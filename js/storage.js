@@ -10,7 +10,10 @@ const STORAGE_KEYS = {
     BOOKMARKS: 'veritas_bookmarks_v1',
     HISTORY: 'veritas_history_v1',
     DAILY_MISSIONS: 'veritas_daily_missions_v1',
-    READING_RECORDS: 'veritas_reading_records_v1'
+    READING_RECORDS: 'veritas_reading_records_v1',
+    USER_PROFILE: 'veritas_user_profile_v1',
+    WRONG_ANSWERS: 'veritas_wrong_answers_v1',
+    MOCK_EXAMS: 'veritas_mock_exams_v1'
 };
 
 // 에빙하우스 망각곡선 기반 라이트너 5단계 복습 간격 (일 단위)
@@ -61,6 +64,17 @@ class StorageManager {
         this.history = []; // [{ date: 'YYYY-MM-DD', learnedCount: 15, quizScore: 90 }]
         this.dailyMissions = {}; // { 'YYYY-MM-DD': { [exprId]: true } }
         this.readingRecords = {}; // { [passageId]: { score: 100, timestamp: 123456789 } }
+        this.userProfile = {
+            name: '영재 학도',
+            exp: 0,
+            tier: 'bronze',
+            badges: [],
+            streak: 1,
+            lastActiveDate: this.getTodayDateString(),
+            completedScrambles: []
+        };
+        this.wrongAnswers = []; // [{ id, sourceType, passageId, questionText, userChoice, correctChoice, explanation, date, isResolved, wrongCount }]
+        this.mockExams = []; // [{ id, title, grade, score, totalQuestions, correctCount, timeSpentSec, date }]
 
         this.loadAll();
     }
@@ -106,6 +120,24 @@ class StorageManager {
             } else {
                 this.readingRecords = {};
             }
+
+            const rawProfile = localStorage.getItem(STORAGE_KEYS.USER_PROFILE);
+            if (rawProfile) {
+                this.userProfile = { ...this.userProfile, ...JSON.parse(rawProfile) };
+            }
+
+            const rawWrongAnswers = localStorage.getItem(STORAGE_KEYS.WRONG_ANSWERS);
+            if (rawWrongAnswers) {
+                this.wrongAnswers = JSON.parse(rawWrongAnswers);
+            }
+
+            const rawMockExams = localStorage.getItem(STORAGE_KEYS.MOCK_EXAMS);
+            if (rawMockExams) {
+                this.mockExams = JSON.parse(rawMockExams);
+            }
+
+            // 출석(Streak) 일자 갱신 검사
+            this.updateDailyStreak();
 
             // 맞춤 바로가기 기본값 보장
             if (!this.settings.customShortcuts || !this.settings.customShortcuts.slot1 || !this.settings.customShortcuts.slot2) {
@@ -194,6 +226,251 @@ class StorageManager {
         } catch (e) {
             console.error('Failed to save reading records:', e);
         }
+    }
+
+    saveUserProfile() {
+        try {
+            localStorage.setItem(STORAGE_KEYS.USER_PROFILE, JSON.stringify(this.userProfile));
+        } catch (e) {
+            console.error('Failed to save user profile:', e);
+        }
+    }
+
+    saveWrongAnswers() {
+        try {
+            localStorage.setItem(STORAGE_KEYS.WRONG_ANSWERS, JSON.stringify(this.wrongAnswers));
+        } catch (e) {
+            console.error('Failed to save wrong answers:', e);
+        }
+    }
+
+    saveMockExams() {
+        try {
+            localStorage.setItem(STORAGE_KEYS.MOCK_EXAMS, JSON.stringify(this.mockExams));
+        } catch (e) {
+            console.error('Failed to save mock exams:', e);
+        }
+    }
+
+    // ------------------------------------------------------------------------
+    // 티어 & 경험치(EXP) & 뱃지 시스템
+    // ------------------------------------------------------------------------
+    calculateTier(exp) {
+        if (exp >= 12000) return { key: 'master', name: 'Grand Veritas Master', rank: 6, min: 12000, next: null, color: 'text-amber-500', bg: 'bg-gradient-to-r from-amber-500 to-yellow-300' };
+        if (exp >= 7000) return { key: 'diamond', name: 'Diamond Fellow', rank: 5, min: 7000, next: 12000, color: 'text-cyan-400', bg: 'bg-cyan-500' };
+        if (exp >= 3500) return { key: 'platinum', name: 'Platinum Scholar', rank: 4, min: 3500, next: 7000, color: 'text-emerald-400', bg: 'bg-emerald-600' };
+        if (exp >= 1500) return { key: 'gold', name: 'Gold Scholar', rank: 3, min: 1500, next: 3500, color: 'text-amber-400', bg: 'bg-amber-500' };
+        if (exp >= 500) return { key: 'silver', name: 'Silver Scholar', rank: 2, min: 500, next: 1500, color: 'text-slate-300', bg: 'bg-slate-400' };
+        return { key: 'bronze', name: 'Bronze Scholar', rank: 1, min: 0, next: 500, color: 'text-amber-700', bg: 'bg-amber-700' };
+    }
+
+    getCurrentTier() {
+        return this.calculateTier(this.userProfile.exp || 0);
+    }
+
+    addExp(amount, reason = '') {
+        if (!amount || amount <= 0) return { gained: 0, newExp: this.userProfile.exp };
+        const prevTier = this.getCurrentTier();
+        this.userProfile.exp = (this.userProfile.exp || 0) + amount;
+        const newTier = this.getCurrentTier();
+        const tierChanged = prevTier.key !== newTier.key && newTier.rank > prevTier.rank;
+        if (tierChanged) {
+            this.userProfile.tier = newTier.key;
+        }
+        
+        // 뱃지 검사
+        const unlockedBadges = this.checkAndUnlockBadges();
+        this.saveUserProfile();
+
+        if (window.achievements && typeof window.achievements.renderHeaderCapsule === 'function') {
+            window.achievements.renderHeaderCapsule();
+        }
+
+        if (window.readingEngine && typeof window.readingEngine.showToast === 'function') {
+            window.readingEngine.showToast(`✨ +${amount} EXP 획득! (${reason || '학습 완료'})`);
+        }
+
+        return {
+            gained: amount,
+            newExp: this.userProfile.exp,
+            tierChanged,
+            newTier,
+            unlockedBadges
+        };
+    }
+
+    updateDailyStreak() {
+        const today = this.getTodayDateString();
+        const lastDate = this.userProfile.lastActiveDate;
+        if (!lastDate) {
+            this.userProfile.streak = 1;
+            this.userProfile.lastActiveDate = today;
+            this.saveUserProfile();
+            return;
+        }
+        if (lastDate === today) {
+            return; // 오늘 이미 출석 반영됨
+        }
+        const yesterday = this.addDays(today, -1);
+        if (lastDate === yesterday) {
+            this.userProfile.streak = (this.userProfile.streak || 0) + 1;
+        } else {
+            this.userProfile.streak = 1; // 연속 끊김
+        }
+        this.userProfile.lastActiveDate = today;
+        this.saveUserProfile();
+        this.addExp(20, '매일 출석 보너스');
+    }
+
+    checkAndUnlockBadges() {
+        if (!this.userProfile.badges) this.userProfile.badges = [];
+        const currentBadges = new Set(this.userProfile.badges);
+        const newUnlocked = [];
+
+        const BADGE_RULES = [
+            { id: 'streak_3', name: '작심삼일 탈출', desc: '3일 연속 학습 달성', exp: 100, check: () => (this.userProfile.streak || 0) >= 3 },
+            { id: 'streak_7', name: '성실의 미덕', desc: '7일 연속 학습 달성', exp: 150, check: () => (this.userProfile.streak || 0) >= 7 },
+            { id: 'streak_30', name: '불굴의 학도', desc: '30일 연속 학습 달성', exp: 300, check: () => (this.userProfile.streak || 0) >= 30 },
+            { id: 'voca_50', name: '어휘 탐험가', desc: '단어 50개 마스터 (플래시카드+퀴즈)', exp: 100, check: () => this.words.filter(w => (w.flashcardDone && w.quizDone) || w.studyCompleted).length >= 50 },
+            { id: 'voca_200', name: '보카 마스터', desc: '단어 200개 마스터', exp: 200, check: () => this.words.filter(w => (w.flashcardDone && w.quizDone) || w.studyCompleted).length >= 200 },
+            { id: 'voca_500', name: '걸어다니는 사전', desc: '단어 500개 마스터', exp: 300, check: () => this.words.filter(w => (w.flashcardDone && w.quizDone) || w.studyCompleted).length >= 500 },
+            { id: 'reading_100_1', name: '첫 만점의 기쁨', desc: '내신 독해 100점 1회 달성', exp: 100, check: () => Object.values(this.readingRecords || {}).filter(r => r.score === 100).length >= 1 },
+            { id: 'reading_100_5', name: '독해 우등생', desc: '내신 독해 100점 5회 달성', exp: 200, check: () => Object.values(this.readingRecords || {}).filter(r => r.score === 100).length >= 5 },
+            { id: 'reading_100_20', name: '독해 지존', desc: '내신 독해 100점 20회 달성', exp: 300, check: () => Object.values(this.readingRecords || {}).filter(r => r.score === 100).length >= 20 },
+            { id: 'scramble_5', name: '구문의 시작', desc: '서술형 어순배열 5문장 성공', exp: 100, check: () => (this.userProfile.completedScrambles || []).length >= 5 },
+            { id: 'scramble_20', name: '서술형 마스터', desc: '서술형 어순배열 20문장 성공', exp: 200, check: () => (this.userProfile.completedScrambles || []).length >= 20 },
+            { id: 'wrong_5', name: '오답 청소기', desc: '오답노트 5문제 극복 완료', exp: 100, check: () => (this.wrongAnswers || []).filter(w => w.isResolved).length >= 5 },
+            { id: 'wrong_20', name: '약점 제로', desc: '오답노트 20문제 극복 완료', exp: 200, check: () => (this.wrongAnswers || []).filter(w => w.isResolved).length >= 20 },
+            { id: 'exam_1', name: '실전 첫걸음', desc: '내신 모의고사 1회 완주', exp: 100, check: () => (this.mockExams || []).length >= 1 },
+            { id: 'exam_5', name: '시험의 고수', desc: '내신 모의고사 5회 완주', exp: 200, check: () => (this.mockExams || []).length >= 5 },
+            { id: 'tier_silver', name: '정진하는 학도', desc: '실버 학도(500 EXP) 등극', exp: 150, check: () => (this.userProfile.exp || 0) >= 500 }
+        ];
+
+        BADGE_RULES.forEach(badge => {
+            if (!currentBadges.has(badge.id) && badge.check()) {
+                currentBadges.add(badge.id);
+                this.userProfile.badges.push(badge.id);
+                newUnlocked.push(badge);
+                // 뱃지 해금 보너스 경험치 지급 (순환 방지 위해 직접 합산)
+                this.userProfile.exp = (this.userProfile.exp || 0) + badge.exp;
+            }
+        });
+
+        if (newUnlocked.length > 0) {
+            this.saveUserProfile();
+            if (window.achievements && typeof window.achievements.triggerBadgeCelebration === 'function') {
+                window.achievements.triggerBadgeCelebration(newUnlocked[0]);
+            }
+        }
+        return newUnlocked;
+    }
+
+    // ------------------------------------------------------------------------
+    // 스마트 오답노트 관리
+    // ------------------------------------------------------------------------
+    recordWrongAnswer(wrongData) {
+        if (!wrongData || !wrongData.questionText) return;
+        if (!this.wrongAnswers) this.wrongAnswers = [];
+        
+        // 기존 동일 문제 여부 확인
+        const existing = this.wrongAnswers.find(w => w.questionText === wrongData.questionText);
+        if (existing) {
+            existing.wrongCount = (existing.wrongCount || 1) + 1;
+            existing.userChoice = wrongData.userChoice || existing.userChoice;
+            existing.date = this.getTodayDateString();
+            existing.isResolved = false; // 재오답 발생 시 미해결 상태 복귀
+        } else {
+            this.wrongAnswers.unshift({
+                id: 'wa-' + Date.now() + '-' + Math.floor(Math.random() * 1000),
+                sourceType: wrongData.sourceType || 'reading', // 'quiz' | 'reading' | 'scramble' | 'exam'
+                passageId: wrongData.passageId || '',
+                passageTitle: wrongData.passageTitle || '',
+                questionText: wrongData.questionText,
+                userChoice: wrongData.userChoice || '',
+                correctChoice: wrongData.correctChoice || '',
+                explanation: wrongData.explanation || '',
+                options: wrongData.options || [],
+                correctIndex: wrongData.correctIndex ?? null,
+                date: this.getTodayDateString(),
+                isResolved: false,
+                wrongCount: 1
+            });
+        }
+        this.saveWrongAnswers();
+        if (window.wrongNote && typeof window.wrongNote.render === 'function') {
+            window.wrongNote.render();
+        }
+    }
+
+    resolveWrongAnswer(id) {
+        if (!this.wrongAnswers) return false;
+        const item = this.wrongAnswers.find(w => w.id === id);
+        if (item && !item.isResolved) {
+            item.isResolved = true;
+            item.resolvedAt = this.getTodayDateString();
+            this.saveWrongAnswers();
+            this.addExp(15, '오답 극복 보너스');
+            this.checkAndUnlockBadges();
+            if (window.wrongNote && typeof window.wrongNote.render === 'function') {
+                window.wrongNote.render();
+            }
+            return true;
+        }
+        return false;
+    }
+
+    getUnresolvedWrongAnswers(filterType = 'all') {
+        if (!this.wrongAnswers) return [];
+        return this.wrongAnswers.filter(w => {
+            if (w.isResolved) return false;
+            if (filterType === 'all') return true;
+            return w.sourceType === filterType;
+        });
+    }
+
+    // ------------------------------------------------------------------------
+    // 서술형 어순배열 완수 기록
+    // ------------------------------------------------------------------------
+    recordScrambleCompletion(scrambleId, isOneShot = true) {
+        if (!this.userProfile.completedScrambles) {
+            this.userProfile.completedScrambles = [];
+        }
+        const isFirstTime = !this.userProfile.completedScrambles.includes(scrambleId);
+        if (isFirstTime) {
+            this.userProfile.completedScrambles.push(scrambleId);
+        }
+        const expGain = 15 + (isOneShot ? 5 : 0);
+        this.addExp(expGain, isOneShot ? '어순 배열 원샷 정답' : '어순 배열 완성');
+        this.checkAndUnlockBadges();
+        this.saveUserProfile();
+        return { isFirstTime, expGain };
+    }
+
+    // ------------------------------------------------------------------------
+    // 내신 실전 모의고사 기록
+    // ------------------------------------------------------------------------
+    recordMockExamResult(examData) {
+        if (!this.mockExams) this.mockExams = [];
+        const record = {
+            id: 'exam-' + Date.now(),
+            title: examData.title || '내신 실전 모의고사',
+            grade: examData.grade || 'all',
+            score: examData.score || 0,
+            totalQuestions: examData.totalQuestions || 20,
+            correctCount: examData.correctCount || 0,
+            timeSpentSec: examData.timeSpentSec || 0,
+            date: this.getTodayDateString()
+        };
+        this.mockExams.unshift(record);
+        this.saveMockExams();
+
+        // EXP 계산: 20문항 이상이면 1.5배 보너스
+        const baseScore = record.score;
+        const expGain = record.totalQuestions >= 20 ? Math.round(baseScore * 1.5) : baseScore;
+        this.addExp(expGain, `내신 모의고사 완주 (${baseScore}점)`);
+        this.checkAndUnlockBadges();
+
+        return record;
     }
 
     // ------------------------------------------------------------------------

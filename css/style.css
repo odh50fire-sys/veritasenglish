@@ -122,13 +122,27 @@ body {
     background: #94A3B8;
 }
 
-/* 인쇄용 학업 보고서 스타일 */
+/* 인쇄용 학업 보고서 및 A4 시험지 인쇄 스타일 */
 @media print {
-    header, nav, footer, button, .no-print {
+    header, nav, footer, button, .no-print, #user-tier-header-capsule, #global-toast-container, main {
         display: none !important;
     }
     body {
         background: #FFFFFF !important;
         color: #000000 !important;
+    }
+    #exam-print-area {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .break-inside-avoid {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+    .break-before-page {
+        break-before: page !important;
+        page-break-before: always !important;
     }
 }

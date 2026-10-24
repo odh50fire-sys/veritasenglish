@@ -179,6 +179,12 @@ class AppController {
         try { this.switchTab('dashboard'); } catch (e) { console.error('Error in switchTab:', e); }
 
         // 첫 진입 시 Lucide 아이콘 활성화
+                if (window.achievements) {
+            window.achievements.renderHeaderCapsule();
+        }
+        if (window.wrongNote) {
+            window.wrongNote.renderStats();
+        }
         if (window.lucide) {
             window.lucide.createIcons();
         }
@@ -235,6 +241,10 @@ class AppController {
             window.readingEngine.render();
         } else if (tabName === 'planner') {
             window.plannerEngine.render();
+        } else if (tabName === 'exam') {
+            if (window.examStudio) window.examStudio.render();
+        } else if (tabName === 'wrong') {
+            if (window.wrongNote) window.wrongNote.render();
         } else if (tabName === 'ocr') {
             // OCR 탭 진입 시 날짜 기본값 자동 설정
             const todayStr = window.storage ? window.storage.getTodayDateString() : new Date().toISOString().slice(0, 10);
@@ -336,6 +346,18 @@ class AppController {
                         previewContainer.appendChild(row);
                     });
                 }
+            }
+            // 업적 & 티어 카드 렌더링 및 오답 카운터 갱신
+            if (window.achievements) {
+                window.achievements.renderDashboardCard();
+                window.achievements.renderHeaderCapsule();
+            }
+            const unresolvedCountEl = document.getElementById('dash-wrong-unresolved-count');
+            if (unresolvedCountEl && window.storage) {
+                unresolvedCountEl.textContent = window.storage.getUnresolvedWrongAnswers().length;
+            }
+            if (window.wrongNote) {
+                window.wrongNote.renderStats();
             }
         } catch (e) {
             console.error('Critical error in renderDashboard:', e);
