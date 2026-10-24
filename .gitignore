@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.system_generated/
+*.tmp
+~$*
+*.xlsx
+*.csv
+*.json
+!manifest.json
