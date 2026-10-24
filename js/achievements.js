@@ -91,13 +91,14 @@ class AchievementsEngine {
     }
 
     renderDashboardCard() {
-        const container = document.getElementById('dash-achievement-card');
+        const container = document.getElementById('dash-welcome-tier-box') || document.getElementById('dash-achievement-card');
         if (!container || !window.storage) return;
 
         const profile = window.storage.userProfile || {};
         const tier = window.storage.getCurrentTier();
         const exp = profile.exp || 0;
         const myBadges = profile.badges || [];
+        const badgesCount = myBadges.length;
 
         let nextExpText = '최고 등급에 도달했습니다!';
         let progressPercent = 100;
@@ -105,43 +106,57 @@ class AchievementsEngine {
             const diff = tier.next - exp;
             const range = tier.next - tier.min;
             progressPercent = Math.min(100, Math.max(0, Math.round(((exp - tier.min) / range) * 100)));
-            nextExpText = `다음 등급까지 <strong class="text-blue-900">${diff} EXP</strong> 남았습니다`;
+            nextExpText = `다음 승급까지 ${diff} EXP`;
         }
 
+        const tierIcons = {
+            bronze: '🌱',
+            silver: '🥉',
+            gold: '🥈',
+            platinum: '🥇',
+            diamond: '💎',
+            master: '👑'
+        };
+
         container.innerHTML = `
-            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs relative overflow-hidden">
-                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                    <div class="flex items-center gap-4">
-                        <div class="w-14 h-14 rounded-2xl ${tier.bg} text-white flex items-center justify-center text-2xl shadow-md border-2 border-white">
-                            ${tier.key === 'master' ? '👑' : tier.key === 'diamond' ? '💎' : tier.key === 'platinum' ? '🥇' : tier.key === 'gold' ? '🥈' : tier.key === 'silver' ? '🥉' : '🌱'}
+            <div onclick="window.achievements.openModal()" 
+                class="p-5 rounded-2xl bg-white/10 hover:bg-white/15 backdrop-blur-md border border-white/20 shadow-lg cursor-pointer transition-all hover:scale-[1.02] active:scale-98 group">
+                <div class="flex items-center justify-between gap-3 mb-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-2xl ${tier.bg} text-white flex items-center justify-center text-2xl shadow-sm border border-white/20">
+                            ${tierIcons[tier.key] || '🏅'}
                         </div>
                         <div>
                             <div class="flex items-center gap-2">
-                                <span class="text-xs font-mono uppercase tracking-widest text-slate-400 font-bold">Veritas Scholar Rank</span>
-                                <span class="px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 font-mono text-[11px] font-bold">연속 ${profile.streak || 1}일 출석 🔥</span>
+                                <span class="text-[10px] font-mono uppercase tracking-wider text-amber-300 font-bold">Veritas Rank</span>
+                                <span class="text-[10px] px-1.5 py-0.5 rounded-full bg-white/10 text-slate-200 font-mono font-semibold">🔥 ${profile.streak || 1}일 연속</span>
                             </div>
-                            <h3 class="font-serif font-black text-xl text-slate-900 mt-0.5">${tier.name}</h3>
-                            <p class="text-xs text-slate-500 mt-0.5">${nextExpText}</p>
+                            <h4 class="font-serif font-black text-base text-white leading-tight mt-0.5">${tier.name}</h4>
+                            <div class="text-[11px] text-slate-300 font-sans mt-0.5">${nextExpText}</div>
                         </div>
                     </div>
-                    <div class="flex items-center gap-2 self-stretch sm:self-auto justify-end">
-                        <button type="button" onclick="window.achievements.openModal()" 
-                            class="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-serif font-semibold shadow-xs flex items-center justify-center gap-2 transition-all cursor-pointer">
-                            <i data-lucide="trophy" class="w-4 h-4 text-amber-400"></i>
-                            <span>명예의 전당 & 뱃지 도감 (${myBadges.length}/16)</span>
-                        </button>
+                    <div class="text-right shrink-0">
+                        <span class="inline-flex items-center gap-1 text-[11px] px-2.5 py-1 rounded-full bg-amber-400/20 text-amber-300 font-mono font-bold border border-amber-400/30">
+                            🏅 ${badgesCount}/16
+                        </span>
                     </div>
                 </div>
 
-                <!-- 진척도 바 -->
-                <div class="mt-4 pt-4 border-t border-slate-100">
-                    <div class="flex items-center justify-between text-xs font-mono text-slate-500 mb-1.5">
-                        <span>현재 보유 EXP: <strong class="text-slate-900 font-bold">${exp} EXP</strong></span>
-                        <span>${progressPercent}% 달성</span>
+                <!-- 진척도 게이지 바 -->
+                <div class="mt-3">
+                    <div class="flex items-center justify-between text-xs font-mono text-slate-200 mb-1">
+                        <span>현재: <strong class="text-white font-bold">${exp} EXP</strong></span>
+                        <span class="text-amber-300 font-bold">${progressPercent}%</span>
                     </div>
-                    <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                    <div class="w-full h-2 bg-white/20 rounded-full overflow-hidden">
                         <div class="${tier.bg} h-full rounded-full transition-all duration-700" style="width: ${progressPercent}%"></div>
                     </div>
+                </div>
+
+                <!-- 클릭 가이드 -->
+                <div class="mt-3.5 pt-2.5 border-t border-white/10 flex items-center justify-between text-xs text-amber-200 group-hover:text-white font-serif font-semibold transition-colors">
+                    <span>명예의 전당 & 도감 확인하기</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-amber-300 group-hover:translate-x-1 transition-transform"></i>
                 </div>
             </div>
         `;
