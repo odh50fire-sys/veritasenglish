@@ -208,6 +208,16 @@ class AppController {
     }
 
     switchTab(tabName) {
+        if (tabName === 'wrong') {
+            this.switchTab('review');
+            this.switchReviewSubTab('wrong');
+            return;
+        }
+        if (tabName === 'exam') {
+            this.switchTab('reading');
+            this.switchReadingSubTab('exam');
+            return;
+        }
         this.currentTab = tabName;
 
         // 탭 버튼 active 클래스 토글
@@ -232,19 +242,15 @@ class AppController {
         } else if (tabName === 'quiz') {
             window.quizEngine.startQuiz(window.quizEngine.currentMode || 'choice', { scope: window.quizEngine.currentScope || 'today' });
         } else if (tabName === 'review') {
-            window.reviewManager.render();
+            this.switchReviewSubTab(this.currentReviewSubTab || 'srs');
         } else if (tabName === 'expressions') {
             window.nativeExpressionsEngine.render();
         } else if (tabName === 'dictionary') {
             window.dictionaryEngine.render();
         } else if (tabName === 'reading') {
-            window.readingEngine.render();
+            this.switchReadingSubTab(this.currentReadingSubTab || 'passages');
         } else if (tabName === 'planner') {
             window.plannerEngine.render();
-        } else if (tabName === 'exam') {
-            if (window.examStudio) window.examStudio.render();
-        } else if (tabName === 'wrong') {
-            if (window.wrongNote) window.wrongNote.render();
         } else if (tabName === 'ocr') {
             // OCR 탭 진입 시 날짜 기본값 자동 설정
             const todayStr = window.storage ? window.storage.getTodayDateString() : new Date().toISOString().slice(0, 10);
@@ -276,6 +282,62 @@ class AppController {
         }
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+
+    switchReviewSubTab(mode = 'srs') {
+        this.currentReviewSubTab = mode;
+        const srsView = document.getElementById('subview-review-srs');
+        const wrongView = document.getElementById('subview-review-wrong');
+        const srsBtn = document.getElementById('btn-subtab-review-srs');
+        const wrongBtn = document.getElementById('btn-subtab-review-wrong');
+
+        if (srsView) srsView.classList.toggle('hidden', mode !== 'srs');
+        if (wrongView) wrongView.classList.toggle('hidden', mode !== 'wrong');
+
+        const activeCls = 'px-4 py-2 rounded-xl bg-slate-900 text-white font-serif font-bold text-xs shadow-xs flex items-center gap-1.5 transition-all cursor-pointer';
+        const inactiveCls = 'px-4 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-700 font-serif font-semibold text-xs border border-slate-200 flex items-center gap-1.5 transition-all cursor-pointer';
+
+        if (srsBtn) srsBtn.className = (mode === 'srs') ? activeCls : inactiveCls;
+        if (wrongBtn) wrongBtn.className = (mode === 'wrong') ? activeCls : inactiveCls;
+
+        if (mode === 'srs' && window.reviewManager) {
+            window.reviewManager.render();
+        } else if (mode === 'wrong' && window.wrongNote) {
+            window.wrongNote.render();
+        }
+        if (window.lucide) window.lucide.createIcons();
+    }
+
+    switchReadingSubTab(mode = 'passages') {
+        this.currentReadingSubTab = mode;
+        const passView = document.getElementById('subview-reading-passages');
+        const scramView = document.getElementById('subview-reading-scramble');
+        const examView = document.getElementById('subview-reading-exam');
+
+        const passBtn = document.getElementById('btn-subtab-reading-passages');
+        const scramBtn = document.getElementById('btn-subtab-reading-scramble');
+        const examBtn = document.getElementById('btn-subtab-reading-exam');
+
+        if (passView) passView.classList.toggle('hidden', mode !== 'passages');
+        if (scramView) scramView.classList.toggle('hidden', mode !== 'scramble');
+        if (examView) examView.classList.toggle('hidden', mode !== 'exam');
+
+        const activeCls = 'px-4 py-2 rounded-xl bg-slate-900 text-white font-serif font-bold text-xs shadow-xs flex items-center gap-1.5 transition-all cursor-pointer';
+        const inactiveCls = 'px-4 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-700 font-serif font-semibold text-xs border border-slate-200 flex items-center gap-1.5 transition-all cursor-pointer';
+
+        if (passBtn) passBtn.className = (mode === 'passages') ? activeCls : inactiveCls;
+        if (scramBtn) scramBtn.className = (mode === 'scramble') ? activeCls : inactiveCls;
+        if (examBtn) examBtn.className = (mode === 'exam') ? activeCls : inactiveCls;
+
+        if (mode === 'passages' && window.readingEngine) {
+            window.readingEngine.render();
+        } else if (mode === 'scramble' && window.scrambleEngine) {
+            window.scrambleEngine.render();
+        } else if (mode === 'exam' && window.examStudio) {
+            window.examStudio.render();
+        }
+        if (window.lucide) window.lucide.createIcons();
     }
 
     initDashboardWidgets() {

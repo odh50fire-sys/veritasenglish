@@ -447,6 +447,12 @@ class ExamStudioEngine {
     // ------------------------------------------------------------------------
     // A4 종이 시험지 인쇄 지원 (Printable Worksheet Mode)
     // ------------------------------------------------------------------------
+    printExamFromSetup() {
+        this.generateExam();
+        this.printExamPaper();
+        this.exitToSetup();
+    }
+
     printExamPaper() {
         if (!this.currentExam) {
             alert('인쇄할 시험지가 생성되지 않았습니다.');

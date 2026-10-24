@@ -84,19 +84,10 @@
                         <span class="flex items-center gap-1.5"><i data-lucide="book-open-check" class="w-4 h-4 text-blue-800"></i> 단어 사전</span>
                     </button>
                     <button class="nav-tab-btn px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="reading">
-                        <span class="flex items-center gap-1.5"><i data-lucide="graduation-cap" class="w-4 h-4 text-indigo-700"></i> 내신 독해</span>
+                        <span class="flex items-center gap-1.5"><i data-lucide="graduation-cap" class="w-4 h-4 text-indigo-700"></i> 내신 대비</span>
                     </button>
                     <button class="nav-tab-btn px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="planner">
                         <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-4 h-4"></i> 학습 플래너</span>
-                    </button>
-                    <button class="nav-tab-btn px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="exam">
-                        <span class="flex items-center gap-1.5"><i data-lucide="clipboard-check" class="w-4 h-4 text-blue-900"></i> 내신 시험실</span>
-                    </button>
-                    <button class="nav-tab-btn px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="wrong">
-                        <span class="flex items-center gap-1.5">
-                            <i data-lucide="bookmark-x" class="w-4 h-4 text-rose-600"></i> 오답노트
-                            <span id="nav-wrong-badge" class="hidden px-1.5 py-0.2 rounded-full bg-rose-600 text-white font-mono text-[10px] font-bold">0</span>
-                        </span>
                     </button>
                 </nav>
 
@@ -123,10 +114,8 @@
             <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="review">🔄 SRS복습</button>
             <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="expressions">💡 원어민표현</button>
             <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="dictionary">📖 사전</button>
-            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="reading">🎓 내신독해</button>
+            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="reading">🎓 내신대비</button>
             <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="planner">📅 플래너</button>
-            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="exam">📝 내신시험</button>
-            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="wrong">📓 오답노트</button>
         </div>
     </header>
 
@@ -172,68 +161,7 @@
             <!-- 영재 학도 학업 성취도 & 티어 카드 -->
             <div id="dash-achievement-card"></div>
 
-            <!-- 신규 4대 핵심 기능 퀵 액션 카드 그리드 -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <!-- 🧩 서술형 어순배열 -->
-                <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-blue-400 transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="w-9 h-9 rounded-xl bg-blue-50 text-blue-900 flex items-center justify-center text-lg mb-2">
-                            <i data-lucide="puzzle" class="w-5 h-5"></i>
-                        </div>
-                        <h4 class="font-serif font-bold text-sm text-slate-900">서술형 어순배열</h4>
-                        <p class="text-xs text-slate-500 mt-0.5">내신 핵심 킬러 문장 조립 영작</p>
-                    </div>
-                    <button type="button" onclick="window.scrambleEngine && window.scrambleEngine.openModal()" class="mt-3 w-full py-2 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-900 font-serif font-semibold text-xs transition-colors flex items-center justify-center gap-1 cursor-pointer">
-                        <span>바로 도전하기</span>
-                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                    </button>
-                </div>
-
-                <!-- 📓 스마트 오답노트 -->
-                <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-rose-400 transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="w-9 h-9 rounded-xl bg-rose-50 text-rose-700 flex items-center justify-center text-lg mb-2">
-                            <i data-lucide="bookmark-x" class="w-5 h-5"></i>
-                        </div>
-                        <h4 class="font-serif font-bold text-sm text-slate-900">스마트 오답노트</h4>
-                        <p class="text-xs text-slate-500 mt-0.5">미해결 오답 <strong id="dash-wrong-unresolved-count" class="text-rose-600">0</strong>개 보관</p>
-                    </div>
-                    <button type="button" onclick="window.app && window.app.switchTab('wrong')" class="mt-3 w-full py-2 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-800 font-serif font-semibold text-xs transition-colors flex items-center justify-center gap-1 cursor-pointer">
-                        <span>오답 클리닉 가기</span>
-                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                    </button>
-                </div>
-
-                <!-- 📝 내신 실전 모의고사 -->
-                <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-emerald-400 transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-800 flex items-center justify-center text-lg mb-2">
-                            <i data-lucide="clipboard-check" class="w-5 h-5"></i>
-                        </div>
-                        <h4 class="font-serif font-bold text-sm text-slate-900">내신 실전 모의고사</h4>
-                        <p class="text-xs text-slate-500 mt-0.5">학교 시험 45분 OMR 실전 CBT</p>
-                    </div>
-                    <button type="button" onclick="window.app && window.app.switchTab('exam')" class="mt-3 w-full py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-900 font-serif font-semibold text-xs transition-colors flex items-center justify-center gap-1 cursor-pointer">
-                        <span>시험지 만들기</span>
-                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                    </button>
-                </div>
-
-                <!-- 🖨️ A4 시험지 인쇄 -->
-                <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-amber-400 transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="w-9 h-9 rounded-xl bg-amber-50 text-amber-800 flex items-center justify-center text-lg mb-2">
-                            <i data-lucide="printer" class="w-5 h-5"></i>
-                        </div>
-                        <h4 class="font-serif font-bold text-sm text-slate-900">A4 종이 시험지 인쇄</h4>
-                        <p class="text-xs text-slate-500 mt-0.5">오프라인 학교/과외 시험지 PDF</p>
-                    </div>
-                    <button type="button" onclick="window.app && window.app.switchTab('exam')" class="mt-3 w-full py-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 font-serif font-semibold text-xs transition-colors flex items-center justify-center gap-1 cursor-pointer">
-                        <span>인쇄 모드 열기</span>
-                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                    </button>
-                </div>
-            </div>
+            
 
             <!-- 핵심 학업 지표 4대 카드 -->
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -1103,8 +1031,24 @@
              TAB 5: 에빙하우스 망각곡선 복습 (Spaced Repetition System)
              ------------------------------------------------------------------ -->
         <section id="tab-review" class="tab-content hidden space-y-6">
-            
-            <!-- 에빙하우스 학술 원리 배너 -->
+            <!-- 복습 서브 네비게이션 세그먼트 바 -->
+            <div class="flex items-center gap-2 border-b border-slate-200 pb-3">
+                <button id="btn-subtab-review-srs" type="button" onclick="window.app.switchReviewSubTab('srs')" 
+                    class="px-4 py-2 rounded-xl bg-slate-900 text-white font-serif font-bold text-xs shadow-xs flex items-center gap-1.5 transition-all cursor-pointer">
+                    <i data-lucide="repeat" class="w-4 h-4 text-emerald-400"></i>
+                    <span>에빙하우스 망각곡선 복습</span>
+                </button>
+                <button id="btn-subtab-review-wrong" type="button" onclick="window.app.switchReviewSubTab('wrong')" 
+                    class="px-4 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-700 font-serif font-semibold text-xs border border-slate-200 flex items-center gap-1.5 transition-all cursor-pointer">
+                    <i data-lucide="bookmark-x" class="w-4 h-4 text-rose-600"></i>
+                    <span>스마트 오답노트 & 클리닉</span>
+                    <span id="nav-wrong-badge" class="hidden px-1.5 py-0.2 rounded-full bg-rose-600 text-white font-mono text-[10px] font-bold">0</span>
+                </button>
+            </div>
+
+            <!-- 서브뷰 A: 에빙하우스 망각곡선 복습 -->
+            <div id="subview-review-srs" class="space-y-6">
+                <!-- 에빙하우스 학술 원리 배너 -->
             <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div>
                     <div class="inline-flex items-center gap-1 text-xs font-mono font-bold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-md mb-2">
@@ -1177,8 +1121,82 @@
                     <!-- JS 동적 주입 -->
                 </div>
             </div>
+            </div>
 
-        </section>
+            <!-- 서브뷰 B: 스마트 오답노트 & 자동 복습 -->
+            <div id="subview-review-wrong" class="hidden space-y-6">
+                <!-- 상단 헤더 배너 -->
+            <div class="rounded-2xl bg-gradient-to-r from-rose-950 via-slate-900 to-slate-900 text-white p-6 sm:p-8 border border-slate-800 shadow-md">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div>
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-rose-300 text-xs font-mono font-medium mb-3">
+                            <i data-lucide="bookmark-x" class="w-3.5 h-3.5"></i>
+                            <span>Smart Wrong-Answer Clinic • 취약점 제로 솔루션</span>
+                        </div>
+                        <h2 class="font-serif font-black text-2xl sm:text-3xl text-white tracking-tight">
+                            스마트 오답노트 & 자동 복습 시험실
+                        </h2>
+                        <p class="text-slate-300 text-xs sm:text-sm mt-1.5 max-w-2xl leading-relaxed">
+                            스마트 퀴즈, 내신 독해, 서술형 어순배열에서 틀린 모든 문제가 자동으로 수집됩니다. <strong>오답 탈출 미니 시험</strong>을 통해 틀린 원인을 분석하고 100% 내 것으로 체화하세요.
+                        </p>
+                    </div>
+
+                    <div class="flex sm:flex-col gap-2 shrink-0">
+                        <button type="button" onclick="window.wrongNote.startRetest(5)" 
+                            class="px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-serif font-bold text-xs shadow-md transition-all flex items-center justify-center gap-1.5 cursor-pointer active:scale-95">
+                            <i data-lucide="zap" class="w-4 h-4 fill-slate-950"></i>
+                            <span>⚡ 오답 탈출 미니 시험 (5제)</span>
+                        </button>
+                        <button type="button" onclick="window.wrongNote.startRetest(10)" 
+                            class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-serif font-semibold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+                            <span>10문제 집중 재시험</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 오답 통계 요약 3대 카드 -->
+            <div class="grid grid-cols-3 gap-3 sm:gap-4">
+                <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-2xs text-center">
+                    <div class="text-[11px] font-mono uppercase text-slate-400 font-bold">누적 오답 수집</div>
+                    <div id="stat-wrong-total" class="font-mono font-black text-2xl sm:text-3xl text-slate-800 mt-0.5">0</div>
+                </div>
+                <div class="p-4 rounded-xl bg-white border border-rose-200 shadow-2xs text-center">
+                    <div class="text-[11px] font-mono uppercase text-rose-500 font-bold">미해결 오답 (집중 복습)</div>
+                    <div id="stat-wrong-unresolved" class="font-mono font-black text-2xl sm:text-3xl text-rose-600 mt-0.5">0</div>
+                </div>
+                <div class="p-4 rounded-xl bg-white border border-emerald-200 shadow-2xs text-center">
+                    <div class="text-[11px] font-mono uppercase text-emerald-600 font-bold">극복 완료</div>
+                    <div id="stat-wrong-resolved" class="font-mono font-black text-2xl sm:text-3xl text-emerald-600 mt-0.5">0</div>
+                </div>
+            </div>
+
+            <!-- 필터 바 (출처별 & 상태별) -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs">
+                <!-- 출처 필터 -->
+                <div class="flex flex-wrap items-center gap-1.5">
+                    <span class="font-bold text-slate-700 mr-1">문제 출처:</span>
+                    <button type="button" onclick="window.wrongNote.setFilter('all')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 font-semibold text-slate-800 shadow-2xs">전체</button>
+                    <button type="button" onclick="window.wrongNote.setFilter('reading')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 font-semibold text-indigo-800 hover:bg-indigo-50">내신 독해</button>
+                    <button type="button" onclick="window.wrongNote.setFilter('quiz')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 font-semibold text-amber-800 hover:bg-amber-50">단어 퀴즈</button>
+                    <button type="button" onclick="window.wrongNote.setFilter('scramble')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 font-semibold text-rose-800 hover:bg-rose-50">서술형 어순배열</button>
+                    <button type="button" onclick="window.wrongNote.setFilter('exam')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 font-semibold text-blue-800 hover:bg-blue-50">모의고사</button>
+                </div>
+
+                <!-- 해결 상태 필터 -->
+                <div class="flex items-center gap-1.5">
+                    <button type="button" onclick="window.wrongNote.setStatusFilter('unresolved')" class="px-3 py-1 rounded-lg bg-rose-600 text-white font-bold">미해결만</button>
+                    <button type="button" onclick="window.wrongNote.setStatusFilter('resolved')" class="px-3 py-1 rounded-lg bg-slate-200 text-slate-700 font-medium">극복 완료만</button>
+                    <button type="button" onclick="window.wrongNote.setStatusFilter('all')" class="px-3 py-1 rounded-lg bg-slate-200 text-slate-700 font-medium">전체 보기</button>
+                </div>
+            </div>
+
+            <!-- 오답 리스트 컨테이너 -->
+            <div id="wrong-note-list-container" class="space-y-4">
+                <!-- JS 주입 -->
+            </div>
+            </div>
+</section>
 
         <!-- ------------------------------------------------------------------
              TAB 6: 원어민 표현 & 뉘앙스 라이브러리 (Native Expressions Lab)
@@ -1465,7 +1483,28 @@
      TAB 9: 중·고등 내신 대비 & 비문학·소설 심층 독해 (Academic Reading & Exam Prep)
      ------------------------------------------------------------------ -->
 <section id="tab-reading" class="tab-content hidden space-y-6">
-    <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-xs space-y-6">
+            <!-- 내신 대비 3대 모드 서브 네비게이션 세그먼트 바 -->
+            <div class="flex flex-wrap items-center gap-2 border-b border-slate-200 pb-3">
+                <button id="btn-subtab-reading-passages" type="button" onclick="window.app.switchReadingSubTab('passages')" 
+                    class="px-4 py-2 rounded-xl bg-slate-900 text-white font-serif font-bold text-xs shadow-xs flex items-center gap-1.5 transition-all cursor-pointer">
+                    <i data-lucide="book-open" class="w-4 h-4 text-amber-300"></i>
+                    <span>📖 70선 독해 지문 & 4대 문항</span>
+                </button>
+                <button id="btn-subtab-reading-scramble" type="button" onclick="window.app.switchReadingSubTab('scramble')" 
+                    class="px-4 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-700 font-serif font-semibold text-xs border border-slate-200 flex items-center gap-1.5 transition-all cursor-pointer">
+                    <i data-lucide="puzzle" class="w-4 h-4 text-blue-900"></i>
+                    <span>🧩 서술형 어순배열 훈련실</span>
+                </button>
+                <button id="btn-subtab-reading-exam" type="button" onclick="window.app.switchReadingSubTab('exam')" 
+                    class="px-4 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-700 font-serif font-semibold text-xs border border-slate-200 flex items-center gap-1.5 transition-all cursor-pointer">
+                    <i data-lucide="clipboard-check" class="w-4 h-4 text-emerald-700"></i>
+                    <span>📝 실전 모의고사 & A4 인쇄</span>
+                </button>
+            </div>
+
+            <!-- 서브뷰 1: 70선 독해 지문 & 문항 -->
+            <div id="subview-reading-passages" class="space-y-6">
+                <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-xs space-y-6">
         
         <!-- 상단 헤더 & 학년 필터 바 -->
         <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-5 border-b border-slate-100">
@@ -1670,12 +1709,93 @@
         </div>
 
     </div>
-</section>
-        <!-- ------------------------------------------------------------------
-             TAB 10: 내신 시험실 (Exam Studio)
-             ------------------------------------------------------------------ -->
-        <section id="tab-exam" class="tab-content hidden space-y-6">
-            <!-- 1. 시험지 생성 설정 뷰 (Setup View) -->
+            </div>
+
+            <!-- 서브뷰 2: 서술형 어순배열 훈련실 -->
+            <div id="subview-reading-scramble" class="hidden space-y-6">
+                
+            <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-xs space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100">
+                    <div>
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 text-blue-900 font-mono text-xs font-bold mb-2">
+                            <i data-lucide="puzzle" class="w-3.5 h-3.5"></i>
+                            <span>Subjective Scrambled Construction • 중등 서술형 킬러 정복</span>
+                        </div>
+                        <h2 class="font-serif font-black text-2xl text-slate-900">서술형 단어 블록 어순배열 훈련실</h2>
+                        <p class="text-xs text-slate-500 mt-1">70선 독해 핵심 구문의 어휘 블록을 올바른 문법 순서로 조립하여 영작을 완성하세요.</p>
+                    </div>
+
+                    <!-- 학년별 필터 -->
+                    <div class="flex items-center gap-1.5 bg-slate-100 p-1 rounded-xl text-xs font-semibold">
+                        <button type="button" onclick="window.scrambleEngine.applyFilter('all')" class="px-3 py-1.5 rounded-lg bg-white shadow-2xs font-bold text-slate-900">전체</button>
+                        <button type="button" onclick="window.scrambleEngine.applyFilter('PRE_M1')" class="px-3 py-1.5 rounded-lg hover:bg-white text-slate-600">예비중</button>
+                        <button type="button" onclick="window.scrambleEngine.applyFilter('M1')" class="px-3 py-1.5 rounded-lg hover:bg-white text-slate-600">중1</button>
+                        <button type="button" onclick="window.scrambleEngine.applyFilter('M2')" class="px-3 py-1.5 rounded-lg hover:bg-white text-slate-600">중2</button>
+                        <button type="button" onclick="window.scrambleEngine.applyFilter('M3')" class="px-3 py-1.5 rounded-lg hover:bg-white text-slate-600">중3</button>
+                    </div>
+                </div>
+
+                <!-- 훈련 보드 -->
+                <div class="max-w-3xl mx-auto space-y-5">
+                    <!-- 문제 정보 카드 -->
+                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span id="scramble-grade-badge" class="px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-900 font-mono text-xs font-bold"></span>
+                            <span id="scramble-progress-count" class="font-mono text-xs text-slate-400 font-bold"></span>
+                        </div>
+                        <h3 id="scramble-title" class="font-serif font-black text-lg text-slate-900"></h3>
+                        <div id="scramble-grammar-point" class="text-xs font-mono font-bold text-blue-900"></div>
+                        <div id="scramble-ko-meaning" class="font-serif font-bold text-base text-slate-900 pt-1"></div>
+                    </div>
+
+                    <!-- 조립된 슬롯 -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 mb-1.5">내가 조립한 영작 문장 (클릭 시 단어 회수)</label>
+                        <div id="scramble-selected-slot"></div>
+                    </div>
+
+                    <!-- 사용 가능한 단어 풀 -->
+                    <div>
+                        <div class="flex items-center justify-between mb-1.5">
+                            <label class="block text-xs font-bold text-slate-600">단어 블록 선택 (클릭하여 조립)</label>
+                            <button type="button" onclick="window.scrambleEngine.clearSelected()" class="text-[11px] text-slate-400 hover:text-rose-600 underline cursor-pointer">
+                                전체 비우기
+                            </button>
+                        </div>
+                        <div id="scramble-available-pool" class="p-3 rounded-2xl bg-slate-50 border border-slate-200"></div>
+                    </div>
+
+                    <!-- 힌트 및 피드백 -->
+                    <div id="scramble-hint-box" class="hidden p-3 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-900 flex items-start gap-2">
+                        <i data-lucide="help-circle" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
+                        <span id="scramble-hint-text"></span>
+                    </div>
+                    <div id="scramble-feedback-area" class="hidden"></div>
+
+                    <!-- 액션 버튼 -->
+                    <div class="pt-2 flex items-center justify-between gap-3">
+                        <button type="button" onclick="window.scrambleEngine.showHint()" class="px-4 py-2.5 rounded-xl bg-white border border-slate-200 hover:bg-slate-100 text-slate-700 text-xs font-semibold flex items-center gap-1 cursor-pointer">
+                            <i data-lucide="lightbulb" class="w-3.5 h-3.5 text-amber-500"></i>
+                            <span>힌트 보기</span>
+                        </button>
+                        <div class="flex items-center gap-2">
+                            <button id="btn-scramble-submit" type="button" onclick="window.scrambleEngine.checkAnswer()" class="px-6 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-xs shadow-md transition-all cursor-pointer">
+                                정답 확인 (채점)
+                            </button>
+                            <button id="btn-scramble-next" type="button" onclick="window.scrambleEngine.nextSentence()" class="hidden px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-serif font-bold text-xs shadow-md transition-all flex items-center gap-1 cursor-pointer">
+                                <span>다음 문장 도전</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+
+            <!-- 서브뷰 3: 실전 모의고사 (CBT & A4 인쇄) -->
+            <div id="subview-reading-exam" class="hidden space-y-6">
+                <!-- 1. 시험지 생성 설정 뷰 (Setup View) -->
             <div id="exam-setup-view" class="space-y-6">
                 <!-- 아카데믹 헤더 배너 -->
                 <div class="rounded-2xl bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white p-6 sm:p-8 border border-slate-800 shadow-md relative overflow-hidden">
@@ -1744,6 +1864,11 @@
                             class="w-full sm:flex-1 py-3 px-6 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-98">
                             <i data-lucide="play" class="w-4 h-4 fill-white"></i>
                             <span>실전 CBT 모의고사 응시 시작</span>
+                        </button>
+                        <button type="button" onclick="window.examStudio.printExamFromSetup()" 
+                            class="w-full sm:w-auto py-3 px-6 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-serif font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-98">
+                            <i data-lucide="printer" class="w-4 h-4"></i>
+                            <span>🖨️ A4 종이 시험지 인쇄하기 (PDF)</span>
                         </button>
                     </div>
                 </div>
@@ -1879,83 +2004,9 @@
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- ------------------------------------------------------------------
-             TAB 11: 스마트 오답노트 (Wrong Clinic)
-             ------------------------------------------------------------------ -->
-        <section id="tab-wrong" class="tab-content hidden space-y-6">
-            <!-- 상단 헤더 배너 -->
-            <div class="rounded-2xl bg-gradient-to-r from-rose-950 via-slate-900 to-slate-900 text-white p-6 sm:p-8 border border-slate-800 shadow-md">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                    <div>
-                        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-rose-300 text-xs font-mono font-medium mb-3">
-                            <i data-lucide="bookmark-x" class="w-3.5 h-3.5"></i>
-                            <span>Smart Wrong-Answer Clinic • 취약점 제로 솔루션</span>
-                        </div>
-                        <h2 class="font-serif font-black text-2xl sm:text-3xl text-white tracking-tight">
-                            스마트 오답노트 & 자동 복습 시험실
-                        </h2>
-                        <p class="text-slate-300 text-xs sm:text-sm mt-1.5 max-w-2xl leading-relaxed">
-                            스마트 퀴즈, 내신 독해, 서술형 어순배열에서 틀린 모든 문제가 자동으로 수집됩니다. <strong>오답 탈출 미니 시험</strong>을 통해 틀린 원인을 분석하고 100% 내 것으로 체화하세요.
-                        </p>
-                    </div>
-
-                    <div class="flex sm:flex-col gap-2 shrink-0">
-                        <button type="button" onclick="window.wrongNote.startRetest(5)" 
-                            class="px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-serif font-bold text-xs shadow-md transition-all flex items-center justify-center gap-1.5 cursor-pointer active:scale-95">
-                            <i data-lucide="zap" class="w-4 h-4 fill-slate-950"></i>
-                            <span>⚡ 오답 탈출 미니 시험 (5제)</span>
-                        </button>
-                        <button type="button" onclick="window.wrongNote.startRetest(10)" 
-                            class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-serif font-semibold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer">
-                            <span>10문제 집중 재시험</span>
-                        </button>
-                    </div>
-                </div>
             </div>
-
-            <!-- 오답 통계 요약 3대 카드 -->
-            <div class="grid grid-cols-3 gap-3 sm:gap-4">
-                <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-2xs text-center">
-                    <div class="text-[11px] font-mono uppercase text-slate-400 font-bold">누적 오답 수집</div>
-                    <div id="stat-wrong-total" class="font-mono font-black text-2xl sm:text-3xl text-slate-800 mt-0.5">0</div>
-                </div>
-                <div class="p-4 rounded-xl bg-white border border-rose-200 shadow-2xs text-center">
-                    <div class="text-[11px] font-mono uppercase text-rose-500 font-bold">미해결 오답 (집중 복습)</div>
-                    <div id="stat-wrong-unresolved" class="font-mono font-black text-2xl sm:text-3xl text-rose-600 mt-0.5">0</div>
-                </div>
-                <div class="p-4 rounded-xl bg-white border border-emerald-200 shadow-2xs text-center">
-                    <div class="text-[11px] font-mono uppercase text-emerald-600 font-bold">극복 완료</div>
-                    <div id="stat-wrong-resolved" class="font-mono font-black text-2xl sm:text-3xl text-emerald-600 mt-0.5">0</div>
-                </div>
-            </div>
-
-            <!-- 필터 바 (출처별 & 상태별) -->
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs">
-                <!-- 출처 필터 -->
-                <div class="flex flex-wrap items-center gap-1.5">
-                    <span class="font-bold text-slate-700 mr-1">문제 출처:</span>
-                    <button type="button" onclick="window.wrongNote.setFilter('all')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 font-semibold text-slate-800 shadow-2xs">전체</button>
-                    <button type="button" onclick="window.wrongNote.setFilter('reading')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 font-semibold text-indigo-800 hover:bg-indigo-50">내신 독해</button>
-                    <button type="button" onclick="window.wrongNote.setFilter('quiz')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 font-semibold text-amber-800 hover:bg-amber-50">단어 퀴즈</button>
-                    <button type="button" onclick="window.wrongNote.setFilter('scramble')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 font-semibold text-rose-800 hover:bg-rose-50">서술형 어순배열</button>
-                    <button type="button" onclick="window.wrongNote.setFilter('exam')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 font-semibold text-blue-800 hover:bg-blue-50">모의고사</button>
-                </div>
-
-                <!-- 해결 상태 필터 -->
-                <div class="flex items-center gap-1.5">
-                    <button type="button" onclick="window.wrongNote.setStatusFilter('unresolved')" class="px-3 py-1 rounded-lg bg-rose-600 text-white font-bold">미해결만</button>
-                    <button type="button" onclick="window.wrongNote.setStatusFilter('resolved')" class="px-3 py-1 rounded-lg bg-slate-200 text-slate-700 font-medium">극복 완료만</button>
-                    <button type="button" onclick="window.wrongNote.setStatusFilter('all')" class="px-3 py-1 rounded-lg bg-slate-200 text-slate-700 font-medium">전체 보기</button>
-                </div>
-            </div>
-
-            <!-- 오답 리스트 컨테이너 -->
-            <div id="wrong-note-list-container" class="space-y-4">
-                <!-- JS 주입 -->
-            </div>
-        </section>
+</section>
+        
 
 
 
