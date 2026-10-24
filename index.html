@@ -1,0 +1,2230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veritas English | 영재 아카데믹 스마트 영어 학습 플랫폼</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        academy: {
+                            navy: '#0F172A',
+                            oxford: '#1E3A8A',
+                            paper: '#FAF9F6',
+                            crimson: '#991B1B',
+                            laurel: '#065F46',
+                            gold: '#B45309'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Tesseract.js (ENG + KOR OCR) -->
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    
+    <!-- Custom Academic Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="min-h-screen flex flex-col bg-[#FAF9F6] text-slate-800 antialiased selection:bg-blue-100 selection:text-blue-900">
+
+    <!-- ======================================================================
+         상단 영재학교 아카데믹 헤더 (Top Navigation Bar)
+         ====================================================================== -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                
+                <!-- 브랜드 로고 & 슬로건 -->
+                <div class="flex items-center gap-3 cursor-pointer" onclick="window.app && window.app.switchTab('dashboard')">
+                    <div class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center text-amber-400 shadow-sm border border-slate-800">
+                        <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <div class="font-serif font-black text-xl text-slate-900 tracking-tight leading-none">
+                            VERITAS <span class="text-blue-900">ENGLISH</span>
+                        </div>
+                        <div class="text-[10px] font-mono tracking-widest text-slate-400 uppercase mt-0.5 font-semibold">
+                            Scholars' Academy
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 메인 네비게이션 탭 -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                    <button class="nav-tab-btn px-3 py-2 text-sm font-medium transition-colors border-b-2 border-transparent active-nav-tab" data-tab="dashboard">
+                        <span class="flex items-center gap-1.5"><i data-lucide="layout-dashboard" class="w-4 h-4"></i> 대시보드</span>
+                    </button>
+                    <button class="nav-tab-btn px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="ocr">
+                        <span class="flex items-center gap-1.5"><i data-lucide="camera" class="w-4 h-4 text-blue-800"></i> 교재 OCR 등록</span>
+                    </button>
+                    <button class="nav-tab-btn px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="flashcards">
+                        <span class="flex items-center gap-1.5"><i data-lucide="layers" class="w-4 h-4"></i> 플래시카드</span>
+                    </button>
+                    <button class="nav-tab-btn px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="quiz">
+                        <span class="flex items-center gap-1.5"><i data-lucide="award" class="w-4 h-4"></i> 스마트 퀴즈</span>
+                    </button>
+                    <button class="nav-tab-btn px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="review">
+                        <span class="flex items-center gap-1.5"><i data-lucide="repeat" class="w-4 h-4 text-emerald-700"></i> 망각곡선 복습</span>
+                    </button>
+                    <button class="nav-tab-btn px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="expressions">
+                        <span class="flex items-center gap-1.5"><i data-lucide="sparkles" class="w-4 h-4 text-amber-600"></i> 원어민 표현 Lab</span>
+                    </button>
+                    <button class="nav-tab-btn px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="dictionary">
+                        <span class="flex items-center gap-1.5"><i data-lucide="book-open-check" class="w-4 h-4 text-blue-800"></i> 단어 사전</span>
+                    </button>
+                    <button class="nav-tab-btn px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="reading">
+                        <span class="flex items-center gap-1.5"><i data-lucide="graduation-cap" class="w-4 h-4 text-indigo-700"></i> 내신 독해</span>
+                    </button>
+                    <button class="nav-tab-btn px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="planner">
+                        <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-4 h-4"></i> 학습 플래너</span>
+                    </button>
+                </nav>
+
+                <!-- 우측 보조 버튼군 -->
+                <div class="flex items-center gap-2">
+                    <button id="btn-open-add-word" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold shadow-xs transition-all">
+                        <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                        <span>단어 추가</span>
+                    </button>
+                    <button id="btn-open-settings" class="p-2 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition-colors" title="학습 환경설정">
+                        <i data-lucide="settings" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 모바일 하단 탭 바 -->
+        <div class="md:hidden flex overflow-x-auto py-2 px-3 border-t border-slate-100 bg-white gap-2 text-xs">
+            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="dashboard">대시보드</button>
+            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="ocr">📸 교재OCR</button>
+            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="flashcards">🎴 플래시카드</button>
+            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="quiz">🧠 퀴즈</button>
+            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="review">🔄 SRS복습</button>
+            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="expressions">💡 원어민표현</button>
+            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="dictionary">📖 사전</button>
+            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="reading">🎓 내신독해</button>
+            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="planner">📅 플래너</button>
+        </div>
+    </header>
+
+    <!-- ======================================================================
+         메인 뷰 컨테이너 (Tabs Container)
+         ====================================================================== -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- ------------------------------------------------------------------
+             TAB 1: 홈 대시보드 (Dashboard)
+             ------------------------------------------------------------------ -->
+        <section id="tab-dashboard" class="tab-content space-y-8">
+            
+            <!-- 환영 배너 (Scholars Banner) -->
+            <div class="rounded-2xl bg-gradient-to-r from-slate-900 via-slate-800 to-blue-950 text-white p-6 sm:p-8 shadow-md relative overflow-hidden border border-slate-800">
+                <div class="relative z-10 max-w-2xl">
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-amber-300 text-xs font-mono font-medium mb-3 backdrop-blur-xs">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                        <span>Academic Excellence Mode</span>
+                    </div>
+                    <h1 class="font-serif font-black text-2xl sm:text-3xl text-white tracking-tight leading-snug">
+                        환영합니다, <span id="dash-student-name" class="text-amber-400 underline decoration-amber-400/40">영재 학도</span> 님
+                    </h1>
+                    <p class="text-slate-300 text-sm sm:text-base mt-2 font-sans font-normal leading-relaxed">
+                        교재 사진 한 장으로 단어를 분석하고, 에빙하우스 망각곡선 주기와 실전 원어민 뉘앙스로 지식을 체화하세요.
+                    </p>
+                    <div class="mt-4 flex flex-wrap items-center gap-2.5">
+                        <div id="dash-custom-shortcuts-container" class="flex flex-wrap items-center gap-2.5">
+                            <!-- JS 주입: 사용자가 설정한 맞춤 바로가기 2개 -->
+                        </div>
+                        <button id="btn-open-shortcut-settings" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white border border-white/15 text-xs font-serif font-medium flex items-center gap-1.5 transition-all cursor-pointer active:scale-95" title="메인 바로가기 2개 변경">
+                            <i data-lucide="settings-2" class="w-3.5 h-3.5 text-amber-300"></i>
+                            <span>바로가기 설정</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- 배경 장식 -->
+                <div class="absolute right-4 bottom-[-20px] opacity-10 text-white pointer-events-none hidden sm:block">
+                    <i data-lucide="book-marked" class="w-64 h-64"></i>
+                </div>
+            </div>
+
+            <!-- 핵심 학업 지표 4대 카드 -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <!-- 총 단어 수 -->
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs hover:border-blue-900 transition-all cursor-pointer group" data-goto-tab="dictionary" title="단어 사전 열기">
+                    <div class="flex items-center justify-between text-slate-500 mb-2">
+                        <span class="text-xs font-semibold uppercase tracking-wider group-hover:text-blue-900 transition-colors">총 등록 단어 (사전)</span>
+                        <div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-900 flex items-center justify-center">
+                            <i data-lucide="book" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                    <div class="font-serif font-bold text-2xl sm:text-3xl text-slate-900" id="dash-total-words">0</div>
+                    <div class="text-[11px] text-slate-400 mt-1 flex items-center justify-between">
+                        <span>교재 및 능률 VOCA 누적</span>
+                        <span class="text-blue-900 font-bold group-hover:underline">사전 열기 →</span>
+                    </div>
+                </div>
+
+                <!-- 30일 마스터 단어 (SRS 5단계) -->
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs hover:border-slate-300 transition-all">
+                    <div class="flex items-center justify-between text-slate-500 mb-2">
+                        <span class="text-xs font-semibold uppercase tracking-wider">장기기억 마스터</span>
+                        <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center">
+                            <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                    <div class="font-serif font-bold text-2xl sm:text-3xl text-emerald-800" id="dash-mastered-words">0</div>
+                    <div class="text-[11px] text-slate-400 mt-1">에빙하우스 5단계 졸업</div>
+                </div>
+
+                <!-- 오늘 복습 예정 -->
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs hover:border-slate-300 transition-all">
+                    <div class="flex items-center justify-between text-slate-500 mb-2">
+                        <span class="text-xs font-semibold uppercase tracking-wider">오늘 복습 필요</span>
+                        <div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-700 flex items-center justify-center">
+                            <i data-lucide="clock" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                    <div class="font-serif font-bold text-2xl sm:text-3xl text-amber-900" id="dash-due-words">0</div>
+                    <div class="text-[11px] text-slate-400 mt-1">망각 도래 예정 단어</div>
+                </div>
+
+                <!-- 취약 단어 -->
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs hover:border-slate-300 transition-all">
+                    <div class="flex items-center justify-between text-slate-500 mb-2">
+                        <span class="text-xs font-semibold uppercase tracking-wider">취약 오답 단어</span>
+                        <div class="w-8 h-8 rounded-lg bg-red-50 text-red-700 flex items-center justify-center">
+                            <i data-lucide="alert-triangle" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                    <div class="font-serif font-bold text-2xl sm:text-3xl text-red-800" id="dash-weak-words">0</div>
+                    <div class="text-[11px] text-slate-400 mt-1">집중 드릴 권장 단어</div>
+                </div>
+            </div>
+
+            <!-- 오늘의 원어민 데일리 미션 위젯 (실전 콜로케이션 1개 + 핵심 구동사 1개) -->
+            <div id="dash-daily-missions-widget" class="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 rounded-2xl p-6 text-white border border-slate-800 shadow-md space-y-4">
+                <!-- JS 주입 -->
+            </div>
+
+            <!-- 학업 목표 관리 트래커 (단기 스프린트 vs 장기 로드맵) & 빠른 복습 시작 섹션 -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                
+                <!-- 단기 vs 장기 학업 목표 트래커 카드 -->
+                <div class="lg:col-span-2 bg-white p-6 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between" id="dash-goal-tracker-card">
+                    <div>
+                        <!-- 상단 헤더 & 모드 스위처 & 설정 버튼 -->
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                            <div class="flex items-center gap-2">
+                                <div class="w-8 h-8 rounded-lg bg-blue-900/10 text-blue-900 flex items-center justify-center">
+                                    <i data-lucide="target" class="w-4 h-4"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-serif font-bold text-base sm:text-lg text-slate-900 flex items-center gap-2">
+                                        <span>학업 목표 트래커</span>
+                                        <span id="dash-goal-dday-badge" class="text-[11px] font-mono font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-amber-300">
+                                            D-Day
+                                        </span>
+                                    </h2>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-2">
+                                <!-- 단기 vs 장기 토글 세그먼트 -->
+                                <div class="inline-flex p-1 rounded-xl bg-slate-100 border border-slate-200 text-xs font-serif font-bold">
+                                    <button id="btn-goal-mode-short" class="px-2.5 py-1 rounded-lg transition-all cursor-pointer flex items-center gap-1.5 bg-white text-blue-950 shadow-xs" onclick="window.app.switchGoalMode('short')">
+                                        <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-500"></i>
+                                        <span>단기 집중</span>
+                                    </button>
+                                    <button id="btn-goal-mode-long" class="px-2.5 py-1 rounded-lg text-slate-500 hover:text-slate-900 transition-all cursor-pointer flex items-center gap-1.5" onclick="window.app.switchGoalMode('long')">
+                                        <i data-lucide="milestone" class="w-3.5 h-3.5 text-blue-900"></i>
+                                        <span>장기 로드맵</span>
+                                    </button>
+                                </div>
+
+                                <!-- 목표 설정 모달 열기 버튼 -->
+                                <button id="btn-open-goal-settings" class="px-3 py-1.5 rounded-xl border border-slate-300 hover:border-blue-900 hover:bg-blue-50/50 text-xs font-serif font-bold text-slate-700 hover:text-blue-900 transition-all cursor-pointer flex items-center gap-1 shadow-2xs" title="학습 목표 변경 및 프리셋 선택">
+                                    <i data-lucide="sliders" class="w-3.5 h-3.5 text-blue-900"></i>
+                                    <span>목표 설정</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 현재 선택된 목표 타이틀 & 프로그레스 수치 -->
+                        <div class="p-4 rounded-xl bg-slate-50/90 border border-slate-200/80 mb-3 space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span id="dash-goal-title" class="text-xs sm:text-sm font-serif font-bold text-slate-900 flex items-center gap-1.5">
+                                    <span id="dash-goal-mode-tag" class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-100 text-blue-800 font-semibold">단기</span>
+                                    <span id="dash-goal-title-text">이번 주 테마 어휘 100단어 완독</span>
+                                </span>
+                                <span id="dash-goal-progress-text" class="text-xs font-mono font-bold text-blue-900">
+                                    0 / 100단어 (0%)
+                                </span>
+                            </div>
+                            
+                            <!-- 게이지 바 -->
+                            <div class="w-full bg-slate-200 rounded-full h-3 overflow-hidden">
+                                <div id="dash-goal-progress-bar" class="bg-gradient-to-r from-blue-900 to-indigo-700 h-full rounded-full transition-all duration-500" style="width: 0%"></div>
+                            </div>
+
+                            <!-- 스마트 코칭 팁 -->
+                            <div class="pt-1 flex flex-col sm:flex-row sm:items-center justify-between text-[11px] text-slate-500 gap-1">
+                                <span id="dash-goal-coach-tip" class="flex items-center gap-1 font-medium text-slate-700">
+                                    <i data-lucide="lightbulb" class="w-3.5 h-3.5 text-amber-500"></i>
+                                    <span id="dash-goal-coach-text">오늘 15단어를 학습하면 목표 일정에 부합합니다!</span>
+                                </span>
+                                <span id="dash-goal-date-range" class="font-mono text-slate-400">
+                                    2026-10-24 시작 (총 7일 코스)
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- 하단에 오늘 하루 데일리 목표 미니 바 -->
+                        <div class="flex items-center justify-between text-xs text-slate-500 px-1">
+                            <span>오늘 하루 학습량: <b id="dash-today-progress-text" class="font-mono text-slate-700 font-bold">0 / 15 단어 (0%)</b></span>
+                            <div class="w-24 bg-slate-100 rounded-full h-1.5 overflow-hidden">
+                                <div id="dash-today-progress-bar" class="bg-blue-900 h-full rounded-full" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3대 퀵 액션 카드 -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6 pt-6 border-t border-slate-100">
+                        <button class="p-3.5 rounded-xl border border-slate-200 hover:border-blue-900 hover:bg-blue-50/40 text-left transition-all group" data-goto-tab="flashcards">
+                            <div class="text-blue-900 mb-1 group-hover:scale-105 transition-transform">
+                                <i data-lucide="layers" class="w-5 h-5"></i>
+                            </div>
+                            <div class="font-serif font-bold text-sm text-slate-900">플래시카드 학습</div>
+                            <div class="text-[11px] text-slate-500">3D 플립 & 발음 듣기</div>
+                        </button>
+
+                        <button class="p-3.5 rounded-xl border border-slate-200 hover:border-blue-900 hover:bg-blue-50/40 text-left transition-all group" data-goto-tab="quiz">
+                            <div class="text-blue-900 mb-1 group-hover:scale-105 transition-transform">
+                                <i data-lucide="award" class="w-5 h-5"></i>
+                            </div>
+                            <div class="font-serif font-bold text-sm text-slate-900">스마트 퀴즈 풀기</div>
+                            <div class="text-[11px] text-slate-500">4지선다 & 스펠링</div>
+                        </button>
+
+                        <button class="p-3.5 rounded-xl border border-blue-200 bg-blue-50/30 hover:bg-blue-50 text-left transition-all group" data-goto-tab="ocr">
+                            <div class="text-blue-900 mb-1 group-hover:scale-105 transition-transform">
+                                <i data-lucide="camera" class="w-5 h-5"></i>
+                            </div>
+                            <div class="font-serif font-bold text-sm text-slate-900">교재 사진 캡처</div>
+                            <div class="text-[11px] text-blue-900 font-medium">단어 자동 인식 등록</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 오늘 복습 추천 단어 미리보기 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-serif font-bold text-base text-slate-900 flex items-center gap-2">
+                                <i data-lucide="bell" class="w-4 h-4 text-amber-600"></i>
+                                오늘의 복습 큐 미리보기
+                            </h3>
+                            <button class="text-xs text-blue-900 hover:underline font-semibold" data-goto-tab="review">전체보기</button>
+                        </div>
+                        <div id="dash-due-preview-list" class="space-y-2">
+                            <!-- JS 주입 -->
+                        </div>
+                    </div>
+                    <button class="mt-4 w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-medium text-xs shadow-xs transition-colors" data-goto-tab="review">
+                        오늘의 복습 큐 바로 시작하기
+                    </button>
+                </div>
+            </div>
+        </section>
+
+                <!-- ------------------------------------------------------------------
+             TAB 2: 교재 OCR 단어 자동 등록 (Capture & OCR)
+             ------------------------------------------------------------------ -->
+        <section id="tab-ocr" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-xs">
+                
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100">
+                    <div>
+                        <h2 class="font-serif font-black text-2xl text-slate-900 flex items-center gap-2.5">
+                            <i data-lucide="scan" class="w-6 h-6 text-blue-900"></i>
+                            영단어 교재 OCR 및 스마트 등록
+                        </h2>
+                        <p class="text-slate-500 text-sm mt-1">
+                            교재 사진을 캡처하거나 텍스트를 붙여넣으시면 단어, 품사, 우리말 뜻을 지능적으로 분리하여 플래너에 등록합니다.
+                        </p>
+                    </div>
+                    <!-- 샘플 이미지로 바로 테스트하는 버튼 -->
+                    <button id="btn-load-sample-ocr" class="px-4 py-2 rounded-xl border border-blue-900 text-blue-900 hover:bg-blue-50 text-xs font-bold transition-all flex items-center gap-1.5 self-start sm:self-auto shrink-0 shadow-xs cursor-pointer" onclick="window.ocrEngine.loadSampleBookImage()">
+                        <i data-lucide="sparkles" class="w-4 h-4 text-amber-500"></i>
+                        샘플 교재 이미지로 즉시 체험
+                    </button>
+                </div>
+
+                <!-- 📸 교재 사진 OCR 모드 vs 📋 교재 텍스트 직접 붙여넣기 모드 탭 -->
+                <div class="flex items-center gap-2 bg-slate-100 p-1 rounded-xl text-xs font-semibold w-fit my-4">
+                    <button id="btn-ocr-mode-photo" class="px-4 py-2 rounded-lg active-subtab flex items-center gap-1.5 transition-all cursor-pointer" onclick="window.ocrEngine.switchMode('photo')">
+                        <i data-lucide="camera" class="w-4 h-4 text-blue-900"></i> 1. 교재 사진 캡처/업로드 OCR
+                    </button>
+                    <button id="btn-ocr-mode-text" class="px-4 py-2 rounded-lg text-slate-600 hover:text-slate-900 flex items-center gap-1.5 transition-all cursor-pointer" onclick="window.ocrEngine.switchMode('text')">
+                        <i data-lucide="clipboard-type" class="w-4 h-4 text-blue-900"></i> 2. 교재 텍스트 직접 붙여넣기 파서
+                    </button>
+                </div>
+
+                <!-- 모드 1: 사진 캡처/업로드 OCR 섹션 -->
+                <div id="ocr-photo-input-section" class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- 왼쪽: 파일 선택 / 드래그존 / 붙여넣기 안내 -->
+                    <div class="border-2 border-dashed border-slate-300 rounded-2xl p-6 flex flex-col items-center justify-center text-center bg-slate-50/50 hover:bg-slate-50 hover:border-blue-900 transition-all min-h-[300px] relative">
+                        <div id="ocr-upload-placeholder" class="space-y-3">
+                            <div class="w-14 h-14 rounded-full bg-blue-100 text-blue-900 flex items-center justify-center mx-auto shadow-inner">
+                                <i data-lucide="upload-cloud" class="w-7 h-7"></i>
+                            </div>
+                            <div>
+                                <label for="ocr-file-input" class="cursor-pointer font-serif font-bold text-blue-900 hover:underline text-base">
+                                    교재 이미지 파일 선택
+                                </label>
+                                <span class="text-slate-500 text-sm"> 또는 여기로 드래그앤드롭</span>
+                            </div>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                스마트폰 캡처, 시험지, 능률보카, 수능특강 사진 지원 (PNG, JPG)<br>
+                                💡 화면 캡처 후 키보드 <kbd class="px-1.5 py-0.5 rounded bg-slate-200 text-slate-700 font-mono text-[11px]">Ctrl + V</kbd> 로 바로 붙여넣기 가능
+                            </p>
+                            <input id="ocr-file-input" type="file" accept="image/*" class="hidden" onchange="window.ocrEngine.handleImageFile(this.files[0])">
+                        </div>
+
+                        <!-- 미리보기 이미지 -->
+                        <div id="ocr-image-preview" class="hidden w-full h-full flex flex-col items-center">
+                            <img id="ocr-preview-img" src="" alt="교재 미리보기" class="max-h-[260px] rounded-lg shadow-sm border border-slate-200 object-contain">
+                            <div class="mt-3 flex items-center gap-2">
+                                <button id="btn-sample-instant-parse" class="hidden px-3 py-1.5 rounded-lg bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-xs flex items-center gap-1 shadow-xs transition-all cursor-pointer" onclick="window.ocrEngine.parseSampleWordsDirectly()">
+                                    <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-300"></i> 샘플 단어 7개 즉시 분석 (1초 완성)
+                                </button>
+                                <label for="ocr-file-input" class="text-xs text-slate-500 hover:text-blue-900 cursor-pointer underline">
+                                    다른 이미지 변경
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 오른쪽: 인식 옵션 및 파이프라인 제어 -->
+                    <div class="flex flex-col justify-between bg-slate-50/80 p-6 rounded-2xl border border-slate-200">
+                        <div class="space-y-4">
+                            <h3 class="font-serif font-bold text-slate-900 text-base flex items-center gap-2">
+                                <i data-lucide="sliders" class="w-4 h-4 text-slate-600"></i>
+                                자동 등록 설정
+                            </h3>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-600 mb-1">학습 계획 일자 (배정일)</label>
+                                <input type="date" id="ocr-target-date" class="w-full px-3 py-2 text-sm bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-900">
+                            </div>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1">교재 / 단원 태그</label>
+                                    <input type="text" id="ocr-target-tag" placeholder="예: 능률보카 3과" class="w-full px-3 py-2 text-sm bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-900">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1">난이도 분류</label>
+                                    <select id="ocr-target-level" class="w-full px-3 py-2 text-sm bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-900">
+                                        <option value="elementary">초등 필수</option>
+                                        <option value="middle" selected>중학 핵심</option>
+                                        <option value="high">고등 / 수능</option>
+                                        <option value="adult">토익 / 비즈니스</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- 프로그레스 바 -->
+                            <div id="ocr-progress-container" class="hidden space-y-2 pt-2">
+                                <div class="flex justify-between text-xs text-slate-600 font-medium">
+                                    <span id="ocr-progress-text">인식 엔진 준비 중...</span>
+                                </div>
+                                <div class="w-full bg-slate-200 rounded-full h-2 overflow-hidden">
+                                    <div id="ocr-progress-bar" class="bg-blue-900 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-6">
+                            <button id="btn-start-ocr" disabled class="w-full py-3.5 rounded-xl bg-blue-900 hover:bg-blue-800 disabled:bg-slate-300 text-white font-serif font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer" onclick="window.ocrEngine.processOCR()">
+                                <i data-lucide="scan-text" class="w-5 h-5"></i>
+                                <span>교재 텍스트 및 영단어 분석 시작</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 모드 2: 교재 텍스트 직접 입력/붙여넣기 파서 섹션 -->
+                <div id="ocr-text-input-section" class="hidden bg-slate-50/80 p-6 rounded-2xl border border-slate-200 space-y-4">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <div>
+                            <h3 class="font-serif font-bold text-slate-900 text-base flex items-center gap-2">
+                                <i data-lucide="clipboard-type" class="w-4 h-4 text-blue-900"></i>
+                                교재 텍스트 직접 입력 / 스마트 파싱 (0.1초 완성)
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-0.5">
+                                스마트폰 카메라의 '텍스트 복사(라이브 텍스트/네이버 파파고)', 전자책, PDF 단어장을 복사하여 붙여넣으세요.
+                            </p>
+                        </div>
+                        <button class="px-3 py-1.5 rounded-lg border border-slate-300 text-slate-600 hover:bg-white text-xs font-medium self-start sm:self-auto cursor-pointer" onclick="document.getElementById('ocr-raw-text-input').value = '1. resilient [rɪˈzɪliənt] a. 회복력 있는\n2. illuminate v. 밝게 비추다, 계몽하다\n3. authentic a. 진짜의\n4. perspective n. 관점, 시각\n5. diligent a. 근면한\n6. persevere v. 끈기 있게 지속하다';">
+                            예시 텍스트 채우기
+                        </button>
+                    </div>
+
+                    <textarea id="ocr-raw-text-input" rows="7" placeholder="여기에 교재 텍스트를 붙여넣으세요...&#10;예시 형태:&#10;1. resilient [rɪˈzɪliənt] a. 회복력 있는, 탄력적인&#10;2. illuminate v. 밝게 비추다, 계몽하다&#10;abandon - 버리다, 포기하다&#10;persevere : 인내하다" class="w-full p-4 text-sm bg-white border border-slate-200 rounded-xl outline-none focus:border-blue-900 font-mono"></textarea>
+
+                    <div class="flex justify-end gap-2 pt-2">
+                        <button class="px-6 py-3 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-xs shadow-xs transition-colors flex items-center gap-1.5 cursor-pointer" onclick="window.ocrEngine.parsePastedText()">
+                            <i data-lucide="sparkles" class="w-4 h-4 text-amber-300"></i>
+                            스마트 텍스트 단어 추출하기 (0.1초 완성)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 분석 결과 검토 및 수정 테이블 (결과 섹션) -->
+                <div id="ocr-result-section" class="hidden mt-8 pt-8 border-t border-slate-200 space-y-4">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div>
+                            <h3 class="font-serif font-bold text-lg text-slate-900 flex items-center gap-2">
+                                <i data-lucide="check-square" class="w-5 h-5 text-blue-900"></i>
+                                추출된 단어 목록 검토 (<span id="ocr-extracted-count">0</span>개)
+                            </h3>
+                            <p class="text-xs text-slate-500">인식된 단어와 뜻을 검토하고 오타를 수정한 뒤 플래너에 등록하세요.</p>
+                        </div>
+                        <button class="px-5 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-xs shadow-sm transition-colors flex items-center gap-1.5 self-start sm:self-auto cursor-pointer" onclick="window.ocrEngine.registerToPlanner()">
+                            <i data-lucide="calendar-plus" class="w-4 h-4 text-amber-300"></i>
+                            선택 단어 플래너에 일괄 등록하기
+                        </button>
+                    </div>
+
+                    <div class="overflow-x-auto rounded-xl border border-slate-200">
+                        <table class="w-full text-left text-sm text-slate-700 bg-white">
+                            <thead class="bg-slate-50 text-xs font-serif font-bold text-slate-600 uppercase border-b border-slate-200">
+                                <tr>
+                                    <th class="py-3 px-3 text-center w-12">선택</th>
+                                    <th class="py-3 px-3 w-1/4">영단어</th>
+                                    <th class="py-3 px-3 w-28">품사</th>
+                                    <th class="py-3 px-3">한글 의미</th>
+                                    <th class="py-3 px-3 text-center w-16">삭제</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ocr-extracted-tbody">
+                                <!-- JS 동적 생성 -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 📚 능률 VOCA 및 테마 단어장 라이브러리 테이블 (DAY별 조회 & 계획표 등록) -->
+                <div class="mt-8 rounded-2xl border border-slate-200 bg-slate-50/70 overflow-hidden shadow-xs">
+                    <!-- 상단 다크 네이비 헤더 & 전체/DAY별 액션 바 -->
+                    <div class="p-5 sm:p-6 bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white">
+                        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                            <div class="space-y-2">
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <div id="voca-book-badge" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-400/20 text-amber-300 font-mono text-[11px] font-bold border border-amber-400/30">
+                                        <i data-lucide="book-marked" class="w-3.5 h-3.5"></i>
+                                        <span>단어장 라이브러리</span>
+                                    </div>
+                                    <span class="text-xs font-serif font-bold text-slate-300">교재/테마 선택:</span>
+                                    <select id="voca-book-select" class="px-3 py-1.5 rounded-lg bg-blue-900 text-amber-300 font-serif font-bold text-xs sm:text-sm border border-amber-400/30 outline-none cursor-pointer" onchange="window.ocrEngine.selectVocaBook(this.value)">
+                                        <optgroup label="📘 능률 VOCA 공식 교재">
+                                            <option value="neungryul_etym_2025" selected>능률 VOCA 어원편 중등 (DAY 01~30, 765단어)</option>
+                                            <option value="neungryul2025">능률 VOCA 중등 고난도 (DAY 01~40, 1,200단어)</option>
+                                        </optgroup>
+                                        <optgroup label="🎓 중등 6개 학기 내신 필수·심화 어휘 시리즈">
+                                            <option value="curated-m1-1">중 1-1 내신 필수 어휘 마스터 (5 DAYs, 100단어)</option>
+                                            <option value="curated-m1-2">중 1-2 내신 필수 어휘 마스터 (5 DAYs, 100단어)</option>
+                                            <option value="curated-m2-1">중 2-1 내신 심화 어휘 마스터 (5 DAYs, 100단어)</option>
+                                            <option value="curated-m2-2">중 2-2 내신 심화 어휘 마스터 (5 DAYs, 100단어)</option>
+                                            <option value="curated-m3-1">중 3-1 내신 고난도 어휘 마스터 (5 DAYs, 100단어)</option>
+                                            <option value="curated-m3-2">중 3-2 내신 킬러 & 고등 연계 어휘 (5 DAYs, 100단어)</option>
+                                        </optgroup>
+                                        <optgroup label="🎯 수능 킬러 & 실전 트렌드 테마 시리즈">
+                                            <option value="curated-killer">수능 1등급 킬러 다의어 & 혼동 어휘 (5 DAYs, 100단어)</option>
+                                            <option value="curated-tech">최신 시사 뉴스 & 테크·AI 트렌드 보카 (5 DAYs, 100단어)</option>
+                                            <option value="curated-phrasal">원어민 실전 핵심 구동사 & 콜로케이션 (5 DAYs, 100단어)</option>
+                                            <option value="curated-slang">미드·유튜브 리얼 라이프 & 트렌디 슬랭 (5 DAYs, 100단어)</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <h3 id="voca-book-title" class="font-serif font-black text-lg sm:text-xl text-white flex items-center gap-2">
+                                    능률 VOCA 어원편 중등 전체 단어
+                                </h3>
+                                <p id="voca-book-desc" class="text-xs text-slate-300">
+                                    DAY 단위로 단어장(DAY, 번호, 영단어, 뜻, 실전 예문)을 가독성 있게 확인하고, 원하는 <strong>DAY별로 계획표에 등록하거나 한꺼번에 삭제</strong>할 수 있습니다.
+                                </p>
+                            </div>
+
+                            <div class="flex flex-wrap items-center gap-2 shrink-0">
+                                <button id="btn-toggle-neungryul-table" class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-serif font-bold text-xs transition-all flex items-center gap-1.5 cursor-pointer" onclick="window.ocrEngine.toggleNeungryulTable()">
+                                    <i data-lucide="table-2" class="w-4 h-4 text-amber-300"></i>
+                                    <span id="neungryul-table-toggle-label">단어장 테이블 접기/펼치기</span>
+                                </button>
+
+                                <button id="btn-register-neungryul-2025" class="px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-serif font-extrabold text-xs shadow-md transition-all flex items-center gap-1.5 cursor-pointer" onclick="window.ocrEngine.registerAllVocaBook()">
+                                    <i data-lucide="library" class="w-4 h-4"></i>
+                                    <span id="label-register-all-book">전체 단어 (DAY 01~30, 765단어) 일괄 등록</span>
+                                </button>
+
+                                <!-- 등록 완료 시 나타나는 '계획표 수정하기' 버튼 -->
+                                <button id="btn-goto-edit-planner" class="hidden px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-serif font-extrabold text-xs shadow-md transition-all flex items-center gap-1.5 cursor-pointer" onclick="window.ocrEngine.openPlannerAfterBookRegister()">
+                                    <i data-lucide="calendar-cog" class="w-4 h-4"></i>
+                                    <span>계획표 수정하기 →</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 현재 계획표에 등록된 DAY 현황 및 원클릭 DAY별 계획 일괄 삭제 바 -->
+                        <div id="neungryul-registered-days-bar" class="hidden mt-4 pt-3 border-t border-white/15">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                                <div class="text-xs font-bold text-amber-300 flex items-center gap-1.5">
+                                    <i data-lucide="calendar-check" class="w-4 h-4"></i>
+                                    <span id="neungryul-register-summary-text">현재 계획표에 등록된 DAY 목록</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <button class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 text-slate-200 text-[11px] font-bold transition-all cursor-pointer flex items-center gap-1" onclick="window.ocrEngine.openPlannerAfterBookRegister()">
+                                        <i data-lucide="calendar" class="w-3 h-3 text-amber-300"></i> 캘린더 계획표 수정 탭 열기
+                                    </button>
+                                    <button class="px-2.5 py-1 rounded-lg bg-red-500/20 hover:bg-red-500/40 border border-red-400/40 text-red-200 text-[11px] font-bold transition-all cursor-pointer flex items-center gap-1" onclick="window.ocrEngine.deleteAllBookPlans()">
+                                        <i data-lucide="trash-2" class="w-3.5 h-3.5"></i> 이 단어장 전체 계획 모두 삭제
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="neungryul-registered-days-chips" class="flex flex-wrap gap-1.5 max-h-24 overflow-y-auto pr-1">
+                                <!-- JS 동적 생성: DAY 01 (2026-10-24) [X] -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DAY 선택 컨트롤 바 & DAY별 계획표 등록 / 일괄 삭제 툴바 -->
+                    <div id="neungryul-voca-table-wrapper" class="p-4 sm:p-6 space-y-4">
+                        <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-2xs">
+                            <!-- 왼쪽: DAY 변경 컨트롤 -->
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="text-xs font-serif font-bold text-slate-700 flex items-center gap-1">
+                                    <i data-lucide="layers" class="w-4 h-4 text-blue-900"></i> DAY 선택:
+                                </span>
+                                <button class="px-2.5 py-1.5 rounded-lg border border-slate-200 hover:bg-slate-100 text-slate-700 text-xs font-bold flex items-center gap-1 transition-colors cursor-pointer" onclick="window.ocrEngine.changeNeungryulDay(-1)">
+                                    <i data-lucide="chevron-left" class="w-3.5 h-3.5"></i> 이전 DAY
+                                </button>
+                                <select id="neungryul-day-select" class="px-3 py-1.5 rounded-lg bg-blue-950 text-white font-mono font-bold text-xs sm:text-sm outline-none cursor-pointer" onchange="window.ocrEngine.selectNeungryulDay(this.value)">
+                                    <!-- DAY 01 ~ DAY 30/40 동적 생성 -->
+                                </select>
+                                <button class="px-2.5 py-1.5 rounded-lg border border-slate-200 hover:bg-slate-100 text-slate-700 text-xs font-bold flex items-center gap-1 transition-colors cursor-pointer" onclick="window.ocrEngine.changeNeungryulDay(1)">
+                                    다음 DAY <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                                </button>
+
+                                <!-- 현재 DAY 등록 상태 배지 -->
+                                <span id="neungryul-current-day-badge" class="px-2.5 py-1 rounded-full text-[11px] font-mono font-bold bg-slate-100 text-slate-600">
+                                    단어 로딩 중...
+                                </span>
+                            </div>
+
+                            <!-- 오른쪽: 선택한 DAY 계획표 등록 & 선택한 DAY 계획 한꺼번에 삭제 -->
+                            <div class="flex flex-wrap items-center gap-2">
+                                <div class="flex items-center gap-1.5 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-200 text-xs">
+                                    <span class="text-slate-600 font-semibold">계획표 배정일:</span>
+                                    <input type="date" id="neungryul-day-target-date" class="bg-transparent text-slate-900 font-mono font-bold text-xs outline-none">
+                                </div>
+
+                                <button id="btn-register-current-day" class="px-4 py-2 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-xs shadow-xs transition-all flex items-center gap-1.5 cursor-pointer" onclick="window.ocrEngine.registerCurrentNeungryulDay()">
+                                    <i data-lucide="calendar-plus" class="w-4 h-4 text-amber-300"></i>
+                                    <span id="label-register-current-day">DAY 01 계획표에 등록</span>
+                                </button>
+
+                                <button id="btn-delete-current-day" class="px-3.5 py-2 rounded-xl border border-red-200 bg-red-50 hover:bg-red-100 text-red-700 font-serif font-bold text-xs transition-all flex items-center gap-1.5 cursor-pointer" onclick="window.ocrEngine.deleteCurrentNeungryulDay()">
+                                    <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                                    <span id="label-delete-current-day">DAY 01 계획 일괄 삭제</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- DAY 빠른 이동 버튼 그리드 -->
+                        <div id="neungryul-day-quick-pills" class="flex items-center gap-1.5 overflow-x-auto pb-1.5">
+                            <!-- JS 동적 생성 -->
+                        </div>
+
+                        <!-- 단어 리스트 테이블 ("DAY", "번호", "영단어", "뜻" 4개 열) -->
+                        <div class="overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-2xs max-h-[460px] overflow-y-auto">
+                            <table class="w-full text-left text-sm text-slate-700 border-collapse">
+                                <thead class="bg-slate-100 text-xs font-serif font-bold text-slate-700 uppercase border-b border-slate-200 sticky top-0 z-10">
+                                    <tr>
+                                        <th class="py-3 px-4 w-28 text-center">DAY</th>
+                                        <th class="py-3 px-4 w-20 text-center">번호</th>
+                                        <th class="py-3 px-4 w-1/3">영단어</th>
+                                        <th class="py-3 px-4">뜻</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="neungryul-voca-tbody" class="divide-y divide-slate-100">
+                                    <!-- JS 동적 렌더링 -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ------------------------------------------------------------------
+             TAB 3: 3D 플립 플래시카드 (Flashcards)
+             ------------------------------------------------------------------ -->
+        <section id="tab-flashcards" class="tab-content hidden space-y-6">
+            
+            <div class="max-w-2xl mx-auto space-y-6">
+                <!-- 상단 필터 & 진행도 -->
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2 bg-slate-100 p-1 rounded-xl text-xs font-medium">
+                        <button class="px-3 py-1.5 rounded-lg active-subtab" onclick="window.flashcardEngine.loadDeck('today')">오늘의 학습</button>
+                        <button class="px-3 py-1.5 rounded-lg" onclick="window.flashcardEngine.loadDeck('all')">전체 단어</button>
+                        <button class="px-3 py-1.5 rounded-lg" onclick="window.flashcardEngine.loadDeck('weak')">취약 단어만</button>
+                    </div>
+                    <span id="fc-counter-text" class="text-xs font-mono font-bold text-slate-600">0 / 0</span>
+                </div>
+
+                <!-- 진행 바 -->
+                <div class="w-full bg-slate-200 rounded-full h-1.5 overflow-hidden">
+                    <div id="fc-progress-bar" class="bg-blue-900 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+                </div>
+
+                <!-- 플래시카드 메인 뷰 -->
+                <div id="flashcard-active-view" class="space-y-6">
+                    <div class="flashcard-perspective">
+                        <div id="flashcard-flipper" class="flashcard-flipper" onclick="window.flashcardEngine.flipCard()">
+                            
+                            <!-- 카드 앞면 (Front: 영단어 & 발음) -->
+                            <div class="flashcard-face flashcard-front p-8 sm:p-10 border border-slate-200 flex flex-col justify-between">
+                                <div class="flex items-center justify-between text-xs text-slate-400">
+                                    <span id="fc-stage-badge" class="font-serif">SRS 1단계</span>
+                                    <span id="fc-tag" class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-mono">기본</span>
+                                </div>
+
+                                <div class="text-center py-6">
+                                    <div id="fc-word" class="font-serif font-black text-4xl sm:text-5xl text-slate-900 tracking-tight">
+                                        Persevere
+                                    </div>
+                                    <div class="mt-3 flex items-center justify-center gap-2">
+                                        <span id="fc-pos" class="font-mono text-sm text-slate-500 font-semibold">v.</span>
+                                        <button id="btn-fc-audio" class="p-1.5 rounded-full hover:bg-slate-100 text-slate-500 hover:text-blue-900 transition-colors" onclick="event.stopPropagation(); window.flashcardEngine.playAudio();" title="원어민 발음 듣기 (단축키 P)">
+                                            <i id="fc-speaker-icon" data-lucide="volume-2" class="w-5 h-5"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="text-center text-xs text-slate-400 font-medium flex items-center justify-center gap-1.5">
+                                    <i data-lucide="rotate-cw" class="w-3.5 h-3.5"></i>
+                                    <span>클릭 또는 <kbd class="px-1.5 py-0.5 rounded bg-slate-100 font-mono text-[10px]">스페이스바</kbd>로 뜻 확인</span>
+                                </div>
+                            </div>
+
+                            <!-- 카드 뒷면 (Back: 한글의미 & 실전예문) -->
+                            <div class="flashcard-face flashcard-back p-8 sm:p-10 border border-blue-200 bg-blue-50/20 flex flex-col justify-between">
+                                <div class="text-right text-xs text-blue-900 font-serif font-bold">
+                                    VERITAS SCHOLARS
+                                </div>
+
+                                <div class="text-center py-4 space-y-4">
+                                    <div id="fc-meaning" class="font-serif font-black text-2xl sm:text-3xl text-slate-900 leading-snug">
+                                        인내하다, 굴하지 않고 계속하다
+                                    </div>
+
+                                    <div id="fc-example-wrap" class="p-4 rounded-xl bg-white/90 border border-slate-200 text-left shadow-2xs">
+                                        <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-1">
+                                            <span>ACADEMIC EXAMPLE</span>
+                                            <button class="hover:text-blue-900" onclick="event.stopPropagation(); window.flashcardEngine.playExampleAudio();">
+                                                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                                            </button>
+                                        </div>
+                                        <p id="fc-example" class="font-serif text-sm text-slate-800 font-medium leading-relaxed">
+                                            Despite the hardships, she persevered and won the scholarship.
+                                        </p>
+                                        <p id="fc-example-meaning" class="text-xs text-slate-500 mt-1">
+                                            고난에도 불구하고 그녀는 인내하여 장학금을 받았다.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="text-center text-xs text-slate-400">
+                                    아래 버튼으로 암기 완성도를 평가하세요
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- 평가 버튼군 (에빙하우스 SRS 주기 결정) -->
+                    <div class="grid grid-cols-3 gap-3">
+                        <button class="py-3 px-2 rounded-xl bg-red-50 hover:bg-red-100 border border-red-200 text-red-800 font-medium text-xs sm:text-sm flex flex-col items-center justify-center transition-all shadow-xs" onclick="window.flashcardEngine.rateCard('hard')">
+                            <span class="font-bold">🔴 몰라요 (Hard)</span>
+                            <span class="text-[10px] text-red-600 mt-0.5">내일 다시 복습 [1]</span>
+                        </button>
+
+                        <button class="py-3 px-2 rounded-xl bg-amber-50 hover:bg-amber-100 border border-amber-200 text-amber-900 font-medium text-xs sm:text-sm flex flex-col items-center justify-center transition-all shadow-xs" onclick="window.flashcardEngine.rateCard('good')">
+                            <span class="font-bold">🟡 애매해요 (Good)</span>
+                            <span class="text-[10px] text-amber-700 mt-0.5">현단계 유지 [2]</span>
+                        </button>
+
+                        <button class="py-3 px-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-900 font-medium text-xs sm:text-sm flex flex-col items-center justify-center transition-all shadow-xs" onclick="window.flashcardEngine.rateCard('easy')">
+                            <span class="font-bold">🟢 알아요 (Easy)</span>
+                            <span class="text-[10px] text-emerald-700 mt-0.5">다음 단계 승급 [3]</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 단어가 없을 때 -->
+                <div id="flashcard-empty-view" class="hidden py-16 text-center bg-white rounded-2xl border border-dashed border-slate-200">
+                    <i data-lucide="inbox" class="w-12 h-12 mx-auto text-slate-300 mb-3"></i>
+                    <h3 class="font-serif font-bold text-slate-700 text-lg">학습할 단어가 없습니다</h3>
+                    <p class="text-xs text-slate-400 mt-1 mb-4">교재 사진을 캡처하거나 직접 단어를 추가해보세요.</p>
+                    <button class="px-4 py-2 rounded-xl bg-slate-900 text-white text-xs font-semibold" onclick="window.app.switchTab('ocr')">교재 단어 등록하기</button>
+                </div>
+
+                <!-- 학습 완료 화면 -->
+                <div id="flashcard-completion-view" class="hidden py-12 px-6 text-center bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                    <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center mx-auto">
+                        <i data-lucide="party-popper" class="w-8 h-8"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-black text-2xl text-slate-900">학습 세션을 완수하셨습니다!</h3>
+                        <p class="text-sm text-slate-500 mt-1">오늘 평가한 결과가 에빙하우스 망각곡선 복습 큐에 즉시 반영되었습니다.</p>
+                    </div>
+
+                    <div class="grid grid-cols-4 gap-2 max-w-sm mx-auto p-4 bg-slate-50 rounded-xl text-center">
+                        <div>
+                            <div class="text-xs text-slate-400">총 학습</div>
+                            <div id="fc-summary-total" class="font-serif font-bold text-lg text-slate-900">0</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-emerald-600">완벽암기</div>
+                            <div id="fc-summary-easy" class="font-serif font-bold text-lg text-emerald-700">0</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-amber-600">애매함</div>
+                            <div id="fc-summary-good" class="font-serif font-bold text-lg text-amber-700">0</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-red-600">오답/취약</div>
+                            <div id="fc-summary-hard" class="font-serif font-bold text-lg text-red-700">0</div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center gap-3">
+                        <button class="px-5 py-2.5 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-50 text-xs font-semibold" onclick="window.flashcardEngine.loadDeck('today')">다시 복습하기</button>
+                        <button class="px-5 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white text-xs font-serif font-bold shadow-xs" onclick="window.app.switchTab('quiz')">스마트 퀴즈 도전</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ------------------------------------------------------------------
+             TAB 4: 4종 지능형 스마트 퀴즈 (Quiz)
+             ------------------------------------------------------------------ -->
+        <section id="tab-quiz" class="tab-content hidden space-y-6">
+            <div class="max-w-3xl mx-auto space-y-6">
+                
+                <!-- 퀴즈 4가지 모드 선택 탭 -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                    <button class="quiz-mode-btn p-3 rounded-xl border border-slate-200 bg-white text-xs font-serif font-bold text-slate-700 flex flex-col items-center gap-1 active-mode transition-all" data-mode="choice" onclick="window.quizEngine.startQuiz('choice')">
+                        <i data-lucide="check-square" class="w-4 h-4"></i>
+                        <span>1. 객관식 4지선다</span>
+                    </button>
+                    <button class="quiz-mode-btn p-3 rounded-xl border border-slate-200 bg-white text-xs font-serif font-bold text-slate-700 flex flex-col items-center gap-1 transition-all" data-mode="spelling" onclick="window.quizEngine.startQuiz('spelling')">
+                        <i data-lucide="keyboard" class="w-4 h-4"></i>
+                        <span>2. 스펠링 타이핑</span>
+                    </button>
+                    <button class="quiz-mode-btn p-3 rounded-xl border border-slate-200 bg-white text-xs font-serif font-bold text-slate-700 flex flex-col items-center gap-1 transition-all" data-mode="listening" onclick="window.quizEngine.startQuiz('listening')">
+                        <i data-lucide="headphones" class="w-4 h-4"></i>
+                        <span>3. 리스닝 딕테이션</span>
+                    </button>
+                    <button class="quiz-mode-btn p-3 rounded-xl border border-slate-200 bg-white text-xs font-serif font-bold text-slate-700 flex flex-col items-center gap-1 transition-all" data-mode="cloze" onclick="window.quizEngine.startQuiz('cloze')">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        <span>4. 문맥 완성 퀴즈</span>
+                    </button>
+                </div>
+
+                <!-- 퀴즈 진행 뷰 -->
+                <div id="quiz-active-view" class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                    
+                    <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+                        <div class="flex items-center gap-2">
+                            <span id="quiz-num-indicator" class="font-serif font-bold text-sm text-slate-900">Question 1 of 10</span>
+                            <span class="text-xs px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 font-bold flex items-center gap-1">
+                                <i data-lucide="flame" class="w-3 h-3"></i> 스트릭: <span id="quiz-streak-count">0</span>
+                            </span>
+                        </div>
+                        <div class="w-32 bg-slate-100 rounded-full h-2 overflow-hidden">
+                            <div id="quiz-progress-bar" class="bg-blue-900 h-full rounded-full transition-all" style="width: 10%"></div>
+                        </div>
+                    </div>
+
+                    <!-- 1. 4지선다 컨테이너 -->
+                    <div id="quiz-choice-container" class="space-y-6">
+                        <div class="text-center py-4">
+                            <span id="quiz-choice-prompt-pos" class="font-mono text-xs text-slate-400 font-semibold">n.</span>
+                            <h3 id="quiz-choice-prompt-word" class="font-serif font-black text-3xl sm:text-4xl text-slate-900 mt-1">Word</h3>
+                            <p class="text-xs text-slate-400 mt-1">다음 중 올바른 우리말 의미를 선택하세요 (단축키 1~4)</p>
+                        </div>
+                        <div id="quiz-choice-options-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <!-- JS 주입 -->
+                        </div>
+                    </div>
+
+                    <!-- 2. 스펠링 타이핑 컨테이너 -->
+                    <div id="quiz-spelling-container" class="hidden space-y-6 text-center py-4">
+                        <div>
+                            <span class="text-xs font-mono uppercase text-slate-400 font-semibold">Spelling Challenge</span>
+                            <h3 id="quiz-spelling-meaning" class="font-serif font-bold text-2xl text-slate-900 mt-1">의미</h3>
+                            <div id="quiz-spelling-hint" class="text-xs font-mono text-slate-500 mt-2">힌트: c _ _ _ _</div>
+                        </div>
+                        <div class="max-w-md mx-auto space-y-3">
+                            <input id="quiz-spelling-input" type="text" placeholder="정확한 철자를 입력하세요..." autocomplete="off" class="w-full text-center font-serif text-xl py-3 px-4 rounded-xl border-2 border-slate-300 outline-none focus:border-blue-900 transition-all">
+                            <button class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-medium text-xs transition-colors" onclick="window.quizEngine.submitSpellingAnswer()">
+                                정답 확인 (Enter)
+                            </button>
+                            <div id="quiz-spelling-feedback"></div>
+                        </div>
+                    </div>
+
+                    <!-- 3. 리스닝 딕테이션 컨테이너 -->
+                    <div id="quiz-listening-container" class="hidden space-y-6 text-center py-4">
+                        <div class="space-y-2">
+                            <div class="w-16 h-16 rounded-full bg-blue-100 text-blue-900 flex items-center justify-center mx-auto cursor-pointer hover:scale-105 transition-transform" onclick="window.tts.speak(window.quizEngine.quizWords[window.quizEngine.currentIndex].word)">
+                                <i data-lucide="volume-2" class="w-8 h-8"></i>
+                            </div>
+                            <p class="text-xs text-slate-500">원어민 발음을 잘 듣고 받아적으세요 (클릭 시 다시 듣기)</p>
+                        </div>
+                        <div class="max-w-md mx-auto space-y-3">
+                            <input id="quiz-listening-input" type="text" placeholder="들린 영단어를 입력하세요..." autocomplete="off" class="w-full text-center font-serif text-xl py-3 px-4 rounded-xl border-2 border-slate-300 outline-none focus:border-blue-900 transition-all">
+                            <button class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-medium text-xs transition-colors" onclick="window.quizEngine.submitListeningAnswer()">
+                                확인하기
+                            </button>
+                            <div id="quiz-listening-feedback"></div>
+                        </div>
+                    </div>
+
+                    <!-- 4. 문맥 완성 퀴즈 컨테이너 -->
+                    <div id="quiz-cloze-container" class="hidden space-y-6">
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 text-center space-y-2">
+                            <p id="quiz-cloze-sentence" class="font-serif text-lg text-slate-800 font-medium leading-relaxed">
+                                Sentence with blank
+                            </p>
+                            <p id="quiz-cloze-translation" class="text-xs text-slate-500">한글 해석</p>
+                        </div>
+                        <div id="quiz-cloze-options-grid" class="grid grid-cols-2 gap-3 max-w-lg mx-auto">
+                            <!-- JS 주입 -->
+                        </div>
+                    </div>
+
+                    <!-- 다음 문제 버튼 -->
+                    <div class="pt-4 flex justify-end">
+                        <button id="quiz-next-btn" class="hidden px-6 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-xs shadow-md transition-all flex items-center gap-1.5" onclick="window.quizEngine.nextQuestion()">
+                            <span>다음 문제 (Space)</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- 퀴즈 완료 성적표 -->
+                <div id="quiz-completion-view" class="hidden py-12 px-6 text-center bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                    <div class="w-16 h-16 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center mx-auto">
+                        <i data-lucide="award" class="w-8 h-8"></i>
+                    </div>
+                    <div>
+                        <div id="quiz-grade-title" class="font-mono text-xs font-bold text-amber-600 uppercase tracking-widest">
+                            Summa Cum Laude
+                        </div>
+                        <h3 class="font-serif font-black text-2xl text-slate-900 mt-1">퀴즈 챌린지 완료!</h3>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-3 max-w-sm mx-auto p-4 bg-slate-50 rounded-xl text-center">
+                        <div>
+                            <div class="text-xs text-slate-400">획득 점수</div>
+                            <div id="quiz-final-score" class="font-serif font-bold text-xl text-slate-900">100</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-400">정답률</div>
+                            <div id="quiz-final-accuracy" class="font-serif font-bold text-xl text-blue-900">100%</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-400">최대 스트릭</div>
+                            <div id="quiz-final-max-streak" class="font-serif font-bold text-xl text-amber-600">10</div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center gap-3">
+                        <button class="px-5 py-2.5 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-50 text-xs font-semibold" onclick="window.quizEngine.startQuiz(window.quizEngine.currentMode)">다시 도전하기</button>
+                        <button class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-serif font-bold shadow-xs" onclick="window.app.switchTab('dashboard')">대시보드로 이동</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ------------------------------------------------------------------
+             TAB 5: 에빙하우스 망각곡선 복습 (Spaced Repetition System)
+             ------------------------------------------------------------------ -->
+        <section id="tab-review" class="tab-content hidden space-y-6">
+            
+            <!-- 에빙하우스 학술 원리 배너 -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div>
+                    <div class="inline-flex items-center gap-1 text-xs font-mono font-bold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-md mb-2">
+                        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                        <span>Ebbinghaus Forgetting Curve Algorithm</span>
+                    </div>
+                    <h2 class="font-serif font-bold text-xl text-slate-900">
+                        라이트너 5단계 박스 자동 순환 복습
+                    </h2>
+                    <p class="text-slate-500 text-xs mt-1 leading-relaxed">
+                        학습 후 1일, 3일, 7일, 14일, 30일 주기로 복습할 때 망각률의 80%를 영구 장기기억으로 전환할 수 있습니다.
+                    </p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button class="px-4 py-2 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-serif font-bold text-xs shadow-xs transition-colors flex items-center gap-1.5" onclick="window.reviewManager.startTargetedReview('due')">
+                        <i data-lucide="play" class="w-3.5 h-3.5"></i>
+                        오늘 복습 큐 시작
+                    </button>
+                </div>
+            </div>
+
+            <!-- 라이트너 5단계 박스 현황판 -->
+            <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
+                <div class="bg-white p-4 rounded-xl border border-slate-200 text-center">
+                    <div class="text-[11px] font-mono font-bold text-slate-400">1단계 (1일 주기)</div>
+                    <div id="srs-count-stage-1" class="font-serif font-bold text-2xl text-slate-900 mt-1">0</div>
+                    <div class="text-[10px] text-slate-400 mt-0.5">당일/입문 단어</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 text-center">
+                    <div class="text-[11px] font-mono font-bold text-blue-600">2단계 (3일 주기)</div>
+                    <div id="srs-count-stage-2" class="font-serif font-bold text-2xl text-blue-900 mt-1">0</div>
+                    <div class="text-[10px] text-slate-400 mt-0.5">단기 기억 안착</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 text-center">
+                    <div class="text-[11px] font-mono font-bold text-indigo-600">3단계 (7일 주기)</div>
+                    <div id="srs-count-stage-3" class="font-serif font-bold text-2xl text-indigo-900 mt-1">0</div>
+                    <div class="text-[10px] text-slate-400 mt-0.5">1주일 차 복습</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 text-center">
+                    <div class="text-[11px] font-mono font-bold text-purple-600">4단계 (14일 주기)</div>
+                    <div id="srs-count-stage-4" class="font-serif font-bold text-2xl text-purple-900 mt-1">0</div>
+                    <div class="text-[10px] text-slate-400 mt-0.5">중기 기억 형성</div>
+                </div>
+                <div class="bg-emerald-50/50 p-4 rounded-xl border border-emerald-200 text-center col-span-2 sm:col-span-1">
+                    <div class="text-[11px] font-mono font-bold text-emerald-800">5단계 (30일 주기)</div>
+                    <div id="srs-count-stage-5" class="font-serif font-bold text-2xl text-emerald-800 mt-1">0</div>
+                    <div class="text-[10px] text-emerald-600 font-semibold mt-0.5">🏆 장기기억 마스터</div>
+                </div>
+            </div>
+
+            <!-- 서브 탭: 오늘 복습할 단어 vs 취약 단어 -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs space-y-4">
+                <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+                    <div class="flex items-center gap-2 bg-slate-100 p-1 rounded-xl text-xs font-medium">
+                        <button id="btn-review-tab-due" class="px-3 py-1.5 rounded-lg active-subtab" onclick="window.reviewManager.switchView('due')">
+                            오늘 복습 큐 (<span id="srs-due-count-pill">0</span>)
+                        </button>
+                        <button id="btn-review-tab-weak" class="px-3 py-1.5 rounded-lg" onclick="window.reviewManager.switchView('weak')">
+                            취약 단어 오답노트 (<span id="srs-weak-count-pill">0</span>)
+                        </button>
+                    </div>
+
+                    <button class="text-xs text-blue-900 hover:underline font-semibold" onclick="window.reviewManager.startTargetedReview(window.reviewManager.currentViewMode)">
+                        플래시카드로 집중 드릴 →
+                    </button>
+                </div>
+
+                <!-- 단어 목록 컨테이너 -->
+                <div id="srs-word-list-container" class="space-y-3">
+                    <!-- JS 동적 주입 -->
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ------------------------------------------------------------------
+             TAB 6: 원어민 표현 & 뉘앙스 라이브러리 (Native Expressions Lab)
+             ------------------------------------------------------------------ -->
+        <section id="tab-expressions" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-xs space-y-6">
+                
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div>
+                        <h2 class="font-serif font-black text-2xl text-slate-900 flex items-center gap-2">
+                            <i data-lucide="sparkles" class="w-6 h-6 text-amber-500"></i>
+                            원어민 실전 표현 & 뉘앙스 Lab
+                        </h2>
+                        <p class="text-slate-500 text-sm mt-1">
+                            교과서 영어에서 한 걸음 더 나아가, 원어민들이 일상과 학술에서 자연스럽게 쓰는 미묘한 뉘앙스 차이와 연어를 마스터하세요.
+                        </p>
+                    </div>
+                    <!-- 검색 입력창 -->
+                    <div class="relative w-full sm:w-64">
+                        <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+                        <input type="text" placeholder="표현 검색..." class="w-full pl-9 pr-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-900" oninput="window.nativeExpressionsEngine.setSearch(this.value)">
+                    </div>
+                </div>
+
+                <!-- 오늘의 원어민 데일리 미션 (실전 콜로케이션 1개 + 핵심 구동사/슬랭 1개) -->
+                <div id="daily-missions-section" class="mb-6">
+                    <!-- JS 주입 -->
+                </div>
+
+                <!-- 카테고리 필터 버튼군 -->
+                <div class="flex flex-wrap gap-2 text-xs font-semibold">
+                    <button class="expr-cat-btn px-3 py-1.5 rounded-lg border border-slate-200 active-cat transition-all" data-category="all" onclick="window.nativeExpressionsEngine.setCategory('all')">
+                        전체 보기
+                    </button>
+                    <button class="expr-cat-btn px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 transition-all" data-category="nuance" onclick="window.nativeExpressionsEngine.setCategory('nuance')">
+                        🔍 뉘앙스 마스터
+                    </button>
+                    <button class="expr-cat-btn px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 transition-all" data-category="collocation" onclick="window.nativeExpressionsEngine.setCategory('collocation')">
+                        🔗 실전 콜로케이션
+                    </button>
+                    <button class="expr-cat-btn px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 transition-all" data-category="idiom" onclick="window.nativeExpressionsEngine.setCategory('idiom')">
+                        🎯 핵심 구동사 & 슬랭
+                    </button>
+                    <button class="expr-cat-btn px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 transition-all" data-category="dialogue" onclick="window.nativeExpressionsEngine.setCategory('dialogue')">
+                        💬 상황별 다이얼로그
+                    </button>
+                    <button class="expr-cat-btn px-3 py-1.5 rounded-lg border border-amber-200 bg-amber-50/50 text-amber-900 hover:bg-amber-100 transition-all" data-category="bookmark" onclick="window.nativeExpressionsEngine.setCategory('bookmark')">
+                        ⭐ 내 북마크
+                    </button>
+                </div>
+
+                <!-- 표현 카드 그리드 -->
+                <div id="native-expressions-list" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- JS 동적 주입 -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ------------------------------------------------------------------
+             TAB 7: 학습 플래너 및 캘린더 일정 편집기 (Curriculum Planner)
+             ------------------------------------------------------------------ -->
+        <section id="tab-planner" class="tab-content hidden space-y-6">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                
+                <!-- 캘린더 그리드 (2열) -->
+                <div class="lg:col-span-2 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-xs space-y-6">
+                    
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <h2 id="planner-month-title" class="font-serif font-black text-2xl text-slate-900">2026년 10월</h2>
+                            <div class="flex items-center gap-1">
+                                <button class="p-1.5 rounded-lg hover:bg-slate-100 text-slate-600 transition-colors" onclick="window.plannerEngine.changeMonth(-1)">
+                                    <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                                </button>
+                                <button class="p-1.5 rounded-lg hover:bg-slate-100 text-slate-600 transition-colors" onclick="window.plannerEngine.changeMonth(1)">
+                                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 하루 목표 단어 수 설정 -->
+                        <div class="flex items-center gap-2 text-xs">
+                            <span class="text-slate-500 font-medium">일일 목표 단어:</span>
+                            <input id="planner-target-input" type="number" min="5" max="100" class="w-14 px-2 py-1 text-center font-mono font-bold bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-900">
+                        </div>
+                    </div>
+
+                    <!-- 요일 헤더 -->
+                    <div class="grid grid-cols-7 text-center font-serif text-xs font-bold text-slate-400 uppercase pb-2 border-b border-slate-100">
+                        <span class="text-red-700">Sun</span>
+                        <span>Mon</span>
+                        <span>Tue</span>
+                        <span>Wed</span>
+                        <span>Thu</span>
+                        <span>Fri</span>
+                        <span class="text-blue-700">Sat</span>
+                    </div>
+
+                    <!-- 캘린더 일자 그리드 -->
+                    <div id="planner-calendar-grid" class="grid grid-cols-7 gap-2">
+                        <!-- JS 주입 -->
+                    </div>
+                </div>
+
+                <!-- 선택 날짜 상세 & 스케줄 편집 패널 (1열) -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+                            <div>
+                                <div class="text-[11px] font-mono text-slate-400 uppercase font-semibold">Scheduled Date</div>
+                                <h3 id="planner-detail-date" class="font-serif font-black text-xl text-slate-900">2026-10-24</h3>
+                            </div>
+                            <button id="btn-toggle-rest-day" class="px-3 py-1.5 text-xs font-medium rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-700">
+                                휴식일 설정
+                            </button>
+                        </div>
+
+                        <div class="mt-4 flex items-center justify-between text-xs text-slate-500">
+                            <span>배정된 단어 목록</span>
+                            <div class="flex items-center gap-2">
+                                <button class="text-blue-900 hover:underline font-semibold cursor-pointer" onclick="window.plannerEngine.rescheduleCurrentDateWords()">
+                                    전체 날짜 변경 →
+                                </button>
+                                <button class="text-red-700 hover:underline font-semibold cursor-pointer" onclick="window.plannerEngine.deleteCurrentDateWords()">
+                                    이 날 계획 전체 삭제
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 선택 날짜에 포함된 DAY별 일괄 삭제 바 -->
+                        <div id="planner-day-batch-bar" class="hidden mt-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+                            <div class="text-[11px] font-bold text-slate-600 flex items-center justify-between">
+                                <span>📚 DAY별 계획 한꺼번에 삭제</span>
+                            </div>
+                            <div id="planner-day-batch-chips" class="flex flex-wrap gap-1.5">
+                                <!-- JS 동적 생성 -->
+                            </div>
+                        </div>
+
+                        <!-- 선택 날짜 단어 목록 -->
+                        <div id="planner-date-words-list" class="mt-3 space-y-2 max-h-[420px] overflow-y-auto pr-1">
+                            <!-- JS 주입 -->
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-100">
+                        <button class="w-full py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-xs shadow-xs transition-colors flex items-center justify-center gap-1.5" onclick="window.flashcardEngine.loadDeck('today'); window.app.switchTab('flashcards');">
+                            <i data-lucide="play" class="w-4 h-4"></i>
+                            이 날짜 단어 플래시카드로 시작
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+                <!-- ------------------------------------------------------------------
+             TAB 8: 베리타스 영단어 사전 (Veritas Lexicon / Dictionary)
+             ------------------------------------------------------------------ -->
+        <section id="tab-dictionary" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-xs space-y-6">
+                
+                <!-- 상단 헤더 & 설명 -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+                    <div>
+                        <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-900 font-mono text-[11px] font-bold mb-2">
+                            <i data-lucide="book-open-check" class="w-3.5 h-3.5"></i>
+                            <span>Veritas Complete Lexicon</span>
+                        </div>
+                        <h2 class="font-serif font-black text-2xl text-slate-900 flex items-center gap-2">
+                            베리타스 영단어 사전
+                        </h2>
+                        <p class="text-slate-500 text-xs sm:text-sm mt-1">
+                            등록된 전체 단어에서 잊어버린 단어를 빠르게 검색하고, <strong>[까먹음! 다시 외우기]</strong>를 눌러 망각곡선 복습 큐에 즉시 재배정하세요.
+                        </p>
+                    </div>
+
+                    <div class="flex items-center gap-2 self-start sm:self-auto">
+                        <span class="text-xs font-mono px-3 py-1.5 rounded-xl bg-slate-100 text-slate-700 font-bold flex items-center gap-1.5">
+                            <i data-lucide="database" class="w-4 h-4 text-blue-900"></i>
+                            검색 결과: <strong id="dict-result-count" class="text-blue-900 font-black">0</strong>개
+                        </span>
+                    </div>
+                </div>
+
+                <!-- 지능형 대형 실시간 검색창 -->
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+                        <i data-lucide="search" class="w-5 h-5"></i>
+                    </div>
+                    <input id="dict-search-input" type="text" placeholder="영단어 철자(예: abandon, jealous) 또는 한글 의미(예: 포기하다, 질투)를 입력하세요..." class="w-full pl-11 pr-10 py-3.5 text-sm sm:text-base bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:border-blue-900 focus:bg-white transition-all font-sans font-medium text-slate-900 shadow-2xs">
+                    <button class="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-600" onclick="document.getElementById('dict-search-input').value = ''; window.dictionaryEngine.searchQuery = ''; window.dictionaryEngine.renderWordList();">
+                        <i data-lucide="x-circle" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <!-- A ~ Z 알파벳 인덱스 색인 바 -->
+                <div class="space-y-1.5">
+                    <div class="text-[11px] font-serif font-bold text-slate-500 uppercase flex items-center gap-1">
+                        <i data-lucide="arrow-down-a-z" class="w-3.5 h-3.5 text-blue-900"></i>
+                        <span>A ~ Z 색인 점프</span>
+                    </div>
+                    <div id="dict-alphabet-bar" class="flex items-center gap-1 overflow-x-auto pb-1.5">
+                        <!-- JS 동적 생성: ALL, A, B, C... -->
+                    </div>
+                </div>
+
+                <!-- 다차원 스마트 필터 & 정렬 툴바 -->
+                <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 p-4 rounded-xl bg-slate-50/80 border border-slate-200 text-xs">
+                    <!-- 왼쪽: 출처 필터 & 상태 칩 -->
+                    <div class="flex flex-wrap items-center gap-2">
+                        <!-- 출처 셀렉트 -->
+                        <div class="flex items-center gap-1.5 bg-white px-2.5 py-1.5 rounded-lg border border-slate-200">
+                            <span class="text-slate-500 font-semibold">출처:</span>
+                            <select id="dict-source-select" class="bg-transparent font-bold text-slate-800 outline-none cursor-pointer" onchange="window.dictionaryEngine.setSourceFilter(this.value)">
+                                <option value="ALL">전체 출처 단어</option>
+                                <option value="curated">베리타스 테마 단어장 (내신/수능/실전)</option>
+                                <option value="neungryul">능률 VOCA 중등 고난도</option>
+                                <option value="ocr">교재 캡처 OCR 단어</option>
+                                <option value="daily">원어민 데일리 표현</option>
+                                <option value="custom">직접 등록 단어</option>
+                            </select>
+                        </div>
+
+                        <!-- 능률 VOCA 선택 시 나타나는 세부 DAY 필터 -->
+                        <div id="dict-neungryul-day-filter-wrap" class="hidden flex items-center gap-1 bg-white px-2 py-1.5 rounded-lg border border-slate-200">
+                            <span class="text-blue-900 font-bold font-mono">DAY:</span>
+                            <select id="dict-neungryul-day-select" class="bg-transparent font-mono font-bold text-blue-900 outline-none cursor-pointer" onchange="window.dictionaryEngine.setNeungryulDayFilter(this.value)">
+                                <option value="ALL">전체 DAY</option>
+                            </select>
+                        </div>
+
+                        <!-- 상태 필터 서브탭 -->
+                        <div class="flex items-center gap-1 bg-slate-200/70 p-1 rounded-lg">
+                            <button class="dict-status-btn px-2.5 py-1 rounded text-[11px] font-bold active-subtab" data-status="ALL" onclick="window.dictionaryEngine.setStatusFilter('ALL')">전체</button>
+                            <button class="dict-status-btn px-2.5 py-1 rounded text-[11px] font-bold" data-status="weak" onclick="window.dictionaryEngine.setStatusFilter('weak')">⚠️ 취약 단어</button>
+                            <button class="dict-status-btn px-2.5 py-1 rounded text-[11px] font-bold" data-status="due" onclick="window.dictionaryEngine.setStatusFilter('due')">⏳ 복습 대기</button>
+                            <button class="dict-status-btn px-2.5 py-1 rounded text-[11px] font-bold" data-status="mastered" onclick="window.dictionaryEngine.setStatusFilter('mastered')">🏆 마스터</button>
+                            <button class="dict-status-btn px-2.5 py-1 rounded text-[11px] font-bold" data-status="starred" onclick="window.dictionaryEngine.setStatusFilter('starred')">⭐ 북마크</button>
+                        </div>
+                    </div>
+
+                    <!-- 오른쪽: 정렬 & 뷰 모드 토글 -->
+                    <div class="flex items-center gap-3">
+                        <div class="flex items-center gap-1.5 bg-white px-2.5 py-1.5 rounded-lg border border-slate-200">
+                            <span class="text-slate-500 font-semibold">정렬:</span>
+                            <select id="dict-sort-select" class="bg-transparent font-semibold text-slate-800 outline-none cursor-pointer" onchange="window.dictionaryEngine.setSortBy(this.value)">
+                                <option value="alpha">알파벳순 (A-Z)</option>
+                                <option value="recent">최신 등록순</option>
+                                <option value="weak">망각/오답 많은 순</option>
+                                <option value="stage">복습 단계 낮은 순</option>
+                            </select>
+                        </div>
+
+                        <div class="flex items-center gap-1 bg-slate-200/70 p-1 rounded-lg">
+                            <button id="btn-dict-view-card" class="px-2.5 py-1 rounded active-subtab flex items-center gap-1 text-[11px] font-bold transition-all cursor-pointer" onclick="window.dictionaryEngine.setViewMode('card')">
+                                <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i> 카드 뷰
+                            </button>
+                            <button id="btn-dict-view-table" class="px-2.5 py-1 rounded flex items-center gap-1 text-[11px] font-bold transition-all cursor-pointer" onclick="window.dictionaryEngine.setViewMode('table')">
+                                <i data-lucide="list" class="w-3.5 h-3.5"></i> 테이블 뷰
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 단어 목록 컨테이너 (카드 뷰 / 테이블 뷰) -->
+                <div id="dict-word-container" class="min-h-[300px]">
+                    <!-- JS 동적 생성 -->
+                </div>
+
+            </div>
+        </section>
+
+            <!-- ------------------------------------------------------------------
+     TAB 9: 중·고등 내신 대비 & 비문학·소설 심층 독해 (Academic Reading & Exam Prep)
+     ------------------------------------------------------------------ -->
+<section id="tab-reading" class="tab-content hidden space-y-6">
+    <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-xs space-y-6">
+        
+        <!-- 상단 헤더 & 학년 필터 바 -->
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+            <div>
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-900 font-mono text-[11px] font-bold mb-2">
+                    <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+                    <span>Veritas Middle School Exam Master • 중등 내신 독해 & 비문학/소설 60선</span>
+                </div>
+                <h2 class="font-serif font-black text-2xl text-slate-900 flex items-center gap-2">
+                    중등 전용 내신 독해 & 비문학·소설 마스터
+                </h2>
+                <p class="text-slate-500 text-xs sm:text-sm mt-1">
+                    중1·중2·중3 학년별 20지문(학기별 10지문) 총 6개 학기 마스터 단원! <strong>어법 오류·빈칸 추론·내용 일치·서술형 영작</strong>을 마스터하고 단원 전체를 학습 계획표에 바로 등록하세요.
+                </p>
+            </div>
+
+            <!-- 학년 필터 서브탭 -->
+            <div class="flex flex-wrap items-center gap-1.5 bg-slate-100 p-1 rounded-xl text-xs font-semibold self-start lg:self-auto">
+                <button class="reading-grade-btn px-3 py-1.5 rounded-lg active-subtab transition-all cursor-pointer" data-grade="all" onclick="window.readingEngine.setGradeFilter('all')">
+                    전체 학기 (6개 단원)
+                </button>
+                <button class="reading-grade-btn px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition-all cursor-pointer" data-grade="중1" onclick="window.readingEngine.setGradeFilter('중1')">
+                    중1 마스터 (20선)
+                </button>
+                <button class="reading-grade-btn px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition-all cursor-pointer" data-grade="중2" onclick="window.readingEngine.setGradeFilter('중2')">
+                    중2 마스터 (20선)
+                </button>
+                <button class="reading-grade-btn px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition-all cursor-pointer" data-grade="중3" onclick="window.readingEngine.setGradeFilter('중3')">
+                    중3 마스터 (20선)
+                </button>
+            </div>
+        </div>
+
+        <!-- 단원(Unit) 선택 및 학습 계획표 연동 카드 -->
+        <div class="p-5 rounded-2xl bg-gradient-to-r from-blue-900 via-slate-900 to-slate-950 text-white shadow-md space-y-4">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+                <div class="flex-1">
+                    <div class="flex items-center gap-2 mb-1.5">
+                        <span class="text-xs font-mono font-bold text-amber-300 uppercase flex items-center gap-1">
+                            <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+                            <span>단원 선택 (Semester Unit):</span>
+                        </span>
+                        <div id="reading-unit-status-badge"></div>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-3">
+                        <select id="reading-unit-select" class="px-3 py-2 text-sm bg-white/10 hover:bg-white/15 border border-white/20 rounded-xl outline-none font-serif font-bold text-white cursor-pointer transition-all min-w-[280px]" onchange="window.readingEngine.selectUnit(this.value)">
+                            <!-- JS 동적 생성 -->
+                        </select>
+                        <h3 id="reading-unit-banner-title" class="hidden sm:inline font-serif font-black text-lg text-amber-200"></h3>
+                    </div>
+                    <p id="reading-unit-banner-desc" class="text-xs text-slate-300 mt-2 font-medium leading-relaxed"></p>
+                </div>
+
+                <!-- 계획표 등록/삭제 버튼군 -->
+                <div class="flex flex-wrap items-center gap-2 shrink-0 pt-2 md:pt-0">
+                    <button class="px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-serif font-bold text-xs shadow-sm transition-all flex items-center gap-1.5 cursor-pointer active:scale-95" onclick="window.readingEngine.registerCurrentUnitToPlanner()">
+                        <i data-lucide="calendar-plus" class="w-4 h-4 text-slate-900"></i>
+                        <span>이 단원 전체 계획표 등록 (1일 1지문)</span>
+                    </button>
+                    <button id="btn-delete-reading-unit-plan" class="hidden px-3.5 py-2.5 rounded-xl bg-red-500/20 hover:bg-red-500/30 border border-red-400/30 text-red-200 font-serif font-semibold text-xs transition-all flex items-center gap-1.5 cursor-pointer" onclick="window.readingEngine.deleteCurrentUnitFromPlanner()" title="이 단원의 계획표 배정 삭제">
+                        <i data-lucide="trash-2" class="w-3.5 h-3.5 text-red-300"></i>
+                        <span>단원 계획 삭제</span>
+                    </button>
+                    <button class="px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-serif font-semibold text-xs transition-all flex items-center gap-1 cursor-pointer" onclick="window.app && window.app.switchTab('planner')">
+                        <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+                        <span>계획표 확인 →</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 단원 내 지문 선택 드롭다운 & 제어 툴바 -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <div class="flex items-center gap-2 flex-1 max-w-xl">
+                <span class="text-xs font-serif font-bold text-slate-700 shrink-0 flex items-center gap-1">
+                    <i data-lucide="book-open" class="w-4 h-4 text-blue-900"></i> 단원 내 지문:
+                </span>
+                <select id="reading-passage-select" class="w-full px-3 py-2 text-xs sm:text-sm bg-white border border-slate-300 rounded-lg outline-none focus:border-blue-900 font-bold text-slate-900 cursor-pointer shadow-2xs" onchange="window.readingEngine.selectPassage(this.value)">
+                    <!-- JS 동적 생성 -->
+                </select>
+            </div>
+
+            <!-- 유형 필터 및 제어 버튼 -->
+            <div class="flex flex-wrap items-center gap-2 shrink-0">
+                <div class="flex items-center gap-1 bg-white p-0.5 rounded-lg border border-slate-200 text-xs">
+                    <button class="reading-cat-btn px-2.5 py-1 rounded active-subtab transition-all cursor-pointer" data-category="all" onclick="window.readingEngine.setCategoryFilter('all')">
+                        전체 (10)
+                    </button>
+                    <button class="reading-cat-btn px-2.5 py-1 rounded text-slate-600 hover:text-slate-900 transition-all cursor-pointer" data-category="nonfiction" onclick="window.readingEngine.setCategoryFilter('nonfiction')">
+                        🔬 비문학
+                    </button>
+                    <button class="reading-cat-btn px-2.5 py-1 rounded text-slate-600 hover:text-slate-900 transition-all cursor-pointer" data-category="fiction" onclick="window.readingEngine.setCategoryFilter('fiction')">
+                        📖 명작소설
+                    </button>
+                </div>
+
+                <button id="btn-speak-entire-passage" class="px-3 py-1.5 rounded-lg bg-white border border-slate-200 hover:border-blue-900 text-slate-700 hover:text-blue-900 text-xs font-semibold flex items-center gap-1 transition-all cursor-pointer shadow-2xs" onclick="window.readingEngine.speakEntirePassage()" title="지문 전체 원어민 낭독">
+                    <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                    <span>지문 전체 듣기</span>
+                </button>
+                <button id="btn-toggle-reading-ko" class="px-3 py-1.5 rounded-lg bg-white border border-slate-200 hover:border-blue-900 text-slate-700 hover:text-blue-900 text-xs font-semibold flex items-center gap-1 transition-all cursor-pointer shadow-2xs" onclick="window.readingEngine.toggleTranslation()">
+                    <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                    <span>한 줄 해석 보기</span>
+                </button>
+                <button class="px-3 py-1.5 rounded-lg bg-emerald-50 border border-emerald-300 hover:bg-emerald-100 text-emerald-800 text-xs font-bold flex items-center gap-1 transition-all cursor-pointer shadow-2xs" onclick="window.readingEngine.registerPassageWordsToVocab()">
+                    <i data-lucide="plus-circle" class="w-3.5 h-3.5"></i>
+                    <span>지문 어휘 등록</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+            
+            <!-- [좌측 패널] 아카데믹 지문 리더 -->
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-2xs space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-100">
+                    <span id="reading-meta-badge" class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold bg-blue-100 text-blue-900">
+                        학술 비문학 • 고등 1~2 핵심
+                    </span>
+                    <div class="flex items-center gap-2 text-xs text-slate-400 font-mono">
+                        <span id="reading-meta-words">220단어</span>
+                        <span>•</span>
+                        <span id="reading-meta-esttime">권장 3분</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 id="reading-meta-title" class="font-serif font-black text-xl text-slate-900 leading-snug">
+                        The Ethical Dilemma of Autonomous Decision-Making
+                    </h3>
+                    <div id="reading-meta-kotitle" class="text-xs font-bold text-slate-500 mt-0.5">
+                        자율적 의사결정의 윤리적 딜레마
+                    </div>
+                    <p id="reading-meta-summary" class="text-xs text-slate-600 bg-slate-50 p-2.5 rounded-lg mt-2 leading-relaxed border border-slate-100">
+                        지문 요약 설명
+                    </p>
+                </div>
+
+                <!-- 지문 본문 (문장별 번호 및 해석 뷰) -->
+                <div id="reading-passage-text-container" class="space-y-1.5 pt-2 max-h-[600px] overflow-y-auto pr-1">
+                    <!-- JS 동적 생성 -->
+                </div>
+
+                <!-- 지문 속 핵심 어휘 모음 -->
+                <div class="pt-4 border-t border-slate-100 space-y-2">
+                    <div class="text-[11px] font-mono font-bold text-slate-500 uppercase flex items-center gap-1">
+                        <i data-lucide="book" class="w-3.5 h-3.5 text-blue-900"></i>
+                        <span>지문 핵심 어휘 (클릭 시 발음 청취)</span>
+                    </div>
+                    <div id="reading-passage-key-vocab" class="flex flex-wrap gap-1.5">
+                        <!-- JS 동적 생성 -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- [우측 패널] 실전 내신 4대 문제 & 채점 -->
+            <div class="space-y-5">
+                <!-- 상단 성적 & 채점 안내 배너 (제출 후 활성화) -->
+                <div id="reading-exam-score-banner" class="hidden p-5 rounded-2xl bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white border border-slate-800 shadow-md">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="text-xs font-mono font-bold text-amber-300 uppercase">Exam Result • 내신 실전 채점</div>
+                            <h3 id="reading-score-text" class="font-serif font-black text-2xl text-white mt-1">100 / 100점</h3>
+                            <p id="reading-score-feedback" class="text-xs text-slate-300 mt-1">피드백 문구</p>
+                        </div>
+                        <div class="w-12 h-12 rounded-xl bg-amber-400/20 text-amber-300 flex items-center justify-center border border-amber-400/30">
+                            <i data-lucide="award" class="w-6 h-6"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between px-1">
+                    <h3 class="font-serif font-bold text-base text-slate-900 flex items-center gap-1.5">
+                        <i data-lucide="check-square" class="w-4 h-4 text-emerald-700"></i>
+                        <span>실전 내신 기출 변형 문항 (4문항)</span>
+                    </h3>
+                    <span class="text-xs text-slate-500">배점 총 14.5점 / 100점 환산</span>
+                </div>
+
+                <!-- 문제 리스트 컨테이너 -->
+                <div id="reading-questions-container" class="space-y-4">
+                    <!-- JS 동적 생성: 어법, 빈칸, 일치, 서술형 -->
+                </div>
+
+                <!-- 제출 / 다시 풀기 액션 바 -->
+                <div class="pt-2">
+                    <button id="btn-submit-reading-exam" class="w-full py-3.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-98" onclick="window.readingEngine.submitExam()">
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                        <span>답안 제출 및 실시간 내신 채점하기</span>
+                    </button>
+
+                    <button id="btn-retake-reading-exam" class="hidden w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-serif font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-98" onclick="window.readingEngine.resetExamState(); window.readingEngine.renderActivePassage();">
+                        <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+                        <span>오답 복습 & 이 지문 다시 시험보기</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+    </main>
+
+    <!-- ======================================================================
+         하단 푸터 (Footer)
+         ====================================================================== -->
+    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-400 font-sans mt-auto">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+            <div>
+                <span class="font-serif font-bold text-slate-700">VERITAS ENGLISH</span> &copy; 2026 Scholars' Academy. All rights reserved.
+            </div>
+            <div class="flex items-center gap-4 text-[11px]">
+                <span>Ebbinghaus SRS 5-Stage</span>
+                <span>•</span>
+                <span>Tesseract.js OCR Engine</span>
+                <span>•</span>
+                <span>Web Speech TTS</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ======================================================================
+         모달 1: 수동 단어 직접 추가 모달 (Add Word Modal)
+         ====================================================================== -->
+    <div id="modal-add-word" class="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-200 space-y-4 animate-in fade-in zoom-in-95 duration-150">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+                <h3 class="font-serif font-bold text-lg text-slate-900 flex items-center gap-2">
+                    <i data-lucide="plus-circle" class="w-5 h-5 text-blue-900"></i>
+                    단어 직접 등록
+                </h3>
+                <button id="btn-close-add-word" class="p-1 rounded-lg text-slate-400 hover:text-slate-700">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="space-y-3">
+                <div class="grid grid-cols-3 gap-2">
+                    <div class="col-span-2">
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">영단어 *</label>
+                        <input id="add-modal-word" type="text" placeholder="예: illuminate" class="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-900 font-serif font-bold">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">품사</label>
+                        <select id="add-modal-pos" class="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-900 font-mono">
+                            <option value="n.">n. (명사)</option>
+                            <option value="v.">v. (동사)</option>
+                            <option value="adj.">adj. (형용사)</option>
+                            <option value="adv.">adv. (부사)</option>
+                            <option value="idiom">idiom (숙어)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 mb-1">한글 의미 *</label>
+                    <input id="add-modal-meaning" type="text" placeholder="예: 밝게 비추다, 계몽하다" class="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-900">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 mb-1">실전 예문 (선택)</label>
+                    <input id="add-modal-example" type="text" placeholder="예: The lanterns illuminate the quiet street." class="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-900 font-serif text-xs">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 mb-1">예문 해석 (선택)</label>
+                    <input id="add-modal-example-meaning" type="text" placeholder="예: 등불이 조용한 거리를 밝힌다." class="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-900 text-xs">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 mb-1">태그 (교재/단원)</label>
+                    <input id="add-modal-tag" type="text" placeholder="예: 수능특강 3강" class="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-900 text-xs">
+                </div>
+            </div>
+
+            <div class="pt-3 flex justify-end gap-2 border-t border-slate-100">
+                <button class="px-4 py-2 rounded-xl text-xs text-slate-600 hover:bg-slate-100" onclick="document.getElementById('modal-add-word').classList.add('hidden')">취소</button>
+                <button id="btn-submit-add-word" class="px-5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-medium text-xs shadow-xs">단어장에 등록하기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================================
+         모달 2: 학습 환경설정 및 백업 관리 (Settings Modal)
+         ====================================================================== -->
+    <div id="modal-settings" class="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-200 space-y-5 animate-in fade-in zoom-in-95 duration-150">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+                <h3 class="font-serif font-bold text-lg text-slate-900 flex items-center gap-2">
+                    <i data-lucide="settings" class="w-5 h-5 text-slate-700"></i>
+                    학습 환경 설정
+                </h3>
+                <button id="btn-close-settings" class="p-1 rounded-lg text-slate-400 hover:text-slate-700">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="space-y-4 text-xs">
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">학도 이름 (Student Name)</label>
+                    <input id="set-student-name" type="text" class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-900 text-sm font-serif">
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">원어민 발음 억양</label>
+                        <select id="set-voice-accent" class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-900 text-xs font-mono">
+                            <option value="en-US">미국식 (American US)</option>
+                            <option value="en-GB">영국식 (British UK)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">발음 속도</label>
+                        <select id="set-voice-rate" class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-900 text-xs font-mono">
+                            <option value="0.75">0.75x (초등/초급)</option>
+                            <option value="0.95" selected>0.95x (표준 권장)</option>
+                            <option value="1.2">1.2x (실전 고속)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">일일 목표 학습 단어 수</label>
+                    <input id="set-daily-target" type="number" min="5" max="100" class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-900 text-sm font-mono">
+                </div>
+
+                <!-- 데이터 백업 및 복원 -->
+                <div class="pt-3 border-t border-slate-100">
+                    <label class="block font-semibold text-slate-700 mb-2">데이터 백업 & 안전 복원</label>
+                    <div class="flex gap-2">
+                        <button id="btn-export-backup" class="flex-1 py-2 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700 font-medium flex items-center justify-center gap-1">
+                            <i data-lucide="download" class="w-3.5 h-3.5"></i> 백업 다운로드
+                        </button>
+                        <button id="btn-import-backup" class="flex-1 py-2 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700 font-medium flex items-center justify-center gap-1">
+                            <i data-lucide="upload" class="w-3.5 h-3.5"></i> 백업 파일 복원
+                        </button>
+                        <input id="import-file-input" type="file" accept=".json" class="hidden">
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-3 flex justify-end gap-2 border-t border-slate-100">
+                <button class="px-4 py-2 rounded-xl text-xs text-slate-600 hover:bg-slate-100" onclick="document.getElementById('modal-settings').classList.add('hidden')">닫기</button>
+                <button id="btn-save-settings" class="px-5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-medium text-xs shadow-xs">설정 저장</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================================
+         모달 3: 메인 화면 퀵 바로가기 맞춤 설정 (Shortcut Settings Modal)
+         ====================================================================== -->
+    <div id="modal-shortcut-settings" class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 space-y-5 animate-in fade-in zoom-in-95 duration-150">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center">
+                        <i data-lucide="settings-2" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-lg text-slate-900">메인 바로가기 2개 설정</h3>
+                        <p class="text-xs text-slate-500">환영 배너에 배치할 바로가기 메뉴 2개와 버튼 문구를 지정합니다.</p>
+                    </div>
+                </div>
+                <button id="btn-close-shortcut-settings" class="p-1 rounded-lg text-slate-400 hover:text-slate-700">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="space-y-4 text-xs">
+                <!-- 바로가기 1번 슬롯 (Primary) -->
+                <div class="p-4 rounded-xl bg-amber-50/40 border border-amber-200/60 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-amber-950 font-serif flex items-center gap-1.5">
+                            <span class="w-5 h-5 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center text-[11px] font-bold">1</span>
+                            바로가기 1 (주요 바로가기)
+                        </span>
+                        <span class="text-[11px] text-amber-700 font-mono">Slot #1</span>
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">연결할 학습 기능</label>
+                        <select id="shortcut-slot1-select" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-900 text-xs font-serif font-medium">
+                            <option value="reading">🎓 중등 내신 독해 & 비문학 마스터</option>
+                            <option value="dictionary">📖 영단어 사전 & 실시간 색인</option>
+                            <option value="ocr">📷 교재 단어 등록 & 테마 단어장</option>
+                            <option value="flashcards">📑 3D 플립 플래시카드 암기</option>
+                            <option value="quiz">🏆 실전 내신·수능 스마트 퀴즈</option>
+                            <option value="review">🔄 에빙하우스 5단계 망각곡선 복습</option>
+                            <option value="expressions">✨ 원어민 실전 표현 LAB</option>
+                            <option value="planner">📅 학습 플래너 & 캘린더</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">버튼 라벨 문구</label>
+                        <input id="shortcut-slot1-label" type="text" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-900 text-xs font-serif" placeholder="버튼에 표시될 문구">
+                    </div>
+                </div>
+
+                <!-- 바로가기 2번 슬롯 (Secondary) -->
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-slate-900 font-serif flex items-center gap-1.5">
+                            <span class="w-5 h-5 rounded-full bg-slate-800 text-white flex items-center justify-center text-[11px] font-bold">2</span>
+                            바로가기 2 (보조 바로가기)
+                        </span>
+                        <span class="text-[11px] text-slate-500 font-mono">Slot #2</span>
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">연결할 학습 기능</label>
+                        <select id="shortcut-slot2-select" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-900 text-xs font-serif font-medium">
+                            <option value="reading">🎓 중등 내신 독해 & 비문학 마스터</option>
+                            <option value="dictionary">📖 영단어 사전 & 실시간 색인</option>
+                            <option value="ocr">📷 교재 단어 등록 & 테마 단어장</option>
+                            <option value="flashcards">📑 3D 플립 플래시카드 암기</option>
+                            <option value="quiz">🏆 실전 내신·수능 스마트 퀴즈</option>
+                            <option value="review">🔄 에빙하우스 5단계 망각곡선 복습</option>
+                            <option value="expressions">✨ 원어민 실전 표현 LAB</option>
+                            <option value="planner">📅 학습 플래너 & 캘린더</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">버튼 라벨 문구</label>
+                        <input id="shortcut-slot2-label" type="text" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-900 text-xs font-serif" placeholder="버튼에 표시될 문구">
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-3 flex items-center justify-between border-t border-slate-100">
+                <button id="btn-reset-shortcuts" class="text-xs text-slate-500 hover:text-slate-800 underline font-medium cursor-pointer">
+                    기본값 복원 (독해 + 사전)
+                </button>
+                <div class="flex gap-2">
+                    <button class="px-4 py-2 rounded-xl text-xs text-slate-600 hover:bg-slate-100 cursor-pointer" onclick="document.getElementById('modal-shortcut-settings').classList.add('hidden')">
+                        취소
+                    </button>
+                    <button id="btn-save-shortcut-settings" class="px-5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-medium text-xs shadow-xs cursor-pointer">
+                        설정 저장
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================================
+         모달 4: 학업 목표 맞춤 설정 (단기 스프린트 & 장기 로드맵)
+         ====================================================================== -->
+    <div id="modal-goal-settings" class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 space-y-5 animate-in fade-in zoom-in-95 duration-150">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-900 flex items-center justify-center">
+                        <i data-lucide="target" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-lg text-slate-900">학업 목표 설정 및 변경</h3>
+                        <p class="text-xs text-slate-500">단기 집중 목표와 장기 로드맵 목표를 맞춤 설정합니다.</p>
+                    </div>
+                </div>
+                <button id="btn-close-goal-settings" class="p-1 rounded-lg text-slate-400 hover:text-slate-700">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- 목표 유형 선택 (단기 vs 장기 탭) -->
+            <div class="grid grid-cols-2 gap-2 p-1 bg-slate-100 rounded-xl">
+                <button id="modal-goal-tab-short" class="py-2 rounded-lg text-xs font-serif font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer bg-white text-blue-950 shadow-xs" onclick="window.app.switchModalGoalTab('short')">
+                    <i data-lucide="zap" class="w-4 h-4 text-amber-500"></i>
+                    <span>⚡ 단기간 집중 목표</span>
+                </button>
+                <button id="modal-goal-tab-long" class="py-2 rounded-lg text-xs font-serif font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer text-slate-500 hover:text-slate-900" onclick="window.app.switchModalGoalTab('long')">
+                    <i data-lucide="milestone" class="w-4 h-4 text-blue-900"></i>
+                    <span>🏛️ 장기간 로드맵 목표</span>
+                </button>
+            </div>
+
+            <!-- 추천 프리셋 선택 -->
+            <div class="space-y-4 text-xs">
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">추천 검증 프리셋 간편 선택</label>
+                    <select id="goal-preset-select" class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-900 text-xs font-serif font-medium">
+                        <!-- JS로 모드에 따라 동적 주입 -->
+                    </select>
+                </div>
+
+                <div class="p-3 rounded-xl bg-blue-50/60 border border-blue-200/60 text-slate-600 space-y-1">
+                    <div class="font-semibold text-blue-950 flex items-center gap-1">
+                        <i data-lucide="info" class="w-3.5 h-3.5 text-blue-900"></i>
+                        <span id="goal-preset-desc-title">프리셋 안내</span>
+                    </div>
+                    <p id="goal-preset-desc-text" class="text-[11px] leading-relaxed text-slate-600">
+                        선택된 프리셋 설명이 표시됩니다.
+                    </p>
+                </div>
+
+                <!-- 세부 정보 직접 수정 -->
+                <div class="space-y-3 pt-2 border-t border-slate-100">
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">목표 타이틀</label>
+                        <input id="goal-input-title" type="text" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-900 text-xs font-serif" placeholder="예: 이번 주 테마 어휘 100단어 완독">
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block font-semibold text-slate-700 mb-1">목표 기간 (일수)</label>
+                            <input id="goal-input-days" type="number" min="1" max="365" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-900 text-xs font-mono" placeholder="7">
+                        </div>
+                        <div>
+                            <label class="block font-semibold text-slate-700 mb-1">목표 달성 수량</label>
+                            <input id="goal-input-count" type="number" min="1" max="5000" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-900 text-xs font-mono" placeholder="100">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block font-semibold text-slate-700 mb-1">측정 기준 단위</label>
+                            <select id="goal-input-type" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-900 text-xs font-mono">
+                                <option value="words">단어 수 (어휘 학습/등록)</option>
+                                <option value="passages">독해 지문 수 (내신 기출 풀이)</option>
+                                <option value="mastered">장기기억 졸업 수 (SRS 5단계)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block font-semibold text-slate-700 mb-1">시작일 (D-Day 기준)</label>
+                            <input id="goal-input-start-date" type="date" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-900 text-xs font-mono">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-3 flex justify-end gap-2 border-t border-slate-100">
+                <button class="px-4 py-2 rounded-xl text-xs text-slate-600 hover:bg-slate-100 cursor-pointer" onclick="document.getElementById('modal-goal-settings').classList.add('hidden')">
+                    취소
+                </button>
+                <button id="btn-save-goal-settings" class="px-5 py-2 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-medium text-xs shadow-xs cursor-pointer">
+                    목표 저장 및 즉시 활성화
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================================
+         모달 3: 메인 화면 퀵 바로가기 맞춤 설정 (Shortcut Settings Modal)
+         ====================================================================== -->
+    <div id="modal-shortcut-settings" class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 space-y-5 animate-in fade-in zoom-in-95 duration-150">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center">
+                        <i data-lucide="settings-2" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-lg text-slate-900">메인 바로가기 2개 설정</h3>
+                        <p class="text-xs text-slate-500">환영 배너에 배치할 바로가기 메뉴 2개와 버튼 문구를 지정합니다.</p>
+                    </div>
+                </div>
+                <button id="btn-close-shortcut-settings" class="p-1 rounded-lg text-slate-400 hover:text-slate-700">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="space-y-4 text-xs">
+                <!-- 바로가기 1번 슬롯 (Primary) -->
+                <div class="p-4 rounded-xl bg-amber-50/40 border border-amber-200/60 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-amber-950 font-serif flex items-center gap-1.5">
+                            <span class="w-5 h-5 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center text-[11px] font-bold">1</span>
+                            바로가기 1 (주요 바로가기)
+                        </span>
+                        <span class="text-[11px] text-amber-700 font-mono">Slot #1</span>
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">연결할 학습 기능</label>
+                        <select id="shortcut-slot1-select" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-900 text-xs font-serif font-medium">
+                            <option value="reading">🎓 중등 내신 독해 & 비문학 마스터</option>
+                            <option value="dictionary">📖 영단어 사전 & 실시간 색인</option>
+                            <option value="ocr">📷 교재 단어 등록 & 테마 단어장</option>
+                            <option value="flashcards">📑 3D 플립 플래시카드 암기</option>
+                            <option value="quiz">🏆 실전 내신·수능 스마트 퀴즈</option>
+                            <option value="review">🔄 에빙하우스 5단계 망각곡선 복습</option>
+                            <option value="expressions">✨ 원어민 실전 표현 LAB</option>
+                            <option value="planner">📅 학습 플래너 & 캘린더</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">버튼 라벨 문구</label>
+                        <input id="shortcut-slot1-label" type="text" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-900 text-xs font-serif" placeholder="버튼에 표시될 문구">
+                    </div>
+                </div>
+
+                <!-- 바로가기 2번 슬롯 (Secondary) -->
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-slate-900 font-serif flex items-center gap-1.5">
+                            <span class="w-5 h-5 rounded-full bg-slate-800 text-white flex items-center justify-center text-[11px] font-bold">2</span>
+                            바로가기 2 (보조 바로가기)
+                        </span>
+                        <span class="text-[11px] text-slate-500 font-mono">Slot #2</span>
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">연결할 학습 기능</label>
+                        <select id="shortcut-slot2-select" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-900 text-xs font-serif font-medium">
+                            <option value="reading">🎓 중등 내신 독해 & 비문학 마스터</option>
+                            <option value="dictionary">📖 영단어 사전 & 실시간 색인</option>
+                            <option value="ocr">📷 교재 단어 등록 & 테마 단어장</option>
+                            <option value="flashcards">📑 3D 플립 플래시카드 암기</option>
+                            <option value="quiz">🏆 실전 내신·수능 스마트 퀴즈</option>
+                            <option value="review">🔄 에빙하우스 5단계 망각곡선 복습</option>
+                            <option value="expressions">✨ 원어민 실전 표현 LAB</option>
+                            <option value="planner">📅 학습 플래너 & 캘린더</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">버튼 라벨 문구</label>
+                        <input id="shortcut-slot2-label" type="text" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-900 text-xs font-serif" placeholder="버튼에 표시될 문구">
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-3 flex items-center justify-between border-t border-slate-100">
+                <button id="btn-reset-shortcuts" class="text-xs text-slate-500 hover:text-slate-800 underline font-medium cursor-pointer">
+                    기본값 복원 (독해 + 사전)
+                </button>
+                <div class="flex gap-2">
+                    <button class="px-4 py-2 rounded-xl text-xs text-slate-600 hover:bg-slate-100 cursor-pointer" onclick="document.getElementById('modal-shortcut-settings').classList.add('hidden')">
+                        취소
+                    </button>
+                    <button id="btn-save-shortcut-settings" class="px-5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-medium text-xs shadow-xs cursor-pointer">
+                        설정 저장
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================================
+         모달 4: 학업 목표 맞춤 설정 (단기 스프린트 & 장기 로드맵)
+         ====================================================================== -->
+    <div id="modal-goal-settings" class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 space-y-5 animate-in fade-in zoom-in-95 duration-150">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-900 flex items-center justify-center">
+                        <i data-lucide="target" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-lg text-slate-900">학업 목표 설정 및 변경</h3>
+                        <p class="text-xs text-slate-500">단기 집중 목표와 장기 로드맵 목표를 맞춤 설정합니다.</p>
+                    </div>
+                </div>
+                <button id="btn-close-goal-settings" class="p-1 rounded-lg text-slate-400 hover:text-slate-700">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- 목표 유형 선택 (단기 vs 장기 탭) -->
+            <div class="grid grid-cols-2 gap-2 p-1 bg-slate-100 rounded-xl">
+                <button id="modal-goal-tab-short" class="py-2 rounded-lg text-xs font-serif font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer bg-white text-blue-950 shadow-xs" onclick="window.app.switchModalGoalTab('short')">
+                    <i data-lucide="zap" class="w-4 h-4 text-amber-500"></i>
+                    <span>⚡ 단기간 집중 목표</span>
+                </button>
+                <button id="modal-goal-tab-long" class="py-2 rounded-lg text-xs font-serif font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer text-slate-500 hover:text-slate-900" onclick="window.app.switchModalGoalTab('long')">
+                    <i data-lucide="milestone" class="w-4 h-4 text-blue-900"></i>
+                    <span>🏛️ 장기간 로드맵 목표</span>
+                </button>
+            </div>
+
+            <!-- 추천 프리셋 선택 -->
+            <div class="space-y-4 text-xs">
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">추천 검증 프리셋 간편 선택</label>
+                    <select id="goal-preset-select" class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-900 text-xs font-serif font-medium">
+                        <!-- JS로 모드에 따라 동적 주입 -->
+                    </select>
+                </div>
+
+                <div class="p-3 rounded-xl bg-blue-50/60 border border-blue-200/60 text-slate-600 space-y-1">
+                    <div class="font-semibold text-blue-950 flex items-center gap-1">
+                        <i data-lucide="info" class="w-3.5 h-3.5 text-blue-900"></i>
+                        <span id="goal-preset-desc-title">프리셋 안내</span>
+                    </div>
+                    <p id="goal-preset-desc-text" class="text-[11px] leading-relaxed text-slate-600">
+                        선택된 프리셋 설명이 표시됩니다.
+                    </p>
+                </div>
+
+                <!-- 세부 정보 직접 수정 -->
+                <div class="space-y-3 pt-2 border-t border-slate-100">
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">목표 타이틀</label>
+                        <input id="goal-input-title" type="text" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-900 text-xs font-serif" placeholder="예: 이번 주 테마 어휘 100단어 완독">
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block font-semibold text-slate-700 mb-1">목표 기간 (일수)</label>
+                            <input id="goal-input-days" type="number" min="1" max="365" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-900 text-xs font-mono" placeholder="7">
+                        </div>
+                        <div>
+                            <label class="block font-semibold text-slate-700 mb-1">목표 달성 수량</label>
+                            <input id="goal-input-count" type="number" min="1" max="5000" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-900 text-xs font-mono" placeholder="100">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block font-semibold text-slate-700 mb-1">측정 기준 단위</label>
+                            <select id="goal-input-type" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-900 text-xs font-mono">
+                                <option value="words">단어 수 (어휘 학습/등록)</option>
+                                <option value="passages">독해 지문 수 (내신 기출 풀이)</option>
+                                <option value="mastered">장기기억 졸업 수 (SRS 5단계)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block font-semibold text-slate-700 mb-1">시작일 (D-Day 기준)</label>
+                            <input id="goal-input-start-date" type="date" class="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-900 text-xs font-mono">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-3 flex justify-end gap-2 border-t border-slate-100">
+                <button class="px-4 py-2 rounded-xl text-xs text-slate-600 hover:bg-slate-100 cursor-pointer" onclick="document.getElementById('modal-goal-settings').classList.add('hidden')">
+                    취소
+                </button>
+                <button id="btn-save-goal-settings" class="px-5 py-2 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-medium text-xs shadow-xs cursor-pointer">
+                    목표 저장 및 즉시 활성화
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================================
+         MODAL: 스마트 학습 계획 일괄 배정 모달 (요일 선택 & 시작 소단원 지정)
+         ====================================================================== -->
+    <div id="modal-batch-plan" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-7 shadow-2xl border border-slate-200 space-y-5 animate-in fade-in zoom-in-95 duration-200">
+            <!-- 모달 헤더 -->
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-900 flex items-center justify-center font-bold">
+                        <i data-lucide="calendar-plus" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-black text-lg text-slate-900" id="batch-plan-modal-title">스마트 학습 계획 배정</h3>
+                        <p class="text-xs text-slate-500" id="batch-plan-modal-desc">요일과 시작 소단원을 지정하여 맞춤형 플래너를 생성합니다.</p>
+                    </div>
+                </div>
+                <button class="p-1 text-slate-400 hover:text-slate-700 rounded-lg cursor-pointer transition-colors" onclick="window.app.closeBatchPlanModal()">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- 1. 대상 콘텐츠 요약 -->
+            <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200/80 flex items-center justify-between text-xs">
+                <div>
+                    <span class="text-slate-400 block text-[11px] font-semibold">학습 대상</span>
+                    <span id="batch-plan-target-name" class="font-serif font-bold text-sm text-blue-950">중 1-1 내신 독해 마스터</span>
+                </div>
+                <span id="batch-plan-total-items-badge" class="px-2.5 py-1 rounded-full bg-blue-100 text-blue-900 font-mono font-bold text-xs">
+                    총 10개 지문
+                </span>
+            </div>
+
+            <div class="space-y-4">
+                <!-- 2. 학습 시작일 & 시작 소단원 (2단 그리드) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                    <div>
+                        <label class="block text-xs font-serif font-bold text-slate-700 mb-1 flex items-center gap-1">
+                            <i data-lucide="calendar" class="w-3.5 h-3.5 text-blue-900"></i> 학습 시작일
+                        </label>
+                        <input type="date" id="batch-plan-start-date" class="w-full px-3 py-2 text-xs sm:text-sm bg-white border border-slate-200 rounded-xl outline-none focus:border-blue-900 font-mono font-bold" onchange="window.app.updateBatchPlanPreview()">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-serif font-bold text-slate-700 mb-1 flex items-center gap-1">
+                            <i data-lucide="list-ordered" class="w-3.5 h-3.5 text-blue-900"></i> 시작 소단원 / DAY
+                        </label>
+                        <select id="batch-plan-start-subunit" class="w-full px-3 py-2 text-xs sm:text-sm bg-white border border-slate-200 rounded-xl outline-none focus:border-blue-900 font-serif font-bold cursor-pointer" onchange="window.app.updateBatchPlanPreview()">
+                            <!-- 동적 주입 -->
+                        </select>
+                    </div>
+                </div>
+
+                <!-- 3. 학습 요일 선택 -->
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between">
+                        <label class="text-xs font-serif font-bold text-slate-700 flex items-center gap-1">
+                            <i data-lucide="repeat" class="w-3.5 h-3.5 text-blue-900"></i> 학습 요일 설정
+                        </label>
+                        <span class="text-[11px] text-slate-400">선택한 요일에만 과제가 배정됩니다</span>
+                    </div>
+
+                    <!-- 빠른 프리셋 버튼들 -->
+                    <div class="flex flex-wrap items-center gap-1.5" id="batch-plan-presets-container">
+                        <button type="button" class="batch-plan-preset-btn px-2.5 py-1 rounded-lg text-[11px] font-bold border transition-all cursor-pointer bg-blue-900 text-white border-blue-900" data-preset="all" onclick="window.app.setBatchPlanDaysPreset('all')">
+                            매일매일 (월~일)
+                        </button>
+                        <button type="button" class="batch-plan-preset-btn px-2.5 py-1 rounded-lg text-[11px] font-bold border transition-all cursor-pointer bg-white text-slate-600 border-slate-200 hover:bg-slate-100" data-preset="mwf" onclick="window.app.setBatchPlanDaysPreset('mwf')">
+                            월·수·금
+                        </button>
+                        <button type="button" class="batch-plan-preset-btn px-2.5 py-1 rounded-lg text-[11px] font-bold border transition-all cursor-pointer bg-white text-slate-600 border-slate-200 hover:bg-slate-100" data-preset="tts" onclick="window.app.setBatchPlanDaysPreset('tts')">
+                            화·목·토
+                        </button>
+                        <button type="button" class="batch-plan-preset-btn px-2.5 py-1 rounded-lg text-[11px] font-bold border transition-all cursor-pointer bg-white text-slate-600 border-slate-200 hover:bg-slate-100" data-preset="weekdays" onclick="window.app.setBatchPlanDaysPreset('weekdays')">
+                            평일 (월~금)
+                        </button>
+                        <button type="button" class="batch-plan-preset-btn px-2.5 py-1 rounded-lg text-[11px] font-bold border transition-all cursor-pointer bg-white text-slate-600 border-slate-200 hover:bg-slate-100" data-preset="weekend" onclick="window.app.setBatchPlanDaysPreset('weekend')">
+                            주말 (토·일)
+                        </button>
+                    </div>
+
+                    <!-- 7개 개별 요일 체크박스 그리드 -->
+                    <div class="grid grid-cols-7 gap-1.5 pt-1 text-center font-mono text-xs" id="batch-plan-days-checkboxes">
+                        <label class="flex flex-col items-center justify-center p-2 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer select-none has-checked:bg-blue-900 has-checked:text-white has-checked:border-blue-900 transition-all">
+                            <input type="checkbox" class="batch-day-check sr-only" value="1" checked onchange="window.app.onBatchPlanDayCheckboxChanged()">
+                            <span class="font-bold text-[11px]">월</span>
+                        </label>
+                        <label class="flex flex-col items-center justify-center p-2 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer select-none has-checked:bg-blue-900 has-checked:text-white has-checked:border-blue-900 transition-all">
+                            <input type="checkbox" class="batch-day-check sr-only" value="2" checked onchange="window.app.onBatchPlanDayCheckboxChanged()">
+                            <span class="font-bold text-[11px]">화</span>
+                        </label>
+                        <label class="flex flex-col items-center justify-center p-2 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer select-none has-checked:bg-blue-900 has-checked:text-white has-checked:border-blue-900 transition-all">
+                            <input type="checkbox" class="batch-day-check sr-only" value="3" checked onchange="window.app.onBatchPlanDayCheckboxChanged()">
+                            <span class="font-bold text-[11px]">수</span>
+                        </label>
+                        <label class="flex flex-col items-center justify-center p-2 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer select-none has-checked:bg-blue-900 has-checked:text-white has-checked:border-blue-900 transition-all">
+                            <input type="checkbox" class="batch-day-check sr-only" value="4" checked onchange="window.app.onBatchPlanDayCheckboxChanged()">
+                            <span class="font-bold text-[11px]">목</span>
+                        </label>
+                        <label class="flex flex-col items-center justify-center p-2 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer select-none has-checked:bg-blue-900 has-checked:text-white has-checked:border-blue-900 transition-all">
+                            <input type="checkbox" class="batch-day-check sr-only" value="5" checked onchange="window.app.onBatchPlanDayCheckboxChanged()">
+                            <span class="font-bold text-[11px]">금</span>
+                        </label>
+                        <label class="flex flex-col items-center justify-center p-2 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer select-none has-checked:bg-blue-900 has-checked:text-white has-checked:border-blue-900 transition-all">
+                            <input type="checkbox" class="batch-day-check sr-only" value="6" checked onchange="window.app.onBatchPlanDayCheckboxChanged()">
+                            <span class="font-bold text-[11px]">토</span>
+                        </label>
+                        <label class="flex flex-col items-center justify-center p-2 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer select-none has-checked:bg-blue-900 has-checked:text-white has-checked:border-blue-900 transition-all">
+                            <input type="checkbox" class="batch-day-check sr-only" value="0" checked onchange="window.app.onBatchPlanDayCheckboxChanged()">
+                            <span class="font-bold text-[11px]">일</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 4. 실시간 배정 일정 미리보기 카드 -->
+                <div class="p-3.5 rounded-xl bg-blue-50/70 border border-blue-200 text-xs space-y-1.5">
+                    <div class="flex items-center justify-between text-blue-950 font-bold">
+                        <span class="flex items-center gap-1.5 font-serif">
+                            <i data-lucide="clock" class="w-3.5 h-3.5 text-blue-900"></i> 예상 배정 일정
+                        </span>
+                        <span id="batch-plan-preview-count" class="font-mono text-blue-900 text-xs font-bold">10회차 배정</span>
+                    </div>
+                    <div id="batch-plan-preview-dates" class="font-mono text-slate-800 text-xs font-bold">
+                        2026-10-24 (토) ~ 2026-11-02 (월)
+                    </div>
+                    <p id="batch-plan-preview-desc" class="text-[11px] text-slate-500">
+                        선택한 요일에 맞추어 플래너에 자동으로 일정이 편성됩니다.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 액션 버튼 -->
+            <div class="flex items-center justify-end gap-2 pt-2 border-t border-slate-100">
+                <button class="px-4 py-2.5 rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-100 text-xs font-bold transition-all cursor-pointer" onclick="window.app.closeBatchPlanModal()">
+                    취소
+                </button>
+                <button id="btn-execute-batch-plan" class="px-5 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-serif font-extrabold text-xs shadow-md transition-all flex items-center gap-1.5 cursor-pointer" onclick="window.app.executeBatchPlanRegistration()">
+                    <i data-lucide="check" class="w-4 h-4 text-amber-300"></i>
+                    <span>이 설정으로 계획표에 등록하기</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================================
+         스크립트 로드 순서 (Data -> Engines -> App Controller)
+         ====================================================================== -->
+    <script src="data/sample_words.js"></script>
+    <script src="data/neungryul_voca_2025.js"></script>
+    <script src="data/neungryul_voca_etym_2025.js"></script>
+    <script src="data/native_expressions.js"></script>
+    <script src="data/reading_passages.js"></script>
+    <script src="data/curated_vocabulary.js"></script>
+    <script src="js/tts.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/ocr.js"></script>
+    <script src="js/flashcards.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/review.js"></script>
+    <script src="js/planner.js"></script>
+    <script src="js/expressions.js"></script>
+    <script src="js/dictionary.js"></script>
+    <script src="js/reading.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
