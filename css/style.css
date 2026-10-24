@@ -81,6 +81,15 @@ body {
 /* --------------------------------------------------------------------------
    네비게이션 탭 & 모드 활성화 스타일
    -------------------------------------------------------------------------- */
+.nav-tab-btn {
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    vertical-align: middle !important;
+    flex-shrink: 0 !important;
+    line-height: 1.25rem !important;
+}
+
 .nav-tab-btn.active-nav-tab {
     color: #0F172A;
     border-bottom: 2px solid #0F172A;
