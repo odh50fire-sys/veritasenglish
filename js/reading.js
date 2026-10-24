@@ -287,7 +287,7 @@ class ReadingEngine {
             let questionBodyHtml = '';
 
             // 서술형 문제인 경우
-            if (q.type === 'subjective') {
+            if (q.type === 'subjective' || q.type === 'writing') {
                 questionBodyHtml = `
                     <div class="space-y-3 mt-3">
                         <textarea id="ans-input-${q.id}" rows="3" class="w-full p-3 text-xs sm:text-sm font-serif bg-slate-50 border ${
@@ -300,7 +300,7 @@ class ReadingEngine {
                                     <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i>
                                     <span>모범 답안:</span>
                                 </div>
-                                <div class="font-serif italic text-blue-950 font-bold">${q.sampleAnswer}</div>
+                                <div class="font-serif italic text-blue-950 font-bold">${q.sampleAnswer || q.expectedAnswer || ""}</div>
                                 <div class="text-slate-600 text-[11px] mt-1">${q.explanation}</div>
                             </div>
                         ` : ''}
@@ -311,7 +311,7 @@ class ReadingEngine {
             else {
                 questionBodyHtml = `
                     <div class="space-y-2 mt-3">
-                        ${q.options.map((opt, optIdx) => {
+                        ${(q.options || []).map((opt, optIdx) => {
                             const isSelected = (userAnswer === optIdx);
                             const isAnswer = (optIdx === q.correctIndex);
                             let optClass = 'border-slate-200 bg-white hover:border-slate-300';
@@ -428,10 +428,10 @@ class ReadingEngine {
      * 정답 채점 로직
      */
     checkAnswer(question, userAnswer) {
-        if (question.type === 'subjective') {
+        if (question.type === 'subjective' || question.type === 'writing') {
             if (!userAnswer || typeof userAnswer !== 'string') return false;
             const cleanUser = userAnswer.toLowerCase().replace(/[^a-z0-9\s]/g, ' ');
-            const keywords = question.keywords || [];
+            const keywords = question.keywords || question.requiredKeywords || [];
             const matched = keywords.filter(kw => cleanUser.includes(kw.toLowerCase()));
             return matched.length >= Math.ceil(keywords.length * 0.7);
         } else {

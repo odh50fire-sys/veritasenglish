@@ -1394,20 +1394,23 @@
             <div>
                 <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-900 font-mono text-[11px] font-bold mb-2">
                     <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
-                    <span>Veritas Middle School Exam Master • 중등 내신 독해 & 비문학/소설 60선</span>
+                    <span>Veritas Middle School Exam Master • 예비중 & 중등 내신 독해 70선</span>
                 </div>
                 <h2 class="font-serif font-black text-2xl text-slate-900 flex items-center gap-2">
                     중등 전용 내신 독해 & 비문학·소설 마스터
                 </h2>
                 <p class="text-slate-500 text-xs sm:text-sm mt-1">
-                    중1·중2·중3 학년별 20지문(학기별 10지문) 총 6개 학기 마스터 단원! <strong>어법 오류·빈칸 추론·내용 일치·서술형 영작</strong>을 마스터하고 단원 전체를 학습 계획표에 바로 등록하세요.
+                    예비중·중1·중2·중3 학년별 마스터 단원 (총 7개 단원, 70선)! <strong>어법 오류·빈칸 추론·내용 일치·서술형 영작</strong>을 마스터하고 단원 전체를 학습 계획표에 바로 등록하세요.
                 </p>
             </div>
 
             <!-- 학년 필터 서브탭 -->
             <div class="flex flex-wrap items-center gap-1.5 bg-slate-100 p-1 rounded-xl text-xs font-semibold self-start lg:self-auto">
                 <button class="reading-grade-btn px-3 py-1.5 rounded-lg active-subtab transition-all cursor-pointer" data-grade="all" onclick="window.readingEngine.setGradeFilter('all')">
-                    전체 학기 (6개 단원)
+                    전체 (7개 단원)
+                </button>
+                <button class="reading-grade-btn px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition-all cursor-pointer" data-grade="예비중" onclick="window.readingEngine.setGradeFilter('예비중')">
+                    예비중 입문 (10선)
                 </button>
                 <button class="reading-grade-btn px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition-all cursor-pointer" data-grade="중1" onclick="window.readingEngine.setGradeFilter('중1')">
                     중1 마스터 (20선)

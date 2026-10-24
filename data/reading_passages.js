@@ -5,6 +5,16 @@
 
 const READING_UNITS = [
   {
+    "unitId": "unit-pre-m1",
+    "unitTitle": "예비중(초6~중1) 입문 독해 마스터",
+    "grade": "예비중",
+    "semester": "입문",
+    "targetGrade": "pre_middle",
+    "description": "초등 심화·중학 내신 브릿지, 문장 성분(주어·동사·목적어·보어), 필수 8품사, 일상 과학·환경·명작 우화 중심의 구문 독해 & 실전 문항 40제 완비",
+    "themePrefix": "PRE_M1"
+  },
+
+  {
     "unitId": "unit-m1-1",
     "unitTitle": "중 1-1 내신 독해 마스터",
     "grade": "중1",
@@ -61,6 +71,1170 @@ const READING_UNITS = [
 ];
 
 const READING_PASSAGES = [
+  {
+    "id": "passage-PRE_M1-1",
+    "unitId": "unit-pre-m1",
+    "unitTitle": "예비중(초6~중1) 입문 독해 마스터",
+    "grade": "예비중",
+    "semester": "입문",
+    "category": "nonfiction",
+    "categoryLabel": "예비중 비문학 • 예비중(초6~중1) 입문 독해 마스터",
+    "title": "Why Do Leaves Change Color in Autumn?",
+    "koreanTitle": "가을에 나뭇잎의 색이 변하는 이유",
+    "level": "pre_middle",
+    "levelLabel": "예비중 입문",
+    "source": "예비중 입문 교과서 & 연계 기출 변형",
+    "wordCount": 48,
+    "estimatedTime": "2분",
+    "summary": "가을철 나뭇잎의 색이 바뀌는 엽록소의 과학적 원리를 배우며, 기본 3인칭 단수 현재 시제와 주어-동사 수일치를 훈련합니다.",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "In spring and summer, leaves are green because they have plenty of chlorophyll.",
+        "ko": "봄과 여름에는 엽록소가 풍부하기 때문에 나뭇잎이 초록색이다."
+      },
+      {
+        "num": 2,
+        "en": "This green pigment helps trees make food from sunlight through photosynthesis.",
+        "ko": "이 초록색 색소는 나무가 광합성을 통해 햇빛으로부터 양분을 만드는 것을 돕는다."
+      },
+      {
+        "num": 3,
+        "en": "When autumn arrives, the days become shorter and temperatures drop quickly.",
+        "ko": "가을이 오면, 낮이 더 짧아지고 기온이 빠르게 떨어진다."
+      },
+      {
+        "num": 4,
+        "en": "As trees stop making food, the green fades away and reveals bright yellow and red colors.",
+        "ko": "나무가 양분 만들기를 멈춤에 따라 초록색이 사라지고 밝은 노란색과 붉은색이 드러난다."
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "chlorophyll",
+        "partOfSpeech": "n.",
+        "meaning": "엽록소"
+      },
+      {
+        "word": "pigment",
+        "partOfSpeech": "n.",
+        "meaning": "색소"
+      },
+      {
+        "word": "photosynthesis",
+        "partOfSpeech": "n.",
+        "meaning": "광합성"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-PRE_M1-1-1",
+        "type": "grammar",
+        "typeLabel": "[예비중 내신 어법] 주어-동사 수일치 (3점)",
+        "questionText": "다음 문장의 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "In spring and summer, leaves ①<u>are</u> green because they ②<u>has</u> plenty of chlorophyll, which ③<u>helps</u> trees ④<u>make</u> food when autumn ⑤<u>arrives</u>.",
+        "options": [
+          "① are (주어 'leaves'에 따른 복수 be동사)",
+          "② has (주어 'they'에 맞추어 복수형 'have'로 고쳐야 함)",
+          "③ helps (주어 'This pigment'에 일치하는 3인칭 단수 동사)",
+          "④ make (help의 목적격 보어로 쓰인 동사원형)",
+          "⑤ arrives (조건/시간 부사절의 3인칭 단수 현재형 동사)"
+        ],
+        "correctIndex": 1,
+        "explanation": "주어가 3인칭 복수 대명사인 'they'이므로 동사는 단수형 'has'가 아니라 복수형 'have'를 써야 올바릅니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-1-2",
+        "type": "blank",
+        "typeLabel": "[예비중 내신 빈칸] 문맥 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 가장 적절한 어구는?\n\n\"This green pigment helps trees (          빈칸          ) through photosynthesis.\"",
+        "options": [
+          "make food from sunlight",
+          "freeze water into solid ice",
+          "cut down their own branches",
+          "hide completely from daylight"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 두 번째 문장에서 엽록소가 광합성을 통해 햇빛으로부터 양분을 만드는 것을 돕는다고 명시되어 있으므로 'make food from sunlight'가 가장 적절합니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-1-3",
+        "type": "comprehension",
+        "typeLabel": "[예비중 내신 독해] 사실적 내용 일치 (3점)",
+        "questionText": "윗글의 내용과 가장 일치하는 것은?",
+        "options": [
+          "가을이 되면 낮의 길이가 봄이나 여름보다 훨씬 길어진다.",
+          "엽록소는 나무가 겨울에 얼지 않도록 얼음을 만드는 물질이다.",
+          "나무가 양분 생산을 멈추면 초록색이 사라지고 숨겨져 있던 노란색과 붉은색이 드러난다.",
+          "기온이 떨어져도 나뭇잎의 색에는 아무런 변화가 생기지 않는다."
+        ],
+        "correctIndex": 2,
+        "explanation": "본문 마지막 문장에서 나무가 양분 만들기를 멈추면 초록색이 사라지고 밝은 노란색과 붉은색이 드러난다고 설명하고 있습니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-1-4",
+        "type": "subjective",
+        "typeLabel": "[예비중 내신 서술형] 조건 영작 및 단어 배열 (5점)",
+        "questionText": "다음 우리말 해석에 맞게 보기의 주어진 단어들을 올바른 순서로 배열하여 영작하시오.",
+        "koreanPrompt": "가을이 오면, 낮이 더 짧아진다.",
+        "requiredKeywords": [
+          "when",
+          "autumn",
+          "arrives",
+          "the days",
+          "become",
+          "shorter"
+        ],
+        "expectedAnswer": "When autumn arrives, the days become shorter.",
+        "explanation": "시간을 나타내는 접속사 'When' 뒤에 주어 'autumn'과 3인칭 단수 동사 'arrives'가 오고, 주절은 주어 'the days'와 2형식 동사 'become', 보어 'shorter'의 어순으로 연결됩니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-PRE_M1-2",
+    "unitId": "unit-pre-m1",
+    "unitTitle": "예비중(초6~중1) 입문 독해 마스터",
+    "grade": "예비중",
+    "semester": "입문",
+    "category": "nonfiction",
+    "categoryLabel": "예비중 비문학 • 예비중(초6~중1) 입문 독해 마스터",
+    "title": "The Secret Life of Ants in an Underground City",
+    "koreanTitle": "지하 도시 개미들의 비밀스러운 협동 생활",
+    "level": "pre_middle",
+    "levelLabel": "예비중 입문",
+    "source": "예비중 입문 교과서 & 연계 기출 변형",
+    "wordCount": 50,
+    "estimatedTime": "2분",
+    "summary": "지하 도시에서 놀라운 분업과 협동으로 살아가는 개미 군집의 생태를 읽고, 명사의 복수형과 대명사의 지칭 관계를 학습합니다.",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Ants are tiny insects, but they build complex cities deep underground.",
+        "ko": "개미는 아주 작은 곤충이지만 지하 깊은 곳에 복잡한 도시를 짓는다."
+      },
+      {
+        "num": 2,
+        "en": "Thousands of worker ants dig connected tunnels and keep their home clean.",
+        "ko": "수천 마리의 일개미들은 서로 연결된 터널을 파고 보금자리를 깨끗하게 유지한다."
+      },
+      {
+        "num": 3,
+        "en": "Each member has a specific role, such as protecting the nest or finding sweet fruit.",
+        "ko": "각 구성원은 둥지를 보호하거나 달콤한 과일을 찾는 것과 같은 특정한 역할을 지닌다."
+      },
+      {
+        "num": 4,
+        "en": "By working together without stopping, this small society survives harsh weather and strong enemies.",
+        "ko": "쉬지 않고 함께 협동함으로써, 이 작은 사회는 가혹한 날씨와 강력한 적들을 견뎌내고 생존한다."
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "complex",
+        "partOfSpeech": "adj.",
+        "meaning": "복잡한"
+      },
+      {
+        "word": "specific",
+        "partOfSpeech": "adj.",
+        "meaning": "특정한, 구체적인"
+      },
+      {
+        "word": "survive",
+        "partOfSpeech": "v.",
+        "meaning": "살아남다, 생존하다"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-PRE_M1-2-1",
+        "type": "grammar",
+        "typeLabel": "[예비중 내신 어법] 명사 수일치와 5형식 형용사 보어 (3점)",
+        "questionText": "다음 문장의 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Thousands of worker ants dig connected tunnels and ①<u>keep</u> their home ②<u>cleanly</u>, while each member ③<u>has</u> a specific role such as ④<u>protecting</u> the nest to ⑤<u>survive</u>.",
+        "options": [
+          "① keep (복수 주어 worker ants에 일치하는 본동사)",
+          "② cleanly (keep의 목적격 보어 자리에는 부사가 아닌 형용사 'clean'이 와야 함)",
+          "③ has (단수 대명사 'each member'에 따른 3인칭 단수 동사)",
+          "④ protecting (전치사 such as 뒤에 온 동명사)",
+          "⑤ survive (목적을 나타내는 to부정사)"
+        ],
+        "correctIndex": 1,
+        "explanation": "'keep + 목적어 + 목적격 보어' 구문에서 목적격 보어 자리에는 상태를 나타내는 형용사 'clean'이 와야 하며, 부사인 'cleanly'는 올 수 없습니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-2-2",
+        "type": "blank",
+        "typeLabel": "[예비중 내신 빈칸] 문맥 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 가장 적절한 어구는?\n\n\"By (          빈칸          ), this small society survives harsh weather and strong enemies.\"",
+        "options": [
+          "working together without stopping",
+          "fighting among members continuously",
+          "living completely alone in separate trees",
+          "refusing to share food with others"
+        ],
+        "correctIndex": 0,
+        "explanation": "개미 군집의 협동과 단합을 강조하는 본문 맥락상 'working together without stopping(쉬지 않고 함께 협동함으로써)'이 가장 적절합니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-2-3",
+        "type": "comprehension",
+        "typeLabel": "[예비중 내신 독해] 사실적 내용 일치 (3점)",
+        "questionText": "윗글의 내용과 가장 일치하는 것은?",
+        "options": [
+          "개미들은 지하에 집을 짓지 못하고 오직 나무 위에서만 산다.",
+          "모든 일개미는 역할 분담 없이 오직 잠만 잔다.",
+          "수천 마리의 일개미들은 서로 연결된 터널을 파고 집을 깨끗이 유지한다.",
+          "개미 사회는 작은 날씨 변화에도 전혀 적응하지 못하고 쉽게 멸종한다."
+        ],
+        "correctIndex": 2,
+        "explanation": "본문 2번째 문장(Thousands of worker ants dig connected tunnels and keep their home clean)에서 일치하는 내용을 직접 확인할 수 있습니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-2-4",
+        "type": "subjective",
+        "typeLabel": "[예비중 내신 서술형] 조건 영작 및 단어 배열 (5점)",
+        "questionText": "다음 우리말 해석에 맞게 보기의 주어진 단어들을 올바른 순서로 배열하여 영작하시오.",
+        "koreanPrompt": "각 구성원은 특정한 역할을 지닌다.",
+        "requiredKeywords": [
+          "each member",
+          "has",
+          "a specific role"
+        ],
+        "expectedAnswer": "Each member has a specific role.",
+        "explanation": "'Each + 단수명사(member)'는 단수 취급하므로 동사 'has'가 오고 목적어 'a specific role'이 이어집니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-PRE_M1-3",
+    "unitId": "unit-pre-m1",
+    "unitTitle": "예비중(초6~중1) 입문 독해 마스터",
+    "grade": "예비중",
+    "semester": "입문",
+    "category": "fiction",
+    "categoryLabel": "예비중 소설/우화 • 예비중(초6~중1) 입문 독해 마스터",
+    "title": "The Boy Who Cried Wolf: A Timeless Lesson",
+    "koreanTitle": "양치기 소년과 거짓말의 대가",
+    "level": "pre_middle",
+    "levelLabel": "예비중 입문",
+    "source": "예비중 입문 교과서 & 연계 기출 변형",
+    "wordCount": 52,
+    "estimatedTime": "2분",
+    "summary": "장난으로 늑대가 나타났다고 외친 소년의 이솝 우화를 통해, 과거 시제의 규칙/불규칙 변화와 거짓말의 위험성을 배웁니다.",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "A young shepherd boy watched sheep near a quiet mountain village every afternoon.",
+        "ko": "한 어린 양치기 소년이 매일 오후 조용한 산골 마을 근처에서 양 떼를 지켰다."
+      },
+      {
+        "num": 2,
+        "en": "Feeling bored, he shouted loudly that a dangerous wolf was coming to attack.",
+        "ko": "지루함을 느낀 그는 위험한 늑대가 공격하러 오고 있다고 큰 소리로 외쳤다."
+      },
+      {
+        "num": 3,
+        "en": "Kind villagers rushed up the hill to help him, but they found no hungry wolf.",
+        "ko": "친절한 마을 사람들은 그를 돕기 위해 언덕 위로 급히 달려갔지만 굶주린 늑대는 찾지 못했다."
+      },
+      {
+        "num": 4,
+        "en": "When a real wolf finally appeared later, nobody trusted his frightened cries for rescue.",
+        "ko": "나중에 진짜 늑대가 마침내 나타났을 때, 아무도 구조를 바라는 그의 겁에 질린 외침을 믿지 않았다."
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "shepherd",
+        "partOfSpeech": "n.",
+        "meaning": "양치기"
+      },
+      {
+        "word": "attack",
+        "partOfSpeech": "v.",
+        "meaning": "공격하다"
+      },
+      {
+        "word": "trust",
+        "partOfSpeech": "v.",
+        "meaning": "신뢰하다, 믿다"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-PRE_M1-3-1",
+        "type": "grammar",
+        "typeLabel": "[예비중 내신 어법] 과거 시제 일치 (3점)",
+        "questionText": "다음 문장의 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "A young shepherd boy ①<u>watched</u> sheep every day, but he ②<u>shouted</u> lies because he ③<u>felt</u> bored, so nobody ④<u>trusts</u> him when the wolf ⑤<u>appeared</u>.",
+        "options": [
+          "① watched (과거의 일상적 사실을 나타내는 과거형)",
+          "② shouted (과거 시제 본동사)",
+          "③ felt (feel의 불규칙 과거형)",
+          "④ trusts (전체 문맥이 과거 이야기이므로 과거형 'trusted'로 일치시켜야 함)",
+          "⑤ appeared (시간 부사절의 과거 시제 동사)"
+        ],
+        "correctIndex": 3,
+        "explanation": "전체 이야기가 과거 시점(watched, shouted, felt, appeared)으로 서술되고 있으므로, ④번 'trusts'는 시제 일치에 맞추어 과거형 'trusted'로 써야 합니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-3-2",
+        "type": "blank",
+        "typeLabel": "[예비중 내신 빈칸] 문맥 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 가장 적절한 어구는?\n\n\"When a real wolf finally appeared later, nobody (          빈칸          ).\"",
+        "options": [
+          "trusted his frightened cries for rescue",
+          "praised him for telling clever jokes",
+          "bought new wool coats from the village",
+          "chased away the shepherd boy forever"
+        ],
+        "correctIndex": 0,
+        "explanation": "거짓말을 반복한 결과 진짜 늑대가 나타났을 때 마을 사람들은 그의 외침을 믿지 않았으므로 'trusted his frightened cries for rescue'가 정답입니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-3-3",
+        "type": "comprehension",
+        "typeLabel": "[예비중 내신 독해] 사실적 내용 일치 (3점)",
+        "questionText": "윗글의 내용과 가장 일치하는 것은?",
+        "options": [
+          "마을 사람들은 소년의 첫 번째 외침을 무시하고 언덕에 올라가지 않았다.",
+          "소년은 처음부터 진짜 늑대를 잡기 위해 사냥꾼을 불렀다.",
+          "소년이 심심해서 거짓 외침을 질렀을 때 언덕 위에는 굶주린 늑대가 없었다.",
+          "마지막에 늑대가 나타났을 때 모든 마을 사람들이 즉시 달려와 도와주었다."
+        ],
+        "correctIndex": 2,
+        "explanation": "본문 3번째 문장(Kind villagers rushed up the hill to help him, but they found no hungry wolf)에 부합합니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-3-4",
+        "type": "subjective",
+        "typeLabel": "[예비중 내신 서술형] 조건 영작 및 단어 배열 (5점)",
+        "questionText": "다음 우리말 해석에 맞게 보기의 주어진 단어들을 올바른 순서로 배열하여 영작하시오.",
+        "koreanPrompt": "친절한 마을 사람들은 그를 돕기 위해 달려갔다.",
+        "requiredKeywords": [
+          "kind villagers",
+          "rushed",
+          "to help him"
+        ],
+        "expectedAnswer": "Kind villagers rushed to help him.",
+        "explanation": "주어 'Kind villagers' + 과거동사 'rushed' + to부정사의 부사적 용법(목적) 'to help him'의 어순으로 영작합니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-PRE_M1-4",
+    "unitId": "unit-pre-m1",
+    "unitTitle": "예비중(초6~중1) 입문 독해 마스터",
+    "grade": "예비중",
+    "semester": "입문",
+    "category": "nonfiction",
+    "categoryLabel": "예비중 비문학 • 예비중(초6~중1) 입문 독해 마스터",
+    "title": "How Does Sunlight Make a Rainbow?",
+    "koreanTitle": "햇빛과 빗방울이 만드는 무지개의 과학",
+    "level": "pre_middle",
+    "levelLabel": "예비중 입문",
+    "source": "예비중 입문 교과서 & 연계 기출 변형",
+    "wordCount": 50,
+    "estimatedTime": "2분",
+    "summary": "비 온 뒤 햇빛과 빗방울이 어우러져 만들어내는 무지개의 굴절 원리를 배우고, 형용사와 부사의 바른 쓰임을 훈련합니다.",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "We often see a beautiful rainbow stretching across the clear sky after summer rain.",
+        "ko": "우리는 여름 비가 내린 뒤 맑은 하늘을 가로지르는 아름다운 무지개를 종종 본다."
+      },
+      {
+        "num": 2,
+        "en": "Sunlight looks purely white to our eyes, but it actually contains many different colors.",
+        "ko": "햇빛은 우리 눈에 순수하게 흰색으로 보이지만, 사실은 수많은 다양한 색을 품고 있다."
+      },
+      {
+        "num": 3,
+        "en": "When sunlight enters raindrops, tiny droplets bend and separate the traveling light rays into colorful arcs.",
+        "ko": "햇빛이 빗방울에 들어가면, 작은 물방울들이 나아가는 광선을 굴절시키고 분리하여 알록달록한 호를 만든다."
+      },
+      {
+        "num": 4,
+        "en": "Red light bends the least, while violet light bends the most to create seven vibrant stripes.",
+        "ko": "빨간색 빛이 가장 적게 꺾이고 보라색 빛이 가장 많이 꺾여 일곱 가지의 선명한 줄무늬를 만든다."
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "purely",
+        "partOfSpeech": "adv.",
+        "meaning": "순수하게"
+      },
+      {
+        "word": "separate",
+        "partOfSpeech": "v.",
+        "meaning": "분리하다, 흩어지게 하다"
+      },
+      {
+        "word": "vibrant",
+        "partOfSpeech": "adj.",
+        "meaning": "생생한, 선명한"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-PRE_M1-4-1",
+        "type": "grammar",
+        "typeLabel": "[예비중 내신 어법] 감각동사 보어의 품사 (3점)",
+        "questionText": "다음 문장의 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Sunlight ①<u>looks</u> ②<u>purely</u> white, but it ③<u>actually</u> contains many colors, which ④<u>separate</u> into seven ⑤<u>vibrantly</u> stripes.",
+        "options": [
+          "① looks (감각동사)",
+          "② purely (형용사 white를 수식하는 부사)",
+          "③ actually (동사 contains를 수식하는 부사)",
+          "④ separate (복수 선행사 colors를 받는 관계대명사절의 동사)",
+          "⑤ vibrantly (명사 stripes를 수식해야 하므로 형용사 'vibrant'로 고쳐야 함)"
+        ],
+        "correctIndex": 4,
+        "explanation": "명사인 'stripes(줄무늬)'를 수식하기 위해서는 부사 'vibrantly'가 아닌 형용사 'vibrant'를 사용해야 합니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-4-2",
+        "type": "blank",
+        "typeLabel": "[예비중 내신 빈칸] 문맥 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 가장 적절한 어구는?\n\n\"When sunlight enters raindrops, tiny droplets bend and separate the traveling light rays into (          빈칸          ).\"",
+        "options": [
+          "colorful arcs",
+          "dark thunderclouds",
+          "invisible radio waves",
+          "sharp winter snowflakes"
+        ],
+        "correctIndex": 0,
+        "explanation": "햇빛이 빗방울을 통과하며 굴절되어 무지개의 형상인 'colorful arcs(알록달록한 호)'를 만든다는 흐름이 가장 적절합니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-4-3",
+        "type": "comprehension",
+        "typeLabel": "[예비중 내신 독해] 사실적 내용 일치 (3점)",
+        "questionText": "윗글의 내용과 가장 일치하는 것은?",
+        "options": [
+          "햇빛은 실제로 단 하나의 순수한 흰색 광선으로만 구성되어 있다.",
+          "빨간색 빛이 보라색 빛보다 물방울 속에서 훨씬 더 많이 꺾인다.",
+          "보라색 빛이 가장 많이 꺾이고 빨간색 빛이 가장 적게 꺾인다.",
+          "무지개는 비가 오기 전 건조하고 흐린 날에만 관찰된다."
+        ],
+        "correctIndex": 2,
+        "explanation": "본문 4번째 문장(Red light bends the least, while violet light bends the most)에서 보라색 빛이 가장 많이, 빨간색 빛이 가장 적게 꺾인다고 설명하고 있습니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-4-4",
+        "type": "subjective",
+        "typeLabel": "[예비중 내신 서술형] 조건 영작 및 단어 배열 (5점)",
+        "questionText": "다음 우리말 해석에 맞게 보기의 주어진 단어들을 올바른 순서로 배열하여 영작하시오.",
+        "koreanPrompt": "햇빛은 우리 눈에 흰색으로 보인다.",
+        "requiredKeywords": [
+          "sunlight",
+          "looks",
+          "white",
+          "to our eyes"
+        ],
+        "expectedAnswer": "Sunlight looks white to our eyes.",
+        "explanation": "주어 'Sunlight' + 감각동사 'looks' + 형용사 보어 'white' + 전치사구 'to our eyes'의 순서로 문장을 완성합니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-PRE_M1-5",
+    "unitId": "unit-pre-m1",
+    "unitTitle": "예비중(초6~중1) 입문 독해 마스터",
+    "grade": "예비중",
+    "semester": "입문",
+    "category": "fiction",
+    "categoryLabel": "예비중 소설/우화 • 예비중(초6~중1) 입문 독해 마스터",
+    "title": "The Tortoise and the Hare: The Power of Persistence",
+    "koreanTitle": "토끼와 거북이: 꾸준함의 승리",
+    "level": "pre_middle",
+    "levelLabel": "예비중 입문",
+    "source": "예비중 입문 교과서 & 연계 기출 변형",
+    "wordCount": 53,
+    "estimatedTime": "2분",
+    "summary": "자만심에 찬 토끼와 묵묵히 전진한 거북이의 경주를 통해, 비교급 표현과 성실함의 가치를 배웁니다.",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "A boastful hare always laughed at a gentle tortoise for walking too slowly.",
+        "ko": "자랑하기 좋아하는 토끼는 너무 느리게 걷는다며 온순한 거북이를 항상 놀려댔다."
+      },
+      {
+        "num": 2,
+        "en": "Challenged to a grand race, the hare sprinted ahead and took a nap under a shady oak tree.",
+        "ko": "큰 경주에 도전을 받자, 토끼는 앞질러 전력 질주한 뒤 그늘진 떡갈나무 아래에서 낮잠을 잤다."
+      },
+      {
+        "num": 3,
+        "en": "Meanwhile, the patient tortoise never paused and took steady steps toward the finish line.",
+        "ko": "그동안 끈기 있는 거북이는 결코 멈추지 않고 결승선을 향해 꾸준한 걸음을 내딛었다."
+      },
+      {
+        "num": 4,
+        "en": "When the arrogant hare woke up, the tortoise was already smiling at the victory podium.",
+        "ko": "오만한 토끼가 잠에서 깼을 때, 거북이는 이미 승리의 단상에서 미소를 짓고 있었다."
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "boastful",
+        "partOfSpeech": "adj.",
+        "meaning": "자랑하는, 뽐내는"
+      },
+      {
+        "word": "persistence",
+        "partOfSpeech": "n.",
+        "meaning": "끈기, 지속성"
+      },
+      {
+        "word": "steady",
+        "partOfSpeech": "adj.",
+        "meaning": "꾸준한, 한결같은"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-PRE_M1-5-1",
+        "type": "grammar",
+        "typeLabel": "[예비중 내신 어법] 전치사 뒤 동명사 목적어 (3점)",
+        "questionText": "다음 문장의 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "The hare laughed at the tortoise for ①<u>walk</u> too slowly, but the tortoise ②<u>took</u> steady steps toward the finish line without ③<u>stopping</u>, so he ④<u>was</u> the ⑤<u>first</u> winner.",
+        "options": [
+          "① walk (전치사 for 뒤에는 동명사 'walking'이 와야 함)",
+          "② took (과거 시제 동사)",
+          "③ stopping (전치사 without 뒤의 동명사)",
+          "④ was (과거 시제 be동사)",
+          "⑤ first (서수 형용사)"
+        ],
+        "correctIndex": 0,
+        "explanation": "전치사 'for'의 목적어로 동사가 올 때는 동명사 형태인 'walking'으로 고쳐 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-5-2",
+        "type": "blank",
+        "typeLabel": "[예비중 내신 빈칸] 문맥 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 가장 적절한 어구는?\n\n\"Meanwhile, the patient tortoise (          빈칸          ) toward the finish line.\"",
+        "options": [
+          "never paused and took steady steps",
+          "returned home and gave up immediately",
+          "fell asleep next to the sleeping hare",
+          "cried bitterly because of exhaustion"
+        ],
+        "correctIndex": 0,
+        "explanation": "토끼가 잠든 사이 포기하지 않고 꾸준히 걸어간 거북이의 행적을 나타내므로 'never paused and took steady steps'가 정답입니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-5-3",
+        "type": "comprehension",
+        "typeLabel": "[예비중 내신 독해] 사실적 내용 일치 (3점)",
+        "questionText": "윗글의 내용과 가장 일치하는 것은?",
+        "options": [
+          "거북이가 먼저 나무 그늘 아래에서 깊은 낮잠에 빠졌다.",
+          "토끼는 경기 내내 한 번도 쉬지 않고 전력 질주했다.",
+          "토끼가 잠에서 깼을 때 거북이는 이미 승리의 자리에 도달해 있었다.",
+          "경주는 아무런 승자도 가리지 못하고 중단되었다."
+        ],
+        "correctIndex": 2,
+        "explanation": "본문 마지막 문장(the tortoise was already smiling at the victory podium)에서 거북이가 이미 승리한 상태였음을 알 수 있습니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-5-4",
+        "type": "subjective",
+        "typeLabel": "[예비중 내신 서술형] 조건 영작 및 단어 배열 (5점)",
+        "questionText": "다음 우리말 해석에 맞게 보기의 주어진 단어들을 올바른 순서로 배열하여 영작하시오.",
+        "koreanPrompt": "거북이는 결승선을 향해 꾸준한 걸음을 내딛었다.",
+        "requiredKeywords": [
+          "the tortoise",
+          "took steady steps",
+          "toward the finish line"
+        ],
+        "expectedAnswer": "The tortoise took steady steps toward the finish line.",
+        "explanation": "주어 'The tortoise' + 술어 동사구 'took steady steps' + 전치사구 'toward the finish line'의 순으로 배열합니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-PRE_M1-6",
+    "unitId": "unit-pre-m1",
+    "unitTitle": "예비중(초6~중1) 입문 독해 마스터",
+    "grade": "예비중",
+    "semester": "입문",
+    "category": "nonfiction",
+    "categoryLabel": "예비중 비문학 • 예비중(초6~중1) 입문 독해 마스터",
+    "title": "Plastic Pollution and Our Blue Ocean",
+    "koreanTitle": "플라스틱 쓰레기와 바다 생물들의 위기",
+    "level": "pre_middle",
+    "levelLabel": "예비중 입문",
+    "source": "예비중 입문 교과서 & 연계 기출 변형",
+    "wordCount": 51,
+    "estimatedTime": "2분",
+    "summary": "바다로 흘러 들어가는 일회용 플라스틱 쓰레기의 심각성을 탐구하고, 조동사(can, must, should)의 쓰임과 환경 보호 의식을 기릅니다.",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Every year, millions of plastic bottles and straws enter the deep blue sea.",
+        "ko": "매년 수백만 개의 플라스틱 병과 빨대가 깊고 푸른 바다로 흘러 들어간다."
+      },
+      {
+        "num": 2,
+        "en": "Sea turtles and dolphins often mistake floating plastic bags for tasty jellyfish.",
+        "ko": "바다거북과 돌고래는 물에 떠다니는 비닐봉지를 맛있는 해파리로 종종 착각한다."
+      },
+      {
+        "num": 3,
+        "en": "Plastic wastes break down into microplastics that can poison precious marine creatures and human food.",
+        "ko": "플라스틱 쓰레기는 소중한 해양 생물과 인간의 먹거리를 오염시킬 수 있는 미세 플라스틱으로 분해된다."
+      },
+      {
+        "num": 4,
+        "en": "We must reduce single-use cups and recycle everyday items to protect clean water.",
+        "ko": "우리는 깨끗한 바닷물을 지키기 위해 일회용 컵을 줄이고 일상용품을 재활용해야만 한다."
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "mistake",
+        "partOfSpeech": "v.",
+        "meaning": "착각하다, 오해하다"
+      },
+      {
+        "word": "marine",
+        "partOfSpeech": "adj.",
+        "meaning": "해양의, 바다의"
+      },
+      {
+        "word": "reduce",
+        "partOfSpeech": "v.",
+        "meaning": "줄이다, 감소시키다"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-PRE_M1-6-1",
+        "type": "grammar",
+        "typeLabel": "[예비중 내신 어법] 조동사 뒤 동사원형 (3점)",
+        "questionText": "다음 문장의 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Plastic wastes ①<u>break</u> down into microplastics that can ②<u>poisons</u> animals, so we must ③<u>reduce</u> cups and ④<u>recycle</u> everyday items to ⑤<u>protect</u> the ocean.",
+        "options": [
+          "① break (복수 주어 Plastic wastes에 일치하는 현재형 동사)",
+          "② poisons (조동사 can 뒤에는 동사원형 'poison'이 와야 함)",
+          "③ reduce (조동사 must 뒤의 동사원형)",
+          "④ recycle (must에 병렬 연결된 동사원형)",
+          "⑤ protect (목적을 나타내는 to부정사)"
+        ],
+        "correctIndex": 1,
+        "explanation": "조동사 'can' 뒤에는 인칭이나 수와 상관없이 항상 동사원형이 와야 하므로 'poisons'가 아닌 'poison'으로 고쳐야 합니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-6-2",
+        "type": "blank",
+        "typeLabel": "[예비중 내신 빈칸] 문맥 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 가장 적절한 어구는?\n\n\"Sea turtles and dolphins often (          빈칸          ) for tasty jellyfish.\"",
+        "options": [
+          "mistake floating plastic bags",
+          "swim quickly to distant islands",
+          "build strong stone nests",
+          "protect young baby sharks"
+        ],
+        "correctIndex": 0,
+        "explanation": "해양 동물들이 물에 뜬 비닐봉지를 해파리로 오인하여 삼킨다는 문맥이므로 'mistake floating plastic bags'가 알맞습니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-6-3",
+        "type": "comprehension",
+        "typeLabel": "[예비중 내신 독해] 사실적 내용 일치 (3점)",
+        "questionText": "윗글의 내용과 가장 일치하는 것은?",
+        "options": [
+          "바다로 들어간 플라스틱 쓰레기는 영원히 큰 덩어리로만 유지된다.",
+          "미세 플라스틱은 해양 생물뿐만 아니라 인간의 먹거리까지 오염시킬 수 있다.",
+          "해양 동물들은 플라스틱을 스스로 완벽히 소화하여 양분으로 삼는다.",
+          "환경 보호를 위해 일회용품 사용을 지금보다 더 많이 늘려야 한다."
+        ],
+        "correctIndex": 1,
+        "explanation": "본문 3번째 문장에서 미세 플라스틱이 해양 생물과 인간의 음식(marine creatures and human food)을 오염시킬 수 있다고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-6-4",
+        "type": "subjective",
+        "typeLabel": "[예비중 내신 서술형] 조건 영작 및 단어 배열 (5점)",
+        "questionText": "다음 우리말 해석에 맞게 보기의 주어진 단어들을 올바른 순서로 배열하여 영작하시오.",
+        "koreanPrompt": "우리는 깨끗한 물을 지키기 위해 일회용 컵을 줄여야 한다.",
+        "requiredKeywords": [
+          "we must reduce",
+          "single-use cups",
+          "to protect clean water"
+        ],
+        "expectedAnswer": "We must reduce single-use cups to protect clean water.",
+        "explanation": "주어 'We' + 조동사구 'must reduce' + 목적어 'single-use cups' + 목적 부사구 'to protect clean water'로 배열합니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-PRE_M1-7",
+    "unitId": "unit-pre-m1",
+    "unitTitle": "예비중(초6~중1) 입문 독해 마스터",
+    "grade": "예비중",
+    "semester": "입문",
+    "category": "fiction",
+    "categoryLabel": "예비중 소설/우화 • 예비중(초6~중1) 입문 독해 마스터",
+    "title": "The Lion and the Tiny Mouse",
+    "koreanTitle": "사자와 작은 생쥐의 은혜 갚기",
+    "level": "pre_middle",
+    "levelLabel": "예비중 입문",
+    "source": "예비중 입문 교과서 & 연계 기출 변형",
+    "wordCount": 52,
+    "estimatedTime": "2분",
+    "summary": "낮잠 자던 사자를 깨웠다가 풀려난 생쥐가 사냥꾼의 그물에 걸린 사자를 구해주는 이야기를 통해 5형식 사역/동사 구조를 익힙니다.",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "A mighty lion was sleeping peacefully in the forest when a tiny mouse accidentally woke him up.",
+        "ko": "거대한 사자가 숲에서 평화롭게 잠자고 있을 때 작은 생쥐가 실수로 그를 깨웠다."
+      },
+      {
+        "num": 2,
+        "en": "The angry king caught the mouse, but he decided to let the trembling creature go free.",
+        "ko": "성난 백수의 왕은 생쥐를 붙잡았지만, 떨고 있는 이 생물을 놓아주기로 결정했다."
+      },
+      {
+        "num": 3,
+        "en": "Days later, the proud lion was trapped inside a strong rope net set by clever hunters.",
+        "ko": "며칠 후, 자랑스러운 사자는 영리한 사냥꾼들이 쳐놓은 튼튼한 밧줄 그물 안에 갇히고 말았다."
+      },
+      {
+        "num": 4,
+        "en": "The brave little mouse chewed the thick ropes with sharp teeth and saved his royal friend.",
+        "ko": "용감하고 작은 생쥐는 날카로운 이빨로 두꺼운 밧줄을 갉아내어 그의 왕다운 친구를 구했다."
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "mighty",
+        "partOfSpeech": "adj.",
+        "meaning": "거대한, 강력한"
+      },
+      {
+        "word": "trembling",
+        "partOfSpeech": "adj.",
+        "meaning": "떨리는, 전율하는"
+      },
+      {
+        "word": "chew",
+        "partOfSpeech": "v.",
+        "meaning": "씹다, 갉아먹다"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-PRE_M1-7-1",
+        "type": "grammar",
+        "typeLabel": "[예비중 내신 어법] 사역동사 let의 목적격 보어 (3점)",
+        "questionText": "다음 문장의 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "The lion decided to let the trembling mouse ①<u>to go</u> free, and later the mouse ②<u>chewed</u> the ropes and ③<u>saved</u> the lion who was ④<u>trapped</u> in a net set by ⑤<u>hunters</u>.",
+        "options": [
+          "① to go (사역동사 let의 목적격 보어로는 to부정사가 아닌 동사원형 'go'가 와야 함)",
+          "② chewed (과거 시제 동사)",
+          "③ saved (과거 시제 동사 병렬)",
+          "④ trapped (수동태 was trapped의 과거분사)",
+          "⑤ hunters (명사의 복수형)"
+        ],
+        "correctIndex": 0,
+        "explanation": "사역동사 'let + 목적어 + 동사원형' 구조이므로 'to go'가 아니라 동사원형 'go'를 써야 올바릅니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-7-2",
+        "type": "blank",
+        "typeLabel": "[예비중 내신 빈칸] 문맥 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 가장 적절한 어구는?\n\n\"The brave little mouse (          빈칸          ) with sharp teeth and saved his royal friend.\"",
+        "options": [
+          "chewed the thick ropes",
+          "invited more dangerous lions",
+          "climbed to the highest treetop",
+          "hid inside a tiny hole forever"
+        ],
+        "correctIndex": 0,
+        "explanation": "생쥐가 날카로운 이빨로 그물의 밧줄을 갉아 사자를 구해준 내용이므로 'chewed the thick ropes'가 정답입니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-7-3",
+        "type": "comprehension",
+        "typeLabel": "[예비중 내신 독해] 사실적 내용 일치 (3점)",
+        "questionText": "윗글의 내용과 가장 일치하는 것은?",
+        "options": [
+          "사자는 자신을 깨운 생쥐를 그 자리에서 곧바로 잡아먹었다.",
+          "사자는 사냥꾼들이 친 튼튼한 밧줄 그물에 갇혀 곤경에 처했다.",
+          "생쥐는 사냥꾼들에게 붙잡혀 우리 속에 갇혔다.",
+          "사자는 생쥐의 도움을 거부하고 스스로 힘으로 그물을 찢고 탈출했다."
+        ],
+        "correctIndex": 1,
+        "explanation": "본문 3번째 문장(the proud lion was trapped inside a strong rope net set by clever hunters)과 일치합니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-7-4",
+        "type": "subjective",
+        "typeLabel": "[예비중 내신 서술형] 조건 영작 및 단어 배열 (5점)",
+        "questionText": "다음 우리말 해석에 맞게 보기의 주어진 단어들을 올바른 순서로 배열하여 영작하시오.",
+        "koreanPrompt": "용감한 생쥐는 날카로운 이빨로 밧줄을 갉았다.",
+        "requiredKeywords": [
+          "the brave mouse",
+          "chewed the ropes",
+          "with sharp teeth"
+        ],
+        "expectedAnswer": "The brave mouse chewed the ropes with sharp teeth.",
+        "explanation": "주어 'The brave mouse' + 동사 'chewed' + 목적어 'the ropes' + 수단 전치사구 'with sharp teeth'의 순서로 영작합니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-PRE_M1-8",
+    "unitId": "unit-pre-m1",
+    "unitTitle": "예비중(초6~중1) 입문 독해 마스터",
+    "grade": "예비중",
+    "semester": "입문",
+    "category": "nonfiction",
+    "categoryLabel": "예비중 비문학 • 예비중(초6~중1) 입문 독해 마스터",
+    "title": "Why Do We Sleep and Dream Every Night?",
+    "koreanTitle": "우리는 왜 매일 밤 잠을 자고 꿈을 꿀까?",
+    "level": "pre_middle",
+    "levelLabel": "예비중 입문",
+    "source": "예비중 입문 교과서 & 연계 기출 변형",
+    "wordCount": 49,
+    "estimatedTime": "2분",
+    "summary": "인간의 수면과 꿈이 신체 회복 및 뇌의 기억 정리에 미치는 긍정적 영향을 탐구하며, to부정사의 부사적 용법(목적)을 배웁니다.",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Good sleep is not just taking a rest; it is essential to keep our brain healthy.",
+        "ko": "좋은 수면은 그저 쉬는 것만이 아니라, 우리의 뇌를 건강하게 유지하는 데 필수적이다."
+      },
+      {
+        "num": 2,
+        "en": "While you dream, your active brain organizes daily memories and repairs tired muscles.",
+        "ko": "당신이 꿈을 꾸는 동안, 당신의 활동적인 뇌는 일상의 기억들을 정리하고 지친 근육을 회복시킨다."
+      },
+      {
+        "num": 3,
+        "en": "Deep rest helps students concentrate better and solves emotional stress from hard school days.",
+        "ko": "깊은 휴식은 학생들이 더 잘 집중할 수 있도록 돕고 힘든 학교생활에서 오는 감정적 스트레스를 해소해준다."
+      },
+      {
+        "num": 4,
+        "en": "Going to bed early guarantees positive energy and cheerful mornings for growing teenagers.",
+        "ko": "일찍 잠자리에 드는 것은 성장기 십 대들에게 긍정적인 에너지와 활기찬 아침을 보장한다."
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "organize",
+        "partOfSpeech": "v.",
+        "meaning": "정리하다, 체계화하다"
+      },
+      {
+        "word": "concentrate",
+        "partOfSpeech": "v.",
+        "meaning": "집중하다"
+      },
+      {
+        "word": "guarantee",
+        "partOfSpeech": "v.",
+        "meaning": "보장하다"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-PRE_M1-8-1",
+        "type": "grammar",
+        "typeLabel": "[예비중 내신 어법] 동명사 주어의 수일치 (3점)",
+        "questionText": "다음 문장의 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Going to bed early ①<u>guarantees</u> energy, and deep rest ②<u>helps</u> students ③<u>concentrate</u> better to ④<u>keeps</u> their active brain ⑤<u>healthy</u>.",
+        "options": [
+          "① guarantees (동명사 주어 Going to bed early에 일치하는 단수 동사)",
+          "② helps (주어 deep rest에 일치하는 3인칭 단수 동사)",
+          "③ concentrate (help의 목적격 보어로 쓰인 동사원형)",
+          "④ keeps (to부정사 to 뒤에는 동사원형 'keep'이 와야 함)",
+          "⑤ healthy (keep의 목적격 보어로 쓰인 형용사)"
+        ],
+        "correctIndex": 3,
+        "explanation": "to부정사는 'to + 동사원형'의 형태이므로 단수형 어미가 붙은 'keeps'가 아닌 동사원형 'keep'으로 고쳐야 합니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-8-2",
+        "type": "blank",
+        "typeLabel": "[예비중 내신 빈칸] 문맥 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 가장 적절한 어구는?\n\n\"While you dream, your active brain (          빈칸          ) and repairs tired muscles.\"",
+        "options": [
+          "organizes daily memories",
+          "erases all learned languages",
+          "stops functioning completely",
+          "creates dangerous heart attacks"
+        ],
+        "correctIndex": 0,
+        "explanation": "꿈을 꾸는 동안 뇌가 하루 동안의 기억을 체계적으로 정리한다는 내용이므로 'organizes daily memories'가 가장 적절합니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-8-3",
+        "type": "comprehension",
+        "typeLabel": "[예비중 내신 독해] 사실적 내용 일치 (3점)",
+        "questionText": "윗글의 내용과 가장 일치하는 것은?",
+        "options": [
+          "잠을 자는 동안 인간의 뇌는 아무런 활동도 하지 않고 완전히 정지한다.",
+          "수면은 학생들의 집중력을 떨어뜨리고 스트레스를 가중시킨다.",
+          "좋은 수면은 피로한 근육을 회복시키고 뇌의 건강을 유지하는 데 필수적이다.",
+          "청소년들은 밤늦게 자는 것이 긍정적 에너지를 얻는 유일한 방법이다."
+        ],
+        "correctIndex": 2,
+        "explanation": "본문 1~2번째 문장에서 좋은 수면은 뇌를 건강하게 하고 근육을 회복시키는 필수적인 과정이라고 설명합니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-8-4",
+        "type": "subjective",
+        "typeLabel": "[예비중 내신 서술형] 조건 영작 및 단어 배열 (5점)",
+        "questionText": "다음 우리말 해석에 맞게 보기의 주어진 단어들을 올바른 순서로 배열하여 영작하시오.",
+        "koreanPrompt": "깊은 휴식은 학생들이 더 잘 집중하도록 돕는다.",
+        "requiredKeywords": [
+          "deep rest",
+          "helps students",
+          "concentrate better"
+        ],
+        "expectedAnswer": "Deep rest helps students concentrate better.",
+        "explanation": "주어 'Deep rest' + 동사 'helps' + 목적어 'students' + 목적격 보어 'concentrate better'로 배열합니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-PRE_M1-9",
+    "unitId": "unit-pre-m1",
+    "unitTitle": "예비중(초6~중1) 입문 독해 마스터",
+    "grade": "예비중",
+    "semester": "입문",
+    "category": "nonfiction",
+    "categoryLabel": "예비중 비문학 • 예비중(초6~중1) 입문 독해 마스터",
+    "title": "Smart Eating: Why Breakfast Fuels Your Brain",
+    "koreanTitle": "아침 식사가 뇌를 깨우는 에너지 과학",
+    "level": "pre_middle",
+    "levelLabel": "예비중 입문",
+    "source": "예비중 입문 교과서 & 연계 기출 변형",
+    "wordCount": 48,
+    "estimatedTime": "2분",
+    "summary": "아침 식사가 집중력과 신체 대사에 미치는 과학적 메커니즘을 읽고, 접속사와 관계대명사 주격의 구조를 익힙니다.",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Eating a wholesome breakfast gives your body the initial fuel needed for active school mornings.",
+        "ko": "건강에 좋은 아침을 먹는 것은 활기찬 학교 아침에 필요한 초기 연료를 당신의 몸에 공급한다."
+      },
+      {
+        "num": 2,
+        "en": "After overnight fasting, your hungry brain craves natural glucose to solve complex problems and memorize facts.",
+        "ko": "밤새 단식한 후, 배고픈 뇌는 복잡한 문제를 풀고 사실을 기억하기 위해 천연 포도당을 갈망한다."
+      },
+      {
+        "num": 3,
+        "en": "Students who skip morning meals often feel tired and lose concentration during early classes.",
+        "ko": "아침 식사를 거르는 학생들은 종종 피로감을 느끼고 이른 수업 시간 동안 집중력을 잃는다."
+      },
+      {
+        "num": 4,
+        "en": "Fresh fruits, whole grains, and warm milk provide steady nutrition without causing sudden sleepiness.",
+        "ko": "신선한 과일, 통곡물, 따뜻한 우유는 갑작스러운 졸음을 유발하지 않으면서 꾸준한 영양을 제공한다."
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "wholesome",
+        "partOfSpeech": "adj.",
+        "meaning": "건강에 좋은"
+      },
+      {
+        "word": "glucose",
+        "partOfSpeech": "n.",
+        "meaning": "포도당"
+      },
+      {
+        "word": "concentration",
+        "partOfSpeech": "n.",
+        "meaning": "집중, 집중력"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-PRE_M1-9-1",
+        "type": "grammar",
+        "typeLabel": "[예비중 내신 어법] 주격 관계대명사절 동사 수일치 (3점)",
+        "questionText": "다음 문장의 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Students who ①<u>skips</u> breakfast ②<u>feel</u> tired, but healthy food ③<u>provides</u> fuel ④<u>needed</u> for school without ⑤<u>causing</u> sleepiness.",
+        "options": [
+          "① skips (선행사 Students가 복수이므로 복수형 동사 'skip'이 와야 함)",
+          "② feel (주어 Students에 일치하는 복수 본동사)",
+          "③ provides (단수 주어 healthy food에 일치하는 단수 동사)",
+          "④ needed (과거분사 형용사)",
+          "⑤ causing (전치사 without 뒤의 동명사)"
+        ],
+        "correctIndex": 0,
+        "explanation": "주격 관계대명사 'who'의 선행사가 복수 명사인 'Students'이므로 관계사절 내 동사도 복수형인 'skip'이 되어야 합니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-9-2",
+        "type": "blank",
+        "typeLabel": "[예비중 내신 빈칸] 문맥 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 가장 적절한 어구는?\n\n\"After overnight fasting, your hungry brain craves (          빈칸          ) to solve complex problems.\"",
+        "options": [
+          "natural glucose",
+          "artificial plastic dyes",
+          "pure carbon dioxide",
+          "boiling salty oil"
+        ],
+        "correctIndex": 0,
+        "explanation": "뇌의 사고 활동과 문제 해결을 위해 갈망하는 뇌의 핵심 영양소는 'natural glucose(천연 포도당)'입니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-9-3",
+        "type": "comprehension",
+        "typeLabel": "[예비중 내신 독해] 사실적 내용 일치 (3점)",
+        "questionText": "윗글의 내용과 가장 일치하는 것은?",
+        "options": [
+          "아침 식사를 거르면 첫 수업 시간 동안 집중력이 더욱 높아진다.",
+          "과일과 통곡물은 급격한 졸음을 유발하는 해로운 음식이다.",
+          "건강한 아침 식사는 학교 아침 활동에 필요한 소중한 초기 연료를 공급한다.",
+          "인간의 뇌는 밤새 잠을 자는 동안 끊임없이 음식을 섭취한다."
+        ],
+        "correctIndex": 2,
+        "explanation": "본문 첫 문장(Eating a wholesome breakfast gives your body the initial fuel needed for active school mornings)에 정확히 부합합니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-9-4",
+        "type": "subjective",
+        "typeLabel": "[예비중 내신 서술형] 조건 영작 및 단어 배열 (5점)",
+        "questionText": "다음 우리말 해석에 맞게 보기의 주어진 단어들을 올바른 순서로 배열하여 영작하시오.",
+        "koreanPrompt": "아침을 먹는 것은 당신의 몸에 연료를 준다.",
+        "requiredKeywords": [
+          "eating breakfast",
+          "gives your body",
+          "fuel"
+        ],
+        "expectedAnswer": "Eating breakfast gives your body fuel.",
+        "explanation": "동명사 주어 'Eating breakfast' + 4형식 수여동사 'gives' + 간접목적어 'your body' + 직접목적어 'fuel'로 배열합니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-PRE_M1-10",
+    "unitId": "unit-pre-m1",
+    "unitTitle": "예비중(초6~중1) 입문 독해 마스터",
+    "grade": "예비중",
+    "semester": "입문",
+    "category": "fiction",
+    "categoryLabel": "예비중 소설/우화 • 예비중(초6~중1) 입문 독해 마스터",
+    "title": "The King and the Cobbler: True Happiness",
+    "koreanTitle": "왕과 구두 수선공의 진정한 행복",
+    "level": "pre_middle",
+    "levelLabel": "예비중 입문",
+    "source": "예비중 입문 교과서 & 연계 기출 변형",
+    "wordCount": 54,
+    "estimatedTime": "2분",
+    "summary": "많은 재물을 가졌으나 늘 불안했던 왕과 가진 것은 적어도 매일 노래를 부르는 구두장이의 이야기를 통해 감각동사와 행복의 의미를 성찰합니다.",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "A wealthy king lived in a golden castle, yet he always felt anxious and unhappy.",
+        "ko": "부유한 왕이 황금 성에 살았지만, 그는 언제나 불안하고 불행하다고 느꼈다."
+      },
+      {
+        "num": 2,
+        "en": "One morning, he visited a poor cobbler who was singing cheerful songs while fixing old shoes.",
+        "ko": "어느 날 아침, 그는 낡은 신발을 고치면서 쾌활한 노래를 부르고 있던 가난한 구두 수선공을 찾아갔다."
+      },
+      {
+        "num": 3,
+        "en": "Surprised by his joyful face, the ruler wondered how an impoverished man could smile so brightly.",
+        "ko": "그의 기쁨에 찬 얼굴에 놀란 통치자는 어떻게 가난한 사람이 그렇게 밝게 미소 지을 수 있는지 궁금해했다."
+      },
+      {
+        "num": 4,
+        "en": "The humble craftsman answered that grateful appreciation for simple daily moments creates eternal peace.",
+        "ko": "겸손한 장인은 단순한 일상의 순간들에 감사하는 마음이 영원한 평화를 만든다고 대답했다."
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "cobbler",
+        "partOfSpeech": "n.",
+        "meaning": "구두 수선공"
+      },
+      {
+        "word": "impoverished",
+        "partOfSpeech": "adj.",
+        "meaning": "가난한, 빈곤한"
+      },
+      {
+        "word": "grateful",
+        "partOfSpeech": "adj.",
+        "meaning": "감사하는, 고마워하는"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-PRE_M1-10-1",
+        "type": "grammar",
+        "typeLabel": "[예비중 내신 어법] 감각동사 보어의 형태 (3점)",
+        "questionText": "다음 문장의 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "The wealthy king ①<u>lived</u> in a castle, but he felt ②<u>anxiously</u>, while the poor cobbler who was ③<u>singing</u> songs smiled ④<u>brightly</u> with a ⑤<u>grateful</u> heart.",
+        "options": [
+          "① lived (과거 시제 동사)",
+          "② anxiously (감각동사 felt의 보어 자리이므로 형용사 'anxious'가 와야 함)",
+          "③ singing (과거진행형 was singing의 현재분사)",
+          "④ brightly (동사 smiled를 수식하는 부사)",
+          "⑤ grateful (명사 heart를 수식하는 형용사)"
+        ],
+        "correctIndex": 1,
+        "explanation": "감각동사 'feel'의 보어 자리에는 상태를 나타내는 형용사 'anxious'가 와야 하며, 부사인 'anxiously'는 올 수 없습니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-10-2",
+        "type": "blank",
+        "typeLabel": "[예비중 내신 빈칸] 문맥 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 가장 적절한 어구는?\n\n\"The humble craftsman answered that grateful appreciation for simple daily moments creates (          빈칸          ).\"",
+        "options": [
+          "eternal peace",
+          "endless warfare",
+          "extreme poverty",
+          "massive golden jewelry"
+        ],
+        "correctIndex": 0,
+        "explanation": "단순한 일상에 감사하는 마음이 마음속 'eternal peace(영원한 평화)'를 가져온다는 교훈적 결론이 가장 적절합니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-10-3",
+        "type": "comprehension",
+        "typeLabel": "[예비중 내신 독해] 사실적 내용 일치 (3점)",
+        "questionText": "윗글의 내용과 가장 일치하는 것은?",
+        "options": [
+          "황금 성에 살던 부유한 왕은 매일 넘치는 행복과 만족을 누렸다.",
+          "구두 수선공은 자신의 가난을 원망하며 하루 종일 슬프게 울고 있었다.",
+          "구두 수선공은 낡은 신발을 고치면서도 밝고 쾌활한 노래를 부르고 있었다.",
+          "왕은 구두 수선공의 전 재산을 몰수하고 감옥에 가두었다."
+        ],
+        "correctIndex": 2,
+        "explanation": "본문 2번째 문장(visiting a poor cobbler who was singing cheerful songs while fixing old shoes)과 일치합니다."
+      },
+      {
+        "id": "q-passage-PRE_M1-10-4",
+        "type": "subjective",
+        "typeLabel": "[예비중 내신 서술형] 조건 영작 및 단어 배열 (5점)",
+        "questionText": "다음 우리말 해석에 맞게 보기의 주어진 단어들을 올바른 순서로 배열하여 영작하시오.",
+        "koreanPrompt": "그는 언제나 불안하고 불행하다고 느꼈다.",
+        "requiredKeywords": [
+          "he always felt",
+          "anxious and unhappy"
+        ],
+        "expectedAnswer": "He always felt anxious and unhappy.",
+        "explanation": "주어 'He' + 빈도부사 'always' + 감각동사 'felt' + 형용사 보어 병렬 'anxious and unhappy'의 순서로 완성합니다."
+      }
+    ]
+  },
+
   {
     "id": "passage-M1_1-1",
     "unitId": "unit-m1-1",
