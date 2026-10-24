@@ -129,10 +129,10 @@
              ------------------------------------------------------------------ -->
         <section id="tab-dashboard" class="tab-content space-y-8">
             
-            <!-- 환영 배너 및 티어 성취도 카드 (Scholars Banner & Tier Box) -->
-            <div class="rounded-3xl bg-gradient-to-r from-slate-900 via-slate-800 to-blue-950 text-white p-6 sm:p-8 shadow-md relative overflow-hidden border border-slate-800 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-6">
-                <!-- 좌측: 환영 메시지 & 맞춤 바로가기 -->
-                <div class="relative z-10 max-w-xl">
+            <!-- 환영 배너 (Scholars Banner) -->
+            <div class="rounded-3xl bg-gradient-to-r from-slate-900 via-slate-800 to-blue-950 text-white p-6 sm:p-8 shadow-md relative overflow-hidden border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                <!-- 환영 메시지 & 모드 -->
+                <div class="relative z-10 max-w-2xl">
                     <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-amber-300 text-xs font-mono font-medium mb-3 backdrop-blur-xs">
                         <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
                         <span>Academic Excellence Mode</span>
@@ -143,20 +143,17 @@
                     <p class="text-slate-300 text-xs sm:text-sm mt-2 font-sans font-normal leading-relaxed">
                         에빙하우스 망각곡선 주기와 70선 내신 실전 훈련으로 최상위 영재 영어 역량을 완성하세요.
                     </p>
-                    <div class="mt-4 flex flex-wrap items-center gap-2.5">
-                        <div id="dash-custom-shortcuts-container" class="flex flex-wrap items-center gap-2.5">
-                            <!-- JS 주입: 사용자가 설정한 맞춤 바로가기 2개 -->
-                        </div>
-                        <button id="btn-open-shortcut-settings" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white border border-white/15 text-xs font-serif font-medium flex items-center gap-1.5 transition-all cursor-pointer active:scale-95" title="메인 바로가기 2개 변경">
-                            <i data-lucide="settings-2" class="w-3.5 h-3.5 text-amber-300"></i>
-                            <span>바로가기 설정</span>
-                        </button>
-                    </div>
                 </div>
 
-                <!-- 우측: 티어 & EXP 성취도 위젯 카드 -->
-                <div id="dash-welcome-tier-box" class="relative z-10 w-full lg:w-80 shrink-0">
-                    <!-- JS 주입: 티어 엠블럼, 현재 등급, EXP 게이지, 뱃지 현황 & 도감 열기 버튼 -->
+                <!-- 맞춤 바로가기 2개 & 설정 버튼 -->
+                <div class="relative z-10 flex flex-wrap items-center gap-2.5 shrink-0">
+                    <div id="dash-custom-shortcuts-container" class="flex flex-wrap items-center gap-2.5">
+                        <!-- JS 주입: 사용자가 설정한 맞춤 바로가기 2개 -->
+                    </div>
+                    <button id="btn-open-shortcut-settings" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white border border-white/15 text-xs font-serif font-medium flex items-center gap-1.5 transition-all cursor-pointer active:scale-95" title="메인 바로가기 2개 변경">
+                        <i data-lucide="settings-2" class="w-3.5 h-3.5 text-amber-300"></i>
+                        <span>바로가기 설정</span>
+                    </button>
                 </div>
             </div>
 
@@ -219,6 +216,11 @@
             <!-- 오늘의 원어민 데일리 미션 위젯 (실전 콜로케이션 1개 + 핵심 구동사 1개) -->
             <div id="dash-daily-missions-widget" class="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 rounded-2xl p-6 text-white border border-slate-800 shadow-md space-y-4">
                 <!-- JS 주입 -->
+            </div>
+
+            <!-- 베리타스 티어 랭크 & 명예의 전당 바로가기 카드 (원어민 표현 위젯 하단 배치) -->
+            <div id="dash-tier-rank-card" class="bg-white rounded-2xl border border-slate-200 shadow-xs p-5 sm:p-6 transition-all hover:border-slate-300">
+                <!-- JS 주입: window.achievements.renderDashboardCard() -->
             </div>
 
             <!-- 학업 목표 관리 트래커 (단기 스프린트 vs 장기 로드맵) & 빠른 복습 시작 섹션 -->
@@ -2837,8 +2839,14 @@
                         🏆
                     </div>
                     <div>
-                        <h3 class="font-serif font-black text-xl text-slate-900">Veritas Hall of Fame & 업적 도감</h3>
-                        <p class="text-xs text-slate-500">매일의 학습 활동으로 EXP를 획득하고 16종 명예의 뱃지를 수집하세요.</p>
+                        <div class="flex flex-wrap items-center gap-2">
+                            <h3 class="font-serif font-black text-xl text-slate-900">Veritas Hall of Fame & 업적 도감</h3>
+                            <button type="button" id="btn-toggle-exp-guide" onclick="window.achievements.toggleExpGuide()" class="px-2.5 py-1 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 text-xs font-serif font-bold inline-flex items-center gap-1 transition-all cursor-pointer shadow-2xs">
+                                <i data-lucide="help-circle" class="w-3.5 h-3.5 text-amber-600"></i>
+                                <span>EXP 획득 가이드</span>
+                            </button>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-0.5">매일의 학습 활동으로 EXP를 획득하고 16종 명예의 뱃지를 수집하세요.</p>
                     </div>
                 </div>
                 <button type="button" onclick="window.achievements.closeModal()" class="p-2 rounded-xl text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition-colors">
@@ -2849,6 +2857,9 @@
             <div class="p-6 overflow-y-auto space-y-6 flex-1">
                 <!-- 요약 배너 -->
                 <div id="achievements-summary-banner"></div>
+
+                <!-- EXP 획득 가이드 & 티어 승급 룰북 컨테이너 -->
+                <div id="achievements-exp-guide-box"></div>
 
                 <!-- 16종 뱃지 그리드 -->
                 <div>

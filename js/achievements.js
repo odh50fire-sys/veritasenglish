@@ -91,7 +91,7 @@ class AchievementsEngine {
     }
 
     renderDashboardCard() {
-        const container = document.getElementById('dash-welcome-tier-box') || document.getElementById('dash-achievement-card');
+        const container = document.getElementById('dash-tier-rank-card') || document.getElementById('dash-welcome-tier-box');
         if (!container || !window.storage) return;
 
         const profile = window.storage.userProfile || {};
@@ -119,49 +119,64 @@ class AchievementsEngine {
         };
 
         container.innerHTML = `
-            <div onclick="window.achievements.openModal()" 
-                class="p-5 rounded-2xl bg-white/10 hover:bg-white/15 backdrop-blur-md border border-white/20 shadow-lg cursor-pointer transition-all hover:scale-[1.02] active:scale-98 group">
-                <div class="flex items-center justify-between gap-3 mb-3">
-                    <div class="flex items-center gap-3">
-                        <div class="w-12 h-12 rounded-2xl ${tier.bg} text-white flex items-center justify-center text-2xl shadow-sm border border-white/20">
-                            ${tierIcons[tier.key] || '🏅'}
+            <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-6">
+                <!-- 좌측: 티어 엠블럼 & 티어 정보 & 진척도 바 -->
+                <div class="flex items-center gap-4 flex-1 min-w-0">
+                    <div class="w-16 h-16 rounded-2xl ${tier.bg} text-white flex items-center justify-center text-3xl shadow-sm border border-slate-200 shrink-0">
+                        ${tierIcons[tier.key] || '🏅'}
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs font-mono font-bold uppercase tracking-wider text-blue-900">Veritas Scholar Rank</span>
+                            <span class="px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200 text-[11px] font-mono font-bold">🔥 ${profile.streak || 1}일 연속 출석</span>
                         </div>
-                        <div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-[10px] font-mono uppercase tracking-wider text-amber-300 font-bold">Veritas Rank</span>
-                                <span class="text-[10px] px-1.5 py-0.5 rounded-full bg-white/10 text-slate-200 font-mono font-semibold">🔥 ${profile.streak || 1}일 연속</span>
+                        <h3 class="font-serif font-black text-xl text-slate-900 mt-0.5 flex items-center gap-2">
+                            <span>${tier.name}</span>
+                            <span class="text-xs font-mono font-normal text-slate-500">(${exp} EXP)</span>
+                        </h3>
+                        
+                        <!-- EXP 진척도 게이지 바 -->
+                        <div class="mt-2 max-w-lg">
+                            <div class="flex items-center justify-between text-xs font-mono text-slate-500 mb-1">
+                                <span>다음 승급: <strong class="text-slate-800 font-bold">${nextExpText}</strong></span>
+                                <span class="text-blue-900 font-bold">${progressPercent}%</span>
                             </div>
-                            <h4 class="font-serif font-black text-base text-white leading-tight mt-0.5">${tier.name}</h4>
-                            <div class="text-[11px] text-slate-300 font-sans mt-0.5">${nextExpText}</div>
+                            <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                                <div class="${tier.bg} h-full rounded-full transition-all duration-700" style="width: ${progressPercent}%"></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="text-right shrink-0">
-                        <span class="inline-flex items-center gap-1 text-[11px] px-2.5 py-1 rounded-full bg-amber-400/20 text-amber-300 font-mono font-bold border border-amber-400/30">
-                            🏅 ${badgesCount}/16
-                        </span>
-                    </div>
                 </div>
 
-                <!-- 진척도 게이지 바 -->
-                <div class="mt-3">
-                    <div class="flex items-center justify-between text-xs font-mono text-slate-200 mb-1">
-                        <span>현재: <strong class="text-white font-bold">${exp} EXP</strong></span>
-                        <span class="text-amber-300 font-bold">${progressPercent}%</span>
+                <!-- 우측: 뱃지 현황 & 명예의 전당 바로가기 액션 버튼군 -->
+                <div class="flex flex-wrap items-center gap-3 shrink-0 justify-start lg:justify-end pt-4 lg:pt-0 border-t lg:border-t-0 border-slate-100">
+                    <div class="px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-center min-w-28">
+                        <div class="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-bold">획득한 업적 뱃지</div>
+                        <div class="font-mono font-black text-lg text-amber-600 mt-0.5">🏅 ${badgesCount} / 16</div>
                     </div>
-                    <div class="w-full h-2 bg-white/20 rounded-full overflow-hidden">
-                        <div class="${tier.bg} h-full rounded-full transition-all duration-700" style="width: ${progressPercent}%"></div>
-                    </div>
-                </div>
-
-                <!-- 클릭 가이드 -->
-                <div class="mt-3.5 pt-2.5 border-t border-white/10 flex items-center justify-between text-xs text-amber-200 group-hover:text-white font-serif font-semibold transition-colors">
-                    <span>명예의 전당 & 도감 확인하기</span>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-amber-300 group-hover:translate-x-1 transition-transform"></i>
+                    <button type="button" onclick="window.achievements.openModal()" 
+                        class="px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-serif font-bold shadow-xs flex items-center gap-2 transition-all cursor-pointer group active:scale-95">
+                        <i data-lucide="trophy" class="w-4 h-4 text-amber-400 group-hover:scale-110 transition-transform"></i>
+                        <span>명예의 전당 & 업적 도감</span>
+                        <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-400 group-hover:translate-x-0.5 transition-transform"></i>
+                    </button>
                 </div>
             </div>
         `;
 
         if (window.lucide) window.lucide.createIcons();
+    }
+
+    toggleExpGuide() {
+        const box = document.getElementById('achievements-exp-guide-box');
+        if (!box) return;
+        if (box.classList.contains('hidden')) {
+            box.classList.remove('hidden');
+        }
+        box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        // 반짝임 효과
+        box.classList.add('ring-2', 'ring-amber-400');
+        setTimeout(() => box.classList.remove('ring-2', 'ring-amber-400'), 1500);
     }
 
     openModal() {
@@ -204,6 +219,113 @@ class AchievementsEngine {
                     <div class="bg-white/10 px-4 py-3 rounded-xl border border-white/15 text-center min-w-32">
                         <div class="text-[10px] font-mono uppercase tracking-wider text-slate-300">획득한 업적 뱃지</div>
                         <div class="font-mono font-black text-2xl text-amber-400 mt-0.5">${myBadgeSet.size} / 16</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        const guideEl = document.getElementById('achievements-exp-guide-box');
+        if (guideEl) {
+            guideEl.innerHTML = `
+                <div class="p-5 rounded-2xl bg-gradient-to-br from-amber-50/70 via-slate-50 to-blue-50/50 border border-amber-200/90 shadow-2xs space-y-4 transition-all">
+                    <div class="flex items-center justify-between pb-3 border-b border-amber-200/60">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center text-sm shadow-xs font-bold">
+                                💡
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-black text-sm text-slate-900">EXP 획득 공식 & 베리타스 티어 승급 룰북</h4>
+                                <p class="text-[11px] text-slate-500">모든 학습 활동마다 즉시 EXP가 누적되며 티어 칭호가 자동으로 승급됩니다.</p>
+                            </div>
+                        </div>
+                        <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 font-bold border border-amber-300">Real-time Sync</span>
+                    </div>
+
+                    <!-- 5대 EXP 획득 경로 카드 그리드 -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+                        <div class="p-3 rounded-xl bg-white border border-slate-200/80 shadow-2xs">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="font-serif font-bold text-xs text-slate-900 flex items-center gap-1.5">
+                                    <span>📅</span> 출석 체크
+                                </span>
+                                <span class="font-mono text-xs font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200">+20 EXP</span>
+                            </div>
+                            <p class="text-[11px] text-slate-500">매일 첫 학습 시 자동 지급 및 연속 출석(Streak) 갱신</p>
+                        </div>
+
+                        <div class="p-3 rounded-xl bg-white border border-slate-200/80 shadow-2xs">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="font-serif font-bold text-xs text-slate-900 flex items-center gap-1.5">
+                                    <span>🔤</span> 서술형 어순배열
+                                </span>
+                                <span class="font-mono text-xs font-bold text-blue-700 bg-blue-50 px-1.5 py-0.5 rounded border border-blue-200">+15~20 EXP</span>
+                            </div>
+                            <p class="text-[11px] text-slate-500">문장 완성 시 +15 EXP (노미스 원샷 통과 시 +5 EXP 보너스)</p>
+                        </div>
+
+                        <div class="p-3 rounded-xl bg-white border border-slate-200/80 shadow-2xs">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="font-serif font-bold text-xs text-slate-900 flex items-center gap-1.5">
+                                    <span>📝</span> 오답노트 극복
+                                </span>
+                                <span class="font-mono text-xs font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">+15 EXP</span>
+                            </div>
+                            <p class="text-[11px] text-slate-500">취약 오답 재도전 성공 시 문제당 즉시 지급</p>
+                        </div>
+
+                        <div class="p-3 rounded-xl bg-white border border-slate-200/80 shadow-2xs">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="font-serif font-bold text-xs text-slate-900 flex items-center gap-1.5">
+                                    <span>🎓</span> 내신 실전 모의고사
+                                </span>
+                                <span class="font-mono text-xs font-bold text-indigo-700 bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-200">+80~150 EXP</span>
+                            </div>
+                            <p class="text-[11px] text-slate-500">시험 득점 점수 비례 지급 (20문항 이상 완주 시 1.5배 보너스)</p>
+                        </div>
+
+                        <div class="p-3 rounded-xl bg-white border border-slate-200/80 shadow-2xs sm:col-span-2">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="font-serif font-bold text-xs text-slate-900 flex items-center gap-1.5">
+                                    <span>🏅</span> 16종 명예 뱃지 수집
+                                </span>
+                                <span class="font-mono text-xs font-bold text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded border border-purple-200">+100~300 EXP</span>
+                            </div>
+                            <p class="text-[11px] text-slate-500">출석·어휘·독해·구문 등 각 마일스톤 달성 시 대량 경험치 보너스</p>
+                        </div>
+                    </div>
+
+                    <!-- 6단계 티어 승급 기준 바 -->
+                    <div class="pt-2">
+                        <div class="text-[11px] font-serif font-bold text-slate-700 mb-1.5 flex items-center gap-1">
+                            <i data-lucide="award" class="w-3.5 h-3.5 text-amber-500"></i>
+                            <span>6단계 베리타스 티어 승급 기준표</span>
+                        </div>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-1.5 text-center text-[10px] font-mono">
+                            <div class="p-2 rounded-lg bg-amber-50 border border-amber-200">
+                                <div class="font-bold text-amber-900">🌱 Bronze</div>
+                                <div class="text-slate-500 mt-0.5">0 ~ 499</div>
+                            </div>
+                            <div class="p-2 rounded-lg bg-slate-100 border border-slate-300">
+                                <div class="font-bold text-slate-800">🥉 Silver</div>
+                                <div class="text-slate-500 mt-0.5">500 ~ 999</div>
+                            </div>
+                            <div class="p-2 rounded-lg bg-yellow-50 border border-yellow-300">
+                                <div class="font-bold text-yellow-800">🥈 Gold</div>
+                                <div class="text-slate-500 mt-0.5">1,000 ~ 1,999</div>
+                            </div>
+                            <div class="p-2 rounded-lg bg-teal-50 border border-teal-200">
+                                <div class="font-bold text-teal-800">🥇 Platinum</div>
+                                <div class="text-slate-500 mt-0.5">2,000 ~ 3,499</div>
+                            </div>
+                            <div class="p-2 rounded-lg bg-cyan-50 border border-cyan-200">
+                                <div class="font-bold text-cyan-800">💎 Diamond</div>
+                                <div class="text-slate-500 mt-0.5">3,500 ~ 4,999</div>
+                            </div>
+                            <div class="p-2 rounded-lg bg-purple-50 border border-purple-200">
+                                <div class="font-bold text-purple-900">👑 Master</div>
+                                <div class="text-slate-500 mt-0.5">5,000+ EXP</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             `;
