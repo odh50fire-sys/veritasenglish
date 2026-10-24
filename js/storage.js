@@ -366,21 +366,27 @@ class StorageManager {
             this.plans[dateStr] = { restDay: false, memo: '', isDone: false };
         }
         const dayWords = this.getWordsByDate(dateStr).filter(w => !w.isReadingPassage);
-        if (dayWords.length > 0) {
-            const allCompleted = dayWords.every(w => (w.flashcardDone && w.quizDone) || w.studyCompleted);
-            const anyFlashcard = dayWords.some(w => w.flashcardDone);
-            const anyQuiz = dayWords.some(w => w.quizDone);
+        const dayPassages = this.getWordsByDate(dateStr).filter(w => w.isReadingPassage);
 
-            this.plans[dateStr].flashcardDone = anyFlashcard;
-            this.plans[dateStr].quizDone = anyQuiz;
-            this.plans[dateStr].isDone = allCompleted;
-            if (allCompleted) {
-                this.plans[dateStr].completedAt = this.plans[dateStr].completedAt || Date.now();
-            }
-            this.savePlans();
-            return allCompleted;
+        const hasAnyItems = dayWords.length > 0 || dayPassages.length > 0;
+        if (!hasAnyItems) return false;
+
+        const wordsCompleted = dayWords.length === 0 || dayWords.every(w => (w.flashcardDone && w.quizDone) || w.studyCompleted);
+        const passagesCompleted = dayPassages.length === 0 || dayPassages.every(p => {
+            const r = this.readingRecords && this.readingRecords[p.readingPassageId];
+            return (r && typeof r.score === 'number') || p.studyCompleted;
+        });
+
+        const allCompleted = wordsCompleted && passagesCompleted;
+
+        this.plans[dateStr].flashcardDone = dayWords.some(w => w.flashcardDone);
+        this.plans[dateStr].quizDone = dayWords.some(w => w.quizDone);
+        this.plans[dateStr].isDone = allCompleted;
+        if (allCompleted) {
+            this.plans[dateStr].completedAt = this.plans[dateStr].completedAt || Date.now();
         }
-        return false;
+        this.savePlans();
+        return allCompleted;
     }
 
     /**

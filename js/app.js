@@ -276,7 +276,7 @@ class AppController {
         try {
             const stats = window.storage ? window.storage.getStatistics() : { total: 0, mastered: 0, dueCount: 0, weakCount: 0 };
             const todayStr = window.storage ? window.storage.getTodayDateString() : new Date().toISOString().slice(0, 10);
-            const todayWords = window.storage ? window.storage.getWordsByDate(todayStr).length : 0;
+            const todayWords = window.storage ? window.storage.getWordsByDate(todayStr).filter(w => !w.isReadingPassage && ((w.flashcardDone && w.quizDone) || w.studyCompleted)).length : 0;
             const target = (window.storage && window.storage.settings && window.storage.settings.dailyTarget) || 15;
 
             // 헤더 학생 이름
@@ -305,7 +305,7 @@ class AppController {
             const progBar = document.getElementById('dash-today-progress-bar');
             const progText = document.getElementById('dash-today-progress-text');
             if (progBar) progBar.style.width = `${progressPct}%`;
-            if (progText) progText.textContent = `${todayWords} / ${target} 단어 (${progressPct}%)`;
+            if (progText) progText.textContent = `${todayWords} / ${target} 단어 완수 (${progressPct}%)`;
 
             // 오늘의 원어민 데일리 미션 위젯 렌더링
             try { this.renderDashboardDailyNativeWidget(todayStr); } catch (e) { console.error('Error in renderDashboardDailyNativeWidget:', e); }

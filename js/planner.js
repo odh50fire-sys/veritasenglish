@@ -100,7 +100,12 @@ class PlannerEngine {
             const vocabWords = wordsOnDate.filter(w => !w.isReadingPassage);
             const readingPassages = wordsOnDate.filter(w => w.isReadingPassage);
             const planInfo = window.storage.plans[dateStr] || {};
-            const isDayCompleted = planInfo.isDone === true || (vocabWords.length > 0 && vocabWords.every(w => (w.flashcardDone && w.quizDone) || w.studyCompleted));
+            const isWordsCompleted = vocabWords.length === 0 || vocabWords.every(w => (w.flashcardDone && w.quizDone) || w.studyCompleted);
+            const isPassagesCompleted = readingPassages.length === 0 || readingPassages.every(p => {
+                const r = window.storage.readingRecords && window.storage.readingRecords[p.readingPassageId];
+                return (r && typeof r.score === 'number') || p.studyCompleted;
+            });
+            const isDayCompleted = planInfo.isDone === true || ((vocabWords.length > 0 || readingPassages.length > 0) && isWordsCompleted && isPassagesCompleted);
 
             let badgesHtml = '';
             if (isDayCompleted) {
@@ -255,7 +260,13 @@ class PlannerEngine {
 
         const dayPlan = window.storage.plans[this.selectedDateStr] || {};
         const vocabOnDate = words.filter(w => !w.isReadingPassage);
-        const isDayAllDone = dayPlan.isDone === true || (vocabOnDate.length > 0 && vocabOnDate.every(w => (w.flashcardDone && w.quizDone) || w.studyCompleted));
+        const readingOnDate = words.filter(w => w.isReadingPassage);
+        const isVocabDone = vocabOnDate.length === 0 || vocabOnDate.every(w => (w.flashcardDone && w.quizDone) || w.studyCompleted);
+        const isReadingDone = readingOnDate.length === 0 || readingOnDate.every(p => {
+            const r = window.storage.readingRecords && window.storage.readingRecords[p.readingPassageId];
+            return (r && typeof r.score === 'number') || p.studyCompleted;
+        });
+        const isDayAllDone = dayPlan.isDone === true || ((vocabOnDate.length > 0 || readingOnDate.length > 0) && isVocabDone && isReadingDone);
 
         if (isDayAllDone) {
             const banner = document.createElement('div');
@@ -285,6 +296,7 @@ class PlannerEngine {
                             <div class="flex flex-wrap items-center gap-1.5">
                                 <span class="font-serif font-bold text-slate-900 text-sm">${w.word}</span>
                                 <span class="text-[10px] font-mono bg-indigo-100 text-indigo-900 px-2 py-0.5 rounded font-bold">${w.tag || '중등내신독해'}</span>
+                                ${window.storage.readingRecords && window.storage.readingRecords[w.readingPassageId]?.score !== undefined ? `<span class="text-[10px] font-mono bg-emerald-100 text-emerald-900 border border-emerald-300 px-2 py-0.5 rounded font-bold flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-emerald-700"></i> ✓ 시험 완료 (${window.storage.readingRecords[w.readingPassageId].score}점)</span>` : ''}
                             </div>
                             <div class="text-xs text-slate-600 mt-0.5">${w.meaning}</div>
                         </div>

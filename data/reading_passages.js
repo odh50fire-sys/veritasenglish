@@ -173,20 +173,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-PRE_M1-1-4",
-        "type": "subjective",
-        "typeLabel": "[예비중 내신 서술형] 조건 영작 및 단어 배열 (5점)",
-        "questionText": "다음 우리말 해석에 맞게 보기의 주어진 단어들을 올바른 순서로 배열하여 영작하시오.",
-        "koreanPrompt": "가을이 오면, 낮이 더 짧아진다.",
-        "requiredKeywords": [
-          "when",
-          "autumn",
-          "arrives",
-          "the days",
-          "become",
-          "shorter"
+        "type": "main_idea",
+        "typeLabel": "[예비중 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on why do leaves change color in autumn?",
+          "② Exploring the fundamental mechanisms and importance of 가을에 나뭇잎의 색이 변하는 이유",
+          "③ The rapid technological replacement of all natural phenomena related to why do leaves change color in autumn?",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about why do leaves change color in autumn? were all harmful"
         ],
-        "expectedAnswer": "When autumn arrives, the days become shorter.",
-        "explanation": "시간을 나타내는 접속사 'When' 뒤에 주어 'autumn'과 3인칭 단수 동사 'arrives'가 오고, 주절은 주어 'the days'와 2형식 동사 'become', 보어 'shorter'의 어순으로 연결됩니다."
+        "correctIndex": 1,
+        "explanation": "윗글은 '가을에 나뭇잎의 색이 변하는 이유'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 가을에 나뭇잎의 색이 변하는 이유'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -292,17 +290,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-PRE_M1-2-4",
-        "type": "subjective",
-        "typeLabel": "[예비중 내신 서술형] 조건 영작 및 단어 배열 (5점)",
-        "questionText": "다음 우리말 해석에 맞게 보기의 주어진 단어들을 올바른 순서로 배열하여 영작하시오.",
-        "koreanPrompt": "각 구성원은 특정한 역할을 지닌다.",
-        "requiredKeywords": [
-          "each member",
-          "has",
-          "a specific role"
+        "type": "main_idea",
+        "typeLabel": "[예비중 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on the secret life of ants in an underground city",
+          "② The rapid technological replacement of all natural phenomena related to the secret life of ants in an underground city",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ A historical debate proving that traditional theories about the secret life of ants in an underground city were all harmful",
+          "⑤ The cooperative social structure and survival strategies of ants underground"
         ],
-        "expectedAnswer": "Each member has a specific role.",
-        "explanation": "'Each + 단수명사(member)'는 단수 취급하므로 동사 'has'가 오고 목적어 'a specific role'이 이어집니다."
+        "correctIndex": 4,
+        "explanation": "윗글은 '지하 도시 개미들의 비밀스러운 협동 생활'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'The cooperative social structure and survival strategies of ants underground'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -408,17 +407,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-PRE_M1-3-4",
-        "type": "subjective",
-        "typeLabel": "[예비중 내신 서술형] 조건 영작 및 단어 배열 (5점)",
-        "questionText": "다음 우리말 해석에 맞게 보기의 주어진 단어들을 올바른 순서로 배열하여 영작하시오.",
-        "koreanPrompt": "친절한 마을 사람들은 그를 돕기 위해 달려갔다.",
-        "requiredKeywords": [
-          "kind villagers",
-          "rushed",
-          "to help him"
+        "type": "main_idea",
+        "typeLabel": "[예비중 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on the boy who cried wolf: a timeless lesson",
+          "② The rapid technological replacement of all natural phenomena related to the boy who cried wolf: a timeless lesson",
+          "③ The serious consequences of repeated dishonesty: A lesson from the shepherd boy",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about the boy who cried wolf: a timeless lesson were all harmful"
         ],
-        "expectedAnswer": "Kind villagers rushed to help him.",
-        "explanation": "주어 'Kind villagers' + 과거동사 'rushed' + to부정사의 부사적 용법(목적) 'to help him'의 어순으로 영작합니다."
+        "correctIndex": 2,
+        "explanation": "윗글은 '양치기 소년과 거짓말의 대가'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'The serious consequences of repeated dishonesty: A lesson from the shepherd boy'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -524,18 +524,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-PRE_M1-4-4",
-        "type": "subjective",
-        "typeLabel": "[예비중 내신 서술형] 조건 영작 및 단어 배열 (5점)",
-        "questionText": "다음 우리말 해석에 맞게 보기의 주어진 단어들을 올바른 순서로 배열하여 영작하시오.",
-        "koreanPrompt": "햇빛은 우리 눈에 흰색으로 보인다.",
-        "requiredKeywords": [
-          "sunlight",
-          "looks",
-          "white",
-          "to our eyes"
+        "type": "main_idea",
+        "typeLabel": "[예비중 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① How sunlight and raindrops interact through refraction to create a rainbow",
+          "② Why modern scholars completely reject any scientific research on how does sunlight make a rainbow?",
+          "③ The rapid technological replacement of all natural phenomena related to how does sunlight make a rainbow?",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about how does sunlight make a rainbow? were all harmful"
         ],
-        "expectedAnswer": "Sunlight looks white to our eyes.",
-        "explanation": "주어 'Sunlight' + 감각동사 'looks' + 형용사 보어 'white' + 전치사구 'to our eyes'의 순서로 문장을 완성합니다."
+        "correctIndex": 0,
+        "explanation": "윗글은 '햇빛과 빗방울이 만드는 무지개의 과학'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'How sunlight and raindrops interact through refraction to create a rainbow'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -641,17 +641,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-PRE_M1-5-4",
-        "type": "subjective",
-        "typeLabel": "[예비중 내신 서술형] 조건 영작 및 단어 배열 (5점)",
-        "questionText": "다음 우리말 해석에 맞게 보기의 주어진 단어들을 올바른 순서로 배열하여 영작하시오.",
-        "koreanPrompt": "거북이는 결승선을 향해 꾸준한 걸음을 내딛었다.",
-        "requiredKeywords": [
-          "the tortoise",
-          "took steady steps",
-          "toward the finish line"
+        "type": "main_idea",
+        "typeLabel": "[예비중 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on the tortoise and the hare: the power of persistence",
+          "② The rapid technological replacement of all natural phenomena related to the tortoise and the hare: the power of persistence",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ The power of patience and persistence over arrogant overconfidence",
+          "⑤ A historical debate proving that traditional theories about the tortoise and the hare: the power of persistence were all harmful"
         ],
-        "expectedAnswer": "The tortoise took steady steps toward the finish line.",
-        "explanation": "주어 'The tortoise' + 술어 동사구 'took steady steps' + 전치사구 'toward the finish line'의 순으로 배열합니다."
+        "correctIndex": 3,
+        "explanation": "윗글은 '토끼와 거북이: 꾸준함의 승리'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'The power of patience and persistence over arrogant overconfidence'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -757,17 +758,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-PRE_M1-6-4",
-        "type": "subjective",
-        "typeLabel": "[예비중 내신 서술형] 조건 영작 및 단어 배열 (5점)",
-        "questionText": "다음 우리말 해석에 맞게 보기의 주어진 단어들을 올바른 순서로 배열하여 영작하시오.",
-        "koreanPrompt": "우리는 깨끗한 물을 지키기 위해 일회용 컵을 줄여야 한다.",
-        "requiredKeywords": [
-          "we must reduce",
-          "single-use cups",
-          "to protect clean water"
+        "type": "main_idea",
+        "typeLabel": "[예비중 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on plastic pollution and our blue ocean",
+          "② The urgent threat of marine plastic pollution and the need for global action",
+          "③ The rapid technological replacement of all natural phenomena related to plastic pollution and our blue ocean",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about plastic pollution and our blue ocean were all harmful"
         ],
-        "expectedAnswer": "We must reduce single-use cups to protect clean water.",
-        "explanation": "주어 'We' + 조동사구 'must reduce' + 목적어 'single-use cups' + 목적 부사구 'to protect clean water'로 배열합니다."
+        "correctIndex": 1,
+        "explanation": "윗글은 '플라스틱 쓰레기와 바다 생물들의 위기'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'The urgent threat of marine plastic pollution and the need for global action'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -873,17 +875,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-PRE_M1-7-4",
-        "type": "subjective",
-        "typeLabel": "[예비중 내신 서술형] 조건 영작 및 단어 배열 (5점)",
-        "questionText": "다음 우리말 해석에 맞게 보기의 주어진 단어들을 올바른 순서로 배열하여 영작하시오.",
-        "koreanPrompt": "용감한 생쥐는 날카로운 이빨로 밧줄을 갉았다.",
-        "requiredKeywords": [
-          "the brave mouse",
-          "chewed the ropes",
-          "with sharp teeth"
+        "type": "main_idea",
+        "typeLabel": "[예비중 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on the lion and the tiny mouse",
+          "② The rapid technological replacement of all natural phenomena related to the lion and the tiny mouse",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ A historical debate proving that traditional theories about the lion and the tiny mouse were all harmful",
+          "⑤ How small acts of kindness and unexpected friendship can save a mighty life"
         ],
-        "expectedAnswer": "The brave mouse chewed the ropes with sharp teeth.",
-        "explanation": "주어 'The brave mouse' + 동사 'chewed' + 목적어 'the ropes' + 수단 전치사구 'with sharp teeth'의 순서로 영작합니다."
+        "correctIndex": 4,
+        "explanation": "윗글은 '사자와 작은 생쥐의 은혜 갚기'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'How small acts of kindness and unexpected friendship can save a mighty life'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -989,17 +992,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-PRE_M1-8-4",
-        "type": "subjective",
-        "typeLabel": "[예비중 내신 서술형] 조건 영작 및 단어 배열 (5점)",
-        "questionText": "다음 우리말 해석에 맞게 보기의 주어진 단어들을 올바른 순서로 배열하여 영작하시오.",
-        "koreanPrompt": "깊은 휴식은 학생들이 더 잘 집중하도록 돕는다.",
-        "requiredKeywords": [
-          "deep rest",
-          "helps students",
-          "concentrate better"
+        "type": "main_idea",
+        "typeLabel": "[예비중 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on why do we sleep and dream every night?",
+          "② The rapid technological replacement of all natural phenomena related to why do we sleep and dream every night?",
+          "③ The essential biological benefits of sleep and dreams for brain health",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about why do we sleep and dream every night? were all harmful"
         ],
-        "expectedAnswer": "Deep rest helps students concentrate better.",
-        "explanation": "주어 'Deep rest' + 동사 'helps' + 목적어 'students' + 목적격 보어 'concentrate better'로 배열합니다."
+        "correctIndex": 2,
+        "explanation": "윗글은 '우리는 왜 매일 밤 잠을 자고 꿈을 꿀까?'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'The essential biological benefits of sleep and dreams for brain health'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -1105,17 +1109,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-PRE_M1-9-4",
-        "type": "subjective",
-        "typeLabel": "[예비중 내신 서술형] 조건 영작 및 단어 배열 (5점)",
-        "questionText": "다음 우리말 해석에 맞게 보기의 주어진 단어들을 올바른 순서로 배열하여 영작하시오.",
-        "koreanPrompt": "아침을 먹는 것은 당신의 몸에 연료를 준다.",
-        "requiredKeywords": [
-          "eating breakfast",
-          "gives your body",
-          "fuel"
+        "type": "main_idea",
+        "typeLabel": "[예비중 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why eating a nutritious breakfast fuels cognitive performance and energy",
+          "② Why modern scholars completely reject any scientific research on smart eating: why breakfast fuels your brain",
+          "③ The rapid technological replacement of all natural phenomena related to smart eating: why breakfast fuels your brain",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about smart eating: why breakfast fuels your brain were all harmful"
         ],
-        "expectedAnswer": "Eating breakfast gives your body fuel.",
-        "explanation": "동명사 주어 'Eating breakfast' + 4형식 수여동사 'gives' + 간접목적어 'your body' + 직접목적어 'fuel'로 배열합니다."
+        "correctIndex": 0,
+        "explanation": "윗글은 '아침 식사가 뇌를 깨우는 에너지 과학'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Why eating a nutritious breakfast fuels cognitive performance and energy'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -1221,20 +1226,21 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-PRE_M1-10-4",
-        "type": "subjective",
-        "typeLabel": "[예비중 내신 서술형] 조건 영작 및 단어 배열 (5점)",
-        "questionText": "다음 우리말 해석에 맞게 보기의 주어진 단어들을 올바른 순서로 배열하여 영작하시오.",
-        "koreanPrompt": "그는 언제나 불안하고 불행하다고 느꼈다.",
-        "requiredKeywords": [
-          "he always felt",
-          "anxious and unhappy"
+        "type": "main_idea",
+        "typeLabel": "[예비중 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on the king and the cobbler: true happiness",
+          "② The rapid technological replacement of all natural phenomena related to the king and the cobbler: true happiness",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ Finding true happiness: Gratitude for simple daily moments over wealth",
+          "⑤ A historical debate proving that traditional theories about the king and the cobbler: true happiness were all harmful"
         ],
-        "expectedAnswer": "He always felt anxious and unhappy.",
-        "explanation": "주어 'He' + 빈도부사 'always' + 감각동사 'felt' + 형용사 보어 병렬 'anxious and unhappy'의 순서로 완성합니다."
+        "correctIndex": 3,
+        "explanation": "윗글은 '왕과 구두 수선공의 진정한 행복'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Finding true happiness: Gratitude for simple daily moments over wealth'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
-
   {
     "id": "passage-M1_1-1",
     "unitId": "unit-m1-1",
@@ -1337,16 +1343,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M1_1-1-4",
-        "type": "subjective",
-        "typeLabel": "[중1 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'ecosystem', 'maintain'을(를) 반드시 포함할 것\n2. 'Honeybees are'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Honeybees are essential pollinators that maintain the balance of our ecosystem.",
-        "keywords": [
-          "honeybees",
-          "ecosystem",
-          "maintain"
+        "type": "main_idea",
+        "typeLabel": "[중1 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on the amazing secrets of honeybees",
+          "② The vital ecological role of honeybees and their unique communication",
+          "③ The rapid technological replacement of all natural phenomena related to the amazing secrets of honeybees",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about the amazing secrets of honeybees were all harmful"
         ],
-        "explanation": "'Honeybees are essential pollinators that maintain the balance of our ecosystem.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 1,
+        "explanation": "윗글은 '꿀벌의 놀라운 생태와 비밀'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'The vital ecological role of honeybees and their unique communication'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -1452,16 +1460,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M1_1-2-4",
-        "type": "subjective",
-        "typeLabel": "[중1 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'ties', 'someone'을(를) 반드시 포함할 것\n2. 'The fox'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "The fox explained that to tame someone means to establish emotional ties.",
-        "keywords": [
-          "the",
-          "ties",
-          "someone"
+        "type": "main_idea",
+        "typeLabel": "[중1 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on the little prince and the desert fox",
+          "② The rapid technological replacement of all natural phenomena related to the little prince and the desert fox",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ A historical debate proving that traditional theories about the little prince and the desert fox were all harmful",
+          "⑤ Moral lessons and character wisdom reflected in 'The Little Prince and the Desert Fox'"
         ],
-        "explanation": "'The fox explained that to tame someone means to establish emotional ties.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 4,
+        "explanation": "윗글은 '어린 왕자와 사막 여우의 만남'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'The Little Prince and the Desert Fox''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -1567,16 +1577,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M1_1-3-4",
-        "type": "subjective",
-        "typeLabel": "[중1 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'stress', 'memories'을(를) 반드시 포함할 것\n2. 'During REM'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "During REM sleep, our brain organizes memories and filters daily emotional stress.",
-        "keywords": [
-          "during",
-          "stress",
-          "memories"
+        "type": "main_idea",
+        "typeLabel": "[중1 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on why do we dream during sleep?",
+          "② The rapid technological replacement of all natural phenomena related to why do we dream during sleep?",
+          "③ The essential biological benefits of sleep and dreams for brain health",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about why do we dream during sleep? were all harmful"
         ],
-        "explanation": "'During REM sleep, our brain organizes memories and filters daily emotional stress.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 2,
+        "explanation": "윗글은 '우리는 수면 중에 왜 꿈을 꿀까?'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'The essential biological benefits of sleep and dreams for brain health'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -1682,16 +1694,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M1_1-4-4",
-        "type": "subjective",
-        "typeLabel": "[중1 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'privilege', 'was'을(를) 반드시 포함할 것\n2. 'Tom pretended'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Tom pretended that whitewashing the fence was an enjoyable and exclusive privilege.",
-        "keywords": [
-          "tom",
-          "privilege",
-          "was"
+        "type": "main_idea",
+        "typeLabel": "[중1 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Moral lessons and character wisdom reflected in 'Tom Sawyer's Clever Fence Painting'",
+          "② Why modern scholars completely reject any scientific research on tom sawyer's clever fence painting",
+          "③ The rapid technological replacement of all natural phenomena related to tom sawyer's clever fence painting",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about tom sawyer's clever fence painting were all harmful"
         ],
-        "explanation": "'Tom pretended that whitewashing the fence was an enjoyable and exclusive privilege.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 0,
+        "explanation": "윗글은 '톰 소여의 기발한 울타리 페인트칠'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Tom Sawyer's Clever Fence Painting''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -1797,16 +1811,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M1_1-5-4",
-        "type": "subjective",
-        "typeLabel": "[중1 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'everest', 'than'을(를) 반드시 포함할 것\n2. 'The Mariana'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "The Mariana Trench is deeper than the height of Mount Everest.",
-        "keywords": [
-          "the",
-          "everest",
-          "than"
+        "type": "main_idea",
+        "typeLabel": "[중1 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on the ocean's deepest mysteries",
+          "② The rapid technological replacement of all natural phenomena related to the ocean's deepest mysteries",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ Exploring the fundamental mechanisms and importance of 심해 바다의 가장 깊은 신비",
+          "⑤ A historical debate proving that traditional theories about the ocean's deepest mysteries were all harmful"
         ],
-        "explanation": "'The Mariana Trench is deeper than the height of Mount Everest.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 3,
+        "explanation": "윗글은 '심해 바다의 가장 깊은 신비'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 심해 바다의 가장 깊은 신비'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -1912,16 +1928,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M1_1-6-4",
-        "type": "subjective",
-        "typeLabel": "[중1 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'time', 'waistcoat'을(를) 반드시 포함할 것\n2. 'Alice followed'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Alice followed a rabbit wearing a waistcoat who was anxiously checking the time.",
-        "keywords": [
-          "alice",
-          "time",
-          "waistcoat"
+        "type": "main_idea",
+        "typeLabel": "[중1 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on alice and the white rabbit's pocket watch",
+          "② Moral lessons and character wisdom reflected in 'Alice and the White Rabbit's Pocket Watch'",
+          "③ The rapid technological replacement of all natural phenomena related to alice and the white rabbit's pocket watch",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about alice and the white rabbit's pocket watch were all harmful"
         ],
-        "explanation": "'Alice followed a rabbit wearing a waistcoat who was anxiously checking the time.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 1,
+        "explanation": "윗글은 '이상한 나라의 앨리스와 회중시계 토끼'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Alice and the White Rabbit's Pocket Watch''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -2027,16 +2045,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M1_1-7-4",
-        "type": "subjective",
-        "typeLabel": "[중1 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'network', 'signals'을(를) 반드시 포함할 것\n2. 'Trees share'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Trees share nutrients and warning signals through an underground fungal network.",
-        "keywords": [
-          "trees",
-          "network",
-          "signals"
+        "type": "main_idea",
+        "typeLabel": "[중1 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on how plants talk to each other",
+          "② The rapid technological replacement of all natural phenomena related to how plants talk to each other",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ A historical debate proving that traditional theories about how plants talk to each other were all harmful",
+          "⑤ The cooperative social structure and survival strategies of ants underground"
         ],
-        "explanation": "'Trees share nutrients and warning signals through an underground fungal network.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 4,
+        "explanation": "윗글은 '식물들은 어떻게 서로 대화할까?'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'The cooperative social structure and survival strategies of ants underground'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -2142,16 +2162,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M1_1-8-4",
-        "type": "subjective",
-        "typeLabel": "[중1 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'threads', 'tied'을(를) 반드시 포함할 것\n2. 'Gulliver woke'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Gulliver woke up stranded on a beach, tied down by hundreds of slender threads.",
-        "keywords": [
-          "gulliver",
-          "threads",
-          "tied"
+        "type": "main_idea",
+        "typeLabel": "[중1 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on gulliver among the tiny lilliputians",
+          "② The rapid technological replacement of all natural phenomena related to gulliver among the tiny lilliputians",
+          "③ Moral lessons and character wisdom reflected in 'Gulliver Among the Tiny Lilliputians'",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about gulliver among the tiny lilliputians were all harmful"
         ],
-        "explanation": "'Gulliver woke up stranded on a beach, tied down by hundreds of slender threads.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 2,
+        "explanation": "윗글은 '걸리버 여행기: 소인국 릴리퍼트'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Gulliver Among the Tiny Lilliputians''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -2257,16 +2279,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M1_1-9-4",
-        "type": "subjective",
-        "typeLabel": "[중1 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'electricity', 'sunlight'을(를) 반드시 포함할 것\n2. 'Solar panels'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Solar panels convert photons from sunlight directly into clean electricity.",
-        "keywords": [
-          "solar",
-          "electricity",
-          "sunlight"
+        "type": "main_idea",
+        "typeLabel": "[중1 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Exploring the fundamental mechanisms and importance of 햇빛으로 만드는 태양광 친환경 에너지",
+          "② Why modern scholars completely reject any scientific research on the story of renewable solar energy",
+          "③ The rapid technological replacement of all natural phenomena related to the story of renewable solar energy",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about the story of renewable solar energy were all harmful"
         ],
-        "explanation": "'Solar panels convert photons from sunlight directly into clean electricity.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 0,
+        "explanation": "윗글은 '햇빛으로 만드는 태양광 친환경 에너지'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 햇빛으로 만드는 태양광 친환경 에너지'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -2372,16 +2396,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M1_1-10-4",
-        "type": "subjective",
-        "typeLabel": "[중1 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'wolf', 'villagers'을(를) 반드시 포함할 것\n2. 'The shepherd'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "The shepherd boy repeatedly fooled the villagers with false alarms about a wolf.",
-        "keywords": [
-          "the",
-          "wolf",
-          "villagers"
+        "type": "main_idea",
+        "typeLabel": "[중1 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on the boy who cried wolf: a moral tale",
+          "② The rapid technological replacement of all natural phenomena related to the boy who cried wolf: a moral tale",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ The serious consequences of repeated dishonesty: A lesson from the shepherd boy",
+          "⑤ A historical debate proving that traditional theories about the boy who cried wolf: a moral tale were all harmful"
         ],
-        "explanation": "'The shepherd boy repeatedly fooled the villagers with false alarms about a wolf.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 3,
+        "explanation": "윗글은 '양치기 소년과 늑대: 신뢰의 소중함'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'The serious consequences of repeated dishonesty: A lesson from the shepherd boy'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -2487,16 +2513,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M1_2-11-4",
-        "type": "subjective",
-        "typeLabel": "[중1 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'day', 'hundred'을(를) 반드시 포함할 것\n2. 'The human'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "The human heart beats approximately one hundred thousand times every single day.",
-        "keywords": [
-          "the",
-          "day",
-          "hundred"
+        "type": "main_idea",
+        "typeLabel": "[중1 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on the wonders of the human heart",
+          "② Exploring the fundamental mechanisms and importance of 잠들지 않는 심장의 기적",
+          "③ The rapid technological replacement of all natural phenomena related to the wonders of the human heart",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about the wonders of the human heart were all harmful"
         ],
-        "explanation": "'The human heart beats approximately one hundred thousand times every single day.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 1,
+        "explanation": "윗글은 '잠들지 않는 심장의 기적'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 잠들지 않는 심장의 기적'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -2602,16 +2630,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M1_2-12-4",
-        "type": "subjective",
-        "typeLabel": "[중1 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'money', 'who'을(를) 반드시 포함할 것\n2. 'Ebenezer Scrooge'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Ebenezer Scrooge was a greedy miser who cared for nothing except accumulating money.",
-        "keywords": [
-          "ebenezer",
-          "money",
-          "who"
+        "type": "main_idea",
+        "typeLabel": "[중1 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on a christmas carol: scrooge's transformation",
+          "② The rapid technological replacement of all natural phenomena related to a christmas carol: scrooge's transformation",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ A historical debate proving that traditional theories about a christmas carol: scrooge's transformation were all harmful",
+          "⑤ Moral lessons and character wisdom reflected in 'A Christmas Carol: Scrooge's Transformation'"
         ],
-        "explanation": "'Ebenezer Scrooge was a greedy miser who cared for nothing except accumulating money.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 4,
+        "explanation": "윗글은 '크리스마스 캐럴: 스크루지의 거듭남'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'A Christmas Carol: Scrooge's Transformation''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -2717,16 +2747,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M1_2-13-4",
-        "type": "subjective",
-        "typeLabel": "[중1 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'flight', 'field'을(를) 반드시 포함할 것\n2. 'Migratory birds'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Migratory birds use the Earth's magnetic field and constellations to guide flight.",
-        "keywords": [
-          "migratory",
-          "flight",
-          "field"
+        "type": "main_idea",
+        "typeLabel": "[중1 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on how migratory birds navigate continents",
+          "② The rapid technological replacement of all natural phenomena related to how migratory birds navigate continents",
+          "③ Exploring the fundamental mechanisms and importance of 철새들은 어떻게 대륙을 건널까?",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about how migratory birds navigate continents were all harmful"
         ],
-        "explanation": "'Migratory birds use the Earth's magnetic field and constellations to guide flight.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 2,
+        "explanation": "윗글은 '철새들은 어떻게 대륙을 건널까?'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 철새들은 어떻게 대륙을 건널까?'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -2832,16 +2864,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M1_2-14-4",
-        "type": "subjective",
-        "typeLabel": "[중1 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'citizens', 'away'을(를) 반드시 포함할 것\n2. 'The statue'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "The statue of the Happy Prince gave away his golden leaves to comfort suffering citizens.",
-        "keywords": [
-          "the",
-          "citizens",
-          "away"
+        "type": "main_idea",
+        "typeLabel": "[중1 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Moral lessons and character wisdom reflected in 'The Happy Prince and the Little Swallow'",
+          "② Why modern scholars completely reject any scientific research on the happy prince and the little swallow",
+          "③ The rapid technological replacement of all natural phenomena related to the happy prince and the little swallow",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about the happy prince and the little swallow were all harmful"
         ],
-        "explanation": "'The statue of the Happy Prince gave away his golden leaves to comfort suffering citizens.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 0,
+        "explanation": "윗글은 '오스카 와일드: 행복한 왕자와 제비'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'The Happy Prince and the Little Swallow''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -2947,16 +2981,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M1_2-15-4",
-        "type": "subjective",
-        "typeLabel": "[중1 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'cells', 'through'을(를) 반드시 포함할 것\n2. 'Human eyes'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Human eyes detect visible light through specialized photoreceptor cone cells.",
-        "keywords": [
-          "human",
-          "cells",
-          "through"
+        "type": "main_idea",
+        "typeLabel": "[중1 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on the science behind color perception",
+          "② The rapid technological replacement of all natural phenomena related to the science behind color perception",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ Exploring the fundamental mechanisms and importance of 인간은 색을 어떻게 인지하는가?",
+          "⑤ A historical debate proving that traditional theories about the science behind color perception were all harmful"
         ],
-        "explanation": "'Human eyes detect visible light through specialized photoreceptor cone cells.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 3,
+        "explanation": "윗글은 '인간은 색을 어떻게 인지하는가?'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 인간은 색을 어떻게 인지하는가?'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -3062,16 +3098,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M1_2-16-4",
-        "type": "subjective",
-        "typeLabel": "[중1 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'flint', 'revealing'을(를) 반드시 포함할 것\n2. 'Young Jim'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Young Jim found a yellowed parchment revealing the hidden treasure of Captain Flint.",
-        "keywords": [
-          "young",
-          "flint",
-          "revealing"
+        "type": "main_idea",
+        "typeLabel": "[중1 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on treasure island: jim hawkins and the map",
+          "② Moral lessons and character wisdom reflected in 'Treasure Island: Jim Hawkins and the Map'",
+          "③ The rapid technological replacement of all natural phenomena related to treasure island: jim hawkins and the map",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about treasure island: jim hawkins and the map were all harmful"
         ],
-        "explanation": "'Young Jim found a yellowed parchment revealing the hidden treasure of Captain Flint.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 1,
+        "explanation": "윗글은 '보물섬: 짐 호킨스와 비밀 지도'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Treasure Island: Jim Hawkins and the Map''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -3177,16 +3215,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M1_2-17-4",
-        "type": "subjective",
-        "typeLabel": "[중1 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'year', 'plastics'을(를) 반드시 포함할 것\n2. 'Millions of'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Millions of tons of non-biodegradable plastics enter the oceans every year.",
-        "keywords": [
-          "millions",
-          "year",
-          "plastics"
+        "type": "main_idea",
+        "typeLabel": "[중1 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on the global challenge of plastic waste",
+          "② The rapid technological replacement of all natural phenomena related to the global challenge of plastic waste",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ A historical debate proving that traditional theories about the global challenge of plastic waste were all harmful",
+          "⑤ The urgent threat of marine plastic pollution and the need for global action"
         ],
-        "explanation": "'Millions of tons of non-biodegradable plastics enter the oceans every year.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 4,
+        "explanation": "윗글은 '플라스틱 쓰레기와 해양 오염 문제'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'The urgent threat of marine plastic pollution and the need for global action'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -3292,16 +3332,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M1_2-18-4",
-        "type": "subjective",
-        "typeLabel": "[중1 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'longer', 'deliberate'을(를) 반드시 포함할 것\n2. 'Whenever the'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Whenever the wooden puppet told a deliberate lie, his long nose grew longer.",
-        "keywords": [
-          "whenever",
-          "longer",
-          "deliberate"
+        "type": "main_idea",
+        "typeLabel": "[중1 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on pinocchio: the value of truth and honesty",
+          "② The rapid technological replacement of all natural phenomena related to pinocchio: the value of truth and honesty",
+          "③ Moral lessons and character wisdom reflected in 'Pinocchio: The Value of Truth and Honesty'",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about pinocchio: the value of truth and honesty were all harmful"
         ],
-        "explanation": "'Whenever the wooden puppet told a deliberate lie, his long nose grew longer.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 2,
+        "explanation": "윗글은 '피노키오: 진실과 정직의 가치'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Pinocchio: The Value of Truth and Honesty''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -3407,16 +3449,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M1_2-19-4",
-        "type": "subjective",
-        "typeLabel": "[중1 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'aviation', 'and'을(를) 반드시 포함할 것\n2. 'Da Vinci'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Da Vinci sketched flying machines and parachutes centuries before modern aviation.",
-        "keywords": [
-          "da",
-          "aviation",
-          "and"
+        "type": "main_idea",
+        "typeLabel": "[중1 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Exploring the fundamental mechanisms and importance of 레오나르도 다빈치의 시대를 앞선 발명",
+          "② Why modern scholars completely reject any scientific research on the inventions of leonardo da vinci",
+          "③ The rapid technological replacement of all natural phenomena related to the inventions of leonardo da vinci",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about the inventions of leonardo da vinci were all harmful"
         ],
-        "explanation": "'Da Vinci sketched flying machines and parachutes centuries before modern aviation.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 0,
+        "explanation": "윗글은 '레오나르도 다빈치의 시대를 앞선 발명'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 레오나르도 다빈치의 시대를 앞선 발명'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -3522,16 +3566,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M1_2-20-4",
-        "type": "subjective",
-        "typeLabel": "[중1 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'integrity', 'in'을(를) 반드시 포함할 것\n2. 'Belle recognized'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Belle recognized that true nobility lies not in appearance, but in kindness and integrity.",
-        "keywords": [
-          "belle",
-          "integrity",
-          "in"
+        "type": "main_idea",
+        "typeLabel": "[중1 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on beauty and the beast: seeing inward virtue",
+          "② The rapid technological replacement of all natural phenomena related to beauty and the beast: seeing inward virtue",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ Moral lessons and character wisdom reflected in 'Beauty and the Beast: Seeing Inward Virtue'",
+          "⑤ A historical debate proving that traditional theories about beauty and the beast: seeing inward virtue were all harmful"
         ],
-        "explanation": "'Belle recognized that true nobility lies not in appearance, but in kindness and integrity.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 3,
+        "explanation": "윗글은 '미녀와 야수: 내면의 진정한 아름다움'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Beauty and the Beast: Seeing Inward Virtue''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -3637,16 +3683,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M2_1-21-4",
-        "type": "subjective",
-        "typeLabel": "[중2 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'globe', 'web'을(를) 반드시 포함할 것\n2. 'The creation'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "The creation of the World Wide Web decentralized information across the globe.",
-        "keywords": [
-          "the",
-          "globe",
-          "web"
+        "type": "main_idea",
+        "typeLabel": "[중2 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on how the internet transformed human culture",
+          "② Exploring the fundamental mechanisms and importance of 인터넷이 인류 문화를 바꾼 방식",
+          "③ The rapid technological replacement of all natural phenomena related to how the internet transformed human culture",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about how the internet transformed human culture were all harmful"
         ],
-        "explanation": "'The creation of the World Wide Web decentralized information across the globe.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 1,
+        "explanation": "윗글은 '인터넷이 인류 문화를 바꾼 방식'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 인터넷이 인류 문화를 바꾼 방식'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -3752,16 +3800,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M2_1-22-4",
-        "type": "subjective",
-        "typeLabel": "[중2 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'jim', 'purchase'을(를) 반드시 포함할 것\n2. 'Della sold'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Della sold her beautiful hair to purchase a platinum watch chain for Jim.",
-        "keywords": [
-          "della",
-          "jim",
-          "purchase"
+        "type": "main_idea",
+        "typeLabel": "[중2 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on the gift of the magi: priceless sacrifice",
+          "② The rapid technological replacement of all natural phenomena related to the gift of the magi: priceless sacrifice",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ A historical debate proving that traditional theories about the gift of the magi: priceless sacrifice were all harmful",
+          "⑤ Moral lessons and character wisdom reflected in 'The Gift of the Magi: Priceless Sacrifice'"
         ],
-        "explanation": "'Della sold her beautiful hair to purchase a platinum watch chain for Jim.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 4,
+        "explanation": "윗글은 '오 헨리: 크리스마스 선물 (현자의 선물)'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'The Gift of the Magi: Priceless Sacrifice''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -3867,16 +3917,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M2_1-23-4",
-        "type": "subjective",
-        "typeLabel": "[중2 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'pathogens', 'antibodies'을(를) 반드시 포함할 것\n2. 'White blood'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "White blood cells produce specific antibodies to neutralize invading pathogens.",
-        "keywords": [
-          "white",
-          "pathogens",
-          "antibodies"
+        "type": "main_idea",
+        "typeLabel": "[중2 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on the mysteries of the human immune system",
+          "② The rapid technological replacement of all natural phenomena related to the mysteries of the human immune system",
+          "③ Exploring the fundamental mechanisms and importance of 인간 면역 체계의 정교한 방어선",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about the mysteries of the human immune system were all harmful"
         ],
-        "explanation": "'White blood cells produce specific antibodies to neutralize invading pathogens.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 2,
+        "explanation": "윗글은 '인간 면역 체계의 정교한 방어선'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 인간 면역 체계의 정교한 방어선'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -3982,16 +4034,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M2_1-24-4",
-        "type": "subjective",
-        "typeLabel": "[중2 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'tunnel', 'merely'을(를) 반드시 포함할 것\n2. 'Holmes deduced'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Holmes deduced that the absurd club was merely a distraction to dig an underground tunnel.",
-        "keywords": [
-          "holmes",
-          "tunnel",
-          "merely"
+        "type": "main_idea",
+        "typeLabel": "[중2 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Moral lessons and character wisdom reflected in 'Sherlock Holmes and the Red-Headed League'",
+          "② Why modern scholars completely reject any scientific research on sherlock holmes and the red-headed league",
+          "③ The rapid technological replacement of all natural phenomena related to sherlock holmes and the red-headed league",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about sherlock holmes and the red-headed league were all harmful"
         ],
-        "explanation": "'Holmes deduced that the absurd club was merely a distraction to dig an underground tunnel.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 0,
+        "explanation": "윗글은 '셜록 홈즈: 붉은 머리 연맹의 비밀'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Sherlock Holmes and the Red-Headed League''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -4097,16 +4151,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M2_1-25-4",
-        "type": "subjective",
-        "typeLabel": "[중2 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'restoration', 'structures'을(를) 반드시 포함할 것\n2. 'Marine biologists'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Marine biologists submerge porous concrete structures to foster coral restoration.",
-        "keywords": [
-          "marine",
-          "restoration",
-          "structures"
+        "type": "main_idea",
+        "typeLabel": "[중2 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on artificial coral reefs and marine conservation",
+          "② The rapid technological replacement of all natural phenomena related to artificial coral reefs and marine conservation",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ Exploring the fundamental mechanisms and importance of 인공 산호초와 해양 생태계 복원",
+          "⑤ A historical debate proving that traditional theories about artificial coral reefs and marine conservation were all harmful"
         ],
-        "explanation": "'Marine biologists submerge porous concrete structures to foster coral restoration.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 3,
+        "explanation": "윗글은 '인공 산호초와 해양 생태계 복원'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 인공 산호초와 해양 생태계 복원'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -4212,16 +4268,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M2_1-26-4",
-        "type": "subjective",
-        "typeLabel": "[중2 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'creation', 'to'을(를) 반드시 포함할 것\n2. 'Victor Frankenstein'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Victor Frankenstein animated lifeless matter, only to flee in horror from his creation.",
-        "keywords": [
-          "victor",
-          "creation",
-          "to"
+        "type": "main_idea",
+        "typeLabel": "[중2 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on frankenstein: the burden of creation",
+          "② Moral lessons and character wisdom reflected in 'Frankenstein: The Burden of Creation'",
+          "③ The rapid technological replacement of all natural phenomena related to frankenstein: the burden of creation",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about frankenstein: the burden of creation were all harmful"
         ],
-        "explanation": "'Victor Frankenstein animated lifeless matter, only to flee in horror from his creation.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 1,
+        "explanation": "윗글은 '메리 셸리: 프랑켄슈타인의 고뇌'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Frankenstein: The Burden of Creation''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -4327,16 +4385,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M2_1-27-4",
-        "type": "subjective",
-        "typeLabel": "[중2 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'failure', 'but'을(를) 반드시 포함할 것\n2. 'Procrastination stems'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Procrastination stems not from laziness, but from emotional aversion to failure.",
-        "keywords": [
-          "procrastination",
-          "failure",
-          "but"
+        "type": "main_idea",
+        "typeLabel": "[중2 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on the psychology behind procrastination",
+          "② The rapid technological replacement of all natural phenomena related to the psychology behind procrastination",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ A historical debate proving that traditional theories about the psychology behind procrastination were all harmful",
+          "⑤ Exploring the fundamental mechanisms and importance of 미루는 습관(Procrastination)의 심리학"
         ],
-        "explanation": "'Procrastination stems not from laziness, but from emotional aversion to failure.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 4,
+        "explanation": "윗글은 '미루는 습관(Procrastination)의 심리학'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 미루는 습관(Procrastination)의 심리학'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -4442,16 +4502,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M2_1-28-4",
-        "type": "subjective",
-        "typeLabel": "[중2 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'walls', 'for'을(를) 반드시 포함할 것\n2. 'Mary discovered'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Mary discovered a locked garden neglected for a decade behind ivy-covered stone walls.",
-        "keywords": [
-          "mary",
-          "walls",
-          "for"
+        "type": "main_idea",
+        "typeLabel": "[중2 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on the secret garden: healing power of nature",
+          "② The rapid technological replacement of all natural phenomena related to the secret garden: healing power of nature",
+          "③ Moral lessons and character wisdom reflected in 'The Secret Garden: Healing Power of Nature'",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about the secret garden: healing power of nature were all harmful"
         ],
-        "explanation": "'Mary discovered a locked garden neglected for a decade behind ivy-covered stone walls.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 2,
+        "explanation": "윗글은 '비밀의 화원: 자연이 주는 치유의 기적'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'The Secret Garden: Healing Power of Nature''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -4557,16 +4619,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M2_1-29-4",
-        "type": "subjective",
-        "typeLabel": "[중2 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'cells', 'technologies'을(를) 반드시 포함할 것\n2. 'Space missions'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Space missions have yielded transformative spin-off technologies like GPS and solar cells.",
-        "keywords": [
-          "space",
-          "cells",
-          "technologies"
+        "type": "main_idea",
+        "typeLabel": "[중2 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Exploring the fundamental mechanisms and importance of 우주 탐사가 지구에 가져다주는 혜택",
+          "② Why modern scholars completely reject any scientific research on why space exploration matters for earth",
+          "③ The rapid technological replacement of all natural phenomena related to why space exploration matters for earth",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about why space exploration matters for earth were all harmful"
         ],
-        "explanation": "'Space missions have yielded transformative spin-off technologies like GPS and solar cells.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 0,
+        "explanation": "윗글은 '우주 탐사가 지구에 가져다주는 혜택'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 우주 탐사가 지구에 가져다주는 혜택'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -4672,16 +4736,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M2_1-30-4",
-        "type": "subjective",
-        "typeLabel": "[중2 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'wealth', 'of'을(를) 반드시 포함할 것\n2. 'Robin Hood'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Robin Hood resisted the corrupt Sheriff of Nottingham by redistributing ill-gotten wealth.",
-        "keywords": [
-          "robin",
-          "wealth",
-          "of"
+        "type": "main_idea",
+        "typeLabel": "[중2 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on robin hood: champion of justice",
+          "② The rapid technological replacement of all natural phenomena related to robin hood: champion of justice",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ Moral lessons and character wisdom reflected in 'Robin Hood: Champion of Justice'",
+          "⑤ A historical debate proving that traditional theories about robin hood: champion of justice were all harmful"
         ],
-        "explanation": "'Robin Hood resisted the corrupt Sheriff of Nottingham by redistributing ill-gotten wealth.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 3,
+        "explanation": "윗글은 '로빈 후드: 부조리에 맞선 셔우드의 의적'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Robin Hood: Champion of Justice''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -4787,16 +4853,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M2_2-31-4",
-        "type": "subjective",
-        "typeLabel": "[중2 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'reward', 'a'을(를) 반드시 포함할 것\n2. 'Every habit'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Every habit consists of a cue, a routine, and a neurological reward.",
-        "keywords": [
-          "every",
-          "reward",
-          "a"
+        "type": "main_idea",
+        "typeLabel": "[중2 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on the power of habit: neural loops in action",
+          "② Exploring the fundamental mechanisms and importance of 습관의 힘: 뇌 속의 신경 루프",
+          "③ The rapid technological replacement of all natural phenomena related to the power of habit: neural loops in action",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about the power of habit: neural loops in action were all harmful"
         ],
-        "explanation": "'Every habit consists of a cue, a routine, and a neurological reward.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 1,
+        "explanation": "윗글은 '습관의 힘: 뇌 속의 신경 루프'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 습관의 힘: 뇌 속의 신경 루프'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -4902,16 +4970,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M2_2-32-4",
-        "type": "subjective",
-        "typeLabel": "[중2 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'corruption', 'hidden'을(를) 반드시 포함할 것\n2. 'Dorian remained'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Dorian remained unblemished while his hidden portrait recorded every moral corruption.",
-        "keywords": [
-          "dorian",
-          "corruption",
-          "hidden"
+        "type": "main_idea",
+        "typeLabel": "[중2 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on the picture of dorian gray: youth and conscience",
+          "② The rapid technological replacement of all natural phenomena related to the picture of dorian gray: youth and conscience",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ A historical debate proving that traditional theories about the picture of dorian gray: youth and conscience were all harmful",
+          "⑤ Moral lessons and character wisdom reflected in 'The Picture of Dorian Gray: Youth and Conscience'"
         ],
-        "explanation": "'Dorian remained unblemished while his hidden portrait recorded every moral corruption.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 4,
+        "explanation": "윗글은 '도리안 그레이의 초상: 양심과 예술'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'The Picture of Dorian Gray: Youth and Conscience''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -5017,16 +5087,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M2_2-33-4",
-        "type": "subjective",
-        "typeLabel": "[중2 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'boundaries', 'mantle,'을(를) 반드시 포함할 것\n2. 'Tectonic plates'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Tectonic plates float on the semi-molten mantle, colliding and grinding at fault boundaries.",
-        "keywords": [
-          "tectonic",
-          "boundaries",
-          "mantle,"
+        "type": "main_idea",
+        "typeLabel": "[중2 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on the science of earthquakes and plate tectonics",
+          "② The rapid technological replacement of all natural phenomena related to the science of earthquakes and plate tectonics",
+          "③ Exploring the fundamental mechanisms and importance of 지진과 판구조론: 지구의 꿈틀거림",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about the science of earthquakes and plate tectonics were all harmful"
         ],
-        "explanation": "'Tectonic plates float on the semi-molten mantle, colliding and grinding at fault boundaries.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 2,
+        "explanation": "윗글은 '지진과 판구조론: 지구의 꿈틀거림'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 지진과 판구조론: 지구의 꿈틀거림'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -5132,16 +5204,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M2_2-34-4",
-        "type": "subjective",
-        "typeLabel": "[중2 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'days', 'he'을(를) 반드시 포함할 것\n2. 'Phileas Fogg'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Phileas Fogg wagered his entire fortune that he could circumnavigate the globe in eighty days.",
-        "keywords": [
-          "phileas",
-          "days",
-          "he"
+        "type": "main_idea",
+        "typeLabel": "[중2 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Moral lessons and character wisdom reflected in 'Around the World in Eighty Days: Precision and Grit'",
+          "② Why modern scholars completely reject any scientific research on around the world in eighty days: precision and grit",
+          "③ The rapid technological replacement of all natural phenomena related to around the world in eighty days: precision and grit",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about around the world in eighty days: precision and grit were all harmful"
         ],
-        "explanation": "'Phileas Fogg wagered his entire fortune that he could circumnavigate the globe in eighty days.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 0,
+        "explanation": "윗글은 '80일간의 세계 일주: 정확성과 끈기'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Around the World in Eighty Days: Precision and Grit''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -5247,16 +5321,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M2_2-35-4",
-        "type": "subjective",
-        "typeLabel": "[중2 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'reaction', 'emitting'을(를) 반드시 포함할 것\n2. 'Fireflies produce'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Fireflies produce luminous glows without emitting heat through the luciferase reaction.",
-        "keywords": [
-          "fireflies",
-          "reaction",
-          "emitting"
+        "type": "main_idea",
+        "typeLabel": "[중2 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on bioluminescence: cold light in living organisms",
+          "② The rapid technological replacement of all natural phenomena related to bioluminescence: cold light in living organisms",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ Exploring the fundamental mechanisms and importance of 생체 발광: 차가운 생명의 빛",
+          "⑤ A historical debate proving that traditional theories about bioluminescence: cold light in living organisms were all harmful"
         ],
-        "explanation": "'Fireflies produce luminous glows without emitting heat through the luciferase reaction.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 3,
+        "explanation": "윗글은 '생체 발광: 차가운 생명의 빛'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 생체 발광: 차가운 생명의 빛'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -5362,16 +5438,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M2_2-36-4",
-        "type": "subjective",
-        "typeLabel": "[중2 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'world', 'them'을(를) 반드시 포함할 것\n2. 'Don Quixote'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Don Quixote charged at windmills, mistaking them for monstrous giants threatening the world.",
-        "keywords": [
-          "don",
-          "world",
-          "them"
+        "type": "main_idea",
+        "typeLabel": "[중2 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on don quixote: the noble pursuit of ideals",
+          "② Moral lessons and character wisdom reflected in 'Don Quixote: The Noble Pursuit of Ideals'",
+          "③ The rapid technological replacement of all natural phenomena related to don quixote: the noble pursuit of ideals",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about don quixote: the noble pursuit of ideals were all harmful"
         ],
-        "explanation": "'Don Quixote charged at windmills, mistaking them for monstrous giants threatening the world.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 1,
+        "explanation": "윗글은 '돈키호테: 불가능한 꿈을 향한 기사'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Don Quixote: The Noble Pursuit of Ideals''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -5477,16 +5555,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M2_2-37-4",
-        "type": "subjective",
-        "typeLabel": "[중2 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'towers', 'steel'을(를) 반드시 포함할 것\n2. 'Suspension bridges'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Suspension bridges distribute tension through steel cables anchored to massive towers.",
-        "keywords": [
-          "suspension",
-          "towers",
-          "steel"
+        "type": "main_idea",
+        "typeLabel": "[중2 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on the architecture of bridges: suspension and arch",
+          "② The rapid technological replacement of all natural phenomena related to the architecture of bridges: suspension and arch",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ A historical debate proving that traditional theories about the architecture of bridges: suspension and arch were all harmful",
+          "⑤ Exploring the fundamental mechanisms and importance of 현수교와 아치교의 공학 역학"
         ],
-        "explanation": "'Suspension bridges distribute tension through steel cables anchored to massive towers.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 4,
+        "explanation": "윗글은 '현수교와 아치교의 공학 역학'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 현수교와 아치교의 공학 역학'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -5592,16 +5672,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M2_2-38-4",
-        "type": "subjective",
-        "typeLabel": "[중2 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'pack', 'into'을(를) 반드시 포함할 것\n2. 'Buck adapted'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Buck adapted from a pampered domestic pet into the formidable leader of a sled-dog pack.",
-        "keywords": [
-          "buck",
-          "pack",
-          "into"
+        "type": "main_idea",
+        "typeLabel": "[중2 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on the call of the wild: returning to nature",
+          "② The rapid technological replacement of all natural phenomena related to the call of the wild: returning to nature",
+          "③ Moral lessons and character wisdom reflected in 'The Call of the Wild: Returning to Nature'",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about the call of the wild: returning to nature were all harmful"
         ],
-        "explanation": "'Buck adapted from a pampered domestic pet into the formidable leader of a sled-dog pack.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 2,
+        "explanation": "윗글은 '잭 런던: 야성의 부름'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'The Call of the Wild: Returning to Nature''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -5707,16 +5789,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M2_2-39-4",
-        "type": "subjective",
-        "typeLabel": "[중2 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'channels', 'communication'을(를) 반드시 포함할 것\n2. 'Public-key cryptography'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Public-key cryptography enables secure communication across untrusted internet channels.",
-        "keywords": [
-          "public-key",
-          "channels",
-          "communication"
+        "type": "main_idea",
+        "typeLabel": "[중2 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Exploring the fundamental mechanisms and importance of 암호학: 디지털 사생활을 지키는 방패",
+          "② Why modern scholars completely reject any scientific research on how cryptography protects digital privacy",
+          "③ The rapid technological replacement of all natural phenomena related to how cryptography protects digital privacy",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about how cryptography protects digital privacy were all harmful"
         ],
-        "explanation": "'Public-key cryptography enables secure communication across untrusted internet channels.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 0,
+        "explanation": "윗글은 '암호학: 디지털 사생활을 지키는 방패'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 암호학: 디지털 사생활을 지키는 방패'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -5822,16 +5906,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M2_2-40-4",
-        "type": "subjective",
-        "typeLabel": "[중2 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'stamina', 'in'을(를) 반드시 포함할 것\n2. 'Santiago battled'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Santiago battled an immense marlin for days in the Gulf Stream with agonizing stamina.",
-        "keywords": [
-          "santiago",
-          "stamina",
-          "in"
+        "type": "main_idea",
+        "typeLabel": "[중2 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on the old man and the sea: indomitable spirit",
+          "② The rapid technological replacement of all natural phenomena related to the old man and the sea: indomitable spirit",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ Moral lessons and character wisdom reflected in 'The Old Man and the Sea: Indomitable Spirit'",
+          "⑤ A historical debate proving that traditional theories about the old man and the sea: indomitable spirit were all harmful"
         ],
-        "explanation": "'Santiago battled an immense marlin for days in the Gulf Stream with agonizing stamina.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 3,
+        "explanation": "윗글은 '노인과 바다: 결코 굴복하지 않는 의지'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'The Old Man and the Sea: Indomitable Spirit''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -5937,16 +6023,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M3_1-41-4",
-        "type": "subjective",
-        "typeLabel": "[중3 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'simultaneously', 'in'을(를) 반드시 포함할 것\n2. 'In quantum'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "In quantum theory, particles exist in superpositions of multiple states simultaneously.",
-        "keywords": [
-          "in",
-          "simultaneously",
-          "in"
+        "type": "main_idea",
+        "typeLabel": "[중3 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on quantum mechanics: the strange subatomic realm",
+          "② The cooperative social structure and survival strategies of ants underground",
+          "③ The rapid technological replacement of all natural phenomena related to quantum mechanics: the strange subatomic realm",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about quantum mechanics: the strange subatomic realm were all harmful"
         ],
-        "explanation": "'In quantum theory, particles exist in superpositions of multiple states simultaneously.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 1,
+        "explanation": "윗글은 '양자역학: 기묘한 미시 세계의 법칙'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'The cooperative social structure and survival strategies of ants underground'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -6052,16 +6140,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M3_1-42-4",
-        "type": "subjective",
-        "typeLabel": "[중3 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'vocabulary', 'eliminate'을(를) 반드시 포함할 것\n2. 'The Party'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "The Party invented Newspeak to eliminate rebellious thoughts by narrowing vocabulary.",
-        "keywords": [
-          "the",
-          "vocabulary",
-          "eliminate"
+        "type": "main_idea",
+        "typeLabel": "[중3 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on george orwell's 1984: language and thought",
+          "② The rapid technological replacement of all natural phenomena related to george orwell's 1984: language and thought",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ A historical debate proving that traditional theories about george orwell's 1984: language and thought were all harmful",
+          "⑤ Moral lessons and character wisdom reflected in 'George Orwell's 1984: Language and Thought'"
         ],
-        "explanation": "'The Party invented Newspeak to eliminate rebellious thoughts by narrowing vocabulary.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 4,
+        "explanation": "윗글은 '조지 오웰 1984: 언어와 사고의 통제'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'George Orwell's 1984: Language and Thought''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -6167,16 +6257,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M3_1-43-4",
-        "type": "subjective",
-        "typeLabel": "[중3 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'precisely', 'excise'을(를) 반드시 포함할 것\n2. 'CRISPR technology'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "CRISPR technology empowers scientists to excise and replace genetic sequences precisely.",
-        "keywords": [
-          "crispr",
-          "precisely",
-          "excise"
+        "type": "main_idea",
+        "typeLabel": "[중3 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on the ethics of gene editing and crispr",
+          "② The rapid technological replacement of all natural phenomena related to the ethics of gene editing and crispr",
+          "③ Exploring the fundamental mechanisms and importance of 유전자 가위 크리스퍼(CRISPR)와 생명윤리",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about the ethics of gene editing and crispr were all harmful"
         ],
-        "explanation": "'CRISPR technology empowers scientists to excise and replace genetic sequences precisely.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 2,
+        "explanation": "윗글은 '유전자 가위 크리스퍼(CRISPR)와 생명윤리'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 유전자 가위 크리스퍼(CRISPR)와 생명윤리'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -6282,16 +6374,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M3_1-44-4",
-        "type": "subjective",
-        "typeLabel": "[중3 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'buchanan', 'reclaim'을(를) 반드시 포함할 것\n2. 'Gatsby amassed'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Gatsby amassed staggering riches solely to reclaim his lost love with Daisy Buchanan.",
-        "keywords": [
-          "gatsby",
-          "buchanan",
-          "reclaim"
+        "type": "main_idea",
+        "typeLabel": "[중3 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Moral lessons and character wisdom reflected in 'The Great Gatsby: The Illusion of Wealth'",
+          "② Why modern scholars completely reject any scientific research on the great gatsby: the illusion of wealth",
+          "③ The rapid technological replacement of all natural phenomena related to the great gatsby: the illusion of wealth",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about the great gatsby: the illusion of wealth were all harmful"
         ],
-        "explanation": "'Gatsby amassed staggering riches solely to reclaim his lost love with Daisy Buchanan.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 0,
+        "explanation": "윗글은 '위대한 개츠비: 물질적 부의 환상'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'The Great Gatsby: The Illusion of Wealth''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -6397,16 +6491,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M3_1-45-4",
-        "type": "subjective",
-        "typeLabel": "[중3 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'sequences', 'gene'을(를) 반드시 포함할 것\n2. 'Epigenetics reveals'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Epigenetics reveals that lifestyle factors alter gene expression without mutating DNA sequences.",
-        "keywords": [
-          "epigenetics",
-          "sequences",
-          "gene"
+        "type": "main_idea",
+        "typeLabel": "[중3 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on epigenetics: how environment influences genes",
+          "② The rapid technological replacement of all natural phenomena related to epigenetics: how environment influences genes",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ Exploring the fundamental mechanisms and importance of 후성유전학: 환경이 유전자를 깨운다",
+          "⑤ A historical debate proving that traditional theories about epigenetics: how environment influences genes were all harmful"
         ],
-        "explanation": "'Epigenetics reveals that lifestyle factors alter gene expression without mutating DNA sequences.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 3,
+        "explanation": "윗글은 '후성유전학: 환경이 유전자를 깨운다'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 후성유전학: 환경이 유전자를 깨운다'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -6512,16 +6608,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M3_1-46-4",
-        "type": "subjective",
-        "typeLabel": "[중3 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'maycomb', 'despite'을(를) 반드시 포함할 것\n2. 'Atticus Finch'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Atticus Finch defended an innocent man despite overwhelming racial prejudice in Maycomb.",
-        "keywords": [
-          "atticus",
-          "maycomb",
-          "despite"
+        "type": "main_idea",
+        "typeLabel": "[중3 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on to kill a mockingbird: courage and conscience",
+          "② Moral lessons and character wisdom reflected in 'To Kill a Mockingbird: Courage and Conscience'",
+          "③ The rapid technological replacement of all natural phenomena related to to kill a mockingbird: courage and conscience",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about to kill a mockingbird: courage and conscience were all harmful"
         ],
-        "explanation": "'Atticus Finch defended an innocent man despite overwhelming racial prejudice in Maycomb.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 1,
+        "explanation": "윗글은 '하퍼 리: 앵무새 죽이기와 양심의 용기'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'To Kill a Mockingbird: Courage and Conscience''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -6627,16 +6725,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M3_1-47-4",
-        "type": "subjective",
-        "typeLabel": "[중3 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'ruin', 'rights,'을(를) 반드시 포함할 것\n2. 'When shared'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "When shared resources lack clear property rights, rational self-interest precipitates collective ruin.",
-        "keywords": [
-          "when",
-          "ruin",
-          "rights,"
+        "type": "main_idea",
+        "typeLabel": "[중3 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on the economics of tragedy of the commons",
+          "② The rapid technological replacement of all natural phenomena related to the economics of tragedy of the commons",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ A historical debate proving that traditional theories about the economics of tragedy of the commons were all harmful",
+          "⑤ Exploring the fundamental mechanisms and importance of 공유지의 비극과 자원 관리의 지혜"
         ],
-        "explanation": "'When shared resources lack clear property rights, rational self-interest precipitates collective ruin.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 4,
+        "explanation": "윗글은 '공유지의 비극과 자원 관리의 지혜'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 공유지의 비극과 자원 관리의 지혜'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -6742,16 +6842,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M3_1-48-4",
-        "type": "subjective",
-        "typeLabel": "[중3 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'haughtiness', 'reserved'을(를) 반드시 포함할 것\n2. 'Elizabeth Bennett'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Elizabeth Bennett misjudged Darcy's reserved demeanor as insufferable haughtiness.",
-        "keywords": [
-          "elizabeth",
-          "haughtiness",
-          "reserved"
+        "type": "main_idea",
+        "typeLabel": "[중3 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on pride and prejudice: beyond first impressions",
+          "② The rapid technological replacement of all natural phenomena related to pride and prejudice: beyond first impressions",
+          "③ Moral lessons and character wisdom reflected in 'Pride and Prejudice: Beyond First Impressions'",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about pride and prejudice: beyond first impressions were all harmful"
         ],
-        "explanation": "'Elizabeth Bennett misjudged Darcy's reserved demeanor as insufferable haughtiness.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 2,
+        "explanation": "윗글은 '오만과 편견: 선입견을 넘어선 진실'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Pride and Prejudice: Beyond First Impressions''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -6857,16 +6959,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M3_1-49-4",
-        "type": "subjective",
-        "typeLabel": "[중3 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'cooperate', 'purely'을(를) 반드시 포함할 것\n2. 'The prisoner's'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "The prisoner's dilemma models why two purely rational individuals might not cooperate.",
-        "keywords": [
-          "the",
-          "cooperate",
-          "purely"
+        "type": "main_idea",
+        "typeLabel": "[중3 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Exploring the fundamental mechanisms and importance of 게임이론과 죄수의 딜레마: 협력의 조건",
+          "② Why modern scholars completely reject any scientific research on game theory and the prisoner's dilemma",
+          "③ The rapid technological replacement of all natural phenomena related to game theory and the prisoner's dilemma",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about game theory and the prisoner's dilemma were all harmful"
         ],
-        "explanation": "'The prisoner's dilemma models why two purely rational individuals might not cooperate.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 0,
+        "explanation": "윗글은 '게임이론과 죄수의 딜레마: 협력의 조건'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 게임이론과 죄수의 딜레마: 협력의 조건'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -6972,16 +7076,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M3_1-50-4",
-        "type": "subjective",
-        "typeLabel": "[중3 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'brutality', 'civilized'을(를) 반드시 포함할 것\n2. 'Stranded British'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Stranded British schoolboys gradually shed civilized norms, descending into tribal brutality.",
-        "keywords": [
-          "stranded",
-          "brutality",
-          "civilized"
+        "type": "main_idea",
+        "typeLabel": "[중3 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on lord of the flies: civilization vs. savagery",
+          "② The rapid technological replacement of all natural phenomena related to lord of the flies: civilization vs. savagery",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ Moral lessons and character wisdom reflected in 'Lord of the Flies: Civilization vs. Savagery'",
+          "⑤ A historical debate proving that traditional theories about lord of the flies: civilization vs. savagery were all harmful"
         ],
-        "explanation": "'Stranded British schoolboys gradually shed civilized norms, descending into tribal brutality.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 3,
+        "explanation": "윗글은 '파리대왕: 문명과 야만성의 충돌'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Lord of the Flies: Civilization vs. Savagery''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -7087,16 +7193,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M3_2-51-4",
-        "type": "subjective",
-        "typeLabel": "[중3 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'stimuli', 'response'을(를) 반드시 포함할 것\n2. 'Synaptic connections'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Synaptic connections reorganize dynamically in response to novel intellectual stimuli.",
-        "keywords": [
-          "synaptic",
-          "stimuli",
-          "response"
+        "type": "main_idea",
+        "typeLabel": "[중3 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on neuroplasticity and lifelong cognitive resilience",
+          "② The urgent threat of marine plastic pollution and the need for global action",
+          "③ The rapid technological replacement of all natural phenomena related to neuroplasticity and lifelong cognitive resilience",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about neuroplasticity and lifelong cognitive resilience were all harmful"
         ],
-        "explanation": "'Synaptic connections reorganize dynamically in response to novel intellectual stimuli.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 1,
+        "explanation": "윗글은 '뇌 가소성과 평생 학습의 회복 탄력성'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'The urgent threat of marine plastic pollution and the need for global action'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -7202,16 +7310,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M3_2-52-4",
-        "type": "subjective",
-        "typeLabel": "[중3 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'drug', 'conditioned'을(를) 반드시 포함할 것\n2. 'In the'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "In the World State, citizens are genetically conditioned and pacified by a pleasure drug.",
-        "keywords": [
-          "in",
-          "drug",
-          "conditioned"
+        "type": "main_idea",
+        "typeLabel": "[중3 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on brave new world: manufactured happiness",
+          "② The rapid technological replacement of all natural phenomena related to brave new world: manufactured happiness",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ A historical debate proving that traditional theories about brave new world: manufactured happiness were all harmful",
+          "⑤ Moral lessons and character wisdom reflected in 'Brave New World: Manufactured Happiness'"
         ],
-        "explanation": "'In the World State, citizens are genetically conditioned and pacified by a pleasure drug.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 4,
+        "explanation": "윗글은 '멋진 신세계: 조작된 행복과 인간성'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Brave New World: Manufactured Happiness''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -7317,16 +7427,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M3_2-53-4",
-        "type": "subjective",
-        "typeLabel": "[중3 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'universe', 'of'을(를) 반드시 포함할 것\n2. 'Luminous matter'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Luminous matter comprises merely five percent of the entire mass-energy of the universe.",
-        "keywords": [
-          "luminous",
-          "universe",
-          "of"
+        "type": "main_idea",
+        "typeLabel": "[중3 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on dark matter and the cosmic web",
+          "② The rapid technological replacement of all natural phenomena related to dark matter and the cosmic web",
+          "③ Exploring the fundamental mechanisms and importance of 암흑물질과 우주의 거대한 그물망",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about dark matter and the cosmic web were all harmful"
         ],
-        "explanation": "'Luminous matter comprises merely five percent of the entire mass-energy of the universe.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 2,
+        "explanation": "윗글은 '암흑물질과 우주의 거대한 그물망'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 암흑물질과 우주의 거대한 그물망'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -7432,16 +7544,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M3_2-54-4",
-        "type": "subjective",
-        "typeLabel": "[중3 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'convict', 'jean'을(를) 반드시 포함할 것\n2. 'Bishop Myriel's'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Bishop Myriel's boundless compassion transformed Jean Valjean from an embittered convict.",
-        "keywords": [
-          "bishop",
-          "convict",
-          "jean"
+        "type": "main_idea",
+        "typeLabel": "[중3 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Moral lessons and character wisdom reflected in 'Les Misérables: The Redeeming Power of Mercy'",
+          "② Why modern scholars completely reject any scientific research on les misérables: the redeeming power of mercy",
+          "③ The rapid technological replacement of all natural phenomena related to les misérables: the redeeming power of mercy",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about les misérables: the redeeming power of mercy were all harmful"
         ],
-        "explanation": "'Bishop Myriel's boundless compassion transformed Jean Valjean from an embittered convict.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 0,
+        "explanation": "윗글은 '레 미제라블: 자비와 구원의 대서사시'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Les Misérables: The Redeeming Power of Mercy''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -7547,16 +7661,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M3_2-55-4",
-        "type": "subjective",
-        "typeLabel": "[중3 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'inevitable', 'galaxy,'을(를) 반드시 포함할 것\n2. 'Given billions'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Given billions of habitable planets in our galaxy, extraterrestrial contact should be statistically inevitable.",
-        "keywords": [
-          "given",
-          "inevitable",
-          "galaxy,"
+        "type": "main_idea",
+        "typeLabel": "[중3 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on the fermi paradox: where are all the aliens?",
+          "② The rapid technological replacement of all natural phenomena related to the fermi paradox: where are all the aliens?",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ Exploring the fundamental mechanisms and importance of 페르미 역설: 외계 지적 생명체는 어디에?",
+          "⑤ A historical debate proving that traditional theories about the fermi paradox: where are all the aliens? were all harmful"
         ],
-        "explanation": "'Given billions of habitable planets in our galaxy, extraterrestrial contact should be statistically inevitable.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 3,
+        "explanation": "윗글은 '페르미 역설: 외계 지적 생명체는 어디에?'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 페르미 역설: 외계 지적 생명체는 어디에?'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -7662,16 +7778,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M3_2-56-4",
-        "type": "subjective",
-        "typeLabel": "[중3 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'fortune', 'slings'을(를) 반드시 포함할 것\n2. 'Hamlet contemplated'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Hamlet contemplated whether to endure the slings and arrows of outrageous fortune.",
-        "keywords": [
-          "hamlet",
-          "fortune",
-          "slings"
+        "type": "main_idea",
+        "typeLabel": "[중3 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on hamlet: the agony of moral hesitation",
+          "② Moral lessons and character wisdom reflected in 'Hamlet: The Agony of Moral Hesitation'",
+          "③ The rapid technological replacement of all natural phenomena related to hamlet: the agony of moral hesitation",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about hamlet: the agony of moral hesitation were all harmful"
         ],
-        "explanation": "'Hamlet contemplated whether to endure the slings and arrows of outrageous fortune.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 1,
+        "explanation": "윗글은 '셰익스피어 햄릿: 존재와 행동의 고뇌'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Hamlet: The Agony of Moral Hesitation''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -7777,16 +7895,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M3_2-57-4",
-        "type": "subjective",
-        "typeLabel": "[중3 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'expenditures', 'investments'을(를) 반드시 포함할 것\n2. 'Individuals frequently'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Individuals frequently persevere in doomed investments solely because of irrecoverable expenditures.",
-        "keywords": [
-          "individuals",
-          "expenditures",
-          "investments"
+        "type": "main_idea",
+        "typeLabel": "[중3 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on behavioral economics and sunk cost fallacy",
+          "② The rapid technological replacement of all natural phenomena related to behavioral economics and sunk cost fallacy",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ A historical debate proving that traditional theories about behavioral economics and sunk cost fallacy were all harmful",
+          "⑤ Exploring the fundamental mechanisms and importance of 매몰비용의 오류(Sunk Cost)와 합리적 선택"
         ],
-        "explanation": "'Individuals frequently persevere in doomed investments solely because of irrecoverable expenditures.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 4,
+        "explanation": "윗글은 '매몰비용의 오류(Sunk Cost)와 합리적 선택'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 매몰비용의 오류(Sunk Cost)와 합리적 선택'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -7892,16 +8012,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M3_2-58-4",
-        "type": "subjective",
-        "typeLabel": "[중3 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'train', 'monstrous'을(를) 반드시 포함할 것\n2. 'Gregor Samsa'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Gregor Samsa awoke transformed into a monstrous insect, agonizing over missing his train.",
-        "keywords": [
-          "gregor",
-          "train",
-          "monstrous"
+        "type": "main_idea",
+        "typeLabel": "[중3 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on the metamorphosis: alienation in modern society",
+          "② The rapid technological replacement of all natural phenomena related to the metamorphosis: alienation in modern society",
+          "③ Moral lessons and character wisdom reflected in 'The Metamorphosis: Alienation in Modern Society'",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about the metamorphosis: alienation in modern society were all harmful"
         ],
-        "explanation": "'Gregor Samsa awoke transformed into a monstrous insect, agonizing over missing his train.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 2,
+        "explanation": "윗글은 '카프카 변신: 현대 사회의 소외와 실존'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'The Metamorphosis: Alienation in Modern Society''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -8007,16 +8129,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M3_2-59-4",
-        "type": "subjective",
-        "typeLabel": "[중3 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'dioxide', 'through'을(를) 반드시 포함할 것\n2. 'Direct air'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Direct air capture facilities filter ambient air through chemical matrices to trap carbon dioxide.",
-        "keywords": [
-          "direct",
-          "dioxide",
-          "through"
+        "type": "main_idea",
+        "typeLabel": "[중3 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Exploring the fundamental mechanisms and importance of 탄소 포집 기술과 지구 공학(Geotherapy)",
+          "② Why modern scholars completely reject any scientific research on atmospheric carbon sequestration and geotherapy",
+          "③ The rapid technological replacement of all natural phenomena related to atmospheric carbon sequestration and geotherapy",
+          "④ How extreme environmental disasters can easily be solved without human effort",
+          "⑤ A historical debate proving that traditional theories about atmospheric carbon sequestration and geotherapy were all harmful"
         ],
-        "explanation": "'Direct air capture facilities filter ambient air through chemical matrices to trap carbon dioxide.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 0,
+        "explanation": "윗글은 '탄소 포집 기술과 지구 공학(Geotherapy)'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 탄소 포집 기술과 지구 공학(Geotherapy)'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   },
@@ -8122,16 +8246,18 @@ const READING_PASSAGES = [
       },
       {
         "id": "q-passage-M3_2-60-4",
-        "type": "subjective",
-        "typeLabel": "[중3 내신 서술형] 조건부 영작 킬러 (5점)",
-        "questionText": "【조건】에 맞추어 지문의 제1문장(주제문)을 완전한 영어 한 문장으로 영작하시오.\n\n[조건]\n1. 'knowledge', 'in'을(를) 반드시 포함할 것\n2. 'Faust surrendered'(으)로 시작할 것\n3. 철자와 문법 오류 없이 완전한 영문장으로 작성할 것",
-        "sampleAnswer": "Faust surrendered his soul to Mephistopheles in pursuit of infinite experiential knowledge.",
-        "keywords": [
-          "faust",
-          "knowledge",
-          "in"
+        "type": "main_idea",
+        "typeLabel": "[중3 내신 독해] 글의 주제·제목 추론 (3.5점)",
+        "questionText": "다음 글의 주제(또는 제목)로 가장 적절한 것은?",
+        "options": [
+          "① Why modern scholars completely reject any scientific research on faust: the insatiable quest for transcendence",
+          "② The rapid technological replacement of all natural phenomena related to faust: the insatiable quest for transcendence",
+          "③ How extreme environmental disasters can easily be solved without human effort",
+          "④ Moral lessons and character wisdom reflected in 'Faust: The Insatiable Quest for Transcendence'",
+          "⑤ A historical debate proving that traditional theories about faust: the insatiable quest for transcendence were all harmful"
         ],
-        "explanation": "'Faust surrendered his soul to Mephistopheles in pursuit of infinite experiential knowledge.' 문장은 주어와 동사, 수식어가 완벽히 결합된 지문의 핵심 주제문으로, 제시된 조건에 정확히 부합하는 서술형 모범 답안입니다."
+        "correctIndex": 3,
+        "explanation": "윗글은 '괴테 파우스트: 멈추지 않는 지적 갈망'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Faust: The Insatiable Quest for Transcendence''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
     ]
   }

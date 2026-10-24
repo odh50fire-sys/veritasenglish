@@ -236,7 +236,7 @@ class ReadingEngine {
                         </span>
                         <div class="flex-1 space-y-1">
                             <p class="font-serif text-slate-900 text-sm sm:text-base leading-relaxed tracking-wide select-text">
-                                ${s.en}
+                                ${this.renderInteractiveEnglishText(s.en, s.num)}
                             </p>
                             <p class="reading-ko-text text-xs text-slate-500 font-medium ${this.showTranslation ? '' : 'hidden'}">
                                 ${s.ko}
@@ -628,7 +628,205 @@ class ReadingEngine {
             window.app.renderDashboard();
         }
     }
+
+    /**
+     * 영문장을 클릭 가능한 인터랙티브 단어 토큰 단위로 변환 렌더링
+     */
+    renderInteractiveEnglishText(sentenceText, sentenceNum) {
+        if (!sentenceText) return '';
+        // 단어 토큰과 공백/구두점 분리
+        const tokens = sentenceText.split(/(\s+|[.,!?;:"'()\[\]]+)/);
+        return tokens.map(token => {
+            const clean = token.replace(/[^a-zA-Z\-]/g, '').trim();
+            if (clean.length > 0 && /^[a-zA-Z]/.test(clean)) {
+                return `<span class="reading-word-token hover:bg-amber-200 hover:text-blue-950 rounded px-0.5 cursor-pointer transition-colors underline decoration-dotted decoration-slate-300 hover:decoration-blue-900" onclick="window.readingEngine.openWordInspector('${clean.replace(/'/g, "\\'")}', ${sentenceNum})" title="클릭하여 단어 사전 추가">${token}</span>`;
+            }
+            return token;
+        }).join('');
+    }
+
+    /**
+     * 전체 어휘 데이터베이스에서 단어 뜻 및 품사 검색
+     */
+    findWordMeaning(word) {
+        if (!word) return null;
+        const lower = word.toLowerCase();
+
+        // 1. 현재 지문 Key Vocabulary 검색
+        const passage = this.getCurrentPassage();
+        if (passage && passage.keyVocabulary && Array.isArray(passage.keyVocabulary)) {
+            const found = passage.keyVocabulary.find(v => v.word && v.word.toLowerCase() === lower);
+            if (found) return { word: found.word, pos: found.partOfSpeech || 'n.', meaning: found.meaning };
+        }
+
+        // 2. window.storage.words 검색
+        if (window.storage && window.storage.words) {
+            const found = window.storage.words.find(w => w.word && w.word.toLowerCase() === lower);
+            if (found) return { word: found.word, pos: found.partOfSpeech || 'n.', meaning: found.meaning };
+        }
+
+        // 3. CURATED_VOCABULARY 검색
+        if (typeof CURATED_VOCABULARY !== 'undefined' && Array.isArray(CURATED_VOCABULARY)) {
+            const found = CURATED_VOCABULARY.find(w => w.word && w.word.toLowerCase() === lower);
+            if (found) return { word: found.word, pos: found.partOfSpeech || 'n.', meaning: found.meaning };
+        }
+
+        // 4. NEUNGRYUL_VOCA_2025 검색
+        if (typeof NEUNGRYUL_VOCA_2025 !== 'undefined' && Array.isArray(NEUNGRYUL_VOCA_2025)) {
+            const found = NEUNGRYUL_VOCA_2025.find(w => w.word && w.word.toLowerCase() === lower);
+            if (found) return { word: found.word, pos: found.partOfSpeech || 'n.', meaning: found.meaning };
+        }
+
+        // 5. NEUNGRYUL_VOCA_ETYM_2025 검색
+        if (typeof NEUNGRYUL_VOCA_ETYM_2025 !== 'undefined' && Array.isArray(NEUNGRYUL_VOCA_ETYM_2025)) {
+            const found = NEUNGRYUL_VOCA_ETYM_2025.find(w => w.word && w.word.toLowerCase() === lower);
+            if (found) return { word: found.word, pos: found.partOfSpeech || 'n.', meaning: found.meaning };
+        }
+
+        // 6. SAMPLE_WORDS 검색
+        if (typeof SAMPLE_WORDS !== 'undefined' && Array.isArray(SAMPLE_WORDS)) {
+            const found = SAMPLE_WORDS.find(w => w.word && w.word.toLowerCase() === lower);
+            if (found) return { word: found.word, pos: found.partOfSpeech || 'n.', meaning: found.meaning };
+        }
+
+        return null;
+    }
+
+    /**
+     * 지문 속 단어 클릭 시 인스펙터 팝오버 오픈
+     */
+    openWordInspector(cleanWord, sentenceNum) {
+        if (!cleanWord) return;
+        this.inspectingWord = cleanWord;
+        this.inspectingSentenceNum = sentenceNum;
+
+        const passage = this.getCurrentPassage();
+        const sentenceObj = passage?.sentences?.find(s => s.num === sentenceNum);
+        const sentenceEn = sentenceObj ? sentenceObj.en : '';
+        const sentenceKo = sentenceObj ? sentenceObj.ko : '';
+
+        const foundInfo = this.findWordMeaning(cleanWord);
+        const meaning = foundInfo ? foundInfo.meaning : '';
+        const pos = foundInfo ? foundInfo.pos : 'n.';
+        this.inspectingPos = pos;
+
+        const modal = document.getElementById('modal-reading-word-inspector');
+        const wordEl = document.getElementById('inspector-word');
+        const posEl = document.getElementById('inspector-pos');
+        const meaningInput = document.getElementById('inspector-meaning-input');
+        const sentenceEnEl = document.getElementById('inspector-sentence-en');
+        const sentenceKoEl = document.getElementById('inspector-sentence-ko');
+        const saveBtn = document.getElementById('btn-inspector-save-word');
+        const saveText = document.getElementById('btn-inspector-save-text');
+
+        if (wordEl) wordEl.textContent = cleanWord;
+        if (posEl) posEl.textContent = pos;
+        if (meaningInput) {
+            meaningInput.value = meaning;
+            if (!meaning) {
+                meaningInput.placeholder = `'${cleanWord}'의 한글 뜻을 직접 입력하세요...`;
+            }
+        }
+        if (sentenceEnEl) sentenceEnEl.textContent = sentenceEn ? `"${sentenceEn}"` : '';
+        if (sentenceKoEl) sentenceKoEl.textContent = sentenceKo ? `해석: ${sentenceKo}` : '';
+
+        // 이미 단어장에 보관 중인지 확인
+        const isAlreadySaved = window.storage && window.storage.words && window.storage.words.some(w => w.word && w.word.toLowerCase() === cleanWord.toLowerCase());
+        if (saveText) {
+            if (isAlreadySaved) {
+                saveText.textContent = '✓ 이미 단어 사전에 보관 중 (다시 저장 가능)';
+            } else {
+                saveText.textContent = '단어 사전에 추가하기';
+            }
+        }
+
+        if (modal) modal.classList.remove('hidden');
+
+        // 여성 원어민 미국식 발음 자동 청취
+        if (window.tts) {
+            window.tts.speak(cleanWord, 'en-US');
+        }
+
+        if (window.lucide) window.lucide.createIcons();
+    }
+
+    closeWordInspector() {
+        const modal = document.getElementById('modal-reading-word-inspector');
+        if (modal) modal.classList.add('hidden');
+    }
+
+    playInspectorAudio(accent = 'en-US') {
+        if (!this.inspectingWord || !window.tts) return;
+        window.tts.speak(this.inspectingWord, accent);
+    }
+
+    saveInspectorWordToDictionary() {
+        if (!this.inspectingWord || !window.storage) return;
+
+        const meaningInput = document.getElementById('inspector-meaning-input');
+        const meaningVal = meaningInput ? meaningInput.value.trim() : '';
+        const passage = this.getCurrentPassage();
+        const sentenceObj = passage?.sentences?.find(s => s.num === this.inspectingSentenceNum);
+
+        const newWord = {
+            id: 'reading_vocab_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5),
+            word: this.inspectingWord,
+            meaning: meaningVal || (passage ? `지문 [${passage.title}] 문맥 어휘` : '독해 문맥 어휘'),
+            partOfSpeech: this.inspectingPos || 'n.',
+            example: sentenceObj ? sentenceObj.en : (passage ? passage.sentences[0]?.en || '' : ''),
+            exampleMeaning: sentenceObj ? sentenceObj.ko : (passage ? passage.sentences[0]?.ko || '' : ''),
+            level: (passage?.grade === '예비중' || passage?.grade === '중1' || passage?.grade === '중2') ? 'middle' : 'high',
+            tag: passage ? `[독해 추가] ${passage.title}` : '[독해 추가 단어]',
+            planDate: window.storage.getTodayDateString(),
+            nextReviewDate: window.storage.getTodayDateString(),
+            createdAt: Date.now(),
+            stage: 1,
+            reviewCount: 0,
+            correctCount: 0,
+            wrongCount: 0,
+            isWeak: false,
+            isCustomWord: true
+        };
+
+        window.storage.words = [newWord, ...window.storage.words];
+        window.storage.saveWords();
+
+        if (window.dictionaryEngine && window.dictionaryEngine.render) {
+            window.dictionaryEngine.render();
+        }
+        if (window.plannerEngine && window.plannerEngine.render) {
+            window.plannerEngine.render();
+        }
+
+        const saveText = document.getElementById('btn-inspector-save-text');
+        if (saveText) saveText.textContent = '✓ 단어 사전에 추가 완료!';
+
+        this.showToast(`'${this.inspectingWord}' 단어가 단어 사전에 성공적으로 추가되었습니다!`);
+
+        setTimeout(() => {
+            this.closeWordInspector();
+        }, 700);
+    }
+
+    showToast(message) {
+        const container = document.getElementById('global-toast-container') || document.body;
+        const toast = document.createElement('div');
+        toast.className = 'px-4 py-3 rounded-2xl bg-slate-900/95 text-white text-xs font-semibold shadow-2xl flex items-center gap-2 border border-slate-700 pointer-events-auto animate-in slide-in-from-bottom-5 duration-200';
+        toast.innerHTML = `
+            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+            <span>${message}</span>
+        `;
+        container.appendChild(toast);
+        if (window.lucide) window.lucide.createIcons();
+
+        setTimeout(() => {
+            toast.classList.add('opacity-0', 'transition-opacity', 'duration-300');
+            setTimeout(() => toast.remove(), 350);
+        }, 2500);
+    }
+
 }
+
 
 // 전역 인스턴스
 window.readingEngine = new ReadingEngine();
