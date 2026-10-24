@@ -2840,13 +2840,13 @@
                     </div>
                     <div>
                         <div class="flex flex-wrap items-center gap-2">
-                            <h3 class="font-serif font-black text-xl text-slate-900">Veritas Hall of Fame & 업적 도감</h3>
-                            <button type="button" id="btn-toggle-exp-guide" onclick="window.achievements.toggleExpGuide()" class="px-2.5 py-1 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 text-xs font-serif font-bold inline-flex items-center gap-1 transition-all cursor-pointer shadow-2xs">
+                            <h3 class="font-serif font-black text-xl text-slate-900" id="achievements-modal-title">Veritas Hall of Fame & 업적 도감</h3>
+                            <button type="button" id="btn-toggle-exp-guide" onclick="window.achievements.toggleExpGuideView()" class="px-3 py-1.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 text-xs font-serif font-bold inline-flex items-center gap-1.5 transition-all cursor-pointer shadow-2xs">
                                 <i data-lucide="help-circle" class="w-3.5 h-3.5 text-amber-600"></i>
-                                <span>EXP 획득 가이드</span>
+                                <span id="btn-toggle-exp-guide-text">EXP 획득 가이드</span>
                             </button>
                         </div>
-                        <p class="text-xs text-slate-500 mt-0.5">매일의 학습 활동으로 EXP를 획득하고 16종 명예의 뱃지를 수집하세요.</p>
+                        <p class="text-xs text-slate-500 mt-0.5" id="achievements-modal-desc">매일의 학습 활동으로 EXP를 획득하고 16종 명예의 뱃지를 수집하세요.</p>
                     </div>
                 </div>
                 <button type="button" onclick="window.achievements.closeModal()" class="p-2 rounded-xl text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition-colors">
@@ -2854,22 +2854,37 @@
                 </button>
             </div>
 
-            <div class="p-6 overflow-y-auto space-y-6 flex-1">
-                <!-- 요약 배너 -->
-                <div id="achievements-summary-banner"></div>
+            <div class="p-6 overflow-y-auto flex-1">
+                <!-- VIEW 1: 기본 뱃지 도감 및 요약 배너 (Default Clean View) -->
+                <div id="achievements-view-badges" class="space-y-6">
+                    <!-- 요약 배너 -->
+                    <div id="achievements-summary-banner"></div>
 
-                <!-- EXP 획득 가이드 & 티어 승급 룰북 컨테이너 -->
-                <div id="achievements-exp-guide-box"></div>
-
-                <!-- 16종 뱃지 그리드 -->
-                <div>
-                    <h4 class="font-serif font-bold text-sm text-slate-900 mb-3 flex items-center gap-1.5">
-                        <i data-lucide="medal" class="w-4 h-4 text-amber-500"></i>
-                        <span>16종 아카데믹 명예 뱃지 컬렉션</span>
-                    </h4>
-                    <div id="achievements-badges-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <!-- JS 렌더링 -->
+                    <!-- 16종 뱃지 그리드 -->
+                    <div>
+                        <h4 class="font-serif font-bold text-sm text-slate-900 mb-3 flex items-center gap-1.5">
+                            <i data-lucide="medal" class="w-4 h-4 text-amber-500"></i>
+                            <span>16종 아카데믹 명예 뱃지 컬렉션</span>
+                        </h4>
+                        <div id="achievements-badges-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <!-- JS 렌더링 -->
+                        </div>
                     </div>
+                </div>
+
+                <!-- VIEW 2: EXP 획득 가이드 & 티어 승급 전용 상세 페이지 (Dedicated Subpage) -->
+                <div id="achievements-view-guide" class="hidden space-y-6">
+                    <!-- 상단 뒤로가기 내비게이션 바 -->
+                    <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+                        <button type="button" onclick="window.achievements.switchModalView('badges')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-xs font-serif font-bold text-slate-700 hover:text-slate-900 transition-all cursor-pointer">
+                            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                            <span>← 명예의 전당 & 뱃지 도감으로 돌아가기</span>
+                        </button>
+                        <span class="text-[11px] font-mono text-amber-800 bg-amber-50 px-2.5 py-1 rounded-full font-bold border border-amber-200">Veritas Official EXP Guide</span>
+                    </div>
+
+                    <!-- EXP 가이드 & 티어 승급 룰북 박스 -->
+                    <div id="achievements-exp-guide-box"></div>
                 </div>
             </div>
 

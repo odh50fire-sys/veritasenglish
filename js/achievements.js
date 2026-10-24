@@ -35,6 +35,7 @@ class AchievementsEngine {
             { id: 'tier_silver', name: '정진하는 학도', category: 'tier', icon: 'star', desc: '실버 학도(500 EXP) 등극', exp: 150 }
         ];
 
+        this.currentModalView = 'badges';
         this.init();
     }
 
@@ -167,22 +168,44 @@ class AchievementsEngine {
         if (window.lucide) window.lucide.createIcons();
     }
 
-    toggleExpGuide() {
-        const box = document.getElementById('achievements-exp-guide-box');
-        if (!box) return;
-        if (box.classList.contains('hidden')) {
-            box.classList.remove('hidden');
+    toggleExpGuideView() {
+        if (this.currentModalView === 'guide') {
+            this.switchModalView('badges');
+        } else {
+            this.switchModalView('guide');
         }
-        box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        // 반짝임 효과
-        box.classList.add('ring-2', 'ring-amber-400');
-        setTimeout(() => box.classList.remove('ring-2', 'ring-amber-400'), 1500);
+    }
+
+    switchModalView(viewName) {
+        this.currentModalView = viewName;
+        const viewBadges = document.getElementById('achievements-view-badges');
+        const viewGuide = document.getElementById('achievements-view-guide');
+        const btnText = document.getElementById('btn-toggle-exp-guide-text');
+        const titleEl = document.getElementById('achievements-modal-title');
+        const descEl = document.getElementById('achievements-modal-desc');
+
+        if (viewName === 'guide') {
+            if (viewBadges) viewBadges.classList.add('hidden');
+            if (viewGuide) viewGuide.classList.remove('hidden');
+            if (btnText) btnText.textContent = '🏅 뱃지 도감 보기';
+            if (titleEl) titleEl.textContent = '💡 Veritas EXP 획득 가이드';
+            if (descEl) descEl.textContent = '다양한 학습 활동으로 EXP를 모으고 베리타스 티어를 승급하세요.';
+        } else {
+            if (viewBadges) viewBadges.classList.remove('hidden');
+            if (viewGuide) viewGuide.classList.add('hidden');
+            if (btnText) btnText.textContent = 'EXP 획득 가이드';
+            if (titleEl) titleEl.textContent = 'Veritas Hall of Fame & 업적 도감';
+            if (descEl) descEl.textContent = '매일의 학습 활동으로 EXP를 획득하고 16종 명예의 뱃지를 수집하세요.';
+        }
+
+        if (window.lucide) window.lucide.createIcons();
     }
 
     openModal() {
         const modal = document.getElementById('modal-achievements');
         if (!modal) return;
         this.renderModalContent();
+        this.switchModalView('badges'); // 항상 깔끔한 16종 뱃지 도감 첫 화면으로 초기화
         modal.classList.remove('hidden');
         if (window.lucide) window.lucide.createIcons();
     }
@@ -325,6 +348,28 @@ class AchievementsEngine {
                                 <div class="font-bold text-purple-900">👑 Master</div>
                                 <div class="text-slate-500 mt-0.5">5,000+ EXP</div>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- EXP 획득 바로가기 퀵 버튼군 -->
+                    <div class="pt-3 border-t border-amber-200/60 flex flex-wrap items-center justify-between gap-2.5">
+                        <span class="text-xs font-serif font-bold text-slate-700">지금 바로 EXP 획득하러 가기:</span>
+                        <div class="flex flex-wrap items-center gap-2">
+                            <button type="button" onclick="window.achievements.closeModal(); window.app && window.app.switchTab('reading'); setTimeout(() => window.app && window.app.switchReadingSubTab('scramble'), 100);" 
+                                class="px-3 py-1.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white text-xs font-serif font-bold transition-all shadow-xs flex items-center gap-1.5 cursor-pointer">
+                                <i data-lucide="align-left" class="w-3.5 h-3.5 text-amber-300"></i>
+                                <span>서술형 어순배열 (+15~20)</span>
+                            </button>
+                            <button type="button" onclick="window.achievements.closeModal(); window.app && window.app.switchTab('review'); setTimeout(() => window.app && window.app.switchReviewSubTab('wrong'), 100);" 
+                                class="px-3 py-1.5 rounded-xl bg-emerald-800 hover:bg-emerald-700 text-white text-xs font-serif font-bold transition-all shadow-xs flex items-center gap-1.5 cursor-pointer">
+                                <i data-lucide="check-check" class="w-3.5 h-3.5 text-amber-300"></i>
+                                <span>오답노트 복습 (+15)</span>
+                            </button>
+                            <button type="button" onclick="window.achievements.closeModal(); window.app && window.app.switchTab('reading'); setTimeout(() => window.app && window.app.switchReadingSubTab('exam'), 100);" 
+                                class="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-serif font-bold transition-all shadow-xs flex items-center gap-1.5 cursor-pointer">
+                                <i data-lucide="file-text" class="w-3.5 h-3.5 text-amber-300"></i>
+                                <span>내신 모의고사 (+80~150)</span>
+                            </button>
                         </div>
                     </div>
                 </div>
