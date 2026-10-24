@@ -222,9 +222,9 @@ class AppController {
         if (tabName === 'dashboard') {
             this.renderDashboard();
         } else if (tabName === 'flashcards') {
-            window.flashcardEngine.loadDeck('today');
+            window.flashcardEngine.loadDeck(window.flashcardEngine.currentFilter || 'today');
         } else if (tabName === 'quiz') {
-            window.quizEngine.startQuiz('choice');
+            window.quizEngine.startQuiz(window.quizEngine.currentMode || 'choice', { scope: window.quizEngine.currentScope || 'today' });
         } else if (tabName === 'review') {
             window.reviewManager.render();
         } else if (tabName === 'expressions') {

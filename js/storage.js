@@ -297,19 +297,16 @@ class StorageManager {
         let current = 0;
         if (goal.targetType === 'passages') {
             const records = this.readingRecords || {};
-            current = Object.keys(records).length;
+            // 요구사항 1: 독해는 지문을 읽고 실전문제를 풀어 채점 완료된 지문만 카운트
+            current = Object.values(records).filter(r => r && typeof r.score === 'number').length;
         } else if (goal.targetType === 'mastered') {
-            current = this.words.filter(w => (w.stage || 1) >= 5).length;
+            current = this.words.filter(w => !w.isReadingPassage && (w.stage || 1) >= 5).length;
         } else {
-            // words target
-            const startTs = new Date(startDate).getTime();
-            const wordsActiveSinceStart = this.words.filter(w => {
-                if (w.createdAt && w.createdAt >= startTs) return true;
-                if (w.lastReviewed && w.lastReviewed >= startTs) return true;
-                return false;
+            // 요구사항 1: 단어는 단순 등록이 아니라 플래시카드-스마트퀴즈를 완료했거나 학습된 단어만 카운트
+            current = this.words.filter(w => {
+                if (w.isReadingPassage) return false;
+                return (w.flashcardDone && w.quizDone) || w.studyCompleted === true || (w.stage && w.stage >= 2);
             }).length;
-
-            current = Math.max(wordsActiveSinceStart, Math.min(this.words.length, target));
         }
 
         const pct = Math.min(100, Math.round((current / target) * 100));
@@ -329,15 +326,127 @@ class StorageManager {
         };
     }
 
-    recordReadingPassageResult(passageId, score) {
+    /**
+     * 단어 플래시카드 학습 완료 마킹
+     */
+    markWordFlashcardDone(wordId, rating = 'good') {
+        const w = this.words.find(item => item.id === wordId);
+        if (!w) return null;
+        w.flashcardDone = true;
+        w.lastRating = rating;
+        if (w.quizDone) {
+            w.studyCompleted = true;
+            w.completedAt = Date.now();
+        }
+        this.saveWords();
+        return w;
+    }
+
+    /**
+     * 단어 스마트 퀴즈 학습 완료 마킹
+     */
+    markWordQuizDone(wordId, isCorrect = true) {
+        const w = this.words.find(item => item.id === wordId);
+        if (!w) return null;
+        w.quizDone = true;
+        if (isCorrect && w.flashcardDone) {
+            w.studyCompleted = true;
+            w.completedAt = Date.now();
+        }
+        this.saveWords();
+        return w;
+    }
+
+    /**
+     * 일자별 학습 플래너 완료 체크 상태 검증 및 업데이트 (플래시카드+퀴즈 모두 완료 시 ✓ 부여)
+     */
+    checkAndMarkDayCompletion(dateStr) {
+        if (!dateStr) dateStr = this.getTodayDateString();
+        if (!this.plans[dateStr]) {
+            this.plans[dateStr] = { restDay: false, memo: '', isDone: false };
+        }
+        const dayWords = this.getWordsByDate(dateStr).filter(w => !w.isReadingPassage);
+        if (dayWords.length > 0) {
+            const allCompleted = dayWords.every(w => (w.flashcardDone && w.quizDone) || w.studyCompleted);
+            const anyFlashcard = dayWords.some(w => w.flashcardDone);
+            const anyQuiz = dayWords.some(w => w.quizDone);
+
+            this.plans[dateStr].flashcardDone = anyFlashcard;
+            this.plans[dateStr].quizDone = anyQuiz;
+            this.plans[dateStr].isDone = allCompleted;
+            if (allCompleted) {
+                this.plans[dateStr].completedAt = this.plans[dateStr].completedAt || Date.now();
+            }
+            this.savePlans();
+            return allCompleted;
+        }
+        return false;
+    }
+
+    /**
+     * 학습 이력 로깅 (히스토리)
+     */
+    recordHistoryLog({ type, title, detail, score = null, total = null, accuracy = null }) {
+        if (!this.history || !Array.isArray(this.history)) this.history = [];
+        const now = new Date();
+        const logItem = {
+            id: 'hist_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5),
+            timestamp: now.getTime(),
+            date: this.getTodayDateString(),
+            timeStr: now.toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' }),
+            type, // 'flashcard', 'quiz', 'reading'
+            title: title || '학습 세션',
+            detail: detail || '',
+            score,
+            total,
+            accuracy: accuracy !== null ? accuracy : (score !== null && total ? Math.round((score / total) * 100) : null)
+        };
+        this.history.unshift(logItem);
+        if (this.history.length > 500) this.history = this.history.slice(0, 500);
+        this.saveHistory();
+        return logItem;
+    }
+
+    getHistoryLogs(filterType = 'all') {
+        if (!this.history || !Array.isArray(this.history)) return [];
+        if (filterType === 'all') return this.history;
+        if (filterType === 'voca') return this.history.filter(h => h.type === 'flashcard' || h.type === 'quiz');
+        if (filterType === 'reading') return this.history.filter(h => h.type === 'reading');
+        return this.history.filter(h => h.type === filterType);
+    }
+
+    recordReadingPassageResult(passageId, score, passageTitle = '') {
         if (!this.readingRecords) this.readingRecords = {};
         this.readingRecords[passageId] = {
             score: score,
             timestamp: Date.now(),
             date: this.getTodayDateString(),
-            isPassed: score >= 70
+            isPassed: score >= 70,
+            passageTitle: passageTitle
         };
         this.saveReadingRecords();
+
+        // 계획표에 등록된 독해 항목도 완료 마킹
+        const plannedItem = this.words.find(w => w.readingPassageId === passageId && w.isReadingPassage);
+        if (plannedItem) {
+            plannedItem.studyCompleted = true;
+            plannedItem.completedAt = Date.now();
+            this.saveWords();
+            if (plannedItem.planDate) {
+                this.checkAndMarkDayCompletion(plannedItem.planDate);
+            }
+        }
+
+        // 학습 이력에 기록
+        this.recordHistoryLog({
+            type: 'reading',
+            title: passageTitle ? `중등 내신 독해: ${passageTitle}` : '중등 내신 독해 실전 시험',
+            detail: `실전 문항 풀이 완료 • 획득 점수: ${score}점 (${score >= 80 ? '우수' : '보통'})`,
+            score: score,
+            total: 100,
+            accuracy: score
+        });
+
         return this.readingRecords[passageId];
     }
 
@@ -1447,6 +1556,7 @@ class StorageManager {
             settings: this.settings,
             plans: this.plans,
             bookmarks: this.bookmarks,
+            history: this.history,
             dailyMissions: this.dailyMissions,
             readingRecords: this.readingRecords
         };
@@ -1467,6 +1577,7 @@ class StorageManager {
                 if (parsed.settings) this.settings = parsed.settings;
                 if (parsed.plans) this.plans = parsed.plans;
                 if (parsed.bookmarks) this.bookmarks = parsed.bookmarks;
+                if (parsed.history) this.history = parsed.history;
                 if (parsed.dailyMissions) this.dailyMissions = parsed.dailyMissions;
                 if (parsed.readingRecords) this.readingRecords = parsed.readingRecords;
 
@@ -1475,6 +1586,7 @@ class StorageManager {
                 this.saveSettings();
                 this.savePlans();
                 this.saveBookmarks();
+                this.saveHistory();
                 this.saveDailyMissions();
                 return true;
             }

@@ -466,7 +466,9 @@ class ReadingEngine {
 
         // 학습 기록 영구 저장 (학업 목표 트래커 연동)
         if (window.storage && window.storage.recordReadingPassageResult && passage) {
-            window.storage.recordReadingPassageResult(passage.id, this.examScore);
+            window.storage.recordReadingPassageResult(passage.id, this.examScore, passage.title);
+            if (window.app && window.app.renderDashboard) window.app.renderDashboard();
+            if (window.plannerEngine && window.plannerEngine.render) window.plannerEngine.render();
         }
 
         this.renderActivePassage();

@@ -99,8 +99,13 @@ class PlannerEngine {
 
             const vocabWords = wordsOnDate.filter(w => !w.isReadingPassage);
             const readingPassages = wordsOnDate.filter(w => w.isReadingPassage);
+            const planInfo = window.storage.plans[dateStr] || {};
+            const isDayCompleted = planInfo.isDone === true || (vocabWords.length > 0 && vocabWords.every(w => (w.flashcardDone && w.quizDone) || w.studyCompleted));
 
             let badgesHtml = '';
+            if (isDayCompleted) {
+                badgesHtml += `<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-300 text-[10px] font-bold shadow-2xs"><i data-lucide="check-circle-2" class="w-3 h-3 text-emerald-600"></i> ✓ 완수</span>`;
+            }
             if (isRest) {
                 badgesHtml += `<span class="inline-block px-1.5 py-0.5 rounded bg-slate-200 text-slate-700 text-[10px] font-mono">휴식일</span>`;
             } else {
@@ -248,6 +253,23 @@ class PlannerEngine {
             return;
         }
 
+        const dayPlan = window.storage.plans[this.selectedDateStr] || {};
+        const vocabOnDate = words.filter(w => !w.isReadingPassage);
+        const isDayAllDone = dayPlan.isDone === true || (vocabOnDate.length > 0 && vocabOnDate.every(w => (w.flashcardDone && w.quizDone) || w.studyCompleted));
+
+        if (isDayAllDone) {
+            const banner = document.createElement('div');
+            banner.className = 'mb-3 p-3 bg-emerald-50 border border-emerald-300 rounded-xl flex items-center justify-between text-xs font-bold text-emerald-950 shadow-2xs';
+            banner.innerHTML = `
+                <div class="flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>
+                    <span>🎉 이 날짜의 배정 단어 플래시카드 & 스마트 퀴즈 학습이 모두 완료되었습니다!</span>
+                </div>
+                <span class="px-2 py-0.5 rounded-full bg-emerald-200 text-emerald-900 font-mono text-[10px]">✓ 학습 완료</span>
+            `;
+            container.appendChild(banner);
+        }
+
         words.forEach(w => {
             const row = document.createElement('div');
             
@@ -293,6 +315,7 @@ class PlannerEngine {
                             <div class="flex items-center gap-1.5">
                                 <span class="font-serif font-bold text-slate-900 text-sm">${w.word}</span>
                                 <span class="text-[11px] font-mono text-slate-500">${w.partOfSpeech || 'n.'}</span>
+                                ${(w.flashcardDone && w.quizDone) || w.studyCompleted ? '<span class="text-[10px] font-mono bg-emerald-100 text-emerald-900 border border-emerald-200 px-1.5 py-0.2 rounded font-bold flex items-center gap-0.5"><i data-lucide="check" class="w-3 h-3 text-emerald-700"></i> ✓ 마스터</span>' : (w.flashcardDone ? '<span class="text-[10px] font-mono bg-blue-100 text-blue-900 border border-blue-200 px-1.5 py-0.2 rounded font-bold">플래시카드완료</span>' : '')}
                                 ${w.neungryulDay ? `<span class="text-[10px] font-mono bg-blue-100 text-blue-900 px-1.5 py-0.2 rounded font-bold">${w.neungryulDay} #${w.neungryulNum || ''}</span>` : ''}
                                 ${w.isCuratedVoca ? `<span class="text-[10px] font-mono bg-amber-100 text-amber-900 px-1.5 py-0.2 rounded font-bold">${w.curatedCollectionTitle || w.tag} ${w.curatedDay} #${w.curatedNum || ''}</span>` : ''}
                                 ${w.isReadingVocab ? `<span class="text-[10px] font-mono bg-indigo-50 text-indigo-800 px-1.5 py-0.2 rounded font-bold">${w.tag}</span>` : ''}
@@ -337,15 +360,16 @@ class PlannerEngine {
     renderOverviewStats() {
         const stats = window.storage.getStatistics();
         const totalWords = stats.total;
-        const dailyTarget = window.storage.settings.dailyTarget;
-        const todayWords = window.storage.getWordsByDate(window.storage.getTodayDateString()).length;
+        const dailyTarget = window.storage.settings.dailyTarget || 15;
+        const todayAllWords = window.storage.getWordsByDate(window.storage.getTodayDateString()).filter(w => !w.isReadingPassage);
+        const completedCount = todayAllWords.filter(w => (w.flashcardDone && w.quizDone) || w.studyCompleted).length;
 
-        const progressPercent = Math.min(100, Math.round((todayWords / dailyTarget) * 100));
+        const progressPercent = Math.min(100, Math.round((completedCount / dailyTarget) * 100));
 
-        const todayProgEl = document.getElementById('planner-today-progress-bar');
-        const todayTextEl = document.getElementById('planner-today-progress-text');
+        const todayProgEl = document.getElementById("planner-today-progress-bar");
+        const todayTextEl = document.getElementById("planner-today-progress-text");
         if (todayProgEl) todayProgEl.style.width = `${progressPercent}%`;
-        if (todayTextEl) todayTextEl.textContent = `${todayWords} / ${dailyTarget} 단어 (${progressPercent}%)`;
+        if (todayTextEl) todayTextEl.textContent = `${completedCount} / ${dailyTarget} 단어 마스터 (${progressPercent}%)`;
     }
 
     /**
@@ -463,6 +487,115 @@ class PlannerEngine {
         }
 
         alert(`🗑️ [${unitTitle}] 관련 학습 과제 총 ${deleted}건이 계획표에서 삭제되었습니다.`);
+    }
+
+    /**
+     * 요구사항 2: 학습 플래너 내 학습 이력 모달 제어
+     */
+    openLearningHistoryModal() {
+        const modal = document.getElementById('modal-learning-history');
+        if (!modal) return;
+        modal.classList.remove('hidden');
+        this.currentHistoryFilter = 'all';
+        this.renderLearningHistoryModal();
+    }
+
+    closeLearningHistoryModal() {
+        const modal = document.getElementById('modal-learning-history');
+        if (modal) modal.classList.add('hidden');
+    }
+
+    filterLearningHistory(filterType) {
+        this.currentHistoryFilter = filterType;
+        document.querySelectorAll('.hist-filter-btn').forEach(btn => {
+            btn.classList.toggle('active-subtab', btn.dataset.filter === filterType);
+        });
+        this.renderLearningHistoryModal();
+    }
+
+    renderLearningHistoryModal() {
+        const listEl = document.getElementById('learning-history-list');
+        const wordsStatEl = document.getElementById('hist-stat-words');
+        const quizAccStatEl = document.getElementById('hist-stat-quiz-acc');
+        const readingStatEl = document.getElementById('hist-stat-reading');
+
+        if (!listEl) return;
+
+        // KPI 통계 산출
+        const allWords = window.storage.words || [];
+        const masteredWords = allWords.filter(w => !w.isReadingPassage && ((w.flashcardDone && w.quizDone) || w.studyCompleted || (w.stage && w.stage >= 2))).length;
+        
+        const historyLogs = window.storage.getHistoryLogs('all') || [];
+        const quizLogs = historyLogs.filter(h => h.type === 'quiz' && typeof h.accuracy === 'number');
+        const avgAcc = quizLogs.length > 0 ? Math.round(quizLogs.reduce((acc, cur) => acc + cur.accuracy, 0) / quizLogs.length) : 0;
+        
+        const readingRecords = window.storage.readingRecords || {};
+        const readingCount = Object.keys(readingRecords).length;
+
+        if (wordsStatEl) wordsStatEl.textContent = masteredWords;
+        if (quizAccStatEl) quizAccStatEl.textContent = avgAcc > 0 ? `${avgAcc}%` : '100%';
+        if (readingStatEl) readingStatEl.textContent = readingCount;
+
+        // 필터링된 로그 목록
+        const filterType = this.currentHistoryFilter || 'all';
+        const logs = window.storage.getHistoryLogs(filterType);
+
+        if (logs.length === 0) {
+            listEl.innerHTML = `
+                <div class="py-12 text-center text-slate-400 bg-slate-50/70 rounded-2xl border border-dashed border-slate-200">
+                    <i data-lucide="inbox" class="w-10 h-10 mx-auto text-slate-300 mb-2"></i>
+                    <p class="font-serif font-bold text-slate-700 text-sm">아직 기록된 학습 이력이 없습니다.</p>
+                    <p class="text-xs text-slate-400 mt-1">플래시카드나 스마트 퀴즈, 독해 지문을 학습하면 자동으로 이력이 누적됩니다.</p>
+                </div>
+            `;
+            if (window.lucide) window.lucide.createIcons();
+            return;
+        }
+
+        listEl.innerHTML = logs.map(item => {
+            let typeBadge = '';
+            let iconName = 'book-open';
+            if (item.type === 'flashcard') {
+                typeBadge = '<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-100 text-blue-900 border border-blue-200">플래시카드</span>';
+                iconName = 'layers';
+            } else if (item.type === 'quiz') {
+                typeBadge = '<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-200">스마트 퀴즈</span>';
+                iconName = 'check-square';
+            } else if (item.type === 'reading') {
+                typeBadge = '<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-indigo-100 text-indigo-900 border border-indigo-200">내신 독해</span>';
+                iconName = 'graduation-cap';
+            }
+
+            let scoreBadge = '';
+            if (typeof item.accuracy === 'number') {
+                scoreBadge = `<span class="text-xs font-mono font-bold ${item.accuracy >= 80 ? 'text-emerald-700' : 'text-blue-900'}">${item.accuracy}% 정답</span>`;
+            } else if (item.score !== null) {
+                scoreBadge = `<span class="text-xs font-mono font-bold text-blue-900">${item.score}점</span>`;
+            }
+
+            return `
+                <div class="p-3.5 bg-white border border-slate-200 hover:border-slate-300 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-2xs transition-all">
+                    <div class="flex items-start gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center shrink-0 mt-0.5">
+                            <i data-lucide="${iconName}" class="w-4 h-4 text-blue-900"></i>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap items-center gap-2">
+                                ${typeBadge}
+                                <span class="font-serif font-bold text-slate-900 text-sm">${item.title}</span>
+                            </div>
+                            <p class="text-xs text-slate-600 mt-1">${item.detail}</p>
+                        </div>
+                    </div>
+                    <div class="flex sm:flex-col items-center sm:items-end justify-between shrink-0 text-right">
+                        <div class="text-[11px] font-mono text-slate-400">${item.date} ${item.timeStr || ''}</div>
+                        <div class="mt-0.5">${scoreBadge}</div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+        if (window.lucide) window.lucide.createIcons();
     }
 }
 

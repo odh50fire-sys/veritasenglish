@@ -679,14 +679,33 @@
         <section id="tab-flashcards" class="tab-content hidden space-y-6">
             
             <div class="max-w-2xl mx-auto space-y-6">
-                <!-- 상단 필터 & 진행도 -->
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-2 bg-slate-100 p-1 rounded-xl text-xs font-medium">
-                        <button class="px-3 py-1.5 rounded-lg active-subtab" onclick="window.flashcardEngine.loadDeck('today')">오늘의 학습</button>
-                        <button class="px-3 py-1.5 rounded-lg" onclick="window.flashcardEngine.loadDeck('all')">전체 단어</button>
-                        <button class="px-3 py-1.5 rounded-lg" onclick="window.flashcardEngine.loadDeck('weak')">취약 단어만</button>
+                <!-- 상단 필터 & 진행도 & 양방향 뒤집기 토글 (요구사항 4, 5) -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div class="flex flex-wrap items-center gap-2">
+                        <!-- 출제 덱 선택 -->
+                        <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-xl text-xs font-medium">
+                            <button class="fc-filter-btn px-2.5 py-1.5 rounded-lg active-subtab" data-filter="today" onclick="window.flashcardEngine.loadDeck('today')">오늘의 학습</button>
+                            <button class="fc-filter-btn px-2.5 py-1.5 rounded-lg" data-filter="review" onclick="window.flashcardEngine.loadDeck('review')">복습 단어</button>
+                            <button class="fc-filter-btn px-2.5 py-1.5 rounded-lg" data-filter="weak" onclick="window.flashcardEngine.loadDeck('weak')">취약 단어</button>
+                            <button class="fc-filter-btn px-2.5 py-1.5 rounded-lg" data-filter="all" onclick="window.flashcardEngine.loadDeck('all')">전체 단어</button>
+                        </div>
+
+                        <!-- 요구사항 4: 영어-한국어 ↔ 한국어-영어 양방향 뒤집기 토글 -->
+                        <div class="flex items-center gap-1 bg-blue-50/80 p-1 rounded-xl text-xs font-medium border border-blue-200">
+                            <button id="btn-fc-mode-eng" class="px-2.5 py-1 rounded-lg font-bold bg-white text-blue-900 shadow-2xs border border-blue-200 transition-all cursor-pointer" onclick="window.flashcardEngine.setFlipMode('eng-to-kor')" title="영어 단어를 보고 한국어 뜻 맞추기 (단축키 M)">
+                                A ➔ 가 영어 우선
+                            </button>
+                            <button id="btn-fc-mode-kor" class="px-2.5 py-1 rounded-lg text-slate-600 hover:text-blue-900 transition-all cursor-pointer" onclick="window.flashcardEngine.setFlipMode('kor-to-eng')" title="한국어 뜻을 보고 영단어 떠올리기 (단축키 M)">
+                                가 ➔ A 한국어 우선
+                            </button>
+                        </div>
                     </div>
-                    <span id="fc-counter-text" class="text-xs font-mono font-bold text-slate-600">0 / 0</span>
+
+                    <div class="flex items-center gap-2 self-end sm:self-auto">
+                        <!-- 요구사항 5: 학습 성격 배지 -->
+                        <div id="fc-session-badge"></div>
+                        <span id="fc-counter-text" class="text-xs font-mono font-bold text-slate-600 bg-slate-100 px-2 py-1 rounded-lg">0 / 0</span>
+                    </div>
                 </div>
 
                 <!-- 진행 바 -->
@@ -720,7 +739,7 @@
 
                                 <div class="text-center text-xs text-slate-400 font-medium flex items-center justify-center gap-1.5">
                                     <i data-lucide="rotate-cw" class="w-3.5 h-3.5"></i>
-                                    <span>클릭 또는 <kbd class="px-1.5 py-0.5 rounded bg-slate-100 font-mono text-[10px]">스페이스바</kbd>로 뜻 확인</span>
+                                    <span id="fc-flip-guide-text">클릭 또는 <kbd class="px-1.5 py-0.5 rounded bg-slate-100 font-mono text-[10px]">스페이스바</kbd>로 뜻 확인</span>
                                 </div>
                             </div>
 
@@ -815,9 +834,20 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-center gap-3">
-                        <button class="px-5 py-2.5 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-50 text-xs font-semibold" onclick="window.flashcardEngine.loadDeck('today')">다시 복습하기</button>
-                        <button class="px-5 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white text-xs font-serif font-bold shadow-xs" onclick="window.app.switchTab('quiz')">스마트 퀴즈 도전</button>
+                    <!-- 요구사항 6: 취약 단어 모아보기 & 반대 모드로 복습하기 -->
+                    <div class="flex flex-wrap justify-center gap-2.5">
+                        <button id="btn-fc-review-weak" class="px-4 py-2.5 rounded-xl border border-red-200 bg-red-50 hover:bg-red-100 text-red-800 text-xs font-bold transition-all flex items-center gap-1.5 shadow-2xs cursor-pointer">
+                            <i data-lucide="alert-triangle" class="w-4 h-4 text-red-600"></i>
+                            <span>취약 단어 모아보기</span>
+                        </button>
+                        <button id="btn-fc-switch-flip-mode" class="px-4 py-2.5 rounded-xl border border-blue-200 bg-blue-50 hover:bg-blue-100 text-blue-900 text-xs font-bold transition-all flex items-center gap-1.5 shadow-2xs cursor-pointer">
+                            <i data-lucide="rotate-ccw" class="w-4 h-4 text-blue-900"></i>
+                            <span>한국어-영어 뒤집어서 다시 학습</span>
+                        </button>
+                        <button class="px-5 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white text-xs font-serif font-bold shadow-xs flex items-center gap-1.5 cursor-pointer" onclick="window.app.switchTab('quiz')">
+                            <span>스마트 퀴즈 도전</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
                     </div>
                 </div>
 
@@ -831,24 +861,45 @@
         <section id="tab-quiz" class="tab-content hidden space-y-6">
             <div class="max-w-3xl mx-auto space-y-6">
                 
-                <!-- 퀴즈 4가지 모드 선택 탭 -->
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                    <button class="quiz-mode-btn p-3 rounded-xl border border-slate-200 bg-white text-xs font-serif font-bold text-slate-700 flex flex-col items-center gap-1 active-mode transition-all" data-mode="choice" onclick="window.quizEngine.startQuiz('choice')">
-                        <i data-lucide="check-square" class="w-4 h-4"></i>
-                        <span>1. 객관식 4지선다</span>
-                    </button>
-                    <button class="quiz-mode-btn p-3 rounded-xl border border-slate-200 bg-white text-xs font-serif font-bold text-slate-700 flex flex-col items-center gap-1 transition-all" data-mode="spelling" onclick="window.quizEngine.startQuiz('spelling')">
-                        <i data-lucide="keyboard" class="w-4 h-4"></i>
-                        <span>2. 스펠링 타이핑</span>
-                    </button>
-                    <button class="quiz-mode-btn p-3 rounded-xl border border-slate-200 bg-white text-xs font-serif font-bold text-slate-700 flex flex-col items-center gap-1 transition-all" data-mode="listening" onclick="window.quizEngine.startQuiz('listening')">
-                        <i data-lucide="headphones" class="w-4 h-4"></i>
-                        <span>3. 리스닝 딕테이션</span>
-                    </button>
-                    <button class="quiz-mode-btn p-3 rounded-xl border border-slate-200 bg-white text-xs font-serif font-bold text-slate-700 flex flex-col items-center gap-1 transition-all" data-mode="cloze" onclick="window.quizEngine.startQuiz('cloze')">
-                        <i data-lucide="file-text" class="w-4 h-4"></i>
-                        <span>4. 문맥 완성 퀴즈</span>
-                    </button>
+                <!-- 퀴즈 출제 범위 (요구사항 8) & 4가지 모드 선택 탭 -->
+                <div class="space-y-3">
+                    <div class="flex flex-wrap items-center justify-between gap-2 bg-slate-100 p-1.5 rounded-2xl">
+                        <div class="flex flex-wrap items-center gap-1.5 text-xs font-medium">
+                            <button class="quiz-scope-btn px-3 py-1.5 rounded-xl active-subtab" data-scope="today" onclick="window.quizEngine.setQuizScope('today')">
+                                📅 오늘의 학습 단어
+                            </button>
+                            <button class="quiz-scope-btn px-3 py-1.5 rounded-xl" data-scope="review" onclick="window.quizEngine.setQuizScope('review')">
+                                🔄 에빙하우스 복습 단어
+                            </button>
+                            <button class="quiz-scope-btn px-3 py-1.5 rounded-xl" data-scope="weak" onclick="window.quizEngine.setQuizScope('weak')">
+                                ⚠️ 취약 단어 집중
+                            </button>
+                            <button class="quiz-scope-btn px-3 py-1.5 rounded-xl" data-scope="all" onclick="window.quizEngine.setQuizScope('all')">
+                                📚 전체 단어 종합
+                            </button>
+                        </div>
+                        <!-- 요구사항 5: 퀴즈 세션 성격 배지 -->
+                        <div id="quiz-session-badge" class="self-end sm:self-auto"></div>
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                        <button class="quiz-mode-btn p-3 rounded-xl border border-slate-200 bg-white text-xs font-serif font-bold text-slate-700 flex flex-col items-center gap-1 active-mode transition-all cursor-pointer" data-mode="choice" onclick="window.quizEngine.startQuiz('choice')">
+                            <i data-lucide="check-square" class="w-4 h-4"></i>
+                            <span>1. 객관식 4지선다</span>
+                        </button>
+                        <button class="quiz-mode-btn p-3 rounded-xl border border-slate-200 bg-white text-xs font-serif font-bold text-slate-700 flex flex-col items-center gap-1 transition-all cursor-pointer" data-mode="spelling" onclick="window.quizEngine.startQuiz('spelling')">
+                            <i data-lucide="keyboard" class="w-4 h-4"></i>
+                            <span>2. 스펠링 타이핑</span>
+                        </button>
+                        <button class="quiz-mode-btn p-3 rounded-xl border border-slate-200 bg-white text-xs font-serif font-bold text-slate-700 flex flex-col items-center gap-1 transition-all cursor-pointer" data-mode="listening" onclick="window.quizEngine.startQuiz('listening')">
+                            <i data-lucide="headphones" class="w-4 h-4"></i>
+                            <span>3. 리스닝 딕테이션</span>
+                        </button>
+                        <button class="quiz-mode-btn p-3 rounded-xl border border-slate-200 bg-white text-xs font-serif font-bold text-slate-700 flex flex-col items-center gap-1 transition-all cursor-pointer" data-mode="cloze" onclick="window.quizEngine.startQuiz('cloze')">
+                            <i data-lucide="file-text" class="w-4 h-4"></i>
+                            <span>4. 문맥 완성 퀴즈</span>
+                        </button>
+                    </div>
                 </div>
 
                 <!-- 퀴즈 진행 뷰 -->
@@ -917,7 +968,7 @@
                             <p id="quiz-cloze-sentence" class="font-serif text-lg text-slate-800 font-medium leading-relaxed">
                                 Sentence with blank
                             </p>
-                            <p id="quiz-cloze-translation" class="text-xs text-slate-500">한글 해석</p>
+                            <p id="quiz-cloze-translation" class="text-xs text-slate-500 hidden"></p>
                         </div>
                         <div id="quiz-cloze-options-grid" class="grid grid-cols-2 gap-3 max-w-lg mx-auto">
                             <!-- JS 주입 -->
@@ -1132,10 +1183,16 @@
                             </div>
                         </div>
 
-                        <!-- 하루 목표 단어 수 설정 -->
-                        <div class="flex items-center gap-2 text-xs">
-                            <span class="text-slate-500 font-medium">일일 목표 단어:</span>
-                            <input id="planner-target-input" type="number" min="5" max="100" class="w-14 px-2 py-1 text-center font-mono font-bold bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-900">
+                        <!-- 요구사항 2: 학습 이력 버튼 & 하루 목표 단어 수 설정 -->
+                        <div class="flex items-center gap-2">
+                            <button id="btn-open-learning-history" class="px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700 text-xs font-serif font-bold flex items-center gap-1.5 transition-all cursor-pointer shadow-2xs" onclick="window.plannerEngine.openLearningHistoryModal()" title="학습 이력 및 성취 통계 확인">
+                                <i data-lucide="history" class="w-3.5 h-3.5 text-blue-900"></i>
+                                <span>학습 이력</span>
+                            </button>
+                            <div class="flex items-center gap-1.5 text-xs">
+                                <span class="text-slate-500 font-medium">일일 목표:</span>
+                                <input id="planner-target-input" type="number" min="5" max="100" class="w-14 px-2 py-1 text-center font-mono font-bold bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-900">
+                            </div>
                         </div>
                     </div>
 
@@ -2201,6 +2258,79 @@
                 <button id="btn-execute-batch-plan" class="px-5 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-serif font-extrabold text-xs shadow-md transition-all flex items-center gap-1.5 cursor-pointer" onclick="window.app.executeBatchPlanRegistration()">
                     <i data-lucide="check" class="w-4 h-4 text-amber-300"></i>
                     <span>이 설정으로 계획표에 등록하기</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================================
+         MODAL: 실시간 학습 이력 & 성취 기록 모달 (요구사항 2)
+         ====================================================================== -->
+    <div id="modal-learning-history" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 space-y-6 max-h-[90vh] flex flex-col">
+            <!-- 헤더 -->
+            <div class="flex items-center justify-between pb-4 border-b border-slate-100 shrink-0">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-2xl bg-blue-100 text-blue-900 flex items-center justify-center">
+                        <i data-lucide="history" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-black text-xl text-slate-900">📊 나의 실시간 학습 이력 & 성취 기록</h3>
+                        <p class="text-xs text-slate-500 mt-0.5">플래시카드, 스마트 퀴즈 및 중등 독해 실전 시험의 누적 학습 로그</p>
+                    </div>
+                </div>
+                <button class="p-2 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-700 transition-colors cursor-pointer" onclick="window.plannerEngine.closeLearningHistoryModal()">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- 3대 핵심 성취 KPI 카드 -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 shrink-0">
+                <div class="p-4 rounded-2xl bg-blue-50/70 border border-blue-200/80">
+                    <div class="text-xs font-mono text-blue-800 font-semibold">마스터 완료 단어</div>
+                    <div class="flex items-baseline gap-1 mt-1">
+                        <span id="hist-stat-words" class="font-serif font-black text-2xl text-blue-950">0</span>
+                        <span class="text-xs text-blue-700 font-serif">단어 달성</span>
+                    </div>
+                    <p class="text-[11px] text-blue-600 mt-0.5">플래시카드 & 스마트퀴즈 통과</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-amber-50/70 border border-amber-200/80">
+                    <div class="text-xs font-mono text-amber-800 font-semibold">스마트 퀴즈 평균 정답률</div>
+                    <div class="flex items-baseline gap-1 mt-1">
+                        <span id="hist-stat-quiz-acc" class="font-serif font-black text-2xl text-amber-950">0%</span>
+                        <span class="text-xs text-amber-700 font-serif">누적 점수</span>
+                    </div>
+                    <p class="text-[11px] text-amber-600 mt-0.5">객관식/스펠링/리스닝/문맥</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-indigo-50/70 border border-indigo-200/80">
+                    <div class="text-xs font-mono text-indigo-800 font-semibold">완독 내신 독해 지문</div>
+                    <div class="flex items-baseline gap-1 mt-1">
+                        <span id="hist-stat-reading" class="font-serif font-black text-2xl text-indigo-950">0</span>
+                        <span class="text-xs text-indigo-700 font-serif">지문 완료</span>
+                    </div>
+                    <p class="text-[11px] text-indigo-600 mt-0.5">실전 시험 풀이 & 채점 완료</p>
+                </div>
+            </div>
+
+            <!-- 카테고리 필터 서브탭 -->
+            <div class="flex items-center gap-1.5 bg-slate-100 p-1 rounded-xl text-xs font-medium shrink-0">
+                <button class="hist-filter-btn px-3 py-1.5 rounded-lg active-subtab" data-filter="all" onclick="window.plannerEngine.filterLearningHistory('all')">전체 이력</button>
+                <button class="hist-filter-btn px-3 py-1.5 rounded-lg" data-filter="voca" onclick="window.plannerEngine.filterLearningHistory('voca')">영단어 & 퀴즈</button>
+                <button class="hist-filter-btn px-3 py-1.5 rounded-lg" data-filter="reading" onclick="window.plannerEngine.filterLearningHistory('reading')">내신 독해 시험</button>
+            </div>
+
+            <!-- 스크롤 가능한 이력 리스트 테이블 -->
+            <div class="flex-1 overflow-y-auto space-y-2 pr-1 custom-scrollbar">
+                <div id="learning-history-list" class="space-y-2">
+                    <!-- JS 주입 -->
+                </div>
+            </div>
+
+            <!-- 푸터 -->
+            <div class="pt-3 border-t border-slate-100 flex justify-between items-center text-xs text-slate-400 shrink-0">
+                <span>* 학습 완료 시 자동으로 기록되며 로컬 브라우저에 안전 보관됩니다.</span>
+                <button class="px-4 py-2 rounded-xl bg-slate-900 text-white font-medium hover:bg-slate-800 cursor-pointer" onclick="window.plannerEngine.closeLearningHistoryModal()">
+                    닫기
                 </button>
             </div>
         </div>
