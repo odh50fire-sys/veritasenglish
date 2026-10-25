@@ -182,6 +182,7 @@ class AppController {
                 if (window.achievements) {
             window.achievements.renderHeaderCapsule();
         }
+        try { this.updateHeaderUserInfo(); } catch (e) { console.error('Error in updateHeaderUserInfo:', e); }
         try { this.updateHeaderAcademicLevelBadge(); } catch (e) { console.error('Error in updateHeaderAcademicLevelBadge:', e); }
         if (window.wrongNote) {
             window.wrongNote.renderStats();
@@ -214,6 +215,344 @@ class AppController {
         // 대시보드 데일리 위젯 재렌더링
         if (typeof this.initDashboardDailyWidget === 'function') {
             this.initDashboardDailyWidget();
+        }
+    }
+
+    /**
+     * 상단 헤더 사용자 정보 갱신
+     */
+    updateHeaderUserInfo() {
+        if (!window.storage || typeof window.storage.getActiveUser !== 'function') return;
+        const user = window.storage.getActiveUser();
+        if (!user) return;
+
+        const avatarEl = document.getElementById('header-user-avatar');
+        if (avatarEl) {
+            avatarEl.textContent = user.avatar || '🎓';
+        }
+
+        const nameEl = document.getElementById('header-user-name');
+        if (nameEl) {
+            nameEl.textContent = user.username || '기본 사용자';
+        }
+
+        const dashNameEl = document.getElementById('dash-student-name');
+        if (dashNameEl) {
+            dashNameEl.textContent = user.username || '영재 학도';
+        }
+    }
+
+    /**
+     * 사용자 전환 시 앱 전체 뷰 즉시 새로고침
+     */
+    refreshAllViews() {
+        this.updateHeaderUserInfo();
+        this.updateHeaderAcademicLevelBadge();
+        if (window.achievements && typeof window.achievements.renderHeaderCapsule === 'function') {
+            window.achievements.renderHeaderCapsule();
+        }
+        if (window.wrongNote && typeof window.wrongNote.renderStats === 'function') {
+            window.wrongNote.renderStats();
+        }
+        if (this.currentTab === 'dashboard') {
+            this.renderDashboard();
+        } else {
+            this.switchTab(this.currentTab);
+        }
+        if (window.lucide) {
+            window.lucide.createIcons();
+        }
+    }
+
+    // ------------------------------------------------------------------------
+    // 다중 사용자(아이디) 모달 제어 로직
+    // ------------------------------------------------------------------------
+    openUserModal() {
+        const modal = document.getElementById('modal-user-switcher');
+        if (!modal) return;
+        this.renderUserModal();
+        modal.classList.remove('hidden');
+        if (window.lucide) window.lucide.createIcons();
+    }
+
+    closeUserModal() {
+        const modal = document.getElementById('modal-user-switcher');
+        if (modal) modal.classList.add('hidden');
+    }
+
+    renderUserModal() {
+        const container = document.getElementById('user-switcher-modal-body');
+        if (!container || !window.storage) return;
+
+        const activeUser = window.storage.getActiveUser();
+        const allUsers = window.storage.getAllUsers();
+        const activeLevel = window.storage.getAcademicLevel ? window.storage.getAcademicLevel() : 3;
+        const levelInfo = window.storage.getLevelInfo ? window.storage.getLevelInfo(activeLevel) : null;
+        const wordCount = window.storage.words ? window.storage.words.length : 0;
+
+        let html = '';
+
+        // 1. 현재 활성 학습자 카드
+        if (activeUser) {
+            html += `
+            <div class="rounded-2xl p-5 bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white border-2 border-blue-400/40 shadow-md">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono text-[11px] font-bold border border-emerald-400/30 flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> 현재 사용 중인 아이디
+                    </span>
+                    <button type="button" onclick="window.app.openUserEditModal('${activeUser.id}')" class="text-xs text-blue-200 hover:text-white underline font-medium cursor-pointer">
+                        ✏️ 정보 수정
+                    </button>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-2xl bg-white/10 border border-white/20 text-3xl flex items-center justify-center shrink-0 shadow-inner">
+                        ${activeUser.avatar || '🎓'}
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <div class="flex items-center gap-2">
+                            <h4 class="font-serif font-black text-xl text-white truncate">${activeUser.username}</h4>
+                            <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white/15 text-white/90 border border-white/20">
+                                ${activeUser.grade || '중등'}
+                            </span>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-300 mt-1.5 font-sans">
+                            <span>🎯 레벨: <strong class="text-amber-300">${levelInfo ? levelInfo.badge : 'Lv.' + activeLevel}</strong></span>
+                            <span>📚 등록 단어: <strong class="text-white">${wordCount}개</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `;
+        }
+
+        // 2. 다른 학습자 목록
+        html += `
+        <div>
+            <div class="flex items-center justify-between mb-3">
+                <h4 class="font-serif font-bold text-sm text-slate-800">
+                    전체 등록된 학습자 목록 <span class="text-blue-900 font-mono">(${allUsers.length}명)</span>
+                </h4>
+                <span class="text-xs text-slate-400">원클릭으로 즉시 전환됩니다</span>
+            </div>
+            <div class="space-y-2.5">
+        `;
+
+        allUsers.forEach(u => {
+            const isActive = (activeUser && u.id === activeUser.id);
+            let uWordCount = 0;
+            if (isActive) {
+                uWordCount = wordCount;
+            } else {
+                try {
+                    const rawW = localStorage.getItem(`veritas_${u.id}_words_v1`);
+                    if (rawW) uWordCount = JSON.parse(rawW).length;
+                } catch(e) {}
+            }
+
+            html += `
+            <div class="p-4 rounded-xl border ${isActive ? 'border-blue-500/50 bg-blue-50/50' : 'border-slate-200 bg-white hover:border-slate-300'} transition-all flex items-center justify-between gap-3 shadow-2xs">
+                <div class="flex items-center gap-3 min-w-0">
+                    <div class="w-10 h-10 rounded-xl ${isActive ? 'bg-blue-900 text-white' : 'bg-slate-100 text-slate-800'} text-xl flex items-center justify-center shrink-0">
+                        ${u.avatar || '🎓'}
+                    </div>
+                    <div class="min-w-0">
+                        <div class="flex items-center gap-2">
+                            <span class="font-serif font-bold text-sm text-slate-900 truncate">${u.username}</span>
+                            <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">
+                                ${u.grade || '중등'}
+                            </span>
+                            ${isActive ? '<span class="text-[10px] font-bold text-blue-900 bg-blue-100 px-1.5 py-0.5 rounded">현재</span>' : ''}
+                        </div>
+                        <div class="text-xs text-slate-500 mt-0.5 flex items-center gap-3">
+                            <span>단어: <strong>${uWordCount}개</strong></span>
+                            <span>가입: ${u.createdAt ? u.createdAt.slice(0, 10) : '-'}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 shrink-0">
+                    ${isActive ? `
+                        <button type="button" onclick="window.app.openUserEditModal('${u.id}')" class="px-3 py-1.5 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-600 text-xs font-medium cursor-pointer">
+                            수정
+                        </button>
+                    ` : `
+                        <button type="button" onclick="window.app.switchUser('${u.id}')" class="px-3 py-1.5 rounded-lg bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-xs shadow-xs transition-colors cursor-pointer">
+                            전환하기
+                        </button>
+                        <button type="button" onclick="window.app.openUserEditModal('${u.id}')" class="p-1.5 rounded-lg border border-slate-200 hover:bg-slate-100 text-slate-500 hover:text-slate-900 cursor-pointer" title="수정">
+                            <i data-lucide="edit-3" class="w-3.5 h-3.5"></i>
+                        </button>
+                        ${allUsers.length > 1 ? `
+                            <button type="button" onclick="window.app.deleteUser('${u.id}', '${u.username}')" class="p-1.5 rounded-lg border border-red-200 hover:bg-red-50 text-red-500 hover:text-red-700 cursor-pointer" title="삭제">
+                                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                            </button>
+                        ` : ''}
+                    `}
+                </div>
+            </div>
+            `;
+        });
+
+        html += `
+            </div>
+        </div>
+        `;
+
+        container.innerHTML = html;
+        if (window.lucide) window.lucide.createIcons();
+    }
+
+    openUserCreateModal() {
+        const modal = document.getElementById('modal-user-create');
+        if (!modal) return;
+        this.initAvatarPicker('create-user-avatar-picker', 'create-user-avatar-value', '🎓');
+        const nameInp = document.getElementById('create-user-name-input');
+        if (nameInp) nameInp.value = '';
+        modal.classList.remove('hidden');
+        if (nameInp) nameInp.focus();
+    }
+
+    closeUserCreateModal() {
+        const modal = document.getElementById('modal-user-create');
+        if (modal) modal.classList.add('hidden');
+    }
+
+    initAvatarPicker(containerId, inputId, selectedAvatar) {
+        const container = document.getElementById(containerId);
+        const hiddenInput = document.getElementById(inputId);
+        if (!container || !hiddenInput) return;
+
+        const avatars = ['🎓', '🦁', '🐯', '🚀', '📚', '💡', '🌟', '🦊', '🦉', '🎯', '⚡', '🍀'];
+        hiddenInput.value = selectedAvatar || avatars[0];
+
+        container.innerHTML = avatars.map(emoji => {
+            const isSel = (emoji === hiddenInput.value);
+            return `
+            <button type="button" class="w-10 h-10 rounded-xl text-xl flex items-center justify-center border transition-all cursor-pointer ${
+                isSel ? 'border-blue-900 bg-blue-50 ring-2 ring-blue-900 scale-105' : 'border-slate-200 bg-white hover:bg-slate-50'
+            }" onclick="window.app.selectAvatar('${containerId}', '${inputId}', '${emoji}')">
+                ${emoji}
+            </button>
+            `;
+        }).join('');
+    }
+
+    selectAvatar(containerId, inputId, emoji) {
+        const hiddenInput = document.getElementById(inputId);
+        if (hiddenInput) hiddenInput.value = emoji;
+        this.initAvatarPicker(containerId, inputId, emoji);
+    }
+
+    handleCreateUserSubmit(event) {
+        event.preventDefault();
+        const nameInput = document.getElementById('create-user-name-input');
+        const gradeSelect = document.getElementById('create-user-grade-select');
+        const avatarInput = document.getElementById('create-user-avatar-value');
+        const seedCheckbox = document.getElementById('create-user-seed-checkbox');
+
+        const username = nameInput ? nameInput.value.trim() : '';
+        if (!username) {
+            alert('학습자 아이디(이름)를 입력해 주세요.');
+            return;
+        }
+
+        const grade = gradeSelect ? gradeSelect.value : '중등';
+        const avatar = avatarInput ? avatarInput.value : '🎓';
+        const seedSample = seedCheckbox ? seedCheckbox.checked : true;
+
+        try {
+            const newUser = window.storage.createUser({
+                username,
+                avatar,
+                grade,
+                seedSample
+            });
+
+            this.closeUserCreateModal();
+            this.closeUserModal();
+            this.refreshAllViews();
+            alert(`🎉 [${newUser.username}] 학습자 아이디가 등록되어 바로 시작합니다!`);
+        } catch(err) {
+            console.error('Failed to create user:', err);
+            alert('학습자 등록 중 오류가 발생했습니다: ' + err.message);
+        }
+    }
+
+    openUserEditModal(userId) {
+        const user = window.storage.getAllUsers().find(u => u.id === userId);
+        if (!user) return;
+
+        const modal = document.getElementById('modal-user-edit');
+        if (!modal) return;
+
+        document.getElementById('edit-user-id-input').value = user.id;
+        document.getElementById('edit-user-name-input').value = user.username;
+        document.getElementById('edit-user-grade-select').value = user.grade || '중등';
+        this.initAvatarPicker('edit-user-avatar-picker', 'edit-user-avatar-value', user.avatar || '🎓');
+
+        modal.classList.remove('hidden');
+    }
+
+    closeUserEditModal() {
+        const modal = document.getElementById('modal-user-edit');
+        if (modal) modal.classList.add('hidden');
+    }
+
+    handleEditUserSubmit(event) {
+        event.preventDefault();
+        const userId = document.getElementById('edit-user-id-input').value;
+        const name = document.getElementById('edit-user-name-input').value.trim();
+        const grade = document.getElementById('edit-user-grade-select').value;
+        const avatar = document.getElementById('edit-user-avatar-value').value;
+
+        if (!name) {
+            alert('아이디(이름)를 입력해 주세요.');
+            return;
+        }
+
+        try {
+            window.storage.updateUser(userId, {
+                username: name,
+                grade,
+                avatar
+            });
+
+            this.closeUserEditModal();
+            this.renderUserModal();
+            this.refreshAllViews();
+            alert('학습자 정보가 성공적으로 수정되었습니다.');
+        } catch(err) {
+            console.error('Failed to update user:', err);
+            alert('수정 중 오류가 발생했습니다: ' + err.message);
+        }
+    }
+
+    switchUser(userId) {
+        try {
+            const user = window.storage.switchUser(userId);
+            if (user) {
+                this.closeUserModal();
+                this.refreshAllViews();
+                alert(`✨ [${user.username}] 님으로 학습 데이터가 전환되었습니다!`);
+            }
+        } catch(err) {
+            console.error('Failed to switch user:', err);
+            alert('사용자 전환 중 오류가 발생했습니다: ' + err.message);
+        }
+    }
+
+    deleteUser(userId, username) {
+        if (!confirm(`정말로 [${username}] 학습자 아이디와 모든 학습 데이터(단어장, 레벨테스트, 플래너)를 영구 삭제하시겠습니까?\n이 작업은 되돌릴 수 없습니다.`)) {
+            return;
+        }
+
+        try {
+            window.storage.deleteUser(userId);
+            this.renderUserModal();
+            this.refreshAllViews();
+            alert(`[${username}] 학습자 아이디가 삭제되었습니다.`);
+        } catch(err) {
+            console.error('Failed to delete user:', err);
+            alert('삭제 실패: ' + err.message);
         }
     }
 

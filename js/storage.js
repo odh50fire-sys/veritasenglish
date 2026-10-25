@@ -3,7 +3,8 @@
  * 단어장, 에빙하우스 망각곡선(SRS), 일일 플래너, 사용자 학습 통계, 원어민 데일리 미션 영구 보관
  */
 
-const STORAGE_KEYS = {
+const USERS_REGISTRY_KEY = 'veritas_users_registry_v1';
+const LEGACY_STORAGE_KEYS = {
     WORDS: 'veritas_words_v1',
     SETTINGS: 'veritas_settings_v1',
     PLANS: 'veritas_plans_v1',
@@ -15,6 +16,15 @@ const STORAGE_KEYS = {
     WRONG_ANSWERS: 'veritas_wrong_answers_v1',
     MOCK_EXAMS: 'veritas_mock_exams_v1'
 };
+
+const STORAGE_KEYS = new Proxy({}, {
+    get(target, prop) {
+        if (typeof window !== 'undefined' && window.storage && typeof window.storage.getStorageKey === 'function') {
+            return window.storage.getStorageKey(prop);
+        }
+        return LEGACY_STORAGE_KEYS[prop] || `veritas_${String(prop).toLowerCase()}_v1`;
+    }
+});
 
 // 에빙하우스 망각곡선 기반 라이트너 5단계 복습 간격 (일 단위)
 const SRS_INTERVALS = {
@@ -263,6 +273,12 @@ if (typeof window !== 'undefined') {
 
 class StorageManager {
     constructor() {
+        this.initUserRegistry();
+        this.resetState();
+        this.loadAll();
+    }
+
+    resetState() {
         this.words = [];
         this.settings = {
             dailyTarget: 15,
@@ -282,7 +298,7 @@ class StorageManager {
                     title: '이번 주 테마 어휘 100단어 완독',
                     targetDays: 7,
                     targetCount: 100,
-                    startDate: new Date().toISOString().split('T')[0],
+                    startDate: this.getTodayDateString(),
                     targetType: 'words'
                 },
                 longTerm: {
@@ -290,7 +306,7 @@ class StorageManager {
                     title: '능률 VOCA 중등 고난도 40일 완강',
                     targetDays: 40,
                     targetCount: 1200,
-                    startDate: new Date().toISOString().split('T')[0],
+                    startDate: this.getTodayDateString(),
                     targetType: 'words'
                 }
             }
@@ -313,8 +329,221 @@ class StorageManager {
         };
         this.wrongAnswers = []; // [{ id, sourceType, passageId, questionText, userChoice, correctChoice, explanation, date, isResolved, wrongCount }]
         this.mockExams = []; // [{ id, title, grade, score, totalQuestions, correctCount, timeSpentSec, date }]
+    }
 
+    // ------------------------------------------------------------------------
+    // 다중 사용자(아이디) 프로필 및 레지스트리 관리 (Multi-User Profile Manager)
+    // ------------------------------------------------------------------------
+    initUserRegistry() {
+        try {
+            const raw = localStorage.getItem(USERS_REGISTRY_KEY);
+            if (raw) {
+                this.userRegistry = JSON.parse(raw);
+                if (!this.userRegistry.users || !Array.isArray(this.userRegistry.users) || this.userRegistry.users.length === 0) {
+                    this.userRegistry = this.createDefaultRegistry();
+                    this.saveUserRegistry();
+                }
+            } else {
+                this.userRegistry = this.createDefaultRegistry();
+                this.saveUserRegistry();
+                // 기존 레거시 데이터가 있으면 user_default로 안전하게 마이그레이션
+                this.migrateLegacyDataToUser('user_default');
+            }
+
+            // activeUserId 유효성 확인
+            const activeUser = this.userRegistry.users.find(u => u.id === this.userRegistry.activeUserId);
+            if (!activeUser) {
+                this.userRegistry.activeUserId = this.userRegistry.users[0].id;
+                this.saveUserRegistry();
+            }
+        } catch (e) {
+            console.error('Failed to init user registry:', e);
+            this.userRegistry = this.createDefaultRegistry();
+        }
+    }
+
+    createDefaultRegistry() {
+        return {
+            activeUserId: 'user_default',
+            users: [
+                {
+                    id: 'user_default',
+                    username: '기본 사용자',
+                    avatar: '🎓',
+                    grade: '중등 통합',
+                    createdAt: new Date().toISOString(),
+                    lastActiveAt: new Date().toISOString()
+                }
+            ]
+        };
+    }
+
+    migrateLegacyDataToUser(targetUserId) {
+        try {
+            Object.keys(LEGACY_STORAGE_KEYS).forEach(k => {
+                const legKey = LEGACY_STORAGE_KEYS[k];
+                const oldVal = localStorage.getItem(legKey);
+                if (oldVal !== null) {
+                    const newKey = `veritas_${targetUserId}_${k.toLowerCase()}_v1`;
+                    if (localStorage.getItem(newKey) === null) {
+                        localStorage.setItem(newKey, oldVal);
+                    }
+                }
+            });
+        } catch (e) {
+            console.error('Migration error:', e);
+        }
+    }
+
+    saveUserRegistry() {
+        try {
+            localStorage.setItem(USERS_REGISTRY_KEY, JSON.stringify(this.userRegistry));
+        } catch (e) {
+            console.error('Failed to save user registry:', e);
+        }
+    }
+
+    getStorageKey(type) {
+        const userId = (this.userRegistry && this.userRegistry.activeUserId) || 'user_default';
+        return `veritas_${userId}_${String(type).toLowerCase()}_v1`;
+    }
+
+    getActiveUser() {
+        if (!this.userRegistry || !this.userRegistry.users) return null;
+        return this.userRegistry.users.find(u => u.id === this.userRegistry.activeUserId) || this.userRegistry.users[0];
+    }
+
+    getAllUsers() {
+        if (!this.userRegistry || !this.userRegistry.users) return [];
+        return [...this.userRegistry.users];
+    }
+
+    createUser({ username, avatar = '🎓', grade = '중등', seedSample = true }) {
+        const trimmedName = String(username || '').trim() || `학습자 ${this.userRegistry.users.length + 1}`;
+        const newId = 'user_' + Date.now();
+        const newUser = {
+            id: newId,
+            username: trimmedName,
+            avatar: avatar || '🎓',
+            grade: grade || '중등',
+            createdAt: new Date().toISOString(),
+            lastActiveAt: new Date().toISOString()
+        };
+
+        this.userRegistry.users.push(newUser);
+        this.saveUserRegistry();
+
+        // 새 사용자로 즉시 전환
+        this.switchUser(newId, { seedSample });
+        return newUser;
+    }
+
+    switchUser(targetUserId, options = {}) {
+        const targetUser = this.userRegistry.users.find(u => u.id === targetUserId);
+        if (!targetUser) {
+            console.error('User not found:', targetUserId);
+            return null;
+        }
+
+        // 현재 사용자 데이터 우선 안전 보관
+        this.saveAll();
+
+        // 활성 사용자 ID 갱신
+        this.userRegistry.activeUserId = targetUserId;
+        targetUser.lastActiveAt = new Date().toISOString();
+        this.saveUserRegistry();
+
+        // 상태 초기화 및 해당 사용자 데이터 로드
+        this.resetState();
         this.loadAll();
+
+        // 새 사용자이고 seedSample 옵션이 켜져 있는데 단어장이 비어있다면 샘플 주입
+        if (options.seedSample && this.words.length === 0) {
+            this.seedSampleWords();
+        }
+
+        // 사용자 설정의 studentName 동기화
+        if (targetUser.username && this.settings.studentName !== targetUser.username) {
+            this.settings.studentName = targetUser.username;
+            this.saveSettings();
+        }
+
+        // 이벤트 디스패치
+        if (typeof window !== 'undefined') {
+            window.dispatchEvent(new CustomEvent('veritas:user-switched', {
+                detail: { user: targetUser }
+            }));
+        }
+
+        return targetUser;
+    }
+
+    updateUser(userId, { username, avatar, grade }) {
+        const user = this.userRegistry.users.find(u => u.id === userId);
+        if (!user) return null;
+        if (username !== undefined) user.username = String(username).trim();
+        if (avatar !== undefined) user.avatar = avatar;
+        if (grade !== undefined) user.grade = grade;
+        this.saveUserRegistry();
+
+        if (userId === this.userRegistry.activeUserId && username) {
+            this.settings.studentName = username;
+            this.saveSettings();
+        }
+        return user;
+    }
+
+    deleteUser(userId) {
+        if (!this.userRegistry.users || this.userRegistry.users.length <= 1) {
+            throw new Error('최소 한 명의 학습자 아이디는 유지되어야 합니다.');
+        }
+
+        const idx = this.userRegistry.users.findIndex(u => u.id === userId);
+        if (idx === -1) return false;
+
+        // 로컬스토리지에서 해당 사용자의 모든 데이터 삭제
+        const prefix = `veritas_${userId}_`;
+        try {
+            const keysToRemove = [];
+            for (let i = 0; i < localStorage.length; i++) {
+                const k = localStorage.key(i);
+                if (k && k.startsWith(prefix)) {
+                    keysToRemove.push(k);
+                }
+            }
+            keysToRemove.forEach(k => localStorage.removeItem(k));
+        } catch (e) {
+            console.error('Error clearing user keys:', e);
+        }
+
+        // 목록에서 제거
+        this.userRegistry.users.splice(idx, 1);
+
+        // 만약 삭제한 사용자가 현재 활성 사용자였다면 첫 번째 사용자로 자동 전환
+        if (this.userRegistry.activeUserId === userId) {
+            const nextUser = this.userRegistry.users[0];
+            this.userRegistry.activeUserId = nextUser.id;
+            this.saveUserRegistry();
+            this.resetState();
+            this.loadAll();
+        } else {
+            this.saveUserRegistry();
+        }
+
+        return true;
+    }
+
+    saveAll() {
+        this.saveWords();
+        this.saveSettings();
+        this.savePlans();
+        this.saveBookmarks();
+        this.saveHistory();
+        this.saveDailyMissions();
+        this.saveReadingRecords();
+        this.saveUserProfile();
+        this.saveWrongAnswers();
+        this.saveMockExams();
     }
 
     loadAll() {
