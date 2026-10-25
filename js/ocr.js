@@ -701,7 +701,7 @@ class OCREngine {
         return {
             id: col ? col.id : 'curated',
             title: col ? col.title : '베리타스 테마 단어장',
-            badge: col ? `${col.badge} • DAY 01 ~ DAY 05 (총 100단어)` : '테마 단어장',
+            badge: col ? `${col.badge} • DAY 01 ~ DAY ${String(col.totalDays || 5).padStart(2, '0')} (총 ${pool.length}단어)` : '테마 단어장',
             description: col ? col.description : '',
             totalDays: col ? col.totalDays : 5,
             isNeungryul: false,

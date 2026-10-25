@@ -1,6 +1,6 @@
 /**
  * Veritas English - 내신 독해 & 원어민 회화 전 단어 렉시콘(Lexicon) 사전 데이터베이스
- * 70개 독해 지문 및 원어민 표현 예문에 등장하는 모든 단어에 대한 표준 품사 및 한국어 뜻 완비
+ * 70개 독해 지문 및 원어민 표현, 신규 교재 예문에 등장하는 모든 단어에 대한 표준 품사 및 한국어 뜻 완비
  */
 const READING_LEXICON_DATA = {
   "chlorophyll": {
@@ -15854,6 +15854,1114 @@ const READING_LEXICON_DATA = {
   "yielded": {
     "pos": "[동]",
     "meaning": "수익률, 산출하다, 굴복하다 (yield의 과거/과거분사)"
+  },
+  "classify": {
+    "pos": "[동]",
+    "meaning": "분류하다, 구분하다"
+  },
+  "sequence": {
+    "pos": "[명]",
+    "meaning": "순서, 연속"
+  },
+  "pattern": {
+    "pos": "[명]",
+    "meaning": "패턴, 양식, 무늬"
+  },
+  "chart": {
+    "pos": "[명]",
+    "meaning": "도표, 차트"
+  },
+  "diagram": {
+    "pos": "[명]",
+    "meaning": "도해, 도식"
+  },
+  "label": {
+    "pos": "[동]",
+    "meaning": "라벨을 붙이다, 명명하다 [명] 상표, 꼬리표"
+  },
+  "fact": {
+    "pos": "[명]",
+    "meaning": "사실, 실상"
+  },
+  "formulate": {
+    "pos": "[동]",
+    "meaning": "체계적으로 형성하다, 만들어내다"
+  },
+  "viewpoint": {
+    "pos": "[명]",
+    "meaning": "관점, 견해"
+  },
+  "tone": {
+    "pos": "[명]",
+    "meaning": "어조, 분위기, 음조"
+  },
+  "subjective": {
+    "pos": "[형]",
+    "meaning": "주관적인"
+  },
+  "coherent": {
+    "pos": "[형]",
+    "meaning": "일관성 있는, 논리 정연한"
+  },
+  "transition": {
+    "pos": "[명]",
+    "meaning": "전환, 변화 [동] 전환하다"
+  },
+  "inherit": {
+    "pos": "[동]",
+    "meaning": "물려받다, 상속하다"
+  },
+  "constitution": {
+    "pos": "[명]",
+    "meaning": "헌법, 체질, 구성"
+  },
+  "trade": {
+    "pos": "[명]",
+    "meaning": "무역, 교역 [동] 거래하다"
+  },
+  "era": {
+    "pos": "[명]",
+    "meaning": "시대, 연대"
+  },
+  "synthesize": {
+    "pos": "[동]",
+    "meaning": "종합하다, 합성하다"
+  },
+  "critique": {
+    "pos": "[명]",
+    "meaning": "비평, 평론 [동] 비평하다"
+  },
+  "substantiate": {
+    "pos": "[동]",
+    "meaning": "입증하다, 실체화하다"
+  },
+  "contradictory": {
+    "pos": "[형]",
+    "meaning": "모순되는, 반박하는"
+  },
+  "correlation": {
+    "pos": "[명]",
+    "meaning": "상관관계, 연관성"
+  },
+  "implication": {
+    "pos": "[명]",
+    "meaning": "함축, 영향, 시사점"
+  },
+  "metaphor": {
+    "pos": "[명]",
+    "meaning": "은유, 비유"
+  },
+  "motif": {
+    "pos": "[명]",
+    "meaning": "모티프, 주제 패턴"
+  },
+  "initiate": {
+    "pos": "[동]",
+    "meaning": "시작하다, 착수하다"
+  },
+  "adjacent": {
+    "pos": "[형]",
+    "meaning": "인접한, 가까운"
+  },
+  "intrinsic": {
+    "pos": "[형]",
+    "meaning": "내재적인, 본질적인"
+  },
+  "extrinsic": {
+    "pos": "[형]",
+    "meaning": "외적인, 비본질적인"
+  },
+  "replicate": {
+    "pos": "[동]",
+    "meaning": "복제하다, 재현하다"
+  },
+  "accelerate": {
+    "pos": "[동]",
+    "meaning": "가속하다, 촉진하다"
+  },
+  "deviate": {
+    "pos": "[동]",
+    "meaning": "벗어나다, 일탈하다"
+  },
+  "theoretical": {
+    "pos": "[형]",
+    "meaning": "이론적인"
+  },
+  "criterion": {
+    "pos": "[명]",
+    "meaning": "기준, 표준"
+  },
+  "methodology": {
+    "pos": "[명]",
+    "meaning": "방법론"
+  },
+  "paradigm": {
+    "pos": "[명]",
+    "meaning": "패러다임, 전형적인 틀"
+  },
+  "conceive": {
+    "pos": "[동]",
+    "meaning": "마음에 품다, 고안하다, 임신하다"
+  },
+  "discern": {
+    "pos": "[동]",
+    "meaning": "분별하다, 식별하다"
+  },
+  "undermine": {
+    "pos": "[동]",
+    "meaning": "약화시키다, 훼손하다"
+  },
+  "allocate": {
+    "pos": "[동]",
+    "meaning": "할당하다, 배분하다"
+  },
+  "finite": {
+    "pos": "[형]",
+    "meaning": "유한한, 한정된"
+  },
+  "volatile": {
+    "pos": "[형]",
+    "meaning": "휘발성의, 변덕스러운, 불안정한"
+  },
+  "legislation": {
+    "pos": "[명]",
+    "meaning": "입법, 법률 제정"
+  },
+  "break the ice": {
+    "pos": "[숙]",
+    "meaning": "어색한 분위기를 깨다"
+  },
+  "keep in touch": {
+    "pos": "[숙]",
+    "meaning": "연락하고 지내다"
+  },
+  "once in a blue moon": {
+    "pos": "[숙]",
+    "meaning": "극히 드물게, 아주 가끔"
+  },
+  "take care of": {
+    "pos": "[숙]",
+    "meaning": "돌보다, 처리하다"
+  },
+  "catch up with": {
+    "pos": "[숙]",
+    "meaning": "~을 따라잡다"
+  },
+  "drop by": {
+    "pos": "[숙]",
+    "meaning": "잠깐 들르다"
+  },
+  "keep an eye on": {
+    "pos": "[숙]",
+    "meaning": "~을 주시하다, 감시하다"
+  },
+  "look after": {
+    "pos": "[숙]",
+    "meaning": "돌보다, 보살피다"
+  },
+  "make sense": {
+    "pos": "[숙]",
+    "meaning": "이치에 맞다, 이해되다"
+  },
+  "out of order": {
+    "pos": "[숙]",
+    "meaning": "고장 난"
+  },
+  "on time": {
+    "pos": "[숙]",
+    "meaning": "정각에, 시간 맞춰"
+  },
+  "in time": {
+    "pos": "[숙]",
+    "meaning": "시간 내에, 늦지 않게"
+  },
+  "all of a sudden": {
+    "pos": "[숙]",
+    "meaning": "갑자기, 별안간"
+  },
+  "by the way": {
+    "pos": "[숙]",
+    "meaning": "그런데, 그건 그렇고"
+  },
+  "as a matter of fact": {
+    "pos": "[숙]",
+    "meaning": "사실은, 실은"
+  },
+  "so far so good": {
+    "pos": "[숙]",
+    "meaning": "지금까지는 순조롭다"
+  },
+  "in other words": {
+    "pos": "[숙]",
+    "meaning": "다시 말해서, 즉"
+  },
+  "at first glance": {
+    "pos": "[숙]",
+    "meaning": "얼핏 보기에, 첫눈에"
+  },
+  "take part in": {
+    "pos": "[숙]",
+    "meaning": "~에 참가하다"
+  },
+  "hand in": {
+    "pos": "[숙]",
+    "meaning": "제출하다"
+  },
+  "give a hand": {
+    "pos": "[숙]",
+    "meaning": "도와주다"
+  },
+  "turn down": {
+    "pos": "[숙]",
+    "meaning": "거절하다, 소리를 줄이다"
+  },
+  "blow up": {
+    "pos": "[숙]",
+    "meaning": "폭발하다, 터지다"
+  },
+  "make fun of": {
+    "pos": "[숙]",
+    "meaning": "~을 놀리다"
+  },
+  "lose one's temper": {
+    "pos": "[숙]",
+    "meaning": "화를 내다, 이성을 잃다"
+  },
+  "bit by bit": {
+    "pos": "[숙]",
+    "meaning": "조금씩, 서서히"
+  },
+  "no matter what": {
+    "pos": "[숙]",
+    "meaning": "비록 무엇이 ~할지라도, 무슨 일이 있어도"
+  },
+  "sooner or later": {
+    "pos": "[숙]",
+    "meaning": "조만간, 머지않아"
+  },
+  "upside down": {
+    "pos": "[숙]",
+    "meaning": "거꾸로, 뒤집혀"
+  },
+  "take turns": {
+    "pos": "[숙]",
+    "meaning": "교대로 하다"
+  },
+  "bear in mind": {
+    "pos": "[숙]",
+    "meaning": "마음에 새기다, 기억하다"
+  },
+  "feel under the weather": {
+    "pos": "[숙]",
+    "meaning": "몸이 찌뿌둥하다, 컨디션이 안 좋다"
+  },
+  "piece of cake": {
+    "pos": "[숙]",
+    "meaning": "식은 죽 먹기, 아주 쉬운 일"
+  },
+  "spill the beans": {
+    "pos": "[숙]",
+    "meaning": "비밀을 털어놓다, 누설하다"
+  },
+  "boarding pass": {
+    "pos": "[명]",
+    "meaning": "탑승권"
+  },
+  "baggage claim": {
+    "pos": "[명]",
+    "meaning": "수하물 찾는 곳"
+  },
+  "carry-on": {
+    "pos": "[명]",
+    "meaning": "기내 반입 수하물 [형] 기내용의"
+  },
+  "check-in counter": {
+    "pos": "[명]",
+    "meaning": "체크인 카운터, 탑승 수속대"
+  },
+  "gate": {
+    "pos": "[명]",
+    "meaning": "탑승구, 게이트"
+  },
+  "departures": {
+    "pos": "[명]",
+    "meaning": "출발편, 출국장"
+  },
+  "arrivals": {
+    "pos": "[명]",
+    "meaning": "도착편, 입국장"
+  },
+  "customs": {
+    "pos": "[명]",
+    "meaning": "세관, 관세"
+  },
+  "security check": {
+    "pos": "[명]",
+    "meaning": "보안 검색"
+  },
+  "flight attendant": {
+    "pos": "[명]",
+    "meaning": "항공 승무원"
+  },
+  "aisle seat": {
+    "pos": "[명]",
+    "meaning": "통로 쪽 좌석"
+  },
+  "window seat": {
+    "pos": "[명]",
+    "meaning": "창가 좌석"
+  },
+  "overhead bin": {
+    "pos": "[명]",
+    "meaning": "머리 위 짐칸"
+  },
+  "fasten seatbelt": {
+    "pos": "[숙]",
+    "meaning": "안전벨트를 매다"
+  },
+  "tray table": {
+    "pos": "[명]",
+    "meaning": "좌석 받침 식판, 트레이 테이블"
+  },
+  "blanket": {
+    "pos": "[명]",
+    "meaning": "담요 [동] 뒤덮다"
+  },
+  "earplugs": {
+    "pos": "[명]",
+    "meaning": "귀마개"
+  },
+  "motion sickness": {
+    "pos": "[명]",
+    "meaning": "멀미"
+  },
+  "in-flight meal": {
+    "pos": "[명]",
+    "meaning": "기내식"
+  },
+  "immigration": {
+    "pos": "[명]",
+    "meaning": "출입국 관리소, 이민국"
+  },
+  "passport control": {
+    "pos": "[명]",
+    "meaning": "여권 심사대"
+  },
+  "final destination": {
+    "pos": "[명]",
+    "meaning": "최종 목적지"
+  },
+  "purpose of visit": {
+    "pos": "[명]",
+    "meaning": "방문 목적"
+  },
+  "transit": {
+    "pos": "[명]",
+    "meaning": "환승, 통과 [동] 통과하다"
+  },
+  "layover": {
+    "pos": "[명]",
+    "meaning": "경유, 체류 시간"
+  },
+  "duty-free": {
+    "pos": "[형]",
+    "meaning": "면세의 [명] 면세점"
+  },
+  "currency exchange": {
+    "pos": "[명]",
+    "meaning": "환전소, 외환 환전"
+  },
+  "visa": {
+    "pos": "[명]",
+    "meaning": "비자, 입국 사증"
+  },
+  "check-in": {
+    "pos": "[명]",
+    "meaning": "체크인, 입실 수속 [동] 투숙 수속을 밟다"
+  },
+  "check-out": {
+    "pos": "[명]",
+    "meaning": "체크아웃, 퇴실 수속"
+  },
+  "front desk": {
+    "pos": "[명]",
+    "meaning": "프런트 데스크, 접수대"
+  },
+  "concierge": {
+    "pos": "[명]",
+    "meaning": "컨시어지, 안내 직원"
+  },
+  "room key": {
+    "pos": "[명]",
+    "meaning": "객실 열쇠, 카드키"
+  },
+  "deposit": {
+    "pos": "[명]",
+    "meaning": "보증금, 예치금 [동] 예치하다"
+  },
+  "complimentary": {
+    "pos": "[형]",
+    "meaning": "무료의, 칭찬하는"
+  },
+  "amenities": {
+    "pos": "[명]",
+    "meaning": "편의 시설, 어메니티 용품"
+  },
+  "wake-up call": {
+    "pos": "[명]",
+    "meaning": "모닝콜, 기상 전화"
+  },
+  "housekeeping": {
+    "pos": "[명]",
+    "meaning": "객실 청소 서비스"
+  },
+  "extra towel": {
+    "pos": "[명]",
+    "meaning": "추가 수건"
+  },
+  "do not disturb": {
+    "pos": "[숙]",
+    "meaning": "방해하지 마시오"
+  },
+  "room service": {
+    "pos": "[명]",
+    "meaning": "룸서비스"
+  },
+  "wi-fi password": {
+    "pos": "[명]",
+    "meaning": "와이파이 비밀번호"
+  },
+  "mini-bar": {
+    "pos": "[명]",
+    "meaning": "객실 미니바"
+  },
+  "air conditioning": {
+    "pos": "[명]",
+    "meaning": "에어컨, 냉방"
+  },
+  "thermostat": {
+    "pos": "[명]",
+    "meaning": "온도 조절기"
+  },
+  "clogged": {
+    "pos": "[형]",
+    "meaning": "막힌"
+  },
+  "hot water": {
+    "pos": "[명]",
+    "meaning": "온수, 따뜻한 물"
+  },
+  "change room": {
+    "pos": "[숙]",
+    "meaning": "방을 바꾸다"
+  },
+  "extend stay": {
+    "pos": "[숙]",
+    "meaning": "숙박을 연장하다"
+  },
+  "luggage storage": {
+    "pos": "[명]",
+    "meaning": "짐 보관소"
+  },
+  "late checkout": {
+    "pos": "[명]",
+    "meaning": "늦은 퇴실, 레이트 체크아웃"
+  },
+  "shuttle bus": {
+    "pos": "[명]",
+    "meaning": "셔틀버스"
+  },
+  "invoice": {
+    "pos": "[명]",
+    "meaning": "청구서, 영수증"
+  },
+  "keycard": {
+    "pos": "[명]",
+    "meaning": "전자 키카드"
+  },
+  "bellhop": {
+    "pos": "[명]",
+    "meaning": "벨보이, 짐 운반 직원"
+  },
+  "table for two": {
+    "pos": "[명]",
+    "meaning": "2인용 테이블"
+  },
+  "menu": {
+    "pos": "[명]",
+    "meaning": "메뉴판, 식단"
+  },
+  "specials": {
+    "pos": "[명]",
+    "meaning": "오늘의 특별 요리, 추천 특선"
+  },
+  "order": {
+    "pos": "[동]",
+    "meaning": "주문하다 [명] 주문"
+  },
+  "appetizer": {
+    "pos": "[명]",
+    "meaning": "전채 요리, 애피타이저"
+  },
+  "main course": {
+    "pos": "[명]",
+    "meaning": "주요리, 메인 코스"
+  },
+  "dessert": {
+    "pos": "[명]",
+    "meaning": "후식, 디저트"
+  },
+  "beverage": {
+    "pos": "[명]",
+    "meaning": "음료"
+  },
+  "medium rare": {
+    "pos": "[형]",
+    "meaning": "미디엄 레어로 익힌"
+  },
+  "dressing on the side": {
+    "pos": "[숙]",
+    "meaning": "드레싱을 따로 담아"
+  },
+  "vegetarian": {
+    "pos": "[형]",
+    "meaning": "채식주의의 [명] 채식주의자"
+  },
+  "allergic": {
+    "pos": "[형]",
+    "meaning": "알레르기가 있는"
+  },
+  "refill": {
+    "pos": "[동]",
+    "meaning": "리필하다, 다시 채우다 [명] 리필"
+  },
+  "napkin": {
+    "pos": "[명]",
+    "meaning": "냅킨, 휴지"
+  },
+  "cutlery": {
+    "pos": "[명]",
+    "meaning": "수저류 (포크, 나이프 등)"
+  },
+  "tap water": {
+    "pos": "[명]",
+    "meaning": "수돗물, 무료 식수"
+  },
+  "sparkling water": {
+    "pos": "[명]",
+    "meaning": "탄산수"
+  },
+  "take out": {
+    "pos": "[동]",
+    "meaning": "포장해 가다 [명] 포장 음식"
+  },
+  "check please": {
+    "pos": "[숙]",
+    "meaning": "계산서 주세요"
+  },
+  "split the bill": {
+    "pos": "[숙]",
+    "meaning": "각자 나누어 내다, 더치페이하다"
+  },
+  "service charge": {
+    "pos": "[명]",
+    "meaning": "봉사료, 서비스 요금"
+  },
+  "gratuity": {
+    "pos": "[명]",
+    "meaning": "팁, 봉사료"
+  },
+  "tip": {
+    "pos": "[명]",
+    "meaning": "팁, 조언 [동] 팁을 주다"
+  },
+  "doggy bag": {
+    "pos": "[명]",
+    "meaning": "남은 음식 포장 용기"
+  },
+  "receipt": {
+    "pos": "[명]",
+    "meaning": "영수증"
+  },
+  "wrong order": {
+    "pos": "[명]",
+    "meaning": "잘못 나온 주문"
+  },
+  "lukewarm": {
+    "pos": "[형]",
+    "meaning": "미지근한"
+  },
+  "delicious": {
+    "pos": "[형]",
+    "meaning": "아주 맛있는"
+  },
+  "subway station": {
+    "pos": "[명]",
+    "meaning": "지하철역"
+  },
+  "bus stop": {
+    "pos": "[명]",
+    "meaning": "버스 정류장"
+  },
+  "platform": {
+    "pos": "[명]",
+    "meaning": "승강장, 플랫폼"
+  },
+  "fare": {
+    "pos": "[명]",
+    "meaning": "운임, 교통 요금"
+  },
+  "ticket machine": {
+    "pos": "[명]",
+    "meaning": "티켓 자동 발매기"
+  },
+  "timetable": {
+    "pos": "[명]",
+    "meaning": "운행 시각표"
+  },
+  "one-way": {
+    "pos": "[형]",
+    "meaning": "편도의"
+  },
+  "round-trip": {
+    "pos": "[형]",
+    "meaning": "왕복의"
+  },
+  "turn left": {
+    "pos": "[숙]",
+    "meaning": "좌회전하다"
+  },
+  "turn right": {
+    "pos": "[숙]",
+    "meaning": "우회전하다"
+  },
+  "go straight": {
+    "pos": "[숙]",
+    "meaning": "직진하다"
+  },
+  "crosswalk": {
+    "pos": "[명]",
+    "meaning": "횡단보도"
+  },
+  "pedestrian": {
+    "pos": "[명]",
+    "meaning": "보행자 [형] 보행자의"
+  },
+  "intersection": {
+    "pos": "[명]",
+    "meaning": "교차로, 사거리"
+  },
+  "block": {
+    "pos": "[명]",
+    "meaning": "블록, 구획 [동] 막다"
+  },
+  "landmark": {
+    "pos": "[명]",
+    "meaning": "주요 지형지물, 랜드마크"
+  },
+  "directions": {
+    "pos": "[명]",
+    "meaning": "길 안내, 방향"
+  },
+  "fitting room": {
+    "pos": "[명]",
+    "meaning": "탈의실, 피팅룸"
+  },
+  "try on": {
+    "pos": "[숙]",
+    "meaning": "입어보다, 착용해 보다"
+  },
+  "size": {
+    "pos": "[명]",
+    "meaning": "치수, 크기"
+  },
+  "sale": {
+    "pos": "[명]",
+    "meaning": "할인 판매, 세일"
+  },
+  "tax refund": {
+    "pos": "[명]",
+    "meaning": "세금 환급, 텍스 리펀"
+  },
+  "out of stock": {
+    "pos": "[숙]",
+    "meaning": "품절된, 재고가 없는"
+  },
+  "emergency room": {
+    "pos": "[명]",
+    "meaning": "응급실"
+  },
+  "ambulance": {
+    "pos": "[명]",
+    "meaning": "구급차"
+  },
+  "nurse": {
+    "pos": "[명]",
+    "meaning": "간호사"
+  },
+  "urgent care": {
+    "pos": "[명]",
+    "meaning": "긴급 진료 센터"
+  },
+  "symptoms": {
+    "pos": "[명]",
+    "meaning": "증상, 징후"
+  },
+  "pain": {
+    "pos": "[명]",
+    "meaning": "통증, 고통"
+  },
+  "fever": {
+    "pos": "[명]",
+    "meaning": "열, 고열"
+  },
+  "headache": {
+    "pos": "[명]",
+    "meaning": "두통"
+  },
+  "pharmacy": {
+    "pos": "[명]",
+    "meaning": "약국"
+  },
+  "pharmacist": {
+    "pos": "[명]",
+    "meaning": "약사"
+  },
+  "prescription": {
+    "pos": "[명]",
+    "meaning": "처방전"
+  },
+  "over-the-counter": {
+    "pos": "[형]",
+    "meaning": "처방전 없이 살 수 있는"
+  },
+  "painkiller": {
+    "pos": "[명]",
+    "meaning": "진통제"
+  },
+  "ointment": {
+    "pos": "[명]",
+    "meaning": "연고"
+  },
+  "digestive medicine": {
+    "pos": "[명]",
+    "meaning": "소화제"
+  },
+  "dosage": {
+    "pos": "[명]",
+    "meaning": "복용량, 정량"
+  },
+  "side effect": {
+    "pos": "[명]",
+    "meaning": "부작용"
+  },
+  "call the police": {
+    "pos": "[숙]",
+    "meaning": "경찰을 부르다"
+  },
+  "stolen": {
+    "pos": "[형]",
+    "meaning": "도난당한"
+  },
+  "lost and found": {
+    "pos": "[명]",
+    "meaning": "분실물 보관소"
+  },
+  "embassy": {
+    "pos": "[명]",
+    "meaning": "대사관"
+  },
+  "passport lost": {
+    "pos": "[숙]",
+    "meaning": "여권을 분실하다"
+  },
+  "accident": {
+    "pos": "[명]",
+    "meaning": "사고, 재해"
+  },
+  "allergic reaction": {
+    "pos": "[명]",
+    "meaning": "알레르기 반응"
+  },
+  "dizzy": {
+    "pos": "[형]",
+    "meaning": "어지러운, 현기증 나는"
+  },
+  "thrilled": {
+    "pos": "[형]",
+    "meaning": "짜릿한, 아주 신이 난"
+  },
+  "overjoyed": {
+    "pos": "[형]",
+    "meaning": "기쁨에 넘치는, 크게 기뻐하는"
+  },
+  "relieved": {
+    "pos": "[형]",
+    "meaning": "안도하는, 다행으로 여기는"
+  },
+  "hopeful": {
+    "pos": "[형]",
+    "meaning": "희망에 찬, 낙관적인"
+  },
+  "radiant": {
+    "pos": "[형]",
+    "meaning": "빛나는, 환한"
+  },
+  "euphoric": {
+    "pos": "[형]",
+    "meaning": "극도의 행복감을 느끼는, 도취된"
+  },
+  "devastated": {
+    "pos": "[형]",
+    "meaning": "엄청난 충격을 받은, 망연자실한"
+  },
+  "heartbroken": {
+    "pos": "[형]",
+    "meaning": "비탄에 잠긴, 가슴이 찢어지는"
+  },
+  "depressed": {
+    "pos": "[형]",
+    "meaning": "우울한, 풀이 죽은"
+  },
+  "sorrowful": {
+    "pos": "[형]",
+    "meaning": "슬픔에 찬, 비통한"
+  },
+  "gloomy": {
+    "pos": "[형]",
+    "meaning": "어두침침한, 우울한, 비관적인"
+  },
+  "mournful": {
+    "pos": "[형]",
+    "meaning": "애절한, 슬픔에 잠긴"
+  },
+  "hopeless": {
+    "pos": "[형]",
+    "meaning": "절망적인, 희망 없는"
+  },
+  "melancholy": {
+    "pos": "[명]",
+    "meaning": "우울, 서글픔 [형] 구슬픈"
+  },
+  "dejected": {
+    "pos": "[형]",
+    "meaning": "낙담한, 풀이 꺾인"
+  },
+  "overwhelmed": {
+    "pos": "[형]",
+    "meaning": "압도된, 벅찬, 어쩔 줄 모르는"
+  },
+  "terrified": {
+    "pos": "[형]",
+    "meaning": "겁에 질린, 공포에 사로잡힌"
+  },
+  "apprehensive": {
+    "pos": "[형]",
+    "meaning": "우려하는, 걱정스러운"
+  },
+  "bewildered": {
+    "pos": "[형]",
+    "meaning": "당혹스러운, 어리둥절한"
+  },
+  "panicky": {
+    "pos": "[형]",
+    "meaning": "공황에 빠진, 전전긍긍하는"
+  },
+  "restless": {
+    "pos": "[형]",
+    "meaning": "안절부절못하는, 침착하지 못한"
+  },
+  "insecure": {
+    "pos": "[형]",
+    "meaning": "불안정한, 자신감 없는"
+  },
+  "startled": {
+    "pos": "[형]",
+    "meaning": "깜짝 놀란"
+  },
+  "furious": {
+    "pos": "[형]",
+    "meaning": "격노한, 맹렬한"
+  },
+  "resentful": {
+    "pos": "[형]",
+    "meaning": "분개하는, 억울해하는"
+  },
+  "frustrated": {
+    "pos": "[형]",
+    "meaning": "좌절감을 느끼는, 답답한"
+  },
+  "irritated": {
+    "pos": "[형]",
+    "meaning": "짜증 난, 화난"
+  },
+  "indignant": {
+    "pos": "[형]",
+    "meaning": "의분한, 분개하는"
+  },
+  "bitter": {
+    "pos": "[형]",
+    "meaning": "씁쓸한, 격심한, 쓰라린"
+  },
+  "cynical": {
+    "pos": "[형]",
+    "meaning": "냉소적인, 비꼬는"
+  },
+  "skeptical": {
+    "pos": "[형]",
+    "meaning": "회의적인, 의심 많은"
+  },
+  "disgusted": {
+    "pos": "[형]",
+    "meaning": "역겨워하는, 혐오감을 느끼는"
+  },
+  "extroverted": {
+    "pos": "[형]",
+    "meaning": "외향적인, 사교적인"
+  },
+  "introverted": {
+    "pos": "[형]",
+    "meaning": "내향적인"
+  },
+  "clumsy": {
+    "pos": "[형]",
+    "meaning": "서투른, 덤벙대는"
+  },
+  "fateful": {
+    "pos": "[형]",
+    "meaning": "운명적인, 중대한"
+  },
+  "quest": {
+    "pos": "[명]",
+    "meaning": "탐색, 원정 [동] 탐구하다"
+  },
+  "ordeal": {
+    "pos": "[명]",
+    "meaning": "시련, 고난"
+  },
+  "catastrophe": {
+    "pos": "[명]",
+    "meaning": "참사, 재앙"
+  },
+  "suspense": {
+    "pos": "[명]",
+    "meaning": "서스펜스, 긴장감"
+  },
+  "climax": {
+    "pos": "[명]",
+    "meaning": "클라이맥스, 절정"
+  },
+  "peculiar": {
+    "pos": "[형]",
+    "meaning": "기이한, 특유의"
+  },
+  "dreary": {
+    "pos": "[형]",
+    "meaning": "음산한, 쓸쓸한"
+  },
+  "enchanting": {
+    "pos": "[형]",
+    "meaning": "매혹적인, 황홀한"
+  },
+  "magnificent": {
+    "pos": "[형]",
+    "meaning": "웅장한, 훌륭한"
+  },
+  "solitary": {
+    "pos": "[형]",
+    "meaning": "고독한, 홀로 있는"
+  },
+  "tranquil": {
+    "pos": "[형]",
+    "meaning": "고요한, 평온한"
+  },
+  "ominous": {
+    "pos": "[형]",
+    "meaning": "불길한, 험악한"
+  },
+  "picturesque": {
+    "pos": "[형]",
+    "meaning": "그림 같은, 그림같이 아름다운"
+  },
+  "remorse": {
+    "pos": "[명]",
+    "meaning": "회한, 깊은 후회"
+  },
+  "agony": {
+    "pos": "[명]",
+    "meaning": "극심한 고통, 번민"
+  },
+  "nostalgia": {
+    "pos": "[명]",
+    "meaning": "향수, 옛 생각"
+  },
+  "solitude": {
+    "pos": "[명]",
+    "meaning": "고독, 독처"
+  },
+  "vanity": {
+    "pos": "[명]",
+    "meaning": "허영심, 덧없음"
+  },
+  "arrogance": {
+    "pos": "[명]",
+    "meaning": "오만함"
+  },
+  "hypocrisy": {
+    "pos": "[명]",
+    "meaning": "위선"
+  },
+  "ecstasy": {
+    "pos": "[명]",
+    "meaning": "황홀경, 무아지경"
+  },
+  "murmur": {
+    "pos": "[동]",
+    "meaning": "속삭이다, 중얼거리다 [명] 속삭임"
+  },
+  "shudder": {
+    "pos": "[동]",
+    "meaning": "몸서리치다, 떨다 [명] 떨림"
+  },
+  "gaze": {
+    "pos": "[동]",
+    "meaning": "응시하다, 바라보다 [명] 응시"
+  },
+  "linger": {
+    "pos": "[동]",
+    "meaning": "남아 있다, 서성거리다"
+  },
+  "beckon": {
+    "pos": "[동]",
+    "meaning": "손짓하다, 유혹하다"
+  },
+  "defy": {
+    "pos": "[동]",
+    "meaning": "반항하다, 거역하다"
+  },
+  "cherish": {
+    "pos": "[동]",
+    "meaning": "소중히 간직하다, 아끼다"
+  },
+  "immortal": {
+    "pos": "[형]",
+    "meaning": "불멸의, 죽지 않는 [명] 불사신"
+  },
+  "fleeting": {
+    "pos": "[형]",
+    "meaning": "순식간의, 덧없는"
+  },
+  "treacherous": {
+    "pos": "[형]",
+    "meaning": "배반하는, 위험한"
+  },
+  "wicked": {
+    "pos": "[형]",
+    "meaning": "사악한, 심술궂은"
+  },
+  "ethereal": {
+    "pos": "[형]",
+    "meaning": "천상(天上)의, 영묘한, 가볍고 우아한"
   }
 };
 
