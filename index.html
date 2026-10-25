@@ -3442,10 +3442,55 @@
                     </div>
                 </div>
 
-                <!-- 5. 단원 제목 직접 편집 (자동 생성 가이드) -->
-                <div class="pt-2 border-t border-slate-100">
-                    <label class="block text-xs font-bold text-slate-900 mb-1.5">5. 생성될 단원 명칭 <span class="text-slate-400 font-normal">(수정 가능)</span></label>
-                    <input type="text" id="custom-unit-title-input" placeholder="단원 명칭이 자동으로 완성됩니다" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm font-serif font-bold text-slate-900 focus:ring-2 focus:ring-blue-900">
+                <!-- 5. 단원 제목(명칭) 설정 방식 (AI 자동 생성 vs 내가 직접 입력) -->
+                <div class="pt-3 border-t border-slate-100">
+                    <div class="flex items-center justify-between mb-2">
+                        <label class="block text-xs font-bold text-slate-900">
+                            5. 단원 명칭(제목) 정하기
+                        </label>
+                        <span class="text-[11px] text-slate-500 font-medium">AI 작명 또는 직접 입력 중 선택</span>
+                    </div>
+
+                    <!-- 2가지 선택 옵션 버튼 -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-2.5">
+                        <button type="button" id="btn-title-mode-ai" onclick="window.ocrEngine && window.ocrEngine.setTitleMode('ai')" class="p-3 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between bg-blue-900 text-white border-blue-900 shadow-sm ring-2 ring-amber-400">
+                            <div class="flex items-center gap-2.5">
+                                <span class="text-xl shrink-0">✨</span>
+                                <div>
+                                    <div class="font-bold text-xs text-amber-300">AI가 알아서 정하기 (추천)</div>
+                                    <div class="text-[10px] text-slate-200 mt-0.5">선택한 목적·테마·일정에 맞춰 최적의 제목 자동 생성</div>
+                                </div>
+                            </div>
+                            <span id="badge-title-mode-ai-check" class="text-amber-300 font-bold text-xs shrink-0">✓ 선택됨</span>
+                        </button>
+
+                        <button type="button" id="btn-title-mode-custom" onclick="window.ocrEngine && window.ocrEngine.setTitleMode('custom')" class="p-3 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between bg-white text-slate-700 border-slate-200 hover:border-blue-400 hover:bg-blue-50/50">
+                            <div class="flex items-center gap-2.5">
+                                <span class="text-xl shrink-0">✍️</span>
+                                <div>
+                                    <div class="font-bold text-xs text-slate-900">내가 직접 정하기</div>
+                                    <div class="text-[10px] text-slate-500 mt-0.5">나만의 특별한 단원 제목을 자유롭게 입력</div>
+                                </div>
+                            </div>
+                            <span id="badge-title-mode-custom-check" class="hidden text-amber-300 font-bold text-xs shrink-0">✓ 선택됨</span>
+                        </button>
+                    </div>
+
+                    <!-- AI 자동 생성 모드일 때: AI 제안 제목 미리보기 박스 -->
+                    <div id="box-title-ai-preview" class="p-3 sm:p-3.5 rounded-xl bg-gradient-to-r from-blue-50 via-indigo-50 to-slate-50 border border-blue-200 flex items-center justify-between">
+                        <div class="flex items-center gap-2 min-w-0">
+                            <span class="px-2 py-0.5 rounded-md bg-blue-900 text-amber-300 font-mono text-[10px] font-bold shrink-0">✨ AI 단원명</span>
+                            <span id="label-ai-suggested-title" class="font-serif font-black text-xs sm:text-sm text-blue-950 truncate">
+                                인문학·철학 7일 완성 (수능 비문학 독해 1등급)
+                            </span>
+                        </div>
+                        <span class="text-[10px] text-blue-700 font-medium shrink-0 ml-2">실시간 동기화</span>
+                    </div>
+
+                    <!-- 내가 직접 입력 모드일 때: 텍스트 입력창 -->
+                    <div id="box-title-custom-input" class="hidden">
+                        <input type="text" id="custom-unit-title-input" placeholder="원하는 단원 제목을 직접 입력하세요 (예: 1학기 기말 벼락치기 VOCA)" class="w-full px-3.5 py-2.5 rounded-xl border border-blue-300 text-sm font-serif font-bold text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-900" oninput="window.ocrEngine && window.ocrEngine.onCustomTitleInput(this.value)">
+                    </div>
                 </div>
             </div>
 
