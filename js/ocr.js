@@ -16,6 +16,17 @@ class OCREngine {
         this.currentBookId = 'neungryul_etym_2025';
         this.currentNeungryulDay = 'DAY 01';
         this.isNeungryulTableOpen = true;
+        this.customGeneratorState = {
+            level: 5,
+            wordsPerDay: 10,
+            totalDays: 5,
+            purposeId: 'exam_top',
+            purposeCustom: '',
+            themeTab: 'reading',
+            themeId: 'R1',
+            themeCustom: '',
+            title: ''
+        };
 
         this.initEventListeners();
     }
@@ -693,6 +704,26 @@ class OCREngine {
             };
         }
 
+        // AI 맞춤 생성 단어장 확인
+        const customCols = window.storage ? window.storage.getCustomCollections() : [];
+        const customCol = customCols.find(c => c.id === this.currentBookId);
+        if (customCol) {
+            const customWords = window.storage ? window.storage.getCustomWords() : [];
+            const pool = customWords.filter(r => r.collectionId === customCol.id);
+            return {
+                id: customCol.id,
+                title: customCol.title,
+                badge: `${customCol.badge || '🎨 AI 맞춤 단원'} • DAY 01 ~ DAY ${String(customCol.totalDays || 1).padStart(2, '0')} (총 ${pool.length}단어)`,
+                description: customCol.description || '',
+                totalDays: customCol.totalDays || 1,
+                isNeungryul: false,
+                isNeungryulEtym: false,
+                isCustom: true,
+                customMeta: customCol,
+                dataPool: pool
+            };
+        }
+
         const collections = window.CURATED_COLLECTIONS || (typeof CURATED_COLLECTIONS !== 'undefined' ? CURATED_COLLECTIONS : []);
         const col = collections.find(c => c.id === this.currentBookId) || collections[0];
         const allCuratedWords = window.CURATED_WORDS_DATA || (typeof CURATED_WORDS_DATA !== 'undefined' ? CURATED_WORDS_DATA : []);
@@ -713,7 +744,19 @@ class OCREngine {
      * 단어장 라이브러리 테이블 및 DAY 선택/등록 상태 전체 렌더링
      */
     renderNeungryulVocaSection() {
+        this.populateVocaBookSelect();
         const book = this.getCurrentBookInfo();
+
+        const deleteUnitBtn = document.getElementById('btn-delete-custom-unit');
+        if (deleteUnitBtn) {
+            if (book.isCustom) {
+                deleteUnitBtn.classList.remove('hidden');
+                deleteUnitBtn.classList.add('flex');
+            } else {
+                deleteUnitBtn.classList.add('hidden');
+                deleteUnitBtn.classList.remove('flex');
+            }
+        }
         const dataPool = book.dataPool;
 
         // 상단 배너 텍스트 갱신
@@ -921,6 +964,448 @@ class OCREngine {
     /**
      * 테이블 접기 / 펼치기 토글
      */
+    /**
+     * 교재 선택 드롭다운 내 AI 맞춤 생성 단어장 그룹 동적 갱신
+     */
+    populateVocaBookSelect() {
+        const optgroup = document.getElementById('voca-custom-optgroup');
+        if (!optgroup) return;
+        const customCols = window.storage ? window.storage.getCustomCollections() : [];
+        if (customCols.length === 0) {
+            optgroup.innerHTML = '<option value="" disabled>생성된 맞춤 단어장이 없습니다</option>';
+        } else {
+            optgroup.innerHTML = customCols.map(c => `
+                <option value="${c.id}" ${c.id === this.currentBookId ? 'selected' : ''}>${c.title} (${c.totalDays}일 완성 • ${c.totalWords}단어)</option>
+            `).join('');
+        }
+    }
+
+    /**
+     * AI 맞춤 단원 생성 모달 열기
+     */
+    openCustomUnitModal() {
+        const modal = document.getElementById('modal-custom-unit-generator');
+        if (!modal) return;
+
+        // 모달 기본 상태 초기화
+        this.renderPurposeGrid();
+        this.renderThemeGrids();
+        this.updateCustomLevelBadge(this.customGeneratorState.level);
+        this.updateCustomUnitVolume();
+        this.updateCustomUnitPreview();
+
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    }
+
+    /**
+     * AI 맞춤 단원 생성 모달 닫기
+     */
+    closeCustomUnitModal() {
+        const modal = document.getElementById('modal-custom-unit-generator');
+        if (modal) {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+    }
+
+    /**
+     * 20개 학습 목적 그리드 렌더링
+     */
+    renderPurposeGrid() {
+        const container = document.getElementById('custom-unit-purpose-grid');
+        if (!container || !window.customVocaAI) return;
+        const purposes = window.customVocaAI.PURPOSES || [];
+
+        const isCustom = (this.customGeneratorState.purposeId === 'custom');
+        const customBox = document.getElementById('custom-unit-purpose-custom-box');
+        if (customBox) {
+            customBox.classList.toggle('hidden', !isCustom);
+        }
+
+        let html = purposes.map(p => {
+            const isSelected = (!isCustom && this.customGeneratorState.purposeId === p.id);
+            return `
+                <button type="button" 
+                    onclick="window.ocrEngine.selectPurpose('${p.id}')"
+                    class="purpose-btn text-left p-2.5 rounded-xl border transition-all cursor-pointer flex flex-col gap-1 ${
+                        isSelected 
+                            ? 'bg-blue-900 border-blue-900 text-white shadow-sm ring-2 ring-amber-400' 
+                            : 'bg-white border-slate-200 hover:border-blue-400 text-slate-700 hover:bg-blue-50/50'
+                    }">
+                    <div class="flex items-center gap-1.5 font-bold text-xs ${isSelected ? 'text-amber-300' : 'text-slate-900'}">
+                        <span>${p.icon}</span>
+                        <span class="truncate">${p.label}</span>
+                    </div>
+                    <div class="text-[10px] ${isSelected ? 'text-slate-200' : 'text-slate-400'} leading-tight line-clamp-2">
+                        ${p.desc}
+                    </div>
+                </button>
+            `;
+        }).join('');
+
+        // 직접 입력 버튼
+        const isCustomSelected = (this.customGeneratorState.purposeId === 'custom');
+        html += `
+            <button type="button" 
+                onclick="window.ocrEngine.selectPurpose('custom')"
+                class="purpose-btn text-left p-2.5 rounded-xl border transition-all cursor-pointer flex flex-col gap-1 ${
+                    isCustomSelected 
+                        ? 'bg-blue-900 border-blue-900 text-white shadow-sm ring-2 ring-amber-400' 
+                        : 'bg-white border-dashed border-slate-300 hover:border-blue-400 text-slate-700 hover:bg-blue-50/50'
+                }">
+                <div class="flex items-center gap-1.5 font-bold text-xs ${isCustomSelected ? 'text-amber-300' : 'text-blue-900'}">
+                    <span>✍️</span>
+                    <span>직접 입력</span>
+                </div>
+                <div class="text-[10px] ${isCustomSelected ? 'text-slate-200' : 'text-slate-400'} leading-tight">
+                    원하는 학습 목적을 자유롭게 입력
+                </div>
+            </button>
+        `;
+
+        container.innerHTML = html;
+
+        // 배지 갱신
+        const badge = document.getElementById('custom-unit-selected-purpose-badge');
+        if (badge) {
+            if (isCustom) {
+                const customVal = this.customGeneratorState.purposeCustom.trim() || '직접 입력';
+                badge.textContent = `✍️ ${customVal}`;
+            } else {
+                const cur = purposes.find(p => p.id === this.customGeneratorState.purposeId);
+                badge.textContent = cur ? `${cur.icon} ${cur.label}` : '학습 목적 선택';
+            }
+        }
+    }
+
+    /**
+     * 학습 목적 선택
+     */
+    selectPurpose(id) {
+        this.customGeneratorState.purposeId = id;
+        if (id === 'custom') {
+            const customBox = document.getElementById('custom-unit-purpose-custom-box');
+            if (customBox) customBox.classList.remove('hidden');
+            const input = document.getElementById('custom-unit-purpose-custom-input');
+            if (input) {
+                input.focus();
+                this.customGeneratorState.purposeCustom = input.value;
+            }
+        } else {
+            this.customGeneratorState.purposeCustom = '';
+            const customBox = document.getElementById('custom-unit-purpose-custom-box');
+            if (customBox) customBox.classList.add('hidden');
+        }
+        this.renderPurposeGrid();
+        this.updateCustomUnitPreview();
+    }
+
+    /**
+     * 학습 목적 직접 입력
+     */
+    onCustomPurposeInput(val) {
+        this.customGeneratorState.purposeId = 'custom';
+        this.customGeneratorState.purposeCustom = val;
+        const badge = document.getElementById('custom-unit-selected-purpose-badge');
+        if (badge) {
+            badge.textContent = `✍️ ${val.trim() || '직접 입력'}`;
+        }
+        this.updateCustomUnitPreview();
+    }
+
+    /**
+     * 테마 탭 전환 (독해 연계 vs 교재·심화 테마 vs 직접 입력)
+     */
+    switchThemeTab(tab) {
+        this.customGeneratorState.themeTab = tab;
+        const readingTabBtn = document.getElementById('theme-tab-reading-btn');
+        const curatedTabBtn = document.getElementById('theme-tab-curated-btn');
+        const customTabBtn = document.getElementById('theme-tab-custom-btn');
+
+        const readingView = document.getElementById('theme-view-reading');
+        const curatedView = document.getElementById('theme-view-curated');
+        const customView = document.getElementById('theme-view-custom');
+
+        const activeClass = 'px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-900 text-white cursor-pointer';
+        const inactiveClass = 'px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 cursor-pointer';
+
+        if (readingTabBtn) readingTabBtn.className = (tab === 'reading') ? activeClass : inactiveClass;
+        if (curatedTabBtn) curatedTabBtn.className = (tab === 'curated') ? activeClass : inactiveClass;
+        if (customTabBtn) customTabBtn.className = (tab === 'custom') ? activeClass : inactiveClass;
+
+        if (readingView) readingView.classList.toggle('hidden', tab !== 'reading');
+        if (curatedView) curatedView.classList.toggle('hidden', tab !== 'curated');
+        if (customView) customView.classList.toggle('hidden', tab !== 'custom');
+
+        if (tab === 'custom') {
+            this.customGeneratorState.themeId = 'custom';
+            const input = document.getElementById('custom-unit-theme-custom-input');
+            if (input) {
+                input.focus();
+                this.customGeneratorState.themeCustom = input.value;
+            }
+        }
+        this.renderThemeGrids();
+        this.updateCustomUnitPreview();
+    }
+
+    /**
+     * 20개 테마 (독해 5개 + 교재 심화 15개) 그리드 렌더링
+     */
+    renderThemeGrids() {
+        if (!window.customVocaAI) return;
+        const readingView = document.getElementById('theme-view-reading');
+        const curatedView = document.getElementById('theme-view-curated');
+
+        const readingThemes = window.customVocaAI.THEMES.reading || [];
+        const curatedThemes = window.customVocaAI.THEMES.curated || [];
+        const isCustom = (this.customGeneratorState.themeId === 'custom');
+
+        if (readingView) {
+            readingView.innerHTML = readingThemes.map(t => {
+                const isSelected = (!isCustom && this.customGeneratorState.themeId === t.id);
+                return `
+                    <button type="button" 
+                        onclick="window.ocrEngine.selectTheme('${t.id}')"
+                        class="text-left p-3 rounded-xl border transition-all cursor-pointer flex flex-col gap-1.5 ${
+                            isSelected 
+                                ? 'bg-indigo-900 border-indigo-900 text-white shadow-sm ring-2 ring-amber-400' 
+                                : 'bg-white border-slate-200 hover:border-indigo-400 text-slate-700 hover:bg-indigo-50/50'
+                        }">
+                        <div class="flex items-center gap-1.5 font-bold text-xs ${isSelected ? 'text-amber-300' : 'text-slate-900'}">
+                            <span>${t.icon}</span>
+                            <span>${t.name}</span>
+                        </div>
+                        <div class="text-[10px] ${isSelected ? 'text-slate-200' : 'text-slate-400'} leading-tight">
+                            ${t.desc}
+                        </div>
+                    </button>
+                `;
+            }).join('');
+        }
+
+        if (curatedView) {
+            curatedView.innerHTML = curatedThemes.map(t => {
+                const isSelected = (!isCustom && this.customGeneratorState.themeId === t.id);
+                return `
+                    <button type="button" 
+                        onclick="window.ocrEngine.selectTheme('${t.id}')"
+                        class="text-left p-3 rounded-xl border transition-all cursor-pointer flex flex-col gap-1.5 ${
+                            isSelected 
+                                ? 'bg-indigo-900 border-indigo-900 text-white shadow-sm ring-2 ring-amber-400' 
+                                : 'bg-white border-slate-200 hover:border-indigo-400 text-slate-700 hover:bg-indigo-50/50'
+                        }">
+                        <div class="flex items-center gap-1.5 font-bold text-xs ${isSelected ? 'text-amber-300' : 'text-slate-900'}">
+                            <span>${t.icon}</span>
+                            <span>${t.name}</span>
+                        </div>
+                        <div class="text-[10px] ${isSelected ? 'text-slate-200' : 'text-slate-400'} leading-tight">
+                            ${t.desc}
+                        </div>
+                    </button>
+                `;
+            }).join('');
+        }
+
+        // 배지 갱신
+        const badge = document.getElementById('custom-unit-selected-theme-badge');
+        if (badge) {
+            if (isCustom) {
+                const customVal = this.customGeneratorState.themeCustom.trim() || '직접 입력 테마';
+                badge.textContent = `✍️ ${customVal}`;
+            } else {
+                const allThemes = [...readingThemes, ...curatedThemes];
+                const cur = allThemes.find(t => t.id === this.customGeneratorState.themeId);
+                badge.textContent = cur ? `${cur.icon} ${cur.name}` : '주제/테마 선택';
+            }
+        }
+    }
+
+    /**
+     * 테마 선택
+     */
+    selectTheme(id) {
+        this.customGeneratorState.themeId = id;
+        this.customGeneratorState.themeCustom = '';
+        this.renderThemeGrids();
+        this.updateCustomUnitPreview();
+    }
+
+    /**
+     * 테마 직접 입력
+     */
+    onCustomThemeInput(val) {
+        this.customGeneratorState.themeId = 'custom';
+        this.customGeneratorState.themeCustom = val;
+        const badge = document.getElementById('custom-unit-selected-theme-badge');
+        if (badge) {
+            badge.textContent = `✍️ ${val.trim() || '직접 입력 테마'}`;
+        }
+        this.updateCustomUnitPreview();
+    }
+
+    /**
+     * 레벨 선택 변경
+     */
+    updateCustomLevelBadge(level) {
+        const lvl = parseInt(level, 10) || 7;
+        this.customGeneratorState.level = lvl;
+        const badge = document.getElementById('custom-unit-level-name-badge');
+        const select = document.getElementById('custom-unit-level-select');
+        if (select && select.value !== String(lvl)) {
+            select.value = String(lvl);
+        }
+
+        const labels = {
+            1: '[Lv.1 Starter] 초등 기초 / 파닉스 완성',
+            2: '[Lv.2 Explorer] 초등 심화 / 기본 일상 표현',
+            3: '[Lv.3 Pioneer] 예비중 / 중1-1 내신 입문',
+            4: '[Lv.4 Navigator] 중1-2 내신 표준 완성',
+            5: '[Lv.5 Challenger] 중2-1 내신 핵심 & 관용구',
+            6: '[Lv.6 Strategist] 중2-2 내신 심화 & 미국교과서 Step1',
+            7: '[Lv.7 Master] 중3-1 내신 완성 & 능률 고난도',
+            8: '[Lv.8 Innovator] 중3-2 킬러 & 고등 연계, 능률 어원편',
+            9: '[Lv.9 Leader] 고1~2 모의고사 1~2등급 & 수능 킬러',
+            10: '[Lv.10 Veritas Elite] 수능 1등급 만점 & 학술 비문학'
+        };
+
+        if (badge) badge.textContent = labels[lvl] || `Lv.${lvl}`;
+        this.updateCustomUnitPreview();
+    }
+
+    /**
+     * 일일 단어 수 및 총 일수 변경 시 볼륨 갱신
+     */
+    updateCustomUnitVolume() {
+        const wpdEl = document.getElementById('custom-unit-words-per-day-select');
+        const daysEl = document.getElementById('custom-unit-total-days-select');
+        const totalBadge = document.getElementById('custom-unit-total-words-badge');
+
+        const wpd = parseInt(wpdEl ? wpdEl.value : 10, 10) || 10;
+        const days = parseInt(daysEl ? daysEl.value : 7, 10) || 7;
+
+        this.customGeneratorState.wordsPerDay = wpd;
+        this.customGeneratorState.totalDays = days;
+
+        const totalWords = wpd * days;
+        if (totalBadge) {
+            totalBadge.textContent = `총 ${totalWords}단어 (하루 ${wpd}단어 × ${days}일)`;
+        }
+        this.updateCustomUnitPreview();
+    }
+
+    /**
+     * 미리보기 및 단원 이름 자동 제안 갱신
+     */
+    updateCustomUnitPreview() {
+        if (!window.customVocaAI) return;
+        const state = this.customGeneratorState;
+        const purposes = window.customVocaAI.PURPOSES || [];
+        const allThemes = [...(window.customVocaAI.THEMES.reading || []), ...(window.customVocaAI.THEMES.curated || [])];
+
+        const purposeObj = purposes.find(p => p.id === state.purposeId);
+        const purposeLabel = state.purposeCustom.trim() || (purposeObj ? purposeObj.label : '맞춤 어휘');
+
+        const themeObj = allThemes.find(t => t.id === state.themeId);
+        const themeLabel = state.themeCustom.trim() || (themeObj ? themeObj.name : '맞춤 테마');
+
+        const titleInput = document.getElementById('custom-unit-title-input');
+        const suggestedTitle = `${themeLabel} ${state.totalDays}일 완성 (${purposeLabel})`;
+        if (titleInput && (!titleInput.value || titleInput.dataset.autoGenerated === 'true')) {
+            titleInput.value = suggestedTitle;
+            titleInput.dataset.autoGenerated = 'true';
+        }
+    }
+
+    /**
+     * AI 맞춤 단원 생성 실행
+     */
+    submitCustomUnitGeneration() {
+        if (!window.customVocaAI) {
+            alert('AI 단원 생성 모듈을 불러오는 중입니다. 잠시 후 다시 시도해주세요.');
+            return;
+        }
+
+        const titleInput = document.getElementById('custom-unit-title-input');
+        const title = titleInput ? titleInput.value.trim() : '';
+        const state = this.customGeneratorState;
+
+        const btn = document.getElementById('btn-submit-generate-custom-unit');
+        if (btn) {
+            btn.disabled = true;
+            btn.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 animate-spin text-amber-300"></i> <span>단원 생성 및 어휘 분석 중...</span>`;
+        }
+
+        setTimeout(() => {
+            try {
+                const result = window.customVocaAI.generateUnit({
+                    title: title,
+                    purposeId: state.purposeId,
+                    purposeCustom: state.purposeCustom,
+                    themeId: state.themeId,
+                    themeCustom: state.themeCustom,
+                    level: state.level,
+                    wordsPerDay: state.wordsPerDay,
+                    totalDays: state.totalDays
+                });
+
+                this.closeCustomUnitModal();
+                this.populateVocaBookSelect();
+                this.selectVocaBook(result.meta.id);
+
+                if (typeof confetti === 'function') {
+                    confetti({
+                        particleCount: 100,
+                        spread: 80,
+                        origin: { y: 0.6 }
+                    });
+                }
+
+                alert(`🎉 [${result.meta.title}] 맞춤 단원이 생성되었습니다!\n하루 ${state.wordsPerDay}단어씩 총 ${result.meta.totalWords}단어 (${state.totalDays}일 코스) 구성입니다.\n지금 바로 학습을 시작하거나 계획표에 배정해보세요!`);
+            } catch (err) {
+                console.error('Custom unit generation error:', err);
+                alert('맞춤 단원 생성 중 오류가 발생했습니다: ' + err.message);
+            } finally {
+                if (btn) {
+                    btn.disabled = false;
+                    btn.innerHTML = `<i data-lucide="sparkles" class="w-4 h-4 text-amber-300"></i> <span>⚡ AI 맞춤 단원 즉시 생성하기</span>`;
+                }
+            }
+        }, 300);
+    }
+
+    /**
+     * 현재 선택된 맞춤 단원 영구 삭제
+     */
+    deleteCurrentCustomUnit() {
+        const book = this.getCurrentBookInfo();
+        if (!book.isCustom) return;
+
+        if (!confirm(`[${book.title}] 맞춤 단원을 정말 영구 삭제하시겠습니까?\n이 단원에 배정된 학습 계획 및 단어 데이터가 모두 정리됩니다.`)) {
+            return;
+        }
+
+        if (window.storage) {
+            window.storage.deleteCustomCollection(book.id);
+        }
+
+        this.populateVocaBookSelect();
+        this.selectVocaBook('neungryul_etym_2025');
+
+        if (window.app && window.app.renderDashboard) {
+            window.app.renderDashboard();
+        }
+        if (window.plannerEngine && window.plannerEngine.render) {
+            window.plannerEngine.render();
+        }
+
+        alert(`🗑️ [${book.title}] 맞춤 단원이 성공적으로 삭제되었습니다.`);
+    }
+
     toggleNeungryulTable() {
         this.isNeungryulTableOpen = !this.isNeungryulTableOpen;
         const wrapper = document.getElementById('neungryul-voca-table-wrapper');

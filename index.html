@@ -582,8 +582,15 @@
                                         <i data-lucide="book-marked" class="w-3.5 h-3.5"></i>
                                         <span>단어장 라이브러리</span>
                                     </div>
+                                    <button type="button" onclick="window.ocrEngine && window.ocrEngine.openCustomUnitModal()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-amber-400 to-amber-300 hover:from-amber-300 hover:to-amber-200 text-blue-950 font-serif font-black text-xs shadow-md transition-all cursor-pointer transform hover:-translate-y-0.5" title="나만의 학습 목적·레벨·일정·테마로 AI 맞춤 단원 생성">
+                                        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-blue-950"></i>
+                                        <span>✨ AI 나만의 맞춤 단원 생성</span>
+                                    </button>
                                     <span class="text-xs font-serif font-bold text-slate-300">교재/테마 선택:</span>
                                     <select id="voca-book-select" class="px-3 py-1.5 rounded-lg bg-blue-900 text-amber-300 font-serif font-bold text-xs sm:text-sm border border-amber-400/30 outline-none cursor-pointer" onchange="window.ocrEngine.selectVocaBook(this.value)">
+                                        <optgroup label="🎨 나만의 AI 맞춤 생성 단어장" id="voca-custom-optgroup">
+                                            <!-- AI 맞춤 생성 단어장 동적 노출 -->
+                                        </optgroup>
                                         <optgroup label="📘 능률 VOCA 공식 교재">
                                             <option value="neungryul_etym_2025" selected>[Lv.8] 능률 VOCA 어원편 중등 (DAY 01~30, 765단어)</option>
                                             <option value="neungryul2025">[Lv.7] 능률 VOCA 중등 고난도 (DAY 01~40, 1,200단어)</option>
@@ -642,6 +649,12 @@
                                 <button id="btn-register-neungryul-2025" class="px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-serif font-extrabold text-xs shadow-md transition-all flex items-center gap-1.5 cursor-pointer" onclick="window.ocrEngine.registerAllVocaBook()">
                                     <i data-lucide="library" class="w-4 h-4"></i>
                                     <span id="label-register-all-book">전체 단어 (DAY 01~30, 765단어) 일괄 등록</span>
+                                </button>
+
+                                <!-- 맞춤 생성 단원 전용 삭제 버튼 -->
+                                <button id="btn-delete-custom-unit" class="hidden px-3.5 py-2.5 rounded-xl border border-red-400/50 bg-red-950/40 hover:bg-red-900/60 text-red-200 font-serif font-bold text-xs transition-all flex items-center gap-1.5 cursor-pointer" onclick="window.ocrEngine.deleteCurrentCustomUnit()" title="현재 맞춤 단원 삭제">
+                                    <i data-lucide="trash-2" class="w-4 h-4 text-red-400"></i>
+                                    <span>맞춤 단원 삭제</span>
                                 </button>
 
                                 <!-- 등록 완료 시 나타나는 '계획표 수정하기' 버튼 -->
@@ -3092,6 +3105,7 @@
     
     <script src="js/tts.js"></script>
     <script src="js/storage.js"></script>
+    <script src="js/custom_voca_ai.js"></script>
     <script src="js/ocr.js"></script>
     <script src="js/flashcards.js"></script>
     <script src="js/quiz.js"></script>
@@ -3277,6 +3291,174 @@
                     </button>
                 </div>
             </form>
+        </div>
+    </div>
+
+    <!-- ======================================================================
+         MODAL: AI 맞춤형 단어 단원 자동 생성 모달
+         ====================================================================== -->
+    <div id="modal-custom-unit-generator" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/85 backdrop-blur-sm hidden">
+        <div class="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[92vh]">
+            <!-- 모달 헤더 -->
+            <div class="p-5 sm:p-6 bg-gradient-to-r from-blue-950 via-slate-900 to-indigo-950 text-white flex items-center justify-between border-b border-slate-800">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-400 to-yellow-300 text-blue-950 flex items-center justify-center text-2xl shadow-md shrink-0">
+                        ✨
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h3 class="font-serif font-black text-lg sm:text-xl text-white">AI 나만의 맞춤 단어 단원 생성기</h3>
+                            <span class="px-2 py-0.5 rounded-full bg-amber-400/20 text-amber-300 font-mono text-[10px] font-bold border border-amber-400/30">
+                                Adaptive AI
+                            </span>
+                        </div>
+                        <p class="text-xs text-slate-300 mt-0.5">목적, 테마, 레벨, 일정(일수·단어수)을 설정하면 AI가 최적의 단원을 자동 빌드합니다.</p>
+                    </div>
+                </div>
+                <button type="button" onclick="window.ocrEngine && window.ocrEngine.closeCustomUnitModal()" class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer" title="닫기">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- 모달 폼 본문 (스크롤) -->
+            <div class="p-5 sm:p-6 overflow-y-auto space-y-6">
+                <!-- 1. 학습 목적 (20개 프리셋 + 직접 입력) -->
+                <div>
+                    <div class="flex items-center justify-between mb-2">
+                        <label class="block text-xs font-bold text-slate-900">
+                            1. 학습 목적 선택 <span class="text-blue-900 font-normal">(20개 프리셋 또는 직접 입력)</span>
+                        </label>
+                        <span id="custom-unit-selected-purpose-badge" class="text-xs font-bold text-blue-900 bg-blue-50 px-2.5 py-0.5 rounded border border-blue-200">
+                            📈 수능 비문학 독해 1등급
+                        </span>
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2" id="custom-unit-purpose-grid">
+                        <!-- JS에서 20개 목적 버튼 동적 렌더링 -->
+                    </div>
+                    <!-- 직접 입력 옵션 텍스트박스 -->
+                    <div id="custom-unit-purpose-custom-box" class="hidden mt-2.5">
+                        <input type="text" id="custom-unit-purpose-custom-input" placeholder="원하는 학습 목적을 직접 입력하세요 (예: 교내 팝송 영어 퀴즈 대비, TED 강연 독해)" class="w-full px-3.5 py-2.5 rounded-xl border border-blue-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-900 font-medium" oninput="window.ocrEngine.onCustomPurposeInput(this.value)">
+                    </div>
+                </div>
+
+                <!-- 2. 주제 / 테마 선택 (독해 연계 5개 + 교재 연계 15개 + 직접 입력) -->
+                <div>
+                    <div class="flex items-center justify-between mb-2">
+                        <label class="block text-xs font-bold text-slate-900">
+                            2. 주제 / 테마 선택 <span class="text-blue-900 font-normal">(광범위 대주제 20선 또는 직접 입력)</span>
+                        </label>
+                        <span id="custom-unit-selected-theme-badge" class="text-xs font-bold text-indigo-900 bg-indigo-50 px-2.5 py-0.5 rounded border border-indigo-200">
+                            🚀 미래 테크 & 문명의 대전환
+                        </span>
+                    </div>
+
+                    <!-- 테마 탭 전환 버튼 -->
+                    <div class="flex items-center gap-2 border-b border-slate-200 pb-2 mb-3">
+                        <button type="button" id="theme-tab-reading-btn" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-900 text-white cursor-pointer" onclick="window.ocrEngine.switchThemeTab('reading')">
+                            🎓 독해 연계 광범위 대주제 (5개)
+                        </button>
+                        <button type="button" id="theme-tab-curated-btn" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 cursor-pointer" onclick="window.ocrEngine.switchThemeTab('curated')">
+                            📘 교재 연계 광범위 대주제 (15개)
+                        </button>
+                        <button type="button" id="theme-tab-custom-btn" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 cursor-pointer" onclick="window.ocrEngine.switchThemeTab('custom')">
+                            ✍️ 나만의 테마 직접 입력
+                        </button>
+                    </div>
+
+                    <!-- 독해 연계 테마 그리드 -->
+                    <div id="theme-view-reading" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+                        <!-- JS 렌더링 -->
+                    </div>
+
+                    <!-- 교재 연계 테마 그리드 -->
+                    <div id="theme-view-curated" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+                        <!-- JS 렌더링 -->
+                    </div>
+
+                    <!-- 테마 직접 입력 뷰 -->
+                    <div id="theme-view-custom" class="hidden space-y-2">
+                        <p class="text-xs text-slate-500">배우고 싶은 영화, 소설, 직업, 뉴스 키워드 등 나만의 테마를 자유롭게 입력하세요.</p>
+                        <input type="text" id="custom-unit-theme-custom-input" placeholder="예: 해리포터 마법 어휘, 마블 히어로 무비, 기후변화 정상회담, 실리콘밸리 스타트업" class="w-full px-3.5 py-2.5 rounded-xl border border-indigo-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-900 font-medium" oninput="window.ocrEngine.onCustomThemeInput(this.value)">
+                    </div>
+                </div>
+
+                <!-- 3. 목표 레벨 및 일정/분량 설정 그리드 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 pt-2 border-t border-slate-100">
+                    <!-- 레벨 설정 -->
+                    <div>
+                        <div class="flex items-center justify-between mb-1.5">
+                            <label class="block text-xs font-bold text-slate-900">3. 목표 난이도 (베리타스 레벨)</label>
+                            <span id="custom-unit-level-name-badge" class="text-xs font-bold text-purple-900 bg-purple-50 px-2 py-0.5 rounded border border-purple-200">
+                                Lv.7 Master (중3 완성)
+                            </span>
+                        </div>
+                        <select id="custom-unit-level-select" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm font-medium focus:ring-2 focus:ring-blue-900" onchange="window.ocrEngine.updateCustomLevelBadge(this.value)">
+                            <option value="1">[Lv.1 Starter] 초등 기초 / 파닉스 완성</option>
+                            <option value="2">[Lv.2 Explorer] 초등 심화 / 기본 일상 표현</option>
+                            <option value="3">[Lv.3 Pioneer] 예비중 / 중1-1 내신 입문</option>
+                            <option value="4">[Lv.4 Navigator] 중1-2 내신 표준 완성</option>
+                            <option value="5">[Lv.5 Challenger] 중2-1 내신 핵심 & 관용구</option>
+                            <option value="6">[Lv.6 Strategist] 중2-2 내신 심화 & 미국교과서 Step1</option>
+                            <option value="7" selected>[Lv.7 Master] 중3-1 내신 완성 & 능률 고난도</option>
+                            <option value="8">[Lv.8 Innovator] 중3-2 킬러 & 고등 연계, 능률 어원편</option>
+                            <option value="9">[Lv.9 Leader] 고1~2 모의고사 1~2등급 & 수능 킬러</option>
+                            <option value="10">[Lv.10 Veritas Elite] 수능 1등급 만점 & 학술 비문학</option>
+                        </select>
+                    </div>
+
+                    <!-- 일정 및 분량 설정 -->
+                    <div>
+                        <div class="flex items-center justify-between mb-1.5">
+                            <label class="block text-xs font-bold text-slate-900">4. 학습 일정 & 일일 분량</label>
+                            <span id="custom-unit-total-words-badge" class="text-xs font-bold text-amber-900 bg-amber-50 px-2 py-0.5 rounded border border-amber-300">
+                                총 70단어 (하루 10단어 × 7일)
+                            </span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-[11px] text-slate-500 mb-1">하루 단어 수</label>
+                                <select id="custom-unit-words-per-day-select" class="w-full px-3 py-2 rounded-xl border border-slate-300 text-sm font-bold text-slate-800" onchange="window.ocrEngine.updateCustomUnitVolume()">
+                                    <option value="5">5단어 / DAY</option>
+                                    <option value="10" selected>10단어 / DAY (추천)</option>
+                                    <option value="15">15단어 / DAY</option>
+                                    <option value="20">20단어 / DAY</option>
+                                    <option value="25">25단어 / DAY</option>
+                                    <option value="30">30단어 / DAY</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-[11px] text-slate-500 mb-1">총 학습 일수</label>
+                                <select id="custom-unit-total-days-select" class="w-full px-3 py-2 rounded-xl border border-slate-300 text-sm font-bold text-slate-800" onchange="window.ocrEngine.updateCustomUnitVolume()">
+                                    <option value="3">3일 완성 코스</option>
+                                    <option value="5">5일 완성 코스</option>
+                                    <option value="7" selected>7일 완성 코스 (1주일)</option>
+                                    <option value="10">10일 완성 코스</option>
+                                    <option value="14">14일 완성 코스 (2주일)</option>
+                                    <option value="20">20일 완성 코스</option>
+                                    <option value="30">30일 완성 코스 (1개월)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. 단원 제목 직접 편집 (자동 생성 가이드) -->
+                <div class="pt-2 border-t border-slate-100">
+                    <label class="block text-xs font-bold text-slate-900 mb-1.5">5. 생성될 단원 명칭 <span class="text-slate-400 font-normal">(수정 가능)</span></label>
+                    <input type="text" id="custom-unit-title-input" placeholder="단원 명칭이 자동으로 완성됩니다" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm font-serif font-bold text-slate-900 focus:ring-2 focus:ring-blue-900">
+                </div>
+            </div>
+
+            <!-- 모달 하단 버튼 바 -->
+            <div class="p-4 sm:p-5 bg-slate-50 border-t border-slate-200 flex items-center justify-between gap-3">
+                <button type="button" onclick="window.ocrEngine && window.ocrEngine.closeCustomUnitModal()" class="px-4 py-2.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-100 text-slate-700 font-serif font-medium text-xs sm:text-sm transition-colors cursor-pointer">
+                    취소
+                </button>
+                <button type="button" id="btn-submit-generate-custom-unit" onclick="window.ocrEngine && window.ocrEngine.submitCustomUnitGeneration()" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-blue-900 via-indigo-900 to-blue-950 hover:from-blue-800 hover:to-indigo-800 text-amber-300 font-serif font-black text-xs sm:text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer transform hover:-translate-y-0.5">
+                    <i data-lucide="sparkles" class="w-4 h-4 text-amber-300"></i>
+                    <span>⚡ AI 맞춤 단원 즉시 생성하기</span>
+                </button>
+            </div>
         </div>
     </div>
 

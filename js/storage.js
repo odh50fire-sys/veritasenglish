@@ -14,7 +14,9 @@ const LEGACY_STORAGE_KEYS = {
     READING_RECORDS: 'veritas_reading_records_v1',
     USER_PROFILE: 'veritas_user_profile_v1',
     WRONG_ANSWERS: 'veritas_wrong_answers_v1',
-    MOCK_EXAMS: 'veritas_mock_exams_v1'
+    MOCK_EXAMS: 'veritas_mock_exams_v1',
+    CUSTOM_COLLECTIONS: 'veritas_custom_collections_v1',
+    CUSTOM_WORDS: 'veritas_custom_words_v1'
 };
 
 const STORAGE_KEYS = new Proxy({}, {
@@ -329,6 +331,8 @@ class StorageManager {
         };
         this.wrongAnswers = []; // [{ id, sourceType, passageId, questionText, userChoice, correctChoice, explanation, date, isResolved, wrongCount }]
         this.mockExams = []; // [{ id, title, grade, score, totalQuestions, correctCount, timeSpentSec, date }]
+        this.customCollections = []; // 사용자 맞춤 AI 생성 단어장 메타데이터 [{ id, title, badge, category, purpose, level, theme, wordsPerDay, totalDays, totalWords, description, createdAt }]
+        this.customWords = []; // 사용자 맞춤 AI 생성 단어 데이터 [{ collectionId, collectionTitle, DAY, 번호, 단어, 영단어, 품사, 뜻, 예문, 해석, 예문해석, category, badge }]
     }
 
     // ------------------------------------------------------------------------
@@ -544,6 +548,8 @@ class StorageManager {
         this.saveUserProfile();
         this.saveWrongAnswers();
         this.saveMockExams();
+        this.saveCustomCollections();
+        this.saveCustomWords();
     }
 
     loadAll() {
@@ -602,6 +608,12 @@ class StorageManager {
             if (rawMockExams) {
                 this.mockExams = JSON.parse(rawMockExams);
             }
+
+            const rawCustomColls = localStorage.getItem(STORAGE_KEYS.CUSTOM_COLLECTIONS);
+            this.customCollections = rawCustomColls ? JSON.parse(rawCustomColls) : [];
+
+            const rawCustomWords = localStorage.getItem(STORAGE_KEYS.CUSTOM_WORDS);
+            this.customWords = rawCustomWords ? JSON.parse(rawCustomWords) : [];
 
             // 출석(Streak) 일자 갱신 검사
             this.updateDailyStreak();
@@ -717,6 +729,70 @@ class StorageManager {
         } catch (e) {
             console.error('Failed to save mock exams:', e);
         }
+    }
+
+    // ------------------------------------------------------------------------
+    // AI 맞춤 생성 단어장(Custom Vocabulary Units) 관리
+    // ------------------------------------------------------------------------
+    getCustomCollections() {
+        return this.customCollections || [];
+    }
+
+    getCustomWords() {
+        return this.customWords || [];
+    }
+
+    saveCustomCollections() {
+        try {
+            localStorage.setItem(STORAGE_KEYS.CUSTOM_COLLECTIONS, JSON.stringify(this.customCollections));
+        } catch (e) {
+            console.error('Failed to save custom collections:', e);
+        }
+    }
+
+    saveCustomWords() {
+        try {
+            localStorage.setItem(STORAGE_KEYS.CUSTOM_WORDS, JSON.stringify(this.customWords));
+        } catch (e) {
+            console.error('Failed to save custom words:', e);
+        }
+    }
+
+    saveCustomCollection(collectionMeta, wordsArray) {
+        if (!collectionMeta || !collectionMeta.id) return false;
+        if (!this.customCollections) this.customCollections = [];
+        const existingIdx = this.customCollections.findIndex(c => c.id === collectionMeta.id);
+        if (existingIdx !== -1) {
+            this.customCollections[existingIdx] = collectionMeta;
+        } else {
+            this.customCollections.unshift(collectionMeta);
+        }
+        this.saveCustomCollections();
+
+        if (!this.customWords) this.customWords = [];
+        this.customWords = this.customWords.filter(w => w.collectionId !== collectionMeta.id);
+        if (Array.isArray(wordsArray)) {
+            this.customWords.push(...wordsArray);
+        }
+        this.saveCustomWords();
+        return true;
+    }
+
+    deleteCustomCollection(collectionId) {
+        if (!collectionId) return false;
+        if (this.customCollections) {
+            this.customCollections = this.customCollections.filter(c => c.id !== collectionId);
+            this.saveCustomCollections();
+        }
+        if (this.customWords) {
+            this.customWords = this.customWords.filter(w => w.collectionId !== collectionId);
+            this.saveCustomWords();
+        }
+        if (this.words) {
+            this.words = this.words.filter(w => w.curatedCollectionId !== collectionId);
+            this.saveWords();
+        }
+        return true;
     }
 
     // ------------------------------------------------------------------------
@@ -1851,7 +1927,10 @@ class StorageManager {
      * 테마 단어장 특정 DAY 계획표 등록
      */
     registerCuratedByDay(collectionId, dayStr, planDateStr = null) {
-        const pool = window.CURATED_WORDS_DATA || (typeof CURATED_WORDS_DATA !== 'undefined' ? CURATED_WORDS_DATA : []);
+        let pool = window.CURATED_WORDS_DATA || (typeof CURATED_WORDS_DATA !== 'undefined' ? CURATED_WORDS_DATA : []);
+        if (this.customWords && this.customWords.length > 0) {
+            pool = pool.concat(this.customWords);
+        }
         const dayRows = pool.filter(r => r.collectionId === collectionId && r.DAY === dayStr);
         if (dayRows.length === 0) {
             return { addedCount: 0, day: dayStr, planDate: '' };
@@ -1915,7 +1994,10 @@ class StorageManager {
      * 테마 단어장 전체(5개 DAY)를 시작일부터 하루 1 DAY씩 배정 등록
      */
     registerAllCuratedDays(collectionId, startDateStr = null, selectedDaysOfWeek = null, startDayIndex = 0) {
-        const pool = window.CURATED_WORDS_DATA || (typeof CURATED_WORDS_DATA !== 'undefined' ? CURATED_WORDS_DATA : []);
+        let pool = window.CURATED_WORDS_DATA || (typeof CURATED_WORDS_DATA !== 'undefined' ? CURATED_WORDS_DATA : []);
+        if (this.customWords && this.customWords.length > 0) {
+            pool = pool.concat(this.customWords);
+        }
         const colRows = pool.filter(r => r.collectionId === collectionId);
         if (colRows.length === 0) {
             return { addedCount: 0, totalDays: 0, collectionTitle: '', startDate: '', endDate: '' };
