@@ -109,8 +109,8 @@ const CURATED_COLLECTIONS = [
     "title": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
     "category": "us_academic",
     "badge": "미국 교과서 Step 1",
-    "totalDays": 10,
-    "description": "미국 초등 고학년~예비중 필수 Tier 2 학술 어휘 (과학, 환경, 지리, 기초 학술 사고 200단어 / 10일 완성)"
+    "totalDays": 20,
+    "description": "미국 초등 고학년~예비중 필수 Tier 2 학술 어휘 (과학, 환경, 지리, 기초 학술 사고 200단어 / 20일 완성, 일당 10단어)"
   },
   {
     "id": "curated-us-mid1",
@@ -118,8 +118,8 @@ const CURATED_COLLECTIONS = [
     "title": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
     "category": "us_academic",
     "badge": "미국 교과서 Step 2",
-    "totalDays": 10,
-    "description": "미국 중등 기초~표준 비문학 논증, 데이터 분석, 역사·사회 필수 학술 어휘 200단어 (10일 완성)"
+    "totalDays": 20,
+    "description": "미국 중등 기초~표준 비문학 논증, 데이터 분석, 역사·사회 필수 학술 어휘 200단어 (20일 완성, 일당 10단어)"
   },
   {
     "id": "curated-us-mid2",
@@ -127,8 +127,8 @@ const CURATED_COLLECTIONS = [
     "title": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
     "category": "us_academic",
     "badge": "미국 교과서 Step 3",
-    "totalDays": 10,
-    "description": "미국 중등 심화~Pre-AP 인문사회 비평, 추상적 개념, 수능·학술 비문학 200단어 (10일 완성)"
+    "totalDays": 20,
+    "description": "미국 중등 심화~Pre-AP 인문사회 비평, 추상적 개념, 수능·학술 비문학 200단어 (20일 완성, 일당 10단어)"
   },
   {
     "id": "curated-m-idioms",
@@ -13358,8 +13358,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 01",
-    "번호": 11,
+    "DAY": "DAY 02",
+    "번호": 1,
     "단어": "summarize",
     "품사": "[동]",
     "뜻": "요약하다, 간추리다",
@@ -13373,8 +13373,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 01",
-    "번호": 12,
+    "DAY": "DAY 02",
+    "번호": 2,
     "단어": "identify",
     "품사": "[동]",
     "뜻": "확인하다, 알아보다",
@@ -13388,8 +13388,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 01",
-    "번호": 13,
+    "DAY": "DAY 02",
+    "번호": 3,
     "단어": "describe",
     "품사": "[동]",
     "뜻": "묘사하다, 설명하다",
@@ -13403,8 +13403,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 01",
-    "번호": 14,
+    "DAY": "DAY 02",
+    "번호": 4,
     "단어": "sequence",
     "품사": "[명]",
     "뜻": "순서, 배열",
@@ -13418,8 +13418,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 01",
-    "번호": 15,
+    "DAY": "DAY 02",
+    "번호": 5,
     "단어": "determine",
     "품사": "[동]",
     "뜻": "알아내다, 결정하다",
@@ -13433,8 +13433,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 01",
-    "번호": 16,
+    "DAY": "DAY 02",
+    "번호": 6,
     "단어": "reflect",
     "품사": "[동]",
     "뜻": "반사하다, 반영하다",
@@ -13448,8 +13448,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 01",
-    "번호": 17,
+    "DAY": "DAY 02",
+    "번호": 7,
     "단어": "essential",
     "품사": "[형]",
     "뜻": "필수적인, 극히 중요한",
@@ -13463,8 +13463,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 01",
-    "번호": 18,
+    "DAY": "DAY 02",
+    "번호": 8,
     "단어": "significant",
     "품사": "[형]",
     "뜻": "중요한, 의미 있는",
@@ -13478,8 +13478,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 01",
-    "번호": 19,
+    "DAY": "DAY 02",
+    "번호": 9,
     "단어": "various",
     "품사": "[형]",
     "뜻": "다양한, 여러 가지의",
@@ -13493,8 +13493,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 01",
-    "번호": 20,
+    "DAY": "DAY 02",
+    "번호": 10,
     "단어": "feature",
     "품사": "[명]",
     "뜻": "특징, 특색",
@@ -13508,7 +13508,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 1,
     "단어": "characteristic",
     "품사": "[명]",
@@ -13523,7 +13523,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 2,
     "단어": "factor",
     "품사": "[명]",
@@ -13538,7 +13538,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 3,
     "단어": "region",
     "품사": "[명]",
@@ -13553,7 +13553,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 4,
     "단어": "climate",
     "품사": "[명]",
@@ -13568,7 +13568,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 5,
     "단어": "ecosystem",
     "품사": "[명]",
@@ -13583,7 +13583,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 6,
     "단어": "adapt",
     "품사": "[동]",
@@ -13598,7 +13598,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 7,
     "단어": "environment",
     "품사": "[명]",
@@ -13613,7 +13613,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 8,
     "단어": "function",
     "품사": "[명]",
@@ -13628,7 +13628,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 9,
     "단어": "structure",
     "품사": "[명]",
@@ -13643,7 +13643,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 10,
     "단어": "pattern",
     "품사": "[명]",
@@ -13658,8 +13658,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 02",
-    "번호": 11,
+    "DAY": "DAY 04",
+    "번호": 1,
     "단어": "resource",
     "품사": "[명]",
     "뜻": "자원, 원천",
@@ -13673,8 +13673,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 02",
-    "번호": 12,
+    "DAY": "DAY 04",
+    "번호": 2,
     "단어": "consume",
     "품사": "[동]",
     "뜻": "소비하다, 섭취하다",
@@ -13688,8 +13688,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 02",
-    "번호": 13,
+    "DAY": "DAY 04",
+    "번호": 3,
     "단어": "produce",
     "품사": "[동]",
     "뜻": "생산하다, 만들어내다",
@@ -13703,8 +13703,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 02",
-    "번호": 14,
+    "DAY": "DAY 04",
+    "번호": 4,
     "단어": "habitat",
     "품사": "[명]",
     "뜻": "서식지",
@@ -13718,8 +13718,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 02",
-    "번호": 15,
+    "DAY": "DAY 04",
+    "번호": 5,
     "단어": "species",
     "품사": "[명]",
     "뜻": "종(생물 분류 단위)",
@@ -13733,8 +13733,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 02",
-    "번호": 16,
+    "DAY": "DAY 04",
+    "번호": 6,
     "단어": "survive",
     "품사": "[동]",
     "뜻": "살아남다, 생존하다",
@@ -13748,8 +13748,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 02",
-    "번호": 17,
+    "DAY": "DAY 04",
+    "번호": 7,
     "단어": "predator",
     "품사": "[명]",
     "뜻": "포식자, 육식 동물",
@@ -13763,8 +13763,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 02",
-    "번호": 18,
+    "DAY": "DAY 04",
+    "번호": 8,
     "단어": "prey",
     "품사": "[명]",
     "뜻": "먹이, 사냥감",
@@ -13778,8 +13778,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 02",
-    "번호": 19,
+    "DAY": "DAY 04",
+    "번호": 9,
     "단어": "nutrient",
     "품사": "[명]",
     "뜻": "영양소, 영양분",
@@ -13793,8 +13793,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 02",
-    "번호": 20,
+    "DAY": "DAY 04",
+    "번호": 10,
     "단어": "moisture",
     "품사": "[명]",
     "뜻": "습기, 수분",
@@ -13808,7 +13808,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 1,
     "단어": "measure",
     "품사": "[동]",
@@ -13823,7 +13823,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 2,
     "단어": "estimate",
     "품사": "[동]",
@@ -13838,7 +13838,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 3,
     "단어": "calculate",
     "품사": "[동]",
@@ -13853,7 +13853,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 4,
     "단어": "data",
     "품사": "[명]",
@@ -13868,7 +13868,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 5,
     "단어": "chart",
     "품사": "[명]",
@@ -13883,7 +13883,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 6,
     "단어": "diagram",
     "품사": "[명]",
@@ -13898,7 +13898,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 7,
     "단어": "label",
     "품사": "[동]",
@@ -13913,7 +13913,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 8,
     "단어": "symbol",
     "품사": "[명]",
@@ -13928,7 +13928,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 9,
     "단어": "represent",
     "품사": "[동]",
@@ -13943,7 +13943,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 10,
     "단어": "detail",
     "품사": "[명]",
@@ -13958,8 +13958,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 03",
-    "번호": 11,
+    "DAY": "DAY 06",
+    "번호": 1,
     "단어": "support",
     "품사": "[동]",
     "뜻": "뒷받침하다, 지지하다",
@@ -13973,8 +13973,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 03",
-    "번호": 12,
+    "DAY": "DAY 06",
+    "번호": 2,
     "단어": "opinion",
     "품사": "[명]",
     "뜻": "의견, 견해",
@@ -13988,8 +13988,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 03",
-    "번호": 13,
+    "DAY": "DAY 06",
+    "번호": 3,
     "단어": "fact",
     "품사": "[명]",
     "뜻": "사실, 실제 일어난 일",
@@ -14003,8 +14003,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 03",
-    "번호": 14,
+    "DAY": "DAY 06",
+    "번호": 4,
     "단어": "claim",
     "품사": "[명]",
     "뜻": "주장",
@@ -14018,8 +14018,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 03",
-    "번호": 15,
+    "DAY": "DAY 06",
+    "번호": 5,
     "단어": "valid",
     "품사": "[형]",
     "뜻": "타당한, 유효한",
@@ -14033,8 +14033,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 03",
-    "번호": 16,
+    "DAY": "DAY 06",
+    "번호": 6,
     "단어": "reasonable",
     "품사": "[형]",
     "뜻": "합리적인, 타당한",
@@ -14048,8 +14048,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 03",
-    "번호": 17,
+    "DAY": "DAY 06",
+    "번호": 7,
     "단어": "connect",
     "품사": "[동]",
     "뜻": "연결하다, 관련짓다",
@@ -14063,8 +14063,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 03",
-    "번호": 18,
+    "DAY": "DAY 06",
+    "번호": 8,
     "단어": "illustrate",
     "품사": "[동]",
     "뜻": "예증하다, 그림을 넣다",
@@ -14078,8 +14078,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 03",
-    "번호": 19,
+    "DAY": "DAY 06",
+    "번호": 9,
     "단어": "volume",
     "품사": "[명]",
     "뜻": "부피, 음량",
@@ -14093,8 +14093,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 03",
-    "번호": 20,
+    "DAY": "DAY 06",
+    "번호": 10,
     "단어": "mass",
     "품사": "[명]",
     "뜻": "질량",
@@ -14108,7 +14108,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 1,
     "단어": "dissolve",
     "품사": "[동]",
@@ -14123,7 +14123,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 2,
     "단어": "friction",
     "품사": "[명]",
@@ -14138,7 +14138,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 3,
     "단어": "gravity",
     "품사": "[명]",
@@ -14153,7 +14153,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 4,
     "단어": "energy",
     "품사": "[명]",
@@ -14168,7 +14168,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 5,
     "단어": "temperature",
     "품사": "[명]",
@@ -14183,7 +14183,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 6,
     "단어": "evaporation",
     "품사": "[명]",
@@ -14198,7 +14198,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 7,
     "단어": "condensation",
     "품사": "[명]",
@@ -14213,7 +14213,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 8,
     "단어": "precipitation",
     "품사": "[명]",
@@ -14228,7 +14228,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 9,
     "단어": "erosion",
     "품사": "[명]",
@@ -14243,7 +14243,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 10,
     "단어": "sediment",
     "품사": "[명]",
@@ -14258,8 +14258,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 04",
-    "번호": 11,
+    "DAY": "DAY 08",
+    "번호": 1,
     "단어": "atmosphere",
     "품사": "[명]",
     "뜻": "대기, 공기층",
@@ -14273,8 +14273,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 04",
-    "번호": 12,
+    "DAY": "DAY 08",
+    "번호": 2,
     "단어": "oxygen",
     "품사": "[명]",
     "뜻": "산소",
@@ -14288,8 +14288,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 04",
-    "번호": 13,
+    "DAY": "DAY 08",
+    "번호": 3,
     "단어": "mineral",
     "품사": "[명]",
     "뜻": "광물, 무기물",
@@ -14303,8 +14303,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 04",
-    "번호": 14,
+    "DAY": "DAY 08",
+    "번호": 4,
     "단어": "cycle",
     "품사": "[명]",
     "뜻": "순환, 주기",
@@ -14318,8 +14318,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 04",
-    "번호": 15,
+    "DAY": "DAY 08",
+    "번호": 5,
     "단어": "solid",
     "품사": "[형]",
     "뜻": "고체의, 단단한",
@@ -14333,8 +14333,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 04",
-    "번호": 16,
+    "DAY": "DAY 08",
+    "번호": 6,
     "단어": "liquid",
     "품사": "[명]",
     "뜻": "액체",
@@ -14348,8 +14348,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 04",
-    "번호": 17,
+    "DAY": "DAY 08",
+    "번호": 7,
     "단어": "gas",
     "품사": "[명]",
     "뜻": "기체, 가스",
@@ -14363,8 +14363,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 04",
-    "번호": 18,
+    "DAY": "DAY 08",
+    "번호": 8,
     "단어": "vibration",
     "품사": "[명]",
     "뜻": "진동",
@@ -14378,8 +14378,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 04",
-    "번호": 19,
+    "DAY": "DAY 08",
+    "번호": 9,
     "단어": "force",
     "품사": "[명]",
     "뜻": "힘, 물리력",
@@ -14393,8 +14393,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 04",
-    "번호": 20,
+    "DAY": "DAY 08",
+    "번호": 10,
     "단어": "motion",
     "품사": "[명]",
     "뜻": "운동, 움직임",
@@ -14408,7 +14408,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 1,
     "단어": "absorb",
     "품사": "[동]",
@@ -14423,7 +14423,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 2,
     "단어": "transparent",
     "품사": "[형]",
@@ -14438,7 +14438,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 3,
     "단어": "opaque",
     "품사": "[형]",
@@ -14453,7 +14453,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 4,
     "단어": "magnet",
     "품사": "[명]",
@@ -14468,7 +14468,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 5,
     "단어": "attract",
     "품사": "[동]",
@@ -14483,7 +14483,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 6,
     "단어": "repel",
     "품사": "[동]",
@@ -14498,7 +14498,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 7,
     "단어": "circuit",
     "품사": "[명]",
@@ -14513,7 +14513,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 8,
     "단어": "current",
     "품사": "[명]",
@@ -14528,7 +14528,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 9,
     "단어": "conduct",
     "품사": "[동]",
@@ -14543,7 +14543,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 10,
     "단어": "insulate",
     "품사": "[동]",
@@ -14558,8 +14558,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 05",
-    "번호": 11,
+    "DAY": "DAY 10",
+    "번호": 1,
     "단어": "renewable",
     "품사": "[형]",
     "뜻": "재생 가능한",
@@ -14573,8 +14573,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 05",
-    "번호": 12,
+    "DAY": "DAY 10",
+    "번호": 2,
     "단어": "convert",
     "품사": "[동]",
     "뜻": "변환하다, 전환하다",
@@ -14588,8 +14588,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 05",
-    "번호": 13,
+    "DAY": "DAY 10",
+    "번호": 3,
     "단어": "generate",
     "품사": "[동]",
     "뜻": "발생시키다, 만들어내다",
@@ -14603,8 +14603,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 05",
-    "번호": 14,
+    "DAY": "DAY 10",
+    "번호": 4,
     "단어": "generator",
     "품사": "[명]",
     "뜻": "발전기",
@@ -14618,8 +14618,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 05",
-    "번호": 15,
+    "DAY": "DAY 10",
+    "번호": 5,
     "단어": "transfer",
     "품사": "[동]",
     "뜻": "전달하다, 이동하다",
@@ -14633,8 +14633,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 05",
-    "번호": 16,
+    "DAY": "DAY 10",
+    "번호": 6,
     "단어": "property",
     "품사": "[명]",
     "뜻": "속성, 특성",
@@ -14648,8 +14648,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 05",
-    "번호": 17,
+    "DAY": "DAY 10",
+    "번호": 7,
     "단어": "particle",
     "품사": "[명]",
     "뜻": "입자, 미립자",
@@ -14663,8 +14663,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 05",
-    "번호": 18,
+    "DAY": "DAY 10",
+    "번호": 8,
     "단어": "density",
     "품사": "[명]",
     "뜻": "밀도",
@@ -14678,8 +14678,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 05",
-    "번호": 19,
+    "DAY": "DAY 10",
+    "번호": 9,
     "단어": "expand",
     "품사": "[동]",
     "뜻": "팽창하다, 확장되다",
@@ -14693,8 +14693,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 05",
-    "번호": 20,
+    "DAY": "DAY 10",
+    "번호": 10,
     "단어": "contract",
     "품사": "[동]",
     "뜻": "수축하다, 줄어들다",
@@ -14708,7 +14708,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 1,
     "단어": "continent",
     "품사": "[명]",
@@ -14723,7 +14723,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 2,
     "단어": "equator",
     "품사": "[명]",
@@ -14738,7 +14738,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 3,
     "단어": "hemisphere",
     "품사": "[명]",
@@ -14753,7 +14753,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 4,
     "단어": "latitude",
     "품사": "[명]",
@@ -14768,7 +14768,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 5,
     "단어": "longitude",
     "품사": "[명]",
@@ -14783,7 +14783,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 6,
     "단어": "boundary",
     "품사": "[명]",
@@ -14798,7 +14798,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 7,
     "단어": "terrain",
     "품사": "[명]",
@@ -14813,7 +14813,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 8,
     "단어": "glacier",
     "품사": "[명]",
@@ -14828,7 +14828,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 9,
     "단어": "plateau",
     "품사": "[명]",
@@ -14843,7 +14843,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 10,
     "단어": "peninsula",
     "품사": "[명]",
@@ -14858,8 +14858,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 06",
-    "번호": 11,
+    "DAY": "DAY 12",
+    "번호": 1,
     "단어": "plain",
     "품사": "[명]",
     "뜻": "평원, 평지",
@@ -14873,8 +14873,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 06",
-    "번호": 12,
+    "DAY": "DAY 12",
+    "번호": 2,
     "단어": "delta",
     "품사": "[명]",
     "뜻": "삼각주",
@@ -14888,8 +14888,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 06",
-    "번호": 13,
+    "DAY": "DAY 12",
+    "번호": 3,
     "단어": "canyon",
     "품사": "[명]",
     "뜻": "협곡",
@@ -14903,8 +14903,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 06",
-    "번호": 14,
+    "DAY": "DAY 12",
+    "번호": 4,
     "단어": "valley",
     "품사": "[명]",
     "뜻": "계곡, 골짜기",
@@ -14918,8 +14918,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 06",
-    "번호": 15,
+    "DAY": "DAY 12",
+    "번호": 5,
     "단어": "coast",
     "품사": "[명]",
     "뜻": "해안, 연안",
@@ -14933,8 +14933,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 06",
-    "번호": 16,
+    "DAY": "DAY 12",
+    "번호": 6,
     "단어": "island",
     "품사": "[명]",
     "뜻": "섬",
@@ -14948,8 +14948,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 06",
-    "번호": 17,
+    "DAY": "DAY 12",
+    "번호": 7,
     "단어": "harbor",
     "품사": "[명]",
     "뜻": "항구, 항만",
@@ -14963,8 +14963,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 06",
-    "번호": 18,
+    "DAY": "DAY 12",
+    "번호": 8,
     "단어": "canal",
     "품사": "[명]",
     "뜻": "운하",
@@ -14978,8 +14978,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 06",
-    "번호": 19,
+    "DAY": "DAY 12",
+    "번호": 9,
     "단어": "border",
     "품사": "[명]",
     "뜻": "국경, 가장자리",
@@ -14993,8 +14993,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 06",
-    "번호": 20,
+    "DAY": "DAY 12",
+    "번호": 10,
     "단어": "settlement",
     "품사": "[명]",
     "뜻": "정착지, 촌락",
@@ -15008,7 +15008,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 1,
     "단어": "community",
     "품사": "[명]",
@@ -15023,7 +15023,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 2,
     "단어": "population",
     "품사": "[명]",
@@ -15038,7 +15038,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 3,
     "단어": "migration",
     "품사": "[명]",
@@ -15053,7 +15053,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 4,
     "단어": "agriculture",
     "품사": "[명]",
@@ -15068,7 +15068,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 5,
     "단어": "cultivate",
     "품사": "[동]",
@@ -15083,7 +15083,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 6,
     "단어": "harvest",
     "품사": "[명]",
@@ -15098,7 +15098,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 7,
     "단어": "surplus",
     "품사": "[명]",
@@ -15113,7 +15113,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 8,
     "단어": "commerce",
     "품사": "[명]",
@@ -15128,7 +15128,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 9,
     "단어": "transport",
     "품사": "[동]",
@@ -15143,7 +15143,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 10,
     "단어": "landmark",
     "품사": "[명]",
@@ -15158,8 +15158,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 07",
-    "번호": 11,
+    "DAY": "DAY 14",
+    "번호": 1,
     "단어": "heritage",
     "품사": "[명]",
     "뜻": "유산, 전통",
@@ -15173,8 +15173,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 07",
-    "번호": 12,
+    "DAY": "DAY 14",
+    "번호": 2,
     "단어": "ancestor",
     "품사": "[명]",
     "뜻": "조상, 선조",
@@ -15188,8 +15188,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 07",
-    "번호": 13,
+    "DAY": "DAY 14",
+    "번호": 3,
     "단어": "monument",
     "품사": "[명]",
     "뜻": "기념물, 기념탑",
@@ -15203,8 +15203,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 07",
-    "번호": 14,
+    "DAY": "DAY 14",
+    "번호": 4,
     "단어": "artifact",
     "품사": "[명]",
     "뜻": "유물, 인공물",
@@ -15218,8 +15218,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 07",
-    "번호": 15,
+    "DAY": "DAY 14",
+    "번호": 5,
     "단어": "ancient",
     "품사": "[형]",
     "뜻": "고대의, 아주 오래된",
@@ -15233,8 +15233,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 07",
-    "번호": 16,
+    "DAY": "DAY 14",
+    "번호": 6,
     "단어": "modern",
     "품사": "[형]",
     "뜻": "현대의, 현대적인",
@@ -15248,8 +15248,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 07",
-    "번호": 17,
+    "DAY": "DAY 14",
+    "번호": 7,
     "단어": "urban",
     "품사": "[형]",
     "뜻": "도시의",
@@ -15263,8 +15263,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 07",
-    "번호": 18,
+    "DAY": "DAY 14",
+    "번호": 8,
     "단어": "rural",
     "품사": "[형]",
     "뜻": "시골의, 전원의",
@@ -15278,8 +15278,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 07",
-    "번호": 19,
+    "DAY": "DAY 14",
+    "번호": 9,
     "단어": "suburban",
     "품사": "[형]",
     "뜻": "교외의",
@@ -15293,8 +15293,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 07",
-    "번호": 20,
+    "DAY": "DAY 14",
+    "번호": 10,
     "단어": "tradition",
     "품사": "[명]",
     "뜻": "전통, 관습",
@@ -15308,7 +15308,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 1,
     "단어": "govern",
     "품사": "[동]",
@@ -15323,7 +15323,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 2,
     "단어": "mayor",
     "품사": "[명]",
@@ -15338,7 +15338,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 3,
     "단어": "council",
     "품사": "[명]",
@@ -15353,7 +15353,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 4,
     "단어": "citizen",
     "품사": "[명]",
@@ -15368,7 +15368,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 5,
     "단어": "vote",
     "품사": "[동]",
@@ -15383,7 +15383,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 6,
     "단어": "election",
     "품사": "[명]",
@@ -15398,7 +15398,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 7,
     "단어": "ballot",
     "품사": "[명]",
@@ -15413,7 +15413,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 8,
     "단어": "rights",
     "품사": "[명]",
@@ -15428,7 +15428,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 9,
     "단어": "responsibility",
     "품사": "[명]",
@@ -15443,7 +15443,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 10,
     "단어": "treaty",
     "품사": "[명]",
@@ -15458,8 +15458,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 08",
-    "번호": 11,
+    "DAY": "DAY 16",
+    "번호": 1,
     "단어": "ally",
     "품사": "[명]",
     "뜻": "동맹(국), 협력자",
@@ -15473,8 +15473,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 08",
-    "번호": 12,
+    "DAY": "DAY 16",
+    "번호": 2,
     "단어": "conflict",
     "품사": "[명]",
     "뜻": "갈등, 분쟁",
@@ -15488,8 +15488,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 08",
-    "번호": 13,
+    "DAY": "DAY 16",
+    "번호": 3,
     "단어": "negotiate",
     "품사": "[동]",
     "뜻": "협상하다, 절충하다",
@@ -15503,8 +15503,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 08",
-    "번호": 14,
+    "DAY": "DAY 16",
+    "번호": 4,
     "단어": "compromise",
     "품사": "[명]",
     "뜻": "타협, 절충안",
@@ -15518,8 +15518,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 08",
-    "번호": 15,
+    "DAY": "DAY 16",
+    "번호": 5,
     "단어": "constitution",
     "품사": "[명]",
     "뜻": "헌법",
@@ -15533,8 +15533,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 08",
-    "번호": 16,
+    "DAY": "DAY 16",
+    "번호": 6,
     "단어": "amendment",
     "품사": "[명]",
     "뜻": "수정안, 개정 조항",
@@ -15548,8 +15548,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 08",
-    "번호": 17,
+    "DAY": "DAY 16",
+    "번호": 7,
     "단어": "liberty",
     "품사": "[명]",
     "뜻": "자유",
@@ -15563,8 +15563,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 08",
-    "번호": 18,
+    "DAY": "DAY 16",
+    "번호": 8,
     "단어": "justice",
     "품사": "[명]",
     "뜻": "정의, 사법",
@@ -15578,8 +15578,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 08",
-    "번호": 19,
+    "DAY": "DAY 16",
+    "번호": 9,
     "단어": "authority",
     "품사": "[명]",
     "뜻": "권위, 권한, 당국",
@@ -15593,8 +15593,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 08",
-    "번호": 20,
+    "DAY": "DAY 16",
+    "번호": 10,
     "단어": "cooperate",
     "품사": "[동]",
     "뜻": "협력하다, 협조하다",
@@ -15608,7 +15608,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 1,
     "단어": "clarify",
     "품사": "[동]",
@@ -15623,7 +15623,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 2,
     "단어": "define",
     "품사": "[동]",
@@ -15638,7 +15638,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 3,
     "단어": "organize",
     "품사": "[동]",
@@ -15653,7 +15653,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 4,
     "단어": "category",
     "품사": "[명]",
@@ -15668,7 +15668,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 5,
     "단어": "topic",
     "품사": "[명]",
@@ -15683,7 +15683,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 6,
     "단어": "section",
     "품사": "[명]",
@@ -15698,7 +15698,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 7,
     "단어": "heading",
     "품사": "[명]",
@@ -15713,7 +15713,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 8,
     "단어": "caption",
     "품사": "[명]",
@@ -15728,7 +15728,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 9,
     "단어": "glossary",
     "품사": "[명]",
@@ -15743,7 +15743,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 10,
     "단어": "index",
     "품사": "[명]",
@@ -15758,8 +15758,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 09",
-    "번호": 11,
+    "DAY": "DAY 18",
+    "번호": 1,
     "단어": "source",
     "품사": "[명]",
     "뜻": "출처, 자료원",
@@ -15773,8 +15773,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 09",
-    "번호": 12,
+    "DAY": "DAY 18",
+    "번호": 2,
     "단어": "quote",
     "품사": "[동]",
     "뜻": "인용하다",
@@ -15788,8 +15788,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 09",
-    "번호": 13,
+    "DAY": "DAY 18",
+    "번호": 3,
     "단어": "narrative",
     "품사": "[명]",
     "뜻": "서사, 이야기",
@@ -15803,8 +15803,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 09",
-    "번호": 14,
+    "DAY": "DAY 18",
+    "번호": 4,
     "단어": "dialogue",
     "품사": "[명]",
     "뜻": "대화",
@@ -15818,8 +15818,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 09",
-    "번호": 15,
+    "DAY": "DAY 18",
+    "번호": 5,
     "단어": "fiction",
     "품사": "[명]",
     "뜻": "허구, 소설",
@@ -15833,8 +15833,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 09",
-    "번호": 16,
+    "DAY": "DAY 18",
+    "번호": 6,
     "단어": "nonfiction",
     "품사": "[명]",
     "뜻": "비문학, 사실 문학",
@@ -15848,8 +15848,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 09",
-    "번호": 17,
+    "DAY": "DAY 18",
+    "번호": 7,
     "단어": "biography",
     "품사": "[명]",
     "뜻": "전기, 일대기",
@@ -15863,8 +15863,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 09",
-    "번호": 18,
+    "DAY": "DAY 18",
+    "번호": 8,
     "단어": "revise",
     "품사": "[동]",
     "뜻": "수정하다, 개정하다",
@@ -15878,8 +15878,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 09",
-    "번호": 19,
+    "DAY": "DAY 18",
+    "번호": 9,
     "단어": "draft",
     "품사": "[명]",
     "뜻": "초고, 밑그림",
@@ -15893,8 +15893,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 09",
-    "번호": 20,
+    "DAY": "DAY 18",
+    "번호": 10,
     "단어": "brainstorm",
     "품사": "[동]",
     "뜻": "아이디어를 내다, 브레인스토밍하다",
@@ -15908,7 +15908,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 1,
     "단어": "survey",
     "품사": "[명]",
@@ -15923,7 +15923,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 2,
     "단어": "interview",
     "품사": "[동]",
@@ -15938,7 +15938,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 3,
     "단어": "record",
     "품사": "[동]",
@@ -15953,7 +15953,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 4,
     "단어": "report",
     "품사": "[동]",
@@ -15968,7 +15968,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 5,
     "단어": "discuss",
     "품사": "[동]",
@@ -15983,7 +15983,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 6,
     "단어": "explain",
     "품사": "[동]",
@@ -15998,7 +15998,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 7,
     "단어": "convince",
     "품사": "[동]",
@@ -16013,7 +16013,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 8,
     "단어": "proof",
     "품사": "[명]",
@@ -16028,7 +16028,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 9,
     "단어": "verify",
     "품사": "[동]",
@@ -16043,7 +16043,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 10,
     "단어": "accurate",
     "품사": "[형]",
@@ -16058,8 +16058,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 10",
-    "번호": 11,
+    "DAY": "DAY 20",
+    "번호": 1,
     "단어": "error",
     "품사": "[명]",
     "뜻": "오류, 실수",
@@ -16073,8 +16073,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 10",
-    "번호": 12,
+    "DAY": "DAY 20",
+    "번호": 2,
     "단어": "strategy",
     "품사": "[명]",
     "뜻": "전략, 방안",
@@ -16088,8 +16088,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 10",
-    "번호": 13,
+    "DAY": "DAY 20",
+    "번호": 3,
     "단어": "method",
     "품사": "[명]",
     "뜻": "방법, 방식",
@@ -16103,8 +16103,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 10",
-    "번호": 14,
+    "DAY": "DAY 20",
+    "번호": 4,
     "단어": "solution",
     "품사": "[명]",
     "뜻": "해결책, 용액",
@@ -16118,8 +16118,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 10",
-    "번호": 15,
+    "DAY": "DAY 20",
+    "번호": 5,
     "단어": "challenge",
     "품사": "[명]",
     "뜻": "도전 과제, 난관",
@@ -16133,8 +16133,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 10",
-    "번호": 16,
+    "DAY": "DAY 20",
+    "번호": 6,
     "단어": "achieve",
     "품사": "[동]",
     "뜻": "성취하다, 달성하다",
@@ -16148,8 +16148,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 10",
-    "번호": 17,
+    "DAY": "DAY 20",
+    "번호": 7,
     "단어": "effort",
     "품사": "[명]",
     "뜻": "노력, 수고",
@@ -16163,8 +16163,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 10",
-    "번호": 18,
+    "DAY": "DAY 20",
+    "번호": 8,
     "단어": "focus",
     "품사": "[동]",
     "뜻": "집중하다, 초점을 맞추다",
@@ -16178,8 +16178,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 10",
-    "번호": 19,
+    "DAY": "DAY 20",
+    "번호": 9,
     "단어": "discover",
     "품사": "[동]",
     "뜻": "발견하다, 알아내다",
@@ -16193,8 +16193,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-elem",
     "collectionTitle": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
-    "DAY": "DAY 10",
-    "번호": 20,
+    "DAY": "DAY 20",
+    "번호": 10,
     "단어": "develop",
     "품사": "[동]",
     "뜻": "개발하다, 발전시키다",
@@ -16358,8 +16358,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 01",
-    "번호": 11,
+    "DAY": "DAY 02",
+    "번호": 1,
     "단어": "dimension",
     "품사": "[명]",
     "뜻": "치수, 차원, 관점",
@@ -16373,8 +16373,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 01",
-    "번호": 12,
+    "DAY": "DAY 02",
+    "번호": 2,
     "단어": "probability",
     "품사": "[명]",
     "뜻": "확률, 개연성",
@@ -16388,8 +16388,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 01",
-    "번호": 13,
+    "DAY": "DAY 02",
+    "번호": 3,
     "단어": "phenomenon",
     "품사": "[명]",
     "뜻": "현상, 사건",
@@ -16403,8 +16403,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 01",
-    "번호": 14,
+    "DAY": "DAY 02",
+    "번호": 4,
     "단어": "component",
     "품사": "[명]",
     "뜻": "구성 요소, 부품",
@@ -16418,8 +16418,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 01",
-    "번호": 15,
+    "DAY": "DAY 02",
+    "번호": 5,
     "단어": "diversity",
     "품사": "[명]",
     "뜻": "다양성, 포괄성",
@@ -16433,8 +16433,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 01",
-    "번호": 16,
+    "DAY": "DAY 02",
+    "번호": 6,
     "단어": "mechanism",
     "품사": "[명]",
     "뜻": "메커니즘, 기제",
@@ -16448,8 +16448,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 01",
-    "번호": 17,
+    "DAY": "DAY 02",
+    "번호": 7,
     "단어": "isolate",
     "품사": "[동]",
     "뜻": "격리하다, 분리하다",
@@ -16463,8 +16463,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 01",
-    "번호": 18,
+    "DAY": "DAY 02",
+    "번호": 8,
     "단어": "establish",
     "품사": "[동]",
     "뜻": "설립하다, 확립하다",
@@ -16478,8 +16478,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 01",
-    "번호": 19,
+    "DAY": "DAY 02",
+    "번호": 9,
     "단어": "replicate",
     "품사": "[동]",
     "뜻": "복제하다, 되풀이하다",
@@ -16493,8 +16493,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 01",
-    "번호": 20,
+    "DAY": "DAY 02",
+    "번호": 10,
     "단어": "potential",
     "품사": "[형]",
     "뜻": "잠재적인, 가능성이 있는",
@@ -16508,7 +16508,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 1,
     "단어": "argue",
     "품사": "[동]",
@@ -16523,7 +16523,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 2,
     "단어": "persuade",
     "품사": "[동]",
@@ -16538,7 +16538,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 3,
     "단어": "perspective",
     "품사": "[명]",
@@ -16553,7 +16553,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 4,
     "단어": "viewpoint",
     "품사": "[명]",
@@ -16568,7 +16568,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 5,
     "단어": "context",
     "품사": "[명]",
@@ -16583,7 +16583,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 6,
     "단어": "tone",
     "품사": "[명]",
@@ -16598,7 +16598,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 7,
     "단어": "objective",
     "품사": "[형]",
@@ -16613,7 +16613,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 8,
     "단어": "subjective",
     "품사": "[형]",
@@ -16628,7 +16628,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 9,
     "단어": "coherent",
     "품사": "[형]",
@@ -16643,7 +16643,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 10,
     "단어": "clarify",
     "품사": "[동]",
@@ -16658,8 +16658,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 02",
-    "번호": 11,
+    "DAY": "DAY 04",
+    "번호": 1,
     "단어": "elaborate",
     "품사": "[동]",
     "뜻": "상세히 설명하다",
@@ -16673,8 +16673,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 02",
-    "번호": 12,
+    "DAY": "DAY 04",
+    "번호": 2,
     "단어": "emphasize",
     "품사": "[동]",
     "뜻": "강조하다, 역설하다",
@@ -16688,8 +16688,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 02",
-    "번호": 13,
+    "DAY": "DAY 04",
+    "번호": 3,
     "단어": "transition",
     "품사": "[명]",
     "뜻": "전환, 이행",
@@ -16703,8 +16703,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 02",
-    "번호": 14,
+    "DAY": "DAY 04",
+    "번호": 4,
     "단어": "impact",
     "품사": "[명]",
     "뜻": "영향, 충격",
@@ -16718,8 +16718,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 02",
-    "번호": 15,
+    "DAY": "DAY 04",
+    "번호": 5,
     "단어": "consequence",
     "품사": "[명]",
     "뜻": "결과, 중대성",
@@ -16733,8 +16733,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 02",
-    "번호": 16,
+    "DAY": "DAY 04",
+    "번호": 6,
     "단어": "counterargument",
     "품사": "[명]",
     "뜻": "반론, 반박 논증",
@@ -16748,8 +16748,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 02",
-    "번호": 17,
+    "DAY": "DAY 04",
+    "번호": 7,
     "단어": "refute",
     "품사": "[동]",
     "뜻": "반박하다, 그릇됨을 증명하다",
@@ -16763,8 +16763,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 02",
-    "번호": 18,
+    "DAY": "DAY 04",
+    "번호": 8,
     "단어": "rationale",
     "품사": "[명]",
     "뜻": "이론적 근거, 이유",
@@ -16778,8 +16778,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 02",
-    "번호": 19,
+    "DAY": "DAY 04",
+    "번호": 9,
     "단어": "bias",
     "품사": "[명]",
     "뜻": "편견, 편향",
@@ -16793,8 +16793,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 02",
-    "번호": 20,
+    "DAY": "DAY 04",
+    "번호": 10,
     "단어": "stance",
     "품사": "[명]",
     "뜻": "입장, 태도",
@@ -16808,7 +16808,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 1,
     "단어": "civilization",
     "품사": "[명]",
@@ -16823,7 +16823,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 2,
     "단어": "citizen",
     "품사": "[명]",
@@ -16838,7 +16838,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 3,
     "단어": "constitution",
     "품사": "[명]",
@@ -16853,7 +16853,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 4,
     "단어": "democracy",
     "품사": "[명]",
@@ -16868,7 +16868,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 5,
     "단어": "economy",
     "품사": "[명]",
@@ -16883,7 +16883,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 6,
     "단어": "trade",
     "품사": "[명]",
@@ -16898,7 +16898,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 7,
     "단어": "export",
     "품사": "[동]",
@@ -16913,7 +16913,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 8,
     "단어": "import",
     "품사": "[동]",
@@ -16928,7 +16928,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 9,
     "단어": "revenue",
     "품사": "[명]",
@@ -16943,7 +16943,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 10,
     "단어": "culture",
     "품사": "[명]",
@@ -16958,8 +16958,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 03",
-    "번호": 11,
+    "DAY": "DAY 06",
+    "번호": 1,
     "단어": "legacy",
     "품사": "[명]",
     "뜻": "유산, 발자취",
@@ -16973,8 +16973,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 03",
-    "번호": 12,
+    "DAY": "DAY 06",
+    "번호": 2,
     "단어": "tradition",
     "품사": "[명]",
     "뜻": "전통, 관습",
@@ -16988,8 +16988,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 03",
-    "번호": 13,
+    "DAY": "DAY 06",
+    "번호": 3,
     "단어": "era",
     "품사": "[명]",
     "뜻": "시대, 연대",
@@ -17003,8 +17003,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 03",
-    "번호": 14,
+    "DAY": "DAY 06",
+    "번호": 4,
     "단어": "generation",
     "품사": "[명]",
     "뜻": "세대, 대(代)",
@@ -17018,8 +17018,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 03",
-    "번호": 15,
+    "DAY": "DAY 06",
+    "번호": 5,
     "단어": "innovation",
     "품사": "[명]",
     "뜻": "혁신, 쇄신",
@@ -17033,8 +17033,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 03",
-    "번호": 16,
+    "DAY": "DAY 06",
+    "번호": 6,
     "단어": "technology",
     "품사": "[명]",
     "뜻": "기술, 공학 기술",
@@ -17048,8 +17048,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 03",
-    "번호": 17,
+    "DAY": "DAY 06",
+    "번호": 7,
     "단어": "civil",
     "품사": "[형]",
     "뜻": "시민의, 민간의",
@@ -17063,8 +17063,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 03",
-    "번호": 18,
+    "DAY": "DAY 06",
+    "번호": 8,
     "단어": "legislation",
     "품사": "[명]",
     "뜻": "입법, 법률 제정",
@@ -17078,8 +17078,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 03",
-    "번호": 19,
+    "DAY": "DAY 06",
+    "번호": 9,
     "단어": "territory",
     "품사": "[명]",
     "뜻": "영토, 영지",
@@ -17093,8 +17093,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 03",
-    "번호": 20,
+    "DAY": "DAY 06",
+    "번호": 10,
     "단어": "sovereign",
     "품사": "[형]",
     "뜻": "주권이 있는, 자주적인",
@@ -17108,7 +17108,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 1,
     "단어": "organism",
     "품사": "[명]",
@@ -17123,7 +17123,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 2,
     "단어": "inherit",
     "품사": "[동]",
@@ -17138,7 +17138,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 3,
     "단어": "trait",
     "품사": "[명]",
@@ -17153,7 +17153,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 4,
     "단어": "reproduce",
     "품사": "[동]",
@@ -17168,7 +17168,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 5,
     "단어": "extinct",
     "품사": "[형]",
@@ -17183,7 +17183,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 6,
     "단어": "mutation",
     "품사": "[명]",
@@ -17198,7 +17198,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 7,
     "단어": "evolve",
     "품사": "[동]",
@@ -17213,7 +17213,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 8,
     "단어": "cellulose",
     "품사": "[명]",
@@ -17228,7 +17228,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 9,
     "단어": "chlorophyll",
     "품사": "[명]",
@@ -17243,7 +17243,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 10,
     "단어": "cellular",
     "품사": "[형]",
@@ -17258,8 +17258,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 04",
-    "번호": 11,
+    "DAY": "DAY 08",
+    "번호": 1,
     "단어": "membrane",
     "품사": "[명]",
     "뜻": "막, 세포막",
@@ -17273,8 +17273,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 04",
-    "번호": 12,
+    "DAY": "DAY 08",
+    "번호": 2,
     "단어": "nucleus",
     "품사": "[명]",
     "뜻": "핵, 중심",
@@ -17288,8 +17288,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 04",
-    "번호": 13,
+    "DAY": "DAY 08",
+    "번호": 3,
     "단어": "tissue",
     "품사": "[명]",
     "뜻": "조직",
@@ -17303,8 +17303,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 04",
-    "번호": 14,
+    "DAY": "DAY 08",
+    "번호": 4,
     "단어": "parasite",
     "품사": "[명]",
     "뜻": "기생 생물",
@@ -17318,8 +17318,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 04",
-    "번호": 15,
+    "DAY": "DAY 08",
+    "번호": 5,
     "단어": "symbiosis",
     "품사": "[명]",
     "뜻": "공생 (관계)",
@@ -17333,8 +17333,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 04",
-    "번호": 16,
+    "DAY": "DAY 08",
+    "번호": 6,
     "단어": "carnivore",
     "품사": "[명]",
     "뜻": "육식 동물",
@@ -17348,8 +17348,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 04",
-    "번호": 17,
+    "DAY": "DAY 08",
+    "번호": 7,
     "단어": "herbivore",
     "품사": "[명]",
     "뜻": "초식 동물",
@@ -17363,8 +17363,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 04",
-    "번호": 18,
+    "DAY": "DAY 08",
+    "번호": 8,
     "단어": "omnivore",
     "품사": "[명]",
     "뜻": "잡식 동물",
@@ -17378,8 +17378,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 04",
-    "번호": 19,
+    "DAY": "DAY 08",
+    "번호": 9,
     "단어": "metabolism",
     "품사": "[명]",
     "뜻": "신진대사, 대사 작용",
@@ -17393,8 +17393,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 04",
-    "번호": 20,
+    "DAY": "DAY 08",
+    "번호": 10,
     "단어": "dormant",
     "품사": "[형]",
     "뜻": "휴면기의, 활동을 중단한",
@@ -17408,7 +17408,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 1,
     "단어": "velocity",
     "품사": "[명]",
@@ -17423,7 +17423,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 2,
     "단어": "acceleration",
     "품사": "[명]",
@@ -17438,7 +17438,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 3,
     "단어": "momentum",
     "품사": "[명]",
@@ -17453,7 +17453,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 4,
     "단어": "inertia",
     "품사": "[명]",
@@ -17468,7 +17468,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 5,
     "단어": "equilibrium",
     "품사": "[명]",
@@ -17483,7 +17483,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 6,
     "단어": "kinetic",
     "품사": "[형]",
@@ -17498,7 +17498,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 7,
     "단어": "wavelength",
     "품사": "[명]",
@@ -17513,7 +17513,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 8,
     "단어": "frequency",
     "품사": "[명]",
@@ -17528,7 +17528,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 9,
     "단어": "amplitude",
     "품사": "[명]",
@@ -17543,7 +17543,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 10,
     "단어": "refraction",
     "품사": "[명]",
@@ -17558,8 +17558,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 05",
-    "번호": 11,
+    "DAY": "DAY 10",
+    "번호": 1,
     "단어": "insulation",
     "품사": "[명]",
     "뜻": "단열재, 절연",
@@ -17573,8 +17573,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 05",
-    "번호": 12,
+    "DAY": "DAY 10",
+    "번호": 2,
     "단어": "conductor",
     "품사": "[명]",
     "뜻": "도체",
@@ -17588,8 +17588,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 05",
-    "번호": 13,
+    "DAY": "DAY 10",
+    "번호": 3,
     "단어": "combustion",
     "품사": "[명]",
     "뜻": "연소, 발화",
@@ -17603,8 +17603,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 05",
-    "번호": 14,
+    "DAY": "DAY 10",
+    "번호": 4,
     "단어": "radiant",
     "품사": "[형]",
     "뜻": "빛나는, 복사의",
@@ -17618,8 +17618,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 05",
-    "번호": 15,
+    "DAY": "DAY 10",
+    "번호": 5,
     "단어": "convection",
     "품사": "[명]",
     "뜻": "대류",
@@ -17633,8 +17633,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 05",
-    "번호": 16,
+    "DAY": "DAY 10",
+    "번호": 6,
     "단어": "conduction",
     "품사": "[명]",
     "뜻": "전도",
@@ -17648,8 +17648,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 05",
-    "번호": 17,
+    "DAY": "DAY 10",
+    "번호": 7,
     "단어": "vacuum",
     "품사": "[명]",
     "뜻": "진공, 공백",
@@ -17663,8 +17663,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 05",
-    "번호": 18,
+    "DAY": "DAY 10",
+    "번호": 8,
     "단어": "frictionless",
     "품사": "[형]",
     "뜻": "마찰이 없는",
@@ -17678,8 +17678,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 05",
-    "번호": 19,
+    "DAY": "DAY 10",
+    "번호": 9,
     "단어": "elastic",
     "품사": "[형]",
     "뜻": "탄력 있는, 유연한",
@@ -17693,8 +17693,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 05",
-    "번호": 20,
+    "DAY": "DAY 10",
+    "번호": 10,
     "단어": "buoyancy",
     "품사": "[명]",
     "뜻": "부력",
@@ -17708,7 +17708,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 1,
     "단어": "tectonic",
     "품사": "[형]",
@@ -17723,7 +17723,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 2,
     "단어": "magma",
     "품사": "[명]",
@@ -17738,7 +17738,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 3,
     "단어": "crust",
     "품사": "[명]",
@@ -17753,7 +17753,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 4,
     "단어": "mantle",
     "품사": "[명]",
@@ -17768,7 +17768,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 5,
     "단어": "seismic",
     "품사": "[형]",
@@ -17783,7 +17783,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 6,
     "단어": "fault",
     "품사": "[명]",
@@ -17798,7 +17798,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 7,
     "단어": "deposition",
     "품사": "[명]",
@@ -17813,7 +17813,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 8,
     "단어": "weathering",
     "품사": "[명]",
@@ -17828,7 +17828,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 9,
     "단어": "fossil",
     "품사": "[명]",
@@ -17843,7 +17843,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 10,
     "단어": "petrified",
     "품사": "[형]",
@@ -17858,8 +17858,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 06",
-    "번호": 11,
+    "DAY": "DAY 12",
+    "번호": 1,
     "단어": "strata",
     "품사": "[명]",
     "뜻": "지층, 단층선",
@@ -17873,8 +17873,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 06",
-    "번호": 12,
+    "DAY": "DAY 12",
+    "번호": 2,
     "단어": "fossilize",
     "품사": "[동]",
     "뜻": "화석화되다",
@@ -17888,8 +17888,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 06",
-    "번호": 13,
+    "DAY": "DAY 12",
+    "번호": 3,
     "단어": "humidity",
     "품사": "[명]",
     "뜻": "습도",
@@ -17903,8 +17903,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 06",
-    "번호": 14,
+    "DAY": "DAY 12",
+    "번호": 4,
     "단어": "barometer",
     "품사": "[명]",
     "뜻": "기압계",
@@ -17918,8 +17918,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 06",
-    "번호": 15,
+    "DAY": "DAY 12",
+    "번호": 5,
     "단어": "airmass",
     "품사": "[명]",
     "뜻": "기단",
@@ -17933,8 +17933,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 06",
-    "번호": 16,
+    "DAY": "DAY 12",
+    "번호": 6,
     "단어": "front",
     "품사": "[명]",
     "뜻": "(기상의) 전선",
@@ -17948,8 +17948,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 06",
-    "번호": 17,
+    "DAY": "DAY 12",
+    "번호": 7,
     "단어": "prevailing",
     "품사": "[형]",
     "뜻": "우세한, 지배적인",
@@ -17963,8 +17963,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 06",
-    "번호": 18,
+    "DAY": "DAY 12",
+    "번호": 8,
     "단어": "ozone",
     "품사": "[명]",
     "뜻": "오존",
@@ -17978,8 +17978,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 06",
-    "번호": 19,
+    "DAY": "DAY 12",
+    "번호": 9,
     "단어": "biosphere",
     "품사": "[명]",
     "뜻": "생물권",
@@ -17993,8 +17993,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 06",
-    "번호": 20,
+    "DAY": "DAY 12",
+    "번호": 10,
     "단어": "hydrosphere",
     "품사": "[명]",
     "뜻": "수권 (물 영역)",
@@ -18008,7 +18008,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 1,
     "단어": "monarchy",
     "품사": "[명]",
@@ -18023,7 +18023,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 2,
     "단어": "republic",
     "품사": "[명]",
@@ -18038,7 +18038,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 3,
     "단어": "judicial",
     "품사": "[형]",
@@ -18053,7 +18053,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 4,
     "단어": "executive",
     "품사": "[형]",
@@ -18068,7 +18068,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 5,
     "단어": "legislative",
     "품사": "[형]",
@@ -18083,7 +18083,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 6,
     "단어": "senate",
     "품사": "[명]",
@@ -18098,7 +18098,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 7,
     "단어": "cabinet",
     "품사": "[명]",
@@ -18113,7 +18113,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 8,
     "단어": "veto",
     "품사": "[동]",
@@ -18128,7 +18128,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 9,
     "단어": "override",
     "품사": "[동]",
@@ -18143,7 +18143,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 10,
     "단어": "ratify",
     "품사": "[동]",
@@ -18158,8 +18158,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 07",
-    "번호": 11,
+    "DAY": "DAY 14",
+    "번호": 1,
     "단어": "treaty",
     "품사": "[명]",
     "뜻": "조약, 협약",
@@ -18173,8 +18173,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 07",
-    "번호": 12,
+    "DAY": "DAY 14",
+    "번호": 2,
     "단어": "diplomacy",
     "품사": "[명]",
     "뜻": "외교(술)",
@@ -18188,8 +18188,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 07",
-    "번호": 13,
+    "DAY": "DAY 14",
+    "번호": 3,
     "단어": "sanction",
     "품사": "[명]",
     "뜻": "제재(조치), 허가",
@@ -18203,8 +18203,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 07",
-    "번호": 14,
+    "DAY": "DAY 14",
+    "번호": 4,
     "단어": "tariff",
     "품사": "[명]",
     "뜻": "관세",
@@ -18218,8 +18218,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 07",
-    "번호": 15,
+    "DAY": "DAY 14",
+    "번호": 5,
     "단어": "subsidy",
     "품사": "[명]",
     "뜻": "보조금, 장려금",
@@ -18233,8 +18233,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 07",
-    "번호": 16,
+    "DAY": "DAY 14",
+    "번호": 6,
     "단어": "monopoly",
     "품사": "[명]",
     "뜻": "독점(권)",
@@ -18248,8 +18248,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 07",
-    "번호": 17,
+    "DAY": "DAY 14",
+    "번호": 7,
     "단어": "scarcity",
     "품사": "[명]",
     "뜻": "희소성, 부족",
@@ -18263,8 +18263,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 07",
-    "번호": 18,
+    "DAY": "DAY 14",
+    "번호": 8,
     "단어": "inflation",
     "품사": "[명]",
     "뜻": "인플레이션, 물가 상승",
@@ -18278,8 +18278,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 07",
-    "번호": 19,
+    "DAY": "DAY 14",
+    "번호": 9,
     "단어": "depression",
     "품사": "[명]",
     "뜻": "불황, 공황",
@@ -18293,8 +18293,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 07",
-    "번호": 20,
+    "DAY": "DAY 14",
+    "번호": 10,
     "단어": "prosperity",
     "품사": "[명]",
     "뜻": "번영, 번성",
@@ -18308,7 +18308,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 1,
     "단어": "protagonist",
     "품사": "[명]",
@@ -18323,7 +18323,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 2,
     "단어": "antagonist",
     "품사": "[명]",
@@ -18338,7 +18338,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 3,
     "단어": "climax",
     "품사": "[명]",
@@ -18353,7 +18353,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 4,
     "단어": "resolution",
     "품사": "[명]",
@@ -18368,7 +18368,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 5,
     "단어": "conflict",
     "품사": "[명]",
@@ -18383,7 +18383,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 6,
     "단어": "setting",
     "품사": "[명]",
@@ -18398,7 +18398,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 7,
     "단어": "theme",
     "품사": "[명]",
@@ -18413,7 +18413,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 8,
     "단어": "symbolism",
     "품사": "[명]",
@@ -18428,7 +18428,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 9,
     "단어": "metaphor",
     "품사": "[명]",
@@ -18443,7 +18443,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 10,
     "단어": "simile",
     "품사": "[명]",
@@ -18458,8 +18458,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 08",
-    "번호": 11,
+    "DAY": "DAY 16",
+    "번호": 1,
     "단어": "personification",
     "품사": "[명]",
     "뜻": "의인화, 의인법",
@@ -18473,8 +18473,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 08",
-    "번호": 12,
+    "DAY": "DAY 16",
+    "번호": 2,
     "단어": "imagery",
     "품사": "[명]",
     "뜻": "심상, 이미지 묘사",
@@ -18488,8 +18488,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 08",
-    "번호": 13,
+    "DAY": "DAY 16",
+    "번호": 3,
     "단어": "foreshadow",
     "품사": "[동]",
     "뜻": "복선을 깔다, 암시하다",
@@ -18503,8 +18503,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 08",
-    "번호": 14,
+    "DAY": "DAY 16",
+    "번호": 4,
     "단어": "flashback",
     "품사": "[명]",
     "뜻": "회상 장면, 플래시백",
@@ -18518,8 +18518,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 08",
-    "번호": 15,
+    "DAY": "DAY 16",
+    "번호": 5,
     "단어": "irony",
     "품사": "[명]",
     "뜻": "반어, 아이러니",
@@ -18533,8 +18533,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 08",
-    "번호": 16,
+    "DAY": "DAY 16",
+    "번호": 6,
     "단어": "allegory",
     "품사": "[명]",
     "뜻": "우화, 풍유",
@@ -18548,8 +18548,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 08",
-    "번호": 17,
+    "DAY": "DAY 16",
+    "번호": 7,
     "단어": "satire",
     "품사": "[명]",
     "뜻": "풍자(문학)",
@@ -18563,8 +18563,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 08",
-    "번호": 18,
+    "DAY": "DAY 16",
+    "번호": 8,
     "단어": "paraphrase",
     "품사": "[동]",
     "뜻": "알기 쉽게 바꿔 쓰다",
@@ -18578,8 +18578,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 08",
-    "번호": 19,
+    "DAY": "DAY 16",
+    "번호": 9,
     "단어": "plagiarize",
     "품사": "[동]",
     "뜻": "표절하다, 도용하다",
@@ -18593,8 +18593,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 08",
-    "번호": 20,
+    "DAY": "DAY 16",
+    "번호": 10,
     "단어": "bibliography",
     "품사": "[명]",
     "뜻": "참고 문헌 목록",
@@ -18608,7 +18608,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 1,
     "단어": "probe",
     "품사": "[동]",
@@ -18623,7 +18623,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 2,
     "단어": "survey",
     "품사": "[동]",
@@ -18638,7 +18638,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 3,
     "단어": "correlation",
     "품사": "[명]",
@@ -18653,7 +18653,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 4,
     "단어": "causation",
     "품사": "[명]",
@@ -18668,7 +18668,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 5,
     "단어": "sample",
     "품사": "[명]",
@@ -18683,7 +18683,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 6,
     "단어": "control",
     "품사": "[명]",
@@ -18698,7 +18698,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 7,
     "단어": "constant",
     "품사": "[형]",
@@ -18713,7 +18713,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 8,
     "단어": "randomize",
     "품사": "[동]",
@@ -18728,7 +18728,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 9,
     "단어": "qualitative",
     "품사": "[형]",
@@ -18743,7 +18743,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 10,
     "단어": "quantitative",
     "품사": "[형]",
@@ -18758,8 +18758,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 09",
-    "번호": 11,
+    "DAY": "DAY 18",
+    "번호": 1,
     "단어": "validity",
     "품사": "[명]",
     "뜻": "타당성, 유효성",
@@ -18773,8 +18773,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 09",
-    "번호": 12,
+    "DAY": "DAY 18",
+    "번호": 2,
     "단어": "reliability",
     "품사": "[명]",
     "뜻": "신뢰도, 신뢰성",
@@ -18788,8 +18788,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 09",
-    "번호": 13,
+    "DAY": "DAY 18",
+    "번호": 3,
     "단어": "reproducible",
     "품사": "[형]",
     "뜻": "재현 가능한",
@@ -18803,8 +18803,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 09",
-    "번호": 14,
+    "DAY": "DAY 18",
+    "번호": 4,
     "단어": "deviation",
     "품사": "[명]",
     "뜻": "편차, 일탈",
@@ -18818,8 +18818,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 09",
-    "번호": 15,
+    "DAY": "DAY 18",
+    "번호": 5,
     "단어": "outlier",
     "품사": "[명]",
     "뜻": "이상치, 특이값",
@@ -18833,8 +18833,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 09",
-    "번호": 16,
+    "DAY": "DAY 18",
+    "번호": 6,
     "단어": "extrapolate",
     "품사": "[동]",
     "뜻": "외삽하다, 추정하다",
@@ -18848,8 +18848,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 09",
-    "번호": 17,
+    "DAY": "DAY 18",
+    "번호": 7,
     "단어": "synthesize",
     "품사": "[동]",
     "뜻": "종합하다, 합성하다",
@@ -18863,8 +18863,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 09",
-    "번호": 18,
+    "DAY": "DAY 18",
+    "번호": 8,
     "단어": "comprehensive",
     "품사": "[형]",
     "뜻": "포괄적인, 종합적인",
@@ -18878,8 +18878,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 09",
-    "번호": 19,
+    "DAY": "DAY 18",
+    "번호": 9,
     "단어": "preliminary",
     "품사": "[형]",
     "뜻": "예비의, 시초의",
@@ -18893,8 +18893,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 09",
-    "번호": 20,
+    "DAY": "DAY 18",
+    "번호": 10,
     "단어": "peer-review",
     "품사": "[명]",
     "뜻": "동료 심사",
@@ -18908,7 +18908,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 1,
     "단어": "autonomous",
     "품사": "[형]",
@@ -18923,7 +18923,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 2,
     "단어": "algorithm",
     "품사": "[명]",
@@ -18938,7 +18938,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 3,
     "단어": "sustainable",
     "품사": "[형]",
@@ -18953,7 +18953,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 4,
     "단어": "deplete",
     "품사": "[동]",
@@ -18968,7 +18968,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 5,
     "단어": "conserve",
     "품사": "[동]",
@@ -18983,7 +18983,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 6,
     "단어": "biodegradable",
     "품사": "[형]",
@@ -18998,7 +18998,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 7,
     "단어": "emission",
     "품사": "[명]",
@@ -19013,7 +19013,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 8,
     "단어": "fossil-fuel",
     "품사": "[명]",
@@ -19028,7 +19028,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 9,
     "단어": "contamination",
     "품사": "[명]",
@@ -19043,7 +19043,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 10,
     "단어": "infrastructure",
     "품사": "[명]",
@@ -19058,8 +19058,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 10",
-    "번호": 11,
+    "DAY": "DAY 20",
+    "번호": 1,
     "단어": "urbanization",
     "품사": "[명]",
     "뜻": "도시화",
@@ -19073,8 +19073,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 10",
-    "번호": 12,
+    "DAY": "DAY 20",
+    "번호": 2,
     "단어": "sanitation",
     "품사": "[명]",
     "뜻": "위생 시설, 공중위생",
@@ -19088,8 +19088,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 10",
-    "번호": 13,
+    "DAY": "DAY 20",
+    "번호": 3,
     "단어": "epidemic",
     "품사": "[명]",
     "뜻": "유행병, 전염병",
@@ -19103,8 +19103,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 10",
-    "번호": 14,
+    "DAY": "DAY 20",
+    "번호": 4,
     "단어": "immunize",
     "품사": "[동]",
     "뜻": "면역력을 갖추게 하다",
@@ -19118,8 +19118,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 10",
-    "번호": 15,
+    "DAY": "DAY 20",
+    "번호": 5,
     "단어": "antibiotic",
     "품사": "[명]",
     "뜻": "항생제",
@@ -19133,8 +19133,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 10",
-    "번호": 16,
+    "DAY": "DAY 20",
+    "번호": 6,
     "단어": "quarantine",
     "품사": "[명]",
     "뜻": "격리, 검역",
@@ -19148,8 +19148,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 10",
-    "번호": 17,
+    "DAY": "DAY 20",
+    "번호": 7,
     "단어": "synthetic",
     "품사": "[형]",
     "뜻": "합성의, 인조의",
@@ -19163,8 +19163,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 10",
-    "번호": 18,
+    "DAY": "DAY 20",
+    "번호": 8,
     "단어": "nanotechnology",
     "품사": "[명]",
     "뜻": "나노 기술",
@@ -19178,8 +19178,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 10",
-    "번호": 19,
+    "DAY": "DAY 20",
+    "번호": 9,
     "단어": "cybersecurity",
     "품사": "[명]",
     "뜻": "사이버 보안",
@@ -19193,8 +19193,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid1",
     "collectionTitle": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
-    "DAY": "DAY 10",
-    "번호": 20,
+    "DAY": "DAY 20",
+    "번호": 10,
     "단어": "globalization",
     "품사": "[명]",
     "뜻": "세계화",
@@ -19358,8 +19358,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 01",
-    "번호": 11,
+    "DAY": "DAY 02",
+    "번호": 1,
     "단어": "concrete",
     "품사": "[형]",
     "뜻": "구체적인, 실체적인",
@@ -19373,8 +19373,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 01",
-    "번호": 12,
+    "DAY": "DAY 02",
+    "번호": 2,
     "단어": "rhetoric",
     "품사": "[명]",
     "뜻": "수사학, 화법",
@@ -19388,8 +19388,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 01",
-    "번호": 13,
+    "DAY": "DAY 02",
+    "번호": 3,
     "단어": "paradox",
     "품사": "[명]",
     "뜻": "역설, 패러독스",
@@ -19403,8 +19403,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 01",
-    "번호": 14,
+    "DAY": "DAY 02",
+    "번호": 4,
     "단어": "dilemma",
     "품사": "[명]",
     "뜻": "딜레마, 진퇴양난",
@@ -19418,8 +19418,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 01",
-    "번호": 15,
+    "DAY": "DAY 02",
+    "번호": 5,
     "단어": "ambiguous",
     "품사": "[형]",
     "뜻": "모호한, 다의적인",
@@ -19433,8 +19433,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 01",
-    "번호": 16,
+    "DAY": "DAY 02",
+    "번호": 6,
     "단어": "comprehensive",
     "품사": "[형]",
     "뜻": "포괄적인, 종합적인",
@@ -19448,8 +19448,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 01",
-    "번호": 17,
+    "DAY": "DAY 02",
+    "번호": 7,
     "단어": "predominant",
     "품사": "[형]",
     "뜻": "지배적인, 우세한",
@@ -19463,8 +19463,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 01",
-    "번호": 18,
+    "DAY": "DAY 02",
+    "번호": 8,
     "단어": "initiate",
     "품사": "[동]",
     "뜻": "착수하다, 시작하다",
@@ -19478,8 +19478,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 01",
-    "번호": 19,
+    "DAY": "DAY 02",
+    "번호": 9,
     "단어": "diminish",
     "품사": "[동]",
     "뜻": "줄어들다, 약화시키다",
@@ -19493,8 +19493,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 01",
-    "번호": 20,
+    "DAY": "DAY 02",
+    "번호": 10,
     "단어": "adjacent",
     "품사": "[형]",
     "뜻": "인접한, 이웃한",
@@ -19508,7 +19508,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 1,
     "단어": "fundamental",
     "품사": "[형]",
@@ -19523,7 +19523,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 2,
     "단어": "intrinsic",
     "품사": "[형]",
@@ -19538,7 +19538,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 3,
     "단어": "extrinsic",
     "품사": "[형]",
@@ -19553,7 +19553,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 4,
     "단어": "simulate",
     "품사": "[동]",
@@ -19568,7 +19568,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 5,
     "단어": "manipulate",
     "품사": "[동]",
@@ -19583,7 +19583,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 6,
     "단어": "accelerate",
     "품사": "[동]",
@@ -19598,7 +19598,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 7,
     "단어": "deviate",
     "품사": "[동]",
@@ -19613,7 +19613,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 8,
     "단어": "empirical",
     "품사": "[형]",
@@ -19628,7 +19628,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 9,
     "단어": "theoretical",
     "품사": "[형]",
@@ -19643,7 +19643,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 02",
+    "DAY": "DAY 03",
     "번호": 10,
     "단어": "criterion",
     "품사": "[명]",
@@ -19658,8 +19658,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 02",
-    "번호": 11,
+    "DAY": "DAY 04",
+    "번호": 1,
     "단어": "methodology",
     "품사": "[명]",
     "뜻": "방법론",
@@ -19673,8 +19673,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 02",
-    "번호": 12,
+    "DAY": "DAY 04",
+    "번호": 2,
     "단어": "parameter",
     "품사": "[명]",
     "뜻": "매개변수, 한계 기준",
@@ -19688,8 +19688,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 02",
-    "번호": 13,
+    "DAY": "DAY 04",
+    "번호": 3,
     "단어": "paradigm",
     "품사": "[명]",
     "뜻": "패러다임, 사고의 틀",
@@ -19703,8 +19703,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 02",
-    "번호": 14,
+    "DAY": "DAY 04",
+    "번호": 4,
     "단어": "perceive",
     "품사": "[동]",
     "뜻": "지각하다, 인식하다",
@@ -19718,8 +19718,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 02",
-    "번호": 15,
+    "DAY": "DAY 04",
+    "번호": 5,
     "단어": "conceive",
     "품사": "[동]",
     "뜻": "마음속에 품다, 구상하다",
@@ -19733,8 +19733,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 02",
-    "번호": 16,
+    "DAY": "DAY 04",
+    "번호": 6,
     "단어": "discern",
     "품사": "[동]",
     "뜻": "식별하다, 분별하다",
@@ -19748,8 +19748,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 02",
-    "번호": 17,
+    "DAY": "DAY 04",
+    "번호": 7,
     "단어": "coincide",
     "품사": "[동]",
     "뜻": "동시에 일어나다, 일치하다",
@@ -19763,8 +19763,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 02",
-    "번호": 18,
+    "DAY": "DAY 04",
+    "번호": 8,
     "단어": "accommodate",
     "품사": "[동]",
     "뜻": "수용하다, 편의를 도모하다",
@@ -19778,8 +19778,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 02",
-    "번호": 19,
+    "DAY": "DAY 04",
+    "번호": 9,
     "단어": "integrate",
     "품사": "[동]",
     "뜻": "통합하다, 융합하다",
@@ -19793,8 +19793,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 02",
-    "번호": 20,
+    "DAY": "DAY 04",
+    "번호": 10,
     "단어": "undermine",
     "품사": "[동]",
     "뜻": "약화시키다, 훼손하다",
@@ -19808,7 +19808,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 1,
     "단어": "reinforce",
     "품사": "[동]",
@@ -19823,7 +19823,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 2,
     "단어": "allocate",
     "품사": "[동]",
@@ -19838,7 +19838,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 3,
     "단어": "finite",
     "품사": "[형]",
@@ -19853,7 +19853,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 4,
     "단어": "volatile",
     "품사": "[형]",
@@ -19868,7 +19868,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 5,
     "단어": "sustainable",
     "품사": "[형]",
@@ -19883,7 +19883,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 6,
     "단어": "legislation",
     "품사": "[명]",
@@ -19898,7 +19898,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 7,
     "단어": "delineate",
     "품사": "[동]",
@@ -19913,7 +19913,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 8,
     "단어": "elucidate",
     "품사": "[동]",
@@ -19928,7 +19928,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 9,
     "단어": "corroborate",
     "품사": "[동]",
@@ -19943,7 +19943,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 03",
+    "DAY": "DAY 05",
     "번호": 10,
     "단어": "repudiate",
     "품사": "[동]",
@@ -19958,8 +19958,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 03",
-    "번호": 11,
+    "DAY": "DAY 06",
+    "번호": 1,
     "단어": "scrutinize",
     "품사": "[동]",
     "뜻": "세밀히 조사하다",
@@ -19973,8 +19973,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 03",
-    "번호": 12,
+    "DAY": "DAY 06",
+    "번호": 2,
     "단어": "diverge",
     "품사": "[동]",
     "뜻": "갈라지다, 의견이 엇갈리다",
@@ -19988,8 +19988,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 03",
-    "번호": 13,
+    "DAY": "DAY 06",
+    "번호": 3,
     "단어": "consolidate",
     "품사": "[동]",
     "뜻": "통합하다, 공고히 하다",
@@ -20003,8 +20003,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 03",
-    "번호": 14,
+    "DAY": "DAY 06",
+    "번호": 4,
     "단어": "extrapolate",
     "품사": "[동]",
     "뜻": "외삽하다, 추론하다",
@@ -20018,8 +20018,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 03",
-    "번호": 15,
+    "DAY": "DAY 06",
+    "번호": 5,
     "단어": "articulate",
     "품사": "[동]",
     "뜻": "명확히 표현하다",
@@ -20033,8 +20033,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 03",
-    "번호": 16,
+    "DAY": "DAY 06",
+    "번호": 6,
     "단어": "implicit",
     "품사": "[형]",
     "뜻": "암묵적인, 내포된",
@@ -20048,8 +20048,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 03",
-    "번호": 17,
+    "DAY": "DAY 06",
+    "번호": 7,
     "단어": "explicit",
     "품사": "[형]",
     "뜻": "명시적인, 노골적인",
@@ -20063,8 +20063,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 03",
-    "번호": 18,
+    "DAY": "DAY 06",
+    "번호": 8,
     "단어": "pervasive",
     "품사": "[형]",
     "뜻": "만연한, 스며드는",
@@ -20078,8 +20078,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 03",
-    "번호": 19,
+    "DAY": "DAY 06",
+    "번호": 9,
     "단어": "unprecedented",
     "품사": "[형]",
     "뜻": "전례 없는, 유례없는",
@@ -20093,8 +20093,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 03",
-    "번호": 20,
+    "DAY": "DAY 06",
+    "번호": 10,
     "단어": "arbitrary",
     "품사": "[형]",
     "뜻": "임의적인, 독단적인",
@@ -20108,7 +20108,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 1,
     "단어": "juxtapose",
     "품사": "[동]",
@@ -20123,7 +20123,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 2,
     "단어": "resilient",
     "품사": "[형]",
@@ -20138,7 +20138,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 3,
     "단어": "detrimental",
     "품사": "[형]",
@@ -20153,7 +20153,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 4,
     "단어": "obsolete",
     "품사": "[형]",
@@ -20168,7 +20168,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 5,
     "단어": "ubiquitous",
     "품사": "[형]",
@@ -20183,7 +20183,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 6,
     "단어": "pragmatic",
     "품사": "[형]",
@@ -20198,7 +20198,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 7,
     "단어": "esoteric",
     "품사": "[형]",
@@ -20213,7 +20213,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 8,
     "단어": "nuance",
     "품사": "[명]",
@@ -20228,7 +20228,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 9,
     "단어": "dichotomy",
     "품사": "[명]",
@@ -20243,7 +20243,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 04",
+    "DAY": "DAY 07",
     "번호": 10,
     "단어": "anomaly",
     "품사": "[명]",
@@ -20258,8 +20258,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 04",
-    "번호": 11,
+    "DAY": "DAY 08",
+    "번호": 1,
     "단어": "premise",
     "품사": "[명]",
     "뜻": "전제",
@@ -20273,8 +20273,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 04",
-    "번호": 12,
+    "DAY": "DAY 08",
+    "번호": 2,
     "단어": "assertion",
     "품사": "[명]",
     "뜻": "주장, 단언",
@@ -20288,8 +20288,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 04",
-    "번호": 13,
+    "DAY": "DAY 08",
+    "번호": 3,
     "단어": "inference",
     "품사": "[명]",
     "뜻": "추론, 결론 도출",
@@ -20303,8 +20303,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 04",
-    "번호": 14,
+    "DAY": "DAY 08",
+    "번호": 4,
     "단어": "discourse",
     "품사": "[명]",
     "뜻": "담론, 담화",
@@ -20318,8 +20318,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 04",
-    "번호": 15,
+    "DAY": "DAY 08",
+    "번호": 5,
     "단어": "dogma",
     "품사": "[명]",
     "뜻": "교조, 도그마",
@@ -20333,8 +20333,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 04",
-    "번호": 16,
+    "DAY": "DAY 08",
+    "번호": 6,
     "단어": "aesthetic",
     "품사": "[형]",
     "뜻": "미적인, 심미적인",
@@ -20348,8 +20348,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 04",
-    "번호": 17,
+    "DAY": "DAY 08",
+    "번호": 7,
     "단어": "fallacy",
     "품사": "[명]",
     "뜻": "오류, 그릇된 논리",
@@ -20363,8 +20363,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 04",
-    "번호": 18,
+    "DAY": "DAY 08",
+    "번호": 8,
     "단어": "thesis",
     "품사": "[명]",
     "뜻": "논제, 학위 논문",
@@ -20378,8 +20378,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 04",
-    "번호": 19,
+    "DAY": "DAY 08",
+    "번호": 9,
     "단어": "antithesis",
     "품사": "[명]",
     "뜻": "정반대, 대조",
@@ -20393,8 +20393,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 04",
-    "번호": 20,
+    "DAY": "DAY 08",
+    "번호": 10,
     "단어": "dialectic",
     "품사": "[명]",
     "뜻": "변증법(적 토론)",
@@ -20408,7 +20408,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 1,
     "단어": "hegemony",
     "품사": "[명]",
@@ -20423,7 +20423,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 2,
     "단어": "sovereignty",
     "품사": "[명]",
@@ -20438,7 +20438,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 3,
     "단어": "diplomacy",
     "품사": "[명]",
@@ -20453,7 +20453,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 4,
     "단어": "bipartisan",
     "품사": "[형]",
@@ -20468,7 +20468,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 5,
     "단어": "bureaucracy",
     "품사": "[명]",
@@ -20483,7 +20483,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 6,
     "단어": "jurisprudence",
     "품사": "[명]",
@@ -20498,7 +20498,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 7,
     "단어": "statutory",
     "품사": "[형]",
@@ -20513,7 +20513,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 8,
     "단어": "precedent",
     "품사": "[명]",
@@ -20528,7 +20528,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 9,
     "단어": "hierarchy",
     "품사": "[명]",
@@ -20543,7 +20543,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 05",
+    "DAY": "DAY 09",
     "번호": 10,
     "단어": "disenfranchise",
     "품사": "[동]",
@@ -20558,8 +20558,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 05",
-    "번호": 11,
+    "DAY": "DAY 10",
+    "번호": 1,
     "단어": "authoritarian",
     "품사": "[형]",
     "뜻": "권위주의적인, 독재적인",
@@ -20573,8 +20573,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 05",
-    "번호": 12,
+    "DAY": "DAY 10",
+    "번호": 2,
     "단어": "totalitarian",
     "품사": "[형]",
     "뜻": "전체주의의",
@@ -20588,8 +20588,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 05",
-    "번호": 13,
+    "DAY": "DAY 10",
+    "번호": 3,
     "단어": "indigenous",
     "품사": "[형]",
     "뜻": "토착의, 고유한",
@@ -20603,8 +20603,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 05",
-    "번호": 14,
+    "DAY": "DAY 10",
+    "번호": 4,
     "단어": "diaspora",
     "품사": "[명]",
     "뜻": "디아스포라, 이주 집단",
@@ -20618,8 +20618,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 05",
-    "번호": 15,
+    "DAY": "DAY 10",
+    "번호": 5,
     "단어": "demography",
     "품사": "[명]",
     "뜻": "인구학, 인구 구성",
@@ -20633,8 +20633,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 05",
-    "번호": 16,
+    "DAY": "DAY 10",
+    "번호": 6,
     "단어": "stratify",
     "품사": "[동]",
     "뜻": "계층화하다, 계급으로 나누다",
@@ -20648,8 +20648,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 05",
-    "번호": 17,
+    "DAY": "DAY 10",
+    "번호": 7,
     "단어": "egalitarian",
     "품사": "[형]",
     "뜻": "평등주의적인",
@@ -20663,8 +20663,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 05",
-    "번호": 18,
+    "DAY": "DAY 10",
+    "번호": 8,
     "단어": "polarize",
     "품사": "[동]",
     "뜻": "양극화하다",
@@ -20678,8 +20678,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 05",
-    "번호": 19,
+    "DAY": "DAY 10",
+    "번호": 9,
     "단어": "coercion",
     "품사": "[명]",
     "뜻": "강제, 강압",
@@ -20693,8 +20693,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 05",
-    "번호": 20,
+    "DAY": "DAY 10",
+    "번호": 10,
     "단어": "legitimacy",
     "품사": "[명]",
     "뜻": "정당성, 합법성",
@@ -20708,7 +20708,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 1,
     "단어": "bioethics",
     "품사": "[명]",
@@ -20723,7 +20723,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 2,
     "단어": "nanotechnology",
     "품사": "[명]",
@@ -20738,7 +20738,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 3,
     "단어": "quantum",
     "품사": "[형]",
@@ -20753,7 +20753,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 4,
     "단어": "thermodynamic",
     "품사": "[형]",
@@ -20768,7 +20768,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 5,
     "단어": "entropy",
     "품사": "[명]",
@@ -20783,7 +20783,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 6,
     "단어": "cognitive",
     "품사": "[형]",
@@ -20798,7 +20798,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 7,
     "단어": "reductionism",
     "품사": "[명]",
@@ -20813,7 +20813,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 8,
     "단어": "emergent",
     "품사": "[형]",
@@ -20828,7 +20828,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 9,
     "단어": "deterministic",
     "품사": "[형]",
@@ -20843,7 +20843,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 06",
+    "DAY": "DAY 11",
     "번호": 10,
     "단어": "stochastic",
     "품사": "[형]",
@@ -20858,8 +20858,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 06",
-    "번호": 11,
+    "DAY": "DAY 12",
+    "번호": 1,
     "단어": "catalyst",
     "품사": "[명]",
     "뜻": "촉매, 기폭제",
@@ -20873,8 +20873,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 06",
-    "번호": 12,
+    "DAY": "DAY 12",
+    "번호": 2,
     "단어": "pathogen",
     "품사": "[명]",
     "뜻": "병원체, 병원균",
@@ -20888,8 +20888,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 06",
-    "번호": 13,
+    "DAY": "DAY 12",
+    "번호": 3,
     "단어": "symbiotic",
     "품사": "[형]",
     "뜻": "공생의",
@@ -20903,8 +20903,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 06",
-    "번호": 14,
+    "DAY": "DAY 12",
+    "번호": 4,
     "단어": "anthropogenic",
     "품사": "[형]",
     "뜻": "인류의 활동으로 인한",
@@ -20918,8 +20918,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 06",
-    "번호": 15,
+    "DAY": "DAY 12",
+    "번호": 5,
     "단어": "resilience",
     "품사": "[명]",
     "뜻": "복원력, 탄성",
@@ -20933,8 +20933,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 06",
-    "번호": 16,
+    "DAY": "DAY 12",
+    "번호": 6,
     "단어": "biodiversity",
     "품사": "[명]",
     "뜻": "생물 다양성",
@@ -20948,8 +20948,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 06",
-    "번호": 17,
+    "DAY": "DAY 12",
+    "번호": 7,
     "단어": "sequestration",
     "품사": "[명]",
     "뜻": "격리, 흡수",
@@ -20963,8 +20963,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 06",
-    "번호": 18,
+    "DAY": "DAY 12",
+    "번호": 8,
     "단어": "neuroscience",
     "품사": "[명]",
     "뜻": "신경과학, 뇌과학",
@@ -20978,8 +20978,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 06",
-    "번호": 19,
+    "DAY": "DAY 12",
+    "번호": 9,
     "단어": "synapse",
     "품사": "[명]",
     "뜻": "시냅스 (신경 접합부)",
@@ -20993,8 +20993,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 06",
-    "번호": 20,
+    "DAY": "DAY 12",
+    "번호": 10,
     "단어": "plasticity",
     "품사": "[명]",
     "뜻": "가소성 (변형성)",
@@ -21008,7 +21008,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 1,
     "단어": "macroeconomic",
     "품사": "[형]",
@@ -21023,7 +21023,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 2,
     "단어": "fiscal",
     "품사": "[형]",
@@ -21038,7 +21038,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 3,
     "단어": "monetary",
     "품사": "[형]",
@@ -21053,7 +21053,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 4,
     "단어": "liquidity",
     "품사": "[명]",
@@ -21068,7 +21068,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 5,
     "단어": "insolvency",
     "품사": "[명]",
@@ -21083,7 +21083,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 6,
     "단어": "collateral",
     "품사": "[명]",
@@ -21098,7 +21098,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 7,
     "단어": "amortization",
     "품사": "[명]",
@@ -21113,7 +21113,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 8,
     "단어": "arbitrage",
     "품사": "[명]",
@@ -21128,7 +21128,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 9,
     "단어": "hedge",
     "품사": "[동]",
@@ -21143,7 +21143,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 07",
+    "DAY": "DAY 13",
     "번호": 10,
     "단어": "commodity",
     "품사": "[명]",
@@ -21158,8 +21158,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 07",
-    "번호": 11,
+    "DAY": "DAY 14",
+    "번호": 1,
     "단어": "speculation",
     "품사": "[명]",
     "뜻": "투기, 추측",
@@ -21173,8 +21173,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 07",
-    "번호": 12,
+    "DAY": "DAY 14",
+    "번호": 2,
     "단어": "recession",
     "품사": "[명]",
     "뜻": "경기 후퇴, 불황",
@@ -21188,8 +21188,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 07",
-    "번호": 13,
+    "DAY": "DAY 14",
+    "번호": 3,
     "단어": "stagnation",
     "품사": "[명]",
     "뜻": "정체, 침체",
@@ -21203,8 +21203,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 07",
-    "번호": 14,
+    "DAY": "DAY 14",
+    "번호": 4,
     "단어": "deficit",
     "품사": "[명]",
     "뜻": "적자, 부족액",
@@ -21218,8 +21218,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 07",
-    "번호": 15,
+    "DAY": "DAY 14",
+    "번호": 5,
     "단어": "surplus",
     "품사": "[명]",
     "뜻": "흑자, 잉여",
@@ -21233,8 +21233,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 07",
-    "번호": 16,
+    "DAY": "DAY 14",
+    "번호": 6,
     "단어": "globalization",
     "품사": "[명]",
     "뜻": "세계화",
@@ -21248,8 +21248,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 07",
-    "번호": 17,
+    "DAY": "DAY 14",
+    "번호": 7,
     "단어": "outsourcing",
     "품사": "[명]",
     "뜻": "아웃소싱, 외주 제작",
@@ -21263,8 +21263,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 07",
-    "번호": 18,
+    "DAY": "DAY 14",
+    "번호": 8,
     "단어": "monopoly",
     "품사": "[명]",
     "뜻": "독점(기업)",
@@ -21278,8 +21278,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 07",
-    "번호": 19,
+    "DAY": "DAY 14",
+    "번호": 9,
     "단어": "oligopoly",
     "품사": "[명]",
     "뜻": "과점 (소수 독점)",
@@ -21293,8 +21293,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 07",
-    "번호": 20,
+    "DAY": "DAY 14",
+    "번호": 10,
     "단어": "antitrust",
     "품사": "[형]",
     "뜻": "독점 금지의",
@@ -21308,7 +21308,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 1,
     "단어": "affective",
     "품사": "[형]",
@@ -21323,7 +21323,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 2,
     "단어": "dissonance",
     "품사": "[명]",
@@ -21338,7 +21338,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 3,
     "단어": "rationalize",
     "품사": "[동]",
@@ -21353,7 +21353,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 4,
     "단어": "subconscious",
     "품사": "[형]",
@@ -21368,7 +21368,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 5,
     "단어": "perception",
     "품사": "[명]",
@@ -21383,7 +21383,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 6,
     "단어": "stimulus",
     "품사": "[명]",
@@ -21398,7 +21398,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 7,
     "단어": "response",
     "품사": "[명]",
@@ -21413,7 +21413,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 8,
     "단어": "conditioning",
     "품사": "[명]",
@@ -21428,7 +21428,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 9,
     "단어": "heuristics",
     "품사": "[명]",
@@ -21443,7 +21443,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 08",
+    "DAY": "DAY 15",
     "번호": 10,
     "단어": "conformity",
     "품사": "[명]",
@@ -21458,8 +21458,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 08",
-    "번호": 11,
+    "DAY": "DAY 16",
+    "번호": 1,
     "단어": "altruism",
     "품사": "[명]",
     "뜻": "이타주의, 이타심",
@@ -21473,8 +21473,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 08",
-    "번호": 12,
+    "DAY": "DAY 16",
+    "번호": 2,
     "단어": "empathy",
     "품사": "[명]",
     "뜻": "공감, 감정이입",
@@ -21488,8 +21488,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 08",
-    "번호": 13,
+    "DAY": "DAY 16",
+    "번호": 3,
     "단어": "introspection",
     "품사": "[명]",
     "뜻": "자기 성찰, 내성",
@@ -21503,8 +21503,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 08",
-    "번호": 14,
+    "DAY": "DAY 16",
+    "번호": 4,
     "단어": "repression",
     "품사": "[명]",
     "뜻": "억압",
@@ -21518,8 +21518,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 08",
-    "번호": 15,
+    "DAY": "DAY 16",
+    "번호": 5,
     "단어": "narcissism",
     "품사": "[명]",
     "뜻": "자아도취, 나르시시즘",
@@ -21533,8 +21533,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 08",
-    "번호": 16,
+    "DAY": "DAY 16",
+    "번호": 6,
     "단어": "malleability",
     "품사": "[명]",
     "뜻": "적응성, 유연성, 전성",
@@ -21548,8 +21548,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 08",
-    "번호": 17,
+    "DAY": "DAY 16",
+    "번호": 7,
     "단어": "temperament",
     "품사": "[명]",
     "뜻": "기질, 성질",
@@ -21563,8 +21563,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 08",
-    "번호": 18,
+    "DAY": "DAY 16",
+    "번호": 8,
     "단어": "apathy",
     "품사": "[명]",
     "뜻": "무관심, 냉담",
@@ -21578,8 +21578,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 08",
-    "번호": 19,
+    "DAY": "DAY 16",
+    "번호": 9,
     "단어": "catharsis",
     "품사": "[명]",
     "뜻": "카타르시스, 정화",
@@ -21593,8 +21593,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 08",
-    "번호": 20,
+    "DAY": "DAY 16",
+    "번호": 10,
     "단어": "sublimation",
     "품사": "[명]",
     "뜻": "승화 (작용)",
@@ -21608,7 +21608,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 1,
     "단어": "hamartia",
     "품사": "[명]",
@@ -21623,7 +21623,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 2,
     "단어": "hubris",
     "품사": "[명]",
@@ -21638,7 +21638,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 3,
     "단어": "nemesis",
     "품사": "[명]",
@@ -21653,7 +21653,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 4,
     "단어": "anagnorisis",
     "품사": "[명]",
@@ -21668,7 +21668,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 5,
     "단어": "peripeteia",
     "품사": "[명]",
@@ -21683,7 +21683,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 6,
     "단어": "bildungsroman",
     "품사": "[명]",
@@ -21698,7 +21698,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 7,
     "단어": "soliloquy",
     "품사": "[명]",
@@ -21713,7 +21713,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 8,
     "단어": "monologue",
     "품사": "[명]",
@@ -21728,7 +21728,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 9,
     "단어": "epilogue",
     "품사": "[명]",
@@ -21743,7 +21743,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 09",
+    "DAY": "DAY 17",
     "번호": 10,
     "단어": "prologue",
     "품사": "[명]",
@@ -21758,8 +21758,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 09",
-    "번호": 11,
+    "DAY": "DAY 18",
+    "번호": 1,
     "단어": "alliteration",
     "품사": "[명]",
     "뜻": "두운(법)",
@@ -21773,8 +21773,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 09",
-    "번호": 12,
+    "DAY": "DAY 18",
+    "번호": 2,
     "단어": "onomatopoeia",
     "품사": "[명]",
     "뜻": "의성어",
@@ -21788,8 +21788,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 09",
-    "번호": 13,
+    "DAY": "DAY 18",
+    "번호": 3,
     "단어": "hyperbole",
     "품사": "[명]",
     "뜻": "과장법",
@@ -21803,8 +21803,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 09",
-    "번호": 14,
+    "DAY": "DAY 18",
+    "번호": 4,
     "단어": "oxymoron",
     "품사": "[명]",
     "뜻": "모순 어법, 옥시모론",
@@ -21818,8 +21818,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 09",
-    "번호": 15,
+    "DAY": "DAY 18",
+    "번호": 5,
     "단어": "euphemism",
     "품사": "[명]",
     "뜻": "완곡어법",
@@ -21833,8 +21833,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 09",
-    "번호": 16,
+    "DAY": "DAY 18",
+    "번호": 6,
     "단어": "didactic",
     "품사": "[형]",
     "뜻": "교훈적인, 설교조의",
@@ -21848,8 +21848,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 09",
-    "번호": 17,
+    "DAY": "DAY 18",
+    "번호": 7,
     "단어": "melodrama",
     "품사": "[명]",
     "뜻": "멜로드라마 (과장된 감정극)",
@@ -21863,8 +21863,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 09",
-    "번호": 18,
+    "DAY": "DAY 18",
+    "번호": 8,
     "단어": "vernacular",
     "품사": "[명]",
     "뜻": "토착어, 방언, 일상어",
@@ -21878,8 +21878,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 09",
-    "번호": 19,
+    "DAY": "DAY 18",
+    "번호": 9,
     "단어": "archetype",
     "품사": "[명]",
     "뜻": "원형, 전형",
@@ -21893,8 +21893,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 09",
-    "번호": 20,
+    "DAY": "DAY 18",
+    "번호": 10,
     "단어": "picaresque",
     "품사": "[형]",
     "뜻": "악한 소설의, 편력 소설의",
@@ -21908,7 +21908,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 1,
     "단어": "epistemology",
     "품사": "[명]",
@@ -21923,7 +21923,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 2,
     "단어": "metaphysics",
     "품사": "[명]",
@@ -21938,7 +21938,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 3,
     "단어": "hermeneutics",
     "품사": "[명]",
@@ -21953,7 +21953,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 4,
     "단어": "pedagogy",
     "품사": "[명]",
@@ -21968,7 +21968,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 5,
     "단어": "utilitarianism",
     "품사": "[명]",
@@ -21983,7 +21983,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 6,
     "단어": "deontology",
     "품사": "[명]",
@@ -21998,7 +21998,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 7,
     "단어": "existentialism",
     "품사": "[명]",
@@ -22013,7 +22013,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 8,
     "단어": "nihilism",
     "품사": "[명]",
@@ -22028,7 +22028,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 9,
     "단어": "stoicism",
     "품사": "[명]",
@@ -22043,7 +22043,7 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 10",
+    "DAY": "DAY 19",
     "번호": 10,
     "단어": "pragmatism",
     "품사": "[명]",
@@ -22058,8 +22058,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 10",
-    "번호": 11,
+    "DAY": "DAY 20",
+    "번호": 1,
     "단어": "postmodernism",
     "품사": "[명]",
     "뜻": "포스트모더니즘",
@@ -22073,8 +22073,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 10",
-    "번호": 12,
+    "DAY": "DAY 20",
+    "번호": 2,
     "단어": "panopticon",
     "품사": "[명]",
     "뜻": "원형 감옥, 판옵티콘",
@@ -22088,8 +22088,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 10",
-    "번호": 13,
+    "DAY": "DAY 20",
+    "번호": 3,
     "단어": "zeitgeist",
     "품사": "[명]",
     "뜻": "시대정신, 시대 풍조",
@@ -22103,8 +22103,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 10",
-    "번호": 14,
+    "DAY": "DAY 20",
+    "번호": 4,
     "단어": "verisimilitude",
     "품사": "[명]",
     "뜻": "진실성, 그럴듯함",
@@ -22118,8 +22118,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 10",
-    "번호": 15,
+    "DAY": "DAY 20",
+    "번호": 5,
     "단어": "solipsism",
     "품사": "[명]",
     "뜻": "유아론 (오직 자아만 실재함)",
@@ -22133,8 +22133,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 10",
-    "번호": 16,
+    "DAY": "DAY 20",
+    "번호": 6,
     "단어": "quid-pro-quo",
     "품사": "[명]",
     "뜻": "대가 관계, 보상",
@@ -22148,8 +22148,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 10",
-    "번호": 17,
+    "DAY": "DAY 20",
+    "번호": 7,
     "단어": "sine-qua-non",
     "품사": "[명]",
     "뜻": "필수 불가결한 조건",
@@ -22163,8 +22163,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 10",
-    "번호": 18,
+    "DAY": "DAY 20",
+    "번호": 8,
     "단어": "ad-hominem",
     "품사": "[형]",
     "뜻": "인신공격적인",
@@ -22178,8 +22178,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 10",
-    "번호": 19,
+    "DAY": "DAY 20",
+    "번호": 9,
     "단어": "straw-man",
     "품사": "[명]",
     "뜻": "허수아비 논법 (곡해된 논증)",
@@ -22193,8 +22193,8 @@ const CURATED_WORDS_DATA = [
   {
     "collectionId": "curated-us-mid2",
     "collectionTitle": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
-    "DAY": "DAY 10",
-    "번호": 20,
+    "DAY": "DAY 20",
+    "번호": 10,
     "단어": "slippery-slope",
     "품사": "[명]",
     "뜻": "미끄러운 비탈길의 오류",
