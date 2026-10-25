@@ -284,7 +284,7 @@ const LEVEL_TEST_BANK = [
     "level": 4,
     "category": "voca",
     "categoryKo": "어휘",
-    "question": "밑줄 친 단어와 의미가 가장 가까운 것은?\n\"He was <curious> about how the clock functioned.\"",
+    "question": "밑줄 친 단어와 의미가 가장 가까운 것은?\n\"He was <u>curious</u> about how the clock functioned.\"",
     "options": [
       "inquisitive",
       "bored",
@@ -331,10 +331,10 @@ const LEVEL_TEST_BANK = [
     "categoryKo": "문법/구문",
     "question": "다음 중 밑줄 친 부분의 쓰임이 어법상 어색한 것은?",
     "options": [
-      "My mother made me <clean> my bedroom.",
-      "The teacher asked us <to listen> carefully.",
-      "I saw the boy <run> across the street.",
-      "He wanted me <go> to the supermarket."
+      "My mother made me <u>clean</u> my bedroom.",
+      "The teacher asked us <u>to listen</u> carefully.",
+      "I saw the boy <u>run</u> across the street.",
+      "He wanted me <u>go</u> to the supermarket."
     ],
     "answer": 3,
     "explanation": "동사 want는 목적격 보어로 to부정사를 취하므로 'wanted me to go'가 되어야 합니다."
@@ -652,7 +652,7 @@ const LEVEL_TEST_BANK = [
     "level": 8,
     "category": "voca",
     "categoryKo": "어휘",
-    "question": "다음 밑줄 친 어원의 의미로 올바른 것은?\n\"The word <perspective> contains the Latin root <spect>.\"",
+    "question": "다음 밑줄 친 어원의 의미로 올바른 것은?\n\"The word <u>perspective</u> contains the Latin root <u>spect</u>.\"",
     "options": [
       "speak (말하다)",
       "see / look (보다)",
@@ -682,7 +682,7 @@ const LEVEL_TEST_BANK = [
     "level": 8,
     "category": "grammar",
     "categoryKo": "문법/구문",
-    "question": "다음 중 밑줄 친 부분의 어법이 올바른 문장은?",
+    "question": "다음 중 어법상 올바른 도치 문장은?",
     "options": [
       "Rarely I have seen such a breathtaking sunset.",
       "Rarely have I seen such a breathtaking sunset.",
@@ -744,7 +744,7 @@ const LEVEL_TEST_BANK = [
     "level": 9,
     "category": "voca",
     "categoryKo": "어휘",
-    "question": "다음 글의 주인공의 심경 변화로 가장 알맞은 것은?\n\"When Clara saw the dense smoke pouring out from her studio, she was <devastated>. However, upon hearing that all her original canvas paintings had already been safely relocated to the gallery, she let out an enormous sigh and felt deeply <relieved>.\"",
+    "question": "다음 글의 주인공의 심경 변화로 가장 알맞은 것은?\n\"When Clara saw the dense smoke pouring out from her studio, she was <u>devastated</u>. However, upon hearing that all her original canvas paintings had already been safely relocated to the gallery, she let out an enormous sigh and felt deeply <u>relieved</u>.\"",
     "options": [
       "devastated -> relieved",
       "indifferent -> furious",
@@ -851,7 +851,7 @@ const LEVEL_TEST_BANK = [
     "level": 10,
     "category": "voca",
     "categoryKo": "어휘",
-    "question": "다음 문맥상 밑줄 친 단어의 의미와 가장 유사한 것은?\n\"The sudden macroeconomic shock left currency markets remarkably <volatile>.\"",
+    "question": "다음 문맥상 밑줄 친 단어의 의미와 가장 유사한 것은?\n\"The sudden macroeconomic shock left currency markets remarkably <u>volatile</u>.\"",
     "options": [
       "stagnant",
       "unpredictable and erratic",

@@ -285,6 +285,64 @@ class LevelTestEngine {
     }
 
     /**
+     * 문장 및 지문 렌더링 시 HTML 태그 처리 및 밑줄/강조 서식 변환
+     * 1) <u>...</u> 태그를 세련된 밑줄 스타일 span으로 변환
+     * 2) 혹시 모를 <word> 형태의 꺾쇠 마커도 안전하게 변환하여 브라우저의 태그 인식으로 인한 문장 끊김 현상 원천 방지
+     */
+    formatContent(text) {
+        if (!text) return '';
+        let str = String(text);
+        // 1. 임의의 <word> 마커(단, 정상 태그 u/span/b/strong 등 제외)를 <u>...</u>로 안전 변환
+        str = str.replace(/<(?!\/?(?:u|span|b|i|strong|em)\b)([a-zA-Z0-9_\s\-]+)>/g, '<u>$1</u>');
+        // 2. <u>...</u> 태그를 세련된 밑줄 강조 span으로 변환
+        str = str.replace(/<u>([\s\S]*?)<\/u>/gi, '<span class="underline decoration-blue-600 font-bold decoration-2 underline-offset-4 text-blue-950 bg-blue-50/60 px-1 py-0.5 rounded">$1</span>');
+        return str;
+    }
+
+    /**
+     * 발문에 영어 인용 문장이 포함되어 있는지 감지
+     */
+    isEnglishQuestion(text) {
+        if (!text) return false;
+        return /"[A-Za-z\s_,.!?'-]+"/.test(text) || /[A-Za-z]{3,}\s+[A-Za-z]{3,}/.test(text);
+    }
+
+    /**
+     * 현재 문제 지문 TTS 발음
+     */
+    speakCurrentPassage() {
+        const q = this.questions[this.currentIndex];
+        if (q && q.passage) {
+            this.speakText(q.passage);
+        }
+    }
+
+    /**
+     * 현재 문제 발문 내 영문장 TTS 발음
+     */
+    speakCurrentQuestion() {
+        const q = this.questions[this.currentIndex];
+        if (!q || !q.question) return;
+        const match = q.question.match(/"([^"]+)"/);
+        const target = match ? match[1] : q.question;
+        this.speakText(target);
+    }
+
+    /**
+     * TTS 발음 재생 (HTML 태그 및 언더스코어 빈칸 정제)
+     */
+    speakText(text) {
+        if (!text || !window.tts) return;
+        const clean = text
+            .replace(/<[^>]+>/g, '')
+            .replace(/_+/g, 'blank')
+            .replace(/A:\s*/g, '')
+            .replace(/B:\s*/g, '')
+            .trim();
+        window.tts.speak(clean);
+    }
+
+    /**
      * 현재 문제 렌더링
      */
     renderQuestion() {
@@ -348,15 +406,29 @@ class LevelTestEngine {
 
                 <!-- 본문 지문 (reading or dialogue passage가 있을 경우) -->
                 ${q.passage ? `
-                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 font-serif text-slate-800 text-sm leading-relaxed mb-5 whitespace-pre-line select-text">
-                        ${q.passage}
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 font-serif text-slate-800 text-sm leading-relaxed mb-5 select-text relative group shadow-xs">
+                        <div class="flex items-start justify-between gap-3">
+                            <div class="flex-1 whitespace-pre-line leading-relaxed">
+                                ${this.formatContent(q.passage)}
+                            </div>
+                            <button type="button" class="p-1.5 rounded-lg border border-slate-200 bg-white hover:bg-blue-50 text-slate-500 hover:text-blue-900 transition-all shrink-0 cursor-pointer shadow-xs" onclick="window.levelTestEngine.speakCurrentPassage()" title="지문 원어민 발음 듣기">
+                                <i data-lucide="volume-2" class="w-4 h-4"></i>
+                            </button>
+                        </div>
                     </div>
                 ` : ''}
 
                 <!-- 문제 발문 -->
-                <h3 class="font-serif font-black text-base sm:text-lg text-slate-900 mb-5 leading-snug whitespace-pre-line">
-                    ${q.question}
-                </h3>
+                <div class="flex items-start justify-between gap-3 mb-5">
+                    <h3 class="font-serif font-black text-base sm:text-lg text-slate-900 leading-snug whitespace-pre-line flex-1">
+                        ${this.formatContent(q.question)}
+                    </h3>
+                    ${this.isEnglishQuestion(q.question) ? `
+                        <button type="button" class="p-1.5 rounded-lg border border-slate-200 bg-white hover:bg-blue-50 text-slate-500 hover:text-blue-900 transition-all shrink-0 cursor-pointer shadow-xs mt-0.5" onclick="window.levelTestEngine.speakCurrentQuestion()" title="영문장 발음 듣기">
+                            <i data-lucide="volume-2" class="w-4 h-4"></i>
+                        </button>
+                    ` : ''}
+                </div>
 
                 <!-- 4지선다 옵션 리스트 -->
                 <div class="space-y-3 mb-8">
@@ -373,7 +445,7 @@ class LevelTestEngine {
                                     ${numIcon}
                                 </span>
                                 <span class="text-sm font-serif leading-relaxed">
-                                    ${opt}
+                                    ${this.formatContent(opt)}
                                 </span>
                             </button>
                         `;
@@ -692,6 +764,78 @@ class LevelTestEngine {
                     </div>
                 </div>
 
+                <!-- 문항별 상세 해설 & 오답 리뷰 아코디언 -->
+                <div class="mb-6 rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-xs">
+                    <button type="button" class="w-full p-4 bg-slate-50 hover:bg-slate-100 flex items-center justify-between transition-colors text-left font-serif font-bold text-sm text-slate-800 cursor-pointer" onclick="window.levelTestEngine.toggleReviewList()">
+                        <span class="flex items-center gap-2">
+                            <i data-lucide="file-text" class="w-4 h-4 text-blue-900"></i>
+                            <span>전 문항 정답 및 상세 해설 / 오답 복습 확인하기 (${result.correctCount}/${result.totalQuestions} 정답)</span>
+                        </span>
+                        <i id="level-test-review-toggle-icon" data-lucide="chevron-down" class="w-4 h-4 text-slate-500 transition-transform"></i>
+                    </button>
+                    <div id="level-test-review-list" class="hidden p-4 sm:p-5 space-y-4 border-t border-slate-200 max-h-[350px] overflow-y-auto">
+                        ${this.questions.map((q, qIdx) => {
+                            const userAns = this.userAnswers[qIdx];
+                            const isCorrect = (userAns === q.answer);
+                            return `
+                                <div class="p-4 rounded-xl border ${isCorrect ? 'border-emerald-200 bg-emerald-50/20' : 'border-rose-200 bg-rose-50/20'} space-y-2.5">
+                                    <div class="flex items-center justify-between gap-2">
+                                        <div class="flex items-center gap-2">
+                                            <span class="w-6 h-6 rounded-full flex items-center justify-center font-mono font-bold text-xs ${isCorrect ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}">
+                                                ${qIdx + 1}
+                                            </span>
+                                            <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-white border border-slate-200 text-slate-600">
+                                                ${q.categoryKo} • Lv.${q.level}
+                                            </span>
+                                        </div>
+                                        <span class="text-xs font-serif font-bold ${isCorrect ? 'text-emerald-700' : 'text-rose-600'}">
+                                            ${isCorrect ? '✓ 정답' : '✗ 오답'}
+                                        </span>
+                                    </div>
+
+                                    ${q.passage ? `
+                                        <div class="p-3 rounded-lg bg-white border border-slate-200 text-xs text-slate-700 font-serif leading-relaxed whitespace-pre-line">
+                                            ${this.formatContent(q.passage)}
+                                        </div>
+                                    ` : ''}
+
+                                    <h5 class="font-serif font-bold text-xs sm:text-sm text-slate-900 leading-snug whitespace-pre-line">
+                                        ${this.formatContent(q.question)}
+                                    </h5>
+
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs font-serif">
+                                        ${q.options.map((opt, optIdx) => {
+                                            const isThisCorrect = (optIdx === q.answer);
+                                            const isThisUser = (optIdx === userAns);
+                                            let badge = '';
+                                            let bgClass = 'bg-white border-slate-200 text-slate-700';
+                                            if (isThisCorrect) {
+                                                bgClass = 'bg-emerald-100/70 border-emerald-300 text-emerald-950 font-bold';
+                                                badge = '<span class="text-[10px] bg-emerald-600 text-white px-1.5 py-0.2 rounded font-mono ml-auto">정답</span>';
+                                            } else if (isThisUser) {
+                                                bgClass = 'bg-rose-100/70 border-rose-300 text-rose-950 line-through';
+                                                badge = '<span class="text-[10px] bg-rose-600 text-white px-1.5 py-0.2 rounded font-mono ml-auto">내 선택</span>';
+                                            }
+                                            const numIcon = ['①', '②', '③', '④'][optIdx] || `${optIdx + 1}.`;
+                                            return `
+                                                <div class="p-2 rounded-lg border flex items-center gap-1.5 ${bgClass}">
+                                                    <span class="font-mono text-[11px] shrink-0">${numIcon}</span>
+                                                    <span class="truncate">${this.formatContent(opt)}</span>
+                                                    ${badge}
+                                                </div>
+                                            `;
+                                        }).join('')}
+                                    </div>
+
+                                    <div class="p-2.5 rounded-lg bg-blue-50/70 border border-blue-100 text-xs text-slate-700 font-serif">
+                                        <strong class="text-blue-900 font-bold">💡 해설:</strong> ${this.formatContent(q.explanation)}
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+
                 <!-- 하단 액션 버튼 -->
                 <div class="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-slate-100">
                     <button class="px-4 py-2.5 rounded-xl border border-slate-300 hover:bg-slate-100 text-slate-700 font-serif font-bold text-xs transition-colors flex items-center gap-1.5" onclick="window.levelTestEngine.showModeSelection()">
@@ -707,6 +851,20 @@ class LevelTestEngine {
         `;
 
         if (window.lucide) window.lucide.createIcons();
+    }
+
+    toggleReviewList() {
+        const list = document.getElementById('level-test-review-list');
+        const icon = document.getElementById('level-test-review-toggle-icon');
+        if (!list) return;
+        const isHidden = list.classList.contains('hidden');
+        if (isHidden) {
+            list.classList.remove('hidden');
+            if (icon) icon.classList.add('rotate-180');
+        } else {
+            list.classList.add('hidden');
+            if (icon) icon.classList.remove('rotate-180');
+        }
     }
 
     getCollectionTitle(colId) {
