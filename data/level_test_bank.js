@@ -207,7 +207,7 @@ const LEVEL_TEST_BANK = [
     "level": 3,
     "category": "voca",
     "categoryKo": "어휘",
-    "question": "다음 숙어의 의미로 올바른 것은?\n\"keep in touch\"",
+    "question": "다음 밑줄 친 숙어의 의미로 올바른 것은?\n\"<u>keep in touch</u>\"",
     "options": [
       "손을 맞잡다",
       "연락을 유지하다",
@@ -284,7 +284,7 @@ const LEVEL_TEST_BANK = [
     "level": 4,
     "category": "voca",
     "categoryKo": "어휘",
-    "question": "밑줄 친 단어와 의미가 가장 가까운 것은?\n\"He was <u>curious</u> about how the clock functioned.\"",
+    "question": "다음 밑줄 친 단어의 의미와 가장 가까운 것은?\n\"He was <u>curious</u> about how the antique clock worked.\"",
     "options": [
       "inquisitive",
       "bored",
@@ -292,7 +292,7 @@ const LEVEL_TEST_BANK = [
       "careless"
     ],
     "answer": 0,
-    "explanation": "'curious(호기심이 많은)'와 가장 가까운 유의어는 'inquisitive(탐구심이 많은, 알고 싶어 하는)'입니다."
+    "explanation": "'curious(호기심이 많은, 알고 싶어 하는)'와 의미가 가장 가까운 유의어는 'inquisitive(탐구적인, 호기심 많은)'입니다."
   },
   {
     "id": "lt-4-2",
@@ -391,7 +391,7 @@ const LEVEL_TEST_BANK = [
     "level": 5,
     "category": "voca",
     "categoryKo": "어휘",
-    "question": "다음 숙어의 의미로 올바른 것은?\n\"put off\"",
+    "question": "다음 밑줄 친 숙어의 의미로 올바른 것은?\n\"<u>put off</u>\"",
     "options": [
       "착용하다",
       "미루다, 연기하다",
@@ -636,8 +636,8 @@ const LEVEL_TEST_BANK = [
     "level": 7,
     "category": "conversation",
     "categoryKo": "실전 회화",
-    "passage": "A: We've been debugging this codebase for six hours straight.\nB: I agree, my eyes are burning. Let's call it a day.",
-    "question": "위 대화에서 'call it a day'의 의미는?",
+    "passage": "A: We've been debugging this codebase for six hours straight.\nB: I agree, my eyes are burning. Let's <u>call it a day</u>.",
+    "question": "위 대화의 밑줄 친 'call it a day'의 의미는?",
     "options": [
       "오늘의 작업을 끝마치다",
       "오늘 하루를 기념일로 지정하다",
@@ -652,7 +652,7 @@ const LEVEL_TEST_BANK = [
     "level": 8,
     "category": "voca",
     "categoryKo": "어휘",
-    "question": "다음 밑줄 친 어원의 의미로 올바른 것은?\n\"The word <u>perspective</u> contains the Latin root <u>spect</u>.\"",
+    "question": "다음 밑줄 친 라틴어 어원의 의미로 올바른 것은?\n\"The word 'perspective' contains the Latin root <u>spect</u>.\"",
     "options": [
       "speak (말하다)",
       "see / look (보다)",
@@ -728,8 +728,8 @@ const LEVEL_TEST_BANK = [
     "level": 8,
     "category": "conversation",
     "categoryKo": "실전 회화",
-    "passage": "A: Our competitor just launched a surprise product with lower pricing!\nB: Stay calm. We need to go back to the drawing board and revise our features.",
-    "question": "위 대화에서 'go back to the drawing board'가 뜻하는 바는?",
+    "passage": "A: Our competitor just launched a surprise product with lower pricing!\nB: Stay calm. We need to <u>go back to the drawing board</u> and revise our features.",
+    "question": "위 대화의 밑줄 친 'go back to the drawing board'가 뜻하는 바는?",
     "options": [
       "도면을 미술관에 전시하다",
       "처음부터 계획을 다시 세우다",
@@ -761,10 +761,10 @@ const LEVEL_TEST_BANK = [
     "categoryKo": "어휘",
     "question": "다음 중 다의어 'address'가 '문제를 다루다, 해결하려 노력하다'의 의미로 쓰인 문장은?",
     "options": [
-      "Please write your forwarding address on the envelope.",
-      "The president will address the nation tonight on television.",
-      "The new municipal policy fails to address housing affordability.",
-      "He gave a passionate keynote address at the seminar."
+      "Please write your forwarding <u>address</u> on the envelope.",
+      "The president will <u>address</u> the nation tonight on television.",
+      "The new municipal policy fails to <u>address</u> housing affordability.",
+      "He gave a passionate keynote <u>address</u> at the seminar."
     ],
     "answer": 2,
     "explanation": "3번 문장의 'address housing affordability'에서 address는 '주택 문제의 가격 적정성을 다루다/해결하려 하다'라는 뜻의 동사로 쓰였습니다."
@@ -820,8 +820,8 @@ const LEVEL_TEST_BANK = [
     "level": 9,
     "category": "conversation",
     "categoryKo": "실전 회화",
-    "passage": "A: He claimed he had insider knowledge of the merger, but it sounded completely made up.\nB: Take whatever he says with a grain of salt; he is known for exaggeration.",
-    "question": "위 대화에서 'take with a grain of salt'의 의미는?",
+    "passage": "A: He claimed he had insider knowledge of the merger, but it sounded completely made up.\nB: Take whatever he says <u>with a grain of salt</u>; he is known for exaggeration.",
+    "question": "위 대화의 밑줄 친 'take with a grain of salt'의 의미는?",
     "options": [
       "음식에 소금을 쳐서 먹다",
       "말을 곧이곧대로 믿지 않고 걸러 듣다",
@@ -854,12 +854,12 @@ const LEVEL_TEST_BANK = [
     "question": "다음 문맥상 밑줄 친 단어의 의미와 가장 유사한 것은?\n\"The sudden macroeconomic shock left currency markets remarkably <u>volatile</u>.\"",
     "options": [
       "stagnant",
-      "unpredictable and erratic",
-      "placid and harmonious",
+      "erratic",
+      "placid",
       "impervious"
     ],
     "answer": 1,
-    "explanation": "'volatile'은 휘발성의, 급변하는, 변덕스러운 뜻으로 'unpredictable and erratic'과 동의어입니다."
+    "explanation": "'volatile'은 휘발성의, 급변하는, 변덕스러운 뜻으로 'erratic(불규칙한, 급변하는)'과 동의어입니다."
   },
   {
     "id": "lt-10-3",
@@ -912,8 +912,8 @@ const LEVEL_TEST_BANK = [
     "level": 10,
     "category": "conversation",
     "categoryKo": "실전 회화",
-    "passage": "A: The board wants us to pivot the entire AI architecture before the Q3 product release.\nB: That sounds like a recipe for disaster; we are biting off more than we can chew.",
-    "question": "위 대화에서 'biting off more than we can chew'의 함의는?",
+    "passage": "A: The board wants us to pivot the entire AI architecture before the Q3 product release.\nB: That sounds like a recipe for disaster; we are <u>biting off more than we can chew</u>.",
+    "question": "위 대화의 밑줄 친 'biting off more than we can chew'의 의미는?",
     "options": [
       "식사량을 조절하지 못하고 과식하고 있다",
       "자신의 역량이나 주어진 여건을 넘어선 무리한 일을 벌이고 있다",
@@ -924,6 +924,7 @@ const LEVEL_TEST_BANK = [
     "explanation": "'bite off more than one can chew'는 직역하면 '씹을 수 있는 양보다 더 많이 베어 물다'로, '자신의 능력이나 한도를 초과하여 지나치게 무리한 일/부담을 떠맡다'를 뜻합니다."
   }
 ];
+
 
 if (typeof window !== 'undefined') {
     window.LEVEL_TEST_BANK = LEVEL_TEST_BANK;

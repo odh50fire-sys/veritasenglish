@@ -286,16 +286,18 @@ class LevelTestEngine {
 
     /**
      * 문장 및 지문 렌더링 시 HTML 태그 처리 및 밑줄/강조 서식 변환
-     * 1) <u>...</u> 태그를 세련된 밑줄 스타일 span으로 변환
-     * 2) 혹시 모를 <word> 형태의 꺾쇠 마커도 안전하게 변환하여 브라우저의 태그 인식으로 인한 문장 끊김 현상 원천 방지
+     * 1) 꺾쇠 마커가 있을 경우 안전하게 <u>...</u>로 표준화
+     * 2) <u> 태그에 명시적인 밑줄 스타일(굵기 2.5px, 파란색 색상, 간격 offset 4px, 배경 틴트)을 부여하여
+     *    Tailwind reset이나 브라우저 환경에 구애받지 않고 항상 선명하고 굵은 밑줄이 시각적으로 확실히 보이도록 보장
      */
     formatContent(text) {
         if (!text) return '';
         let str = String(text);
         // 1. 임의의 <word> 마커(단, 정상 태그 u/span/b/strong 등 제외)를 <u>...</u>로 안전 변환
         str = str.replace(/<(?!\/?(?:u|span|b|i|strong|em)\b)([a-zA-Z0-9_\s\-]+)>/g, '<u>$1</u>');
-        // 2. <u>...</u> 태그를 세련된 밑줄 강조 span으로 변환
-        str = str.replace(/<u>([\s\S]*?)<\/u>/gi, '<span class="underline decoration-blue-600 font-bold decoration-2 underline-offset-4 text-blue-950 bg-blue-50/60 px-1 py-0.5 rounded">$1</span>');
+        // 2. <u>...</u> 태그를 선명하고 굵은 파란 밑줄과 강조 스타일로 변환
+        const uStyle = 'text-decoration: underline 3px solid #2563eb !important; text-underline-offset: 4px !important; border-bottom: 2.5px solid #2563eb; font-weight: 800; color: #1e3a8a; background-color: rgba(239, 246, 255, 0.85); padding: 1px 5px; border-radius: 4px; display: inline;';
+        str = str.replace(/<u>([\s\S]*?)<\/u>/gi, `<u class="underline font-black text-blue-900 border-b-2 border-blue-600 bg-blue-50/80 px-1 py-0.5 rounded-sm" style="${uStyle}">$1</u>`);
         return str;
     }
 
