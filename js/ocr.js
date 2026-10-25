@@ -809,7 +809,12 @@ class OCREngine {
         const currentDayWords = dataPool.filter(r => r.DAY === this.currentNeungryulDay);
         if (tbody) {
             tbody.innerHTML = currentDayWords.map(row => {
-                const hasExample = !!row['예문'];
+                const word = row['영단어'] || row['단어'] || '';
+                const trans = row['예문해석'] || row['해석'] || '';
+                const meaning = row['뜻'] || '';
+                const pos = row['품사'] || '';
+                const example = row['예문'] || '';
+                const hasExample = !!example;
                 return `
                 <tr class="hover:bg-blue-50/40 transition-colors">
                     <td class="py-2.5 px-4 text-center font-mono text-xs font-bold text-blue-900 bg-slate-50/50 align-top">
@@ -820,21 +825,21 @@ class OCREngine {
                     </td>
                     <td class="py-2.5 px-4 align-top">
                         <div class="flex items-center gap-2">
-                            <span class="font-serif font-black text-slate-900 text-sm tracking-wide">${row['영단어']}</span>
-                            ${window.posHelper ? window.posHelper.renderPosBadge(row['품사'], row['영단어'], row['뜻']) : (row['품사'] ? `<span class="text-[10px] font-mono font-bold text-slate-500">${row['품사']}</span>` : '')}
-                            <button class="text-slate-400 hover:text-blue-900 transition-colors p-1" onclick="window.tts && window.tts.speak('${String(row['영단어']).replace(/'/g, "\\'")}')" title="원어민 발음">
+                            <span class="font-serif font-black text-slate-900 text-sm tracking-wide">${word}</span>
+                            ${window.posHelper ? window.posHelper.renderPosBadge(pos, word, meaning) : (pos ? `<span class="text-[10px] font-mono font-bold text-slate-500">${pos}</span>` : '')}
+                            <button class="text-slate-400 hover:text-blue-900 transition-colors p-1" onclick="window.tts && window.tts.speak('${String(word).replace(/'/g, "\\'")}')" title="원어민 발음">
                                 <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
                             </button>
                         </div>
                         ${hasExample ? `
                             <div class="mt-1 text-xs font-serif italic text-slate-600 bg-slate-50/80 p-1.5 rounded-lg border border-slate-100">
-                                <div>${(!book.isNeungryul && !book.isNeungryulEtym) ? this.renderInteractiveSentenceTokens(row['예문'], row['예문해석']) : row['예문']}</div>
-                                <div class="text-[11px] text-slate-400 not-italic mt-0.5">${row['예문해석'] || ''}</div>
+                                <div>${(!book.isNeungryul && !book.isNeungryulEtym) ? this.renderInteractiveSentenceTokens(example, trans) : example}</div>
+                                <div class="text-[11px] text-slate-400 not-italic mt-0.5">${trans}</div>
                             </div>
                         ` : ''}
                     </td>
                     <td class="py-2.5 px-4 text-xs text-slate-700 leading-relaxed font-medium align-top">
-                        ${row['뜻']}
+                        ${meaning}
                     </td>
                 </tr>
             `;

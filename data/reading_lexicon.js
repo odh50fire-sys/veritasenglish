@@ -16962,6 +16962,1042 @@ const READING_LEXICON_DATA = {
   "ethereal": {
     "pos": "[형]",
     "meaning": "천상(天上)의, 영묘한, 가볍고 우아한"
+  },
+  "moisture": {
+    "pos": "[명]",
+    "meaning": "습기, 수분"
+  },
+  "dissolve": {
+    "pos": "[동]",
+    "meaning": "녹다, 용해시키다"
+  },
+  "evaporation": {
+    "pos": "[명]",
+    "meaning": "증발(작용)"
+  },
+  "condensation": {
+    "pos": "[명]",
+    "meaning": "응결, 응축"
+  },
+  "precipitation": {
+    "pos": "[명]",
+    "meaning": "강수(량), 강우"
+  },
+  "erosion": {
+    "pos": "[명]",
+    "meaning": "침식, 침식 작용"
+  },
+  "sediment": {
+    "pos": "[명]",
+    "meaning": "퇴적물, 침전물"
+  },
+  "mineral": {
+    "pos": "[명]",
+    "meaning": "광물, 무기물"
+  },
+  "cycle": {
+    "pos": "[명]",
+    "meaning": "순환, 주기"
+  },
+  "liquid": {
+    "pos": "[명]",
+    "meaning": "액체"
+  },
+  "gas": {
+    "pos": "[명]",
+    "meaning": "기체, 가스"
+  },
+  "vibration": {
+    "pos": "[명]",
+    "meaning": "진동"
+  },
+  "transparent": {
+    "pos": "[형]",
+    "meaning": "투명한"
+  },
+  "opaque": {
+    "pos": "[형]",
+    "meaning": "불투명한"
+  },
+  "repel": {
+    "pos": "[동]",
+    "meaning": "밀어내다, 쫓아버리다"
+  },
+  "circuit": {
+    "pos": "[명]",
+    "meaning": "전기 회로"
+  },
+  "insulate": {
+    "pos": "[동]",
+    "meaning": "절연하다, 단열하다"
+  },
+  "generator": {
+    "pos": "[명]",
+    "meaning": "발전기"
+  },
+  "equator": {
+    "pos": "[명]",
+    "meaning": "적도"
+  },
+  "hemisphere": {
+    "pos": "[명]",
+    "meaning": "반구 (지구의 반)"
+  },
+  "latitude": {
+    "pos": "[명]",
+    "meaning": "위도"
+  },
+  "longitude": {
+    "pos": "[명]",
+    "meaning": "경도"
+  },
+  "boundary": {
+    "pos": "[명]",
+    "meaning": "경계, 국경선"
+  },
+  "terrain": {
+    "pos": "[명]",
+    "meaning": "지형, 지세"
+  },
+  "plateau": {
+    "pos": "[명]",
+    "meaning": "고원"
+  },
+  "peninsula": {
+    "pos": "[명]",
+    "meaning": "반도"
+  },
+  "delta": {
+    "pos": "[명]",
+    "meaning": "삼각주"
+  },
+  "canyon": {
+    "pos": "[명]",
+    "meaning": "협곡"
+  },
+  "coast": {
+    "pos": "[명]",
+    "meaning": "해안, 연안"
+  },
+  "harbor": {
+    "pos": "[명]",
+    "meaning": "항구, 항만"
+  },
+  "canal": {
+    "pos": "[명]",
+    "meaning": "운하"
+  },
+  "migration": {
+    "pos": "[명]",
+    "meaning": "이주, 이동"
+  },
+  "agriculture": {
+    "pos": "[명]",
+    "meaning": "농업"
+  },
+  "surplus": {
+    "pos": "[명]",
+    "meaning": "잉여, 흑자"
+  },
+  "artifact": {
+    "pos": "[명]",
+    "meaning": "유물, 인공물"
+  },
+  "suburban": {
+    "pos": "[형]",
+    "meaning": "교외의"
+  },
+  "vote": {
+    "pos": "[동]",
+    "meaning": "투표하다"
+  },
+  "ballot": {
+    "pos": "[명]",
+    "meaning": "투표용지, 투표"
+  },
+  "treaty": {
+    "pos": "[명]",
+    "meaning": "조약, 협정"
+  },
+  "ally": {
+    "pos": "[명]",
+    "meaning": "동맹(국), 협력자"
+  },
+  "amendment": {
+    "pos": "[명]",
+    "meaning": "수정안, 개정 조항"
+  },
+  "heading": {
+    "pos": "[명]",
+    "meaning": "표제, 소제목"
+  },
+  "caption": {
+    "pos": "[명]",
+    "meaning": "사진 설명, 캡션"
+  },
+  "glossary": {
+    "pos": "[명]",
+    "meaning": "용어집, 낱말 풀이"
+  },
+  "source": {
+    "pos": "[명]",
+    "meaning": "출처, 자료원"
+  },
+  "quote": {
+    "pos": "[동]",
+    "meaning": "인용하다"
+  },
+  "narrative": {
+    "pos": "[명]",
+    "meaning": "서사, 이야기"
+  },
+  "fiction": {
+    "pos": "[명]",
+    "meaning": "허구, 소설"
+  },
+  "nonfiction": {
+    "pos": "[명]",
+    "meaning": "비문학, 사실 문학"
+  },
+  "biography": {
+    "pos": "[명]",
+    "meaning": "전기, 일대기"
+  },
+  "draft": {
+    "pos": "[명]",
+    "meaning": "초고, 밑그림"
+  },
+  "brainstorm": {
+    "pos": "[동]",
+    "meaning": "아이디어를 내다, 브레인스토밍하다"
+  },
+  "discuss": {
+    "pos": "[동]",
+    "meaning": "논의하다, 토론하다"
+  },
+  "verify": {
+    "pos": "[동]",
+    "meaning": "확인하다, 검증하다"
+  },
+  "method": {
+    "pos": "[명]",
+    "meaning": "방법, 방식"
+  },
+  "isolate": {
+    "pos": "[동]",
+    "meaning": "격리하다, 분리하다"
+  },
+  "counterargument": {
+    "pos": "[명]",
+    "meaning": "반론, 반박 논증"
+  },
+  "rationale": {
+    "pos": "[명]",
+    "meaning": "이론적 근거, 이유"
+  },
+  "stance": {
+    "pos": "[명]",
+    "meaning": "입장, 태도"
+  },
+  "territory": {
+    "pos": "[명]",
+    "meaning": "영토, 영지"
+  },
+  "sovereign": {
+    "pos": "[형]",
+    "meaning": "주권이 있는, 자주적인"
+  },
+  "cellulose": {
+    "pos": "[명]",
+    "meaning": "셀룰로오스, 섬유소"
+  },
+  "membrane": {
+    "pos": "[명]",
+    "meaning": "막, 세포막"
+  },
+  "nucleus": {
+    "pos": "[명]",
+    "meaning": "핵, 중심"
+  },
+  "carnivore": {
+    "pos": "[명]",
+    "meaning": "육식 동물"
+  },
+  "herbivore": {
+    "pos": "[명]",
+    "meaning": "초식 동물"
+  },
+  "omnivore": {
+    "pos": "[명]",
+    "meaning": "잡식 동물"
+  },
+  "acceleration": {
+    "pos": "[명]",
+    "meaning": "가속, 가속도"
+  },
+  "kinetic": {
+    "pos": "[형]",
+    "meaning": "운동의, 동적인"
+  },
+  "amplitude": {
+    "pos": "[명]",
+    "meaning": "진폭"
+  },
+  "refraction": {
+    "pos": "[명]",
+    "meaning": "굴절"
+  },
+  "insulation": {
+    "pos": "[명]",
+    "meaning": "단열재, 절연"
+  },
+  "conductor": {
+    "pos": "[명]",
+    "meaning": "도체"
+  },
+  "combustion": {
+    "pos": "[명]",
+    "meaning": "연소, 발화"
+  },
+  "convection": {
+    "pos": "[명]",
+    "meaning": "대류"
+  },
+  "conduction": {
+    "pos": "[명]",
+    "meaning": "전도"
+  },
+  "frictionless": {
+    "pos": "[형]",
+    "meaning": "마찰이 없는"
+  },
+  "elastic": {
+    "pos": "[형]",
+    "meaning": "탄력 있는, 유연한"
+  },
+  "buoyancy": {
+    "pos": "[명]",
+    "meaning": "부력"
+  },
+  "magma": {
+    "pos": "[명]",
+    "meaning": "마그마"
+  },
+  "crust": {
+    "pos": "[명]",
+    "meaning": "지각, 외피"
+  },
+  "deposition": {
+    "pos": "[명]",
+    "meaning": "퇴적, 침전 작용"
+  },
+  "weathering": {
+    "pos": "[명]",
+    "meaning": "풍화(작용)"
+  },
+  "petrified": {
+    "pos": "[형]",
+    "meaning": "돌처럼 굳은, 석화된"
+  },
+  "strata": {
+    "pos": "[명]",
+    "meaning": "지층, 단층선"
+  },
+  "fossilize": {
+    "pos": "[동]",
+    "meaning": "화석화되다"
+  },
+  "humidity": {
+    "pos": "[명]",
+    "meaning": "습도"
+  },
+  "barometer": {
+    "pos": "[명]",
+    "meaning": "기압계"
+  },
+  "airmass": {
+    "pos": "[명]",
+    "meaning": "기단"
+  },
+  "prevailing": {
+    "pos": "[형]",
+    "meaning": "우세한, 지배적인"
+  },
+  "biosphere": {
+    "pos": "[명]",
+    "meaning": "생물권"
+  },
+  "hydrosphere": {
+    "pos": "[명]",
+    "meaning": "수권 (물 영역)"
+  },
+  "monarchy": {
+    "pos": "[명]",
+    "meaning": "군주제"
+  },
+  "judicial": {
+    "pos": "[형]",
+    "meaning": "사법의, 재판의"
+  },
+  "executive": {
+    "pos": "[형]",
+    "meaning": "행정의, 집행의"
+  },
+  "legislative": {
+    "pos": "[형]",
+    "meaning": "입법의, 법률을 제정하는"
+  },
+  "senate": {
+    "pos": "[명]",
+    "meaning": "상원"
+  },
+  "cabinet": {
+    "pos": "[명]",
+    "meaning": "내각, 행정 각료"
+  },
+  "veto": {
+    "pos": "[동]",
+    "meaning": "거부권을 행사하다"
+  },
+  "override": {
+    "pos": "[동]",
+    "meaning": "(거부권을) 무효화하다, 뒤엎다"
+  },
+  "ratify": {
+    "pos": "[동]",
+    "meaning": "비준하다, 재가하다"
+  },
+  "diplomacy": {
+    "pos": "[명]",
+    "meaning": "외교(술)"
+  },
+  "sanction": {
+    "pos": "[명]",
+    "meaning": "제재(조치), 허가"
+  },
+  "tariff": {
+    "pos": "[명]",
+    "meaning": "관세"
+  },
+  "subsidy": {
+    "pos": "[명]",
+    "meaning": "보조금, 장려금"
+  },
+  "monopoly": {
+    "pos": "[명]",
+    "meaning": "독점(권)"
+  },
+  "scarcity": {
+    "pos": "[명]",
+    "meaning": "희소성, 부족"
+  },
+  "protagonist": {
+    "pos": "[명]",
+    "meaning": "주인공"
+  },
+  "antagonist": {
+    "pos": "[명]",
+    "meaning": "적대자, 악역"
+  },
+  "resolution": {
+    "pos": "[명]",
+    "meaning": "결말, 해결"
+  },
+  "symbolism": {
+    "pos": "[명]",
+    "meaning": "상징주의, 상징적 표현"
+  },
+  "simile": {
+    "pos": "[명]",
+    "meaning": "직유(법)"
+  },
+  "personification": {
+    "pos": "[명]",
+    "meaning": "의인화, 의인법"
+  },
+  "imagery": {
+    "pos": "[명]",
+    "meaning": "심상, 이미지 묘사"
+  },
+  "foreshadow": {
+    "pos": "[동]",
+    "meaning": "복선을 깔다, 암시하다"
+  },
+  "flashback": {
+    "pos": "[명]",
+    "meaning": "회상 장면, 플래시백"
+  },
+  "irony": {
+    "pos": "[명]",
+    "meaning": "반어, 아이러니"
+  },
+  "allegory": {
+    "pos": "[명]",
+    "meaning": "우화, 풍유"
+  },
+  "satire": {
+    "pos": "[명]",
+    "meaning": "풍자(문학)"
+  },
+  "paraphrase": {
+    "pos": "[동]",
+    "meaning": "알기 쉽게 바꿔 쓰다"
+  },
+  "plagiarize": {
+    "pos": "[동]",
+    "meaning": "표절하다, 도용하다"
+  },
+  "bibliography": {
+    "pos": "[명]",
+    "meaning": "참고 문헌 목록"
+  },
+  "probe": {
+    "pos": "[동]",
+    "meaning": "탐구하다, 면밀히 조사하다"
+  },
+  "causation": {
+    "pos": "[명]",
+    "meaning": "인과 관계"
+  },
+  "sample": {
+    "pos": "[명]",
+    "meaning": "표본, 시료"
+  },
+  "randomize": {
+    "pos": "[동]",
+    "meaning": "무작위로 추출하다"
+  },
+  "qualitative": {
+    "pos": "[형]",
+    "meaning": "정성적인, 질적인"
+  },
+  "quantitative": {
+    "pos": "[형]",
+    "meaning": "정량적인, 양적인"
+  },
+  "reliability": {
+    "pos": "[명]",
+    "meaning": "신뢰도, 신뢰성"
+  },
+  "reproducible": {
+    "pos": "[형]",
+    "meaning": "재현 가능한"
+  },
+  "deviation": {
+    "pos": "[명]",
+    "meaning": "편차, 일탈"
+  },
+  "outlier": {
+    "pos": "[명]",
+    "meaning": "이상치, 특이값"
+  },
+  "extrapolate": {
+    "pos": "[동]",
+    "meaning": "외삽하다, 추정하다"
+  },
+  "peer-review": {
+    "pos": "[명]",
+    "meaning": "동료 심사"
+  },
+  "algorithm": {
+    "pos": "[명]",
+    "meaning": "알고리즘"
+  },
+  "deplete": {
+    "pos": "[동]",
+    "meaning": "고갈시키다, 바닥나게 하다"
+  },
+  "fossil-fuel": {
+    "pos": "[명]",
+    "meaning": "화석 연료"
+  },
+  "contamination": {
+    "pos": "[명]",
+    "meaning": "오염"
+  },
+  "urbanization": {
+    "pos": "[명]",
+    "meaning": "도시화"
+  },
+  "sanitation": {
+    "pos": "[명]",
+    "meaning": "위생 시설, 공중위생"
+  },
+  "immunize": {
+    "pos": "[동]",
+    "meaning": "면역력을 갖추게 하다"
+  },
+  "quarantine": {
+    "pos": "[명]",
+    "meaning": "격리, 검역"
+  },
+  "cybersecurity": {
+    "pos": "[명]",
+    "meaning": "사이버 보안"
+  },
+  "globalization": {
+    "pos": "[명]",
+    "meaning": "세계화"
+  },
+  "delineate": {
+    "pos": "[동]",
+    "meaning": "기술하다, 경계를 그리다"
+  },
+  "elucidate": {
+    "pos": "[동]",
+    "meaning": "명백히 밝히다, 해명하다"
+  },
+  "corroborate": {
+    "pos": "[동]",
+    "meaning": "확증하다, 뒷받침하다"
+  },
+  "repudiate": {
+    "pos": "[동]",
+    "meaning": "부인하다, 거부하다"
+  },
+  "pervasive": {
+    "pos": "[형]",
+    "meaning": "만연한, 스며드는"
+  },
+  "arbitrary": {
+    "pos": "[형]",
+    "meaning": "임의적인, 독단적인"
+  },
+  "juxtapose": {
+    "pos": "[동]",
+    "meaning": "병치하다, 나란히 놓다"
+  },
+  "detrimental": {
+    "pos": "[형]",
+    "meaning": "해로운, 유해한"
+  },
+  "obsolete": {
+    "pos": "[형]",
+    "meaning": "구식의, 쓸모없어진"
+  },
+  "ubiquitous": {
+    "pos": "[형]",
+    "meaning": "어디에나 존재하는"
+  },
+  "esoteric": {
+    "pos": "[형]",
+    "meaning": "심오한, 난해한"
+  },
+  "nuance": {
+    "pos": "[명]",
+    "meaning": "미묘한 차이, 뉘앙스"
+  },
+  "dichotomy": {
+    "pos": "[명]",
+    "meaning": "이분법, 양분"
+  },
+  "anomaly": {
+    "pos": "[명]",
+    "meaning": "변칙, 이상 현상"
+  },
+  "assertion": {
+    "pos": "[명]",
+    "meaning": "주장, 단언"
+  },
+  "discourse": {
+    "pos": "[명]",
+    "meaning": "담론, 담화"
+  },
+  "dogma": {
+    "pos": "[명]",
+    "meaning": "교조, 도그마"
+  },
+  "thesis": {
+    "pos": "[명]",
+    "meaning": "논제, 학위 논문"
+  },
+  "antithesis": {
+    "pos": "[명]",
+    "meaning": "정반대, 대조"
+  },
+  "dialectic": {
+    "pos": "[명]",
+    "meaning": "변증법(적 토론)"
+  },
+  "hegemony": {
+    "pos": "[명]",
+    "meaning": "패권, 주도권"
+  },
+  "sovereignty": {
+    "pos": "[명]",
+    "meaning": "주권, 자주권"
+  },
+  "bipartisan": {
+    "pos": "[형]",
+    "meaning": "초당적인, 양당의"
+  },
+  "bureaucracy": {
+    "pos": "[명]",
+    "meaning": "관료제, 관료주의"
+  },
+  "jurisprudence": {
+    "pos": "[명]",
+    "meaning": "법학, 법철학"
+  },
+  "statutory": {
+    "pos": "[형]",
+    "meaning": "법정의, 법률이 정한"
+  },
+  "precedent": {
+    "pos": "[명]",
+    "meaning": "선례, 판례"
+  },
+  "hierarchy": {
+    "pos": "[명]",
+    "meaning": "계층 구조, 위계질서"
+  },
+  "disenfranchise": {
+    "pos": "[동]",
+    "meaning": "참정권을 박탈하다"
+  },
+  "authoritarian": {
+    "pos": "[형]",
+    "meaning": "권위주의적인, 독재적인"
+  },
+  "totalitarian": {
+    "pos": "[형]",
+    "meaning": "전체주의의"
+  },
+  "indigenous": {
+    "pos": "[형]",
+    "meaning": "토착의, 고유한"
+  },
+  "diaspora": {
+    "pos": "[명]",
+    "meaning": "디아스포라, 이주 집단"
+  },
+  "demography": {
+    "pos": "[명]",
+    "meaning": "인구학, 인구 구성"
+  },
+  "stratify": {
+    "pos": "[동]",
+    "meaning": "계층화하다, 계급으로 나누다"
+  },
+  "egalitarian": {
+    "pos": "[형]",
+    "meaning": "평등주의적인"
+  },
+  "coercion": {
+    "pos": "[명]",
+    "meaning": "강제, 강압"
+  },
+  "legitimacy": {
+    "pos": "[명]",
+    "meaning": "정당성, 합법성"
+  },
+  "thermodynamic": {
+    "pos": "[형]",
+    "meaning": "열역학의"
+  },
+  "entropy": {
+    "pos": "[명]",
+    "meaning": "엔트로피, 무질서도"
+  },
+  "reductionism": {
+    "pos": "[명]",
+    "meaning": "환원주의"
+  },
+  "emergent": {
+    "pos": "[형]",
+    "meaning": "창발적인, 신생의"
+  },
+  "deterministic": {
+    "pos": "[형]",
+    "meaning": "결정론적인"
+  },
+  "stochastic": {
+    "pos": "[형]",
+    "meaning": "확률적인, 확률론의"
+  },
+  "catalyst": {
+    "pos": "[명]",
+    "meaning": "촉매, 기폭제"
+  },
+  "symbiotic": {
+    "pos": "[형]",
+    "meaning": "공생의"
+  },
+  "anthropogenic": {
+    "pos": "[형]",
+    "meaning": "인류의 활동으로 인한"
+  },
+  "resilience": {
+    "pos": "[명]",
+    "meaning": "복원력, 탄성"
+  },
+  "plasticity": {
+    "pos": "[명]",
+    "meaning": "가소성 (변형성)"
+  },
+  "macroeconomic": {
+    "pos": "[형]",
+    "meaning": "거시경제학의"
+  },
+  "liquidity": {
+    "pos": "[명]",
+    "meaning": "유동성, 환금성"
+  },
+  "insolvency": {
+    "pos": "[명]",
+    "meaning": "지급 불능, 파산"
+  },
+  "collateral": {
+    "pos": "[명]",
+    "meaning": "담보(물)"
+  },
+  "amortization": {
+    "pos": "[명]",
+    "meaning": "분할 상환, 감가상각"
+  },
+  "arbitrage": {
+    "pos": "[명]",
+    "meaning": "차익 거래"
+  },
+  "speculation": {
+    "pos": "[명]",
+    "meaning": "투기, 추측"
+  },
+  "stagnation": {
+    "pos": "[명]",
+    "meaning": "정체, 침체"
+  },
+  "outsourcing": {
+    "pos": "[명]",
+    "meaning": "아웃소싱, 외주 제작"
+  },
+  "oligopoly": {
+    "pos": "[명]",
+    "meaning": "과점 (소수 독점)"
+  },
+  "affective": {
+    "pos": "[형]",
+    "meaning": "정서적인, 감정의"
+  },
+  "dissonance": {
+    "pos": "[명]",
+    "meaning": "부조화, 불일치"
+  },
+  "rationalize": {
+    "pos": "[동]",
+    "meaning": "합리화하다"
+  },
+  "subconscious": {
+    "pos": "[형]",
+    "meaning": "잠재의식의"
+  },
+  "stimulus": {
+    "pos": "[명]",
+    "meaning": "자극(제)"
+  },
+  "conditioning": {
+    "pos": "[명]",
+    "meaning": "조건 형성, 길들이기"
+  },
+  "heuristics": {
+    "pos": "[명]",
+    "meaning": "휴리스틱 (어림셈법)"
+  },
+  "conformity": {
+    "pos": "[명]",
+    "meaning": "동조, 순응"
+  },
+  "introspection": {
+    "pos": "[명]",
+    "meaning": "자기 성찰, 내성"
+  },
+  "repression": {
+    "pos": "[명]",
+    "meaning": "억압"
+  },
+  "narcissism": {
+    "pos": "[명]",
+    "meaning": "자아도취, 나르시시즘"
+  },
+  "malleability": {
+    "pos": "[명]",
+    "meaning": "적응성, 유연성, 전성"
+  },
+  "temperament": {
+    "pos": "[명]",
+    "meaning": "기질, 성질"
+  },
+  "apathy": {
+    "pos": "[명]",
+    "meaning": "무관심, 냉담"
+  },
+  "catharsis": {
+    "pos": "[명]",
+    "meaning": "카타르시스, 정화"
+  },
+  "sublimation": {
+    "pos": "[명]",
+    "meaning": "승화 (작용)"
+  },
+  "hamartia": {
+    "pos": "[명]",
+    "meaning": "(비극적 주인공의) 치명적 결함"
+  },
+  "hubris": {
+    "pos": "[명]",
+    "meaning": "오만, 자만심"
+  },
+  "nemesis": {
+    "pos": "[명]",
+    "meaning": "천벌, 강적, 네메시스"
+  },
+  "anagnorisis": {
+    "pos": "[명]",
+    "meaning": "(비극에서의) 진실 발견, 인지"
+  },
+  "peripeteia": {
+    "pos": "[명]",
+    "meaning": "(운명의) 급전, 반전"
+  },
+  "bildungsroman": {
+    "pos": "[명]",
+    "meaning": "성장 소설"
+  },
+  "soliloquy": {
+    "pos": "[명]",
+    "meaning": "독백 (극문학)"
+  },
+  "monologue": {
+    "pos": "[명]",
+    "meaning": "긴 독백, 모놀로그"
+  },
+  "epilogue": {
+    "pos": "[명]",
+    "meaning": "에필로그, 끝맺는 말"
+  },
+  "prologue": {
+    "pos": "[명]",
+    "meaning": "프롤로그, 서막"
+  },
+  "alliteration": {
+    "pos": "[명]",
+    "meaning": "두운(법)"
+  },
+  "onomatopoeia": {
+    "pos": "[명]",
+    "meaning": "의성어"
+  },
+  "hyperbole": {
+    "pos": "[명]",
+    "meaning": "과장법"
+  },
+  "oxymoron": {
+    "pos": "[명]",
+    "meaning": "모순 어법, 옥시모론"
+  },
+  "euphemism": {
+    "pos": "[명]",
+    "meaning": "완곡어법"
+  },
+  "didactic": {
+    "pos": "[형]",
+    "meaning": "교훈적인, 설교조의"
+  },
+  "melodrama": {
+    "pos": "[명]",
+    "meaning": "멜로드라마 (과장된 감정극)"
+  },
+  "vernacular": {
+    "pos": "[명]",
+    "meaning": "토착어, 방언, 일상어"
+  },
+  "archetype": {
+    "pos": "[명]",
+    "meaning": "원형, 전형"
+  },
+  "picaresque": {
+    "pos": "[형]",
+    "meaning": "악한 소설의, 편력 소설의"
+  },
+  "epistemology": {
+    "pos": "[명]",
+    "meaning": "인식론"
+  },
+  "metaphysics": {
+    "pos": "[명]",
+    "meaning": "형이상학"
+  },
+  "hermeneutics": {
+    "pos": "[명]",
+    "meaning": "해석학"
+  },
+  "pedagogy": {
+    "pos": "[명]",
+    "meaning": "교수법, 교육학"
+  },
+  "utilitarianism": {
+    "pos": "[명]",
+    "meaning": "공리주의"
+  },
+  "deontology": {
+    "pos": "[명]",
+    "meaning": "의무론 (칸트 윤리학)"
+  },
+  "existentialism": {
+    "pos": "[명]",
+    "meaning": "실존주의"
+  },
+  "nihilism": {
+    "pos": "[명]",
+    "meaning": "허무주의, 니힐리즘"
+  },
+  "stoicism": {
+    "pos": "[명]",
+    "meaning": "스토아 철학, 금욕주의"
+  },
+  "pragmatism": {
+    "pos": "[명]",
+    "meaning": "실용주의, 프래그머티즘"
+  },
+  "postmodernism": {
+    "pos": "[명]",
+    "meaning": "포스트모더니즘"
+  },
+  "panopticon": {
+    "pos": "[명]",
+    "meaning": "원형 감옥, 판옵티콘"
+  },
+  "zeitgeist": {
+    "pos": "[명]",
+    "meaning": "시대정신, 시대 풍조"
+  },
+  "verisimilitude": {
+    "pos": "[명]",
+    "meaning": "진실성, 그럴듯함"
+  },
+  "solipsism": {
+    "pos": "[명]",
+    "meaning": "유아론 (오직 자아만 실재함)"
+  },
+  "quid-pro-quo": {
+    "pos": "[명]",
+    "meaning": "대가 관계, 보상"
+  },
+  "sine-qua-non": {
+    "pos": "[명]",
+    "meaning": "필수 불가결한 조건"
+  },
+  "ad-hominem": {
+    "pos": "[형]",
+    "meaning": "인신공격적인"
+  },
+  "straw-man": {
+    "pos": "[명]",
+    "meaning": "허수아비 논법 (곡해된 논증)"
+  },
+  "slippery-slope": {
+    "pos": "[명]",
+    "meaning": "미끄러운 비탈길의 오류"
   }
 };
 
