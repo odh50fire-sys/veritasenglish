@@ -134,7 +134,7 @@ class NativeExpressionsEngine {
                             
                             <div class="p-3 bg-black/25 rounded-lg mt-3 text-xs leading-relaxed space-y-1 border border-white/5">
                                 <div class="text-indigo-200 font-mono text-[11px] font-semibold">📌 패턴: ${colloc.collocationPair || colloc.title}</div>
-                                <div class="text-slate-100 font-serif italic mt-1">"${colloc.exampleEn}"</div>
+                                <div class="text-slate-100 font-serif italic mt-1">"${this.renderInteractiveSentenceTokens(colloc.exampleEn, colloc.exampleKo)}"</div>
                                 <div class="text-slate-400 text-[11px]">${colloc.exampleKo}</div>
                             </div>
 
@@ -179,7 +179,7 @@ class NativeExpressionsEngine {
                             
                             <div class="p-3 bg-black/25 rounded-lg mt-3 text-xs leading-relaxed space-y-1 border border-white/5">
                                 <div class="text-emerald-200 font-mono text-[11px] font-semibold">📌 패턴: ${idiom.collocationPair || idiom.title}</div>
-                                <div class="text-slate-100 font-serif italic mt-1">"${idiom.exampleEn}"</div>
+                                <div class="text-slate-100 font-serif italic mt-1">"${this.renderInteractiveSentenceTokens(idiom.exampleEn, idiom.exampleKo)}"</div>
                                 <div class="text-slate-400 text-[11px]">${idiom.exampleKo}</div>
                             </div>
 
@@ -316,7 +316,7 @@ class NativeExpressionsEngine {
                                     <span class="text-xs text-slate-500 font-mono">${c.tip}</span>
                                 </div>
                                 <div class="text-sm text-slate-700 font-medium mt-1">${c.meaning}</div>
-                                <div class="text-xs text-slate-500 italic mt-1 font-serif">"${c.example}"</div>
+                                <div class="text-xs text-slate-500 italic mt-1 font-serif">"${this.renderInteractiveSentenceTokens(c.example, c.meaning)}"</div>
                             </div>
                         `).join('')}
                     </div>
@@ -332,7 +332,7 @@ class NativeExpressionsEngine {
                             <div class="text-sm text-slate-700 mt-1">${item.explanation}</div>
                         </div>
                         <div class="p-3 bg-slate-50 rounded-xl">
-                            <div class="text-sm font-serif text-slate-900 font-medium">"${item.exampleEn}"</div>
+                            <div class="text-sm font-serif text-slate-900 font-medium">"${this.renderInteractiveSentenceTokens(item.exampleEn, item.exampleKo)}"</div>
                             <div class="text-xs text-slate-500 mt-1">${item.exampleKo}</div>
                         </div>
                     </div>
@@ -345,7 +345,7 @@ class NativeExpressionsEngine {
                         ${item.speakers.map(s => `
                             <div class="text-xs leading-relaxed">
                                 <strong class="font-bold text-slate-900 font-serif">${s.speaker}:</strong> 
-                                <span class="text-slate-700">"${s.text}"</span>
+                                <span class="text-slate-700">"${this.renderInteractiveSentenceTokens(s.text, '')}"</span>
                             </div>
                         `).join('')}
                     </div>
@@ -436,7 +436,36 @@ class NativeExpressionsEngine {
         this.searchQuery = query;
         this.render();
     }
+
+    /**
+     * 원어민 회화 예문의 영단어들을 클릭 가능한 인터랙티브 토큰으로 분할 렌더링
+     */
+    renderInteractiveSentenceTokens(sentenceText, sentenceKo = '') {
+        if (!sentenceText) return '';
+        const tokens = sentenceText.split(/(\s+|[.,!?;:"'()\[\]]+)/);
+        const encodedKo = encodeURIComponent(sentenceKo || '');
+        const encodedEn = encodeURIComponent(sentenceText || '');
+        return tokens.map(token => {
+            const clean = token.replace(/[^a-zA-Z\-]/g, '').trim();
+            if (clean.length > 0 && /^[a-zA-Z]/.test(clean)) {
+                return `<span class="reading-word-token hover:bg-amber-200 hover:text-blue-950 rounded px-0.5 cursor-pointer transition-colors underline decoration-dotted decoration-slate-400 hover:decoration-blue-900" onclick="window.nativeExpressionsEngine.inspectExampleWord('${clean.replace(/'/g, "\\'")}', '${encodedEn}', '${encodedKo}')" title="단어 뜻 보기 및 사전 추가">${token}</span>`;
+            }
+            return token;
+        }).join('');
+    }
+
+    /**
+     * 예문 단어 클릭 시 내신 독해의 Word Inspector 팝오버를 연결 오픈
+     */
+    inspectExampleWord(cleanWord, encodedEn, encodedKo) {
+        const sentenceEn = decodeURIComponent(encodedEn || '');
+        const sentenceKo = decodeURIComponent(encodedKo || '');
+        if (window.readingEngine && window.readingEngine.openWordInspector) {
+            window.readingEngine.openWordInspector(cleanWord, sentenceEn, sentenceKo);
+        }
+    }
 }
 
 // 전역 인스턴스
 window.nativeExpressionsEngine = new NativeExpressionsEngine();
+window.expressionsEngine = window.nativeExpressionsEngine;

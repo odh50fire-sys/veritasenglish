@@ -23,6 +23,23 @@ class ExamStudioEngine {
         // 기본값 세팅
     }
 
+    formatGradeLabel(grade) {
+        const map = {
+            'PRE_M1': '예비중',
+            'M1_1': '중 1-1',
+            'M1_2': '중 1-2',
+            'M2_1': '중 2-1',
+            'M2_2': '중 2-2',
+            'M3_1': '중 3-1',
+            'M3_2': '중 3-2',
+            'M1': '중1',
+            'M2': '중2',
+            'M3': '중3',
+            'all': '전학년 통합'
+        };
+        return map[grade] || grade || '통합';
+    }
+
     renderHistory() {
         const container = document.getElementById('exam-history-list');
         if (!container || !window.storage) return;
@@ -41,7 +58,7 @@ class ExamStudioEngine {
             <div class="p-4 rounded-xl bg-white border border-slate-200 flex items-center justify-between gap-3 shadow-2xs">
                 <div>
                     <div class="flex items-center gap-2">
-                        <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-900 text-[10px] font-bold font-mono">${item.grade || '통합'}</span>
+                        <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-900 text-[10px] font-bold font-mono">${this.formatGradeLabel(item.grade)}</span>
                         <h4 class="font-serif font-bold text-sm text-slate-900">${item.title}</h4>
                     </div>
                     <div class="text-xs text-slate-500 mt-0.5">
@@ -63,6 +80,10 @@ class ExamStudioEngine {
     // ------------------------------------------------------------------------
     // 모의고사 시험지 자동 생성기 (Synthesizer)
     // ------------------------------------------------------------------------
+    generateMockExam() {
+        return this.generateExam();
+    }
+
     generateExam() {
         const gradeSelect = document.getElementById('exam-gen-grade');
         const countSelect = document.getElementById('exam-gen-count');
@@ -75,14 +96,28 @@ class ExamStudioEngine {
         // 지문 풀 필터링
         let passagePool = typeof READING_PASSAGES !== 'undefined' ? [...READING_PASSAGES] : [];
         if (selectedGrade !== 'all') {
-            const gradeMap = {
-                'PRE_M1': '예비중',
+            const unitMap = {
+                'PRE_M1': 'unit-pre-m1',
+                'M1_1': 'unit-m1-1',
+                'M1_2': 'unit-m1-2',
+                'M2_1': 'unit-m2-1',
+                'M2_2': 'unit-m2-2',
+                'M3_1': 'unit-m3-1',
+                'M3_2': 'unit-m3-2',
                 'M1': '중1',
                 'M2': '중2',
                 'M3': '중3'
             };
-            const targetGrade = gradeMap[selectedGrade] || selectedGrade;
-            passagePool = passagePool.filter(p => p.grade === targetGrade);
+            if (unitMap[selectedGrade]) {
+                const target = unitMap[selectedGrade];
+                if (target.startsWith('unit-')) {
+                    passagePool = passagePool.filter(p => p.unitId === target);
+                } else {
+                    passagePool = passagePool.filter(p => p.grade === target);
+                }
+            } else {
+                passagePool = passagePool.filter(p => p.grade === selectedGrade);
+            }
         }
 
         if (passagePool.length === 0) {
@@ -124,6 +159,12 @@ class ExamStudioEngine {
         // 시험지 객체 구축
         const gradeTitleMap = {
             'PRE_M1': '예비중 (초6~중1 입문)',
+            'M1_1': '중 1-1 내신',
+            'M1_2': '중 1-2 내신',
+            'M2_1': '중 2-1 내신',
+            'M2_2': '중 2-2 내신',
+            'M3_1': '중 3-1 내신',
+            'M3_2': '중 3-2 내신',
             'M1': '중1 내신 성취도',
             'M2': '중2 중간·기말고사 대비',
             'M3': '중3 최상위 내신 완성',
@@ -524,3 +565,4 @@ class ExamStudioEngine {
 
 // 전역 인스턴스
 window.examStudio = new ExamStudioEngine();
+window.examStudioEngine = window.examStudio;

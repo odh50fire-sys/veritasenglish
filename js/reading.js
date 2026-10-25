@@ -672,6 +672,14 @@ class ReadingEngine {
             }
         }
 
+        // 2.5. READING_LEXICON_DATA (전수 렉시콘) 검색
+        const lexicon = window.READING_LEXICON_DATA || (typeof READING_LEXICON_DATA !== 'undefined' ? READING_LEXICON_DATA : null);
+        if (lexicon && lexicon[lower]) {
+            const entry = lexicon[lower];
+            const stdPos = window.posHelper ? window.posHelper.standardizePos(entry.pos, clean, entry.meaning) : (entry.pos || '[명]');
+            return { word: clean, pos: stdPos, meaning: entry.meaning };
+        }
+
         // 3. CURATED_WORDS_DATA 검색
         const curatedList = window.CURATED_WORDS_DATA || (typeof CURATED_WORDS_DATA !== 'undefined' ? CURATED_WORDS_DATA : []);
         if (Array.isArray(curatedList)) {
@@ -738,6 +746,11 @@ class ReadingEngine {
         }
 
         for (const candidate of stemCandidates) {
+            if (lexicon && lexicon[candidate]) {
+                const entry = lexicon[candidate];
+                const stdPos = window.posHelper ? window.posHelper.standardizePos(entry.pos, candidate, entry.meaning) : (entry.pos || '[동]');
+                return { word: clean, pos: stdPos, meaning: `${entry.meaning} (원형: ${candidate})` };
+            }
             const stemMatch = (curatedList.find(w => w['영단어'] && w['영단어'].toLowerCase() === candidate)) ||
                               (neungryulList.find(w => w['영단어'] && w['영단어'].toLowerCase() === candidate)) ||
                               (etymList.find(w => w['영단어'] && w['영단어'].toLowerCase() === candidate));
