@@ -94,6 +94,11 @@
                 <!-- 우측 보조 버튼군 -->
                 <div class="flex items-center gap-2 shrink-0">
                     
+                    <!-- 진단 레벨 배지 & 레벨테스트 바로가기 버튼 -->
+                    <button id="header-academic-level-btn" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-sky-400/40 bg-sky-50 hover:bg-sky-100 text-sky-900 text-xs font-serif font-bold transition-all shadow-xs cursor-pointer" onclick="window.levelTestEngine && window.levelTestEngine.openModal()" title="실력 진단 레벨테스트 및 현재 레벨 확인">
+                        <span class="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
+                        <span id="header-academic-level-badge">Lv.3 Pioneer</span>
+                    </button>
                     <button id="btn-open-add-word" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold shadow-xs transition-all">
                         <i data-lucide="plus" class="w-3.5 h-3.5"></i>
                         <span>단어 추가</span>
@@ -155,7 +160,38 @@
                         <span>바로가기 설정</span>
                     </button>
                 </div>
-            </div>
+            <
+
+            <!-- 실력 진단 레벨테스트 배너 카드 -->
+            <div class="rounded-2xl p-5 sm:p-6 bg-gradient-to-r from-blue-900 via-indigo-950 to-slate-900 text-white border-2 border-amber-400/40 shadow-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-5 relative overflow-hidden">
+                <div class="flex items-center gap-4 relative z-10">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-tr from-amber-400 to-yellow-300 text-blue-950 flex items-center justify-center font-black text-2xl shadow-md shrink-0">
+                        🎯
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap items-center gap-2 mb-1">
+                            <span class="px-2.5 py-0.5 rounded-full bg-amber-400/20 text-amber-300 font-mono text-[11px] font-bold border border-amber-400/30">
+                                10단계 실력 진단 & 맞춤 추천
+                            </span>
+                            <span id="dash-academic-level-badge-pill" class="px-2.5 py-0.5 rounded-full bg-white/10 text-white font-mono text-[11px] font-bold border border-white/20">
+                                현재: Lv.3 Pioneer (파이오니어)
+                            </span>
+                        </div>
+                        <h3 class="font-serif font-black text-lg sm:text-xl text-white">
+                            나의 영어 실력 진단 레벨테스트 (10문항 / 20문항 / 30문항)
+                        </h3>
+                        <p class="text-xs text-slate-300 mt-1 line-clamp-1">
+                            어휘·문법·독해·회화 4대 영역을 종합 진단하고, 내 레벨에 꼭 맞는 단원과 원어민 표현을 자동 추천받으세요.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2.5 shrink-0 relative z-10 w-full sm:w-auto">
+                    <button class="w-full sm:w-auto px-5 py-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-300 hover:from-amber-300 hover:to-amber-200 text-blue-950 font-serif font-black text-xs sm:text-sm transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5" onclick="window.levelTestEngine && window.levelTestEngine.openModal()">
+                        <i data-lucide="play-circle" class="w-4 h-4 text-blue-950"></i>
+                        <span>지금 레벨테스트 시작하기</span>
+                    </button>
+                </div>
+            </div>/div>
 
             
 
@@ -542,43 +578,43 @@
                                     <span class="text-xs font-serif font-bold text-slate-300">교재/테마 선택:</span>
                                     <select id="voca-book-select" class="px-3 py-1.5 rounded-lg bg-blue-900 text-amber-300 font-serif font-bold text-xs sm:text-sm border border-amber-400/30 outline-none cursor-pointer" onchange="window.ocrEngine.selectVocaBook(this.value)">
                                         <optgroup label="📘 능률 VOCA 공식 교재">
-                                            <option value="neungryul_etym_2025" selected>능률 VOCA 어원편 중등 (DAY 01~30, 765단어)</option>
-                                            <option value="neungryul2025">능률 VOCA 중등 고난도 (DAY 01~40, 1,200단어)</option>
+                                            <option value="neungryul_etym_2025" selected>[Lv.8] 능률 VOCA 어원편 중등 (DAY 01~30, 765단어)</option>
+                                            <option value="neungryul2025">[Lv.7] 능률 VOCA 중등 고난도 (DAY 01~40, 1,200단어)</option>
                                         </optgroup>
                                         <optgroup label="🎓 중등 6개 학기 내신 필수·심화 어휘 시리즈">
-                                            <option value="curated-m1-1">중 1-1 내신 필수 어휘 마스터 (5 DAYs, 100단어)</option>
-                                            <option value="curated-m1-2">중 1-2 내신 필수 어휘 마스터 (5 DAYs, 100단어)</option>
-                                            <option value="curated-m2-1">중 2-1 내신 심화 어휘 마스터 (5 DAYs, 100단어)</option>
-                                            <option value="curated-m2-2">중 2-2 내신 심화 어휘 마스터 (5 DAYs, 100단어)</option>
-                                            <option value="curated-m3-1">중 3-1 내신 고난도 어휘 마스터 (5 DAYs, 100단어)</option>
-                                            <option value="curated-m3-2">중 3-2 내신 킬러 & 고등 연계 어휘 (5 DAYs, 100단어)</option>
+                                            <option value="curated-m1-1">[Lv.3] 중 1-1 내신 필수 어휘 마스터 (5 DAYs, 100단어)</option>
+                                            <option value="curated-m1-2">[Lv.4] 중 1-2 내신 필수 어휘 마스터 (5 DAYs, 100단어)</option>
+                                            <option value="curated-m2-1">[Lv.5] 중 2-1 내신 심화 어휘 마스터 (5 DAYs, 100단어)</option>
+                                            <option value="curated-m2-2">[Lv.6] 중 2-2 내신 심화 어휘 마스터 (5 DAYs, 100단어)</option>
+                                            <option value="curated-m3-1">[Lv.7] 중 3-1 내신 고난도 어휘 마스터 (5 DAYs, 100단어)</option>
+                                            <option value="curated-m3-2">[Lv.8] 중 3-2 내신 킬러 & 고등 연계 어휘 (5 DAYs, 100단어)</option>
                                         </optgroup>
                                         <optgroup label="🎯 수능 킬러 & 실전 트렌드 테마 시리즈">
-                                            <option value="curated-killer">수능 1등급 킬러 다의어 & 혼동 어휘 (5 DAYs, 100단어)</option>
-                                            <option value="curated-tech">최신 시사 뉴스 & 테크·AI 트렌드 보카 (5 DAYs, 100단어)</option>
-                                            <option value="curated-phrasal">원어민 실전 핵심 구동사 & 콜로케이션 (5 DAYs, 100단어)</option>
-                                            <option value="curated-slang">미드·유튜브 리얼 라이프 & 트렌디 슬랭 (5 DAYs, 100단어)</option>
+                                            <option value="curated-killer">[Lv.9] 수능 1등급 킬러 다의어 & 혼동 어휘 (5 DAYs, 100단어)</option>
+                                            <option value="curated-tech">[Lv.10] 최신 시사 뉴스 & 테크·AI 트렌드 보카 (5 DAYs, 100단어)</option>
+                                            <option value="curated-phrasal">[Lv.7] 원어민 실전 핵심 구동사 & 콜로케이션 (5 DAYs, 100단어)</option>
+                                            <option value="curated-slang">[Lv.9] 미드·유튜브 리얼 라이프 & 트렌디 슬랭 (5 DAYs, 100단어)</option>
                                         </optgroup>
                                         <optgroup label="🏫 미국 교과서 학술 어휘 시리즈 (Tier 2 Academic)">
-                                            <option value="curated-us-elem">미국 교과서 학술 어휘 Step 1 (Grade 4-5, 50단어)</option>
-                                            <option value="curated-us-mid1">미국 교과서 학술 어휘 Step 2 (Grade 6-7, 50단어)</option>
-                                            <option value="curated-us-mid2">미국 교과서 학술 어휘 Step 3 (Grade 8-9, 50단어)</option>
+                                            <option value="curated-us-elem">[Lv.6] 미국 교과서 학술 어휘 Step 1 (Grade 4-5, 50단어)</option>
+                                            <option value="curated-us-mid1">[Lv.8] 미국 교과서 학술 어휘 Step 2 (Grade 6-7, 50단어)</option>
+                                            <option value="curated-us-mid2">[Lv.10] 미국 교과서 학술 어휘 Step 3 (Grade 8-9, 50단어)</option>
                                         </optgroup>
                                         <optgroup label="📘 중학 교과서 필수 관용구 & 숙어">
-                                            <option value="curated-m-idioms">중학 교과서 빈출 필수 숙어 50 (5 DAYs, 50숙어)</option>
+                                            <option value="curated-m-idioms">[Lv.5] 중학 교과서 빈출 필수 숙어 50 (5 DAYs, 50숙어)</option>
                                         </optgroup>
                                         <optgroup label="✈️ 실전 생존 & 여행 시추에이션 영어 시리즈">
-                                            <option value="curated-travel-air">생존 여행 1: 공항 & 기내 & 입국심사 (3 DAYs, 30표현)</option>
-                                            <option value="curated-travel-hotel">생존 여행 2: 호텔 & 숙소 & 체크인 (3 DAYs, 30표현)</option>
-                                            <option value="curated-travel-dining">생존 여행 3: 식당 & 카페 & 주문 (3 DAYs, 30표현)</option>
-                                            <option value="curated-travel-transit">생존 여행 4: 대중교통 & 길찾기 & 쇼핑 (3 DAYs, 30표현)</option>
-                                            <option value="curated-travel-emerge">생존 여행 5: 병원 & 약국 & 긴급상황 (3 DAYs, 30표현)</option>
+                                            <option value="curated-travel-air">[Lv.1] 생존 여행 1: 공항 & 기내 & 입국심사 (3 DAYs, 30표현)</option>
+                                            <option value="curated-travel-hotel">[Lv.2] 생존 여행 2: 호텔 & 숙소 & 체크인 (3 DAYs, 30표현)</option>
+                                            <option value="curated-travel-dining">[Lv.2] 생존 여행 3: 식당 & 카페 & 주문 (3 DAYs, 30표현)</option>
+                                            <option value="curated-travel-transit">[Lv.3] 생존 여행 4: 대중교통 & 길찾기 & 쇼핑 (3 DAYs, 30표현)</option>
+                                            <option value="curated-travel-emerge">[Lv.4] 생존 여행 5: 병원 & 약국 & 긴급상황 (3 DAYs, 30표현)</option>
                                         </optgroup>
                                         <optgroup label="🎭 원어민 감정 · 심경 & 성격 묘사 마스터">
-                                            <option value="curated-emotions">원어민 감정 · 심경 & 성격 묘사 마스터 (5 DAYs, 50단어)</option>
+                                            <option value="curated-emotions">[Lv.9] 원어민 감정 · 심경 & 성격 묘사 마스터 (5 DAYs, 50단어)</option>
                                         </optgroup>
                                         <optgroup label="📖 영미 명작 문학 & 소설 클래식 어휘">
-                                            <option value="curated-literature">영미 명작 문학 & 스토리텔링 클래식 어휘 (5 DAYs, 50단어)</option>
+                                            <option value="curated-literature">[Lv.9] 영미 명작 문학 & 스토리텔링 클래식 어휘 (5 DAYs, 50단어)</option>
                                         </optgroup>
                                     </select>
                                 </div>
@@ -3045,6 +3081,8 @@
     <script src="data/reading_passages.js"></script>
     <script src="data/curated_vocabulary.js"></script>
     <script src="data/reading_lexicon.js"></script>
+    <script src="data/level_test_bank.js"></script>
+    
     <script src="js/tts.js"></script>
     <script src="js/storage.js"></script>
     <script src="js/ocr.js"></script>
@@ -3055,11 +3093,21 @@
     <script src="js/expressions.js"></script>
     <script src="js/dictionary.js"></script>
     <script src="js/reading.js"></script>
+    <script src="js/level_test.js"></script>
+    
         <script src="data/scramble_sentences.js"></script>
     <script src="js/scramble.js"></script>
     <script src="js/achievements.js"></script>
     <script src="js/wrong_note.js"></script>
     <script src="js/exam_studio.js"></script>
     <script src="js/app.js"></script>
+
+    <!-- 실력 진단 레벨테스트 모달 (Level Test Modal) -->
+    <div id="modal-level-test" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-sm hidden">
+        <div class="relative w-full max-w-3xl max-h-[90vh] bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-y-auto no-scrollbar" id="level-test-container">
+            <!-- 동적 렌더링 영역 (모드 선택 / 문제 풀이 / 결과 리포트) -->
+        </div>
+    </div>
+
 </body>
 </html>

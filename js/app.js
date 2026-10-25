@@ -182,11 +182,38 @@ class AppController {
                 if (window.achievements) {
             window.achievements.renderHeaderCapsule();
         }
+        try { this.updateHeaderAcademicLevelBadge(); } catch (e) { console.error('Error in updateHeaderAcademicLevelBadge:', e); }
         if (window.wrongNote) {
             window.wrongNote.renderStats();
         }
         if (window.lucide) {
             window.lucide.createIcons();
+        }
+    }
+
+    
+    /**
+     * 상단 헤더 및 대시보드의 실력 진단 학술 레벨 배지 갱신
+     */
+    updateHeaderAcademicLevelBadge() {
+        if (!window.storage || typeof window.storage.getAcademicLevel !== 'function') return;
+        const lvl = window.storage.getAcademicLevel();
+        const info = window.storage.getLevelInfo(lvl);
+        if (!info) return;
+
+        const headerBadgeEl = document.getElementById('header-academic-level-badge');
+        if (headerBadgeEl) {
+            headerBadgeEl.textContent = info.badge;
+        }
+
+        const pillEl = document.getElementById('dash-academic-level-badge-pill');
+        if (pillEl) {
+            pillEl.textContent = `현재: ${info.badge} (${info.nameKo})`;
+        }
+
+        // 대시보드 데일리 위젯 재렌더링
+        if (typeof this.initDashboardDailyWidget === 'function') {
+            this.initDashboardDailyWidget();
         }
     }
 
@@ -439,7 +466,8 @@ class AppController {
 
         const offset = window.storage.getDailySetOffset(todayStr);
         const pastCompletedIds = window.storage.getPastCompletedDailyIds(todayStr);
-        const daily = getDailyExpressions(todayStr, offset, pastCompletedIds);
+        const userLvl = window.storage ? window.storage.getAcademicLevel() : 3;
+        const daily = getDailyExpressions(todayStr, offset, pastCompletedIds, userLvl);
         const colloc = daily.collocation;
         const idiom = daily.idiom;
 

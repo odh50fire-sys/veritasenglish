@@ -56,7 +56,8 @@ class NativeExpressionsEngine {
 
         const offset = window.storage.getDailySetOffset(activeDateStr);
         const pastCompletedIds = window.storage.getPastCompletedDailyIds(activeDateStr);
-        const daily = getDailyExpressions(activeDateStr, offset, pastCompletedIds);
+        const userLvl = window.storage ? window.storage.getAcademicLevel() : 3;
+        const daily = getDailyExpressions(activeDateStr, offset, pastCompletedIds, userLvl);
 
         const colloc = daily.collocation;
         const idiom = daily.idiom;

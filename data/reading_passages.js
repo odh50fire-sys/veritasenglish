@@ -6,6 +6,7 @@
 const READING_UNITS = [
   {
     "unitId": "unit-pre-m1",
+    "level": 2,
     "unitTitle": "예비중(초6~중1) 입문 독해 마스터",
     "grade": "예비중",
     "semester": "입문",
@@ -16,6 +17,7 @@ const READING_UNITS = [
 
   {
     "unitId": "unit-m1-1",
+    "level": 3,
     "unitTitle": "중 1-1 내신 독해 마스터",
     "grade": "중1",
     "semester": "1학기",
@@ -25,6 +27,7 @@ const READING_UNITS = [
   },
   {
     "unitId": "unit-m1-2",
+    "level": 4,
     "unitTitle": "중 1-2 내신 독해 마스터",
     "grade": "중1",
     "semester": "2학기",
@@ -34,6 +37,7 @@ const READING_UNITS = [
   },
   {
     "unitId": "unit-m2-1",
+    "level": 5,
     "unitTitle": "중 2-1 내신 독해 마스터",
     "grade": "중2",
     "semester": "1학기",
@@ -43,6 +47,7 @@ const READING_UNITS = [
   },
   {
     "unitId": "unit-m2-2",
+    "level": 6,
     "unitTitle": "중 2-2 내신 독해 마스터",
     "grade": "중2",
     "semester": "2학기",
@@ -52,6 +57,7 @@ const READING_UNITS = [
   },
   {
     "unitId": "unit-m3-1",
+    "level": 7,
     "unitTitle": "중 3-1 내신 독해 마스터",
     "grade": "중3",
     "semester": "1학기",
@@ -61,6 +67,7 @@ const READING_UNITS = [
   },
   {
     "unitId": "unit-m3-2",
+    "level": 8,
     "unitTitle": "중 3-2 내신 독해 마스터",
     "grade": "중3",
     "semester": "2학기",

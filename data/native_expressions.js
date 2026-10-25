@@ -383,6 +383,7 @@ const DAILY_EXCLUSIVE_POOL = [
     // --- 실전 콜로케이션 (Daily Exclusive Collocations) ---
     {
         id: "daily-colloc-1",
+        level: 8,
         category: "collocation",
         title: "Bridge the gap",
         summary: "‘격차를 줄이다, 간극을 메우다’",
@@ -395,6 +396,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-colloc-2",
+        level: 5,
         category: "collocation",
         title: "Jump to conclusions",
         summary: "‘성급하게 결론을 내리다, 단정 짓다’",
@@ -407,6 +409,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-colloc-3",
+        level: 6,
         category: "collocation",
         title: "Shed light on",
         summary: "‘~을 밝히다, 규명하다, 새로운 단서를 주다’",
@@ -419,6 +422,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-colloc-4",
+        level: 7,
         category: "collocation",
         title: "Take for granted",
         summary: "‘당연하게 여기다 (고마운 줄 모르다)’",
@@ -431,6 +435,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-colloc-5",
+        level: 9,
         category: "collocation",
         title: "Pave the way for",
         summary: "‘~을 위한 길을 닦다, 토대를 마련하다’",
@@ -443,6 +448,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-colloc-6",
+        level: 4,
         category: "collocation",
         title: "Raise awareness of",
         summary: "‘~에 대한 인식을 높이다, 경각심을 일깨우다’",
@@ -455,6 +461,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-colloc-7",
+        level: 8,
         category: "collocation",
         title: "Meet the criteria",
         summary: "‘기준을 충족하다, 자격 요건에 부합하다’",
@@ -467,6 +474,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-colloc-8",
+        level: 6,
         category: "collocation",
         title: "Pose a threat to",
         summary: "‘~에 위협이 되다, 위험을 초래하다’",
@@ -479,6 +487,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-colloc-9",
+        level: 10,
         category: "collocation",
         title: "Break the ice",
         summary: "‘어색한 분위기를 깨다, 말문을 트다’",
@@ -491,6 +500,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-colloc-10",
+        level: 3,
         category: "collocation",
         title: "Give credit to",
         summary: "‘~의 공로를 인정하다, 칭찬을 돌리다’",
@@ -503,6 +513,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-colloc-11",
+        level: 7,
         category: "collocation",
         title: "Have Second Thoughts",
         summary: "‘다시 생각해보고 망설이다, 마음이 바뀌다’",
@@ -515,6 +526,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-colloc-12",
+        level: 5,
         category: "collocation",
         title: "Play devil's advocate",
         summary: "‘(토론을 위해) 일부러 반대 입장을 취하다’",
@@ -527,6 +539,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-colloc-13",
+        level: 9,
         category: "collocation",
         title: "Go hand in hand",
         summary: "‘밀접하게 연관되다, 늘 함께 따라다니다’",
@@ -539,6 +552,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-colloc-14",
+        level: 4,
         category: "collocation",
         title: "Food for thought",
         summary: "‘깊이 생각해 볼 거리, 시사점’",
@@ -551,6 +565,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-colloc-15",
+        level: 10,
         category: "collocation",
         title: "Pull some strings",
         summary: "‘인맥이나 영향력을 동원해 뒤에서 힘을 쓰다’",
@@ -565,6 +580,7 @@ const DAILY_EXCLUSIVE_POOL = [
     // --- 핵심 구동사 & 슬랭 (Daily Exclusive Phrasal Verbs & Slang) ---
     {
         id: "daily-idiom-1",
+        level: 5,
         category: "idiom",
         title: "Brush up on",
         summary: "‘(잊어가던 실력·지식을) 다시 가다듬다, 복습하다’",
@@ -577,6 +593,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-idiom-2",
+        level: 4,
         category: "idiom",
         title: "Wrap up",
         summary: "‘(회의·수업·작업을) 깔끔하게 마무리하다’",
@@ -589,6 +606,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-idiom-3",
+        level: 6,
         category: "idiom",
         title: "Figure out",
         summary: "‘(고민 끝에 해답·원인을) 알아내다, 해결하다, 이해하다’",
@@ -601,6 +619,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-idiom-4",
+        level: 7,
         category: "idiom",
         title: "narrow down",
         summary: "‘(후보나 선택지의 범위를) 압축하다, 좁히다’",
@@ -613,6 +632,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-idiom-5",
+        level: 3,
         category: "idiom",
         title: "Boil down to",
         summary: "‘결국 ~로 귀결되다, 핵심은 ~이다’",
@@ -625,6 +645,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-idiom-6",
+        level: 5,
         category: "idiom",
         title: "Follow through",
         summary: "‘계획한 일을 끝까지 완수하다, 용두사미로 끝내지 않다’",
@@ -637,6 +658,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-idiom-7",
+        level: 8,
         category: "idiom",
         title: "Rule out",
         summary: "‘(가능성·용의자 등을) 배제하다, 제외하다’",
@@ -649,6 +671,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-idiom-8",
+        level: 6,
         category: "idiom",
         title: "Sink in",
         summary: "‘(놀라운 소식·깊은 뜻이) 서서히 실감 나다, 마음속에 와닿다’",
@@ -661,6 +684,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-idiom-9",
+        level: 9,
         category: "idiom",
         title: "Pan out",
         summary: "‘(계획·일이) 잘 풀리다, 좋은 결과를 내다’",
@@ -673,6 +697,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-idiom-10",
+        level: 4,
         category: "idiom",
         title: "Touch base",
         summary: "‘잠깐 연락해서 진행 상황을 공유하다, 안부를 확인하다’",
@@ -685,6 +710,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-idiom-11",
+        level: 7,
         category: "idiom",
         title: "Play it by ear",
         summary: "‘상황 봐서 즉흥적으로 대처하다 (미리 정하지 않다)’",
@@ -697,6 +723,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-idiom-12",
+        level: 8,
         category: "idiom",
         title: "Keep tabs on",
         summary: "‘~을 주의 깊게 지켜보다, 기록하며 관리하다’",
@@ -709,6 +736,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-idiom-13",
+        level: 10,
         category: "idiom",
         title: "Iron out",
         summary: "‘(문제·이견·세부 오류를) 매끄럽게 해결하다, 조율하다’",
@@ -721,6 +749,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-idiom-14",
+        level: 3,
         category: "idiom",
         title: "Zone out",
         summary: "‘멍때리다, 깜빡 집중력을 잃고 딴생각하다’",
@@ -733,6 +762,7 @@ const DAILY_EXCLUSIVE_POOL = [
     },
     {
         id: "daily-idiom-15",
+        level: 9,
         category: "idiom",
         title: "Ace",
         summary: "‘(시험·면접 등을) 완벽하게 해내다, 만점 받다’",
@@ -759,22 +789,29 @@ function findNativeExpressionById(id) {
  * @param {number} extraOffset 같은 날 '새로운 표현 더 보기' 클릭 시 증가하는 오프셋
  * @param {Array<string>} completedIds 이미 완료한 표현 ID 배열 (미완료 표현 우선 추천용)
  */
-function getDailyExpressions(dateStr, extraOffset = 0, completedIds = []) {
+function getDailyExpressions(dateStr, extraOffset = 0, completedIds = [], userLevel = null) {
     const target = dateStr || (new Date().toISOString().slice(0, 10));
 
-    // YYYY-MM-DD를 기준 일수(Epoch DayNumber)로 변환해 날마다 1씩 순차 증가 보장 (연속적인 날에 절대 같은 표현이 안 나오도록)
+    // YYYY-MM-DD를 기준 일수(Epoch DayNumber)로 변환해 날마다 1씩 순차 증가 보장
     const parts = target.split('-').map(Number);
     const utcDays = Math.floor(Date.UTC(parts[0], (parts[1] || 1) - 1, parts[2] || 1) / 86400000);
     const stepIndex = Math.abs(utcDays + extraOffset);
 
-    const collocations = DAILY_EXCLUSIVE_POOL.filter(e => e.category === 'collocation');
-    const idioms = DAILY_EXCLUSIVE_POOL.filter(e => e.category === 'idiom');
+    let collocations = DAILY_EXCLUSIVE_POOL.filter(e => e.category === 'collocation');
+    let idioms = DAILY_EXCLUSIVE_POOL.filter(e => e.category === 'idiom');
 
-    // 만약 extraOffset > 0 이거나 미학습 표현을 우선 순환하고 싶을 때 자연스럽게 다음 인덱스로 이동
+    // 사용자의 진단 레벨(userLevel)이 주어지면 레벨 맞춤(오차 +-2 이내) 엄격 필터링
+    const targetLvl = Number(userLevel) || (window.storage && window.storage.getAcademicLevel ? window.storage.getAcademicLevel() : null);
+    if (targetLvl && targetLvl >= 1 && targetLvl <= 10) {
+        const collocFiltered = collocations.filter(e => Math.abs((e.level || 5) - targetLvl) <= 2);
+        const idiomFiltered = idioms.filter(e => Math.abs((e.level || 5) - targetLvl) <= 2);
+        if (collocFiltered.length > 0) collocations = collocFiltered;
+        if (idiomFiltered.length > 0) idioms = idiomFiltered;
+    }
+
     let collocIdx = stepIndex % collocations.length;
     let idiomIdx = stepIndex % idioms.length;
 
-    // 이미 과거에 완료한 표현이고 아직 안 본 표현이 남아있다면 안 본 표현을 우선 배정 (오늘 이미 완료한 건 유지)
     if (Array.isArray(completedIds) && completedIds.length > 0) {
         for (let i = 0; i < collocations.length; i++) {
             const candidate = collocations[(collocIdx + i) % collocations.length];
@@ -793,14 +830,11 @@ function getDailyExpressions(dateStr, extraOffset = 0, completedIds = []) {
     }
 
     return {
-        date: target,
-        dayNumber: stepIndex,
-        totalPoolSize: DAILY_EXCLUSIVE_POOL.length,
         collocation: collocations[collocIdx],
         idiom: idioms[idiomIdx]
     };
 }
 
-if (typeof module !== "undefined" && module.exports) {
+if (typeof module !== 'undefined' && module.exports) {
     module.exports = { NATIVE_EXPRESSIONS, DAILY_EXCLUSIVE_POOL, findNativeExpressionById, getDailyExpressions };
 }

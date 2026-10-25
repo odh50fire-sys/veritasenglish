@@ -11,6 +11,7 @@
 const CURATED_COLLECTIONS = [
   {
     "id": "curated-m1-1",
+    "level": 3,
     "title": "중 1-1 내신 필수 어휘 마스터",
     "category": "middle",
     "badge": "중1 1학기 내신",
@@ -19,6 +20,7 @@ const CURATED_COLLECTIONS = [
   },
   {
     "id": "curated-m1-2",
+    "level": 4,
     "title": "중 1-2 내신 필수 어휘 마스터",
     "category": "middle",
     "badge": "중1 2학기 내신",
@@ -27,6 +29,7 @@ const CURATED_COLLECTIONS = [
   },
   {
     "id": "curated-m2-1",
+    "level": 5,
     "title": "중 2-1 내신 심화 어휘 마스터",
     "category": "middle",
     "badge": "중2 1학기 내신",
@@ -35,6 +38,7 @@ const CURATED_COLLECTIONS = [
   },
   {
     "id": "curated-m2-2",
+    "level": 6,
     "title": "중 2-2 내신 심화 어휘 마스터",
     "category": "middle",
     "badge": "중2 2학기 내신",
@@ -43,6 +47,7 @@ const CURATED_COLLECTIONS = [
   },
   {
     "id": "curated-m3-1",
+    "level": 7,
     "title": "중 3-1 내신 고난도 어휘 마스터",
     "category": "middle",
     "badge": "중3 1학기 내신",
@@ -51,6 +56,7 @@ const CURATED_COLLECTIONS = [
   },
   {
     "id": "curated-m3-2",
+    "level": 8,
     "title": "중 3-2 내신 킬러 & 고등 연계 어휘",
     "category": "middle",
     "badge": "중3 2학기 내신",
@@ -59,6 +65,7 @@ const CURATED_COLLECTIONS = [
   },
   {
     "id": "curated-killer",
+    "level": 9,
     "title": "수능 1등급 킬러 다의어 & 혼동 어휘",
     "category": "killer",
     "badge": "수능/평가원 1등급",
@@ -67,6 +74,7 @@ const CURATED_COLLECTIONS = [
   },
   {
     "id": "curated-tech",
+    "level": 10,
     "title": "최신 시사 뉴스 & 테크·AI 트렌드 보카",
     "category": "practical",
     "badge": "시사/테크 트렌드",
@@ -75,6 +83,7 @@ const CURATED_COLLECTIONS = [
   },
   {
     "id": "curated-phrasal",
+    "level": 7,
     "title": "원어민 실전 핵심 구동사 & 콜로케이션",
     "category": "practical",
     "badge": "실전 구동사/연어",
@@ -83,6 +92,7 @@ const CURATED_COLLECTIONS = [
   },
   {
     "id": "curated-slang",
+    "level": 9,
     "title": "미드·유튜브 리얼 라이프 & 트렌디 슬랭",
     "category": "practical",
     "badge": "리얼라이프/슬랭",
@@ -92,6 +102,7 @@ const CURATED_COLLECTIONS = [
 ,
   {
     "id": "curated-us-elem",
+    "level": 6,
     "title": "미국 교과서 학술 어휘 Step 1 (Grade 4-5)",
     "category": "us_academic",
     "badge": "미국 교과서 Step 1",
@@ -100,6 +111,7 @@ const CURATED_COLLECTIONS = [
   },
   {
     "id": "curated-us-mid1",
+    "level": 8,
     "title": "미국 교과서 학술 어휘 Step 2 (Grade 6-7)",
     "category": "us_academic",
     "badge": "미국 교과서 Step 2",
@@ -108,6 +120,7 @@ const CURATED_COLLECTIONS = [
   },
   {
     "id": "curated-us-mid2",
+    "level": 10,
     "title": "미국 교과서 학술 어휘 Step 3 (Grade 8-9)",
     "category": "us_academic",
     "badge": "미국 교과서 Step 3",
@@ -116,6 +129,7 @@ const CURATED_COLLECTIONS = [
   },
   {
     "id": "curated-m-idioms",
+    "level": 5,
     "title": "중학 교과서 빈출 필수 숙어 50",
     "category": "middle_idioms",
     "badge": "중학 필수 숙어",
@@ -124,6 +138,7 @@ const CURATED_COLLECTIONS = [
   },
   {
     "id": "curated-travel-air",
+    "level": 1,
     "title": "생존 여행 영어 1: 공항 & 기내 & 입국심사",
     "category": "travel",
     "badge": "공항·기내·입국",
@@ -132,6 +147,7 @@ const CURATED_COLLECTIONS = [
   },
   {
     "id": "curated-travel-hotel",
+    "level": 2,
     "title": "생존 여행 영어 2: 호텔 & 숙소 & 체크인",
     "category": "travel",
     "badge": "호텔·숙소·체크인",
@@ -140,6 +156,7 @@ const CURATED_COLLECTIONS = [
   },
   {
     "id": "curated-travel-dining",
+    "level": 2,
     "title": "생존 여행 영어 3: 식당 & 카페 & 음식 주문",
     "category": "travel",
     "badge": "식당·카페·주문",
@@ -148,6 +165,7 @@ const CURATED_COLLECTIONS = [
   },
   {
     "id": "curated-travel-transit",
+    "level": 3,
     "title": "생존 여행 영어 4: 대중교통 & 길찾기 & 쇼핑",
     "category": "travel",
     "badge": "교통·길찾기·쇼핑",
@@ -156,6 +174,7 @@ const CURATED_COLLECTIONS = [
   },
   {
     "id": "curated-travel-emerge",
+    "level": 4,
     "title": "생존 여행 영어 5: 병원 & 약국 & 긴급상황",
     "category": "travel",
     "badge": "병원·약국·응급",
@@ -164,6 +183,7 @@ const CURATED_COLLECTIONS = [
   },
   {
     "id": "curated-emotions",
+    "level": 9,
     "title": "원어민 감정 · 심경 & 성격 묘사 마스터",
     "category": "emotions",
     "badge": "감정·심경·성격",
@@ -172,6 +192,7 @@ const CURATED_COLLECTIONS = [
   },
   {
     "id": "curated-literature",
+    "level": 9,
     "title": "영미 명작 문학 & 스토리텔링 클래식 어휘",
     "category": "literature",
     "badge": "명작 문학·소설",

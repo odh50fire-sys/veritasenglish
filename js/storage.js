@@ -113,6 +113,154 @@ window.posHelper = {
     }
 };
 
+
+const ACADEMIC_LEVELS = {
+    1: {
+        level: 1,
+        name: 'Starter',
+        nameKo: '스타터',
+        subTitle: '기초 입문',
+        badge: 'Lv.1 Starter',
+        color: 'text-emerald-400',
+        borderColor: 'border-emerald-400/40',
+        badgeBg: 'bg-emerald-500/20 text-emerald-300 border-emerald-400/30',
+        description: '알파벳 파닉스 완성 및 초등 기초 어휘/단문 학습 단계',
+        targetGrade: '초등 기초 / 파닉스 완성',
+        recommendedVocas: ['curated-travel-air'],
+        recommendedPassageSemester: '예비중'
+    },
+    2: {
+        level: 2,
+        name: 'Explorer',
+        nameKo: '익스플로러',
+        subTitle: '기초 다지기',
+        badge: 'Lv.2 Explorer',
+        color: 'text-teal-400',
+        borderColor: 'border-teal-400/40',
+        badgeBg: 'bg-teal-500/20 text-teal-300 border-teal-400/30',
+        description: '기본 일상 및 여행 생존 어휘, Be동사/일반동사 현재/과거 기본 문장',
+        targetGrade: '초등 심화 / 예비중 입문',
+        recommendedVocas: ['curated-travel-hotel', 'curated-travel-dining'],
+        recommendedPassageSemester: '예비중'
+    },
+    3: {
+        level: 3,
+        name: 'Pioneer',
+        nameKo: '파이오니어',
+        subTitle: '중학 입문',
+        badge: 'Lv.3 Pioneer',
+        color: 'text-sky-400',
+        borderColor: 'border-sky-400/40',
+        badgeBg: 'bg-sky-500/20 text-sky-300 border-sky-400/30',
+        description: '중1-1 교과서 필수 어휘, 조동사 및 기본 접속사 활용 단문/복문',
+        targetGrade: '중학교 1-1 내신 수준',
+        recommendedVocas: ['curated-m1-1', 'curated-travel-transit'],
+        recommendedPassageSemester: '중 1-1'
+    },
+    4: {
+        level: 4,
+        name: 'Navigator',
+        nameKo: '내비게이터',
+        subTitle: '중학 도약',
+        badge: 'Lv.4 Navigator',
+        color: 'text-blue-400',
+        borderColor: 'border-blue-400/40',
+        badgeBg: 'bg-blue-500/20 text-blue-300 border-blue-400/30',
+        description: '중1-2 표준 내신, To부정사 & 동명사 기초, 일상 회화 대화문 완성',
+        targetGrade: '중학교 1-2 내신 수준',
+        recommendedVocas: ['curated-m1-2', 'curated-travel-emerge'],
+        recommendedPassageSemester: '중 1-2'
+    },
+    5: {
+        level: 5,
+        name: 'Challenger',
+        nameKo: '챌린저',
+        subTitle: '중학 핵심',
+        badge: 'Lv.5 Challenger',
+        color: 'text-indigo-400',
+        borderColor: 'border-indigo-400/40',
+        badgeBg: 'bg-indigo-500/20 text-indigo-300 border-indigo-400/30',
+        description: '중2-1 핵심 내신, 수동태 & 관계대명사, 중학 교과서 필수 숙어',
+        targetGrade: '중학교 2-1 내신 수준',
+        recommendedVocas: ['curated-m2-1', 'curated-m-idioms'],
+        recommendedPassageSemester: '중 2-1'
+    },
+    6: {
+        level: 6,
+        name: 'Strategist',
+        nameKo: '스트래티지스트',
+        subTitle: '중학 심화',
+        badge: 'Lv.6 Strategist',
+        color: 'text-violet-400',
+        borderColor: 'border-violet-400/40',
+        badgeBg: 'bg-violet-500/20 text-violet-300 border-violet-400/30',
+        description: '중2-2 심화 내신, 현재완료 & 분사구문, 미국 교과서 학술 Step 1',
+        targetGrade: '중학교 2-2 내신 수준',
+        recommendedVocas: ['curated-m2-2', 'curated-us-elem'],
+        recommendedPassageSemester: '중 2-2'
+    },
+    7: {
+        level: 7,
+        name: 'Master',
+        nameKo: '마스터',
+        subTitle: '중학 완성',
+        badge: 'Lv.7 Master',
+        color: 'text-purple-400',
+        borderColor: 'border-purple-400/40',
+        badgeBg: 'bg-purple-500/20 text-purple-300 border-purple-400/30',
+        description: '중3-1 고난도 내신, 능률 VOCA 중등 고난도, 실전 구동사 마스터',
+        targetGrade: '중학교 3-1 고난도 내신',
+        recommendedVocas: ['neungryul2025', 'curated-m3-1', 'curated-phrasal'],
+        recommendedPassageSemester: '중 3-1'
+    },
+    8: {
+        level: 8,
+        name: 'Innovator',
+        nameKo: '이노베이터',
+        subTitle: '고등 연계',
+        badge: 'Lv.8 Innovator',
+        color: 'text-amber-400',
+        borderColor: 'border-amber-400/40',
+        badgeBg: 'bg-amber-500/20 text-amber-300 border-amber-400/30',
+        description: '능률 VOCA 어원편, 중3-2 킬러/고등 연계, 미국 교과서 Step 2',
+        targetGrade: '중 3-2 킬러 및 예비고1 모의고사',
+        recommendedVocas: ['neungryul_etym_2025', 'curated-m3-2', 'curated-us-mid1'],
+        recommendedPassageSemester: '중 3-2'
+    },
+    9: {
+        level: 9,
+        name: 'Leader',
+        nameKo: '리더',
+        subTitle: '고등 1~2등급',
+        badge: 'Lv.9 Leader',
+        color: 'text-rose-400',
+        borderColor: 'border-rose-400/40',
+        badgeBg: 'bg-rose-500/20 text-rose-300 border-rose-400/30',
+        description: '수능 1등급 킬러 다의어, 원어민 감정·심경·성격, 영미 명작 문학 & 슬랭',
+        targetGrade: '고1~고2 전국연합 학력평가 1~2등급',
+        recommendedVocas: ['curated-killer', 'curated-emotions', 'curated-literature', 'curated-slang'],
+        recommendedPassageSemester: '중 3-2'
+    },
+    10: {
+        level: 10,
+        name: 'Veritas Elite',
+        nameKo: '베리타스 엘리트',
+        subTitle: '원어민 마스터',
+        badge: 'Lv.10 Veritas Elite',
+        color: 'text-amber-300',
+        borderColor: 'border-amber-400/50',
+        badgeBg: 'bg-gradient-to-r from-amber-500/30 via-yellow-400/30 to-amber-500/30 text-amber-200 border-amber-400/50 shadow-sm',
+        description: '수능 1등급 만점, 미국 교과서 Tier 2 심화, 최신 시사 뉴스 & AI 테크 보카',
+        targetGrade: '고3 수능 만점 및 최고급 비문학 학술',
+        recommendedVocas: ['curated-us-mid2', 'curated-tech'],
+        recommendedPassageSemester: '중 3-2'
+    }
+};
+
+if (typeof window !== 'undefined') {
+    window.ACADEMIC_LEVELS = ACADEMIC_LEVELS;
+}
+
 class StorageManager {
     constructor() {
         this.words = [];
@@ -158,6 +306,8 @@ class StorageManager {
             tier: 'bronze',
             badges: [],
             streak: 1,
+            academicLevel: 3,
+            levelTestHistory: [],
             lastActiveDate: this.getTodayDateString(),
             completedScrambles: []
         };
@@ -354,6 +504,70 @@ class StorageManager {
 
     getCurrentTier() {
         return this.calculateTier(this.userProfile.exp || 0);
+    }
+
+    /**
+     * 현재 사용자의 진단 학술 레벨 (1 ~ 10, 기본값 3)
+     */
+    getAcademicLevel() {
+        const lvl = Number(this.userProfile && this.userProfile.academicLevel);
+        return (lvl >= 1 && lvl <= 10) ? lvl : 3;
+    }
+
+    /**
+     * 레벨 번호(1~10)에 따른 메타데이터 반환
+     */
+    getLevelInfo(levelNum = null) {
+        const lvl = levelNum !== null ? Number(levelNum) : this.getAcademicLevel();
+        const validLvl = (lvl >= 1 && lvl <= 10) ? lvl : 3;
+        return ACADEMIC_LEVELS[validLvl] || ACADEMIC_LEVELS[3];
+    }
+
+    /**
+     * 학술 레벨 수동 지정 및 저장
+     */
+    setAcademicLevel(levelNum) {
+        const lvl = Math.min(10, Math.max(1, Number(levelNum) || 3));
+        this.userProfile.academicLevel = lvl;
+        this.saveUserProfile();
+        return this.getLevelInfo(lvl);
+    }
+
+    /**
+     * 레벨테스트 결과 저장 및 +150 EXP 보상 지급
+     */
+    saveLevelTestResult({ questionCount = 10, score = 0, correctCount = 0, level = 3, categoryScores = {} }) {
+        const assignedLevel = Math.min(10, Math.max(1, Number(level) || 3));
+        this.userProfile.academicLevel = assignedLevel;
+        if (!Array.isArray(this.userProfile.levelTestHistory)) {
+            this.userProfile.levelTestHistory = [];
+        }
+        const record = {
+            id: `lt-${Date.now()}`,
+            date: this.getTodayDateString(),
+            timestamp: Date.now(),
+            questionCount,
+            score,
+            correctCount,
+            level: assignedLevel,
+            categoryScores
+        };
+        this.userProfile.levelTestHistory.unshift(record);
+        
+        // 보상 EXP 150 지급
+        const expResult = this.addExp(150, '실력 진단 레벨테스트 완료');
+        this.saveUserProfile();
+
+        // 메인 헤더 및 배너 UI 갱신 이벤트
+        if (window.app && typeof window.app.updateHeaderAcademicLevelBadge === 'function') {
+            window.app.updateHeaderAcademicLevelBadge();
+        }
+
+        return {
+            record,
+            levelInfo: this.getLevelInfo(assignedLevel),
+            expGained: expResult.gained
+        };
     }
 
     addExp(amount, reason = '') {
