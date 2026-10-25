@@ -269,10 +269,17 @@ class FlashcardEngine {
         if (tagEl) tagEl.textContent = word.neungryulDay || word.tag || '기본';
 
         // 요구사항 4: 영어-한국어 ↔ 한국어-영어 양방향 렌더링
+        const stdPos = window.posHelper ? window.posHelper.standardizePos(word.partOfSpeech, word.word, word.meaning) : (word.partOfSpeech || '[명]');
+        if (posEl) {
+            posEl.textContent = stdPos;
+            if (window.posHelper) {
+                posEl.className = `px-2 py-0.5 rounded-md font-mono text-xs font-bold border transition-all ${window.posHelper.getBadgeColor(stdPos)}`;
+            }
+        }
+
         if (this.flipMode === 'eng-to-kor') {
             // 앞면: 영어 단어
             if (wordEl) wordEl.textContent = word.word;
-            if (posEl) posEl.textContent = word.partOfSpeech || 'n.';
             if (audioBtn) audioBtn.classList.remove('hidden');
             if (flipGuideText) flipGuideText.textContent = '클릭 또는 스페이스바로 우리말 뜻 확인';
 
@@ -281,7 +288,6 @@ class FlashcardEngine {
         } else {
             // 앞면: 한국어 뜻 (영단어를 떠올리는 챌린지 모드)
             if (wordEl) wordEl.textContent = word.meaning;
-            if (posEl) posEl.textContent = word.partOfSpeech || 'n.';
             if (audioBtn) audioBtn.classList.add('hidden'); // 영어 스포일 방지
             if (flipGuideText) flipGuideText.textContent = '클릭 또는 스페이스바로 영단어 확인';
 

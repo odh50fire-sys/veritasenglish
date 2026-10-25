@@ -25,6 +25,94 @@ const SRS_INTERVALS = {
     5: 30   // 5단계: 30일 후 (장기기억 마스터 완료)
 };
 
+/**
+ * 전역 품사 표준화 헬퍼 (POS Helper)
+ * 영문 약어(n., v., phr.v. 등)와 한국어 태그를 통합하여 표준 [명], [동], [형], [부], [숙] 뱃지 제공
+ */
+window.posHelper = {
+    standardizePos(posStr = '', word = '', meaning = '') {
+        const rawPos = String(posStr || '').trim().toLowerCase();
+        const rawMeaning = String(meaning || '').trim();
+        const cleanWord = String(word || '').trim();
+
+        // 1. 숙어 (Phrasal verb / Idiom / 2단어 이상 공백 포함) 우선 판별
+        if (
+            rawPos.includes('phr') || 
+            rawPos.includes('idiom') || 
+            rawPos.includes('phrase') || 
+            rawPos.includes('colloc') || 
+            rawPos.includes('숙어') || 
+            rawPos.includes('[숙]') ||
+            rawMeaning.includes('[숙]') ||
+            (cleanWord.includes(' ') && !cleanWord.startsWith('the ') && !cleanWord.startsWith('a '))
+        ) {
+            return '[숙]';
+        }
+
+        // 2. 복합 품사 (예: n./v., v./n., a./n.)
+        if (rawPos.includes('n.') && rawPos.includes('v.')) {
+            return rawPos.indexOf('n.') < rawPos.indexOf('v.') ? '[명/동]' : '[동/명]';
+        }
+        if (rawPos.includes('a.') && rawPos.includes('n.')) {
+            return rawPos.indexOf('a.') < rawPos.indexOf('n.') ? '[형/명]' : '[명/형]';
+        }
+        if (rawPos.includes('a.') && rawPos.includes('v.')) {
+            return '[형/동]';
+        }
+
+        // 3. 한국어 대괄호 품사 태그 매칭
+        if (rawPos.includes('[명]') || rawMeaning.includes('[명]')) return '[명]';
+        if (rawPos.includes('[동]') || rawMeaning.includes('[동]')) return '[동]';
+        if (rawPos.includes('[형]') || rawMeaning.includes('[형]')) return '[형]';
+        if (rawPos.includes('[부]') || rawMeaning.includes('[부]')) return '[부]';
+        if (rawPos.includes('[접]') || rawMeaning.includes('[접]')) return '[접]';
+        if (rawPos.includes('[전]') || rawMeaning.includes('[전]')) return '[전]';
+        if (rawPos.includes('[대]') || rawMeaning.includes('[대]')) return '[대]';
+        if (rawPos.includes('[감]') || rawMeaning.includes('[감]')) return '[감]';
+
+        // 4. 영문 약어 매칭
+        if (rawPos === 'n.' || rawPos === 'noun' || rawPos === 'n') return '[명]';
+        if (rawPos === 'v.' || rawPos === 'verb' || rawPos === 'v') return '[동]';
+        if (rawPos === 'a.' || rawPos === 'adj.' || rawPos === 'adj' || rawPos === 'adjective' || rawPos === 'a') return '[형]';
+        if (rawPos === 'ad.' || rawPos === 'adv.' || rawPos === 'adv' || rawPos === 'adverb') return '[부]';
+        if (rawPos === 'conj.' || rawPos === 'conj') return '[접]';
+        if (rawPos === 'prep.' || rawPos === 'prep') return '[전]';
+        if (rawPos === 'pron.' || rawPos === 'pron') return '[대]';
+        if (rawPos === 'interj.') return '[감]';
+
+        // 5. 형태소 기반 휴리스틱 추정 (단어 접미사 검사)
+        const lowerWord = cleanWord.toLowerCase();
+        if (lowerWord.length >= 4) {
+            if (lowerWord.endsWith('ly')) return '[부]';
+            if (lowerWord.endsWith('tion') || lowerWord.endsWith('ment') || lowerWord.endsWith('ness') || lowerWord.endsWith('ity') || lowerWord.endsWith('ance') || lowerWord.endsWith('ence') || lowerWord.endsWith('ship')) return '[명]';
+            if (lowerWord.endsWith('ful') || lowerWord.endsWith('less') || lowerWord.endsWith('able') || lowerWord.endsWith('ible') || lowerWord.endsWith('ous') || lowerWord.endsWith('ive') || lowerWord.endsWith('ic')) return '[형]';
+            if (lowerWord.endsWith('ize') || lowerWord.endsWith('ise') || lowerWord.endsWith('ate') || lowerWord.endsWith('en') || lowerWord.endsWith('ify')) return '[동]';
+        }
+
+        // 기본값: 뜻에서 한국어 서술어 종결어미 추정
+        if (rawMeaning.endsWith('다') || rawMeaning.endsWith('하다') || rawMeaning.endsWith('되다')) return '[동]';
+        if (rawMeaning.endsWith('한') || rawMeaning.endsWith('적') || rawMeaning.endsWith('운') || rawMeaning.endsWith('인')) return '[형]';
+        if (rawMeaning.endsWith('게') || rawMeaning.endsWith('히') || rawMeaning.endsWith('로')) return '[부]';
+
+        return '[명]';
+    },
+
+    getBadgeColor(stdPos) {
+        if (stdPos === '[명]') return 'bg-blue-50 text-blue-800 border-blue-200';
+        if (stdPos === '[동]') return 'bg-emerald-50 text-emerald-800 border-emerald-200';
+        if (stdPos === '[형]') return 'bg-amber-50 text-amber-800 border-amber-200';
+        if (stdPos === '[부]') return 'bg-slate-100 text-slate-700 border-slate-300';
+        if (stdPos === '[숙]' || stdPos.includes('숙')) return 'bg-purple-100 text-purple-900 border-purple-300 font-black shadow-2xs';
+        return 'bg-slate-50 text-slate-700 border-slate-200';
+    },
+
+    renderPosBadge(posStr = '', word = '', meaning = '') {
+        const stdPos = this.standardizePos(posStr, word, meaning);
+        const color = this.getBadgeColor(stdPos);
+        return `<span class="inline-flex items-center text-[10px] font-mono font-bold px-1.5 py-0.5 rounded border ${color} shrink-0">${stdPos}</span>`;
+    }
+};
+
 class StorageManager {
     constructor() {
         this.words = [];
@@ -908,7 +996,7 @@ class StorageManager {
             id: 'word-' + Date.now() + '-' + Math.random().toString(36).substr(2, 5),
             word: wordObj.word.trim(),
             meaning: wordObj.meaning.trim(),
-            partOfSpeech: wordObj.partOfSpeech || 'n.',
+            partOfSpeech: window.posHelper ? window.posHelper.standardizePos(wordObj.partOfSpeech, wordObj.word, wordObj.meaning) : (wordObj.partOfSpeech || '[명]'),
             example: wordObj.example ? wordObj.example.trim() : '',
             exampleMeaning: wordObj.exampleMeaning ? wordObj.exampleMeaning.trim() : '',
             level: wordObj.level || 'middle',
@@ -937,7 +1025,7 @@ class StorageManager {
             id: 'word-' + Date.now() + '-' + idx + '-' + Math.random().toString(36).substr(2, 4),
             word: item.word.trim(),
             meaning: item.meaning.trim(),
-            partOfSpeech: item.partOfSpeech || 'n.',
+            partOfSpeech: window.posHelper ? window.posHelper.standardizePos(item.partOfSpeech, item.word, item.meaning) : (item.partOfSpeech || '[명]'),
             example: item.example ? item.example.trim() : '',
             exampleMeaning: item.exampleMeaning ? item.exampleMeaning.trim() : '',
             level: item.level || defaultLevel || 'middle',
@@ -959,15 +1047,10 @@ class StorageManager {
     }
 
     /**
-     * 뜻 문자열(예: "[형] 질투하는, 시기하는")에서 품사 약어를 추출하는 헬퍼
+     * 뜻 문자열(예: "[형] 질투하는, 시기하는")에서 표준 한국어 품사를 추출하는 헬퍼
      */
-    extractPosFromMeaning(meaningStr) {
-        if (!meaningStr) return 'n.';
-        if (meaningStr.includes('[동]')) return 'v.';
-        if (meaningStr.includes('[형]')) return 'adj.';
-        if (meaningStr.includes('[부]')) return 'adv.';
-        if (meaningStr.includes('[명]')) return 'n.';
-        return 'n.';
+    extractPosFromMeaning(meaningStr, word = '') {
+        return window.posHelper ? window.posHelper.standardizePos('', word, meaningStr) : '[명]';
     }
 
     /**
@@ -991,7 +1074,7 @@ class StorageManager {
             id: `neungryul2025-${dayStr.replace(/\s+/g, '')}-${row['번호']}`,
             word: String(row['영단어']).trim(),
             meaning: String(row['뜻']).trim(),
-            partOfSpeech: this.extractPosFromMeaning(String(row['뜻'])),
+            partOfSpeech: this.extractPosFromMeaning(String(row['뜻']), String(row['영단어'])),
             example: '',
             exampleMeaning: '',
             level: 'high',
@@ -1066,7 +1149,7 @@ class StorageManager {
                     id: `neungryul2025-${dayStr.replace(/\s+/g, '')}-${row['번호']}`,
                     word: String(row['영단어']).trim(),
                     meaning: String(row['뜻']).trim(),
-                    partOfSpeech: this.extractPosFromMeaning(String(row['뜻'])),
+                    partOfSpeech: this.extractPosFromMeaning(String(row['뜻']), String(row['영단어'])),
                     example: '',
                     exampleMeaning: '',
                     level: 'high',
@@ -1130,7 +1213,7 @@ class StorageManager {
             id: `neungryul-etym-${dayStr.replace(/\s+/g, '')}-${row['번호']}`,
             word: String(row['영단어']).trim(),
             meaning: String(row['뜻']).trim(),
-            partOfSpeech: this.extractPosFromMeaning(String(row['뜻'])),
+            partOfSpeech: this.extractPosFromMeaning(String(row['뜻']), String(row['영단어'])),
             example: '',
             exampleMeaning: '',
             level: 'middle',
@@ -1203,7 +1286,7 @@ class StorageManager {
                     id: `neungryul-etym-${dayStr.replace(/\s+/g, '')}-${row['번호']}`,
                     word: String(row['영단어']).trim(),
                     meaning: String(row['뜻']).trim(),
-                    partOfSpeech: this.extractPosFromMeaning(String(row['뜻'])),
+                    partOfSpeech: this.extractPosFromMeaning(String(row['뜻']), String(row['영단어'])),
                     example: '',
                     exampleMeaning: '',
                     level: 'middle',
@@ -1340,7 +1423,7 @@ class StorageManager {
             id: `curated-${collectionId}-${dayStr.replace(/\s+/g, '')}-${row['번호']}`,
             word: String(row['영단어']).trim(),
             meaning: String(row['뜻']).trim(),
-            partOfSpeech: row['품사'] || this.extractPosFromMeaning(String(row['뜻'])),
+            partOfSpeech: window.posHelper ? window.posHelper.standardizePos(row['품사'], row['영단어'], row['뜻']) : (row['품사'] || '[명]'),
             example: row['예문'] || '',
             exampleMeaning: row['예문해석'] || '',
             level: row['category'] === 'middle' ? 'middle' : 'high',
@@ -1413,7 +1496,7 @@ class StorageManager {
                     id: `curated-${collectionId}-${dayStr.replace(/\s+/g, '')}-${row['번호']}`,
                     word: String(row['영단어']).trim(),
                     meaning: String(row['뜻']).trim(),
-                    partOfSpeech: row['품사'] || this.extractPosFromMeaning(String(row['뜻'])),
+                    partOfSpeech: window.posHelper ? window.posHelper.standardizePos(row['품사'], row['영단어'], row['뜻']) : (row['품사'] || '[명]'),
                     example: row['예문'] || '',
                     exampleMeaning: row['예문해석'] || '',
                     level: row['level'] || 'middle',

@@ -250,7 +250,7 @@ class DictionaryEngine {
                 <div class="mt-2.5">
                     <div class="flex items-baseline gap-2">
                         <h4 class="font-serif font-black text-xl text-slate-900 tracking-wide">${w.word}</h4>
-                        <span class="font-mono text-xs text-slate-500 font-bold">${w.partOfSpeech || 'n.'}</span>
+                        ${window.posHelper ? window.posHelper.renderPosBadge(w.partOfSpeech, w.word, w.meaning) : `<span class="font-mono text-xs text-slate-500 font-bold">${w.partOfSpeech || 'n.'}</span>`}
                     </div>
                     <div class="text-sm font-semibold text-slate-800 mt-1 leading-snug">${w.meaning}</div>
 
@@ -328,7 +328,7 @@ class DictionaryEngine {
                                         </button>
                                     </div>
                                 </td>
-                                <td class="py-2.5 px-3 text-center font-mono text-xs text-slate-500 font-bold">${w.partOfSpeech || 'n.'}</td>
+                                <td class="py-2.5 px-3 text-center text-xs font-bold">${window.posHelper ? window.posHelper.renderPosBadge(w.partOfSpeech, w.word, w.meaning) : (w.partOfSpeech || 'n.')}</td>
                                 <td class="py-2.5 px-4 text-xs font-medium text-slate-800">${w.meaning}</td>
                                 <td class="py-2.5 px-3 text-center text-[11px] font-mono">
                                     <span class="px-2 py-0.5 rounded ${isWeak ? 'bg-amber-100 text-amber-900 font-bold' : 'bg-slate-100 text-slate-600'}">

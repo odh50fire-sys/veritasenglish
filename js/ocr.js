@@ -821,14 +821,14 @@ class OCREngine {
                     <td class="py-2.5 px-4 align-top">
                         <div class="flex items-center gap-2">
                             <span class="font-serif font-black text-slate-900 text-sm tracking-wide">${row['영단어']}</span>
-                            ${row['품사'] ? `<span class="text-[10px] font-mono font-bold text-slate-500">${row['품사']}</span>` : ''}
+                            ${window.posHelper ? window.posHelper.renderPosBadge(row['품사'], row['영단어'], row['뜻']) : (row['품사'] ? `<span class="text-[10px] font-mono font-bold text-slate-500">${row['품사']}</span>` : '')}
                             <button class="text-slate-400 hover:text-blue-900 transition-colors p-1" onclick="window.tts && window.tts.speak('${String(row['영단어']).replace(/'/g, "\\'")}')" title="원어민 발음">
                                 <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
                             </button>
                         </div>
                         ${hasExample ? `
                             <div class="mt-1 text-xs font-serif italic text-slate-600 bg-slate-50/80 p-1.5 rounded-lg border border-slate-100">
-                                <div>${row['예문']}</div>
+                                <div>${(!book.isNeungryul && !book.isNeungryulEtym) ? this.renderInteractiveSentenceTokens(row['예문'], row['예문해석']) : row['예문']}</div>
                                 <div class="text-[11px] text-slate-400 not-italic mt-0.5">${row['예문해석'] || ''}</div>
                             </div>
                         ` : ''}
@@ -1192,7 +1192,33 @@ class OCREngine {
         container.innerHTML = '';
     }
 
-}
+    /**
+     * 비-능률 단원 예문의 영단어들을 클릭 가능한 인터랙티브 토큰으로 분할 렌더링
+     */
+    renderInteractiveSentenceTokens(sentenceText, sentenceKo = '') {
+        if (!sentenceText) return '';
+        const tokens = sentenceText.split(/(\s+|[.,!?;:"'()\[\]]+)/);
+        const encodedKo = encodeURIComponent(sentenceKo || '');
+        const encodedEn = encodeURIComponent(sentenceText || '');
+        return tokens.map(token => {
+            const clean = token.replace(/[^a-zA-Z\-]/g, '').trim();
+            if (clean.length > 0 && /^[a-zA-Z]/.test(clean)) {
+                return `<span class="reading-word-token hover:bg-amber-200 hover:text-blue-950 rounded px-0.5 cursor-pointer transition-colors underline decoration-dotted decoration-slate-300 hover:decoration-blue-900" onclick="window.ocrEngine.inspectExampleWord('${clean.replace(/'/g, "\\'")}', '${encodedEn}', '${encodedKo}')" title="단어 뜻 보기 및 사전 추가">${token}</span>`;
+            }
+            return token;
+        }).join('');
+    }
 
+    /**
+     * 예문 단어 클릭 시 내신 독해의 Word Inspector 팝오버를 연결 오픈
+     */
+    inspectExampleWord(cleanWord, encodedEn, encodedKo) {
+        const sentenceEn = decodeURIComponent(encodedEn || '');
+        const sentenceKo = decodeURIComponent(encodedKo || '');
+        if (window.readingEngine && window.readingEngine.openWordInspector) {
+            window.readingEngine.openWordInspector(cleanWord, sentenceEn, sentenceKo);
+        }
+    }
+}
 // 전역 인스턴스
 window.ocrEngine = new OCREngine();

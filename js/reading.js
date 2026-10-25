@@ -646,81 +646,154 @@ class ReadingEngine {
     }
 
     /**
-     * 전체 어휘 데이터베이스에서 단어 뜻 및 품사 검색
+     * 전체 어휘 데이터베이스에서 단어 뜻 및 품사 검색 (품사 구분 오류 제거 & 어근/복수형 탐색)
      */
     findWordMeaning(word) {
         if (!word) return null;
-        const lower = word.toLowerCase();
+        const clean = String(word).trim();
+        const lower = clean.toLowerCase();
 
         // 1. 현재 지문 Key Vocabulary 검색
         const passage = this.getCurrentPassage();
         if (passage && passage.keyVocabulary && Array.isArray(passage.keyVocabulary)) {
             const found = passage.keyVocabulary.find(v => v.word && v.word.toLowerCase() === lower);
-            if (found) return { word: found.word, pos: found.partOfSpeech || 'n.', meaning: found.meaning };
+            if (found) {
+                const stdPos = window.posHelper ? window.posHelper.standardizePos(found.partOfSpeech, found.word, found.meaning) : (found.partOfSpeech || '[명]');
+                return { word: found.word, pos: stdPos, meaning: found.meaning };
+            }
         }
 
         // 2. window.storage.words 검색
-        if (window.storage && window.storage.words) {
+        if (window.storage && window.storage.words && Array.isArray(window.storage.words)) {
             const found = window.storage.words.find(w => w.word && w.word.toLowerCase() === lower);
-            if (found) return { word: found.word, pos: found.partOfSpeech || 'n.', meaning: found.meaning };
+            if (found) {
+                const stdPos = window.posHelper ? window.posHelper.standardizePos(found.partOfSpeech, found.word, found.meaning) : (found.partOfSpeech || '[명]');
+                return { word: found.word, pos: stdPos, meaning: found.meaning };
+            }
         }
 
-        // 3. CURATED_VOCABULARY 검색
-        if (typeof CURATED_VOCABULARY !== 'undefined' && Array.isArray(CURATED_VOCABULARY)) {
-            const found = CURATED_VOCABULARY.find(w => w.word && w.word.toLowerCase() === lower);
-            if (found) return { word: found.word, pos: found.partOfSpeech || 'n.', meaning: found.meaning };
+        // 3. CURATED_WORDS_DATA 검색
+        const curatedList = window.CURATED_WORDS_DATA || (typeof CURATED_WORDS_DATA !== 'undefined' ? CURATED_WORDS_DATA : []);
+        if (Array.isArray(curatedList)) {
+            const found = curatedList.find(w => (w['영단어'] && w['영단어'].toLowerCase() === lower));
+            if (found) {
+                const stdPos = window.posHelper ? window.posHelper.standardizePos(found['품사'], found['영단어'], found['뜻']) : (found['품사'] || '[명]');
+                return { word: found['영단어'], pos: stdPos, meaning: found['뜻'] };
+            }
         }
 
-        // 4. NEUNGRYUL_VOCA_2025 검색
-        if (typeof NEUNGRYUL_VOCA_2025 !== 'undefined' && Array.isArray(NEUNGRYUL_VOCA_2025)) {
-            const found = NEUNGRYUL_VOCA_2025.find(w => w.word && w.word.toLowerCase() === lower);
-            if (found) return { word: found.word, pos: found.partOfSpeech || 'n.', meaning: found.meaning };
+        // 4. NEUNGRYUL_VOCA_2025_DATA 검색
+        const neungryulList = window.NEUNGRYUL_VOCA_2025_DATA || (typeof NEUNGRYUL_VOCA_2025_DATA !== 'undefined' ? NEUNGRYUL_VOCA_2025_DATA : []);
+        if (Array.isArray(neungryulList)) {
+            const found = neungryulList.find(w => (w['영단어'] && w['영단어'].toLowerCase() === lower));
+            if (found) {
+                const stdPos = window.posHelper ? window.posHelper.standardizePos('', found['영단어'], found['뜻']) : '[명]';
+                return { word: found['영단어'], pos: stdPos, meaning: found['뜻'] };
+            }
         }
 
-        // 5. NEUNGRYUL_VOCA_ETYM_2025 검색
-        if (typeof NEUNGRYUL_VOCA_ETYM_2025 !== 'undefined' && Array.isArray(NEUNGRYUL_VOCA_ETYM_2025)) {
-            const found = NEUNGRYUL_VOCA_ETYM_2025.find(w => w.word && w.word.toLowerCase() === lower);
-            if (found) return { word: found.word, pos: found.partOfSpeech || 'n.', meaning: found.meaning };
+        // 5. NEUNGRYUL_VOCA_ETYM_2025_DATA 검색
+        const etymList = window.NEUNGRYUL_VOCA_ETYM_2025_DATA || (typeof NEUNGRYUL_VOCA_ETYM_2025_DATA !== 'undefined' ? NEUNGRYUL_VOCA_ETYM_2025_DATA : []);
+        if (Array.isArray(etymList)) {
+            const found = etymList.find(w => (w['영단어'] && w['영단어'].toLowerCase() === lower));
+            if (found) {
+                const stdPos = window.posHelper ? window.posHelper.standardizePos('', found['영단어'], found['뜻']) : '[명]';
+                return { word: found['영단어'], pos: stdPos, meaning: found['뜻'] };
+            }
         }
 
-        // 6. SAMPLE_WORDS 검색
-        if (typeof SAMPLE_WORDS !== 'undefined' && Array.isArray(SAMPLE_WORDS)) {
-            const found = SAMPLE_WORDS.find(w => w.word && w.word.toLowerCase() === lower);
-            if (found) return { word: found.word, pos: found.partOfSpeech || 'n.', meaning: found.meaning };
+        // 6. NATIVE_EXPRESSIONS_DATA (원어민 표현 및 숙어 풀) 검색
+        const nativeList = window.NATIVE_EXPRESSIONS_DATA || (typeof NATIVE_EXPRESSIONS_DATA !== 'undefined' ? NATIVE_EXPRESSIONS_DATA : []);
+        if (Array.isArray(nativeList)) {
+            const found = nativeList.find(w => (w.expression && w.expression.toLowerCase() === lower));
+            if (found) {
+                return { word: found.expression, pos: '[숙]', meaning: found.meaning };
+            }
         }
 
-        return null;
+        // 7. SAMPLE_WORDS 검색
+        const sampleList = window.SAMPLE_WORDS || (typeof SAMPLE_WORDS !== 'undefined' ? SAMPLE_WORDS : []);
+        if (Array.isArray(sampleList)) {
+            const found = sampleList.find(w => (w.word && w.word.toLowerCase() === lower));
+            if (found) {
+                const stdPos = window.posHelper ? window.posHelper.standardizePos(found.partOfSpeech, found.word, found.meaning) : (found.partOfSpeech || '[명]');
+                return { word: found.word, pos: stdPos, meaning: found.meaning };
+            }
+        }
+
+        // 8. 굴절형(Inflection) 기본형 추정 검색: -s, -es, -ed, -ing, -ly 제거 후 재검색
+        const stemCandidates = [];
+        if (lower.endsWith('ies') && lower.length > 4) stemCandidates.push(lower.slice(0, -3) + 'y');
+        if (lower.endsWith('ves') && lower.length > 4) stemCandidates.push(lower.slice(0, -3) + 'f', lower.slice(0, -3) + 'fe');
+        if (lower.endsWith('es') && lower.length > 3) stemCandidates.push(lower.slice(0, -2));
+        if (lower.endsWith('s') && lower.length > 3) stemCandidates.push(lower.slice(0, -1));
+        if (lower.endsWith('ied') && lower.length > 4) stemCandidates.push(lower.slice(0, -3) + 'y');
+        if (lower.endsWith('ed') && lower.length > 3) {
+            stemCandidates.push(lower.slice(0, -2));
+            stemCandidates.push(lower.slice(0, -1));
+        }
+        if (lower.endsWith('ing') && lower.length > 4) {
+            stemCandidates.push(lower.slice(0, -3));
+            stemCandidates.push(lower.slice(0, -3) + 'e');
+        }
+
+        for (const candidate of stemCandidates) {
+            const stemMatch = (curatedList.find(w => w['영단어'] && w['영단어'].toLowerCase() === candidate)) ||
+                              (neungryulList.find(w => w['영단어'] && w['영단어'].toLowerCase() === candidate)) ||
+                              (etymList.find(w => w['영단어'] && w['영단어'].toLowerCase() === candidate));
+            if (stemMatch) {
+                const wordText = stemMatch['영단어'];
+                const meaningText = stemMatch['뜻'] || '';
+                const posText = stemMatch['품사'] || '';
+                const stdPos = window.posHelper ? window.posHelper.standardizePos(posText, wordText, meaningText) : '[동]';
+                return { word: clean, pos: stdPos, meaning: `${meaningText} (원형: ${wordText})` };
+            }
+        }
+
+        // 9. 형태소 및 숙어 규칙 기반 품사 추정
+        const fallbackPos = window.posHelper ? window.posHelper.standardizePos('', clean, '') : '[명]';
+        return { word: clean, pos: fallbackPos, meaning: '' };
     }
 
     /**
-     * 지문 속 단어 클릭 시 인스펙터 팝오버 오픈
+     * 지문 속 단어 또는 교재 예문 속 단어 클릭 시 인스펙터 팝오버 오픈
      */
-    openWordInspector(cleanWord, sentenceNum) {
+    openWordInspector(cleanWord, sentenceNumOrEn, customSentenceKo = '') {
         if (!cleanWord) return;
         this.inspectingWord = cleanWord;
-        this.inspectingSentenceNum = sentenceNum;
 
-        const passage = this.getCurrentPassage();
-        const sentenceObj = passage?.sentences?.find(s => s.num === sentenceNum);
-        const sentenceEn = sentenceObj ? sentenceObj.en : '';
-        const sentenceKo = sentenceObj ? sentenceObj.ko : '';
+        let sentenceEn = '';
+        let sentenceKo = '';
+
+        if (typeof sentenceNumOrEn === 'number') {
+            this.inspectingSentenceNum = sentenceNumOrEn;
+            const passage = this.getCurrentPassage();
+            const sentenceObj = passage?.sentences?.find(s => s.num === sentenceNumOrEn);
+            sentenceEn = sentenceObj ? sentenceObj.en : '';
+            sentenceKo = sentenceObj ? sentenceObj.ko : '';
+        } else {
+            this.inspectingSentenceNum = null;
+            sentenceEn = typeof sentenceNumOrEn === 'string' ? sentenceNumOrEn : '';
+            sentenceKo = customSentenceKo || '';
+        }
+
+        this.inspectingSentenceEn = sentenceEn;
+        this.inspectingSentenceKo = sentenceKo;
 
         const foundInfo = this.findWordMeaning(cleanWord);
         const meaning = foundInfo ? foundInfo.meaning : '';
-        const pos = foundInfo ? foundInfo.pos : 'n.';
-        this.inspectingPos = pos;
+        const pos = foundInfo ? foundInfo.pos : (window.posHelper ? window.posHelper.standardizePos('', cleanWord, '') : '[명]');
 
         const modal = document.getElementById('modal-reading-word-inspector');
         const wordEl = document.getElementById('inspector-word');
-        const posEl = document.getElementById('inspector-pos');
         const meaningInput = document.getElementById('inspector-meaning-input');
         const sentenceEnEl = document.getElementById('inspector-sentence-en');
         const sentenceKoEl = document.getElementById('inspector-sentence-ko');
-        const saveBtn = document.getElementById('btn-inspector-save-word');
         const saveText = document.getElementById('btn-inspector-save-text');
 
         if (wordEl) wordEl.textContent = cleanWord;
-        if (posEl) posEl.textContent = pos;
+        this.setInspectorPos(pos);
+
         if (meaningInput) {
             meaningInput.value = meaning;
             if (!meaning) {
@@ -750,6 +823,27 @@ class ReadingEngine {
         if (window.lucide) window.lucide.createIcons();
     }
 
+    /**
+     * 인스펙터 품사 직접 변경 및 UI 뱃지/버튼 활성화 동기화
+     */
+    setInspectorPos(pos) {
+        this.inspectingPos = pos || '[명]';
+        const posEl = document.getElementById('inspector-pos');
+        if (posEl) {
+            posEl.textContent = this.inspectingPos;
+            const badgeColor = window.posHelper ? window.posHelper.getBadgeColor(this.inspectingPos) : 'bg-blue-100 text-blue-900 border-blue-200';
+            posEl.className = `px-2 py-0.5 rounded-md font-mono text-xs font-bold border transition-all ${badgeColor}`;
+        }
+        document.querySelectorAll('.inspector-pos-btn').forEach(btn => {
+            const btnPos = btn.getAttribute('data-pos');
+            if (btnPos === this.inspectingPos) {
+                btn.classList.add('ring-2', 'ring-indigo-600', 'font-black', 'scale-105', 'shadow-xs');
+            } else {
+                btn.classList.remove('ring-2', 'ring-indigo-600', 'font-black', 'scale-105', 'shadow-xs');
+            }
+        });
+    }
+
     closeWordInspector() {
         const modal = document.getElementById('modal-reading-word-inspector');
         if (modal) modal.classList.add('hidden');
@@ -766,17 +860,20 @@ class ReadingEngine {
         const meaningInput = document.getElementById('inspector-meaning-input');
         const meaningVal = meaningInput ? meaningInput.value.trim() : '';
         const passage = this.getCurrentPassage();
-        const sentenceObj = passage?.sentences?.find(s => s.num === this.inspectingSentenceNum);
+        const sentenceObj = this.inspectingSentenceNum ? passage?.sentences?.find(s => s.num === this.inspectingSentenceNum) : null;
+
+        const exampleEn = sentenceObj ? sentenceObj.en : (this.inspectingSentenceEn || (passage ? passage.sentences[0]?.en || '' : ''));
+        const exampleKo = sentenceObj ? sentenceObj.ko : (this.inspectingSentenceKo || (passage ? passage.sentences[0]?.ko || '' : ''));
 
         const newWord = {
             id: 'reading_vocab_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5),
             word: this.inspectingWord,
-            meaning: meaningVal || (passage ? `지문 [${passage.title}] 문맥 어휘` : '독해 문맥 어휘'),
-            partOfSpeech: this.inspectingPos || 'n.',
-            example: sentenceObj ? sentenceObj.en : (passage ? passage.sentences[0]?.en || '' : ''),
-            exampleMeaning: sentenceObj ? sentenceObj.ko : (passage ? passage.sentences[0]?.ko || '' : ''),
+            meaning: meaningVal || (passage ? `지문 [${passage.title}] 문맥 어휘` : '문맥 어휘'),
+            partOfSpeech: this.inspectingPos || (window.posHelper ? window.posHelper.standardizePos('', this.inspectingWord, meaningVal) : '[명]'),
+            example: exampleEn,
+            exampleMeaning: exampleKo,
             level: (passage?.grade === '예비중' || passage?.grade === '중1' || passage?.grade === '중2') ? 'middle' : 'high',
-            tag: passage ? `[독해 추가] ${passage.title}` : '[독해 추가 단어]',
+            tag: passage ? `[독해 추가] ${passage.title}` : '[문맥 어휘 추가]',
             planDate: window.storage.getTodayDateString(),
             nextReviewDate: window.storage.getTodayDateString(),
             createdAt: Date.now(),
