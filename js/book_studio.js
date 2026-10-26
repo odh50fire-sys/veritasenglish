@@ -1,7 +1,7 @@
 /**
  * Veritas English - 부교재 전용 [보카북 & 워크북] 스튜디오 엔진 (BookStudioEngine)
  * 21개 큐레이션 부교재 + AI 맞춤 교재 전용
- * 8대 시리즈별 고유 비주얼 디자인 & 특화 학습·문제 구성 자동 합성 및 A4 인쇄
+ * 8대 시리즈별 고유 비주얼 디자인 & 특화 학습·문제 구성 자동 합성 및 무오류 A4 인쇄
  */
 
 (function (window) {
@@ -146,7 +146,7 @@
     }
 
     /**
-     * 교재 데이터 로드 및 Day별 그룹화
+     * 교재 데이터 로드 및 Day별 그룹화 (다양한 데이터 필드명 완벽 정규화)
      */
     loadBookData(bookId) {
       this.currentBookId = bookId;
@@ -168,20 +168,44 @@
         rawWords = allCurated.filter(w => w.collectionId === bookId);
       }
 
-      // Day별 정렬 및 그룹화
+      // Day별 정렬 및 그룹화 (모든 키 완벽 대응)
       this.groupedDays = {};
-      rawWords.forEach(w => {
-        const dayKey = w.DAY || `DAY ${String(w.day || 1).padStart(2, '0')}`;
+      rawWords.forEach((w, idx) => {
+        const dayKey = w.DAY || (w.day ? `DAY ${String(w.day).padStart(2, '0')}` : 'DAY 01');
         if (!this.groupedDays[dayKey]) {
           this.groupedDays[dayKey] = [];
         }
+
+        // [중요 버그 수정]: '영단어'와 '단어', 'word' 등 모든 필드명을 안전하게 추출
+        const resolvedWord = String(
+          w.영단어 || w.단어 || w.word || w.lemma || w.표제어 || w.어휘 || ''
+        ).trim();
+
+        const resolvedMeaning = String(
+          w.뜻 || w.meaning || w.의미 || w.해설 || ''
+        ).trim();
+
+        const resolvedExample = String(
+          w.예문 || w.example || w.sentence || w.문장 || ''
+        ).trim();
+
+        const resolvedTranslation = String(
+          w.해석 || w.translation || w.예문해석 || ''
+        ).trim();
+
+        const resolvedPos = String(
+          w.품사 || w.pos || ''
+        ).trim();
+
+        const resolvedNum = w.번호 || w.num || (this.groupedDays[dayKey].length + 1);
+
         this.groupedDays[dayKey].push({
-          num: w.번호 || w.num || (this.groupedDays[dayKey].length + 1),
-          word: w.단어 || w.word || '',
-          pos: w.품사 || w.pos || '',
-          meaning: w.뜻 || w.meaning || '',
-          example: w.예문 || w.example || '',
-          translation: w.해석 || w.translation || '',
+          num: resolvedNum,
+          word: resolvedWord,
+          pos: resolvedPos,
+          meaning: resolvedMeaning,
+          example: resolvedExample,
+          translation: resolvedTranslation,
           pronunciation: w.발음 || w.pronunciation || ''
         });
       });
@@ -221,9 +245,10 @@
       if (!modal) {
         modal = document.createElement('div');
         modal.id = 'book-studio-modal';
-        modal.className = 'fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex flex-col overflow-hidden';
         document.body.appendChild(modal);
       }
+
+      modal.className = 'fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex flex-col overflow-hidden';
 
       const meta = this.currentBookMeta;
       const seriesKey = meta.series || 'middle';
@@ -231,7 +256,7 @@
       const days = Object.keys(this.groupedDays);
 
       modal.innerHTML = `
-        <!-- 상단 고정 제어 툴바 (인쇄 시 숨김) -->
+        <!-- 상단 고정 제어 툴바 (인쇄 시 완전 숨김) -->
         <div class="studio-toolbar no-print bg-slate-900 border-b border-slate-800 text-white px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-3 shadow-lg shrink-0">
           <div class="flex items-center gap-3">
             <span class="text-2xl">${seriesInfo.icon}</span>
@@ -282,7 +307,7 @@
             </select>
 
             <!-- 인쇄 버튼 -->
-            <button onclick="window.bookStudioEngine.print()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-md transition-transform active:scale-95 cursor-pointer" title="A4 인쇄 또는 PDF 저장">
+            <button onclick="window.bookStudioEngine.print()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-md transition-transform active:scale-95 cursor-pointer" title="A4 고품질 인쇄 또는 PDF 저장">
               <i data-lucide="printer" class="w-4 h-4"></i>
               <span>A4 인쇄 (PDF)</span>
             </button>
@@ -339,34 +364,22 @@
       return html;
     }
 
-    /**
-     * 교재 전환 핸들러
-     */
     onBookChange(bookId) {
       this.selectedDay = 'ALL';
       this.loadBookData(bookId);
       this.renderModal();
     }
 
-    /**
-     * 단원 필터 변경 핸들러
-     */
     onDayChange(dayVal) {
       this.selectedDay = dayVal;
       this.refreshPaper();
     }
 
-    /**
-     * 모드 전환 (보카북 / 워크북 / 합본)
-     */
     setMode(mode) {
       this.currentMode = mode;
       this.renderModal();
     }
 
-    /**
-     * 블라인드 모드 변경
-     */
     onBlindChange(val) {
       this.blindMode = val;
       const scrollArea = document.getElementById('studio-scroll-area');
@@ -377,9 +390,6 @@
       }
     }
 
-    /**
-     * A4 시트 콘텐츠만 다시 그리기
-     */
     refreshPaper() {
       const container = document.getElementById('studio-paper-container');
       if (container) {
@@ -391,20 +401,26 @@
     }
 
     /**
-     * 인쇄 실행
+     * [인쇄 오류 완전 해결] 브라우저 인쇄 모드 전용 클래스 부착 후 print 실행
      */
     print() {
-      window.print();
+      document.body.classList.add('is-printing-book-studio');
+      
+      // 약간의 지연 후 window.print 실행하여 스타일 안착 보장
+      setTimeout(() => {
+        window.print();
+        setTimeout(() => {
+          document.body.classList.remove('is-printing-book-studio');
+        }, 500);
+      }, 100);
     }
 
-    /**
-     * 모달 닫기
-     */
     close() {
       const modal = document.getElementById('book-studio-modal');
       if (modal) {
         modal.remove();
       }
+      document.body.classList.remove('is-printing-book-studio');
     }
 
     // =========================================================================
@@ -458,7 +474,6 @@
 
       return `
         <div class="studio-a4-sheet studio-cover-sheet">
-          <!-- 상단 엠블럼 & 시리즈 배지 -->
           <div>
             <div class="flex items-center justify-between border-b-2 border-slate-900 pb-4 mb-8">
               <div class="flex items-center gap-2">
@@ -493,7 +508,6 @@
             </div>
           </div>
 
-          <!-- 중간 그래픽 장식 및 학습 모드 안내 -->
           <div class="my-8 py-8 border-y border-dashed border-slate-300">
             <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">본 부교재의 구성과 학습법</h3>
             <div class="grid grid-cols-2 gap-4 text-xs text-slate-700">
@@ -516,7 +530,6 @@
             </div>
           </div>
 
-          <!-- 하단 학습자 정보 기입란 -->
           <div class="pt-6 border-t-2 border-slate-900 flex items-end justify-between">
             <div class="space-y-1.5 text-xs text-slate-700">
               <div>학습자 성명: <span class="inline-block w-28 border-b border-slate-400"></span></div>
@@ -552,7 +565,7 @@
           <div class="studio-toc-grid mt-4">
             ${days.map(d => {
               const words = this.groupedDays[d] || [];
-              const first3 = words.slice(0, 3).map(w => w.word).join(', ');
+              const first3 = words.slice(0, 3).map(w => w.word || '어휘').join(', ');
               return `
                 <div class="p-3 rounded-lg border border-slate-200 bg-slate-50/50 flex flex-col justify-between">
                   <div class="flex items-center justify-between mb-1.5">
@@ -560,13 +573,13 @@
                     <span class="text-[11px] font-bold text-slate-500">${words.length} Words</span>
                   </div>
                   <div class="text-xs text-slate-600 truncate mb-2">
-                    주요 어휘: <span class="font-serif italic">${first3}...</span>
+                    주요 어휘: <span class="font-serif italic font-bold text-slate-800">${first3}...</span>
                   </div>
                   <div class="flex items-center justify-between pt-2 border-t border-slate-200 text-[10px] text-slate-500">
                     <span>1회독 [ ]</span>
                     <span>2회독 [ ]</span>
                     <span>워크북 [ ]</span>
-                    <span>확인일: ___/___</span>
+                    <span>확인: ___/___</span>
                   </div>
                 </div>
               `;
@@ -592,6 +605,7 @@
       const meta = this.currentBookMeta;
       const seriesKey = meta.series || 'middle';
       const seriesInfo = SERIES_INFO[seriesKey] || SERIES_INFO.middle;
+      const isCompactDay = words.length <= 10;
 
       return `
         <div class="studio-a4-sheet">
@@ -619,6 +633,37 @@
             ${words.map(w => this.renderWordCard(w, seriesKey)).join('')}
           </div>
 
+          <!-- [여백 보완]: 10단어 이하 교재를 위한 하단 특별 학습 노트 섹션 -->
+          ${isCompactDay ? `
+            <div class="studio-compact-day-notes mt-6 p-4 rounded-xl border border-slate-200 bg-slate-50/70">
+              <div class="flex items-center justify-between border-b border-slate-200 pb-2 mb-3">
+                <span class="text-xs font-bold text-slate-900 flex items-center gap-1.5">
+                  <span>✍️ ${dayKey} 핵심 단어 활용 문장 작문 & 오답 정리 노트</span>
+                </span>
+                <span class="text-[10px] text-slate-500 font-medium">Daily Application Note</span>
+              </div>
+              <div class="space-y-2 text-xs text-slate-600">
+                <div class="flex items-center gap-2">
+                  <span class="font-bold text-slate-800">1. 핵심 문장:</span>
+                  <span class="flex-1 border-b border-slate-300 h-5"></span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="font-bold text-slate-800">2. 핵심 문장:</span>
+                  <span class="flex-1 border-b border-slate-300 h-5"></span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="font-bold text-slate-800">3. 헷갈린 단어 복습:</span>
+                  <span class="flex-1 border-b border-slate-300 h-5"></span>
+                </div>
+              </div>
+              <div class="mt-3 pt-2 border-t border-slate-200/80 flex items-center justify-between text-[11px] text-slate-500">
+                <span>학습 소요 시간: [ &nbsp;&nbsp;&nbsp;&nbsp;분 ]</span>
+                <span>자가 진단: [ &nbsp; ] 완벽 암기 &nbsp;&nbsp; [ &nbsp; ] 추가 복습 필요</span>
+                <span>확인 도장/서명: ( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )</span>
+              </div>
+            </div>
+          ` : ''}
+
           <!-- 하단 단원 푸터 -->
           <div class="mt-6 pt-3 border-t border-slate-200 flex items-center justify-between text-[10px] text-slate-400">
             <span>VERITAS ENGLISH SUPPLEMENTARY SERIES • VOCABULARY BOOK</span>
@@ -629,9 +674,11 @@
     }
 
     /**
-     * 시리즈별 차별화된 어휘 카드 템플릿
+     * 시리즈별 차별화된 어휘 카드 템플릿 (영단어 100% 확실 노출 및 불필요한 빈칸 제거)
      */
     renderWordCard(w, seriesKey) {
+      const displayWord = w.word || 'VOCA';
+
       // 1. 수능 킬러 다의어 시리즈 특화 UI
       if (seriesKey === 'killer') {
         const meanings = w.meaning.split(/[,;/]|\d+\.\s*/).map(s => s.trim()).filter(Boolean);
@@ -642,9 +689,9 @@
           <div class="studio-word-card">
             <div>
               <div class="flex items-center justify-between">
-                <div class="flex items-baseline gap-1">
+                <div class="flex items-baseline gap-1.5">
                   <span class="studio-word-num">${String(w.num).padStart(2, '0')}.</span>
-                  <span class="studio-word-lemma">${w.word}</span>
+                  <span class="studio-word-lemma">${displayWord}</span>
                   ${w.pos ? `<span class="studio-word-pos">${w.pos}</span>` : ''}
                 </div>
                 <div class="studio-checks">
@@ -655,7 +702,7 @@
               </div>
 
               <!-- 다의어 1/2차 의미 분할 박스 -->
-              <div class="mt-1.5 space-y-1">
+              <div class="mt-1 space-y-1">
                 <div class="studio-word-meaning text-xs flex items-baseline gap-1">
                   <span class="text-[10px] font-bold text-rose-700 bg-rose-50 px-1 rounded">① 기본</span>
                   <span>${m1}</span>
@@ -671,7 +718,7 @@
 
             ${w.example ? `
               <div class="studio-word-example">
-                <div class="font-medium">${this.highlightWord(w.example, w.word)}</div>
+                <div class="font-medium">${this.highlightWord(w.example, displayWord)}</div>
                 ${w.translation ? `<div class="studio-word-trans mt-0.5">${w.translation}</div>` : ''}
               </div>
             ` : ''}
@@ -685,9 +732,9 @@
           <div class="studio-word-card border-l-4 border-slate-900">
             <div>
               <div class="flex items-center justify-between">
-                <div class="flex items-baseline gap-1">
+                <div class="flex items-baseline gap-1.5">
                   <span class="studio-word-num">${String(w.num).padStart(2, '0')}.</span>
-                  <span class="studio-word-lemma">${w.word}</span>
+                  <span class="studio-word-lemma">${displayWord}</span>
                   ${w.pos ? `<span class="studio-word-pos font-serif">${w.pos}</span>` : ''}
                 </div>
                 <div class="studio-checks">
@@ -702,9 +749,9 @@
             </div>
 
             ${w.example ? `
-              <div class="studio-word-example bg-slate-50/70 p-1.5 rounded mt-2">
-                <div class="font-serif italic text-slate-800">${this.highlightWord(w.example, w.word)}</div>
-                ${w.translation ? `<div class="studio-word-trans mt-1">${w.translation}</div>` : ''}
+              <div class="studio-word-example bg-slate-50/70 p-1.5 rounded mt-1.5">
+                <div class="font-serif italic text-slate-800">${this.highlightWord(w.example, displayWord)}</div>
+                ${w.translation ? `<div class="studio-word-trans mt-0.5">${w.translation}</div>` : ''}
               </div>
             ` : ''}
           </div>
@@ -717,9 +764,9 @@
           <div class="studio-word-card border-l-4 border-sky-600 bg-sky-50/20">
             <div>
               <div class="flex items-center justify-between">
-                <div class="flex items-baseline gap-1">
+                <div class="flex items-baseline gap-1.5">
                   <span class="studio-word-num text-sky-700 font-bold">#${w.num}</span>
-                  <span class="studio-word-lemma text-sky-900">${w.word}</span>
+                  <span class="studio-word-lemma text-sky-900">${displayWord}</span>
                 </div>
                 <span class="text-[10px] font-bold text-sky-700 bg-sky-100 px-1.5 py-0.5 rounded">Travel Prep</span>
               </div>
@@ -730,7 +777,7 @@
 
             ${w.example ? `
               <div class="studio-word-example border-sky-100">
-                <div class="font-semibold text-sky-950">🗣️ ${this.highlightWord(w.example, w.word)}</div>
+                <div class="font-semibold text-sky-950">🗣️ ${this.highlightWord(w.example, displayWord)}</div>
                 ${w.translation ? `<div class="studio-word-trans text-slate-600 mt-0.5">${w.translation}</div>` : ''}
               </div>
             ` : ''}
@@ -743,9 +790,9 @@
         <div class="studio-word-card">
           <div>
             <div class="flex items-center justify-between">
-              <div class="flex items-baseline gap-1">
+              <div class="flex items-baseline gap-1.5">
                 <span class="studio-word-num">${String(w.num).padStart(2, '0')}.</span>
-                <span class="studio-word-lemma">${w.word}</span>
+                <span class="studio-word-lemma">${displayWord}</span>
                 ${w.pos ? `<span class="studio-word-pos">${w.pos}</span>` : ''}
               </div>
               <div class="studio-checks">
@@ -761,7 +808,7 @@
 
           ${w.example ? `
             <div class="studio-word-example">
-              <div>${this.highlightWord(w.example, w.word)}</div>
+              <div>${this.highlightWord(w.example, displayWord)}</div>
               ${w.translation ? `<div class="studio-word-trans mt-0.5">${w.translation}</div>` : ''}
             </div>
           ` : ''}
@@ -770,20 +817,19 @@
     }
 
     /**
-     * 워크북 단원(Day) 시트 (문제 자동 출제)
+     * 워크북 단원(Day) 시트 (문제 자동 출제 및 Section 3 영단어 완벽 노출)
      */
     renderWorkbookDaySheet(dayKey, words) {
       const meta = this.currentBookMeta;
       const seriesKey = meta.series || 'middle';
       const seriesInfo = SERIES_INFO[seriesKey] || SERIES_INFO.middle;
 
-      // 단어 분할: Section A (철자 쓰기), Section B (의미 매칭), Section C (예문 빈칸 Cloze)
       const count = words.length;
       const half = Math.ceil(count / 2);
       const groupA = words.slice(0, half);
       const groupB = words.slice(half);
 
-      // Section B용 셔플 리스트 (뜻 매칭)
+      // Section 3용 셔플 리스트 (뜻 매칭)
       const shuffledMeanings = [...groupB].sort(() => 0.5 - Math.random());
 
       return `
@@ -851,18 +897,20 @@
             }).join('')}
           </div>
 
-          <!-- Section 3. 어휘와 의미 올바르게 연결하기 (Matching Test) -->
+          <!-- Section 3. 어휘와 의미 올바르게 연결하기 (Matching Test - 단어 확실 노출) -->
           ${groupB.length > 0 ? `
             <div class="studio-wb-section-title mt-4">
               <span>Section 3. 왼쪽의 영단어와 오른쪽의 알맞은 의미를 바르게 연결하시오.</span>
               <span class="text-[10px] font-normal text-slate-500">Meaning Match</span>
             </div>
-            <div class="grid grid-cols-2 gap-4 p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs">
+            <div class="grid grid-cols-2 gap-4 p-2.5 bg-slate-50 rounded-lg border border-slate-200 text-xs">
               <div class="space-y-2">
                 ${groupB.map((w, idx) => `
-                  <div class="flex items-center justify-between p-1.5 bg-white rounded border border-slate-200">
-                    <span><strong class="text-slate-800">(${idx + 1})</strong> ${w.word}</span>
-                    <span class="text-slate-400">●</span>
+                  <div class="flex items-center justify-between p-1.5 bg-white rounded border border-slate-200 shadow-2xs">
+                    <span class="font-bold text-slate-900">
+                      <strong class="text-blue-900 mr-1.5">(${idx + 1})</strong>${w.word || 'VOCA'}
+                    </span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-slate-300 inline-block"></span>
                   </div>
                 `).join('')}
               </div>
@@ -870,13 +918,19 @@
                 ${shuffledMeanings.map((w, idx) => {
                   const label = String.fromCharCode(65 + idx); // A, B, C...
                   return `
-                    <div class="flex items-center justify-between p-1.5 bg-white rounded border border-slate-200">
-                      <span class="text-slate-400">●</span>
-                      <span class="truncate pl-2"><strong class="text-blue-900">(${label})</strong> ${w.meaning}</span>
+                    <div class="flex items-center justify-between p-1.5 bg-white rounded border border-slate-200 shadow-2xs">
+                      <span class="w-2.5 h-2.5 rounded-full bg-slate-300 inline-block"></span>
+                      <span class="truncate pl-2 text-slate-800 font-medium">
+                        <strong class="text-emerald-800 mr-1.5">(${label})</strong>${w.meaning}
+                      </span>
                     </div>
                   `;
                 }).join('')}
               </div>
+            </div>
+            <!-- 정답 기입란 -->
+            <div class="mt-2 text-right text-[11px] text-slate-600 font-medium">
+              연결 정답: ${groupB.map((_, i) => `(${i + 1})-[ &nbsp; ]`).join(' &nbsp; ')}
             </div>
           ` : ''}
 
@@ -918,7 +972,7 @@
                     ${words.map(w => `
                       <div class="studio-answer-item">
                         <span class="font-bold text-slate-500">${w.num}.</span>
-                        <span class="font-bold text-slate-900">${w.word}</span>
+                        <span class="font-bold text-slate-900">${w.word || 'VOCA'}</span>
                         <div class="text-[10px] text-slate-600 truncate">${w.meaning}</div>
                       </div>
                     `).join('')}
@@ -939,9 +993,6 @@
     // 헬퍼 유틸리티
     // =========================================================================
 
-    /**
-     * 예문에서 단어를 찾아 강조 태그 처리
-     */
     highlightWord(sentence, targetWord) {
       if (!sentence || !targetWord) return sentence || '';
       try {
@@ -952,9 +1003,6 @@
       }
     }
 
-    /**
-     * 철자 힌트 생성 (예: curious -> c _ _ _ _ _ _)
-     */
     makeSpellingHint(word) {
       if (!word) return '______';
       const clean = word.trim();
@@ -962,9 +1010,6 @@
       return clean.slice(0, 2) + ' ' + '_ '.repeat(clean.length - 2).trim();
     }
 
-    /**
-     * 예문에서 단어를 빈칸 ( ________ )으로 치환
-     */
     makeClozeSentence(sentence, targetWord) {
       if (!sentence || !targetWord) return sentence || '( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )';
       try {
