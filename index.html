@@ -104,11 +104,6 @@
                     </button>
 
                     <!-- 진단 레벨 배지 & 레벨테스트 바로가기 버튼 -->
-                    <!-- 부교재 보카북 & 워크북 스튜디오 퀵 버튼 -->
-                    <button id="header-book-studio-btn" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-emerald-500/40 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 text-xs font-serif font-bold transition-all shadow-xs cursor-pointer" onclick="window.bookStudioEngine && window.bookStudioEngine.open()" title="21개 부교재 및 AI 맞춤 교재 전용 보카북 & 워크북 인쇄 스튜디오">
-                        <i data-lucide="printer" class="w-3.5 h-3.5 text-emerald-700"></i>
-                        <span class="hidden xl:inline">부교재</span><span>보카북·워크북</span>
-                    </button>
                     <button id="header-academic-level-btn" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-sky-400/40 bg-sky-50 hover:bg-sky-100 text-sky-900 text-xs font-serif font-bold transition-all shadow-xs cursor-pointer" onclick="window.levelTestEngine && window.levelTestEngine.openModal()" title="실력 진단 레벨테스트 및 현재 레벨 확인">
                         <span class="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
                         <span id="header-academic-level-badge">Lv.3 Pioneer</span>
@@ -593,17 +588,11 @@
                                         <i data-lucide="sparkles" class="w-3.5 h-3.5 text-blue-950"></i>
                                         <span>✨ AI 나만의 맞춤 단원 생성</span>
                                     </button>
-                                    <!-- 부교재 보카북 & 워크북 바로가기 액션 버튼군 -->
-                                    <div class="inline-flex items-center gap-1.5">
-                                        <button type="button" onclick="window.bookStudioEngine && window.bookStudioEngine.open(document.getElementById('voca-book-select').value, 'voca')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-serif font-bold text-xs shadow-xs transition-all cursor-pointer" title="현재 선택된 교재의 보카북 열기 및 A4 인쇄">
-                                            <i data-lucide="book-open" class="w-3.5 h-3.5 text-emerald-200"></i>
-                                            <span>📖 보카북 열기</span>
-                                        </button>
-                                        <button type="button" onclick="window.bookStudioEngine && window.bookStudioEngine.open(document.getElementById('voca-book-select').value, 'workbook')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-700 hover:bg-blue-600 text-white font-serif font-bold text-xs shadow-xs transition-all cursor-pointer" title="현재 선택된 교재의 실전 문제 워크북 열기 및 A4 인쇄">
-                                            <i data-lucide="file-edit" class="w-3.5 h-3.5 text-blue-200"></i>
-                                            <span>📝 워크북 & 인쇄</span>
-                                        </button>
-                                    </div>
+                                    <!-- 부교재 보카북 & 워크북 통합 바로가기 버튼 -->
+                                    <button type="button" onclick="window.bookStudioEngine && window.bookStudioEngine.open(document.getElementById('voca-book-select').value, 'voca')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-serif font-bold text-xs shadow-xs transition-all cursor-pointer" title="현재 선택된 교재의 보카북·워크북 스튜디오 열기 (보기 전환 및 A4 인쇄)">
+                                        <i data-lucide="printer" class="w-3.5 h-3.5 text-emerald-200"></i>
+                                        <span>📚 보카북·워크북</span>
+                                    </button>
                                     <span class="text-xs font-serif font-bold text-slate-300">교재/테마 선택:</span>
                                     <select id="voca-book-select" class="px-3 py-1.5 rounded-lg bg-blue-900 text-amber-300 font-serif font-bold text-xs sm:text-sm border border-amber-400/30 outline-none cursor-pointer" onchange="window.ocrEngine.selectVocaBook(this.value)">
                                         <optgroup label="🎨 나만의 AI 맞춤 생성 단어장" id="voca-custom-optgroup">
