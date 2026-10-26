@@ -1,0 +1,473 @@
+/**
+ * Veritas English - 부교재 전용 [보카북 & 워크북] 시리즈 맞춤 인쇄 스타일시트
+ * A4 출판 규격 및 8대 시리즈 테마 시스템 (CSS Variables & Print Media)
+ */
+
+:root {
+  --book-font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --book-font-serif: 'Cinzel', 'Playfair Display', 'Batang', serif;
+}
+
+/* ==========================================================================
+   1. 8대 시리즈별 디자인 테마 정의 (Series Design Themes)
+   ========================================================================== */
+
+/* 1) 중등 내신 마스터 시리즈 (Edu Blue & Mint Emerald) */
+.series-theme-middle {
+  --theme-primary: #1e3a8a;       /* deep edu blue */
+  --theme-secondary: #0d9488;     /* teal emerald */
+  --theme-accent: #0284c7;        /* sky blue */
+  --theme-bg-soft: #f0fdf4;       /* soft light green/blue tint */
+  --theme-border: #bfdbfe;
+  --theme-badge-bg: #dbeafe;
+  --theme-badge-text: #1e40af;
+  --theme-tag-symbol: "🎓";
+  --theme-name: "중등 내신 어휘 마스터";
+}
+
+/* 2) 수능 1등급 킬러 & 혼동 어휘 (Dark Crimson & Indigo Black) */
+.series-theme-killer {
+  --theme-primary: #881337;       /* deep crimson */
+  --theme-secondary: #312e81;     /* indigo black */
+  --theme-accent: #e11d48;        /* rose red */
+  --theme-bg-soft: #fff1f2;
+  --theme-border: #fecdd3;
+  --theme-badge-bg: #ffe4e6;
+  --theme-badge-text: #9f1239;
+  --theme-tag-symbol: "🎯";
+  --theme-name: "수능 1등급 킬러 보카";
+}
+
+/* 3) 트렌드 & 실전 구어 시리즈 (Neon Cyan & Tech Amber) */
+.series-theme-trend {
+  --theme-primary: #0f766e;       /* cyber teal */
+  --theme-secondary: #d97706;     /* tech amber */
+  --theme-accent: #0284c7;        /* cyan */
+  --theme-bg-soft: #f0fdfa;
+  --theme-border: #99f6e4;
+  --theme-badge-bg: #ccfbf1;
+  --theme-badge-text: #115e59;
+  --theme-tag-symbol: "⚡";
+  --theme-name: "트렌드 & 실전 구어";
+}
+
+/* 4) 미국 교과서 학술 어휘 (Ivy League Navy & Warm Gold) */
+.series-theme-academic {
+  --theme-primary: #0f172a;       /* oxford navy */
+  --theme-secondary: #b45309;     /* ivy gold/amber */
+  --theme-accent: #334155;        /* slate */
+  --theme-bg-soft: #f8fafc;
+  --theme-border: #cbd5e1;
+  --theme-badge-bg: #fef3c7;
+  --theme-badge-text: #92400e;
+  --theme-tag-symbol: "🏫";
+  --theme-name: "미국 교과서 학술 어휘";
+}
+
+/* 5) 중학 필수 숙어 (Fresh Mint & Coral) */
+.series-theme-idioms {
+  --theme-primary: #047857;       /* fresh mint */
+  --theme-secondary: #f43f5e;     /* energetic coral */
+  --theme-accent: #10b981;
+  --theme-bg-soft: #ecfdf5;
+  --theme-border: #a7f3d0;
+  --theme-badge-bg: #d1fae5;
+  --theme-badge-text: #065f46;
+  --theme-tag-symbol: "🧩";
+  --theme-name: "중학 교과서 필수 숙어";
+}
+
+/* 6) 실전 여행 영어 (Sky Blue & Passport Stamp Beige) */
+.series-theme-travel {
+  --theme-primary: #0369a1;       /* sky deep blue */
+  --theme-secondary: #b45309;     /* passport leather */
+  --theme-accent: #0284c7;
+  --theme-bg-soft: #f0f9ff;
+  --theme-border: #bae6fd;
+  --theme-badge-bg: #e0f2fe;
+  --theme-badge-text: #075985;
+  --theme-tag-symbol: "✈️";
+  --theme-name: "글로벌 여행 서바이벌";
+}
+
+/* 7) 감정 묘사 & 영미 명작 문학 (Burgundy & Antique Parchment) */
+.series-theme-literature {
+  --theme-primary: #701a75;       /* literary burgundy / fuchsia */
+  --theme-secondary: #854d0e;     /* antique parchment gold */
+  --theme-accent: #a21caf;
+  --theme-bg-soft: #fdf4ff;
+  --theme-border: #f5d0fe;
+  --theme-badge-bg: #fae8ff;
+  --theme-badge-text: #86198f;
+  --theme-tag-symbol: "📜";
+  --theme-name: "감정 묘사 & 클래식 문학";
+}
+
+/* 8) AI 맞춤 생성 교재 (Future AI Violet Gradient) */
+.series-theme-custom_ai {
+  --theme-primary: #4c1d95;       /* deep ai violet */
+  --theme-secondary: #7c3aed;     /* electric purple */
+  --theme-accent: #2563eb;
+  --theme-bg-soft: #f5f3ff;
+  --theme-border: #ddd6fe;
+  --theme-badge-bg: #ede9fe;
+  --theme-badge-text: #5b21b6;
+  --theme-tag-symbol: "✨";
+  --theme-name: "AI 맞춤 스마트 보카";
+}
+
+/* ==========================================================================
+   2. 스튜디오 모달 & 뷰어 UI (Screen Mode)
+   ========================================================================== */
+
+#book-studio-modal {
+  font-family: var(--book-font-sans);
+}
+
+.studio-paper-preview {
+  background-color: #525659;
+  min-height: calc(100vh - 72px);
+  padding: 24px 12px;
+}
+
+.studio-a4-sheet {
+  background: white;
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto 24px auto;
+  padding: 16mm 14mm;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  position: relative;
+  color: #1e293b;
+}
+
+/* 표지 스타일 */
+.studio-cover-sheet {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 4px double var(--theme-primary);
+  background: linear-gradient(180deg, #ffffff 0%, var(--theme-bg-soft) 100%);
+  padding: 24mm 18mm;
+}
+
+.studio-cover-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--theme-badge-bg);
+  color: var(--theme-badge-text);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 700;
+  border: 1px solid var(--theme-border);
+}
+
+.studio-cover-title {
+  font-family: var(--book-font-serif);
+  color: var(--theme-primary);
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+/* 목차(TOC) 스타일 */
+.studio-toc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+/* 단원(Day) 헤더 */
+.studio-day-header {
+  border-bottom: 2.5px solid var(--theme-primary);
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.studio-day-tag {
+  background: var(--theme-primary);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+/* 보카북: 어휘 카드 2단 그리드 */
+.studio-voca-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 14px;
+}
+
+.studio-word-card {
+  border: 1px solid #e2e8f0;
+  border-left: 3.5px solid var(--theme-primary);
+  border-radius: 6px;
+  padding: 8px 10px;
+  background: #ffffff;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 82px;
+}
+
+.studio-word-card:hover {
+  border-color: var(--theme-border);
+  background-color: #fafafa;
+}
+
+.studio-word-num {
+  font-size: 11px;
+  font-weight: 700;
+  color: #94a3b8;
+  font-family: var(--book-font-serif);
+}
+
+.studio-word-lemma {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--theme-primary);
+  letter-spacing: -0.2px;
+}
+
+.studio-word-pos {
+  font-size: 10px;
+  font-weight: 700;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 1px 5px;
+  border-radius: 4px;
+  margin-left: 4px;
+}
+
+.studio-word-meaning {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.35;
+  margin-top: 2px;
+}
+
+.studio-word-example {
+  font-size: 11px;
+  color: #475569;
+  line-height: 1.35;
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.studio-word-trans {
+  font-size: 10.5px;
+  color: #64748b;
+  line-height: 1.3;
+}
+
+/* 3회독 체크박스 */
+.studio-checks {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9.5px;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.studio-check-box {
+  width: 12px;
+  height: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+/* ==========================================================================
+   3. 워크북 문제 스타일 (Workbook Sections)
+   ========================================================================== */
+
+.studio-wb-section-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--theme-primary);
+  background: var(--theme-bg-soft);
+  padding: 5px 10px;
+  border-radius: 5px;
+  border-left: 3px solid var(--theme-secondary);
+  margin: 12px 0 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.studio-wb-qitem {
+  page-break-inside: avoid;
+  break-inside: avoid;
+  margin-bottom: 7px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+}
+
+.studio-wb-qnum {
+  font-weight: 800;
+  color: var(--theme-primary);
+  font-size: 11.5px;
+  margin-right: 4px;
+}
+
+.studio-wb-cloze-blank {
+  display: inline-block;
+  min-width: 90px;
+  border-bottom: 1.5px solid var(--theme-primary);
+  margin: 0 3px;
+  text-align: center;
+  color: transparent;
+  font-size: 12px;
+}
+
+.studio-wb-hint {
+  font-size: 11px;
+  color: #64748b;
+  font-family: monospace;
+  background: #f8fafc;
+  padding: 1px 4px;
+  border-radius: 3px;
+  border: 1px solid #e2e8f0;
+}
+
+/* 빠른 정답표 (Answer Key Sheet) */
+.studio-answer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px 12px;
+  font-size: 11px;
+}
+
+.studio-answer-item {
+  padding: 4px 6px;
+  background: #f8fafc;
+  border-radius: 4px;
+  border-left: 2px solid var(--theme-primary);
+}
+
+/* ==========================================================================
+   4. 블라인드 셀프 테스트 모드 (화면 & 인쇄)
+   ========================================================================== */
+
+/* 뜻 가리기 */
+.blind-meanings .studio-word-meaning,
+.blind-meanings .studio-word-trans {
+  color: transparent !important;
+  user-select: none;
+  background: #e2e8f0;
+  border-radius: 4px;
+}
+
+.blind-meanings .studio-word-meaning:hover,
+.blind-meanings .studio-word-trans:hover {
+  color: inherit !important;
+  background: transparent !important;
+}
+
+/* 단어 가리기 */
+.blind-words .studio-word-lemma {
+  color: transparent !important;
+  user-select: none;
+  background: #e2e8f0;
+  border-radius: 4px;
+  display: inline-block;
+  min-width: 70px;
+}
+
+.blind-words .studio-word-lemma:hover {
+  color: inherit !important;
+  background: transparent !important;
+}
+
+/* ==========================================================================
+   5. A4 인쇄 전용 규칙 (@media print)
+   ========================================================================== */
+
+@media print {
+  /* 불필요한 모든 웹 UI 및 내비게이션 숨김 */
+  header, nav, #app-navbar, .fixed, .no-print,
+  #header-user-profile-btn, #header-academic-level-btn,
+  .studio-toolbar, .studio-paper-preview > .no-print {
+    display: none !important;
+  }
+
+  body, html {
+    background: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  /* 인쇄 페이지 설정 */
+  @page {
+    size: A4 portrait;
+    margin: 10mm 10mm 12mm 10mm;
+  }
+
+  .studio-paper-preview {
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: auto !important;
+  }
+
+  .studio-a4-sheet {
+    width: 100% !important;
+    min-height: 270mm !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 6mm 4mm !important;
+    box-shadow: none !important;
+    border: none !important;
+    /* Day 끝날 때마다 자동 새 페이지 */
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+
+  .studio-a4-sheet:last-child {
+    page-break-after: auto !important;
+    break-after: auto !important;
+  }
+
+  /* 단어 카드와 문제 분할 방지 */
+  .studio-word-card,
+  .studio-wb-qitem,
+  .studio-wb-section-title,
+  .studio-day-header {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* 인쇄 시 블라인드 모드 처리: 배경 회색 대신 밑줄 빈칸 처리 */
+  .blind-meanings .studio-word-meaning,
+  .blind-meanings .studio-word-trans {
+    background: transparent !important;
+    color: transparent !important;
+    border-bottom: 1.5px solid #64748b !important;
+    min-height: 14px;
+    display: block;
+  }
+
+  .blind-words .studio-word-lemma {
+    background: transparent !important;
+    color: transparent !important;
+    border-bottom: 1.5px solid #64748b !important;
+    min-width: 80px;
+    display: inline-block;
+  }
+}
