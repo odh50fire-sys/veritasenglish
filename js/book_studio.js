@@ -98,6 +98,7 @@
       this.selectedDay = 'ALL';  // 'ALL' or 'DAY 01', 'DAY 02'
       this.blindMode = 'none';   // 'none' | 'meaning' | 'word'
       this.includeAnswers = true;
+      this.shuffleSeed = 0;      // 워크북 문제 섞기 시드
       this.currentBookMeta = null;
       this.groupedDays = {};
     }
@@ -304,6 +305,12 @@
               <option value="meaning" ${this.blindMode === 'meaning' ? 'selected' : ''}>🙈 뜻 가리기 (테스트)</option>
               <option value="word" ${this.blindMode === 'word' ? 'selected' : ''}>🤐 단어 가리기 (영작)</option>
             </select>
+
+            <!-- 문제 새로 섞기 (워크북/합본 모드) -->
+            ${this.currentMode !== 'voca' ? `
+            <button onclick="window.bookStudioEngine.reshuffle()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 text-xs font-bold border border-slate-700 cursor-pointer" title="단어 배분과 문제 순서를 새로 섞습니다 (정답지도 함께 바뀜)">
+              🔀 문제 새로 섞기
+            </button>` : ''}
 
             <!-- 인쇄 버튼 -->
             <button onclick="window.bookStudioEngine.print()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-md transition-transform active:scale-95 cursor-pointer" title="A4 고품질 인쇄 또는 PDF 저장">
@@ -802,20 +809,124 @@
       `;
     }
 
+    // =========================================================================
+    // 워크북 문제 데이터 생성 (시드 고정 → 문제지와 정답지 100% 일치)
+    // - 하루치 단어가 Section 1·2·3에 "겹치지 않게" 한 번씩만 배분됨
+    // - 문항 번호는 1번부터 끝까지 연속 → 정답지 문항 수 = 문제지 문항 수
+    // =========================================================================
+
+    hashString(str) {
+      let h = 2166136261;
+      for (let i = 0; i < str.length; i++) {
+        h ^= str.charCodeAt(i);
+        h = Math.imul(h, 16777619);
+      }
+      return h >>> 0;
+    }
+
+    createRng(seed) {
+      let a = seed >>> 0;
+      return function () {
+        a = (a + 0x6D2B79F5) | 0;
+        let t = Math.imul(a ^ (a >>> 15), 1 | a);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      };
+    }
+
+    seededShuffle(arr, rng) {
+      const a = arr.slice();
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(rng() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
     /**
-     * 워크북 단원(Day) 시트 (필기 칸 넉넉한 확장으로 튀어나오는 문제 완전 해결)
+     * [문제 새로 섞기] 시드 변경 → 단어 배분·순서·보기 순서가 새로 바뀜 (정답지도 함께 갱신)
+     */
+    reshuffle() {
+      this.shuffleSeed = (this.shuffleSeed || 0) + 1;
+      this.refreshPaper();
+    }
+
+    getWorkbookData(dayKey, words) {
+      const seed = this.hashString(`${this.currentBookId}|${dayKey}|${this.shuffleSeed || 0}`);
+      const rng = this.createRng(seed);
+      const pool = this.seededShuffle(words, rng);
+
+      // 1) 예문에서 실제로 빈칸 처리가 가능한 단어만 Section 2(문맥 빈칸) 후보로 선별
+      const clozeCandidates = [];
+      const others = [];
+      pool.forEach(w => {
+        const m = this.findClozeMatch(w.example, w.word);
+        if (m) clozeCandidates.push({ w, m });
+        else others.push(w);
+      });
+
+      const targetCloze = Math.max(1, Math.round(words.length * 0.25));
+      const clozePicked = clozeCandidates.slice(0, targetCloze);
+      const rest = this.seededShuffle(
+        others.concat(clozeCandidates.slice(targetCloze).map(c => c.w)),
+        rng
+      );
+
+      // 2) 나머지 단어를 Section 1(철자) / Section 3(의미 연결)로 반씩 배분 (중복 없음)
+      const s1Count = Math.ceil(rest.length / 2);
+      const s1Words = rest.slice(0, s1Count);
+      const s3Words = rest.slice(s1Count);
+
+      let no = 0;
+      const section1 = s1Words.map(w => ({
+        no: ++no,
+        word: w.word,
+        meaning: w.meaning,
+        hint: this.makeSpellingHint(w.word)
+      }));
+
+      const section2 = clozePicked.map(c => ({
+        no: ++no,
+        word: c.w.word,
+        matched: c.m.matched,
+        sentenceHtml: c.m.html,
+        translation: c.w.translation || c.w.meaning,
+        meaning: c.w.meaning
+      }));
+
+      // 3) 의미 연결 보기(A, B, C...)는 별도로 섞고, 문항별 정답 기호를 기록
+      const order = this.seededShuffle(s3Words.map((_, i) => i), rng);
+      const labelByIdx = {};
+      const s3Options = order.map((origIdx, pos) => {
+        const label = String.fromCharCode(65 + pos);
+        labelByIdx[origIdx] = label;
+        return { label, meaning: s3Words[origIdx].meaning };
+      });
+      const section3 = s3Words.map((w, i) => ({
+        no: ++no,
+        word: w.word,
+        meaning: w.meaning,
+        answerLabel: labelByIdx[i]
+      }));
+
+      return { section1, section2, section3, s3Options, total: no };
+    }
+
+    rangeLabel(items) {
+      if (!items.length) return '';
+      const a = items[0].no;
+      const b = items[items.length - 1].no;
+      return a === b ? `${a}번` : `${a}~${b}번`;
+    }
+
+    /**
+     * 워크북 단원(Day) 시트
      */
     renderWorkbookDaySheet(dayKey, words) {
       const meta = this.currentBookMeta;
       const seriesKey = meta.series || 'middle';
       const seriesInfo = SERIES_INFO[seriesKey] || SERIES_INFO.middle;
-
-      const count = words.length;
-      const half = Math.ceil(count / 2);
-      const groupA = words.slice(0, half);
-      const groupB = words.slice(half);
-
-      const shuffledMeanings = [...groupB].sort(() => 0.5 - Math.random());
+      const wb = this.getWorkbookData(dayKey, words);
 
       return `
         <div class="studio-a4-sheet">
@@ -826,97 +937,89 @@
                 <span class="text-xs font-bold text-slate-700">${seriesInfo.name}</span>
               </div>
               <div class="text-xs text-slate-500 font-medium">
-                능동적 인출(Retrieval Practice) & 문맥 적용 집중 실전 문제
+                총 ${wb.total}문항 · 하루치 ${words.length}단어를 중복 없이 모두 출제
               </div>
             </div>
             <div class="text-right text-[11px] text-slate-500">
               <div>학습자: _____________</div>
-              <div class="font-bold text-slate-800 mt-0.5">점수: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 100점</div>
+              <div class="font-bold text-slate-800 mt-0.5">맞은 개수: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / ${wb.total}문항</div>
             </div>
           </div>
 
-          <!-- Section 1. 우리말 뜻 보고 스펠링 쓰기 (칸이 튀어나오지 않는 넉넉한 2단 분리형 카드) -->
-          <div class="studio-wb-section-title">
-            <span>Section 1. 우리말 뜻을 보고 알맞은 영단어를 철자로 완성하시오.</span>
-            <span class="text-[10px] font-normal text-slate-500">Spelling & Recall</span>
-          </div>
-          <div class="grid grid-cols-2 gap-2.5">
-            ${groupA.map((w, idx) => {
-              const hint = this.makeSpellingHint(w.word);
-              return `
+          ${wb.section1.length ? `
+            <div class="studio-wb-section-title">
+              <span>Section 1. 우리말 뜻을 보고 알맞은 영단어를 철자로 완성하시오. (${this.rangeLabel(wb.section1)})</span>
+              <span class="text-[10px] font-normal text-slate-500">Spelling & Recall</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2.5">
+              ${wb.section1.map(q => `
                 <div class="studio-wb-qitem flex flex-col justify-between p-2 rounded border border-slate-200">
                   <div class="text-xs font-semibold text-slate-800 leading-snug mb-1.5 flex items-baseline gap-1">
-                    <span class="studio-wb-qnum">${idx + 1}.</span>
-                    <span class="break-words">${w.meaning}</span>
+                    <span class="studio-wb-qnum">${q.no}.</span>
+                    <span class="break-words">${q.meaning}</span>
                   </div>
                   <div class="flex items-center justify-between gap-2 pt-1 border-t border-slate-100">
-                    <span class="studio-wb-hint shrink-0">${hint}</span>
+                    <span class="studio-wb-hint shrink-0">${q.hint}</span>
                     <span class="studio-wb-cloze-blank flex-1 max-w-[220px]"></span>
                   </div>
                 </div>
-              `;
-            }).join('')}
-          </div>
+              `).join('')}
+            </div>
+          ` : ''}
 
-          <!-- Section 2. 실전 예문 문맥 빈칸 완성 (넉넉한 정답 기입란) -->
-          <div class="studio-wb-section-title mt-4">
-            <span>Section 2. 문맥을 읽고 괄호 안에 들어갈 가장 알맞은 어휘를 적으시오.</span>
-            <span class="text-[10px] font-normal text-slate-500">Context Cloze</span>
-          </div>
-          <div class="space-y-2">
-            ${words.slice(0, 5).map((w, idx) => {
-              const clozeSentence = this.makeClozeSentence(w.example, w.word);
-              return `
+          ${wb.section2.length ? `
+            <div class="studio-wb-section-title mt-4">
+              <span>Section 2. 문맥을 읽고 빈칸에 들어갈 알맞은 어휘를 문장에 맞는 형태로 쓰시오. (${this.rangeLabel(wb.section2)})</span>
+              <span class="text-[10px] font-normal text-slate-500">Context Cloze</span>
+            </div>
+            <div class="space-y-2">
+              ${wb.section2.map(q => `
                 <div class="studio-wb-qitem p-2.5 border border-slate-200">
                   <div class="text-xs text-slate-900 leading-relaxed font-serif">
-                    <span class="studio-wb-qnum font-sans font-bold">${idx + 1}.</span>
-                    <span>${clozeSentence}</span>
+                    <span class="studio-wb-qnum font-sans font-bold">${q.no}.</span>
+                    <span>${q.sentenceHtml}</span>
                   </div>
                   <div class="text-[11px] text-slate-500 mt-2 pl-4 flex items-center justify-between flex-wrap gap-2">
-                    <span class="max-w-[60%] truncate">[해석] ${w.translation || w.meaning}</span>
+                    <span class="max-w-[60%]">[해석] ${q.translation}</span>
                     <div class="flex items-center gap-1 font-bold text-slate-800 shrink-0">
                       <span>정답:</span>
                       <span class="inline-block w-40 sm:w-52 border-b-2 border-slate-700"></span>
                     </div>
                   </div>
                 </div>
-              `;
-            }).join('')}
-          </div>
+              `).join('')}
+            </div>
+          ` : ''}
 
-          <!-- Section 3. 어휘와 의미 올바르게 연결하기 (Matching Test) -->
-          ${groupB.length > 0 ? `
+          ${wb.section3.length ? `
             <div class="studio-wb-section-title mt-4">
-              <span>Section 3. 왼쪽의 영단어와 오른쪽의 알맞은 의미를 바르게 연결하시오.</span>
+              <span>Section 3. 왼쪽의 영단어와 오른쪽의 알맞은 의미를 바르게 연결하시오. (${this.rangeLabel(wb.section3)})</span>
               <span class="text-[10px] font-normal text-slate-500">Meaning Match</span>
             </div>
             <div class="grid grid-cols-2 gap-4 p-2.5 bg-slate-50 rounded-lg border border-slate-200 text-xs">
               <div class="space-y-2">
-                ${groupB.map((w, idx) => `
-                  <div class="flex items-center justify-between p-1.5 bg-white rounded border border-slate-200 shadow-2xs">
+                ${wb.section3.map(q => `
+                  <div class="flex items-center justify-between p-1.5 bg-white rounded border border-slate-200">
                     <span class="font-bold text-slate-900 break-words pr-2">
-                      <strong class="text-blue-900 mr-1.5">(${idx + 1})</strong>${w.word || 'VOCA'}
+                      <strong class="text-blue-900 mr-1.5">${q.no}.</strong>${q.word || 'VOCA'}
                     </span>
                     <span class="w-2.5 h-2.5 rounded-full bg-slate-300 inline-block shrink-0"></span>
                   </div>
                 `).join('')}
               </div>
               <div class="space-y-2">
-                ${shuffledMeanings.map((w, idx) => {
-                  const label = String.fromCharCode(65 + idx);
-                  return `
-                    <div class="flex items-center justify-between p-1.5 bg-white rounded border border-slate-200 shadow-2xs">
-                      <span class="w-2.5 h-2.5 rounded-full bg-slate-300 inline-block shrink-0"></span>
-                      <span class="pl-2 text-slate-800 font-medium break-words">
-                        <strong class="text-emerald-800 mr-1.5">(${label})</strong>${w.meaning}
-                      </span>
-                    </div>
-                  `;
-                }).join('')}
+                ${wb.s3Options.map(o => `
+                  <div class="flex items-center justify-between p-1.5 bg-white rounded border border-slate-200">
+                    <span class="w-2.5 h-2.5 rounded-full bg-slate-300 inline-block shrink-0"></span>
+                    <span class="pl-2 text-slate-800 font-medium break-words">
+                      <strong class="text-emerald-800 mr-1.5">(${o.label})</strong>${o.meaning}
+                    </span>
+                  </div>
+                `).join('')}
               </div>
             </div>
-            <div class="mt-2 text-right text-[11px] text-slate-600 font-medium">
-              연결 정답: ${groupB.map((_, i) => `(${i + 1})-[ &nbsp;&nbsp; ]`).join(' &nbsp; ')}
+            <div class="mt-2 text-right text-[11px] text-slate-600 font-medium leading-relaxed">
+              연결 정답: ${wb.section3.map(q => `${q.no}-[ &nbsp;&nbsp; ]`).join(' &nbsp; ')}
             </div>
           ` : ''}
 
@@ -929,42 +1032,74 @@
     }
 
     /**
-     * 빠른 정답표 시트 (3열 확장 + 텍스트 자동 줄바꿈으로 어떤 긴 단어도 튀어나오지 않음)
+     * 빠른 정답표 — 문제지와 동일한 데이터로 생성 (문항 번호·문항 수·유형별 정답 형식 일치)
      */
     renderAnswerKeySheet(days) {
       const meta = this.currentBookMeta;
+
+      const sectionBlock = (title, items, renderItem) => items.length ? `
+        <div class="mb-3">
+          <div class="text-[11px] font-bold text-slate-700 mb-1.5">${title} <span class="text-slate-400 font-medium">(${this.rangeLabel(items)})</span></div>
+          <div class="studio-answer-grid">
+            ${items.map(renderItem).join('')}
+          </div>
+        </div>
+      ` : '';
 
       return `
         <div class="studio-a4-sheet">
           <div class="studio-day-header border-b-2 border-slate-900">
             <div>
               <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Answer Key</span>
-              <h2 class="text-xl font-black text-slate-900">워크북 빠른 정답표 (Quick Answer Key)</h2>
+              <h2 class="text-xl font-black text-slate-900">워크북 정답 및 해설</h2>
             </div>
             <span class="text-xs font-bold text-slate-500">${meta.title}</span>
           </div>
 
-          <div class="space-y-6 mt-4">
+          <div class="space-y-5 mt-4">
             ${days.map(d => {
               const words = this.groupedDays[d] || [];
+              if (!words.length) return '';
+              const wb = this.getWorkbookData(d, words);
               return `
-                <div class="p-4 rounded-lg border border-slate-200 bg-slate-50/50">
+                <div class="studio-answer-day p-4 rounded-lg border border-slate-200 bg-slate-50/50">
                   <div class="flex items-center justify-between mb-3 border-b border-slate-200 pb-2">
-                    <span class="font-bold text-xs text-slate-900 bg-slate-200 px-2.5 py-1 rounded">${d} 정답 목록</span>
-                    <span class="text-[11px] text-slate-500 font-semibold">총 ${words.length}개 어휘/표현 완벽 수록</span>
+                    <span class="font-bold text-xs text-slate-900 bg-slate-200 px-2.5 py-1 rounded">${d} 정답</span>
+                    <span class="text-[11px] text-slate-500 font-semibold">총 ${wb.total}문항</span>
                   </div>
-                  <!-- 3열 와이드 그리드로 넉넉한 가로 폭 확보 -->
-                  <div class="studio-answer-grid">
-                    ${words.map(w => `
-                      <div class="studio-answer-item">
-                        <div class="flex items-baseline gap-1.5 mb-0.5">
-                          <span class="font-bold text-slate-400 text-[11px] shrink-0">${String(w.num).padStart(2, '0')}.</span>
-                          <span class="studio-answer-lemma">${w.word || 'VOCA'}</span>
-                        </div>
-                        <div class="studio-answer-meaning">${w.meaning}</div>
+
+                  ${sectionBlock('Section 1. 철자 완성', wb.section1, q => `
+                    <div class="studio-answer-item">
+                      <div class="flex items-baseline gap-1.5">
+                        <span class="font-bold text-slate-400 text-[11px] shrink-0">${q.no}.</span>
+                        <span class="studio-answer-lemma">${q.word}</span>
                       </div>
-                    `).join('')}
-                  </div>
+                      <div class="studio-answer-meaning">${q.meaning}</div>
+                    </div>
+                  `)}
+
+                  ${sectionBlock('Section 2. 문맥 빈칸', wb.section2, q => {
+                    const diff = q.matched && q.matched.toLowerCase() !== q.word.toLowerCase();
+                    return `
+                      <div class="studio-answer-item">
+                        <div class="flex items-baseline gap-1.5">
+                          <span class="font-bold text-slate-400 text-[11px] shrink-0">${q.no}.</span>
+                          <span class="studio-answer-lemma">${diff ? q.matched : q.word}</span>
+                        </div>
+                        <div class="studio-answer-meaning">${diff ? `원형: ${q.word} · ` : ''}${q.meaning}</div>
+                      </div>
+                    `;
+                  })}
+
+                  ${sectionBlock('Section 3. 의미 연결', wb.section3, q => `
+                    <div class="studio-answer-item">
+                      <div class="flex items-baseline gap-1.5">
+                        <span class="font-bold text-slate-400 text-[11px] shrink-0">${q.no}.</span>
+                        <span class="studio-answer-lemma">(${q.answerLabel})</span>
+                      </div>
+                      <div class="studio-answer-meaning">${q.word} = ${q.meaning}</div>
+                    </div>
+                  `)}
                 </div>
               `;
             }).join('')}
@@ -981,36 +1116,72 @@
     // 헬퍼 유틸리티
     // =========================================================================
 
+    escapeRegex(s) {
+      return String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
     highlightWord(sentence, targetWord) {
       if (!sentence || !targetWord) return sentence || '';
-      try {
-        const regex = new RegExp(`\\b(${targetWord}[a-zA-Z]*)\\b`, 'gi');
-        return sentence.replace(regex, '<strong class="text-slate-900 underline decoration-slate-400">$1</strong>');
-      } catch (e) {
-        return sentence;
-      }
+      const m = this.findClozeMatch(sentence, targetWord, '<strong class="text-slate-900 underline decoration-slate-400">$&</strong>');
+      return m ? m.html : sentence;
     }
 
     makeSpellingHint(word) {
       if (!word) return '______';
       const clean = word.trim();
-      // 긴 구동사/표현일 때: 첫 단어와 두 번째 단어 앞글자 힌트
       if (clean.includes(' ')) {
-        const parts = clean.split(' ');
+        const parts = clean.split(/\s+/);
         return parts.map(p => p.length <= 2 ? p : p.charAt(0) + '_'.repeat(p.length - 1)).join(' ');
       }
       if (clean.length <= 3) return clean.charAt(0) + ' ' + '_ '.repeat(clean.length - 1).trim();
       return clean.slice(0, 2) + ' ' + '_ '.repeat(clean.length - 2).trim();
     }
 
-    makeClozeSentence(sentence, targetWord) {
-      if (!sentence || !targetWord) return sentence || '( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )';
-      try {
-        const regex = new RegExp(`\\b(${targetWord}[a-zA-Z]*)\\b`, 'gi');
-        return sentence.replace(regex, '<strong>( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )</strong>');
-      } catch (e) {
-        return sentence;
+    /**
+     * 예문 속 표제어(활용형 포함)를 찾아 치환.
+     * 찾지 못하면 null → 해당 단어는 문맥 빈칸 문제로 출제하지 않음 (정답이 문장에 그대로 노출되는 문제 방지)
+     */
+    findClozeMatch(sentence, word, replacement) {
+      if (!sentence || !word) return null;
+      const w = String(word).trim();
+      if (!w) return null;
+      const blank = replacement ||
+        '<span class="studio-cloze-gap">&nbsp;</span>';
+
+      const tryRegex = (re) => {
+        const m = sentence.match(re);
+        if (!m) return null;
+        // 문장 안에 같은 단어가 여러 번 나와도 모두 치환 (정답 노출 방지)
+        return { matched: m[0], html: sentence.replace(new RegExp(re.source, 'gi'), blank) };
+      };
+
+      const suffix = "(?:s|es|ed|d|ing|er|est|ly|ies|ied)?";
+
+      if (!/\s/.test(w)) {
+        const e = this.escapeRegex(w);
+        const last = this.escapeRegex(w.slice(-1));
+        // 1) 원형 + 활용 어미 (stop → stopped 처럼 자음 중복 포함)
+        let r = tryRegex(new RegExp(`\\b${e}(?:${last})?${suffix}\\b`, 'i'));
+        if (r) return r;
+        // 2) e/y 탈락형 (make → making, study → studied)
+        if (/[ey]$/i.test(w) && w.length >= 5) {
+          const stem = this.escapeRegex(w.slice(0, -1));
+          r = tryRegex(new RegExp(`\\b${stem}(?:ing|ed|ies|ied|ier|iest|ily|ation)\\b`, 'i'));
+          if (r) return r;
+        }
+        return null;
       }
+
+      // 숙어/구동사: 첫 단어 활용형 허용, one's/someone 등은 임의 단어 허용
+      const parts = w.split(/\s+/);
+      const pat = parts.map((p, i) => {
+        if (/^(one's|someone's|one|oneself|someone|somebody|something|sb|sth|~)$/i.test(p)) {
+          return "[A-Za-z']+";
+        }
+        const e = this.escapeRegex(p);
+        return i === 0 ? `${e}[a-z]{0,4}` : e;
+      }).join('\\s+');
+      return tryRegex(new RegExp(`\\b${pat}\\b`, 'i'));
     }
   }
 

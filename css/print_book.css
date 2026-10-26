@@ -520,3 +520,17 @@
     display: inline-block;
   }
 }
+
+/* 워크북 문맥 빈칸 (Section 2) */
+.studio-cloze-gap {
+  display: inline-block;
+  min-width: 110px;
+  border-bottom: 1.5px solid var(--theme-primary, #1e3a8a);
+  margin: 0 3px;
+  line-height: 1;
+}
+
+.studio-answer-day {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
