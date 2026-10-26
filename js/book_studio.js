@@ -605,11 +605,49 @@
     /**
      * 보카북 단원(Day) 시트
      */
+
+    /**
+     * Day 내 단어 중 원어민 꿀팁을 선별 (가끔: Day당 1~2개 선별)
+     */
+    selectDayNativeTips(words, seriesKey) {
+      const db = window.NATIVE_TIPS_DATABASE || {};
+      const matched = [];
+
+      words.forEach(w => {
+        const raw = (w.word || '').toLowerCase().trim();
+        let tip = db[raw];
+        if (!tip) {
+          // 구동사/숙어 또는 단어 정규화 매칭
+          const keys = Object.keys(db);
+          for (let i = 0; i < keys.length; i++) {
+            const k = keys[i];
+            if (raw === k || raw.startsWith(k + ' ') || raw.endsWith(' ' + k)) {
+              tip = db[k];
+              break;
+            }
+          }
+        }
+        if (tip) {
+          matched.push({ num: w.num, tip });
+        }
+      });
+
+      const tipMap = {};
+      if (matched.length > 0) {
+        // "가끔" 원칙: Day당 최대 1~2개만 선별 노출
+        matched.slice(0, 2).forEach(m => {
+          tipMap[m.num] = m.tip;
+        });
+      }
+      return tipMap;
+    }
+
     renderVocaDaySheet(dayKey, words) {
       const meta = this.currentBookMeta;
       const seriesKey = meta.series || 'middle';
       const seriesInfo = SERIES_INFO[seriesKey] || SERIES_INFO.middle;
       const isCompactDay = words.length <= 10;
+      const tipMap = this.selectDayNativeTips(words, seriesKey);
 
       return `
         <div class="studio-a4-sheet">
@@ -632,7 +670,7 @@
           </div>
 
           <div class="studio-voca-grid">
-            ${words.map(w => this.renderWordCard(w, seriesKey)).join('')}
+            ${words.map(w => this.renderWordCard(w, seriesKey, tipMap[w.num])).join('')}
           </div>
 
           <!-- 10단어 이하 교재를 위한 하단 특별 학습 노트 섹션 -->
@@ -674,7 +712,7 @@
       `;
     }
 
-    renderWordCard(w, seriesKey) {
+    renderWordCard(w, seriesKey, tipInfo = null) {
       const displayWord = w.word || 'VOCA';
 
       if (seriesKey === 'killer') {
@@ -718,6 +756,16 @@
                 ${w.translation ? `<div class="studio-word-trans mt-0.5">${w.translation}</div>` : ''}
               </div>
             ` : ''}
+            ${tipInfo ? `
+              <div class="studio-native-tip-box">
+                <div class="studio-native-tip-header">
+                  <span>💡</span>
+                  <span class="studio-native-tip-badge">${tipInfo.tag || '원어민 꿀팁'}</span>
+                  <span class="studio-native-tip-title">${tipInfo.title}</span>
+                </div>
+                <div class="studio-native-tip-content">${tipInfo.tip}</div>
+              </div>
+            ` : ''}
           </div>
         `;
       }
@@ -749,6 +797,16 @@
                 ${w.translation ? `<div class="studio-word-trans mt-0.5">${w.translation}</div>` : ''}
               </div>
             ` : ''}
+            ${tipInfo ? `
+              <div class="studio-native-tip-box">
+                <div class="studio-native-tip-header">
+                  <span>💡</span>
+                  <span class="studio-native-tip-badge">${tipInfo.tag || '원어민 꿀팁'}</span>
+                  <span class="studio-native-tip-title">${tipInfo.title}</span>
+                </div>
+                <div class="studio-native-tip-content">${tipInfo.tip}</div>
+              </div>
+            ` : ''}
           </div>
         `;
       }
@@ -773,6 +831,16 @@
               <div class="studio-word-example border-sky-100">
                 <div class="font-semibold text-sky-950">🗣️ ${this.highlightWord(w.example, displayWord)}</div>
                 ${w.translation ? `<div class="studio-word-trans text-slate-600 mt-0.5">${w.translation}</div>` : ''}
+              </div>
+            ` : ''}
+            ${tipInfo ? `
+              <div class="studio-native-tip-box">
+                <div class="studio-native-tip-header">
+                  <span>💡</span>
+                  <span class="studio-native-tip-badge">${tipInfo.tag || '원어민 꿀팁'}</span>
+                  <span class="studio-native-tip-title">${tipInfo.title}</span>
+                </div>
+                <div class="studio-native-tip-content">${tipInfo.tip}</div>
               </div>
             ` : ''}
           </div>
@@ -805,6 +873,16 @@
               ${w.translation ? `<div class="studio-word-trans mt-0.5">${w.translation}</div>` : ''}
             </div>
           ` : ''}
+            ${tipInfo ? `
+              <div class="studio-native-tip-box">
+                <div class="studio-native-tip-header">
+                  <span>💡</span>
+                  <span class="studio-native-tip-badge">${tipInfo.tag || '원어민 꿀팁'}</span>
+                  <span class="studio-native-tip-title">${tipInfo.title}</span>
+                </div>
+                <div class="studio-native-tip-content">${tipInfo.tip}</div>
+              </div>
+            ` : ''}
         </div>
       `;
     }

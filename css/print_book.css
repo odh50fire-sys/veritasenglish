@@ -534,3 +534,96 @@
   page-break-inside: avoid;
   break-inside: avoid;
 }
+
+
+/* ==========================================================================
+   6. [원어민 꿀팁] 박스 스타일 (Native Speaker's Secret Tip)
+   ========================================================================== */
+
+.studio-native-tip-box {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-left: 3.5px solid #d97706;
+  border-radius: 6px;
+  padding: 6px 9px;
+  margin-top: 6px;
+  font-size: 11px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  box-sizing: border-box;
+}
+
+.studio-native-tip-header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 2px;
+}
+
+.studio-native-tip-badge {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+  font-size: 9.5px;
+  font-weight: 800;
+  padding: 1px 5px;
+  border-radius: 4px;
+  letter-spacing: -0.2px;
+}
+
+.studio-native-tip-title {
+  font-weight: 800;
+  color: #78350f;
+  font-size: 11px;
+  letter-spacing: -0.2px;
+}
+
+.studio-native-tip-content {
+  color: #451a03;
+  line-height: 1.4;
+  font-size: 10.5px;
+  word-break: keep-all;
+}
+
+.studio-native-tip-content b {
+  color: #9a3412;
+  font-weight: 700;
+}
+
+/* Day 하단 스페셜 꿀팁 칼럼 (10단어 교재용) */
+.studio-native-column-box {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 1.5px solid #fde68a;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-top: 14px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+@media print {
+  .studio-native-tip-box {
+    background: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+    border-left: 3px solid #475569 !important;
+    color: #1e293b !important;
+  }
+  .studio-native-tip-badge {
+    background: #e2e8f0 !important;
+    color: #1e293b !important;
+    border-color: #94a3b8 !important;
+  }
+  .studio-native-tip-title {
+    color: #0f172a !important;
+  }
+  .studio-native-tip-content {
+    color: #334155 !important;
+  }
+  .studio-native-tip-content b {
+    color: #0f172a !important;
+  }
+  .studio-native-column-box {
+    background: #f8fafc !important;
+    border: 1px solid #94a3b8 !important;
+  }
+}
