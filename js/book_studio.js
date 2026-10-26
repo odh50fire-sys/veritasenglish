@@ -91,6 +91,36 @@
     }
   };
 
+  const SPECIAL_MODES = {
+    middle: [
+      { id: 'writing', name: '✍️ 서술형 영작 노트', desc: '내신 서술형 조건부 문장 완성' },
+      { id: 'cram', name: '⚡ 10분 파이널 시트', desc: 'A4 1장 초압축 시험직전 암기' }
+    ],
+    killer: [
+      { id: 'matrix', name: '🎯 혼동어휘 클리닉', desc: '수능 1:1 혼동어휘 정밀 대조' },
+      { id: 'cram', name: '⚡ 10분 파이널 시트', desc: 'A4 1장 초압축 수능 보카' }
+    ],
+    travel: [
+      { id: 'pocket', name: '✈️ 포켓 회화 핸드북', desc: '현장 실전 롤플레잉 포켓북' }
+    ],
+    trend: [
+      { id: 'script', name: '🎬 섀도잉 실전 대본집', desc: '미드·유튜브 리얼 대화문' }
+    ],
+    academic: [
+      { id: 'academic_reader', name: '🏫 학술 영영 리더', desc: 'Tier-2 영영정의 & 미니 지문' }
+    ],
+    idioms: [
+      { id: 'writing', name: '✍️ 통문장 영작 완성', desc: '전치사 결합형 통문장 훈련' }
+    ],
+    literature: [
+      { id: 'reader', name: '📜 명작 소설 원문 리더', desc: '고전 명작 발췌 & 감정 스펙트럼' }
+    ],
+    custom_ai: [
+      { id: 'writing', name: '✍️ 서술형 영작 노트', desc: '맞춤 서술형 문장 완성' },
+      { id: 'cram', name: '⚡ 10분 파이널 시트', desc: 'A4 1장 초압축 파이널' }
+    ]
+  };
+
   class BookStudioEngine {
     constructor() {
       this.currentBookId = null;
@@ -286,8 +316,8 @@
               ${days.map(d => `<option value="${d}" ${this.selectedDay === d ? 'selected' : ''}>${d} (${this.groupedDays[d].length}단어)</option>`).join('')}
             </select>
 
-            <!-- 모드 전환 (보카북 / 워크북 / 합본) -->
-            <div class="inline-flex rounded-lg bg-slate-800 p-0.5 border border-slate-700 text-xs font-semibold">
+            <!-- 모드 전환 (기본 2종 + 특화 스페셜 부교재 동적 확장) -->
+            <div class="inline-flex flex-wrap items-center rounded-lg bg-slate-800 p-0.5 border border-slate-700 text-xs font-semibold gap-0.5">
               <button onclick="window.bookStudioEngine.setMode('voca')" class="px-2.5 py-1 rounded-md transition-colors ${this.currentMode === 'voca' ? 'bg-blue-600 text-white shadow-xs' : 'text-slate-400 hover:text-white'}">
                 📖 보카북
               </button>
@@ -297,6 +327,7 @@
               <button onclick="window.bookStudioEngine.setMode('both')" class="px-2.5 py-1 rounded-md transition-colors ${this.currentMode === 'both' ? 'bg-blue-600 text-white shadow-xs' : 'text-slate-400 hover:text-white'}">
                 📚 합본
               </button>
+              ${this.renderSpecialModeButtons(seriesKey)}
             </div>
 
             <!-- 셀프 테스트 (블라인드 가리기) 토글 -->
@@ -431,10 +462,26 @@
     // 문서 렌더링 로직 (표지, 목차, 보카북, 워크북, 정답지)
     // =========================================================================
 
+
+    renderSpecialModeButtons(seriesKey) {
+      const modes = SPECIAL_MODES[seriesKey] || [];
+      if (!modes.length) return '';
+      return modes.map(m => `
+        <button onclick="window.bookStudioEngine.setMode('${m.id}')" class="px-2.5 py-1 rounded-md transition-colors ${this.currentMode === m.id ? 'bg-amber-600 text-white font-bold shadow-xs' : 'text-amber-300 hover:text-white'}" title="${m.desc}">
+          ${m.name}
+        </button>
+      `).join('');
+    }
+
     buildPreviewHtml() {
       const meta = this.currentBookMeta;
       const days = this.selectedDay === 'ALL' ? Object.keys(this.groupedDays) : [this.selectedDay];
       let html = '';
+
+      // [스페셜 부교재 모드 처리]
+      if (this.currentMode === 'cram') {
+        return this.renderCramSheet(days);
+      }
 
       // 1. 전체 인쇄 모드일 경우: 표지(Cover) + 목차(TOC) 포함
       if (this.selectedDay === 'ALL') {
@@ -447,18 +494,33 @@
         const words = this.groupedDays[dayKey] || [];
         if (words.length === 0) return;
 
-        // 보카북 렌더링
         if (this.currentMode === 'voca' || this.currentMode === 'both') {
           html += this.renderVocaDaySheet(dayKey, words);
         }
-
-        // 워크북 렌더링
         if (this.currentMode === 'workbook' || this.currentMode === 'both') {
           html += this.renderWorkbookDaySheet(dayKey, words);
         }
+        if (this.currentMode === 'writing') {
+          html += this.renderWritingNoteSheet(dayKey, words);
+        }
+        if (this.currentMode === 'pocket') {
+          html += this.renderPocketTravelSheet(dayKey, words);
+        }
+        if (this.currentMode === 'script') {
+          html += this.renderShadowingScriptSheet(dayKey, words);
+        }
+        if (this.currentMode === 'academic_reader') {
+          html += this.renderAcademicReaderSheet(dayKey, words);
+        }
+        if (this.currentMode === 'matrix') {
+          html += this.renderMatrixSheet(dayKey, words);
+        }
+        if (this.currentMode === 'reader') {
+          html += this.renderLiteratureReaderSheet(dayKey, words);
+        }
       });
 
-      // 3. 워크북 또는 합본 모드이고 전체 인쇄일 때: 빠른 정답지(Answer Key) 추가
+      // 3. 빠른 정답지 (워크북/합본/서술형 모드 지원)
       if ((this.currentMode === 'workbook' || this.currentMode === 'both') && this.includeAnswers) {
         html += this.renderAnswerKeySheet(days);
       }
@@ -1169,12 +1231,447 @@
       `;
     }
 
+
+    // =========================================================================
+    // 특화 스페셜 부교재 렌더러 (Specialized Supplementary Book Engines)
+    // =========================================================================
+
+    /**
+     * 1) ✍️ [내신 서술형 영작 조건부 완성 노트] (중등 내신 & 숙어 & AI 맞춤)
+     */
+    renderWritingNoteSheet(dayKey, words) {
+      const meta = this.currentBookMeta;
+      const seriesKey = meta.series || 'middle';
+      const seriesInfo = SERIES_INFO[seriesKey] || SERIES_INFO.middle;
+
+      // 영작 문항으로 적합한 단어 5~6개 선별 (예문이 있는 단어 우선)
+      const targetWords = words.filter(w => w.example && w.translation).slice(0, 6);
+      const fallbackWords = targetWords.length >= 4 ? targetWords : words.slice(0, 6);
+
+      return `
+        <div class="studio-a4-sheet">
+          <div class="studio-day-header border-b-2 border-slate-900">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="studio-day-tag bg-blue-900">${dayKey} 서술형 영작 노트</span>
+                <span class="text-xs font-bold text-slate-700">${seriesInfo.name}</span>
+              </div>
+              <div class="text-xs text-slate-500 font-medium">
+                학교 시험 서술형 만점 대비 • 조건부 문장 완성 & 어형 변화 집중 클리닉
+              </div>
+            </div>
+            <div class="text-right text-[11px] text-slate-500">
+              <div>학습자: _____________</div>
+              <div class="font-bold text-slate-800 mt-0.5">점수: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 100점</div>
+            </div>
+          </div>
+
+          <!-- Section 1. 조건부 문장 영작 드릴 -->
+          <div class="studio-wb-section-title">
+            <span>Section 1. 다음 우리말과 일치하도록 주어진 [조건]에 맞추어 완전한 영어 문장을 쓰시오.</span>
+            <span class="text-[10px] font-normal text-slate-500">Conditional Writing</span>
+          </div>
+
+          <div class="space-y-3">
+            ${fallbackWords.map((w, idx) => {
+              const trans = w.translation || `그들은 ${w.meaning}에 대해 이야기하고 있었다.`;
+              return `
+                <div class="studio-writing-item">
+                  <div class="flex items-start justify-between gap-2 mb-1.5">
+                    <div class="text-xs font-bold text-slate-900 leading-snug">
+                      <span class="text-blue-900 font-black mr-1">[${idx + 1}번]</span>
+                      <span>${trans}</span>
+                    </div>
+                    <div class="flex items-center gap-1 shrink-0">
+                      <span class="studio-writing-condition">제시어: <strong>${w.word}</strong></span>
+                      <span class="studio-writing-condition">어형 변형 가능</span>
+                    </div>
+                  </div>
+                  <div class="text-[11px] text-slate-500 mb-1">
+                    [조건] ① 제시어 '<strong>${w.word}</strong>'를 반드시 활용할 것 &nbsp; ② 시제와 수일치에 주의하여 완전한 문장으로 쓸 것
+                  </div>
+                  <div class="pt-2">
+                    <span class="text-xs font-bold text-slate-700">답안 작성:</span>
+                    <span class="studio-writing-line"></span>
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+
+          <!-- Section 2. 서술형 어형 변형 & 빈칸 완성 드릴 -->
+          <div class="studio-wb-section-title mt-4">
+            <span>Section 2. 문맥을 읽고 괄호 안의 단어를 문법과 의미에 맞게 알맞은 형태로 고쳐 쓰시오.</span>
+            <span class="text-[10px] font-normal text-slate-500">Form Transformation</span>
+          </div>
+
+          <div class="space-y-2">
+            ${words.slice(0, 4).map((w, idx) => {
+              const hintSentence = w.example ? this.makeClozeSentence(w.example, w.word) : `The students were very ( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ) about the project.`;
+              return `
+                <div class="studio-wb-qitem p-2.5 border border-slate-200">
+                  <div class="text-xs text-slate-900 font-serif leading-relaxed">
+                    <span class="studio-wb-qnum font-sans font-bold">${idx + 1}.</span>
+                    <span>${hintSentence}</span>
+                    <span class="text-blue-900 font-bold ml-1">[ 제시어: ${w.word} ]</span>
+                  </div>
+                  <div class="mt-2 text-right text-[11px] font-bold text-slate-700">
+                    변형 정답: ( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+
+          <!-- 하단 푸터 -->
+          <div class="mt-6 pt-3 border-t border-slate-200 flex items-center justify-between text-[10px] text-slate-400">
+            <span>VERITAS ENGLISH SUPPLEMENTARY SERIES • WRITING NOTEBOOK</span>
+            <span>${dayKey} • DESCRIPTIVE ENGLISH PRACTICE</span>
+          </div>
+        </div>
+      `;
+    }
+
+    /**
+     * 2) ⚡ [시험 직전 10분 최종 파이널 체크 시트] (A4 1장 초압축 암기장)
+     */
+    renderCramSheet(days) {
+      const meta = this.currentBookMeta;
+      const allWords = [];
+      days.forEach(d => {
+        (this.groupedDays[d] || []).forEach(w => {
+          allWords.push({ ...w, day: d });
+        });
+      });
+
+      return `
+        <div class="studio-a4-sheet" style="padding: 10mm 10mm;">
+          <!-- 초압축 헤더 -->
+          <div class="flex items-center justify-between border-b-2 border-slate-900 pb-2 mb-3">
+            <div class="flex items-center gap-2">
+              <span class="text-lg">⚡</span>
+              <div>
+                <h1 class="text-base font-black text-slate-900 tracking-tight leading-none">
+                  ${meta.title} • 시험 직전 10분 초압축 파이널 치트시트
+                </h1>
+                <span class="text-[10px] text-slate-500 font-medium">전체 ${days.length} DAYs (${allWords.length}단어) 총정리 • 접이식 셀프 테스트선 탑재</span>
+              </div>
+            </div>
+            <div class="text-right text-[10px] text-slate-600">
+              <span class="font-bold bg-amber-200 text-amber-950 px-2 py-0.5 rounded">FINAL CRAM</span>
+            </div>
+          </div>
+
+          <!-- 3열 초압축 테이블 (가운데 접이식 선) -->
+          <div class="studio-cram-container">
+            ${allWords.map((w, idx) => `
+              <div class="studio-cram-row">
+                <div class="flex items-baseline gap-1 truncate pr-1">
+                  <span class="text-[9px] font-bold text-slate-400 font-mono">${String(idx + 1).padStart(3, '0')}</span>
+                  <span class="font-bold text-slate-900 text-xs">${w.word || 'VOCA'}</span>
+                  ${w.pos ? `<span class="text-[9px] text-slate-500">(${w.pos})</span>` : ''}
+                </div>
+                <div class="text-[10px] text-slate-700 font-medium truncate text-right max-w-[55%]">
+                  ${w.meaning}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+
+          <!-- 하단 접이식 셀프 테스트 안내선 -->
+          <div class="mt-4 pt-2 border-t border-dashed border-amber-400 text-center text-[10px] text-amber-900 bg-amber-50/70 p-2 rounded">
+            <strong>✂️ 시험 직전 10분 암기 팁:</strong> A4 종이를 세로로 3등분하여 오른편 뜻 부분을 손이나 책받침으로 가리면서 1초 만에 뜻이 튀어나오지 않는 단어에 형광펜을 치세요!
+          </div>
+        </div>
+      `;
+    }
+
+    /**
+     * 3) ✈️ [포켓 서바이벌 현장 회화 핸드북] (여행 영어 5종)
+     */
+    renderPocketTravelSheet(dayKey, words) {
+      const meta = this.currentBookMeta;
+
+      return `
+        <div class="studio-a4-sheet">
+          <div class="studio-day-header border-b-2 border-sky-700">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="studio-day-tag bg-sky-700">${dayKey} 포켓 서바이벌</span>
+                <span class="text-xs font-bold text-sky-950">글로벌 여행 현장 직결 회화</span>
+              </div>
+              <div class="text-xs text-slate-500 font-medium">
+                공항·호텔·식당 현장에서 1초 만에 펼쳐 손가락으로 짚거나 바로 말하는 실전 핸드북
+              </div>
+            </div>
+            <div class="text-right text-[11px] text-sky-800 font-bold">
+              POCKET SURVIVAL
+            </div>
+          </div>
+
+          <!-- 상황별 롤플레잉 대화문 카드 2단 그리드 -->
+          <div class="grid grid-cols-2 gap-3 mt-3">
+            ${words.map((w, idx) => `
+              <div class="p-3 rounded-lg border border-sky-200 bg-sky-50/30 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between border-b border-sky-100 pb-1.5 mb-2">
+                    <span class="text-xs font-black text-sky-900 flex items-center gap-1">
+                      <span>📍 Situational Key #${idx + 1}</span>
+                    </span>
+                    <span class="text-[10px] font-bold text-sky-700 bg-sky-100 px-1.5 py-0.2 rounded">${w.word}</span>
+                  </div>
+                  <div class="text-xs font-bold text-slate-900 mb-1">
+                    🗣️ [현장 표현]: "${w.example || `Could you please check this ${w.word}?`}"
+                  </div>
+                  <div class="text-[11px] text-slate-600 mb-2">
+                    [한국어 뜻]: ${w.translation || w.meaning}
+                  </div>
+                </div>
+                <div class="pt-2 border-t border-dashed border-sky-200 text-[10.5px] text-sky-900 bg-white/70 p-1.5 rounded">
+                  <strong>💡 현장 대처 팁:</strong> 상대방이 못 알아들으면 이 카드의 영어를 손가락으로 가리키며 <strong>"This one, please!"</strong>라고 말하세요.
+                </div>
+              </div>
+            `).join('')}
+          </div>
+
+          <div class="mt-6 pt-3 border-t border-slate-200 flex items-center justify-between text-[10px] text-slate-400">
+            <span>VERITAS ENGLISH TRAVEL COMPANION • POCKET SURVIVAL EDITION</span>
+            <span>${dayKey} • INSTANT PHRASEBOOK</span>
+          </div>
+        </div>
+      `;
+    }
+
+    /**
+     * 4) 🎬 [미드 & 유튜브 섀도잉 실전 대본집] (구동사 & 슬랭)
+     */
+    renderShadowingScriptSheet(dayKey, words) {
+      const meta = this.currentBookMeta;
+
+      return `
+        <div class="studio-a4-sheet">
+          <div class="studio-day-header border-b-2 border-teal-800">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="studio-day-tag bg-teal-800">${dayKey} 섀도잉 대본집</span>
+                <span class="text-xs font-bold text-teal-950">미드·유튜브 리얼 씬 스크립트</span>
+              </div>
+              <div class="text-xs text-slate-500 font-medium">
+                눈으로만 외우지 않고 배우의 억양과 감정으로 3회 소리 내어 따라 읽는 실전 발화집
+              </div>
+            </div>
+            <div class="text-right text-[11px] text-teal-800 font-bold">
+              SHADOWING SCRIPT
+            </div>
+          </div>
+
+          <div class="space-y-3 mt-3">
+            ${words.map((w, idx) => `
+              <div class="studio-script-dialogue">
+                <div class="flex items-center justify-between border-b border-slate-200 pb-1 mb-2">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-black text-teal-900">Scene #${idx + 1}</span>
+                    <span class="text-[11px] font-bold text-slate-700 bg-teal-100 px-2 py-0.2 rounded">${w.word}</span>
+                    <span class="text-[11px] text-slate-500">(${w.meaning})</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 text-[10px] font-bold text-slate-500">
+                    <span>섀도잉 체크:</span>
+                    <span>1<span class="studio-check-box ml-0.5"></span></span>
+                    <span>2<span class="studio-check-box ml-0.5"></span></span>
+                    <span>3<span class="studio-check-box ml-0.5"></span></span>
+                  </div>
+                </div>
+
+                <div class="space-y-1.5 text-xs text-slate-800 font-sans">
+                  <div>
+                    <span class="studio-script-speaker">A:</span>
+                    <span>"Hey, did you hear about what happened yesterday?"</span>
+                  </div>
+                  <div class="bg-teal-50/50 p-1.5 rounded">
+                    <span class="studio-script-speaker text-teal-900">B:</span>
+                    <span class="font-bold text-slate-900">"${w.example || `Yeah, we definitely need to ${w.word} as soon as possible.`}"</span>
+                    <div class="text-[10.5px] text-slate-600 mt-0.5 pl-5">(${w.translation || w.meaning})</div>
+                  </div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+
+          <div class="mt-6 pt-3 border-t border-slate-200 flex items-center justify-between text-[10px] text-slate-400">
+            <span>VERITAS ENGLISH REAL DIALOGUE SERIES • SHADOWING PLAYBOOK</span>
+            <span>${dayKey} • SPOKEN FLUENCY</span>
+          </div>
+        </div>
+      `;
+    }
+
+    /**
+     * 5) 🎯 [수능 혼동어휘 1:1 클리닉 매트릭스] (수능 킬러 교재)
+     */
+    renderMatrixSheet(dayKey, words) {
+      const meta = this.currentBookMeta;
+
+      return `
+        <div class="studio-a4-sheet">
+          <div class="studio-day-header border-b-2 border-rose-900">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="studio-day-tag bg-rose-900">${dayKey} 혼동어휘 클리닉</span>
+                <span class="text-xs font-bold text-rose-950">수능 1등급 킬러 1:1 대조 매트릭스</span>
+              </div>
+              <div class="text-xs text-slate-500 font-medium">
+                철자·발음 혼동 및 다의어 킬러 의미 1:1 정밀 대조 분석표
+              </div>
+            </div>
+            <div class="text-right text-[11px] text-rose-900 font-bold">
+              CONFUSION MATRIX
+            </div>
+          </div>
+
+          <div class="space-y-3 mt-3">
+            ${words.map((w, idx) => `
+              <div class="p-3 rounded-lg border border-rose-200 bg-rose-50/20">
+                <div class="flex items-center justify-between border-b border-rose-100 pb-1 mb-2">
+                  <span class="text-xs font-black text-rose-950">[킬러 문맥 #${idx + 1}]</span>
+                  <span class="text-xs font-black text-rose-900">${w.word}</span>
+                </div>
+                <div class="grid grid-cols-2 gap-3 text-xs">
+                  <div class="p-2 rounded bg-white border border-rose-200/70">
+                    <div class="font-bold text-slate-800 mb-1">① 기본 의미:</div>
+                    <div class="text-slate-700">${w.meaning}</div>
+                  </div>
+                  <div class="p-2 rounded bg-rose-100/40 border border-rose-300/80">
+                    <div class="font-bold text-rose-950 mb-1">② 수능 킬러 문맥 의미:</div>
+                    <div class="text-rose-900 font-medium">${w.translation || '지문 속 함정 의미 주의'}</div>
+                  </div>
+                </div>
+                <div class="mt-2 text-[11px] text-slate-700 bg-white p-2 rounded border border-slate-200">
+                  <strong>기출형 예문:</strong> ${this.highlightWord(w.example || '', w.word)}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+
+          <div class="mt-6 pt-3 border-t border-slate-200 flex items-center justify-between text-[10px] text-slate-400">
+            <span>VERITAS ENGLISH CSAT KILLER SERIES • CONFUSION MATRIX</span>
+            <span>${dayKey} • ADVANCED DISTINCTION</span>
+          </div>
+        </div>
+      `;
+    }
+
+    /**
+     * 6) 🏫 [미국 교과서 학술 영영 리더 & 코퍼스 지문] (미국 교과서 학술 어휘)
+     */
+    renderAcademicReaderSheet(dayKey, words) {
+      const meta = this.currentBookMeta;
+
+      return `
+        <div class="studio-a4-sheet">
+          <div class="studio-day-header border-b-2 border-slate-900">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="studio-day-tag bg-slate-900">${dayKey} Academic Reader</span>
+                <span class="text-xs font-bold text-slate-700">Tier-2 Academic Corpus & English Definition</span>
+              </div>
+              <div class="text-xs text-slate-500 font-medium">
+                미국 교과서(과학/사회) 속 학술 영영 정의 및 코퍼스 지문 정밀 리딩
+              </div>
+            </div>
+            <div class="text-right text-[11px] text-slate-600 font-bold">
+              ACADEMIC READER
+            </div>
+          </div>
+
+          <div class="space-y-3 mt-3">
+            ${words.map((w, idx) => `
+              <div class="p-3 rounded-lg border border-slate-300 bg-slate-50/60">
+                <div class="flex items-baseline justify-between border-b border-slate-200 pb-1.5 mb-2">
+                  <div class="flex items-baseline gap-2">
+                    <span class="font-serif font-black text-sm text-slate-900">${w.word}</span>
+                    <span class="font-serif italic text-xs text-slate-600">/${w.pos || 'acad.'}/</span>
+                  </div>
+                  <span class="text-xs font-bold text-blue-900">${w.meaning}</span>
+                </div>
+                <div class="text-xs font-serif text-slate-800 leading-relaxed bg-white p-2.5 rounded border border-slate-200">
+                  <div class="text-[10px] uppercase font-mono font-bold text-slate-400 mb-1">Context Passage:</div>
+                  ${this.highlightWord(w.example || '', w.word)}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+
+          <div class="mt-6 pt-3 border-t border-slate-200 flex items-center justify-between text-[10px] text-slate-400">
+            <span>VERITAS ENGLISH US ACADEMIC SERIES • CORPUS READER</span>
+            <span>${dayKey} • SCHOLARLY READING</span>
+          </div>
+        </div>
+      `;
+    }
+
+    /**
+     * 7) 📜 [영미 명작 소설 원문 리더 & 감정 스펙트럼] (감정 & 문학)
+     */
+    renderLiteratureReaderSheet(dayKey, words) {
+      const meta = this.currentBookMeta;
+
+      return `
+        <div class="studio-a4-sheet">
+          <div class="studio-day-header border-b-2 border-fuchsia-900">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="studio-day-tag bg-fuchsia-900">${dayKey} Literature Reader</span>
+                <span class="text-xs font-bold text-fuchsia-950">영미 명작 원문 발췌 & 감정 스펙트럼</span>
+              </div>
+              <div class="text-xs text-slate-500 font-medium">
+                고전 문학 소설 속 원문 단락과 원어민 감정 강도 척도 분석
+              </div>
+            </div>
+            <div class="text-right text-[11px] text-fuchsia-900 font-bold">
+              CLASSIC LITERATURE
+            </div>
+          </div>
+
+          <div class="space-y-3 mt-3">
+            ${words.map((w, idx) => `
+              <div class="p-3.5 rounded-lg border border-fuchsia-200 bg-fuchsia-50/20 font-serif">
+                <div class="flex items-center justify-between border-b border-fuchsia-100 pb-1.5 mb-2 font-sans">
+                  <div class="flex items-baseline gap-2">
+                    <span class="text-sm font-black text-fuchsia-950">${w.word}</span>
+                    <span class="text-xs text-fuchsia-800 font-medium">(${w.meaning})</span>
+                  </div>
+                  <span class="text-[10px] font-bold text-fuchsia-900 bg-fuchsia-100 px-2 py-0.5 rounded">Literature Note</span>
+                </div>
+                <div class="text-xs text-slate-800 italic leading-relaxed bg-white p-2.5 rounded border border-fuchsia-100">
+                  "${this.highlightWord(w.example || '', w.word)}"
+                </div>
+                ${w.translation ? `<div class="text-[11px] font-sans text-slate-600 mt-1 pl-2">[해석] ${w.translation}</div>` : ''}
+              </div>
+            `).join('')}
+          </div>
+
+          <div class="mt-6 pt-3 border-t border-slate-200 flex items-center justify-between text-[10px] text-slate-400">
+            <span>VERITAS ENGLISH LITERARY CLASSICS • FICTION READER</span>
+            <span>${dayKey} • NOVEL EXCERPTS</span>
+          </div>
+        </div>
+      `;
+    }
+
     // =========================================================================
     // 헬퍼 유틸리티
     // =========================================================================
 
     escapeRegex(s) {
       return String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    makeClozeSentence(sentence, targetWord) {
+      if (!sentence || !targetWord) return sentence || '';
+      const m = this.findClozeMatch(sentence, targetWord, '<span class="studio-cloze-gap font-mono text-slate-700 font-bold border-b border-slate-400 px-3 py-0.5 inline-block min-w-[70px] text-center">[ &nbsp;&nbsp;&nbsp;&nbsp; ]</span>');
+      if (m) return m.html;
+      const esc = this.escapeRegex(targetWord);
+      return sentence.replace(new RegExp(esc, 'gi'), '<span class="studio-cloze-gap font-mono text-slate-700 font-bold border-b border-slate-400 px-3 py-0.5 inline-block min-w-[70px] text-center">[ &nbsp;&nbsp;&nbsp;&nbsp; ]</span>');
     }
 
     highlightWord(sentence, targetWord) {
