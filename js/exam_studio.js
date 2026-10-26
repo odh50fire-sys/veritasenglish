@@ -77,6 +77,25 @@ class ExamStudioEngine {
         `).join('');
     }
 
+    formatQuestionItem(p, originalQ, qNum) {
+        return {
+            qNum: qNum,
+            passageId: p.id,
+            passageTitle: p.title || p.koreanTitle || '내신 독해 지문',
+            passageGrade: p.grade || '',
+            passageText: p.sentences ? p.sentences.map(s => s.en).join(' ') : (p.content || ''),
+            passageWithUnderline: originalQ.passageWithUnderline || null,
+            passageWithBlank: originalQ.passageWithBlank || null,
+            // questionText가 데이터 원본의 표준 프로퍼티이며, 기타 네이밍 호환
+            questionText: String(originalQ.questionText || originalQ.question || originalQ.prompt || '다음 글을 읽고 물음에 답하시오.').trim(),
+            type: originalQ.type || 'multiple_choice',
+            typeLabel: originalQ.typeLabel || '객관식',
+            options: Array.isArray(originalQ.options) ? originalQ.options : [],
+            correctIndex: typeof originalQ.correctIndex === 'number' ? originalQ.correctIndex : 0,
+            explanation: originalQ.explanation || ''
+        };
+    }
+
     // ------------------------------------------------------------------------
     // 모의고사 시험지 자동 생성기 (Synthesizer)
     // ------------------------------------------------------------------------
@@ -127,33 +146,36 @@ class ExamStudioEngine {
         // 지문 셔플
         passagePool.sort(() => Math.random() - 0.5);
 
-        // 문항 추출
+        // 문항 추출 (1차: 지문당 최대 2문제 균등 추출 -> 2차: 25문항 등 목표치 미달 시 추가 보충)
         const questions = [];
-        let pIndex = 0;
+        const usedQuestionIds = new Set();
 
-        while (questions.length < questionCount && pIndex < passagePool.length) {
-            const p = passagePool[pIndex];
-            if (p.questions && p.questions.length > 0) {
-                // 지문당 1~2문제 추출
-                const qShuffled = [...p.questions].sort(() => Math.random() - 0.5);
-                const pickCount = Math.min(2, questionCount - questions.length, qShuffled.length);
-                for (let i = 0; i < pickCount; i++) {
-                    const originalQ = qShuffled[i];
-                    questions.push({
-                        qNum: questions.length + 1,
-                        passageId: p.id,
-                        passageTitle: p.title,
-                        passageGrade: p.grade,
-                        passageText: p.sentences.map(s => s.en).join(' '),
-                        questionText: originalQ.question,
-                        typeLabel: originalQ.typeLabel || '객관식',
-                        options: originalQ.options || [],
-                        correctIndex: originalQ.correctIndex ?? 0,
-                        explanation: originalQ.explanation || ''
-                    });
+        // 1단계: 지문당 최대 2문항 균등 배분
+        for (const p of passagePool) {
+            if (questions.length >= questionCount) break;
+            const availableQ = (p.questions || []).filter(q => !usedQuestionIds.has(q.id));
+            if (availableQ.length === 0) continue;
+            const qShuffled = [...availableQ].sort(() => Math.random() - 0.5);
+            const pickCount = Math.min(2, questionCount - questions.length, qShuffled.length);
+            for (let i = 0; i < pickCount; i++) {
+                const originalQ = qShuffled[i];
+                usedQuestionIds.add(originalQ.id);
+                questions.push(this.formatQuestionItem(p, originalQ, questions.length + 1));
+            }
+        }
+
+        // 2단계: 목표 문항수(예: 25문항) 미달 시 잔여 문항 풀에서 추가 보충
+        if (questions.length < questionCount) {
+            for (const p of passagePool) {
+                if (questions.length >= questionCount) break;
+                const remainingQ = (p.questions || []).filter(q => !usedQuestionIds.has(q.id));
+                const qShuffled = [...remainingQ].sort(() => Math.random() - 0.5);
+                while (qShuffled.length > 0 && questions.length < questionCount) {
+                    const originalQ = qShuffled.pop();
+                    usedQuestionIds.add(originalQ.id);
+                    questions.push(this.formatQuestionItem(p, originalQ, questions.length + 1));
                 }
             }
-            pIndex++;
         }
 
         // 시험지 객체 구축
@@ -254,10 +276,13 @@ class ExamStudioEngine {
             questionsContainer.innerHTML = this.currentExam.questions.map((q, idx) => `
                 <div id="exam-q-box-${idx}" class="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3 scroll-mt-24">
                     <div class="flex items-center justify-between pb-2 border-b border-slate-100 text-xs">
-                        <span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 font-bold font-mono">
-                            문항 ${q.qNum}
-                        </span>
-                        <span class="text-slate-400 font-serif">[${q.passageTitle}]</span>
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-900 font-bold font-mono">
+                                문항 ${q.qNum}
+                            </span>
+                            ${q.typeLabel ? `<span class="px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 font-medium text-[11px]">${q.typeLabel}</span>` : ''}
+                        </div>
+                        <span class="text-slate-400 font-serif text-[11px] truncate max-w-[200px]">[${q.passageTitle}]</span>
                     </div>
 
                     <!-- 지문 박스 -->
@@ -265,8 +290,22 @@ class ExamStudioEngine {
                         ${q.passageText}
                     </div>
 
+                    ${q.passageWithUnderline ? `
+                        <div class="p-3.5 rounded-xl bg-blue-50/70 border border-blue-200 font-serif text-xs sm:text-sm leading-relaxed text-blue-950 font-medium">
+                            <span class="inline-block px-1.5 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-bold font-mono mr-1.5 align-middle">어법 밑줄 지문</span>
+                            ${q.passageWithUnderline}
+                        </div>
+                    ` : ''}
+
+                    ${q.passageWithBlank ? `
+                        <div class="p-3.5 rounded-xl bg-amber-50/70 border border-amber-200 font-serif text-xs sm:text-sm leading-relaxed text-amber-950 font-medium">
+                            <span class="inline-block px-1.5 py-0.5 rounded bg-amber-200 text-amber-900 text-[10px] font-bold font-mono mr-1.5 align-middle">빈칸 문맥</span>
+                            ${q.passageWithBlank}
+                        </div>
+                    ` : ''}
+
                     <!-- 질문 문구 -->
-                    <h3 class="font-serif font-bold text-base text-slate-900 leading-snug">
+                    <h3 class="font-serif font-bold text-base text-slate-900 leading-snug whitespace-pre-line">
                         ${q.questionText}
                     </h3>
 
@@ -455,7 +494,7 @@ class ExamStudioEngine {
                                 ${isCorrect ? '✓ 정답 (100점)' : '✕ 오답 (오답노트 등록)'}
                             </span>
                         </div>
-                        <p class="font-serif font-bold text-slate-900 mt-2 text-sm">${q.questionText}</p>
+                        <p class="font-serif font-bold text-slate-900 mt-2 text-sm whitespace-pre-line">${q.questionText}</p>
                         <div class="mt-2 space-y-1">
                             <div>내 답: <strong class="${isCorrect ? 'text-emerald-800' : 'text-rose-800'}">${typeof userChoice === 'number' ? `${userChoice + 1}번 (${q.options[userChoice]})` : '미응답'}</strong></div>
                             ${!isCorrect ? `<div>정답: <strong class="text-emerald-800">${q.correctIndex + 1}번 (${q.options[q.correctIndex]})</strong></div>` : ''}
@@ -529,10 +568,15 @@ class ExamStudioEngine {
                             <div class="flex items-start gap-2">
                                 <span class="font-bold text-sm">[${q.qNum}]</span>
                                 <div>
-                                    <div class="font-bold text-sm text-slate-900">${q.questionText}</div>
-                                    <div class="mt-1.5 p-3 bg-slate-50 border border-slate-200 text-xs leading-relaxed">
+                                    <div class="font-bold text-sm text-slate-900 whitespace-pre-line">${q.questionText}</div>
+                                    <div class="mt-1.5 p-3 bg-slate-50 border border-slate-200 text-xs leading-relaxed font-serif">
                                         ${q.passageText}
                                     </div>
+                                    ${q.passageWithUnderline ? `
+                                        <div class="mt-1 p-2 bg-blue-50/60 border border-blue-200 text-xs font-serif leading-relaxed text-blue-950">
+                                            <strong class="text-blue-900 font-mono text-[10px]">[어법 밑줄]</strong> ${q.passageWithUnderline}
+                                        </div>
+                                    ` : ''}
                                     <div class="mt-2 grid grid-cols-1 gap-1 text-xs">
                                         ${q.options.map((opt, oIdx) => `
                                             <div>${['①', '②', '③', '④', '⑤'][oIdx]} ${opt}</div>
