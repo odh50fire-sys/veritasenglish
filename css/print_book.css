@@ -627,3 +627,33 @@
     border: 1px solid #94a3b8 !important;
   }
 }
+
+
+/* ==========================================================================
+   7. [원래 단어장 밑 배치] 원어민 꿀팁 배너 스타일
+   ========================================================================== */
+
+.studio-day-native-tip-banner {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 1.5px solid #fde68a;
+  border-left: 4.5px solid #d97706;
+  border-radius: 8px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  box-sizing: border-box;
+}
+
+@media print {
+  .studio-day-native-tip-banner {
+    background: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+    border-left: 4px solid #475569 !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    margin-top: 10px !important;
+    padding: 8px 12px !important;
+  }
+  .studio-day-native-tip-banner * {
+    color: #0f172a !important;
+  }
+}
