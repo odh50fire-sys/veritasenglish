@@ -1254,9 +1254,84 @@ class StorageManager {
     }
 
     /**
+     * 단어의 소속 단원(Unit / DAY / 컬렉션) 고유 키 식별
+     */
+    getWordUnitKey(w) {
+        if (!w) return '';
+        if (w.isNeungryul2025 && w.neungryulDay) {
+            return `neungryul2025_${w.neungryulDay}`;
+        }
+        if (w.isNeungryulEtym2025 && w.neungryulDay) {
+            return `neungryul_etym_${w.neungryulDay}`;
+        }
+        if (w.curatedCollectionId && w.curatedDay) {
+            return `curated_${w.curatedCollectionId}_${w.curatedDay}`;
+        }
+        if (w.collectionId && (w.curatedDay || w.DAY)) {
+            return `col_${w.collectionId}_${w.curatedDay || w.DAY}`;
+        }
+        if (w.tag && w.tag.trim()) {
+            return `tag_${w.tag.trim().toLowerCase()}`;
+        }
+        if (w.planDate) {
+            return `plan_${w.planDate}`;
+        }
+        return '';
+    }
+
+    /**
+     * 스마트 퀴즈로 학습한 단어와 같은 단원이면서 플래시카드를 완료한 단어들을 학습 완료 상태로 자동 동기화
+     */
+    syncUnitCompletionForFlashcardWords(sampleWords = null) {
+        const activeUnitKeys = new Set();
+
+        // 1. 현재 퀴즈 세션의 단어들로부터 단원 키 추출
+        if (Array.isArray(sampleWords) && sampleWords.length > 0) {
+            sampleWords.forEach(w => {
+                const k = this.getWordUnitKey(w);
+                if (k) activeUnitKeys.add(k);
+            });
+        }
+
+        // 2. 전체 단어 중 퀴즈를 완료한 이력이 있는 단어들의 단원 키도 수집
+        this.words.forEach(w => {
+            if (w.quizDone && !w.isReadingPassage) {
+                const k = this.getWordUnitKey(w);
+                if (k) activeUnitKeys.add(k);
+            }
+        });
+
+        if (activeUnitKeys.size === 0) return 0;
+
+        let syncedCount = 0;
+        this.words.forEach(w => {
+            if (!w.isReadingPassage && w.flashcardDone) {
+                const k = this.getWordUnitKey(w);
+                if (k && activeUnitKeys.has(k)) {
+                    if (!w.quizDone || !w.studyCompleted) {
+                        w.quizDone = true;
+                        w.studyCompleted = true;
+                        w.completedAt = w.completedAt || Date.now();
+                        syncedCount++;
+                    }
+                }
+            }
+        });
+
+        if (syncedCount > 0) {
+            this.saveWords();
+        }
+
+        return syncedCount;
+    }
+
+    /**
      * 일자별 학습 플래너 완료 체크 상태 검증 및 업데이트 (플래시카드+퀴즈 모두 완료 시 ✓ 부여)
      */
     checkAndMarkDayCompletion(dateStr) {
+        // 플래시카드는 완료했으나 스마트 퀴즈를 못 본 같은 단원 단어들 자동 완료 동기화
+        this.syncUnitCompletionForFlashcardWords();
+
         if (!dateStr) dateStr = this.getTodayDateString();
         if (!this.plans[dateStr]) {
             this.plans[dateStr] = { restDay: false, memo: '', isDone: false };

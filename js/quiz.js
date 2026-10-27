@@ -570,7 +570,30 @@ class QuizEngine {
             accuracy: accuracy
         });
 
-        // 요구사항 3: 일일 학습 플래너 완료 체크마크 갱신
+        // 다음 퀴즈 단계 버튼 라벨 및 액션 갱신 (객관식 -> 스펠링 -> 리스닝 -> 문맥 완성 -> 복습)
+        const stageNames = {
+            choice: '스펠링 타이핑',
+            spelling: '리스닝 딕테이션',
+            listening: '문맥 완성 퀴즈',
+            cloze: '에빙하우스 복습'
+        };
+        const nextBtn = document.getElementById('quiz-next-stage-btn');
+        const nextLabel = document.getElementById('quiz-next-stage-label');
+        if (nextBtn && nextLabel) {
+            const nextTargetName = stageNames[this.currentMode] || '다음 단계';
+            if (this.currentMode === 'cloze') {
+                nextLabel.textContent = `다음 학습 단계 (${nextTargetName}) 이동`;
+            } else {
+                nextLabel.textContent = `다음 단계 (${nextTargetName}) 도전`;
+            }
+        }
+
+        // 플래시카드는 했지만 퀴즈를 못 본 같은 단원의 단어들도 학습 완료로 자동 동기화
+        if (window.storage && typeof window.storage.syncUnitCompletionForFlashcardWords === 'function') {
+            window.storage.syncUnitCompletionForFlashcardWords(this.quizWords);
+        }
+
+        // 일일 학습 플래너 완료 체크마크 갱신
         window.storage.checkAndMarkDayCompletion(today);
         if (window.plannerEngine && window.plannerEngine.render) {
             window.plannerEngine.render();
@@ -579,8 +602,30 @@ class QuizEngine {
             window.app.renderDashboard();
         }
 
+        if (window.lucide) window.lucide.createIcons();
+
         if (accuracy >= 70 && typeof confetti === 'function') {
             confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
+        }
+    }
+
+    /**
+     * 스마트 퀴즈 다음 학습 단계로 즉시 전환 및 시작
+     * (객관식 4지선다 -> 스펠링 타이핑 -> 리스닝 딕테이션 -> 문맥 완성 퀴즈 -> 에빙하우스 복습)
+     */
+    goToNextQuizStage() {
+        const stages = ['choice', 'spelling', 'listening', 'cloze'];
+        const currIdx = stages.indexOf(this.currentMode);
+
+        if (currIdx !== -1 && currIdx < stages.length - 1) {
+            const nextMode = stages[currIdx + 1];
+            // 동일 단어 풀을 유지하여 동일 단어들에 대한 단계별 심화 학습 진행
+            this.startQuiz(nextMode, { scope: this.currentScope, wordPool: this.quizWords });
+        } else {
+            // 마지막 단계(문맥 완성 퀴즈) 완수 후에는 다음 학습 탭인 에빙하우스 복습으로 이동
+            if (window.app && window.app.switchTab) {
+                window.app.switchTab('review');
+            }
         }
     }
 

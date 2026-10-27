@@ -352,6 +352,11 @@ class FlashcardEngine {
                 accuracy: Math.round(((this.reviewedSession.easy + this.reviewedSession.good) / Math.max(1, this.reviewedSession.total)) * 100)
             });
 
+            // 같은 단원에서 스마트 퀴즈를 이미 풀었던 단원이면 플래시카드 완료 즉시 전체 학습 완료 동기화
+            if (window.storage && typeof window.storage.syncUnitCompletionForFlashcardWords === 'function') {
+                window.storage.syncUnitCompletionForFlashcardWords(this.sessionInitialDeck);
+            }
+
             // 요구사항 3: 일자별 플래너 완료 체크 업데이트
             window.storage.checkAndMarkDayCompletion(today);
             if (window.plannerEngine && window.plannerEngine.render) {

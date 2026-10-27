@@ -1103,9 +1103,16 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-center gap-3">
-                        <button class="px-5 py-2.5 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-50 text-xs font-semibold" onclick="window.quizEngine.startQuiz(window.quizEngine.currentMode)">다시 도전하기</button>
-                        <button class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-serif font-bold shadow-xs" onclick="window.app.switchTab('dashboard')">대시보드로 이동</button>
+                    <div class="flex flex-wrap justify-center items-center gap-3">
+                        <button id="quiz-retry-btn" class="px-5 py-2.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold cursor-pointer transition-all flex items-center gap-1.5 shadow-2xs" onclick="window.quizEngine.startQuiz(window.quizEngine.currentMode)">
+                            <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+                            <span>다시 도전하기</span>
+                        </button>
+                        <button id="quiz-next-stage-btn" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-blue-900 to-indigo-900 hover:from-blue-800 hover:to-indigo-800 text-amber-300 font-serif font-black text-xs sm:text-sm shadow-md transition-all cursor-pointer flex items-center gap-2 transform hover:-translate-y-0.5" onclick="window.quizEngine.goToNextQuizStage()">
+                            <span id="quiz-next-stage-label">다음 단계 도전하기</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                        <button class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-serif font-bold shadow-xs cursor-pointer transition-all" onclick="window.app.switchTab('dashboard')">대시보드로 이동</button>
                     </div>
                 </div>
 

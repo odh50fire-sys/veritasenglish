@@ -28,6 +28,9 @@ class PlannerEngine {
     }
 
     render() {
+        if (window.storage && typeof window.storage.syncUnitCompletionForFlashcardWords === 'function') {
+            window.storage.syncUnitCompletionForFlashcardWords();
+        }
         this.renderCalendar();
         this.renderSelectedDateDetail();
         this.renderOverviewStats();
