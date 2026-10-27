@@ -29,10 +29,27 @@
     'curated-travel-transit': 'travel',
     'curated-travel-emerge': 'travel',
     'curated-emotions': 'literature',
-    'curated-literature': 'literature'
+    'curated-literature': 'literature',
+    'veritas-original-l1': 'original',
+    'veritas-original-l2': 'original',
+    'veritas-original-l3': 'original',
+    'veritas-original-l4': 'original',
+    'veritas-original-l5': 'original',
+    'veritas-original-l6': 'original',
+    'veritas-original-l7': 'original',
+    'veritas-original-l8': 'original',
+    'veritas-original-l9': 'original',
+    'veritas-original-l10': 'original'
   };
 
   const SERIES_INFO = {
+    original: {
+      name: '베리타스 오리지널 마스터 보카',
+      sub: 'Lv.1 스타터부터 Lv.10 엘리트까지 총 6,000단어 30일 완성 공식 기본서',
+      icon: '👑',
+      accentColor: '#0f172a',
+      badgeClass: 'series-theme-original'
+    },
     middle: {
       name: '중등 내신 어휘 마스터',
       sub: '교과서 단원별 빈출 어휘 & 서술형 완벽 대비',

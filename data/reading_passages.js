@@ -8270,6 +8270,11 @@ const READING_PASSAGES = [
   }
 ];
 
+if (typeof window !== "undefined") {
+    window.READING_UNITS = READING_UNITS;
+    window.READING_PASSAGES = READING_PASSAGES;
+}
+
 if (typeof module !== "undefined" && module.exports) {
     module.exports = { READING_UNITS, READING_PASSAGES };
 }
