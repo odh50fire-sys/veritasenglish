@@ -1307,7 +1307,11 @@
 
           <div class="space-y-2">
             ${words.slice(0, 4).map((w, idx) => {
-              const hintSentence = w.example ? this.makeClozeSentence(w.example, w.word) : `The students were very ( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ) about the project.`;
+              const sInfo = (window.contextSentenceHelper && typeof window.contextSentenceHelper.getOrGenerateSentence === 'function')
+                ? window.contextSentenceHelper.getOrGenerateSentence(w)
+                : null;
+              const targetSentence = w.example || (sInfo ? sInfo.sentence : '');
+              const hintSentence = targetSentence ? this.makeClozeSentence(targetSentence, w.word) : `The students practiced to understand ( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ) in context.`;
               return `
                 <div class="studio-wb-qitem p-2.5 border border-slate-200">
                   <div class="text-xs text-slate-900 font-serif leading-relaxed">

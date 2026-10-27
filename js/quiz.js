@@ -402,37 +402,55 @@ class QuizEngine {
         this.showNextButton();
     }
 
-    // 4. 문맥 완성 퀴즈 (Cloze) - 요구사항 9: 한국어 힌트 완전 제거
+    // 4. 문맥 완성 퀴즈 (Cloze) - 능률 VOCA 및 전 교재 문맥 문장 완벽 연동
     renderClozeQuestion(currentWord, container) {
         if (!container) return;
         container.classList.remove('hidden');
 
-        let sentence = currentWord.example || `The teacher asked us to understand the meaning of ______ clearly.`;
-        const regex = new RegExp(`\\b${currentWord.word}\\w*\\b`, 'gi');
-        const clozeSentence = sentence.replace(regex, '【 ____________ 】');
+        // 스마트 문맥 예문 헬퍼를 통해 대상 단어가 100% 반영된 문장 및 빈칸 데이터 획득
+        let sInfo = null;
+        if (window.contextSentenceHelper && typeof window.contextSentenceHelper.getOrGenerateSentence === 'function') {
+            sInfo = window.contextSentenceHelper.getOrGenerateSentence(currentWord);
+        }
+
+        const sentence = sInfo ? sInfo.sentence : (currentWord.example || '');
+        const translation = sInfo ? sInfo.translation : (currentWord.exampleMeaning || currentWord.meaning || '');
+        const clozeSentence = sInfo ? sInfo.clozeSentence : (sentence ? sentence.replace(new RegExp(`\\b${currentWord.word}\\w*\\b`, 'gi'), '【 ____________ 】') : '【 ____________ 】');
+        const matchedWord = (sInfo && sInfo.matchedWord) ? sInfo.matchedWord : currentWord.word;
 
         const sentenceEl = document.getElementById('quiz-cloze-sentence');
         const transEl = document.getElementById('quiz-cloze-translation');
         const optionsGrid = document.getElementById('quiz-cloze-options-grid');
 
-        if (sentenceEl) sentenceEl.innerHTML = clozeSentence;
-        
-        // 요구사항 9: 한국어 힌트 텍스트 완전 제거 및 숨김 처리
+        if (sentenceEl) {
+            sentenceEl.innerHTML = clozeSentence;
+        }
+
+        // 문제 풀이 전에는 한국어 번역 힌트를 감추어 순수 문맥 독해 유도 (요구사항 9)
         if (transEl) {
             transEl.textContent = '';
             transEl.classList.add('hidden');
         }
 
-        const otherWords = window.storage.words
-            .filter(w => w.id !== currentWord.id && !w.isReadingPassage)
+        // 오답 선지 3개 선별 (타 단어장에서 고르게 추출)
+        const otherWords = (window.storage && window.storage.words ? window.storage.words : [])
+            .filter(w => w.id !== currentWord.id && !w.isReadingPassage && w.word && w.word.toLowerCase() !== currentWord.word.toLowerCase())
             .map(w => w.word);
-        const distractors = [...new Set(otherWords)].sort(() => Math.random() - 0.5).slice(0, 3);
+
+        let distractors = [...new Set(otherWords)].sort(() => Math.random() - 0.5).slice(0, 3);
+        
+        // 단어장 단어가 부족할 경우 보충 오답 풀에서 채움
+        if (distractors.length < 3 && window.contextSentenceHelper && window.contextSentenceHelper.getDistractors) {
+            const more = window.contextSentenceHelper.getDistractors(currentWord.word, 3 - distractors.length);
+            distractors = [...distractors, ...more];
+        }
+
         const options = [...distractors, currentWord.word].sort(() => Math.random() - 0.5);
 
         optionsGrid.innerHTML = '';
         options.forEach(opt => {
             const btn = document.createElement('button');
-            btn.className = 'w-full py-3 px-4 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-800 font-serif font-bold text-base transition-all shadow-sm cursor-pointer';
+            btn.className = 'w-full py-3.5 px-4 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-800 font-serif font-bold text-base transition-all shadow-sm cursor-pointer hover:border-blue-400 text-center';
             btn.textContent = opt;
             btn.onclick = () => {
                 if (this.isAnswered) return;
@@ -440,9 +458,39 @@ class QuizEngine {
                 const isCorrect = (opt.toLowerCase() === currentWord.word.toLowerCase());
                 this.processAnswerResult(isCorrect, currentWord);
 
-                btn.classList.add(isCorrect ? 'bg-emerald-100' : 'bg-red-100');
-                btn.classList.add(isCorrect ? 'border-emerald-400' : 'border-red-400');
-                sentenceEl.innerHTML = sentence.replace(regex, `<span class="text-blue-900 underline font-bold">${currentWord.word}</span>`);
+                // 모든 선지 버튼 상태 업데이트 (정답은 초록, 내가 고른 오답은 빨강)
+                optionsGrid.querySelectorAll('button').forEach(b => {
+                    b.disabled = true;
+                    if (b.textContent.toLowerCase() === currentWord.word.toLowerCase()) {
+                        b.classList.remove('bg-white', 'border-slate-200');
+                        b.classList.add('bg-emerald-100', 'border-emerald-500', 'text-emerald-950', 'ring-2', 'ring-emerald-400');
+                    } else if (b === btn && !isCorrect) {
+                        b.classList.remove('bg-white', 'border-slate-200');
+                        b.classList.add('bg-red-100', 'border-red-500', 'text-red-950');
+                    }
+                });
+
+                // 문장 내 빈칸에 정답 단어 하이라이트 반영
+                if (sentenceEl) {
+                    sentenceEl.innerHTML = clozeSentence.replace('【 ____________ 】', `<span class="text-blue-900 underline font-black bg-amber-100/90 px-2 py-0.5 rounded shadow-2xs">${matchedWord}</span>`);
+                }
+
+                // 문제 풀이 후 문맥 해석 및 어휘 뜻풀이 박스 표시
+                if (transEl && translation) {
+                    transEl.classList.remove('hidden');
+                    transEl.innerHTML = `
+                        <div class="mt-3 p-3 rounded-xl bg-blue-50/80 border border-blue-200 text-xs text-slate-700 leading-relaxed flex items-start gap-2 shadow-2xs">
+                            <i data-lucide="book-open" class="w-4 h-4 text-blue-900 shrink-0 mt-0.5"></i>
+                            <div>
+                                <span class="font-bold text-blue-950 block mb-0.5">💡 문맥 해석 & 어휘 뜻풀이</span>
+                                <span class="text-slate-800">${translation}</span>
+                                <span class="text-slate-500 text-[11px] block mt-0.5 font-medium">[${currentWord.word}] : ${currentWord.meaning}</span>
+                            </div>
+                        </div>
+                    `;
+                    if (window.lucide) window.lucide.createIcons();
+                }
+
                 this.showNextButton();
             };
             optionsGrid.appendChild(btn);

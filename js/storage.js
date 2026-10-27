@@ -557,6 +557,18 @@ class StorageManager {
             const rawWords = localStorage.getItem(STORAGE_KEYS.WORDS);
             if (rawWords) {
                 this.words = JSON.parse(rawWords);
+                // 기존 등록 단어 중 예문이 비어있거나 구버전 정적 오류 문장인 경우 자동 보강
+                if (window.contextSentenceHelper && Array.isArray(this.words)) {
+                    this.words.forEach(w => {
+                        if ((!w.example || !w.example.trim() || w.example.includes('meaning of ______ clearly')) && !w.isReadingPassage && w.word) {
+                            const sInfo = window.contextSentenceHelper.getOrGenerateSentence(w);
+                            if (sInfo && sInfo.sentence) {
+                                w.example = sInfo.sentence;
+                                w.exampleMeaning = sInfo.translation;
+                            }
+                        }
+                    });
+                }
             } else {
                 // 초기 진입 시 샘플 단어 자동 주입
                 this.seedSampleWords();
@@ -1589,28 +1601,36 @@ class StorageManager {
         // 이미 해당 DAY가 등록되어 있다면 기존 항목을 제거하고 새 날짜로 갱신 등록
         this.words = this.words.filter(w => !(w.isNeungryul2025 && w.neungryulDay === dayStr));
 
-        const newItems = dayRows.map(row => ({
-            id: `neungryul2025-${dayStr.replace(/\s+/g, '')}-${row['번호']}`,
-            word: String(row['영단어']).trim(),
-            meaning: String(row['뜻']).trim(),
-            partOfSpeech: this.extractPosFromMeaning(String(row['뜻']), String(row['영단어'])),
-            example: '',
-            exampleMeaning: '',
-            level: 'high',
-            tag: `능률VOCA [2025] ${dayStr}`,
-            neungryulDay: dayStr,
-            neungryulNum: row['번호'],
-            planDate: targetDate,
-            createdAt: Date.now(),
-            stage: 1,
-            nextReviewDate: targetDate,
-            lastReviewed: null,
-            reviewCount: 0,
-            correctCount: 0,
-            wrongCount: 0,
-            isWeak: false,
-            isNeungryul2025: true
-        }));
+        const newItems = dayRows.map(row => {
+            const word = String(row['영단어'] || row['단어'] || '').trim();
+            const meaning = String(row['뜻'] || '').trim();
+            const pos = this.extractPosFromMeaning(meaning, word);
+            const sInfo = (window.contextSentenceHelper && typeof window.contextSentenceHelper.getOrGenerateSentence === 'function')
+                ? window.contextSentenceHelper.getOrGenerateSentence(word, meaning, pos)
+                : null;
+            return {
+                id: `neungryul2025-${dayStr.replace(/\s+/g, '')}-${row['번호']}`,
+                word: word,
+                meaning: meaning,
+                partOfSpeech: pos,
+                example: sInfo ? sInfo.sentence : '',
+                exampleMeaning: sInfo ? sInfo.translation : '',
+                level: 'high',
+                tag: `능률VOCA [2025] ${dayStr}`,
+                neungryulDay: dayStr,
+                neungryulNum: row['번호'],
+                planDate: targetDate,
+                createdAt: Date.now(),
+                stage: 1,
+                nextReviewDate: targetDate,
+                lastReviewed: null,
+                reviewCount: 0,
+                correctCount: 0,
+                wrongCount: 0,
+                isWeak: false,
+                isNeungryul2025: true
+            };
+        });
 
         this.words = [...newItems, ...this.words];
         this.saveWords();
@@ -1728,28 +1748,36 @@ class StorageManager {
         // 기존 해당 DAY 단어 정리 후 갱신 등록
         this.words = this.words.filter(w => !(w.isNeungryulEtym2025 && w.neungryulDay === dayStr));
 
-        const newItems = dayRows.map(row => ({
-            id: `neungryul-etym-${dayStr.replace(/\s+/g, '')}-${row['번호']}`,
-            word: String(row['영단어']).trim(),
-            meaning: String(row['뜻']).trim(),
-            partOfSpeech: this.extractPosFromMeaning(String(row['뜻']), String(row['영단어'])),
-            example: '',
-            exampleMeaning: '',
-            level: 'middle',
-            tag: `능률VOCA [어원편] ${dayStr}`,
-            neungryulDay: dayStr,
-            neungryulNum: row['번호'],
-            planDate: targetDate,
-            createdAt: Date.now(),
-            stage: 1,
-            nextReviewDate: targetDate,
-            lastReviewed: null,
-            reviewCount: 0,
-            correctCount: 0,
-            wrongCount: 0,
-            isWeak: false,
-            isNeungryulEtym2025: true
-        }));
+        const newItems = dayRows.map(row => {
+            const word = String(row['영단어'] || row['단어'] || '').trim();
+            const meaning = String(row['뜻'] || '').trim();
+            const pos = this.extractPosFromMeaning(meaning, word);
+            const sInfo = (window.contextSentenceHelper && typeof window.contextSentenceHelper.getOrGenerateSentence === 'function')
+                ? window.contextSentenceHelper.getOrGenerateSentence(word, meaning, pos)
+                : null;
+            return {
+                id: `neungryul-etym-${dayStr.replace(/\s+/g, '')}-${row['번호']}`,
+                word: word,
+                meaning: meaning,
+                partOfSpeech: pos,
+                example: sInfo ? sInfo.sentence : '',
+                exampleMeaning: sInfo ? sInfo.translation : '',
+                level: 'middle',
+                tag: `능률VOCA [어원편] ${dayStr}`,
+                neungryulDay: dayStr,
+                neungryulNum: row['번호'],
+                planDate: targetDate,
+                createdAt: Date.now(),
+                stage: 1,
+                nextReviewDate: targetDate,
+                lastReviewed: null,
+                reviewCount: 0,
+                correctCount: 0,
+                wrongCount: 0,
+                isWeak: false,
+                isNeungryulEtym2025: true
+            };
+        });
 
         this.words = [...newItems, ...this.words];
         this.saveWords();
