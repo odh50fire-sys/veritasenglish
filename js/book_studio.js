@@ -109,6 +109,11 @@
   };
 
   const SPECIAL_MODES = {
+    original: [
+      { id: 'collocation', name: '🔗 핵심 콜로케이션', desc: '부교재 1: 전치사 & 연어 결합집' },
+      { id: 'writing_drill', name: '✍️ 서술형 패턴 드릴', desc: '부교재 2: 조건 영작 & 패턴 드릴' },
+      { id: 'cloze_sprint', name: '⚡ 5분 스프린트 펑크', desc: '부교재 3: 5분 빈칸 펑크 테스트북' }
+    ],
     middle: [
       { id: 'writing', name: '✍️ 서술형 영작 노트', desc: '내신 서술형 조건부 문장 완성' },
       { id: 'cram', name: '⚡ 10분 파이널 시트', desc: 'A4 1장 초압축 시험직전 암기' }
@@ -155,6 +160,22 @@
      */
     getAvailableBooks() {
       const list = [];
+
+      // 0. 베리타스 오리지널 마스터 교재 10종
+      const origList = (window.VERITAS_ORIGINAL_COLLECTIONS || []);
+      origList.forEach(c => {
+        list.push({
+          id: c.id,
+          title: c.title,
+          badge: c.badge || '오리지널',
+          totalDays: c.totalDays || 30,
+          level: c.level || 1,
+          category: c.category || 'original',
+          series: 'original',
+          isOriginalCurriculum: true,
+          isCustom: false
+        });
+      });
 
       // 1. 21개 큐레이션 부교재
       const curList = (window.CURATED_COLLECTIONS || []).filter(c => 
@@ -205,13 +226,17 @@
       let rawWords = [];
 
       if (this.currentBookMeta.isCustom) {
-        // AI 생성 단어장 데이터
+        // AI 맞춤 단어장
         if (window.storage && typeof window.storage.getCustomWords === 'function') {
           const allCustom = window.storage.getCustomWords() || [];
           rawWords = allCustom.filter(w => w.collectionId === bookId);
         }
+      } else if (this.currentBookMeta.isOriginalCurriculum || bookId.startsWith('veritas-original-')) {
+        // 베리타스 오리지널 6,000 필수 영단어
+        const allOrig = window.VERITAS_ORIGINAL_WORDS_DATA || [];
+        rawWords = allOrig.filter(w => w.collectionId === bookId);
       } else {
-        // 21개 큐레이션 단어 데이터
+        // 21개 큐레이션 단어장
         const allCurated = window.CURATED_WORDS_DATA || [];
         rawWords = allCurated.filter(w => w.collectionId === bookId);
       }
@@ -253,6 +278,9 @@
           meaning: resolvedMeaning,
           example: resolvedExample,
           translation: resolvedTranslation,
+          collocation: w.collocation || '',
+          writingPattern: w.writingPattern || '',
+          clozeHint: w.clozeHint || '',
           pronunciation: w.발음 || w.pronunciation || ''
         });
       });
@@ -402,7 +430,7 @@
         html += `</optgroup>`;
       }
 
-      const seriesOrder = ['middle', 'killer', 'trend', 'academic', 'idioms', 'travel', 'literature'];
+      const seriesOrder = ['original', 'middle', 'killer', 'trend', 'academic', 'idioms', 'travel', 'literature'];
       seriesOrder.forEach(sk => {
         const sInfo = SERIES_INFO[sk];
         const sBooks = books.filter(b => !b.isCustom && b.series === sk);
@@ -534,6 +562,15 @@
         }
         if (this.currentMode === 'reader') {
           html += this.renderLiteratureReaderSheet(dayKey, words);
+        }
+        if (this.currentMode === 'collocation') {
+          html += this.renderOriginalCollocationSheet(dayKey, words);
+        }
+        if (this.currentMode === 'writing_drill') {
+          html += this.renderOriginalWritingDrillSheet(dayKey, words);
+        }
+        if (this.currentMode === 'cloze_sprint') {
+          html += this.renderOriginalClozeSprintSheet(dayKey, words);
         }
       });
 
@@ -1758,6 +1795,165 @@
       }).join('\\s+');
       return tryRegex(new RegExp(`\\b${pat}\\b`, 'i'));
     }
+    /**
+     * 부교재 1: 핵심 콜로케이션 & 전치사 결합집 (A4 시트)
+     */
+    renderOriginalCollocationSheet(dayKey, words) {
+      const meta = this.currentBookMeta;
+      const seriesInfo = SERIES_INFO.original;
+      let html = `
+        <div class="studio-paper a4-page flex flex-col justify-between p-8 bg-white text-slate-800 shadow-lg border border-slate-200 print:shadow-none print:border-none mb-6">
+          <div class="sheet-header border-b-2 border-slate-900 pb-3 mb-4 flex items-center justify-between">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-slate-900 text-white">부교재 1</span>
+                <span class="text-xs font-bold text-slate-500">${meta.title}</span>
+              </div>
+              <h2 class="text-xl font-black text-slate-900 mt-1">🔗 ${dayKey} 핵심 콜로케이션 & 전치사 결합집</h2>
+            </div>
+            <div class="text-right text-xs text-slate-500">
+              <div>학습일: _____년 ___월 ___일</div>
+              <div class="font-bold text-slate-800 mt-1">이름: ____________</div>
+            </div>
+          </div>
+
+          <div class="sheet-body flex-1 grid grid-cols-2 gap-3 text-xs">
+      `;
+
+      words.forEach((w, idx) => {
+        html += `
+          <div class="p-2.5 rounded-lg border border-slate-200 bg-slate-50 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between border-b border-slate-200 pb-1 mb-1.5">
+                <span class="font-black text-sm text-slate-900">${idx + 1}. ${w.word}</span>
+                <span class="text-[11px] font-bold text-indigo-700 bg-indigo-50 px-1.5 py-0.5 rounded">${w.pos} ${w.meaning}</span>
+              </div>
+              <div class="bg-amber-50 border border-amber-200 rounded px-2 py-1 text-amber-950 font-bold mb-1.5 flex items-center gap-1.5">
+                <span class="text-amber-600">🔗</span>
+                <span>${w.collocation || w.word}</span>
+              </div>
+              <p class="text-[11px] text-slate-700 leading-snug">${w.example}</p>
+              <p class="text-[10px] text-slate-500 mt-0.5">${w.translation}</p>
+            </div>
+          </div>
+        `;
+      });
+
+      html += `
+          </div>
+          <div class="sheet-footer pt-3 mt-4 border-t border-slate-200 flex justify-between text-[10px] text-slate-400">
+            <span>Veritas English Core 6,000 Master Companion Series</span>
+            <span>${dayKey} Collocation & Preposition Workbook</span>
+          </div>
+        </div>
+      `;
+      return html;
+    }
+
+    /**
+     * 부교재 2: 서술형 조건 영작 & 패턴 드릴 (A4 시트)
+     */
+    renderOriginalWritingDrillSheet(dayKey, words) {
+      const meta = this.currentBookMeta;
+      const drillWords = words.slice(0, 10); // 1일 10개 핵심 패턴 드릴
+
+      let html = `
+        <div class="studio-paper a4-page flex flex-col justify-between p-8 bg-white text-slate-800 shadow-lg border border-slate-200 print:shadow-none print:border-none mb-6">
+          <div class="sheet-header border-b-2 border-slate-900 pb-3 mb-4 flex items-center justify-between">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-blue-700 text-white">부교재 2</span>
+                <span class="text-xs font-bold text-slate-500">${meta.title}</span>
+              </div>
+              <h2 class="text-xl font-black text-slate-900 mt-1">✍️ ${dayKey} 서술형 조건 영작 & 문장 패턴 드릴</h2>
+            </div>
+            <div class="text-right text-xs text-slate-500">
+              <div>제한 시간: 15분</div>
+              <div class="font-bold text-slate-800 mt-1">점수: _____ / 100</div>
+            </div>
+          </div>
+
+          <div class="sheet-body flex-1 space-y-3 text-xs">
+      `;
+
+      drillWords.forEach((w, idx) => {
+        html += `
+          <div class="p-2.5 rounded-lg border border-slate-200 bg-slate-50">
+            <div class="flex items-center justify-between mb-1">
+              <span class="font-bold text-slate-900">[문항 ${idx + 1}] 조건 제시어: <strong class="text-blue-700">${w.word}</strong> (${w.pos} ${w.meaning})</span>
+              <span class="text-[10px] bg-slate-200 text-slate-700 px-2 py-0.5 rounded font-mono font-bold">패턴: ${w.writingPattern || 'S + V + O'}</span>
+            </div>
+            <div class="text-[11px] text-slate-600 mb-1.5">
+              <strong>[조건 해석]</strong> "${w.translation}"
+            </div>
+            <div class="border-b border-dashed border-slate-400 h-6 flex items-end text-[11px] font-mono text-slate-800">
+              <span class="text-slate-400 mr-2">영작:</span>
+            </div>
+          </div>
+        `;
+      });
+
+      html += `
+          </div>
+          <div class="sheet-footer pt-3 mt-4 border-t border-slate-200 flex justify-between text-[10px] text-slate-400">
+            <span>Veritas English Core 6,000 Master Companion Series</span>
+            <span>${dayKey} Writing Pattern Drill Sheet</span>
+          </div>
+        </div>
+      `;
+      return html;
+    }
+
+    /**
+     * 부교재 3: 5분 파이널 스프린트 빈칸 펑크 테스트 (A4 시트)
+     */
+    renderOriginalClozeSprintSheet(dayKey, words) {
+      const meta = this.currentBookMeta;
+
+      let html = `
+        <div class="studio-paper a4-page flex flex-col justify-between p-8 bg-white text-slate-800 shadow-lg border border-slate-200 print:shadow-none print:border-none mb-6">
+          <div class="sheet-header border-b-2 border-slate-900 pb-3 mb-4 flex items-center justify-between">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-700 text-white">부교재 3</span>
+                <span class="text-xs font-bold text-slate-500">${meta.title}</span>
+              </div>
+              <h2 class="text-xl font-black text-slate-900 mt-1">⚡ ${dayKey} 5분 파이널 스프린트 빈칸 펑크 테스트</h2>
+            </div>
+            <div class="text-right text-xs text-slate-500">
+              <div>시험 시간: 5분 (초스피드 셀프 체크)</div>
+              <div class="font-bold text-slate-800 mt-1">이름: ____________ ( ___ / 20 )</div>
+            </div>
+          </div>
+
+          <div class="sheet-body flex-1 grid grid-cols-2 gap-3 text-xs">
+      `;
+
+      words.forEach((w, idx) => {
+        html += `
+          <div class="p-2 border border-slate-200 rounded bg-white flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="w-5 text-slate-400 font-bold">${idx + 1}.</span>
+              <span class="font-mono font-bold text-sm text-slate-900 tracking-wider">${w.clozeHint || w.word}</span>
+            </div>
+            <div class="w-24 border-b border-slate-400 text-right pr-1 text-slate-300 font-mono text-[10px]">
+              ( 정답 기입 )
+            </div>
+          </div>
+        `;
+      });
+
+      html += `
+          </div>
+          <div class="sheet-footer pt-3 mt-4 border-t border-slate-200 flex justify-between text-[10px] text-slate-400">
+            <span>Veritas English Core 6,000 Master Companion Series</span>
+            <span>${dayKey} 5-Minute Final Sprint Cloze Testbook</span>
+          </div>
+        </div>
+      `;
+      return html;
+    }
+
   }
 
   // 글로벌 싱글톤 인스턴스 등록
