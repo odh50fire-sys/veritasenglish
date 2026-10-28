@@ -1669,7 +1669,18 @@ class AppController {
 
         this.closeBatchPlanModal();
 
-        if (window.plannerEngine) window.plannerEngine.render();
+        if (window.plannerEngine) {
+            const todayStr = window.storage.getTodayDateString();
+            const todayWords = window.storage.getWordsByDate(todayStr).filter(w => !String(w.id || '').startsWith('sample-'));
+            const targetFocusDate = (todayWords.length > 0) ? todayStr : (result && result.startDate ? result.startDate : todayStr);
+            window.plannerEngine.selectedDateStr = targetFocusDate;
+            const [fy, fm] = targetFocusDate.split('-').map(Number);
+            if (fy && fm) {
+                window.plannerEngine.currentYear = fy;
+                window.plannerEngine.currentMonth = fm - 1;
+            }
+            window.plannerEngine.render();
+        }
         if (this.renderDashboard) this.renderDashboard();
     }
 

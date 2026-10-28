@@ -948,16 +948,21 @@ class OCREngine {
             gotoPlannerBtn.classList.toggle('hidden', registeredDays.length === 0);
         }
         if (registerAllBtn) {
-            const expectedTotal = book.isNeungryul ? 1200 : (book.isNeungryulEtym ? 765 : (book.totalDays * 20));
+            const expectedTotal = (book.dataPool && book.dataPool.length > 0)
+                ? book.dataPool.length
+                : (book.isNeungryul ? 1200 : (book.isNeungryulEtym ? 765 : (book.totalDays * 20)));
             if (overallStatus.isRegistered && overallStatus.count >= expectedTotal) {
-                registerAllBtn.innerHTML = `<i data-lucide="check-circle-2" class="w-4 h-4"></i> 전체 DAY 등록 완료됨`;
+                registerAllBtn.innerHTML = `<i data-lucide="check-circle-2" class="w-4 h-4"></i> 전체 DAY 등록 완료됨 (${overallStatus.count.toLocaleString()}단어)`;
+                registerAllBtn.className = 'px-4 py-2.5 rounded-xl bg-white/20 text-amber-300 border border-amber-300/40 font-serif font-extrabold text-xs shadow-sm transition-all flex items-center gap-1.5 cursor-pointer';
+            } else if (overallStatus.isRegistered && overallStatus.count > 0) {
+                registerAllBtn.innerHTML = `<i data-lucide="check-circle-2" class="w-4 h-4"></i> 계획 등록됨 (${overallStatus.totalDays}/${book.totalDays} DAYs • ${overallStatus.count.toLocaleString()}단어)`;
                 registerAllBtn.className = 'px-4 py-2.5 rounded-xl bg-white/20 text-amber-300 border border-amber-300/40 font-serif font-extrabold text-xs shadow-sm transition-all flex items-center gap-1.5 cursor-pointer';
             } else {
                 const btnText = book.isNeungryul 
                     ? '전체 단어 (DAY 01~40, 1,200단어) 일괄 등록' 
                     : (book.isNeungryulEtym 
                         ? '전체 단어 (DAY 01~30, 765단어) 일괄 등록' 
-                        : `전체 단어 (${book.totalDays} DAYs, ${expectedTotal}단어) 일괄 등록`);
+                        : `전체 단어 (${book.totalDays} DAYs, ${expectedTotal.toLocaleString()}단어) 일괄 등록`);
                 registerAllBtn.innerHTML = `<i data-lucide="library" class="w-4 h-4"></i> ${btnText}`;
                 registerAllBtn.className = 'px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-serif font-extrabold text-xs shadow-md transition-all flex items-center gap-1.5 cursor-pointer';
             }
@@ -1579,8 +1584,18 @@ class OCREngine {
         if (window.app && window.app.renderDashboard) {
             window.app.renderDashboard();
         }
-        if (window.plannerEngine && window.plannerEngine.render) {
-            window.plannerEngine.render();
+        if (window.plannerEngine) {
+            if (result && result.planDate) {
+                window.plannerEngine.selectedDateStr = result.planDate;
+                const [py, pm] = result.planDate.split('-').map(Number);
+                if (py && pm) {
+                    window.plannerEngine.currentYear = py;
+                    window.plannerEngine.currentMonth = pm - 1;
+                }
+            }
+            if (window.plannerEngine.render) {
+                window.plannerEngine.render();
+            }
         }
 
         alert(`✅ [${book.title}] ${result.day} 총 ${result.addedCount}단어가 [${result.planDate}] 학습 계획표에 성공적으로 등록되었습니다!

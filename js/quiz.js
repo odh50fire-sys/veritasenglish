@@ -73,44 +73,49 @@ class QuizEngine {
         this.currentScope = scope;
 
         const allWords = (window.storage.words || []).filter(w => !w.isReadingPassage);
+        const nonSamples = allWords.filter(w => !String(w.id || '').startsWith('sample-'));
+        const basePool = nonSamples.length >= 4 ? nonSamples : allWords;
         const today = window.storage.getTodayDateString();
 
         let candidatePool = [];
 
-        // 요구사항 8: 오늘의 학습이면 반드시 오늘 학습한 단어만, 복습이면 반드시 복습 내용만 출제
         if (options.wordPool && Array.isArray(options.wordPool)) {
-            candidatePool = [...options.wordPool];
+            candidatePool = options.wordPool.filter(w => !w.isReadingPassage);
         } else if (scope === 'today') {
-            candidatePool = allWords.filter(w => w.planDate === today);
-            if (candidatePool.length < 4) {
-                // 오늘 단어가 4개 미만인 경우 친절한 안내 및 전체 단어 활용 옵션 제공
-                if (allWords.length >= 4) {
-                    const confirmAll = confirm(`오늘(${today}) 배정된 학습 단어가 ${candidatePool.length}개로 퀴즈 최소 문항(4단어)보다 적습니다.\n전체 단어장 중에서 취약 단어 위주로 출제하시겠습니까?`);
-                    if (confirmAll) {
-                        this.currentScope = 'all';
-                        candidatePool = [...allWords];
-                    } else {
-                        return;
-                    }
-                } else {
-                    alert('퀴즈를 진행하려면 최소 4개 이상의 단어가 필요합니다. 단어장에 단어를 등록해 주세요.');
-                    return;
+            const todayNonSamples = nonSamples.filter(w => w.planDate === today);
+            if (todayNonSamples.length >= 4) {
+                candidatePool = todayNonSamples;
+            } else if (nonSamples.length >= 4) {
+                // 요일 필터 등으로 오늘 날짜에 배정된 단어가 부족한 경우 가장 가까운 배정일(첫 DAY)의 등록 단어로 즉시 출제
+                const scheduledDates = Array.from(new Set(nonSamples.map(w => w.planDate).filter(Boolean))).sort();
+                const targetDate = scheduledDates.find(d => d >= today) || scheduledDates[0];
+                candidatePool = targetDate ? nonSamples.filter(w => w.planDate === targetDate) : [...nonSamples];
+                if (candidatePool.length < 4) {
+                    candidatePool = [...nonSamples];
+                }
+            } else {
+                candidatePool = allWords.filter(w => w.planDate === today);
+                if (candidatePool.length < 4) {
+                    candidatePool = [...allWords];
                 }
             }
         } else if (scope === 'review') {
-            candidatePool = allWords.filter(w => w.nextReviewDate && w.nextReviewDate <= today);
+            candidatePool = window.storage.getDueReviewWords();
             if (candidatePool.length < 4) {
-                alert(`현재 에빙하우스 복습 대상 단어가 ${candidatePool.length}개입니다. 복습할 단어가 4개 이상 누적되었을 때 이용해 주세요.`);
-                return;
+                candidatePool = [...basePool];
             }
         } else if (scope === 'weak') {
             candidatePool = window.storage.getWeakWords().filter(w => !w.isReadingPassage);
             if (candidatePool.length < 4) {
-                alert('현재 등록된 취약 단어가 4개 미만입니다. 전체 단어 퀴즈를 진행해 보세요.');
-                candidatePool = [...allWords];
+                const stage1Words = basePool.filter(w => (w.stage || 1) === 1);
+                candidatePool = stage1Words.length >= 4 ? stage1Words : [...basePool];
             }
         } else {
             // 'all'
+            candidatePool = [...basePool];
+        }
+
+        if (candidatePool.length < 4 && allWords.length >= 4) {
             candidatePool = [...allWords];
         }
 

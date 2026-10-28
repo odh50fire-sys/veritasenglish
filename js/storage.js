@@ -285,6 +285,9 @@ if (typeof window !== 'undefined') {
 
 class StorageManager {
     constructor() {
+        if (typeof window !== 'undefined') {
+            window.storage = this;
+        }
         this.initUserRegistry();
         this.resetState();
         this.loadAll();
@@ -564,12 +567,38 @@ class StorageManager {
 
     loadAll() {
         try {
-            const rawWords = localStorage.getItem(STORAGE_KEYS.WORDS);
-            if (rawWords) {
-                this.words = JSON.parse(rawWords);
-                // 기존 등록 단어 중 예문이 비어있거나 구버전 정적 오류 문장인 경우 자동 보강
-                if (window.contextSentenceHelper && Array.isArray(this.words)) {
-                    this.words.forEach(w => {
+            // 기존 Proxy 비동기화 이슈로 레거시 키에만 남아있거나 사용자 키에만 남아있는 데이터를 안전하게 병합/복구
+            const userWordsKey = this.getStorageKey('WORDS');
+            const rawUserWords = localStorage.getItem(userWordsKey);
+            const rawLegacyWords = localStorage.getItem(LEGACY_STORAGE_KEYS.WORDS);
+
+            let parsedUserWords = [];
+            let parsedLegacyWords = [];
+            try { if (rawUserWords) parsedUserWords = JSON.parse(rawUserWords); } catch (e) {}
+            try { if (rawLegacyWords) parsedLegacyWords = JSON.parse(rawLegacyWords); } catch (e) {}
+
+            if (Array.isArray(parsedUserWords) && parsedUserWords.length > 0) {
+                //もし 레거시 키에 더 많은 등록 단어가 있다면(또는 사용자 키가 기본 샘플만 있다면) 병합
+                const isUserOnlySamples = parsedUserWords.every(w => String(w.id || '').startsWith('sample-'));
+                const hasLegacyRealWords = Array.isArray(parsedLegacyWords) && parsedLegacyWords.some(w => !String(w.id || '').startsWith('sample-'));
+                if (isUserOnlySamples && hasLegacyRealWords) {
+                    this.words = parsedLegacyWords;
+                    localStorage.setItem(userWordsKey, JSON.stringify(this.words));
+                } else {
+                    this.words = parsedUserWords;
+                }
+            } else if (Array.isArray(parsedLegacyWords) && parsedLegacyWords.length > 0) {
+                this.words = parsedLegacyWords;
+                localStorage.setItem(userWordsKey, JSON.stringify(this.words));
+            } else {
+                // 초기 진입 시 샘플 단어 자동 주입
+                this.seedSampleWords();
+            }
+
+            // 기존 등록 단어 중 예문이 비어있거나 구버전 정적 오류 문장인 경우 자동 보강
+            if (window.contextSentenceHelper && Array.isArray(this.words)) {
+                this.words.forEach(w => {
+                    try {
                         if ((!w.example || !w.example.trim() || w.example.includes('meaning of ______ clearly')) && !w.isReadingPassage && w.word) {
                             const sInfo = window.contextSentenceHelper.getOrGenerateSentence(w);
                             if (sInfo && sInfo.sentence) {
@@ -577,64 +606,61 @@ class StorageManager {
                                 w.exampleMeaning = sInfo.translation;
                             }
                         }
-                    });
-                }
-            } else {
-                // 초기 진입 시 샘플 단어 자동 주입
-                this.seedSampleWords();
+                    } catch (err) {}
+                });
             }
 
-            const rawSettings = localStorage.getItem(STORAGE_KEYS.SETTINGS);
+            const rawSettings = localStorage.getItem(this.getStorageKey('SETTINGS')) || localStorage.getItem(LEGACY_STORAGE_KEYS.SETTINGS);
             if (rawSettings) {
                 this.settings = { ...this.settings, ...JSON.parse(rawSettings) };
             }
 
-            const rawPlans = localStorage.getItem(STORAGE_KEYS.PLANS);
+            const rawPlans = localStorage.getItem(this.getStorageKey('PLANS')) || localStorage.getItem(LEGACY_STORAGE_KEYS.PLANS);
             if (rawPlans) {
                 this.plans = JSON.parse(rawPlans);
             }
 
-            const rawBookmarks = localStorage.getItem(STORAGE_KEYS.BOOKMARKS);
+            const rawBookmarks = localStorage.getItem(this.getStorageKey('BOOKMARKS')) || localStorage.getItem(LEGACY_STORAGE_KEYS.BOOKMARKS);
             if (rawBookmarks) {
                 this.bookmarks = JSON.parse(rawBookmarks);
             }
 
-            const rawHistory = localStorage.getItem(STORAGE_KEYS.HISTORY);
+            const rawHistory = localStorage.getItem(this.getStorageKey('HISTORY')) || localStorage.getItem(LEGACY_STORAGE_KEYS.HISTORY);
             if (rawHistory) {
                 this.history = JSON.parse(rawHistory);
             }
 
-            const rawMissions = localStorage.getItem(STORAGE_KEYS.DAILY_MISSIONS);
+            const rawMissions = localStorage.getItem(this.getStorageKey('DAILY_MISSIONS')) || localStorage.getItem(LEGACY_STORAGE_KEYS.DAILY_MISSIONS);
             if (rawMissions) {
                 this.dailyMissions = JSON.parse(rawMissions);
             }
 
-            const rawReadingRecords = localStorage.getItem(STORAGE_KEYS.READING_RECORDS);
+            const rawReadingRecords = localStorage.getItem(this.getStorageKey('READING_RECORDS')) || localStorage.getItem(LEGACY_STORAGE_KEYS.READING_RECORDS);
             if (rawReadingRecords) {
                 this.readingRecords = JSON.parse(rawReadingRecords);
             } else {
                 this.readingRecords = {};
             }
 
-            const rawProfile = localStorage.getItem(STORAGE_KEYS.USER_PROFILE);
+            const rawProfile = localStorage.getItem(this.getStorageKey('USER_PROFILE')) || localStorage.getItem(LEGACY_STORAGE_KEYS.USER_PROFILE);
             if (rawProfile) {
                 this.userProfile = { ...this.userProfile, ...JSON.parse(rawProfile) };
             }
 
-            const rawWrongAnswers = localStorage.getItem(STORAGE_KEYS.WRONG_ANSWERS);
+            const rawWrongAnswers = localStorage.getItem(this.getStorageKey('WRONG_ANSWERS')) || localStorage.getItem(LEGACY_STORAGE_KEYS.WRONG_ANSWERS);
             if (rawWrongAnswers) {
                 this.wrongAnswers = JSON.parse(rawWrongAnswers);
             }
 
-            const rawMockExams = localStorage.getItem(STORAGE_KEYS.MOCK_EXAMS);
+            const rawMockExams = localStorage.getItem(this.getStorageKey('MOCK_EXAMS')) || localStorage.getItem(LEGACY_STORAGE_KEYS.MOCK_EXAMS);
             if (rawMockExams) {
                 this.mockExams = JSON.parse(rawMockExams);
             }
 
-            const rawCustomColls = localStorage.getItem(STORAGE_KEYS.CUSTOM_COLLECTIONS);
+            const rawCustomColls = localStorage.getItem(this.getStorageKey('CUSTOM_COLLECTIONS')) || localStorage.getItem(LEGACY_STORAGE_KEYS.CUSTOM_COLLECTIONS);
             this.customCollections = rawCustomColls ? JSON.parse(rawCustomColls) : [];
 
-            const rawCustomWords = localStorage.getItem(STORAGE_KEYS.CUSTOM_WORDS);
+            const rawCustomWords = localStorage.getItem(this.getStorageKey('CUSTOM_WORDS')) || localStorage.getItem(LEGACY_STORAGE_KEYS.CUSTOM_WORDS);
             this.customWords = rawCustomWords ? JSON.parse(rawCustomWords) : [];
 
             // 출석(Streak) 일자 갱신 검사
@@ -2423,14 +2449,27 @@ class StorageManager {
 
     getDueReviewWords() {
         const today = this.getTodayDateString();
-        return this.words.filter(w => {
+        const vocabWords = this.words.filter(w => !w.isReadingPassage);
+        let due = vocabWords.filter(w => {
             if (!w.nextReviewDate) return true;
-            return w.nextReviewDate <= today;
+            return w.nextReviewDate <= today || w.planDate <= today;
         });
+        // 만약 요일 필터 등으로 미래 날짜에 계획이 배정되어 당일 복습 큐가 비어 있다면 가장 가까운 배정일(첫 DAY)의 단어를 우선 제공
+        if (due.length === 0 && vocabWords.length > 0) {
+            const nonSamples = vocabWords.filter(w => !String(w.id || '').startsWith('sample-'));
+            const pool = nonSamples.length > 0 ? nonSamples : vocabWords;
+            const scheduledDates = Array.from(new Set(pool.map(w => w.planDate).filter(Boolean))).sort();
+            if (scheduledDates.length > 0) {
+                due = pool.filter(w => w.planDate === scheduledDates[0]);
+            } else {
+                due = pool.slice(0, 20);
+            }
+        }
+        return due;
     }
 
     getWeakWords() {
-        return this.words.filter(w => w.isWeak || (w.wrongCount > 0 && w.wrongCount >= w.correctCount));
+        return this.words.filter(w => !w.isReadingPassage && (w.isWeak || (w.wrongCount > 0 && w.wrongCount >= w.correctCount)));
     }
 
     /**
@@ -2533,12 +2572,13 @@ class StorageManager {
     }
 
     getStatistics() {
-        const total = this.words.length;
+        const vocabWords = this.words.filter(w => !w.isReadingPassage);
+        const total = vocabWords.length;
         const stages = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
         let totalCorrect = 0;
         let totalReviews = 0;
 
-        this.words.forEach(w => {
+        vocabWords.forEach(w => {
             const s = w.stage || 1;
             stages[s] = (stages[s] || 0) + 1;
             totalCorrect += (w.correctCount || 0);

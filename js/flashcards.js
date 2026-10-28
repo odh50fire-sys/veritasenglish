@@ -87,25 +87,42 @@ class FlashcardEngine {
      */
     loadDeck(filter = 'today', customList = null) {
         this.currentFilter = filter;
-        const allWords = window.storage.words || [];
+        const allWords = (window.storage.words || []).filter(w => !w.isReadingPassage);
+        const nonSamples = allWords.filter(w => !String(w.id || '').startsWith('sample-'));
         const today = window.storage.getTodayDateString();
 
         if (customList && Array.isArray(customList)) {
-            this.deck = [...customList];
+            this.deck = customList.filter(w => !w.isReadingPassage);
         } else if (filter === 'today') {
-            // 오늘 배정된 신규 단어 우선
-            this.deck = allWords.filter(w => !w.isReadingPassage && w.planDate === today);
-            // 만약 오늘 배정 단어가 없으면 복습 대상까지 포함
-            if (this.deck.length === 0) {
-                this.deck = allWords.filter(w => !w.isReadingPassage && (w.planDate === today || (w.nextReviewDate && w.nextReviewDate <= today)));
+            // 1순위: 오늘 배정된 등록 단어 (샘플 제외 우선)
+            const todayNonSamples = nonSamples.filter(w => w.planDate === today);
+            if (todayNonSamples.length > 0) {
+                this.deck = todayNonSamples;
+            } else if (nonSamples.length > 0) {
+                // 요일 지정 등으로 오늘 날짜에 배정된 단어가 없다면 가장 가까운 배정일(첫 DAY)의 등록 단어를 로드
+                const scheduledDates = Array.from(new Set(nonSamples.map(w => w.planDate).filter(Boolean))).sort();
+                const targetDate = scheduledDates.find(d => d >= today) || scheduledDates[0];
+                this.deck = targetDate ? nonSamples.filter(w => w.planDate === targetDate) : nonSamples.slice(0, 20);
+            } else {
+                // 등록된 교재가 아직 없을 때만 샘플/전체 단어 중 오늘 또는 복습 단어 표시
+                this.deck = allWords.filter(w => w.planDate === today);
+                if (this.deck.length === 0) {
+                    this.deck = allWords.filter(w => !w.nextReviewDate || w.nextReviewDate <= today);
+                }
+                if (this.deck.length === 0) {
+                    this.deck = [...allWords];
+                }
             }
         } else if (filter === 'review') {
-            // 에빙하우스 복습 대상만
-            this.deck = allWords.filter(w => !w.isReadingPassage && w.nextReviewDate && w.nextReviewDate <= today);
+            // 에빙하우스 복습 대상
+            this.deck = window.storage.getDueReviewWords();
+            if (this.deck.length === 0) {
+                this.deck = (nonSamples.length > 0 ? nonSamples : allWords).slice(0, 20);
+            }
         } else if (filter === 'weak') {
             this.deck = window.storage.getWeakWords().filter(w => !w.isReadingPassage);
         } else {
-            this.deck = allWords.filter(w => !w.isReadingPassage);
+            this.deck = nonSamples.length > 0 ? [...nonSamples] : [...allWords];
         }
 
         // 덱 셔플
@@ -236,12 +253,15 @@ class FlashcardEngine {
             if (word.planDate === today) {
                 sessionBadgeEl.className = 'inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-blue-100 text-blue-900 border border-blue-200 shadow-2xs';
                 sessionBadgeEl.innerHTML = `<i data-lucide="calendar" class="w-3 h-3 text-blue-700"></i><span>오늘의 학습 (${today})</span>`;
+            } else if (word.planDate && word.planDate > today) {
+                sessionBadgeEl.className = 'inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-indigo-100 text-indigo-900 border border-indigo-200 shadow-2xs';
+                sessionBadgeEl.innerHTML = `<i data-lucide="calendar" class="w-3 h-3 text-indigo-700"></i><span>예정 학습 (${word.planDate})</span>`;
             } else if (word.nextReviewDate && word.nextReviewDate <= today) {
                 sessionBadgeEl.className = 'inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-100 text-amber-900 border border-amber-200 shadow-2xs';
                 sessionBadgeEl.innerHTML = `<i data-lucide="refresh-cw" class="w-3 h-3 text-amber-700"></i><span>복습 (${word.stage || 1}단계)</span>`;
             } else {
                 sessionBadgeEl.className = 'inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-slate-100 text-slate-700 border border-slate-200';
-                sessionBadgeEl.innerHTML = `<i data-lucide="book-open" class="w-3 h-3 text-slate-600"></i><span>단어 학습</span>`;
+                sessionBadgeEl.innerHTML = `<i data-lucide="book-open" class="w-3 h-3 text-slate-600"></i><span>단어 학습 (${word.planDate || '전체'})</span>`;
             }
         }
 

@@ -124,13 +124,21 @@ class ReviewManager {
     }
 
     startTargetedReview(mode) {
-        if (mode === 'due') {
-            window.flashcardEngine.loadDeck('today');
+        const targetMode = mode || this.currentViewMode || 'due';
+        let targetWords = [];
+        if (targetMode === 'due') {
+            targetWords = window.storage.getDueReviewWords();
         } else {
-            window.flashcardEngine.loadDeck('weak');
+            targetWords = window.storage.getWeakWords();
+            if (targetWords.length === 0) {
+                targetWords = window.storage.getDueReviewWords();
+            }
         }
         if (window.app && window.app.switchTab) {
             window.app.switchTab('flashcards');
+        }
+        if (window.flashcardEngine) {
+            window.flashcardEngine.loadDeck(targetMode === 'due' ? 'review' : 'weak', targetWords.length > 0 ? targetWords : null);
         }
     }
 }

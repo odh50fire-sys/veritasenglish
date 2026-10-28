@@ -252,10 +252,30 @@ class PlannerEngine {
         }
 
         if (words.length === 0) {
+            const allPlanWords = (window.storage.words || []).filter(w => !String(w.id || '').startsWith('sample-') && w.planDate);
+            const scheduledDates = Array.from(new Set(allPlanWords.map(w => w.planDate))).sort();
+            let quickJumpHtml = '';
+            if (scheduledDates.length > 0) {
+                const nearestDate = scheduledDates.find(d => d >= this.selectedDateStr) || scheduledDates[0];
+                const sampleOnNearest = allPlanWords.find(w => w.planDate === nearestDate);
+                const planName = sampleOnNearest ? (sampleOnNearest.curatedCollectionTitle || sampleOnNearest.tag || '등록된 학습 계획') : '등록된 학습 계획';
+                quickJumpHtml = `
+                    <div class="mt-3 p-3 rounded-xl bg-blue-50/80 border border-blue-200 text-left">
+                        <div class="text-xs font-serif font-bold text-blue-950 flex items-center justify-between gap-2">
+                            <span>📅 현재 등록된 계획: ${planName} (총 ${scheduledDates.length}일 과정)</span>
+                        </div>
+                        <p class="text-[11px] text-slate-600 mt-1">배정 기간: ${scheduledDates[0]} ~ ${scheduledDates[scheduledDates.length - 1]}</p>
+                        <button class="mt-2 w-full py-1.5 px-3 rounded-lg bg-blue-900 hover:bg-blue-800 text-white text-xs font-serif font-bold transition-all cursor-pointer" onclick="window.plannerEngine.jumpToDate('${nearestDate}')">
+                            가장 가까운 배정일 (${nearestDate})로 이동 →
+                        </button>
+                    </div>
+                `;
+            }
             container.innerHTML = `
-                <div class="py-8 text-center text-slate-400 border border-dashed border-slate-200 rounded-xl">
-                    <p class="text-sm font-medium">이 날짜에 배정된 학습 과제가 없습니다.</p>
-                    <p class="text-xs text-slate-400 mt-1">교재 사진을 캡처하거나 중등 독해 단원을 계획표에 추가해 보세요.</p>
+                <div class="py-8 px-4 text-center text-slate-400 border border-dashed border-slate-200 rounded-xl">
+                    <p class="text-sm font-medium">이 날짜(${this.selectedDateStr})에 배정된 학습 과제가 없습니다.</p>
+                    <p class="text-xs text-slate-400 mt-1">교재 등록에서 단어장을 추가하거나 독해 단원을 계획표에 등록해 보세요.</p>
+                    ${quickJumpHtml}
                 </div>
             `;
             return;
@@ -385,6 +405,32 @@ class PlannerEngine {
         const todayTextEl = document.getElementById("planner-today-progress-text");
         if (todayProgEl) todayProgEl.style.width = `${progressPercent}%`;
         if (todayTextEl) todayTextEl.textContent = `${completedCount} / ${dailyTarget} 단어 마스터 (${progressPercent}%)`;
+    }
+
+    jumpToDate(dateStr) {
+        if (!dateStr) return;
+        this.selectedDateStr = dateStr;
+        const [y, m] = dateStr.split('-').map(Number);
+        if (y && m) {
+            this.currentYear = y;
+            this.currentMonth = m - 1;
+        }
+        this.render();
+    }
+
+    startFlashcardsForSelectedDate() {
+        const targetDate = this.selectedDateStr || window.storage.getTodayDateString();
+        const dateWords = window.storage.getWordsByDate(targetDate).filter(w => !w.isReadingPassage);
+        if (window.app && window.app.switchTab) {
+            window.app.switchTab('flashcards');
+        }
+        if (window.flashcardEngine) {
+            if (dateWords.length > 0) {
+                window.flashcardEngine.loadDeck('today', dateWords);
+            } else {
+                window.flashcardEngine.loadDeck('today');
+            }
+        }
     }
 
     /**
