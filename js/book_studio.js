@@ -112,8 +112,8 @@
 
   const SPECIAL_MODES = {
     original: [
-      { id: 'collocation', name: '🔗 핵심 콜로케이션', desc: '부교재 1: 전치사 & 연어 결합집' },
-      { id: 'writing_drill', name: '✍️ 서술형 패턴 드릴', desc: '부교재 2: 조건 영작 & 패턴 드릴' },
+      { id: 'collocation', name: '🔗 핵심 콜로케이션', desc: '부교재 1: 전치사 & 연어 결합집 (Lv.3~10 전용)', minLevel: 3 },
+      { id: 'writing_drill', name: '✍️ 서술형 패턴 드릴', desc: '부교재 2: 조건 영작 & 패턴 드릴 (Lv.3~10 전용)', minLevel: 3 },
       { id: 'cloze_sprint', name: '⚡ 5분 스프린트 펑크', desc: '부교재 3: 5분 빈칸 펑크 테스트북' }
     ],
     middle: [
@@ -451,6 +451,10 @@
     onBookChange(bookId) {
       this.selectedDay = 'ALL';
       this.loadBookData(bookId);
+      const bookLvl = (this.currentBookMeta && this.currentBookMeta.level) || 1;
+      if (bookLvl < 3 && (this.currentMode === 'collocation' || this.currentMode === 'writing_drill')) {
+        this.currentMode = 'voca';
+      }
       this.renderModal();
     }
 
@@ -511,7 +515,9 @@
 
 
     renderSpecialModeButtons(seriesKey) {
-      const modes = SPECIAL_MODES[seriesKey] || [];
+      const rawModes = SPECIAL_MODES[seriesKey] || [];
+      const bookLvl = (this.currentBookMeta && this.currentBookMeta.level) || 1;
+      const modes = rawModes.filter(m => !m.minLevel || bookLvl >= m.minLevel);
       if (!modes.length) return '';
       return modes.map(m => `
         <button onclick="window.bookStudioEngine.setMode('${m.id}')" class="px-2.5 py-1 rounded-md transition-colors ${this.currentMode === m.id ? 'bg-amber-600 text-white font-bold shadow-xs' : 'text-amber-300 hover:text-white'}" title="${m.desc}">

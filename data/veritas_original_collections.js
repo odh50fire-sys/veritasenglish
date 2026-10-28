@@ -11,6 +11,9 @@ const VERITAS_ORIGINAL_COLLECTIONS = [
     "dayCount": 30,
     "wordsPerDay": 20,
     "description": "파닉스 완성 이후 초등 3~4학년 검정 교과서 핵심 기초 어휘 및 원어민 일상 기초 표현 600단어",
+    "companionBooks": [
+      "cloze_sprint"
+    ],
     "isOriginalCurriculum": true
   },
   {
@@ -24,6 +27,9 @@ const VERITAS_ORIGINAL_COLLECTIONS = [
     "dayCount": 30,
     "wordsPerDay": 20,
     "description": "초등 5~6학년 교과서 필수 어휘 완성 및 중학교 진학 전 반드시 익혀야 할 원어민 생활 밀착 어휘 600단어",
+    "companionBooks": [
+      "cloze_sprint"
+    ],
     "isOriginalCurriculum": true
   },
   {
@@ -37,6 +43,11 @@ const VERITAS_ORIGINAL_COLLECTIONS = [
     "dayCount": 30,
     "wordsPerDay": 20,
     "description": "중학교 1학년 13종 검정 교과서 공통 핵심 어휘 및 학교생활·교우관계 원어민 다빈출 표현 600단어",
+    "companionBooks": [
+      "collocation",
+      "writing_drill",
+      "cloze_sprint"
+    ],
     "isOriginalCurriculum": true
   },
   {
@@ -50,6 +61,11 @@ const VERITAS_ORIGINAL_COLLECTIONS = [
     "dayCount": 30,
     "wordsPerDay": 20,
     "description": "중2 첫 지필고사를 완벽 대비하는 1학기 교과서 핵심 어휘·다의어 및 원어민 감정·소통 빈출 어휘 600단어",
+    "companionBooks": [
+      "collocation",
+      "writing_drill",
+      "cloze_sprint"
+    ],
     "isOriginalCurriculum": true
   },
   {
@@ -63,6 +79,11 @@ const VERITAS_ORIGINAL_COLLECTIONS = [
     "dayCount": 30,
     "wordsPerDay": 20,
     "description": "문장이 길어지는 중2 2학기 독해·서술형 핵심 어휘 및 문화·여행·미디어 원어민 실전 어휘 600단어",
+    "companionBooks": [
+      "collocation",
+      "writing_drill",
+      "cloze_sprint"
+    ],
     "isOriginalCurriculum": true
   },
   {
@@ -76,6 +97,11 @@ const VERITAS_ORIGINAL_COLLECTIONS = [
     "dayCount": 30,
     "wordsPerDay": 20,
     "description": "중3 1학기 내신 최상위권 도약을 위한 교차 어휘·어원 확장 및 뉴스·트렌드 원어민 빈출 어휘 600단어",
+    "companionBooks": [
+      "collocation",
+      "writing_drill",
+      "cloze_sprint"
+    ],
     "isOriginalCurriculum": true
   },
   {
@@ -89,6 +115,11 @@ const VERITAS_ORIGINAL_COLLECTIONS = [
     "dayCount": 30,
     "wordsPerDay": 20,
     "description": "중등 과정 총정리 및 고교 진학 브릿지를 위한 중3 2학기 심화 독해 어휘·원어민 뉘앙스 핵심어 600단어",
+    "companionBooks": [
+      "collocation",
+      "writing_drill",
+      "cloze_sprint"
+    ],
     "isOriginalCurriculum": true
   },
   {
@@ -102,6 +133,11 @@ const VERITAS_ORIGINAL_COLLECTIONS = [
     "dayCount": 30,
     "wordsPerDay": 20,
     "description": "2022 개정 고등 공통영어1·2 교과서 및 고1 전국연합학력평가 1등급 필수 어휘 600단어",
+    "companionBooks": [
+      "collocation",
+      "writing_drill",
+      "cloze_sprint"
+    ],
     "isOriginalCurriculum": true
   },
   {
@@ -115,6 +151,11 @@ const VERITAS_ORIGINAL_COLLECTIONS = [
     "dayCount": 30,
     "wordsPerDay": 20,
     "description": "고2~고3 평가원 모의고사·수능 기출 핵심 추상어, 빈칸추론 킬러 어휘 및 시사·칼럼 다빈출어 600단어",
+    "companionBooks": [
+      "collocation",
+      "writing_drill",
+      "cloze_sprint"
+    ],
     "isOriginalCurriculum": true
   },
   {
@@ -128,6 +169,11 @@ const VERITAS_ORIGINAL_COLLECTIONS = [
     "dayCount": 30,
     "wordsPerDay": 20,
     "description": "수능 최상위 변별 문항, 영미권 대학 학술 아티클 및 SAT·TOEFL 완벽 제압을 위한 엘리트 어휘 600단어",
+    "companionBooks": [
+      "collocation",
+      "writing_drill",
+      "cloze_sprint"
+    ],
     "isOriginalCurriculum": true
   }
 ];
