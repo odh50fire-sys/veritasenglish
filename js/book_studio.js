@@ -23,6 +23,8 @@
     'curated-us-mid1': 'academic',
     'curated-us-mid2': 'academic',
     'curated-m-idioms': 'idioms',
+    'curated-csat-idioms': 'idioms',
+    'curated-native-proverbs': 'idioms',
     'curated-travel-air': 'travel',
     'curated-travel-hotel': 'travel',
     'curated-travel-dining': 'travel',
@@ -79,8 +81,8 @@
       badgeClass: 'series-theme-academic'
     },
     idioms: {
-      name: '중학 교과서 필수 숙어',
-      sub: '내신 서술형 필수 숙어 50 & 전치사 블록',
+      name: '필수 숙어 & 관용구·속담',
+      sub: '중학·고등 빈출 숙어 100 & 찐 원어민 관용구·속담',
       icon: '🧩',
       accentColor: '#047857',
       badgeClass: 'series-theme-idioms'

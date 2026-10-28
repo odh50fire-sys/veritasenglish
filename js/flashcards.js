@@ -313,6 +313,16 @@ class FlashcardEngine {
             if (exampleWrap) exampleWrap.classList.add('hidden');
         }
 
+        // 뉘앙스 & 문화 유래 팁 렌더링
+        const nuanceWrap = document.getElementById('fc-nuance-wrap');
+        const nuanceText = document.getElementById('fc-nuance-text');
+        if (word.nuanceTip && word.nuanceTip.trim()) {
+            if (nuanceWrap) nuanceWrap.classList.remove('hidden');
+            if (nuanceText) nuanceText.textContent = word.nuanceTip;
+        } else {
+            if (nuanceWrap) nuanceWrap.classList.add('hidden');
+        }
+
         // 자동 오디오 재생 (영어-한국어 모드일 때만 앞면에서 재생)
         if (this.flipMode === 'eng-to-kor' && window.storage.settings.autoAudio && window.tts) {
             setTimeout(() => {

@@ -47,6 +47,14 @@ window.posHelper = {
         const rawMeaning = String(meaning || '').trim();
         const cleanWord = String(word || '').trim();
 
+        // 0. 속담 [속], 관용구 [관] 명시적 매칭
+        if (rawPos.includes('[속]') || rawPos.includes('속담') || rawMeaning.includes('[속]')) {
+            return '[속]';
+        }
+        if (rawPos.includes('[관]') || rawPos.includes('관용') || rawMeaning.includes('[관]')) {
+            return '[관]';
+        }
+
         // 1. 숙어 (Phrasal verb / Idiom / 2단어 이상 공백 포함) 우선 판별
         if (
             rawPos.includes('phr') || 
@@ -114,6 +122,8 @@ window.posHelper = {
         if (stdPos === '[동]') return 'bg-emerald-50 text-emerald-800 border-emerald-200';
         if (stdPos === '[형]') return 'bg-amber-50 text-amber-800 border-amber-200';
         if (stdPos === '[부]') return 'bg-slate-100 text-slate-700 border-slate-300';
+        if (stdPos === '[속]' || stdPos.includes('속')) return 'bg-rose-100 text-rose-900 border-rose-300 font-black shadow-2xs';
+        if (stdPos === '[관]' || stdPos.includes('관')) return 'bg-indigo-100 text-indigo-900 border-indigo-300 font-black shadow-2xs';
         if (stdPos === '[숙]' || stdPos.includes('숙')) return 'bg-purple-100 text-purple-900 border-purple-300 font-black shadow-2xs';
         return 'bg-slate-50 text-slate-700 border-slate-200';
     },
@@ -2069,7 +2079,8 @@ class StorageManager {
             correctCount: 0,
             wrongCount: 0,
             isWeak: false,
-            isCuratedVoca: true
+            isCuratedVoca: true,
+            nuanceTip: row['nuanceTip'] || ''
         }));
 
         this.words = [...newItems, ...this.words];
@@ -2148,7 +2159,8 @@ class StorageManager {
                     correctCount: 0,
                     wrongCount: 0,
                     isWeak: false,
-                    isCuratedVoca: true
+                    isCuratedVoca: true,
+                    nuanceTip: row['nuanceTip'] || ''
                 });
             });
         });

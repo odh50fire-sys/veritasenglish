@@ -900,6 +900,12 @@ class OCREngine {
                                 <div class="text-[11px] text-slate-400 not-italic mt-0.5">${trans}</div>
                             </div>
                         ` : ''}
+                        ${row.nuanceTip ? `
+                            <div class="mt-1 text-[11px] text-purple-900 bg-purple-50/90 p-1.5 rounded-lg border border-purple-200 flex items-start gap-1.5">
+                                <span class="font-bold shrink-0 text-purple-700">💡 뉘앙스/유래:</span>
+                                <span class="text-slate-700 font-sans leading-relaxed">${row.nuanceTip}</span>
+                            </div>
+                        ` : ''}
                     </td>
                     <td class="py-2.5 px-4 text-xs text-slate-700 leading-relaxed font-medium align-top">
                         ${meaning}
