@@ -705,6 +705,25 @@ class OCREngine {
             };
         }
 
+        // 베리타스 오리지널 마스터 보카 10종 확인
+        if (this.currentBookId && this.currentBookId.startsWith('veritas-original-')) {
+            const origList = window.VERITAS_ORIGINAL_COLLECTIONS || [];
+            const origCol = origList.find(c => c.id === this.currentBookId) || origList[0];
+            const allOrigWords = window.VERITAS_ORIGINAL_WORDS_DATA || [];
+            const pool = origCol ? allOrigWords.filter(r => r.collectionId === origCol.id) : [];
+            return {
+                id: origCol ? origCol.id : this.currentBookId,
+                title: origCol ? origCol.title : '베리타스 오리지널 마스터 보카',
+                badge: origCol ? `${origCol.badge} • DAY 01 ~ DAY 30 (총 ${pool.length}단어)` : '베리타스 오리지널',
+                description: origCol ? origCol.description : '',
+                totalDays: 30,
+                isNeungryul: false,
+                isNeungryulEtym: false,
+                isOriginal: true,
+                dataPool: pool
+            };
+        }
+
         // AI 맞춤 생성 단어장 확인
         const customCols = window.storage ? window.storage.getCustomCollections() : [];
         const customCol = customCols.find(c => c.id === this.currentBookId);

@@ -179,7 +179,7 @@
 
       // 1. 21개 큐레이션 부교재
       const curList = (window.CURATED_COLLECTIONS || []).filter(c => 
-        !c.id.includes('neungryul')
+        !c.id.includes('neungryul') && !c.id.startsWith('veritas-original-')
       );
       curList.forEach(c => {
         list.push({
