@@ -26693,8 +26693,8 @@ const CURATED_WORDS_DATA = [
       "영단어": "put into practice",
       "품사": "[숙]",
       "뜻": "~을 실행에 옮기다, 실천하다",
-      "예문": "Theoretical models remain futile unless they are put into practical reality.",
-      "예문해석": "이론적 모델들은 실제 현실에서 실행에 옮겨지지 않는 한 무용지물이다.",
+      "예문": "Theoretical models remain futile unless they are put into practice in real classrooms.",
+      "예문해석": "이론적 모델들은 실제 교실에서 실행에 옮겨지지 않는 한 무용지물이다.",
       "nuanceTip": "머릿속 지식이나 아이디어를 구체적 행동으로 구현한다는 실천 지향적 숙어입니다.",
       "category": "high_idioms",
       "badge": "고등·수능 킬러 숙어"

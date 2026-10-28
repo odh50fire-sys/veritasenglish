@@ -1299,10 +1299,29 @@
       const meta = this.currentBookMeta;
       const seriesKey = meta.series || 'middle';
       const seriesInfo = SERIES_INFO[seriesKey] || SERIES_INFO.middle;
+      const isIdiomSeries = seriesKey === 'idioms';
+      const isLongExpr = (w) => String(w.word || '').trim().split(/\s+/).length >= 3;
 
-      // 영작 문항으로 적합한 단어 5~6개 선별 (예문이 있는 단어 우선)
+      // Section 1: 영작 문항 (예문 + 해석이 있는 단어 우선, 최대 6개)
       const targetWords = words.filter(w => w.example && w.translation).slice(0, 6);
-      const fallbackWords = targetWords.length >= 4 ? targetWords : words.slice(0, 6);
+      const section1Words = targetWords.length >= 4 ? targetWords : words.slice(0, 6);
+      const usedIds = new Set(section1Words.map(w => w.word));
+
+      // Section 2: Section 1과 "다른 문장"만 사용 (같은 예문이 반복되어 영작 정답이 노출되는 문제 방지)
+      // + 예문 속 표제어가 실제로 빈칸 처리되는 문항만 출제 (정답 노출 방지)
+      const gapHtml = '<span class="studio-cloze-gap font-mono text-slate-700 font-bold border-b border-slate-400 px-3 py-0.5 inline-block min-w-[70px] text-center">[ &nbsp;&nbsp;&nbsp;&nbsp; ]</span>';
+      const section2Items = [];
+      words.filter(w => !usedIds.has(w.word)).forEach(w => {
+        if (section2Items.length >= 4) return;
+        const sInfo = (window.contextSentenceHelper && typeof window.contextSentenceHelper.getOrGenerateSentence === 'function')
+          ? window.contextSentenceHelper.getOrGenerateSentence(w)
+          : null;
+        const candidates = [w.example, sInfo ? sInfo.sentence : ''].filter(Boolean);
+        for (const s of candidates) {
+          const m = this.findClozeMatch(s, w.word, gapHtml);
+          if (m) { section2Items.push({ w, html: m.html }); break; }
+        }
+      });
 
       return `
         <div class="studio-a4-sheet">
@@ -1313,7 +1332,7 @@
                 <span class="text-xs font-bold text-slate-700">${seriesInfo.name}</span>
               </div>
               <div class="text-xs text-slate-500 font-medium">
-                학교 시험 서술형 만점 대비 • 조건부 문장 완성 & 어형 변화 집중 클리닉
+                학교 시험 서술형 만점 대비 • 조건부 문장 완성 &amp; 어형 변화 집중 클리닉
               </div>
             </div>
             <div class="text-right text-[11px] text-slate-500">
@@ -1329,59 +1348,58 @@
           </div>
 
           <div class="space-y-3">
-            ${fallbackWords.map((w, idx) => {
+            ${section1Words.map((w, idx) => {
               const trans = w.translation || `그들은 ${w.meaning}에 대해 이야기하고 있었다.`;
+              const long = isLongExpr(w);
               return `
                 <div class="studio-writing-item">
-                  <div class="flex items-start justify-between gap-2 mb-1.5">
-                    <div class="text-xs font-bold text-slate-900 leading-snug">
+                  <div class="studio-writing-head ${long ? 'is-stacked' : ''}">
+                    <div class="studio-writing-prompt text-xs font-bold text-slate-900 leading-snug">
                       <span class="text-blue-900 font-black mr-1">[${idx + 1}번]</span>
                       <span>${trans}</span>
                     </div>
-                    <div class="flex items-center gap-1 shrink-0">
+                    <div class="studio-writing-conds">
                       <span class="studio-writing-condition">제시어: <strong>${w.word}</strong></span>
-                      <span class="studio-writing-condition">어형 변형 가능</span>
+                      <span class="studio-writing-condition">${isIdiomSeries ? '필요시 동사 시제 변형' : '어형 변형 가능'}</span>
                     </div>
                   </div>
-                  <div class="text-[11px] text-slate-500 mb-1">
-                    [조건] ① 제시어 '<strong>${w.word}</strong>'를 반드시 활용할 것 &nbsp; ② 시제와 수일치에 주의하여 완전한 문장으로 쓸 것
+                  <div class="text-[11px] text-slate-500 mb-1 studio-wrap-text">
+                    [조건] ① 제시어를 반드시 활용할 것 &nbsp; ② 시제와 수일치에 주의하여 완전한 문장으로 쓸 것
                   </div>
                   <div class="pt-2">
                     <span class="text-xs font-bold text-slate-700">답안 작성:</span>
                     <span class="studio-writing-line"></span>
+                    ${long ? '<span class="studio-writing-line"></span>' : ''}
                   </div>
                 </div>
               `;
             }).join('')}
           </div>
 
-          <!-- Section 2. 서술형 어형 변형 & 빈칸 완성 드릴 -->
+          ${section2Items.length ? `
+          <!-- Section 2. 문맥 빈칸 완성 드릴 (Section 1과 다른 문장) -->
           <div class="studio-wb-section-title mt-4">
-            <span>Section 2. 문맥을 읽고 괄호 안의 단어를 문법과 의미에 맞게 알맞은 형태로 고쳐 쓰시오.</span>
-            <span class="text-[10px] font-normal text-slate-500">Form Transformation</span>
+            <span>Section 2. ${isIdiomSeries ? '문맥을 읽고 빈칸에 들어갈 알맞은 표현을 우리말 뜻을 참고하여 쓰시오.' : '문맥을 읽고 괄호 안의 단어를 문법과 의미에 맞게 알맞은 형태로 고쳐 쓰시오.'}</span>
+            <span class="text-[10px] font-normal text-slate-500">${isIdiomSeries ? 'Expression Cloze' : 'Form Transformation'}</span>
           </div>
 
           <div class="space-y-2">
-            ${words.slice(0, 4).map((w, idx) => {
-              const sInfo = (window.contextSentenceHelper && typeof window.contextSentenceHelper.getOrGenerateSentence === 'function')
-                ? window.contextSentenceHelper.getOrGenerateSentence(w)
-                : null;
-              const targetSentence = w.example || (sInfo ? sInfo.sentence : '');
-              const hintSentence = targetSentence ? this.makeClozeSentence(targetSentence, w.word) : `The students practiced to understand ( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ) in context.`;
-              return `
+            ${section2Items.map(({ w, html }, idx) => `
                 <div class="studio-wb-qitem p-2.5 border border-slate-200">
-                  <div class="text-xs text-slate-900 font-serif leading-relaxed">
+                  <div class="text-xs text-slate-900 font-serif leading-relaxed studio-wrap-text">
                     <span class="studio-wb-qnum font-sans font-bold">${idx + 1}.</span>
-                    <span>${hintSentence}</span>
-                    <span class="text-blue-900 font-bold ml-1">[ 제시어: ${w.word} ]</span>
+                    <span>${html}</span>
                   </div>
-                  <div class="mt-2 text-right text-[11px] font-bold text-slate-700">
-                    변형 정답: ( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )
+                  <div class="mt-1 text-[11px] text-blue-900 font-bold studio-wrap-text">
+                    ${isIdiomSeries ? `[ 뜻: ${w.meaning} ]` : `[ 제시어: ${w.word} ]`}
+                  </div>
+                  <div class="mt-2 text-[11px] font-bold text-slate-700">
+                    정답: <span class="studio-writing-line inline-answer"></span>
                   </div>
                 </div>
-              `;
-            }).join('')}
+              `).join('')}
           </div>
+          ` : ''}
 
           <!-- 하단 푸터 -->
           <div class="mt-6 pt-3 border-t border-slate-200 flex items-center justify-between text-[10px] text-slate-400">
@@ -1786,16 +1804,88 @@
         return null;
       }
 
-      // 숙어/구동사: 첫 단어 활용형 허용, one's/someone 등은 임의 단어 허용
-      const parts = w.split(/\s+/);
-      const pat = parts.map((p, i) => {
-        if (/^(one's|someone's|one|oneself|someone|somebody|something|sb|sth|~)$/i.test(p)) {
-          return "[A-Za-z']+";
+      // 숙어/구동사/속담: 고정 어구만 빈칸 처리하고, 목적어 자리(A, B, someone 등)와
+      // 분리형 구동사 사이 삽입어(take [clean water] for granted)는 그대로 노출
+      return this.findIdiomClozeMatch(sentence, w, blank);
+    }
+
+    findIdiomClozeMatch(sentence, phrase, blank) {
+      const IRREGULAR = {
+        be: ['be', 'is', 'are', 'was', 'were', 'been', 'being', 'am'],
+        bite: ['bit', 'bitten'], give: ['gave', 'given'], bring: ['brought'], come: ['came'],
+        take: ['took', 'taken'], make: ['made'], hold: ['held'], burn: ['burnt'], leave: ['left'],
+        go: ['went', 'gone'], fall: ['fell', 'fallen'], see: ['saw', 'seen'], throw: ['threw', 'thrown'],
+        steal: ['stole', 'stolen'], sit: ['sat'], sleep: ['slept'], speak: ['spoke', 'spoken'],
+        lose: ['lost'], stand: ['stood'], bear: ['bore', 'borne'], pay: ['paid'], run: ['ran'],
+        get: ['got', 'gotten'], catch: ['caught'], keep: ['kept'], find: ['found'], shed: ['shed'],
+        wreak: ['wrought'], blow: ['blew', 'blown'], feel: ['felt'], break: ['broke', 'broken'],
+        do: ['did', 'done', 'does'], have: ['has', 'had'], strike: ['struck']
+      };
+      const MULTI_WILD = /^(A|B|one|oneself|someone|somebody|something|sb|sth|it|~)$/;
+      const SINGLE_WILD = /^(one's|someone's|your|my|his|her|their|our)$/i;
+      const WILD_MULTI_RE = "([A-Za-z'\\-]+(?:\\s+[A-Za-z'\\-]+){0,3}?)";
+      const WILD_SINGLE_RE = "([A-Za-z'\\-]+)";
+
+      const clean = String(phrase).replace(/[.!?]+$/, '').trim();
+      const tokens = clean.split(/\s+/);
+      const kinds = tokens.map(t => (MULTI_WILD.test(t) ? 'wild' : SINGLE_WILD.test(t) ? 'wild1' : 'lit'));
+      if (!kinds.includes('lit')) return null;
+
+      let src = '';
+      const groupKinds = []; // 'lit' = 빈칸 처리, 'keep' = 문장에 그대로 노출
+      tokens.forEach((t, i) => {
+        if (i > 0) {
+          src += '\\s+';
+          // 분리형 구동사: 첫 단어 뒤에 최대 4단어 삽입 허용 (take [clean water] for granted)
+          if (i === 1 && kinds[0] === 'lit' && kinds[1] === 'lit') {
+            src += "((?:[A-Za-z'\\-]+,?\\s+){0,4}?)";
+            groupKinds.push('keep');
+          }
         }
-        const e = this.escapeRegex(p);
-        return i === 0 ? `${e}[a-z]{0,4}` : e;
-      }).join('\\s+');
-      return tryRegex(new RegExp(`\\b${pat}\\b`, 'i'));
+        if (kinds[i] === 'wild') { src += WILD_MULTI_RE; groupKinds.push('keep'); return; }
+        if (kinds[i] === 'wild1') { src += WILD_SINGLE_RE; groupKinds.push('keep'); return; }
+
+        const base = t.replace(/,$/, '');
+        const lower = base.toLowerCase();
+        let p = this.escapeRegex(base) + (t.endsWith(',') ? ',?' : '');
+        if (i === 0) {
+          if (lower === "don't") {
+            p = "(?:don't|do\\s+not|never)";
+          } else {
+            const alts = (IRREGULAR[lower] || []).map(x => this.escapeRegex(x));
+            const stem = (/e$/.test(lower) && lower.length >= 4) ? this.escapeRegex(base.slice(0, -1)) + '[a-z]{0,4}' : '';
+            p = `(?:${[this.escapeRegex(base) + '[a-z]{0,4}', stem, ...alts].filter(Boolean).join('|')})`;
+          }
+        }
+        src += `(${p})`;
+        groupKinds.push('lit');
+      });
+
+      const re = new RegExp(`\\b${src}(?![A-Za-z])`, 'i');
+      const m = sentence.match(re);
+      if (!m) return null;
+
+      // 결과 조립: 연속된 고정 어구는 하나의 빈칸으로 병합
+      const pieces = [];
+      let litBuf = [];
+      const flush = () => {
+        if (litBuf.length) {
+          const litText = litBuf.join(' ');
+          pieces.push(blank.replace(/\$&/g, litText));
+          litBuf = [];
+        }
+      };
+      groupKinds.forEach((k, gi) => {
+        const val = (m[gi + 1] || '').trim();
+        if (k === 'lit') { litBuf.push(val); return; }
+        if (!val) return;
+        flush();
+        pieces.push(val);
+      });
+      flush();
+
+      const html = sentence.slice(0, m.index) + pieces.join(' ') + sentence.slice(m.index + m[0].length);
+      return { matched: m[0], html };
     }
     /**
      * 부교재 1: 핵심 콜로케이션 & 전치사 결합집 (A4 시트)

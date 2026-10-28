@@ -675,9 +675,61 @@
   break-inside: avoid;
 }
 
+.studio-writing-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+  min-width: 0;
+}
+
+.studio-writing-head.is-stacked {
+  flex-direction: column;
+  gap: 4px;
+}
+
+.studio-writing-prompt {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: keep-all;
+}
+
+.studio-writing-conds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-width: 100%;
+  min-width: 0;
+  flex: 0 1 auto;
+}
+
+.studio-writing-head:not(.is-stacked) .studio-writing-conds {
+  max-width: 45%;
+  justify-content: flex-end;
+}
+
+.studio-wrap-text {
+  overflow-wrap: anywhere;
+  word-break: keep-all;
+  white-space: normal;
+}
+
+.studio-writing-line.inline-answer {
+  display: inline-block;
+  width: 70%;
+  vertical-align: bottom;
+}
+
 .studio-writing-condition {
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.35;
   gap: 4px;
   background: #f1f5f9;
   color: #475569;
