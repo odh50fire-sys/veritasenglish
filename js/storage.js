@@ -889,7 +889,7 @@ class StorageManager {
     /**
      * 레벨테스트 결과 저장 및 +150 EXP 보상 지급
      */
-    saveLevelTestResult({ questionCount = 10, score = 0, correctCount = 0, level = 3, categoryScores = {} }) {
+    saveLevelTestResult({ questionCount = 10, score = 0, correctCount = 0, level = 3, categoryScores = {}, isAdaptive = false }) {
         const assignedLevel = Math.min(10, Math.max(1, Number(level) || 3));
         this.userProfile.academicLevel = assignedLevel;
         if (!Array.isArray(this.userProfile.levelTestHistory)) {
@@ -903,7 +903,8 @@ class StorageManager {
             score,
             correctCount,
             level: assignedLevel,
-            categoryScores
+            categoryScores,
+            isAdaptive: Boolean(isAdaptive)
         };
         this.userProfile.levelTestHistory.unshift(record);
         

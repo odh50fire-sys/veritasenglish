@@ -131,9 +131,9 @@ body {
     background: #94A3B8;
 }
 
-/* 인쇄용 학업 보고서 및 A4 시험지 인쇄 스타일 */
+/* 인쇄용 학업 보고서 및 A4 시험지 / 공식 레벨테스트 성적표 인쇄 스타일 */
 @media print {
-    header, nav, footer, button, .no-print, #user-tier-header-capsule, #global-toast-container, main {
+    header, nav, footer, button:not(.print-allow), .no-print, #user-tier-header-capsule, #global-toast-container, main {
         display: none !important;
     }
     body {
@@ -145,6 +145,29 @@ body {
         width: 100% !important;
         margin: 0 !important;
         padding: 0 !important;
+    }
+    /* 레벨테스트 공식 진단 성적표 인쇄 지원 */
+    #modal-level-test {
+        position: static !important;
+        display: block !important;
+        background: transparent !important;
+        padding: 0 !important;
+        z-index: auto !important;
+    }
+    #level-test-container {
+        box-shadow: none !important;
+        border: none !important;
+        max-width: 100% !important;
+        max-height: none !important;
+        overflow: visible !important;
+        border-radius: 0 !important;
+    }
+    #print-report-card {
+        display: block !important;
+        padding: 0 !important;
+    }
+    #print-report-card button {
+        display: none !important;
     }
     .break-inside-avoid {
         break-inside: avoid !important;
