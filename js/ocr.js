@@ -673,6 +673,8 @@ class OCREngine {
         this.currentBookId = bookId;
         this.currentNeungryulDay = 'DAY 01';
         this.renderNeungryulVocaSection();
+        // 온보딩: 단어장 열기 퀘스트 완료
+        if (window.onboardingEngine) window.onboardingEngine.completeQuestStep('vocaExplored');
     }
 
     /**

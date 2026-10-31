@@ -160,6 +160,8 @@ class FlashcardEngine {
             if (this.flipMode === 'kor-to-eng' && window.storage.settings.autoAudio) {
                 setTimeout(() => this.playAudio(), 200);
             }
+            // 온보딩: 플래시카드 뒤집기 퀘스트 진행
+            if (window.onboardingEngine) window.onboardingEngine.completeQuestStep('flashcardFlipped', 1);
         } else {
             cardElement.classList.remove('is-flipped');
         }

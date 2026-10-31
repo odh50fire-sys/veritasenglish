@@ -470,6 +470,8 @@ class ReadingEngine {
             if (window.app && window.app.renderDashboard) window.app.renderDashboard();
             if (window.plannerEngine && window.plannerEngine.render) window.plannerEngine.render();
         }
+        // 온보딩: 독해 지문 풀기 퀘스트 완료
+        if (window.onboardingEngine) window.onboardingEngine.completeQuestStep('readingSolved');
 
         this.renderActivePassage();
 

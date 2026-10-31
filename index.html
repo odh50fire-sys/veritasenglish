@@ -104,7 +104,7 @@
                     </button>
 
                     <!-- 진단 레벨 배지 & 레벨테스트 바로가기 버튼 -->
-                    <button id="header-academic-level-btn" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-sky-400/40 bg-sky-50 hover:bg-sky-100 text-sky-900 text-xs font-serif font-bold transition-all shadow-xs cursor-pointer" onclick="window.levelTestEngine && window.levelTestEngine.openModal()" title="실력 진단 레벨테스트 및 현재 레벨 확인">
+                    <button id="header-academic-level-btn" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-sky-400/40 bg-sky-50 hover:bg-sky-100 text-sky-900 text-xs font-serif font-bold transition-all shadow-xs cursor-pointer" onclick="window.levelTestEngine && window.levelTestEngine.openModal('adaptive')" title="실력 진단 레벨테스트 및 현재 레벨 확인">
                         <span class="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
                         <span id="header-academic-level-badge">Lv.3 Pioneer</span>
                     </button>
@@ -171,6 +171,9 @@
                 </div>
             </div>
 
+            <!-- 신규 학습자 스타터 온보딩 퀘스트 위젯 -->
+            <div id="dashboard-starter-quest-container"></div>
+
             <!-- 실력 진단 레벨테스트 배너 카드 -->
             <div class="rounded-2xl p-5 sm:p-6 bg-gradient-to-r from-blue-900 via-indigo-950 to-slate-900 text-white border-2 border-amber-400/40 shadow-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-5 relative overflow-hidden">
                 <div class="flex items-center gap-4 relative z-10">
@@ -187,7 +190,7 @@
                             </span>
                         </div>
                         <h3 class="font-serif font-black text-lg sm:text-xl text-white">
-                            나의 영어 실력 진단 레벨테스트 (10문항 / 20문항 / 30문항)
+                            AI 스마트 적응형 레벨테스트 (15문항·7분 / 10·20·30문항 선택)
                         </h3>
                         <p class="text-xs text-slate-300 mt-1 line-clamp-1">
                             어휘·문법·독해·회화 4대 영역을 종합 진단하고, 내 레벨에 꼭 맞는 단원과 원어민 표현을 자동 추천받으세요.
@@ -195,7 +198,7 @@
                     </div>
                 </div>
                 <div class="flex items-center gap-2.5 shrink-0 relative z-10 w-full sm:w-auto">
-                    <button class="w-full sm:w-auto px-5 py-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-300 hover:from-amber-300 hover:to-amber-200 text-blue-950 font-serif font-black text-xs sm:text-sm transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5" onclick="window.levelTestEngine && window.levelTestEngine.openModal()">
+                    <button class="w-full sm:w-auto px-5 py-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-300 hover:from-amber-300 hover:to-amber-200 text-blue-950 font-serif font-black text-xs sm:text-sm transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5" onclick="window.levelTestEngine && window.levelTestEngine.openModal('adaptive')">
                         <i data-lucide="play-circle" class="w-4 h-4 text-blue-950"></i>
                         <span>지금 레벨테스트 시작하기</span>
                     </button>
@@ -3155,6 +3158,7 @@
     <script src="js/dictionary.js"></script>
     <script src="js/reading.js"></script>
     <script src="js/level_test.js"></script>
+    <script src="js/onboarding.js"></script>
     
         <script src="data/scramble_sentences.js"></script>
     <script src="js/scramble.js"></script>
@@ -3544,6 +3548,105 @@
                 <button type="button" id="btn-submit-generate-custom-unit" onclick="window.ocrEngine && window.ocrEngine.submitCustomUnitGeneration()" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-blue-900 via-indigo-900 to-blue-950 hover:from-blue-800 hover:to-indigo-800 text-amber-300 font-serif font-black text-xs sm:text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer transform hover:-translate-y-0.5">
                     <i data-lucide="sparkles" class="w-4 h-4 text-amber-300"></i>
                     <span>⚡ AI 맞춤 단원 즉시 생성하기</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- [신규] 첫 방문자 환영 및 레벨테스트 유도 모달 (Welcome Modal) -->
+    <div id="modal-onboarding-welcome" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/85 backdrop-blur-md hidden">
+        <div class="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col">
+            <!-- 상단 그래픽 헤더 -->
+            <div class="p-6 sm:p-8 bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950 text-white relative overflow-hidden text-center">
+                <div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-amber-400/15 blur-xl pointer-events-none"></div>
+                <div class="w-16 h-16 rounded-3xl bg-gradient-to-tr from-amber-400 to-amber-200 text-blue-950 flex items-center justify-center font-black text-3xl shadow-lg mx-auto mb-3">
+                    🎓
+                </div>
+                <span class="inline-block px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 font-mono text-xs font-bold border border-amber-400/30 mb-2">
+                    Welcome to Veritas English
+                </span>
+                <h3 class="font-serif font-black text-2xl sm:text-3xl text-white tracking-tight leading-snug">
+                    환영합니다, 영재 학도님!
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-300 mt-2 font-sans leading-relaxed max-w-sm mx-auto">
+                    수능 1등급과 최상위 영재 영어의 지름길, 베리타스 잉글리시에 오신 것을 진심으로 환영합니다.
+                </p>
+            </div>
+
+            <!-- 모달 본문 안내 -->
+            <div class="p-6 space-y-4">
+                <div class="p-4 rounded-2xl bg-blue-50/70 border border-blue-200 flex items-start gap-3.5">
+                    <div class="w-9 h-9 rounded-xl bg-blue-900 text-amber-300 flex items-center justify-center font-bold text-base shrink-0 mt-0.5 shadow-xs">
+                        🎯
+                    </div>
+                    <div>
+                        <h4 class="font-serif font-bold text-sm text-blue-950">
+                            어디서부터 시작해야 할지 고민이신가요?
+                        </h4>
+                        <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                            가장 먼저 <strong>7분 실력 진단 레벨테스트</strong>로 나의 10단계 위치를 파악하세요. 진단 후 내 수준에 딱 맞는 단어장과 내신 독해 지문이 자동 추천됩니다!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between text-xs text-slate-500 font-mono bg-slate-50 px-3.5 py-2 rounded-xl border border-slate-200">
+                    <span class="flex items-center gap-1.5">
+                        <i data-lucide="clock" class="w-3.5 h-3.5 text-blue-900"></i> 소요 시간: 약 7~8분 (15문항)
+                    </span>
+                    <span class="text-emerald-700 font-bold flex items-center gap-1">
+                        🎁 완료 시 +150 EXP 즉시 지급
+                    </span>
+                </div>
+            </div>
+
+            <!-- 하단 버튼 -->
+            <div class="p-4 sm:p-5 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-2.5">
+                <button type="button" onclick="window.onboardingEngine && window.onboardingEngine.closeWelcomeModal()" class="w-full sm:w-auto px-4 py-2.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-100 text-slate-600 font-serif font-medium text-xs transition-colors cursor-pointer text-center">
+                    나중에 할게요 (대시보드 둘러보기)
+                </button>
+                <button type="button" onclick="window.onboardingEngine && window.onboardingEngine.startLevelTestFromWelcome()" class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-gradient-to-r from-blue-900 to-indigo-900 hover:from-blue-800 hover:to-indigo-800 text-amber-300 font-serif font-black text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+                    <i data-lucide="play" class="w-4 h-4 text-amber-300"></i>
+                    <span>지금 레벨테스트 시작하기 →</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- [신규] 레벨테스트 직후 '다음에 해야 할 일 3단계 맞춤 로드맵' 모달 -->
+    <div id="modal-post-leveltest-roadmap" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/85 backdrop-blur-md hidden">
+        <div class="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[92vh]">
+            <!-- 모달 상단 헤더 -->
+            <div class="p-5 sm:p-6 bg-slate-900 text-white flex items-center justify-between border-b border-slate-800">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-400 to-yellow-300 text-blue-950 flex items-center justify-center text-xl font-black">
+                        🧭
+                    </div>
+                    <div>
+                        <span class="inline-block px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-300 font-mono text-[10px] font-bold border border-blue-400/30">
+                            Next Steps Roadmap
+                        </span>
+                        <h3 class="font-serif font-black text-lg sm:text-xl text-white">
+                            레벨테스트 완료! 다음에 해야 할 맞춤 미션
+                        </h3>
+                    </div>
+                </div>
+                <button type="button" onclick="window.onboardingEngine && window.onboardingEngine.closePostLevelTestRoadmap()" class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer" title="닫기">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- 동적 본문 (JS에서 렌더링) -->
+            <div class="p-5 sm:p-6 overflow-y-auto space-y-4" id="post-leveltest-roadmap-body">
+                <!-- JS 렌더링 -->
+            </div>
+
+            <!-- 하단 바 -->
+            <div class="p-4 sm:p-5 bg-slate-50 border-t border-slate-200 flex items-center justify-between gap-3">
+                <span class="text-xs text-slate-500 font-serif">
+                    💡 언제든지 대시보드 상단에서 스타터 퀘스트를 이어갈 수 있습니다.
+                </span>
+                <button type="button" onclick="window.onboardingEngine && window.onboardingEngine.closePostLevelTestRoadmap()" class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-serif font-bold text-xs transition-colors cursor-pointer">
+                    확인 및 닫기
                 </button>
             </div>
         </div>

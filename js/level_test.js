@@ -934,6 +934,11 @@ class LevelTestEngine {
         };
 
         this.renderResultReport(this.lastResult);
+
+        // 온보딩: 레벨테스트 완료 후 맞춤 로드맵 모달 자동 표시
+        if (window.onboardingEngine && typeof window.onboardingEngine.showPostLevelTestRoadmap === 'function') {
+            setTimeout(() => window.onboardingEngine.showPostLevelTestRoadmap(assignedLevel), 900);
+        }
     }
 
     /**
