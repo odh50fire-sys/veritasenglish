@@ -5,22 +5,93 @@
  * 2. 레벨테스트 직후 "다음에 해야 할 일 4대 핵심 미션" (Post-Level Test Next Steps Roadmap)
  * 3. 대시보드 스타터 온보딩 퀘스트 트래커 위젯 (4-Step Starter Quest)
  * 4. 단계별 완료 감지 및 보너스 EXP 수여
+ * 5. 퀘스트 전체 완료 시 위젯 자동 소멸 (EXP는 유지)
+ * 6. 업데이트 전 기완료자 자동 인식 처리
  */
 
 class OnboardingEngine {
     constructor() {
         this.storageKey = 'veritas_starter_quest_v1';
         this.welcomeStorageKey = 'veritas_welcome_shown_v1';
+        this.dismissForeverKey = 'veritas_starter_quest_done_v1';
         this.status = this.loadQuestStatus();
         this.init();
     }
 
     init() {
+        // 퀘스트 이미 영구 소멸 처리된 경우 즉시 위젯 숨김
+        if (this._isDismissedForever()) {
+            setTimeout(() => this._hideQuestWidget(), 300);
+            return;
+        }
+
+        // 업데이트 전 기완료자 자동 인식 (localStorage 퀘스트 데이터 없는 상태에서 레벨테스트 이력 존재)
+        this._checkLegacyCompletion();
+
         // 첫 방문 환영 체크 (DOM 로드 후 약간의 지연 후 띄움)
         setTimeout(() => {
             this.checkFirstVisitWelcome();
             this.renderDashboardQuest();
         }, 600);
+    }
+
+    /**
+     * 영구 소멸 플래그 확인
+     */
+    _isDismissedForever() {
+        return localStorage.getItem(this.dismissForeverKey) === 'true';
+    }
+
+    /**
+     * 영구 소멸 플래그 설정 후 위젯 숨김
+     */
+    _dismissForever() {
+        localStorage.setItem(this.dismissForeverKey, 'true');
+        setTimeout(() => this._hideQuestWidget(), 2500);
+    }
+
+    /**
+     * 위젯 컨테이너를 부드럽게 소멸
+     */
+    _hideQuestWidget() {
+        const container = document.getElementById('dashboard-starter-quest-container');
+        if (!container) return;
+        container.style.transition = 'opacity 0.6s ease, max-height 0.8s ease, margin 0.6s ease';
+        container.style.opacity = '0';
+        container.style.maxHeight = '0';
+        container.style.overflow = 'hidden';
+        container.style.marginBottom = '0';
+        setTimeout(() => {
+            container.innerHTML = '';
+            container.style = '';
+        }, 900);
+    }
+
+    /**
+     * 업데이트 이전에 이미 4단계를 모두 수행한 기완료자 자동 인식
+     * - localStorage에 퀘스트 상태 없음 + 레벨테스트 이력 있음 → 기완료자로 간주
+     * - EXP 추가 지급 없이 위젯만 즉시 소멸
+     */
+    _checkLegacyCompletion() {
+        const rawQuest = localStorage.getItem(this.storageKey);
+        if (rawQuest) return; // 이미 퀘스트 데이터 있으면 신규 사용자 → 스킵
+
+        const hasLevelTest = window.storage &&
+            window.storage.userProfile &&
+            Array.isArray(window.storage.userProfile.levelTestHistory) &&
+            window.storage.userProfile.levelTestHistory.length > 0;
+
+        if (hasLevelTest) {
+            // 기존에 레벨테스트를 봤던 사람 → 퀘스트 모두 완료 처리 (EXP 지급 없음)
+            this.status.levelTest = true;
+            this.status.vocaExplored = true;
+            this.status.flashcardFlipped = true;
+            this.status.readingSolved = true;
+            this.status.allCompletedBonusClaimed = true;
+            this.status.flippedCount = 5;
+            this.saveQuestStatus();
+            this._dismissForever();
+        }
     }
 
     /**
@@ -61,8 +132,8 @@ class OnboardingEngine {
      */
     checkFirstVisitWelcome() {
         const welcomeShown = localStorage.getItem(this.welcomeStorageKey);
-        const hasHistory = window.storage && window.storage.userProfile && 
-                           Array.isArray(window.storage.userProfile.levelTestHistory) && 
+        const hasHistory = window.storage && window.storage.userProfile &&
+                           Array.isArray(window.storage.userProfile.levelTestHistory) &&
                            window.storage.userProfile.levelTestHistory.length > 0;
 
         // 아직 레벨테스트를 본 적이 없고 웰컴 모달을 보지 않은 경우 웰컴 모달 표시
@@ -101,15 +172,19 @@ class OnboardingEngine {
 
     /**
      * 퀘스트 단계 완료 처리
+     * - flashcardFlipped: amount 파라미터로 카운트 누적, 5 이상 시 완료
+     *   단, amount >= 5 를 한 번에 넘기면 즉시 완료 (퀴즈 완료 훅용)
      */
     completeQuestStep(stepKey, amount = 1) {
         if (!this.status) return;
+        if (this._isDismissedForever()) return;
 
         if (stepKey === 'flashcardFlipped') {
+            if (this.status.flashcardFlipped) return; // 이미 완료
             this.status.flippedCount = (this.status.flippedCount || 0) + amount;
-            if (this.status.flippedCount >= 5 && !this.status.flashcardFlipped) {
+            if (this.status.flippedCount >= 5) {
                 this.status.flashcardFlipped = true;
-                this.grantStepExp(50, '스타터 퀘스트: 플래시카드 5단어 암기 완료');
+                this.grantStepExp(50, '스타터 퀘스트: 플래시카드 & 스마트퀴즈 학습 완료');
             }
         } else if (!this.status[stepKey]) {
             this.status[stepKey] = true;
@@ -118,17 +193,21 @@ class OnboardingEngine {
             } else if (stepKey === 'vocaExplored') {
                 this.grantStepExp(50, '스타터 퀘스트: 내 레벨 추천 단어장 열람');
             } else if (stepKey === 'readingSolved') {
-                this.grantStepExp(100, '스타터 퀘스트: 추천 내신 독해 지문 풀이 완료');
+                this.grantStepExp(100, '스타터 퀘스트: 오늘의 학습 스마트 퀴즈 & 복습 완료');
             }
         }
 
         // 전체 완료 체크
-        if (this.status.levelTest && this.status.vocaExplored && this.status.flashcardFlipped && this.status.readingSolved && !this.status.allCompletedBonusClaimed) {
+        const allDone = this.status.levelTest && this.status.vocaExplored &&
+                        this.status.flashcardFlipped && this.status.readingSolved;
+        if (allDone && !this.status.allCompletedBonusClaimed) {
             this.status.allCompletedBonusClaimed = true;
             this.grantStepExp(200, '🎉 스타터 온보딩 퀘스트 전체 올클리어 보너스!');
             if (typeof confetti === 'function') {
                 try { confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } }); } catch(e) {}
             }
+            // 전체 완료 → 잠시 후 위젯 영구 소멸
+            this._dismissForever();
         }
 
         this.saveQuestStatus();
@@ -152,7 +231,13 @@ class OnboardingEngine {
         const container = document.getElementById('dashboard-starter-quest-container');
         if (!container) return;
 
-        // 만약 사용자가 숨겼다면 렌더링 안 함
+        // 영구 소멸 처리된 경우 빈 상태 유지
+        if (this._isDismissedForever()) {
+            container.innerHTML = '';
+            return;
+        }
+
+        // 만약 사용자가 임시로 숨겼다면 접힌 상태 렌더링
         if (this.status.dismissed) {
             container.innerHTML = `
                 <div class="flex items-center justify-between p-3 rounded-xl bg-blue-50/60 border border-blue-200 text-xs text-blue-900">
@@ -170,8 +255,8 @@ class OnboardingEngine {
         }
 
         // 이미 레벨테스트 기록이 있는지 스토리지와 동기화
-        const hasHistory = window.storage && window.storage.userProfile && 
-                           Array.isArray(window.storage.userProfile.levelTestHistory) && 
+        const hasHistory = window.storage && window.storage.userProfile &&
+                           Array.isArray(window.storage.userProfile.levelTestHistory) &&
                            window.storage.userProfile.levelTestHistory.length > 0;
         if (hasHistory) {
             this.status.levelTest = true;
@@ -185,8 +270,8 @@ class OnboardingEngine {
                 key: 'levelTest',
                 num: 1,
                 title: '실력 진단 레벨테스트 응시',
-                desc: this.status.levelTest 
-                    ? `완료! 내 레벨: <strong class="text-amber-600 font-mono">${info ? info.badge : 'Lv.' + currentLvl}</strong>` 
+                desc: this.status.levelTest
+                    ? `완료! 내 레벨: <strong class="text-amber-600 font-mono">${info ? info.badge : 'Lv.' + currentLvl}</strong>`
                     : '10단계 중 나의 정확한 실력 위치를 파악하고 맞춤 코스 받기',
                 exp: '+150 EXP',
                 done: this.status.levelTest,
@@ -206,8 +291,10 @@ class OnboardingEngine {
             {
                 key: 'flashcardFlipped',
                 num: 3,
-                title: '3D 플립 플래시카드 5단어 넘기기',
-                desc: `에빙하우스 망각곡선 기반 단어 암기 훈련 체험 (${this.status.flippedCount || 0}/5단어)`,
+                title: '단어 플래시카드 & 스마트퀴즈 학습',
+                desc: this.status.flashcardFlipped
+                    ? '완료! 오늘의 학습 퀴즈를 완수하셨습니다.'
+                    : `오늘의 학습에서 단어 플래시카드 or 스마트퀴즈 1회 완수 (${Math.min(this.status.flippedCount || 0, 5)}/5)`,
                 exp: '+50 EXP',
                 done: this.status.flashcardFlipped,
                 actionText: '플래시카드 가기',
@@ -216,12 +303,14 @@ class OnboardingEngine {
             {
                 key: 'readingSolved',
                 num: 4,
-                title: '추천 내신 독해 지문 1편 풀기',
-                desc: `추천 학기: <strong class="text-amber-800 font-mono">${info ? info.recommendedPassageSemester : '중 1-1'}</strong> 내신 지문 독해 및 서술형 도전`,
+                title: '오늘의 학습 스마트퀴즈 or 에빙하우스 복습',
+                desc: this.status.readingSolved
+                    ? '완료! 퀴즈 또는 복습 세션을 마치셨습니다.'
+                    : `스마트퀴즈 완수 또는 에빙하우스 복습 탭에서 오늘 복습 세션 1회 완료`,
                 exp: '+100 EXP',
                 done: this.status.readingSolved,
-                actionText: '독해 지문 풀기',
-                actionFn: "window.onboardingEngine.goToReading()"
+                actionText: '스마트퀴즈 가기',
+                actionFn: "window.app && window.app.switchTab('quiz')"
             }
         ];
 
@@ -252,7 +341,7 @@ class OnboardingEngine {
                                 ${isAllDone ? '🎉 축하합니다! 스타터 온보딩 퀘스트 올클리어!' : '신규 학습자 필수 코스: 4-Step 스타터 퀘스트'}
                             </h3>
                             <p class="text-xs text-slate-300 mt-0.5">
-                                ${isAllDone ? 'Veritas English의 핵심 학습 루틴을 마스터하셨습니다. 매일 꾸준한 복습으로 영재 티어를 높여보세요!' : '레벨테스트 후 아래 4가지 단계를 차례대로 완료하고 총 +450 EXP 보너스를 획득하세요.'}
+                                ${isAllDone ? 'Veritas English의 핵심 학습 루틴을 마스터하셨습니다. 이 위젯은 잠시 후 자동으로 사라집니다.' : '레벨테스트 후 아래 4가지 단계를 차례대로 완료하고 총 +450 EXP 보너스를 획득하세요.'}
                             </p>
                         </div>
                     </div>
@@ -264,9 +353,11 @@ class OnboardingEngine {
                                 스타터 마스터 완료 (+200 EXP 지급됨)
                             </span>
                         ` : ''}
+                        ${!isAllDone ? `
                         <button type="button" class="p-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white transition-colors cursor-pointer text-xs" onclick="window.onboardingEngine.toggleDismiss(true)" title="위젯 접기">
                             <i data-lucide="x" class="w-4 h-4"></i>
                         </button>
+                        ` : ''}
                     </div>
                 </div>
 
@@ -279,8 +370,8 @@ class OnboardingEngine {
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 relative z-10">
                     ${steps.map(s => `
                         <div class="p-4 rounded-2xl border transition-all flex flex-col justify-between ${
-                            s.done 
-                                ? 'bg-emerald-950/40 border-emerald-500/40 text-emerald-100' 
+                            s.done
+                                ? 'bg-emerald-950/40 border-emerald-500/40 text-emerald-100'
                                 : 'bg-white/10 border-white/15 hover:border-amber-400/50 text-white'
                         }">
                             <div>
@@ -302,8 +393,8 @@ class OnboardingEngine {
                                 </p>
                             </div>
                             <button type="button" class="w-full py-2 rounded-xl font-serif font-bold text-xs transition-all flex items-center justify-center gap-1 cursor-pointer ${
-                                s.done 
-                                    ? 'bg-emerald-800/50 hover:bg-emerald-800 text-emerald-200 border border-emerald-600/30' 
+                                s.done
+                                    ? 'bg-emerald-800/50 hover:bg-emerald-800 text-emerald-200 border border-emerald-600/30'
                                     : 'bg-amber-400 hover:bg-amber-300 text-blue-950 shadow-sm'
                             }" onclick="${s.actionFn}">
                                 <span>${s.actionText}</span>
@@ -392,10 +483,10 @@ class OnboardingEngine {
                             <div>
                                 <span class="px-2 py-0.5 rounded bg-indigo-100 text-indigo-900 font-mono text-[10px] font-bold">2단계 암기 훈련</span>
                                 <h4 class="font-serif font-black text-base text-indigo-950 mt-1 mb-0.5">
-                                    3D 플립 플래시카드로 5개 단어 즉시 넘기기
+                                    단어 플래시카드 & 스마트퀴즈 1회 완수
                                 </h4>
                                 <p class="text-xs text-slate-600">
-                                    원어민 발음(TTS)을 들으며 카드를 뒤집어 장기기억으로 전환하는 암기를 체험하세요.
+                                    오늘의 학습 탭에서 플래시카드로 단어를 암기하고, 스마트퀴즈로 실력을 테스트하세요.
                                 </p>
                             </div>
                         </div>
@@ -405,24 +496,24 @@ class OnboardingEngine {
                         </button>
                     </div>
 
-                    <!-- 액션 3: 맞춤 독해 지문 -->
+                    <!-- 액션 3: 스마트퀴즈 & 복습 -->
                     <div class="p-4 sm:p-5 rounded-2xl border-2 border-amber-200 bg-amber-50/40 hover:bg-amber-50 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                         <div class="flex items-start gap-3.5">
                             <span class="w-8 h-8 rounded-xl bg-amber-800 text-white flex items-center justify-center font-mono font-bold text-xs shrink-0 mt-0.5">
                                 3
                             </span>
                             <div>
-                                <span class="px-2 py-0.5 rounded bg-amber-100 text-amber-900 font-mono text-[10px] font-bold">3단계 실전 독해</span>
+                                <span class="px-2 py-0.5 rounded bg-amber-100 text-amber-900 font-mono text-[10px] font-bold">3단계 실전 확인</span>
                                 <h4 class="font-serif font-black text-base text-amber-950 mt-1 mb-0.5">
-                                    ${semester} 내신 독해 지문 1편 풀기
+                                    스마트퀴즈 완수 또는 에빙하우스 복습 1회
                                 </h4>
                                 <p class="text-xs text-slate-600">
-                                    지문 직독직해와 객관식/서술형 문제를 풀며 첫 독해 완료 경험치를 획득하세요.
+                                    퀴즈를 완수하거나 에빙하우스 복습 탭에서 오늘 복습 세션을 완료해 기억을 장기 고착시키세요.
                                 </p>
                             </div>
                         </div>
-                        <button type="button" class="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-amber-300 font-serif font-bold text-xs transition-colors flex items-center justify-center gap-1.5 shrink-0 shadow-sm cursor-pointer" onclick="window.onboardingEngine.goToReading('${semester}')">
-                            <span>독해 지문 바로 풀기</span>
+                        <button type="button" class="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-amber-300 font-serif font-bold text-xs transition-colors flex items-center justify-center gap-1.5 shrink-0 shadow-sm cursor-pointer" onclick="window.app && window.app.switchTab('quiz'); window.onboardingEngine.closePostLevelTestRoadmap();">
+                            <span>스마트퀴즈 바로 가기</span>
                             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                         </button>
                     </div>

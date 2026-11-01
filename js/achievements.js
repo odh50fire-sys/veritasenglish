@@ -186,7 +186,7 @@ class AchievementsEngine {
 
         if (viewName === 'guide') {
             if (viewBadges) viewBadges.classList.add('hidden');
-            if (viewGuide) viewGuide.classList.remove('hidden');
+            if (viewGuide) { viewGuide.classList.remove('hidden'); this.switchExpSubtab('guide'); }
             if (btnText) btnText.textContent = '🏅 뱃지 도감 보기';
             if (titleEl) titleEl.textContent = '💡 Veritas EXP 획득 가이드';
             if (descEl) descEl.textContent = '다양한 학습 활동으로 EXP를 모으고 베리타스 티어를 승급하세요.';
@@ -415,6 +415,92 @@ class AchievementsEngine {
         this.renderHeaderCapsule();
         this.renderDashboardCard();
     }
+
+    switchExpSubtab(subtab) {
+        const guideBox = document.getElementById('achievements-exp-guide-box');
+        const historyBox = document.getElementById('achievements-exp-history-box');
+        const btnGuide = document.getElementById('btn-exp-subtab-guide');
+        const btnHistory = document.getElementById('btn-exp-subtab-history');
+
+        if (subtab === 'history') {
+            if (guideBox) guideBox.classList.add('hidden');
+            if (historyBox) historyBox.classList.remove('hidden');
+            if (btnGuide) {
+                btnGuide.className = 'px-3.5 py-1.5 rounded-lg text-xs font-serif font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 transition-all cursor-pointer';
+            }
+            if (btnHistory) {
+                btnHistory.className = 'px-3.5 py-1.5 rounded-lg text-xs font-serif font-bold bg-amber-500 text-white shadow-xs transition-all cursor-pointer';
+            }
+            this.renderExpHistory();
+        } else {
+            if (guideBox) guideBox.classList.remove('hidden');
+            if (historyBox) historyBox.classList.add('hidden');
+            if (btnGuide) {
+                btnGuide.className = 'px-3.5 py-1.5 rounded-lg text-xs font-serif font-bold bg-amber-500 text-white shadow-xs transition-all cursor-pointer';
+            }
+            if (btnHistory) {
+                btnHistory.className = 'px-3.5 py-1.5 rounded-lg text-xs font-serif font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 transition-all cursor-pointer';
+            }
+        }
+        if (window.lucide) window.lucide.createIcons();
+    }
+
+    renderExpHistory() {
+        const historyBox = document.getElementById('achievements-exp-history-box');
+        if (!historyBox) return;
+
+        const history = (window.storage && window.storage.userProfile && Array.isArray(window.storage.userProfile.expHistory))
+            ? window.storage.userProfile.expHistory
+            : [];
+
+        if (history.length === 0) {
+            historyBox.innerHTML = `
+                <div class="py-12 text-center text-slate-400 bg-slate-50/50 rounded-2xl border border-dashed border-slate-200">
+                    <i data-lucide="clock" class="w-10 h-10 mx-auto text-slate-400 mb-2"></i>
+                    <p class="font-serif font-bold text-slate-700 text-base">아직 기록된 EXP 획득 이력이 없습니다.</p>
+                    <p class="text-xs text-slate-500 mt-1">출석 체크, 플래시카드, 퀴즈, 레벨테스트 등 학습 활동을 완료하면 여기에 실시간으로 기록됩니다.</p>
+                </div>
+            `;
+            if (window.lucide) window.lucide.createIcons();
+            return;
+        }
+
+        // 역순 정렬 (최신순)
+        const reversed = [...history].reverse();
+        historyBox.innerHTML = `
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2.5">
+                <div class="flex items-center justify-between pb-2 border-b border-slate-200 text-xs">
+                    <span class="font-serif font-bold text-slate-700">최근 EXP 획득 내역 (최신 ${reversed.length}건)</span>
+                    <span class="font-mono text-slate-500 text-[11px]">누적 총 ${window.storage.userProfile.exp || 0} EXP</span>
+                </div>
+                <div class="space-y-2 max-h-[360px] overflow-y-auto pr-1">
+                    ${reversed.map(item => {
+                        const dateObj = new Date(item.timestamp);
+                        const dateStr = isNaN(dateObj.getTime()) ? '' : `${dateObj.getMonth() + 1}/${dateObj.getDate()} ${String(dateObj.getHours()).padStart(2, '0')}:${String(dateObj.getMinutes()).padStart(2, '0')}`;
+                        return `
+                            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white border border-slate-200/80 shadow-2xs hover:border-amber-300 transition-all text-xs">
+                                <div class="flex items-center gap-2.5 min-w-0">
+                                    <span class="w-8 h-8 rounded-lg bg-amber-50 text-amber-700 border border-amber-200 flex items-center justify-center font-mono font-bold text-xs shrink-0">
+                                        ⚡
+                                    </span>
+                                    <div class="min-w-0">
+                                        <div class="font-serif font-bold text-slate-900 truncate">${item.reason || '학습 활동 완료'}</div>
+                                        <div class="text-[10px] text-slate-400 font-mono">${dateStr}</div>
+                                    </div>
+                                </div>
+                                <div class="text-right shrink-0 ml-3">
+                                    <span class="font-mono font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 text-xs">+${item.amount} EXP</span>
+                                    <div class="text-[10px] text-slate-400 font-mono mt-0.5">${item.totalExp ? item.totalExp + ' EXP' : ''}</div>
+                                </div>
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+            </div>
+        `;
+        if (window.lucide) window.lucide.createIcons();
+    }
+
 }
 
 // 전역 인스턴스

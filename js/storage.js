@@ -934,6 +934,20 @@ class StorageManager {
             this.userProfile.tier = newTier.key;
         }
         
+        // EXP 획득 이력 기록 (최근 100건)
+        if (!Array.isArray(this.userProfile.expHistory)) {
+            this.userProfile.expHistory = [];
+        }
+        this.userProfile.expHistory.push({
+            amount,
+            reason: reason || '학습 완료',
+            timestamp: new Date().toISOString(),
+            totalExp: this.userProfile.exp
+        });
+        if (this.userProfile.expHistory.length > 100) {
+            this.userProfile.expHistory = this.userProfile.expHistory.slice(-100);
+        }
+
         // 뱃지 검사
         const unlockedBadges = this.checkAndUnlockBadges();
         this.saveUserProfile();

@@ -117,6 +117,7 @@ class ReviewManager {
                 const action = btn.dataset.action;
                 window.storage.recordReviewResult(id, action);
                 this.render();
+                if (window.onboardingEngine) window.onboardingEngine.completeQuestStep('readingSolved');
             };
         });
 

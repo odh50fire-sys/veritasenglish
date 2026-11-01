@@ -612,6 +612,11 @@ class QuizEngine {
         if (accuracy >= 70 && typeof confetti === 'function') {
             confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
         }
+            // 온보딩 스타터 퀘스트 연동 (플래시카드 & 스마트퀴즈, 독해/복습 퀘스트 클리어)
+        if (window.onboardingEngine) {
+            window.onboardingEngine.completeQuestStep('flashcardFlipped', 5);
+            window.onboardingEngine.completeQuestStep('readingSolved');
+        }
     }
 
     /**
