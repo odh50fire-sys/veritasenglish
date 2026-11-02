@@ -2465,19 +2465,29 @@ class StorageManager {
     getDueReviewWords() {
         const today = this.getTodayDateString();
         const vocabWords = this.words.filter(w => !w.isReadingPassage);
+        // 에빙하우스 복습 대상 선정:
+        // 오늘 신규 학습하는 단어(planDate === today)는 당일 신규 학습 대상이므로 순수 복습 큐에서는 엄격히 제외
+        // 단, 단어사전 등에서 "단어 까먹었을 때(lastForgotten)" 원클릭 리셋된 단어는 당일 복습 큐에 포함
         let due = vocabWords.filter(w => {
+            if (w.planDate === today && !w.lastForgotten) {
+                return false;
+            }
             if (!w.nextReviewDate) return true;
-            return w.nextReviewDate <= today || w.planDate <= today;
+            return w.nextReviewDate <= today || (w.planDate && w.planDate < today);
         });
-        // 만약 요일 필터 등으로 미래 날짜에 계획이 배정되어 당일 복습 큐가 비어 있다면 가장 가까운 배정일(첫 DAY)의 단어를 우선 제공
+        // 만약 과거 학습 이력이 전혀 없어 복습 큐가 비어있고 등록된 어휘만 있을 때는
+        // 과거 배정일 또는 첫 배정 단어를 우선 제공하되, 오늘 신규 학습 단어만 있는 경우 신규 학습에 전념하도록 유지
         if (due.length === 0 && vocabWords.length > 0) {
-            const nonSamples = vocabWords.filter(w => !String(w.id || '').startsWith('sample-'));
-            const pool = nonSamples.length > 0 ? nonSamples : vocabWords;
-            const scheduledDates = Array.from(new Set(pool.map(w => w.planDate).filter(Boolean))).sort();
-            if (scheduledDates.length > 0) {
-                due = pool.filter(w => w.planDate === scheduledDates[0]);
-            } else {
-                due = pool.slice(0, 20);
+            const pastOrOther = vocabWords.filter(w => w.planDate !== today);
+            if (pastOrOther.length > 0) {
+                const nonSamples = pastOrOther.filter(w => !String(w.id || '').startsWith('sample-'));
+                const pool = nonSamples.length > 0 ? nonSamples : pastOrOther;
+                const scheduledDates = Array.from(new Set(pool.map(w => w.planDate).filter(Boolean))).sort();
+                if (scheduledDates.length > 0) {
+                    due = pool.filter(w => w.planDate === scheduledDates[0]);
+                } else {
+                    due = pool.slice(0, 20);
+                }
             }
         }
         return due;

@@ -132,6 +132,7 @@ class DictionaryEngine {
             if (this.statusFilter === 'weak') {
                 if (!word.isWeak && (word.wrongCount === 0 || word.wrongCount < word.correctCount)) return false;
             } else if (this.statusFilter === 'due') {
+                if (word.planDate === today && !word.lastForgotten) return false;
                 if (word.nextReviewDate && word.nextReviewDate > today) return false;
             } else if (this.statusFilter === 'mastered') {
                 if ((word.stage || 1) < 5) return false;
