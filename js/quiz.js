@@ -100,9 +100,13 @@ class QuizEngine {
                 }
             }
         } else if (scope === 'review') {
-            candidatePool = window.storage.getDueReviewWords();
+            const rawDue = window.storage.getDueReviewWords();
+            // 오늘 배정된 신규 단어(planDate === today)는 복습 퀴즈 풀에서 엄격히 배제 (단, 망각 리셋 단어는 포함)
+            candidatePool = rawDue.filter(w => w.planDate !== today || w.lastForgotten);
             if (candidatePool.length < 4) {
-                candidatePool = [...basePool];
+                // 복습 단어가 부족할 경우에도 오늘의 신규 단어가 아닌 과거 학습 단어로만 보충
+                const pastWords = basePool.filter(w => w.planDate !== today || w.lastForgotten);
+                candidatePool = pastWords.length >= 4 ? pastWords : (candidatePool.length > 0 ? candidatePool : pastWords);
             }
         } else if (scope === 'weak') {
             candidatePool = window.storage.getWeakWords().filter(w => !w.isReadingPassage);
@@ -115,7 +119,8 @@ class QuizEngine {
             candidatePool = [...basePool];
         }
 
-        if (candidatePool.length < 4 && allWords.length >= 4) {
+        // 복습 스코프일 때는 오늘의 신규 학습 단어가 섞여 들어가지 않도록 allWords fallback 차단
+        if (candidatePool.length < 4 && scope !== 'review' && allWords.length >= 4) {
             candidatePool = [...allWords];
         }
 
@@ -418,10 +423,30 @@ class QuizEngine {
             sInfo = window.contextSentenceHelper.getOrGenerateSentence(currentWord);
         }
 
-        const sentence = sInfo ? sInfo.sentence : (currentWord.example || '');
-        const translation = sInfo ? sInfo.translation : (currentWord.exampleMeaning || currentWord.meaning || '');
-        const clozeSentence = sInfo ? sInfo.clozeSentence : (sentence ? sentence.replace(new RegExp(`\\b${currentWord.word}\\w*\\b`, 'gi'), '【 ____________ 】') : '【 ____________ 】');
-        const matchedWord = (sInfo && sInfo.matchedWord) ? sInfo.matchedWord : currentWord.word;
+        let sentence = sInfo ? sInfo.sentence : (currentWord.example || '');
+        let translation = sInfo ? sInfo.translation : (currentWord.exampleMeaning || currentWord.meaning || '');
+        let clozeSentence = sInfo ? sInfo.clozeSentence : '';
+        let matchedWord = (sInfo && sInfo.matchedWord) ? sInfo.matchedWord : currentWord.word;
+
+        if (!clozeSentence || !clozeSentence.includes('【 ____________ 】')) {
+            if (window.contextSentenceHelper && window.contextSentenceHelper.findClozeMatch) {
+                const match = window.contextSentenceHelper.findClozeMatch(sentence, currentWord.word);
+                if (match) {
+                    clozeSentence = match.clozeSentence;
+                    matchedWord = match.matchedWord;
+                }
+            }
+            if (!clozeSentence || !clozeSentence.includes('【 ____________ 】')) {
+                const cleanW = (currentWord.word || '').replace(/[.,!?'"“”]/g, '').trim();
+                if (sentence && cleanW) {
+                    const esc = cleanW.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                    clozeSentence = sentence.replace(new RegExp(`\\b${esc}\\w*\\b`, 'i'), '【 ____________ 】');
+                }
+                if (!clozeSentence || !clozeSentence.includes('【 ____________ 】')) {
+                    clozeSentence = sentence ? `${sentence} 【 ____________ 】` : '【 ____________ 】';
+                }
+            }
+        }
 
         const sentenceEl = document.getElementById('quiz-cloze-sentence');
         const transEl = document.getElementById('quiz-cloze-translation');
@@ -437,16 +462,27 @@ class QuizEngine {
             transEl.classList.add('hidden');
         }
 
-        // 오답 선지 3개 선별 (타 단어장에서 고르게 추출)
+        // 오답 선지 3개 선별 (단어/숙어/속담 유형 및 품사 일치 스마트 선별)
+        const isProverb = currentWord.word.split(/\s+/).length >= 4 || currentWord.word.includes('.') || (currentWord.pos && currentWord.pos.includes('[속]'));
+        const isPhrase = !isProverb && (currentWord.word.includes(' ') || (currentWord.pos && (currentWord.pos.includes('[숙]') || currentWord.pos.includes('[관]'))));
+        const distType = isProverb ? 'proverb' : (isPhrase ? 'phrase' : 'word');
+
         const otherWords = (window.storage && window.storage.words ? window.storage.words : [])
-            .filter(w => w.id !== currentWord.id && !w.isReadingPassage && w.word && w.word.toLowerCase() !== currentWord.word.toLowerCase())
+            .filter(w => {
+                if (w.id === currentWord.id || w.isReadingPassage || !w.word) return false;
+                if (w.word.toLowerCase() === currentWord.word.toLowerCase()) return false;
+                const wordsCount = w.word.trim().split(/\s+/).length;
+                if (isProverb) return wordsCount >= 4 || w.word.includes('.');
+                if (isPhrase) return wordsCount >= 2 && wordsCount < 4;
+                return wordsCount === 1;
+            })
             .map(w => w.word);
 
         let distractors = [...new Set(otherWords)].sort(() => Math.random() - 0.5).slice(0, 3);
-        
-        // 단어장 단어가 부족할 경우 보충 오답 풀에서 채움
+
+        // 단어장 단어가 부족할 경우 보충 오답 풀에서 채움 (유형별 정밀 분기)
         if (distractors.length < 3 && window.contextSentenceHelper && window.contextSentenceHelper.getDistractors) {
-            const more = window.contextSentenceHelper.getDistractors(currentWord.word, 3 - distractors.length);
+            const more = window.contextSentenceHelper.getDistractors(currentWord.word, 3 - distractors.length, distType);
             distractors = [...distractors, ...more];
         }
 
