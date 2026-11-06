@@ -41,7 +41,13 @@
     'veritas-original-l7': 'original',
     'veritas-original-l8': 'original',
     'veritas-original-l9': 'original',
-    'veritas-original-l10': 'original'
+    'veritas-original-l10': 'original',
+    // 베리타스 프리미엄 5대 시즌 단어장
+    'season-netflix-slang': 'season_netflix_slang',
+    'season-ted-news': 'season_ted_news',
+    'season-academic-essay': 'season_academic_essay',
+    'season-middle-starter': 'season_middle_starter',
+    'season-toeic-rc1500': 'season_toeic_rc'
   };
 
   const SERIES_INFO = {
@@ -107,6 +113,41 @@
       icon: '✨',
       accentColor: '#4c1d95',
       badgeClass: 'series-theme-custom_ai'
+    },
+    season_netflix_slang: {
+      name: '넷플릭스·미드 구어 & SNS 슬랭',
+      sub: '미드 대본 섀도잉 & Z세대 최신 SNS 슬랭·리얼 구어체 완성',
+      icon: '🍿',
+      accentColor: '#b91c1c',
+      badgeClass: 'series-theme-season_netflix_slang'
+    },
+    season_ted_news: {
+      name: 'TED & 글로벌 뉴스 시사 영단어',
+      sub: 'BBC·CNN 뉴스 브리핑 & TED 명강연 시사 섀도잉 리더',
+      icon: '🎙️',
+      accentColor: '#991b1b',
+      badgeClass: 'series-theme-season_ted_news'
+    },
+    season_academic_essay: {
+      name: '영미권 대학 강의 & 학술 에세이',
+      sub: 'Tier-2/3 학술 담화 표지 & 논문 패러프레이징·논증 라이팅',
+      icon: '🏛️',
+      accentColor: '#1e1b4b',
+      badgeClass: 'series-theme-season_academic_essay'
+    },
+    season_middle_starter: {
+      name: '중학 첫걸음 필수 기초 영단어',
+      sub: '교육부 중학 기초 1,000 & 불규칙 동사 100선 3단 변화 완전 정복',
+      icon: '🌱',
+      accentColor: '#047857',
+      badgeClass: 'series-theme-season_middle_starter'
+    },
+    season_toeic_rc: {
+      name: '토익(TOEIC) 기출 RC 핵심 보카',
+      sub: 'Part 5·6·7 실전 빈출 어휘 & 3초 컷 빈출 연어(Collocation) 클리닉',
+      icon: '💼',
+      accentColor: '#0369a1',
+      badgeClass: 'series-theme-season_toeic_rc'
     }
   };
 
@@ -142,6 +183,31 @@
     custom_ai: [
       { id: 'writing', name: '✍️ 서술형 영작 노트', desc: '맞춤 서술형 문장 완성' },
       { id: 'cram', name: '⚡ 10분 파이널 시트', desc: 'A4 1장 초압축 파이널' }
+    ],
+    season_netflix_slang: [
+      { id: 'script', name: '🎬 섀도잉 실전 대본집', desc: '부교재 1: 미드·유튜브 리얼 대화문 & 롤플레잉 드릴' },
+      { id: 'slang_talk', name: '💬 Z세대 메신저(DM) 톡 드릴', desc: '부교재 2: SNS/문자 메시지 실전 슬랭 완성 노트' },
+      { id: 'cram', name: '⚡ 10분 생존 슬랭 시트', desc: '부교재 3: A4 1장 초압축 생존 리액션 & 구어' }
+    ],
+    season_ted_news: [
+      { id: 'ted_brief', name: '🎙️ TED 1분 시사 브리핑', desc: '부교재 1: 시사 헤드라인 & 1분 스피치 낭독 시트' },
+      { id: 'cloze_sprint', name: '⚡ 5분 시사 빈칸 펑크', desc: '부교재 2: 글로벌 뉴스 필수 시사 어휘 고속 인출' },
+      { id: 'writing', name: '✍️ 시사 이슈 서술형 노트', desc: '부교재 3: 뉴스 쟁점 핵심 문장 영작 완성' }
+    ],
+    season_academic_essay: [
+      { id: 'academic_reader', name: '🏫 학술 담화 & 패러프레이징', desc: '부교재 1: 논문·원서 독해 & 동의어 치환 드릴' },
+      { id: 'writing_drill', name: '✍️ 에세이 논증 패턴 드릴', desc: '부교재 2: 학술 담화 표지 & 조건 영작 노트' },
+      { id: 'cloze_sprint', name: '⚡ 5분 학술 빈칸 펑크', desc: '부교재 3: 에세이 핵심 어휘 고속 인출 테스트' }
+    ],
+    season_middle_starter: [
+      { id: 'irregular_verbs', name: '⚡ 불규칙 동사 100선 마스터', desc: '부교재 1: 원형-과거-과거분사 3단 변화 총정리 시트' },
+      { id: 'writing', name: '✍️ 중학 첫걸음 영작 노트', desc: '부교재 2: 기초 어순 배열 & 기본 문장 쓰기' },
+      { id: 'cram', name: '⚡ 10분 기초 보카 파이널', desc: '부교재 3: A4 1장 초압축 기초 어휘 정리' }
+    ],
+    season_toeic_rc: [
+      { id: 'toeic_collocation', name: '⏱️ 3초 컷 빈출 연어 클리닉', desc: '부교재 1: 파트 5 최다 빈출 전치사/명사 짝단어 족보' },
+      { id: 'toeic_part5', name: '🎯 파트 5 실전 4지선다 모의', desc: '부교재 2: 토익 실전 시험지와 동일한 RC 4지선다 워크북' },
+      { id: 'cram', name: '⚡ 시험장 직전 초압축 족보', desc: '부교재 3: A4 1장 토익 RC 빈출 어휘 총정리' }
     ]
   };
 
@@ -283,7 +349,10 @@
           collocation: w.collocation || '',
           writingPattern: w.writingPattern || '',
           clozeHint: w.clozeHint || '',
-          pronunciation: w.발음 || w.pronunciation || ''
+          pronunciation: w.발음 || w.pronunciation || '',
+          nuanceTip: w.nuanceTip || w.뉘앙스 || '',
+          level: w.level || 1,
+          badge: w.badge || ''
         });
       });
 
@@ -432,7 +501,21 @@
         html += `</optgroup>`;
       }
 
-      const seriesOrder = ['original', 'middle', 'killer', 'trend', 'academic', 'idioms', 'travel', 'literature'];
+      const seriesOrder = [
+        'season_netflix_slang',
+        'season_ted_news',
+        'season_academic_essay',
+        'season_middle_starter',
+        'season_toeic_rc',
+        'original',
+        'middle',
+        'killer',
+        'trend',
+        'academic',
+        'idioms',
+        'travel',
+        'literature'
+      ];
       seriesOrder.forEach(sk => {
         const sInfo = SERIES_INFO[sk];
         const sBooks = books.filter(b => !b.isCustom && b.series === sk);
@@ -579,6 +662,21 @@
         }
         if (this.currentMode === 'cloze_sprint') {
           html += this.renderOriginalClozeSprintSheet(dayKey, words);
+        }
+        if (this.currentMode === 'slang_talk') {
+          html += this.renderSlangChatSheet(dayKey, words);
+        }
+        if (this.currentMode === 'ted_brief') {
+          html += this.renderTedBriefSheet(dayKey, words);
+        }
+        if (this.currentMode === 'irregular_verbs') {
+          html += this.renderIrregularVerbsSheet(dayKey, words);
+        }
+        if (this.currentMode === 'toeic_collocation') {
+          html += this.renderToeicCollocationSheet(dayKey, words);
+        }
+        if (this.currentMode === 'toeic_part5') {
+          html += this.renderToeicPart5Sheet(dayKey, words);
         }
       });
 
@@ -953,6 +1051,181 @@
             ${w.example ? `
               <div class="studio-word-example border-sky-100">
                 <div class="font-semibold text-sky-950">🗣️ ${this.highlightWord(w.example, displayWord)}</div>
+                ${w.translation ? `<div class="studio-word-trans text-slate-600 mt-0.5">${w.translation}</div>` : ''}
+              </div>
+            ` : ''}
+          </div>
+        `;
+      }
+
+      // 1) 넷플릭스·미드 구어 & SNS 슬랭 카드
+      if (seriesKey === 'season_netflix_slang') {
+        return `
+          <div class="studio-word-card border-l-4 border-rose-600 bg-rose-50/10">
+            <div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-baseline gap-1.5 min-w-0">
+                  <span class="studio-word-num text-rose-700 font-bold shrink-0">#${String(w.num).padStart(2, '0')}</span>
+                  <span class="studio-word-lemma text-rose-950 font-serif font-black">${displayWord}</span>
+                  ${w.pos ? `<span class="studio-word-pos bg-rose-100 text-rose-800 font-bold px-1.5 py-0.5 rounded text-[10px] shrink-0">${w.pos}</span>` : ''}
+                </div>
+                <div class="studio-checks shrink-0">
+                  <span>1<span class="studio-check-box ml-0.5"></span></span>
+                  <span>2<span class="studio-check-box ml-0.5"></span></span>
+                </div>
+              </div>
+              <div class="studio-word-meaning font-bold text-slate-900 mt-1">
+                ${w.meaning}
+              </div>
+              ${w.nuanceTip ? `
+                <div class="mt-1 text-[10.5px] bg-amber-50 text-amber-900 px-2 py-0.5 rounded border border-amber-200 flex items-center gap-1">
+                  <span>💡 뉘앙스:</span>
+                  <span class="font-medium">${w.nuanceTip}</span>
+                </div>
+              ` : ''}
+            </div>
+            ${w.example ? `
+              <div class="studio-word-example border-rose-100 mt-1.5">
+                <div class="font-sans text-slate-800 font-medium">🗣️ "${this.highlightWord(w.example, displayWord)}"</div>
+                ${w.translation ? `<div class="studio-word-trans text-slate-500 mt-0.5">${w.translation}</div>` : ''}
+              </div>
+            ` : ''}
+          </div>
+        `;
+      }
+
+      // 2) TED & 글로벌 뉴스 시사 영단어 카드
+      if (seriesKey === 'season_ted_news') {
+        return `
+          <div class="studio-word-card border-l-4 border-teal-700 bg-teal-50/15">
+            <div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-baseline gap-1.5 min-w-0">
+                  <span class="studio-word-num text-teal-800 font-bold shrink-0">${String(w.num).padStart(2, '0')}.</span>
+                  <span class="studio-word-lemma text-teal-950 font-serif font-black">${displayWord}</span>
+                  ${w.pos ? `<span class="studio-word-pos bg-teal-100 text-teal-900 font-mono px-1.5 py-0.5 rounded text-[10px] shrink-0">${w.pos}</span>` : ''}
+                </div>
+                <span class="text-[10px] font-bold text-teal-800 bg-teal-50 border border-teal-200 px-1.5 py-0.5 rounded">TED/News</span>
+              </div>
+              <div class="studio-word-meaning font-bold text-slate-900 mt-1">
+                ${w.meaning}
+              </div>
+              ${w.collocation ? `
+                <div class="mt-1 text-[10.5px] bg-teal-50/80 text-teal-950 px-2 py-0.5 rounded border border-teal-200 flex items-center gap-1">
+                  <span class="font-bold text-teal-800">🌐 연어:</span>
+                  <span class="font-semibold">${w.collocation}</span>
+                </div>
+              ` : ''}
+            </div>
+            ${w.example ? `
+              <div class="studio-word-example border-teal-100 mt-1.5">
+                <div class="font-serif italic text-slate-900">${this.highlightWord(w.example, displayWord)}</div>
+                ${w.translation ? `<div class="studio-word-trans text-slate-600 mt-0.5">${w.translation}</div>` : ''}
+              </div>
+            ` : ''}
+          </div>
+        `;
+      }
+
+      // 3) 영미권 대학 강의 & 학술 에세이 카드
+      if (seriesKey === 'season_academic_essay') {
+        return `
+          <div class="studio-word-card border-l-4 border-indigo-950 bg-slate-50/30">
+            <div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-baseline gap-1.5 min-w-0">
+                  <span class="studio-word-num text-slate-800 font-bold shrink-0">${String(w.num).padStart(2, '0')}.</span>
+                  <span class="studio-word-lemma text-indigo-950 font-serif font-black tracking-tight">${displayWord}</span>
+                  ${w.pos ? `<span class="studio-word-pos bg-slate-200 text-slate-800 font-serif italic px-1.5 py-0.5 rounded text-[10px] shrink-0">${w.pos}</span>` : ''}
+                </div>
+                <span class="text-[10px] font-mono font-bold text-indigo-900 bg-indigo-50 border border-indigo-200 px-1.5 py-0.5 rounded">Academic Lv.9</span>
+              </div>
+              <div class="studio-word-meaning font-bold text-slate-900 mt-1">
+                ${w.meaning}
+              </div>
+              ${w.writingPattern ? `
+                <div class="mt-1 text-[10.5px] bg-indigo-50 text-indigo-950 px-2 py-0.5 rounded border border-indigo-200 flex items-center gap-1">
+                  <span class="font-bold text-indigo-800">✍️ 패턴:</span>
+                  <span class="font-mono">${w.writingPattern}</span>
+                </div>
+              ` : ''}
+            </div>
+            ${w.example ? `
+              <div class="studio-word-example border-slate-200 mt-1.5">
+                <div class="font-serif text-slate-900 leading-snug">${this.highlightWord(w.example, displayWord)}</div>
+                ${w.translation ? `<div class="studio-word-trans text-slate-600 mt-0.5">${w.translation}</div>` : ''}
+              </div>
+            ` : ''}
+          </div>
+        `;
+      }
+
+      // 4) 중학 첫걸음 필수 기초 영단어 카드
+      if (seriesKey === 'season_middle_starter') {
+        return `
+          <div class="studio-word-card border-l-4 border-emerald-600 bg-emerald-50/10">
+            <div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-baseline gap-1.5 min-w-0">
+                  <span class="studio-word-num text-emerald-800 font-bold shrink-0">${String(w.num).padStart(2, '0')}.</span>
+                  <span class="studio-word-lemma text-emerald-950 font-bold text-base">${displayWord}</span>
+                  ${w.pos ? `<span class="studio-word-pos bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.5 rounded text-[10px] shrink-0">${w.pos}</span>` : ''}
+                </div>
+                <div class="studio-checks shrink-0">
+                  <span>1<span class="studio-check-box ml-0.5"></span></span>
+                  <span>2<span class="studio-check-box ml-0.5"></span></span>
+                  <span>3<span class="studio-check-box ml-0.5"></span></span>
+                </div>
+              </div>
+              <div class="studio-word-meaning font-bold text-slate-900 text-sm mt-1">
+                ${w.meaning}
+              </div>
+              ${w.collocation ? `
+                <div class="mt-1 text-[10.5px] bg-amber-50 text-amber-950 px-2 py-0.5 rounded border border-amber-300 font-medium">
+                  ⚡ <strong>3단 변화/연어:</strong> ${w.collocation}
+                </div>
+              ` : ''}
+            </div>
+            ${w.example ? `
+              <div class="studio-word-example border-emerald-100 mt-1.5">
+                <div class="font-sans text-slate-900 font-medium">${this.highlightWord(w.example, displayWord)}</div>
+                ${w.translation ? `<div class="studio-word-trans text-slate-600 mt-0.5">${w.translation}</div>` : ''}
+              </div>
+            ` : ''}
+          </div>
+        `;
+      }
+
+      // 5) 토익(TOEIC) 기출 RC 핵심 보카 카드
+      if (seriesKey === 'season_toeic_rc') {
+        return `
+          <div class="studio-word-card border-l-4 border-blue-700 bg-blue-50/10">
+            <div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-baseline gap-1.5 min-w-0">
+                  <span class="studio-word-num text-blue-900 font-bold shrink-0">${String(w.num).padStart(2, '0')}.</span>
+                  <span class="studio-word-lemma text-blue-950 font-bold text-base tracking-tight">${displayWord}</span>
+                  ${w.pos ? `<span class="studio-word-pos bg-blue-100 text-blue-900 font-mono font-bold px-1.5 py-0.5 rounded text-[10px] shrink-0">${w.pos}</span>` : ''}
+                </div>
+                <span class="text-[10px] font-bold text-blue-900 bg-amber-100 border border-amber-300 px-1.5 py-0.5 rounded">TOEIC RC</span>
+              </div>
+              <div class="studio-word-meaning font-bold text-slate-900 text-xs mt-1">
+                ${w.meaning}
+              </div>
+              ${w.collocation ? `
+                <div class="mt-1 text-[10.5px] bg-sky-50 text-sky-950 px-2 py-0.5 rounded border border-sky-200">
+                  ⏱️ <strong>3초 컷 짝단어:</strong> <span class="font-bold text-blue-900">${w.collocation}</span>
+                </div>
+              ` : ''}
+              ${w.nuanceTip ? `
+                <div class="mt-0.5 text-[10px] text-slate-500">
+                  🎯 출제 팁: ${w.nuanceTip}
+                </div>
+              ` : ''}
+            </div>
+            ${w.example ? `
+              <div class="studio-word-example border-blue-100 mt-1.5">
+                <div class="font-sans text-slate-900 font-medium">${this.highlightWord(w.example, displayWord)}</div>
                 ${w.translation ? `<div class="studio-word-trans text-slate-600 mt-0.5">${w.translation}</div>` : ''}
               </div>
             ` : ''}
@@ -2052,6 +2325,369 @@
       return html;
     }
 
+
+    /**
+     * 신규 특화 부교재 1: 💬 Z세대 메신저(DM) & SNS 실전 대화 워크북 (넷플릭스·슬랭)
+     */
+    renderSlangChatSheet(dayKey, words) {
+      const meta = this.currentBookMeta;
+      const targetWords = words.slice(0, 8); // 8개 실전 대화 씬
+
+      let html = `
+        <div class="studio-paper a4-page flex flex-col justify-between p-8 bg-white text-slate-800 shadow-lg border border-slate-200 print:shadow-none print:border-none mb-6">
+          <div class="sheet-header border-b-2 border-rose-900 pb-3 mb-4 flex items-center justify-between">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-rose-600 text-white">부교재 2</span>
+                <span class="text-xs font-bold text-slate-500">${meta.title}</span>
+              </div>
+              <h2 class="text-xl font-black text-slate-900 mt-1">💬 ${dayKey} Z세대 메신저(DM) &amp; SNS 실전 대화 워크북</h2>
+            </div>
+            <div class="text-right text-xs text-slate-500">
+              <div>학습일: _____년 ___월 ___일</div>
+              <div class="font-bold text-rose-900 mt-1">진단: [ &nbsp; / 8 대화 완성 ]</div>
+            </div>
+          </div>
+
+          <div class="sheet-body flex-1 space-y-3 text-xs">
+      `;
+
+      targetWords.forEach((w, idx) => {
+        const gap = `<span class="border-b-2 border-rose-500 font-mono font-bold text-rose-900 px-3 py-0.5 inline-block min-w-[90px] text-center bg-rose-50/50">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</span>`;
+        let replacedEx = w.example;
+        const m = this.findClozeMatch(w.example, w.word, gap);
+        if (m) replacedEx = m.html;
+
+        html += `
+          <div class="p-3 rounded-xl border border-slate-200 bg-slate-50/60">
+            <div class="flex items-center justify-between pb-1 mb-2 border-b border-slate-200/80">
+              <span class="font-black text-rose-900">Chat #${idx + 1} • <strong class="text-slate-800">${w.word}</strong> <span class="font-normal text-slate-500">(${w.meaning})</span></span>
+              <span class="text-[10px] font-mono bg-white px-2 py-0.5 rounded border border-slate-200 text-slate-600">힌트: ${w.clozeHint || w.word[0] + '___'}</span>
+            </div>
+            <div class="space-y-1.5">
+              <div class="flex items-start gap-2">
+                <span class="px-1.5 py-0.5 rounded bg-slate-200 text-slate-700 font-bold text-[10px] shrink-0 mt-0.5">Alex</span>
+                <div class="bg-white p-2 rounded-lg border border-slate-200 text-slate-700 text-[11px] flex-1">
+                  "Hey! Did you check out the new post today?"
+                </div>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="px-1.5 py-0.5 rounded bg-rose-600 text-white font-bold text-[10px] shrink-0 mt-0.5">You</span>
+                <div class="bg-rose-50/80 p-2 rounded-lg border border-rose-200 text-slate-900 text-[11px] font-medium flex-1">
+                  "${replacedEx}"
+                  <div class="text-[10px] text-slate-500 mt-1">해석: ${w.translation}</div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-2 pt-1.5 border-t border-dashed border-slate-200 flex items-center justify-between text-[11px]">
+              <span class="text-slate-600 font-bold">✍️ 슬랭 답안:</span>
+              <span class="border-b border-slate-400 w-3/4 h-5"></span>
+            </div>
+          </div>
+        `;
+      });
+
+      html += `
+          </div>
+          <div class="sheet-footer pt-3 mt-4 border-t border-slate-200 flex justify-between text-[10px] text-slate-400">
+            <span>Veritas Netflix &amp; Native Slang Companion Series</span>
+            <span>${dayKey} Real Messenger &amp; DM Workbook</span>
+          </div>
+        </div>
+      `;
+      return html;
+    }
+
+    /**
+     * 신규 특화 부교재 2: 🎙️ TED 1분 시사 브리핑 & 섀도잉 스피치 노트 (TED & 뉴스)
+     */
+    renderTedBriefSheet(dayKey, words) {
+      const meta = this.currentBookMeta;
+      const targetWords = words.slice(0, 5); // 5개 심층 브리핑
+
+      let html = `
+        <div class="studio-paper a4-page flex flex-col justify-between p-8 bg-white text-slate-800 shadow-lg border border-slate-200 print:shadow-none print:border-none mb-6">
+          <div class="sheet-header border-b-2 border-teal-900 pb-3 mb-4 flex items-center justify-between">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-teal-800 text-white">부교재 1</span>
+                <span class="text-xs font-bold text-slate-500">${meta.title}</span>
+              </div>
+              <h2 class="text-xl font-black text-slate-900 mt-1">🎙️ ${dayKey} TED 1분 시사 브리핑 &amp; 섀도잉 스피치 노트</h2>
+            </div>
+            <div class="text-right text-xs text-slate-500">
+              <div>목표: 1분 연속 스피치 낭독</div>
+              <div class="font-bold text-teal-900 mt-1">학습일: _____년 ___월 ___일</div>
+            </div>
+          </div>
+
+          <div class="sheet-body flex-1 space-y-3.5 text-xs">
+      `;
+
+      targetWords.forEach((w, idx) => {
+        html += `
+          <div class="p-3.5 rounded-xl border border-teal-200 bg-teal-50/20">
+            <div class="flex items-center justify-between border-b border-teal-200/80 pb-1.5 mb-2">
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded bg-teal-900 text-white font-mono font-bold text-[10.5px]">Brief #${idx + 1}</span>
+                <span class="font-serif font-black text-sm text-teal-950">${w.word}</span>
+                <span class="text-[11px] font-bold text-teal-800">(${w.pos} ${w.meaning})</span>
+              </div>
+              <div class="flex items-center gap-2 text-[10px] text-slate-500">
+                <span>⏱️ 스피치: [ &nbsp;&nbsp;&nbsp;&nbsp;초 / 60초 ]</span>
+                <span>체크: [ ] 1회 [ ] 2회 [ ] 3회</span>
+              </div>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="text-xs font-serif leading-relaxed text-slate-900 bg-white p-2.5 rounded-lg border border-teal-100">
+                "Ladies and gentlemen, looking at the recent global developments, ${this.highlightWord(w.example, w.word)}"
+              </div>
+              <div class="text-[11px] text-slate-600 pl-1">
+                📌 <strong>한국어 해석:</strong> "${w.translation}"
+              </div>
+              <div class="flex flex-wrap items-center gap-3 pt-1 text-[10.5px] text-slate-600">
+                <span class="bg-teal-100 text-teal-950 px-2 py-0.5 rounded font-bold">🌐 핵심 연어: ${w.collocation || w.word}</span>
+                <span class="text-slate-500">💡 <strong>시사 포인트:</strong> ${w.nuanceTip || '전문 보도 및 강연 빈출 담화 표현'}</span>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      html += `
+          </div>
+          <div class="sheet-footer pt-3 mt-4 border-t border-slate-200 flex justify-between text-[10px] text-slate-400">
+            <span>Veritas TED &amp; Global News Briefing Companion Series</span>
+            <span>${dayKey} 1-Minute Speech &amp; Shadowing Playbook</span>
+          </div>
+        </div>
+      `;
+      return html;
+    }
+
+    /**
+     * 신규 특화 부교재 3: ⚡ 불규칙 동사 100선 & 기초 어휘 3단 변화 마스터 시트 (중학 기초 1,000)
+     */
+    renderIrregularVerbsSheet(dayKey, words) {
+      const meta = this.currentBookMeta;
+
+      let html = `
+        <div class="studio-paper a4-page flex flex-col justify-between p-8 bg-white text-slate-800 shadow-lg border border-slate-200 print:shadow-none print:border-none mb-6">
+          <div class="sheet-header border-b-2 border-emerald-900 pb-3 mb-4 flex items-center justify-between">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-700 text-white">부교재 1</span>
+                <span class="text-xs font-bold text-slate-500">${meta.title}</span>
+              </div>
+              <h2 class="text-xl font-black text-slate-900 mt-1">⚡ ${dayKey} 중학 필수 불규칙 동사 &amp; 기초 어휘 3단 변화 마스터</h2>
+            </div>
+            <div class="text-right text-xs text-slate-500">
+              <div>중학 내신 1등급 필수 기초</div>
+              <div class="font-bold text-emerald-900 mt-1">점수: _____ / 100</div>
+            </div>
+          </div>
+
+          <!-- Section 1. 3단 변화 & 의미 표 -->
+          <div class="sheet-body flex-1 space-y-4 text-xs">
+            <div class="studio-wb-section-title">
+              <span>Section 1. 다음 표의 빈칸에 알맞은 과거형과 과거분사형(P.P.) 또는 우리말 뜻을 쓰시오.</span>
+              <span class="text-[10px] font-normal text-slate-500">Base - Past - Past Participle</span>
+            </div>
+
+            <div class="overflow-hidden border border-slate-300 rounded-lg">
+              <table class="w-full text-left text-xs border-collapse">
+                <thead>
+                  <tr class="bg-emerald-900 text-white font-bold text-[11px]">
+                    <th class="p-2 border-r border-emerald-800 w-10 text-center">No.</th>
+                    <th class="p-2 border-r border-emerald-800 w-28">원형 (Base Form)</th>
+                    <th class="p-2 border-r border-emerald-800 w-28">과거형 (Past)</th>
+                    <th class="p-2 border-r border-emerald-800 w-28">과거분사 (P.P.)</th>
+                    <th class="p-2">대표 한국어 뜻</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200">
+      `;
+
+      words.slice(0, 15).forEach((w, idx) => {
+        const isOdd = idx % 2 === 1;
+        html += `
+          <tr class="${isOdd ? 'bg-slate-50/60' : 'bg-white'}">
+            <td class="p-1.5 border-r border-slate-200 text-center font-bold text-slate-500">${idx + 1}</td>
+            <td class="p-1.5 border-r border-slate-200 font-bold text-emerald-950">${w.word}</td>
+            <td class="p-1.5 border-r border-slate-200 font-mono text-slate-400">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</td>
+            <td class="p-1.5 border-r border-slate-200 font-mono text-slate-400">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</td>
+            <td class="p-1.5 text-slate-700 font-medium">${w.meaning}</td>
+          </tr>
+        `;
+      });
+
+      html += `
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Section 2. 기본 문장 완성 영작 -->
+            <div class="studio-wb-section-title mt-4">
+              <span>Section 2. 주어진 단어를 문맥의 알맞은 시제(현재/과거/완료)로 바꾸어 빈칸을 완성하시오.</span>
+              <span class="text-[10px] font-normal text-slate-500">Sentence Completion</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2.5">
+              ${words.slice(0, 4).map((w, idx) => `
+                <div class="p-2 rounded border border-slate-200 bg-white">
+                  <div class="text-[11px] font-serif text-slate-900 leading-snug">
+                    <span class="font-bold text-emerald-800">${idx + 1}.</span> ${this.highlightWord(w.example, w.word)}
+                  </div>
+                  <div class="mt-1 text-[10px] text-slate-500 flex justify-between">
+                    <span>제시어: [ <strong>${w.word}</strong> ]</span>
+                    <span>뜻: ${w.meaning}</span>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <div class="sheet-footer pt-3 mt-4 border-t border-slate-200 flex justify-between text-[10px] text-slate-400">
+            <span>Veritas Middle School Starter 1,000 Companion Series</span>
+            <span>${dayKey} Irregular Verbs &amp; Basic Lexicon Matrix</span>
+          </div>
+        </div>
+      `;
+      return html;
+    }
+
+    /**
+     * 신규 특화 부교재 4: ⏱️ 3초 컷 빈출 연어(Collocation) 클리닉 (토익 RC 1,500)
+     */
+    renderToeicCollocationSheet(dayKey, words) {
+      const meta = this.currentBookMeta;
+
+      let html = `
+        <div class="studio-paper a4-page flex flex-col justify-between p-8 bg-white text-slate-800 shadow-lg border border-slate-200 print:shadow-none print:border-none mb-6">
+          <div class="sheet-header border-b-2 border-blue-900 pb-3 mb-4 flex items-center justify-between">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-blue-800 text-white">부교재 1</span>
+                <span class="text-xs font-bold text-slate-500">${meta.title}</span>
+              </div>
+              <h2 class="text-xl font-black text-slate-900 mt-1">⏱️ ${dayKey} 토익 RC Part 5 3초 컷 빈출 연어(Collocation) 클리닉</h2>
+            </div>
+            <div class="text-right text-xs text-slate-500">
+              <div>정기토익 Part 5 만점 대비</div>
+              <div class="font-bold text-blue-900 mt-1">학습일: _____년 ___월 ___일</div>
+            </div>
+          </div>
+
+          <div class="sheet-body flex-1 grid grid-cols-2 gap-3 text-xs">
+      `;
+
+      words.slice(0, 16).forEach((w, idx) => {
+        html += `
+          <div class="p-2.5 rounded-lg border border-blue-200 bg-blue-50/20 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between border-b border-blue-200/70 pb-1 mb-1.5">
+                <span class="font-bold text-blue-950">[${idx + 1}] ${w.word}</span>
+                <span class="text-[10px] font-bold text-blue-700 bg-white px-1.5 py-0.5 rounded border border-blue-200">${w.pos} ${w.meaning}</span>
+              </div>
+              <div class="bg-white border border-blue-200 rounded p-1.5 mb-1.5">
+                <div class="text-[10.5px] font-black text-blue-900 flex items-center gap-1">
+                  <span>⏱️ 3초 컷 짝단어:</span>
+                  <span class="font-mono text-slate-900">${w.collocation || w.word}</span>
+                </div>
+              </div>
+              <div class="text-[11px] text-slate-800 font-sans leading-snug">
+                "${this.highlightWord(w.example, w.word)}"
+              </div>
+              <div class="text-[10px] text-slate-500 mt-0.5">${w.translation}</div>
+            </div>
+            ${w.nuanceTip ? `
+              <div class="mt-1 pt-1 border-t border-dashed border-blue-200 text-[10px] text-blue-800">
+                🎯 <strong>출제 족보:</strong> ${w.nuanceTip}
+              </div>
+            ` : ''}
+          </div>
+        `;
+      });
+
+      html += `
+          </div>
+          <div class="sheet-footer pt-3 mt-4 border-t border-slate-200 flex justify-between text-[10px] text-slate-400">
+            <span>Veritas TOEIC RC 1,500 Companion Series</span>
+            <span>${dayKey} Part 5 3-Second Speed Collocation Clinic</span>
+          </div>
+        </div>
+      `;
+      return html;
+    }
+
+    /**
+     * 신규 특화 부교재 5: 🎯 파트 5 실전 4지선다 모의 워크북 (토익 RC 1,500)
+     */
+    renderToeicPart5Sheet(dayKey, words) {
+      const meta = this.currentBookMeta;
+      const targetQuestions = words.slice(0, 10); // 10문항 정통 토익 Part 5
+
+      let html = `
+        <div class="studio-paper a4-page flex flex-col justify-between p-8 bg-white text-slate-800 shadow-lg border border-slate-200 print:shadow-none print:border-none mb-6">
+          <div class="sheet-header border-b-2 border-slate-900 pb-3 mb-4 flex items-center justify-between">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-500 text-slate-950">부교재 2</span>
+                <span class="text-xs font-bold text-slate-500">${meta.title}</span>
+              </div>
+              <h2 class="text-xl font-black text-slate-900 mt-1">🎯 ${dayKey} 토익 RC Part 5 실전 4지선다 모의 워크북</h2>
+            </div>
+            <div class="text-right text-xs text-slate-500">
+              <div>제한 시간: 7분 (문항당 40초)</div>
+              <div class="font-bold text-slate-900 mt-1">점수: _____ / 10</div>
+            </div>
+          </div>
+
+          <div class="sheet-body flex-1 space-y-3.5 text-xs">
+            <div class="text-[11px] text-slate-600 bg-slate-100 p-2 rounded font-sans">
+              <strong>Directions:</strong> Select the best answer from choices (A), (B), (C), and (D) to complete each sentence.
+            </div>
+      `;
+
+      targetQuestions.forEach((w, idx) => {
+        // Create 4 choices using other words from words array
+        const otherWords = words.filter(ow => ow.word !== w.word);
+        const distractors = otherWords.slice(idx * 3, idx * 3 + 3).map(ow => ow.word);
+        while (distractors.length < 3) distractors.push('require', 'provide', 'submit');
+
+        const choices = [w.word, ...distractors.slice(0, 3)].sort();
+        const letters = ['(A)', '(B)', '(C)', '(D)'];
+        const blankSentence = w.example.replace(new RegExp(`\\b${w.word}\\b`, 'gi'), '____________');
+
+        html += `
+          <div class="p-2.5 rounded border border-slate-200 bg-white">
+            <div class="font-serif text-slate-900 text-xs leading-relaxed mb-2">
+              <span class="font-sans font-bold text-blue-900 mr-1.5">${101 + idx}.</span>
+              <span>${blankSentence}</span>
+            </div>
+            <div class="grid grid-cols-4 gap-2 text-xs font-sans pl-5 text-slate-800">
+              ${choices.map((c, cIdx) => `
+                <div class="flex items-center gap-1">
+                  <span class="font-bold text-slate-500">${letters[cIdx]}</span>
+                  <span class="font-medium">${c}</span>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      });
+
+      html += `
+          </div>
+          <div class="sheet-footer pt-3 mt-4 border-t border-slate-200 flex justify-between text-[10px] text-slate-400">
+            <span>Veritas TOEIC RC 1,500 Companion Series</span>
+            <span>${dayKey} Part 5 Mock Test Sheet</span>
+          </div>
+        </div>
+      `;
+      return html;
+    }
   }
 
   // 글로벌 싱글톤 인스턴스 등록

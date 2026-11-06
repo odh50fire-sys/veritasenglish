@@ -116,6 +116,71 @@
   --theme-name: "AI 맞춤 스마트 보카";
 }
 
+/* 9) 넷플릭스·미드 구어 & SNS 슬랭 (Netflix Red & Midnight Slate) */
+.series-theme-season_netflix_slang {
+  --theme-primary: #b91c1c;       /* netflix red */
+  --theme-secondary: #0f172a;     /* midnight slate */
+  --theme-accent: #e11d48;        /* neon rose */
+  --theme-bg-soft: #fff1f2;
+  --theme-border: #fecdd3;
+  --theme-badge-bg: #ffe4e6;
+  --theme-badge-text: #9f1239;
+  --theme-tag-symbol: "🍿";
+  --theme-name: "넷플릭스·미드 구어 & SNS 슬랭";
+}
+
+/* 10) TED & 글로벌 뉴스 시사 영단어 (TED Crimson & Global Teal) */
+.series-theme-season_ted_news {
+  --theme-primary: #991b1b;       /* deep ted crimson */
+  --theme-secondary: #0f766e;     /* global news teal */
+  --theme-accent: #b45309;        /* briefing gold */
+  --theme-bg-soft: #fef2f2;
+  --theme-border: #fed7aa;
+  --theme-badge-bg: #fee2e2;
+  --theme-badge-text: #7f1d1d;
+  --theme-tag-symbol: "🎙️";
+  --theme-name: "TED & 글로벌 뉴스 시사 영단어";
+}
+
+/* 11) 영미권 대학 강의 & 학술 에세이 (Ivy League Indigo & Oxford Blue) */
+.series-theme-season_academic_essay {
+  --theme-primary: #1e1b4b;       /* deep ivy league indigo */
+  --theme-secondary: #1e3a8a;     /* royal oxford blue */
+  --theme-accent: #b45309;        /* warm academic gold */
+  --theme-bg-soft: #f8fafc;
+  --theme-border: #cbd5e1;
+  --theme-badge-bg: #e0e7ff;
+  --theme-badge-text: #3730a3;
+  --theme-tag-symbol: "🏛️";
+  --theme-name: "영미권 대학 강의 & 학술 에세이";
+}
+
+/* 12) 중학 첫걸음 필수 기초 영단어 (Fresh Forest Green & Mint) */
+.series-theme-season_middle_starter {
+  --theme-primary: #047857;       /* fresh emerald green */
+  --theme-secondary: #0284c7;     /* bright sky blue */
+  --theme-accent: #059669;
+  --theme-bg-soft: #ecfdf5;
+  --theme-border: #a7f3d0;
+  --theme-badge-bg: #d1fae5;
+  --theme-badge-text: #065f46;
+  --theme-tag-symbol: "🌱";
+  --theme-name: "중학 첫걸음 필수 기초 영단어";
+}
+
+/* 13) 토익(TOEIC) 기출 RC 핵심 보카 (Business Navy & Executive Gold) */
+.series-theme-season_toeic_rc {
+  --theme-primary: #0369a1;       /* professional business blue */
+  --theme-secondary: #b45309;     /* executive gold */
+  --theme-accent: #2563eb;        /* test sapphire */
+  --theme-bg-soft: #f0f9ff;
+  --theme-border: #bae6fd;
+  --theme-badge-bg: #e0f2fe;
+  --theme-badge-text: #075985;
+  --theme-tag-symbol: "💼";
+  --theme-name: "토익(TOEIC) 기출 RC 핵심 보카";
+}
+
 /* ==========================================================================
    2. 스튜디오 모달 & 뷰어 UI (Screen Mode)
    ========================================================================== */
