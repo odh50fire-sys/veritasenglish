@@ -443,7 +443,13 @@ class QuizEngine {
                     clozeSentence = sentence.replace(new RegExp(`\\b${esc}\\w*\\b`, 'i'), '【 ____________ 】');
                 }
                 if (!clozeSentence || !clozeSentence.includes('【 ____________ 】')) {
-                    clozeSentence = sentence ? `${sentence} 【 ____________ 】` : '【 ____________ 】';
+                    if (cleanW.length >= 4) {
+                        const stem = cleanW.slice(0, 4).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                        clozeSentence = sentence.replace(new RegExp(`\\b\\w*${stem}\\w*\\b`, 'i'), '【 ____________ 】');
+                    }
+                    if (!clozeSentence || !clozeSentence.includes('【 ____________ 】')) {
+                        clozeSentence = `【 ____________ 】 : ${sentence}`;
+                    }
                 }
             }
         }

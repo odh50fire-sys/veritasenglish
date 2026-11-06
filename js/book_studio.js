@@ -691,6 +691,59 @@
     /**
      * 교재 표지 (Cover Page)
      */
+    
+    /**
+     * 표제어의 의미와 품사에 부합하는 100% 자연스러운 문맥형 대화문 생성기
+     */
+    buildContextualDialogue(w) {
+      const ex = String(w.example || '').trim();
+      const word = String(w.word || '').trim();
+      const pos = String(w.pos || '').toLowerCase();
+      const meaning = String(w.meaning || '').trim();
+
+      // 예문에 이미 A/B 대화 따옴표가 있는 경우
+      if (ex.includes('A:') && ex.includes('B:')) {
+        const parts = ex.split(/B:/);
+        return {
+          speakerA: parts[0].replace(/A:/, '').trim().replace(/^["']|["']$/g, ''),
+          speakerB: parts[1].trim().replace(/^["']|["']$/g, '')
+        };
+      }
+
+      // 의미 및 품사 기반 문맥형 자연스러운 질문 도출
+      let promptA = "What did the team conclude about this situation?";
+      if (pos.includes('v') || meaning.includes('하다') || meaning.includes('되다')) {
+        if (meaning.includes('취소') || meaning.includes('연기') || meaning.includes('중단')) {
+          promptA = "Is the upcoming event still scheduled to take place as planned?";
+        } else if (meaning.includes('동의') || meaning.includes('결정') || meaning.includes('해결')) {
+          promptA = "Have they finally reached a consensus on the matter?";
+        } else if (meaning.includes('구매') || meaning.includes('판매') || meaning.includes('비용')) {
+          promptA = "How did the department handle the financial transaction?";
+        } else if (meaning.includes('개선') || meaning.includes('증가') || meaning.includes('개발')) {
+          promptA = "What progress has been made on the ongoing project?";
+        } else {
+          promptA = `How did they decide to handle the matter regarding ${word}?`;
+        }
+      } else if (pos.includes('a') || meaning.includes('한') || meaning.includes('적인')) {
+        if (meaning.includes('중요') || meaning.includes('필수') || meaning.includes('심각')) {
+          promptA = "Why is everyone paying so much attention to this issue?";
+        } else if (meaning.includes('편리') || meaning.includes('효과') || meaning.includes('우수')) {
+          promptA = "What makes this new approach so highly recommended?";
+        } else {
+          promptA = "How would you describe the overall condition of the project?";
+        }
+      } else if (meaning.includes('편견') || meaning.includes('갈등') || meaning.includes('어려움')) {
+        promptA = "What was the main obstacle encountered during the discussion?";
+      } else {
+        promptA = "Could you explain the key takeaway from the recent report?";
+      }
+
+      return {
+        speakerA: promptA,
+        speakerB: ex || `We must make sure that we thoroughly understand ${word}.`
+      };
+    }
+
     renderCoverSheet() {
       const meta = this.currentBookMeta;
       const seriesKey = meta.series || 'middle';
@@ -865,92 +918,96 @@
       const meta = this.currentBookMeta;
       const seriesKey = meta.series || 'middle';
       const seriesInfo = SERIES_INFO[seriesKey] || SERIES_INFO.middle;
-      const isCompactDay = words.length <= 10;
       const dayTip = this.selectDayNativeTip(words, seriesKey);
 
-      return `
-        <div class="studio-a4-sheet">
-          <div class="studio-day-header">
-            <div>
-              <div class="flex items-center gap-2 mb-1">
-                <span class="studio-day-tag">${dayKey}</span>
-                <span class="text-xs font-bold text-slate-700">${seriesInfo.name}</span>
-                <span class="text-slate-300">•</span>
-                <span class="text-xs font-medium text-slate-500">${meta.title}</span>
+      // A4 높이(297mm) 초과 방지: 페이지당 정확히 10단어씩 분할 (5행 x 2열)
+      const pageSize = 10;
+      const totalPages = Math.ceil(words.length / pageSize) || 1;
+      let pagesHtml = '';
+
+      for (let pIdx = 0; pIdx < totalPages; pIdx++) {
+        const pageWords = words.slice(pIdx * pageSize, (pIdx + 1) * pageSize);
+        const isFirstPage = pIdx === 0;
+        const isLastPage = pIdx === totalPages - 1;
+        const pageLabel = totalPages > 1 ? ` (Page ${pIdx + 1} / ${totalPages})` : '';
+
+        pagesHtml += `
+          <div class="studio-a4-sheet">
+            <div class="studio-day-header">
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="studio-day-tag">${dayKey}${pageLabel}</span>
+                  <span class="text-xs font-bold text-slate-700">${seriesInfo.name}</span>
+                  <span class="text-slate-300">•</span>
+                  <span class="text-xs font-medium text-slate-500 truncate max-w-[220px]">${meta.title}</span>
+                </div>
+                <div class="text-xs text-slate-500 font-medium">
+                  단어 ${pIdx * pageSize + 1}~${Math.min((pIdx + 1) * pageSize, words.length)}번 (총 ${words.length}단어) | 3회독 누적 암기 트레이닝
+                </div>
               </div>
-              <div class="text-xs text-slate-500 font-medium">
-                총 ${words.length}단어 | 핵심 어휘 인지 및 3회독 누적 암기 트레이닝
+              <div class="text-right text-[11px] text-slate-500">
+                <div>학습일: ____년 __월 __일</div>
+                <div class="font-bold text-slate-800 mt-0.5">암기 확인: [ &nbsp; / ${pageWords.length} ]</div>
               </div>
             </div>
-            <div class="text-right text-[11px] text-slate-500">
-              <div>학습일: ____년 __월 __일</div>
-              <div class="font-bold text-slate-800 mt-0.5">암기 확인: [ &nbsp; / ${words.length} ]</div>
+
+            <!-- 어휘 카드 2단 그리드 (각 열 50% 엄격 유지, 박스 돌출 차단) -->
+            <div class="studio-voca-grid">
+              ${pageWords.map(w => this.renderWordCard(w, seriesKey)).join('')}
+            </div>
+
+            <!-- 마지막 페이지에만 원어민 꿀팁 배너 배치하여 A4 높이 무오류 보장 -->
+            ${isLastPage && dayTip ? `
+              <div class="studio-day-native-tip-banner mt-3.5 p-3 rounded-xl border border-amber-300 bg-amber-50/70 shadow-2xs">
+                <div class="flex items-center justify-between border-b border-amber-200/80 pb-1.5 mb-2">
+                  <div class="flex items-center gap-2">
+                    <span class="text-sm">💡</span>
+                    <span class="text-xs font-black text-amber-950 tracking-tight">Today's Native Speaker Tip • 원어민 꿀팁</span>
+                    <span class="px-2 py-0.5 rounded-full bg-amber-200/90 text-amber-950 text-[10px] font-bold border border-amber-300">${dayTip.tag || '뉘앙스 & 실전 구어'}</span>
+                  </div>
+                  <span class="text-[11px] font-extrabold text-amber-900 bg-white/90 px-2 py-0.5 rounded border border-amber-200">#${dayTip.keyword}</span>
+                </div>
+                <div class="text-xs">
+                  <div class="font-bold text-amber-950 mb-1 flex items-center gap-1.5">
+                    <span class="text-xs">📌</span>
+                    <span class="text-[11.5px] font-black">${dayTip.title}</span>
+                  </div>
+                  <p class="text-[11px] text-slate-700 leading-relaxed pl-4 font-normal">${dayTip.tip}</p>
+                </div>
+              </div>
+            ` : ''}
+
+            <!-- 10단어 이하 교재를 위한 하단 특별 학습 노트 섹션 -->
+            ${totalPages === 1 && words.length <= 8 ? `
+              <div class="studio-compact-day-notes mt-4 p-3 rounded-xl border border-slate-200 bg-slate-50/70">
+                <div class="flex items-center justify-between border-b border-slate-200 pb-1.5 mb-2">
+                  <span class="text-xs font-bold text-slate-900 flex items-center gap-1.5">
+                    <span>✍️ ${dayKey} 핵심 단어 활용 문장 작문 & 오답 정리 노트</span>
+                  </span>
+                  <span class="text-[10px] text-slate-500 font-medium">Daily Application Note</span>
+                </div>
+                <div class="space-y-1.5 text-xs text-slate-600">
+                  <div class="flex items-center gap-2">
+                    <span class="font-bold text-slate-800 shrink-0">1. 핵심 문장:</span>
+                    <span class="flex-1 border-b border-slate-300 h-5"></span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="font-bold text-slate-800 shrink-0">2. 핵심 문장:</span>
+                    <span class="flex-1 border-b border-slate-300 h-5"></span>
+                  </div>
+                </div>
+              </div>
+            ` : ''}
+
+            <div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-[10px] text-slate-400">
+              <span>VERITAS ENGLISH SCHOLARS' ACADEMY • SUPPLEMENTARY VOCA BOOK</span>
+              <span>${dayKey} • PAGE ${pIdx + 1} OF ${totalPages}</span>
             </div>
           </div>
+        `;
+      }
 
-          <!-- 원래 단어장 어휘 카드 2단 그리드 (단정하고 일정한 카드 규격 유지) -->
-          <div class="studio-voca-grid">
-            ${words.map(w => this.renderWordCard(w, seriesKey)).join('')}
-          </div>
-
-          <!-- [원래 단어장 밑에 깔끔하게 배치된 원어민 꿀팁 배너 - 매 Day 100% 수록] -->
-          ${dayTip ? `
-            <div class="studio-day-native-tip-banner mt-3.5 p-3 rounded-xl border border-amber-300 bg-amber-50/70 shadow-2xs">
-              <div class="flex items-center justify-between border-b border-amber-200/80 pb-1.5 mb-2">
-                <div class="flex items-center gap-2">
-                  <span class="text-sm">💡</span>
-                  <span class="text-xs font-black text-amber-950 tracking-tight">Today's Native Speaker Tip • 원어민 꿀팁</span>
-                  <span class="px-2 py-0.5 rounded-full bg-amber-200/90 text-amber-950 text-[10px] font-bold border border-amber-300">${dayTip.tag || '뉘앙스 & 실전 구어'}</span>
-                </div>
-                <span class="text-[11px] font-extrabold text-amber-900 bg-white/90 px-2 py-0.5 rounded border border-amber-200">#${dayTip.keyword}</span>
-              </div>
-              <div class="text-xs">
-                <div class="font-bold text-amber-950 mb-1 flex items-center gap-1.5">
-                  <span class="text-xs">📌</span>
-                  <span class="text-[11.5px] font-black">${dayTip.title}</span>
-                </div>
-                <p class="text-[11px] text-slate-700 leading-relaxed pl-4 font-normal">${dayTip.tip}</p>
-              </div>
-            </div>
-          ` : ''}
-
-          <!-- 10단어 이하 교재를 위한 하단 특별 학습 노트 섹션 -->
-          ${isCompactDay ? `
-            <div class="studio-compact-day-notes mt-6 p-4 rounded-xl border border-slate-200 bg-slate-50/70">
-              <div class="flex items-center justify-between border-b border-slate-200 pb-2 mb-3">
-                <span class="text-xs font-bold text-slate-900 flex items-center gap-1.5">
-                  <span>✍️ ${dayKey} 핵심 단어 활용 문장 작문 & 오답 정리 노트</span>
-                </span>
-                <span class="text-[10px] text-slate-500 font-medium">Daily Application Note</span>
-              </div>
-              <div class="space-y-2 text-xs text-slate-600">
-                <div class="flex items-center gap-2">
-                  <span class="font-bold text-slate-800 shrink-0">1. 핵심 문장:</span>
-                  <span class="flex-1 border-b border-slate-300 h-5"></span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <span class="font-bold text-slate-800 shrink-0">2. 핵심 문장:</span>
-                  <span class="flex-1 border-b border-slate-300 h-5"></span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <span class="font-bold text-slate-800 shrink-0">3. 복습 체크:</span>
-                  <span class="flex-1 border-b border-slate-300 h-5"></span>
-                </div>
-              </div>
-              <div class="mt-3 pt-2 border-t border-slate-200/80 flex items-center justify-between text-[11px] text-slate-500">
-                <span>학습 시간: [ &nbsp;&nbsp;&nbsp;&nbsp;분 ]</span>
-                <span>자가 진단: [ &nbsp; ] 완벽 암기 &nbsp;&nbsp; [ &nbsp; ] 복습 필요</span>
-                <span>확인 도장: ( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )</span>
-              </div>
-            </div>
-          ` : ''}
-
-          <div class="mt-6 pt-3 border-t border-slate-200 flex items-center justify-between text-[10px] text-slate-400">
-            <span>VERITAS ENGLISH SUPPLEMENTARY SERIES • VOCABULARY BOOK</span>
-            <span>${dayKey} • PAGE COMPLETE</span>
-          </div>
-        </div>
-      `;
+      return pagesHtml;
     }
 
     renderWordCard(w, seriesKey) {
@@ -1382,112 +1439,205 @@
       const seriesInfo = SERIES_INFO[seriesKey] || SERIES_INFO.middle;
       const wb = this.getWorkbookData(dayKey, words);
 
+      // 워크북 문항 수에 따라 2페이지 분할하여 A4 높이 넘침 원천 차단
+      const needsTwoPages = wb.total > 10;
+
+      if (!needsTwoPages) {
+        return `
+          <div class="studio-a4-sheet">
+            <div class="studio-day-header border-b-2 border-slate-900">
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="studio-day-tag bg-slate-900">${dayKey} WORKBOOK</span>
+                  <span class="text-xs font-bold text-slate-700">${seriesInfo.name}</span>
+                </div>
+                <div class="text-xs text-slate-500 font-medium">
+                  총 ${wb.total}문항 · 하루치 ${words.length}단어를 중복 없이 모두 출제
+                </div>
+              </div>
+              <div class="text-right text-[11px] text-slate-500">
+                <div>학습자: _____________</div>
+                <div class="font-bold text-slate-800 mt-0.5">점수: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / ${wb.total}문항</div>
+              </div>
+            </div>
+
+            ${this.renderWorkbookSection1(wb)}
+            ${this.renderWorkbookSection2(wb)}
+            ${this.renderWorkbookSection3(wb)}
+
+            <div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-[10px] text-slate-400">
+              <span>VERITAS ENGLISH SUPPLEMENTARY SERIES • WORKBOOK</span>
+              <span>${dayKey} • COMPLETE</span>
+            </div>
+          </div>
+        `;
+      }
+
+      // 2페이지로 깔끔하게 분할 렌더링
       return `
+        <!-- 워크북 Page 1: Section 1 & Section 2 -->
         <div class="studio-a4-sheet">
           <div class="studio-day-header border-b-2 border-slate-900">
             <div>
               <div class="flex items-center gap-2 mb-1">
-                <span class="studio-day-tag bg-slate-900">${dayKey} WORKBOOK</span>
+                <span class="studio-day-tag bg-slate-900">${dayKey} WORKBOOK (Part 1)</span>
                 <span class="text-xs font-bold text-slate-700">${seriesInfo.name}</span>
               </div>
               <div class="text-xs text-slate-500 font-medium">
-                총 ${wb.total}문항 · 하루치 ${words.length}단어를 중복 없이 모두 출제
+                Section 1 (철자 인출) &amp; Section 2 (문맥 빈칸) • Page 1 of 2
               </div>
             </div>
             <div class="text-right text-[11px] text-slate-500">
               <div>학습자: _____________</div>
-              <div class="font-bold text-slate-800 mt-0.5">맞은 개수: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / ${wb.total}문항</div>
+              <div class="font-bold text-slate-800 mt-0.5">확인: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</div>
             </div>
           </div>
 
-          ${wb.section1.length ? `
-            <div class="studio-wb-section-title">
-              <span>Section 1. 우리말 뜻을 보고 알맞은 영단어를 철자로 완성하시오. (${this.rangeLabel(wb.section1)})</span>
-              <span class="text-[10px] font-normal text-slate-500">Spelling & Recall</span>
-            </div>
-            <div class="grid grid-cols-2 gap-2.5">
-              ${wb.section1.map(q => `
-                <div class="studio-wb-qitem flex flex-col justify-between p-2 rounded border border-slate-200">
-                  <div class="text-xs font-semibold text-slate-800 leading-snug mb-1.5 flex items-baseline gap-1">
-                    <span class="studio-wb-qnum">${q.no}.</span>
-                    <span class="break-words">${q.meaning}</span>
-                  </div>
-                  <div class="flex items-center justify-between gap-2 pt-1 border-t border-slate-100">
-                    <span class="studio-wb-hint shrink-0">${q.hint}</span>
-                    <span class="studio-wb-cloze-blank flex-1 max-w-[220px]"></span>
-                  </div>
-                </div>
-              `).join('')}
-            </div>
-          ` : ''}
+          ${this.renderWorkbookSection1(wb)}
+          ${this.renderWorkbookSection2(wb)}
 
-          ${wb.section2.length ? `
-            <div class="studio-wb-section-title mt-4">
-              <span>Section 2. 문맥을 읽고 빈칸에 들어갈 알맞은 어휘를 문장에 맞는 형태로 쓰시오. (${this.rangeLabel(wb.section2)})</span>
-              <span class="text-[10px] font-normal text-slate-500">Context Cloze</span>
-            </div>
-            <div class="space-y-2">
-              ${wb.section2.map(q => `
-                <div class="studio-wb-qitem p-2.5 border border-slate-200">
-                  <div class="text-xs text-slate-900 leading-relaxed font-serif">
-                    <span class="studio-wb-qnum font-sans font-bold">${q.no}.</span>
-                    <span>${q.sentenceHtml}</span>
-                  </div>
-                  <div class="text-[11px] text-slate-500 mt-2 pl-4 flex items-center justify-between flex-wrap gap-2">
-                    <span class="max-w-[60%]">[해석] ${q.translation}</span>
-                    <div class="flex items-center gap-1 font-bold text-slate-800 shrink-0">
-                      <span>정답:</span>
-                      <span class="inline-block w-40 sm:w-52 border-b-2 border-slate-700"></span>
-                    </div>
-                  </div>
-                </div>
-              `).join('')}
-            </div>
-          ` : ''}
-
-          ${wb.section3.length ? `
-            <div class="studio-wb-section-title mt-4">
-              <span>Section 3. 왼쪽의 영단어와 오른쪽의 알맞은 의미를 바르게 연결하시오. (${this.rangeLabel(wb.section3)})</span>
-              <span class="text-[10px] font-normal text-slate-500">Meaning Match</span>
-            </div>
-            <div class="grid grid-cols-2 gap-4 p-2.5 bg-slate-50 rounded-lg border border-slate-200 text-xs">
-              <div class="space-y-2">
-                ${wb.section3.map(q => `
-                  <div class="flex items-center justify-between p-1.5 bg-white rounded border border-slate-200">
-                    <span class="font-bold text-slate-900 break-words pr-2">
-                      <strong class="text-blue-900 mr-1.5">${q.no}.</strong>${q.word || 'VOCA'}
-                    </span>
-                    <span class="w-2.5 h-2.5 rounded-full bg-slate-300 inline-block shrink-0"></span>
-                  </div>
-                `).join('')}
-              </div>
-              <div class="space-y-2">
-                ${wb.s3Options.map(o => `
-                  <div class="flex items-center justify-between p-1.5 bg-white rounded border border-slate-200">
-                    <span class="w-2.5 h-2.5 rounded-full bg-slate-300 inline-block shrink-0"></span>
-                    <span class="pl-2 text-slate-800 font-medium break-words">
-                      <strong class="text-emerald-800 mr-1.5">(${o.label})</strong>${o.meaning}
-                    </span>
-                  </div>
-                `).join('')}
-              </div>
-            </div>
-            <div class="mt-2 text-right text-[11px] text-slate-600 font-medium leading-relaxed">
-              연결 정답: ${wb.section3.map(q => `${q.no}-[ &nbsp;&nbsp; ]`).join(' &nbsp; ')}
-            </div>
-          ` : ''}
-
-          <div class="mt-6 pt-3 border-t border-slate-200 flex items-center justify-between text-[10px] text-slate-400">
+          <div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-[10px] text-slate-400">
             <span>VERITAS ENGLISH SUPPLEMENTARY SERIES • WORKBOOK</span>
-            <span>${dayKey} • SOLVE & PRACTICE</span>
+            <span>${dayKey} • PAGE 1 OF 2</span>
+          </div>
+        </div>
+
+        <!-- 워크북 Page 2: Section 3 & 의미 연결 -->
+        <div class="studio-a4-sheet">
+          <div class="studio-day-header border-b-2 border-slate-900">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="studio-day-tag bg-slate-900">${dayKey} WORKBOOK (Part 2)</span>
+                <span class="text-xs font-bold text-slate-700">${seriesInfo.name}</span>
+              </div>
+              <div class="text-xs text-slate-500 font-medium">
+                Section 3 (의미 매칭) &amp; 실전 어휘 종합 점검 • Page 2 of 2
+              </div>
+            </div>
+            <div class="text-right text-[11px] text-slate-500">
+              <div>학습자: _____________</div>
+              <div class="font-bold text-slate-800 mt-0.5">최종 점수: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / ${wb.total}</div>
+            </div>
+          </div>
+
+          ${this.renderWorkbookSection3(wb)}
+
+          <!-- 하단 오답 클리닉 노트 -->
+          <div class="mt-6 p-3.5 rounded-xl border border-slate-200 bg-slate-50/70">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-1.5 mb-2 text-xs font-bold text-slate-900">
+              <span>✍️ 틀린 단어 셀프 클리닉 &amp; 복습 작성란</span>
+              <span class="text-[10px] text-slate-500">Mistake Review</span>
+            </div>
+            <div class="space-y-2 text-xs">
+              <div class="flex items-center gap-2">
+                <span class="w-16 font-bold text-slate-700">오답 1:</span>
+                <span class="flex-1 border-b border-slate-300 h-5"></span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-16 font-bold text-slate-700">오답 2:</span>
+                <span class="flex-1 border-b border-slate-300 h-5"></span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-16 font-bold text-slate-700">오답 3:</span>
+                <span class="flex-1 border-b border-slate-300 h-5"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-[10px] text-slate-400">
+            <span>VERITAS ENGLISH SUPPLEMENTARY SERIES • WORKBOOK</span>
+            <span>${dayKey} • PAGE 2 OF 2</span>
           </div>
         </div>
       `;
     }
 
-    /**
-     * 빠른 정답표 — 문제지와 동일한 데이터로 생성 (문항 번호·문항 수·유형별 정답 형식 일치)
-     */
+    renderWorkbookSection1(wb) {
+      if (!wb.section1.length) return '';
+      return `
+        <div class="studio-wb-section-title">
+          <span>Section 1. 우리말 뜻을 보고 알맞은 영단어를 철자로 완성하시오. (${this.rangeLabel(wb.section1)})</span>
+          <span class="text-[10px] font-normal text-slate-500">Spelling &amp; Recall</span>
+        </div>
+        <div class="grid grid-cols-2 gap-2.5">
+          ${wb.section1.map(q => `
+            <div class="studio-wb-qitem flex flex-col justify-between p-2 rounded border border-slate-200">
+              <div class="text-xs font-semibold text-slate-800 leading-snug mb-1.5 flex items-baseline gap-1">
+                <span class="studio-wb-qnum">${q.no}.</span>
+                <span class="break-words">${q.meaning}</span>
+              </div>
+              <div class="flex items-center justify-between gap-2 pt-1 border-t border-slate-100">
+                <span class="studio-wb-hint shrink-0">${q.hint}</span>
+                <span class="studio-wb-cloze-blank flex-1 max-w-[220px]"></span>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    renderWorkbookSection2(wb) {
+      if (!wb.section2.length) return '';
+      return `
+        <div class="studio-wb-section-title mt-4">
+          <span>Section 2. 문맥을 읽고 빈칸에 들어갈 알맞은 어휘를 문장에 맞는 형태로 쓰시오. (${this.rangeLabel(wb.section2)})</span>
+          <span class="text-[10px] font-normal text-slate-500">Context Cloze</span>
+        </div>
+        <div class="space-y-2">
+          ${wb.section2.map(q => `
+            <div class="studio-wb-qitem p-2.5 border border-slate-200">
+              <div class="text-xs text-slate-900 leading-relaxed font-serif">
+                <span class="studio-wb-qnum font-sans font-bold">${q.no}.</span>
+                <span>${q.sentenceHtml}</span>
+              </div>
+              <div class="text-[11px] text-slate-500 mt-2 pl-4 flex items-center justify-between flex-wrap gap-2">
+                <span class="max-w-[60%]">[해석] ${q.translation}</span>
+                <div class="flex items-center gap-1 font-bold text-slate-800 shrink-0">
+                  <span>정답:</span>
+                  <span class="inline-block w-40 sm:w-52 border-b-2 border-slate-700"></span>
+                </div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    renderWorkbookSection3(wb) {
+      if (!wb.section3.length) return '';
+      return `
+        <div class="studio-wb-section-title mt-2">
+          <span>Section 3. 왼쪽의 영단어와 오른쪽의 알맞은 의미를 바르게 연결하시오. (${this.rangeLabel(wb.section3)})</span>
+          <span class="text-[10px] font-normal text-slate-500">Meaning Match</span>
+        </div>
+        <div class="grid grid-cols-2 gap-4 p-2.5 bg-slate-50 rounded-lg border border-slate-200 text-xs">
+          <div class="space-y-2">
+            ${wb.section3.map(q => `
+              <div class="flex items-center justify-between p-1.5 bg-white rounded border border-slate-200">
+                <span class="font-bold text-slate-900 break-words pr-2">
+                  <strong class="text-blue-900 mr-1.5">${q.no}.</strong>${q.word || 'VOCA'}
+                </span>
+                <span class="w-2.5 h-2.5 rounded-full bg-slate-300 inline-block shrink-0"></span>
+              </div>
+            `).join('')}
+          </div>
+          <div class="space-y-2">
+            ${wb.s3Options.map(o => `
+              <div class="flex items-center justify-between p-1.5 bg-white rounded border border-slate-200">
+                <span class="w-2.5 h-2.5 rounded-full bg-slate-300 inline-block shrink-0"></span>
+                <span class="pl-2 text-slate-800 font-medium break-words">
+                  <strong class="text-emerald-800 mr-1.5">(${o.label})</strong>${o.meaning}
+                </span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+        <div class="mt-2 text-right text-[11px] text-slate-600 font-medium leading-relaxed">
+          연결 정답: ${wb.section3.map(q => `${q.no}-[ &nbsp;&nbsp; ]`).join(' &nbsp; ')}
+        </div>
+      `;
+    }
+
     renderAnswerKeySheet(days) {
       const meta = this.currentBookMeta;
 
@@ -1804,6 +1954,7 @@
      */
     renderShadowingScriptSheet(dayKey, words) {
       const meta = this.currentBookMeta;
+      const scenes = words.slice(0, 6); // 6개 고품질 씬이 A4 1장에 완벽 피트
 
       return `
         <div class="studio-a4-sheet">
@@ -1811,10 +1962,10 @@
             <div>
               <div class="flex items-center gap-2 mb-1">
                 <span class="studio-day-tag bg-teal-800">${dayKey} 섀도잉 대본집</span>
-                <span class="text-xs font-bold text-teal-950">미드·유튜브 리얼 씬 스크립트</span>
+                <span class="text-xs font-bold text-teal-950">미드·원어민 리얼 씬 스크립트</span>
               </div>
               <div class="text-xs text-slate-500 font-medium">
-                눈으로만 외우지 않고 배우의 억양과 감정으로 3회 소리 내어 따라 읽는 실전 발화집
+                질문과 답변이 100% 상호 호응하는 자연스러운 원어민 억양 및 감정 발화 트레이닝
               </div>
             </div>
             <div class="text-right text-[11px] text-teal-800 font-bold">
@@ -1823,48 +1974,52 @@
           </div>
 
           <div class="space-y-3 mt-3">
-            ${words.map((w, idx) => `
-              <div class="studio-script-dialogue">
-                <div class="flex items-center justify-between border-b border-slate-200 pb-1 mb-2">
-                  <div class="flex items-center gap-2">
-                    <span class="text-xs font-black text-teal-900">Scene #${idx + 1}</span>
-                    <span class="text-[11px] font-bold text-slate-700 bg-teal-100 px-2 py-0.2 rounded">${w.word}</span>
-                    <span class="text-[11px] text-slate-500">(${w.meaning})</span>
+            ${scenes.map((w, idx) => {
+              const diag = this.buildContextualDialogue(w);
+              return `
+                <div class="studio-script-dialogue p-2.5 rounded-lg border border-teal-200 bg-white">
+                  <div class="flex items-center justify-between border-b border-slate-200 pb-1 mb-2">
+                    <div class="flex items-center gap-2 min-w-0">
+                      <span class="text-xs font-black text-teal-900 shrink-0">Scene #${idx + 1}</span>
+                      <span class="text-[11px] font-bold text-teal-950 bg-teal-100 px-2 py-0.5 rounded truncate">${w.word}</span>
+                      <span class="text-[11px] text-slate-500 truncate">(${w.meaning})</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-[10px] font-bold text-slate-500 shrink-0">
+                      <span>섀도잉:</span>
+                      <span>1<span class="studio-check-box ml-0.5"></span></span>
+                      <span>2<span class="studio-check-box ml-0.5"></span></span>
+                      <span>3<span class="studio-check-box ml-0.5"></span></span>
+                    </div>
                   </div>
-                  <div class="flex items-center gap-1.5 text-[10px] font-bold text-slate-500">
-                    <span>섀도잉 체크:</span>
-                    <span>1<span class="studio-check-box ml-0.5"></span></span>
-                    <span>2<span class="studio-check-box ml-0.5"></span></span>
-                    <span>3<span class="studio-check-box ml-0.5"></span></span>
-                  </div>
-                </div>
 
-                <div class="space-y-1.5 text-xs text-slate-800 font-sans">
-                  <div>
-                    <span class="studio-script-speaker">A:</span>
-                    <span>"Hey, did you hear about what happened yesterday?"</span>
-                  </div>
-                  <div class="bg-teal-50/50 p-1.5 rounded">
-                    <span class="studio-script-speaker text-teal-900">B:</span>
-                    <span class="font-bold text-slate-900">"${w.example || `Yeah, we definitely need to ${w.word} as soon as possible.`}"</span>
-                    <div class="text-[10.5px] text-slate-600 mt-0.5 pl-5">(${w.translation || w.meaning})</div>
+                  <div class="space-y-1.5 text-xs text-slate-800 font-sans">
+                    <div class="flex items-start gap-1.5">
+                      <span class="studio-script-speaker text-slate-600 font-bold shrink-0">Speaker A:</span>
+                      <span class="italic text-slate-700 font-medium leading-snug">"${diag.speakerA}"</span>
+                    </div>
+                    <div class="bg-teal-50/60 p-2 rounded border border-teal-100 mt-1">
+                      <div class="flex items-start gap-1.5">
+                        <span class="studio-script-speaker text-teal-900 font-black shrink-0">Speaker B:</span>
+                        <span class="font-bold text-slate-950 leading-snug">"${this.highlightWord(diag.speakerB, w.word)}"</span>
+                      </div>
+                      <div class="text-[10.5px] text-slate-600 mt-1 pl-4 border-t border-teal-100 pt-1">
+                        📌 <strong>해석:</strong> ${w.translation || w.meaning}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            `).join('')}
+              `;
+            }).join('')}
           </div>
 
-          <div class="mt-6 pt-3 border-t border-slate-200 flex items-center justify-between text-[10px] text-slate-400">
+          <div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-[10px] text-slate-400">
             <span>VERITAS ENGLISH REAL DIALOGUE SERIES • SHADOWING PLAYBOOK</span>
-            <span>${dayKey} • SPOKEN FLUENCY</span>
+            <span>${dayKey} • NATURAL CONTEXTUAL Q&amp;A</span>
           </div>
         </div>
       `;
     }
 
-    /**
-     * 5) 🎯 [수능 혼동어휘 1:1 클리닉 매트릭스] (수능 킬러 교재)
-     */
     renderMatrixSheet(dayKey, words) {
       const meta = this.currentBookMeta;
 
@@ -2173,7 +2328,7 @@
       const meta = this.currentBookMeta;
       const seriesInfo = SERIES_INFO.original;
       let html = `
-        <div class="studio-paper a4-page flex flex-col justify-between p-8 bg-white text-slate-800 shadow-lg border border-slate-200 print:shadow-none print:border-none mb-6">
+        <div class="studio-a4-sheet">
           <div class="sheet-header border-b-2 border-slate-900 pb-3 mb-4 flex items-center justify-between">
             <div>
               <div class="flex items-center gap-2">
@@ -2229,7 +2384,7 @@
       const drillWords = words.slice(0, 10); // 1일 10개 핵심 패턴 드릴
 
       let html = `
-        <div class="studio-paper a4-page flex flex-col justify-between p-8 bg-white text-slate-800 shadow-lg border border-slate-200 print:shadow-none print:border-none mb-6">
+        <div class="studio-a4-sheet">
           <div class="sheet-header border-b-2 border-slate-900 pb-3 mb-4 flex items-center justify-between">
             <div>
               <div class="flex items-center gap-2">
@@ -2282,7 +2437,7 @@
       const meta = this.currentBookMeta;
 
       let html = `
-        <div class="studio-paper a4-page flex flex-col justify-between p-8 bg-white text-slate-800 shadow-lg border border-slate-200 print:shadow-none print:border-none mb-6">
+        <div class="studio-a4-sheet">
           <div class="sheet-header border-b-2 border-slate-900 pb-3 mb-4 flex items-center justify-between">
             <div>
               <div class="flex items-center gap-2">
@@ -2334,7 +2489,7 @@
       const targetWords = words.slice(0, 8); // 8개 실전 대화 씬
 
       let html = `
-        <div class="studio-paper a4-page flex flex-col justify-between p-8 bg-white text-slate-800 shadow-lg border border-slate-200 print:shadow-none print:border-none mb-6">
+        <div class="studio-a4-sheet">
           <div class="sheet-header border-b-2 border-rose-900 pb-3 mb-4 flex items-center justify-between">
             <div>
               <div class="flex items-center gap-2">
@@ -2368,7 +2523,7 @@
               <div class="flex items-start gap-2">
                 <span class="px-1.5 py-0.5 rounded bg-slate-200 text-slate-700 font-bold text-[10px] shrink-0 mt-0.5">Alex</span>
                 <div class="bg-white p-2 rounded-lg border border-slate-200 text-slate-700 text-[11px] flex-1">
-                  "Hey! Did you check out the new post today?"
+                  "${this.buildContextualDialogue(w).speakerA}"
                 </div>
               </div>
               <div class="flex items-start gap-2">
@@ -2406,7 +2561,7 @@
       const targetWords = words.slice(0, 5); // 5개 심층 브리핑
 
       let html = `
-        <div class="studio-paper a4-page flex flex-col justify-between p-8 bg-white text-slate-800 shadow-lg border border-slate-200 print:shadow-none print:border-none mb-6">
+        <div class="studio-a4-sheet">
           <div class="sheet-header border-b-2 border-teal-900 pb-3 mb-4 flex items-center justify-between">
             <div>
               <div class="flex items-center gap-2">
@@ -2473,7 +2628,7 @@
       const meta = this.currentBookMeta;
 
       let html = `
-        <div class="studio-paper a4-page flex flex-col justify-between p-8 bg-white text-slate-800 shadow-lg border border-slate-200 print:shadow-none print:border-none mb-6">
+        <div class="studio-a4-sheet">
           <div class="sheet-header border-b-2 border-emerald-900 pb-3 mb-4 flex items-center justify-between">
             <div>
               <div class="flex items-center gap-2">
@@ -2564,7 +2719,7 @@
       const meta = this.currentBookMeta;
 
       let html = `
-        <div class="studio-paper a4-page flex flex-col justify-between p-8 bg-white text-slate-800 shadow-lg border border-slate-200 print:shadow-none print:border-none mb-6">
+        <div class="studio-a4-sheet">
           <div class="sheet-header border-b-2 border-blue-900 pb-3 mb-4 flex items-center justify-between">
             <div>
               <div class="flex items-center gap-2">
@@ -2629,7 +2784,7 @@
       const targetQuestions = words.slice(0, 10); // 10문항 정통 토익 Part 5
 
       let html = `
-        <div class="studio-paper a4-page flex flex-col justify-between p-8 bg-white text-slate-800 shadow-lg border border-slate-200 print:shadow-none print:border-none mb-6">
+        <div class="studio-a4-sheet">
           <div class="sheet-header border-b-2 border-slate-900 pb-3 mb-4 flex items-center justify-between">
             <div>
               <div class="flex items-center gap-2">

@@ -1743,7 +1743,7 @@ const VERITAS_SEASONS_WORDS_DATA = [
     "단어": "binge-watch",
     "품사": "[동]",
     "뜻": "몰아보다, 정주행하다",
-    "예문": "I spent the entire rainy weekend to binge-watch the brand-new drama season.",
+    "예문": "I spent the entire rainy weekend binge-watching the brand-new drama season.",
     "해석": "나는 비 오는 주말 내내 그 새 드라마 시즌을 정주행하며 보냈다.",
     "예문해석": "나는 비 오는 주말 내내 그 새 드라마 시즌을 정주행하며 보냈다.",
     "collocation": "binge-watch a series (시리즈를 정주행하다)",

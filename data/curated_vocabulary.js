@@ -23849,7 +23849,7 @@ const CURATED_WORDS_DATA = [
     "영단어": "refill",
     "품사": "[동]",
     "뜻": "리필하다, 다시 채우다 [명] 리필",
-    "예문": "Could I get a free refill on iced iced Americano?",
+    "예문": "Could I get a free refill on an iced Americano?",
     "예문해석": "아이스 아메리카노 무료 리필을 받을 수 있을까요?",
     "category": "travel",
     "badge": "식당·카페·주문"

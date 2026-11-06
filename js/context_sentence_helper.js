@@ -409,18 +409,172 @@ class ContextSentenceHelper {
      * 문장 내에서 대상 단어(단어, 굴절형, 숙어, 구동사, 속담 등)를 정밀 감지하여 Cloze 빈칸(【 ____________ 】)으로 치환
      */
     findClozeMatch(sentence, targetWord, blankPlaceholder = '【 ____________ 】') {
-        if (!sentence || !targetWord) {
-            return null;
-        }
+        if (!sentence || !targetWord) return null;
 
         const raw = String(sentence).trim();
         const word = String(targetWord).trim();
         if (!raw || !word) return null;
 
-        // 불규칙 동사 변화형 사전
+        const cleanWord = word.replace(/[.,!?"“”]/g, '').trim();
+
+        // 1. 완전 일치 (대소문자 무시)
+        const reExact = new RegExp(`\\b${this.escapeRegex(cleanWord)}\\b`, 'i');
+        const mExact = raw.match(reExact);
+        if (mExact) {
+            return {
+                matched: true,
+                matchedWord: mExact[0],
+                clozeSentence: raw.replace(reExact, blankPlaceholder),
+                originalSentence: raw
+            };
+        }
+
+        // 2. 소유격(one's, someone's) 및 목적격(someone) 관용구 매칭
+        if (cleanWord.includes("one's") || cleanWord.includes("someone's") || cleanWord.includes("someone")) {
+            const parts = cleanWord.split(/\s+/);
+            const firstForms = this.getVerbForms(parts[0]);
+            const p0 = firstForms.map(f => this.escapeRegex(f)).join('|');
+            const restPats = parts.slice(1).map(r => {
+                if (r === "one's" || r === "someone's") {
+                    return '(?:my|your|his|her|its|our|their|one\'s|someone\'s)';
+                } else if (r === "someone") {
+                    return '(?:me|you|him|her|us|them|someone|[\\w\\s]{1,15})';
+                }
+                return this.escapeRegex(r);
+            });
+            const idiomPat = `\\b(${p0})\\s+${restPats.join('\\s+')}\\b`;
+            const reIdiom = new RegExp(idiomPat, 'i');
+            const mId = raw.match(reIdiom);
+            if (mId) {
+                return {
+                    matched: true,
+                    matchedWord: mId[0],
+                    clozeSentence: raw.replace(reIdiom, blankPlaceholder),
+                    originalSentence: raw
+                };
+            }
+        }
+
+        // 3. 다단어 동사 관용구 (첫 단어 동사 시제 굴절): e.g. "bury the hatchet" -> "buried the hatchet"
+        const parts = cleanWord.split(/\s+/);
+        if (parts.length >= 2) {
+            const firstForms = this.getVerbForms(parts[0]);
+            const p0 = firstForms.map(f => this.escapeRegex(f)).join('|');
+            const restPat = parts.slice(1).map(r => this.escapeRegex(r)).join('\\s+');
+            const reMulti = new RegExp(`\\b(${p0})\\s+${restPat}\\b`, 'i');
+            const mMulti = raw.match(reMulti);
+            if (mMulti) {
+                return {
+                    matched: true,
+                    matchedWord: mMulti[0],
+                    clozeSentence: raw.replace(reMulti, blankPlaceholder),
+                    originalSentence: raw
+                };
+            }
+
+            // 분리형 구동사 (목적어 개입): e.g. "let down" -> "let my teammates down"
+            if (parts.length === 2) {
+                const rePv = new RegExp(`\\b(${p0})\\b(?:\\s+[\\w\\s]{1,25})?\\s+\\b${this.escapeRegex(parts[1])}\\b`, 'i');
+                const mPv = raw.match(rePv);
+                if (mPv) {
+                    return {
+                        matched: true,
+                        matchedWord: mPv[0],
+                        clozeSentence: raw.replace(rePv, blankPlaceholder),
+                        originalSentence: raw
+                    };
+                }
+            }
+        }
+
+        // 4. 하이픈 및 공백 변형 (quid-pro-quo <-> quid pro quo, rent-free <-> rent free)
+        if (cleanWord.includes('-') || cleanWord.includes(' ')) {
+            const hPattern = this.escapeRegex(cleanWord).replace(/[-\\s]+/g, '[-_\\s]+');
+            const reH = new RegExp(`\\b${hPattern}\\b`, 'i');
+            const mH = raw.match(reH);
+            if (mH) {
+                return {
+                    matched: true,
+                    matchedWord: mH[0],
+                    clozeSentence: raw.replace(reH, blankPlaceholder),
+                    originalSentence: raw
+                };
+            }
+        }
+
+        // 5. 단일 단어 불규칙 및 규칙 동사/명사 변화형 탐색
+        const forms = this.getVerbForms(cleanWord);
+        for (const f of forms) {
+            const reF = new RegExp(`\\b${this.escapeRegex(f)}\\b`, 'i');
+            const mF = raw.match(reF);
+            if (mF) {
+                return {
+                    matched: true,
+                    matchedWord: mF[0],
+                    clozeSentence: raw.replace(reF, blankPlaceholder),
+                    originalSentence: raw
+                };
+            }
+        }
+
+        // 6. 불규칙 명사 복수형
+        const IRREGULAR_NOUNS = {
+            'enemy': ['enemy', 'enemies'],
+            'memory': ['memory', 'memories'],
+            'subsidy': ['subsidy', 'subsidies'],
+            'activity': ['activity', 'activities'],
+            'city': ['city', 'cities'],
+            'bacterium': ['bacterium', 'bacteria'],
+            'datum': ['datum', 'data'],
+            'phenomenon': ['phenomenon', 'phenomena'],
+            'criterion': ['criterion', 'criteria'],
+            'child': ['child', 'children'],
+            'person': ['person', 'people']
+        };
+        if (IRREGULAR_NOUNS[cleanWord.toLowerCase()]) {
+            for (const nForm of IRREGULAR_NOUNS[cleanWord.toLowerCase()]) {
+                const reN = new RegExp(`\\b${this.escapeRegex(nForm)}\\b`, 'i');
+                const mN = raw.match(reN);
+                if (mN) {
+                    return {
+                        matched: true,
+                        matchedWord: mN[0],
+                        clozeSentence: raw.replace(reN, blankPlaceholder),
+                        originalSentence: raw
+                    };
+                }
+            }
+        }
+
+        // 7. 어간 fallback (4자 이상 어휘)
+        if (cleanWord.length >= 4) {
+            const stem = cleanWord.slice(0, 4);
+            const reStem = new RegExp(`\\b\\w*${this.escapeRegex(stem)}\\w*\\b`, 'i');
+            const mStem = raw.match(reStem);
+            if (mStem) {
+                return {
+                    matched: true,
+                    matchedWord: mStem[0],
+                    clozeSentence: raw.replace(reStem, blankPlaceholder),
+                    originalSentence: raw
+                };
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * 동사 및 명사의 굴절형 목록 생성
+     */
+    getVerbForms(verb) {
+        const v = String(verb || '').toLowerCase().trim();
         const IRREGULAR_VERBS = {
             'take': ['take', 'takes', 'took', 'taking', 'taken'],
-            'undertake': ['undertake', 'undertakes', 'undertook', 'undertaking', 'undertaken'],
+            'throw': ['throw', 'throws', 'threw', 'throwing', 'thrown'],
+            'get': ['get', 'gets', 'got', 'getting', 'gotten'],
+            'foot': ['foot', 'foots', 'footed', 'footing'],
+            'pass': ['pass', 'passes', 'passed', 'passing'],
             'bring': ['bring', 'brings', 'brought', 'bringing'],
             'come': ['come', 'comes', 'came', 'coming'],
             'draw': ['draw', 'draws', 'drew', 'drawing', 'drawn'],
@@ -469,169 +623,50 @@ class ContextSentenceHelper {
             'choose': ['choose', 'chooses', 'chose', 'choosing', 'chosen'],
             'feel': ['feel', 'feels', 'felt', 'feeling'],
             'sleep': ['sleep', 'sleeps', 'slept', 'sleeping'],
-            'oversleep': ['oversleep', 'oversleeps', 'overslept', 'oversleeping'],
-            'sting': ['sting', 'stings', 'stung', 'stinging'],
-            'weep': ['weep', 'weeps', 'wept', 'weeping'],
             'grow': ['grow', 'grows', 'grew', 'growing', 'grown'],
-            'cut': ['cut', 'cuts', 'cutting'],
-            'put': ['put', 'puts', 'putting'],
-            'set': ['set', 'sets', 'setting'],
-            'let': ['let', 'lets', 'letting'],
-            'hit': ['hit', 'hits', 'hitting'],
-            'cast': ['cast', 'casts', 'casting'],
-            'cost': ['cost', 'costs', 'costing'],
-            'hurt': ['hurt', 'hurts', 'hurting'],
             'make': ['make', 'makes', 'made', 'making'],
-            'shake': ['shake', 'shakes', 'shook', 'shaking', 'shaken'],
-            'blow': ['blow', 'blows', 'blew', 'blowing', 'blown'],
-            'bite': ['bite', 'bites', 'bit', 'biting', 'bitten'],
+            'be': ['be', 'is', 'am', 'are', 'was', 'were', 'been', 'being'],
+            'deny': ['deny', 'denies', 'denied', 'denying'],
+            'modify': ['modify', 'modifies', 'modified', 'modifying'],
+            'dance': ['dance', 'dances', 'danced', 'dancing'],
+            'hide': ['hide', 'hides', 'hid', 'hidden', 'hiding'],
+            'undertake': ['undertake', 'undertakes', 'undertook', 'undertaken', 'undertaking'],
+            'discriminate': ['discriminate', 'discriminates', 'discriminated', 'discriminating'],
+            'bury': ['bury', 'buries', 'buried', 'burying'],
+            'rub': ['rub', 'rubs', 'rubbed', 'rubbing'],
+            'hit': ['hit', 'hits', 'hitting'],
+            'dig': ['dig', 'digs', 'dug', 'digging'],
+            'pop': ['pop', 'pops', 'popped', 'popping'],
+            'mop': ['mop', 'mops', 'mopped', 'mopping'],
+            'hum': ['hum', 'hums', 'hummed', 'humming'],
             'shoot': ['shoot', 'shoots', 'shot', 'shooting'],
-            'play': ['play', 'plays', 'played', 'playing'],
-            'be': ['be', 'is', 'am', 'are', 'was', 'were', 'been', 'being']
+            'weep': ['weep', 'weeps', 'wept', 'weeping'],
+            'bite': ['bite', 'bites', 'bit', 'biting', 'bitten'],
+            'blow': ['blow', 'blows', 'blew', 'blowing', 'blown'],
+            'shake': ['shake', 'shakes', 'shook', 'shaking', 'shaken'],
+            'sting': ['sting', 'stings', 'stung', 'stinging'],
+            'bow': ['bow', 'bows', 'bowed', 'bowing']
         };
 
-        const IRREGULAR_NOUNS = {
-            'bacterium': ['bacterium', 'bacteria'],
-            'datum': ['datum', 'data'],
-            'phenomenon': ['phenomenon', 'phenomena'],
-            'criterion': ['criterion', 'criteria'],
-            'freshman': ['freshman', 'freshmen'],
-            'child': ['child', 'children'],
-            'person': ['person', 'people']
-        };
-
-        const cleanWord = word.replace(/[.,!?"“”]/g, '').trim();
-        const regexes = [];
-
-        // 1. 완전 일치 (원문 구두점 제거형 포함)
-        regexes.push(new RegExp(`\\b${this.escapeRegex(word.replace(/[.,!?]+$/, ''))}\\b`, 'i'));
-        regexes.push(new RegExp(`\\b${this.escapeRegex(cleanWord)}\\b`, 'i'));
-
-        // 하이픈 및 공백 변형 (quid-pro-quo <-> quid pro quo)
-        if (cleanWord.includes('-') || cleanWord.includes(' ')) {
-            const hPattern = this.escapeRegex(cleanWord).replace(/[-\\s]+/g, '[-\\s]+');
-            regexes.push(new RegExp(`\\b${hPattern}\\b`, 'i'));
+        if (IRREGULAR_VERBS[v]) {
+            return IRREGULAR_VERBS[v];
         }
 
-        const words = cleanWord.split(/\s+/);
-
-        // 2. 다단어 숙어 및 구동사 (동사 굴절, one's 치환, 분리형 구동사)
-        if (words.length > 1) {
-            const patternParts = [];
-            words.forEach((w, i) => {
-                const wLower = w.toLowerCase();
-                if (wLower === "one's" || wLower === "ones") {
-                    patternParts.push("(?:one's|my|your|his|her|its|our|their|\\w+'s)");
-                } else if (wLower === "oneself") {
-                    patternParts.push("(?:oneself|myself|yourself|himself|herself|itself|ourselves|themselves)");
-                } else if (wLower === "someone's" || wLower === "somebody's") {
-                    patternParts.push("(?:someone's|somebody's|my|your|his|her|its|our|their|\\w+'s)");
-                } else if (wLower === "someone" || wLower === "somebody") {
-                    patternParts.push("(?:someone|somebody|him|her|me|us|them|you|\\w+)");
-                } else if (wLower === "one") {
-                    patternParts.push("(?:one|you|he|she|they|we|I)");
-                } else if (wLower === "the") {
-                    patternParts.push("(?:the\\s+)?");
-                } else if (wLower === "don't" || wLower === "dont") {
-                    patternParts.push("(?:don't|never|do not|cannot)?");
-                } else if (i === 0 && IRREGULAR_VERBS[wLower]) {
-                    patternParts.push(`(?:${IRREGULAR_VERBS[wLower].join('|')})`);
-                } else if (i === 0) {
-                    if (wLower.endsWith('e') && wLower.length > 2) {
-                        const stem = this.escapeRegex(wLower.slice(0, -1));
-                        patternParts.push(`(?:${this.escapeRegex(wLower)}s?|${stem}(?:ed|ing|es))`);
-                    } else if (wLower.endsWith('y') && wLower.length > 2 && !'aeiou'.includes(wLower.charAt(wLower.length - 2))) {
-                        const stem = this.escapeRegex(wLower.slice(0, -1));
-                        patternParts.push(`(?:${this.escapeRegex(wLower)}|${stem}(?:ied|ies)|${this.escapeRegex(wLower)}ing)`);
-                    } else {
-                        const dbl = wLower + wLower.slice(-1);
-                        patternParts.push(`(?:${this.escapeRegex(wLower)}(?:s|es|ed|ing|d)?|${this.escapeRegex(dbl)}(?:ed|ing))`);
-                    }
-                } else {
-                    patternParts.push(this.escapeRegex(w));
-                }
-            });
-
-            // 중간 수식어(형용사/부사 등) 최대 3단어 허용 결합
-            regexes.push(new RegExp(`\\b${patternParts.join('\\s+(?:[\\w\'\\-]+\\s+)?')}\\b`, 'i'));
-            regexes.push(new RegExp(`\\b${patternParts.join('\\s*')}\\b`, 'i'));
-
-            // 분리형 구동사 (동사 + 목적어구 1~4단어 + 전치사/부사)
-            if (words.length >= 2) {
-                regexes.push(new RegExp(`\\b${patternParts[0]}\\s+(?:(?:\\w+[\'\\-]?\\w*)\\s+){1,4}${patternParts.slice(1).join('\\s+')}\\b`, 'i'));
-            }
-
-            // 끝 전치사 생략 매칭 (예: bond with -> bond)
-            const lastWord = words[words.length - 1].toLowerCase();
-            if (['with', 'in', 'to', 'for', 'at', 'on', 'from', 'of', 'about'].includes(lastWord)) {
-                const shorter = words.slice(0, -1).join(' ');
-                regexes.push(new RegExp(`\\b${this.escapeRegex(shorter)}(?:s|es|ed|ing)?\\b`, 'i'));
-            }
-
-            // 긴 속담의 핵심 어절 부분 매칭
-            if (words.length >= 5) {
-                const coreWords = words.filter(cw => !["don't", "never", "always", "it's", "no"].includes(cw.toLowerCase()));
-                if (coreWords.length >= 4) {
-                    regexes.push(new RegExp(`\\b${coreWords.slice(0, 4).map(cw => this.escapeRegex(cw)).join('[\\s\\S]*?')}[\\s\\S]*?\\b`, 'i'));
-                }
-            }
+        const forms = [v];
+        if (v.endsWith('e')) {
+            forms.push(v + 's', v + 'd', v.slice(0, -1) + 'ing');
+        } else if (v.endsWith('y') && v.length >= 3 && !'aeiou'.includes(v[v.length - 2])) {
+            forms.push(v.slice(0, -1) + 'ies', v.slice(0, -1) + 'ied', v + 'ing');
+        } else if (v.length >= 3 && 'bcdfghjklmnpqrstvwxyz'.includes(v[v.length - 1]) && 'aeiou'.includes(v[v.length - 2]) && !'aeiou'.includes(v[v.length - 3])) {
+            const last = v[v.length - 1];
+            forms.push(v + 's', v + last + 'ed', v + last + 'ing');
+        } else {
+            forms.push(v + 's', v + 'es', v + 'ed', v + 'ing', v + 'er', v + 'est');
         }
 
-        // 3. 단일 단어: 불규칙 동사 및 불규칙 명사 매칭
-        const wLower = cleanWord.toLowerCase();
-        if (IRREGULAR_VERBS[wLower]) {
-            regexes.push(new RegExp(`\\b(?:${IRREGULAR_VERBS[wLower].join('|')})\\b`, 'i'));
-        }
-        if (IRREGULAR_NOUNS[wLower]) {
-            regexes.push(new RegExp(`\\b(?:${IRREGULAR_NOUNS[wLower].join('|')})\\b`, 'i'));
-        }
-
-        // 표준 형태소 굴절형 (복수, 과거, 진행, 형용사, 부사, CVC 자음 중복)
-        regexes.push(new RegExp(`\\b${this.escapeRegex(cleanWord)}(?:s|es|ed|ing|d|ly|er|est)?\\b`, 'i'));
-        if (cleanWord.length >= 3 && 'bcdfghjklmnpqrstvwxyz'.includes(cleanWord.slice(-1)) && 'aeiou'.includes(cleanWord.charAt(cleanWord.length - 2))) {
-            const dbl = cleanWord + cleanWord.slice(-1);
-            regexes.push(new RegExp(`\\b${this.escapeRegex(dbl)}(?:ed|ing|er|est)\\b`, 'i'));
-        }
-        if (cleanWord.endsWith('e') && cleanWord.length > 2) {
-            const stem = this.escapeRegex(cleanWord.slice(0, -1));
-            regexes.push(new RegExp(`\\b${stem}(?:ing|ed|es|er|est)\\b`, 'i'));
-        }
-        if (cleanWord.endsWith('y') && cleanWord.length > 2 && !'aeiou'.includes(cleanWord.charAt(cleanWord.length - 2))) {
-            const stem = this.escapeRegex(cleanWord.slice(0, -1));
-            regexes.push(new RegExp(`\\b${stem}(?:ied|ies|ying)\\b`, 'i'));
-        }
-
-        // 접두어/어간 기반 fallback (5자 이상 어휘)
-        if (cleanWord.length >= 5) {
-            const stem5 = cleanWord.slice(0, 5);
-            regexes.push(new RegExp(`\\b\\w*${this.escapeRegex(stem5)}\\w*\\b`, 'i'));
-        }
-
-        for (const re of regexes) {
-            try {
-                const match = raw.match(re);
-                if (match) {
-                    const matchedWord = match[0];
-                    const clozeSentence = raw.replace(re, blankPlaceholder);
-                    return {
-                        matched: true,
-                        matchedWord: matchedWord,
-                        clozeSentence: clozeSentence,
-                        originalSentence: raw
-                    };
-                }
-            } catch (e) {
-                continue;
-            }
-        }
-
-        return null;
+        return Array.from(new Set(forms));
     }
 
-    /**
-     * 단어 객체 또는 원시 단어명으로부터 최적의 문맥 문장 및 Cloze 데이터 획득
-     * (절대로 정적 문장이나 빈칸 없는 문장을 반환하지 않음)
-     */
     getOrGenerateSentence(wordInput, meaningInput = '', posInput = '') {
         let word = '';
         let meaning = '';
