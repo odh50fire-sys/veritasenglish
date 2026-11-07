@@ -47,7 +47,10 @@
     'season-ted-news': 'season_ted_news',
     'season-academic-essay': 'season_academic_essay',
     'season-middle-starter': 'season_middle_starter',
-    'season-toeic-rc1500': 'season_toeic_rc'
+    'season-toeic-rc1500': 'season_toeic_rc',
+    'challenger-1': 'reading_tutor_challenger',
+    'challenger-2': 'reading_tutor_challenger',
+    'challenger-3': 'reading_tutor_challenger'
   };
 
   const SERIES_INFO = {
@@ -142,6 +145,13 @@
       accentColor: '#047857',
       badgeClass: 'series-theme-season_middle_starter'
     },
+    reading_tutor_challenger: {
+      name: '리딩튜터 챌린저 실전 독해 보카',
+      sub: 'NE능률 2025 개정 최신판 지문 연동 고교 내신 1등급 & 수능 킬러 정복',
+      icon: '📖',
+      accentColor: '#4338ca',
+      badgeClass: 'series-theme-reading_tutor'
+    },
     season_toeic_rc: {
       name: '토익(TOEIC) 기출 RC 핵심 보카',
       sub: 'Part 5·6·7 실전 빈출 어휘 & 3초 컷 빈출 연어(Collocation) 클리닉',
@@ -203,6 +213,11 @@
       { id: 'irregular_verbs', name: '⚡ 불규칙 동사 100선 마스터', desc: '부교재 1: 원형-과거-과거분사 3단 변화 총정리 시트' },
       { id: 'writing', name: '✍️ 중학 첫걸음 영작 노트', desc: '부교재 2: 기초 어순 배열 & 기본 문장 쓰기' },
       { id: 'cram', name: '⚡ 10분 기초 보카 파이널', desc: '부교재 3: A4 1장 초압축 기초 어휘 정리' }
+    ],
+    reading_tutor_challenger: [
+      { id: 'passage_cloze', name: '🎯 지문 문맥 빈칸 펑크', desc: '부교재 1: 지문 주제 기반 고교 내신 서술형 빈칸 인출 드릴' },
+      { id: 'collocation_match', name: '⚡ 고교 빈출 연어 매칭', desc: '부교재 2: 수능 1등급 직결 필수 콜로케이션 클리닉' },
+      { id: 'cram', name: '⚡ 지문 직전 초압축 족보', desc: '부교재 3: A4 1장 섹션별 표제어 초고속 복습 시트' }
     ],
     season_toeic_rc: [
       { id: 'toeic_collocation', name: '⏱️ 3초 컷 빈출 연어 클리닉', desc: '부교재 1: 파트 5 최다 빈출 전치사/명사 짝단어 족보' },
@@ -1116,6 +1131,36 @@
       }
 
       // 1) 넷플릭스·미드 구어 & SNS 슬랭 카드
+      if (seriesKey === 'reading_tutor_challenger') {
+        return `
+          <div class="studio-word-card border-l-4 border-indigo-600 bg-indigo-50/10">
+            <div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-baseline gap-1.5 min-w-0">
+                  <span class="studio-word-num text-indigo-700 font-bold shrink-0">#${String(w.num).padStart(2, '0')}</span>
+                  <span class="studio-word-lemma text-indigo-950 font-serif font-black">${displayWord}</span>
+                  ${w.pos ? `<span class="studio-word-pos bg-indigo-100 text-indigo-800 font-bold px-1.5 py-0.5 rounded text-[10px] shrink-0">${w.pos}</span>` : ''}
+                </div>
+                <div class="studio-checks shrink-0">
+                  <span>1<span class="studio-check-box ml-0.5"></span></span>
+                  <span>2<span class="studio-check-box ml-0.5"></span></span>
+                </div>
+              </div>
+              <div class="studio-word-meaning font-bold text-slate-900 mt-1">
+                ${w.meaning}
+              </div>
+              ${w.pronunciation ? `<div class="text-[10px] text-indigo-600 font-mono mt-0.5">${w.pronunciation}</div>` : ''}
+              ${w.example ? `
+                <div class="studio-word-example text-slate-600 mt-1 pl-2 border-l border-indigo-200">
+                  <div class="font-serif italic text-slate-700">${w.example}</div>
+                  ${w.trans ? `<div class="text-[11px] text-slate-500 mt-0.5">${w.trans}</div>` : ''}
+                </div>` : ''}
+              ${w.collocation ? `<div class="text-[10px] text-indigo-700 mt-1 font-semibold">📌 ${w.collocation}</div>` : ''}
+            </div>
+          </div>
+        `;
+      }
+
       if (seriesKey === 'season_netflix_slang') {
         return `
           <div class="studio-word-card border-l-4 border-rose-600 bg-rose-50/10">

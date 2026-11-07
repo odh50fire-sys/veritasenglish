@@ -181,6 +181,20 @@
   --theme-name: "토익(TOEIC) 기출 RC 핵심 보카";
 }
 
+
+/* 14) NE능률 리딩튜터 챌린저 시리즈 (Indigo & Deep Purple) */
+.series-theme-reading_tutor {
+  --theme-primary: #4338ca;       /* deep indigo */
+  --theme-secondary: #6366f1;     /* royal violet */
+  --theme-accent: #312e81;        /* midnight purple */
+  --theme-bg-soft: #eef2ff;
+  --theme-border: #c7d2fe;
+  --theme-badge-bg: #e0e7ff;
+  --theme-badge-text: #3730a3;
+  --theme-tag-symbol: "📖";
+  --theme-name: "리딩튜터 챌린저 고등 독해";
+}
+
 /* ==========================================================================
    2. 스튜디오 모달 & 뷰어 UI (Screen Mode)
    ========================================================================== */
