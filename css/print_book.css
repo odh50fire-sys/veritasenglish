@@ -183,6 +183,17 @@
 
 
 
+/* 16) 옥스퍼드 Oxford 3000™ & 5000™ 공식 어휘 시리즈 (Oxford Academic Navy & Royal Blue) */
+.series-theme-oxford {
+  --theme-primary: #002147;       /* oxford classic deep academic navy */
+  --theme-secondary: #1e3a8a;     /* royal academic blue */
+  --theme-accent: #b45309;        /* oxford classic gold/amber accent */
+  --theme-bg-soft: #f8fafc;       /* crisp academic paper white */
+  --theme-border: #cbd5e1;        /* classic oxford rule border */
+  --theme-badge-bg: #e0e7ff;      /* soft academic indigo badge */
+  --theme-badge-text: #3730a3;    /* deep oxford indigo text */
+}
+
 /* 15) National Geographic Pathways 아카데믹 리딩 시리즈 (NGL Yellow & Ocean Navy) */
 .series-theme-pathways {
   --theme-primary: #ca8a04;       /* national geographic dark gold */

@@ -262,9 +262,9 @@
       { id: 'cram', name: '⚡ 시험장 직전 초압축 족보', desc: '부교재 3: A4 1장 토익 RC 빈출 어휘 총정리' }
     ],
     oxford: [
-      { id: 'collocation_match', name: '🔗 옥스퍼드 필수 연어 클리닉', desc: '부교재 1: Oxford 실전 학술/회화 빈출 연어 매칭 드릴' },
-      { id: 'cloze_sprint', name: '🎯 옥스퍼드 빈칸 인출 드릴', desc: '부교재 2: CEFR 등급별 예문 기반 빈칸 완성 워크북' },
-      { id: 'cram', name: '⚡ DAY별 초압축 족보', desc: '부교재 3: A4 1장 DAY별 어휘 총정리' }
+      { id: 'collocation_match', name: '🔗 옥스퍼드 코퍼스 연어 클리닉', desc: '특화형 1: Oxford 코퍼스 빈출/학술 연어 결합 완성 드릴' },
+      { id: 'cefr_drill', name: '🎯 CEFR 레벨별 어휘 인출 드릴', desc: '특화형 2: CEFR 등급별 지문 연계 서술형 빈칸 인출' },
+      { id: 'cram', name: '⚡ 시험 직전 초압축 족보', desc: '특화형 3: A4 1장 DAY별 어휘 초압축 족보' }
     ]
   };
 
@@ -575,6 +575,7 @@
       }
 
       const seriesOrder = [
+        'oxford',
         'pathways',
         'reading_tutor_challenger',
         'season_netflix_slang',
@@ -692,7 +693,7 @@
       // [스페셜 부교재 모드 처리]
       if (this.currentMode === 'cram') {
         const seriesKey = this.currentBookMeta ? this.currentBookMeta.series : '';
-        if (seriesKey === 'pathways' || seriesKey === 'reading_tutor_challenger') {
+        if (seriesKey === 'pathways' || seriesKey === 'reading_tutor_challenger' || seriesKey === 'oxford') {
           let cramHtml = '';
           days.forEach(dayKey => {
             const words = this.groupedDays[dayKey] || [];
@@ -714,6 +715,17 @@
           }
         });
         return clozeHtml;
+      }
+
+      if (this.currentMode === 'cefr_drill') {
+        let cefrHtml = '';
+        days.forEach(dayKey => {
+          const words = this.groupedDays[dayKey] || [];
+          if (words.length > 0) {
+            cefrHtml += this.renderCefrDrillSheet(dayKey, words);
+          }
+        });
+        return cefrHtml;
       }
 
       if (this.currentMode === 'collocation_match') {
@@ -3326,6 +3338,106 @@
           <div class="sheet-footer pt-2 mt-2 border-t border-slate-200 flex justify-between items-center text-[10px] text-slate-400">
             <span>Veritas High-Speed Academic Prep Series</span>
             <span>${dayKey} 지문 직전 초압축 족보 (A4 1장 10단어 완결)</span>
+          </div>
+        </div>
+      `;
+
+      return html;
+    }
+
+
+    /**
+     * Oxford 특화 부교재: CEFR 레벨별 어휘 인출 드릴 (A4 1장 10문항 완결)
+     * Oxford 3000™ & 5000™ 코퍼스 예문 기반 서술형 빈칸 인출 테스트 (박스 넘침 0%)
+     */
+    renderCefrDrillSheet(dayKey, words) {
+      const meta = this.currentBookMeta || {};
+      const chapterTitle = words[0]?.chapterTitle || `${meta.badge || 'Oxford'} Core Drill`;
+      const sectionTheme = words[0]?.sectionTheme || meta.title || 'Oxford Academic Lexicon';
+
+      let html = `
+        <div class="studio-a4-sheet bg-white p-7 text-slate-800 flex flex-col justify-between" style="page-break-after: always; height: 297mm; max-height: 297mm; overflow: hidden; box-sizing: border-box;">
+          <div>
+            <!-- 헤더 -->
+            <div class="flex justify-between items-start border-b-2 border-indigo-900 pb-3 mb-4">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-0.5 bg-indigo-950 text-amber-300 font-bold rounded text-xs">Oxford 3000™ &amp; 5000™</span>
+                  <span class="text-xs text-slate-500 font-medium">${escapeHtml(meta.title || 'Oxford Lexicon')}</span>
+                </div>
+                <h1 class="text-xl font-black text-slate-900 mt-1 flex items-center gap-2">
+                  <span>🎯 CEFR 레벨별 어휘 인출 드릴</span>
+                  <span class="text-xs font-normal text-slate-500">(코퍼스 예문 연계 서술형 빈칸 인출)</span>
+                </h1>
+                <p class="text-xs text-indigo-900 font-semibold mt-0.5">
+                  [${dayKey}] ${escapeHtml(chapterTitle)} • ${escapeHtml(sectionTheme)}
+                </p>
+              </div>
+              <div class="text-right flex flex-col items-end">
+                <div class="border border-slate-300 rounded px-2.5 py-1 text-center bg-slate-50 text-xs">
+                  <span class="text-slate-400 block text-[10px]">SCORE</span>
+                  <span class="font-bold text-indigo-950">_____ / 100</span>
+                </div>
+                <span class="text-[10px] text-slate-400 mt-1">Class: ________ Name: ________</span>
+              </div>
+            </div>
+
+            <!-- 안내 배너 -->
+            <div class="bg-indigo-50/80 border border-indigo-200 rounded-lg p-2.5 mb-3 flex items-center justify-between text-xs text-indigo-950">
+              <span class="font-medium">💡 <b>지시문:</b> 옥스퍼드 코퍼스 예문의 문맥을 파악하고, [우리말 뜻]과 [CEFR 레벨]에 부합하는 표제어를 정확한 철자로 빈칸에 쓰시오.</span>
+              <span class="font-bold text-indigo-700 text-[11px] shrink-0 ml-2">배점: 각 10점</span>
+            </div>
+
+            <!-- 10개 문제 리스트 (컴팩트 그리드: 박스 넘침 0%) -->
+            <div class="space-y-2.5">
+      `;
+
+      words.slice(0, 10).forEach((w, idx) => {
+        const num = idx + 1;
+        const targetWord = w.word;
+        const rawExample = w.example || 'Example sentence not provided.';
+        const escapedWord = targetWord.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(`\\b${escapedWord}\\b`, 'gi');
+        
+        let clozeSentence = rawExample;
+        if (regex.test(rawExample)) {
+          clozeSentence = rawExample.replace(regex, `<span class="inline-block border-b-2 border-indigo-700 font-mono text-indigo-950 font-bold px-3 mx-1 text-center" style="min-width: 90px;">(${num}) ____________</span>`);
+        } else {
+          clozeSentence = rawExample + ` <span class="inline-block border-b-2 border-indigo-700 font-mono text-indigo-950 font-bold px-3 mx-1 text-center" style="min-width: 90px;">(${num}) ____________</span>`;
+        }
+
+        const firstLetter = targetWord.charAt(0);
+        const wordLen = targetWord.length;
+        const cefrBadge = w.cefr ? `<span class="px-1.5 py-0.2 rounded bg-indigo-100 text-indigo-800 font-bold text-[9px] mr-1.5">${escapeHtml(w.cefr)}</span>` : '';
+
+        html += `
+          <div class="p-2 border border-slate-200 rounded-md bg-slate-50/60 hover:bg-white text-xs leading-relaxed">
+            <div class="flex items-start justify-between gap-2">
+              <div class="flex-1">
+                ${cefrBadge}
+                <span class="font-black text-indigo-900 mr-1">${num}.</span>
+                <span class="text-slate-900 font-serif">${clozeSentence}</span>
+              </div>
+              <div class="shrink-0 text-right">
+                <span class="inline-block bg-slate-200 text-slate-700 text-[10px] font-mono px-1.5 py-0.5 rounded">힌트: ${firstLetter}___ (${wordLen}자)</span>
+              </div>
+            </div>
+            <div class="mt-1 pl-4 flex items-center justify-between text-[11px] text-slate-500 border-t border-slate-100 pt-1">
+              <span><b>[문맥 의미]</b> ${escapeHtml(w.meaning)} <span class="text-slate-400 font-serif italic">(${escapeHtml(w.pos)})</span></span>
+              ${w.collocation ? `<span class="text-indigo-800 font-medium">연어: <i>${escapeHtml(w.collocation)}</i></span>` : ''}
+            </div>
+          </div>
+        `;
+      });
+
+      html += `
+            </div>
+          </div>
+
+          <!-- 푸터 -->
+          <div class="sheet-footer pt-2 mt-2 border-t border-slate-200 flex justify-between items-center text-[10px] text-slate-400">
+            <span>Veritas Oxford 3000™ &amp; 5000™ Companion Drill Series</span>
+            <span>${dayKey} CEFR 레벨별 어휘 인출 드릴 (A4 1장 완결)</span>
           </div>
         </div>
       `;
