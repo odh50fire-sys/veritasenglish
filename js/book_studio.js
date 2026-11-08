@@ -64,7 +64,11 @@
     'pathways-1': 'pathways',
     'pathways-2': 'pathways',
     'pathways-3': 'pathways',
-    'pathways-4': 'pathways'
+    'pathways-4': 'pathways',
+    'oxford-vol1': 'oxford',
+    'oxford-vol2': 'oxford',
+    'oxford-vol3': 'oxford',
+    'oxford-vol4': 'oxford'
   };
 
   const SERIES_INFO = {
@@ -179,6 +183,13 @@
       icon: '💼',
       accentColor: '#0369a1',
       badgeClass: 'series-theme-season_toeic_rc'
+    },
+    oxford: {
+      name: 'Oxford 3000™ & 5000™ Complete Series',
+      sub: 'Oxford Univ. Press 공식 선정 A1~C1 필수 어휘 5,000단어 18열 완전체',
+      icon: '🏛️',
+      accentColor: '#3730A3',
+      badgeClass: 'series-theme-oxford'
     }
   };
 
@@ -249,6 +260,11 @@
       { id: 'toeic_collocation', name: '⏱️ 3초 컷 빈출 연어 클리닉', desc: '부교재 1: 파트 5 최다 빈출 전치사/명사 짝단어 족보' },
       { id: 'toeic_part5', name: '🎯 파트 5 실전 4지선다 모의', desc: '부교재 2: 토익 실전 시험지와 동일한 RC 4지선다 워크북' },
       { id: 'cram', name: '⚡ 시험장 직전 초압축 족보', desc: '부교재 3: A4 1장 토익 RC 빈출 어휘 총정리' }
+    ],
+    oxford: [
+      { id: 'collocation_match', name: '🔗 옥스퍼드 필수 연어 클리닉', desc: '부교재 1: Oxford 실전 학술/회화 빈출 연어 매칭 드릴' },
+      { id: 'cloze_sprint', name: '🎯 옥스퍼드 빈칸 인출 드릴', desc: '부교재 2: CEFR 등급별 예문 기반 빈칸 완성 워크북' },
+      { id: 'cram', name: '⚡ DAY별 초압축 족보', desc: '부교재 3: A4 1장 DAY별 어휘 총정리' }
     ]
   };
 
