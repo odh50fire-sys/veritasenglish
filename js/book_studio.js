@@ -262,9 +262,8 @@
       { id: 'cram', name: '⚡ 시험장 직전 초압축 족보', desc: '부교재 3: A4 1장 토익 RC 빈출 어휘 총정리' }
     ],
     oxford: [
-      { id: 'collocation_match', name: '🔗 옥스퍼드 코퍼스 연어 클리닉', desc: '특화형 1: Oxford 코퍼스 빈출/학술 연어 결합 완성 드릴' },
-      { id: 'cefr_drill', name: '🎯 CEFR 레벨별 어휘 인출 드릴', desc: '특화형 2: CEFR 등급별 지문 연계 서술형 빈칸 인출' },
-      { id: 'cram', name: '⚡ 시험 직전 초압축 족보', desc: '특화형 3: A4 1장 DAY별 어휘 초압축 족보' }
+      { id: 'cefr_drill', name: '🎯 CEFR 레벨별 어휘 인출 드릴', desc: '특화형 1: CEFR 등급별 대표 예문 서술형 빈칸 인출' },
+      { id: 'cram', name: '⚡ 시험 직전 초압축 족보', desc: '특화형 2: A4 1장 DAY별 어휘 초압축 족보' }
     ]
   };
 
@@ -3254,7 +3253,7 @@
                 </div>
                 <h1 class="text-xl font-black text-slate-900 mt-1 flex items-center gap-2">
                   <span>⚡ 지문 직전 초압축 족보</span>
-                  <span class="text-xs font-normal text-slate-500">(1장 10단어 핵심 어휘·연어·뉘앙스 총망라)</span>
+                  <span class="text-xs font-normal text-slate-500">${seriesKey === 'oxford' ? '(1장 10단어 핵심 어휘 및 공식 실전 예문 총망라)' : '(1장 10단어 핵심 어휘·연어·뉘앙스 총망라)'}</span>
                 </h1>
                 <p class="text-xs text-amber-800 font-semibold mt-0.5">
                   [${dayKey}] ${escapeHtml(chapterTitle ? chapterTitle + ' - ' + sectionTheme : sectionTheme)}
@@ -3274,7 +3273,7 @@
                     <th class="py-1.5 px-2.5 w-8 text-center">No</th>
                     <th class="py-1.5 px-3 w-36">어휘 (품사 / 발음)</th>
                     <th class="py-1.5 px-3 w-40">핵심 의미</th>
-                    <th class="py-1.5 px-3">학술 필수 연어 &amp; 다큐 대표 예문</th>
+                    <th class="py-1.5 px-3">${seriesKey === 'oxford' ? '옥스퍼드 공식 대표 예문 &amp; 해석' : '학술 필수 연어 &amp; 다큐 대표 예문'}</th>
                     <th class="py-1.5 px-2 w-14 text-center">체크</th>
                   </tr>
                 </thead>
@@ -3298,7 +3297,7 @@
               <div class="font-semibold text-slate-800">${escapeHtml(w.meaning)}</div>
             </td>
             <td class="py-2 px-3 align-top leading-tight">
-              ${w.collocation ? `<div class="text-[10.5px] font-bold text-indigo-700 mb-0.5">🔗 ${escapeHtml(w.collocation)}</div>` : ''}
+              ${(w.collocation && seriesKey !== 'oxford') ? `<div class="text-[10.5px] font-bold text-indigo-700 mb-0.5">🔗 ${escapeHtml(w.collocation)}</div>` : ''}
               <div class="text-[11px] text-slate-600 font-serif italic">"${escapeHtml(w.example)}"</div>
               <div class="text-[10px] text-slate-400 mt-0.5">${escapeHtml(w.exampleMeaning || '')}</div>
             </td>
@@ -3424,7 +3423,7 @@
             </div>
             <div class="mt-1 pl-4 flex items-center justify-between text-[11px] text-slate-500 border-t border-slate-100 pt-1">
               <span><b>[문맥 의미]</b> ${escapeHtml(w.meaning)} <span class="text-slate-400 font-serif italic">(${escapeHtml(w.pos)})</span></span>
-              ${w.collocation ? `<span class="text-indigo-800 font-medium">연어: <i>${escapeHtml(w.collocation)}</i></span>` : ''}
+              
             </div>
           </div>
         `;
