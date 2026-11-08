@@ -7,6 +7,22 @@
  */
 
 class FlashcardEngine {
+    isIdiomOrNativeDeck(word) {
+        if (!word) return false;
+        const targetStr = [
+            word.curatedCollectionId,
+            word.curatedCollectionTitle,
+            word.collectionId,
+            word.collectionTitle,
+            word.category,
+            word.series,
+            word.type,
+            word.badge
+        ].filter(Boolean).join(' ').toLowerCase();
+
+        return /idiom|phrasal|slang|proverb|native|숙어|구동사|원어민|관용구|슬랭|이어동사/.test(targetStr);
+    }
+
     constructor() {
         this.deck = [];
         this.currentIndex = 0;
@@ -336,9 +352,11 @@ class FlashcardEngine {
         }
 
         // 뉘앙스 & 문화 유래 팁 렌더링
+        // 뉘앙스 & 원어민 팁 영역 제어 (원어민 표현, 구동사, 숙어 단어장에만 한정 노출)
         const nuanceWrap = document.getElementById('fc-nuance-wrap');
         const nuanceText = document.getElementById('fc-nuance-text');
-        if (word.nuanceTip && word.nuanceTip.trim()) {
+        const isIdiomOrNative = this.isIdiomOrNativeDeck(word);
+        if (isIdiomOrNative && word.nuanceTip && word.nuanceTip.trim()) {
             if (nuanceWrap) nuanceWrap.classList.remove('hidden');
             if (nuanceText) nuanceText.textContent = word.nuanceTip;
         } else {

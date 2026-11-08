@@ -7,6 +7,16 @@
 (function (window) {
   'use strict';
 
+  function escapeHtml(str) {
+    if (str === null || str === undefined) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
   // 8대 시리즈 테마 맵핑
   const SERIES_MAP = {
     'curated-m1-1': 'middle',
@@ -243,6 +253,19 @@
   };
 
   class BookStudioEngine {
+    isIdiomOrNativeSeries() {
+      const meta = this.currentBookMeta || {};
+      const checkStr = [
+        meta.id,
+        meta.title,
+        meta.category,
+        meta.series,
+        meta.badge
+      ].filter(Boolean).join(' ').toLowerCase();
+
+      return /idiom|phrasal|slang|proverb|native|숙어|구동사|원어민|관용구|슬랭|이어동사/.test(checkStr);
+    }
+
     constructor() {
       this.currentBookId = null;
       this.currentMode = 'voca'; // 'voca' | 'workbook' | 'both'
@@ -664,6 +687,28 @@
           return cramHtml;
         }
         return this.renderCramSheet(days);
+      }
+
+      if (this.currentMode === 'passage_cloze') {
+        let clozeHtml = '';
+        days.forEach(dayKey => {
+          const words = this.groupedDays[dayKey] || [];
+          if (words.length > 0) {
+            clozeHtml += this.renderPassageClozeSheet(dayKey, words);
+          }
+        });
+        return clozeHtml;
+      }
+
+      if (this.currentMode === 'collocation_match') {
+        let collocHtml = '';
+        days.forEach(dayKey => {
+          const words = this.groupedDays[dayKey] || [];
+          if (words.length > 0) {
+            collocHtml += this.renderCollocationMatchSheet(dayKey, words);
+          }
+        });
+        return collocHtml;
       }
 
       // 1. 전체 인쇄 모드일 경우: 표지(Cover) + 목차(TOC) 포함
@@ -1247,7 +1292,7 @@
               <div class="studio-word-meaning font-bold text-slate-900 mt-1">
                 ${w.meaning}
               </div>
-              ${w.nuanceTip ? `
+              ${(w.nuanceTip && this.isIdiomOrNativeSeries()) ? `
                 <div class="mt-1 text-[10.5px] bg-amber-50 text-amber-900 px-2 py-0.5 rounded border border-amber-200 flex items-center gap-1">
                   <span>💡 뉘앙스:</span>
                   <span class="font-medium">${w.nuanceTip}</span>
@@ -1387,7 +1432,7 @@
                   ⏱️ <strong>3초 컷 짝단어:</strong> <span class="font-bold text-blue-900">${w.collocation}</span>
                 </div>
               ` : ''}
-              ${w.nuanceTip ? `
+              ${(w.nuanceTip && this.isIdiomOrNativeSeries()) ? `
                 <div class="mt-0.5 text-[10px] text-slate-500">
                   🎯 출제 팁: ${w.nuanceTip}
                 </div>
@@ -2869,7 +2914,7 @@
               </div>
               <div class="text-[10px] text-slate-500 mt-0.5">${w.translation}</div>
             </div>
-            ${w.nuanceTip ? `
+            ${(w.nuanceTip && this.isIdiomOrNativeSeries()) ? `
               <div class="mt-1 pt-1 border-t border-dashed border-blue-200 text-[10px] text-blue-800">
                 🎯 <strong>출제 족보:</strong> ${w.nuanceTip}
               </div>
@@ -3223,7 +3268,6 @@
             </td>
             <td class="py-2 px-3 align-top">
               <div class="font-semibold text-slate-800">${escapeHtml(w.meaning)}</div>
-              ${nuance}
             </td>
             <td class="py-2 px-3 align-top leading-tight">
               ${w.collocation ? `<div class="text-[10.5px] font-bold text-indigo-700 mb-0.5">🔗 ${escapeHtml(w.collocation)}</div>` : ''}

@@ -902,7 +902,7 @@ class OCREngine {
                                 <div class="text-[11px] text-slate-400 not-italic mt-0.5">${trans}</div>
                             </div>
                         ` : ''}
-                        ${row.nuanceTip ? `
+                        ${(row.nuanceTip && book && /idiom|phrasal|slang|proverb|native|숙어|구동사|원어민|관용구|슬랭|이어동사/i.test([book.id, book.title, book.category, book.badge, book.series].filter(Boolean).join(" "))) ? `
                             <div class="mt-1 text-[11px] text-purple-900 bg-purple-50/90 p-1.5 rounded-lg border border-purple-200 flex items-start gap-1.5">
                                 <span class="font-bold shrink-0 text-purple-700">💡 뉘앙스/유래:</span>
                                 <span class="text-slate-700 font-sans leading-relaxed">${row.nuanceTip}</span>
