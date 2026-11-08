@@ -50,7 +50,11 @@
     'season-toeic-rc1500': 'season_toeic_rc',
     'challenger-1': 'reading_tutor_challenger',
     'challenger-2': 'reading_tutor_challenger',
-    'challenger-3': 'reading_tutor_challenger'
+    'challenger-3': 'reading_tutor_challenger',
+    'pathways-1': 'pathways',
+    'pathways-2': 'pathways',
+    'pathways-3': 'pathways',
+    'pathways-4': 'pathways'
   };
 
   const SERIES_INFO = {
@@ -145,6 +149,13 @@
       accentColor: '#047857',
       badgeClass: 'series-theme-season_middle_starter'
     },
+    pathways: {
+      name: '내셔널 지오그래픽 Pathways 아카데믹 리딩',
+      sub: 'NGL 3rd Ed. 최신판 다큐멘터리 지문 연동 대학 교양 & 학술 에세이 마스터',
+      icon: '🌍',
+      accentColor: '#ca8a04',
+      badgeClass: 'series-theme-pathways'
+    },
     reading_tutor_challenger: {
       name: '리딩튜터 챌린저 실전 독해 보카',
       sub: 'NE능률 2025 개정 최신판 지문 연동 고교 내신 1등급 & 수능 킬러 정복',
@@ -213,6 +224,11 @@
       { id: 'irregular_verbs', name: '⚡ 불규칙 동사 100선 마스터', desc: '부교재 1: 원형-과거-과거분사 3단 변화 총정리 시트' },
       { id: 'writing', name: '✍️ 중학 첫걸음 영작 노트', desc: '부교재 2: 기초 어순 배열 & 기본 문장 쓰기' },
       { id: 'cram', name: '⚡ 10분 기초 보카 파이널', desc: '부교재 3: A4 1장 초압축 기초 어휘 정리' }
+    ],
+    pathways: [
+      { id: 'passage_cloze', name: '🔭 다큐 문맥 빈칸 드릴', desc: '부교재 1: 내셔널 지오그래픽 탐사 지문 문맥 서술형 빈칸 인출' },
+      { id: 'collocation_match', name: '🔗 AWL 학술 연어 클리닉', desc: '부교재 2: 대학 에세이 & 리포트 필수 Academic Collocation 훈련' },
+      { id: 'cram', name: '⚡ 지문 직전 초압축 족보', desc: '부교재 3: A4 1장 10단어 초고속 복습 & 리딩 퀵 서머리' }
     ],
     reading_tutor_challenger: [
       { id: 'passage_cloze', name: '🎯 지문 문맥 빈칸 펑크', desc: '부교재 1: 지문 주제 기반 고교 내신 서술형 빈칸 인출 드릴' },
@@ -1131,6 +1147,36 @@
       }
 
       // 1) 넷플릭스·미드 구어 & SNS 슬랭 카드
+      if (seriesKey === 'pathways') {
+        return `
+          <div class="studio-word-card border-l-4 border-yellow-500 bg-yellow-50/15">
+            <div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-baseline gap-1.5 min-w-0">
+                  <span class="studio-word-num text-amber-700 font-bold shrink-0">#${String(w.num).padStart(2, '0')}</span>
+                  <span class="studio-word-lemma text-slate-900 font-serif font-black">${displayWord}</span>
+                  ${w.pos ? `<span class="studio-word-pos bg-amber-100 text-amber-900 font-bold px-1.5 py-0.5 rounded text-[10px] shrink-0">${w.pos}</span>` : ''}
+                </div>
+                <div class="studio-checks shrink-0">
+                  <span>1<span class="studio-check-box ml-0.5"></span></span>
+                  <span>2<span class="studio-check-box ml-0.5"></span></span>
+                </div>
+              </div>
+              <div class="studio-word-meaning font-bold text-slate-900 mt-1">
+                ${w.meaning}
+              </div>
+              ${w.pronunciation ? `<div class="text-[10px] text-amber-700 font-mono mt-0.5">${w.pronunciation}</div>` : ''}
+              ${w.example ? `
+                <div class="studio-word-example text-slate-600 mt-1 pl-2 border-l border-amber-300">
+                  <div class="font-serif italic text-slate-800">${w.example}</div>
+                  ${w.trans ? `<div class="text-[11px] text-slate-500 mt-0.5">${w.trans}</div>` : ''}
+                </div>` : ''}
+              ${w.collocation ? `<div class="text-[10px] text-amber-800 mt-1 font-semibold">📌 ${w.collocation}</div>` : ''}
+            </div>
+          </div>
+        `;
+      }
+
       if (seriesKey === 'reading_tutor_challenger') {
         return `
           <div class="studio-word-card border-l-4 border-indigo-600 bg-indigo-50/10">

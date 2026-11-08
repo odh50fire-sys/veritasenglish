@@ -182,6 +182,20 @@
 }
 
 
+
+/* 15) National Geographic Pathways 아카데믹 리딩 시리즈 (NGL Yellow & Ocean Navy) */
+.series-theme-pathways {
+  --theme-primary: #ca8a04;       /* national geographic dark gold */
+  --theme-secondary: #0284c7;     /* ocean explorer blue */
+  --theme-accent: #0f172a;        /* deep midnight slate */
+  --theme-bg-soft: #fefce8;       /* soft parchment yellow */
+  --theme-border: #fde047;        /* bright yellow accent */
+  --theme-badge-bg: #fef08a;      /* warm yellow pill */
+  --theme-badge-text: #854d0e;     /* deep amber text */
+  --theme-tag-symbol: "🌍";
+  --theme-name: "내셔널 지오그래픽 Pathways 아카데믹 리딩";
+}
+
 /* 14) NE능률 리딩튜터 챌린저 시리즈 (Indigo & Deep Purple) */
 .series-theme-reading_tutor {
   --theme-primary: #4338ca;       /* deep indigo */
