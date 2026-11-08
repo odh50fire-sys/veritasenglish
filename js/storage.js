@@ -2088,6 +2088,9 @@ class StorageManager {
         if (window.VERITAS_ORIGINAL_WORDS_DATA && window.VERITAS_ORIGINAL_WORDS_DATA.length > 0) {
             pool = pool.concat(window.VERITAS_ORIGINAL_WORDS_DATA);
         }
+        if (window.VERITAS_OXFORD_WORDS_DATA && window.VERITAS_OXFORD_WORDS_DATA.length > 0) {
+            pool = pool.concat(window.VERITAS_OXFORD_WORDS_DATA);
+        }
         const dayRows = pool.filter(r => r.collectionId === collectionId && r.DAY === dayStr);
         if (dayRows.length === 0) {
             return { addedCount: 0, day: dayStr, planDate: '' };
@@ -2100,11 +2103,11 @@ class StorageManager {
 
         const newItems = dayRows.map(row => ({
             id: `curated-${collectionId}-${dayStr.replace(/\s+/g, '')}-${row['번호']}`,
-            word: String(row['영단어'] || row['단어'] || '').trim(),
-            meaning: String(row['뜻'] || '').trim(),
+            word: String(row['영단어'] || row['단어'] || row['word'] || row['표제어'] || '').trim(),
+            meaning: String(row['뜻'] || row['meaning'] || '').trim(),
             partOfSpeech: window.posHelper ? window.posHelper.standardizePos(row['품사'], row['영단어'] || row['단어'], row['뜻']) : (row['품사'] || '[명]'),
             example: row['예문'] || '',
-            exampleMeaning: row['예문해석'] || row['해석'] || '',
+            exampleMeaning: row['예문해석'] || row['해석'] || row['example_ko'] || row['translation'] || '',
             level: row['category'] === 'middle' ? 'middle' : 'high',
             tag: `${row['collectionTitle']} ${dayStr}`,
             curatedCollectionId: collectionId,
@@ -2159,6 +2162,9 @@ class StorageManager {
         if (window.VERITAS_ORIGINAL_WORDS_DATA && window.VERITAS_ORIGINAL_WORDS_DATA.length > 0) {
             pool = pool.concat(window.VERITAS_ORIGINAL_WORDS_DATA);
         }
+        if (window.VERITAS_OXFORD_WORDS_DATA && window.VERITAS_OXFORD_WORDS_DATA.length > 0) {
+            pool = pool.concat(window.VERITAS_OXFORD_WORDS_DATA);
+        }
         const colRows = pool.filter(r => r.collectionId === collectionId);
         if (colRows.length === 0) {
             return { addedCount: 0, totalDays: 0, collectionTitle: '', startDate: '', endDate: '' };
@@ -2180,11 +2186,11 @@ class StorageManager {
             rows.forEach(row => {
                 allNewItems.push({
                     id: `curated-${collectionId}-${dayStr.replace(/\s+/g, '')}-${row['번호']}`,
-                    word: String(row['영단어'] || row['단어'] || '').trim(),
-                    meaning: String(row['뜻'] || '').trim(),
+                    word: String(row['영단어'] || row['단어'] || row['word'] || row['표제어'] || '').trim(),
+                    meaning: String(row['뜻'] || row['meaning'] || '').trim(),
                     partOfSpeech: window.posHelper ? window.posHelper.standardizePos(row['품사'], row['영단어'] || row['단어'], row['뜻']) : (row['품사'] || '[명]'),
                     example: row['예문'] || '',
-                    exampleMeaning: row['예문해석'] || row['해석'] || '',
+                    exampleMeaning: row['예문해석'] || row['해석'] || row['example_ko'] || row['translation'] || '',
                     level: row['level'] || 'middle',
                     tag: `${row['collectionTitle']} ${dayStr}`,
                     curatedCollectionId: collectionId,

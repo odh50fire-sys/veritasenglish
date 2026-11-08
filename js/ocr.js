@@ -672,6 +672,16 @@ class OCREngine {
         if (!bookId) return;
         this.currentBookId = bookId;
         this.currentNeungryulDay = 'DAY 01';
+
+        // 단어장 테이블이 접혀있다면 자동으로 펼쳐서 즉시 보이도록 보장
+        const wrapper = document.getElementById('neungryul-voca-table-wrapper');
+        if (wrapper && wrapper.classList.contains('hidden')) {
+            wrapper.classList.remove('hidden');
+            this.isNeungryulTableOpen = true;
+            const label = document.getElementById('neungryul-table-toggle-label');
+            if (label) label.textContent = '단어장 테이블 접기';
+        }
+
         this.renderNeungryulVocaSection();
         // 온보딩: 단어장 열기 퀘스트 완료
         if (window.onboardingEngine) window.onboardingEngine.completeQuestStep('vocaExplored');
@@ -722,6 +732,25 @@ class OCREngine {
                 isNeungryul: false,
                 isNeungryulEtym: false,
                 isOriginal: true,
+                dataPool: pool
+            };
+        }
+
+        // 옥스퍼드 3000™ & 5000™ 공식 교재 4종 확인
+        if (this.currentBookId && this.currentBookId.startsWith('oxford-')) {
+            const oxList = window.VERITAS_OXFORD_COLLECTIONS || [];
+            const oxCol = oxList.find(c => c.id === this.currentBookId) || oxList[0];
+            const allOxWords = window.VERITAS_OXFORD_WORDS_DATA || [];
+            const pool = oxCol ? allOxWords.filter(r => r.collectionId === oxCol.id) : [];
+            return {
+                id: oxCol ? oxCol.id : this.currentBookId,
+                title: oxCol ? oxCol.title : 'Oxford 3000™ & 5000™',
+                badge: oxCol ? `${oxCol.badge} • DAY 01 ~ DAY ${String(oxCol.totalDays || 40).padStart(2, '0')} (총 ${pool.length}단어)` : 'Oxford',
+                description: oxCol ? oxCol.description : '',
+                totalDays: oxCol ? oxCol.totalDays : 40,
+                isNeungryul: false,
+                isNeungryulEtym: false,
+                isOxford: true,
                 dataPool: pool
             };
         }
@@ -874,11 +903,11 @@ class OCREngine {
         const currentDayWords = dataPool.filter(r => r.DAY === this.currentNeungryulDay);
         if (tbody) {
             tbody.innerHTML = currentDayWords.map(row => {
-                const word = row['영단어'] || row['단어'] || '';
-                const trans = row['예문해석'] || row['해석'] || '';
-                const meaning = row['뜻'] || '';
-                const pos = row['품사'] || '';
-                const example = row['예문'] || '';
+                const word = row['영단어'] || row['단어'] || row['word'] || row['표제어'] || '';
+                const trans = row['예문해석'] || row['해석'] || row['example_ko'] || row['translation'] || '';
+                const meaning = row['뜻'] || row['meaning'] || '';
+                const pos = row['품사'] || row['pos'] || '';
+                const example = row['예문'] || row['example'] || '';
                 const hasExample = !!example;
                 return `
                 <tr class="hover:bg-blue-50/40 transition-colors">
