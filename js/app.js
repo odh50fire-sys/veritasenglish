@@ -787,6 +787,15 @@ class AppController {
             if (window.wrongNote) {
                 window.wrongNote.renderStats();
             }
+
+            // 에빙하우스 망각곡선 365일 잔디 히트맵 & 미래 복습 예측 타임라인 렌더링
+            if (window.heatmapEngine && window.heatmapEngine.render) {
+                try {
+                    window.heatmapEngine.render();
+                } catch (heatErr) {
+                    console.error('Error rendering Ebbinghaus Heatmap:', heatErr);
+                }
+            }
         } catch (e) {
             console.error('Critical error in renderDashboard:', e);
         } finally {

@@ -103,6 +103,12 @@
                         <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400 group-hover:text-slate-700 transition-transform"></i>
                     </button>
 
+                    <!-- 핸즈프리 워크맨 오디오북 빠른 실행 버튼 -->
+                    <button id="header-audiobook-btn" class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg border border-indigo-300 bg-indigo-50 hover:bg-indigo-100 text-indigo-900 text-xs font-serif font-bold transition-all shadow-xs cursor-pointer active:scale-95" onclick="window.audiobookPlayer && window.audiobookPlayer.playTodayWords()" title="핸즈프리 워크맨 오디오북 (모바일 백그라운드 & 이어폰 제어)">
+                        <i data-lucide="headphones" class="w-3.5 h-3.5 text-indigo-600"></i>
+                        <span class="hidden sm:inline">🎧 워크맨</span>
+                    </button>
+
                     <!-- 진단 레벨 배지 & 레벨테스트 바로가기 버튼 -->
                     <button id="header-academic-level-btn" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-sky-400/40 bg-sky-50 hover:bg-sky-100 text-sky-900 text-xs font-serif font-bold transition-all shadow-xs cursor-pointer" onclick="window.levelTestEngine && window.levelTestEngine.openModal('adaptive')" title="실력 진단 레벨테스트 및 현재 레벨 확인">
                         <span class="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
@@ -203,6 +209,13 @@
                         <span>지금 레벨테스트 시작하기</span>
                     </button>
                 </div>
+            </div>
+
+            <!-- ======================================================================
+                 에빙하우스 망각곡선 365일 연간 학습 잔디 & 미래 복습 예측 히트맵
+                 ====================================================================== -->
+            <div id="dash-ebbinghaus-heatmap-container" class="bg-white rounded-2xl border border-slate-200 shadow-xs p-5 sm:p-6 transition-all hover:border-slate-300">
+                <!-- JS 주입: window.heatmapEngine.render() -->
             </div>
 
             
@@ -595,6 +608,11 @@
                                     <button type="button" onclick="window.bookStudioEngine && window.bookStudioEngine.open(document.getElementById('voca-book-select').value, 'voca')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-serif font-bold text-xs shadow-xs transition-all cursor-pointer" title="현재 선택된 교재의 보카북·워크북 스튜디오 열기 (보기 전환 및 A4 인쇄)">
                                         <i data-lucide="printer" class="w-3.5 h-3.5 text-emerald-200"></i>
                                         <span>📚 보카북·워크북</span>
+                                    </button>
+                                    <!-- 핸즈프리 워크맨 오디오북 바로듣기 버튼 -->
+                                    <button type="button" onclick="window.audiobookPlayer && window.audiobookPlayer.playCurrentBook(document.getElementById('voca-book-select').value)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-700 hover:bg-indigo-600 text-white font-serif font-bold text-xs shadow-xs transition-all cursor-pointer active:scale-95" title="현재 선택된 교재 단어를 팟캐스트처럼 듣기">
+                                        <i data-lucide="headphones" class="w-3.5 h-3.5 text-amber-300"></i>
+                                        <span>🎧 오디오북</span>
                                     </button>
                                     <span class="text-xs font-serif font-bold text-slate-300">교재/테마 선택:</span>
                                     <select id="voca-book-select" class="px-3 py-1.5 rounded-lg bg-blue-900 text-amber-300 font-serif font-bold text-xs sm:text-sm border border-amber-400/30 outline-none cursor-pointer" onchange="window.ocrEngine.selectVocaBook(this.value)">
@@ -3275,6 +3293,9 @@
     <script src="js/exam_studio.js"></script>
     <!-- 부교재 전용 보카북 & 워크북 맞춤 인쇄 스튜디오 엔진 -->
     <script src="js/book_studio.js"></script>
+    <!-- 차세대 스마트 고도화: 에빙하우스 잔디 히트맵 & 핸즈프리 워크맨 오디오북 -->
+    <script src="js/heatmap_engine.js"></script>
+    <script src="js/audiobook_player.js"></script>
     <script src="js/app.js"></script>
 
     <!-- ======================================================================
@@ -3764,6 +3785,133 @@
     <div id="modal-level-test" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-sm hidden">
         <div class="relative w-full max-w-3xl max-h-[90vh] bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-y-auto no-scrollbar" id="level-test-container">
             <!-- 동적 렌더링 영역 (모드 선택 / 문제 풀이 / 결과 리포트) -->
+        </div>
+    </div>
+
+
+    <!-- ======================================================================
+         FLOATING WIDGET: 핸즈프리 워크맨 오디오북 플레이어 (백그라운드 & 이어폰 제어)
+         ====================================================================== -->
+    <div id="audiobook-player-widget" class="fixed bottom-0 left-0 right-0 z-50 transform translate-y-full transition-transform duration-300 shadow-2xl bg-slate-950/95 border-t border-slate-800 text-white backdrop-blur-md">
+        <!-- 상단 미세 프로그레스 바 -->
+        <div class="w-full bg-slate-800 h-1 overflow-hidden">
+            <div id="audiobook-progress-fill" class="bg-gradient-to-r from-amber-400 via-indigo-400 to-emerald-400 h-full w-0 transition-all duration-300"></div>
+        </div>
+
+        <!-- 메인 컴팩트 플레이어 바 -->
+        <div class="max-w-7xl mx-auto px-4 py-2.5 flex items-center justify-between gap-3">
+            <!-- 좌측: 현재 재생 단어 정보 & 사운드웨이브 -->
+            <div class="flex items-center gap-3 min-w-0 flex-1 cursor-pointer" onclick="window.audiobookPlayer && window.audiobookPlayer.toggleExpand()">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-indigo-800 border border-indigo-400/30 flex items-center justify-center shrink-0 shadow-md relative">
+                    <i data-lucide="headphones" class="w-5 h-5 text-amber-300"></i>
+                    <div id="audiobook-soundwave-visualizer" class="absolute -top-1 -right-1 flex items-end gap-0.5 h-3 opacity-30 transition-opacity">
+                        <span class="w-0.5 h-full bg-amber-400 rounded-full animate-bounce"></span>
+                        <span class="w-0.5 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+                        <span class="w-0.5 h-3 bg-amber-300 rounded-full animate-bounce"></span>
+                    </div>
+                </div>
+
+                <div class="min-w-0">
+                    <div class="flex items-center gap-2">
+                        <span id="audiobook-word-text" class="font-serif font-black text-base sm:text-lg text-white truncate tracking-tight">재생 대기 중</span>
+                        <span id="audiobook-pos-badge" class="px-1.5 py-0.2 rounded text-[10px] font-mono bg-indigo-500/30 text-indigo-200 border border-indigo-400/30"></span>
+                        <span id="audiobook-count-text" class="text-[11px] font-mono text-slate-400 hidden sm:inline">0 / 0</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-slate-300 truncate">
+                        <span id="audiobook-meaning-text" class="truncate font-medium text-amber-300/90">단어를 선택해 주세요</span>
+                        <span class="text-slate-600">•</span>
+                        <span id="audiobook-book-title" class="text-[11px] text-slate-400 truncate hidden md:inline">베리타스 영단어</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 중앙: 재생 컨트롤러 (이전, 재생/일시정지, 다음) -->
+            <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                <button type="button" onclick="window.audiobookPlayer && window.audiobookPlayer.prevWord()" class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/80 transition-colors cursor-pointer" title="이전 단어">
+                    <i data-lucide="skip-back" class="w-4 h-4"></i>
+                </button>
+                <button id="audiobook-btn-play" type="button" onclick="window.audiobookPlayer && window.audiobookPlayer.togglePlay()" class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-gradient-to-tr from-amber-400 to-amber-300 hover:from-amber-300 hover:to-amber-200 text-slate-950 flex items-center justify-center shadow-lg transition-transform active:scale-95 cursor-pointer" title="재생 / 일시정지">
+                    <i data-lucide="play" class="w-5 h-5 text-slate-950 ml-0.5"></i>
+                </button>
+                <button type="button" onclick="window.audiobookPlayer && window.audiobookPlayer.nextWord()" class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/80 transition-colors cursor-pointer" title="다음 단어">
+                    <i data-lucide="skip-forward" class="w-4 h-4"></i>
+                </button>
+            </div>
+
+            <!-- 우측: 모드 선택(A/B/C), 배속, 확장, 닫기 -->
+            <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                <!-- 3대 모드 세그먼트 -->
+                <div class="hidden lg:flex items-center p-0.5 rounded-lg bg-slate-900 border border-slate-800 text-[11px]">
+                    <button id="audiobook-mode-btn-A" onclick="window.audiobookPlayer && window.audiobookPlayer.setMode('A')" class="px-2 py-1 rounded bg-amber-400 text-slate-950 font-bold transition-colors cursor-pointer" title="모드 A: [단어] ➔ 1초 ➔ [뜻] ➔ [예문] ➔ [해석]">표준</button>
+                    <button id="audiobook-mode-btn-B" onclick="window.audiobookPlayer && window.audiobookPlayer.setMode('B')" class="px-2 py-1 rounded bg-white/10 text-slate-300 transition-colors cursor-pointer" title="모드 B: [단어 2회] ➔ 1.5초 무음 연상 ➔ [뜻]">스피드</button>
+                    <button id="audiobook-mode-btn-C" onclick="window.audiobookPlayer && window.audiobookPlayer.setMode('C')" class="px-2 py-1 rounded bg-white/10 text-slate-300 transition-colors cursor-pointer" title="모드 C: 차분한 톤 + 수면 앰비언트 + 타이머">수면</button>
+                </div>
+
+                <!-- 배속 드롭다운 -->
+                <select id="audiobook-speed-select" onchange="window.audiobookPlayer && window.audiobookPlayer.setSpeed(this.value)" class="bg-slate-900 text-slate-300 text-[11px] font-mono font-bold px-2 py-1 rounded-lg border border-slate-800 outline-none cursor-pointer">
+                    <option value="0.8">0.8x</option>
+                    <option value="1.0" selected>1.0x</option>
+                    <option value="1.2">1.2x</option>
+                    <option value="1.5">1.5x</option>
+                </select>
+
+                <!-- 서랍 확장/축소 토글 -->
+                <button type="button" onclick="window.audiobookPlayer && window.audiobookPlayer.toggleExpand()" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer" title="플레이어 상세 서랍 열기">
+                    <i id="audiobook-expand-icon" data-lucide="chevron-up" class="w-4 h-4"></i>
+                </button>
+
+                <!-- 위젯 닫기 -->
+                <button type="button" onclick="window.audiobookPlayer && window.audiobookPlayer.closeWidget()" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer" title="오디오북 닫기">
+                    <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- 확장 서랍 뷰 (Drawer: 클릭 시 위로 펼쳐짐) -->
+        <div id="audiobook-expanded-drawer" class="hidden border-t border-slate-800/80 bg-slate-900/95 px-4 py-4 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                <!-- 1열: 원서 예문 & 해석 디스플레이 -->
+                <div class="md:col-span-2 bg-slate-950/80 border border-slate-800 rounded-xl p-3.5 space-y-2">
+                    <div class="flex items-center justify-between text-slate-400 text-[11px]">
+                        <span class="font-serif font-bold text-amber-300 flex items-center gap-1">
+                            <i data-lucide="quote" class="w-3.5 h-3.5"></i>
+                            원서 대표 예문 &amp; 맥락 해석
+                        </span>
+                        <span id="audiobook-drawer-colloc" class="text-indigo-400 font-mono"></span>
+                    </div>
+                    <p id="audiobook-drawer-example" class="font-serif italic text-sm text-slate-200 leading-relaxed"></p>
+                    <p id="audiobook-drawer-example-meaning" class="text-xs text-slate-400 font-sans"></p>
+                </div>
+
+                <!-- 2열: 고급 세팅 (슬립 타이머, 반복 모드, 모바일 백그라운드 안내) -->
+                <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-3.5 space-y-3 flex flex-col justify-between">
+                    <div>
+                        <span class="text-slate-400 font-bold block mb-2">스마트 재생 세팅</span>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-400">🌙 슬립 타이머:</span>
+                                <select onchange="window.audiobookPlayer && window.audiobookPlayer.setSleepTimer(this.value)" class="bg-slate-900 text-amber-300 text-xs px-2 py-1 rounded border border-slate-700 outline-none">
+                                    <option value="0">타이머 꺼짐</option>
+                                    <option value="15">15분 후 자동 종료</option>
+                                    <option value="30">30분 후 자동 종료</option>
+                                    <option value="45">45분 후 자동 종료</option>
+                                </select>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-400">🔁 반복 재생:</span>
+                                <select onchange="window.audiobookPlayer && window.audiobookPlayer.setRepeat(this.value)" class="bg-slate-900 text-slate-200 text-xs px-2 py-1 rounded border border-slate-700 outline-none">
+                                    <option value="all">전체 반복</option>
+                                    <option value="one">한 단어 무한 반복</option>
+                                    <option value="none">1회 완독 후 정지</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-2 rounded bg-indigo-950/40 border border-indigo-500/20 text-[10px] text-indigo-300 leading-snug">
+                        💡 <b>화면 꺼짐 지원:</b> 화면이 꺼져도 이어폰이나 잠금화면 위젯으로 단어를 넘기며 계속 청취할 수 있습니다.
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

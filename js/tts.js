@@ -171,6 +171,43 @@ class TTSEngine {
         return this.voices.find(v => v.lang.startsWith('en')) || null;
     }
 
+    /**
+     * 한국어 뜻/예문 해석 발음 재생 (핸즈프리 오디오북 연동)
+     */
+    speakKorean(text, onStart = null, onEnd = null) {
+        if (!this.synth) return;
+        this.synth.cancel();
+        if (!text || text.trim() === '') {
+            if (typeof onEnd === 'function') onEnd();
+            return;
+        }
+
+        const utterance = new SpeechSynthesisUtterance(text.trim());
+        utterance.lang = 'ko-KR';
+        utterance.rate = this.rate || 0.95;
+        utterance.pitch = 1.0;
+
+        if (!this.voices || this.voices.length === 0) this.initVoices();
+        const koVoice = this.voices.find(v => v.lang.startsWith('ko') && /female|heami|sunhi|yuna|유나|혜미|선희|natural/i.test(v.name))
+                     || this.voices.find(v => v.lang.startsWith('ko'));
+        if (koVoice) utterance.voice = koVoice;
+
+        utterance.onstart = () => {
+            this.isSpeaking = true;
+            if (typeof onStart === 'function') onStart();
+        };
+        utterance.onend = () => {
+            this.isSpeaking = false;
+            if (typeof onEnd === 'function') onEnd();
+        };
+        utterance.onerror = (e) => {
+            console.error('Korean TTS speech error:', e);
+            this.isSpeaking = false;
+            if (typeof onEnd === 'function') onEnd();
+        };
+        this.synth.speak(utterance);
+    }
+
     stop() {
         if (this.synth) {
             this.synth.cancel();
