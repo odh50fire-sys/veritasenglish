@@ -2740,18 +2740,119 @@ class StorageManager {
         return count;
     }
 
+    /**
+     * 특정 일자를 휴식일로 지정하거나 해제
+     * - 휴식일 지정 시: 해당 일자의 단어 및 이후 진도를 다음 학습 요일로 1회차씩 연쇄 순연 (Cascade Shift)
+     * - 휴식일 해제 시: 연쇄 순연되었던 단어들을 원래 배정 일자로 100% 무손실 복구 (Rollback)
+     * @param {string} dateStr 날짜 (YYYY-MM-DD)
+     * @param {boolean} isRest 휴식일 여부
+     */
     setRestDay(dateStr, isRest) {
         if (!this.plans[dateStr]) {
             this.plans[dateStr] = {};
         }
-        this.plans[dateStr].restDay = isRest;
+
+        const currentlyRest = !!this.plans[dateStr].restDay;
+        if (currentlyRest === !!isRest) {
+            return;
+        }
 
         if (isRest) {
-            const nextDay = this.addDays(dateStr, 1);
-            const scheduledWords = this.getWordsByDate(dateStr);
-            scheduledWords.forEach(w => {
-                w.planDate = nextDay;
-            });
+            this.plans[dateStr].restDay = true;
+
+            // 1. 해당 날짜 및 이후(planDate >= dateStr)의 모든 실제 과제 조회
+            const scheduledWords = this.words.filter(w => !String(w.id || '').startsWith('sample-') && w.planDate);
+            const todayWords = scheduledWords.filter(w => w.planDate === dateStr);
+
+            if (todayWords.length > 0) {
+                // 교재/콘텐츠 그룹 식별 헬퍼
+                const getGroupKey = (w) => {
+                    if (w.isReadingPassage && w.readingUnitId) return `reading:${w.readingUnitId}`;
+                    if (w.curatedCollectionId) return `curated:${w.curatedCollectionId}`;
+                    if (w.isNeungryul2025) return 'neungryul2025';
+                    if (w.isNeungryulEtym) return 'neungryul_etym';
+                    return `tag:${w.tag || 'general'}`;
+                };
+
+                const affectedGroups = Array.from(new Set(todayWords.map(getGroupKey)));
+                const snapshot = [];
+
+                affectedGroups.forEach(groupKey => {
+                    const groupWords = scheduledWords.filter(w => getGroupKey(w) === groupKey && w.planDate >= dateStr);
+                    const uniqueDates = Array.from(new Set(groupWords.map(w => w.planDate))).sort();
+                    if (uniqueDates.length === 0 || !uniqueDates.includes(dateStr)) return;
+
+                    // 그룹의 다음 추가 배정일(nextCandidate) 계산
+                    let nextCandidate = null;
+                    if (uniqueDates.length >= 2) {
+                        const lastDate = uniqueDates[uniqueDates.length - 1];
+                        const prevDate = uniqueDates[uniqueDates.length - 2];
+                        const [y1, m1, d1] = prevDate.split('-').map(Number);
+                        const [y2, m2, d2] = lastDate.split('-').map(Number);
+                        const diffDays = Math.max(1, Math.round((new Date(y2, m2 - 1, d2) - new Date(y1, m1 - 1, d1)) / (1000 * 60 * 60 * 24)));
+                        
+                        let cursor = this.addDays(lastDate, diffDays);
+                        let safety = 0;
+                        while (this.isRestDay(cursor) && safety < 60) {
+                            cursor = this.addDays(cursor, 1);
+                            safety++;
+                        }
+                        nextCandidate = cursor;
+                    } else {
+                        let cursor = this.addDays(uniqueDates[0], 1);
+                        let safety = 0;
+                        while (this.isRestDay(cursor) && safety < 60) {
+                            cursor = this.addDays(cursor, 1);
+                            safety++;
+                        }
+                        nextCandidate = cursor;
+                    }
+
+                    // 매핑 테이블 생성: D_0 -> D_1, D_1 -> D_2, ..., D_{m-1} -> nextCandidate
+                    const dateMap = {};
+                    for (let i = 0; i < uniqueDates.length; i++) {
+                        const cur = uniqueDates[i];
+                        const next = (i + 1 < uniqueDates.length) ? uniqueDates[i + 1] : nextCandidate;
+                        dateMap[cur] = next;
+                    }
+
+                    // 단어들의 planDate 갱신 및 스냅샷 보존
+                    groupWords.forEach(w => {
+                        const origDate = w.planDate;
+                        const newDate = dateMap[origDate];
+                        if (newDate && newDate !== origDate) {
+                            snapshot.push({
+                                id: w.id,
+                                fromDate: origDate,
+                                toDate: newDate
+                            });
+                            w.planDate = newDate;
+                            if (w.nextReviewDate === origDate) {
+                                w.nextReviewDate = newDate;
+                            }
+                        }
+                    });
+                });
+
+                this.plans[dateStr].restCascadeSnapshot = snapshot;
+            }
+        } else {
+            // 휴식일 해제 (원래 일정으로 100% 원복)
+            this.plans[dateStr].restDay = false;
+            const snapshot = this.plans[dateStr].restCascadeSnapshot;
+
+            if (snapshot && Array.isArray(snapshot) && snapshot.length > 0) {
+                snapshot.forEach(item => {
+                    const w = this.words.find(x => x.id === item.id);
+                    if (w && w.planDate === item.toDate) {
+                        w.planDate = item.fromDate;
+                        if (w.nextReviewDate === item.toDate) {
+                            w.nextReviewDate = item.fromDate;
+                        }
+                    }
+                });
+                delete this.plans[dateStr].restCascadeSnapshot;
+            }
         }
 
         this.savePlans();

@@ -2046,6 +2046,7 @@ class AppController {
         const daysMap = {
             all: [1, 2, 3, 4, 5, 6, 0],
             mwf: [1, 3, 5],
+            tt: [2, 4],
             tts: [2, 4, 6],
             weekdays: [1, 2, 3, 4, 5],
             weekend: [6, 0]
@@ -2057,6 +2058,13 @@ class AppController {
             cb.checked = activeDays.includes(val);
         });
 
+        // 상단 드롭다운 값 동기화
+        const quickSelect = document.getElementById('batch-plan-quick-pattern-select');
+        if (quickSelect) {
+            quickSelect.value = (daysMap[presetName]) ? presetName : 'custom';
+        }
+
+        // 프리셋 버튼 활성화 스타일 동기화
         document.querySelectorAll('.batch-plan-preset-btn').forEach(btn => {
             const isMatch = (btn.dataset.preset === presetName);
             btn.className = `batch-plan-preset-btn px-2.5 py-1 rounded-lg text-[11px] font-bold border transition-all cursor-pointer ${
@@ -2067,10 +2075,65 @@ class AppController {
         this.updateBatchPlanPreview();
     }
 
-    onBatchPlanDayCheckboxChanged() {
+    onBatchPlanQuickPatternChanged(patternVal) {
+        if (patternVal === 'custom') {
+            // 직접 선택 모드: 프리셋 하이라이트만 해제하고 현재 체크박스 상태 유지
+            document.querySelectorAll('.batch-plan-preset-btn').forEach(btn => {
+                btn.className = 'batch-plan-preset-btn px-2.5 py-1 rounded-lg text-[11px] font-bold border transition-all cursor-pointer bg-white text-slate-600 border-slate-200 hover:bg-slate-100';
+            });
+            this.updateBatchPlanPreview();
+            return;
+        }
+        this.setBatchPlanDaysPreset(patternVal);
+    }
+
+    clearAllBatchPlanDays() {
+        document.querySelectorAll('.batch-day-check').forEach(cb => {
+            cb.checked = false;
+        });
+        const quickSelect = document.getElementById('batch-plan-quick-pattern-select');
+        if (quickSelect) quickSelect.value = 'custom';
         document.querySelectorAll('.batch-plan-preset-btn').forEach(btn => {
             btn.className = 'batch-plan-preset-btn px-2.5 py-1 rounded-lg text-[11px] font-bold border transition-all cursor-pointer bg-white text-slate-600 border-slate-200 hover:bg-slate-100';
         });
+        this.updateBatchPlanPreview();
+    }
+
+    selectAllBatchPlanDays() {
+        this.setBatchPlanDaysPreset('all');
+    }
+
+    onBatchPlanDayCheckboxChanged() {
+        const checkedDays = this.getSelectedBatchPlanDays();
+        const quickSelect = document.getElementById('batch-plan-quick-pattern-select');
+
+        // 체크 상태가 특정 프리셋과 일치하는지 확인
+        const daysMap = {
+            all: [1, 2, 3, 4, 5, 6, 0],
+            mwf: [1, 3, 5],
+            tt: [2, 4],
+            tts: [2, 4, 6],
+            weekdays: [1, 2, 3, 4, 5],
+            weekend: [6, 0]
+        };
+
+        let matchedPreset = 'custom';
+        for (const [key, arr] of Object.entries(daysMap)) {
+            if (arr.length === checkedDays.length && arr.every(d => checkedDays.includes(d))) {
+                matchedPreset = key;
+                break;
+            }
+        }
+
+        if (quickSelect) quickSelect.value = matchedPreset;
+
+        document.querySelectorAll('.batch-plan-preset-btn').forEach(btn => {
+            const isMatch = (btn.dataset.preset === matchedPreset);
+            btn.className = `batch-plan-preset-btn px-2.5 py-1 rounded-lg text-[11px] font-bold border transition-all cursor-pointer ${
+                isMatch ? 'bg-blue-900 text-white border-blue-900 shadow-xs' : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-100'
+            }`;
+        });
+
         this.updateBatchPlanPreview();
     }
 
@@ -2162,6 +2225,39 @@ class AppController {
         }
 
         const conf = this.currentBatchPlanConfig;
+
+        // 다른 교재 중복 등록 검사 및 플랜 충돌 방지 로직 (요구사항 4)
+        const allPlanWords = (window.storage.words || []).filter(w => !String(w.id || '').startsWith('sample-') && w.planDate);
+        let hasOtherPlans = false;
+        if (conf.type === 'voca') {
+            hasOtherPlans = allPlanWords.some(w => {
+                if (w.isReadingPassage) return false;
+                if (conf.isNeungryul && !w.isNeungryul2025) return true;
+                if (conf.isNeungryulEtym && !(w.isNeungryulEtym || w.isNeungryulEtym2025)) return true;
+                if (!conf.isNeungryul && !conf.isNeungryulEtym && w.curatedCollectionId && w.curatedCollectionId !== conf.bookId) return true;
+                return false;
+            });
+        } else if (conf.type === 'reading') {
+            hasOtherPlans = allPlanWords.some(w => w.isReadingPassage && w.readingUnitId !== conf.targetId);
+        }
+
+        if (hasOtherPlans) {
+            const replaceChoice = confirm(
+                `💡 [교재 등록 안내]\n플래너에 이미 다른 교재의 학습 계획이 등록되어 있습니다.\n\n` +
+                `• [확인]: 기존의 다른 교재 계획을 모두 깔끔하게 정리하고, 이번 [${conf.bookTitle || conf.targetTitle || '새 교재'}]로 새롭게 시작합니다. (권장: 플랜 중복 방지)\n` +
+                `• [취소]: 기존 다른 교재 계획을 유지한 채 함께 병행하여 등록합니다.`
+            );
+            if (replaceChoice) {
+                // 기존 다른 계획 정리
+                if (conf.type === 'voca') {
+                    window.storage.words = window.storage.words.filter(w => w.isReadingPassage || String(w.id || '').startsWith('sample-'));
+                } else if (conf.type === 'reading') {
+                    window.storage.words = window.storage.words.filter(w => !w.isReadingPassage || String(w.id || '').startsWith('sample-'));
+                }
+                window.storage.saveWords();
+            }
+        }
+
         let result = null;
 
         if (conf.type === 'reading') {

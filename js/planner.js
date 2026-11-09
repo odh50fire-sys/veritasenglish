@@ -171,26 +171,38 @@ class PlannerEngine {
         const isRest = window.storage.isRestDay(this.selectedDateStr);
         if (restToggleBtn) {
             restToggleBtn.textContent = isRest ? '휴식일 해제하기' : '이 날을 휴식일로 지정';
-            restToggleBtn.className = `px-3 py-1.5 text-xs font-medium rounded-lg border transition-all ${
-                isRest ? 'bg-amber-100 text-amber-900 border-amber-300' : 'bg-white hover:bg-slate-50 text-slate-700 border-slate-200'
+            restToggleBtn.className = `px-3 py-1.5 text-xs font-medium rounded-lg border transition-all cursor-pointer ${
+                isRest ? 'bg-amber-100 text-amber-900 border-amber-300 font-bold shadow-2xs' : 'bg-white hover:bg-slate-50 text-slate-700 border-slate-200'
             }`;
             restToggleBtn.onclick = () => {
-                window.storage.setRestDay(this.selectedDateStr, !isRest);
+                const willBeRest = !isRest;
+                window.storage.setRestDay(this.selectedDateStr, willBeRest);
+                if (willBeRest) {
+                    alert(`🏖️ [${this.selectedDateStr}] 하루가 휴식일로 지정되었습니다!\n\n오늘 배정된 학습 과제와 이후의 전체 진도가 다음 학습 요일로 순연(하루씩 밀림)되었습니다.`);
+                } else {
+                    alert(`✨ [${this.selectedDateStr}] 휴식일 지정이 해제되었습니다!\n\n밀렸던 모든 학습 일정이 원래대로 안전하게 복구되었습니다.`);
+                }
                 this.render();
+                if (window.app && window.app.renderDashboard) {
+                    window.app.renderDashboard();
+                }
             };
         }
 
-        const words = window.storage.getWordsByDate(this.selectedDateStr);
+        const allWordsOnDate = window.storage.getWordsByDate(this.selectedDateStr);
         container.innerHTML = '';
 
         // 이 날짜에 포함된 능률 VOCA DAY, 테마 단어장 및 중등 독해 단원 일괄 삭제 바 렌더링
         const dayBatchBar = document.getElementById('planner-day-batch-bar');
         const dayBatchChips = document.getElementById('planner-day-batch-chips');
-        const uniqueDaysOnDate = Array.from(new Set(words.map(w => w.neungryulDay).filter(Boolean))).sort();
+
+        // 능률 고난도와 능률 어원편 분리
+        const neungryul2025Days = Array.from(new Set(allWordsOnDate.filter(w => w.isNeungryul2025).map(w => w.neungryulDay).filter(Boolean))).sort();
+        const neungryulEtymDays = Array.from(new Set(allWordsOnDate.filter(w => w.isNeungryulEtym).map(w => w.neungryulDay).filter(Boolean))).sort();
         
         // 테마 단어장 컬렉션/DAY 중복 제거 목록
         const curatedDaysOnDate = [];
-        words.forEach(w => {
+        allWordsOnDate.forEach(w => {
             if (w.isCuratedVoca && w.curatedCollectionId && w.curatedDay) {
                 const key = `${w.curatedCollectionId}:${w.curatedDay}`;
                 if (!curatedDaysOnDate.some(x => x.key === key)) {
@@ -206,7 +218,7 @@ class PlannerEngine {
 
         // 독해 단원 중복 제거 목록
         const readingUnitsOnDateMap = {};
-        words.forEach(w => {
+        allWordsOnDate.forEach(w => {
             if (w.readingUnitId) {
                 readingUnitsOnDateMap[w.readingUnitId] = w.tag ? w.tag.replace(' [어휘]', '') : '중등 내신 독해';
             }
@@ -214,15 +226,24 @@ class PlannerEngine {
         const readingUnitEntries = Object.entries(readingUnitsOnDateMap);
 
         if (dayBatchBar && dayBatchChips) {
-            if (uniqueDaysOnDate.length > 0 || readingUnitEntries.length > 0 || curatedDaysOnDate.length > 0) {
+            if (neungryul2025Days.length > 0 || neungryulEtymDays.length > 0 || readingUnitEntries.length > 0 || curatedDaysOnDate.length > 0) {
                 dayBatchBar.classList.remove('hidden');
                 
                 let chipsHtml = '';
-                uniqueDaysOnDate.forEach(d => {
+                neungryul2025Days.forEach(d => {
                     chipsHtml += `
                         <button class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-red-100/80 hover:bg-red-200 border border-red-300 text-red-800 text-xs font-mono font-bold transition-all cursor-pointer" onclick="window.plannerEngine.deleteNeungryulDayFromPlanner('${d}')">
                             <i data-lucide="trash-2" class="w-3.5 h-3.5 text-red-600"></i>
-                            <span>${d} 계획 일괄 삭제</span>
+                            <span>[능률고난도] ${d} 계획 삭제</span>
+                        </button>
+                    `;
+                });
+
+                neungryulEtymDays.forEach(d => {
+                    chipsHtml += `
+                        <button class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-amber-100 hover:bg-amber-200 border border-amber-300 text-amber-900 text-xs font-mono font-bold transition-all cursor-pointer" onclick="window.plannerEngine.deleteNeungryulEtymDayFromPlanner ? window.plannerEngine.deleteNeungryulEtymDayFromPlanner('${d}') : window.plannerEngine.deleteNeungryulDayFromPlanner('${d}')">
+                            <i data-lucide="trash-2" class="w-3.5 h-3.5 text-amber-700"></i>
+                            <span>[능률어원편] ${d} 계획 삭제</span>
                         </button>
                     `;
                 });
@@ -238,8 +259,8 @@ class PlannerEngine {
 
                 curatedDaysOnDate.forEach(item => {
                     chipsHtml += `
-                        <button class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-amber-100 hover:bg-amber-200 border border-amber-300 text-amber-900 text-xs font-mono font-bold transition-all cursor-pointer" onclick="window.plannerEngine.deleteCuratedDayFromPlanner('${item.colId}', '${item.day}', '${item.colTitle}')">
-                            <i data-lucide="trash-2" class="w-3.5 h-3.5 text-amber-700"></i>
+                        <button class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-blue-100 hover:bg-blue-200 border border-blue-300 text-blue-900 text-xs font-mono font-bold transition-all cursor-pointer" onclick="window.plannerEngine.deleteCuratedDayFromPlanner('${item.colId}', '${item.day}', '${item.colTitle}')">
+                            <i data-lucide="trash-2" class="w-3.5 h-3.5 text-blue-700"></i>
                             <span>${item.colTitle} ${item.day} 삭제</span>
                         </button>
                     `;
@@ -250,6 +271,72 @@ class PlannerEngine {
                 dayBatchBar.classList.add('hidden');
             }
         }
+
+        // 복수 교재/과제 등록 시 교재별 필터 지원 (교재등록/플랜 동시 노출 문제 해결)
+        const bookFilterMap = {};
+        allWordsOnDate.forEach(w => {
+            let key = 'etc';
+            let label = '기타 단어';
+            if (w.isReadingPassage) {
+                key = `reading:${w.readingUnitId || 'r'}`;
+                label = w.tag || '중등 내신 독해';
+            } else if (w.isNeungryul2025) {
+                key = 'neungryul2025';
+                label = '능률 VOCA 중등 고난도';
+            } else if (w.isNeungryulEtym) {
+                key = 'neungryul_etym';
+                label = '능률 VOCA 어원편';
+            } else if (w.curatedCollectionId) {
+                key = `curated:${w.curatedCollectionId}`;
+                label = w.curatedCollectionTitle || w.tag || '테마 단어장';
+            }
+            if (!bookFilterMap[key]) {
+                bookFilterMap[key] = { key, label, count: 0 };
+            }
+            bookFilterMap[key].count++;
+        });
+
+        const filterKeys = Object.keys(bookFilterMap);
+        if (filterKeys.length > 1) {
+            this.currentDayBookFilter = this.currentDayBookFilter || 'all';
+            if (this.currentDayBookFilter !== 'all' && !bookFilterMap[this.currentDayBookFilter]) {
+                this.currentDayBookFilter = 'all';
+            }
+
+            const filterBar = document.createElement('div');
+            filterBar.className = 'flex flex-wrap items-center gap-1.5 mb-3 p-2 bg-slate-50 rounded-xl border border-slate-200 text-xs';
+            filterBar.innerHTML = `
+                <span class="text-[11px] font-serif font-bold text-slate-500 mr-1 flex items-center gap-1">
+                    <i data-lucide="layers" class="w-3.5 h-3.5 text-blue-900"></i> 교재별 필터:
+                </span>
+                <button type="button" class="px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                    this.currentDayBookFilter === 'all' ? 'bg-blue-900 text-white shadow-2xs' : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-100'
+                }" onclick="window.plannerEngine.setDayBookFilter('all')">
+                    전체 과제 (${allWordsOnDate.length})
+                </button>
+                ${filterKeys.map(k => `
+                    <button type="button" class="px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                        this.currentDayBookFilter === k ? 'bg-blue-900 text-white shadow-2xs' : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-100'
+                    }" onclick="window.plannerEngine.setDayBookFilter('${k}')">
+                        ${bookFilterMap[k].label} (${bookFilterMap[k].count})
+                    </button>
+                `).join('')}
+            `;
+            container.appendChild(filterBar);
+        } else {
+            this.currentDayBookFilter = 'all';
+        }
+
+        // 필터링 적용된 단어 목록
+        const words = (this.currentDayBookFilter && this.currentDayBookFilter !== 'all')
+            ? allWordsOnDate.filter(w => {
+                if (w.isReadingPassage && `reading:${w.readingUnitId || 'r'}` === this.currentDayBookFilter) return true;
+                if (w.isNeungryul2025 && this.currentDayBookFilter === 'neungryul2025') return true;
+                if (w.isNeungryulEtym && this.currentDayBookFilter === 'neungryul_etym') return true;
+                if (w.curatedCollectionId && `curated:${w.curatedCollectionId}` === this.currentDayBookFilter) return true;
+                return false;
+            })
+            : allWordsOnDate;
 
         if (words.length === 0) {
             const allPlanWords = (window.storage.words || []).filter(w => !String(w.id || '').startsWith('sample-') && w.planDate);
@@ -491,8 +578,13 @@ class PlannerEngine {
     /**
      * 플래너에서 특정 능률 VOCA DAY 계획 한꺼번에 삭제
      */
+    setDayBookFilter(filterKey) {
+        this.currentDayBookFilter = filterKey;
+        this.renderSelectedDateDetail();
+    }
+
     deleteNeungryulDayFromPlanner(dayStr) {
-        if (!confirm(`[${dayStr}] 배정 계획을 삭제하시겠습니까?\n해당 DAY의 모든 배정 단어가 계획표에서 한꺼번에 삭제됩니다.`)) {
+        if (!confirm(`[능률고난도 ${dayStr}] 배정 계획을 삭제하시겠습니까?\n해당 DAY의 모든 배정 단어가 계획표에서 한꺼번에 삭제됩니다.`)) {
             return;
         }
 
@@ -506,7 +598,25 @@ class PlannerEngine {
             window.ocrEngine.renderNeungryulVocaSection();
         }
 
-        alert(`🗑️ [${dayStr}] 총 ${deleted}단어의 학습 계획이 한꺼번에 삭제되었습니다.`);
+        alert(`🗑️ [능률고난도 ${dayStr}] 총 ${deleted}단어의 학습 계획이 한꺼번에 삭제되었습니다.`);
+    }
+
+    deleteNeungryulEtymDayFromPlanner(dayStr) {
+        if (!confirm(`[능률어원편 ${dayStr}] 배정 계획을 삭제하시겠습니까?\n해당 DAY의 모든 배정 단어가 계획표에서 한꺼번에 삭제됩니다.`)) {
+            return;
+        }
+
+        const deleted = window.storage.deleteNeungryulEtymByDay ? window.storage.deleteNeungryulEtymByDay(dayStr) : 0;
+        this.render();
+
+        if (window.app && window.app.renderDashboard) {
+            window.app.renderDashboard();
+        }
+        if (window.ocrEngine && window.ocrEngine.renderNeungryulVocaSection) {
+            window.ocrEngine.renderNeungryulVocaSection();
+        }
+
+        alert(`🗑️ [능률어원편 ${dayStr}] 총 ${deleted}단어의 학습 계획이 한꺼번에 삭제되었습니다.`);
     }
 
     /**
