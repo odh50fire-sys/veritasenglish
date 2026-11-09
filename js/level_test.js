@@ -38,6 +38,13 @@ class LevelTestEngine {
         this.adaptiveCategorySeq = ['voca', 'grammar', 'reading', 'conversation', 'listening'];
 
         this.initKeyboardEvents();
+        if (typeof document !== 'undefined') {
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', () => this.updateDashboardBannerVisibility());
+            } else {
+                setTimeout(() => this.updateDashboardBannerVisibility(), 50);
+            }
+        }
     }
 
     /**
@@ -88,6 +95,38 @@ class LevelTestEngine {
             this.startTest(mode);
         } else {
             this.showModeSelection();
+        }
+    }
+
+    /**
+     * 레벨테스트 대시보드 추천 배너 노출 여부 판단
+     * 규칙:
+     * - 미응시(이력 0건)인 경우: 배너 노출 (true)
+     * - 마지막 응시일로부터 180일(6개월) 이상 경과한 경우: 배너 재노출 (true)
+     * - 최근 180일 이내에 응시 완료한 경우: 배너 숨김 (false)
+     */
+    shouldShowDashboardBanner() {
+        const history = (window.storage && window.storage.userProfile && window.storage.userProfile.levelTestHistory) || [];
+        if (!history || history.length === 0) return true;
+        const last = history[0];
+        if (!last || !last.date) return true;
+        const testDate = new Date(last.date);
+        if (isNaN(testDate.getTime())) return true;
+        const diffMs = Date.now() - testDate.getTime();
+        const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+        return diffDays >= 180;
+    }
+
+    /**
+     * 대시보드 레벨테스트 배너 표시/숨김 DOM 갱신
+     */
+    updateDashboardBannerVisibility() {
+        const banner = document.getElementById('dash-level-test-banner');
+        if (!banner) return;
+        if (this.shouldShowDashboardBanner()) {
+            banner.classList.remove('hidden');
+        } else {
+            banner.classList.add('hidden');
         }
     }
 
@@ -934,6 +973,9 @@ class LevelTestEngine {
         };
 
         this.renderResultReport(this.lastResult);
+
+        // 레벨테스트 완료 즉시 대시보드 배너 숨김 반영 (6개월 라이프사이클)
+        this.updateDashboardBannerVisibility();
 
         // 온보딩: 레벨테스트 완료 후 맞춤 로드맵 모달 자동 표시
         if (window.onboardingEngine && typeof window.onboardingEngine.showPostLevelTestRoadmap === 'function') {

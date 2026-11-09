@@ -103,12 +103,6 @@
                         <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400 group-hover:text-slate-700 transition-transform"></i>
                     </button>
 
-                    <!-- 핸즈프리 워크맨 오디오북 빠른 실행 버튼 -->
-                    <button id="header-audiobook-btn" class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg border border-indigo-300 bg-indigo-50 hover:bg-indigo-100 text-indigo-900 text-xs font-serif font-bold transition-all shadow-xs cursor-pointer active:scale-95" onclick="window.audiobookPlayer && window.audiobookPlayer.playTodayWords()" title="핸즈프리 워크맨 오디오북 (모바일 백그라운드 & 이어폰 제어)">
-                        <i data-lucide="headphones" class="w-3.5 h-3.5 text-indigo-600"></i>
-                        <span class="hidden sm:inline">🎧 워크맨</span>
-                    </button>
-
 
                     <!-- 진단 레벨 배지 & 레벨테스트 바로가기 버튼 -->
                     <button id="header-academic-level-btn" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-sky-400/40 bg-sky-50 hover:bg-sky-100 text-sky-900 text-xs font-serif font-bold transition-all shadow-xs cursor-pointer" onclick="window.levelTestEngine && window.levelTestEngine.openModal('adaptive')" title="실력 진단 레벨테스트 및 현재 레벨 확인">
@@ -178,11 +172,14 @@
                 </div>
             </div>
 
+            <!-- 오늘 추천 학습 통합 브리핑 박스 (단어장 + 독해 지문) -->
+            <div id="dash-today-learning-container"></div>
+
             <!-- 신규 학습자 스타터 온보딩 퀘스트 위젯 -->
             <div id="dashboard-starter-quest-container"></div>
 
             <!-- 실력 진단 레벨테스트 배너 카드 -->
-            <div class="rounded-2xl p-5 sm:p-6 bg-gradient-to-r from-blue-900 via-indigo-950 to-slate-900 text-white border-2 border-amber-400/40 shadow-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-5 relative overflow-hidden">
+            <div id="dash-level-test-banner" class="rounded-2xl p-5 sm:p-6 bg-gradient-to-r from-blue-900 via-indigo-950 to-slate-900 text-white border-2 border-amber-400/40 shadow-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-5 relative overflow-hidden">
                 <div class="flex items-center gap-4 relative z-10">
                     <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-tr from-amber-400 to-yellow-300 text-blue-950 flex items-center justify-center font-black text-2xl shadow-md shrink-0">
                         🎯
@@ -1237,6 +1234,10 @@
                     </p>
                 </div>
                 <div class="flex items-center gap-2 shrink-0">
+                    <button type="button" class="px-3 py-2 rounded-xl border border-indigo-200 bg-indigo-50 hover:bg-indigo-100 text-indigo-900 font-serif font-bold text-xs shadow-xs transition-colors flex items-center gap-1.5 cursor-pointer active:scale-95" onclick="window.audiobookPlayer && window.audiobookPlayer.playDueWords()" title="에빙하우스 복습 대상 단어 워크맨 연속 재생">
+                        <i data-lucide="headphones" class="w-3.5 h-3.5 text-indigo-600"></i>
+                        <span>🎧 복습 단어 워크맨</span>
+                    </button>
                     <button class="px-4 py-2 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-serif font-bold text-xs shadow-xs transition-colors flex items-center gap-1.5" onclick="window.reviewManager.startTargetedReview('due')">
                         <i data-lucide="play" class="w-3.5 h-3.5"></i>
                         오늘 복습 큐 시작

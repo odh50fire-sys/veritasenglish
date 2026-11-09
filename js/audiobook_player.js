@@ -97,6 +97,33 @@ class AudiobookPlayer {
   }
 
   /**
+   * 오늘 학습할 신규 단어(복습 제외)만 워크맨 오디오북으로 재생
+   */
+  playTodayNewWords() {
+    const words = (window.storage && window.storage.words) ? window.storage.words : [];
+    const today = window.storage ? window.storage.getTodayDateString() : new Date().toISOString().slice(0, 10);
+    
+    // 복습 단어(stage >= 1 또는 isReadingPassage)를 제외하고 오늘 학습 배정된 신규 단어(stage === 0 or undefined) 추출
+    let newWords = words.filter(w => !w.isReadingPassage && w.planDate === today && (!w.stage || w.stage === 0));
+
+    // 플래너상 오늘 지정 신규 단어가 없으면 현재 주력 교재의 미완료(stage 0) 단어 상위 20개 추출
+    if (newWords.length === 0) {
+      const activeBookId = (window.storage && window.storage.settings && window.storage.settings.currentBookId) || 'pathways_1600_level1';
+      newWords = words.filter(w => !w.isReadingPassage && (!w.stage || w.stage === 0) && (w.bookId === activeBookId || !w.bookId)).slice(0, 20);
+      if (newWords.length === 0) {
+        newWords = words.filter(w => !w.isReadingPassage && (!w.stage || w.stage === 0)).slice(0, 20);
+      }
+    }
+
+    if (newWords.length > 0) {
+      this.setPlaylist(newWords, `오늘 학습 신규 단어 (${newWords.length}개)`);
+    } else {
+      const sample = words.filter(w => !w.isReadingPassage).slice(0, 20);
+      this.setPlaylist(sample, '오늘의 학습 단어');
+    }
+  }
+
+  /**
    * 오늘의 학습 단어 오디오북 재생
    */
   playTodayWords() {
