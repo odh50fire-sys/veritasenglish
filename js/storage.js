@@ -2262,7 +2262,7 @@ class StorageManager {
     /**
      * 테마 단어장 전체(5개 DAY)를 시작일부터 하루 1 DAY씩 배정 등록
      */
-    registerAllCuratedDays(collectionId, startDateStr = null, selectedDaysOfWeek = null, startDayIndex = 0, wordsPerDay = null) {
+    registerAllCuratedDays(collectionId, startDateStr = null, selectedDaysOfWeek = null, startDayIndex = 0, wordsPerDay = null, includePlus = true) {
         let pool = window.CURATED_WORDS_DATA || (typeof CURATED_WORDS_DATA !== 'undefined' ? CURATED_WORDS_DATA : []);
         if (this.customWords && this.customWords.length > 0) {
             pool = pool.concat(this.customWords);
@@ -2273,7 +2273,10 @@ class StorageManager {
         if (window.VERITAS_OXFORD_WORDS_DATA && window.VERITAS_OXFORD_WORDS_DATA.length > 0) {
             pool = pool.concat(window.VERITAS_OXFORD_WORDS_DATA);
         }
-        const colRows = pool.filter(r => r.collectionId === collectionId);
+        let colRows = pool.filter(r => r.collectionId === collectionId);
+        if (includePlus === false) {
+            colRows = colRows.filter(r => !r.isBooster);
+        }
         if (colRows.length === 0) {
             return { addedCount: 0, totalDays: 0, collectionTitle: '', startDate: '', endDate: '' };
         }

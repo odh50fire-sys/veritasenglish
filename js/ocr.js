@@ -887,13 +887,15 @@ class OCREngine {
             dayPillsContainer.innerHTML = uniqueDays.map(d => {
                 const isCurrent = (d === this.currentNeungryulDay);
                 const isReg = !!statusMap[d];
+                const isPlus = d.includes('PLUS');
                 return `
                     <button class="px-3 py-1 rounded-lg text-xs font-mono font-bold whitespace-nowrap transition-all cursor-pointer ${
-                        isCurrent ? 'bg-blue-900 text-white shadow-xs' :
+                        isCurrent ? (isPlus ? 'bg-indigo-900 text-white shadow-xs border border-indigo-700' : 'bg-blue-900 text-white shadow-xs') :
                         isReg ? 'bg-blue-100 text-blue-900 border border-blue-300 font-bold' :
+                        isPlus ? 'bg-indigo-50 text-indigo-900 border border-indigo-300 hover:bg-indigo-100 font-extrabold' :
                         'bg-white text-slate-600 border border-slate-200 hover:bg-slate-100'
                     }" onclick="window.ocrEngine.selectNeungryulDay('${d}')">
-                        ${d} ${isReg ? '✓' : ''}
+                        ${isPlus ? '🚀 ' : ''}${d} ${isReg ? '✓' : ''}
                     </button>
                 `;
             }).join('');

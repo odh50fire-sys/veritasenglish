@@ -613,10 +613,10 @@
                                             <option value="pathways-3">[Lv.8] Pathways: Reading, Writing, and Critical Thinking 3 (총 20강, 200단어)</option>
                                             <option value="pathways-4">[Lv.9] Pathways: Reading, Writing, and Critical Thinking 4 (총 20강, 200단어)</option>
                                         </optgroup>
-                                        <optgroup label="📖 [고등 독해] NE능률 리딩튜터 챌린저 시리즈 (2025 개정 최신판, 총 2,378어휘)" id="voca-reading-tutor-challenger-optgroup">
-                                            <option value="challenger-1">[Lv.7] 리딩튜터 챌린저 1 (고교 입문·내신 1등급 완성 • 40일, 729어휘)</option>
-                                            <option value="challenger-2">[Lv.8] 리딩튜터 챌린저 2 (고교 실전·학평 1등급 정복 • 40일, 866어휘)</option>
-                                            <option value="challenger-3">[Lv.9] 리딩튜터 챌린저 3 (수능 1등급 킬러·심화 독해 • 40일, 783어휘)</option>
+                                        <optgroup label="📖 [고등 독해] NE능률 리딩튜터 챌린저 시리즈 (2025 개정 최신판 • 총 2,450어휘 완결)" id="voca-reading-tutor-challenger-optgroup">
+                                            <option value="challenger-1">[Lv.7] 리딩튜터 챌린저 1 (고교 입문·내신 1등급 완성 • 40일+PLUS, 750어휘)</option>
+                                            <option value="challenger-2">[Lv.8] 리딩튜터 챌린저 2 (고교 실전·학평 1등급 정복 • 40일+PLUS, 900어휘)</option>
+                                            <option value="challenger-3">[Lv.9] 리딩튜터 챌린저 3 (수능 1등급 킬러·심화 독해 • 40일+PLUS, 800어휘)</option>
                                         </optgroup>
                                         <optgroup label="✨ 베리타스 프리미엄 신규 시즌 단어장 (5대 시리즈, 총 4,200어휘)" id="voca-veritas-seasons-optgroup">
                                             <option value="season-netflix-slang">[Lv.9] 넷플릭스·미드 생존 구어체 & SNS 슬랭 500 (25일, 500어휘)</option>
@@ -2735,6 +2735,22 @@
                         <select id="batch-plan-start-subunit" class="w-full px-3 py-2 text-xs sm:text-sm bg-white border border-slate-200 rounded-xl outline-none focus:border-blue-900 font-serif font-bold cursor-pointer" onchange="window.app.updateBatchPlanPreview()">
                             <!-- 동적 주입 -->
                         </select>
+                    </div>
+                </div>
+
+                <!-- 리딩튜터 챌린저 전용 PLUS (보충+수능 심화) 옵션 -->
+                <div id="batch-plan-plus-option-section" class="hidden p-3 bg-indigo-50/70 rounded-xl border border-indigo-200 flex items-center justify-between">
+                    <div class="flex items-center gap-2.5">
+                        <input type="checkbox" id="batch-plan-include-plus-check" class="w-4 h-4 text-indigo-700 rounded cursor-pointer accent-indigo-700" checked onchange="window.app.onBatchPlanPlusToggleChanged()">
+                        <div>
+                            <label for="batch-plan-include-plus-check" class="text-xs font-serif font-bold text-indigo-950 cursor-pointer flex items-center gap-1.5">
+                                <span>🚀 PLUS (보충+수능 심화) 단어 포함 학습</span>
+                                <span class="text-[10px] bg-indigo-200 text-indigo-900 px-1.5 py-0.2 rounded font-bold">권장</span>
+                            </label>
+                            <p id="batch-plan-plus-desc" class="text-[11px] text-indigo-700 mt-0.5">
+                                기본 40일 + PLUS 수능 심화 코스가 함께 편성됩니다.
+                            </p>
+                        </div>
                     </div>
                 </div>
 

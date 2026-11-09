@@ -1478,6 +1478,8 @@ class AppController {
 
         const wordsSection = document.getElementById('batch-plan-words-per-day-section');
         if (wordsSection) wordsSection.classList.add('hidden');
+        const plusSection = document.getElementById('batch-plan-plus-option-section');
+        if (plusSection) plusSection.classList.add('hidden');
 
         this.setBatchPlanDaysPreset('all');
         if (modal) modal.classList.remove('hidden');
@@ -1500,13 +1502,38 @@ class AppController {
             isNeungryul: book.isNeungryul,
             isNeungryulEtym: book.isNeungryulEtym,
             items: uniqueDays,
+            rawPool: dataPool,
             dataPool: dataPool,
             totalWords: dataPool.length,
-            wordsPerDay: 'default'
+            wordsPerDay: 'default',
+            includePlus: true
         };
 
         const wordsSection = document.getElementById('batch-plan-words-per-day-section');
         if (wordsSection) wordsSection.classList.remove('hidden');
+
+        const plusSection = document.getElementById('batch-plan-plus-option-section');
+        const plusCheck = document.getElementById('batch-plan-include-plus-check');
+        const plusDesc = document.getElementById('batch-plan-plus-desc');
+        const isChallenger = String(book.id || '').startsWith('challenger-');
+
+        if (plusSection) {
+            if (isChallenger) {
+                plusSection.classList.remove('hidden');
+                if (plusCheck) plusCheck.checked = true;
+                if (plusDesc) {
+                    if (book.id === 'challenger-1') {
+                        plusDesc.textContent = '기본 40일(729단어) + DAY PLUS(21단어) = 총 750단어 완강 코스로 배정됩니다.';
+                    } else if (book.id === 'challenger-2') {
+                        plusDesc.textContent = '기본 40일(866단어) + PLUS 01~02(34단어) = 총 900단어 완강 코스로 배정됩니다.';
+                    } else if (book.id === 'challenger-3') {
+                        plusDesc.textContent = '기본 40일(783단어) + DAY PLUS(17단어) = 총 800단어 완강 코스로 배정됩니다.';
+                    }
+                }
+            } else {
+                plusSection.classList.add('hidden');
+            }
+        }
 
         const modal = document.getElementById('modal-batch-plan');
         const modalTitle = document.getElementById('batch-plan-modal-title');
@@ -1533,6 +1560,35 @@ class AppController {
     closeBatchPlanModal() {
         const modal = document.getElementById('modal-batch-plan');
         if (modal) modal.classList.add('hidden');
+    }
+
+    onBatchPlanPlusToggleChanged() {
+        if (!this.currentBatchPlanConfig) return;
+        const conf = this.currentBatchPlanConfig;
+        const plusCheck = document.getElementById('batch-plan-include-plus-check');
+        const includePlus = plusCheck ? plusCheck.checked : true;
+
+        let activePool = conf.rawPool || conf.dataPool || [];
+        if (!conf.rawPool) conf.rawPool = activePool;
+
+        if (!includePlus) {
+            activePool = conf.rawPool.filter(r => !r.isBooster);
+        } else {
+            activePool = conf.rawPool;
+        }
+
+        const uniqueDays = Array.from(new Set(activePool.map(r => r.DAY))).sort();
+        conf.dataPool = activePool;
+        conf.totalWords = activePool.length;
+        conf.items = uniqueDays;
+        conf.includePlus = includePlus;
+
+        const totalItemsBadge = document.getElementById('batch-plan-total-items-badge');
+        if (totalItemsBadge) {
+            totalItemsBadge.textContent = `총 ${uniqueDays.length} DAYs (${activePool.length}단어)`;
+        }
+
+        this.setBatchPlanWordsPreset(conf.wordsPerDay || 'default');
     }
 
     setBatchPlanWordsPreset(wordsVal) {
@@ -1742,7 +1798,7 @@ class AppController {
             } else if (conf.isNeungryulEtym) {
                 result = window.storage.registerAllNeungryulEtymDays(startDate, selectedDays, startIdx, wpd);
             } else {
-                result = window.storage.registerAllCuratedDays(conf.bookId, startDate, selectedDays, startIdx, wpd);
+                result = window.storage.registerAllCuratedDays(conf.bookId, startDate, selectedDays, startIdx, wpd, (conf.includePlus !== undefined ? conf.includePlus : true));
             }
 
             if (typeof confetti === 'function') {
