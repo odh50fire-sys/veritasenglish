@@ -817,217 +817,28 @@ class AppController {
     }
 
     /**
-     * 홈 대시보드: 환영 배너 직하단 '오늘의 학습' 통합 브리핑 박스 렌더링
-     * - 오늘의 단어장: 교재명, DAY, 주요 단어 칩, 총 단어 개수, 우측 상단 [🎧 오늘 단어 워크맨] 버튼, 단어장 바로 들어가기
-     * - 오늘의 독해 지문: 독해 단원, 지문 제목, 국문 제목, 지문 독해 핵심 학습 목표, 독해 바로 시작하기
+     * 특정 단어장 그룹의 오늘 단어만 워크맨 오디오북으로 재생
      */
-    renderTodayLearningBox(todayStr) {
-        const container = document.getElementById('dash-today-learning-container');
-        if (!container) return;
+    playVocaGroupWalkman(groupKey) {
+        const group = this.todayVocaGroupsMap && this.todayVocaGroupsMap[groupKey];
+        if (!group || !window.audiobookPlayer) return;
 
-        todayStr = todayStr || (window.storage ? window.storage.getTodayDateString() : new Date().toISOString().slice(0, 10));
-
-        // 1. 단어장 데이터 추출
-        const allWords = (window.storage && window.storage.words) ? window.storage.words.filter(w => !w.isReadingPassage) : [];
-        const todayWords = allWords.filter(w => w.planDate === todayStr);
-        const newWords = todayWords.filter(w => !w.stage || w.stage === 0);
-
-        let vocaBookTitle = '베리타스 핵심 영단어';
-        let vocaDay = '오늘 학습';
-        let vocaCount = todayWords.length;
-        let vocaWordList = (newWords.length > 0 ? newWords : todayWords);
-
-        if (todayWords.length > 0) {
-            const first = todayWords[0];
-            vocaBookTitle = first.bookTitle || first.curatedCollectionTitle || first.collectionTitle || first.tag || '베리타스 영단어';
-            vocaDay = first.curatedDay || first.day || (first.tag ? (first.tag.match(/DAY\s*\d+/i) || [])[0] : null) || '오늘 학습';
-        } else {
-            // 오늘 지정 일정이 없을 경우: 미학습 단어가 있는 주력 교재에서 추천
-            const activeBookId = (window.storage && window.storage.settings && window.storage.settings.currentBookId) || 'pathways_1600_level1';
-            let candidateWords = allWords.filter(w => (!w.stage || w.stage === 0) && (w.bookId === activeBookId || !w.bookId));
-            if (candidateWords.length === 0) {
-                candidateWords = allWords.filter(w => !w.stage || w.stage === 0);
-            }
-            if (candidateWords.length === 0) {
-                candidateWords = allWords;
-            }
-
-            if (candidateWords.length > 0) {
-                const first = candidateWords[0];
-                vocaBookTitle = first.bookTitle || first.curatedCollectionTitle || 'Pathways 1600 & 능률 VOCA';
-                vocaDay = first.curatedDay || first.day || (first.tag ? (first.tag.match(/DAY\s*\d+/i) || [])[0] : null) || 'DAY 01';
-                vocaWordList = candidateWords.slice(0, 20);
-                vocaCount = vocaWordList.length;
-            } else {
-                vocaCount = 20;
-            }
-        }
-
-        // 주요 단어 칩 (3~4개)
-        let keyWordChips = [];
-        if (vocaWordList.length > 0) {
-            keyWordChips = vocaWordList.slice(0, 4).map(w => w.word);
-        } else {
-            keyWordChips = ['persevere', 'mitigate', 'resilient', 'embrace'];
-        }
-
-        const chipsHtml = keyWordChips.map(kw => `
-            <span class="inline-flex items-center px-2.5 py-1 rounded-lg bg-blue-50/90 border border-blue-200/80 text-blue-900 font-serif font-bold text-xs shadow-2xs hover:bg-blue-100 transition-colors">
-                ${kw}
-            </span>
-        `).join('');
-
-        // 2. 독해 지문 데이터 추출
-        const passagesPool = (typeof READING_PASSAGES !== 'undefined') ? READING_PASSAGES : (window.READING_PASSAGES || []);
-        let readingPassage = null;
-
-        // 플래너에 오늘 배정된 독해 지문이 있는지 확인
-        const scheduledReadingWord = (window.storage && window.storage.words) ? window.storage.words.find(w => w.isReadingPassage && w.planDate === todayStr) : null;
-        if (scheduledReadingWord) {
-            readingPassage = passagesPool.find(p => p.id === (scheduledReadingWord.readingPassageId || scheduledReadingWord.passageId || scheduledReadingWord.id));
-        }
-
-        // 없을 경우 미완료 지문 중 학습자 레벨에 맞춘 지문 자동 추천
-        if (!readingPassage && passagesPool.length > 0) {
-            const userLvl = window.storage ? window.storage.getAcademicLevel() : 3;
-            // 미완료 지문 검색
-            const uncompleted = passagesPool.find(p => {
-                if (window.storage && typeof window.storage.isPassageCompleted === 'function') {
-                    return !window.storage.isPassageCompleted(p.id);
-                }
-                return true;
-            });
-            readingPassage = uncompleted || passagesPool[0];
-        }
-
-        const readingUnitTitle = readingPassage ? (readingPassage.unitTitle || '중학 내신 독해 마스터') : '중 1-1 내신 독해 마스터';
-        const readingTitle = readingPassage ? readingPassage.title : 'Why Do Leaves Change Color in Autumn?';
-        const readingKoTitle = readingPassage ? (readingPassage.koreanTitle || '') : '가을에 나뭇잎 색이 변하는 까닭';
-        const readingGoal = readingPassage ? (readingPassage.summary || '문맥 추론과 핵심 구문 분석을 통한 내신 만점 대비') : '광합성 색소의 변화 원리를 이해하고 핵심 인과 연결사를 정밀 독해합니다.';
-        const readingBadge = readingPassage ? `${readingPassage.estimatedTime || '3분'} • ${readingPassage.wordCount || 50}단어` : '3분 • 50단어';
-        const readingPassageId = readingPassage ? readingPassage.id : 'passage-PRE_M1-1';
-
-        container.innerHTML = `
-            <div class="rounded-3xl bg-white border border-slate-200/90 shadow-xs p-5 sm:p-6 space-y-4">
-                <div class="flex items-center justify-between pb-2 border-b border-slate-100">
-                    <div class="flex items-center gap-2">
-                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                        <h2 class="font-serif font-black text-lg text-slate-900 tracking-tight">오늘의 학습</h2>
-                        <span class="text-xs text-slate-400 font-mono hidden sm:inline">${todayStr} (Today)</span>
-                    </div>
-                    <button type="button" onclick="window.app && window.app.switchTab('planner')" class="text-xs text-indigo-600 hover:text-indigo-800 font-bold flex items-center gap-1 cursor-pointer transition-colors" title="학습 플래너 캘린더 바로가기">
-                        <span>학습 플래너 일정 보기</span>
-                        <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
-                    </button>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5">
-                    <!-- 1. 오늘의 단어장 카드 (우측 상단 워크맨 배치) -->
-                    <div class="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-blue-50/30 p-5 shadow-xs relative flex flex-col justify-between hover:border-indigo-300 hover:shadow-sm transition-all">
-                        <div>
-                            <!-- 카드 상단 헤더: 단어장 메타 & 우측 상단 워크맨 버튼 -->
-                            <div class="flex items-start justify-between gap-3 mb-3">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-11 h-11 rounded-xl bg-blue-100/70 text-blue-900 border border-blue-200 flex items-center justify-center text-xl font-bold shrink-0 shadow-xs">
-                                        📘
-                                    </div>
-                                    <div>
-                                        <div class="flex items-center gap-2 mb-0.5">
-                                            <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 font-mono text-[10px] font-bold">오늘의 단어장</span>
-                                            <span class="text-[11px] font-mono font-bold text-slate-500">${vocaDay}</span>
-                                        </div>
-                                        <h3 class="font-serif font-black text-base sm:text-lg text-slate-900 line-clamp-1" title="${vocaBookTitle}">
-                                            ${vocaBookTitle}
-                                        </h3>
-                                    </div>
-                                </div>
-                                <!-- 단어장 우측 상단 워크맨 버튼 (오늘 학습 단어 - 복습 제외) -->
-                                <button type="button" onclick="window.audiobookPlayer && window.audiobookPlayer.playTodayNewWords()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-indigo-200 bg-indigo-50/90 hover:bg-indigo-100 text-indigo-900 text-xs font-serif font-bold transition-all shadow-xs cursor-pointer active:scale-95 shrink-0" title="오늘 학습할 단어(복습 제외)만 워크맨으로 즉시 청취">
-                                    <i data-lucide="headphones" class="w-3.5 h-3.5 text-indigo-600 animate-pulse"></i>
-                                    <span class="whitespace-nowrap">🎧 워크맨</span>
-                                </button>
-                            </div>
-
-                            <!-- 주요 단어 칩 & 개수 -->
-                            <div class="mt-4 pt-3 border-t border-slate-100">
-                                <div class="flex items-center justify-between mb-2">
-                                    <span class="text-[11px] font-bold text-slate-500">주요 학습 단어</span>
-                                    <span class="text-xs font-bold text-indigo-600 font-mono">총 ${vocaCount}단어 학습</span>
-                                </div>
-                                <div class="flex flex-wrap gap-1.5">
-                                    ${chipsHtml}
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 단어장 바로 들어가기 버튼 -->
-                        <button type="button" onclick="window.app && window.app.startTodayVocaStudy()" class="w-full mt-5 py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-serif font-bold text-xs flex items-center justify-center gap-1.5 shadow-xs transition-all cursor-pointer">
-                            <span>단어장 바로 들어가기</span>
-                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                        </button>
-                    </div>
-
-                    <!-- 2. 오늘의 독해 지문 카드 -->
-                    <div class="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-emerald-50/30 p-5 shadow-xs relative flex flex-col justify-between hover:border-emerald-300 hover:shadow-sm transition-all">
-                        <div>
-                            <!-- 카드 상단 헤더: 독해 단원 & 지문 제목 -->
-                            <div class="flex items-start justify-between gap-3 mb-3">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-11 h-11 rounded-xl bg-emerald-100/70 text-emerald-900 border border-emerald-200 flex items-center justify-center text-xl font-bold shrink-0 shadow-xs">
-                                        🎓
-                                    </div>
-                                    <div>
-                                        <div class="flex items-center gap-2 mb-0.5">
-                                            <span class="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 font-mono text-[10px] font-bold">오늘의 독해</span>
-                                            <span class="text-[11px] font-bold text-slate-500 line-clamp-1">${readingUnitTitle}</span>
-                                        </div>
-                                        <h3 class="font-serif font-black text-base sm:text-lg text-slate-900 line-clamp-1" title="${readingTitle}">
-                                            ${readingTitle}
-                                        </h3>
-                                        ${readingKoTitle ? `<p class="text-xs text-slate-500 font-sans mt-0.5 line-clamp-1">${readingKoTitle}</p>` : ''}
-                                    </div>
-                                </div>
-                                <span class="px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-mono text-[11px] font-bold border border-emerald-200 shrink-0">
-                                    ${readingBadge}
-                                </span>
-                            </div>
-
-                            <!-- 지문 독해 핵심 학습 목표 -->
-                            <div class="mt-4 pt-3 border-t border-slate-100">
-                                <div class="p-3 rounded-xl bg-white/80 border border-emerald-100 shadow-2xs">
-                                    <div class="text-[11px] font-bold text-emerald-800 mb-1 flex items-center gap-1.5">
-                                        <i data-lucide="target" class="w-3.5 h-3.5 text-emerald-600"></i>
-                                        <span>지문 독해 핵심 학습 목표</span>
-                                    </div>
-                                    <p class="text-xs text-slate-600 font-sans leading-relaxed line-clamp-2">
-                                        ${readingGoal}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 독해 바로 시작하기 버튼 -->
-                        <button type="button" onclick="window.app && window.app.startReadingPassage('${readingPassageId}')" class="w-full mt-5 py-2.5 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white font-serif font-bold text-xs flex items-center justify-center gap-1.5 shadow-xs transition-all cursor-pointer">
-                            <span>독해 바로 시작하기</span>
-                            <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        `;
-
-        if (window.lucide) {
-            window.lucide.createIcons();
-        }
+        const targetWords = group.newWords.length > 0 ? group.newWords : group.words;
+        window.audiobookPlayer.setPlaylist(targetWords, `${group.bookTitle} (${group.dayLabel})`);
     }
 
     /**
-     * 오늘 단어장 학습 시작 (플래시카드 연동)
+     * 특정 단어장 그룹의 오늘 단어로 플래시카드 학습 시작
      */
-    startTodayVocaStudy() {
+    startVocaGroupStudy(groupKey) {
+        const group = this.todayVocaGroupsMap && this.todayVocaGroupsMap[groupKey];
         this.switchTab('flashcards');
         if (window.flashcardEngine && typeof window.flashcardEngine.loadDeck === 'function') {
-            window.flashcardEngine.loadDeck('today');
+            if (group && group.words && group.words.length > 0) {
+                window.flashcardEngine.loadDeck('today', group.words);
+            } else {
+                window.flashcardEngine.loadDeck('today');
+            }
         }
     }
 
@@ -1039,6 +850,337 @@ class AppController {
             window.readingEngine.selectPassage(passageId);
         }
         this.switchTab('reading');
+    }
+
+    /**
+     * 홈 대시보드: 환영 배너 직하단 '오늘의 학습' 동적 브리핑 박스 렌더링
+     * - 실제 오늘 계획된 단어장 및 독해 지문만 100% 동적으로 렌더링
+     * - 단어장만 있으면 단어장 카드만, 독해만 있으면 독해 카드만 표시
+     * - 여러 개(단어장 2개 이상 또는 독해 2편 이상) 학습 시 개별 카드 동적 생성
+     * - 오늘 학습 과제가 없을 시 가짜 카드를 띄우지 않고 깔끔한 휴식/일정 등록 안내 상태 제공
+     */
+    renderTodayLearningBox(todayStr) {
+        const container = document.getElementById('dash-today-learning-container');
+        if (!container) return;
+
+        todayStr = todayStr || (window.storage ? window.storage.getTodayDateString() : new Date().toISOString().slice(0, 10));
+
+        // 오늘 날짜(todayStr)에 실제로 배정된 과제 추출
+        const todayItems = (window.storage && typeof window.storage.getWordsByDate === 'function')
+            ? window.storage.getWordsByDate(todayStr)
+            : ((window.storage && window.storage.words) ? window.storage.words.filter(w => w.planDate === todayStr) : []);
+
+        const vocabWords = todayItems.filter(w => !w.isReadingPassage);
+        const readingWords = todayItems.filter(w => w.isReadingPassage);
+
+        // 1. 단어장 그룹화 (교재 및 DAY 단위)
+        const groupsMap = {};
+        this.todayVocaGroupsMap = {};
+
+        vocabWords.forEach(w => {
+            let groupKey = '';
+            let bookTitle = '';
+            let dayLabel = '';
+
+            if (w.curatedCollectionId) {
+                groupKey = `curated_${w.curatedCollectionId}_${w.curatedDay || 'ALL'}`;
+                bookTitle = w.curatedCollectionTitle || w.tag || '부교재 테마 단어장';
+                dayLabel = w.curatedDay || '';
+            } else if (w.neungryulDay) {
+                groupKey = `neungryul_${w.neungryulDay}`;
+                bookTitle = '능률 VOCA 어원편';
+                dayLabel = w.neungryulDay;
+            } else if (w.bookId) {
+                groupKey = `book_${w.bookId}_${w.day || w.tag || 'ALL'}`;
+                bookTitle = w.bookTitle || w.tag || '등록 단어장';
+                dayLabel = w.day || (w.tag ? (w.tag.match(/DAY\s*\d+/i) || [])[0] : '') || '';
+            } else if (w.tag) {
+                const dayMatch = w.tag.match(/DAY\s*\d+/i);
+                const cleanTitle = w.tag.replace(/\[?DAY\s*\d+\]?/i, '').replace(/\[|\]/g, '').trim() || '사용자 단어장';
+                dayLabel = dayMatch ? dayMatch[0] : '';
+                groupKey = `tag_${cleanTitle}_${dayLabel}`;
+                bookTitle = cleanTitle;
+            } else {
+                groupKey = 'custom_voca';
+                bookTitle = '개인 맞춤 단어장';
+                dayLabel = '오늘 학습';
+            }
+
+            if (!dayLabel) {
+                dayLabel = '오늘 학습';
+            }
+
+            if (!groupsMap[groupKey]) {
+                groupsMap[groupKey] = {
+                    key: groupKey,
+                    bookTitle,
+                    dayLabel,
+                    words: [],
+                    newWords: []
+                };
+            }
+
+            groupsMap[groupKey].words.push(w);
+            if (!w.stage || w.stage === 0) {
+                groupsMap[groupKey].newWords.push(w);
+            }
+        });
+
+        this.todayVocaGroupsMap = groupsMap;
+        const vocabGroups = Object.values(groupsMap);
+
+        // 2. 독해 지문 목록 추출
+        const passagesPool = (typeof READING_PASSAGES !== 'undefined') ? READING_PASSAGES : (window.READING_PASSAGES || []);
+        const seenPassageIds = new Set();
+        const readingPassages = [];
+
+        readingWords.forEach(w => {
+            const pId = w.readingPassageId || w.passageId || w.id;
+            if (!pId || seenPassageIds.has(pId)) return;
+            seenPassageIds.add(pId);
+
+            const passage = passagesPool.find(p => p.id === pId);
+            const unitTitle = passage ? (passage.unitTitle || '중학 내신 독해 마스터') : (w.tag ? w.tag.replace(' [어휘]', '').replace(' [독해]', '') : '중등 내신 독해');
+            const title = passage ? passage.title : (w.word || w.title || 'Academic Reading Passage');
+            const koreanTitle = passage ? (passage.koreanTitle || '') : (w.meaning || '');
+            const learningGoal = passage ? (passage.summary || '문맥 추론과 핵심 구문 분석을 통한 내신 만점 대비') : (w.example || '지문 핵심 문장 분석과 실전 문항 풀이를 진행합니다.');
+            const badge = passage ? `${passage.estimatedTime || '3분'} • ${passage.wordCount || 50}단어` : '3분 • 50단어';
+            const isDone = (window.storage && window.storage.readingRecords && window.storage.readingRecords[pId]?.score !== undefined) || w.studyCompleted;
+
+            readingPassages.push({
+                id: pId,
+                unitTitle,
+                title,
+                koreanTitle,
+                learningGoal,
+                badge,
+                isDone
+            });
+        });
+
+        // 3. 오늘 배정된 학습이 전혀 없는 경우: 가짜 카드를 띄우지 않고 친절한 빈 상태(Empty State) 표시
+        if (vocabGroups.length === 0 && readingPassages.length === 0) {
+            const allPlanWords = (window.storage && window.storage.words || []).filter(w => !String(w.id || '').startsWith('sample-') && w.planDate);
+            const scheduledDates = Array.from(new Set(allPlanWords.map(w => w.planDate))).sort();
+            const futureDates = scheduledDates.filter(d => d > todayStr);
+
+            let nearestNoticeHtml = '';
+            if (futureDates.length > 0) {
+                const nextDate = futureDates[0];
+                const wordsOnNext = allPlanWords.filter(w => w.planDate === nextDate);
+                const sampleItem = wordsOnNext[0];
+                const planName = sampleItem.curatedCollectionTitle || sampleItem.bookTitle || sampleItem.tag || '학습 일정';
+                nearestNoticeHtml = `
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-900 text-xs font-mono font-bold">
+                        <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                        <span>다음 학습 예정일: ${nextDate} (${planName} • ${wordsOnNext.length}개 과제)</span>
+                    </div>
+                `;
+            }
+
+            container.innerHTML = `
+                <div class="rounded-3xl bg-white border border-slate-200/90 shadow-xs p-6 sm:p-8 text-center space-y-4">
+                    <div class="w-14 h-14 mx-auto rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center text-2xl shadow-2xs">
+                        📅
+                    </div>
+                    <div class="max-w-md mx-auto">
+                        <h3 class="font-serif font-black text-lg text-slate-900">
+                            오늘(${todayStr}) 계획된 학습 과제가 없습니다
+                        </h3>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                            학습 플래너에서 단어장과 내신 독해 지문 일정을 배정하거나,<br class="hidden sm:inline"/>
+                            교재 등록에서 새로운 단어장을 시작해 보세요.
+                        </p>
+                    </div>
+
+                    ${nearestNoticeHtml}
+
+                    <div class="flex flex-wrap items-center justify-center gap-2.5 pt-2">
+                        <button type="button" onclick="window.app && window.app.switchTab('planner')" class="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-serif font-bold text-xs flex items-center gap-1.5 shadow-xs transition-all cursor-pointer">
+                            <i data-lucide="calendar" class="w-4 h-4 text-amber-300"></i>
+                            <span>학습 플래너에서 일정 배정하기</span>
+                        </button>
+                        <button type="button" onclick="window.app && window.app.switchTab('ocr')" class="px-4 py-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-800 font-serif font-bold text-xs flex items-center gap-1.5 shadow-xs transition-all cursor-pointer">
+                            <i data-lucide="book-plus" class="w-4 h-4 text-blue-600"></i>
+                            <span>교재 등록 / 단어장 선택</span>
+                        </button>
+                        <button type="button" onclick="window.app && window.app.switchTab('reading')" class="px-4 py-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-800 font-serif font-bold text-xs flex items-center gap-1.5 shadow-xs transition-all cursor-pointer">
+                            <i data-lucide="graduation-cap" class="w-4 h-4 text-emerald-600"></i>
+                            <span>중등 내신 독해 단원 보기</span>
+                        </button>
+                    </div>
+                </div>
+            `;
+            if (window.lucide) window.lucide.createIcons();
+            return;
+        }
+
+        // 4. 단어장 카드 및 독해 카드 HTML 빌드
+        const cardsHtmlArr = [];
+
+        // 단어장 카드 렌더링
+        vocabGroups.forEach(group => {
+            const keyWords = (group.newWords.length > 0 ? group.newWords : group.words).slice(0, 4).map(w => w.word);
+            const chipsHtml = keyWords.map(kw => `
+                <span class="inline-flex items-center px-2 py-0.5 rounded-lg bg-blue-50 border border-blue-200/80 text-blue-900 font-serif font-bold text-xs shadow-2xs">
+                    ${kw}
+                </span>
+            `).join('');
+
+            const isGroupDone = group.words.length > 0 && group.words.every(w => (w.flashcardDone && w.quizDone) || w.studyCompleted);
+
+            cardsHtmlArr.push(`
+                <div class="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-blue-50/30 p-5 shadow-xs relative flex flex-col justify-between hover:border-indigo-300 hover:shadow-sm transition-all">
+                    <div>
+                        <!-- 카드 상단: 단어장 명칭 및 [🎧 워크맨] 버튼 (해당 단어장 전용) -->
+                        <div class="flex items-start justify-between gap-3 mb-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-11 h-11 rounded-xl bg-blue-100/70 text-blue-900 border border-blue-200 flex items-center justify-center text-xl font-bold shrink-0 shadow-xs">
+                                    📘
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-2 mb-0.5">
+                                        <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 font-mono text-[10px] font-bold">오늘의 단어장</span>
+                                        <span class="text-[11px] font-mono font-bold text-slate-500">${group.dayLabel}</span>
+                                        ${isGroupDone ? `<span class="px-1.5 py-0.2 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">완료</span>` : ''}
+                                    </div>
+                                    <h3 class="font-serif font-black text-base sm:text-lg text-slate-900 line-clamp-1" title="${group.bookTitle}">
+                                        ${group.bookTitle}
+                                    </h3>
+                                </div>
+                            </div>
+                            <!-- 해당 단어장 전용 워크맨 버튼 -->
+                            <button type="button" onclick="window.app && window.app.playVocaGroupWalkman('${group.key}')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-indigo-200 bg-indigo-50/90 hover:bg-indigo-100 text-indigo-900 text-xs font-serif font-bold transition-all shadow-xs cursor-pointer active:scale-95 shrink-0" title="[${group.bookTitle} ${group.dayLabel}] 단어만 워크맨으로 청취">
+                                <i data-lucide="headphones" class="w-3.5 h-3.5 text-indigo-600 animate-pulse"></i>
+                                <span class="whitespace-nowrap">🎧 워크맨</span>
+                            </button>
+                        </div>
+
+                        <!-- 주요 단어 칩 & 개수 -->
+                        <div class="mt-4 pt-3 border-t border-slate-100">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-[11px] font-bold text-slate-500">주요 학습 단어</span>
+                                <span class="text-xs font-bold text-indigo-600 font-mono">총 ${group.words.length}단어 학습</span>
+                            </div>
+                            <div class="flex flex-wrap gap-1.5">
+                                ${chipsHtml}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 단어장 바로 들어가기 버튼 -->
+                    <button type="button" onclick="window.app && window.app.startVocaGroupStudy('${group.key}')" class="w-full mt-5 py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-serif font-bold text-xs flex items-center justify-center gap-1.5 shadow-xs transition-all cursor-pointer">
+                        <span>단어장 바로 들어가기</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+            `);
+        });
+
+        // 독해 지문 카드 렌더링
+        readingPassages.forEach(reading => {
+            cardsHtmlArr.push(`
+                <div class="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-emerald-50/30 p-5 shadow-xs relative flex flex-col justify-between hover:border-emerald-300 hover:shadow-sm transition-all">
+                    <div>
+                        <!-- 카드 상단: 독해 단원 & 지문 제목 -->
+                        <div class="flex items-start justify-between gap-3 mb-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-11 h-11 rounded-xl bg-emerald-100/70 text-emerald-900 border border-emerald-200 flex items-center justify-center text-xl font-bold shrink-0 shadow-xs">
+                                    🎓
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-2 mb-0.5">
+                                        <span class="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 font-mono text-[10px] font-bold">오늘의 독해</span>
+                                        <span class="text-[11px] font-bold text-slate-500 line-clamp-1">${reading.unitTitle}</span>
+                                        ${reading.isDone ? `<span class="px-1.5 py-0.2 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">완료</span>` : ''}
+                                    </div>
+                                    <h3 class="font-serif font-black text-base sm:text-lg text-slate-900 line-clamp-1" title="${reading.title}">
+                                        ${reading.title}
+                                    </h3>
+                                    ${reading.koreanTitle ? `<p class="text-xs text-slate-500 font-sans mt-0.5 line-clamp-1">${reading.koreanTitle}</p>` : ''}
+                                </div>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-mono text-[11px] font-bold border border-emerald-200 shrink-0">
+                                ${reading.badge}
+                            </span>
+                        </div>
+
+                        <!-- 지문 독해 핵심 학습 목표 -->
+                        <div class="mt-4 pt-3 border-t border-slate-100">
+                            <div class="p-3 rounded-xl bg-white/80 border border-emerald-100 shadow-2xs">
+                                <div class="text-[11px] font-bold text-emerald-800 mb-1 flex items-center gap-1.5">
+                                    <i data-lucide="target" class="w-3.5 h-3.5 text-emerald-600"></i>
+                                    <span>지문 독해 핵심 학습 목표</span>
+                                </div>
+                                <p class="text-xs text-slate-600 font-sans leading-relaxed line-clamp-2">
+                                    ${reading.learningGoal}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 독해 바로 시작하기 버튼 -->
+                    <button type="button" onclick="window.app && window.app.startReadingPassage('${reading.id}')" class="w-full mt-5 py-2.5 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white font-serif font-bold text-xs flex items-center justify-center gap-1.5 shadow-xs transition-all cursor-pointer">
+                        <span>독해 바로 시작하기</span>
+                        <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+            `);
+        });
+
+        // 5. 그리드 컬럼 계산: 1개면 1열, 2개면 2열, 3개 이상이면 반응형 다열
+        const totalCards = cardsHtmlArr.length;
+        let gridClass = 'grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5';
+        if (totalCards === 1) {
+            gridClass = 'grid grid-cols-1 gap-4 max-w-2xl';
+        } else if (totalCards >= 3) {
+            gridClass = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5';
+        }
+
+        const totalVocabCount = vocabWords.length;
+        let summaryBadge = '';
+        if (vocabGroups.length > 0 && readingPassages.length > 0) {
+            summaryBadge = `단어장 ${vocabGroups.length}개 (${totalVocabCount}단어) • 독해 ${readingPassages.length}편`;
+        } else if (vocabGroups.length > 0) {
+            summaryBadge = `단어장 ${vocabGroups.length}개 (총 ${totalVocabCount}단어)`;
+        } else if (readingPassages.length > 0) {
+            summaryBadge = `독해 ${readingPassages.length}편`;
+        }
+
+        container.innerHTML = `
+            <div class="rounded-3xl bg-white border border-slate-200/90 shadow-xs p-5 sm:p-6 space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-100">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <h2 class="font-serif font-black text-lg text-slate-900 tracking-tight">오늘의 학습</h2>
+                        <span class="text-xs text-slate-400 font-mono hidden sm:inline">${todayStr} (Today)</span>
+                        <span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 font-mono text-[11px] font-bold border border-slate-200">
+                            ${summaryBadge}
+                        </span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        ${vocabGroups.length > 1 ? `
+                            <button type="button" onclick="window.audiobookPlayer && window.audiobookPlayer.playTodayNewWords()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-indigo-200 bg-indigo-50 hover:bg-indigo-100 text-indigo-900 text-xs font-serif font-bold transition-all shadow-xs cursor-pointer active:scale-95" title="오늘 학습할 모든 단어장을 한꺼번에 워크맨으로 청취">
+                                <i data-lucide="headphones" class="w-3.5 h-3.5 text-indigo-600 animate-pulse"></i>
+                                <span>🎧 오늘 전체 단어 (${totalVocabCount}개)</span>
+                            </button>
+                        ` : ''}
+                        <button type="button" onclick="window.app && window.app.switchTab('planner')" class="text-xs text-indigo-600 hover:text-indigo-800 font-bold flex items-center gap-1 cursor-pointer transition-colors" title="학습 플래너 캘린더 바로가기">
+                            <span>학습 플래너 일정 보기</span>
+                            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="${gridClass}">
+                    ${cardsHtmlArr.join('')}
+                </div>
+            </div>
+        `;
+
+        if (window.lucide) {
+            window.lucide.createIcons();
+        }
     }
 
     /**
