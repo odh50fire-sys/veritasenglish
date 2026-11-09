@@ -609,6 +609,9 @@ class AppController {
             window.quizEngine.startQuiz(window.quizEngine.currentMode || 'choice', { scope: window.quizEngine.currentScope || 'today' });
         } else if (tabName === 'review') {
             this.switchReviewSubTab(this.currentReviewSubTab || 'srs');
+            if (window.heatmapEngine) {
+                window.heatmapEngine.render();
+            }
         } else if (tabName === 'expressions') {
             window.nativeExpressionsEngine.render();
         } else if (tabName === 'dictionary') {

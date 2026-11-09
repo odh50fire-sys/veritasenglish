@@ -109,11 +109,6 @@
                         <span class="hidden sm:inline">🎧 워크맨</span>
                     </button>
 
-                    <!-- 60초 단어 배틀 & 랭킹 리더보드 빠른 실행 버튼 -->
-                    <button id="header-battle-btn" class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-900 text-xs font-serif font-bold transition-all shadow-xs cursor-pointer active:scale-95" onclick="window.battleEngine && window.battleEngine.openBattle()" title="60초 스피드 단어 배틀 & 명예의 전당">
-                        <i data-lucide="swords" class="w-3.5 h-3.5 text-amber-600"></i>
-                        <span class="hidden sm:inline">⚔️ 배틀</span>
-                    </button>
 
                     <!-- 진단 레벨 배지 & 레벨테스트 바로가기 버튼 -->
                     <button id="header-academic-level-btn" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-sky-400/40 bg-sky-50 hover:bg-sky-100 text-sky-900 text-xs font-serif font-bold transition-all shadow-xs cursor-pointer" onclick="window.levelTestEngine && window.levelTestEngine.openModal('adaptive')" title="실력 진단 레벨테스트 및 현재 레벨 확인">
@@ -217,12 +212,7 @@
                 </div>
             </div>
 
-            <!-- ======================================================================
-                 에빙하우스 망각곡선 365일 연간 학습 잔디 & 미래 복습 예측 히트맵
-                 ====================================================================== -->
-            <div id="dash-ebbinghaus-heatmap-container" class="bg-white rounded-2xl border border-slate-200 shadow-xs p-5 sm:p-6 transition-all hover:border-slate-300">
-                <!-- JS 주입: window.heatmapEngine.render() -->
-            </div>
+
 
             
 
@@ -1208,6 +1198,13 @@
              TAB 5: 에빙하우스 망각곡선 복습 (Spaced Repetition System)
              ------------------------------------------------------------------ -->
         <section id="tab-review" class="tab-content hidden space-y-6">
+
+            <!-- ======================================================================
+                 365일 에빙하우스 학습 잔디 심기 & 미래 복습 예측 히트맵
+                 ====================================================================== -->
+            <div id="dash-ebbinghaus-heatmap-container" class="bg-white rounded-2xl border border-slate-200 shadow-xs p-5 sm:p-6 transition-all hover:border-slate-300">
+                <!-- JS 주입: window.heatmapEngine.render() -->
+            </div>
             <!-- 복습 서브 네비게이션 세그먼트 바 -->
             <div class="flex items-center gap-2 border-b border-slate-200 pb-3">
                 <button id="btn-subtab-review-srs" type="button" onclick="window.app.switchReviewSubTab('srs')" 
@@ -3316,7 +3313,6 @@
     <script src="js/audiobook_player.js"></script>
     <script src="js/lexical_mindmap.js"></script>
     <script src="js/ai_writing_coach.js"></script>
-    <script src="js/battle_engine.js"></script>
     <script src="js/app.js"></script>
 
     <!-- ======================================================================

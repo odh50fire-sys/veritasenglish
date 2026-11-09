@@ -276,6 +276,14 @@ class HeatmapEngine {
                 <span class="font-serif font-bold text-sm sm:text-base text-emerald-900">${stats.totalWordsReviewed.toLocaleString()}단어</span>
               </div>
             </div>
+
+            <!-- 맨 오른쪽: 💡 365일 잔디 학습 가이드 버튼 -->
+            <button type="button" onclick="window.heatmapEngine && window.heatmapEngine.openGuideModal()" 
+              class="px-3.5 py-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white text-xs font-serif font-bold shadow-xs flex items-center gap-1.5 transition-all cursor-pointer active:scale-95 group ml-auto sm:ml-1" 
+              title="365일 에빙하우스 학습 잔디 심기란? 친절 학습 가이드 열기">
+              <i data-lucide="help-circle" class="w-4 h-4 text-emerald-200 group-hover:rotate-12 transition-transform"></i>
+              <span>💡 학습 가이드</span>
+            </button>
           </div>
         </div>
 
@@ -571,6 +579,169 @@ class HeatmapEngine {
       cell.addEventListener('mouseleave', hideTooltip);
       cell.addEventListener('touchstart', showTooltip, { passive: true });
     });
+  }
+
+  /**
+   * 365일 에빙하우스 잔디 심기 친절 학습 가이드 모달 열기
+   */
+  openGuideModal() {
+    let modal = document.getElementById('modal-heatmap-guide');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'modal-heatmap-guide';
+      modal.className = 'fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-sm transition-all';
+      document.body.appendChild(modal);
+    }
+
+    modal.innerHTML = `
+      <div class="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[90vh] animate-in fade-in zoom-in-95 duration-200">
+        <!-- 모달 헤더 -->
+        <div class="px-6 py-4.5 bg-gradient-to-r from-slate-900 via-slate-800 to-emerald-950 text-white flex items-center justify-between border-b border-slate-700/60">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-2xl bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 flex items-center justify-center text-xl shadow-xs">
+              🌱
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] font-mono font-bold text-emerald-400 uppercase tracking-wider">Veritas Ebbinghaus Guide</span>
+                <span class="px-2 py-0.2 rounded-full bg-emerald-500/20 text-emerald-200 text-[10px] font-medium border border-emerald-500/30">과학적 복습 주기</span>
+              </div>
+              <h2 class="font-serif font-black text-lg sm:text-xl text-white">
+                365일 에빙하우스 학습 잔디 심기 가이드
+              </h2>
+            </div>
+          </div>
+          <button type="button" onclick="window.heatmapEngine.closeGuideModal()" class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-white/10 transition-colors cursor-pointer" title="닫기 (ESC)">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <!-- 모달 바디 (스크롤 가능) -->
+        <div class="p-6 overflow-y-auto space-y-6 text-slate-700 text-sm leading-relaxed custom-scrollbar font-sans">
+          
+          <!-- 섹션 1: 왜 잔디를 심어야 할까요? -->
+          <div class="rounded-2xl bg-emerald-50/70 border border-emerald-200/80 p-4.5 space-y-2">
+            <h3 class="font-serif font-black text-emerald-950 text-base flex items-center gap-2">
+              <span class="text-lg">🧠</span>
+              <span>1. 왜 매일 잔디를 심어야 할까요? (망각곡선의 원리)</span>
+            </h3>
+            <p class="text-xs sm:text-sm text-emerald-900/90 leading-relaxed">
+              독일의 인지심리학자 <b>헤르만 에빙하우스(Hermann Ebbinghaus)</b>의 연구에 따르면, 인간의 뇌는 새로운 단어를 암기한 직후 급격한 망각을 겪어 <b>20분 후 42%, 하루 뒤 67%, 한 달 뒤에는 79%</b>를 잊어버리게 됩니다.
+            </p>
+            <div class="p-3 bg-white/90 rounded-xl border border-emerald-200 text-xs text-slate-800 space-y-1">
+              <span class="font-bold text-emerald-900 block">⚡ 베리타스 에빙하우스 황금 복습 주기:</span>
+              <div class="flex flex-wrap items-center gap-1.5 font-mono text-[11px] pt-1">
+                <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 font-bold">D+1 (1일 뒤)</span> ➔
+                <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 font-bold">D+3 (3일 뒤)</span> ➔
+                <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 font-bold">D+7 (7일 뒤)</span> ➔
+                <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 font-bold">D+14 (14일 뒤)</span> ➔
+                <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 font-bold">D+30 (30일 뒤)</span>
+              </div>
+              <p class="text-[11px] text-slate-600 mt-1">이 주기에 맞춰 짧게 복습하면 망각곡선이 평평해지며 평생 잊지 않는 <b>장기 기억(Long-Term Memory)</b>으로 100% 굳어집니다.</p>
+            </div>
+          </div>
+
+          <!-- 섹션 2: 잔디 심기 작동 방식 -->
+          <div class="space-y-3">
+            <h3 class="font-serif font-black text-slate-900 text-base flex items-center gap-2">
+              <span class="text-lg">🌱</span>
+              <span>2. 잔디 심기(Streak)는 어떻게 작동하나요?</span>
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              베리타스 잉글리시에서 <b>망각곡선 복습(SRS), 플래시카드 암기, 스마트 퀴즈, 워크맨 오디오북</b> 중 어떤 학습이든 하루 1회 이상 완료하면 해당 날짜 칸에 초록색 잔디가 자동으로 심어집니다. 하루도 거르지 않고 잔디를 이어가면 <b>🔥 현재 연속 잔디(Streak)</b> 일수가 계속 올라갑니다!
+            </p>
+          </div>
+
+          <!-- 섹션 3: 5단계 잔디 색상 기준 -->
+          <div class="space-y-3">
+            <h3 class="font-serif font-black text-slate-900 text-base flex items-center gap-2">
+              <span class="text-lg">🟩</span>
+              <span>3. 5단계 잔디 색상(Level)의 의미</span>
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+              <div class="p-2.5 rounded-xl border border-slate-200 bg-slate-50 flex items-center gap-3">
+                <span class="w-5 h-5 rounded-md bg-[#f1f5f9] border border-slate-300 shrink-0"></span>
+                <div>
+                  <span class="font-bold text-slate-700 block">Lv.0 미학습 (회색)</span>
+                  <span class="text-slate-500 text-[11px]">학습 기록 없음 (휴식일)</span>
+                </div>
+              </div>
+              <div class="p-2.5 rounded-xl border border-emerald-100 bg-emerald-50/50 flex items-center gap-3">
+                <span class="w-5 h-5 rounded-md bg-[#a7f3d0] border border-emerald-300 shrink-0"></span>
+                <div>
+                  <span class="font-bold text-emerald-800 block">Lv.1 워밍업 (연한 연두)</span>
+                  <span class="text-slate-600 text-[11px]">1~10단어 복습 완료</span>
+                </div>
+              </div>
+              <div class="p-2.5 rounded-xl border border-emerald-200 bg-emerald-50 flex items-center gap-3">
+                <span class="w-5 h-5 rounded-md bg-[#34d399] border border-emerald-400 shrink-0"></span>
+                <div>
+                  <span class="font-bold text-emerald-900 block">Lv.2 기본 달성 (녹색)</span>
+                  <span class="text-slate-700 text-[11px]">11~30단어 (일일 권장 목표!)</span>
+                </div>
+              </div>
+              <div class="p-2.5 rounded-xl border border-emerald-300 bg-emerald-100/60 flex items-center gap-3">
+                <span class="w-5 h-5 rounded-md bg-[#059669] shrink-0 shadow-2xs"></span>
+                <div>
+                  <span class="font-bold text-emerald-950 block">Lv.3 우수 달성 (진한 녹색)</span>
+                  <span class="text-emerald-900 text-[11px]">31~50단어 초과 복습 달성</span>
+                </div>
+              </div>
+              <div class="p-2.5 rounded-xl border border-emerald-500 bg-emerald-100/90 flex items-center gap-3 sm:col-span-2">
+                <span class="w-5 h-5 rounded-md bg-[#047857] shrink-0 shadow-2xs"></span>
+                <div>
+                  <span class="font-bold text-emerald-950 block">Lv.4 마스터 (딥 에메랄드)</span>
+                  <span class="text-emerald-950 text-[11px]">50단어 이상 + 퀴즈 만점 마스터 (최고의 학업 열정)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 섹션 4: 미래 복습 예측 타임라인 & 호버 상세 -->
+          <div class="rounded-2xl bg-slate-50 border border-slate-200 p-4 space-y-2 text-xs">
+            <h3 class="font-serif font-black text-slate-900 text-sm flex items-center gap-2">
+              <span class="text-base">🔮</span>
+              <span>4. 미래 복습 예측 뷰(Review Forecast) & 툴팁 활용법</span>
+            </h3>
+            <ul class="space-y-1.5 text-slate-600 list-disc list-inside leading-relaxed text-[11px] sm:text-xs">
+              <li><b>실시간 호버 툴팁:</b> 잔디 사각형에 마우스를 올리거나 모바일에서 터치하면, 그날 복습한 총 단어 수와 퀴즈 정답률이 팝업으로 상세히 나타납니다.</li>
+              <li><b>미래 복습 예측:</b> 캘린더 우측 타임라인 바는 내가 학습한 단어들의 주기(D+1, D+3, D+7 등)를 실시간 계산하여, <b>내일과 주말에 몇 단어를 복습해야 하는지</b> 미리 알려줍니다.</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- 모달 푸터 -->
+        <div class="px-6 py-4 bg-slate-50 border-t border-slate-200 flex items-center justify-end">
+          <button type="button" onclick="window.heatmapEngine.closeGuideModal()" class="px-6 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-serif font-bold text-xs shadow-xs transition-all cursor-pointer active:scale-95">
+            가이드 확인 완료
+          </button>
+        </div>
+      </div>
+    `;
+
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    if (window.lucide) window.lucide.createIcons();
+
+    const escHandler = (e) => {
+      if (e.key === 'Escape') {
+        this.closeGuideModal();
+        window.removeEventListener('keydown', escHandler);
+      }
+    };
+    window.addEventListener('keydown', escHandler);
+  }
+
+  /**
+   * 가이드 모달 닫기
+   */
+  closeGuideModal() {
+    const modal = document.getElementById('modal-heatmap-guide');
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
   }
 }
 
