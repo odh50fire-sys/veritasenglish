@@ -198,6 +198,10 @@ class FlashcardEngine {
         }
     }
 
+    getCurrentWord() {
+        return this.deck && this.deck[this.currentIndex] ? this.deck[this.currentIndex] : null;
+    }
+
     playExampleAudio() {
         const currentWord = this.deck[this.currentIndex];
         if (currentWord && currentWord.example && window.tts) {

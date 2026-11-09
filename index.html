@@ -109,6 +109,12 @@
                         <span class="hidden sm:inline">🎧 워크맨</span>
                     </button>
 
+                    <!-- 60초 단어 배틀 & 랭킹 리더보드 빠른 실행 버튼 -->
+                    <button id="header-battle-btn" class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-900 text-xs font-serif font-bold transition-all shadow-xs cursor-pointer active:scale-95" onclick="window.battleEngine && window.battleEngine.openBattle()" title="60초 스피드 단어 배틀 & 명예의 전당">
+                        <i data-lucide="swords" class="w-3.5 h-3.5 text-amber-600"></i>
+                        <span class="hidden sm:inline">⚔️ 배틀</span>
+                    </button>
+
                     <!-- 진단 레벨 배지 & 레벨테스트 바로가기 버튼 -->
                     <button id="header-academic-level-btn" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-sky-400/40 bg-sky-50 hover:bg-sky-100 text-sky-900 text-xs font-serif font-bold transition-all shadow-xs cursor-pointer" onclick="window.levelTestEngine && window.levelTestEngine.openModal('adaptive')" title="실력 진단 레벨테스트 및 현재 레벨 확인">
                         <span class="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
@@ -925,6 +931,18 @@
                                             <span>💡 원어민 뉘앙스 & 문화 유래 팁</span>
                                         </div>
                                         <p id="fc-nuance-text" class="text-xs text-slate-700 leading-relaxed font-sans"></p>
+                                    </div>
+
+                                    <!-- 스마트 고도화: 어휘 지식 그래프 & AI 1문장 영작 코칭 액션 버튼 -->
+                                    <div class="flex items-center justify-center gap-2 pt-2">
+                                        <button type="button" onclick="event.stopPropagation(); const w = window.flashcardEngine && window.flashcardEngine.getCurrentWord ? window.flashcardEngine.getCurrentWord() : null; if(w && window.lexicalMindmap) window.lexicalMindmap.open(w.word);" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-50 hover:bg-sky-100 text-sky-800 border border-sky-200 text-xs font-bold transition-all shadow-xs cursor-pointer active:scale-95" title="어휘 지식 그래프 (유의어/반의어/파생어 시각화)">
+                                            <i data-lucide="share-2" class="w-3.5 h-3.5 text-sky-600"></i>
+                                            <span>🕸️ 지식 그래프</span>
+                                        </button>
+                                        <button type="button" onclick="event.stopPropagation(); const w = window.flashcardEngine && window.flashcardEngine.getCurrentWord ? window.flashcardEngine.getCurrentWord() : null; if(w && window.aiWritingCoach) window.aiWritingCoach.open(w.word);" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 text-xs font-bold transition-all shadow-xs cursor-pointer active:scale-95" title="AI 실시간 1문장 영작 코칭">
+                                            <i data-lucide="pen-tool" class="w-3.5 h-3.5 text-emerald-600"></i>
+                                            <span>✍️ 1문장 영작 코칭</span>
+                                        </button>
                                     </div>
                                 </div>
 
@@ -3293,9 +3311,12 @@
     <script src="js/exam_studio.js"></script>
     <!-- 부교재 전용 보카북 & 워크북 맞춤 인쇄 스튜디오 엔진 -->
     <script src="js/book_studio.js"></script>
-    <!-- 차세대 스마트 고도화: 에빙하우스 잔디 히트맵 & 핸즈프리 워크맨 오디오북 -->
+    <!-- 차세대 스마트 고도화 5대 엔진: 잔디 히트맵, 워크맨, 지식그래프, 영작튜터, 단어배틀 -->
     <script src="js/heatmap_engine.js"></script>
     <script src="js/audiobook_player.js"></script>
+    <script src="js/lexical_mindmap.js"></script>
+    <script src="js/ai_writing_coach.js"></script>
+    <script src="js/battle_engine.js"></script>
     <script src="js/app.js"></script>
 
     <!-- ======================================================================

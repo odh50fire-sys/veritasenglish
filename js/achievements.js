@@ -155,10 +155,20 @@ class AchievementsEngine {
                         <div class="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-bold">획득한 업적 뱃지</div>
                         <div class="font-mono font-black text-lg text-amber-600 mt-0.5">🏅 ${badgesCount} / 16</div>
                     </div>
+                    <button type="button" onclick="window.battleEngine && window.battleEngine.openBattle()" 
+                        class="px-4 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white text-xs font-serif font-bold shadow-xs flex items-center gap-1.5 transition-all cursor-pointer group active:scale-95">
+                        <i data-lucide="swords" class="w-4 h-4 text-white group-hover:rotate-12 transition-transform"></i>
+                        <span>⚔️ 60초 단어 배틀</span>
+                    </button>
+                    <button type="button" onclick="window.battleEngine && window.battleEngine.openLeaderboard()" 
+                        class="px-4 py-3 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-900 border border-indigo-200 text-xs font-serif font-bold shadow-xs flex items-center gap-1.5 transition-all cursor-pointer group active:scale-95">
+                        <i data-lucide="medal" class="w-4 h-4 text-indigo-600"></i>
+                        <span>🏆 주간 랭킹</span>
+                    </button>
                     <button type="button" onclick="window.achievements.openModal()" 
-                        class="px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-serif font-bold shadow-xs flex items-center gap-2 transition-all cursor-pointer group active:scale-95">
+                        class="px-4 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-serif font-bold shadow-xs flex items-center gap-2 transition-all cursor-pointer group active:scale-95">
                         <i data-lucide="trophy" class="w-4 h-4 text-amber-400 group-hover:scale-110 transition-transform"></i>
-                        <span>명예의 전당 & 업적 도감</span>
+                        <span>업적 도감</span>
                         <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-400 group-hover:translate-x-0.5 transition-transform"></i>
                     </button>
                 </div>
