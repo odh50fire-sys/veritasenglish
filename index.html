@@ -1422,6 +1422,10 @@
 
                         <!-- 요구사항 2: 학습 이력 버튼 & 하루 목표 단어 수 설정 -->
                         <div class="flex items-center gap-2 shrink-0">
+                            <button id="btn-replan-voca" class="px-3 py-1.5 rounded-lg border border-blue-200 bg-blue-50 hover:bg-blue-100 text-blue-900 text-xs font-serif font-bold flex items-center gap-1.5 transition-all cursor-pointer shadow-2xs" onclick="window.plannerEngine.openVocaReplanModal()" title="등록된 단어장의 일일 학습 단어 수 및 일정 재배정/수정">
+                                <i data-lucide="sliders-horizontal" class="w-3.5 h-3.5 text-blue-900"></i>
+                                <span>계획 수정·재배정</span>
+                            </button>
                             <button id="btn-open-learning-history" class="px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700 text-xs font-serif font-bold flex items-center gap-1.5 transition-all cursor-pointer shadow-2xs" onclick="window.plannerEngine.openLearningHistoryModal()" title="학습 이력 및 성취 통계 확인">
                                 <i data-lucide="history" class="w-3.5 h-3.5 text-blue-900"></i>
                                 <span>학습 이력</span>
@@ -2732,6 +2736,53 @@
                             <!-- 동적 주입 -->
                         </select>
                     </div>
+                </div>
+
+                <!-- 2-1. 하루 학습 단어 수 설정 (단어장 플랜 전용, 최대 100개 프리셋) -->
+                <div id="batch-plan-words-per-day-section" class="space-y-2 p-3 bg-amber-50/60 rounded-xl border border-amber-200/80">
+                    <div class="flex items-center justify-between">
+                        <label class="text-xs font-serif font-bold text-slate-800 flex items-center gap-1.5">
+                            <i data-lucide="layers" class="w-3.5 h-3.5 text-amber-600"></i>
+                            <span>하루 학습 단어 수 설정</span>
+                        </label>
+                        <span id="batch-plan-words-per-day-info" class="text-[11px] font-mono font-bold text-amber-900 bg-amber-100/80 px-2 py-0.5 rounded border border-amber-300">
+                            교재 기본값 (표준)
+                        </span>
+                    </div>
+
+                    <!-- 단어 수 프리셋 버튼 그룹 (최대 100개) -->
+                    <div class="flex flex-wrap items-center gap-1.5" id="batch-plan-words-presets-container">
+                        <button type="button" class="batch-words-preset-btn px-2.5 py-1 rounded-lg text-[11px] font-bold border transition-all cursor-pointer bg-blue-900 text-white border-blue-900 shadow-xs" data-words="default" onclick="window.app.setBatchPlanWordsPreset('default')">
+                            🎯 기본값 (표준)
+                        </button>
+                        <button type="button" class="batch-words-preset-btn px-2 py-1 rounded-lg text-[11px] font-bold border transition-all cursor-pointer bg-white text-slate-600 border-slate-200 hover:bg-slate-100" data-words="10" onclick="window.app.setBatchPlanWordsPreset('10')">
+                            10개
+                        </button>
+                        <button type="button" class="batch-words-preset-btn px-2 py-1 rounded-lg text-[11px] font-bold border transition-all cursor-pointer bg-white text-slate-600 border-slate-200 hover:bg-slate-100" data-words="15" onclick="window.app.setBatchPlanWordsPreset('15')">
+                            15개
+                        </button>
+                        <button type="button" class="batch-words-preset-btn px-2 py-1 rounded-lg text-[11px] font-bold border transition-all cursor-pointer bg-white text-slate-600 border-slate-200 hover:bg-slate-100" data-words="20" onclick="window.app.setBatchPlanWordsPreset('20')">
+                            20개
+                        </button>
+                        <button type="button" class="batch-words-preset-btn px-2 py-1 rounded-lg text-[11px] font-bold border transition-all cursor-pointer bg-white text-slate-600 border-slate-200 hover:bg-slate-100" data-words="25" onclick="window.app.setBatchPlanWordsPreset('25')">
+                            25개
+                        </button>
+                        <button type="button" class="batch-words-preset-btn px-2 py-1 rounded-lg text-[11px] font-bold border transition-all cursor-pointer bg-white text-slate-600 border-slate-200 hover:bg-slate-100" data-words="30" onclick="window.app.setBatchPlanWordsPreset('30')">
+                            30개
+                        </button>
+                        <button type="button" class="batch-words-preset-btn px-2 py-1 rounded-lg text-[11px] font-bold border transition-all cursor-pointer bg-white text-slate-600 border-slate-200 hover:bg-slate-100" data-words="40" onclick="window.app.setBatchPlanWordsPreset('40')">
+                            40개
+                        </button>
+                        <button type="button" class="batch-words-preset-btn px-2 py-1 rounded-lg text-[11px] font-bold border transition-all cursor-pointer bg-white text-slate-600 border-slate-200 hover:bg-slate-100" data-words="50" onclick="window.app.setBatchPlanWordsPreset('50')">
+                            50개
+                        </button>
+                        <button type="button" class="batch-words-preset-btn px-2.5 py-1 rounded-lg text-[11px] font-bold border transition-all cursor-pointer bg-white text-slate-600 border-slate-200 hover:bg-slate-100" data-words="100" onclick="window.app.setBatchPlanWordsPreset('100')">
+                            ⚡ 100개 (파이널)
+                        </button>
+                    </div>
+                    <p class="text-[10.5px] text-slate-500 leading-snug">
+                        ※ 하루 단어 수를 변경해도 교재의 전체 단어는 100% 보존되며, 마지막 회차에 잔여 단어가 자동 흡수 배정됩니다.
+                    </p>
                 </div>
 
                 <!-- 3. 학습 요일 선택 -->

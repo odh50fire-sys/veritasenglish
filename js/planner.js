@@ -353,6 +353,7 @@ class PlannerEngine {
                                 ${(w.flashcardDone && w.quizDone) || w.studyCompleted ? '<span class="text-[10px] font-mono bg-emerald-100 text-emerald-900 border border-emerald-200 px-1.5 py-0.2 rounded font-bold flex items-center gap-0.5"><i data-lucide="check" class="w-3 h-3 text-emerald-700"></i> ✓ 마스터</span>' : (w.flashcardDone ? '<span class="text-[10px] font-mono bg-blue-100 text-blue-900 border border-blue-200 px-1.5 py-0.2 rounded font-bold">플래시카드완료</span>' : '')}
                                 ${w.neungryulDay ? `<span class="text-[10px] font-mono bg-blue-100 text-blue-900 px-1.5 py-0.2 rounded font-bold">${w.neungryulDay} #${w.neungryulNum || ''}</span>` : ''}
                                 ${w.isCuratedVoca ? `<span class="text-[10px] font-mono bg-amber-100 text-amber-900 px-1.5 py-0.2 rounded font-bold">${w.curatedCollectionTitle || w.tag} ${w.curatedDay} #${w.curatedNum || ''}</span>` : ''}
+                                ${w.wordsPerDay ? `<span class="text-[10px] font-mono bg-blue-50 text-blue-800 border border-blue-200 px-1.5 py-0.2 rounded font-semibold">하루 ${w.wordsPerDay}단어 코스</span>` : ''}
                                 ${w.isReadingVocab ? `<span class="text-[10px] font-mono bg-indigo-50 text-indigo-800 px-1.5 py-0.2 rounded font-bold">${w.tag}</span>` : ''}
                             </div>
                             <div class="text-xs text-slate-600">${w.meaning}</div>
@@ -553,6 +554,39 @@ class PlannerEngine {
     /**
      * 요구사항 2: 학습 플래너 내 학습 이력 모달 제어
      */
+    /**
+     * 플래너 내 단어장 계획 수정 및 일일 학습 단어 수 재배정
+     */
+    openVocaReplanModal() {
+        const words = window.storage ? window.storage.words : [];
+        let bookInfo = null;
+
+        if (window.ocrEngine) {
+            bookInfo = window.ocrEngine.getCurrentBookInfo();
+        }
+
+        // 플래너에 등록된 단어가 있는 단어장 자동 탐색
+        if (!bookInfo || !bookInfo.dataPool || bookInfo.dataPool.length === 0) {
+            const curatedWord = words.find(w => w.curatedCollectionId);
+            if (curatedWord && window.ocrEngine) {
+                window.ocrEngine.selectVocaBook(curatedWord.curatedCollectionId);
+                bookInfo = window.ocrEngine.getCurrentBookInfo();
+            } else if (words.some(w => w.isNeungryul2025) && window.ocrEngine) {
+                window.ocrEngine.selectVocaBook('neungryul2025');
+                bookInfo = window.ocrEngine.getCurrentBookInfo();
+            } else if (words.some(w => w.isNeungryulEtym2025) && window.ocrEngine) {
+                window.ocrEngine.selectVocaBook('neungryul_etym_2025');
+                bookInfo = window.ocrEngine.getCurrentBookInfo();
+            }
+        }
+
+        if (window.app && window.app.openVocaBatchPlanModal) {
+            window.app.openVocaBatchPlanModal(bookInfo);
+        } else {
+            alert('계획 배정 모달을 열 수 없습니다. 교재 등록 탭에서 단어장을 먼저 확인해 주세요.');
+        }
+    }
+
     openLearningHistoryModal() {
         const modal = document.getElementById('modal-learning-history');
         if (!modal) return;

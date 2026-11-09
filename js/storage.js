@@ -1790,21 +1790,75 @@ class StorageManager {
      * 능률 VOCA 중등 고난도 전체 단어 (DAY 01 ~ DAY 40, 1,200단어)를 시작일부터 하루 1 DAY씩 자동 배정 등록
      * @param {string} startDateStr 시작 일자 (YYYY-MM-DD)
      */
-    registerAllNeungryulDays(startDateStr = null, selectedDaysOfWeek = null, startDayIndex = 0) {
+    registerAllNeungryulDays(startDateStr = null, selectedDaysOfWeek = null, startDayIndex = 0, wordsPerDay = null) {
         const dataPool = window.NEUNGRYUL_VOCA_2025_DATA || (typeof NEUNGRYUL_VOCA_2025_DATA !== 'undefined' ? NEUNGRYUL_VOCA_2025_DATA : []);
         if (dataPool.length === 0) {
             return { addedCount: 0, totalDays: 0, startDate: '', endDate: '' };
         }
 
         const start = startDateStr || this.getTodayDateString();
+        this.words = this.words.filter(w => !w.isNeungryul2025);
+        const allNewItems = [];
+
+        // 맞춤 하루 단어 수 설정 시: 전체 단어 100% 보존 동적 청크 분할
+        if (wordsPerDay && wordsPerDay !== 'default' && Number(wordsPerDay) > 0) {
+            const wpd = Number(wordsPerDay);
+            const chunks = [];
+            for (let i = 0; i < dataPool.length; i += wpd) {
+                chunks.push(dataPool.slice(i, i + wpd));
+            }
+            const targetChunks = chunks.slice(Math.max(0, startDayIndex));
+            const scheduledDates = this.calculateScheduledDates(start, targetChunks.length, selectedDaysOfWeek);
+
+            targetChunks.forEach((chunkRows, idx) => {
+                const planDate = scheduledDates[idx] || start;
+                const sessionNum = startDayIndex + idx + 1;
+                const sessionLabel = `DAY ${String(sessionNum).padStart(2, '0')}`;
+                chunkRows.forEach((row, rIdx) => {
+                    allNewItems.push({
+                        id: `neungryul2025-s${sessionNum}-${row['번호'] || (idx * wpd + rIdx + 1)}`,
+                        word: String(row['영단어'] || row['word'] || '').trim(),
+                        meaning: String(row['뜻'] || row['meaning'] || '').trim(),
+                        partOfSpeech: this.extractPosFromMeaning(String(row['뜻']), String(row['영단어'])),
+                        example: '',
+                        exampleMeaning: '',
+                        level: 'high',
+                        tag: `능률VOCA [고난도] ${sessionLabel} (${chunkRows.length}단어)`,
+                        neungryulDay: row['DAY'] || sessionLabel,
+                        neungryulNum: row['번호'] || (rIdx + 1),
+                        planSession: sessionLabel,
+                        planDate: planDate,
+                        wordsPerDay: wpd,
+                        createdAt: Date.now(),
+                        stage: 1,
+                        nextReviewDate: planDate,
+                        lastReviewed: null,
+                        reviewCount: 0,
+                        correctCount: 0,
+                        wrongCount: 0,
+                        isWeak: false,
+                        isNeungryul2025: true
+                    });
+                });
+            });
+
+            this.words = [...allNewItems, ...this.words];
+            this.saveWords();
+
+            return {
+                addedCount: allNewItems.length,
+                totalDays: targetChunks.length,
+                startDayName: `${startDayIndex + 1}회차 (DAY ${String(startDayIndex + 1).padStart(2, '0')})`,
+                startDate: scheduledDates[0] || start,
+                endDate: scheduledDates[scheduledDates.length - 1] || start,
+                wordsPerDay: wpd
+            };
+        }
+
+        // 기본값: 교재 원본 DAY 단위 분할
         const allUniqueDays = Array.from(new Set(dataPool.map(r => r.DAY))).sort();
         const targetDays = allUniqueDays.slice(Math.max(0, startDayIndex));
-
-        // 기존 능률 VOCA 고난도 단어 계획 전체 삭제
-        this.words = this.words.filter(w => !w.isNeungryul2025);
-
         const scheduledDates = this.calculateScheduledDates(start, targetDays.length, selectedDaysOfWeek);
-        const allNewItems = [];
 
         targetDays.forEach((dayStr, idx) => {
             const planDate = scheduledDates[idx] || start;
@@ -1935,21 +1989,75 @@ class StorageManager {
     /**
      * 능률 VOCA 어원편 중등 전체 단어 (DAY 01 ~ DAY 30, 765단어)를 시작일부터 하루 1 DAY씩 배정 등록
      */
-    registerAllNeungryulEtymDays(startDateStr = null, selectedDaysOfWeek = null, startDayIndex = 0) {
+    registerAllNeungryulEtymDays(startDateStr = null, selectedDaysOfWeek = null, startDayIndex = 0, wordsPerDay = null) {
         const dataPool = window.NEUNGRYUL_VOCA_ETYM_2025_DATA || (typeof NEUNGRYUL_VOCA_ETYM_2025_DATA !== 'undefined' ? NEUNGRYUL_VOCA_ETYM_2025_DATA : []);
         if (dataPool.length === 0) {
             return { addedCount: 0, totalDays: 0, startDate: '', endDate: '' };
         }
 
         const start = startDateStr || this.getTodayDateString();
+        this.words = this.words.filter(w => !w.isNeungryulEtym2025);
+        const allNewItems = [];
+
+        // 맞춤 하루 단어 수 설정 시: 전체 단어 100% 보존 동적 청크 분할
+        if (wordsPerDay && wordsPerDay !== 'default' && Number(wordsPerDay) > 0) {
+            const wpd = Number(wordsPerDay);
+            const chunks = [];
+            for (let i = 0; i < dataPool.length; i += wpd) {
+                chunks.push(dataPool.slice(i, i + wpd));
+            }
+            const targetChunks = chunks.slice(Math.max(0, startDayIndex));
+            const scheduledDates = this.calculateScheduledDates(start, targetChunks.length, selectedDaysOfWeek);
+
+            targetChunks.forEach((chunkRows, idx) => {
+                const planDate = scheduledDates[idx] || start;
+                const sessionNum = startDayIndex + idx + 1;
+                const sessionLabel = `DAY ${String(sessionNum).padStart(2, '0')}`;
+                chunkRows.forEach((row, rIdx) => {
+                    allNewItems.push({
+                        id: `neungryul-etym-s${sessionNum}-${row['번호'] || (idx * wpd + rIdx + 1)}`,
+                        word: String(row['영단어'] || row['word'] || '').trim(),
+                        meaning: String(row['뜻'] || row['meaning'] || '').trim(),
+                        partOfSpeech: this.extractPosFromMeaning(String(row['뜻']), String(row['영단어'])),
+                        example: '',
+                        exampleMeaning: '',
+                        level: 'middle',
+                        tag: `능률VOCA [어원편] ${sessionLabel} (${chunkRows.length}단어)`,
+                        neungryulDay: row['DAY'] || sessionLabel,
+                        neungryulNum: row['번호'] || (rIdx + 1),
+                        planSession: sessionLabel,
+                        planDate: planDate,
+                        wordsPerDay: wpd,
+                        createdAt: Date.now(),
+                        stage: 1,
+                        nextReviewDate: planDate,
+                        lastReviewed: null,
+                        reviewCount: 0,
+                        correctCount: 0,
+                        wrongCount: 0,
+                        isWeak: false,
+                        isNeungryulEtym2025: true
+                    });
+                });
+            });
+
+            this.words = [...allNewItems, ...this.words];
+            this.saveWords();
+
+            return {
+                addedCount: allNewItems.length,
+                totalDays: targetChunks.length,
+                startDayName: `${startDayIndex + 1}회차 (DAY ${String(startDayIndex + 1).padStart(2, '0')})`,
+                startDate: scheduledDates[0] || start,
+                endDate: scheduledDates[scheduledDates.length - 1] || start,
+                wordsPerDay: wpd
+            };
+        }
+
+        // 기본값: 교재 원본 DAY 단위 분할
         const allUniqueDays = Array.from(new Set(dataPool.map(r => r.DAY))).sort();
         const targetDays = allUniqueDays.slice(Math.max(0, startDayIndex));
-
-        // 기존 능률 VOCA 어원편 단어 계획 전체 삭제
-        this.words = this.words.filter(w => !w.isNeungryulEtym2025);
-
         const scheduledDates = this.calculateScheduledDates(start, targetDays.length, selectedDaysOfWeek);
-        const allNewItems = [];
 
         targetDays.forEach((dayStr, idx) => {
             const planDate = scheduledDates[idx] || start;
@@ -2154,7 +2262,7 @@ class StorageManager {
     /**
      * 테마 단어장 전체(5개 DAY)를 시작일부터 하루 1 DAY씩 배정 등록
      */
-    registerAllCuratedDays(collectionId, startDateStr = null, selectedDaysOfWeek = null, startDayIndex = 0) {
+    registerAllCuratedDays(collectionId, startDateStr = null, selectedDaysOfWeek = null, startDayIndex = 0, wordsPerDay = null) {
         let pool = window.CURATED_WORDS_DATA || (typeof CURATED_WORDS_DATA !== 'undefined' ? CURATED_WORDS_DATA : []);
         if (this.customWords && this.customWords.length > 0) {
             pool = pool.concat(this.customWords);
@@ -2171,14 +2279,73 @@ class StorageManager {
         }
 
         const start = startDateStr || this.getTodayDateString();
-        const allUniqueDays = Array.from(new Set(colRows.map(r => r.DAY))).sort();
-        const targetDays = allUniqueDays.slice(Math.max(0, startDayIndex));
-
         // 기존 해당 테마 계획 전체 삭제 후 재등록
         this.words = this.words.filter(w => w.curatedCollectionId !== collectionId);
-
-        const scheduledDates = this.calculateScheduledDates(start, targetDays.length, selectedDaysOfWeek);
         const allNewItems = [];
+
+        // 맞춤 하루 단어 수 설정 시: 전체 단어 100% 보존 동적 청크 분할
+        if (wordsPerDay && wordsPerDay !== 'default' && Number(wordsPerDay) > 0) {
+            const wpd = Number(wordsPerDay);
+            const chunks = [];
+            for (let i = 0; i < colRows.length; i += wpd) {
+                chunks.push(colRows.slice(i, i + wpd));
+            }
+            const targetChunks = chunks.slice(Math.max(0, startDayIndex));
+            const scheduledDates = this.calculateScheduledDates(start, targetChunks.length, selectedDaysOfWeek);
+
+            targetChunks.forEach((chunkRows, idx) => {
+                const planDate = scheduledDates[idx] || start;
+                const sessionNum = startDayIndex + idx + 1;
+                const sessionLabel = `DAY ${String(sessionNum).padStart(2, '0')}`;
+                chunkRows.forEach((row, rIdx) => {
+                    allNewItems.push({
+                        id: `curated-${collectionId}-s${sessionNum}-${row['번호'] || row['word_num'] || (idx * wpd + rIdx + 1)}`,
+                        word: String(row['영단어'] || row['단어'] || row['word'] || row['표제어'] || '').trim(),
+                        meaning: String(row['뜻'] || row['meaning'] || '').trim(),
+                        partOfSpeech: window.posHelper ? window.posHelper.standardizePos(row['품사'] || row['pos'], row['영단어'] || row['단어'] || row['word'] || row['표제어'], row['뜻'] || row['meaning']) : (row['품사'] || row['pos'] || '[명]'),
+                        example: row['예문'] || '',
+                        exampleMeaning: row['예문해석'] || row['해석'] || row['example_ko'] || row['translation'] || '',
+                        level: row['level'] || 'middle',
+                        tag: `${row['collectionTitle']} ${sessionLabel} (${chunkRows.length}단어)`,
+                        curatedCollectionId: collectionId,
+                        curatedCollectionTitle: row['collectionTitle'],
+                        curatedDay: row['DAY'] || sessionLabel,
+                        curatedNum: row['번호'] || row['word_num'] || (rIdx + 1),
+                        planSession: sessionLabel,
+                        planDate: planDate,
+                        wordsPerDay: wpd,
+                        createdAt: Date.now(),
+                        stage: 1,
+                        nextReviewDate: planDate,
+                        lastReviewed: null,
+                        reviewCount: 0,
+                        correctCount: 0,
+                        wrongCount: 0,
+                        isWeak: false,
+                        isCuratedVoca: true,
+                        nuanceTip: row['nuanceTip'] || ''
+                    });
+                });
+            });
+
+            this.words = [...allNewItems, ...this.words];
+            this.saveWords();
+
+            return {
+                addedCount: allNewItems.length,
+                totalDays: targetChunks.length,
+                collectionTitle: colRows[0] ? colRows[0].collectionTitle : '',
+                startDate: scheduledDates[0] || start,
+                endDate: scheduledDates[scheduledDates.length - 1] || start,
+                startDayName: `${startDayIndex + 1}회차 (DAY ${String(startDayIndex + 1).padStart(2, '0')})`,
+                wordsPerDay: wpd
+            };
+        }
+
+        // 기본값: 교재 원본 DAY 단위 분할
+        const allUniqueDays = Array.from(new Set(colRows.map(r => r.DAY))).sort();
+        const targetDays = allUniqueDays.slice(Math.max(0, startDayIndex));
+        const scheduledDates = this.calculateScheduledDates(start, targetDays.length, selectedDaysOfWeek);
 
         targetDays.forEach((dayStr, idx) => {
             const planDate = scheduledDates[idx] || start;
@@ -2218,14 +2385,15 @@ class StorageManager {
         return {
             addedCount: allNewItems.length,
             totalDays: targetDays.length,
-            startDayName: targetDays[0] || 'DAY 01',
-            collectionTitle: colRows[0]?.collectionTitle || '',
+            collectionTitle: colRows[0] ? colRows[0].collectionTitle : '',
             startDate: scheduledDates[0] || start,
-            endDate: scheduledDates[scheduledDates.length - 1] || start
+            endDate: scheduledDates[scheduledDates.length - 1] || start,
+            startDayName: targetDays[0] || 'DAY 01'
         };
     }
+
     /**
-     * 특정 테마 단어장 전체 계획 일괄 삭제
+     * 테마 단어장 계획 전체 삭제
      */
     deleteAllCuratedDays(collectionId) {
         const beforeCount = this.words.length;

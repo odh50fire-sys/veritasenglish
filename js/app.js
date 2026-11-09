@@ -1476,6 +1476,9 @@ class AppController {
             `).join('');
         }
 
+        const wordsSection = document.getElementById('batch-plan-words-per-day-section');
+        if (wordsSection) wordsSection.classList.add('hidden');
+
         this.setBatchPlanDaysPreset('all');
         if (modal) modal.classList.remove('hidden');
         if (window.lucide) window.lucide.createIcons();
@@ -1496,8 +1499,14 @@ class AppController {
             bookTitle: book.title,
             isNeungryul: book.isNeungryul,
             isNeungryulEtym: book.isNeungryulEtym,
-            items: uniqueDays
+            items: uniqueDays,
+            dataPool: dataPool,
+            totalWords: dataPool.length,
+            wordsPerDay: 'default'
         };
+
+        const wordsSection = document.getElementById('batch-plan-words-per-day-section');
+        if (wordsSection) wordsSection.classList.remove('hidden');
 
         const modal = document.getElementById('modal-batch-plan');
         const modalTitle = document.getElementById('batch-plan-modal-title');
@@ -1515,14 +1524,7 @@ class AppController {
         const todayStr = window.storage ? window.storage.getTodayDateString() : new Date().toISOString().slice(0, 10);
         if (startDateInput) startDateInput.value = todayStr;
 
-        if (startSubunitSelect) {
-            startSubunitSelect.innerHTML = uniqueDays.map((d, idx) => `
-                <option value="${idx}">
-                    ${d}부터 시작 • 총 ${uniqueDays.length - idx}일 코스
-                </option>
-            `).join('');
-        }
-
+        this.setBatchPlanWordsPreset('default');
         this.setBatchPlanDaysPreset('all');
         if (modal) modal.classList.remove('hidden');
         if (window.lucide) window.lucide.createIcons();
@@ -1531,6 +1533,70 @@ class AppController {
     closeBatchPlanModal() {
         const modal = document.getElementById('modal-batch-plan');
         if (modal) modal.classList.add('hidden');
+    }
+
+    setBatchPlanWordsPreset(wordsVal) {
+        if (!this.currentBatchPlanConfig) return;
+        this.currentBatchPlanConfig.wordsPerDay = wordsVal;
+
+        document.querySelectorAll('.batch-words-preset-btn').forEach(btn => {
+            const isMatch = (btn.dataset.words === String(wordsVal));
+            btn.className = `batch-words-preset-btn px-2.5 py-1 rounded-lg text-[11px] font-bold border transition-all cursor-pointer ${
+                isMatch ? 'bg-blue-900 text-white border-blue-900 shadow-xs' : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-100'
+            }`;
+        });
+
+        const infoEl = document.getElementById('batch-plan-words-per-day-info');
+        if (infoEl) {
+            const totalWords = this.currentBatchPlanConfig.totalWords || 0;
+            if (wordsVal === 'default') {
+                const totalDays = (this.currentBatchPlanConfig.items || []).length || 1;
+                const avg = Math.round(totalWords / totalDays);
+                infoEl.textContent = `교재 기본값 (표준: ${avg}단어/DAY, 총 ${totalWords}단어)`;
+            } else {
+                const wpd = Number(wordsVal);
+                const chunksCount = Math.ceil(totalWords / wpd);
+                infoEl.textContent = `맞춤 설정: 하루 ${wpd}단어씩 • 총 ${chunksCount}회 코스 (${totalWords}단어 100% 보존)`;
+            }
+        }
+
+        this.updateBatchPlanStartSubunitOptions();
+        this.updateBatchPlanPreview();
+    }
+
+    updateBatchPlanStartSubunitOptions() {
+        const startSubunitSelect = document.getElementById('batch-plan-start-subunit');
+        if (!startSubunitSelect || !this.currentBatchPlanConfig) return;
+        const conf = this.currentBatchPlanConfig;
+
+        if (conf.type === 'reading') return;
+
+        const totalWords = conf.totalWords || 0;
+        const wordsVal = conf.wordsPerDay || 'default';
+
+        if (wordsVal === 'default') {
+            const uniqueDays = conf.items || [];
+            startSubunitSelect.innerHTML = uniqueDays.map((d, idx) => `
+                <option value="${idx}">
+                    ${d}부터 시작 • 총 ${uniqueDays.length - idx}일 코스
+                </option>
+            `).join('');
+        } else {
+            const wpd = Number(wordsVal);
+            const totalChunks = Math.ceil(totalWords / wpd);
+            const options = [];
+            for (let i = 0; i < totalChunks; i++) {
+                const startNum = i * wpd + 1;
+                const endNum = Math.min((i + 1) * wpd, totalWords);
+                const remaining = totalChunks - i;
+                options.push(`
+                    <option value="${i}">
+                        ${i + 1}회차 (${startNum}~${endNum}번)부터 시작 • 총 ${remaining}회 완강 코스
+                    </option>
+                `);
+            }
+            startSubunitSelect.innerHTML = options.join('');
+        }
     }
 
     setBatchPlanDaysPreset(presetName) {
@@ -1584,8 +1650,19 @@ class AppController {
 
         const startDate = (startDateInput && startDateInput.value) ? startDateInput.value : window.storage.getTodayDateString();
         const startIdx = startSubunitSelect ? Number(startSubunitSelect.value) : 0;
-        const totalItems = this.currentBatchPlanConfig.items || [];
-        const remainingCount = Math.max(1, totalItems.length - startIdx);
+        const conf = this.currentBatchPlanConfig;
+        const totalItems = conf.items || [];
+        const totalWords = conf.totalWords || totalItems.length;
+        const wordsVal = conf.wordsPerDay || 'default';
+
+        let totalSessionsCount = totalItems.length;
+        let wpd = 0;
+        if (conf.type === 'voca' && wordsVal !== 'default') {
+            wpd = Number(wordsVal);
+            totalSessionsCount = Math.ceil(totalWords / wpd);
+        }
+
+        const remainingCount = Math.max(1, totalSessionsCount - startIdx);
         const selectedDays = this.getSelectedBatchPlanDays();
 
         if (selectedDays.length === 0) {
@@ -1606,10 +1683,23 @@ class AppController {
 
         const selectedDayLabels = selectedDays.map(d => dayNames[d]).join('·');
 
-        if (previewCount) previewCount.textContent = `총 ${scheduledDates.length}회차 배정`;
-        if (previewDates) previewDates.textContent = `${startDayStr} ~ ${endDayStr}`;
-        if (previewDesc) {
-            previewDesc.textContent = `선택 요일: [${selectedDayLabels}] 매주 지정 요일에 하루 1회차씩 자동 배정됩니다.`;
+        if (conf.type === 'voca' && wordsVal !== 'default') {
+            const remainder = totalWords % wpd;
+            if (previewCount) previewCount.textContent = `총 ${scheduledDates.length}회차 배정 (하루 ${wpd}단어씩)`;
+            if (previewDates) previewDates.textContent = `${startDayStr} ~ ${endDayStr}`;
+            if (previewDesc) {
+                if (remainder === 0) {
+                    previewDesc.textContent = `선택 요일: [${selectedDayLabels}] 매회 정확히 ${wpd}단어씩 배정되어 총 ${totalWords}단어가 100% 완전 편성됩니다.`;
+                } else {
+                    previewDesc.textContent = `선택 요일: [${selectedDayLabels}] 매회 ${wpd}단어씩 배정되며, 마지막 날은 잔여 ${remainder}단어가 모두 배정되어 전체 ${totalWords}단어가 단 1개도 빠짐없이 보존됩니다.`;
+                }
+            }
+        } else {
+            if (previewCount) previewCount.textContent = `총 ${scheduledDates.length}회차 배정 (교재 표준 DAY)`;
+            if (previewDates) previewDates.textContent = `${startDayStr} ~ ${endDayStr}`;
+            if (previewDesc) {
+                previewDesc.textContent = `선택 요일: [${selectedDayLabels}] 매주 지정 요일에 하루 1회차(교재 DAY)씩 자동 배정됩니다.`;
+            }
         }
     }
 
@@ -1646,21 +1736,24 @@ class AppController {
 
             if (window.readingEngine) window.readingEngine.renderUnitBanner();
         } else if (conf.type === 'voca') {
+            const wpd = conf.wordsPerDay || 'default';
             if (conf.isNeungryul) {
-                result = window.storage.registerAllNeungryulDays(startDate, selectedDays, startIdx);
+                result = window.storage.registerAllNeungryulDays(startDate, selectedDays, startIdx, wpd);
             } else if (conf.isNeungryulEtym) {
-                result = window.storage.registerAllNeungryulEtymDays(startDate, selectedDays, startIdx);
+                result = window.storage.registerAllNeungryulEtymDays(startDate, selectedDays, startIdx, wpd);
             } else {
-                result = window.storage.registerAllCuratedDays(conf.bookId, startDate, selectedDays, startIdx);
+                result = window.storage.registerAllCuratedDays(conf.bookId, startDate, selectedDays, startIdx, wpd);
             }
 
             if (typeof confetti === 'function') {
                 confetti({ particleCount: 70, spread: 60, origin: { y: 0.6 } });
             }
 
+            const wpdLabel = (conf.wordsPerDay && conf.wordsPerDay !== 'default') ? `하루 ${conf.wordsPerDay}단어 맞춤 코스` : '교재 기본 권장(표준)';
             alert(`🎉 [${conf.bookTitle}] 단어 학습 계획이 플래너에 배정되었습니다!\n\n` +
-                  `• 시작 DAY: ${result.startDayName}\n` +
-                  `• 총 배정 일수: ${result.totalDays} DAYs (총 ${result.addedCount}단어)\n` +
+                  `• 1회 학습량: ${wpdLabel}\n` +
+                  `• 시작 회차: ${result.startDayName}\n` +
+                  `• 총 배정 회차: ${result.totalDays}회차 (총 ${result.addedCount}단어 100% 보존)\n` +
                   `• 배정 기간: ${result.startDate} ~ ${result.endDate}\n` +
                   `• 지정 요일에 맞추어 플래너에 성공적으로 등록되었습니다.`);
 
