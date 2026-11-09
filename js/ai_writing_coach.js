@@ -413,29 +413,33 @@ Student's English sentence: "${sentence}"
 Student's intended Korean meaning (optional, may be empty): "${userIntent}"
 
 Carefully analyze:
-1. What was the student trying to express? (intended meaning)
-2. What are the core grammatical, syntactic, or collocation errors? (point them out precisely)
-3. Correct the sentence directly into a natural, grammatically flawless sentence that preserves the student's exact intended message.
-4. Provide a top-tier native/academic alternative.
-5. Provide a constructive, encouraging Korean commentary explaining why the corrections were made.
-6. Give a fair score (0-100).
+1. Is the sentence 100% grammatically flawless, natural, and accurately utilizing "${targetWord}"?
+   - CRITICAL REQUIREMENT: If the student's sentence is already 100% correct without ANY grammatical, lexical, punctuation, or syntactic error:
+     set "isFlawless": true, "score": 100, "coreErrors": [], and set "correctedSentence": "${sentence}".
+   - If the sentence has errors, set "isFlawless": false, deduct points realistically (e.g. 10-50 for broken sentences), and provide specific errors in "coreErrors".
+2. If faulty:
+   - Identify precise core grammatical or syntactic errors.
+   - Reconstruct the sentence into a 100% flawless, natural English sentence that honors the student's intended message.
+3. Provide a top-tier Ivy League/academic alternative in "nativeSentence".
+4. Provide constructive feedback in Korean.
 
 You MUST respond strictly with valid JSON conforming to this schema (no markdown fences, just pure JSON):
 {
+  "isFlawless": true,
   "intendedMeaning": "학습자가 표현하고자 한 의도 요약 (한국어 1문장)",
-  "intentMatchRate": 90,
+  "intentMatchRate": 95,
   "coreErrors": [
     {
-      "type": "수일치 / 시제 / 품사 / 관사 / 어색한 표현 / 목적어 누락 중 하나",
+      "type": "수일치 / 시제 / 품사 / 관사 / 어색한 표현 / 목적어 누락 / 본동사 결여 중 하나",
       "faulty": "틀린 단어 또는 어구",
       "correction": "올바른 교정 단어 또는 어구",
       "reason": "왜 이렇게 고쳐야 하는지 구체적이고 알기 쉬운 설명"
     }
   ],
-  "correctedSentence": "학습자의 의도를 살려 문법과 문맥을 완벽히 교정한 자연스러운 완성문",
+  "correctedSentence": "학습자의 의도를 살려 문법과 문맥을 완벽히 교정한 자연스러운 완성문 (완벽한 정문이면 원문 그대로)",
   "nativeSentence": "아이비리그/학술지 수준의 세련된 모범 대안문",
   "commentary": "선생님이 학생에게 전하는 1:1 과외식 첨삭 총평 (2~3문장)",
-  "score": 85
+  "score": 100
 }`;
 
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
@@ -446,7 +450,7 @@ You MUST respond strictly with valid JSON conforming to this schema (no markdown
         contents: [{ parts: [{ text: systemPrompt }] }],
         generationConfig: {
           responseMimeType: "application/json",
-          temperature: 0.2
+          temperature: 0.1
         }
       })
     });
@@ -461,46 +465,254 @@ You MUST respond strictly with valid JSON conforming to this schema (no markdown
 
     const parsed = JSON.parse(textResp);
     parsed.engineType = 'gemini';
+    if (!parsed.coreErrors || parsed.coreErrors.length === 0) {
+      parsed.isFlawless = true;
+      parsed.score = Math.max(95, parsed.score || 100);
+      parsed.correctedSentence = sentence;
+    }
     return parsed;
   }
 
   /**
-   * Veritas 로컬 지능형 시맨틱 첨삭 엔진 (Local Semantic AI Engine)
-   * 오프라인에서도 구문 분석, 의도 파악, 핵심 오류 진단, 문장 교정을 100% 자율 수행
+   * Veritas 로컬 지능형 시맨틱 첨삭 엔진 (Local Semantic AI Engine v3.0)
+   * 정밀 통사 분석, 의도 파악, 엉터리 비문 엄격 진단, 완벽한 정문 첨삭 생략 지원
    */
   evaluateWithLocalSemanticAI(sentence, userIntent) {
     const targetWord = this.currentWord.toLowerCase();
     const cleanSentence = sentence.replace(/\s+/g, ' ').trim();
-    const words = cleanSentence.split(/\s+/).map(w => w.replace(/[^a-zA-Z0-9'-]/g, '')).filter(Boolean);
+    const rawWords = cleanSentence.split(/\s+/);
+    const words = rawWords.map(w => w.replace(/[^a-zA-Z0-9'-]/g, '')).filter(Boolean);
 
     const coreErrors = [];
     let score = 100;
 
-    // 1. 목표 어휘 포함 여부
+    // =========================================================================
+    // 0. 치명적 엉터리 문장 / 무의미한 입력 (Gibberish & Nonsense Detection)
+    // =========================================================================
+    const isGibberish = words.some(w => {
+      // 5자 이상인데 모음(aeiouy)이 아예 없거나, 동일 알파벳 3연속 이상인 경우 (예: zzzz, asdfgh)
+      if (w.length >= 5 && !/[aeiouy]/i.test(w)) return true;
+      if (/(.)\1\1/.test(w)) return true;
+      return false;
+    });
+
+    if (isGibberish) {
+      coreErrors.push({
+        type: '식별 불가능한 단어 (철자 오류)',
+        faulty: cleanSentence,
+        correction: `[올바른 영어 어휘 사용 필요]`,
+        reason: '사전에 등재되지 않았거나 무의미하게 나열된 비정상적인 철자가 포함되어 있어 문장을 성립시킬 수 없습니다.'
+      });
+      score -= 60;
+    }
+
+    // 한글이 섞여 있는 경우
+    if (/[가-힣]/.test(cleanSentence)) {
+      coreErrors.push({
+        type: '한글/영문 혼용 오류',
+        faulty: cleanSentence.match(/[가-힣]+/g).join(', '),
+        correction: '[완전한 영문장으로 작성]',
+        reason: '영작 챌린지 문장 내에 한글 단어가 섞여 있습니다. 모든 성분을 영어로 완성해 주세요.'
+      });
+      score -= 40;
+    }
+
+    // =========================================================================
+    // 1. 목표 표제어 포함 여부 검증
+    // =========================================================================
     const wordPattern = new RegExp(`\\b${targetWord}(s|ed|ing|d|es|ion|ive|able|ment)?\\b`, 'i');
     const hasWord = wordPattern.test(cleanSentence);
     if (!hasWord) {
       coreErrors.push({
         type: '목표 표제어 누락',
-        faulty: '(어휘 누락)',
+        faulty: '(표제어 미포함)',
         correction: targetWord,
-        reason: `이번 챌린지의 핵심 단어인 '${targetWord}'(또는 파생형)가 문장에 사용되지 않았습니다.`
+        reason: `이번 챌린지의 필수 어휘인 '${targetWord}'(또는 파생형)가 문장에 전혀 사용되지 않았습니다.`
       });
-      score -= 30;
+      score -= 40;
     }
 
-    // 2. 단어 수 및 완성도
-    if (words.length < 4) {
+    // =========================================================================
+    // 2. 문장 최소 길이 및 완성도 검증
+    // =========================================================================
+    if (words.length < 3) {
       coreErrors.push({
-        type: '문장 불완전 (길이 부족)',
+        type: '문장 불완전 (단어 수 극단적 부족)',
         faulty: cleanSentence,
-        correction: `${cleanSentence} [보충 어구 필요]`,
-        reason: `문장이 ${words.length}단어로 너무 짧습니다. 주어, 동사, 목적어/수식어를 갖춘 완전한 문장을 구성하세요.`
+        correction: `${cleanSentence} [주어/동사/목적어 완성 필요]`,
+        reason: `문장이 ${words.length}단어로 너무 짧아 독립된 문장으로 기능하지 못합니다. 주어와 동사를 갖춘 완전한 문장을 만드세요.`
+      });
+      score -= 40;
+    }
+
+    // =========================================================================
+    // 3. 본동사(Finite Verb) 결여 검사 (Sentence Fragment)
+    // =========================================================================
+    // 영어 필수 기본 동사 리스트 및 표제어 품사 검사
+    const commonVerbsRegex = /\b(is|am|are|was|were|be|been|being|have|has|had|do|does|did|will|would|can|could|should|must|may|might|make|makes|made|take|takes|took|get|gets|got|see|saw|know|think|find|give|tell|work|call|try|ask|need|needs|needed|feel|become|leave|put|mean|keep|let|begin|seem|help|helps|helped|talk|turn|start|show|hear|play|run|move|like|live|believe|hold|bring|happen|write|provide|provides|provided|sit|stand|lose|pay|meet|include|includes|continue|set|learn|change|changes|changed|lead|understand|watch|follow|stop|create|creates|created|speak|read|allow|allows|allowed|add|spend|grow|open|walk|win|offer|remember|love|consider|appear|buy|wait|serve|die|send|expect|build|stay|fall|cut|reach|kill|remain|suggest|raise|pass|sell|require|requires|required|report|decide|pull|mitigate|mitigates|mitigated|mitigating|enhance|enhances|enhanced|alleviate|acquire|diminish|facilitate|accelerate)\b/i;
+    
+    const pos = (this.currentInfo.pos || '').toLowerCase();
+    const isTargetVerb = pos.includes('동') || pos.includes('verb') || ['mitigate', 'enhance', 'acquire', 'facilitate', 'alleviate'].includes(targetWord);
+    
+    let hasVerb = commonVerbsRegex.test(cleanSentence);
+    if (!hasVerb && isTargetVerb && hasWord) {
+      hasVerb = true;
+    }
+
+    if (!hasVerb && !isGibberish) {
+      coreErrors.push({
+        type: '본동사 결여 (불완전한 문장)',
+        faulty: cleanSentence,
+        correction: `주어 + [동사] + 목적어`,
+        reason: '문장에 주어의 동작이나 상태를 서술하는 유효한 본동사(술어 동사)가 없습니다. 완전한 문장 구조를 갖추어야 합니다.'
+      });
+      score -= 35;
+    }
+
+    // =========================================================================
+    // 4. 이중 동사 오류 (be동사 + 일반동사 원형)
+    // =========================================================================
+    const beBaseMatch = cleanSentence.match(/\b(is|am|are|was|were|be)\s+([a-z]+(?<!ing|ed|d|en|t|s))\b/i);
+    const nonVerbsAfterBe = ['happy', 'ready', 'able', 'sure', 'good', 'bad', 'new', 'old', 'here', 'there', 'very', 'not', 'also', 'important', 'crucial', 'essential', 'clear', 'true'];
+    if (beBaseMatch && !nonVerbsAfterBe.includes(beBaseMatch[2].toLowerCase())) {
+      const v = beBaseMatch[2].toLowerCase();
+      if (v === targetWord || isTargetVerb || commonVerbsRegex.test(v)) {
+        coreErrors.push({
+          type: '이중 동사 오류 (be동사 + 일반동사 원형 결합)',
+          faulty: beBaseMatch[0],
+          correction: `${beBaseMatch[1]} ${v}ing 또는 ${v}s`,
+          reason: `'${beBaseMatch[0]}'처럼 be동사 바로 뒤에 일반동사 원형이 결합할 수 없습니다. be동사를 삭제하고 일반동사 단독으로 쓰거나 진행형(-ing)으로 고쳐야 합니다.`
+        });
+        score -= 25;
+      }
+    }
+
+    // =========================================================================
+    // 5. to부정사 누락 오류 (want/hope/need/plan + base verb)
+    // =========================================================================
+    const needToMatch = cleanSentence.match(/\b(want|wants|wanted|hope|hopes|hoped|need|needs|needed|plan|plans|planned|decide|decides|decided|try|tries|tried|attempt|strive)\s+(?!to\b)([a-z]+)\b/i);
+    if (needToMatch) {
+      const v1 = needToMatch[1];
+      const v2 = needToMatch[2];
+      if (v2.toLowerCase() === targetWord || isTargetVerb || commonVerbsRegex.test(v2)) {
+        coreErrors.push({
+          type: 'to부정사 누락 (목적어 어법 위반)',
+          faulty: `${v1} ${v2}`,
+          correction: `${v1} to ${v2}`,
+          reason: `'${v1}' 동사 뒤에 다른 동작(동사)이 이어질 때는 'to + 동사원형' 형태의 to부정사를 써야 합니다.`
+        });
+        score -= 20;
+      }
+    }
+
+    // =========================================================================
+    // 6. 전치사 뒤 동사원형 오류 (for/by/in/without + base verb)
+    // =========================================================================
+    const prepVerbMatch = cleanSentence.match(/\b(for|by|in|without|before|after|about|of)\s+([a-z]+(?<!ing|ed|the|a|an|my|our|his|her|this|that|all|some))\b/i);
+    if (prepVerbMatch) {
+      const prep = prepVerbMatch[1];
+      const pVerb = prepVerbMatch[2].toLowerCase();
+      if ((pVerb === targetWord && isTargetVerb) || ['mitigate', 'reduce', 'help', 'prevent', 'solve', 'protect'].includes(pVerb)) {
+        coreErrors.push({
+          type: '전치사 목적어 어법 오류 (동명사 필요)',
+          faulty: prepVerbMatch[0],
+          correction: `${prep} ${pVerb}ing`,
+          reason: `전치사('${prep}') 뒤에는 동사원형이 올 수 없으며, 명사 또는 동명사('-ing') 형태를 써야 합니다.`
+        });
+        score -= 20;
+      }
+    }
+
+    // =========================================================================
+    // 7. 주어-동사 3인칭 단수 수일치 (Subject-Verb Agreement)
+    // 명사구(예: the economic risk)를 주어-동사로 오인하지 않도록 엄격 분리
+    // =========================================================================
+    // 1) 3인칭 단수 대명사 주어 (he, she, it, everyone)
+    const pronounMatch = cleanSentence.match(/\b(he|she|it|everyone|everybody)\s+([a-z]{3,}(?<!s|ed|ing|d|is|was|has|can|will|should|must|could|would|might|may))\b/i);
+    
+    // 2) 문두 단수 명사 주어 (^the + 명사 + 동사)
+    const sentenceStartSingularNoun = cleanSentence.match(/^\s*(the\s+[a-z]+(?<!s|people|children|police|men|women|data))\s+([a-z]{3,}(?<!s|ed|ing|d|is|was|has|can|will|should|must|could|would|might|may))\b/i);
+    
+    const thirdSingularMatch = pronounMatch || sentenceStartSingularNoun;
+    const nonVerbs = ['risk', 'risks', 'problem', 'problems', 'challenge', 'challenges', 'impact', 'impacts', 'issue', 'issues', 'damage', 'measure', 'measures', 'strategy', 'strategies', 'economic', 'financial', 'social', 'environmental', 'new', 'old', 'good', 'bad', 'important'];
+    
+    if (thirdSingularMatch && !['did', 'had', 'got', 'put', 'let', 'set', 'must', 'can', 'will'].includes(thirdSingularMatch[2].toLowerCase())) {
+      const subj = thirdSingularMatch[1];
+      const verb = thirdSingularMatch[2].toLowerCase();
+      if (!nonVerbs.includes(verb) && (verb === targetWord || (isTargetVerb && verb === targetWord) || commonVerbsRegex.test(verb))) {
+        coreErrors.push({
+          type: '주어-동사 수일치 오류 (3인칭 단수)',
+          faulty: `${subj} ${thirdSingularMatch[2]}`,
+          correction: `${subj} ${thirdSingularMatch[2]}s`,
+          reason: `3인칭 단수 주어('${subj}') 뒤의 현재시제 일반동사에는 반드시 '-s' 또는 '-es'를 붙여야 합니다.`
+        });
+        score -= 20;
+      }
+    }
+
+    // 복수 주어 + is/was
+    const peopleIsMatch = cleanSentence.match(/\b(people|they|we|children|students|researchers|scientists)\s+(is|was)\b/i);
+    if (peopleIsMatch) {
+      coreErrors.push({
+        type: '주어-be동사 수일치 오류 (복수 주어)',
+        faulty: peopleIsMatch[0],
+        correction: `${peopleIsMatch[1]} ${peopleIsMatch[2].toLowerCase() === 'is' ? 'are' : 'were'}`,
+        reason: `'${peopleIsMatch[1]}'은(는) 복수 주어이므로 '${peopleIsMatch[2]}' 대신 'are' 또는 'were'를 써야 합니다.`
+      });
+      score -= 15;
+    }
+
+    // 조동사 뒤 동사원형 위반
+    const modalMatch = cleanSentence.match(/\b(can|could|will|would|shall|should|may|might|must)\s+([a-z]+(ed|ing|s))\b/i);
+    if (modalMatch) {
+      coreErrors.push({
+        type: '조동사 어법 위반 (동사원형 필요)',
+        faulty: modalMatch[0],
+        correction: `${modalMatch[1]} [동사원형]`,
+        reason: `조동사 '${modalMatch[1]}' 뒤에는 변형된 형태가 아닌 반드시 동사원형이 와야 합니다.`
       });
       score -= 20;
     }
 
-    // 3. 첫 글자 대문자
+    // =========================================================================
+    // 8. 타동사 목적어 누락 (Transitive Verb lacking Object)
+    // =========================================================================
+    const transitiveVerbs = ['mitigate', 'acquire', 'facilitate', 'enhance', 'accelerate', 'comprise', 'diminish', 'alleviate'];
+    if (transitiveVerbs.includes(targetWord)) {
+      const transEnding = new RegExp(`\\b${targetWord}(s|ed|d)?\\s*[.?!]$`, 'i');
+      const isPassive = new RegExp(`\\b(is|are|was|were|be|been)\\s+${targetWord}(d|ed)?\\b`, 'i');
+      if (transEnding.test(cleanSentence) && !isPassive.test(cleanSentence)) {
+        coreErrors.push({
+          type: '타동사 목적어 누락',
+          faulty: targetWord,
+          correction: `${targetWord} the risk (또는 the impact)`,
+          reason: `'${targetWord}'은(는) 반드시 대상(목적어)을 필요로 하는 타동사입니다. 무엇을 완화하는지 목적어를 명시해야 합니다.`
+        });
+        score -= 25;
+      }
+    }
+
+    // =========================================================================
+    // 9. 단수 가산명사 무관사 오류 (Bare Singular Countable Noun)
+    // =========================================================================
+    const countNouns = ['problem', 'risk', 'solution', 'crisis', 'impact', 'challenge', 'damage', 'strategy', 'measure', 'issue', 'result'];
+    countNouns.forEach(cn => {
+      const bareNounRegex = new RegExp(`\\b(${targetWord}|reduce|prevent|solve|face|cause)\\s+(${cn})\\b`, 'i');
+      const m = cleanSentence.match(bareNounRegex);
+      if (m) {
+        coreErrors.push({
+          type: '가산명사 단수 무관사 오류',
+          faulty: m[0],
+          correction: `${m[1]} the ${m[2]} (또는 ${m[2]}s)`,
+          reason: `가산명사 '${m[2]}'는 단독으로 쓸 수 없으며, 관사(the/a)를 붙이거나 복수형('${m[2]}s')으로 써야 합니다.`
+        });
+        score -= 15;
+      }
+    });
+
+    // =========================================================================
+    // 10. 첫 글자 대문자 및 문장 부호
+    // =========================================================================
     if (/^[a-z]/.test(cleanSentence)) {
       const firstChar = cleanSentence.charAt(0);
       coreErrors.push({
@@ -512,172 +724,91 @@ You MUST respond strictly with valid JSON conforming to this schema (no markdown
       score -= 5;
     }
 
-    // 4. 문장 부호(종결 부호)
     if (!/[.?!]$/.test(cleanSentence)) {
       coreErrors.push({
         type: '종결 부호 누락',
         faulty: '(문장 끝 마침표 없음)',
         correction: '.',
-        reason: '문장 끝에는 반드시 마침표(.), 물음표(?), 느낌표(!) 중 하나가 있어야 합니다.'
+        reason: '문장 끝에는 반드시 마침표(.)나 물음표(?), 느낌표(!)가 있어야 합니다.'
       });
       score -= 5;
     }
 
-    // 5. be동사 + 일반동사 원형 결합 오류 (Double Verb: is mitigate, are reduce 등)
-    const beBaseMatch = cleanSentence.match(/\b(is|am|are|was|were|be)\s+([a-z]+(?<!ing|ed|d|en|t|s))\b/i);
-    const nonVerbsAfterBe = ['happy', 'ready', 'able', 'sure', 'good', 'bad', 'new', 'old', 'here', 'there', 'very', 'not', 'also', 'important', 'crucial'];
-    if (beBaseMatch && !nonVerbsAfterBe.includes(beBaseMatch[2].toLowerCase())) {
-      const v = beBaseMatch[2].toLowerCase();
-      if (v === targetWord || this.inferPartOfSpeech(v) === 'v') {
-        coreErrors.push({
-          type: '이중 동사 오류 (be동사 + 일반동사 원형)',
-          faulty: beBaseMatch[0],
-          correction: `${beBaseMatch[1]} ${v}ing 또는 ${v}s`,
-          reason: `'${beBaseMatch[0]}'처럼 be동사 뒤에 동사원형이 바로 올 수 없습니다. 현재진행형('-ing')이나 수동태('-ed'), 또는 be동사를 빼고 일반동사 단독으로 쓰세요.`
-        });
-        score -= 20;
-      }
-    }
+    score = Math.max(10, Math.min(100, score));
 
-    // 6. 주어-동사 3인칭 단수 수일치 (Subject-Verb Agreement)
-    // 3인칭 단수 대명사 (he, she, it, everyone, the government)
-    const thirdSingularMatch = cleanSentence.match(/\b(he|she|it|everyone|everybody)\s+([a-z]{3,}(?<!s|ed|ing|d|is|was|has|can|will|should|must|could|would|might|may))\b/i);
-    const singularNounMatch = cleanSentence.match(/\b(the|a|this|that|my|our|their|his|her)\s+([a-z]{3,}(?<!s|people|children|police|men|women|data))\s+([a-z]{3,}(?<!s|ed|ing|d|is|was|has|can|will|should|must|could|would|might|may))\b/i);
+    // =========================================================================
+    // 11. 무결점 완벽 정문(Flawless) 판정 (요구사항: 맞으면 첨삭하지 않음)
+    // =========================================================================
+    const isFlawless = (coreErrors.length === 0 && score >= 95 && words.length >= 4 && hasWord && hasVerb && !isGibberish);
 
-    if (thirdSingularMatch && !['did', 'had', 'got'].includes(thirdSingularMatch[2].toLowerCase())) {
-      const subj = thirdSingularMatch[1];
-      const verb = thirdSingularMatch[2];
-      coreErrors.push({
-        type: '주어-동사 수일치 오류 (3인칭 단수)',
-        faulty: `${subj} ${verb}`,
-        correction: `${subj} ${verb}s`,
-        reason: `3인칭 단수 주어('${subj}') 뒤의 현재시제 동사('${verb}')에는 '-s' 또는 '-es'가 붙어야 합니다.`
-      });
-      score -= 15;
-    } else if (singularNounMatch && !['did', 'had', 'got'].includes(singularNounMatch[3].toLowerCase())) {
-      const subj = `${singularNounMatch[1]} ${singularNounMatch[2]}`;
-      const verb = singularNounMatch[3];
-      if (verb.toLowerCase() === targetWord || this.inferPartOfSpeech(verb) === 'v') {
-        coreErrors.push({
-          type: '주어-동사 수일치 오류 (단수 명사 주어)',
-          faulty: `${subj} ${verb}`,
-          correction: `${subj} ${verb}s`,
-          reason: `단수 주어('${subj}')에 호응하는 현재시제 동사는 '${verb}s' 형태여야 합니다.`
-        });
-        score -= 15;
-      }
-    }
-
-    // 7. 복수 주어 + is / 단수 주어 + are 오류
-    const peopleIsMatch = cleanSentence.match(/\b(people|they|we|children|students)\s+(is|was)\b/i);
-    if (peopleIsMatch) {
-      coreErrors.push({
-        type: '주어-be동사 수일치 오류 (복수 주어)',
-        faulty: peopleIsMatch[0],
-        correction: `${peopleIsMatch[1]} ${peopleIsMatch[2].toLowerCase() === 'is' ? 'are' : 'were'}`,
-        reason: `'${peopleIsMatch[1]}'은(는) 복수 명사이므로 '${peopleIsMatch[2]}'가 아닌 '${peopleIsMatch[2].toLowerCase() === 'is' ? 'are' : 'were'}'를 써야 합니다.`
-      });
-      score -= 15;
-    }
-
-    // 8. 조동사 뒤 동사원형 위반
-    const modalMatch = cleanSentence.match(/\b(can|could|will|would|shall|should|may|might|must)\s+([a-z]+(ed|ing|s))\b/i);
-    if (modalMatch) {
-      coreErrors.push({
-        type: '조동사 어법 위반 (동사원형 필요)',
-        faulty: modalMatch[0],
-        correction: `${modalMatch[1]} [동사원형]`,
-        reason: `조동사 '${modalMatch[1]}' 뒤에는 변형된 형태가 아닌 반드시 동사원형이 와야 합니다.`
-      });
-      score -= 15;
-    }
-
-    // 9. 타동사 목적어 누락
-    const transitiveVerbs = ['mitigate', 'acquire', 'facilitate', 'enhance', 'accelerate', 'comprise', 'diminish', 'alleviate'];
-    if (transitiveVerbs.includes(targetWord)) {
-      const transEnding = new RegExp(`\\b${targetWord}(s|ed|d)?\\s*[.?!]$`, 'i');
-      const isPassive = new RegExp(`\\b(is|are|was|were|be|been)\\s+${targetWord}(d|ed)?\\b`, 'i');
-      if (transEnding.test(cleanSentence) && !isPassive.test(cleanSentence)) {
-        coreErrors.push({
-          type: '타동사 목적어 누락',
-          faulty: targetWord,
-          correction: `${targetWord} the risk (또는 the impact)`,
-          reason: `'${targetWord}'은(는) 목적어가 필수적인 타동사입니다. 무엇을 완화하고 줄이는지 대상(목적어)을 반드시 명시해야 합니다.`
-        });
-        score -= 20;
-      }
-    }
-
-    // 10. 품사 오용 (Verb as Noun)
-    const verbAsNoun = new RegExp(`\\b(the|a|an|my|our|their)\\s+${targetWord}\\s+(is|was|are|were)\\b`, 'i');
-    if (verbAsNoun.test(cleanSentence)) {
-      coreErrors.push({
-        type: `품사 오용 (동사를 주어/명사 자리에 사용)`,
-        faulty: `${targetWord}`,
-        correction: `${targetWord}ion (또는 동명사 ${targetWord}ing)`,
-        reason: `'${targetWord}'은(는) 동사입니다. 관사 뒤 주어 자리에는 명사형을 사용해야 합니다.`
-      });
-      score -= 25;
-    }
-
-    // 11. 부정관사 a vs an 오류
-    const aAnMatch = cleanSentence.match(/\b(a)\s+([aeiou][a-z]+)\b/i);
-    if (aAnMatch && !['a university', 'a european', 'a one', 'a user'].includes(aAnMatch[0].toLowerCase())) {
-      coreErrors.push({
-        type: '부정관사(a/an) 모음 충돌',
-        faulty: aAnMatch[0],
-        correction: `an ${aAnMatch[2]}`,
-        reason: `모음('${aAnMatch[2].charAt(0)}')으로 발음되는 명사 앞에는 'a' 대신 'an'을 씁니다.`
-      });
-      score -= 10;
-    }
-
-    // -------------------------------------------------------------------------
-    // 의도 파악 (Intended Meaning Synthesis)
-    // -------------------------------------------------------------------------
+    // =========================================================================
+    // 12. 의도 파악 (Intended Meaning)
+    // =========================================================================
     let intendedMeaning = userIntent;
     if (!intendedMeaning) {
       intendedMeaning = this.synthesizeIntendedMeaning(cleanSentence, targetWord);
     }
 
-    // -------------------------------------------------------------------------
-    // AI 1:1 맞춤 교정 완성문 생성 (Direct Corrected Sentence Generation)
-    // -------------------------------------------------------------------------
+    // =========================================================================
+    // 13. 고품질 맞춤 교정 완성문 (Flawless Corrected Sentence Generation)
+    // =========================================================================
     let corrected = cleanSentence;
 
-    // 대문자 및 마침표 보정
-    if (corrected.length > 0) {
-      corrected = corrected.charAt(0).toUpperCase() + corrected.slice(1);
+    if (isFlawless) {
+      // 완벽한 문장이면 원문 그대로 유지!
+      corrected = cleanSentence;
+      score = 100;
+    } else {
+      // 오류가 있는 경우 문법적으로 100% 완전무결한 정문 생성
+      // 1. 대문자 및 마침표 보정
+      if (corrected.length > 0) {
+        corrected = corrected.charAt(0).toUpperCase() + corrected.slice(1);
+      }
+      if (!/[.?!]$/.test(corrected)) {
+        corrected += '.';
+      }
+
+      // 2. 수일치, be동사 결합, to부정사, 목적어 결합 보정
+      corrected = corrected.replace(/\bpeople\s+is\b/gi, 'people are');
+      corrected = corrected.replace(/\bthey\s+is\b/gi, 'they are');
+      corrected = corrected.replace(/\bwe\s+is\b/gi, 'we are');
+      corrected = corrected.replace(/\ba\s+economic\b/gi, 'an economic');
+
+      // to부정사 결합 보정 (want mitigate -> want to mitigate)
+      corrected = corrected.replace(/\b(want|hope|need|plan|decide|attempt)\s+([a-z]+)\b/gi, (m, v1, v2) => {
+        if (v2.toLowerCase() === 'to') return m;
+        return `${v1} to ${v2}`;
+      });
+
+      // 전치사 + 동명사 보정 (for mitigate -> for mitigating)
+      corrected = corrected.replace(new RegExp(`\\b(for|by|without|in)\\s+${targetWord}\\b`, 'gi'), `$1 ${targetWord}ing`);
+
+      // be동사 + 일반동사 원형 보정 (is mitigate -> aims to mitigate)
+      corrected = corrected.replace(new RegExp(`\\b(is|are|was|were)\\s+${targetWord}\\b`, 'gi'), `aims to ${targetWord}`);
+
+      // 3인칭 단수 수일치 보정 (the government mitigate -> the government mitigates)
+      const subjVerbRegex = new RegExp(`\\b(the\\s+[a-z]+|he|she|it)\\s+${targetWord}\\b`, 'i');
+      corrected = corrected.replace(subjVerbRegex, (m, subj) => `${subj} ${targetWord}s`);
+
+      // 타동사 목적어 누락 보정
+      const transFixRegex = new RegExp(`\\b(${targetWord}s?)\\s*\\.`, 'i');
+      corrected = corrected.replace(transFixRegex, `$1 the negative impact.`);
+
+      // 단수 가산명사 무관사 보정
+      countNouns.forEach(cn => {
+        const r = new RegExp(`\\b(${targetWord}|reduce|prevent)\\s+(${cn})\\b`, 'gi');
+        corrected = corrected.replace(r, `$1 the $2`);
+      });
+
+      // 본동사 결여 등 심각한 비문일 경우 모범 정문으로 재구성
+      if (!hasVerb && !hasWord) {
+        corrected = `We must implement effective strategies to ${targetWord} the critical risk.`;
+      }
     }
-    if (!/[.?!]$/.test(corrected)) {
-      corrected += '.';
-    }
 
-    // 오류 순차 자동 수복
-    corrected = corrected.replace(/\bpeople\s+is\b/gi, 'people are');
-    corrected = corrected.replace(/\bpeople\s+was\b/gi, 'people were');
-    corrected = corrected.replace(/\bthey\s+is\b/gi, 'they are');
-    corrected = corrected.replace(/\bwe\s+is\b/gi, 'we are');
-    corrected = corrected.replace(/\ba\s+economic\b/gi, 'an economic');
-
-    // 수일치 수복 (the government mitigate -> the government mitigates)
-    const subjVerbRegex = new RegExp(`\\b(the\\s+[a-z]+|he|she|it)\\s+${targetWord}\\b`, 'i');
-    corrected = corrected.replace(subjVerbRegex, (m, subj) => `${subj} ${targetWord}s`);
-
-    // 타동사 목적어 누락 수복
-    const transFixRegex = new RegExp(`\\b(${targetWord}s?)\\s*\\.`, 'i');
-    corrected = corrected.replace(transFixRegex, `$1 the negative impact.`);
-
-    // be동사 + 원형 수복 (is mitigate -> is mitigating 또는 should mitigate)
-    const beBaseRegex = new RegExp(`\\b(is|are|was|were)\\s+${targetWord}\\b`, 'i');
-    corrected = corrected.replace(beBaseRegex, `aims to ${targetWord}`);
-
-    // 만약 교정 후에도 원형과 같다면, 원어민식 자연스러운 관사 및 전치사 다듬기
-    corrected = corrected.replace(/\bmitigates?\s+economic\s+impact\b/gi, (m) => m.replace('economic impact', 'the economic impact'));
-
-    // -------------------------------------------------------------------------
-    // 원어민 학술 대안문 (Native Alternative)
-    // -------------------------------------------------------------------------
+    // =========================================================================
+    // 14. 원어민 학술 대안문 (Native Alternative)
+    // =========================================================================
     let nativeSentence = '';
     const example = this.currentInfo.example;
     const colloc = this.currentInfo.collocation;
@@ -693,21 +824,20 @@ You MUST respond strictly with valid JSON conforming to this schema (no markdown
       nativeSentence = `Scholars actively employ methodical strategies to ${targetWord} ${colloc || 'critical risks'} in real-world contexts.`;
     }
 
-    score = Math.max(15, Math.min(100, score));
-
     let commentary = '';
-    if (coreErrors.length === 0) {
-      commentary = `훌륭한 작문입니다! 표제어 '${targetWord}'의 통사적 역할과 문맥이 매우 명확하며, 주어-동사 호응과 문장 구조가 자연스럽습니다.`;
-    } else if (coreErrors.length <= 2) {
+    if (isFlawless) {
+      commentary = `🎉 완벽한 영작입니다! 주어-동사 수일치, 시제, 문맥 및 표제어 '${targetWord}'의 쓰임새가 100% 무결하여 별도의 첨삭이 전혀 필요하지 않습니다.`;
+    } else if (score >= 70) {
       commentary = `전반적인 아이디어와 문맥 구성은 훌륭합니다. 다만 ${coreErrors.map(e => e.type).join(', ')} 등의 기본 규칙을 보완하면 훨씬 완성도 높은 학술 문장이 됩니다.`;
     } else {
-      commentary = `전달하고자 하신 핵심 의도는 명확히 전달됩니다. AI가 첨삭해 드린 교정 완성문과 단계별 문법 규칙을 비교하며 문맥을 다듬어 보세요.`;
+      commentary = `문장의 기본 골격(주어+동사 및 문법 어순)에 보완이 필요합니다. AI가 분석한 핵심 오류와 아래 교정 완성문을 비교하여 다시 작성해 보세요.`;
     }
 
     return {
       engineType: 'local',
+      isFlawless,
       intendedMeaning,
-      intentMatchRate: Math.max(70, score + 10),
+      intentMatchRate: isFlawless ? 100 : Math.max(30, score + 10),
       coreErrors,
       correctedSentence: corrected,
       nativeSentence,
@@ -744,6 +874,7 @@ You MUST respond strictly with valid JSON conforming to this schema (no markdown
 
   /**
    * 첨삭 피드백 결과 UI 렌더링
+   * 사용자 요청: "내가 입력한 문장이 맞으면 첨삭을 하지 않게 해줘" 완벽 구현
    */
   renderFeedbackUI(feedback, originalSentence) {
     const summaryCard = document.getElementById('coach-card-summary');
@@ -753,10 +884,15 @@ You MUST respond strictly with valid JSON conforming to this schema (no markdown
     const upgradeCard = document.getElementById('coach-card-upgrade');
 
     const score = feedback.score || 85;
-    const isPerfect = score >= 90;
-    const isGood = score >= 70 && score < 90;
-    const tierColor = isPerfect ? 'bg-emerald-500' : (isGood ? 'bg-indigo-600' : 'bg-rose-600');
-    const tierBg = isPerfect ? 'bg-emerald-50 border-emerald-300' : (isGood ? 'bg-indigo-50 border-indigo-200' : 'bg-rose-50 border-rose-200');
+    const isFlawless = feedback.isFlawless || (feedback.coreErrors && feedback.coreErrors.length === 0 && score >= 95);
+    const isGood = score >= 70 && score < 95;
+    const tierColor = isFlawless ? 'bg-emerald-600' : (isGood ? 'bg-indigo-600' : 'bg-rose-600');
+    const tierBg = isFlawless ? 'bg-emerald-50 border-emerald-300' : (isGood ? 'bg-indigo-50 border-indigo-200' : 'bg-rose-50 border-rose-200');
+
+    // 완벽한 문장일 때 축하 confetti 발사
+    if (isFlawless && typeof confetti === 'function') {
+      confetti({ particleCount: 80, spread: 70, origin: { y: 0.6 } });
+    }
 
     // 1. 종합 점수 및 코멘트 배너
     if (summaryCard) {
@@ -765,7 +901,7 @@ You MUST respond strictly with valid JSON conforming to this schema (no markdown
         <div class="space-y-1">
           <div class="flex items-center gap-2">
             <span class="px-2.5 py-0.5 rounded-full text-white text-[11px] font-mono font-bold ${tierColor}">
-              ${isPerfect ? 'MASTER PIECE' : (isGood ? 'INTERMEDIATE' : 'REVISION REQUIRED')}
+              ${isFlawless ? 'PERFECT MASTER • 무결점 정답' : (isGood ? 'INTERMEDIATE • 양호' : 'REVISION REQUIRED • 첨삭 필요')}
             </span>
             <span class="text-xs text-slate-500 font-mono flex items-center gap-1">
               <i data-lucide="${feedback.engineType === 'gemini' ? 'sparkles' : 'cpu'}" class="w-3.5 h-3.5 text-indigo-600"></i>
@@ -773,7 +909,7 @@ You MUST respond strictly with valid JSON conforming to this schema (no markdown
             </span>
           </div>
           <h3 class="font-serif font-black text-base sm:text-lg text-slate-900">
-            ${isPerfect ? '🎯 우수한 학술 완성도' : (isGood ? '👍 의도 부합 & 개선 권장' : '⚠️ 핵심 문법 및 어법 교정 필요')}
+            ${isFlawless ? '🎉 완벽한 영작입니다! (별도 첨삭 불필요)' : (isGood ? '👍 의도 부합 & 세부 문법 보완 권장' : '⚠️ 핵심 문법 및 어법 교정 필요')}
           </h3>
           <p class="text-xs text-slate-700 leading-relaxed max-w-xl">
             ${feedback.commentary}
@@ -781,7 +917,7 @@ You MUST respond strictly with valid JSON conforming to this schema (no markdown
         </div>
         <div class="text-center sm:text-right shrink-0 bg-white/90 px-4 py-2.5 rounded-xl border border-slate-200 shadow-2xs">
           <span class="text-[10px] font-mono uppercase text-slate-400 font-bold block">Evaluation Score</span>
-          <span class="font-serif font-black text-2xl sm:text-3xl ${isPerfect ? 'text-emerald-600' : (isGood ? 'text-indigo-600' : 'text-rose-600')}">
+          <span class="font-serif font-black text-2xl sm:text-3xl ${isFlawless ? 'text-emerald-600' : (isGood ? 'text-indigo-600' : 'text-rose-600')}">
             ${score}<span class="text-xs font-sans text-slate-400 font-normal"> / 100점</span>
           </span>
         </div>
@@ -806,10 +942,6 @@ You MUST respond strictly with valid JSON conforming to this schema (no markdown
           <p class="font-serif font-bold text-slate-900 text-sm leading-relaxed">
             ${feedback.intendedMeaning}
           </p>
-          <div class="text-[11px] text-blue-800 pt-1 flex items-center gap-1">
-            <i data-lucide="check" class="w-3 h-3 text-blue-600"></i>
-            <span>학습자의 원래 의도를 100% 보존하여 아래 3단계에서 자연스럽게 교정했습니다.</span>
-          </div>
         </div>
       `;
     }
@@ -823,10 +955,10 @@ You MUST respond strictly with valid JSON conforming to this schema (no markdown
         <div class="flex items-center justify-between mb-2">
           <span class="font-serif font-black text-xs sm:text-sm flex items-center gap-1.5 ${isClean ? 'text-emerald-950' : 'text-amber-950'}">
             <i data-lucide="${isClean ? 'shield-check' : 'alert-triangle'}" class="w-4 h-4 ${isClean ? 'text-emerald-600' : 'text-amber-600'}"></i>
-            <span>2단계: 핵심 오류 정밀 진단 (${isClean ? '오류 없음' : errorCount + '개 오류 포착'})</span>
+            <span>2단계: 문법 및 어법 정밀 진단 (${isClean ? '오류 없음 • 100% 무결' : errorCount + '개 오류 포착'})</span>
           </span>
           <span class="text-[10px] font-mono px-2 py-0.5 rounded-full ${isClean ? 'bg-emerald-200 text-emerald-900 font-bold' : 'bg-amber-200 text-amber-900 font-bold'}">
-            ${isClean ? 'CLEAN STRUCTURE' : 'DIAGNOSIS COMPLETE'}
+            ${isClean ? 'CLEAN & FLAWLESS' : 'DIAGNOSIS COMPLETE'}
           </span>
         </div>
         <div class="space-y-2 text-xs">
@@ -847,59 +979,95 @@ You MUST respond strictly with valid JSON conforming to this schema (no markdown
               </p>
             </div>
           `).join('') : `
-            <div class="p-3 rounded-xl bg-white/90 border border-emerald-300 text-emerald-900 text-xs">
-              ✅ 주어-동사 수일치, 시제, 문장 부호 및 품사 배치가 정확하며 중대한 문법 결함이 없습니다.
+            <div class="p-3 rounded-xl bg-white/90 border border-emerald-300 text-emerald-900 text-xs flex items-center gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+              <span>주어-동사 호응, 시제, 문장 부호, 목적어 및 품사 배치가 정확하며 일체의 문법적 결함이 없습니다.</span>
             </div>
           `}
         </div>
       `;
     }
 
-    // 4. AI 1:1 맞춤 교정 (Before & After) 카드
+    // 4. AI 1:1 맞춤 교정 카드 (사용자 문장이 맞으면 첨삭 생략!)
     if (correctionCard) {
-      correctionCard.className = 'rounded-2xl p-4.5 bg-gradient-to-br from-indigo-50/90 to-purple-50/60 border border-indigo-200 text-indigo-950 space-y-3';
-      correctionCard.innerHTML = `
-        <div class="flex items-center justify-between">
-          <span class="font-serif font-black text-xs sm:text-sm flex items-center gap-1.5 text-indigo-950">
-            <i data-lucide="check-check" class="w-4 h-4 text-indigo-600"></i>
-            <span>3단계: AI 1:1 맞춤 교정 완성문 (Before ➔ After)</span>
-          </span>
-          <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-indigo-200 text-indigo-900 font-bold">
-            DIRECT CORRECTION
-          </span>
-        </div>
-
-        <!-- Before & After 시각적 대조 박스 -->
-        <div class="space-y-2 text-xs">
-          <!-- Before (원문) -->
-          <div class="p-3 bg-white/80 rounded-xl border border-rose-200 space-y-1">
-            <div class="flex items-center justify-between">
-              <span class="text-[10px] font-mono font-bold uppercase text-rose-700 bg-rose-50 px-2 py-0.5 rounded border border-rose-200">Before (수정 전 학습자 원문)</span>
-            </div>
-            <p class="font-serif text-slate-700 text-sm leading-relaxed">${originalSentence}</p>
+      if (isFlawless) {
+        // [문장이 맞을 때]: 불필요한 첨삭을 진행하지 않고 정답 마스터 칭찬 카드 렌더링
+        correctionCard.className = 'rounded-2xl p-5 bg-gradient-to-br from-emerald-50 via-teal-50 to-green-50 border border-emerald-300 text-emerald-950 space-y-3 shadow-sm';
+        correctionCard.innerHTML = `
+          <div class="flex items-center justify-between">
+            <span class="font-serif font-black text-xs sm:text-sm flex items-center gap-1.5 text-emerald-950">
+              <i data-lucide="sparkles" class="w-4 h-4 text-emerald-600"></i>
+              <span>3단계: AI 1:1 맞춤 교정 (첨삭 불필요 • 원문 정답 인정)</span>
+            </span>
+            <span class="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-emerald-200 text-emerald-900 font-extrabold border border-emerald-300">
+              NO CORRECTION NEEDED
+            </span>
           </div>
 
-          <!-- After (AI 교정 완성문) -->
-          <div class="p-3.5 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl border border-emerald-300 space-y-1.5 shadow-xs">
+          <div class="p-4 bg-white/90 rounded-xl border border-emerald-200 space-y-2 shadow-2xs">
             <div class="flex items-center justify-between">
-              <span class="text-[10px] font-mono font-bold uppercase text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-300">After (AI 1:1 맞춤 교정 완성문)</span>
-              <button type="button" onclick="navigator.clipboard.writeText('${feedback.correctedSentence.replace(/'/g, "\\'")}')" class="text-[11px] text-emerald-800 hover:text-emerald-950 font-bold flex items-center gap-1 cursor-pointer">
+              <span class="text-[10px] font-mono font-bold uppercase text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-300">
+                ✨ 학습자 작성 정답 문장
+              </span>
+              <button type="button" onclick="navigator.clipboard.writeText('${originalSentence.replace(/'/g, "\\'")}')" class="text-[11px] text-emerald-800 hover:text-emerald-950 font-bold flex items-center gap-1 cursor-pointer">
                 <i data-lucide="copy" class="w-3 h-3"></i>
                 <span>문장 복사</span>
               </button>
             </div>
-            <p class="font-serif font-bold text-emerald-950 text-sm sm:text-base leading-relaxed">
-              "${feedback.correctedSentence}"
+            <p class="font-serif font-black text-slate-900 text-base sm:text-lg leading-relaxed">
+              "${originalSentence}"
             </p>
-            <div class="pt-1 flex items-center justify-between">
-              <span class="text-[11px] text-emerald-800">✨ 의도를 살리고 모든 문법/어법 오류를 보완한 정문입니다.</span>
-              <button type="button" onclick="document.getElementById('coach-writing-input').value = '${feedback.correctedSentence.replace(/'/g, "\\'")}'" class="text-[11px] font-bold text-indigo-600 hover:text-indigo-800 underline cursor-pointer">
-                입력창에 적용하기
-              </button>
+            <p class="text-xs text-emerald-800 pt-1 flex items-center gap-1.5">
+              <i data-lucide="check-check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+              <span><strong>축하합니다!</strong> 작성하신 문장은 문법과 문맥이 모두 완벽하여 별도의 AI 교정(수정)을 거칠 필요가 없습니다.</span>
+            </p>
+          </div>
+        `;
+      } else {
+        // [문장에 오류가 있을 때]: 정확한 Before & After 교정 완성문 제공
+        correctionCard.className = 'rounded-2xl p-4.5 bg-gradient-to-br from-indigo-50/90 to-purple-50/60 border border-indigo-200 text-indigo-950 space-y-3';
+        correctionCard.innerHTML = `
+          <div class="flex items-center justify-between">
+            <span class="font-serif font-black text-xs sm:text-sm flex items-center gap-1.5 text-indigo-950">
+              <i data-lucide="check-check" class="w-4 h-4 text-indigo-600"></i>
+              <span>3단계: AI 1:1 맞춤 교정 완성문 (Before ➔ After)</span>
+            </span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-indigo-200 text-indigo-900 font-bold">
+              DIRECT CORRECTION
+            </span>
+          </div>
+
+          <div class="space-y-2 text-xs">
+            <!-- Before (원문) -->
+            <div class="p-3 bg-white/80 rounded-xl border border-rose-200 space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-mono font-bold uppercase text-rose-700 bg-rose-50 px-2 py-0.5 rounded border border-rose-200">Before (수정 전 학습자 원문)</span>
+              </div>
+              <p class="font-serif text-slate-700 text-sm leading-relaxed">${originalSentence}</p>
+            </div>
+
+            <!-- After (AI 교정 완성문) -->
+            <div class="p-3.5 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl border border-emerald-300 space-y-1.5 shadow-xs">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-mono font-bold uppercase text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-300">After (AI 1:1 맞춤 교정 완성문)</span>
+                <button type="button" onclick="navigator.clipboard.writeText('${feedback.correctedSentence.replace(/'/g, "\\'")}')" class="text-[11px] text-emerald-800 hover:text-emerald-950 font-bold flex items-center gap-1 cursor-pointer">
+                  <i data-lucide="copy" class="w-3 h-3"></i>
+                  <span>문장 복사</span>
+                </button>
+              </div>
+              <p class="font-serif font-bold text-emerald-950 text-sm sm:text-base leading-relaxed">
+                "${feedback.correctedSentence}"
+              </p>
+              <div class="pt-1 flex items-center justify-between">
+                <span class="text-[11px] text-emerald-800">✨ 의도를 살리고 모든 문법/어법 오류를 보완한 정문입니다.</span>
+                <button type="button" onclick="document.getElementById('coach-writing-input').value = '${feedback.correctedSentence.replace(/'/g, "\\'")}'" class="text-[11px] font-bold text-indigo-600 hover:text-indigo-800 underline cursor-pointer">
+                  입력창에 적용하기
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      `;
+        `;
+      }
     }
 
     // 5. 원어민식 세련된 고급 표현 & 콜로케이션
@@ -915,7 +1083,6 @@ You MUST respond strictly with valid JSON conforming to this schema (no markdown
           </span>
         </div>
 
-        <!-- 원어민 대안문 -->
         <div class="p-3.5 bg-white/90 rounded-xl border border-indigo-200 space-y-1 shadow-2xs">
           <span class="text-[10px] font-mono font-bold text-indigo-700 uppercase tracking-wider block">원어민 학술 저널/에세이 추천 모범문</span>
           <p class="font-serif italic text-slate-900 font-bold text-xs sm:text-sm leading-relaxed">
@@ -923,7 +1090,6 @@ You MUST respond strictly with valid JSON conforming to this schema (no markdown
           </p>
         </div>
 
-        <!-- 권장 콜로케이션 팁 -->
         ${this.currentInfo.collocation ? `
           <div class="p-3 bg-white/80 rounded-xl border border-indigo-100 text-xs space-y-1">
             <span class="text-indigo-900 font-bold flex items-center gap-1">
@@ -931,7 +1097,7 @@ You MUST respond strictly with valid JSON conforming to this schema (no markdown
               <span class="font-mono text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-200">${this.currentInfo.collocation}</span>
             </span>
             <p class="text-[11px] text-slate-600 leading-relaxed">
-              단어를 따로 쓰는 것보다 위 연어(Collocation) 묶음으로 암기하면 서술형 수행평가와 실전 에세이에서 가산점을 받습니다.
+              단어를 따로 쓰는 것보다 위 연어(Collocation) 묶음으로 활용하면 서술형 수행평가와 실전 에세이에서 고득점을 받습니다.
             </p>
           </div>
         ` : ''}
