@@ -3093,8 +3093,8 @@
           const targetWord = w.word;
           const rawExample = w.example || 'No example sentence available.';
           
-          const escapedWord = targetWord.replace(/[.*+?^${}()|[\]\]/g, '\$&');
-          const regex = new RegExp(`\b${escapedWord}\b`, 'gi');
+          const escapedWord = targetWord.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          const regex = new RegExp(`\\b${escapedWord}\\b`, 'gi');
           let clozeSentence = rawExample;
           if (regex.test(rawExample)) {
             clozeSentence = rawExample.replace(regex, `<span class="inline-block border-b-2 border-indigo-500 font-mono text-indigo-900 font-bold px-3 mx-1 text-center" style="min-width: 90px;">(${num}) ____________</span>`);
