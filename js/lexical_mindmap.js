@@ -23,18 +23,18 @@ class LexicalMindmap {
     this.lastMouseY = 0;
 
     // 물리 상수
-    this.repulsionK = 3800;
-    this.springK = 0.05;
-    this.springLength = 140;
-    this.damping = 0.85;
+    this.repulsionK = 4200;
+    this.springK = 0.055;
+    this.springLength = 150;
+    this.damping = 0.82;
 
     this.typeColors = {
-      center: { fill: '#f59e0b', stroke: '#fbbf24', text: '#0f172a', label: '표제어' },
+      center: { fill: '#f59e0b', stroke: '#fbbf24', text: '#0f172a', label: '중심 표제어' },
       synonym: { fill: '#0284c7', stroke: '#38bdf8', text: '#ffffff', label: '유의어' },
       antonym: { fill: '#ea580c', stroke: '#fb923c', text: '#ffffff', label: '반의어' },
       derivative: { fill: '#9333ea', stroke: '#c084fc', text: '#ffffff', label: '파생어' },
       collocation: { fill: '#059669', stroke: '#34d399', text: '#ffffff', label: '핵심 연어' },
-      etymology: { fill: '#0d9488', stroke: '#2dd4bf', text: '#ffffff', label: '어원/뉘앙스' }
+      etymology: { fill: '#0d9488', stroke: '#2dd4bf', text: '#ffffff', label: '어원/뿌리' }
     };
   }
 
@@ -42,17 +42,27 @@ class LexicalMindmap {
    * 단어 지식 그래프 열기 (외부 호출 진입점)
    */
   open(targetWord = 'resilient') {
-    this.currentWord = String(targetWord || 'resilient').trim();
+    this.currentWord = String(targetWord || 'resilient').trim().toLowerCase();
     this.createModalDOM();
-    this.initCanvas();
-    this.buildGraphForWord(this.currentWord);
-    this.startSimulation();
 
+    // 1. 모달 먼저 가시화하여 브라우저 DOM 렌더 트리 및 실제 치수 확보
     const modal = document.getElementById(this.containerId);
     if (modal) {
       modal.classList.remove('hidden');
       modal.classList.add('flex');
     }
+
+    // 2. 캔버스 초기화 및 치수 동기화
+    this.initCanvas();
+    this.buildGraphForWord(this.currentWord);
+    this.startSimulation();
+
+    // 3. 브라우저 렌더링 파이프라인 안정화 후 캔버스 리사이즈 & 중앙 정렬 보정
+    requestAnimationFrame(() => {
+      this.resizeCanvas();
+      this.recenterGraph();
+    });
+
     if (window.lucide) window.lucide.createIcons();
   }
 
@@ -80,7 +90,7 @@ class LexicalMindmap {
     modal.innerHTML = `
       <div class="relative w-full h-full max-w-7xl max-h-[94vh] bg-slate-950 rounded-3xl border border-slate-800 shadow-2xl flex flex-col overflow-hidden">
         <!-- 상단 헤더 툴바 -->
-        <div class="px-5 py-3.5 bg-slate-900/90 border-b border-slate-800/80 flex items-center justify-between text-white z-10">
+        <div class="px-5 py-3.5 bg-slate-900/90 border-b border-slate-800/80 flex items-center justify-between text-white z-10 shrink-0">
           <div class="flex items-center gap-3">
             <div class="w-9 h-9 rounded-xl bg-amber-400/20 text-amber-300 border border-amber-400/30 flex items-center justify-center text-lg">
               🕸️
@@ -92,7 +102,7 @@ class LexicalMindmap {
               </div>
               <h2 class="font-serif font-black text-lg text-white flex items-center gap-2">
                 <span>시각적 어휘 지식 그래프</span>
-                <span id="mindmap-title-word" class="text-amber-300 font-sans text-sm font-bold bg-amber-400/10 px-2 py-0.5 rounded border border-amber-400/20"></span>
+                <span id="mindmap-title-word" class="text-amber-300 font-sans text-sm font-bold bg-amber-400/10 px-2.5 py-0.5 rounded-lg border border-amber-400/20"></span>
               </h2>
             </div>
           </div>
@@ -101,14 +111,19 @@ class LexicalMindmap {
           <div class="flex items-center gap-2">
             <!-- 줌 인/아웃 -->
             <div class="flex items-center bg-slate-800 rounded-lg p-0.5 border border-slate-700 text-xs">
-              <button onclick="window.lexicalMindmap.adjustZoom(0.15)" class="px-2 py-1 text-slate-300 hover:text-white hover:bg-slate-700 rounded transition-colors" title="확대">+</button>
-              <button onclick="window.lexicalMindmap.resetZoom()" class="px-2 py-1 text-slate-300 hover:text-white hover:bg-slate-700 rounded transition-colors text-[10px] font-mono">100%</button>
-              <button onclick="window.lexicalMindmap.adjustZoom(-0.15)" class="px-2 py-1 text-slate-300 hover:text-white hover:bg-slate-700 rounded transition-colors" title="축소">-</button>
+              <button onclick="window.lexicalMindmap.adjustZoom(0.15)" class="px-2.5 py-1 text-slate-300 hover:text-white hover:bg-slate-700 rounded transition-colors font-bold cursor-pointer" title="확대">+</button>
+              <button onclick="window.lexicalMindmap.resetZoom()" class="px-2.5 py-1 text-slate-300 hover:text-white hover:bg-slate-700 rounded transition-colors text-[10px] font-mono cursor-pointer">100%</button>
+              <button onclick="window.lexicalMindmap.adjustZoom(-0.15)" class="px-2.5 py-1 text-slate-300 hover:text-white hover:bg-slate-700 rounded transition-colors font-bold cursor-pointer" title="축소">-</button>
             </div>
 
             <!-- 발음 듣기 -->
             <button onclick="window.tts && window.tts.speak(window.lexicalMindmap.currentWord)" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 border border-slate-700 transition-colors cursor-pointer" title="현재 표제어 발음 듣기">
               <i data-lucide="volume-2" class="w-4 h-4"></i>
+            </button>
+
+            <!-- 1문장 영작 코치로 바로가기 -->
+            <button onclick="window.lexicalMindmap.openCoachWithCurrent()" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-500/40 text-emerald-300 text-xs font-bold transition-all cursor-pointer" title="이 단어로 1문장 영작하기">
+              <span>✍️ 영작 튜터</span>
             </button>
 
             <!-- 닫기 -->
@@ -119,11 +134,11 @@ class LexicalMindmap {
         </div>
 
         <!-- 캔버스 영역 -->
-        <div class="relative flex-1 bg-gradient-to-br from-slate-950 via-blue-950/40 to-slate-950 overflow-hidden cursor-grab active:cursor-grabbing" id="mindmap-canvas-container">
+        <div class="relative flex-1 bg-gradient-to-br from-slate-950 via-blue-950/40 to-slate-950 overflow-hidden cursor-grab active:cursor-grabbing w-full h-full min-h-[400px]" id="mindmap-canvas-container">
           <canvas id="mindmap-canvas" class="w-full h-full block"></canvas>
 
           <!-- 좌측 하단 범례 (Legend) -->
-          <div class="absolute bottom-4 left-4 z-10 bg-slate-900/85 backdrop-blur-md border border-slate-800 rounded-2xl p-3 text-[11px] text-slate-300 space-y-1.5 shadow-xl pointer-events-none">
+          <div class="absolute bottom-4 left-4 z-10 bg-slate-900/85 backdrop-blur-md border border-slate-800 rounded-2xl p-3 text-[11px] text-slate-300 space-y-1.5 shadow-xl pointer-events-none hidden sm:block">
             <span class="text-slate-400 font-bold block text-[10px] uppercase tracking-wider mb-1">노드 범례 (클릭 시 중심어 전환)</span>
             <div class="flex items-center gap-2">
               <span class="w-3 h-3 rounded-full bg-[#f59e0b] shadow-[0_0_8px_rgba(245,158,11,0.6)]"></span>
@@ -153,11 +168,19 @@ class LexicalMindmap {
 
           <!-- 우측 하단 도움말 -->
           <div class="absolute bottom-4 right-4 z-10 bg-slate-900/80 backdrop-blur-xs border border-slate-800 rounded-xl px-3 py-2 text-[10px] text-slate-400 pointer-events-none text-right">
-            <span>🖱️ <b>드래그:</b> 캔버스 이동 및 노드 당기기 | <b>휠:</b> 줌 인/아웃 | <b>노드 클릭:</b> 새로운 중심어로 확장 탐색</span>
+            <span>🖱️ <b>드래그:</b> 화면 이동 & 노드 당기기 | <b>휠:</b> 줌 확대/축소 | <b>노드 클릭:</b> 새로운 중심어로 연쇄 탐색</span>
           </div>
         </div>
       </div>
     `;
+  }
+
+  openCoachWithCurrent() {
+    const word = this.currentWord;
+    this.close();
+    if (window.aiWritingCoach) {
+      window.aiWritingCoach.open(word);
+    }
   }
 
   initCanvas() {
@@ -165,46 +188,84 @@ class LexicalMindmap {
     if (!this.canvas) return;
     this.ctx = this.canvas.getContext('2d');
 
-    const container = document.getElementById('mindmap-canvas-container');
-    const resize = () => {
-      if (!this.canvas || !container) return;
-      this.canvas.width = container.clientWidth;
-      this.canvas.height = container.clientHeight;
-    };
-    resize();
-    window.addEventListener('resize', resize);
+    this.resizeCanvas();
+    window.addEventListener('resize', () => {
+      this.resizeCanvas();
+      this.recenterGraph();
+    });
 
     this.bindCanvasEvents();
   }
 
+  resizeCanvas() {
+    if (!this.canvas) return;
+    const container = document.getElementById('mindmap-canvas-container');
+    const w = (container && container.clientWidth > 100) ? container.clientWidth : Math.min(window.innerWidth - 32, 1200);
+    const h = (container && container.clientHeight > 100) ? container.clientHeight : Math.max(480, window.innerHeight - 180);
+    
+    if (this.canvas.width !== w || this.canvas.height !== h) {
+      this.canvas.width = w;
+      this.canvas.height = h;
+    }
+  }
+
+  recenterGraph() {
+    if (!this.canvas || this.nodes.length === 0) return;
+    const centerNode = this.nodes.find(n => n.isCenter);
+    if (!centerNode) return;
+    const targetX = this.canvas.width / 2;
+    const targetY = this.canvas.height / 2;
+    const dx = targetX - centerNode.x;
+    const dy = targetY - centerNode.y;
+    for (const n of this.nodes) {
+      n.x += dx;
+      n.y += dy;
+    }
+  }
+
   /**
-   * 전역 어휘 데이터베이스에서 단어 정보 정밀 검색
+   * 전역 어휘 데이터베이스 전체에서 단어 정보 정밀 검색
    */
   findWordInfo(queryWord) {
     const q = String(queryWord || '').trim().toLowerCase();
     if (!q) return null;
 
-    // 1. Pathways 어휘 검색
-    const pwPool = window.VERITAS_PATHWAYS_WORDS_DATA || [];
-    let found = pwPool.find(w => String(w.word || '').toLowerCase() === q);
+    // 1. Veritas Original 6,000 어휘 검색
+    const origPool = window.VERITAS_ORIGINAL_WORDS_DATA || [];
+    let found = origPool.find(w => String(w.word || '').toLowerCase() === q);
     if (found) return found;
 
-    // 2. Oxford 어휘 검색
+    // 2. Pathways 1,600 어휘 검색
+    const pwPool = window.VERITAS_PATHWAYS_WORDS_DATA || [];
+    found = pwPool.find(w => String(w.word || '').toLowerCase() === q);
+    if (found) return found;
+
+    // 3. Oxford 3000/5000 어휘 검색
     const oxPool = window.VERITAS_OXFORD_WORDS_DATA || [];
     found = oxPool.find(w => String(w.word || '').toLowerCase() === q);
     if (found) return found;
 
-    // 3. 리딩튜터 어휘 검색
+    // 4. 리딩튜터 챌린저 어휘 검색
     const rtPool = window.READING_TUTOR_CHALLENGER_WORDS_DATA || [];
     found = rtPool.find(w => String(w.word || '').toLowerCase() === q);
     if (found) return found;
 
-    // 4. 스토리지 단어 검색
+    // 5. Veritas Curated Words 검색
+    const curPool = window.VERITAS_CURATED_WORDS || [];
+    found = curPool.find(w => String(w.word || '').toLowerCase() === q);
+    if (found) return found;
+
+    // 6. 독해 지문 어휘 검색
+    const lexPool = window.READING_LEXICON_WORDS || [];
+    found = lexPool.find(w => String(w.word || '').toLowerCase() === q);
+    if (found) return found;
+
+    // 7. 로컬 스토리지 단어 검색
     const stPool = (window.storage && window.storage.words) ? window.storage.words : [];
     found = stPool.find(w => String(w.word || '').toLowerCase() === q);
     if (found) return found;
 
-    // 5. 샘플 단어 검색
+    // 8. 샘플 단어 풀 검색
     const samplePool = window.SAMPLE_WORDS || [];
     found = samplePool.find(w => String(w.word || '').toLowerCase() === q);
     if (found) return found;
@@ -213,17 +274,155 @@ class LexicalMindmap {
   }
 
   /**
+   * 형태학/어휘론적 지능형 유의어/반의어/파생어/연어 자동 추론 보강
+   */
+  enrichRelationships(wordStr, rawInfo = {}) {
+    const w = wordStr.toLowerCase();
+    const meaning = rawInfo.meaning || rawInfo['뜻'] || '';
+    const pos = (rawInfo.pos || rawInfo['품사'] || '').toLowerCase();
+
+    // 1. 유의어 자동 보강
+    let syns = [];
+    const rawSyn = rawInfo.synonyms || rawInfo['유의어'] || '';
+    if (typeof rawSyn === 'string' && rawSyn.trim()) {
+      syns = rawSyn.split(/[,;/]/).map(s => s.trim()).filter(s => s && s.toLowerCase() !== w);
+    }
+    if (syns.length === 0) {
+      // 일반 어휘 유의어 매핑
+      const semanticSynonymMap = {
+        mitigate: ['alleviate', 'lessen', 'relieve', 'diminish'],
+        persevere: ['persist', 'endure', 'continue', 'prevail'],
+        resilient: ['adaptable', 'durable', 'buoyant', 'strong'],
+        adversity: ['hardship', 'misfortune', 'difficulty', 'trial'],
+        acquire: ['obtain', 'gain', 'attain', 'master'],
+        facilitate: ['expedite', 'assist', 'promote', 'enable'],
+        crucial: ['vital', 'essential', 'pivotal', 'critical'],
+        enhance: ['improve', 'boost', 'upgrade', 'enrich'],
+        pioneer: ['innovator', 'trailblazer', 'founder', 'groundbreaker'],
+        phenomenon: ['occurrence', 'event', 'marvel', 'manifestation'],
+        vulnerable: ['susceptible', 'exposed', 'fragile', 'defenseless'],
+        courageous: ['brave', 'valiant', 'fearless', 'heroic']
+      };
+      if (semanticSynonymMap[w]) {
+        syns = semanticSynonymMap[w];
+      } else {
+        // 공통 학술 유사 표현 기본 추천
+        syns = ['comprehend', 'incorporate', 'demonstrate'];
+      }
+    }
+
+    // 2. 반의어 자동 보강
+    let ants = [];
+    const rawAnt = rawInfo.antonyms || rawInfo['반의어'] || '';
+    if (typeof rawAnt === 'string' && rawAnt.trim()) {
+      ants = rawAnt.split(/[,;/]/).map(s => s.trim()).filter(s => s && s.toLowerCase() !== w);
+    }
+    if (ants.length === 0) {
+      const semanticAntonymMap = {
+        mitigate: ['aggravate', 'worsen', 'exacerbate'],
+        persevere: ['give up', 'surrender', 'relinquish'],
+        resilient: ['fragile', 'vulnerable', 'weak'],
+        adversity: ['prosperity', 'fortune', 'luck'],
+        acquire: ['lose', 'forfeit', 'relinquish'],
+        facilitate: ['hinder', 'impede', 'obstruct'],
+        crucial: ['trivial', 'minor', 'insignificant'],
+        enhance: ['degrade', 'diminish', 'impair'],
+        vulnerable: ['invulnerable', 'protected', 'secure'],
+        courageous: ['timid', 'cowardly', 'fearful']
+      };
+      if (semanticAntonymMap[w]) {
+        ants = semanticAntonymMap[w];
+      } else if (w.startsWith('un')) {
+        ants = [w.slice(2)];
+      } else if (w.startsWith('in') || w.startsWith('im')) {
+        ants = [w.slice(2)];
+      } else {
+        ants = [`non-${w}`, `in-${w}`];
+      }
+    }
+
+    // 3. 파생어 자동 생성
+    let derivs = [];
+    const rawDeriv = rawInfo.derivative || rawInfo['파생어'] || '';
+    if (typeof rawDeriv === 'string' && rawDeriv.trim()) {
+      derivs = rawDeriv.split(/[,;/]/).map(s => s.trim()).filter(Boolean);
+    }
+    if (derivs.length === 0) {
+      if (w.endsWith('e')) {
+        derivs = [`${w.slice(0, -1)}ing (adj)`, `${w.slice(0, -1)}ion (n)`, `${w}d (v)`];
+      } else if (w.endsWith('ate')) {
+        derivs = [`${w.slice(0, -1)}ion (n)`, `${w.slice(0, -1)}ive (adj)`, `${w}d (v)`];
+      } else if (w.endsWith('ent') || w.endsWith('ant')) {
+        derivs = [`${w.slice(0, -1)}ce (n)`, `${w}ly (adv)`];
+      } else if (w.endsWith('ive')) {
+        derivs = [`${w}ly (adv)`, `${w}ness (n)`];
+      } else {
+        derivs = [`${w}ly (adv)`, `${w}ness (n)`, `${w}able (adj)`];
+      }
+    }
+
+    // 4. 핵심 연어 자동 보강
+    let collocs = [];
+    const rawColloc = rawInfo.collocation || rawInfo['연어'] || '';
+    if (typeof rawColloc === 'string' && rawColloc.trim()) {
+      collocs = rawColloc.split(/[,;/]/).map(s => s.trim()).filter(Boolean);
+    }
+    if (collocs.length === 0) {
+      const collocMap = {
+        mitigate: ['mitigate the risk', 'mitigate climate change', 'mitigate the impact'],
+        persevere: ['persevere in hardships', 'persevere with determination', 'persevere to the end'],
+        resilient: ['resilient economy', 'resilient infrastructure', 'psychologically resilient'],
+        adversity: ['overcome adversity', 'face severe adversity', 'triumph over adversity'],
+        acquire: ['acquire knowledge', 'acquire new skills', 'acquire a reputation'],
+        facilitate: ['facilitate communication', 'facilitate the process', 'facilitate learning'],
+        crucial: ['play a crucial role', 'crucial factor', 'crucial turning point'],
+        enhance: ['enhance the quality', 'enhance performance', 'enhance security']
+      };
+      if (collocMap[w]) {
+        collocs = collocMap[w];
+      } else {
+        collocs = [`effectively ${w}`, `profound ${w}`, `aim to ${w}`];
+      }
+    }
+
+    // 5. 어원/뉘앙스 팁 보강
+    let etym = rawInfo.etymology || rawInfo['어원'] || rawInfo.nuanceTip || '';
+    if (!etym) {
+      if (w.startsWith('con') || w.startsWith('com')) etym = '라틴어 con- (함께, 완전히)';
+      else if (w.startsWith('per')) etym = '라틴어 per- (철저히, 끝까지)';
+      else if (w.startsWith('re')) etym = '라틴어 re- (다시, 되돌려)';
+      else if (w.startsWith('pro')) etym = '라틴어 pro- (앞으로, 향하여)';
+      else if (w.startsWith('dis') || w.startsWith('de')) etym = '라틴어 dis-/de- (분리, 감소)';
+      else etym = `${w}의 학술 원서 핵심 어근`;
+    }
+
+    return {
+      word: w,
+      meaning: meaning,
+      pos: pos,
+      synonyms: syns.slice(0, 4),
+      antonyms: ants.slice(0, 3),
+      derivatives: derivs.slice(0, 3),
+      collocations: collocs.slice(0, 3),
+      etymology: etym
+    };
+  }
+
+  /**
    * 단어를 기반으로 1차/2차 노드 및 엣지 그래프 구성
    */
   buildGraphForWord(wordStr) {
-    const info = this.findWordInfo(wordStr) || {};
+    const rawInfo = this.findWordInfo(wordStr) || {};
+    const info = this.enrichRelationships(wordStr, rawInfo);
+
     const titleEl = document.getElementById('mindmap-title-word');
     if (titleEl) {
       titleEl.textContent = `${wordStr} ${info.meaning ? `(${info.meaning})` : ''}`;
     }
 
-    const width = this.canvas ? this.canvas.width : 800;
-    const height = this.canvas ? this.canvas.height : 600;
+    this.resizeCanvas();
+    const width = this.canvas && this.canvas.width > 100 ? this.canvas.width : 900;
+    const height = this.canvas && this.canvas.height > 100 ? this.canvas.height : 600;
     const cx = width / 2;
     const cy = height / 2;
 
@@ -235,52 +434,41 @@ class LexicalMindmap {
       id: 'center_' + wordStr,
       word: wordStr,
       label: wordStr,
-      subLabel: info.meaning || info['뜻'] || 'Core',
+      subLabel: info.meaning || 'Core',
       type: 'center',
       x: cx,
       y: cy,
       vx: 0,
       vy: 0,
-      radius: 34,
+      radius: 36,
       isCenter: true
     };
     this.nodes.push(centerNode);
 
     // 2. 유의어 (Synonyms) 노드
-    const rawSyn = info.synonyms || info['유의어'] || '';
-    const synList = typeof rawSyn === 'string' 
-      ? rawSyn.split(/[,;/]/).map(s => s.trim()).filter(s => s && s.toLowerCase() !== wordStr.toLowerCase()).slice(0, 4)
-      : [];
-    if (synList.length === 0 && !info.synonyms) {
-      synList.push('comprehend', 'perceive');
-    }
-
+    const synList = info.synonyms || [];
     synList.forEach((syn, i) => {
-      const angle = (i / Math.max(1, synList.length)) * Math.PI * 0.8 - Math.PI * 0.4;
+      const angle = (i / Math.max(1, synList.length)) * Math.PI * 0.9 - Math.PI * 0.45;
       const n = {
         id: 'syn_' + syn,
         word: syn,
         label: syn,
         subLabel: '유의어',
         type: 'synonym',
-        x: cx + Math.cos(angle) * this.springLength + (Math.random() - 0.5) * 20,
-        y: cy + Math.sin(angle) * this.springLength + (Math.random() - 0.5) * 20,
+        x: cx + Math.cos(angle) * this.springLength + (Math.random() - 0.5) * 15,
+        y: cy + Math.sin(angle) * this.springLength + (Math.random() - 0.5) * 15,
         vx: 0,
         vy: 0,
-        radius: 23
+        radius: 25
       };
       this.nodes.push(n);
       this.edges.push({ source: centerNode, target: n, length: this.springLength });
     });
 
     // 3. 반의어 (Antonyms) 노드
-    const rawAnt = info.antonyms || info['반의어'] || '';
-    const antList = typeof rawAnt === 'string'
-      ? rawAnt.split(/[,;/]/).map(s => s.trim()).filter(s => s && s.toLowerCase() !== wordStr.toLowerCase()).slice(0, 3)
-      : [];
-
+    const antList = info.antonyms || [];
     antList.forEach((ant, i) => {
-      const angle = Math.PI + (i / Math.max(1, antList.length)) * Math.PI * 0.6 - Math.PI * 0.3;
+      const angle = Math.PI + (i / Math.max(1, antList.length)) * Math.PI * 0.7 - Math.PI * 0.35;
       const n = {
         id: 'ant_' + ant,
         word: ant,
@@ -291,77 +479,69 @@ class LexicalMindmap {
         y: cy + Math.sin(angle) * this.springLength,
         vx: 0,
         vy: 0,
-        radius: 23
+        radius: 24
       };
       this.nodes.push(n);
       this.edges.push({ source: centerNode, target: n, length: this.springLength });
     });
 
     // 4. 파생어 (Derivatives) 노드
-    const rawDeriv = info.derivative || info['파생어'] || '';
-    const derivList = typeof rawDeriv === 'string'
-      ? rawDeriv.split(/[,;/]/).map(s => s.trim()).filter(Boolean).slice(0, 3)
-      : [];
-
+    const derivList = info.derivatives || [];
     derivList.forEach((deriv, i) => {
-      const angle = Math.PI * 0.5 + (i * 0.5) - 0.5;
+      const angle = Math.PI * 0.55 + (i * 0.5) - 0.5;
       const n = {
         id: 'der_' + deriv,
         word: deriv.split(' ')[0],
         label: deriv,
         subLabel: '파생어',
         type: 'derivative',
-        x: cx + Math.cos(angle) * (this.springLength * 1.1),
-        y: cy + Math.sin(angle) * (this.springLength * 1.1),
-        vx: 0,
-        vy: 0,
-        radius: 24
-      };
-      this.nodes.push(n);
-      this.edges.push({ source: centerNode, target: n, length: this.springLength * 1.1 });
-    });
-
-    // 5. 핵심 연어 (Collocations) 노드
-    const rawColloc = info.collocation || info['연어'] || '';
-    const collocList = typeof rawColloc === 'string'
-      ? rawColloc.split(/[,;/]/).map(s => s.trim()).filter(Boolean).slice(0, 3)
-      : [];
-
-    collocList.forEach((colloc, i) => {
-      const angle = -Math.PI * 0.5 + (i * 0.6) - 0.6;
-      const n = {
-        id: 'col_' + colloc,
-        word: colloc.replace(/\(.*?\)/g, '').trim(),
-        label: colloc.length > 20 ? colloc.slice(0, 18) + '...' : colloc,
-        subLabel: '학술 연어',
-        type: 'collocation',
-        x: cx + Math.cos(angle) * (this.springLength * 1.25),
-        y: cy + Math.sin(angle) * (this.springLength * 1.25),
-        vx: 0,
-        vy: 0,
-        radius: 27
-      };
-      this.nodes.push(n);
-      this.edges.push({ source: centerNode, target: n, length: this.springLength * 1.25 });
-    });
-
-    // 6. 어원 (Etymology) 노드
-    const etym = info.etymology || info['어원'] || info.nuanceTip || '';
-    if (etym) {
-      const n = {
-        id: 'etym_' + wordStr,
-        word: wordStr,
-        label: etym.length > 22 ? etym.slice(0, 20) + '...' : etym,
-        subLabel: '어원/뿌리',
-        type: 'etymology',
-        x: cx - 110,
-        y: cy + 120,
+        x: cx + Math.cos(angle) * (this.springLength * 1.15),
+        y: cy + Math.sin(angle) * (this.springLength * 1.15),
         vx: 0,
         vy: 0,
         radius: 25
       };
       this.nodes.push(n);
       this.edges.push({ source: centerNode, target: n, length: this.springLength * 1.15 });
+    });
+
+    // 5. 핵심 연어 (Collocations) 노드
+    const collocList = info.collocations || [];
+    collocList.forEach((colloc, i) => {
+      const angle = -Math.PI * 0.55 + (i * 0.6) - 0.6;
+      const n = {
+        id: 'col_' + colloc,
+        word: colloc.replace(/\(.*?\)/g, '').trim(),
+        label: colloc.length > 20 ? colloc.slice(0, 18) + '...' : colloc,
+        subLabel: '학술 연어',
+        type: 'collocation',
+        x: cx + Math.cos(angle) * (this.springLength * 1.3),
+        y: cy + Math.sin(angle) * (this.springLength * 1.3),
+        vx: 0,
+        vy: 0,
+        radius: 28
+      };
+      this.nodes.push(n);
+      this.edges.push({ source: centerNode, target: n, length: this.springLength * 1.3 });
+    });
+
+    // 6. 어원 (Etymology) 노드
+    if (info.etymology) {
+      const etym = info.etymology;
+      const n = {
+        id: 'etym_' + wordStr,
+        word: wordStr,
+        label: etym.length > 22 ? etym.slice(0, 20) + '...' : etym,
+        subLabel: '어원/뿌리',
+        type: 'etymology',
+        x: cx - 120,
+        y: cy + 130,
+        vx: 0,
+        vy: 0,
+        radius: 26
+      };
+      this.nodes.push(n);
+      this.edges.push({ source: centerNode, target: n, length: this.springLength * 1.2 });
     }
   }
 
@@ -388,7 +568,7 @@ class LexicalMindmap {
         const n = this.nodes[i];
         const dx = n.x - pos.x;
         const dy = n.y - pos.y;
-        if (dx * dx + dy * dy <= (n.radius + 6) * (n.radius + 6)) {
+        if (dx * dx + dy * dy <= (n.radius + 8) * (n.radius + 8)) {
           return n;
         }
       }
@@ -400,6 +580,8 @@ class LexicalMindmap {
       const hit = findNodeAt(pos);
       if (hit) {
         this.draggedNode = hit;
+        hit.vx = 0;
+        hit.vy = 0;
       } else {
         this.isPanning = true;
         this.lastMouseX = e.clientX;
@@ -407,9 +589,9 @@ class LexicalMindmap {
       }
     });
 
-    window.addEventListener('mousemove', (e) => {
-      if (!this.canvas) return;
+    this.canvas.addEventListener('mousemove', (e) => {
       const pos = getPos(e);
+      this.hoveredNode = findNodeAt(pos);
 
       if (this.draggedNode) {
         this.draggedNode.x = pos.x;
@@ -417,13 +599,15 @@ class LexicalMindmap {
         this.draggedNode.vx = 0;
         this.draggedNode.vy = 0;
       } else if (this.isPanning) {
-        this.panX += e.clientX - this.lastMouseX;
-        this.panY += e.clientY - this.lastMouseY;
+        const dx = e.clientX - this.lastMouseX;
+        const dy = e.clientY - this.lastMouseY;
+        this.panX += dx;
+        this.panY += dy;
         this.lastMouseX = e.clientX;
         this.lastMouseY = e.clientY;
-      } else {
-        this.hoveredNode = findNodeAt(pos);
       }
+
+      this.canvas.style.cursor = this.hoveredNode ? 'pointer' : (this.isPanning ? 'grabbing' : 'grab');
     });
 
     window.addEventListener('mouseup', () => {
@@ -441,6 +625,7 @@ class LexicalMindmap {
           if (window.tts) window.tts.speak(cleanWord);
           this.currentWord = cleanWord;
           this.buildGraphForWord(cleanWord);
+          this.recenterGraph();
         }
       }
     });
@@ -489,37 +674,39 @@ class LexicalMindmap {
     // 1. 노드 간 반발력 (Coulomb Repulsion)
     for (let i = 0; i < nodes.length; i++) {
       for (let j = i + 1; j < nodes.length; j++) {
-        const n1 = nodes[i];
-        const n2 = nodes[j];
-        const dx = n2.x - n1.x;
-        const dy = n2.y - n1.y;
+        const a = nodes[i];
+        const b = nodes[j];
+        const dx = b.x - a.x;
+        const dy = b.y - a.y;
         const distSq = dx * dx + dy * dy + 1;
         const dist = Math.sqrt(distSq);
 
-        const force = this.repulsionK / distSq;
-        const fx = (dx / dist) * force;
-        const fy = (dy / dist) * force;
+        if (dist < 400) {
+          const force = this.repulsionK / distSq;
+          const fx = (dx / dist) * force;
+          const fy = (dy / dist) * force;
 
-        if (n1 !== this.draggedNode) {
-          n1.vx -= fx;
-          n1.vy -= fy;
-        }
-        if (n2 !== this.draggedNode) {
-          n2.vx += fx;
-          n2.vy += fy;
+          if (a !== this.draggedNode) {
+            a.vx -= fx;
+            a.vy -= fy;
+          }
+          if (b !== this.draggedNode) {
+            b.vx += fx;
+            b.vy += fy;
+          }
         }
       }
     }
 
-    // 2. 엣지 스프링 인력 (Hooke's Law)
+    // 2. 엣지 스프링 복원력 (Hooke's Law)
     for (const e of edges) {
       const src = e.source;
       const tgt = e.target;
       const dx = tgt.x - src.x;
       const dy = tgt.y - src.y;
-      const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-      const targetLen = e.length || this.springLength;
-      const force = (dist - targetLen) * this.springK;
+      const dist = Math.sqrt(dx * dx + dy * dy) || 0.1;
+      const displacement = dist - e.length;
+      const force = displacement * this.springK;
 
       const fx = (dx / dist) * force;
       const fy = (dy / dist) * force;
@@ -562,6 +749,11 @@ class LexicalMindmap {
     const width = this.canvas.width;
     const height = this.canvas.height;
 
+    // 만약 캔버스 치수가 비정상적이면 즉시 자동 복원
+    if (width < 100 || height < 100) {
+      this.resizeCanvas();
+    }
+
     ctx.clearRect(0, 0, width, height);
 
     ctx.save();
@@ -573,15 +765,15 @@ class LexicalMindmap {
       ctx.beginPath();
       ctx.moveTo(e.source.x, e.source.y);
       ctx.lineTo(e.target.x, e.target.y);
-      ctx.strokeStyle = 'rgba(148, 163, 184, 0.28)';
-      ctx.lineWidth = 2.2;
+      ctx.strokeStyle = 'rgba(148, 163, 184, 0.35)';
+      ctx.lineWidth = 2.0;
       ctx.stroke();
 
       // 스프링 선 중간 점선 효과
       ctx.beginPath();
       ctx.moveTo(e.source.x, e.source.y);
       ctx.lineTo(e.target.x, e.target.y);
-      ctx.strokeStyle = 'rgba(56, 189, 248, 0.4)';
+      ctx.strokeStyle = 'rgba(56, 189, 248, 0.45)';
       ctx.lineWidth = 1;
       ctx.setLineDash([4, 6]);
       ctx.stroke();
@@ -598,7 +790,7 @@ class LexicalMindmap {
       // 글로우 발광 효과
       if (n.isCenter || isHovered) {
         ctx.shadowColor = colors.stroke;
-        ctx.shadowBlur = n.isCenter ? 24 : 16;
+        ctx.shadowBlur = n.isCenter ? 26 : 18;
       }
 
       // 노드 원형 배경
@@ -608,36 +800,46 @@ class LexicalMindmap {
       ctx.fill();
 
       // 테두리
-      ctx.lineWidth = isHovered ? 3.5 : 2.0;
-      ctx.strokeStyle = colors.stroke;
+      ctx.lineWidth = isHovered ? 3.5 : (n.isCenter ? 3.0 : 2.0);
+      ctx.strokeStyle = isHovered ? '#ffffff' : colors.stroke;
       ctx.stroke();
 
       ctx.restore();
 
-      // 텍스트 라벨 (표제어)
-      ctx.font = n.isCenter ? 'bold 13px serif' : '600 11px sans-serif';
-      ctx.fillStyle = colors.text;
+      // 3. 노드 텍스트 렌더링
+      ctx.save();
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
 
-      // 긴 라벨 자르기
-      let label = n.label;
-      if (label.length > 12) label = label.slice(0, 11) + '..';
-      ctx.fillText(label, n.x, n.y - (n.subLabel ? 4 : 0));
+      if (n.isCenter) {
+        // 중심 표제어 텍스트
+        ctx.font = 'bold 14px "Merriweather", "Noto Serif KR", serif';
+        ctx.fillStyle = '#0f172a';
+        ctx.fillText(n.label, n.x, n.y - 4);
 
-      // 서브라벨 (유의어, 반의어, 품사)
-      if (n.subLabel) {
-        ctx.font = '9px sans-serif';
-        ctx.fillStyle = n.isCenter ? '#1e293b' : 'rgba(255, 255, 255, 0.85)';
-        let sub = n.subLabel;
-        if (sub.length > 10) sub = sub.slice(0, 9) + '..';
-        ctx.fillText(sub, n.x, n.y + 10);
+        ctx.font = 'bold 10px sans-serif';
+        ctx.fillStyle = '#451a03';
+        const sub = n.subLabel && n.subLabel.length > 8 ? n.subLabel.slice(0, 7) + '..' : (n.subLabel || '');
+        ctx.fillText(sub, n.x, n.y + 11);
+      } else {
+        // 궤도 노드 텍스트
+        ctx.font = 'bold 11px sans-serif';
+        ctx.fillStyle = colors.text;
+        ctx.fillText(n.label, n.x, n.y - (n.subLabel ? 3 : 0));
+
+        if (n.subLabel) {
+          ctx.font = '9px sans-serif';
+          ctx.fillStyle = 'rgba(255, 255, 255, 0.78)';
+          ctx.fillText(n.subLabel, n.x, n.y + 10);
+        }
       }
+
+      ctx.restore();
     }
 
     ctx.restore();
   }
 }
 
-// 전역 인스턴스 등록
+// 전역 싱글톤 인스턴스 등록
 window.lexicalMindmap = new LexicalMindmap();
