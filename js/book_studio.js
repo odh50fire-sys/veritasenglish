@@ -3028,17 +3028,30 @@
       `;
       return html;
     }
-
     /**
      * 스페셜 부교재 1: 지문 주제 연계 서술형 빈칸 인출 (다큐 문맥 빈칸 드릴)
-     * National Geographic Pathways 및 수능/학술 지문 문맥 빈칸 완성 (A4 1장 10단어 완결)
+     * National Geographic Pathways 및 수능/학술 지문 문맥 빈칸 완성 (A4 1장 10단어, 20단어 시 2장 자동 분할 완결)
      */
     renderPassageClozeSheet(dayKey, words) {
       const meta = this.currentBookMeta || {};
       const chapterTitle = words[0]?.chapterTitle || '';
       const sectionTheme = words[0]?.sectionTheme || meta.title || 'Academic Reading';
 
-      let html = `
+      const chunks = [];
+      const chunkSize = 10;
+      for (let i = 0; i < words.length; i += chunkSize) {
+        chunks.push(words.slice(i, i + chunkSize));
+      }
+      if (chunks.length === 0) chunks.push([]);
+
+      let totalHtml = '';
+
+      chunks.forEach((chunkWords, cIdx) => {
+        const isMultiPart = chunks.length > 1;
+        const partLabel = isMultiPart ? ` (Part ${cIdx + 1}/${chunks.length})` : '';
+        const offset = cIdx * chunkSize;
+
+        let html = `
         <div class="studio-a4-sheet bg-white p-7 text-slate-800 flex flex-col justify-between" style="page-break-after: always; height: 297mm; max-height: 297mm; overflow: hidden; box-sizing: border-box;">
           <div>
             <!-- 헤더 -->
@@ -3053,13 +3066,13 @@
                   <span class="text-xs font-normal text-slate-500">(지문 주제 연계 서술형 빈칸 인출)</span>
                 </h1>
                 <p class="text-xs text-indigo-800 font-semibold mt-0.5">
-                  [${dayKey}] ${escapeHtml(chapterTitle ? chapterTitle + ' - ' + sectionTheme : sectionTheme)}
+                  [${dayKey}${partLabel}] ${escapeHtml(chapterTitle ? chapterTitle + ' - ' + sectionTheme : sectionTheme)}
                 </p>
               </div>
               <div class="text-right flex flex-col items-end">
                 <div class="border border-slate-300 rounded px-2.5 py-1 text-center bg-slate-50 text-xs">
                   <span class="text-slate-400 block text-[10px]">SCORE</span>
-                  <span class="font-bold text-slate-700">_____ / 10</span>
+                  <span class="font-bold text-slate-700">_____ / ${chunkWords.length}</span>
                 </div>
                 <span class="text-[10px] text-slate-400 mt-1">Class: ________ Name: ________</span>
               </div>
@@ -3073,73 +3086,85 @@
 
             <!-- 10개 문제 리스트 (컴팩트 그리드: 박스 넘침 원천 차단) -->
             <div class="space-y-2.5">
-      `;
+        `;
 
-      words.slice(0, 10).forEach((w, idx) => {
-        const num = idx + 1;
-        const targetWord = w.word;
-        const rawExample = w.example || 'No example sentence available.';
-        
-        // 정답 단어를 빈칸 [ ____________ ] 로 치환 (대소문자 무시 치환)
-        const escapedWord = targetWord.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        const regex = new RegExp(`\\b${escapedWord}\\b`, 'gi');
-        let clozeSentence = rawExample;
-        if (regex.test(rawExample)) {
-          clozeSentence = rawExample.replace(regex, `<span class="inline-block border-b-2 border-indigo-500 font-mono text-indigo-900 font-bold px-3 mx-1 text-center" style="min-width: 90px;">(${num}) ____________</span>`);
-        } else {
-          clozeSentence = rawExample + ` <span class="inline-block border-b-2 border-indigo-500 font-mono text-indigo-900 font-bold px-3 mx-1 text-center" style="min-width: 90px;">(${num}) ____________</span>`;
-        }
+        chunkWords.forEach((w, idx) => {
+          const num = offset + idx + 1;
+          const targetWord = w.word;
+          const rawExample = w.example || 'No example sentence available.';
+          
+          const escapedWord = targetWord.replace(/[.*+?^${}()|[\]\]/g, '\$&');
+          const regex = new RegExp(`\b${escapedWord}\b`, 'gi');
+          let clozeSentence = rawExample;
+          if (regex.test(rawExample)) {
+            clozeSentence = rawExample.replace(regex, `<span class="inline-block border-b-2 border-indigo-500 font-mono text-indigo-900 font-bold px-3 mx-1 text-center" style="min-width: 90px;">(${num}) ____________</span>`);
+          } else {
+            clozeSentence = rawExample + ` <span class="inline-block border-b-2 border-indigo-500 font-mono text-indigo-900 font-bold px-3 mx-1 text-center" style="min-width: 90px;">(${num}) ____________</span>`;
+          }
 
-        const firstLetter = targetWord.charAt(0);
-        const wordLen = targetWord.length;
+          const firstLetter = targetWord.charAt(0);
+          const wordLen = targetWord.length;
 
-        html += `
-          <div class="p-2 border border-slate-200 rounded-md bg-slate-50/50 hover:bg-white text-xs leading-relaxed">
-            <div class="flex items-start justify-between gap-2">
-              <div class="flex-1">
-                <span class="font-black text-indigo-700 mr-1.5">${num}.</span>
-                <span class="text-slate-900 font-serif">${clozeSentence}</span>
+          html += `
+            <div class="p-2 border border-slate-200 rounded-md bg-slate-50/50 hover:bg-white text-xs leading-relaxed">
+              <div class="flex items-start justify-between gap-2">
+                <div class="flex-1">
+                  <span class="font-black text-indigo-700 mr-1.5">${num}.</span>
+                  <span class="text-slate-900 font-serif">${clozeSentence}</span>
+                </div>
+                <div class="shrink-0 text-right">
+                  <span class="inline-block bg-slate-200 text-slate-700 text-[10px] font-mono px-1.5 py-0.5 rounded">힌트: ${firstLetter}___ (${wordLen}자)</span>
+                </div>
               </div>
-              <div class="shrink-0 text-right">
-                <span class="inline-block bg-slate-200 text-slate-700 text-[10px] font-mono px-1.5 py-0.5 rounded">힌트: ${firstLetter}___ (${wordLen}자)</span>
+              <div class="mt-1 pl-4 flex items-center justify-between text-[11px] text-slate-500 border-t border-slate-100 pt-1">
+                <span><b>[문맥 의미]</b> ${escapeHtml(w.meaning)} <span class="text-slate-400 font-serif italic">(${w.pos})</span></span>
+                ${w.collocation ? `<span class="text-indigo-600 font-medium">연어: <i>${escapeHtml(w.collocation)}</i></span>` : ''}
               </div>
             </div>
-            <div class="mt-1 pl-4 flex items-center justify-between text-[11px] text-slate-500 border-t border-slate-100 pt-1">
-              <span><b>[문맥 의미]</b> ${escapeHtml(w.meaning)} <span class="text-slate-400 font-serif italic">(${w.pos})</span></span>
-              ${w.collocation ? `<span class="text-indigo-600 font-medium">연어: <i>${escapeHtml(w.collocation)}</i></span>` : ''}
+          `;
+        });
+
+        html += `
+              </div>
+            </div>
+
+            <!-- 푸터 -->
+            <div class="sheet-footer pt-2 mt-2 border-t border-slate-200 flex justify-between items-center text-[10px] text-slate-400">
+              <span>Veritas Pathways Academic Companion Drill Series</span>
+              <span>${dayKey}${partLabel} 다큐 문맥 빈칸 인출 드릴</span>
             </div>
           </div>
         `;
+
+        totalHtml += html;
       });
 
-      html += `
-            </div>
-          </div>
-
-          <!-- 푸터 (정답 영역 포함 접이식 / 하단 배치) -->
-          <div class="sheet-footer pt-2 mt-2 border-t border-slate-200 flex justify-between items-center text-[10px] text-slate-400">
-            <span>Veritas Pathways Academic Companion Drill Series</span>
-            <span>${dayKey} 다큐 문맥 빈칸 인출 드릴 (A4 1장 완결)</span>
-          </div>
-        </div>
-      `;
-
-      return html;
+      return totalHtml;
     }
-
     /**
      * 스페셜 부교재 2: 학술 에세이 직결 필수 연어 정복 (AWL 학술 언어 클리닉)
-     * National Geographic Academic Collocations & Phrasal Patterns (A4 1장 10단어 완결)
+     * National Geographic Academic Collocations & Phrasal Patterns (A4 1장 10단어, 20단어 시 2장 자동 분할 완결)
      */
     renderCollocationMatchSheet(dayKey, words) {
       const meta = this.currentBookMeta || {};
       const chapterTitle = words[0]?.chapterTitle || '';
       const sectionTheme = words[0]?.sectionTheme || meta.title || 'Academic Collocations';
 
-      // 10단어 추출
-      const tenWords = words.slice(0, 10);
+      const chunks = [];
+      const chunkSize = 10;
+      for (let i = 0; i < words.length; i += chunkSize) {
+        chunks.push(words.slice(i, i + chunkSize));
+      }
+      if (chunks.length === 0) chunks.push([]);
 
-      let html = `
+      let totalHtml = '';
+
+      chunks.forEach((chunkWords, cIdx) => {
+        const isMultiPart = chunks.length > 1;
+        const partLabel = isMultiPart ? ` (Part ${cIdx + 1}/${chunks.length})` : '';
+        const offset = cIdx * chunkSize;
+
+        let html = `
         <div class="studio-a4-sheet bg-white p-7 text-slate-800 flex flex-col justify-between" style="page-break-after: always; height: 297mm; max-height: 297mm; overflow: hidden; box-sizing: border-box;">
           <div>
             <!-- 헤더 -->
@@ -3154,7 +3179,7 @@
                   <span class="text-xs font-normal text-slate-500">(학술 에세이 직결 필수 연어 정복)</span>
                 </h1>
                 <p class="text-xs text-teal-800 font-semibold mt-0.5">
-                  [${dayKey}] ${escapeHtml(chapterTitle ? chapterTitle + ' - ' + sectionTheme : sectionTheme)}
+                  [${dayKey}${partLabel}] ${escapeHtml(chapterTitle ? chapterTitle + ' - ' + sectionTheme : sectionTheme)}
                 </p>
               </div>
               <div class="text-right flex flex-col items-end">
@@ -3173,75 +3198,89 @@
 
             <!-- 2열 카드 그리드: 10개 단어 연어 클리닉 -->
             <div class="grid grid-cols-2 gap-2.5">
-      `;
+        `;
 
-      tenWords.forEach((w, idx) => {
-        const num = idx + 1;
-        const collocations = w.collocation ? w.collocation.split(/[,;/]/).map(c => c.trim()).filter(Boolean) : [`use ${w.word}`, `key ${w.word}`];
-        const primaryColloc = collocations[0] || `${w.word} pattern`;
-        
-        // 연어 빈칸 문장 생성
-        const clozeColloc = primaryColloc.replace(new RegExp(`\\b${w.word}\\b`, 'gi'), '__________');
+        chunkWords.forEach((w, idx) => {
+          const num = offset + idx + 1;
+          const collocations = w.collocation ? w.collocation.split(/[,;/]/).map(c => c.trim()).filter(Boolean) : [`use ${w.word}`, `key ${w.word}`];
+          const primaryColloc = collocations[0] || `${w.word} pattern`;
+          
+          const clozeColloc = primaryColloc.replace(new RegExp(`\b${w.word}\b`, 'gi'), '__________');
 
-        html += `
-          <div class="border border-slate-200 rounded-lg p-2.5 bg-slate-50/70 hover:bg-white flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between border-b border-slate-200 pb-1 mb-1.5">
-                <span class="font-bold text-teal-800 text-xs">${num}. ${escapeHtml(w.word)}</span>
-                <span class="text-[10px] text-slate-500 font-serif italic">${w.pos} | ${escapeHtml(w.meaning)}</span>
-              </div>
-              
-              <!-- 필수 연어 공식 -->
-              <div class="bg-white border border-teal-100 rounded px-2 py-1 mb-1.5">
-                <div class="text-[10px] font-bold text-teal-700 flex items-center gap-1">
-                  <span>🎯 학술 연어 공식:</span>
-                  <span class="font-mono text-slate-900 font-semibold">${clozeColloc}</span>
+          html += `
+            <div class="border border-slate-200 rounded-lg p-2.5 bg-slate-50/70 hover:bg-white flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between border-b border-slate-200 pb-1 mb-1.5">
+                  <span class="font-bold text-teal-800 text-xs">${num}. ${escapeHtml(w.word)}</span>
+                  <span class="text-[10px] text-slate-500 font-serif italic">${w.pos} | ${escapeHtml(w.meaning)}</span>
+                </div>
+                
+                <!-- 필수 연어 공식 -->
+                <div class="bg-white border border-teal-100 rounded px-2 py-1 mb-1.5">
+                  <div class="text-[10px] font-bold text-teal-700 flex items-center gap-1">
+                    <span>🎯 학술 연어 공식:</span>
+                    <span class="font-mono text-slate-900 font-semibold">${clozeColloc}</span>
+                  </div>
+                </div>
+
+                <!-- 문맥 결합 작문 -->
+                <div class="text-[11px] text-slate-700 leading-snug">
+                  <p class="font-serif text-slate-800 italic text-[10.5px]">"${escapeHtml(w.example)}"</p>
                 </div>
               </div>
 
-              <!-- 문맥 결합 작문 -->
-              <div class="text-[11px] text-slate-700 leading-snug">
-                <p class="font-serif text-slate-800 italic text-[10.5px]">"${escapeHtml(w.example)}"</p>
+              <!-- 하단 인출 체크박스 -->
+              <div class="mt-2 pt-1 border-t border-slate-200 flex justify-between items-center text-[10px] text-slate-500">
+                <span class="font-mono">정답: <span class="border-b border-slate-400 px-3 inline-block"></span></span>
+                <span class="flex items-center gap-1">
+                  <input type="checkbox" class="w-3 h-3 text-teal-600 rounded"> 암기 완료
+                </span>
+              </div>
+            </div>
+          `;
+        });
+
+        html += `
               </div>
             </div>
 
-            <!-- 하단 인출 체크박스 -->
-            <div class="mt-2 pt-1 border-t border-slate-200 flex justify-between items-center text-[10px] text-slate-500">
-              <span class="font-mono">정답: <span class="border-b border-slate-400 px-3 inline-block"></span></span>
-              <span class="flex items-center gap-1">
-                <input type="checkbox" class="w-3 h-3 text-teal-600 rounded"> 암기 완료
-              </span>
+            <!-- 푸터 -->
+            <div class="sheet-footer pt-2 mt-2 border-t border-slate-200 flex justify-between items-center text-[10px] text-slate-400">
+              <span>Veritas Pathways AWL Academic Collocation Series</span>
+              <span>${dayKey}${partLabel} 학술 에세이 직결 필수 연어 정복</span>
             </div>
           </div>
         `;
+
+        totalHtml += html;
       });
 
-      html += `
-            </div>
-          </div>
-
-          <!-- 푸터 -->
-          <div class="sheet-footer pt-2 mt-2 border-t border-slate-200 flex justify-between items-center text-[10px] text-slate-400">
-            <span>Veritas Pathways AWL Academic Collocation Series</span>
-            <span>${dayKey} 학술 에세이 직결 필수 연어 정복 (A4 1장 완결)</span>
-          </div>
-        </div>
-      `;
-
-      return html;
+      return totalHtml;
     }
-
     /**
-     * 스페셜 부교재 3: 지문 직전 초압축 족보 (A4 1장 10단어 초고속 복습 시트)
+     * 스페셜 부교재 3: 지문 직전 초압축 족보 (A4 1장 10단어, 20단어 시 2장 자동 분할 초고속 복습 시트)
      * Pathways 및 중등/고등 독해 교재를 위해 지문/Day별 A4 1장에 딱 10단어씩 배치 (박스 및 텍스트 넘침 0%)
      */
     renderPathwaysCramSheet(dayKey, words, seriesKey) {
       const meta = this.currentBookMeta || {};
       const chapterTitle = words[0]?.chapterTitle || '';
       const sectionTheme = words[0]?.sectionTheme || meta.title || 'Academic Reading';
-      const tenWords = words.slice(0, 10);
 
-      let html = `
+      const chunks = [];
+      const chunkSize = 10;
+      for (let i = 0; i < words.length; i += chunkSize) {
+        chunks.push(words.slice(i, i + chunkSize));
+      }
+      if (chunks.length === 0) chunks.push([]);
+
+      let totalHtml = '';
+
+      chunks.forEach((chunkWords, cIdx) => {
+        const isMultiPart = chunks.length > 1;
+        const partLabel = isMultiPart ? ` (Part ${cIdx + 1}/${chunks.length})` : '';
+        const offset = cIdx * chunkSize;
+
+        let html = `
         <div class="studio-a4-sheet bg-white p-7 text-slate-800 flex flex-col justify-between" style="page-break-after: always; height: 297mm; max-height: 297mm; overflow: hidden; box-sizing: border-box;">
           <div>
             <!-- 헤더 -->
@@ -3256,12 +3295,12 @@
                   <span class="text-xs font-normal text-slate-500">${seriesKey === 'oxford' ? '(1장 10단어 핵심 어휘 및 공식 실전 예문 총망라)' : '(1장 10단어 핵심 어휘·연어·뉘앙스 총망라)'}</span>
                 </h1>
                 <p class="text-xs text-amber-800 font-semibold mt-0.5">
-                  [${dayKey}] ${escapeHtml(chapterTitle ? chapterTitle + ' - ' + sectionTheme : sectionTheme)}
+                  [${dayKey}${partLabel}] ${escapeHtml(chapterTitle ? chapterTitle + ' - ' + sectionTheme : sectionTheme)}
                 </p>
               </div>
               <div class="text-right">
                 <div class="text-[10px] text-slate-400">Class: ________ Name: ________</div>
-                <div class="text-xs font-bold text-amber-700 mt-1">10 Words Quick Mastery</div>
+                <div class="text-xs font-bold text-amber-700 mt-1">${chunkWords.length} Words Quick Mastery</div>
               </div>
             </div>
 
@@ -3278,40 +3317,40 @@
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-200">
-      `;
+        `;
 
-      tenWords.forEach((w, idx) => {
-        const num = idx + 1;
-        const rowBg = idx % 2 === 1 ? 'bg-slate-50/60' : 'bg-white';
-        const pronunciation = w.pronunciation ? `<span class="text-slate-400 font-mono text-[10px]">[${escapeHtml(w.pronunciation)}]</span>` : '';
-        const nuance = w.nuanceTip ? `<span class="inline-block bg-amber-50 text-amber-800 text-[10px] px-1 py-0.2 rounded font-sans ml-1">Tip: ${escapeHtml(w.nuanceTip)}</span>` : '';
+        chunkWords.forEach((w, idx) => {
+          const num = offset + idx + 1;
+          const rowBg = idx % 2 === 1 ? 'bg-slate-50/60' : 'bg-white';
+          const pronunciation = w.pronunciation ? `<span class="text-slate-400 font-mono text-[10px]">[${escapeHtml(w.pronunciation)}]</span>` : '';
+          const nuance = w.nuanceTip ? `<span class="inline-block bg-amber-50 text-amber-800 text-[10px] px-1 py-0.2 rounded font-sans ml-1">Tip: ${escapeHtml(w.nuanceTip)}</span>` : '';
+
+          html += `
+            <tr class="${rowBg} hover:bg-amber-50/40">
+              <td class="py-2 px-2.5 text-center font-bold text-slate-400 text-xs">${num}</td>
+              <td class="py-2 px-3 align-top">
+                <div class="font-bold text-slate-900 text-sm tracking-tight">${escapeHtml(w.word)}</div>
+                <div class="text-[10px] text-slate-500 font-serif italic">${escapeHtml(w.pos)} ${pronunciation}</div>
+              </td>
+              <td class="py-2 px-3 align-top">
+                <div class="font-semibold text-slate-800">${escapeHtml(w.meaning)}</div>
+              </td>
+              <td class="py-2 px-3 align-top leading-tight">
+                ${(w.collocation && seriesKey !== 'oxford') ? `<div class="text-[10.5px] font-bold text-indigo-700 mb-0.5">🔗 ${escapeHtml(w.collocation)}</div>` : ''}
+                <div class="text-[11px] text-slate-600 font-serif italic">"${escapeHtml(w.example)}"</div>
+                <div class="text-[10px] text-slate-400 mt-0.5">${escapeHtml(w.exampleMeaning || '')}</div>
+              </td>
+              <td class="py-2 px-2 text-center align-middle">
+                <div class="flex flex-col items-center gap-1">
+                  <input type="checkbox" class="w-3.5 h-3.5 text-amber-600 rounded">
+                  <span class="text-[9px] text-slate-400">1회</span>
+                </div>
+              </td>
+            </tr>
+          `;
+        });
 
         html += `
-          <tr class="${rowBg} hover:bg-amber-50/40">
-            <td class="py-2 px-2.5 text-center font-bold text-slate-400 text-xs">${num}</td>
-            <td class="py-2 px-3 align-top">
-              <div class="font-bold text-slate-900 text-sm tracking-tight">${escapeHtml(w.word)}</div>
-              <div class="text-[10px] text-slate-500 font-serif italic">${escapeHtml(w.pos)} ${pronunciation}</div>
-            </td>
-            <td class="py-2 px-3 align-top">
-              <div class="font-semibold text-slate-800">${escapeHtml(w.meaning)}</div>
-            </td>
-            <td class="py-2 px-3 align-top leading-tight">
-              ${(w.collocation && seriesKey !== 'oxford') ? `<div class="text-[10.5px] font-bold text-indigo-700 mb-0.5">🔗 ${escapeHtml(w.collocation)}</div>` : ''}
-              <div class="text-[11px] text-slate-600 font-serif italic">"${escapeHtml(w.example)}"</div>
-              <div class="text-[10px] text-slate-400 mt-0.5">${escapeHtml(w.exampleMeaning || '')}</div>
-            </td>
-            <td class="py-2 px-2 text-center align-middle">
-              <div class="flex flex-col items-center gap-1">
-                <input type="checkbox" class="w-3.5 h-3.5 text-amber-600 rounded">
-                <span class="text-[9px] text-slate-400">1회</span>
-              </div>
-            </td>
-          </tr>
-        `;
-      });
-
-      html += `
                 </tbody>
               </table>
             </div>
@@ -3323,9 +3362,9 @@
                 <span class="text-[10px] text-slate-400">뜻을 가리고 영어 단어를 말해보세요!</span>
               </div>
               <div class="grid grid-cols-5 gap-1.5 text-center text-[10px]">
-                ${tenWords.map((w, i) => `
+                ${chunkWords.map((w, i) => `
                   <div class="bg-white border border-slate-200 rounded p-1">
-                    <span class="text-slate-400 block">${i+1}</span>
+                    <span class="text-slate-400 block">${offset + i + 1}</span>
                     <span class="font-bold text-slate-800 block truncate" title="${escapeHtml(w.word)}">${escapeHtml(w.word)}</span>
                   </div>
                 `).join('')}
@@ -3335,13 +3374,16 @@
 
           <!-- 푸터 -->
           <div class="sheet-footer pt-2 mt-2 border-t border-slate-200 flex justify-between items-center text-[10px] text-slate-400">
-            <span>Veritas High-Speed Academic Prep Series</span>
-            <span>${dayKey} 지문 직전 초압축 족보 (A4 1장 10단어 완결)</span>
+            <span>Veritas Pathways Academic Cram Sheet Series</span>
+            <span>${dayKey}${partLabel} 지문 직전 초압축 족보</span>
           </div>
         </div>
-      `;
+        `;
 
-      return html;
+        totalHtml += html;
+      });
+
+      return totalHtml;
     }
 
 

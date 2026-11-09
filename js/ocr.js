@@ -755,6 +755,25 @@ class OCREngine {
             };
         }
 
+        // 내셔널 지오그래픽 Pathways 아카데믹 리딩 교재 4종 확인
+        if (this.currentBookId && this.currentBookId.startsWith('pathways-')) {
+            const pwList = window.VERITAS_PATHWAYS_COLLECTIONS || [];
+            const pwCol = pwList.find(c => c.id === this.currentBookId) || pwList[0];
+            const allPwWords = window.VERITAS_PATHWAYS_WORDS_DATA || [];
+            const pool = pwCol ? allPwWords.filter(r => r.collectionId === pwCol.id) : [];
+            return {
+                id: pwCol ? pwCol.id : this.currentBookId,
+                title: pwCol ? pwCol.title : 'Pathways: Reading, Writing, and Critical Thinking',
+                badge: pwCol ? `${pwCol.badge} • DAY 01 ~ DAY ${String(pwCol.totalDays || 20).padStart(2, '0')} (총 ${pool.length}단어)` : 'Pathways',
+                description: pwCol ? pwCol.description : '',
+                totalDays: pwCol ? pwCol.totalDays : 20,
+                isNeungryul: false,
+                isNeungryulEtym: false,
+                isPathways: true,
+                dataPool: pool
+            };
+        }
+
         // AI 맞춤 생성 단어장 확인
         const customCols = window.storage ? window.storage.getCustomCollections() : [];
         const customCol = customCols.find(c => c.id === this.currentBookId);
