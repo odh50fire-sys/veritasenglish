@@ -121,11 +121,6 @@ class LexicalMindmap {
               <i data-lucide="volume-2" class="w-4 h-4"></i>
             </button>
 
-            <!-- 1문장 영작 코치로 바로가기 -->
-            <button onclick="window.lexicalMindmap.openCoachWithCurrent()" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-500/40 text-emerald-300 text-xs font-bold transition-all cursor-pointer" title="이 단어로 1문장 영작하기">
-              <span>✍️ 영작 튜터</span>
-            </button>
-
             <!-- 닫기 -->
             <button onclick="window.lexicalMindmap.close()" class="p-2 rounded-xl bg-slate-800 hover:bg-red-950 hover:text-red-300 text-slate-400 transition-colors cursor-pointer" title="닫기 (ESC)">
               <i data-lucide="x" class="w-5 h-5"></i>
@@ -173,14 +168,6 @@ class LexicalMindmap {
         </div>
       </div>
     `;
-  }
-
-  openCoachWithCurrent() {
-    const word = this.currentWord;
-    this.close();
-    if (window.aiWritingCoach) {
-      window.aiWritingCoach.open(word);
-    }
   }
 
   initCanvas() {
