@@ -920,13 +920,7 @@
                                         <p id="fc-nuance-text" class="text-xs text-slate-700 leading-relaxed font-sans"></p>
                                     </div>
 
-                                    <!-- 스마트 고도화: 어휘 지식 그래프 액션 버튼 -->
-                                    <div class="flex items-center justify-center gap-2 pt-2">
-                                        <button type="button" onclick="event.stopPropagation(); const w = window.flashcardEngine && window.flashcardEngine.getCurrentWord ? window.flashcardEngine.getCurrentWord() : null; if(w && window.lexicalMindmap) window.lexicalMindmap.open(w.word);" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-50 hover:bg-sky-100 text-sky-800 border border-sky-200 text-xs font-bold transition-all shadow-xs cursor-pointer active:scale-95" title="어휘 지식 그래프 (유의어/반의어/파생어 시각화)">
-                                            <i data-lucide="share-2" class="w-3.5 h-3.5 text-sky-600"></i>
-                                            <span>🕸️ 지식 그래프</span>
-                                        </button>
-                                    </div>
+
                                 </div>
 
                                 <div class="text-center text-xs text-slate-400">
@@ -3321,7 +3315,6 @@
     <!-- 차세대 스마트 고도화 5대 엔진: 잔디 히트맵, 워크맨, 지식그래프, 영작튜터, 단어배틀 -->
     <script src="js/heatmap_engine.js"></script>
     <script src="js/audiobook_player.js"></script>
-    <script src="js/lexical_mindmap.js"></script>
     <script src="js/app.js"></script>
 
     <!-- ======================================================================

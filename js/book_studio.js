@@ -292,7 +292,7 @@
       this.groupedDays = {};
 
       // 맞춤 학습 필기 노트 시스템 상태 변수
-      this.currentNoteTemplate = 'cornell'; // 'cornell' | 'collocation' | 'syntax' | 'writing' | 'blank_test'
+      this.currentNoteTemplate = 'voca_recall'; // 'cornell' | 'collocation' | 'syntax' | 'writing' | 'blank_test'
       this.notePrintMode = 'content'; // 'content' (필기본 인쇄) | 'blank' (손글씨용 빈 양식 인쇄)
       this.notesStorageKey = 'veritas_book_studio_notes_v1';
     }
@@ -473,7 +473,7 @@
 
       modal.className = 'fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex flex-col overflow-hidden';
 
-      const meta = this.currentBookMeta;
+      const meta = this.currentBookMeta || {};
       const seriesKey = meta.series || 'middle';
       const seriesInfo = SERIES_INFO[seriesKey] || SERIES_INFO.middle;
       const days = Object.keys(this.groupedDays);
@@ -557,22 +557,19 @@
         <div class="no-print bg-slate-950 border-b border-slate-800 px-4 sm:px-6 py-2.5 flex flex-wrap items-center justify-between gap-2.5 text-xs">
           <div class="flex flex-wrap items-center gap-1.5">
             <span class="text-[11px] font-serif font-bold text-slate-400 mr-1 flex items-center gap-1">
-              <i data-lucide="notebook-pen" class="w-3.5 h-3.5 text-amber-400"></i> 노트 템플릿:
+              <i data-lucide="notebook-pen" class="w-3.5 h-3.5 text-amber-400"></i> 공통 학습 공책:
             </span>
-            <button type="button" onclick="window.bookStudioEngine.setNoteTemplate('cornell')" class="px-2.5 py-1 rounded-lg text-xs font-bold border transition-all cursor-pointer ${this.currentNoteTemplate === 'cornell' ? 'bg-amber-400 text-slate-950 border-amber-400 shadow-xs' : 'bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-700'}">
-              📋 코넬식 핵심 요약
+            <button type="button" onclick="window.bookStudioEngine.setNoteTemplate('voca_recall')" class="px-2.5 py-1 rounded-lg text-xs font-bold border transition-all cursor-pointer ${this.currentNoteTemplate === 'voca_recall' ? 'bg-amber-400 text-slate-950 border-amber-400 shadow-xs' : 'bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-700'}">
+              🗂️ 3단 보카 인출 노트
             </button>
-            <button type="button" onclick="window.bookStudioEngine.setNoteTemplate('collocation')" class="px-2.5 py-1 rounded-lg text-xs font-bold border transition-all cursor-pointer ${this.currentNoteTemplate === 'collocation' ? 'bg-amber-400 text-slate-950 border-amber-400 shadow-xs' : 'bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-700'}">
-              🕸️ 콜로케이션 & 뉘앙스 매핑
+            <button type="button" onclick="window.bookStudioEngine.setNoteTemplate('cornell_syntax')" class="px-2.5 py-1 rounded-lg text-xs font-bold border transition-all cursor-pointer ${this.currentNoteTemplate === 'cornell_syntax' ? 'bg-amber-400 text-slate-950 border-amber-400 shadow-xs' : 'bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-700'}">
+              📐 코넬 구문·문법 노트
             </button>
-            <button type="button" onclick="window.bookStudioEngine.setNoteTemplate('syntax')" class="px-2.5 py-1 rounded-lg text-xs font-bold border transition-all cursor-pointer ${this.currentNoteTemplate === 'syntax' ? 'bg-amber-400 text-slate-950 border-amber-400 shadow-xs' : 'bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-700'}">
-              🔬 구문 해체 & 어법 클리닉
+            <button type="button" onclick="window.bookStudioEngine.setNoteTemplate('voca_clinic')" class="px-2.5 py-1 rounded-lg text-xs font-bold border transition-all cursor-pointer ${this.currentNoteTemplate === 'voca_clinic' ? 'bg-amber-400 text-slate-950 border-amber-400 shadow-xs' : 'bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-700'}">
+              🔍 어휘 확장·오답 클리닉
             </button>
-            <button type="button" onclick="window.bookStudioEngine.setNoteTemplate('writing')" class="px-2.5 py-1 rounded-lg text-xs font-bold border transition-all cursor-pointer ${this.currentNoteTemplate === 'writing' ? 'bg-amber-400 text-slate-950 border-amber-400 shadow-xs' : 'bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-700'}">
-              ✍️ 서술형 실전 영작 훈련
-            </button>
-            <button type="button" onclick="window.bookStudioEngine.setNoteTemplate('blank_test')" class="px-2.5 py-1 rounded-lg text-xs font-bold border transition-all cursor-pointer ${this.currentNoteTemplate === 'blank_test' ? 'bg-amber-400 text-slate-950 border-amber-400 shadow-xs' : 'bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-700'}">
-              🎯 백지 복습 & 암기 자가진단
+            <button type="button" onclick="window.bookStudioEngine.setNoteTemplate('general_ruled')" class="px-2.5 py-1 rounded-lg text-xs font-bold border transition-all cursor-pointer ${this.currentNoteTemplate === 'general_ruled' ? 'bg-amber-400 text-slate-950 border-amber-400 shadow-xs' : 'bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-700'}">
+              📝 빈 4선 영어공책
             </button>
           </div>
 
@@ -748,7 +745,7 @@
         days.forEach(dayKey => {
           const words = this.groupedDays[dayKey] || [];
           if (words.length > 0) {
-            notesHtml += this.renderStudyNoteSheet(dayKey, words, this.currentNoteTemplate || 'cornell');
+            notesHtml += this.renderStudyNoteSheet(dayKey, words, this.currentNoteTemplate || 'voca_recall');
           }
         });
         return notesHtml;
@@ -935,7 +932,7 @@
     }
 
     renderCoverSheet() {
-      const meta = this.currentBookMeta;
+      const meta = this.currentBookMeta || {};
       const seriesKey = meta.series || 'middle';
       const seriesInfo = SERIES_INFO[seriesKey] || SERIES_INFO.middle;
       const totalWords = Object.values(this.groupedDays).reduce((acc, cur) => acc + cur.length, 0);
@@ -1105,7 +1102,7 @@
     }
 
     renderVocaDaySheet(dayKey, words) {
-      const meta = this.currentBookMeta;
+      const meta = this.currentBookMeta || {};
       const seriesKey = meta.series || 'middle';
       const seriesInfo = SERIES_INFO[seriesKey] || SERIES_INFO.middle;
       const dayTip = this.selectDayNativeTip(words, seriesKey);
@@ -1684,7 +1681,7 @@
      * 워크북 단원(Day) 시트
      */
     renderWorkbookDaySheet(dayKey, words) {
-      const meta = this.currentBookMeta;
+      const meta = this.currentBookMeta || {};
       const seriesKey = meta.series || 'middle';
       const seriesInfo = SERIES_INFO[seriesKey] || SERIES_INFO.middle;
       const wb = this.getWorkbookData(dayKey, words);
@@ -1975,7 +1972,7 @@
      * 1) ✍️ [내신 서술형 영작 조건부 완성 노트] (중등 내신 & 숙어 & AI 맞춤)
      */
     renderWritingNoteSheet(dayKey, words) {
-      const meta = this.currentBookMeta;
+      const meta = this.currentBookMeta || {};
       const seriesKey = meta.series || 'middle';
       const seriesInfo = SERIES_INFO[seriesKey] || SERIES_INFO.middle;
       const isIdiomSeries = seriesKey === 'idioms';
@@ -3551,8 +3548,12 @@
       return html;
     }
 
-    // =========================================================================
-    // 📝 맞춤 학습 필기 노트 시스템 (5대 전문 체계적 노트 엔진)
+        // =========================================================================
+    // 📝 범용 만능 영어 학습 공책 시스템 (4대 표준 공통 템플릿)
+    // 1. voca_recall: 에빙하우스 3단 보카 암기 & 인출 노트
+    // 2. cornell_syntax: 코넬식 영문법 & 구문 독해 분석 노트
+    // 3. voca_clinic: 어휘 확장 & 오답 클리닉 마스터 노트
+    // 4. general_ruled: 빈 일반 영어 공책 (정통 4선 영어 쓰기 공책 - Option A)
     // =========================================================================
 
     setNoteTemplate(tmplKey) {
@@ -3600,556 +3601,440 @@
         return;
       }
 
-      const tmpl = this.currentNoteTemplate || 'cornell';
+      const tmpl = this.currentNoteTemplate || 'voca_recall';
       const key = this.getNoteStorageKey(dayKey, tmpl);
       const data = this.getSavedNoteData(dayKey, tmpl);
 
-      if (tmpl === 'cornell') {
-        const wordList = words.slice(0, 10).map((w, i) => `${i+1}. ${w.word || w['영단어'] || ''} (${w.meaning || w['뜻'] || ''})`).join('\n');
-        data['cornell_cues'] = wordList;
-        data['cornell_notes'] = words.slice(0, 5).map(w => `• [${w.word}]: ${w.meaning}\n  - 예문: ${w.example || '학습한 예문을 정리하세요.'}\n  - 어법/연어: ${w.collocation || ''}`).join('\n\n');
-      } else if (tmpl === 'collocation') {
-        words.slice(0, 4).forEach((w, i) => {
-          data[`colloc_word_${i}`] = w.word || '';
-          data[`colloc_meaning_${i}`] = w.meaning || '';
-          data[`colloc_pair_${i}`] = w.collocation || `${w.word} the impact / risk`;
-          data[`colloc_nuance_${i}`] = w.nuanceTip || '동의어와의 뉘앙스 차이를 필기하세요.';
-          data[`colloc_sent_${i}`] = w.example || `Experts strive to ${w.word} the critical problem.`;
+      if (tmpl === 'voca_recall') {
+        words.slice(0, 25).forEach((w, idx) => {
+          data[`vr_word_${idx}`] = w.word || '';
+          data[`vr_meaning_${idx}`] = `${w.pos ? '(' + w.pos + ') ' : ''}${w.meaning || ''}`;
+          if (w.example) data[`vr_ex_${idx}`] = w.example;
         });
-      } else if (tmpl === 'syntax') {
-        words.slice(0, 3).forEach((w, i) => {
-          data[`syntax_raw_${i}`] = w.example || `The government implemented strategic policies to ${w.word} the economic crisis.`;
-          data[`syntax_chunk_${i}`] = `[S: The government] / [V: implemented] / [O: strategic policies] / [M: to ${w.word} the crisis]`;
-          data[`syntax_grammar_${i}`] = `to부정사의 부사적 용법 (목적), 3인칭 과거시제 동사 호응`;
-          data[`syntax_trap_${i}`] = `to 뒤에 동사원형 '${w.word}' 확인 (변형형 오답 주의)`;
+      } else if (tmpl === 'cornell_syntax') {
+        const cueList = words.slice(0, 8).map(w => `• ${w.word}: ${w.meaning}`).join('\n');
+        data['cornell_cue'] = cueList;
+        const notesList = words.slice(0, 5).filter(w => w.example).map(w => `[${w.word}]\n${w.example}\n(${w.example_kr || w.meaning})`).join('\n\n');
+        data['cornell_notes'] = notesList;
+        data['cornell_summary'] = `${dayKey} 핵심 ${words.length}단어 주요 구문 및 어법 포인트 총정리.`;
+      } else if (tmpl === 'voca_clinic') {
+        words.slice(0, 8).forEach((w, idx) => {
+          data[`vc_word_${idx}`] = w.word || '';
+          data[`vc_meaning_${idx}`] = w.meaning || '';
+          data[`vc_ex_${idx}`] = w.example || '';
         });
-      } else if (tmpl === 'writing') {
-        words.slice(0, 2).forEach((w, i) => {
-          data[`writing_prompt_${i}`] = `[조건영작] '${w.word}'(${w.meaning})를 반드시 포함하여 경제적 어려움을 해결하는 문장을 8단어 이상으로 영작하시오.`;
-          data[`writing_draft_${i}`] = `We should ${w.word} the negative consequences effectively.`;
-          data[`writing_clinic_${i}`] = `조동사 should 뒤에 동사원형 '${w.word}' 정상 결합. 타동사 목적어 완비.`;
-          data[`writing_polish_${i}`] = `By implementing innovative solutions, the team successfully ${w.word}ed the impending crisis.`;
-        });
-      } else if (tmpl === 'blank_test') {
-        words.slice(0, 15).forEach((w, i) => {
-          data[`blank_word_${i}`] = w.word || '';
-          data[`blank_meaning_${i}`] = w.meaning || '';
+      } else if (tmpl === 'general_ruled') {
+        words.slice(0, 14).forEach((w, idx) => {
+          data[`gr_line_${idx}`] = `${w.word} : ${w.meaning}`;
         });
       }
 
       localStorage.setItem(key, JSON.stringify(data));
-      this.renderModal();
-      if (window.lucide) window.lucide.createIcons();
-      alert(`💡 [${dayKey}] ${words.length}개 단어 데이터가 필기 노트 양식에 자동으로 채워졌습니다!`);
+      this.refreshPaper();
+      console.log('BookStudio autoPopulateNoteWords complete: ' + dayKey);
     }
 
     clearCurrentDayNote() {
       const dayKey = (this.selectedDay === 'ALL') ? Object.keys(this.groupedDays)[0] : this.selectedDay;
-      const tmpl = this.currentNoteTemplate || 'cornell';
-      if (!confirm(`[${dayKey}] 현재 작성된 ${tmpl} 필기 내용을 모두 초기화하시겠습니까?`)) {
-        return;
-      }
+      const tmpl = this.currentNoteTemplate || 'voca_recall';
+      if (!confirm(`[${dayKey}] 현재 공책의 모든 필기 내용을 초기화하시겠습니까?`)) return;
       localStorage.removeItem(this.getNoteStorageKey(dayKey, tmpl));
-      this.renderModal();
-      if (window.lucide) window.lucide.createIcons();
+      this.refreshPaper();
     }
 
     renderStudyNoteSheet(dayKey, words, templateType) {
       const saved = this.getSavedNoteData(dayKey, templateType);
 
-      if (templateType === 'collocation') {
-        return this.renderCollocationMappingNoteSheet(dayKey, words, saved);
-      } else if (templateType === 'syntax') {
-        return this.renderSyntaxDissectionNoteSheet(dayKey, words, saved);
-      } else if (templateType === 'writing') {
-        return this.renderDescriptiveWritingNoteSheet(dayKey, words, saved);
-      } else if (templateType === 'blank_test') {
-        return this.renderBlankSelfTestNoteSheet(dayKey, words, saved);
+      if (templateType === 'cornell_syntax') {
+        return this.renderCornellSyntaxNoteSheet(dayKey, words, saved);
+      } else if (templateType === 'voca_clinic') {
+        return this.renderVocaClinicNoteSheet(dayKey, words, saved);
+      } else if (templateType === 'general_ruled') {
+        return this.renderGeneralRuledNoteSheet(dayKey, words, saved);
       } else {
-        return this.renderCornellNoteSheet(dayKey, words, saved);
+        return this.renderVocaRecallNoteSheet(dayKey, words, saved);
       }
     }
 
-    // -------------------------------------------------------------------------
-    // ① 코넬식 어휘 & 독해 핵심 요약 노트 (Cornell System)
-    // -------------------------------------------------------------------------
-    renderCornellNoteSheet(dayKey, words, saved) {
+    /**
+     * 템플릿 1: 🗂️ 에빙하우스 3단 보카 암기 & 인출 노트 (3-Step Active Recall Voca Note)
+     */
+    renderVocaRecallNoteSheet(dayKey, words, saved) {
       const meta = this.currentBookMeta || {};
       const isBlank = (this.notePrintMode === 'blank');
-      const todayStr = window.storage ? window.storage.getTodayDateString() : new Date().toISOString().slice(0, 10);
+      const maxWords = 22;
+      const rows = [];
+      const count = Math.max(words.length, maxWords);
 
-      const valCues = isBlank ? '' : (saved.cornell_cues || '');
-      const valNotes = isBlank ? '' : (saved.cornell_notes || '');
-      const valSummary = isBlank ? '' : (saved.cornell_summary || '');
-      const valGoal = isBlank ? '' : (saved.cornell_goal || '');
+      for (let i = 0; i < maxWords; i++) {
+        const w = words[i] || {};
+        const wordVal = isBlank ? '' : (saved[`vr_word_${i}`] !== undefined ? saved[`vr_word_${i}`] : (w.word || ''));
+        const meanVal = isBlank ? '' : (saved[`vr_meaning_${i}`] !== undefined ? saved[`vr_meaning_${i}`] : (w.meaning ? `${w.pos ? '(' + w.pos + ') ' : ''}${w.meaning}` : ''));
+        const exVal = isBlank ? '' : (saved[`vr_ex_${i}`] || '');
+        const chk1 = saved[`vr_chk1_${i}`] ? 'checked' : '';
+        const chk2 = saved[`vr_chk2_${i}`] ? 'checked' : '';
+        const chk3 = saved[`vr_chk3_${i}`] ? 'checked' : '';
+
+        rows.push(`
+          <tr class="border-b border-slate-200 text-xs">
+            <td class="py-1 px-1.5 font-mono text-slate-400 text-center w-7 border-r border-slate-200">${String(i + 1).padStart(2, '0')}</td>
+            <!-- 1열: 단어 & 발음 -->
+            <td class="py-1 px-2 border-r border-slate-200 w-[28%] font-serif">
+              <input type="text" placeholder="Word & POS" value="${escapeHtml(wordVal)}"
+                class="w-full bg-transparent border-none outline-none font-bold text-slate-900 focus:bg-amber-50 rounded"
+                oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'voca_recall', 'vr_word_${i}', this.value)" />
+            </td>
+            <!-- 2열: 우리말 뜻 & 연상 힌트 -->
+            <td class="py-1 px-2 border-r border-slate-200 w-[38%]">
+              <input type="text" placeholder="Meaning / Mnemonic Clue" value="${escapeHtml(meanVal)}"
+                class="w-full bg-transparent border-none outline-none text-slate-800 focus:bg-amber-50 rounded"
+                oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'voca_recall', 'vr_meaning_${i}', this.value)" />
+            </td>
+            <!-- 3열: 3회 인출 체크박스 & 철자 쓰기 -->
+            <td class="py-1 px-2 w-[34%]">
+              <div class="flex items-center justify-between gap-1">
+                <input type="text" placeholder="Active Recall Practice" value="${escapeHtml(exVal)}"
+                  class="flex-1 bg-transparent border-none outline-none font-mono text-[11px] text-indigo-900 font-semibold focus:bg-amber-50 rounded"
+                  oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'voca_recall', 'vr_ex_${i}', this.value)" />
+                <div class="flex items-center gap-1 shrink-0 text-[10px] font-mono text-slate-400">
+                  <label class="cursor-pointer inline-flex items-center gap-0.5"><input type="checkbox" ${chk1} onchange="window.bookStudioEngine.autoSaveNote('${dayKey}', 'voca_recall', 'vr_chk1_${i}', this.checked)" class="rounded w-3 h-3 text-indigo-600 cursor-pointer" /><span class="text-[9px]">1D</span></label>
+                  <label class="cursor-pointer inline-flex items-center gap-0.5"><input type="checkbox" ${chk2} onchange="window.bookStudioEngine.autoSaveNote('${dayKey}', 'voca_recall', 'vr_chk2_${i}', this.checked)" class="rounded w-3 h-3 text-indigo-600 cursor-pointer" /><span class="text-[9px]">7D</span></label>
+                  <label class="cursor-pointer inline-flex items-center gap-0.5"><input type="checkbox" ${chk3} onchange="window.bookStudioEngine.autoSaveNote('${dayKey}', 'voca_recall', 'vr_chk3_${i}', this.checked)" class="rounded w-3 h-3 text-indigo-600 cursor-pointer" /><span class="text-[9px]">30D</span></label>
+                </div>
+              </div>
+            </td>
+          </tr>
+        `);
+      }
 
       return `
-        <div class="paper-sheet a4-page p-7 sm:p-9 mb-8 bg-white shadow-xl rounded-sm border border-slate-200 text-slate-900 flex flex-col justify-between" style="min-height: 297mm;">
-          <!-- 1. 헤더 -->
-          <div class="border-b-2 border-slate-900 pb-3 mb-4">
-            <div class="flex items-center justify-between">
+        <div class="paper-sheet a4-page bg-white text-slate-900 shadow-xl mx-auto my-6 p-6 font-sans relative flex flex-col justify-between" style="min-height: 297mm; box-sizing: border-box;">
+          <div>
+            <!-- 헤더 -->
+            <div class="flex justify-between items-start border-b-2 border-indigo-900 pb-3 mb-2">
               <div>
-                <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-blue-900 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
-                  Cornell Note-Taking System
+                <span class="inline-block bg-indigo-950 text-amber-300 font-serif font-black text-[11px] px-2.5 py-0.5 rounded tracking-wider uppercase mb-1">
+                  Active Recall Voca Notebook • ${meta.title || 'Veritas English'}
                 </span>
-                <h1 class="text-xl sm:text-2xl font-serif font-black tracking-tight text-slate-950 mt-1">
-                  ${meta.title || 'Veritas English'} • ${dayKey} 코넬 핵심 요약 노트
-                </h1>
+                <h2 class="text-xl font-serif font-black text-slate-900 tracking-tight flex items-center gap-2">
+                  <span>${dayKey} 3단 보카 암기 &amp; 주기 인출 노트</span>
+                </h2>
               </div>
-              <div class="text-right text-xs font-mono">
-                <div class="text-slate-500">학습일: <span class="font-bold text-slate-800">${todayStr}</span></div>
-                <div class="text-slate-500 mt-0.5">배정 어휘: <span class="font-bold text-blue-900">${words.length}단어</span></div>
+              <div class="text-right text-xs font-mono text-slate-500 space-y-0.5">
+                <div>Date: <span class="border-b border-slate-300 inline-block w-24 text-center">${new Date().toISOString().slice(0, 10)}</span></div>
+                <div>Review: <span class="font-bold text-indigo-700">[1일] [7일] [30일]</span></div>
               </div>
             </div>
 
-            <!-- 오늘의 학습 목표란 -->
-            <div class="mt-2.5 p-2 bg-slate-50 rounded-lg border border-slate-200 flex items-center gap-2 text-xs">
-              <span class="font-serif font-bold text-slate-700 shrink-0">🎯 Today's Goal:</span>
-              <input type="text" value="${escapeHtml(valGoal)}" placeholder="오늘의 핵심 학습 목표 및 암기 타겟을 적으세요..." 
-                class="flex-1 bg-transparent border-none outline-none font-sans text-slate-900 placeholder:text-slate-400 font-medium"
-                oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'cornell', 'cornell_goal', this.value)">
-            </div>
-          </div>
-
-          <!-- 2. 코넬 본문 2분할 (Cues 30% : Notes 70%) -->
-          <div class="flex-1 grid grid-cols-12 gap-4 border border-slate-300 rounded-xl overflow-hidden mb-4 bg-white" style="min-height: 180mm;">
-            <!-- 좌측 큐 컬럼 (35% 너비) -->
-            <div class="col-span-4 bg-slate-50/70 p-4 border-r border-slate-300 flex flex-col">
-              <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-200">
-                <span class="text-xs font-serif font-black text-slate-800 flex items-center gap-1">
-                  <span>💡 큐 & 핵심 단서 (Cues)</span>
-                </span>
-                <span class="text-[10px] font-mono text-slate-400 font-bold">RECALL CUES</span>
-              </div>
-              <p class="text-[10.5px] text-slate-500 leading-snug mb-2 no-print">
-                ※ 질문, 표제어, 힌트 등을 적고 복습 시 가려가며 인출 테스트를 진행하세요.
-              </p>
-              <textarea placeholder="1. 표제어 목록\n2. 스스로 묻는 질문 (ex: mitigate의 목적어는?)\n3. 망각곡선 3회독 체크 [ ][ ][ ]"
-                class="flex-1 w-full bg-transparent border-none outline-none resize-none text-xs leading-relaxed font-mono text-slate-900 placeholder:text-slate-400"
-                style="line-height: 1.8rem;"
-                oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'cornell', 'cornell_cues', this.value)">${escapeHtml(valCues)}</textarea>
+            <!-- 안내 가이드 -->
+            <div class="no-print bg-indigo-50/70 border border-indigo-200 rounded-lg p-2 mb-2 flex items-center justify-between text-xs text-indigo-900">
+              <span>💡 <b>3단 접기 활용법:</b> 종이를 세로 3단으로 접어 단어/뜻을 가리며 자가 테스트하세요. 우측 1D·7D·30D 체크박스는 복습 주기에 맞춰 체크합니다.</span>
+              <span class="text-[11px] font-mono text-indigo-600">A4 1장 최적화 (22단어 수납)</span>
             </div>
 
-            <!-- 우측 필기 본문 컬럼 (65% 너비) -->
-            <div class="col-span-8 p-4 flex flex-col bg-white" style="background-image: repeating-linear-gradient(transparent, transparent 1.75rem, #f1f5f9 1.75rem, #f1f5f9 1.8rem);">
-              <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-200">
-                <span class="text-xs font-serif font-black text-blue-950 flex items-center gap-1">
-                  <span>📝 상세 학습 필기 (Lecture & Study Notes)</span>
-                </span>
-                <span class="text-[10px] font-mono text-slate-400 font-bold">CLASS NOTES</span>
-              </div>
-              <p class="text-[10.5px] text-slate-500 leading-snug mb-2 no-print">
-                ※ 뜻, 유의어/반의어, 문맥상 핵심 예문, 중요 어법 및 파생어를 상세히 기록하세요.
-              </p>
-              <textarea placeholder="• 단어의 다의어 뜻과 문맥 속 쓰임새\n• 예문 및 끊어읽기 구문 분석\n• 선생님 강조 팁 및 시험 출제 포인트..."
-                class="flex-1 w-full bg-transparent border-none outline-none resize-none text-xs leading-relaxed font-sans text-slate-900 placeholder:text-slate-400"
-                style="line-height: 1.8rem;"
-                oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'cornell', 'cornell_notes', this.value)">${escapeHtml(valNotes)}</textarea>
-            </div>
-          </div>
-
-          <!-- 3. 하단 요약 (Summary 20%) -->
-          <div class="p-3.5 rounded-xl bg-emerald-50/80 border border-emerald-300 text-xs flex flex-col">
-            <div class="flex items-center justify-between mb-1.5">
-              <span class="font-serif font-black text-emerald-950 flex items-center gap-1">
-                <span>📌 핵심 요약 (Summary: 오늘 배운 내용을 1~2문장으로 압축 요약)</span>
-              </span>
-              <span class="text-[10px] font-mono text-emerald-800 font-bold">ACTIVE SYNTHESIS</span>
-            </div>
-            <textarea placeholder="오늘 ${dayKey}에서 가장 중요한 핵심 개념과 어휘를 관통하는 최종 요약문을 작성하세요..."
-              class="w-full bg-transparent border-none outline-none resize-none text-xs leading-relaxed font-sans font-medium text-emerald-950 placeholder:text-emerald-700/60"
-              rows="2"
-              oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'cornell', 'cornell_summary', this.value)">${escapeHtml(valSummary)}</textarea>
+            <!-- 3열 테이블 -->
+            <table class="w-full border border-slate-200 border-collapse table-fixed">
+              <thead>
+                <tr class="bg-slate-100 text-[11px] font-bold text-slate-700 border-b border-slate-300">
+                  <th class="py-1.5 w-7 text-center border-r border-slate-300">No</th>
+                  <th class="py-1.5 px-2 text-left border-r border-slate-300 w-[28%]">단어 &amp; 품사 (Word &amp; POS)</th>
+                  <th class="py-1.5 px-2 text-left border-r border-slate-300 w-[38%]">우리말 뜻 &amp; 연상 힌트 (Meaning &amp; Clue)</th>
+                  <th class="py-1.5 px-2 text-left w-[34%]">3회 인출 체크 &amp; 철자 연습 (Recall Practice)</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${rows.join('')}
+              </tbody>
+            </table>
           </div>
 
           <!-- 푸터 -->
           <div class="pt-2 mt-2 border-t border-slate-200 flex justify-between items-center text-[10px] font-mono text-slate-400">
-            <span>Veritas Cornell Note Series • ${meta.title || ''}</span>
+            <span>Veritas Active Recall Notebook • 3-Step Memorization System</span>
             <span>${dayKey} (Page 1/1)</span>
           </div>
         </div>
       `;
     }
 
-    // -------------------------------------------------------------------------
-    // ② 콜로케이션 & 뉘앙스 매핑 노트 (Collocation & Nuance Mapping)
-    // -------------------------------------------------------------------------
-    renderCollocationMappingNoteSheet(dayKey, words, saved) {
+    /**
+     * 템플릿 2: 📐 코넬식 영문법 & 구문 독해 분석 노트 (Universal Cornell Syntax & Grammar Note)
+     */
+    renderCornellSyntaxNoteSheet(dayKey, words, saved) {
       const meta = this.currentBookMeta || {};
       const isBlank = (this.notePrintMode === 'blank');
-      const targetWords = words.slice(0, 4);
-
-      let cardsHtml = '';
-      targetWords.forEach((w, idx) => {
-        const valWord = isBlank ? '' : (saved[`colloc_word_${idx}`] || w.word || '');
-        const valMeaning = isBlank ? '' : (saved[`colloc_meaning_${idx}`] || w.meaning || '');
-        const valPair = isBlank ? '' : (saved[`colloc_pair_${idx}`] || w.collocation || '');
-        const valNuance = isBlank ? '' : (saved[`colloc_nuance_${idx}`] || w.nuanceTip || '');
-        const valSent = isBlank ? '' : (saved[`colloc_sent_${idx}`] || w.example || '');
-
-        cardsHtml += `
-          <div class="p-4 rounded-xl border border-slate-300 bg-white space-y-2.5 shadow-2xs">
-            <!-- 1행: 표제어 & 뜻 -->
-            <div class="flex items-center justify-between pb-1.5 border-b border-slate-200">
-              <div class="flex items-center gap-2">
-                <span class="w-6 h-6 rounded-lg bg-blue-100 text-blue-900 font-mono font-bold text-xs flex items-center justify-center">${idx + 1}</span>
-                <input type="text" value="${escapeHtml(valWord)}" placeholder="표제어..."
-                  class="font-serif font-black text-base text-slate-900 bg-transparent border-none outline-none w-36"
-                  oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'collocation', 'colloc_word_${idx}', this.value)">
-                <input type="text" value="${escapeHtml(valMeaning)}" placeholder="뜻..."
-                  class="text-xs text-slate-600 bg-transparent border-none outline-none flex-1 font-medium"
-                  oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'collocation', 'colloc_meaning_${idx}', this.value)">
-              </div>
-              <span class="text-[10px] font-mono text-slate-400 font-bold uppercase">LEXICAL MAP</span>
-            </div>
-
-            <!-- 2행 & 3행 그리드: 콜로케이션 연어 vs 뉘앙스 비교 -->
-            <div class="grid grid-cols-2 gap-2 text-xs">
-              <div class="p-2.5 rounded-lg bg-blue-50/60 border border-blue-200">
-                <span class="text-[10px] font-mono font-bold text-blue-900 block mb-1">🎯 짝궁 연어 (Collocations)</span>
-                <input type="text" value="${escapeHtml(valPair)}" placeholder="ex: mitigate the impact / comply with rules"
-                  class="w-full bg-transparent border-none outline-none font-mono text-xs text-blue-950 font-bold"
-                  oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'collocation', 'colloc_pair_${idx}', this.value)">
-              </div>
-              <div class="p-2.5 rounded-lg bg-amber-50/60 border border-amber-200">
-                <span class="text-[10px] font-mono font-bold text-amber-900 block mb-1">🔍 뉘앙스 & 동의어 차이</span>
-                <input type="text" value="${escapeHtml(valNuance)}" placeholder="ex: 단순 감소(reduce) vs 피해 완화(mitigate)"
-                  class="w-full bg-transparent border-none outline-none font-sans text-xs text-amber-950 font-medium"
-                  oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'collocation', 'colloc_nuance_${idx}', this.value)">
-              </div>
-            </div>
-
-            <!-- 4행: 나만의 실전 응용 작문 -->
-            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 text-xs">
-              <span class="text-[10px] font-mono font-bold text-slate-600 block mb-1">✍️ 나만의 실전 활용 1문장 (My Contextual Sentence)</span>
-              <input type="text" value="${escapeHtml(valSent)}" placeholder="위 콜로케이션을 활용하여 완성된 1문장을 영작하세요..."
-                class="w-full bg-transparent border-none outline-none font-serif text-xs text-slate-900 font-semibold"
-                oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'collocation', 'colloc_sent_${idx}', this.value)">
-            </div>
-          </div>
-        `;
-      });
+      const valGoal = isBlank ? '' : (saved['cornell_goal'] || '');
+      const valCue = isBlank ? '' : (saved['cornell_cue'] || '');
+      const valNotes = isBlank ? '' : (saved['cornell_notes'] || '');
+      const valSummary = isBlank ? '' : (saved['cornell_summary'] || '');
 
       return `
-        <div class="paper-sheet a4-page p-7 sm:p-9 mb-8 bg-white shadow-xl rounded-sm border border-slate-200 text-slate-900 flex flex-col justify-between" style="min-height: 297mm;">
+        <div class="paper-sheet a4-page bg-white text-slate-900 shadow-xl mx-auto my-6 p-6 font-sans relative flex flex-col justify-between" style="min-height: 297mm; box-sizing: border-box;">
           <div>
-            <div class="border-b-2 border-slate-900 pb-3 mb-4 flex items-center justify-between">
+            <!-- 헤더 -->
+            <div class="flex justify-between items-start border-b-2 border-slate-800 pb-3 mb-2">
               <div>
-                <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-indigo-900 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-200">
-                  Collocation & Nuance Expansion Notebook
+                <span class="inline-block bg-slate-900 text-amber-300 font-serif font-black text-[11px] px-2.5 py-0.5 rounded tracking-wider uppercase mb-1">
+                  Cornell Note-taking System • ${meta.title || 'Veritas English'}
                 </span>
-                <h1 class="text-xl sm:text-2xl font-serif font-black tracking-tight text-slate-950 mt-1">
-                  ${meta.title || 'Veritas English'} • ${dayKey} 콜로케이션 & 뉘앙스 매핑 노트
-                </h1>
+                <h2 class="text-xl font-serif font-black text-slate-900 tracking-tight">
+                  ${dayKey} 코넬식 영문법 &amp; 구문 독해 분석 노트
+                </h2>
               </div>
-              <div class="text-right text-xs font-mono">
-                <div class="text-slate-500">단원: <span class="font-bold text-blue-900">${dayKey}</span></div>
-                <div class="text-slate-500 mt-0.5">유기적 어휘망 구축</div>
+              <div class="text-right text-xs font-mono text-slate-500 space-y-0.5">
+                <div>Date: <span class="border-b border-slate-300 inline-block w-24 text-center">${new Date().toISOString().slice(0, 10)}</span></div>
+                <div>Topic: <span class="border-b border-slate-300 inline-block w-28 text-center">${dayKey} Grammar &amp; Syntax</span></div>
               </div>
             </div>
 
-            <div class="space-y-3.5">
-              ${cardsHtml}
+            <!-- 학습 목표 필기 바 -->
+            <div class="p-2 mb-2 bg-slate-50 border border-slate-200 rounded-lg flex items-center gap-2 text-xs">
+              <span class="font-bold text-indigo-900 shrink-0 font-serif">🎯 오늘의 학습 목표 / 핵심 문법:</span>
+              <input type="text" placeholder="ex: 관계대명사 that vs what의 차이점 및 주어-동사 수일치 구문 분석"
+                value="${escapeHtml(valGoal)}"
+                class="flex-1 bg-transparent border-none outline-none font-medium text-slate-800"
+                oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'cornell_syntax', 'cornell_goal', this.value)" />
+            </div>
+
+            <!-- 코넬 2열 본문 그리드 -->
+            <div class="border border-slate-300 rounded-lg overflow-hidden flex min-h-[580px]">
+              <!-- 좌측 큐(Cue) 컬럼 (28%) -->
+              <div class="w-[28%] bg-slate-50/70 border-r border-slate-300 p-3 flex flex-col justify-between">
+                <div>
+                  <div class="border-b border-slate-200 pb-1 mb-2">
+                    <span class="text-[11px] font-serif font-black text-slate-800 tracking-wider uppercase block">🔑 CUE COLUMN</span>
+                    <span class="text-[10px] text-slate-500 font-sans">핵심 키워드 / 질문 / 문법 공식</span>
+                  </div>
+                  <textarea placeholder="• 핵심 어휘 및 숙어&#10;• 문법 공식 (S+V+O+C)&#10;• 헷갈리는 질문들&#10;• 시험 주의 포인트..."
+                    class="w-full bg-transparent border-none outline-none font-serif text-xs text-slate-900 leading-relaxed resize-none h-[490px]"
+                    oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'cornell_syntax', 'cornell_cue', this.value)">${escapeHtml(valCue)}</textarea>
+                </div>
+              </div>
+
+              <!-- 우측 메인 필기(Notes) 컬럼 (72%) -->
+              <div class="w-[72%] p-3.5 flex flex-col justify-between bg-white">
+                <div>
+                  <div class="border-b border-slate-200 pb-1 mb-2">
+                    <span class="text-[11px] font-serif font-black text-indigo-950 tracking-wider uppercase block">📝 MAIN NOTES &amp; SYNTAX DISSECTION</span>
+                    <span class="text-[10px] text-slate-500 font-sans">문장 성분(S, V, O, C) 끊어읽기 / 직독직해 / 상세 필기</span>
+                  </div>
+                  <textarea placeholder="[구문 분석 & 직독직해 필기 공간]&#10;&#10;S: The newly implemented policy&#10;V: will mitigate&#10;O: the severe economic risk [facing small businesses].&#10;&#10;[직독직해]&#10;새롭게 시행된 정책은 / 완화할 것이다 / 심각한 경제적 위험을 / [소상공인들이 직면한]."
+                    class="w-full bg-transparent border-none outline-none font-serif text-xs text-slate-900 leading-relaxed resize-none h-[490px]"
+                    oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'cornell_syntax', 'cornell_notes', this.value)">${escapeHtml(valNotes)}</textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- 하단 요약(Summary) 바 -->
+            <div class="mt-2.5 p-3 rounded-lg bg-amber-50/70 border border-amber-200">
+              <span class="text-[11px] font-serif font-black text-amber-950 block mb-1">
+                💡 SUMMARY (오늘 학습한 핵심 내용 1문장 압축 정리)
+              </span>
+              <textarea placeholder="오늘 배운 구문 또는 문법의 가장 중요한 결론을 1~2문장으로 요약하세요."
+                class="w-full bg-transparent border-none outline-none font-serif text-xs text-amber-950 leading-relaxed resize-none" rows="2"
+                oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'cornell_syntax', 'cornell_summary', this.value)">${escapeHtml(valSummary)}</textarea>
             </div>
           </div>
 
           <!-- 푸터 -->
-          <div class="pt-2 mt-4 border-t border-slate-200 flex justify-between items-center text-[10px] font-mono text-slate-400">
-            <span>Veritas Lexical Collocation Notebook • ${meta.title || ''}</span>
+          <div class="pt-2 mt-2 border-t border-slate-200 flex justify-between items-center text-[10px] font-mono text-slate-400">
+            <span>Veritas Cornell Syntax Notebook • Systematic English Learning</span>
             <span>${dayKey} (Page 1/1)</span>
           </div>
         </div>
       `;
     }
 
-    // -------------------------------------------------------------------------
-    // ③ 구문 해체 & 어법 클리닉 노트 (Syntax Dissection & Grammar Clinic)
-    // -------------------------------------------------------------------------
-    renderSyntaxDissectionNoteSheet(dayKey, words, saved) {
+    /**
+     * 템플릿 3: 🔍 어휘 확장 & 오답 클리닉 마스터 노트 (Vocabulary Expansion & Clinic Note)
+     */
+    renderVocaClinicNoteSheet(dayKey, words, saved) {
       const meta = this.currentBookMeta || {};
       const isBlank = (this.notePrintMode === 'blank');
-      const targetWords = words.slice(0, 3);
+      const cards = [];
 
-      let sectionsHtml = '';
-      targetWords.forEach((w, idx) => {
-        const valRaw = isBlank ? '' : (saved[`syntax_raw_${idx}`] || w.example || '');
-        const valChunk = isBlank ? '' : (saved[`syntax_chunk_${idx}`] || '');
-        const valGrammar = isBlank ? '' : (saved[`syntax_grammar_${idx}`] || '');
-        const valTrap = isBlank ? '' : (saved[`syntax_trap_${idx}`] || '');
+      for (let i = 0; i < 8; i++) {
+        const w = words[i] || {};
+        const wordVal = isBlank ? '' : (saved[`vc_word_${i}`] !== undefined ? saved[`vc_word_${i}`] : (w.word || ''));
+        const reasonVal = isBlank ? '' : (saved[`vc_reason_${i}`] || '');
+        const synVal = isBlank ? '' : (saved[`vc_syn_${i}`] || '');
+        const antVal = isBlank ? '' : (saved[`vc_ant_${i}`] || '');
+        const derVal = isBlank ? '' : (saved[`vc_der_${i}`] || '');
+        const colVal = isBlank ? '' : (saved[`vc_col_${i}`] || '');
+        const exVal = isBlank ? '' : (saved[`vc_ex_${i}`] !== undefined ? saved[`vc_ex_${i}`] : (w.example || ''));
+        const chk = saved[`vc_chk_${i}`] ? 'checked' : '';
 
-        sectionsHtml += `
-          <div class="p-4 rounded-xl border border-slate-300 bg-white space-y-3 shadow-2xs">
-            <div class="flex items-center justify-between pb-1.5 border-b border-slate-200">
-              <span class="font-serif font-black text-xs sm:text-sm text-slate-900 flex items-center gap-1.5">
-                <span class="w-5 h-5 rounded bg-indigo-100 text-indigo-900 font-mono text-xs flex items-center justify-center font-bold">${idx + 1}</span>
-                <span>핵심 문장 구문 정밀 해체 (표제어: <strong class="text-blue-900">${w.word || ''}</strong>)</span>
-              </span>
-              <span class="text-[10px] font-mono text-slate-400 font-bold">SYNTAX CLINIC</span>
-            </div>
-
-            <!-- 원문 문장 -->
-            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 text-xs">
-              <span class="text-[10px] font-mono font-bold text-slate-500 block mb-0.5">📖 지문 속 원문장 (Target Sentence)</span>
-              <textarea placeholder="분석할 원문장을 입력하세요..."
-                class="w-full bg-transparent border-none outline-none font-serif text-xs text-slate-900 font-bold resize-none" rows="2"
-                oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'syntax', 'syntax_raw_${idx}', this.value)">${escapeHtml(valRaw)}</textarea>
-            </div>
-
-            <!-- 끊어읽기 & 성분 해체 -->
-            <div class="p-2.5 rounded-lg bg-indigo-50/60 border border-indigo-200 text-xs">
-              <span class="text-[10px] font-mono font-bold text-indigo-900 block mb-0.5">✂️ 슬래시(/) 끊어읽기 & 문장 성분 [S][V][O][C][M]</span>
-              <textarea placeholder="ex: [S: The government] / [V: implemented] / [O: strategic policies] / [M: to mitigate the risk]"
-                class="w-full bg-transparent border-none outline-none font-mono text-xs text-indigo-950 font-bold resize-none" rows="2"
-                oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'syntax', 'syntax_chunk_${idx}', this.value)">${escapeHtml(valChunk)}</textarea>
-            </div>
-
-            <!-- 어법 공식 & 출제 함정 2열 -->
-            <div class="grid grid-cols-2 gap-2 text-xs">
-              <div class="p-2.5 rounded-lg bg-emerald-50/60 border border-emerald-200">
-                <span class="text-[10px] font-mono font-bold text-emerald-900 block mb-0.5">🔬 적용된 핵심 어법 공식 (Grammar Rules)</span>
-                <textarea placeholder="ex: to부정사의 부사적 용법(목적), 수일치, 능동태"
-                  class="w-full bg-transparent border-none outline-none font-sans text-xs text-emerald-950 font-medium resize-none" rows="2"
-                  oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'syntax', 'syntax_grammar_${idx}', this.value)">${escapeHtml(valGrammar)}</textarea>
+        cards.push(`
+          <div class="border border-slate-300 rounded-lg p-2.5 bg-slate-50/50 flex flex-col justify-between text-xs space-y-1.5">
+            <!-- 카드 헤더: 표제어 + 오답 원인 -->
+            <div class="flex items-center justify-between border-b border-slate-200 pb-1 gap-2">
+              <div class="flex items-center gap-1.5 flex-1">
+                <span class="w-5 h-5 rounded-full bg-slate-800 text-white font-mono text-[10px] flex items-center justify-center font-bold shrink-0">${i + 1}</span>
+                <input type="text" placeholder="표제어 (Target Word)" value="${escapeHtml(wordVal)}"
+                  class="font-serif font-black text-slate-900 bg-transparent border-none outline-none text-xs w-32 focus:bg-amber-50 rounded"
+                  oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'voca_clinic', 'vc_word_${i}', this.value)" />
               </div>
-              <div class="p-2.5 rounded-lg bg-rose-50/60 border border-rose-200">
-                <span class="text-[10px] font-mono font-bold text-rose-900 block mb-0.5">⚠️ 시험 출제 오답 함정 (Trap Analysis)</span>
-                <textarea placeholder="ex: 동사원형 자리에 분사나 명사형으로 변형 출제 주의"
-                  class="w-full bg-transparent border-none outline-none font-sans text-xs text-rose-950 font-medium resize-none" rows="2"
-                  oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'syntax', 'syntax_trap_${idx}', this.value)">${escapeHtml(valTrap)}</textarea>
+              <div class="flex items-center gap-1">
+                <label class="inline-flex items-center gap-1 text-[10px] font-serif text-slate-500 cursor-pointer">
+                  <input type="checkbox" ${chk} onchange="window.bookStudioEngine.autoSaveNote('${dayKey}', 'voca_clinic', 'vc_chk_${i}', this.checked)" class="rounded w-3 h-3 text-emerald-600 cursor-pointer" />
+                  <span>체화</span>
+                </label>
               </div>
+            </div>
+
+            <!-- 오답 및 헷갈린 이유 기록 -->
+            <div class="bg-rose-50/70 border border-rose-200 rounded px-2 py-0.5 text-[11px] flex items-center gap-1">
+              <span class="text-rose-700 font-bold shrink-0">⚠️ 오답 원인:</span>
+              <input type="text" placeholder="ex: 철자 혼동, 다의어 뜻 착각, 전치사 오용..." value="${escapeHtml(reasonVal)}"
+                class="w-full bg-transparent border-none outline-none text-rose-950 font-medium"
+                oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'voca_clinic', 'vc_reason_${i}', this.value)" />
+            </div>
+
+            <!-- 4각 확장 매핑 -->
+            <div class="grid grid-cols-2 gap-1 text-[10px] bg-white border border-slate-200 rounded p-1.5">
+              <div class="flex items-center gap-1">
+                <span class="text-indigo-600 font-bold shrink-0">유의어:</span>
+                <input type="text" placeholder="Synonyms" value="${escapeHtml(synVal)}"
+                  class="w-full bg-transparent border-none outline-none font-serif text-slate-800"
+                  oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'voca_clinic', 'vc_syn_${i}', this.value)" />
+              </div>
+              <div class="flex items-center gap-1">
+                <span class="text-rose-600 font-bold shrink-0">반의어:</span>
+                <input type="text" placeholder="Antonyms" value="${escapeHtml(antVal)}"
+                  class="w-full bg-transparent border-none outline-none font-serif text-slate-800"
+                  oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'voca_clinic', 'vc_ant_${i}', this.value)" />
+              </div>
+              <div class="flex items-center gap-1">
+                <span class="text-emerald-600 font-bold shrink-0">파생어:</span>
+                <input type="text" placeholder="Derivatives" value="${escapeHtml(derVal)}"
+                  class="w-full bg-transparent border-none outline-none font-serif text-slate-800"
+                  oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'voca_clinic', 'vc_der_${i}', this.value)" />
+              </div>
+              <div class="flex items-center gap-1">
+                <span class="text-amber-600 font-bold shrink-0">짝단어:</span>
+                <input type="text" placeholder="Collocation" value="${escapeHtml(colVal)}"
+                  class="w-full bg-transparent border-none outline-none font-serif text-slate-800"
+                  oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'voca_clinic', 'vc_col_${i}', this.value)" />
+              </div>
+            </div>
+
+            <!-- 교정 예문 직접 쓰기 -->
+            <div class="pt-0.5">
+              <span class="text-[9px] font-bold text-slate-400 block mb-0.5">✍️ 올바른 문맥 예문 직접 쓰기:</span>
+              <input type="text" placeholder="정확한 예문을 직접 작성해보세요" value="${escapeHtml(exVal)}"
+                class="w-full bg-white border border-slate-200 rounded px-2 py-0.5 font-serif text-[11px] text-slate-900 focus:bg-amber-50 outline-none"
+                oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'voca_clinic', 'vc_ex_${i}', this.value)" />
             </div>
           </div>
-        `;
-      });
+        `);
+      }
 
       return `
-        <div class="paper-sheet a4-page p-7 sm:p-9 mb-8 bg-white shadow-xl rounded-sm border border-slate-200 text-slate-900 flex flex-col justify-between" style="min-height: 297mm;">
+        <div class="paper-sheet a4-page bg-white text-slate-900 shadow-xl mx-auto my-6 p-6 font-sans relative flex flex-col justify-between" style="min-height: 297mm; box-sizing: border-box;">
           <div>
-            <div class="border-b-2 border-slate-900 pb-3 mb-4 flex items-center justify-between">
+            <!-- 헤더 -->
+            <div class="flex justify-between items-start border-b-2 border-slate-900 pb-3 mb-2.5">
               <div>
-                <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-indigo-900 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-200">
-                  Syntax Dissection &amp; Grammar Clinic Notebook
+                <span class="inline-block bg-slate-900 text-amber-300 font-serif font-black text-[11px] px-2.5 py-0.5 rounded tracking-wider uppercase mb-1">
+                  Vocabulary Clinic &amp; Expansion • ${meta.title || 'Veritas English'}
                 </span>
-                <h1 class="text-xl sm:text-2xl font-serif font-black tracking-tight text-slate-950 mt-1">
-                  ${meta.title || 'Veritas English'} • ${dayKey} 구문 해체 &amp; 어법 클리닉
-                </h1>
+                <h2 class="text-xl font-serif font-black text-slate-900 tracking-tight">
+                  ${dayKey} 어휘 확장 &amp; 오답 클리닉 마스터 노트
+                </h2>
               </div>
-              <div class="text-right text-xs font-mono">
-                <div class="text-slate-500">내신·수능 1등급 대비</div>
-                <div class="text-blue-900 font-bold mt-0.5">${dayKey} 문장 구조 완전 정복</div>
+              <div class="text-right text-xs font-mono text-slate-500 space-y-0.5">
+                <div>Date: <span class="border-b border-slate-300 inline-block w-24 text-center">${new Date().toISOString().slice(0, 10)}</span></div>
+                <div>Target: <span class="font-bold text-slate-700">취약 어휘 8선 심층 분석</span></div>
               </div>
             </div>
 
-            <div class="space-y-4">
-              ${sectionsHtml}
+            <!-- 2열 x 4행 그리드 -->
+            <div class="grid grid-cols-2 gap-2.5">
+              ${cards.join('')}
             </div>
           </div>
 
-          <div class="pt-2 mt-4 border-t border-slate-200 flex justify-between items-center text-[10px] font-mono text-slate-400">
-            <span>Veritas Syntax Dissection Notebook • ${meta.title || ''}</span>
+          <!-- 푸터 -->
+          <div class="pt-2 mt-2 border-t border-slate-200 flex justify-between items-center text-[10px] font-mono text-slate-400">
+            <span>Veritas Vocabulary Expansion &amp; Clinic Note</span>
             <span>${dayKey} (Page 1/1)</span>
           </div>
         </div>
       `;
     }
 
-    // -------------------------------------------------------------------------
-    // ④ 서술형 실전 영작 훈련 노트 (Descriptive Writing)
-    // -------------------------------------------------------------------------
-    renderDescriptiveWritingNoteSheet(dayKey, words, saved) {
+    /**
+     * 템플릿 4: 📝 빈 일반 영어 공책 (정통 4선 영어 쓰기 공책 - Option A)
+     * Standard 4-Line English Handwriting Practice Notebook
+     */
+    renderGeneralRuledNoteSheet(dayKey, words, saved) {
       const meta = this.currentBookMeta || {};
       const isBlank = (this.notePrintMode === 'blank');
-      const targetWords = words.slice(0, 2);
+      const staves = [];
+      const totalStaves = 14;
 
-      let promptsHtml = '';
-      targetWords.forEach((w, idx) => {
-        const valPrompt = isBlank ? '' : (saved[`writing_prompt_${idx}`] || `[조건영작] '${w.word}'(${w.meaning})를 반드시 포함하고, 수일치 및 목적어를 살려 8~12단어 내외의 완전한 영문장으로 작성하시오.`);
-        const valDraft = isBlank ? '' : (saved[`writing_draft_${idx}`] || '');
-        const valClinic = isBlank ? '' : (saved[`writing_clinic_${idx}`] || '');
-        const valPolish = isBlank ? '' : (saved[`writing_polish_${idx}`] || '');
+      for (let i = 0; i < totalStaves; i++) {
+        const val = isBlank ? '' : (saved[`gr_line_${i}`] || '');
+        const num = String(i + 1).padStart(2, '0');
 
-        promptsHtml += `
-          <div class="p-4 rounded-xl border border-slate-300 bg-white space-y-3 shadow-2xs">
-            <div class="flex items-center justify-between pb-1.5 border-b border-slate-200">
-              <span class="font-serif font-black text-xs sm:text-sm text-slate-900 flex items-center gap-1.5">
-                <span class="w-5 h-5 rounded bg-emerald-100 text-emerald-900 font-mono text-xs flex items-center justify-center font-bold">Q${idx + 1}</span>
-                <span>서술형 조건 영작 실전 훈련 (핵심 어휘: <strong class="text-blue-900">${w.word || ''}</strong>)</span>
-              </span>
-              <span class="text-[10px] font-mono text-slate-400 font-bold">DESCRIPTIVE CLINIC</span>
-            </div>
+        staves.push(`
+          <div class="relative w-full h-[48px] my-1 border-b border-slate-300">
+            <!-- 4선 가이드라인 -->
+            <!-- Line 1: Top Ascender Line (Slate 300) -->
+            <div class="absolute top-[8px] left-7 right-0 border-t border-slate-300 pointer-events-none"></div>
+            <!-- Line 2: Midline / Mean Line (Dashed Slate 300) -->
+            <div class="absolute top-[20px] left-7 right-0 border-t border-dashed border-slate-300 pointer-events-none"></div>
+            <!-- Line 3: Baseline / 기준선 (Red solid line) -->
+            <div class="absolute top-[32px] left-7 right-0 border-t-2 border-rose-500 pointer-events-none"></div>
+            <!-- Line 4: Bottom Descender Line (Slate 300) -->
+            <div class="absolute top-[44px] left-7 right-0 border-t border-slate-300 pointer-events-none"></div>
 
-            <!-- 조건 제시 -->
-            <div class="p-2.5 rounded-lg bg-blue-50/70 border border-blue-200 text-xs">
-              <span class="text-[10px] font-mono font-bold text-blue-900 block mb-0.5">📋 우리말 의미 및 필수 조건 (Writing Prompt)</span>
-              <textarea placeholder="조건 제시문을 작성하세요..."
-                class="w-full bg-transparent border-none outline-none font-sans text-xs text-blue-950 font-semibold resize-none" rows="2"
-                oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'writing', 'writing_prompt_${idx}', this.value)">${escapeHtml(valPrompt)}</textarea>
-            </div>
+            <!-- 행 번호 -->
+            <span class="absolute left-0 top-[18px] text-[10px] font-mono text-slate-400 font-bold select-none">${num}</span>
 
-            <!-- 1차 자가 영작란 (Draft) -->
-            <div class="p-3 rounded-lg bg-white border border-slate-300 text-xs" style="background-image: repeating-linear-gradient(transparent, transparent 1.6rem, #f1f5f9 1.6rem, #f1f5f9 1.65rem);">
-              <span class="text-[10px] font-mono font-bold text-slate-600 block mb-1">✏️ 1차 자가 영작 초안 (Student's Draft)</span>
-              <textarea placeholder="조건에 맞추어 직접 영작문을 작성하세요..."
-                class="w-full bg-transparent border-none outline-none font-serif text-xs leading-relaxed text-slate-900 font-semibold resize-none" rows="3"
-                style="line-height: 1.65rem;"
-                oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'writing', 'writing_draft_${idx}', this.value)">${escapeHtml(valDraft)}</textarea>
-            </div>
-
-            <!-- 자가 채점 & 첨삭 피드백 메모란 -->
-            <div class="grid grid-cols-2 gap-2 text-xs">
-              <div class="p-2.5 rounded-lg bg-amber-50/60 border border-amber-200">
-                <span class="text-[10px] font-mono font-bold text-amber-900 block mb-0.5">💡 자가 첨삭 & 문법 교정 체크 (Self-Correction)</span>
-                <textarea placeholder="수일치, 시제, 관사(a/the), 전치사 오류 체크 메모..."
-                  class="w-full bg-transparent border-none outline-none font-sans text-xs text-amber-950 font-medium resize-none" rows="2"
-                  oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'writing', 'writing_clinic_${idx}', this.value)">${escapeHtml(valClinic)}</textarea>
-              </div>
-              <div class="p-2.5 rounded-lg bg-emerald-50/60 border border-emerald-200">
-                <span class="text-[10px] font-mono font-bold text-emerald-900 block mb-0.5">🏆 아이비리그 모범 학술 대안문 (Academic Polish)</span>
-                <textarea placeholder="더 세련된 원어민 수준의 모범 대안문 기록..."
-                  class="w-full bg-transparent border-none outline-none font-serif italic text-xs text-emerald-950 font-bold resize-none" rows="2"
-                  oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'writing', 'writing_polish_${idx}', this.value)">${escapeHtml(valPolish)}</textarea>
-              </div>
-            </div>
+            <!-- 디지털 타이핑 필기용 입력창 (빈 양식 모드에서는 텍스트 미출력) -->
+            <input type="text" value="${escapeHtml(val)}"
+              placeholder=""
+              class="absolute left-8 right-1 top-[10px] h-[26px] bg-transparent border-none outline-none font-serif text-[18px] text-slate-900 tracking-wide font-normal leading-none z-10 ${isBlank ? 'opacity-0' : ''}"
+              oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'general_ruled', 'gr_line_${i}', this.value)" />
           </div>
-        `;
-      });
+        `);
+      }
 
       return `
-        <div class="paper-sheet a4-page p-7 sm:p-9 mb-8 bg-white shadow-xl rounded-sm border border-slate-200 text-slate-900 flex flex-col justify-between" style="min-height: 297mm;">
+        <div class="paper-sheet a4-page bg-white text-slate-900 shadow-xl mx-auto my-6 p-6 font-sans relative flex flex-col justify-between" style="min-height: 297mm; box-sizing: border-box;">
           <div>
-            <div class="border-b-2 border-slate-900 pb-3 mb-4 flex items-center justify-between">
+            <!-- 헤더 -->
+            <div class="flex justify-between items-start border-b-2 border-slate-900 pb-3 mb-2">
               <div>
-                <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-emerald-900 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                  Descriptive Writing &amp; Essay Clinic Notebook
+                <span class="inline-block bg-slate-900 text-amber-300 font-serif font-black text-[11px] px-2.5 py-0.5 rounded tracking-wider uppercase mb-1">
+                  English Handwriting Notebook • ${meta.title || 'General English Study'}
                 </span>
-                <h1 class="text-xl sm:text-2xl font-serif font-black tracking-tight text-slate-950 mt-1">
-                  ${meta.title || 'Veritas English'} • ${dayKey} 서술형 실전 영작 훈련
-                </h1>
+                <h2 class="text-xl font-serif font-black text-slate-900 tracking-tight">
+                  ${dayKey} 정통 4선 영어 쓰기 공책
+                </h2>
               </div>
-              <div class="text-right text-xs font-mono">
-                <div class="text-slate-500">내신 서술형 만점 대비</div>
-                <div class="text-emerald-900 font-bold mt-0.5">조건 영작 &amp; 첨삭 클리닉</div>
+              <div class="text-right text-xs font-mono text-slate-500 space-y-0.5">
+                <div>Date: <span class="border-b border-slate-300 inline-block w-28 text-center">${new Date().toISOString().slice(0, 10)}</span></div>
+                <div>Topic: <span class="border-b border-slate-300 inline-block w-36 text-center">Handwriting &amp; Practice</span></div>
               </div>
             </div>
 
-            <div class="space-y-4">
-              ${promptsHtml}
+            <!-- 안내 가이드 (인쇄 시 숨김) -->
+            <div class="no-print bg-slate-100 border border-slate-200 rounded-lg p-2 mb-2 flex items-center justify-between text-xs text-slate-700">
+              <span>✍️ <b>정통 4선 가이드:</b> 붉은색 기준선(Baseline)에 소문자 몸통을 맞추어 대·소문자의 높낮이를 바르게 필기하는 표준 4선 영어 공책입니다.</span>
+              <span class="text-[11px] font-mono text-slate-500">14 세트 수납 (A4 1장)</span>
+            </div>
+
+            <!-- 14개 4선지 세트 -->
+            <div class="space-y-0">
+              ${staves.join('')}
             </div>
           </div>
 
-          <div class="pt-2 mt-4 border-t border-slate-200 flex justify-between items-center text-[10px] font-mono text-slate-400">
-            <span>Veritas Descriptive Writing Notebook • ${meta.title || ''}</span>
-            <span>${dayKey} (Page 1/1)</span>
-          </div>
-        </div>
-      `;
-    }
-
-    // -------------------------------------------------------------------------
-    // ⑤ 백지 복습 & 암기 자가진단 체크 노트 (Blank Self-Testing & Active Recall)
-    // -------------------------------------------------------------------------
-    renderBlankSelfTestNoteSheet(dayKey, words, saved) {
-      const meta = this.currentBookMeta || {};
-      const isBlank = (this.notePrintMode === 'blank');
-      const testWords = words.slice(0, 15);
-      const valRetrieval = isBlank ? '' : (saved.blank_retrieval || '');
-      const valWeak = isBlank ? '' : (saved.blank_weak || '');
-
-      let rowsHtml = '';
-      testWords.forEach((w, idx) => {
-        const valWord = isBlank ? '' : (saved[`blank_word_${idx}`] || w.word || '');
-        const valMeaning = isBlank ? '' : (saved[`blank_meaning_${idx}`] || w.meaning || '');
-
-        rowsHtml += `
-          <tr class="border-b border-slate-200 text-xs hover:bg-slate-50">
-            <td class="p-1.5 text-center font-mono font-bold text-slate-400 w-8">${idx + 1}</td>
-            <td class="p-1.5 font-serif font-bold text-slate-900">
-              <input type="text" value="${escapeHtml(valWord)}" placeholder="단어..."
-                class="w-full bg-transparent border-none outline-none font-serif font-bold text-xs"
-                oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'blank_test', 'blank_word_${idx}', this.value)">
-            </td>
-            <td class="p-1.5 text-slate-700">
-              <input type="text" value="${escapeHtml(valMeaning)}" placeholder="뜻 인출..."
-                class="w-full bg-transparent border-none outline-none font-sans text-xs"
-                oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'blank_test', 'blank_meaning_${idx}', this.value)">
-            </td>
-            <td class="p-1.5 text-center font-mono text-xs w-16 select-none cursor-pointer">
-              <input type="checkbox" class="rounded accent-emerald-600 cursor-pointer">
-            </td>
-            <td class="p-1.5 text-center font-mono text-xs w-16 select-none cursor-pointer">
-              <input type="checkbox" class="rounded accent-emerald-600 cursor-pointer">
-            </td>
-            <td class="p-1.5 text-center font-mono text-xs w-16 select-none cursor-pointer">
-              <input type="checkbox" class="rounded accent-emerald-600 cursor-pointer">
-            </td>
-          </tr>
-        `;
-      });
-
-      return `
-        <div class="paper-sheet a4-page p-7 sm:p-9 mb-8 bg-white shadow-xl rounded-sm border border-slate-200 text-slate-900 flex flex-col justify-between" style="min-height: 297mm;">
-          <div>
-            <div class="border-b-2 border-slate-900 pb-3 mb-4 flex items-center justify-between">
-              <div>
-                <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-rose-900 bg-rose-50 px-2 py-0.5 rounded border border-rose-200">
-                  Active Recall &amp; Retrieval Self-Test
-                </span>
-                <h1 class="text-xl sm:text-2xl font-serif font-black tracking-tight text-slate-950 mt-1">
-                  ${meta.title || 'Veritas English'} • ${dayKey} 백지 복습 &amp; 자가진단
-                </h1>
-              </div>
-              <div class="text-right text-xs font-mono">
-                <div class="text-slate-500">메타인지 인출 효과</div>
-                <div class="text-rose-900 font-bold mt-0.5">3회독 셀프 테스트</div>
-              </div>
-            </div>
-
-            <!-- 상단: 3회독 자가진단 테이블 -->
-            <div class="border border-slate-300 rounded-xl overflow-hidden mb-4 bg-white">
-              <table class="w-full text-left border-collapse">
-                <thead class="bg-slate-100/80 border-b border-slate-300 text-[10.5px] font-mono font-bold text-slate-600">
-                  <tr>
-                    <th class="p-2 text-center w-8">#</th>
-                    <th class="p-2 w-32">표제어 (Word)</th>
-                    <th class="p-2">한국어 뜻 (Recall)</th>
-                    <th class="p-2 text-center w-16">1회(뜻)</th>
-                    <th class="p-2 text-center w-16">2회(철자)</th>
-                    <th class="p-2 text-center w-16">3회(예문)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  ${rowsHtml}
-                </tbody>
-              </table>
-            </div>
-
-            <!-- 중단: 백지 인출 메모장 -->
-            <div class="p-3.5 rounded-xl border border-slate-300 bg-slate-50/50 mb-4" style="background-image: repeating-linear-gradient(transparent, transparent 1.6rem, #f1f5f9 1.6rem, #f1f5f9 1.65rem);">
-              <div class="flex items-center justify-between mb-1">
-                <span class="text-xs font-serif font-black text-slate-900 flex items-center gap-1">
-                  <span>🧠 백지 인출 메모장 (Blank Retrieval Zone: 교재를 덮고 생각나는 모든 것을 적으세요)</span>
-                </span>
-                <span class="text-[10px] font-mono text-slate-400 font-bold">FREE RECALL</span>
-              </div>
-              <textarea placeholder="표제어, 콜로케이션, 예문, 헷갈렸던 문법 등 머릿속에 남아있는 기억을 백지에 모두 쏟아내세요..."
-                class="w-full bg-transparent border-none outline-none font-sans text-xs leading-relaxed text-slate-900 resize-none" rows="5"
-                style="line-height: 1.65rem;"
-                oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'blank_test', 'blank_retrieval', this.value)">${escapeHtml(valRetrieval)}</textarea>
-            </div>
-
-            <!-- 하단: 3회 오답 취약 단어 집중 공략 -->
-            <div class="p-3.5 rounded-xl bg-rose-50/70 border border-rose-200">
-              <span class="text-[11px] font-serif font-black text-rose-950 block mb-1">
-                🔥 취약 단어 집중 공략 (끝까지 헷갈린 3개 단어 선정 후 3회 반복 필기)
-              </span>
-              <textarea placeholder="ex: 1. mitigate: 완화하다, mitigate, mitigate\n2. vulnerable: 취약한, vulnerable, vulnerable\n3. reluctant: 꺼리는, reluctant, reluctant"
-                class="w-full bg-transparent border-none outline-none font-mono text-xs text-rose-950 font-bold resize-none" rows="3"
-                oninput="window.bookStudioEngine.autoSaveNote('${dayKey}', 'blank_test', 'blank_weak', this.value)">${escapeHtml(valWeak)}</textarea>
-            </div>
-          </div>
-
-          <div class="pt-2 mt-4 border-t border-slate-200 flex justify-between items-center text-[10px] font-mono text-slate-400">
-            <span>Veritas Active Recall Notebook • ${meta.title || ''}</span>
+          <!-- 푸터 -->
+          <div class="pt-2 mt-2 border-t border-slate-200 flex justify-between items-center text-[10px] font-mono text-slate-400">
+            <span>Veritas 4-Line English Handwriting Practice Notebook • Option A</span>
             <span>${dayKey} (Page 1/1)</span>
           </div>
         </div>
