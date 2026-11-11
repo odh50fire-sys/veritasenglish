@@ -173,6 +173,7 @@ class AppController {
     }
 
     init() {
+        try { this.handleIncomingIntroUser(); } catch (e) { console.error('Error in handleIncomingIntroUser:', e); }
         try { this.initNavigation(); } catch (e) { console.error('Error in initNavigation:', e); }
         try { this.initDashboardWidgets(); } catch (e) { console.error('Error in initDashboardWidgets:', e); }
         try { this.initModals(); } catch (e) { console.error('Error in initModals:', e); }
@@ -189,6 +190,46 @@ class AppController {
         }
         if (window.lucide) {
             window.lucide.createIcons();
+        }
+    }
+
+    /**
+     * intro.html 소개 페이지에서 넘어온 신규 사용자 쿼리 파라미터 처리
+     */
+    handleIncomingIntroUser() {
+        try {
+            const params = new URLSearchParams(window.location.search);
+            const userParam = params.get('user');
+            const fromParam = params.get('from');
+
+            if (userParam && window.storage) {
+                const targetName = decodeURIComponent(userParam).trim();
+                const existingUser = window.storage.userRegistry && 
+                                     Array.isArray(window.storage.userRegistry.users) && 
+                                     window.storage.userRegistry.users.find(u => u.username === targetName);
+                if (existingUser) {
+                    window.storage.switchUser(existingUser.id);
+                } else if (typeof window.storage.createUser === 'function') {
+                    window.storage.createUser({ username: targetName, avatar: '🎓', grade: '중등' });
+                }
+
+                // 환영 축하 confetti 실행
+                if (typeof confetti === 'function') {
+                    setTimeout(() => {
+                        try {
+                            confetti({ particleCount: 70, spread: 60, origin: { y: 0.6 } });
+                        } catch(e) {}
+                    }, 400);
+                }
+            }
+
+            // URL 파라미터 정리
+            if (userParam || fromParam) {
+                const cleanUrl = window.location.pathname + window.location.hash;
+                window.history.replaceState({}, document.title, cleanUrl);
+            }
+        } catch (e) {
+            console.warn('handleIncomingIntroUser error:', e);
         }
     }
 

@@ -109,6 +109,11 @@
                         <span class="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
                         <span id="header-academic-level-badge">Lv.3 Pioneer</span>
                     </button>
+                    <!-- 서비스 소개 및 학습 가이드 (intro.html) 이동 버튼 -->
+                    <a href="intro.html" class="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300/80 text-xs font-serif font-bold shadow-xs transition-all" title="베리타스 잉글리시 공식 소개 및 3분 학습 가이드 보기">
+                        <span>🧭</span>
+                        <span class="hidden sm:inline">서비스 소개</span>
+                    </a>
                     <button id="btn-open-add-word" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold shadow-xs transition-all">
                         <i data-lucide="plus" class="w-3.5 h-3.5"></i>
                         <span>단어 추가</span>
@@ -122,6 +127,7 @@
 
         <!-- 모바일 하단 탭 바 -->
         <div class="md:hidden flex overflow-x-auto py-2 px-3 border-t border-slate-100 bg-white gap-2 text-xs">
+            <a href="intro.html" class="whitespace-nowrap px-2.5 py-1 rounded bg-amber-50 text-amber-900 border border-amber-200 font-bold flex items-center gap-1">🧭 소개</a>
             <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="dashboard">대시보드</button>
             <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="ocr">📸 교재등록</button>
             <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="flashcards">🎴 플래시카드</button>
@@ -3749,9 +3755,14 @@
 
             <!-- 하단 버튼 -->
             <div class="p-4 sm:p-5 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-2.5">
-                <button type="button" onclick="window.onboardingEngine && window.onboardingEngine.closeWelcomeModal()" class="w-full sm:w-auto px-4 py-2.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-100 text-slate-600 font-serif font-medium text-xs transition-colors cursor-pointer text-center">
-                    나중에 할게요 (대시보드 둘러보기)
-                </button>
+                <div class="flex items-center gap-2 w-full sm:w-auto">
+                    <a href="intro.html" class="px-3.5 py-2.5 rounded-xl border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-900 font-serif font-bold text-xs transition-colors text-center inline-flex items-center justify-center gap-1">
+                        <span>🧭 3분 소개 보기</span>
+                    </a>
+                    <button type="button" onclick="window.onboardingEngine && window.onboardingEngine.closeWelcomeModal()" class="flex-1 sm:flex-none px-4 py-2.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-100 text-slate-600 font-serif font-medium text-xs transition-colors cursor-pointer text-center">
+                        대시보드로 이동
+                    </button>
+                </div>
                 <button type="button" onclick="window.onboardingEngine && window.onboardingEngine.startLevelTestFromWelcome()" class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-gradient-to-r from-blue-900 to-indigo-900 hover:from-blue-800 hover:to-indigo-800 text-amber-300 font-serif font-black text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-1.5 cursor-pointer">
                     <i data-lucide="play" class="w-4 h-4 text-amber-300"></i>
                     <span>지금 레벨테스트 시작하기 →</span>
