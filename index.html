@@ -603,6 +603,10 @@
                                         <i data-lucide="sparkles" class="w-3.5 h-3.5 text-blue-950"></i>
                                         <span>✨ AI 나만의 맞춤 단원 생성</span>
                                     </button>
+                                    <!-- 어휘 교재 라인업 심층 가이드 바로가기 버튼 -->
+                                    <a href="intro.html#guide-curriculum" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-amber-400/20 hover:bg-amber-400/30 text-amber-300 font-serif font-bold text-xs border border-amber-400/30 transition-all cursor-pointer" title="베리타스 어휘 교재 라인업 심층 가이드 보기">
+                                        <span>ℹ️ 교재 가이드</span>
+                                    </a>
                                     <!-- 부교재 보카북 & 워크북 통합 바로가기 버튼 -->
                                     <button type="button" onclick="window.bookStudioEngine && window.bookStudioEngine.open(document.getElementById('voca-book-select').value, 'voca')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-serif font-bold text-xs shadow-xs transition-all cursor-pointer" title="현재 선택된 교재의 보카북·워크북 스튜디오 열기 (보기 전환 및 A4 인쇄)">
                                         <i data-lucide="printer" class="w-3.5 h-3.5 text-emerald-200"></i>
@@ -851,6 +855,9 @@
                     </div>
 
                     <div class="flex items-center gap-2 self-end sm:self-auto">
+                        <a href="intro.html#guide-quiz" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-900 border border-rose-200 text-xs font-serif font-bold transition-all shadow-2xs cursor-pointer" title="플래시카드 & 4대 스마트 퀴즈 심층 가이드 보기">
+                            <span>ℹ️ 퀴즈 가이드</span>
+                        </a>
                         <!-- 요구사항 5: 학습 성격 배지 -->
                         <div id="fc-session-badge"></div>
                         <span id="fc-counter-text" class="text-xs font-mono font-bold text-slate-600 bg-slate-100 px-2 py-1 rounded-lg">0 / 0</span>
@@ -1211,6 +1218,9 @@
                     <span>스마트 오답노트 & 클리닉</span>
                     <span id="nav-wrong-badge" class="hidden px-1.5 py-0.2 rounded-full bg-rose-600 text-white font-mono text-[10px] font-bold">0</span>
                 </button>
+                <a href="intro.html#guide-srs" class="px-3 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 text-xs font-serif font-bold flex items-center gap-1 transition-all cursor-pointer shadow-2xs ml-auto" title="에빙하우스 망각곡선 30일 SRS 복습 심층 가이드 보기">
+                    <span>ℹ️ SRS 복습 가이드</span>
+                </a>
             </div>
 
             <!-- 서브뷰 A: 에빙하우스 망각곡선 복습 -->
@@ -1385,10 +1395,15 @@
                             교과서 영어에서 한 걸음 더 나아가, 원어민들이 일상과 학술에서 자연스럽게 쓰는 미묘한 뉘앙스 차이와 연어를 마스터하세요.
                         </p>
                     </div>
-                    <!-- 검색 입력창 -->
-                    <div class="relative w-full sm:w-64">
-                        <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
-                        <input type="text" placeholder="표현 검색..." class="w-full pl-9 pr-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-900" oninput="window.nativeExpressionsEngine.setSearch(this.value)">
+                    <!-- 검색 입력창 & 가이드 버튼 -->
+                    <div class="flex items-center gap-2 w-full sm:w-auto">
+                        <a href="intro.html#guide-native" class="inline-flex items-center gap-1 px-3 py-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 text-xs font-serif font-bold transition-all shrink-0 shadow-2xs" title="원어민 표현 Lab 학습 가이드 보기">
+                            <span>ℹ️ 표현 가이드</span>
+                        </a>
+                        <div class="relative w-full sm:w-64">
+                            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+                            <input type="text" placeholder="표현 검색..." class="w-full pl-9 pr-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-900" oninput="window.nativeExpressionsEngine.setSearch(this.value)">
+                        </div>
                     </div>
                 </div>
 
@@ -1452,6 +1467,9 @@
 
                         <!-- 요구사항 2: 학습 이력 버튼 & 하루 목표 단어 수 설정 -->
                         <div class="flex items-center gap-2 shrink-0">
+                            <a href="intro.html#guide-planner" class="px-2.5 py-1.5 rounded-lg border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-900 text-xs font-serif font-bold flex items-center gap-1 transition-all shadow-2xs cursor-pointer" title="스마트 학습 플래너 100% 이용 가이드 보기">
+                                <span>ℹ️ 플래너 가이드</span>
+                            </a>
                             <button id="btn-replan-voca" class="px-3 py-1.5 rounded-lg border border-blue-200 bg-blue-50 hover:bg-blue-100 text-blue-900 text-xs font-serif font-bold flex items-center gap-1.5 transition-all cursor-pointer shadow-2xs" onclick="window.plannerEngine.openVocaReplanModal()" title="등록된 단어장의 일일 학습 단어 수 및 일정 재배정/수정">
                                 <i data-lucide="sliders-horizontal" class="w-3.5 h-3.5 text-blue-900"></i>
                                 <span>계획 수정·재배정</span>
@@ -1684,9 +1702,14 @@
         <!-- 상단 헤더 & 학년 필터 바 -->
         <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-5 border-b border-slate-100">
             <div>
-                <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-900 font-mono text-[11px] font-bold mb-2">
-                    <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
-                    <span>Veritas Middle School Exam Master • 예비중 & 중등 내신 독해 70선</span>
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                    <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-900 font-mono text-[11px] font-bold">
+                        <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+                        <span>Veritas Middle School Exam Master • 예비중 & 중등 내신 독해 70선</span>
+                    </div>
+                    <a href="intro.html#guide-reading" class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-indigo-50 hover:bg-indigo-100 text-indigo-900 font-serif text-[11px] font-bold border border-indigo-200 shadow-2xs transition-colors cursor-pointer" title="중등 내신 독해 70선 심층 학습 가이드 보기">
+                        <span>ℹ️ 내신 독해 가이드</span>
+                    </a>
                 </div>
                 <h2 class="font-serif font-black text-2xl text-slate-900 flex items-center gap-2">
                     중등 전용 내신 독해 & 비문학·소설 마스터

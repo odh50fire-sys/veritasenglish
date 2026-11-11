@@ -120,12 +120,12 @@
 
                 <!-- 섹션 내비게이션 앵커 링크 (데스크톱) -->
                 <nav class="hidden lg:flex items-center space-x-1 font-medium text-sm text-slate-600 break-keep">
-                    <a href="#curriculum" class="px-3 py-2 rounded-lg hover:text-blue-900 hover:bg-slate-100/80 transition-colors">유명 교재</a>
-                    <a href="#veritas-original" class="px-3 py-2 rounded-lg hover:text-blue-900 hover:bg-slate-100/80 transition-colors">베리타스 오리지널</a>
-                    <a href="#memory-science" class="px-3 py-2 rounded-lg hover:text-blue-900 hover:bg-slate-100/80 transition-colors">뇌과학 SRS & 퀴즈</a>
-                    <a href="#reading-middle" class="px-3 py-2 rounded-lg hover:text-blue-900 hover:bg-slate-100/80 transition-colors">중등 내신 대비</a>
-                    <a href="#native-lab" class="px-3 py-2 rounded-lg hover:text-blue-900 hover:bg-slate-100/80 transition-colors">원어민 표현 Lab</a>
-                    <a href="#quick-guide" class="px-3 py-2 rounded-lg hover:text-blue-900 hover:bg-slate-100/80 transition-colors">3분 활용법</a>
+                    <a href="#curriculum" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100/80 transition-colors">유명 교재</a>
+                    <a href="#veritas-original" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100/80 transition-colors">오리지널</a>
+                    <a href="#reading-middle" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100/80 transition-colors">중등 내신</a>
+                    <a href="#native-lab" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100/80 transition-colors">원어민 Lab</a>
+                    <a href="#quick-guide" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100/80 transition-colors">3분 루틴</a>
+                    <a href="#detailed-guides" class="px-3 py-1.5 rounded-lg bg-blue-50 text-blue-900 font-bold hover:bg-blue-100 transition-colors border border-blue-200/80">📖 6대 심층 가이드</a>
                 </nav>
 
                 <!-- 우측 액션 버튼 -->
@@ -986,6 +986,507 @@
     </section>
 
     <!-- ======================================================================
+         9-2. [★신설] 베리타스 6대 영역별 심층 학습 가이드 허브 (Learning Guide Hub)
+         5대 핵심 영역 + 학습 플래너 완벽 수록
+         ====================================================================== -->
+    <section id="detailed-guides" class="py-20 sm:py-28 bg-[#FAF9F6] border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 break-keep">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-mono uppercase tracking-widest font-bold text-blue-900 bg-blue-100/70 px-3 py-1 rounded-full border border-blue-200">
+                    Comprehensive Learning Manual
+                </span>
+                <h2 class="academic-serif font-black text-3xl sm:text-4xl text-slate-950 mt-3 tracking-tight break-keep">
+                    베리타스 6대 영역별 심층 학습 가이드
+                </h2>
+                <p class="text-sm sm:text-base text-slate-600 mt-3 font-sans leading-relaxed break-keep">
+                    어휘 교재 선택부터 내신 4대 문항 공략, 원어민 표현, 뇌과학 복습, 퀴즈, 플래너까지 <br class="hidden sm:inline">
+                    최상위 0.1% 영재의 공부법을 영역별로 완벽하게 안내해 드립니다.
+                </p>
+            </div>
+
+            <!-- 6대 가이드 탭 네비게이션 버튼군 -->
+            <div class="flex items-center justify-start lg:justify-center gap-2 overflow-x-auto no-scrollbar pb-3 mb-8">
+                <button type="button" onclick="switchGuideTab('curriculum')" id="guide-tab-btn-curriculum" class="guide-tab-btn px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap transition-all shadow-xs bg-slate-900 text-amber-300 ring-2 ring-slate-900 flex items-center gap-1.5 cursor-pointer">
+                    <span>📚 어휘 교재 라인업</span>
+                </button>
+                <button type="button" onclick="switchGuideTab('reading')" id="guide-tab-btn-reading" class="guide-tab-btn px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap transition-all shadow-xs bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 flex items-center gap-1.5 cursor-pointer">
+                    <span>🎓 중등 내신 독해</span>
+                </button>
+                <button type="button" onclick="switchGuideTab('native')" id="guide-tab-btn-native" class="guide-tab-btn px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap transition-all shadow-xs bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 flex items-center gap-1.5 cursor-pointer">
+                    <span>💡 원어민 표현 Lab</span>
+                </button>
+                <button type="button" onclick="switchGuideTab('srs')" id="guide-tab-btn-srs" class="guide-tab-btn px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap transition-all shadow-xs bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 flex items-center gap-1.5 cursor-pointer">
+                    <span>🔄 망각곡선 SRS</span>
+                </button>
+                <button type="button" onclick="switchGuideTab('quiz')" id="guide-tab-btn-quiz" class="guide-tab-btn px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap transition-all shadow-xs bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 flex items-center gap-1.5 cursor-pointer">
+                    <span>🧠 플래시 & 퀴즈</span>
+                </button>
+                <button type="button" onclick="switchGuideTab('planner')" id="guide-tab-btn-planner" class="guide-tab-btn px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap transition-all shadow-xs bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 flex items-center gap-1.5 cursor-pointer">
+                    <span>📅 스마트 플래너</span>
+                </button>
+            </div>
+
+            <!-- 6대 가이드 탭 콘텐츠 컨테이너 -->
+            <div class="bg-white rounded-3xl border border-slate-200 shadow-md p-6 sm:p-10 transition-all">
+
+                <!-- -------------------------------------------------------------
+                     탭 1: 어휘 교재 라인업 선택 & 학습 가이드 (시판 4대 + 오리지널 10종 전면 수록)
+                     ------------------------------------------------------------- -->
+                <div id="guide-content-curriculum" class="guide-content-panel space-y-8">
+                    <div class="border-b border-slate-100 pb-5">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 text-blue-900 font-mono text-xs font-bold mb-2">
+                            <span>GUIDE 01</span> • <span>Vocabulary Curricula Guide</span>
+                        </div>
+                        <h3 class="academic-serif font-black text-2xl text-slate-900">다양한 어휘 교재 소개와 맞춤 학습 가이드</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
+                            시판 4대 유명 교재부터 베리타스 독자 오리지널 10대 단어장까지, 총 13,000+ 어휘 중 내 수준에 맞는 최적의 교재를 선택하고 완벽하게 마스터하는 로드맵입니다.
+                        </p>
+                    </div>
+
+                    <!-- Part A: 시판 4대 교재 요약 -->
+                    <div class="space-y-3">
+                        <h4 class="font-bold text-base text-slate-900 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-blue-900"></span> 서점에서 검증된 시판 4대 유명 교재 라인업
+                        </h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+                            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                                <span class="font-bold text-rose-700 block">1. 능률 VOCA (4종 완결)</span>
+                                <p class="text-slate-600 mt-1 leading-relaxed">중학 고난도(1,200단어) ➔ 고등 기본(1,200단어) ➔ 수능 필수(2,000단어) ➔ 수능 고난도(2,000단어). 어원 중심 필수 암기서.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                                <span class="font-bold text-blue-700 block">2. 리딩튜터 챌린저 (3종)</span>
+                                <p class="text-slate-600 mt-1 leading-relaxed">챌린저 1~3(총 2,450어휘). Lexile 900L~1300L 최신 내신 및 수능 실전 독해 지문 연계 심화 어휘집.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                                <span class="font-bold text-indigo-700 block">3. Oxford 3000 & 5000</span>
+                                <p class="text-slate-600 mt-1 leading-relaxed">CEFR A1~C1 4개 권역(공식 5,000어휘). 전 세계 영어 텍스트 85%를 커버하는 글로벌 스탠다드 필수 어휘.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                                <span class="font-bold text-amber-800 block">4. Pathways 1600 (Level 1~4)</span>
+                                <p class="text-slate-600 mt-1 leading-relaxed">내셔널 지오그래픽 학술 리딩(총 1,600어휘). 과학, 환경, 인류학 등 영재고·특목고 및 TOEFL/SAT 대비.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Part B: [★핵심] 베리타스 오리지널 10개 전 시리즈 상세 안내 -->
+                    <div class="space-y-4 pt-4 border-t border-slate-100">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-bold text-base text-slate-900 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-amber-500"></span> 👑 베리타스 오리지널 10대 단어장 완벽 해설 & 가이드
+                            </h4>
+                            <span class="text-xs text-amber-800 font-bold bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200">총 10개 전 시리즈 완비</span>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                            <!-- 1. 마스터 6000 -->
+                            <div class="p-4 rounded-2xl bg-gradient-to-br from-slate-900 to-blue-950 text-white border border-slate-800 space-y-1.5">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold text-amber-300 text-sm">1. 베리타스 마스터 6,000 보카</span>
+                                    <span class="text-[10px] bg-amber-400/20 text-amber-300 px-2 py-0.5 rounded font-mono">Lv.1~10</span>
+                                </div>
+                                <p class="text-slate-300 leading-relaxed">초등 스타터부터 중1~3, 예비고, 수능 기본/심화, SAT 엘리트까지 10단계 6,000단어로 구성된 베리타스 정규 핵심 커리큘럼입니다.</p>
+                                <div class="text-[11px] text-amber-200 pt-1 font-semibold">💡 학습 팁: 레벨테스트 후 배정된 자신의 티어(30일 600단어)를 1순위로 완주하세요.</div>
+                            </div>
+
+                            <!-- 2. 중등 6개 학기 내신 어휘 -->
+                            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold text-blue-900 text-sm">2. 중등 6개 학기 내신 어휘 시리즈</span>
+                                    <span class="text-[10px] bg-blue-100 text-blue-900 px-2 py-0.5 rounded font-mono">중1-1 ~ 중3-2</span>
+                                </div>
+                                <p class="text-slate-600 leading-relaxed">중학교 1-1부터 3-2까지 학기별 교과서 필수·심화 어휘를 각 5 DAYs(100단어, 총 600단어)로 핀포인트 압축했습니다.</p>
+                                <div class="text-[11px] text-blue-900 pt-1 font-semibold">💡 학습 팁: 중간/기말고사 3주 전, 해당 학기 단어장을 집중 학습하면 내신 시험 범위가 100% 커버됩니다.</div>
+                            </div>
+
+                            <!-- 3. 프리미엄 신규 5대 시즌 단어장 -->
+                            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold text-emerald-900 text-sm">3. 프리미엄 신규 5대 시즌 단어장</span>
+                                    <span class="text-[10px] bg-emerald-100 text-emerald-900 px-2 py-0.5 rounded font-mono">총 4,200어휘</span>
+                                </div>
+                                <p class="text-slate-600 leading-relaxed">넷플릭스·미드 슬랭 500, TED 뉴스 600, 대학 강의 학술 에세이 600, 중학 첫걸음 1,000, 토익 RC 파트 5·6·7 핵심 1,500으로 구성된 시즌별 특화 단어장입니다.</p>
+                                <div class="text-[11px] text-emerald-800 pt-1 font-semibold">💡 학습 팁: 방학 기간 회화 감각이나 시사 상식, 토익 인증 등 목적별 집중 훈련에 활용하세요.</div>
+                            </div>
+
+                            <!-- 4. 수능 킬러 & 트렌드 테마 -->
+                            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold text-rose-900 text-sm">4. 수능 킬러 & 실전 트렌드 테마</span>
+                                    <span class="text-[10px] bg-rose-100 text-rose-900 px-2 py-0.5 rounded font-mono">4개 테마, 400단어</span>
+                                </div>
+                                <p class="text-slate-600 leading-relaxed">수능 1등급 킬러 다의어·혼동어, 최신 테크·AI 트렌드 보카, 실전 핵심 구동사, 미드 트렌디 슬랭을 각 5 DAYs로 집약했습니다.</p>
+                                <div class="text-[11px] text-rose-800 pt-1 font-semibold">💡 학습 팁: 상위 1% 변별력을 가르는 다의어와 최신 신기술 지문 어휘를 단 5일 만에 완성하세요.</div>
+                            </div>
+
+                            <!-- 5. 미국 교과서 학술 어휘 Tier 2 -->
+                            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold text-indigo-900 text-sm">5. 미국 교과서 학술 어휘 (Tier 2)</span>
+                                    <span class="text-[10px] bg-indigo-100 text-indigo-900 px-2 py-0.5 rounded font-mono">Grade 4-9 (600단어)</span>
+                                </div>
+                                <p class="text-slate-600 leading-relaxed">Step 1(Grade 4-5), Step 2(Grade 6-7), Step 3(Grade 8-9) 각 200단어씩 미국 현지 교과서에 쓰이는 학술 필수 어휘입니다.</p>
+                                <div class="text-[11px] text-indigo-800 pt-1 font-semibold">💡 학습 팁: 영재고·국제중 준비생이나 원서 독해 시 문해력을 급상승시키고자 할 때 필수 코스입니다.</div>
+                            </div>
+
+                            <!-- 6. 필수 숙어 & 관용구·속담 -->
+                            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold text-slate-900 text-sm">6. 필수 숙어 & 관용구·속담 시리즈</span>
+                                    <span class="text-[10px] bg-slate-200 text-slate-800 px-2 py-0.5 rounded font-mono">150표현</span>
+                                </div>
+                                <p class="text-slate-600 leading-relaxed">중학 교과서 필수 숙어 50, 고등·수능 빈출 킬러 숙어 50, 찐 원어민 관용구 & 클래식 영미 속담 50을 총망라했습니다.</p>
+                                <div class="text-[11px] text-slate-700 pt-1 font-semibold">💡 학습 팁: 내신 서술형 및 수능 빈칸추론에서 감점을 방어하는 핵심 족집게 자료입니다.</div>
+                            </div>
+
+                            <!-- 7. 실전 생존 여행 시추에이션 -->
+                            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold text-teal-900 text-sm">7. 실전 생존 & 여행 시추에이션</span>
+                                    <span class="text-[10px] bg-teal-100 text-teal-900 px-2 py-0.5 rounded font-mono">5개 상황 (150표현)</span>
+                                </div>
+                                <p class="text-slate-600 leading-relaxed">공항·입국심사 ➔ 호텔·체크인 ➔ 식당·주문 ➔ 대중교통·쇼핑 ➔ 병원·약국 긴급상황 5대 필수 시추에이션 영어입니다.</p>
+                                <div class="text-[11px] text-teal-800 pt-1 font-semibold">💡 학습 팁: 해외 연수나 여행 출국 2주 전, 상황별로 오디오북과 플래시카드로 입에 익히세요.</div>
+                            </div>
+
+                            <!-- 8 & 9. 심경 묘사 & 영미 명작 문학 -->
+                            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold text-purple-900 text-sm">8·9. 감정 묘사 & 영미 명작 문학</span>
+                                    <span class="text-[10px] bg-purple-100 text-purple-900 px-2 py-0.5 rounded font-mono">각 50단어</span>
+                                </div>
+                                <p class="text-slate-600 leading-relaxed">수능 18~19번 분위기/심경 변화에 출제되는 감정 어휘와 고전 명작 소설의 스토리텔링 클래식 어휘입니다.</p>
+                                <div class="text-[11px] text-purple-800 pt-1 font-semibold">💡 학습 팁: 모의고사 심경 문제를 100% 맞히고 영미 원서 북클럽을 시작할 때 병행하세요.</div>
+                            </div>
+
+                            <!-- 10. 나만의 AI 맞춤 생성 단어장 -->
+                            <div class="p-4 rounded-2xl bg-amber-50/70 border border-amber-200 space-y-1.5 md:col-span-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold text-amber-950 text-sm">10. 🎨 나만의 AI 맞춤 생성 단어장</span>
+                                    <span class="text-[10px] bg-amber-200 text-amber-900 px-2 py-0.5 rounded font-bold font-mono">무제한 생성</span>
+                                </div>
+                                <p class="text-slate-700 leading-relaxed">학습자가 좋아하는 영화, 소설, 스포츠, 과학 기술 키워드를 입력하면 AI가 맞춤 어휘와 뜻, 예문을 즉각 생성하여 단어장을 구축합니다.</p>
+                                <div class="text-[11px] text-amber-900 pt-1 font-semibold">💡 학습 팁: 공부가 지루할 때 흥미 위주의 관심 테마 단어장을 만들어 주도적인 몰입을 이끌어내세요.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 추천 학습 루틴 요약 -->
+                    <div class="p-5 rounded-2xl bg-blue-50/80 border border-blue-200 text-xs sm:text-sm text-blue-950 space-y-2">
+                        <div class="font-bold flex items-center gap-1.5">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-900"></i> 학년 및 수준별 3단계 추천 학습 로드맵
+                        </div>
+                        <ul class="list-disc list-inside space-y-1 text-slate-700 pl-1 text-xs">
+                            <li><strong>초급 / 중등 입문 (Lv.1~3)</strong>: 베리타스 스타터/파이오니어 ➔ 중1~2 내신 필수 어휘 ➔ 능률 중학 고난도</li>
+                            <li><strong>중등 심화 / 예비고 (Lv.4~6)</strong>: 베리타스 네비게이터/스트래티지스트 ➔ 리딩튜터 챌린저 1 ➔ 능률 고등 기본 ➔ Oxford Vol.1~2</li>
+                            <li><strong>고등 실전 / 최상위 영재 (Lv.7~10)</strong>: 리딩튜터 챌린저 2~3 ➔ 능률 수능필수/고난도 ➔ Pathways 1~4 ➔ 수능 킬러 다의어</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- -------------------------------------------------------------
+                     탭 2: 중등 전용 내신 독해 학습 가이드 (70선 지문 & 4대 문항)
+                     ------------------------------------------------------------- -->
+                <div id="guide-content-reading" class="guide-content-panel hidden space-y-8">
+                    <div class="border-b border-slate-100 pb-5">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-100 text-indigo-900 font-mono text-xs font-bold mb-2">
+                            <span>GUIDE 02</span> • <span>Middle School Exam Reading Guide</span>
+                        </div>
+                        <h3 class="academic-serif font-black text-2xl text-slate-900">중등 전용 내신 독해 & 70선 실전 지문 학습 가이드</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
+                            중학교 1~3학년 내신 교과서 핵심 지문과 70선 지문을 분석하고, 실제 학교 시험에 출제되는 4대 질문을 정복하는 실전 가이드입니다.
+                        </p>
+                    </div>
+
+                    <!-- 3단계 정독 루틴 -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
+                            <span class="w-7 h-7 rounded-lg bg-blue-900 text-white font-bold flex items-center justify-center mb-3">1</span>
+                            <h4 class="font-bold text-sm text-slate-900">1단계: 전체 흐름 속독</h4>
+                            <p class="text-slate-600 mt-1.5 leading-relaxed">첫 문장과 마지막 문장, 그리고 문단 내 연결사(However, Therefore)를 중심으로 글의 중심 소재와 요지를 1분 내에 스키밍(Skimming)합니다.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
+                            <span class="w-7 h-7 rounded-lg bg-indigo-900 text-white font-bold flex items-center justify-center mb-3">2</span>
+                            <h4 class="font-bold text-sm text-slate-900">2단계: 정독 & 어휘 체화</h4>
+                            <p class="text-slate-600 mt-1.5 leading-relaxed">지문을 꼼꼼히 읽으며 모르는 단어는 클릭하여 단어장에 담고, 수식어구에 괄호를 치며 주어와 동사의 뼈대를 정확하게 파악합니다.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
+                            <span class="w-7 h-7 rounded-lg bg-emerald-700 text-white font-bold flex items-center justify-center mb-3">3</span>
+                            <h4 class="font-bold text-sm text-slate-900">3단계: 4대 출제 질문 풀이</h4>
+                            <p class="text-slate-600 mt-1.5 leading-relaxed">실제 시험과 동일한 환경에서 문항당 1분 제한시간을 두고 어법, 빈칸, 일치, 서술형 문제를 풀어보며 실전 감각을 완성합니다.</p>
+                        </div>
+                    </div>
+
+                    <!-- 4대 질문 유형별 풀이 사고법 -->
+                    <div class="space-y-3 pt-2">
+                        <h4 class="font-bold text-base text-slate-900">🎯 내신 1등급을 결정짓는 4대 질문 공략 비법</h4>
+                        <div class="space-y-2.5 text-xs">
+                            <div class="p-4 rounded-xl bg-white border border-slate-200">
+                                <span class="font-bold text-rose-800 text-sm block mb-1">① 어법 오류 파악 (Grammar Check)</span>
+                                <p class="text-slate-600 leading-relaxed">
+                                    • <strong>수일치</strong>: 주어와 동사 사이에 관계사절이나 전치사구가 길게 끼어있을 때 단수/복수 일치 확인.<br>
+                                    • <strong>관계대명사</strong>: 선행사가 있는지, 뒷문장이 완전한지에 따라 that / what / which 구분.<br>
+                                    • <strong>준동사의 태</strong>: 수식을 받는 명사와의 관계가 능동(-ing)인지 수동(-ed)인지 판별.
+                                </p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-white border border-slate-200">
+                                <span class="font-bold text-amber-800 text-sm block mb-1">② 빈칸 추론 (Context Inference)</span>
+                                <p class="text-slate-600 leading-relaxed">
+                                    • 빈칸 앞뒤 문장의 <strong>역접(However) / 인과(Therefore) / 첨가(In addition)</strong> 연결사에 동그라미.<br>
+                                    • 글의 주제문과 직결된 패러프레이징(Paraphrasing) 표현을 선택지에서 찾아 소거법 적용.
+                                </p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-white border border-slate-200">
+                                <span class="font-bold text-blue-800 text-sm block mb-1">③ 내용 일치·불일치 (Detail Comprehension)</span>
+                                <p class="text-slate-600 leading-relaxed">
+                                    • 선택지 속 <strong>고유명사, 숫자, 시간, 장소, 한정 부사(only, never, all, always)</strong>에 밑줄 치기.<br>
+                                    • 지문 본문의 해당 문장과 1:1 대조하여 왜곡되거나 과장된 선지를 오답 처리.
+                                </p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-white border border-slate-200">
+                                <span class="font-bold text-emerald-800 text-sm block mb-1">④ 서술형 조건 영작 (Descriptive Writing)</span>
+                                <p class="text-slate-600 leading-relaxed">
+                                    • 한글 해석에서 <strong>'누가(주어) 무엇을(목적어) 어떻게 했다(동사)'</strong>의 뼈대를 1차 작성.<br>
+                                    • 제시된 조건 단어의 어형 변화(수동태, 과거분사, 시제 일치)를 점검하고 스펠링 감점 방지.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 부교재 인쇄 연계 -->
+                    <div class="p-4 rounded-2xl bg-indigo-50/70 border border-indigo-200 text-xs text-indigo-950 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                        <div>
+                            <strong>💡 시험 D-7일 실전 팁</strong>: <br>
+                            '서술형 어순배열 훈련실'에서 취약 문장을 블록으로 맞추고, '실전 모의고사'를 A4로 출력하여 손글씨 필기 시험 훈련을 병행하세요.
+                        </div>
+                        <a href="index.html" class="px-3.5 py-2 rounded-xl bg-indigo-900 text-white font-bold shrink-0 hover:bg-indigo-800 transition-colors">내신 70선 바로가기 →</a>
+                    </div>
+                </div>
+
+                <!-- -------------------------------------------------------------
+                     탭 3: 원어민 실전 표현 & 뉘앙스 Lab 가이드
+                     ------------------------------------------------------------- -->
+                <div id="guide-content-native" class="guide-content-panel hidden space-y-8">
+                    <div class="border-b border-slate-100 pb-5">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-900 font-mono text-xs font-bold mb-2">
+                            <span>GUIDE 03</span> • <span>Native Expressions & Nuance Guide</span>
+                        </div>
+                        <h3 class="academic-serif font-black text-2xl text-slate-900">원어민 실전 표현 & 뉘앙스 Lab 학습 가이드</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
+                            교과서 영어를 뛰어넘어 원어민들이 실제로 쓰는 자연스러운 연어와 헷갈리는 뉘앙스 차이를 체화하는 훈련법입니다.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                            <h4 class="font-bold text-sm text-slate-900 flex items-center gap-1.5">
+                                <span>📅</span> 매일 아침 3분 데일리 미션 루틴
+                            </h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                매일 스마트 플래너에 자동으로 추천되는 <strong>실전 콜로케이션 1개 + 핵심 이디엄/슬랭 1개</strong>를 학습합니다.
+                            </p>
+                            <ol class="list-decimal list-inside space-y-1 text-slate-700 pl-1">
+                                <li>원어민 음성(TTS)을 들으며 2회 이상 소리 내어 따라 읽기 (Shadowing)</li>
+                                <li>제시된 대화문 맥락 속에서 어떤 감정/상황에 쓰이는지 확인</li>
+                                <li>'학습 완료' 클릭 시 자동으로 뇌과학 망각곡선 30일 복습 등록 & +20 EXP 보너스</li>
+                            </ol>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                            <h4 class="font-bold text-sm text-slate-900 flex items-center gap-1.5">
+                                <span>🔍</span> 헷갈리는 뉘앙스 상황별 이미지 연상법
+                            </h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                단어만 1:1로 외우지 말고, 상황별 시각 이미지를 머릿속에 그리는 연상법을 활용하세요.
+                            </p>
+                            <div class="p-3 rounded-xl bg-white border border-slate-200 space-y-1.5 text-[11px]">
+                                <div>• <strong>look at</strong>: 카메라 렌즈를 한곳에 맞추듯 정적인 응시 ("Look at the picture!")</div>
+                                <div>• <strong>watch</strong>: 움직이는 스포츠 경기나 영화를 관찰 ("Watch a match!")</div>
+                                <div>• <strong>see</strong>: 눈을 뜨고 있어 자연스럽게 시야에 들어옴 ("I see birds flying.")</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-amber-50/70 border border-amber-200 text-xs text-amber-950 space-y-1.5">
+                        <strong>💡 스피킹 & 수행평가 영작 전이 팁</strong>:
+                        '결정하다'는 <code>make a decision</code>, '폭우'는 <code>heavy rain</code>처럼 짝꿍 단어를 덩어리(Chunk)로 통째로 암기하세요. 마음에 드는 표현은 <strong>⭐ 북마크</strong>에 담아두고 학교 수행평가 영작에 적극 활용하세요.
+                    </div>
+                </div>
+
+                <!-- -------------------------------------------------------------
+                     탭 4: 뇌과학 에빙하우스 SRS 복습 가이드
+                     ------------------------------------------------------------- -->
+                <div id="guide-content-srs" class="guide-content-panel hidden space-y-8">
+                    <div class="border-b border-slate-100 pb-5">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 font-mono text-xs font-bold mb-2">
+                            <span>GUIDE 04</span> • <span>Ebbinghaus SRS Memory Guide</span>
+                        </div>
+                        <h3 class="academic-serif font-black text-2xl text-slate-900">뇌과학 에빙하우스 망각곡선 SRS 복습 가이드</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
+                            인간의 두뇌가 망각하는 시점에 맞춰 기억을 되살리는 1일 · 7일 · 30일 주기 복습 알고리즘 활용법입니다.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
+                            <span class="font-bold text-amber-700 text-sm block mb-1">1일 차: 골든타임 복습</span>
+                            <p class="text-slate-600 leading-relaxed">학습 24시간 후 급격히 사라지는 70%의 기억을 1차로 방어하여 기억 보존율을 80%로 끌어올립니다.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
+                            <span class="font-bold text-emerald-700 text-sm block mb-1">7일 차: 시냅스 강화 복습</span>
+                            <p class="text-slate-600 leading-relaxed">단기 기억을 관장하는 해마에서 대뇌 피질의 장기 기억 회로로 정보가 완전히 안착하도록 뇌 신경망을 강화합니다.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
+                            <span class="font-bold text-blue-900 text-sm block mb-1">30일 차: 평생 고착 복습</span>
+                            <p class="text-slate-600 leading-relaxed">한 달 뒤 마지막 점검을 통해 완전히 잊혀지지 않는 반영구적 지식으로 뇌리에 영구 각인시킵니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 text-xs">
+                        <h4 class="font-bold text-base text-slate-900">🚨 복습 알림 및 오답 노트 탈출 전략</h4>
+                        <div class="p-4 rounded-xl bg-white border border-slate-200 space-y-2 text-slate-700">
+                            <p>• 대시보드 상단에 <strong>"오늘 복습할 단어 N개"</strong> 알림이 뜨면 5분 내에 퀵 런(Quick Run)으로 즉시 완료하세요.</p>
+                            <p>• 복습 중 틀린 단어는 <strong>오답 노트(Wrong Note)</strong>에 자동 분류되며, 복습 주기가 1일 차로 리셋되어 맞힐 때까지 반복 추적됩니다.</p>
+                            <p>• 매일 복습을 완수하여 대시보드 하단의 <strong>잔디 히트맵(Heatmap)</strong>을 초록색으로 채우는 성취감을 느껴보세요.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- -------------------------------------------------------------
+                     탭 5: 플래시카드 & 4대 스마트 퀴즈 체화 가이드
+                     ------------------------------------------------------------- -->
+                <div id="guide-content-quiz" class="guide-content-panel hidden space-y-8">
+                    <div class="border-b border-slate-100 pb-5">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-100 text-rose-900 font-mono text-xs font-bold mb-2">
+                            <span>GUIDE 05</span> • <span>Flashcards & Smart Quiz Guide</span>
+                        </div>
+                        <h3 class="academic-serif font-black text-2xl text-slate-900">플래시카드 & 4대 스마트 퀴즈 감각 체화 가이드</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
+                            단순 주입식 암기를 넘어, 능동적 인출(Active Recall)과 4대 퀴즈의 교차 자극으로 영단어를 뇌리에 체화하는 훈련법입니다.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2.5">
+                            <h4 class="font-bold text-sm text-slate-900 flex items-center gap-1.5">
+                                <span>🎴</span> 3D 플래시카드의 능동적 인출 (Active Recall)
+                            </h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                카드를 뒤집기 전, 영단어의 뜻을 <strong>3초 동안 머릿속으로 먼저 떠올려보는 인출 훈련</strong>을 거치면 기억 유지 기간이 3배 이상 길어집니다.
+                            </p>
+                            <div class="text-slate-700 space-y-1">
+                                <div>• 스페이스바/화면 탭으로 카드를 뒤집고 영영 정의 확인</div>
+                                <div>• 원어민 TTS 발음을 들으며 시각과 청각 동시 자극</div>
+                                <div>• 헷갈리는 단어는 즉시 별표(북마크) 표시하여 집중 관리</div>
+                            </div>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2.5">
+                            <h4 class="font-bold text-sm text-slate-900 flex items-center gap-1.5">
+                                <span>🧠</span> 4대 스마트 퀴즈 교차 두뇌 자극
+                            </h4>
+                            <div class="space-y-2 text-slate-700">
+                                <div>• <strong>사지선다</strong>: 어휘의 핵심 의미와 문맥상 적합한 번역 능력 검증</div>
+                                <div>• <strong>단어 스크램블</strong>: 철자의 결합 원리와 어원 형태소를 손으로 직접 조립</div>
+                                <div>• <strong>4초 스피드 챌린지</strong>: 한국어 번역 없이 직관적으로 반응하는 '영어 뇌' 훈련</div>
+                                <div>• <strong>스펠링 테스트</strong>: 내신 서술형에서 감점 요인이 되는 철자 오류를 0%로 단속</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- -------------------------------------------------------------
+                     탭 6: [★신설] 스마트 학습 플래너 100% 이용 가이드
+                     ------------------------------------------------------------- -->
+                <div id="guide-content-planner" class="guide-content-panel hidden space-y-8">
+                    <div class="border-b border-slate-100 pb-5">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 font-mono text-xs font-bold mb-2">
+                            <span>GUIDE 06</span> • <span>Smart Planner Master Guide</span>
+                        </div>
+                        <h3 class="academic-serif font-black text-2xl text-slate-900">스마트 학습 플래너 100% 이용 가이드</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
+                            나만의 학습 목표를 설정하고, 휴식일을 지정하며, 월간 캘린더에서 당일 맞춤 학습을 1초 만에 실행하는 자기주도 플래닝 가이드입니다.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+                        <!-- 1. 스마트 캘린더 진도 시각화 -->
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                            <h4 class="font-bold text-sm text-slate-900 flex items-center gap-2">
+                                <span class="w-6 h-6 rounded-lg bg-blue-900 text-white flex items-center justify-center font-bold text-xs">1</span>
+                                스마트 월간 캘린더로 학습 진도 시각화
+                            </h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                플래너 달력에는 날짜별로 배정된 <strong>단어 수(`N 단어`)</strong>와 <strong>내신 지문 수(`독해 N편`)</strong>가 자동으로 표시됩니다.
+                            </p>
+                            <div class="p-3 rounded-xl bg-white border border-slate-200 text-slate-700 space-y-1">
+                                <div>• 당일 목표량을 완수하면 초록색 <strong>`✓ 완수`</strong> 배지 자동 점등</div>
+                                <div>• 이전 날짜의 밀린 학습도 달력에서 한눈에 확인하여 보충 가능</div>
+                            </div>
+                        </div>
+
+                        <!-- 2. 일일 목표량 & 휴식일 설정 -->
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                            <h4 class="font-bold text-sm text-slate-900 flex items-center gap-2">
+                                <span class="w-6 h-6 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold text-xs">2</span>
+                                나만의 일일 목표(Daily Target) & 휴식일 지정
+                            </h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                자신의 학년과 일정에 맞춰 무리하지 않고 지속 가능한 페이스를 설정하세요.
+                            </p>
+                            <div class="p-3 rounded-xl bg-white border border-slate-200 text-slate-700 space-y-1">
+                                <div>• <strong>수준별 1일 목표</strong>: 기초 15단어 / 표준 20~25단어 / 방학 몰입 30단어</div>
+                                <div>• <strong>유연한 휴식일</strong>: 주말이나 특정 요일을 '휴식일'로 지정하여 번아웃 방지</div>
+                            </div>
+                        </div>
+
+                        <!-- 3. 날짜 클릭 즉시 학습 연동 -->
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                            <h4 class="font-bold text-sm text-slate-900 flex items-center gap-2">
+                                <span class="w-6 h-6 rounded-lg bg-indigo-900 text-white flex items-center justify-center font-bold text-xs">3</span>
+                                날짜별 상세 내역에서 '원클릭 즉시 학습' 직행
+                            </h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                달력에서 특정 날짜를 클릭하면 해당 일자의 단어와 지문 목록이 노출되며, 즉시 학습 버튼을 지원합니다.
+                            </p>
+                            <div class="p-3 rounded-xl bg-white border border-slate-200 text-slate-700 space-y-1">
+                                <div>• <code>[ 🎴 플래시카드 ]</code>: 당일 배정 단어 플립 훈련 직행</div>
+                                <div>• <code>[ 🧠 퀴즈 풀기 ]</code>: 당일 단어 4대 스마트 퀴즈 시험 시작</div>
+                                <div>• <code>[ 🎧 오디오북 ]</code>: 팟캐스트처럼 핸즈프리로 귀로 듣기</div>
+                            </div>
+                        </div>
+
+                        <!-- 4. 잔디 히트맵 연동 -->
+                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                            <h4 class="font-bold text-sm text-slate-900 flex items-center gap-2">
+                                <span class="w-6 h-6 rounded-lg bg-amber-600 text-white flex items-center justify-center font-bold text-xs">4</span>
+                                365일 잔디 히트맵과 연계된 영재 습관 형성
+                            </h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                플래너 완수 기록은 대시보드 하단의 잔디 히트맵(GitHub 스타일)에 실시간 초록 잔디로 누적됩니다.
+                            </p>
+                            <div class="p-3 rounded-xl bg-white border border-slate-200 text-slate-700 space-y-1">
+                                <div>• 연속 학습일수(Streak)를 유지하며 공부의 일관성 습관화</div>
+                                <div>• 주간/월간 달성률 그래프를 통해 나의 성장 추이를 한눈에 확인</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-950 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                        <div>
+                            <strong>💡 영재 플래너 사용 꿀팁</strong>: <br>
+                            월요일부터 금요일까지 정규 진도를 진행하고, 토요일은 플래너 휴식일로 설정한 뒤 일요일에 망각곡선 누적 복습을 진행하면 최고의 효율을 거둘 수 있습니다.
+                        </div>
+                        <a href="index.html" class="px-3.5 py-2 rounded-xl bg-emerald-700 text-white font-bold shrink-0 hover:bg-emerald-600 transition-colors">플래너 바로가기 →</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ======================================================================
          10. 바로 시작하기 (Bottom CTA & Quick Profile Setup)
          ====================================================================== -->
     <section class="py-20 sm:py-28 bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950 text-white relative overflow-hidden break-keep">
@@ -1057,6 +1558,48 @@
         if (window.lucide) {
             window.lucide.createIcons();
         }
+
+        // 6대 심층 가이드 탭 전환 함수
+        function switchGuideTab(tabKey) {
+            const tabs = ['curriculum', 'reading', 'native', 'srs', 'quiz', 'planner'];
+            if (!tabs.includes(tabKey)) tabKey = 'curriculum';
+
+            // 모든 탭 버튼 및 패널 전환
+            tabs.forEach(key => {
+                const btn = document.getElementById(`guide-tab-btn-${key}`);
+                const panel = document.getElementById(`guide-content-${key}`);
+                if (btn) {
+                    if (key === tabKey) {
+                        btn.className = 'guide-tab-btn px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap transition-all shadow-xs bg-slate-900 text-amber-300 ring-2 ring-slate-900 flex items-center gap-1.5 cursor-pointer';
+                    } else {
+                        btn.className = 'guide-tab-btn px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap transition-all shadow-xs bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 flex items-center gap-1.5 cursor-pointer';
+                    }
+                }
+                if (panel) {
+                    if (key === tabKey) {
+                        panel.classList.remove('hidden');
+                    } else {
+                        panel.classList.add('hidden');
+                    }
+                }
+            });
+        }
+
+        // URL 해시 기반 자동 탭 열기 (예: intro.html#guide-planner)
+        function checkGuideHash() {
+            const hash = window.location.hash.replace('#', '');
+            if (hash.startsWith('guide-')) {
+                const tabKey = hash.replace('guide-', '');
+                switchGuideTab(tabKey);
+                const guideSection = document.getElementById('detailed-guides');
+                if (guideSection) {
+                    guideSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        }
+
+        window.addEventListener('hashchange', checkGuideHash);
+        window.addEventListener('DOMContentLoaded', checkGuideHash);
 
         // 바로 시작하기 폼 핸들러
         document.getElementById('start-form').addEventListener('submit', function(e) {
