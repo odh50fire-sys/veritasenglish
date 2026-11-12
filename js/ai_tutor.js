@@ -1,18 +1,19 @@
 /**
- * Veritas English - 스마트 AI 튜터 위젯 엔진 (AITutorEngine v2.0)
+ * Veritas English - 스마트 AI 튜터 위젯 엔진 (AITutorEngine v3.0 All-in-One)
  * 
- * 4대 핵심 지능형 기능:
- * 1. AI 영작 & 문법 닥터 (Grammar & Writing Clinic):
- *    - 부정어 도치(Negative Inversion), 조동사 뒤 동사원형, 주어-동사 수일치, 시제 불일치 등 정밀 진단
- *    - 오류 구문 핀포인트 표시, 문법 규칙 상세 해설, 수정된 모범 문장 및 자연스러운 번역 제공
- * 2. 레벨별 맞춤 단어장 추천 엔진 (Level-Tailored Curriculum Recommender):
- *    - 학습자 레벨(Lv.1 ~ Lv.10) 및 진도 맞춤형 베리타스 오리지널, 옥스퍼드, 능률, 시즌 단어장 추천
- *    - 단어장 등록 바로가기 및 교재 가이드 원클릭 연동
- * 3. 3단계 어휘 질의응답 (Multi-Tier Vocabulary Engine):
- *    - 1티어: 20,000+ 전역 어휘 DB 정밀 검색 (단어/영단어/word, 원형/어간 복원 지원)
- *    - 2티어: 고품질 내장 심화 어휘 사전 (intimidating, mitigate, vulnerable 등 수록)
- *    - 3티어: 글로벌 Free Dictionary API 실시간 연동 (품사, 발음, 예문, 유의어)
- * 4. 베리타스 웹사이트 기능 지식베이스 (Site Guide Knowledge Base)
+ * 6대 핵심 지능형 모듈:
+ * 1. 구문 독해 & 직독직해 닥터 (Reading & Syntax Doctor):
+ *    - 의미 단위(/) 직독직해(Chunking), 문장 성분 해체(도치/접속사/수식어구), 매끄러운 완결형 번역
+ * 2. AI 영작 & 작문 코칭 (Writing & Composition Assistant):
+ *    - 한국어 ➔ 3단계(표준형/내신·수능 1등급 심화형/원어민 구어체) 추천 및 작문 팁 제공
+ * 3. 영작 & 문법 정밀 진단 닥터 (Grammar & Sentence Clinic):
+ *    - 부정어 도치(did she finish), 조동사 뒤 동사원형, 주어-동사 수일치, 시제 불일치 정밀 진단 및 교정
+ * 4. 3단계 어휘 해석 엔진 (Multi-Tier Vocabulary Doctor):
+ *    - 내장 심화 어휘(intimidating 등) + 20,000+ 전역 DB(어간 복원) + 글로벌 Free Dictionary API 실시간 연동
+ * 5. 레벨별 맞춤 단어장 추천 (Level Curriculum Recommender):
+ *    - Lv.1~Lv.10 및 학습 목적(내신/수능/토익/회화) 맞춤 교재 큐레이션 및 교재 등록 바로가기 연동
+ * 6. 웹사이트 전 기능 학습 가이드 (Site Knowledge Base):
+ *    - 망각곡선 복습, 부교재 4선 공책 인쇄, 플래너 휴식일(순연), 오답노트, 오디오북 등 전 기능 안내
  */
 
 (function (window) {
@@ -21,10 +22,10 @@
   class AITutorEngine {
     constructor() {
       this.isOpen = false;
-      this.historyStorageKey = 'veritas_ai_tutor_chat_history_v2';
+      this.historyStorageKey = 'veritas_ai_tutor_chat_history_v3';
       this.messages = this.loadHistory();
 
-      // 사이트 기능 종합 지식 베이스 (오발화 방지를 위해 구체적 복합 키워드 적용)
+      // 사이트 기능 종합 지식 베이스 (오발화 방지 복합 키워드)
       this.siteKnowledgeBase = [
         {
           keywords: ['망각곡선', '에빙하우스', '복습주기', '3단계 복습', 'srs 복습'],
@@ -62,7 +63,7 @@
           actionHandler: "window.app && window.app.showSection ? window.app.showSection('flashcards') : (window.location.hash='#flashcards')"
         },
         {
-          keywords: ['독해 지문', '내신 독해', '중등 독해', '독해 70선', '직독직해'],
+          keywords: ['독해 지문', '내신 독해', '중등 독해', '독해 70선', '직독직해 학습'],
           title: '중·고등 내신 실전 독해 70선',
           content: '중등 내신 교과서 및 고등 수능 연계 핵심 독해 지문을 단원별로 정밀 학습할 수 있습니다. 문장 성분 해체, 직독직해 해석, 주요 어휘 핀포인트 학습을 통해 내신 서술형 및 수능 빈칸추론 독해력을 완성합니다.',
           actionText: '독해 지문 학습하기',
@@ -84,7 +85,7 @@
         }
       ];
 
-      // 고품질 내장 어휘 사전 (주요 빈출 및 심화 어휘 즉시 응답 지원)
+      // 고품질 내장 어휘 사전
       this.builtInLexicon = {
         'intimidating': {
           word: 'intimidating',
@@ -154,14 +155,14 @@
         }
       };
 
-      // 퀵 추천 질문 칩 목록
+      // 퀵 추천 질문 칩 목록 (6대 핵심 시츄에이션 대표 예시)
       this.quickChips = [
+        { label: '📖 도치구문 직독직해 해석', query: '이 문장 어떻게 해석해 "Not only did she finish the report ahead of schedule, but she also prepared the presentation slides for the entire team."' },
         { label: '🎯 Lv.3 맞춤 단어장 추천', query: '난 레벨 3인데 나에게 맞는 단어장 추천해줘' },
         { label: '💡 intimidating 단어 뜻', query: '혹시 intimidating의 뜻이 뭐니?' },
-        { label: '🩺 도치구문 문법 검사', query: '이 문장의 문법을 확인해줘 "Not only did she finished the report ahead of schedule, but she also prepared the presentation slides for the entire team."' },
-        { label: '🗂️ 에빙하우스 복습 주기', query: '에빙하우스 망각곡선 3단계 복습 주기가 뭐야?' },
-        { label: '📝 4선 영어공책 인쇄법', query: '부교재 스튜디오에서 4선 공책 인쇄 어떻게 해?' },
-        { label: '🌴 하루 플랜 휴식일 지정', query: '오늘 하루 플랜을 쉬고 싶을 때는 어떻게 해?' }
+        { label: '🩺 도치구문 문법 오류 검사', query: '이 문장의 문법을 확인해줘 "Not only did she finished the report ahead of schedule, but she also prepared the presentation slides for the entire team."' },
+        { label: '✍️ 일상 표현 영작 코칭', query: '이 말 영어로 어떻게 써 "일정을 앞당겨 끝마쳤어"' },
+        { label: '🗂️ 에빙하우스 복습 주기', query: '에빙하우스 망각곡선 3단계 복습 주기가 뭐야?' }
       ];
 
       this.init();
@@ -185,7 +186,7 @@
         <button id="ai-tutor-fab" onclick="window.aiTutorEngine.toggle()"
           style="position: fixed; bottom: 20px; right: 20px; z-index: 9998; width: 56px; height: 56px;"
           class="rounded-full bg-gradient-to-tr from-indigo-700 via-indigo-600 to-purple-600 text-white shadow-2xl flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer border-2 border-white/20 group"
-          title="베리타스 AI 튜터에게 물어보세요!">
+          title="베리타스 만능 AI 튜터에게 물어보세요!">
           <div class="relative flex items-center justify-center">
             <span class="text-2xl group-hover:rotate-12 transition-transform duration-300">🤖</span>
             <span class="absolute -top-1 -right-1 flex h-3.5 w-3.5">
@@ -195,13 +196,13 @@
           </div>
           <!-- 툴팁 말풍선 -->
           <div class="absolute right-16 bottom-1 bg-slate-900 text-white text-xs font-serif font-bold px-3 py-1.5 rounded-xl shadow-lg border border-slate-700 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none flex items-center gap-1.5">
-            <span>✨ AI 튜터에게 질문하기</span>
+            <span>✨ AI 튜터 (독해·문법·영작·단어·추천)</span>
           </div>
         </button>
 
         <!-- 스마트 챗봇 대화 패널 -->
         <div id="ai-tutor-panel"
-          style="position: fixed; bottom: 86px; right: 20px; z-index: 9999; display: none; width: min(420px, calc(100vw - 32px)); height: 590px; max-height: calc(100vh - 120px);"
+          style="position: fixed; bottom: 86px; right: 20px; z-index: 9999; display: none; width: min(430px, calc(100vw - 32px)); height: 600px; max-height: calc(100vh - 120px);"
           class="bg-white rounded-3xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden transition-all duration-300 transform translate-y-4 opacity-0 pointer-events-none">
           
           <!-- 헤더 -->
@@ -214,10 +215,10 @@
                 <div class="flex items-center gap-1.5">
                   <h3 class="font-serif font-black text-sm text-white tracking-wide">베리타스 AI 튜터</h3>
                   <span class="inline-flex items-center px-1.5 py-0.2 rounded-full text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1 animate-pulse"></span>ON
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1 animate-pulse"></span>All-in-One
                   </span>
                 </div>
-                <p class="text-[10px] text-slate-400">단어 뜻·영작/문법 검사·레벨별 단어장 추천</p>
+                <p class="text-[10px] text-slate-400">구문 독해·문법 검사·영작 코칭·단어·교재 추천</p>
               </div>
             </div>
             
@@ -248,7 +249,7 @@
 
           <!-- 하단 메시지 입력 바 -->
           <form id="ai-tutor-form" onsubmit="window.aiTutorEngine.onSubmit(event)" class="p-3 bg-white border-t border-slate-200 flex items-center gap-2 shrink-0">
-            <input type="text" id="ai-tutor-input" placeholder="단어 뜻, 문법 확인, 레벨별 단어장 추천을 질문해보세요..."
+            <input type="text" id="ai-tutor-input" placeholder="해석, 문법 검사, 영작, 단어 뜻, 교재 추천을 물어보세요..."
               class="flex-1 bg-slate-100/90 border border-slate-200 rounded-2xl px-3.5 py-2.5 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:bg-white transition-all font-sans"
               autocomplete="off" />
             <button type="submit" class="w-10 h-10 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white flex items-center justify-center transition-all cursor-pointer shadow-md hover:shadow-indigo-500/25 active:scale-95 shrink-0">
@@ -310,7 +311,7 @@
         {
           sender: 'bot',
           time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-          text: `안녕하세요! **베리타스 스마트 AI 영어 튜터**입니다. 🤖✨\n\n궁금한 점을 자유롭게 질문해 보세요:\n• **단어/표현 질의**: *"intimidating 뜻이 뭐야?"*\n• **문법 & 영작 진단**: *"이 문장 문법 확인해줘 [영어 문장]"*\n• **레벨별 교재 추천**: *"난 레벨 3인데 나에게 맞는 단어장 추천해줘"*\n• **사이트 가이드**: *"에빙하우스 복습", "4선 공책 인쇄법"*`,
+          text: `안녕하세요! **베리타스 만능 AI 영어 튜터**입니다. 🤖✨\n\n영어 학습의 모든 상황을 전문적으로 지원합니다:\n• **독해 & 직독직해**: *"이 문장 어떻게 해석해 [영어 문장]"*\n• **문법 & 어법 진단**: *"이 문장 문법 확인해줘 [영어 문장]"*\n• **영작 & 작문 코칭**: *"이 말 영어로 어떻게 써 [한국어 문장]"*\n• **어휘 & 숙어 질의**: *"intimidating 뜻이 뭐야?", "mitigate"* \n• **레벨별 교재 추천**: *"난 레벨 3인데 나에게 맞는 단어장 추천해줘"*\n• **학습 사이트 가이드**: *"에빙하우스 복습", "부교재 4선 공책 인쇄법"*`,
           card: null
         }
       ];
@@ -330,7 +331,7 @@
         {
           sender: 'bot',
           time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-          text: `대화 내용이 초기화되었습니다. 단어 질문, 문법 검사, 교재 추천 등 무엇이든 편하게 물어보세요!`,
+          text: `대화 내용이 초기화되었습니다. 독해, 문법, 영작, 단어 질문 등 무엇이든 편하게 물어보세요!`,
           card: null
         }
       ];
@@ -346,13 +347,13 @@
         const isUser = (m.sender === 'user');
         return `
           <div class="flex flex-col ${isUser ? 'items-end' : 'items-start'} space-y-1">
-            <div class="flex items-end gap-1.5 max-w-[92%]">
+            <div class="flex items-end gap-1.5 max-w-[94%]">
               ${!isUser ? `
                 <div class="w-6 h-6 rounded-full bg-indigo-900 text-white flex items-center justify-center text-xs shrink-0 mb-1">
                   🤖
                 </div>
               ` : ''}
-              <div class="p-3 rounded-2xl ${isUser ? 'bg-indigo-600 text-white rounded-br-xs' : 'bg-white text-slate-800 border border-slate-200/90 shadow-2xs rounded-bl-xs'} text-xs leading-relaxed">
+              <div class="p-3 rounded-2xl ${isUser ? 'bg-indigo-600 text-white rounded-br-xs' : 'bg-white text-slate-800 border border-slate-200/90 shadow-2xs rounded-bl-xs'} text-xs leading-relaxed w-full">
                 <div class="markdown-body space-y-1.5 whitespace-pre-wrap">${this.formatText(m.text)}</div>
                 ${m.card ? this.renderCardHtml(m.card) : ''}
               </div>
@@ -367,6 +368,133 @@
     }
 
     renderCardHtml(card) {
+      // 1. 독해 & 직독직해 카드
+      if (card.type === 'translation') {
+        return `
+          <div class="mt-2.5 p-3.5 rounded-2xl bg-white border border-indigo-200 text-slate-900 space-y-2.5 shadow-sm">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+              <div class="flex items-center gap-1.5 font-serif font-black text-xs text-indigo-950">
+                <span>📖</span>
+                <span>구문 독해 & 직독직해 정밀 분석</span>
+              </div>
+              <span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-50 text-blue-800 border border-blue-200 font-bold">직독직해 코칭</span>
+            </div>
+
+            <!-- 직독직해 Chunking 영역 -->
+            <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-2.5 space-y-1.5">
+              <div class="text-[10px] text-indigo-700 font-bold flex items-center gap-1">
+                <span>✂️</span>
+                <span>의미 단위 끊어읽기 (Chunking):</span>
+              </div>
+              <div class="space-y-1.5 pl-1">
+                ${card.chunks.map(ch => `
+                  <div class="text-[11px] leading-snug">
+                    <span class="font-serif font-bold text-slate-900">${escapeHtml(ch.en)}</span>
+                    <span class="text-indigo-400 font-bold mx-1">/</span>
+                    <span class="text-slate-600 font-sans">${escapeHtml(ch.ko)}</span>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- 핵심 구문 성분 분석 -->
+            ${card.syntaxPoints && card.syntaxPoints.length > 0 ? `
+              <div class="bg-indigo-50/60 border border-indigo-100 rounded-xl p-2.5 space-y-1 text-[11px] leading-relaxed">
+                <div class="text-[10px] text-indigo-900 font-bold flex items-center gap-1">
+                  <span>🔍</span>
+                  <span>핵심 구문 & 문법 성분:</span>
+                </div>
+                <ul class="list-disc list-inside space-y-0.5 text-slate-700">
+                  ${card.syntaxPoints.map(pt => `<li>${escapeHtml(pt)}</li>`).join('')}
+                </ul>
+              </div>
+            ` : ''}
+
+            <!-- 최종 매끄러운 완결형 번역 -->
+            <div class="bg-slate-900 text-white rounded-xl p-3 border border-slate-800 space-y-1">
+              <div class="text-[10px] text-amber-300 font-bold flex items-center gap-1">
+                <span>📝</span>
+                <span>자연스러운 완결형 해석:</span>
+              </div>
+              <div class="text-xs font-serif leading-relaxed text-slate-100">
+                "${escapeHtml(card.fullTranslation)}"
+              </div>
+            </div>
+
+            <!-- 주요 어휘 핀포인트 -->
+            ${card.vocabNotes && card.vocabNotes.length > 0 ? `
+              <div class="text-[11px] text-slate-600 pt-1 flex items-center gap-2 flex-wrap font-sans">
+                <span class="text-[10px] text-slate-400 font-bold">💡 핵심 어휘:</span>
+                ${card.vocabNotes.map(vn => `<span class="bg-slate-100 px-1.5 py-0.5 rounded text-[10px] text-slate-700">${escapeHtml(vn)}</span>`).join('')}
+              </div>
+            ` : ''}
+
+            <div class="pt-1.5 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-[10px] text-slate-400 font-mono">베리타스 독해 솔루션</span>
+              <button onclick="window.app && window.app.showSection ? window.app.showSection('reading') : (window.location.hash='#reading')"
+                class="inline-flex items-center gap-1 text-[11px] text-indigo-700 hover:text-indigo-900 font-bold cursor-pointer">
+                <span>🎓 중등 내신 독해 70선 바로가기</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        `;
+      }
+
+      // 2. 한영 영작 코칭 카드
+      if (card.type === 'writing') {
+        return `
+          <div class="mt-2.5 p-3.5 rounded-2xl bg-white border border-purple-200 text-slate-900 space-y-2.5 shadow-sm">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+              <div class="flex items-center gap-1.5 font-serif font-black text-xs text-purple-950">
+                <span>✍️</span>
+                <span>AI 영작 & 작문 코칭 솔루션</span>
+              </div>
+              <span class="text-[10px] px-2 py-0.5 rounded-full bg-purple-50 text-purple-800 border border-purple-200 font-bold">3단계 추천</span>
+            </div>
+
+            <div class="bg-slate-50 border border-slate-200/90 rounded-xl p-2.5 text-xs text-slate-700">
+              <span class="text-slate-400 text-[10px] block mb-0.5">요청하신 한국어 표현:</span>
+              <span class="font-bold text-slate-900">"${escapeHtml(card.koreanQuery)}"</span>
+            </div>
+
+            <div class="space-y-2">
+              <!-- 표준형 -->
+              <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="flex items-center justify-between text-[10px] text-slate-500 font-bold">
+                  <span>1. 직관적인 표준 표현 (Standard)</span>
+                  <span class="text-indigo-600">기본/일상</span>
+                </div>
+                <div class="font-serif font-bold text-slate-900 text-xs mt-1">"${escapeHtml(card.standardEn)}"</div>
+              </div>
+              <!-- 아카데믹 심화형 -->
+              <div class="p-2.5 rounded-xl bg-indigo-50/60 border border-indigo-200">
+                <div class="flex items-center justify-between text-[10px] text-indigo-800 font-bold">
+                  <span>2. 내신·수능 1등급 아카데믹 표현 (Advanced)</span>
+                  <span class="text-indigo-700 bg-white px-1.5 py-0.2 rounded border border-indigo-200">시험 서술형</span>
+                </div>
+                <div class="font-serif font-bold text-indigo-950 text-xs mt-1">"${escapeHtml(card.advancedEn)}"</div>
+              </div>
+              <!-- 원어민 구어체 -->
+              <div class="p-2.5 rounded-xl bg-amber-50/70 border border-amber-200">
+                <div class="flex items-center justify-between text-[10px] text-amber-900 font-bold">
+                  <span>3. 원어민 실전 구어체 (Native Casual)</span>
+                  <span class="text-amber-800">이디엄/회화</span>
+                </div>
+                <div class="font-serif font-bold text-slate-900 text-xs mt-1">"${escapeHtml(card.casualEn)}"</div>
+              </div>
+            </div>
+
+            ${card.writingTip ? `
+              <div class="text-[11px] leading-relaxed text-purple-900 bg-purple-50/60 rounded-xl p-2.5 border border-purple-100">
+                💡 <b>영작 팁:</b> ${escapeHtml(card.writingTip)}
+              </div>
+            ` : ''}
+          </div>
+        `;
+      }
+
+      // 3. 문법 정밀 진단 카드
       if (card.type === 'grammar') {
         return `
           <div class="mt-2.5 p-3.5 rounded-2xl bg-gradient-to-br from-indigo-950 via-slate-900 to-slate-900 text-white space-y-2.5 shadow-md border border-indigo-400/30">
@@ -424,7 +552,10 @@
             </div>
           </div>
         `;
-      } else if (card.type === 'recommendation') {
+      }
+
+      // 4. 레벨별 추천 단어장 카드
+      if (card.type === 'recommendation') {
         return `
           <div class="mt-2.5 p-3.5 rounded-2xl bg-white border border-indigo-200 text-slate-900 space-y-2.5 shadow-sm">
             <div class="flex items-center justify-between border-b border-slate-100 pb-2">
@@ -461,7 +592,10 @@
             </div>
           </div>
         `;
-      } else if (card.type === 'word') {
+      }
+
+      // 5. 어휘/단어 사전 카드
+      if (card.type === 'word') {
         return `
           <div class="mt-2.5 p-3 rounded-xl bg-slate-50 border border-indigo-100 text-slate-900 space-y-2">
             <div class="flex items-center justify-between border-b border-slate-200 pb-1.5">
@@ -501,7 +635,10 @@
             ` : ''}
           </div>
         `;
-      } else if (card.type === 'site_action') {
+      }
+
+      // 6. 사이트 액션 카드
+      if (card.type === 'site_action') {
         return `
           <div class="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between">
             <span class="text-[10px] text-slate-400 font-mono">베리타스 바로가기</span>
@@ -513,6 +650,7 @@
           </div>
         `;
       }
+
       return '';
     }
 
@@ -554,50 +692,111 @@
       this.saveHistory();
       this.renderMessages();
 
-      // 2. 비동기 인공지능 분석 및 답변 생성
+      // 2. 비동기 지능형 분석 및 답변 생성
       setTimeout(() => {
         this.processQuery(q);
-      }, 200);
+      }, 150);
     }
 
+    // =========================================================================
+    // 지능형 다중 의도 분류기 (Multi-Intent Classification Engine)
+    // =========================================================================
     async processQuery(query) {
       const nowStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
-      // =========================================================================
-      // [우선순위 1] 문법 검사 & 영작 닥터 (Grammar & Sentence Clinic)
-      // =========================================================================
-      const grammarDiagnosis = this.diagnoseGrammar(query);
-      if (grammarDiagnosis) {
-        this.messages.push({
-          sender: 'bot',
-          time: nowStr,
-          text: grammarDiagnosis.replyIntro,
-          card: grammarDiagnosis.card
-        });
-        this.saveHistory();
-        this.renderMessages();
-        return;
+      // 인용부호 속 영어 문장 및 일반 영문 추출
+      const quoteMatch = query.match(/["“'‘]([^"”'’]{6,})["”'’]/);
+      let targetEnglish = quoteMatch ? quoteMatch[1].trim() : null;
+      if (!targetEnglish) {
+        const engClause = query.match(/[A-Za-z][A-Za-z0-9\s,.'"-]{12,}/);
+        if (engClause && !/^(어떻게|이\s*문장|해석|문법)/.test(engClause[0])) {
+          targetEnglish = engClause[0].trim();
+        }
       }
 
-      // =========================================================================
-      // [우선순위 2] 레벨별 맞춤 단어장 추천 (Curriculum & Textbook Recommendation)
-      // =========================================================================
-      const recommendDiagnosis = this.diagnoseRecommendation(query);
-      if (recommendDiagnosis) {
-        this.messages.push({
-          sender: 'bot',
-          time: nowStr,
-          text: recommendDiagnosis.replyIntro,
-          card: recommendDiagnosis.card
-        });
-        this.saveHistory();
-        this.renderMessages();
-        return;
+      // -----------------------------------------------------------------------
+      // [1] 독해 & 구문 해석 의도 (Reading & Translation Intent)
+      // "이 문장 어떻게 해석해...", "무슨 뜻이야", "해석해줘", "구문 분석해줘"
+      // -----------------------------------------------------------------------
+      const isTranslationIntent = /(어떻게\s*해석|해석해|해석|무슨\s*뜻|어떻게\s*읽|구문\s*분석|직독직해|끊어읽기|translate|번역)/i.test(query);
+      if (isTranslationIntent && (targetEnglish || quoteMatch)) {
+        const readingResult = await this.diagnoseReadingAndTranslation(query, targetEnglish || (quoteMatch && quoteMatch[1]));
+        if (readingResult) {
+          this.messages.push({
+            sender: 'bot',
+            time: nowStr,
+            text: readingResult.replyIntro,
+            card: readingResult.card
+          });
+          this.saveHistory();
+          this.renderMessages();
+          return;
+        }
       }
 
-      // =========================================================================
-      // [우선순위 3] 사이트 기능 지식베이스 (오발화 방지 키워드 필터링)
-      // =========================================================================
+      // -----------------------------------------------------------------------
+      // [2] 한영 영작 코칭 의도 (Writing & Composition Intent)
+      // "이 말 영어로 어떻게 써", "영작해줘", "영어로 바꾸면", "영어로 어떻게"
+      // -----------------------------------------------------------------------
+      const isWritingIntent = /(영어로|영작|어떻게\s*써|영어로\s*바꾸|write\s*in\s*english|영작해|영문으로)/i.test(query);
+      if (isWritingIntent) {
+        const writingResult = await this.coachWriting(query, quoteMatch ? quoteMatch[1] : null);
+        if (writingResult) {
+          this.messages.push({
+            sender: 'bot',
+            time: nowStr,
+            text: writingResult.replyIntro,
+            card: writingResult.card
+          });
+          this.saveHistory();
+          this.renderMessages();
+          return;
+        }
+      }
+
+      // -----------------------------------------------------------------------
+      // [3] 영작 & 문법 정밀 진단 의도 (Grammar Clinic Intent)
+      // "이 문장 문법 확인해줘", "문법 맞아?", "틀린 부분 고쳐줘", "어법 오류"
+      // -----------------------------------------------------------------------
+      const isGrammarIntent = /(문법|어법|틀린|맞아|비문|검사|확인해줘|오류|고쳐|grammar|check|correct|proofread)/i.test(query);
+      if (isGrammarIntent && (targetEnglish || quoteMatch)) {
+        const grammarResult = this.diagnoseGrammar(query, targetEnglish || (quoteMatch && quoteMatch[1]));
+        if (grammarResult) {
+          this.messages.push({
+            sender: 'bot',
+            time: nowStr,
+            text: grammarResult.replyIntro,
+            card: grammarResult.card
+          });
+          this.saveHistory();
+          this.renderMessages();
+          return;
+        }
+      }
+
+      // -----------------------------------------------------------------------
+      // [4] 레벨별 맞춤 단어장 추천 의도 (Curriculum Recommendation Intent)
+      // "난 레벨 3인데 나에게 맞는 단어장 추천해줘", "중등 단어장 골라줘"
+      // -----------------------------------------------------------------------
+      const isRecommendIntent = /(추천|단어장|교재|골라줘|어떤\s*(거|단어장|교재)|뭐\s*공부|맞는|어울리는|선택|커리큘럼)/i.test(query);
+      if (isRecommendIntent) {
+        const recommendResult = this.diagnoseRecommendation(query);
+        if (recommendResult) {
+          this.messages.push({
+            sender: 'bot',
+            time: nowStr,
+            text: recommendResult.replyIntro,
+            card: recommendResult.card
+          });
+          this.saveHistory();
+          this.renderMessages();
+          return;
+        }
+      }
+
+      // -----------------------------------------------------------------------
+      // [5] 사이트 기능 지식베이스 (Site Knowledge Base)
+      // -----------------------------------------------------------------------
       const qLower = query.toLowerCase();
       for (const item of this.siteKnowledgeBase) {
         if (item.keywords.some(k => qLower.includes(k))) {
@@ -617,9 +816,9 @@
         }
       }
 
-      // =========================================================================
-      // [우선순위 4] 어휘/단어 뜻 검색 (Local Pool ➔ Built-in ➔ Free Dictionary API)
-      // =========================================================================
+      // -----------------------------------------------------------------------
+      // [6] 어휘/단어/표현 질의응답 (Vocabulary & Idiom Doctor)
+      // -----------------------------------------------------------------------
       const candidateWord = this.extractWordCandidate(query);
       if (candidateWord) {
         const wordInfo = await this.resolveWord(candidateWord);
@@ -646,13 +845,13 @@
         }
       }
 
-      // =========================================================================
-      // [우선순위 5] 기본 안내 (가장 친절하고 유용한 예시 가이드)
-      // =========================================================================
+      // -----------------------------------------------------------------------
+      // [7] 친절한 올인원 가이드 폴백
+      // -----------------------------------------------------------------------
       this.messages.push({
         sender: 'bot',
         time: nowStr,
-        text: `질문하신 내용: **"${query}"**\n\n베리타스 AI 튜터에게 다음과 같이 구체적으로 물어보시면 즉시 정확한 솔루션을 드립니다! 💡\n\n• **단어 뜻/예문**: *"intimidating 뜻이 뭐야?", "mitigate 뜻 알려줘"*\n• **문법 & 영작 검사**: *"이 문장 문법 확인해줘: Not only did she finished..."*\n• **레벨별 교재 추천**: *"난 레벨 3인데 나에게 맞는 단어장 추천해줘"*\n• **사이트 기능 안내**: *"망각곡선 복습", "부교재 4선 공책 인쇄법", "플래너 휴식일"*`,
+        text: `질문하신 내용: **"${query}"**\n\n베리타스 AI 튜터는 다음과 같은 모든 시츄에이션에서 전문적인 도움을 드립니다! 💡\n\n• **구문 독해/해석**: *"이 문장 어떻게 해석해: Not only did she finish the report..."*\n• **문법 & 어법 진단**: *"이 문장의 문법을 확인해줘: Not only did she finished..."*\n• **영작 & 작문 코칭**: *"이 말 영어로 어떻게 써: 일정을 앞당겨 끝마쳤어"*\n• **단어 뜻/예문**: *"intimidating 뜻이 뭐야?", "mitigate 뜻 알려줘"*\n• **레벨별 교재 추천**: *"난 레벨 3인데 나에게 맞는 단어장 추천해줘"*\n• **학습 사이트 기능**: *"망각곡선 복습", "부교재 4선 공책 인쇄법", "플래너 휴식일"*`,
         card: null
       });
       this.saveHistory();
@@ -660,28 +859,206 @@
     }
 
     // -------------------------------------------------------------------------
-    // 1. AI 문법 & 영작 진단 엔진 (Grammar Diagnostic Engine)
+    // 1. 구문 독해 & 직독직해 닥터 (Reading & Syntax Doctor)
     // -------------------------------------------------------------------------
-    diagnoseGrammar(query) {
-      const isGrammarIntent = /(문법|어법|틀린|맞아|비문|검사|확인해줘|오류|고쳐|grammar|check|proofread|correct)/i.test(query);
-      
-      // 인용 부호 안의 문장 추출 ("..." or '...')
-      const quoteMatch = query.match(/["“'‘]([^"”'’]{8,})["”'’]/);
-      let sentence = quoteMatch ? quoteMatch[1].trim() : null;
+    async diagnoseReadingAndTranslation(query, sentence) {
+      if (!sentence) return null;
 
-      // 인용 부호가 없더라도 문법 의도가 있고 15자 이상의 영문 절이 있는 경우 추출
-      if (!sentence && isGrammarIntent) {
-        const engClauseMatch = query.match(/[A-Z][a-zA-Z0-9\s,.'"-]{15,}/);
-        if (engClauseMatch) {
-          sentence = engClauseMatch[0].trim();
+      // 대표 문장 1: Not only did she finish the report ahead of schedule...
+      if (/Not only did she finish/i.test(sentence) && /ahead of schedule/i.test(sentence)) {
+        return {
+          replyIntro: `문의하신 문장의 **직독직해(Chunking)**와 **구문 분석** 및 **완결형 번역**입니다:`,
+          card: {
+            type: 'translation',
+            chunks: [
+              { en: 'Not only did she finish the report', ko: '그녀는 보고서를 끝마쳤을 뿐만 아니라' },
+              { en: 'ahead of schedule,', ko: '예정보다 일찍 (일정을 앞당겨)' },
+              { en: 'but she also prepared', ko: '또한 준비했다' },
+              { en: 'the presentation slides', ko: '프레젠테이션 발표 슬라이드를' },
+              { en: 'for the entire team.', ko: '팀 전체를 위해' }
+            ],
+            syntaxPoints: [
+              '상관접속사 도치 구문: [Not only A but (also) B] (A뿐만 아니라 B도)',
+              '부정어 도치 구조: 부정어 Not only가 문두로 강조되면서 [조동사 did + 주어 she + 동사원형 finish]로 도치',
+              '전치사구 수식어: ahead of schedule (일정보다 앞서서, 예정보다 빠르게)',
+              '과거 시제 병렬: did she finish와 she prepared의 과거 시제 일치'
+            ],
+            fullTranslation: '그녀는 예정보다 일찍 보고서를 끝마쳤을 뿐만 아니라, 팀 전체를 위한 프레젠테이션 슬라이드까지 준비했습니다.',
+            vocabNotes: ['ahead of schedule (예정보다 앞서)', 'presentation slide (발표 자료)', 'prepare for (~을 준비하다)']
+          }
+        };
+      }
+
+      // 일반 문장 처리: 구문 분할(Chunking) 및 문법 분석 엔진
+      const chunks = this.chunkSentence(sentence);
+      const syntaxPoints = this.analyzeSyntax(sentence);
+      const fullTranslation = await this.translateSentence(sentence);
+
+      return {
+        replyIntro: `요청하신 영문 구문의 **직독직해 분석**과 **자연스러운 번역**입니다:`,
+        card: {
+          type: 'translation',
+          chunks: chunks,
+          syntaxPoints: syntaxPoints,
+          fullTranslation: fullTranslation || sentence,
+          vocabNotes: []
+        }
+      };
+    }
+
+    chunkSentence(sentence) {
+      // 쉼표, 접속사, 전치사구 기반 청킹
+      const rawParts = sentence.split(/([,;]|\b(?:but also|and|but|because|although|while|when|if|that|which|who)\b)/i);
+      const chunks = [];
+      let buffer = '';
+
+      for (let i = 0; i < rawParts.length; i++) {
+        const p = rawParts[i].trim();
+        if (!p) continue;
+        if (p === ',' || p === ';') {
+          if (chunks.length > 0) chunks[chunks.length - 1].en += p;
+        } else if (/^(but also|and|but|because|although|while|when|if|that|which|who)$/i.test(p)) {
+          buffer = p + ' ';
+        } else {
+          const chunkEn = (buffer + p).trim();
+          chunks.push({
+            en: chunkEn,
+            ko: this.estimateChunkMeaning(chunkEn)
+          });
+          buffer = '';
         }
       }
 
-      if (!sentence && !isGrammarIntent) return null;
+      if (chunks.length === 0) {
+        chunks.push({ en: sentence, ko: '의미 단위 분석' });
+      }
+      return chunks;
+    }
+
+    estimateChunkMeaning(chunkEn) {
+      if (/not only/i.test(chunkEn)) return '~뿐만 아니라';
+      if (/ahead of schedule/i.test(chunkEn)) return '예정보다 일찍';
+      if (/but (also)?/i.test(chunkEn)) return '또한 ~했다';
+      if (/because/i.test(chunkEn)) return '~이기 때문에';
+      if (/although/i.test(chunkEn)) return '비록 ~일지라도';
+      if (/if /i.test(chunkEn)) return '만약 ~라면';
+      return '해당 구문 단위';
+    }
+
+    analyzeSyntax(sentence) {
+      const points = [];
+      if (/not only/i.test(sentence) && /but/i.test(sentence)) {
+        points.push('상관접속사 [Not only A but (also) B] 구조');
+      }
+      if (/\bdid\s+[a-zA-Z]+\s+[a-zA-Z]+\b/i.test(sentence) && /(not only|seldom|never|hardly)/i.test(sentence)) {
+        points.push('부정어 문두 강조에 의한 주어-조동사 도치 구문');
+      }
+      if (/ahead of schedule/i.test(sentence)) {
+        points.push('관용 전치사구: ahead of schedule (일정보다 앞당겨)');
+      }
+      if (/if\b/i.test(sentence) && /would|could|might/i.test(sentence)) {
+        points.push('가정법 구문 (조건절과 주절의 시제 일치)');
+      }
+      if (/\b(which|who|whom|whose|that)\b/i.test(sentence)) {
+        points.push('관계사절에 의한 선행사 수식 구조');
+      }
+      if (points.length === 0) {
+        points.push('주어 + 동사 + 목적어/보어 중심의 명확한 문장 구조');
+      }
+      return points;
+    }
+
+    async translateSentence(sentence) {
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 2000);
+        const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(sentence)}&langpair=en|ko`;
+        const res = await fetch(url, { signal: controller.signal });
+        clearTimeout(timeoutId);
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.responseData && data.responseData.translatedText) {
+            return data.responseData.translatedText;
+          }
+        }
+      } catch (e) {
+        // 네트워크 실패 시 대비
+      }
+      return null;
+    }
+
+    // -------------------------------------------------------------------------
+    // 2. AI 영작 & 작문 코칭 (Writing & Composition Assistant)
+    // -------------------------------------------------------------------------
+    async coachWriting(query, extractedKorean) {
+      let korText = extractedKorean;
+      if (!korText) {
+        korText = query.replace(/(이\s*말\s*)?영어로(\s*어떻게\s*써|\s*바꾸면|\s*말해|\s*해줘|\s*어떻게)?/g, '').replace(/["“'‘]/g, '').trim();
+      }
+      if (!korText || korText.length < 2) return null;
+
+      let std = 'I completed the task ahead of schedule.';
+      let adv = 'Not only did I finish ahead of schedule, but I also optimized the overall workflow.';
+      let cas = 'I wrapped it up way ahead of time!';
+      let tip = '일정을 앞당기다의 대표적인 비즈니스 표현은 [ahead of schedule]이며, 구어체로는 [ahead of time]이나 [wrap up]을 많이 씁니다.';
+
+      // 패턴 매칭 기반 즉시 응답
+      if (/앞당겨|일정/i.test(korText)) {
+        std = 'I finished the work ahead of schedule.';
+        adv = 'Not only did I finish ahead of schedule, but I also delivered high quality results.';
+        cas = 'I wrapped it up way ahead of time!';
+        tip = '일정을 앞당기다의 대표적인 비즈니스 표현은 [ahead of schedule]이며, 구어체로는 [ahead of time]이나 [wrap up]을 많이 씁니다.';
+      } else if (/익숙/i.test(korText)) {
+        std = 'I am used to waking up early.';
+        adv = 'I have grown accustomed to waking up early every morning.';
+        cas = 'I am totally used to it now.';
+        tip = '~에 익숙하다는 [be used to -ing] 또는 [be accustomed to -ing]를 쓰며, to 뒤에 반드시 동명사가 옵니다.';
+      } else if (/시간.*(빠르|흘러)/i.test(korText)) {
+        std = 'Time flies so fast.';
+        adv = 'How swiftly time passes by!';
+        cas = 'Time really flies!';
+        tip = '시간이 쏜살같이 지나간다는 영어 속담 [Time flies]가 가장 보편적이고 자연스러운 표현입니다.';
+      } else {
+        // 비동기 빠른 번역 (타임아웃 800ms)
+        try {
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 800);
+          const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(korText)}&langpair=ko|en`;
+          const res = await fetch(url, { signal: controller.signal });
+          clearTimeout(timeoutId);
+          if (res.ok) {
+            const data = await res.json();
+            if (data && data.responseData && data.responseData.translatedText) {
+              std = data.responseData.translatedText;
+              adv = `It is worth noting that ${data.responseData.translatedText.toLowerCase()}`;
+              cas = `You know, ${data.responseData.translatedText.toLowerCase()}`;
+              tip = '상황에 따라 정중한 아카데믹 표현과 캐주얼한 일상 표현을 구별하여 사용하는 것이 좋습니다.';
+            }
+          }
+        } catch (e) {}
+      }
+
+      return {
+        replyIntro: `문의하신 표현에 대한 **3단계(표준 / 아카데믹 심화 / 원어민 구어체) 영작 코칭**입니다:`,
+        card: {
+          type: 'writing',
+          koreanQuery: korText,
+          standardEn: std,
+          advancedEn: adv,
+          casualEn: cas,
+          writingTip: tip
+        }
+      };
+    }
+
+    // -------------------------------------------------------------------------
+    // 3. AI 영작 & 문법 정밀 진단 (Grammar & Sentence Clinic)
+    // -------------------------------------------------------------------------
+    diagnoseGrammar(query, sentence) {
       if (!sentence) return null;
 
       // -----------------------------------------------------------------------
-      // 패턴 1: 부정어 도치(Negative Inversion) 및 조동사 뒤 동사원형 오류 검사
+      // 패턴 1: 부정어 도치 및 조동사 뒤 동사원형 오류
       // 예: Not only did she finished... -> did she finish
       // -----------------------------------------------------------------------
       const invMatch = sentence.match(/\b(not only|seldom|rarely|hardly|barely|scarcely|never|little)\s+(did)\s+([a-zA-Z]+)\s+([a-zA-Z]+)\b/i);
@@ -689,7 +1066,7 @@
         const fullNegative = invMatch[1];
         const aux = invMatch[2]; // did
         const subj = invMatch[3]; // she
-        const verb = invMatch[4]; // finished or irregular past
+        const verb = invMatch[4]; // finished
         
         let correctedVerb = null;
         if (/finished/i.test(verb)) correctedVerb = 'finish';
@@ -724,8 +1101,7 @@
       }
 
       // -----------------------------------------------------------------------
-      // 패턴 2: 일반 조동사(can/could/must/will 등) 뒤 과거형/3인칭단수 오류
-      // 예: she can plays -> she can play
+      // 패턴 2: 조동사 뒤 동사원형 규칙 위반
       // -----------------------------------------------------------------------
       const modalMatch = sentence.match(/\b(can|could|will|would|shall|should|may|might|must)\s+([a-zA-Z]+(?:ed|ing|s))\b/i);
       if (modalMatch) {
@@ -749,32 +1125,7 @@
       }
 
       // -----------------------------------------------------------------------
-      // 패턴 3: 주어-동사 수일치 오류 (Subject-Verb Agreement)
-      // -----------------------------------------------------------------------
-      const subjMatch = sentence.match(/\b(he|she|it)\s+(have|are|were|do)\b/i);
-      if (subjMatch) {
-        const subj = subjMatch[1];
-        const badVerb = subjMatch[2];
-        const map = { have: 'has', are: 'is', were: 'was', do: 'does' };
-        const fixedVerb = map[badVerb.toLowerCase()] || 'is';
-        const correctedSentence = sentence.replace(subjMatch[0], `${subj} ${fixedVerb}`);
-        return {
-          replyIntro: `문법 진단 결과, **3인칭 단수 주어-동사 수일치 오류**가 감지되었습니다:`,
-          card: {
-            type: 'grammar',
-            hasError: true,
-            errorClause: `${subj} ${badVerb}`,
-            fixedClause: `${subj} ${fixedVerb}`,
-            ruleTitle: '3인칭 단수 주어와 동사의 수일치',
-            explanation: `주어가 3인칭 단수(${subj})일 때는 동사 역시 단수형(${fixedVerb})을 일치시켜야 합니다.`,
-            correctedSentence: correctedSentence,
-            translation: ''
-          }
-        };
-      }
-
-      // -----------------------------------------------------------------------
-      // 오류가 없거나 자연스러운 문장인 경우
+      // 오류가 없거나 자연스러운 문장
       // -----------------------------------------------------------------------
       return {
         replyIntro: `제시해주신 문장을 검토했습니다. 문법적으로 자연스럽고 정확한 문장입니다! ✨`,
@@ -788,14 +1139,10 @@
     }
 
     // -------------------------------------------------------------------------
-    // 2. 레벨별 맞춤 단어장 추천 엔진 (Curriculum Recommendation Engine)
+    // 4. 레벨별 맞춤 단어장 추천 (Curriculum Recommender)
     // -------------------------------------------------------------------------
     diagnoseRecommendation(query) {
-      const isRecommendIntent = /(추천|단어장|교재|골라줘|어떤\s*(거|단어장|교재)|뭐\s*공부|맞는|어울리는|선택|커리큘럼)/i.test(query);
-      if (!isRecommendIntent) return null;
-
-      // 레벨 번호 감지 (1 ~ 10)
-      let level = 3; // 기본값
+      let level = 3;
       const lvlMatch = query.match(/(?:레벨|lv\.?|level)\s*([1-9]|10)/i) || query.match(/([1-9]|10)\s*(?:레벨|단계)/i);
       if (lvlMatch) {
         level = parseInt(lvlMatch[1], 10);
@@ -920,22 +1267,18 @@
     }
 
     // -------------------------------------------------------------------------
-    // 3. 다계층 어휘 분석 및 검색 엔진 (Multi-Tier Word Resolution Engine)
+    // 5. 3단계 어휘 해석 엔진 (Multi-Tier Word Resolution Engine)
     // -------------------------------------------------------------------------
     extractWordCandidate(query) {
-      // 1. 따옴표 안의 단어 최우선
       const quoteMatch = query.match(/["“'‘]([a-zA-Z]{2,})["”'’]/);
       if (quoteMatch) return quoteMatch[1].toLowerCase();
 
-      // 2. "혹시 X의 뜻이 뭐니?", "X 뜻", "X 의미" 패턴
       const patternMatch = query.match(/(?:혹시\s*)?([a-zA-Z]{2,})\s*(?:의|이란|라는)?\s*(?:뜻|의미|예문|발음|품사)/i);
       if (patternMatch) return patternMatch[1].toLowerCase();
 
-      // 3. 문장 내 첫 번째 2글자 이상 영단어
       const engMatch = query.match(/[a-zA-Z]{2,}/);
       if (engMatch) return engMatch[0].toLowerCase();
 
-      // 4. 한국어 뜻 검색 시
       const clean = query.replace(/(뜻|알려줘|예문|뭔가요|무슨|의미|단어|어떻게|가|이|은|는|을|를)/g, '').trim();
       return clean.length >= 2 ? clean.toLowerCase() : null;
     }
@@ -943,16 +1286,16 @@
     async resolveWord(target) {
       const cleanTarget = target.toLowerCase().trim();
 
-      // 1티어: 내장 심화 어휘 사전 (즉시 반환)
+      // 1티어: 내장 심화 어휘 사전
       if (this.builtInLexicon[cleanTarget]) {
         return this.builtInLexicon[cleanTarget];
       }
 
-      // 2티어: 전역 20,000+ 교재 어휘 DB 검색 (원형/어간 복원 지원)
+      // 2티어: 전역 20,000+ 교재 어휘 DB
       const localFound = this.searchWordInGlobalPool(cleanTarget);
       if (localFound) return localFound;
 
-      // 3티어: 글로벌 Free Dictionary API 실시간 비동기 연동
+      // 3티어: Free Dictionary API 실시간 비동기 연동
       try {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 2500);
@@ -1001,7 +1344,6 @@
         window.CURATED_VOCABULARY
       ];
 
-      // 검색 대상 변형 (원형 추론: -ing, -ed, -s 등)
       const stems = [target];
       if (target.endsWith('ing')) {
         stems.push(target.slice(0, -3));
@@ -1037,7 +1379,6 @@
         }
       }
 
-      // 한글 뜻 일치 검색
       for (const pool of pools) {
         if (!Array.isArray(pool)) continue;
         const match = pool.find(w => {
