@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중등 내신 독해 70선 학습 가이드 | 베리타스 잉글리시</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        academy: {
+                            navy: '#0F172A',
+                            oxford: '#1E3A8A',
+                            paper: '#FAF9F6',
+                            crimson: '#991B1B',
+                            laurel: '#065F46',
+                            gold: '#B45309',
+                            amber: '#F59E0B'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Merriweather', 'Georgia', 'serif'],
+                        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600&display=swap');
+
+        * {
+            word-break: keep-all;
+            overflow-wrap: break-word;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, sans-serif;
+            background-color: #FAF9F6;
+            color: #1E293B;
+            word-break: keep-all;
+        }
+
+        .academic-serif {
+            font-family: 'Playfair Display', 'Merriweather', Georgia, serif;
+        }
+    </style>
+</head>
+<body class="selection:bg-amber-100 selection:text-blue-950 break-keep">
+
+    <!-- 상단 Sticky 헤더 -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <a href="../intro.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center text-amber-400 shadow-md border border-slate-800 group-hover:scale-105 transition-transform">
+                        <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <div class="academic-serif font-black text-xl text-slate-900 tracking-tight leading-none">
+                            VERITAS <span class="text-blue-900">ENGLISH</span>
+                        </div>
+                        <div class="text-[10px] font-mono tracking-widest text-slate-500 uppercase mt-0.5 font-bold">
+                            Learning Guide Center
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 7대 가이드 스위처 칩스 (데스크톱) -->
+                <nav class="hidden xl:flex items-center space-x-1 font-medium text-xs text-slate-600">
+                    <a href="starter.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">0. 기본 사용법</a>
+                    <a href="curriculum.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">1. 어휘 교재</a>
+                    <a href="reading.html" class="px-2.5 py-1.5 rounded-lg bg-blue-900 text-amber-300 font-bold shadow-2xs">2. 중등 내신</a>
+                    <a href="native.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">3. 원어민 Lab</a>
+                    <a href="srs.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">4. 망각곡선 SRS</a>
+                    <a href="quiz.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">5. 플래시 & 퀴즈</a>
+                    <a href="planner.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">6. 스마트 플래너</a>
+                </nav>
+
+                <div class="flex items-center gap-2">
+                    <a href="../intro.html#guide-center" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition-all">
+                        <i data-lucide="layout-grid" class="w-4 h-4"></i>
+                        <span>가이드 목록</span>
+                    </a>
+                    <a href="../index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 hover:bg-blue-950 text-amber-300 font-semibold text-xs sm:text-sm shadow-md transition-all">
+                        <span>학습실 바로가기</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-amber-400"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 모바일 가이드 네비게이션 가로 스크롤 바 -->
+        <div class="xl:hidden flex items-center gap-2 px-4 py-2 bg-slate-50 border-t border-slate-200 overflow-x-auto no-scrollbar text-xs">
+            <a href="starter.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">0. 기본 사용법</a>
+            <a href="curriculum.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">1. 어휘 교재</a>
+            <a href="reading.html" class="px-3 py-1.5 rounded-full bg-blue-900 text-amber-300 font-bold whitespace-nowrap">2. 중등 내신</a>
+            <a href="native.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">3. 원어민 Lab</a>
+            <a href="srs.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">4. 망각곡선 SRS</a>
+            <a href="quiz.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">5. 플래시 & 퀴즈</a>
+            <a href="planner.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">6. 스마트 플래너</a>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+        
+        <!-- 브레드크럼 -->
+        <nav class="flex items-center gap-2 text-xs font-medium text-slate-500 mb-6">
+            <a href="../intro.html" class="hover:text-blue-900">홈</a>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-400"></i>
+            <a href="../intro.html#guide-center" class="hover:text-blue-900">가이드 센터</a>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-400"></i>
+            <span class="text-blue-950 font-bold">2. 중등 내신 독해 70선 학습 가이드</span>
+        </nav>
+
+        <!-- 히어로 배너 -->
+        <div class="relative bg-gradient-to-br from-emerald-950 via-teal-900 to-slate-900 text-white rounded-3xl p-8 sm:p-12 mb-12 shadow-xl border border-emerald-800 overflow-hidden">
+            <div class="absolute -right-12 -bottom-12 w-80 h-80 bg-emerald-400/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="relative z-10 max-w-3xl">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-400/20 text-emerald-300 border border-emerald-400/30 mb-4">
+                    <i data-lucide="file-check-2" class="w-3.5 h-3.5"></i>
+                    MIDDLE SCHOOL EXAM-TARGETED READING
+                </span>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight mb-4">
+                    중등 내신 교과서 70선 실전 독해<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-teal-200 to-amber-300">내신 빈출 지문 &amp; 4가지 질문 훈련</span>
+                </h1>
+                <p class="text-emerald-100 text-sm sm:text-base leading-relaxed break-keep">
+                    단순 번역을 보는 것이 아닌, 실제 중학교 내신 지필평가에 반드시 출제되는 엄선된 70개 지문을 직접 읽고,<br class="hidden sm:inline">
+                    시험에 나오는 <strong>4가지 핵심 질문</strong>을 직접 해결하며 서술형 100점 감각을 완성합니다.
+                </p>
+            </div>
+        </div>
+
+        <!-- 핵심 안내: 실제 웹페이지 구성 특성 알림 -->
+        <div class="bg-blue-50 border-l-4 border-blue-600 p-5 rounded-r-2xl mb-12 shadow-xs">
+            <div class="flex items-start gap-3">
+                <i data-lucide="info" class="w-5 h-5 text-blue-700 shrink-0 mt-0.5"></i>
+                <div class="text-sm text-blue-950 leading-relaxed">
+                    <p class="font-bold mb-1">💡 베리타스 내신 독해 서비스의 본질</p>
+                    <p class="text-slate-700 text-xs sm:text-sm">
+                        베리타스 중등 독해관은 미리 번역된 직독직해 문장을 단순히 읽고 지나가는 수동적 학습이 아닙니다. 
+                        <strong>학생이 직접 지문을 읽고 구조를 파악한 뒤, 내신 시험에 직결되는 4가지 유형의 질문(어법 오류, 빈칸 추론, 내용 일치, 조건 영작)을 직접 해결하여 능동적 문제 해결력</strong>을 기르도록 설계되었습니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 섹션 1: 4대 핵심 질문 유형 완벽 분석 -->
+        <section class="mb-16">
+            <div class="mb-8 pb-4 border-b border-slate-200">
+                <span class="text-xs font-bold text-emerald-800 tracking-wider uppercase">PART 1. 4 ESSENTIAL QUESTIONS</span>
+                <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">내신 지필평가를 완벽 적중하는 4가지 질문</h2>
+                <p class="text-xs sm:text-sm text-slate-600 mt-1">지문마다 탑재된 4가지 핵심 질문을 단계별로 해결하면 객관식과 서술형을 동시에 대비할 수 있습니다.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Q1: 핵심 어법 오류 파악 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-8 h-8 rounded-xl bg-red-100 text-red-700 font-black flex items-center justify-center text-sm">Q1</span>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-base">핵심 어법 오류 파악 (Grammar Check)</h3>
+                            <p class="text-xs text-slate-500">배점 높은 내신 어법 객관식·서술형 킬러 대비</p>
+                        </div>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                        관계대명사 vs 접속사 what/that, 수동태 시제 일치, 분사구문 능동/수동 판별 등 중등 시험에서 가장 오답률이 높은 어법 포인트를 지문 문맥 속에서 짚어냅니다.
+                    </p>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs text-slate-700 font-mono">
+                        예: 지문의 밑줄 친 ⒜~⒠ 중 어법상 옳지 않은 것을 고르고 바르게 고치시오.
+                    </div>
+                </div>
+
+                <!-- Q2: 문맥 빈칸 추론 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-8 h-8 rounded-xl bg-blue-100 text-blue-700 font-black flex items-center justify-center text-sm">Q2</span>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-base">문맥 빈칸 추론 (Contextual Cloze)</h3>
+                            <p class="text-xs text-slate-500">주제문 및 핵심 접속사·연결사 추론력 훈련</p>
+                        </div>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                        글의 논리적 흐름(However, Therefore 등)과 글쓴이의 중심 생각(Main Idea)을 담은 핵심 어휘 빈칸을 채우며 글의 뼈대를 꿰뚫는 시야를 형성합니다.
+                    </p>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs text-slate-700 font-mono">
+                        예: 빈칸 (A)와 (B)에 들어갈 말로 가장 적절한 연결어 쌍을 고르시오.
+                    </div>
+                </div>
+
+                <!-- Q3: 내용 일치·불일치 판별 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-8 h-8 rounded-xl bg-amber-100 text-amber-800 font-black flex items-center justify-center text-sm">Q3</span>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-base">내용 일치·불일치 판별 (True or False)</h3>
+                            <p class="text-xs text-slate-500">정밀 독해와 선택지 함정 탈출 훈련</p>
+                        </div>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                        수치, 인과관계, 시점의 선후 등 교묘하게 바뀐 오답 선택지를 걸러내는 훈련입니다. 대충 훑어 읽는 나쁜 습관을 교정하고 100% 팩트 기반 정독을 체화합니다.
+                    </p>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs text-slate-700 font-mono">
+                        예: 위 글의 주인공에 대한 내용과 일치하지 않는 것을 모두 고르시오.
+                    </div>
+                </div>
+
+                <!-- Q4: 서술형 조건 영작 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-8 h-8 rounded-xl bg-emerald-100 text-emerald-800 font-black flex items-center justify-center text-sm">Q4</span>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-base">서술형 조건 영작 (Sentence Writing)</h3>
+                            <p class="text-xs text-slate-500">감점 없는 완벽한 서술형 영작 실전</p>
+                        </div>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                        지문의 핵심 문장을 주어진 조건(어형 변화, 필수 단어 포함, 단어 수 제한)에 맞추어 직접 영작하는 최고난도 서술형 훈련입니다.
+                    </p>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs text-slate-700 font-mono">
+                        예: [조건: not only ~ but also 구문 활용, 총 9단어]로 주제문을 완성하시오.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 2: 3단계 독해 정복 루틴 -->
+        <section class="mb-16">
+            <div class="mb-8 pb-4 border-b border-slate-200">
+                <span class="text-xs font-bold text-blue-900 tracking-wider uppercase">PART 2. 3-STEP READING ROUTINE</span>
+                <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">한 지문 10분 완성! 3단계 실전 정복 루틴</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-slate-200">
+                    <div class="w-10 h-10 rounded-xl bg-blue-900 text-amber-300 font-black flex items-center justify-center shrink-0 text-sm">
+                        STEP 1
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base mb-1">스스로 끊어 읽기 (Self-Paced Chunk Reading)</h4>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            지문을 처음부터 끝까지 소리 내어 읽거나 눈으로 정독하며, 의미 단위별(주어구/동사구/수식어 거품)로 끊어 읽습니다. 모르는 단어는 클릭하여 즉시 어휘 뜻을 확인합니다.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-slate-200">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-800 text-emerald-100 font-black flex items-center justify-center shrink-0 text-sm">
+                        STEP 2
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base mb-1">4대 질문 스스로 풀기 &amp; 정답 피드백</h4>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            지문 우측(또는 하단)에 배치된 4대 질문에 순서대로 답안을 선택하거나 타이핑합니다. 제출 즉시 상세 해설과 정답 근거 문장이 하이라이트됩니다.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-slate-200">
+                    <div class="w-10 h-10 rounded-xl bg-amber-600 text-white font-black flex items-center justify-center shrink-0 text-sm">
+                        STEP 3
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base mb-1">서술형 조건 영작 완벽 체화 &amp; 오답 클리닉</h4>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            틀린 문항은 오답노트에 담고, 서술형 영작 문장은 단어 카드를 드래그하거나 직접 키보드로 타이핑하며 문장 구조를 완벽하게 각인시킵니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 3: 인쇄 및 워크시트 활용 기능 -->
+        <section class="mb-16">
+            <div class="bg-gradient-to-r from-slate-900 to-blue-950 text-white rounded-3xl p-8 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-6">
+                <div>
+                    <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">A4 WORKSHEET PRINT</span>
+                    <h3 class="text-2xl font-black mt-1 mb-2">시험 직전, 깔끔한 종이 워크시트로 실전 모의고사!</h3>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-xl">
+                        베리타스의 70선 지문과 4가지 질문은 브라우저 인쇄 버튼 하나로 깔끔한 지필평가용 A4 시험지 형태로 즉시 출력할 수 있습니다. 학원 수업 숙제나 실전 시험 대비로 적극 활용해 보세요.
+                    </p>
+                </div>
+                <div class="shrink-0 flex items-center gap-3">
+                    <a href="../index.html" class="px-5 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-sm shadow-md transition-all inline-flex items-center gap-2">
+                        <i data-lucide="printer" class="w-4 h-4"></i>
+                        <span>독해 지문 인쇄해보기</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 하단 네비게이션 액션 바 -->
+        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+            <a href="curriculum.html" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                <span>이전: 1. 어휘 교재 라인업</span>
+            </a>
+            <div class="flex items-center gap-3">
+                <a href="../intro.html#guide-center" class="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs sm:text-sm transition-all">
+                    전체 목록 보기
+                </a>
+                <a href="native.html" class="px-5 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-950 text-amber-300 font-bold text-xs sm:text-sm shadow-md transition-all inline-flex items-center gap-2">
+                    <span>다음: 3. 원어민 Lab 가이드</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-amber-400"></i>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-center text-xs">
+        <div class="max-w-6xl mx-auto px-4">
+            <p class="font-serif font-bold text-slate-200 text-sm mb-2">VERITAS ENGLISH ACADEMY</p>
+            <p class="text-slate-500 mb-4">뇌과학 기반 4단계 어휘 습득 &amp; 중등 내신 70선 독해 시스템</p>
+            <p class="text-slate-600">&copy; 2026 Veritas English. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

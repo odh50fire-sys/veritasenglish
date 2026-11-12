@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>원어민 실전 표현 & 뉘앙스 Lab 가이드 | 베리타스 잉글리시</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        academy: {
+                            navy: '#0F172A',
+                            oxford: '#1E3A8A',
+                            paper: '#FAF9F6',
+                            crimson: '#991B1B',
+                            laurel: '#065F46',
+                            gold: '#B45309',
+                            amber: '#F59E0B'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Merriweather', 'Georgia', 'serif'],
+                        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600&display=swap');
+
+        * {
+            word-break: keep-all;
+            overflow-wrap: break-word;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, sans-serif;
+            background-color: #FAF9F6;
+            color: #1E293B;
+            word-break: keep-all;
+        }
+
+        .academic-serif {
+            font-family: 'Playfair Display', 'Merriweather', Georgia, serif;
+        }
+    </style>
+</head>
+<body class="selection:bg-amber-100 selection:text-blue-950 break-keep">
+
+    <!-- 상단 Sticky 헤더 -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <a href="../intro.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center text-amber-400 shadow-md border border-slate-800 group-hover:scale-105 transition-transform">
+                        <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <div class="academic-serif font-black text-xl text-slate-900 tracking-tight leading-none">
+                            VERITAS <span class="text-blue-900">ENGLISH</span>
+                        </div>
+                        <div class="text-[10px] font-mono tracking-widest text-slate-500 uppercase mt-0.5 font-bold">
+                            Learning Guide Center
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 7대 가이드 스위처 칩스 (데스크톱) -->
+                <nav class="hidden xl:flex items-center space-x-1 font-medium text-xs text-slate-600">
+                    <a href="starter.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">0. 기본 사용법</a>
+                    <a href="curriculum.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">1. 어휘 교재</a>
+                    <a href="reading.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">2. 중등 내신</a>
+                    <a href="native.html" class="px-2.5 py-1.5 rounded-lg bg-blue-900 text-amber-300 font-bold shadow-2xs">3. 원어민 Lab</a>
+                    <a href="srs.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">4. 망각곡선 SRS</a>
+                    <a href="quiz.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">5. 플래시 & 퀴즈</a>
+                    <a href="planner.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">6. 스마트 플래너</a>
+                </nav>
+
+                <div class="flex items-center gap-2">
+                    <a href="../intro.html#guide-center" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition-all">
+                        <i data-lucide="layout-grid" class="w-4 h-4"></i>
+                        <span>가이드 목록</span>
+                    </a>
+                    <a href="../index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 hover:bg-blue-950 text-amber-300 font-semibold text-xs sm:text-sm shadow-md transition-all">
+                        <span>학습실 바로가기</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-amber-400"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 모바일 가이드 네비게이션 가로 스크롤 바 -->
+        <div class="xl:hidden flex items-center gap-2 px-4 py-2 bg-slate-50 border-t border-slate-200 overflow-x-auto no-scrollbar text-xs">
+            <a href="starter.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">0. 기본 사용법</a>
+            <a href="curriculum.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">1. 어휘 교재</a>
+            <a href="reading.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">2. 중등 내신</a>
+            <a href="native.html" class="px-3 py-1.5 rounded-full bg-blue-900 text-amber-300 font-bold whitespace-nowrap">3. 원어민 Lab</a>
+            <a href="srs.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">4. 망각곡선 SRS</a>
+            <a href="quiz.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">5. 플래시 & 퀴즈</a>
+            <a href="planner.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">6. 스마트 플래너</a>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+        
+        <!-- 브레드크럼 -->
+        <nav class="flex items-center gap-2 text-xs font-medium text-slate-500 mb-6">
+            <a href="../intro.html" class="hover:text-blue-900">홈</a>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-400"></i>
+            <a href="../intro.html#guide-center" class="hover:text-blue-900">가이드 센터</a>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-400"></i>
+            <span class="text-blue-950 font-bold">3. 원어민 실전 표현 &amp; 뉘앙스 Lab 가이드</span>
+        </nav>
+
+        <!-- 히어로 배너 -->
+        <div class="relative bg-gradient-to-br from-indigo-950 via-slate-900 to-blue-950 text-white rounded-3xl p-8 sm:p-12 mb-12 shadow-xl border border-indigo-900 overflow-hidden">
+            <div class="absolute -right-12 -bottom-12 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="relative z-10 max-w-3xl">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 mb-4">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                    REAL-WORLD NATIVE EXPRESSIONS &amp; NUANCE LAB
+                </span>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight mb-4">
+                    원어민 실전 표현 &amp; 뉘앙스 Lab<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-200 to-indigo-200">교과서 영어를 뛰어넘는 현지 0.1% 감각</span>
+                </h1>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed break-keep">
+                    한국어로는 똑같이 번역되지만 원어민에게는 완전히 다르게 들리는 미묘한 뉘앙스 차이.<br class="hidden sm:inline">
+                    매일 업데이트되는 2종 데일리 미션과 뉘앙스 비교 연구소로 어색한 콩글리시를 벗어나 진짜 원어민 영어를 습득하세요.
+                </p>
+            </div>
+        </div>
+
+        <!-- 섹션 1: 데일리 2종 실전 미션 -->
+        <section class="mb-16">
+            <div class="mb-8 pb-4 border-b border-slate-200">
+                <span class="text-xs font-bold text-indigo-900 tracking-wider uppercase">PART 1. DAILY MISSIONS</span>
+                <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">매일 3분! 데일리 2종 실전 미션</h2>
+                <p class="text-xs sm:text-sm text-slate-600 mt-1">접속할 때마다 새로운 표현과 뉘앙스 퀴즈가 매일 자정에 자동으로 갱신됩니다.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 미션 1: 오늘의 실전 표현 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-700 font-bold flex items-center justify-center">
+                            <i data-lucide="flame" class="w-5 h-5"></i>
+                        </span>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-base">MISSION 1. 오늘의 실전 표현</h3>
+                            <p class="text-xs text-slate-500">미드·유튜브·현지 일상에서 매일 쓰는 생생한 관용구</p>
+                        </div>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                        사전적 뜻만으로는 이해하기 힘든 영미권 핫트렌드 표현을 예문과 함께 학습합니다. 원어민 음성 재생 버튼으로 원어민 특유의 강세와 연음을 즉시 확인할 수 있습니다.
+                    </p>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 mt-auto">
+                        <div class="flex items-center justify-between text-xs font-bold text-indigo-900 mb-1">
+                            <span>오늘의 픽: "cut corners"</span>
+                            <span class="text-slate-400 font-normal">관용구</span>
+                        </div>
+                        <p class="text-xs text-slate-600">직역: 모서리를 자르다 ➔ <strong>실제 의미: 절차를 건너뛰고 대충 때우다</strong></p>
+                    </div>
+                </div>
+
+                <!-- 미션 2: 미묘한 뉘앙스 퀴즈 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-10 h-10 rounded-xl bg-amber-50 text-amber-700 font-bold flex items-center justify-center">
+                            <i data-lucide="help-circle" class="w-5 h-5"></i>
+                        </span>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-base">MISSION 2. 미묘한 뉘앙스 퀴즈</h3>
+                            <p class="text-xs text-slate-500">원어민 감각으로 고르는 2지선다 / 4지선다 퀴즈</p>
+                        </div>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                        두 단어 중 특정 상황에서 원어민이 자연스럽게 선택하는 단어를 맞히는 퀴즈입니다. 정답을 선택하면 왜 그 단어가 더 적합한지 상세한 비교 해설이 펼쳐집니다.
+                    </p>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 mt-auto">
+                        <p class="text-xs font-bold text-slate-800 mb-1">Q. 콘서트에서 밴드의 연주를 볼 때는?</p>
+                        <div class="flex gap-2 text-xs">
+                            <span class="px-2 py-1 bg-white border border-slate-200 rounded text-slate-400">see a band</span>
+                            <span class="px-2 py-1 bg-amber-100 border border-amber-300 font-bold text-amber-900 rounded">watch a band ✓</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 2: 뉘앙스 비교 연구소 대표 사례 -->
+        <section class="mb-16">
+            <div class="mb-8 pb-4 border-b border-slate-200">
+                <span class="text-xs font-bold text-blue-900 tracking-wider uppercase">PART 2. NUANCE COMPARISON</span>
+                <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">뉘앙스 연구소 대표 비교 사례 TOP 3</h2>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Case 1: Look at vs Watch vs See -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <h3 class="font-bold text-slate-900 text-base mb-3 flex items-center gap-2">
+                        <span class="w-6 h-6 rounded-md bg-blue-100 text-blue-900 flex items-center justify-center text-xs font-bold">1</span>
+                        <span>'보다' 3총사의 결정적 뉘앙스 차이</span>
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+                        <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <strong class="text-blue-900 block mb-1">👀 See (의도 없음)</strong>
+                            <p class="text-slate-600">눈을 뜨고 있어서 저절로 시야에 들어오는 것 (I saw him on the bus.)</p>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <strong class="text-indigo-900 block mb-1">🎯 Look at (초점 지향)</strong>
+                            <p class="text-slate-600">의도를 가지고 특정 정적 대상을 시선으로 응시하는 것 (Look at the picture!)</p>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <strong class="text-amber-900 block mb-1">🎬 Watch (동적 관찰)</strong>
+                            <p class="text-slate-600">움직임이나 변화가 있는 대상의 과정을 지켜보는 것 (Watch TV, Watch a game)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 2: Hear vs Listen to -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <h3 class="font-bold text-slate-900 text-base mb-3 flex items-center gap-2">
+                        <span class="w-6 h-6 rounded-md bg-emerald-100 text-emerald-900 flex items-center justify-center text-xs font-bold">2</span>
+                        <span>'듣다' Hear vs Listen to</span>
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                        <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <strong class="text-emerald-900 block mb-1">👂 Hear (자연 지각)</strong>
+                            <p class="text-slate-600">귀가 열려 있어 소음이나 소리가 그냥 들리는 것 (Did you hear that sound?)</p>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <strong class="text-teal-900 block mb-1">🎧 Listen to (주의 집중)</strong>
+                            <p class="text-slate-600">의식적으로 귀를 기울여 메시지나 음악을 이해하려는 것 (Listen carefully to me.)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 3: Affect vs Effect -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <h3 class="font-bold text-slate-900 text-base mb-3 flex items-center gap-2">
+                        <span class="w-6 h-6 rounded-md bg-purple-100 text-purple-900 flex items-center justify-center text-xs font-bold">3</span>
+                        <span>원어민도 헷갈리는 Affect vs Effect</span>
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                        <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <strong class="text-purple-900 block mb-1">⚡ Affect (대부분 동사)</strong>
+                            <p class="text-slate-600">'~에 영향을 미치다' (Action). Cold weather affects crops.</p>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <strong class="text-pink-900 block mb-1">🏁 Effect (대부분 명사)</strong>
+                            <p class="text-slate-600">'영향, 효과, 결과' (End result). The side effects of this medicine.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 3: 100% 활용 루틴 -->
+        <section class="mb-16">
+            <div class="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200">
+                <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <i data-lucide="bookmark" class="w-5 h-5 text-indigo-600"></i>
+                    <span>나만의 실전 뉘앙스 보관함 활용법</span>
+                </h3>
+                <ol class="space-y-3 text-xs sm:text-sm text-slate-600 list-decimal list-inside">
+                    <li>매일 메인 홈에서 <strong>'원어민 실전 표현 &amp; 뉘앙스 Lab'</strong> 탭으로 이동합니다.</li>
+                    <li>당일 배정된 실전 표현의 예문을 원어민 TTS 음성으로 3회 이상 섀도잉하며 억양을 모방합니다.</li>
+                    <li>미묘한 뉘앙스 퀴즈를 풀고 상세 비교 팁을 정독합니다.</li>
+                    <li>기억해두고 싶은 표현은 <strong>'★ 북마크'</strong>를 눌러 북마크 보관함에 저장하고 주말마다 한꺼번에 꺼내 복습합니다.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 하단 네비게이션 액션 바 -->
+        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+            <a href="reading.html" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                <span>이전: 2. 중등 내신 독해</span>
+            </a>
+            <div class="flex items-center gap-3">
+                <a href="../intro.html#guide-center" class="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs sm:text-sm transition-all">
+                    전체 목록 보기
+                </a>
+                <a href="srs.html" class="px-5 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-950 text-amber-300 font-bold text-xs sm:text-sm shadow-md transition-all inline-flex items-center gap-2">
+                    <span>다음: 4. 망각곡선 SRS 가이드</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-amber-400"></i>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-center text-xs">
+        <div class="max-w-6xl mx-auto px-4">
+            <p class="font-serif font-bold text-slate-200 text-sm mb-2">VERITAS ENGLISH ACADEMY</p>
+            <p class="text-slate-500 mb-4">뇌과학 기반 4단계 어휘 습득 &amp; 중등 내신 70선 독해 시스템</p>
+            <p class="text-slate-600">&copy; 2026 Veritas English. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

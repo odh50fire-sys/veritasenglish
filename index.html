@@ -114,6 +114,11 @@
                         <span>🧭</span>
                         <span class="hidden sm:inline">서비스 소개</span>
                     </a>
+                    <!-- 베리타스 AI 튜터 열기 버튼 -->
+                    <button type="button" onclick="window.aiTutorEngine && window.aiTutorEngine.open()" class="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-900 border border-indigo-300/80 text-xs font-serif font-bold shadow-xs transition-all cursor-pointer" title="베리타스 AI 튜터에게 질문하기">
+                        <span>🤖</span>
+                        <span class="hidden sm:inline">AI 튜터</span>
+                    </button>
                     <button id="btn-open-add-word" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold shadow-xs transition-all">
                         <i data-lucide="plus" class="w-3.5 h-3.5"></i>
                         <span>단어 추가</span>
@@ -128,6 +133,7 @@
         <!-- 모바일 하단 탭 바 -->
         <div class="md:hidden flex overflow-x-auto py-2 px-3 border-t border-slate-100 bg-white gap-2 text-xs">
             <a href="intro.html" class="whitespace-nowrap px-2.5 py-1 rounded bg-amber-50 text-amber-900 border border-amber-200 font-bold flex items-center gap-1">🧭 소개</a>
+            <button onclick="window.aiTutorEngine && window.aiTutorEngine.open()" class="whitespace-nowrap px-2.5 py-1 rounded bg-indigo-50 text-indigo-900 border border-indigo-200 font-bold flex items-center gap-1 cursor-pointer">🤖 AI 튜터</button>
             <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="dashboard">대시보드</button>
             <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="ocr">📸 교재등록</button>
             <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="flashcards">🎴 플래시카드</button>
@@ -604,7 +610,7 @@
                                         <span>✨ AI 나만의 맞춤 단원 생성</span>
                                     </button>
                                     <!-- 어휘 교재 라인업 심층 가이드 바로가기 버튼 -->
-                                    <a href="intro.html#guide-curriculum" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-amber-400/20 hover:bg-amber-400/30 text-amber-300 font-serif font-bold text-xs border border-amber-400/30 transition-all cursor-pointer" title="베리타스 어휘 교재 라인업 심층 가이드 보기">
+                                    <a href="guides/curriculum.html" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-amber-400/20 hover:bg-amber-400/30 text-amber-300 font-serif font-bold text-xs border border-amber-400/30 transition-all cursor-pointer" title="베리타스 어휘 교재 라인업 심층 가이드 보기">
                                         <span>ℹ️ 교재 가이드</span>
                                     </a>
                                     <!-- 부교재 보카북 & 워크북 통합 바로가기 버튼 -->
@@ -855,7 +861,7 @@
                     </div>
 
                     <div class="flex items-center gap-2 self-end sm:self-auto">
-                        <a href="intro.html#guide-quiz" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-900 border border-rose-200 text-xs font-serif font-bold transition-all shadow-2xs cursor-pointer" title="플래시카드 & 4대 스마트 퀴즈 심층 가이드 보기">
+                        <a href="guides/quiz.html" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-900 border border-rose-200 text-xs font-serif font-bold transition-all shadow-2xs cursor-pointer" title="플래시카드 & 4대 스마트 퀴즈 심층 가이드 보기">
                             <span>ℹ️ 퀴즈 가이드</span>
                         </a>
                         <!-- 요구사항 5: 학습 성격 배지 -->
@@ -1218,7 +1224,7 @@
                     <span>스마트 오답노트 & 클리닉</span>
                     <span id="nav-wrong-badge" class="hidden px-1.5 py-0.2 rounded-full bg-rose-600 text-white font-mono text-[10px] font-bold">0</span>
                 </button>
-                <a href="intro.html#guide-srs" class="px-3 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 text-xs font-serif font-bold flex items-center gap-1 transition-all cursor-pointer shadow-2xs ml-auto" title="에빙하우스 망각곡선 30일 SRS 복습 심층 가이드 보기">
+                <a href="guides/srs.html" class="px-3 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 text-xs font-serif font-bold flex items-center gap-1 transition-all cursor-pointer shadow-2xs ml-auto" title="에빙하우스 망각곡선 30일 SRS 복습 심층 가이드 보기">
                     <span>ℹ️ SRS 복습 가이드</span>
                 </a>
             </div>
@@ -1397,7 +1403,7 @@
                     </div>
                     <!-- 검색 입력창 & 가이드 버튼 -->
                     <div class="flex items-center gap-2 w-full sm:w-auto">
-                        <a href="intro.html#guide-native" class="inline-flex items-center gap-1 px-3 py-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 text-xs font-serif font-bold transition-all shrink-0 shadow-2xs" title="원어민 표현 Lab 학습 가이드 보기">
+                        <a href="guides/native.html" class="inline-flex items-center gap-1 px-3 py-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 text-xs font-serif font-bold transition-all shrink-0 shadow-2xs" title="원어민 표현 Lab 학습 가이드 보기">
                             <span>ℹ️ 표현 가이드</span>
                         </a>
                         <div class="relative w-full sm:w-64">
@@ -1467,7 +1473,7 @@
 
                         <!-- 요구사항 2: 학습 이력 버튼 & 하루 목표 단어 수 설정 -->
                         <div class="flex items-center gap-2 shrink-0">
-                            <a href="intro.html#guide-planner" class="px-2.5 py-1.5 rounded-lg border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-900 text-xs font-serif font-bold flex items-center gap-1 transition-all shadow-2xs cursor-pointer" title="스마트 학습 플래너 100% 이용 가이드 보기">
+                            <a href="guides/planner.html" class="px-2.5 py-1.5 rounded-lg border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-900 text-xs font-serif font-bold flex items-center gap-1 transition-all shadow-2xs cursor-pointer" title="스마트 학습 플래너 100% 이용 가이드 보기">
                                 <span>ℹ️ 플래너 가이드</span>
                             </a>
                             <button id="btn-replan-voca" class="px-3 py-1.5 rounded-lg border border-blue-200 bg-blue-50 hover:bg-blue-100 text-blue-900 text-xs font-serif font-bold flex items-center gap-1.5 transition-all cursor-pointer shadow-2xs" onclick="window.plannerEngine.openVocaReplanModal()" title="등록된 단어장의 일일 학습 단어 수 및 일정 재배정/수정">
@@ -1707,7 +1713,7 @@
                         <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
                         <span>Veritas Middle School Exam Master • 예비중 & 중등 내신 독해 70선</span>
                     </div>
-                    <a href="intro.html#guide-reading" class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-indigo-50 hover:bg-indigo-100 text-indigo-900 font-serif text-[11px] font-bold border border-indigo-200 shadow-2xs transition-colors cursor-pointer" title="중등 내신 독해 70선 심층 학습 가이드 보기">
+                    <a href="guides/reading.html" class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-indigo-50 hover:bg-indigo-100 text-indigo-900 font-serif text-[11px] font-bold border border-indigo-200 shadow-2xs transition-colors cursor-pointer" title="중등 내신 독해 70선 심층 학습 가이드 보기">
                         <span>ℹ️ 내신 독해 가이드</span>
                     </a>
                 </div>

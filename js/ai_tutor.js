@@ -108,7 +108,8 @@
       container.innerHTML = `
         <!-- 우측 하단 플로팅 버튼 (Floating Action Button) -->
         <button id="ai-tutor-fab" onclick="window.aiTutorEngine.toggle()"
-          class="fixed bottom-5 right-5 z-40 w-14 h-14 rounded-full bg-gradient-to-tr from-indigo-700 via-indigo-600 to-purple-600 text-white shadow-2xl flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer border-2 border-white/20 group"
+          style="position: fixed; bottom: 20px; right: 20px; z-index: 9998; width: 56px; height: 56px;"
+          class="rounded-full bg-gradient-to-tr from-indigo-700 via-indigo-600 to-purple-600 text-white shadow-2xl flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer border-2 border-white/20 group"
           title="베리타스 AI 튜터에게 물어보세요!">
           <div class="relative flex items-center justify-center">
             <span class="text-2xl group-hover:rotate-12 transition-transform duration-300">🤖</span>
@@ -125,7 +126,8 @@
 
         <!-- 스마트 챗봇 대화 패널 -->
         <div id="ai-tutor-panel"
-          class="fixed bottom-22 right-5 z-50 w-[92vw] sm:w-[400px] h-[580px] max-h-[82vh] bg-white rounded-3xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden transition-all duration-300 transform translate-y-4 opacity-0 pointer-events-none">
+          style="position: fixed; bottom: 86px; right: 20px; z-index: 9999; display: none; width: min(400px, calc(100vw - 32px)); height: 580px; max-height: calc(100vh - 120px);"
+          class="bg-white rounded-3xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden transition-all duration-300 transform translate-y-4 opacity-0 pointer-events-none">
           
           <!-- 헤더 -->
           <div class="p-4 bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white flex items-center justify-between border-b border-slate-800 shrink-0">
@@ -187,23 +189,39 @@
       if (window.lucide) window.lucide.createIcons();
     }
 
-    toggle() {
-      this.isOpen = !this.isOpen;
-      const panel = document.getElementById('ai-tutor-panel');
-      const fab = document.getElementById('ai-tutor-fab');
-      if (!panel || !fab) return;
+    toggle(forceState) {
+      this.isOpen = (typeof forceState === 'boolean') ? forceState : !this.isOpen;
+      let panel = document.getElementById('ai-tutor-panel');
+      if (!panel) {
+        this.mount();
+        panel = document.getElementById('ai-tutor-panel');
+      }
+      if (!panel) return;
 
       if (this.isOpen) {
+        panel.style.display = 'flex';
+        panel.offsetHeight; // reflow
         panel.classList.remove('translate-y-4', 'opacity-0', 'pointer-events-none');
-        panel.classList.add('translate-y-0', 'opacity-100');
+        panel.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
         const input = document.getElementById('ai-tutor-input');
         if (input) setTimeout(() => input.focus(), 150);
         this.scrollToBottom();
       } else {
         panel.classList.add('translate-y-4', 'opacity-0', 'pointer-events-none');
-        panel.classList.remove('translate-y-0', 'opacity-100');
+        panel.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+        setTimeout(() => {
+          if (!this.isOpen && panel) panel.style.display = 'none';
+        }, 300);
       }
       if (window.lucide) window.lucide.createIcons();
+    }
+
+    open() {
+      this.toggle(true);
+    }
+
+    close() {
+      this.toggle(false);
     }
 
     loadHistory() {

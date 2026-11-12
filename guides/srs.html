@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뇌과학 망각곡선 SRS 복습 가이드 | 베리타스 잉글리시</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        academy: {
+                            navy: '#0F172A',
+                            oxford: '#1E3A8A',
+                            paper: '#FAF9F6',
+                            crimson: '#991B1B',
+                            laurel: '#065F46',
+                            gold: '#B45309',
+                            amber: '#F59E0B'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Merriweather', 'Georgia', 'serif'],
+                        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600&display=swap');
+
+        * {
+            word-break: keep-all;
+            overflow-wrap: break-word;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, sans-serif;
+            background-color: #FAF9F6;
+            color: #1E293B;
+            word-break: keep-all;
+        }
+
+        .academic-serif {
+            font-family: 'Playfair Display', 'Merriweather', Georgia, serif;
+        }
+    </style>
+</head>
+<body class="selection:bg-amber-100 selection:text-blue-950 break-keep">
+
+    <!-- 상단 Sticky 헤더 -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <a href="../intro.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center text-amber-400 shadow-md border border-slate-800 group-hover:scale-105 transition-transform">
+                        <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <div class="academic-serif font-black text-xl text-slate-900 tracking-tight leading-none">
+                            VERITAS <span class="text-blue-900">ENGLISH</span>
+                        </div>
+                        <div class="text-[10px] font-mono tracking-widest text-slate-500 uppercase mt-0.5 font-bold">
+                            Learning Guide Center
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 7대 가이드 스위처 칩스 (데스크톱) -->
+                <nav class="hidden xl:flex items-center space-x-1 font-medium text-xs text-slate-600">
+                    <a href="starter.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">0. 기본 사용법</a>
+                    <a href="curriculum.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">1. 어휘 교재</a>
+                    <a href="reading.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">2. 중등 내신</a>
+                    <a href="native.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">3. 원어민 Lab</a>
+                    <a href="srs.html" class="px-2.5 py-1.5 rounded-lg bg-blue-900 text-amber-300 font-bold shadow-2xs">4. 망각곡선 SRS</a>
+                    <a href="quiz.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">5. 플래시 & 퀴즈</a>
+                    <a href="planner.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">6. 스마트 플래너</a>
+                </nav>
+
+                <div class="flex items-center gap-2">
+                    <a href="../intro.html#guide-center" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition-all">
+                        <i data-lucide="layout-grid" class="w-4 h-4"></i>
+                        <span>가이드 목록</span>
+                    </a>
+                    <a href="../index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 hover:bg-blue-950 text-amber-300 font-semibold text-xs sm:text-sm shadow-md transition-all">
+                        <span>학습실 바로가기</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-amber-400"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 모바일 가이드 네비게이션 가로 스크롤 바 -->
+        <div class="xl:hidden flex items-center gap-2 px-4 py-2 bg-slate-50 border-t border-slate-200 overflow-x-auto no-scrollbar text-xs">
+            <a href="starter.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">0. 기본 사용법</a>
+            <a href="curriculum.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">1. 어휘 교재</a>
+            <a href="reading.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">2. 중등 내신</a>
+            <a href="native.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">3. 원어민 Lab</a>
+            <a href="srs.html" class="px-3 py-1.5 rounded-full bg-blue-900 text-amber-300 font-bold whitespace-nowrap">4. 망각곡선 SRS</a>
+            <a href="quiz.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">5. 플래시 & 퀴즈</a>
+            <a href="planner.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">6. 스마트 플래너</a>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+        
+        <!-- 브레드크럼 -->
+        <nav class="flex items-center gap-2 text-xs font-medium text-slate-500 mb-6">
+            <a href="../intro.html" class="hover:text-blue-900">홈</a>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-400"></i>
+            <a href="../intro.html#guide-center" class="hover:text-blue-900">가이드 센터</a>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-400"></i>
+            <span class="text-blue-950 font-bold">4. 뇌과학 망각곡선 SRS 복습 가이드</span>
+        </nav>
+
+        <!-- 히어로 배너 -->
+        <div class="relative bg-gradient-to-br from-purple-950 via-slate-900 to-blue-950 text-white rounded-3xl p-8 sm:p-12 mb-12 shadow-xl border border-purple-900 overflow-hidden">
+            <div class="absolute -right-12 -bottom-12 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="relative z-10 max-w-3xl">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-4">
+                    <i data-lucide="repeat" class="w-3.5 h-3.5"></i>
+                    EBBINGHAUS SPRAYED REPETITION SYSTEM (SRS)
+                </span>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight mb-4">
+                    뇌과학 에빙하우스 망각곡선 SRS<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-pink-200 to-amber-300">1·7·30일 주기 장기기억 고착화</span>
+                </h1>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed break-keep">
+                    열심히 외웠는데 다음 주면 절반 이상 잊어버리는 이유는 기억력이 나빠서가 아닙니다.<br class="hidden sm:inline">
+                    뇌의 자연스러운 망각 시점을 역이용하는 베리타스 SRS 알고리즘이 잊혀질 때마다 자동으로 복습을 호출해 <strong>평생 잊히지 않는 장기기억(LTM)</strong>으로 전환합니다.
+                </p>
+            </div>
+        </div>
+
+        <!-- 섹션 1: 에빙하우스 망각곡선과 베리타스 3단계 복습 주기 -->
+        <section class="mb-16">
+            <div class="mb-8 pb-4 border-b border-slate-200">
+                <span class="text-xs font-bold text-purple-900 tracking-wider uppercase">PART 1. SCIENTIFIC REPETITION</span>
+                <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">인간의 망각 타이밍을 완벽 차단하는 1·7·30 주기</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- 1일차 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="w-10 h-10 rounded-xl bg-purple-100 text-purple-800 font-black flex items-center justify-center text-sm">1일</span>
+                        <span class="text-xs font-bold text-purple-600 bg-purple-50 px-2 py-0.5 rounded">1차 황금 복습</span>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base mb-2">1일 차: 1차 망각 방어 (Retention 80%)</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                        인간은 학습 직후 24시간 이내에 배운 단어의 약 70%를 망각합니다. 1일 차 복습 큐(Queue)에 등록된 단어를 5분 퀵런으로 즉시 복기하여 기억을 즉시 원상 복구합니다.
+                    </p>
+                    <div class="mt-auto pt-3 border-t border-slate-100 text-xs text-purple-900 font-semibold">
+                        ⏱ 권장 소요 시간: 3~5분
+                    </div>
+                </div>
+
+                <!-- 7일차 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="w-10 h-10 rounded-xl bg-blue-100 text-blue-800 font-black flex items-center justify-center text-sm">7일</span>
+                        <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded">2차 중기 강화</span>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base mb-2">7일 차: 2차 시냅스 결합 (Retention 90%)</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                        일주일 뒤, 뇌 신경망 시냅스가 단어를 희미하게 지워가려 할 때 두 번째로 자극을 가합니다. 이 단계에서 단어는 단기 작업 기억에서 중기 안정 기억으로 이동합니다.
+                    </p>
+                    <div class="mt-auto pt-3 border-t border-slate-100 text-xs text-blue-900 font-semibold">
+                        ⏱ 권장 소요 시간: 5~7분
+                    </div>
+                </div>
+
+                <!-- 30일차 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 font-black flex items-center justify-center text-sm">30일</span>
+                        <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">3차 장기 고착</span>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base mb-2">30일 차: 영구 기억 전환 (Retention 98%)</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                        한 달 주기의 마지막 테스트를 통과한 단어는 대뇌 피질의 장기기억 저장소로 안전하게 이전되어, 시험장에서 망설임 없이 0.3초 만에 반사적으로 떠오릅니다.
+                    </p>
+                    <div class="mt-auto pt-3 border-t border-slate-100 text-xs text-emerald-900 font-semibold">
+                        ⏱ 권장 소요 시간: 5분
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 2: 오답노트 자동 탈출 알고리즘 -->
+        <section class="mb-16">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+                    <span class="w-8 h-8 rounded-lg bg-rose-100 text-rose-800 font-bold flex items-center justify-center text-sm">
+                        <i data-lucide="check-check" class="w-4 h-4"></i>
+                    </span>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">3회 연속 정답 시 '오답노트 자동 탈출'</h3>
+                        <p class="text-xs sm:text-sm text-slate-600">틀린 단어만 무한히 쌓이는 스트레스는 그만! 메타인지 스마트 정화 시스템</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div class="space-y-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        <p>
+                            퀴즈나 테스트 중 오답이 발생하면 즉시 <strong>'스마트 오답노트'</strong>에 자동으로 등록됩니다.
+                        </p>
+                        <p>
+                            하지만 영원히 오답노트에 머물지 않습니다. SRS 복습 루틴에서 <strong>연속 3회 정답</strong>을 맞히면, 인공지능이 "완전 습득"으로 판정하여 오답노트에서 자동으로 졸업시켜 줍니다.
+                        </p>
+                        <div class="bg-rose-50 p-3 rounded-xl border border-rose-100 text-rose-950 text-xs">
+                            💡 <strong>스트레스 제로:</strong> 아는 단어는 빼주고, 여전히 헷갈리는 진짜 약점 단어만 남겨 학습 피로도를 70% 이상 절감합니다.
+                        </div>
+                    </div>
+                    <div class="bg-slate-900 text-white rounded-xl p-5 font-mono text-xs space-y-2 border border-slate-800">
+                        <div class="text-slate-400">// SRS 탈출 알고리즘 상태 예시</div>
+                        <div class="flex items-center justify-between text-slate-300">
+                            <span>단어: ambiguous</span>
+                            <span class="text-amber-400 font-bold">오답 1회 등록</span>
+                        </div>
+                        <div class="flex items-center justify-between text-slate-300">
+                            <span>Day 1 퀴즈: 정답 (+1)</span>
+                            <span class="text-blue-300">1/3 완료</span>
+                        </div>
+                        <div class="flex items-center justify-between text-slate-300">
+                            <span>Day 7 퀴즈: 정답 (+1)</span>
+                            <span class="text-blue-300">2/3 완료</span>
+                        </div>
+                        <div class="flex items-center justify-between text-emerald-400 font-bold border-t border-slate-800 pt-2">
+                            <span>Day 30 퀴즈: 정답 (+1)</span>
+                            <span>✓ 졸업 (오답노트 제거)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 3: 365일 잔디 심기 히트맵과 학습 연속성 -->
+        <section class="mb-16">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-sm">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                    </span>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">365일 잔디 심기 (GitHub-Style Heatmap)</h3>
+                        <p class="text-xs sm:text-sm text-slate-600">하루 5분, 매일 채워지는 초록색 잔디로 완성하는 자기주도 학습 습관</p>
+                    </div>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+                    오늘 복습한 단어 수와 퀴즈 풀이량에 따라 잔디의 색상이 옅은 연두색에서 짙은 에메랄드색으로 진해집니다. 끊기지 않는 스트릭(Streak)을 쌓으며 학습 성취감을 눈으로 직접 확인하세요.
+                </p>
+
+                <!-- 잔디 시각화 프리뷰 -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 overflow-x-auto">
+                    <div class="flex gap-1.5 min-w-[320px] justify-between">
+                        <div class="flex flex-col gap-1.5"><div class="w-3.5 h-3.5 rounded-xs bg-emerald-200"></div><div class="w-3.5 h-3.5 rounded-xs bg-emerald-400"></div><div class="w-3.5 h-3.5 rounded-xs bg-emerald-600"></div></div>
+                        <div class="flex flex-col gap-1.5"><div class="w-3.5 h-3.5 rounded-xs bg-emerald-400"></div><div class="w-3.5 h-3.5 rounded-xs bg-emerald-600"></div><div class="w-3.5 h-3.5 rounded-xs bg-emerald-700"></div></div>
+                        <div class="flex flex-col gap-1.5"><div class="w-3.5 h-3.5 rounded-xs bg-emerald-500"></div><div class="w-3.5 h-3.5 rounded-xs bg-emerald-600"></div><div class="w-3.5 h-3.5 rounded-xs bg-emerald-700"></div></div>
+                        <div class="flex flex-col gap-1.5"><div class="w-3.5 h-3.5 rounded-xs bg-emerald-300"></div><div class="w-3.5 h-3.5 rounded-xs bg-emerald-500"></div><div class="w-3.5 h-3.5 rounded-xs bg-emerald-600"></div></div>
+                        <div class="flex flex-col gap-1.5"><div class="w-3.5 h-3.5 rounded-xs bg-emerald-600"></div><div class="w-3.5 h-3.5 rounded-xs bg-emerald-700"></div><div class="w-3.5 h-3.5 rounded-xs bg-emerald-600"></div></div>
+                        <div class="flex flex-col gap-1.5"><div class="w-3.5 h-3.5 rounded-xs bg-emerald-500"></div><div class="w-3.5 h-3.5 rounded-xs bg-emerald-600"></div><div class="w-3.5 h-3.5 rounded-xs bg-emerald-700"></div></div>
+                        <div class="flex flex-col gap-1.5"><div class="w-3.5 h-3.5 rounded-xs bg-emerald-700"></div><div class="w-3.5 h-3.5 rounded-xs bg-emerald-600"></div><div class="w-3.5 h-3.5 rounded-xs bg-emerald-700"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 하단 네비게이션 액션 바 -->
+        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+            <a href="native.html" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                <span>이전: 3. 원어민 Lab</span>
+            </a>
+            <div class="flex items-center gap-3">
+                <a href="../intro.html#guide-center" class="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs sm:text-sm transition-all">
+                    전체 목록 보기
+                </a>
+                <a href="quiz.html" class="px-5 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-950 text-amber-300 font-bold text-xs sm:text-sm shadow-md transition-all inline-flex items-center gap-2">
+                    <span>다음: 5. 플래시 &amp; 퀴즈 가이드</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-amber-400"></i>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-center text-xs">
+        <div class="max-w-6xl mx-auto px-4">
+            <p class="font-serif font-bold text-slate-200 text-sm mb-2">VERITAS ENGLISH ACADEMY</p>
+            <p class="text-slate-500 mb-4">뇌과학 기반 4단계 어휘 습득 &amp; 중등 내신 70선 독해 시스템</p>
+            <p class="text-slate-600">&copy; 2026 Veritas English. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

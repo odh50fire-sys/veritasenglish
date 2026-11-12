@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>어휘 교재 라인업 & 커리큘럼 가이드 | 베리타스 잉글리시</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        academy: {
+                            navy: '#0F172A',
+                            oxford: '#1E3A8A',
+                            paper: '#FAF9F6',
+                            crimson: '#991B1B',
+                            laurel: '#065F46',
+                            gold: '#B45309',
+                            amber: '#F59E0B'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Merriweather', 'Georgia', 'serif'],
+                        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600&display=swap');
+
+        * {
+            word-break: keep-all;
+            overflow-wrap: break-word;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, sans-serif;
+            background-color: #FAF9F6;
+            color: #1E293B;
+            word-break: keep-all;
+        }
+
+        .academic-serif {
+            font-family: 'Playfair Display', 'Merriweather', Georgia, serif;
+        }
+    </style>
+</head>
+<body class="selection:bg-amber-100 selection:text-blue-950 break-keep">
+
+    <!-- 상단 Sticky 헤더 -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <a href="../intro.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center text-amber-400 shadow-md border border-slate-800 group-hover:scale-105 transition-transform">
+                        <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <div class="academic-serif font-black text-xl text-slate-900 tracking-tight leading-none">
+                            VERITAS <span class="text-blue-900">ENGLISH</span>
+                        </div>
+                        <div class="text-[10px] font-mono tracking-widest text-slate-500 uppercase mt-0.5 font-bold">
+                            Learning Guide Center
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 7대 가이드 스위처 칩스 (데스크톱) -->
+                <nav class="hidden xl:flex items-center space-x-1 font-medium text-xs text-slate-600">
+                    <a href="starter.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">0. 기본 사용법</a>
+                    <a href="curriculum.html" class="px-2.5 py-1.5 rounded-lg bg-blue-900 text-amber-300 font-bold shadow-2xs">1. 어휘 교재</a>
+                    <a href="reading.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">2. 중등 내신</a>
+                    <a href="native.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">3. 원어민 Lab</a>
+                    <a href="srs.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">4. 망각곡선 SRS</a>
+                    <a href="quiz.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">5. 플래시 & 퀴즈</a>
+                    <a href="planner.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">6. 스마트 플래너</a>
+                </nav>
+
+                <div class="flex items-center gap-2">
+                    <a href="../intro.html#guide-center" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition-all">
+                        <i data-lucide="layout-grid" class="w-4 h-4"></i>
+                        <span>가이드 목록</span>
+                    </a>
+                    <a href="../index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 hover:bg-blue-950 text-amber-300 font-semibold text-xs sm:text-sm shadow-md transition-all">
+                        <span>학습실 바로가기</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-amber-400"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 모바일 가이드 네비게이션 가로 스크롤 바 -->
+        <div class="xl:hidden flex items-center gap-2 px-4 py-2 bg-slate-50 border-t border-slate-200 overflow-x-auto no-scrollbar text-xs">
+            <a href="starter.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">0. 기본 사용법</a>
+            <a href="curriculum.html" class="px-3 py-1.5 rounded-full bg-blue-900 text-amber-300 font-bold whitespace-nowrap">1. 어휘 교재</a>
+            <a href="reading.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">2. 중등 내신</a>
+            <a href="native.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">3. 원어민 Lab</a>
+            <a href="srs.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">4. 망각곡선 SRS</a>
+            <a href="quiz.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">5. 플래시 & 퀴즈</a>
+            <a href="planner.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">6. 스마트 플래너</a>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+        
+        <!-- 브레드크럼 -->
+        <nav class="flex items-center gap-2 text-xs font-medium text-slate-500 mb-6">
+            <a href="../intro.html" class="hover:text-blue-900">홈</a>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-400"></i>
+            <a href="../intro.html#guide-center" class="hover:text-blue-900">가이드 센터</a>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-400"></i>
+            <span class="text-blue-950 font-bold">1. 어휘 교재 라인업 & 학습 가이드</span>
+        </nav>
+
+        <!-- 히어로 배너 -->
+        <div class="relative bg-gradient-to-br from-slate-900 via-blue-950 to-indigo-950 text-white rounded-3xl p-8 sm:p-12 mb-12 shadow-xl border border-slate-800 overflow-hidden">
+            <div class="absolute -right-12 -bottom-12 w-80 h-80 bg-amber-400/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="relative z-10 max-w-3xl">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30 mb-4">
+                    <i data-lucide="book-marked" class="w-3.5 h-3.5"></i>
+                    ALL-IN-ONE VOCABULARY CURRICULUM
+                </span>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight mb-4">
+                    서점 유명 4대 교재 &amp;<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-200 to-yellow-400">베리타스 오리지널 10개 전 시리즈</span> 완벽 수록
+                </h1>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed break-keep">
+                    대한민국 1위 능률보카, 리딩튜터 챌린저, 영국 옥스퍼드 3000/5000, 내셔널지오그래픽 Pathways까지.<br class="hidden sm:inline">
+                    시판 유명 베스트셀러뿐만 아니라 베리타스만의 특화된 10대 단어장 라인업으로 내신부터 수능, 영재 아카데믹까지 단 한 곳에서 완성합니다.
+                </p>
+            </div>
+        </div>
+
+        <!-- 섹션 1: 서점에서 검증된 유명 4대 교재 라인업 (순서: 능률보카 -> 리딩튜터 -> 옥스퍼드 -> 패쓰웨이스) -->
+        <section class="mb-16">
+            <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-200">
+                <div>
+                    <span class="text-xs font-bold text-blue-900 tracking-wider uppercase">PART 1. BESTSELLER CURRICULUM</span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">서점에서 검증된 유명 4대 교재 실물 라인업</h2>
+                </div>
+                <span class="hidden sm:inline-flex items-center gap-1 text-xs font-medium text-slate-500 bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-2xs">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i> 실물 교재 100% 매핑
+                </span>
+            </div>
+
+            <!-- 교재 1: 능률 VOCA 시리즈 -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm mb-8">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-100">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-lg bg-red-100 text-red-800 font-bold flex items-center justify-center text-sm">01</span>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">NE능률 VOCA 시리즈 (중학 고난도 ~ 수능)</h3>
+                            <p class="text-xs sm:text-sm text-slate-600">대한민국 어휘 1위 베스트셀러, 어원과 빈출 문맥으로 수능 1등급을 견인하는 대표 어휘서</p>
+                        </div>
+                    </div>
+                    <span class="inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-md bg-amber-50 text-amber-800 font-medium border border-amber-200">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-600"></i> 고등 3종 추후 단어장 순차 탑재 예정
+                    </span>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+                    <!-- 권 1: 중등 고난도 -->
+                    <div class="group bg-slate-50 rounded-xl p-3 sm:p-4 border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all flex flex-col">
+                        <div class="aspect-3/4 rounded-lg overflow-hidden bg-white mb-3 shadow-xs border border-slate-100">
+                            <img src="../img/books/ne_voca_middle_adv.jpg" alt="능률 중학 고난도" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-sm mb-1 leading-snug">능률 중학 고난도</h4>
+                        <p class="text-xs text-slate-500 mb-2">40일 완성 · 1,200단어</p>
+                        <span class="mt-auto inline-block text-[11px] font-bold text-blue-900 bg-blue-50 px-2 py-0.5 rounded text-center">현재 수록 완료 ✓</span>
+                    </div>
+
+                    <!-- 권 2: 고등 기본 -->
+                    <div class="group bg-slate-50 rounded-xl p-3 sm:p-4 border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all flex flex-col">
+                        <div class="aspect-3/4 rounded-lg overflow-hidden bg-white mb-3 shadow-xs border border-slate-100">
+                            <img src="../img/books/ne_voca_high_basic.jpg" alt="능률 고등 기본" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-sm mb-1 leading-snug">능률 고등 기본</h4>
+                        <p class="text-xs text-slate-500 mb-2">40일 완성 · 1,200단어</p>
+                        <span class="mt-auto inline-block text-[11px] font-semibold text-amber-800 bg-amber-50 px-2 py-0.5 rounded text-center">추후 업데이트 예정</span>
+                    </div>
+
+                    <!-- 권 3: 수능 필수 -->
+                    <div class="group bg-slate-50 rounded-xl p-3 sm:p-4 border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all flex flex-col">
+                        <div class="aspect-3/4 rounded-lg overflow-hidden bg-white mb-3 shadow-xs border border-slate-100">
+                            <img src="../img/books/ne_voca_sat_essential.jpg" alt="능률 수능 필수" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-sm mb-1 leading-snug">능률 수능 필수</h4>
+                        <p class="text-xs text-slate-500 mb-2">60일 완성 · 2,000단어</p>
+                        <span class="mt-auto inline-block text-[11px] font-semibold text-amber-800 bg-amber-50 px-2 py-0.5 rounded text-center">추후 업데이트 예정</span>
+                    </div>
+
+                    <!-- 권 4: 수능 고난도 -->
+                    <div class="group bg-slate-50 rounded-xl p-3 sm:p-4 border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all flex flex-col">
+                        <div class="aspect-3/4 rounded-lg overflow-hidden bg-white mb-3 shadow-xs border border-slate-100">
+                            <img src="../img/books/ne_voca_sat_adv.jpg" alt="능률 수능 고난도" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-sm mb-1 leading-snug">능률 수능 고난도</h4>
+                        <p class="text-xs text-slate-500 mb-2">50일 완성 · 2,000단어</p>
+                        <span class="mt-auto inline-block text-[11px] font-semibold text-amber-800 bg-amber-50 px-2 py-0.5 rounded text-center">추후 업데이트 예정</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 교재 2: 리딩튜터 챌린저 시리즈 -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm mb-8">
+                <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+                    <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-sm">02</span>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">리딩튜터 챌린저 시리즈 (Challenger 1, 2, 3)</h3>
+                        <p class="text-xs sm:text-sm text-slate-600">누적 판매 1,900만 부의 신화! 수능 프리뷰와 고난도 독해 연계 핵심 어휘 완벽 수록</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div class="group bg-slate-50 rounded-xl p-4 border border-slate-200 hover:border-emerald-400 hover:shadow-md transition-all flex flex-col">
+                        <div class="aspect-3/4 rounded-lg overflow-hidden bg-white mb-3 shadow-xs border border-slate-100">
+                            <img src="../img/books/reading_tutor_1.jpg" alt="리딩튜터 챌린저 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-base mb-1">리딩튜터 챌린저 1</h4>
+                        <p class="text-xs text-slate-600 mb-2">Lexile 900L ~ 1100L · 수능 입문 및 고1 모의 수준</p>
+                        <span class="mt-auto inline-block text-xs font-bold text-emerald-800 bg-emerald-50 px-2 py-1 rounded text-center">현재 수록 완료 ✓</span>
+                    </div>
+
+                    <div class="group bg-slate-50 rounded-xl p-4 border border-slate-200 hover:border-emerald-400 hover:shadow-md transition-all flex flex-col">
+                        <div class="aspect-3/4 rounded-lg overflow-hidden bg-white mb-3 shadow-xs border border-slate-100">
+                            <img src="../img/books/reading_tutor_2.jpg" alt="리딩튜터 챌린저 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-base mb-1">리딩튜터 챌린저 2</h4>
+                        <p class="text-xs text-slate-600 mb-2">Lexile 1000L ~ 1200L · 고2 모의 및 심화 독해</p>
+                        <span class="mt-auto inline-block text-xs font-bold text-emerald-800 bg-emerald-50 px-2 py-1 rounded text-center">현재 수록 완료 ✓</span>
+                    </div>
+
+                    <div class="group bg-slate-50 rounded-xl p-4 border border-slate-200 hover:border-emerald-400 hover:shadow-md transition-all flex flex-col">
+                        <div class="aspect-3/4 rounded-lg overflow-hidden bg-white mb-3 shadow-xs border border-slate-100">
+                            <img src="../img/books/reading_tutor_3.jpg" alt="리딩튜터 챌린저 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-base mb-1">리딩튜터 챌린저 3</h4>
+                        <p class="text-xs text-slate-600 mb-2">Lexile 1100L ~ 1300L · 수능 1등급 킬러 독해 어휘</p>
+                        <span class="mt-auto inline-block text-xs font-bold text-emerald-800 bg-emerald-50 px-2 py-1 rounded text-center">현재 수록 완료 ✓</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 교재 3: 옥스퍼드 3000 / 5000 -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm mb-8">
+                <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+                    <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-900 font-bold flex items-center justify-center text-sm">03</span>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Oxford 3000™ / 5000™ 공식 선정 핵심 어휘</h3>
+                        <p class="text-xs sm:text-sm text-slate-600">영국 옥스퍼드 대학 출판부 공식 지정, 전 세계 영어 화자가 가장 먼저 마스터해야 하는 필수 골드 스탠다드</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                    <div class="group bg-slate-50 rounded-xl p-4 border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all">
+                        <div class="aspect-3/4 rounded-lg overflow-hidden bg-white mb-3 shadow-xs border border-slate-100">
+                            <img src="../img/books/oxford_3000.jpg" alt="Oxford 3000" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-base mb-1">Oxford 3000 & 5000</h4>
+                        <p class="text-xs text-slate-600">CEFR A1 ~ C1 표준 공인 등급 매핑</p>
+                    </div>
+                    <div class="md:col-span-2 space-y-3 text-sm text-slate-600">
+                        <div class="bg-blue-50/70 p-4 rounded-xl border border-blue-100">
+                            <h5 class="font-bold text-blue-950 mb-1 flex items-center gap-1.5">
+                                <i data-lucide="check" class="w-4 h-4 text-blue-700"></i> CEFR 국제 표준 레벨 체계 완전 연동
+                            </h5>
+                            <p class="text-xs text-blue-900 leading-relaxed">
+                                A1(기초)부터 B2(독립 구사), C1(고급 학술)까지 옥스퍼드 코퍼스 20억 단어 빅데이터 기반으로 가장 빈도와 중요도가 높은 3,000~5,000단어를 완벽 추출하여 학습합니다.
+                            </p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <h5 class="font-bold text-slate-900 mb-1">💡 추천 학습자</h5>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                토플, IELTS, 외고·국제고 진학, 해외 유학 및 수능 어휘의 든든한 밑거름을 쌓고자 하는 초중고 모든 학생.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 교재 4: 내셔널 지오그래픽 Pathways -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+                    <span class="w-8 h-8 rounded-lg bg-amber-100 text-amber-900 font-bold flex items-center justify-center text-sm">04</span>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">National Geographic Learning Pathways 3rd Edition (1~4)</h3>
+                        <p class="text-xs sm:text-sm text-slate-600">내셔널 지오그래픽 공식 학술 독해·비판적 사고 교재, 영재원 및 특목고 최우선 추천 코스</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+                    <div class="group bg-slate-50 rounded-xl p-3 sm:p-4 border border-slate-200 hover:border-amber-400 hover:shadow-md transition-all flex flex-col">
+                        <div class="aspect-3/4 rounded-lg overflow-hidden bg-white mb-3 shadow-xs border border-slate-100">
+                            <img src="../img/books/pathways_1.jpg" alt="Pathways Level 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-sm mb-1">Pathways Level 1</h4>
+                        <p class="text-xs text-slate-500 mb-2">Reading & Writing</p>
+                        <span class="mt-auto inline-block text-[11px] font-bold text-amber-900 bg-amber-50 px-2 py-0.5 rounded text-center">현재 수록 완료 ✓</span>
+                    </div>
+
+                    <div class="group bg-slate-50 rounded-xl p-3 sm:p-4 border border-slate-200 hover:border-amber-400 hover:shadow-md transition-all flex flex-col">
+                        <div class="aspect-3/4 rounded-lg overflow-hidden bg-white mb-3 shadow-xs border border-slate-100">
+                            <img src="../img/books/pathways_2.jpg" alt="Pathways Level 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-sm mb-1">Pathways Level 2</h4>
+                        <p class="text-xs text-slate-500 mb-2">Reading & Writing</p>
+                        <span class="mt-auto inline-block text-[11px] font-bold text-amber-900 bg-amber-50 px-2 py-0.5 rounded text-center">현재 수록 완료 ✓</span>
+                    </div>
+
+                    <div class="group bg-slate-50 rounded-xl p-3 sm:p-4 border border-slate-200 hover:border-amber-400 hover:shadow-md transition-all flex flex-col">
+                        <div class="aspect-3/4 rounded-lg overflow-hidden bg-white mb-3 shadow-xs border border-slate-100">
+                            <img src="../img/books/pathways_3.jpg" alt="Pathways Level 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-sm mb-1">Pathways Level 3</h4>
+                        <p class="text-xs text-slate-500 mb-2">Reading & Writing</p>
+                        <span class="mt-auto inline-block text-[11px] font-bold text-amber-900 bg-amber-50 px-2 py-0.5 rounded text-center">현재 수록 완료 ✓</span>
+                    </div>
+
+                    <div class="group bg-slate-50 rounded-xl p-3 sm:p-4 border border-slate-200 hover:border-amber-400 hover:shadow-md transition-all flex flex-col">
+                        <div class="aspect-3/4 rounded-lg overflow-hidden bg-white mb-3 shadow-xs border border-slate-100">
+                            <img src="../img/books/pathways_4.jpg" alt="Pathways Level 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-sm mb-1">Pathways Level 4</h4>
+                        <p class="text-xs text-slate-500 mb-2">Reading & Writing</p>
+                        <span class="mt-auto inline-block text-[11px] font-bold text-amber-900 bg-amber-50 px-2 py-0.5 rounded text-center">현재 수록 완료 ✓</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 2: 베리타스 오리지널 10개 전 시리즈 단어장 완벽 해부 -->
+        <section class="mb-16">
+            <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-200">
+                <div>
+                    <span class="text-xs font-bold text-amber-600 tracking-wider uppercase">PART 2. VERITAS ORIGINAL LINEUP</span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">베리타스 오리지널 10개 전 시리즈 완벽 라인업</h2>
+                </div>
+                <span class="hidden sm:inline-flex items-center gap-1 text-xs font-bold text-amber-900 bg-amber-100 px-3 py-1.5 rounded-lg border border-amber-300">
+                    <i data-lucide="crown" class="w-4 h-4 text-amber-600"></i> 자체 제작 특화 코스
+                </span>
+            </div>
+
+            <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                유명 시판 교재 외에도, 학생들의 실제 내신 시험 및 취약점, 최신 트렌드를 분석하여 자체 개발한 <strong>10대 오리지널 단어장</strong>이 모두 탑재되어 있습니다.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 1. 베리타스 마스터 6000 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:border-blue-400 transition-all">
+                    <div class="flex items-start justify-between gap-3 mb-3">
+                        <span class="w-7 h-7 rounded-lg bg-blue-900 text-amber-300 font-bold flex items-center justify-center text-xs">01</span>
+                        <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-blue-50 text-blue-800">Lv.1 ~ Lv.10</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-1">베리타스 마스터 6,000 보카</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                        초등 고학년 기초부터 영재·외고·토플 수준까지 10단계로 정밀 세분화된 종합 마스터 어휘 코스입니다.
+                    </p>
+                    <div class="text-[11px] text-slate-500 font-medium bg-slate-50 p-2.5 rounded-lg">
+                        🎯 <strong>학습 가이드:</strong> 레벨 진단 후 자기 수준에 맞는 단계부터 매일 30단어씩 순차 정복.
+                    </div>
+                </div>
+
+                <!-- 2. 중등 6개 학기 내신 어휘 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:border-blue-400 transition-all">
+                    <div class="flex items-start justify-between gap-3 mb-3">
+                        <span class="w-7 h-7 rounded-lg bg-emerald-900 text-emerald-300 font-bold flex items-center justify-center text-xs">02</span>
+                        <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-800">중1-1 ~ 중3-2 (각 100단어)</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-1">중등 6개 학기 내신 기출 어휘</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                        전국 주요 중학교 교과서 5종 및 실제 중간/기말 지필평가 출제 빈출 어휘를 학기별로 압축 탑재했습니다.
+                    </p>
+                    <div class="text-[11px] text-slate-500 font-medium bg-slate-50 p-2.5 rounded-lg">
+                        🎯 <strong>학습 가이드:</strong> 시험 3주 전부터 해당 학기 단어장을 집중 복습하여 내신 100점 확보.
+                    </div>
+                </div>
+
+                <!-- 3. 프리미엄 신규 5대 시즌 단어장 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:border-blue-400 transition-all">
+                    <div class="flex items-start justify-between gap-3 mb-3">
+                        <span class="w-7 h-7 rounded-lg bg-purple-900 text-purple-300 font-bold flex items-center justify-center text-xs">03</span>
+                        <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-purple-50 text-purple-800">신규 5대 테마</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-1">프리미엄 5대 시즌 단어장</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                        미드 슬랭 500, TED 강연 600, 에세이 라이팅 600, 중학 첫걸음 1,000, 토익 RC 1,500 단어로 구성된 프리미엄 패키지.
+                    </p>
+                    <div class="text-[11px] text-slate-500 font-medium bg-slate-50 p-2.5 rounded-lg">
+                        🎯 <strong>학습 가이드:</strong> 방학 특강 및 스피킹·라이팅 포트폴리오 대비용으로 맞춤 활용.
+                    </div>
+                </div>
+
+                <!-- 4. 수능 킬러 & 트렌드 테마 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:border-blue-400 transition-all">
+                    <div class="flex items-start justify-between gap-3 mb-3">
+                        <span class="w-7 h-7 rounded-lg bg-rose-900 text-rose-300 font-bold flex items-center justify-center text-xs">04</span>
+                        <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-rose-50 text-rose-800">수능 1등급 킬러</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-1">수능 다의어 &amp; 혼동 어휘 / 테크 AI</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                        수능 33~34번 빈칸 추론을 가르는 핵심 다의어와 혼동 어휘, 최신 기술 및 생성형 AI 트렌드 단어를 정복합니다.
+                    </p>
+                    <div class="text-[11px] text-slate-500 font-medium bg-slate-50 p-2.5 rounded-lg">
+                        🎯 <strong>학습 가이드:</strong> 문맥별 다른 의미(1번 뜻 vs 2·3번 뜻)를 3D 플래시카드로 집중 훈련.
+                    </div>
+                </div>
+
+                <!-- 5. 미국 교과서 학술 어휘 Tier 2 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:border-blue-400 transition-all">
+                    <div class="flex items-start justify-between gap-3 mb-3">
+                        <span class="w-7 h-7 rounded-lg bg-amber-900 text-amber-300 font-bold flex items-center justify-center text-xs">05</span>
+                        <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-amber-50 text-amber-800">Grade 4~9 (600단어)</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-1">미국 교과서 학술 어휘 (Tier 2 Academic)</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                        사회, 과학, 역사 등 미국 현지 정규 교과서에 빈번히 등장하는 범교과 학술 어휘(analyze, interpret 등)를 체계화.
+                    </p>
+                    <div class="text-[11px] text-slate-500 font-medium bg-slate-50 p-2.5 rounded-lg">
+                        🎯 <strong>학습 가이드:</strong> 비문학 지문 독해력과 논술형 답안 작성 능력을 급상승시키는 필수 코스.
+                    </div>
+                </div>
+
+                <!-- 6. 필수 숙어 & 관용구·속담 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:border-blue-400 transition-all">
+                    <div class="flex items-start justify-between gap-3 mb-3">
+                        <span class="w-7 h-7 rounded-lg bg-indigo-900 text-indigo-300 font-bold flex items-center justify-center text-xs">06</span>
+                        <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-indigo-50 text-indigo-800">숙어·속담 150표현</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-1">중학·수능 필수 숙어 &amp; 찐 속담</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                        글자 그대로 해석하면 틀리는 영어 관용 표현과 영미 문화권 속담을 직관적인 예문과 함께 습득합니다.
+                    </p>
+                    <div class="text-[11px] text-slate-500 font-medium bg-slate-50 p-2.5 rounded-lg">
+                        🎯 <strong>학습 가이드:</strong> 내신 서술형 및 모의고사 밑줄 친 함축 의미 추론 문항 완벽 대비.
+                    </div>
+                </div>
+
+                <!-- 7. 실전 생존 여행 시추에이션 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:border-blue-400 transition-all">
+                    <div class="flex items-start justify-between gap-3 mb-3">
+                        <span class="w-7 h-7 rounded-lg bg-teal-900 text-teal-300 font-bold flex items-center justify-center text-xs">07</span>
+                        <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-teal-50 text-teal-800">5개 상황 150표현</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-1">실전 생존 여행 시추에이션</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                        공항 입국심사, 호텔 체크인, 레스토랑 주문, 길 찾기 등 해외 현지에서 즉시 입에서 터져 나오는 실전 회화 표현.
+                    </p>
+                    <div class="text-[11px] text-slate-500 font-medium bg-slate-50 p-2.5 rounded-lg">
+                        🎯 <strong>학습 가이드:</strong> 원어민 음성 TTS를 들으며 소리 내어 3번 이상 섀도잉 발음 훈련.
+                    </div>
+                </div>
+
+                <!-- 8. 감정·심경 묘사 마스터 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:border-blue-400 transition-all">
+                    <div class="flex items-start justify-between gap-3 mb-3">
+                        <span class="w-7 h-7 rounded-lg bg-pink-900 text-pink-300 font-bold flex items-center justify-center text-xs">08</span>
+                        <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-pink-50 text-pink-800">수능 19번 전용</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-1">원어민 감정·심경 묘사 마스터 (50단어)</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                        수능 영어 19번 심경·분위기 파악 문항에 출제되는 모든 감정 형용사(indifferent, apprehensive 등)를 총망라.
+                    </p>
+                    <div class="text-[11px] text-slate-500 font-medium bg-slate-50 p-2.5 rounded-lg">
+                        🎯 <strong>학습 가이드:</strong> 긍정(+)과 부정(-) 감정 축을 기준으로 뉘앙스를 대조하여 암기.
+                    </div>
+                </div>
+
+                <!-- 9. 영미 명작 문학 & 소설 클래식 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:border-blue-400 transition-all">
+                    <div class="flex items-start justify-between gap-3 mb-3">
+                        <span class="w-7 h-7 rounded-lg bg-slate-800 text-amber-300 font-bold flex items-center justify-center text-xs">09</span>
+                        <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-800">클래식 명작</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-1">영미 명작 문학 &amp; 소설 클래식 어휘</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                        위대한 개츠비, 1984, 오만과 편견 등 세계적 고전문학에서 발췌한 품격 높은 어휘와 수사적 표현 수록.
+                    </p>
+                    <div class="text-[11px] text-slate-500 font-medium bg-slate-50 p-2.5 rounded-lg">
+                        🎯 <strong>학습 가이드:</strong> 인문학적 배경지식과 고급 리딩의 깊이를 확장하는 심화 과정.
+                    </div>
+                </div>
+
+                <!-- 10. 나만의 AI 맞춤 생성 단어장 -->
+                <div class="bg-white rounded-2xl p-6 border border-amber-300 bg-amber-50/20 shadow-sm hover:border-amber-500 transition-all">
+                    <div class="flex items-start justify-between gap-3 mb-3">
+                        <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 font-bold flex items-center justify-center text-xs">10</span>
+                        <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-900 font-mono">AI AUTO GENERATION</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-1">나만의 AI 맞춤 생성 단어장</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                        내가 퀴즈에서 자주 틀린 오답과 북마크한 단어만을 인공지능이 분석하여 자동으로 조합해주는 개인화 단어장.
+                    </p>
+                    <div class="text-[11px] text-amber-900 font-medium bg-amber-100/60 p-2.5 rounded-lg border border-amber-200">
+                        🎯 <strong>학습 가이드:</strong> 주말 복습 시 오직 나만의 취약 단어장만을 로딩하여 100% 약점 보완.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 3: 4단계 수준별 추천 학습 로드맵 -->
+        <section class="mb-16">
+            <div class="mb-8 pb-4 border-b border-slate-200">
+                <span class="text-xs font-bold text-blue-900 tracking-wider uppercase">PART 3. LEARNING ROADMAP</span>
+                <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">학년·목표별 베리타스 4단계 추천 학습 로드맵</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <!-- STEP 1: 입문 (초5~중1) -->
+                <div class="bg-white rounded-2xl p-5 border border-slate-200 flex flex-col">
+                    <div class="text-xs font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md self-start mb-3">STEP 1. 입문 단계</div>
+                    <h3 class="font-bold text-slate-900 text-base mb-1">초5 ~ 중1 기초 다지기</h3>
+                    <p class="text-xs text-slate-500 mb-4">어휘 근육 생성 &amp; 기초 내신</p>
+                    <ul class="text-xs text-slate-700 space-y-2 mb-4">
+                        <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> 중학 첫걸음 1,000</li>
+                        <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> 중1 1·2학기 내신 어휘</li>
+                        <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Oxford 3000 (A1~A2)</li>
+                    </ul>
+                    <div class="mt-auto pt-3 border-t border-slate-100 text-[11px] text-slate-500">
+                        권장 학습량: <strong>매일 15~20단어</strong>
+                    </div>
+                </div>
+
+                <!-- STEP 2: 도약 (중2~중3) -->
+                <div class="bg-white rounded-2xl p-5 border border-slate-200 flex flex-col">
+                    <div class="text-xs font-bold text-blue-800 bg-blue-50 px-2.5 py-1 rounded-md self-start mb-3">STEP 2. 도약 단계</div>
+                    <h3 class="font-bold text-slate-900 text-base mb-1">중2 ~ 중3 고득점 도약</h3>
+                    <p class="text-xs text-slate-500 mb-4">중등 심화 &amp; 수능 선행</p>
+                    <ul class="text-xs text-slate-700 space-y-2 mb-4">
+                        <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> 능률 중학 고난도</li>
+                        <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> 리딩튜터 챌린저 1</li>
+                        <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> 중등 2·3학년 내신 어휘</li>
+                    </ul>
+                    <div class="mt-auto pt-3 border-t border-slate-100 text-[11px] text-slate-500">
+                        권장 학습량: <strong>매일 25~30단어</strong>
+                    </div>
+                </div>
+
+                <!-- STEP 3: 수능 실전 (고1~고3) -->
+                <div class="bg-white rounded-2xl p-5 border border-slate-200 flex flex-col">
+                    <div class="text-xs font-bold text-indigo-800 bg-indigo-50 px-2.5 py-1 rounded-md self-start mb-3">STEP 3. 수능 실전</div>
+                    <h3 class="font-bold text-slate-900 text-base mb-1">고1 ~ 고3 1등급 완성</h3>
+                    <p class="text-xs text-slate-500 mb-4">수능 빈출 &amp; 킬러 문맥</p>
+                    <ul class="text-xs text-slate-700 space-y-2 mb-4">
+                        <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-600"></i> 리딩튜터 챌린저 2 &amp; 3</li>
+                        <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-600"></i> 수능 1등급 킬러 다의어</li>
+                        <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-600"></i> 능률 고등 기본 &amp; 수능 필수</li>
+                    </ul>
+                    <div class="mt-auto pt-3 border-t border-slate-100 text-[11px] text-slate-500">
+                        권장 학습량: <strong>매일 30~40단어</strong>
+                    </div>
+                </div>
+
+                <!-- STEP 4: 최상위 아카데믹 -->
+                <div class="bg-white rounded-2xl p-5 border border-amber-300 bg-amber-50/20 flex flex-col">
+                    <div class="text-xs font-bold text-amber-900 bg-amber-100 px-2.5 py-1 rounded-md self-start mb-3">STEP 4. 최상위</div>
+                    <h3 class="font-bold text-slate-900 text-base mb-1">영재·특목 &amp; 아카데믹</h3>
+                    <p class="text-xs text-slate-500 mb-4">원서 독해 &amp; 학술 논문</p>
+                    <ul class="text-xs text-slate-700 space-y-2 mb-4">
+                        <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600"></i> Pathways 3rd (1~4)</li>
+                        <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600"></i> Oxford 5000 (B2~C1)</li>
+                        <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600"></i> 미국 교과서 학술 어휘 Tier 2</li>
+                    </ul>
+                    <div class="mt-auto pt-3 border-t border-amber-200 text-[11px] text-amber-900">
+                        권장 학습량: <strong>매일 30~50단어</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 하단 네비게이션 액션 바 -->
+        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+            <a href="starter.html" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                <span>이전: 0. 기본 사용 가이드</span>
+            </a>
+            <div class="flex items-center gap-3">
+                <a href="../intro.html#guide-center" class="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs sm:text-sm transition-all">
+                    전체 목록 보기
+                </a>
+                <a href="reading.html" class="px-5 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-950 text-amber-300 font-bold text-xs sm:text-sm shadow-md transition-all inline-flex items-center gap-2">
+                    <span>다음: 2. 중등 내신 독해 가이드</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-amber-400"></i>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-center text-xs">
+        <div class="max-w-6xl mx-auto px-4">
+            <p class="font-serif font-bold text-slate-200 text-sm mb-2">VERITAS ENGLISH ACADEMY</p>
+            <p class="text-slate-500 mb-4">뇌과학 기반 4단계 어휘 습득 &amp; 중등 내신 70선 독해 시스템</p>
+            <p class="text-slate-600">&copy; 2026 Veritas English. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

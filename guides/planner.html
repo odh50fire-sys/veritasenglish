@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스마트 학습 플래너 이용 가이드 | 베리타스 잉글리시</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        academy: {
+                            navy: '#0F172A',
+                            oxford: '#1E3A8A',
+                            paper: '#FAF9F6',
+                            crimson: '#991B1B',
+                            laurel: '#065F46',
+                            gold: '#B45309',
+                            amber: '#F59E0B'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Merriweather', 'Georgia', 'serif'],
+                        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600&display=swap');
+
+        * {
+            word-break: keep-all;
+            overflow-wrap: break-word;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, sans-serif;
+            background-color: #FAF9F6;
+            color: #1E293B;
+            word-break: keep-all;
+        }
+
+        .academic-serif {
+            font-family: 'Playfair Display', 'Merriweather', Georgia, serif;
+        }
+    </style>
+</head>
+<body class="selection:bg-amber-100 selection:text-blue-950 break-keep">
+
+    <!-- 상단 Sticky 헤더 -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <a href="../intro.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center text-amber-400 shadow-md border border-slate-800 group-hover:scale-105 transition-transform">
+                        <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <div class="academic-serif font-black text-xl text-slate-900 tracking-tight leading-none">
+                            VERITAS <span class="text-blue-900">ENGLISH</span>
+                        </div>
+                        <div class="text-[10px] font-mono tracking-widest text-slate-500 uppercase mt-0.5 font-bold">
+                            Learning Guide Center
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 7대 가이드 스위처 칩스 (데스크톱) -->
+                <nav class="hidden xl:flex items-center space-x-1 font-medium text-xs text-slate-600">
+                    <a href="starter.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">0. 기본 사용법</a>
+                    <a href="curriculum.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">1. 어휘 교재</a>
+                    <a href="reading.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">2. 중등 내신</a>
+                    <a href="native.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">3. 원어민 Lab</a>
+                    <a href="srs.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">4. 망각곡선 SRS</a>
+                    <a href="quiz.html" class="px-2.5 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">5. 플래시 & 퀴즈</a>
+                    <a href="planner.html" class="px-2.5 py-1.5 rounded-lg bg-blue-900 text-amber-300 font-bold shadow-2xs">6. 스마트 플래너</a>
+                </nav>
+
+                <div class="flex items-center gap-2">
+                    <a href="../intro.html#guide-center" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition-all">
+                        <i data-lucide="layout-grid" class="w-4 h-4"></i>
+                        <span>가이드 목록</span>
+                    </a>
+                    <a href="../index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 hover:bg-blue-950 text-amber-300 font-semibold text-xs sm:text-sm shadow-md transition-all">
+                        <span>학습실 바로가기</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-amber-400"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 모바일 가이드 네비게이션 가로 스크롤 바 -->
+        <div class="xl:hidden flex items-center gap-2 px-4 py-2 bg-slate-50 border-t border-slate-200 overflow-x-auto no-scrollbar text-xs">
+            <a href="starter.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">0. 기본 사용법</a>
+            <a href="curriculum.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">1. 어휘 교재</a>
+            <a href="reading.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">2. 중등 내신</a>
+            <a href="native.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">3. 원어민 Lab</a>
+            <a href="srs.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">4. 망각곡선 SRS</a>
+            <a href="quiz.html" class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 whitespace-nowrap">5. 플래시 & 퀴즈</a>
+            <a href="planner.html" class="px-3 py-1.5 rounded-full bg-blue-900 text-amber-300 font-bold whitespace-nowrap">6. 스마트 플래너</a>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+        
+        <!-- 브레드크럼 -->
+        <nav class="flex items-center gap-2 text-xs font-medium text-slate-500 mb-6">
+            <a href="../intro.html" class="hover:text-blue-900">홈</a>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-400"></i>
+            <a href="../intro.html#guide-center" class="hover:text-blue-900">가이드 센터</a>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-400"></i>
+            <span class="text-blue-950 font-bold">6. 스마트 학습 플래너 100% 이용 가이드</span>
+        </nav>
+
+        <!-- 히어로 배너 -->
+        <div class="relative bg-gradient-to-br from-slate-900 via-blue-950 to-teal-950 text-white rounded-3xl p-8 sm:p-12 mb-12 shadow-xl border border-slate-800 overflow-hidden">
+            <div class="absolute -right-12 -bottom-12 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="relative z-10 max-w-3xl">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-teal-400/20 text-teal-300 border border-teal-400/30 mb-4">
+                    <i data-lucide="calendar-check-2" class="w-3.5 h-3.5"></i>
+                    SMART STUDY PLANNER &amp; ROUTINE
+                </span>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight mb-4">
+                    스마트 학습 플래너 100% 활용법<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 via-amber-200 to-yellow-300">작심삼일 탈출! 완주형 자기주도 학습</span>
+                </h1>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed break-keep">
+                    계획만 세우고 흐지부지되던 지난날의 공부 습관은 이제 안녕!<br class="hidden sm:inline">
+                    스마트 캘린더 진도 추적, 일일 목표량 커스텀, 주말 휴식일(Rest Day) 지정 기능으로 부담 없이 매일 완주하는 플래너 시스템을 경험하세요.
+                </p>
+            </div>
+        </div>
+
+        <!-- 섹션 1: 플래너 4대 핵심 기능 -->
+        <section class="mb-16">
+            <div class="mb-8 pb-4 border-b border-slate-200">
+                <span class="text-xs font-bold text-teal-800 tracking-wider uppercase">PART 1. 4 ESSENTIAL FEATURES</span>
+                <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">스마트 학습 플래너의 4대 핵심 기능</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 기능 1: 스마트 캘린더 진도 기록 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-8 h-8 rounded-lg bg-teal-100 text-teal-900 font-bold flex items-center justify-center text-xs">01</span>
+                        <h3 class="font-bold text-slate-900 text-base">스마트 캘린더 진도 시각화</h3>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                        월간 달력 날짜 칸마다 오늘 학습한 <strong>'N단어'</strong>, <strong>'독해 N편'</strong> 뱃지가 자동으로 생성되며, 목표치를 달성하면 <strong>'✓ 완수'</strong> 녹색 칩이 환하게 켜집니다.
+                    </p>
+                    <div class="mt-auto bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-2 text-xs">
+                        <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-900 font-bold">25단어</span>
+                        <span class="px-2 py-0.5 rounded bg-amber-100 text-amber-900 font-bold">독해 2편</span>
+                        <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 font-bold">✓ 목표 달성</span>
+                    </div>
+                </div>
+
+                <!-- 기능 2: 일일 목표량 커스텀 설정 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-900 font-bold flex items-center justify-center text-xs">02</span>
+                        <h3 class="font-bold text-slate-900 text-base">일일 목표량 개인 맞춤 설정</h3>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                        초보자는 하루 15단어로 가볍게 시작하고, 시험 기간에는 30~50단어로 스스로 목표를 조정할 수 있습니다. 무리한 계획으로 인한 중도 포기를 원천 방지합니다.
+                    </p>
+                    <div class="mt-auto bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs text-slate-700">
+                        🎯 <strong>추천 설정:</strong> 기본 20단어 + 독해 1지문 (소요시간 15분)
+                    </div>
+                </div>
+
+                <!-- 기능 3: 휴식일 (Rest Day) 지정 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-8 h-8 rounded-lg bg-amber-100 text-amber-900 font-bold flex items-center justify-center text-xs">03</span>
+                        <h3 class="font-bold text-slate-900 text-base">요일별 휴식일 (Rest Day) 설정</h3>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                        일요일이나 특정 요일을 '휴식일'로 지정해두면, 그날 공부를 쉬어도 연속 스트릭(Streak)이 끊기지 않는 베리타스만의 세심한 롱런 배려 시스템입니다.
+                    </p>
+                    <div class="mt-auto bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs text-slate-700">
+                        ☕ <strong>스트레스 제로:</strong> 죄책감 없는 건강한 휴식 보장
+                    </div>
+                </div>
+
+                <!-- 기능 4: 누적 통계 & 메타인지 대시보드 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-900 font-bold flex items-center justify-center text-xs">04</span>
+                        <h3 class="font-bold text-slate-900 text-base">누적 통계 &amp; 성취율 대시보드</h3>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                        총 누적 학습 단어 수, 총 퀴즈 정답률, 독해 지문 완료 편수, 월간 출석률을 정량적 수치와 그래프로 한눈에 확인할 수 있습니다.
+                    </p>
+                    <div class="mt-auto bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs text-slate-700">
+                        📊 <strong>동기 부여:</strong> 눈에 보이는 정량적 성장 데이터
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 2: 4주 완주 챌린지 루틴 -->
+        <section class="mb-16">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <i data-lucide="award" class="w-5 h-5 text-amber-500"></i>
+                    <span>베리타스 4주 어휘 완주 공식 (월 600단어 마스터)</span>
+                </h3>
+
+                <div class="space-y-4 text-xs sm:text-sm text-slate-600">
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 flex items-start gap-3">
+                        <span class="font-bold text-blue-900 shrink-0">월~금:</span>
+                        <div>
+                            <strong>정규 진도 학습:</strong> 플래너의 일일 목표(25단어 + 4대 퀴즈)를 달성하고 초록색 출석 잔디를 획득합니다.
+                        </div>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 flex items-start gap-3">
+                        <span class="font-bold text-amber-900 shrink-0">토요일:</span>
+                        <div>
+                            <strong>주간 SRS 오답 클리닉:</strong> 한 주 동안 틀렸던 단어만 모아 집중 복습하고 오답노트에서 탈출시킵니다.
+                        </div>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 flex items-start gap-3">
+                        <span class="font-bold text-teal-900 shrink-0">일요일:</span>
+                        <div>
+                            <strong>공식 휴식일 (Rest Day):</strong> 온전히 재충전하며 다음 주 학습을 준비합니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 하단 네비게이션 액션 바 -->
+        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+            <a href="quiz.html" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                <span>이전: 5. 플래시 &amp; 퀴즈</span>
+            </a>
+            <div class="flex items-center gap-3">
+                <a href="../intro.html#guide-center" class="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs sm:text-sm transition-all">
+                    전체 목록 보기
+                </a>
+                <a href="../index.html" class="px-5 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-950 text-amber-300 font-bold text-xs sm:text-sm shadow-md transition-all inline-flex items-center gap-2">
+                    <span>학습실로 입장하기</span>
+                    <i data-lucide="graduation-cap" class="w-4 h-4 text-amber-400"></i>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-center text-xs">
+        <div class="max-w-6xl mx-auto px-4">
+            <p class="font-serif font-bold text-slate-200 text-sm mb-2">VERITAS ENGLISH ACADEMY</p>
+            <p class="text-slate-500 mb-4">뇌과학 기반 4단계 어휘 습득 &amp; 중등 내신 70선 독해 시스템</p>
+            <p class="text-slate-600">&copy; 2026 Veritas English. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
