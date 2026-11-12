@@ -160,6 +160,7 @@
         { label: '📖 도치구문 직독직해 해석', query: '이 문장 어떻게 해석해 "Not only did she finish the report ahead of schedule, but she also prepared the presentation slides for the entire team."' },
         { label: '🎯 Lv.3 맞춤 단어장 추천', query: '난 레벨 3인데 나에게 맞는 단어장 추천해줘' },
         { label: '💡 intimidating 단어 뜻', query: '혹시 intimidating의 뜻이 뭐니?' },
+        { label: '🔍 완화하다 뜻하는 영단어', query: '완화하다를 뜻하는 영단어가 뭐야?' },
         { label: '🩺 도치구문 문법 오류 검사', query: '이 문장의 문법을 확인해줘 "Not only did she finished the report ahead of schedule, but she also prepared the presentation slides for the entire team."' },
         { label: '✍️ 일상 표현 영작 코칭', query: '이 말 영어로 어떻게 써 "일정을 앞당겨 끝마쳤어"' },
         { label: '🗂️ 에빙하우스 복습 주기', query: '에빙하우스 망각곡선 3단계 복습 주기가 뭐야?' }
@@ -311,7 +312,7 @@
         {
           sender: 'bot',
           time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-          text: `안녕하세요! **베리타스 만능 AI 영어 튜터**입니다. 🤖✨\n\n영어 학습의 모든 상황을 전문적으로 지원합니다:\n• **독해 & 직독직해**: *"이 문장 어떻게 해석해 [영어 문장]"*\n• **문법 & 어법 진단**: *"이 문장 문법 확인해줘 [영어 문장]"*\n• **영작 & 작문 코칭**: *"이 말 영어로 어떻게 써 [한국어 문장]"*\n• **어휘 & 숙어 질의**: *"intimidating 뜻이 뭐야?", "mitigate"* \n• **레벨별 교재 추천**: *"난 레벨 3인데 나에게 맞는 단어장 추천해줘"*\n• **학습 사이트 가이드**: *"에빙하우스 복습", "부교재 4선 공책 인쇄법"*`,
+          text: `안녕하세요! **베리타스 만능 AI 영어 튜터**입니다. 🤖✨\n\n영어 학습의 모든 상황을 전문적으로 지원합니다:\n• **독해 & 직독직해**: *"이 문장 어떻게 해석해 [영어 문장]"*\n• **문법 & 어법 진단**: *"이 문장 문법 확인해줘 [영어 문장]"*\n• **한영 단어 찾기**: *"완화하다를 뜻하는 영단어가 뭐야?"*\n• **어휘 & 숙어 질의**: *"intimidating 뜻이 뭐야?", "mitigate"* \n• **영작 & 작문 코칭**: *"이 말 영어로 어떻게 써 [한국어 문장]"*\n• **레벨별 교재 추천**: *"난 레벨 3인데 나에게 맞는 단어장 추천해줘"*\n• **학습 사이트 가이드**: *"에빙하우스 복습", "부교재 4선 공책 인쇄법"*`,
           card: null
         }
       ];
@@ -817,7 +818,55 @@
       }
 
       // -----------------------------------------------------------------------
-      // [6] 어휘/단어/표현 질의응답 (Vocabulary & Idiom Doctor)
+      // [6] 한영 역방향 어휘 매칭 (Korean-to-English Reverse Word Doctor)
+      // "~를 뜻하는 영단어가 뭐야?", "영단어 중에 완화하다를 뜻하는 단어", "완화하다 영어로"
+      // -----------------------------------------------------------------------
+      const korCandidate = this.extractKoreanWordCandidate(query);
+      if (korCandidate) {
+        const korResolved = await this.resolveKoreanToEnglish(korCandidate);
+        if (korResolved && korResolved.primary) {
+          const w = korResolved.primary;
+          let replyText = `**'${korCandidate}'**(을)를 뜻하는 대표적인 영단어는 **'${w.word}'**입니다:`;
+          if (korResolved.related && korResolved.related.length > 0) {
+            const relStr = korResolved.related.map(r => `• **${r.word}**: ${r.meaning}`).join('\n');
+            replyText += `\n\n💡 **함께 알아두면 유용한 관련 어휘/유의어**:\n${relStr}`;
+          }
+
+          this.messages.push({
+            sender: 'bot',
+            time: nowStr,
+            text: replyText,
+            card: {
+              type: 'word',
+              word: w.word,
+              pronunciation: w.pronunciation || '',
+              meaning: w.meaning,
+              pos: w.pos || '',
+              example: w.example || '',
+              example_kr: w.example_kr || '',
+              nuance: w.nuance || '',
+              synonyms: w.synonyms || ''
+            }
+          });
+          this.saveHistory();
+          this.renderMessages();
+          return;
+        } else {
+          // 검색 결과가 없을 때도 친절하게 안내
+          this.messages.push({
+            sender: 'bot',
+            time: nowStr,
+            text: `문의하신 **'${korCandidate}'** 뜻과 일치하는 영단어를 심화 어휘 DB에서 정밀 탐색 중입니다.\n\n구체적인 문맥이나 품사(동사/형용사/명사)를 함께 말씀해 주시면(예: *"~을 완화하다는 동사 영단어"*) 가장 자연스러운 영단어와 예문을 안내해 드립니다!`,
+            card: null
+          });
+          this.saveHistory();
+          this.renderMessages();
+          return;
+        }
+      }
+
+      // -----------------------------------------------------------------------
+      // [7] 영한 어휘/단어/표현 질의응답 (English-to-Korean Vocabulary Doctor)
       // -----------------------------------------------------------------------
       const candidateWord = this.extractWordCandidate(query);
       if (candidateWord) {
@@ -846,12 +895,12 @@
       }
 
       // -----------------------------------------------------------------------
-      // [7] 친절한 올인원 가이드 폴백
+      // [8] 친절한 올인원 가이드 폴백
       // -----------------------------------------------------------------------
       this.messages.push({
         sender: 'bot',
         time: nowStr,
-        text: `질문하신 내용: **"${query}"**\n\n베리타스 AI 튜터는 다음과 같은 모든 시츄에이션에서 전문적인 도움을 드립니다! 💡\n\n• **구문 독해/해석**: *"이 문장 어떻게 해석해: Not only did she finish the report..."*\n• **문법 & 어법 진단**: *"이 문장의 문법을 확인해줘: Not only did she finished..."*\n• **영작 & 작문 코칭**: *"이 말 영어로 어떻게 써: 일정을 앞당겨 끝마쳤어"*\n• **단어 뜻/예문**: *"intimidating 뜻이 뭐야?", "mitigate 뜻 알려줘"*\n• **레벨별 교재 추천**: *"난 레벨 3인데 나에게 맞는 단어장 추천해줘"*\n• **학습 사이트 기능**: *"망각곡선 복습", "부교재 4선 공책 인쇄법", "플래너 휴식일"*`,
+        text: `질문하신 내용: **"${query}"**\n\n베리타스 AI 튜터는 다음과 같은 모든 시츄에이션에서 전문적인 도움을 드립니다! 💡\n\n• **한영 단어 역방향 검색**: *"완화하다를 뜻하는 영단어가 뭐야?", "위협적인 뜻하는 단어"*\n• **어휘 뜻/예문**: *"intimidating 뜻이 뭐야?", "mitigate 뜻 알려줘"*\n• **구문 독해/해석**: *"이 문장 어떻게 해석해: Not only did she finish the report..."*\n• **문법 & 어법 진단**: *"이 문장의 문법을 확인해줘: Not only did she finished..."*\n• **영작 & 작문 코칭**: *"이 말 영어로 어떻게 써: 일정을 앞당겨 끝마쳤어"*\n• **레벨별 교재 추천**: *"난 레벨 3인데 나에게 맞는 단어장 추천해줘"*\n• **학습 사이트 기능**: *"망각곡선 복습", "부교재 4선 공책 인쇄법", "플래너 휴식일"*`,
         card: null
       });
       this.saveHistory();
@@ -1267,8 +1316,216 @@
     }
 
     // -------------------------------------------------------------------------
-    // 5. 3단계 어휘 해석 엔진 (Multi-Tier Word Resolution Engine)
+    // 5. 한영/영한 어휘 진단 & 역방향 매칭 엔진 (Vocabulary Doctor Engine)
     // -------------------------------------------------------------------------
+    extractKoreanWordCandidate(query) {
+      if (!query) return null;
+
+      // 1. 인용부호 속 단어 우선 추출 ("'완화하다'" or '"취약한"')
+      const quoteMatch = query.match(/["“'‘]([^"”'’]{1,25})["”'’]/);
+      if (quoteMatch) {
+        const val = quoteMatch[1].trim();
+        if (/[가-힣]/.test(val)) {
+          return val.replace(/^(?:은|는|이|가|을|를)\s*/, '').trim();
+        }
+      }
+
+      // 2. 패턴: "영단어 중에 [대상]를 뜻하는" / "영단어 중에서 [대상] 의미하는"
+      const revMatch = query.match(/(?:영단어|단어|영어\s*단어|표현)\s*(?:중(?:에서|에)?\s*)?([가-힣\s]{2,15}?)(?:를|을|의|이라는|라는)?\s*(?:뜻하는|의미하는|나타내는)/);
+      if (revMatch) {
+        return revMatch[1].trim();
+      }
+
+      // 3. 패턴: "[대상](을/를/이란/라는/에 해당하는)? (뜻하는|의미하는|나타내는|가리키는) (영단어|단어|영어 단어|표현)"
+      const p1 = query.match(/(?:혹시\s*)?([가-힣\s]{2,15}?)(?:를|을|의|이란|라는|이라는|에\s*해당하는|의\s*뜻을\s*가진|뜻의|의미의)?\s*(?:뜻하는|의미하는|나타내는|가리키는|뜻을\s*가진|의미의|뜻의)\s*(?:영단어|영어\s*단어|단어|표현)/);
+      if (p1) {
+        return p1[1].trim();
+      }
+
+      // 4. 패턴: "[대상](은/는/이/가)? 영어(단어)?로 뭐야/알려줘"
+      const p2 = query.match(/(?:혹시\s*)?([가-힣\s]{2,15}?)(?:은|는|이|가|을|를)?\s*(?:영어\s*단어|영단어|영어)로\s*(?:뭐야|뭔가요|알려줘|무엇인가요|어떻게|\?)/);
+      if (p2) {
+        return p2[1].trim();
+      }
+
+      // 5. 패턴: "[대상]에 해당하는 영단어/단어"
+      const p3 = query.match(/(?:혹시\s*)?([가-힣\s]{2,15}?)(?:에\s*해당하는|에\s*맞는)\s*(?:영단어|영어\s*단어|단어|표현)/);
+      if (p3) {
+        return p3[1].trim();
+      }
+
+      return null;
+    }
+
+    async resolveKoreanToEnglish(koreanTerm) {
+      if (!koreanTerm) return null;
+      const clean = koreanTerm.trim();
+      if (!clean) return null;
+
+      // 형태소 어간 후보군 생성 (완화하다 -> 완화, 완화하 / 위협적인 -> 위협적, 위협 / 취약한 -> 취약)
+      const stems = [clean];
+      if (clean.endsWith('하다')) {
+        stems.push(clean.slice(0, -2));
+        stems.push(clean.slice(0, -2) + '하');
+      } else if (clean.endsWith('적인')) {
+        stems.push(clean.slice(0, -2));
+        stems.push(clean.slice(0, -1));
+      } else if (clean.endsWith('한')) {
+        stems.push(clean.slice(0, -1));
+      } else if (clean.endsWith('하는')) {
+        stems.push(clean.slice(0, -2));
+      } else if (clean.endsWith('있는')) {
+        stems.push(clean.slice(0, -2).trim());
+      } else if (clean.endsWith('되다') || clean.endsWith('시키다')) {
+        stems.push(clean.slice(0, -2));
+      } else if (clean.endsWith('스럽다')) {
+        stems.push(clean.slice(0, -3));
+      } else if (clean.endsWith('로운')) {
+        stems.push(clean.slice(0, -2));
+      }
+      const validStems = Array.from(new Set(stems.filter(s => s && s.length >= 2)));
+
+      const matches = [];
+      const seenWords = new Set();
+
+      // [Tier 1] 내장 심화 사전 (builtInLexicon) 검색
+      for (const key of Object.keys(this.builtInLexicon)) {
+        const item = this.builtInLexicon[key];
+        const mStr = item.meaning || '';
+        if (mStr.includes(clean)) {
+          matches.push({ score: 100, data: item });
+          seenWords.add(item.word.toLowerCase());
+        } else if (validStems.some(s => mStr.includes(s))) {
+          matches.push({ score: 85, data: item });
+          seenWords.add(item.word.toLowerCase());
+        }
+      }
+
+      // [Tier 2] 전역 20,000+ 교재 어휘 DB 풀 검색
+      const pools = [
+        window.VERITAS_ORIGINAL_WORDS_DATA,
+        window.VERITAS_SEASONS_WORDS_DATA,
+        window.VERITAS_OXFORD_WORDS_DATA,
+        window.VERITAS_PATHWAYS_WORDS_DATA,
+        window.VERITAS_CHALLENGER_WORDS_DATA,
+        window.SAMPLE_WORDS,
+        window.NEUNGRYUL_VOCA_2025_DATA,
+        window.READING_LEXICON_DATA,
+        window.CURATED_VOCABULARY
+      ];
+
+      for (const pool of pools) {
+        if (!Array.isArray(pool)) continue;
+        for (const w of pool) {
+          const wordStr = String(w.word || w['단어'] || w['영단어'] || w.title || '').trim();
+          if (!wordStr || seenWords.has(wordStr.toLowerCase())) continue;
+
+          const meanStr = String(w.meaning || w['뜻'] || w.exampleMeaning || w.definition || '').trim();
+          if (!meanStr) continue;
+
+          // 의미 토큰 정확 일치 체크 (예: "완화하다, 경감하다" 중 "완화하다")
+          const tokens = meanStr.split(/[,;·\(\)\[\]\/\s]+/).map(t => t.trim()).filter(Boolean);
+          if (tokens.includes(clean)) {
+            matches.push({
+              score: 95,
+              data: {
+                word: wordStr,
+                pronunciation: w.pronunciation || w['발음'] || '',
+                pos: w.pos || w['품사'] || w.partOfSpeech || '',
+                meaning: meanStr,
+                example: w.example || w['예문'] || w.example_en || '',
+                example_kr: w.example_kr || w['해석'] || w['예문해석'] || w.exampleMeaning || w.example_ko || '',
+                nuance: w.nuance || w.nuanceTip || w['원어민팁'] || w.collocation || '',
+                synonyms: w.synonyms || ''
+              }
+            });
+            seenWords.add(wordStr.toLowerCase());
+            continue;
+          }
+
+          if (meanStr.includes(clean)) {
+            matches.push({
+              score: 80,
+              data: {
+                word: wordStr,
+                pronunciation: w.pronunciation || w['발음'] || '',
+                pos: w.pos || w['품사'] || w.partOfSpeech || '',
+                meaning: meanStr,
+                example: w.example || w['예문'] || w.example_en || '',
+                example_kr: w.example_kr || w['해석'] || w['예문해석'] || w.exampleMeaning || w.example_ko || '',
+                nuance: w.nuance || w.nuanceTip || w['원어민팁'] || w.collocation || '',
+                synonyms: w.synonyms || ''
+              }
+            });
+            seenWords.add(wordStr.toLowerCase());
+            continue;
+          }
+
+          if (validStems.some(s => tokens.includes(s) || meanStr.includes(s))) {
+            matches.push({
+              score: 60,
+              data: {
+                word: wordStr,
+                pronunciation: w.pronunciation || w['발음'] || '',
+                pos: w.pos || w['품사'] || w.partOfSpeech || '',
+                meaning: meanStr,
+                example: w.example || w['예문'] || w.example_en || '',
+                example_kr: w.example_kr || w['해석'] || w['예문해석'] || w.exampleMeaning || w.example_ko || '',
+                nuance: w.nuance || w.nuanceTip || w['원어민팁'] || w.collocation || '',
+                synonyms: w.synonyms || ''
+              }
+            });
+            seenWords.add(wordStr.toLowerCase());
+          }
+        }
+      }
+
+      if (matches.length > 0) {
+        matches.sort((a, b) => b.score - a.score);
+        const primary = matches[0].data;
+        const related = matches.slice(1, 4).map(m => m.data);
+        return { primary, related };
+      }
+
+      // [Tier 3] 온라인 번역 API 폴백 (MyMemory Translate API)
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 2000);
+        const transRes = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(clean)}&langpair=ko|en`, { signal: controller.signal });
+        clearTimeout(timeoutId);
+        if (transRes.ok) {
+          const transData = await transRes.json();
+          let engText = transData?.responseData?.translatedText;
+          if (engText && !/[가-힣]/.test(engText)) {
+            let cleanEng = engText.replace(/^(to\s+|a\s+|the\s+)/i, '').trim().toLowerCase();
+            const firstWord = cleanEng.split(/[\s,]+/)[0];
+            const resolved = await this.resolveWord(firstWord || cleanEng);
+            if (resolved) {
+              return { primary: resolved, related: [] };
+            } else {
+              return {
+                primary: {
+                  word: cleanEng,
+                  pronunciation: '',
+                  pos: '',
+                  meaning: `${clean} (온라인 번역 매칭)`,
+                  example: '',
+                  example_kr: '',
+                  nuance: '글로벌 번역 엔진을 통해 매칭된 영어 어휘입니다.',
+                  synonyms: ''
+                },
+                related: []
+              };
+            }
+          }
+        }
+      } catch (e) {
+        console.warn('MyMemory translation lookup failed:', e);
+      }
+
+      return null;
+    }
+
     extractWordCandidate(query) {
       const quoteMatch = query.match(/["“'‘]([a-zA-Z]{2,})["”'’]/);
       if (quoteMatch) return quoteMatch[1].toLowerCase();
@@ -1279,8 +1536,7 @@
       const engMatch = query.match(/[a-zA-Z]{2,}/);
       if (engMatch) return engMatch[0].toLowerCase();
 
-      const clean = query.replace(/(뜻|알려줘|예문|뭔가요|무슨|의미|단어|어떻게|가|이|은|는|을|를)/g, '').trim();
-      return clean.length >= 2 ? clean.toLowerCase() : null;
+      return null;
     }
 
     async resolveWord(target) {
@@ -1340,7 +1596,10 @@
         window.VERITAS_OXFORD_WORDS_DATA,
         window.VERITAS_PATHWAYS_WORDS_DATA,
         window.VERITAS_CHALLENGER_WORDS_DATA,
+        window.SAMPLE_WORDS,
+        window.NEUNGRYUL_VOCA_2025_DATA,
         window.NEUNGRYUL_VOCA_2025,
+        window.READING_LEXICON_DATA,
         window.CURATED_VOCABULARY
       ];
 
