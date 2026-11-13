@@ -22,9 +22,11 @@ class ReadingEngine {
 
         // 리더 상태
         this.showTranslation = false;
+        this.showChunking = false;
         this.readingTimerSeconds = 0;
         this.timerInterval = null;
         this.isTimerRunning = false;
+        this.wpmScore = null;
 
         // 시험 상태
         this.userAnswers = {}; // { [questionId]: optionIndex or text }
@@ -74,8 +76,11 @@ class ReadingEngine {
         if (!selectEl) return;
 
         const filteredUnits = this.units.filter(u => {
-            if (this.currentGradeFilter !== 'all' && u.grade !== this.currentGradeFilter) return false;
-            return true;
+            if (this.currentGradeFilter === 'all') return true;
+            if (this.currentGradeFilter === '중등') return u.grade.startsWith('중') || u.grade === '예비중';
+            if (this.currentGradeFilter === '고등') return u.grade === '고등' || u.grade.startsWith('고');
+            if (this.currentGradeFilter === '수능') return u.grade === '수능';
+            return u.grade === this.currentGradeFilter;
         });
 
         selectEl.innerHTML = filteredUnits.map(u => `
@@ -236,7 +241,7 @@ class ReadingEngine {
                         </span>
                         <div class="flex-1 space-y-1">
                             <p class="font-serif text-slate-900 text-sm sm:text-base leading-relaxed tracking-wide select-text">
-                                ${this.renderInteractiveEnglishText(s.en, s.num)}
+                                ${this.renderInteractiveSentence(s, s.num)}
                             </p>
                             <p class="reading-ko-text text-xs text-slate-500 font-medium ${this.showTranslation ? '' : 'hidden'}">
                                 ${s.ko}
@@ -499,6 +504,118 @@ class ReadingEngine {
     }
 
     /**
+     * 직독직해(Chunking) 모드 토글
+     */
+    toggleChunking() {
+        this.showChunking = !this.showChunking;
+        const btn = document.getElementById('btn-toggle-reading-chunks');
+        if (btn) {
+            btn.className = this.showChunking ?
+                'px-3 py-1.5 rounded-lg bg-indigo-600 text-white text-xs font-bold flex items-center gap-1 transition-all cursor-pointer shadow-2xs' :
+                'px-3 py-1.5 rounded-lg bg-white border border-slate-200 hover:border-indigo-600 text-slate-700 hover:text-indigo-900 text-xs font-semibold flex items-center gap-1 transition-all cursor-pointer shadow-2xs';
+            btn.innerHTML = this.showChunking ?
+                '<i data-lucide="scissors" class="w-3.5 h-3.5"></i> 직독직해 ON' :
+                '<i data-lucide="scissors" class="w-3.5 h-3.5"></i> 직독직해(Chunking)';
+        }
+        this.renderActivePassage();
+        if (window.lucide) window.lucide.createIcons();
+    }
+
+    /**
+     * WPM 실전 독해 타이머 시작/종료 토글
+     */
+    toggleWPMTimer() {
+        if (this.isTimerRunning) {
+            this.stopReadingTimer();
+        } else {
+            this.startReadingTimer();
+        }
+    }
+
+    startReadingTimer() {
+        this.isTimerRunning = true;
+        this.readingTimerSeconds = 0;
+        this.wpmScore = null;
+        this.updateWPMDisplay();
+
+        if (this.timerInterval) clearInterval(this.timerInterval);
+        this.timerInterval = setInterval(() => {
+            this.readingTimerSeconds++;
+            this.updateWPMDisplay();
+        }, 1000);
+    }
+
+    stopReadingTimer() {
+        if (this.timerInterval) {
+            clearInterval(this.timerInterval);
+            this.timerInterval = null;
+        }
+        this.isTimerRunning = false;
+
+        const passage = this.getCurrentPassage();
+        if (passage && this.readingTimerSeconds > 0) {
+            const minutes = this.readingTimerSeconds / 60;
+            this.wpmScore = Math.round(passage.wordCount / minutes);
+        }
+        this.updateWPMDisplay();
+    }
+
+    updateWPMDisplay() {
+        const timerBtn = document.getElementById('btn-reading-wpm-timer');
+        const wpmBadge = document.getElementById('reading-meta-wpm-badge');
+
+        const mins = String(Math.floor(this.readingTimerSeconds / 60)).padStart(2, '0');
+        const secs = String(this.readingTimerSeconds % 60).padStart(2, '0');
+
+        if (timerBtn) {
+            if (this.isTimerRunning) {
+                timerBtn.className = 'px-3 py-1.5 rounded-lg bg-amber-500 text-white text-xs font-bold flex items-center gap-1 animate-pulse transition-all cursor-pointer shadow-2xs';
+                timerBtn.innerHTML = `<i data-lucide="timer" class="w-3.5 h-3.5"></i> 측정 중 (${mins}:${secs}) - 클릭 시 완료`;
+            } else {
+                timerBtn.className = 'px-3 py-1.5 rounded-lg bg-white border border-slate-200 hover:border-amber-500 text-slate-700 hover:text-amber-800 text-xs font-semibold flex items-center gap-1 transition-all cursor-pointer shadow-2xs';
+                timerBtn.innerHTML = `<i data-lucide="clock" class="w-3.5 h-3.5"></i> 실전 WPM 타이머`;
+            }
+        }
+
+        if (wpmBadge) {
+            if (this.wpmScore) {
+                let badgeClass = 'bg-blue-100 text-blue-900 border-blue-200';
+                let label = '정독 페이스';
+                if (this.wpmScore >= 150) {
+                    badgeClass = 'bg-emerald-100 text-emerald-900 border-emerald-300';
+                    label = '수능 1등급 안정 속도 🚀';
+                } else if (this.wpmScore >= 120) {
+                    badgeClass = 'bg-indigo-100 text-indigo-900 border-indigo-200';
+                    label = '고등 내신 1등급 속도 🎯';
+                }
+                wpmBadge.className = `inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold border ${badgeClass}`;
+                wpmBadge.innerHTML = `<i data-lucide="zap" class="w-3 h-3"></i> ${this.wpmScore} WPM (${label})`;
+                wpmBadge.classList.remove('hidden');
+            } else if (this.isTimerRunning) {
+                wpmBadge.className = 'inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-amber-50 text-amber-900 border border-amber-200';
+                wpmBadge.innerHTML = `<i data-lucide="timer" class="w-3 h-3 animate-spin"></i> 독해 중 ${mins}:${secs}`;
+                wpmBadge.classList.remove('hidden');
+            } else {
+                wpmBadge.classList.add('hidden');
+            }
+        }
+        if (window.lucide) window.lucide.createIcons();
+    }
+
+    /**
+     * 문장 단위 렌더링 (직독직해 청크 모드 지원)
+     */
+    renderInteractiveSentence(sentence, sentenceNum) {
+        if (this.showChunking && sentence.chunks && Array.isArray(sentence.chunks) && sentence.chunks.length > 0) {
+            return sentence.chunks.map(chunk => {
+                const innerHtml = this.renderInteractiveEnglishText(chunk, sentenceNum);
+                return `<span class="inline-block bg-indigo-50/70 border-b-2 border-indigo-300 rounded px-1.5 py-0.5 mr-1.5 my-0.5 text-blue-950 font-serif font-medium tracking-wide transition-colors hover:bg-indigo-100/90">${innerHtml}</span>`;
+            }).join(' ');
+        }
+        return this.renderInteractiveEnglishText(sentence.en, sentenceNum);
+    }
+
+    /**
      * 한 줄 해석 전체 토글
      */
     toggleTranslation() {
@@ -689,6 +806,16 @@ class ReadingEngine {
             if (found) {
                 const stdPos = window.posHelper ? window.posHelper.standardizePos(found['품사'], found['영단어'], found['뜻']) : (found['품사'] || '[명]');
                 return { word: found['영단어'], pos: stdPos, meaning: found['뜻'] };
+            }
+        }
+
+        // 4.5. VERITAS_NEUNGRYUL_HIGH_WORDS_DATA (능률 고등·수능 마스터 5,200단어)
+        const neungryulHigh = window.VERITAS_NEUNGRYUL_HIGH_WORDS_DATA || (typeof VERITAS_NEUNGRYUL_HIGH_WORDS_DATA !== 'undefined' ? VERITAS_NEUNGRYUL_HIGH_WORDS_DATA : []);
+        if (Array.isArray(neungryulHigh)) {
+            const found = neungryulHigh.find(w => w.word && w.word.toLowerCase() === lower);
+            if (found) {
+                const stdPos = window.posHelper ? window.posHelper.standardizePos(found.pos, found.word, found.meaning) : (found.pos || '[명]');
+                return { word: found.word, pos: stdPos, meaning: found.meaning, example_en: found.example_en, example_ko: found.example_ko };
             }
         }
 

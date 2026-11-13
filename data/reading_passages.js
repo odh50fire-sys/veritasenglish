@@ -1,6 +1,11 @@
 /**
- * Veritas English - 중등 전용 내신 독해 & 비문학/소설 마스터 데이터베이스
- * 중1, 중2, 중3 학년별 20편 (학기별 10편) 총 6개 학기 단원, 60편 전문 및 개별 맞춤 문제 완비
+ * Veritas English - 중등·고등·수능 전용 내신 & 평가원 마스터 독해 데이터베이스
+ * 
+ * [단원 구성: 총 14개 단원 / 140편 전문 완비]
+ * 1. 예비중 (1개 단원, 10편) - 입문 독해
+ * 2. 중등 내신 (6개 단원, 60편) - 중1-1 ~ 중3-2
+ * 3. 고등 1~2 내신 & 학평 실전 독해 (4개 단원, 40편) - 고1-1, 고1-2, 고2-1, 고2-2
+ * 4. 수능 1등급 & 평가원 킬러 독해 마스터 (3개 단원, 30편) - 기본편, 실전편, 킬러편
  */
 
 const READING_UNITS = [
@@ -14,7 +19,6 @@ const READING_UNITS = [
     "description": "초등 심화·중학 내신 브릿지, 문장 성분(주어·동사·목적어·보어), 필수 8품사, 일상 과학·환경·명작 우화 중심의 구문 독해 & 실전 문항 40제 완비",
     "themePrefix": "PRE_M1"
   },
-
   {
     "unitId": "unit-m1-1",
     "level": 3,
@@ -74,6 +78,76 @@ const READING_UNITS = [
     "targetGrade": "middle3_2",
     "description": "철학·심리학, 디스토피아 명작 소설 (고등 연계 도치·일치·킬러 서술형 영작)",
     "themePrefix": "M3_2"
+  },
+  {
+    "unitId": "unit-h1-1",
+    "level": 8,
+    "unitTitle": "고 1-1 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "1-1학기",
+    "targetGrade": "high1_1",
+    "description": "실제 고1 3월·6월 교육청 학평 기출 & 1학기 내신 1등급 변형 지문 (주제·제목, 관계사·수일치 어법, 내신 서술형 영작)",
+    "themePrefix": "H1_1"
+  },
+  {
+    "unitId": "unit-h1-2",
+    "level": 8,
+    "unitTitle": "고 1-2 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "1-2학기",
+    "targetGrade": "high1_2",
+    "description": "실제 고1 9월·11월 교육청 학평 기출 & 2학기 내신 기출 지문 (분사구문·도치 어법, 문맥상 어휘 추론, 핵심 문장 배열 서술형)",
+    "themePrefix": "H1_2"
+  },
+  {
+    "unitId": "unit-h2-1",
+    "level": 8,
+    "unitTitle": "고 2-1 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "2-1학기",
+    "targetGrade": "high2_1",
+    "description": "실제 고2 3월·6월 교육청 학평 기출 & 1등급 가르는 고난도 변형 지문 (함축의미 추론, 2중 부정·가정법 구문, 조건 제시형 서술형)",
+    "themePrefix": "H2_1"
+  },
+  {
+    "unitId": "unit-h2-2",
+    "level": 8,
+    "unitTitle": "고 2-2 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "2-2학기",
+    "targetGrade": "high2_2",
+    "description": "실제 고2 9월·11월 교육청 학평 기출 & 고3 수능 연계 브릿지 지문 (빈칸 추론 기초, 순서 배열, 요약문 완성)",
+    "themePrefix": "H2_2"
+  },
+  {
+    "unitId": "unit-csat-basic",
+    "level": 9,
+    "unitTitle": "수능 1등급 기본편 (평가원 마스터)",
+    "grade": "수능",
+    "semester": "기본",
+    "targetGrade": "csat_basic",
+    "description": "실제 평가원 6·9월 모의평가 및 수능 1등급 방어선 (21번 함축의미, 29번 어법, 30번 어휘, 대의 파악 실전 기출)",
+    "themePrefix": "CSAT_B"
+  },
+  {
+    "unitId": "unit-csat-real",
+    "level": 9,
+    "unitTitle": "수능 1등급 실전편 (평가원 마스터)",
+    "grade": "수능",
+    "semester": "실전",
+    "targetGrade": "csat_real",
+    "description": "실제 평가원 및 수능 실전 중상위권 킬러 (31~32번 빈칸, 35번 무관한 문장, 36~37번 글의 순서 배열)",
+    "themePrefix": "CSAT_R"
+  },
+  {
+    "unitId": "unit-csat-killer",
+    "level": 9,
+    "unitTitle": "평가원 킬러 마스터편 (수능 1등급)",
+    "grade": "수능",
+    "semester": "킬러",
+    "targetGrade": "csat_killer",
+    "description": "실제 평가원·수능 오답률 1~3위 극악 킬러 (33~34번 고난도 빈칸 추론, 38~39번 문장 삽입, 41~42번 장문 복합)",
+    "themePrefix": "CSAT_K"
   }
 ];
 
@@ -8265,6 +8339,10926 @@ const READING_PASSAGES = [
         ],
         "correctIndex": 3,
         "explanation": "윗글은 '괴테 파우스트: 멈추지 않는 지적 갈망'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Faust: The Insatiable Quest for Transcendence''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H1_1-1",
+    "unitId": "unit-h1-1",
+    "unitTitle": "고 1-1 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고1-1학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 1-1 내신 & 학평 실전 독해 마스터",
+    "title": "Artificial Intelligence and Human Intuition",
+    "koreanTitle": "인공지능과 인간 직관의 본질",
+    "level": "high1_1",
+    "levelLabel": "고1 내신 1등급",
+    "source": "실제 고1 3월 학평 31번 변형 (내신 1등급 기출)",
+    "wordCount": 92,
+    "estimatedTime": "1분 40초",
+    "summary": "인공지능의 계산 능력과 인간 고유의 직관 및 윤리적 판단력의 상호보완적 관계",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in artificial intelligence and human intuition reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "인공지능과 인간 직관의 본질에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in artificial intelligence and human intuition /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 인공지능의 계산 능력과 인간 고유의 직관 및 윤리적 판단력의 상 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 인공지능의 계산 능력과 인간 고유의 직관 및 윤리적 판단력의 상을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing artificial intelligence and human intuition /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H1_1-1-1",
+        "type": "grammar",
+        "typeLabel": "[고1 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H1_1-1-2",
+        "type": "blank",
+        "typeLabel": "[고1 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H1_1-1-3",
+        "type": "subjective",
+        "typeLabel": "[고1 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H1_1-1-4",
+        "type": "main_idea",
+        "typeLabel": "[고1 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Artificial Intelligence and Human Intuition",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '인공지능과 인간 직관의 본질'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H1_1-2",
+    "unitId": "unit-h1-1",
+    "unitTitle": "고 1-1 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고1-1학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 1-1 내신 & 학평 실전 독해 마스터",
+    "title": "Circadian Rhythms and Screen Exposure",
+    "koreanTitle": "일주기 생체 리듬과 야간 스크린 노출",
+    "level": "high1_1",
+    "levelLabel": "고1 내신 1등급",
+    "source": "실제 고1 3월 학평 24번 변형 (내신 1등급 기출)",
+    "wordCount": 90,
+    "estimatedTime": "1분 40초",
+    "summary": "스마트폰 청색광이 멜라토닌 분비를 억제하여 청소년 수면의 질을 저하시키는 메커니즘",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in circadian rhythms and screen exposure reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "일주기 생체 리듬과 야간 스크린 노출에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in circadian rhythms and screen exposure /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 스마트폰 청색광이 멜라토닌 분비를 억제하여 청소년 수면의 질을  is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 스마트폰 청색광이 멜라토닌 분비를 억제하여 청소년 수면의 질을 을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing circadian rhythms and screen exposure /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H1_1-2-1",
+        "type": "grammar",
+        "typeLabel": "[고1 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H1_1-2-2",
+        "type": "blank",
+        "typeLabel": "[고1 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H1_1-2-3",
+        "type": "subjective",
+        "typeLabel": "[고1 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H1_1-2-4",
+        "type": "main_idea",
+        "typeLabel": "[고1 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Circadian Rhythms and Screen Exposure",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '일주기 생체 리듬과 야간 스크린 노출'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H1_1-3",
+    "unitId": "unit-h1-1",
+    "unitTitle": "고 1-1 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고1-1학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 1-1 내신 & 학평 실전 독해 마스터",
+    "title": "Confirmation Bias in the Information Age",
+    "koreanTitle": "정보화 시대의 확증 편향과 필터 버블",
+    "level": "high1_1",
+    "levelLabel": "고1 내신 1등급",
+    "source": "실제 고1 3월 학평 34번 변형 (내신 1등급 기출)",
+    "wordCount": 92,
+    "estimatedTime": "1분 40초",
+    "summary": "알고리즘 추천 시스템이 기존 신념을 강화하여 사회적 양극화를 유발하는 현상",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in confirmation bias in the information age reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "정보화 시대의 확증 편향과 필터 버블에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in confirmation bias in the information age /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 알고리즘 추천 시스템이 기존 신념을 강화하여 사회적 양극화를 유 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 알고리즘 추천 시스템이 기존 신념을 강화하여 사회적 양극화를 유을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing confirmation bias in the information age /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H1_1-3-1",
+        "type": "grammar",
+        "typeLabel": "[고1 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H1_1-3-2",
+        "type": "blank",
+        "typeLabel": "[고1 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H1_1-3-3",
+        "type": "subjective",
+        "typeLabel": "[고1 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H1_1-3-4",
+        "type": "main_idea",
+        "typeLabel": "[고1 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Confirmation Bias in the Information Age",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '정보화 시대의 확증 편향과 필터 버블'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H1_1-4",
+    "unitId": "unit-h1-1",
+    "unitTitle": "고 1-1 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고1-1학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 1-1 내신 & 학평 실전 독해 마스터",
+    "title": "Colony Collapse Disorder and Pollinators",
+    "koreanTitle": "군집 붕괴 현상과 꽃가루 매개자의 위기",
+    "level": "high1_1",
+    "levelLabel": "고1 내신 1등급",
+    "source": "실제 고1 6월 학평 32번 변형 (내신 1등급 기출)",
+    "wordCount": 93,
+    "estimatedTime": "1분 40초",
+    "summary": "꿀벌 개체수 감소가 농작물 생산 및 전 지구적 식량 안보에 미치는 파급 효과",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in colony collapse disorder and pollinators reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "군집 붕괴 현상과 꽃가루 매개자의 위기에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in colony collapse disorder and pollinators /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 꿀벌 개체수 감소가 농작물 생산 및 전 지구적 식량 안보에 미치 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 꿀벌 개체수 감소가 농작물 생산 및 전 지구적 식량 안보에 미치을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing colony collapse disorder and pollinators /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H1_1-4-1",
+        "type": "grammar",
+        "typeLabel": "[고1 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H1_1-4-2",
+        "type": "blank",
+        "typeLabel": "[고1 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H1_1-4-3",
+        "type": "subjective",
+        "typeLabel": "[고1 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H1_1-4-4",
+        "type": "main_idea",
+        "typeLabel": "[고1 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Colony Collapse Disorder and Pollinators",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '군집 붕괴 현상과 꽃가루 매개자의 위기'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H1_1-5",
+    "unitId": "unit-h1-1",
+    "unitTitle": "고 1-1 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고1-1학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 1-1 내신 & 학평 실전 독해 마스터",
+    "title": "Behavioral Economics and the Power of Nudges",
+    "koreanTitle": "행동경제학과 넛지의 힘",
+    "level": "high1_1",
+    "levelLabel": "고1 내신 1등급",
+    "source": "실제 고1 6월 학평 33번 변형 (내신 1등급 기출)",
+    "wordCount": 94,
+    "estimatedTime": "1분 40초",
+    "summary": "강제나 금전적 보상 대신 선택 설계를 통해 사람들의 행동을 긍정적으로 유도하는 원리",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in behavioral economics and the power of nudges reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "행동경제학과 넛지의 힘에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in behavioral economics and the power of nudges /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 강제나 금전적 보상 대신 선택 설계를 통해 사람들의 행동을 긍정 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 강제나 금전적 보상 대신 선택 설계를 통해 사람들의 행동을 긍정을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing behavioral economics and the power of nudges /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H1_1-5-1",
+        "type": "grammar",
+        "typeLabel": "[고1 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H1_1-5-2",
+        "type": "blank",
+        "typeLabel": "[고1 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H1_1-5-3",
+        "type": "subjective",
+        "typeLabel": "[고1 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H1_1-5-4",
+        "type": "main_idea",
+        "typeLabel": "[고1 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Behavioral Economics and the Power of Nudges",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '행동경제학과 넛지의 힘'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H1_1-6",
+    "unitId": "unit-h1-1",
+    "unitTitle": "고 1-1 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고1-1학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 1-1 내신 & 학평 실전 독해 마스터",
+    "title": "Neurological Resonance of Musical Harmony",
+    "koreanTitle": "음악적 화음의 신경학적 공명과 뇌파",
+    "level": "high1_1",
+    "levelLabel": "고1 내신 1등급",
+    "source": "실제 고1 6월 학평 29번 변형 (내신 1등급 기출)",
+    "wordCount": 92,
+    "estimatedTime": "1분 40초",
+    "summary": "음악 청취가 도파민 방출 및 스트레스 호르몬 감소를 통해 인지 기능에 미치는 영향",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in neurological resonance of musical harmony reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "음악적 화음의 신경학적 공명과 뇌파에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in neurological resonance of musical harmony /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 음악 청취가 도파민 방출 및 스트레스 호르몬 감소를 통해 인지  is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 음악 청취가 도파민 방출 및 스트레스 호르몬 감소를 통해 인지 을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing neurological resonance of musical harmony /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H1_1-6-1",
+        "type": "grammar",
+        "typeLabel": "[고1 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H1_1-6-2",
+        "type": "blank",
+        "typeLabel": "[고1 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H1_1-6-3",
+        "type": "subjective",
+        "typeLabel": "[고1 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H1_1-6-4",
+        "type": "main_idea",
+        "typeLabel": "[고1 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Neurological Resonance of Musical Harmony",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '음악적 화음의 신경학적 공명과 뇌파'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H1_1-7",
+    "unitId": "unit-h1-1",
+    "unitTitle": "고 1-1 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고1-1학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 1-1 내신 & 학평 실전 독해 마스터",
+    "title": "The Structural Dilemma of Plastic Recycling",
+    "koreanTitle": "플라스틱 재활용의 구조적 한계와 순환 경제",
+    "level": "high1_1",
+    "levelLabel": "고1 내신 1등급",
+    "source": "실제 고1 3월 학평 38번 변형 (내신 1등급 기출)",
+    "wordCount": 93,
+    "estimatedTime": "1분 40초",
+    "summary": "기계적 재활용의 품질 저하 한계를 극복하기 위한 근본적 감축 및 생분해 신소재 필요성",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in the structural dilemma of plastic recycling reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "플라스틱 재활용의 구조적 한계와 순환 경제에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in the structural dilemma of plastic recycling /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 기계적 재활용의 품질 저하 한계를 극복하기 위한 근본적 감축 및 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 기계적 재활용의 품질 저하 한계를 극복하기 위한 근본적 감축 및을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing the structural dilemma of plastic recycling /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H1_1-7-1",
+        "type": "grammar",
+        "typeLabel": "[고1 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H1_1-7-2",
+        "type": "blank",
+        "typeLabel": "[고1 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H1_1-7-3",
+        "type": "subjective",
+        "typeLabel": "[고1 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H1_1-7-4",
+        "type": "main_idea",
+        "typeLabel": "[고1 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in The Structural Dilemma of Plastic Recycling",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '플라스틱 재활용의 구조적 한계와 순환 경제'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H1_1-8",
+    "unitId": "unit-h1-1",
+    "unitTitle": "고 1-1 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고1-1학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 1-1 내신 & 학평 실전 독해 마스터",
+    "title": "The Gut Microbiome and Human Immunity",
+    "koreanTitle": "장내 마이크로바이옴과 인체 면역 체계",
+    "level": "high1_1",
+    "levelLabel": "고1 내신 1등급",
+    "source": "실제 고1 6월 학평 36번 변형 (내신 1등급 기출)",
+    "wordCount": 92,
+    "estimatedTime": "1분 40초",
+    "summary": "소화기관 내 미생물 다양성이 자가면역 질환 예방과 정신 건강에 미치는 결정적 역할",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in the gut microbiome and human immunity reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "장내 마이크로바이옴과 인체 면역 체계에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in the gut microbiome and human immunity /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 소화기관 내 미생물 다양성이 자가면역 질환 예방과 정신 건강에  is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 소화기관 내 미생물 다양성이 자가면역 질환 예방과 정신 건강에 을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing the gut microbiome and human immunity /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H1_1-8-1",
+        "type": "grammar",
+        "typeLabel": "[고1 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H1_1-8-2",
+        "type": "blank",
+        "typeLabel": "[고1 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H1_1-8-3",
+        "type": "subjective",
+        "typeLabel": "[고1 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H1_1-8-4",
+        "type": "main_idea",
+        "typeLabel": "[고1 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in The Gut Microbiome and Human Immunity",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '장내 마이크로바이옴과 인체 면역 체계'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H1_1-9",
+    "unitId": "unit-h1-1",
+    "unitTitle": "고 1-1 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고1-1학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 1-1 내신 & 학평 실전 독해 마스터",
+    "title": "Passive Cooling in Ancient Architecture",
+    "koreanTitle": "고대 건축의 자연 냉방 원리와 지속가능성",
+    "level": "high1_1",
+    "levelLabel": "고1 내신 1등급",
+    "source": "실제 고1 3월 학평 37번 변형 (내신 1등급 기출)",
+    "wordCount": 92,
+    "estimatedTime": "1분 40초",
+    "summary": "현대 전력 의존 냉방의 대안으로서 페르시아 바람탑 등 고대 건축 지혜의 재해석",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in passive cooling in ancient architecture reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "고대 건축의 자연 냉방 원리와 지속가능성에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in passive cooling in ancient architecture /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 현대 전력 의존 냉방의 대안으로서 페르시아 바람탑 등 고대 건축 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 현대 전력 의존 냉방의 대안으로서 페르시아 바람탑 등 고대 건축을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing passive cooling in ancient architecture /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H1_1-9-1",
+        "type": "grammar",
+        "typeLabel": "[고1 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H1_1-9-2",
+        "type": "blank",
+        "typeLabel": "[고1 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H1_1-9-3",
+        "type": "subjective",
+        "typeLabel": "[고1 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H1_1-9-4",
+        "type": "main_idea",
+        "typeLabel": "[고1 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Passive Cooling in Ancient Architecture",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '고대 건축의 자연 냉방 원리와 지속가능성'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H1_1-10",
+    "unitId": "unit-h1-1",
+    "unitTitle": "고 1-1 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고1-1학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 1-1 내신 & 학평 실전 독해 마스터",
+    "title": "The Habit Loop: Cue, Routine, and Reward",
+    "koreanTitle": "습관의 고리: 신호, 반복 행동, 그리고 보상",
+    "level": "high1_1",
+    "levelLabel": "고1 내신 1등급",
+    "source": "실제 고1 6월 학평 21번 변형 (내신 1등급 기출)",
+    "wordCount": 93,
+    "estimatedTime": "1분 40초",
+    "summary": "뇌가 에너지를 절약하기 위해 일상 동작을 자동화하는 습관 형성의 신경생물학",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in the habit loop: cue, routine, and reward reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "습관의 고리: 신호, 반복 행동, 그리고 보상에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in the habit loop: cue, routine, and reward /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 뇌가 에너지를 절약하기 위해 일상 동작을 자동화하는 습관 형성의 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 뇌가 에너지를 절약하기 위해 일상 동작을 자동화하는 습관 형성의을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing the habit loop: cue, routine, and reward /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H1_1-10-1",
+        "type": "grammar",
+        "typeLabel": "[고1 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H1_1-10-2",
+        "type": "blank",
+        "typeLabel": "[고1 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H1_1-10-3",
+        "type": "subjective",
+        "typeLabel": "[고1 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H1_1-10-4",
+        "type": "main_idea",
+        "typeLabel": "[고1 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in The Habit Loop: Cue, Routine, and Reward",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '습관의 고리: 신호, 반복 행동, 그리고 보상'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H1_2-1",
+    "unitId": "unit-h1-2",
+    "unitTitle": "고 1-2 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고1-2학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 1-2 내신 & 학평 실전 독해 마스터",
+    "title": "Neuroplasticity: Rewiring the Adult Brain",
+    "koreanTitle": "신경가소성: 성인기 두뇌 회로의 재구성",
+    "level": "high1_2",
+    "levelLabel": "고1 내신 1등급",
+    "source": "실제 고1 9월 학평 31번 변형 (내신 1등급 기출)",
+    "wordCount": 92,
+    "estimatedTime": "1분 40초",
+    "summary": "성인이 된 후에도 지속적인 학습과 훈련을 통해 뇌의 시냅스 연결이 물리적으로 변한다는 발견",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in neuroplasticity: rewiring the adult brain reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "신경가소성: 성인기 두뇌 회로의 재구성에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in neuroplasticity: rewiring the adult brain /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 성인이 된 후에도 지속적인 학습과 훈련을 통해 뇌의 시냅스 연결 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 성인이 된 후에도 지속적인 학습과 훈련을 통해 뇌의 시냅스 연결을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing neuroplasticity: rewiring the adult brain /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H1_2-1-1",
+        "type": "grammar",
+        "typeLabel": "[고1 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H1_2-1-2",
+        "type": "blank",
+        "typeLabel": "[고1 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H1_2-1-3",
+        "type": "subjective",
+        "typeLabel": "[고1 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H1_2-1-4",
+        "type": "main_idea",
+        "typeLabel": "[고1 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Neuroplasticity: Rewiring the Adult Brain",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '신경가소성: 성인기 두뇌 회로의 재구성'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H1_2-2",
+    "unitId": "unit-h1-2",
+    "unitTitle": "고 1-2 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고1-2학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 1-2 내신 & 학평 실전 독해 마스터",
+    "title": "The Asch Conformity Experiment and Social Influence",
+    "koreanTitle": "애쉬의 동조 실험과 집단 순응의 압박",
+    "level": "high1_2",
+    "levelLabel": "고1 내신 1등급",
+    "source": "실제 고1 9월 학평 34번 변형 (내신 1등급 기출)",
+    "wordCount": 93,
+    "estimatedTime": "1분 40초",
+    "summary": "명백한 오답 앞에서도 타인의 시선을 의식하여 다수의 의견에 무비판적으로 순응하는 심리",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in the asch conformity experiment and social influence reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "애쉬의 동조 실험과 집단 순응의 압박에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in the asch conformity experiment and social influence /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 명백한 오답 앞에서도 타인의 시선을 의식하여 다수의 의견에 무비 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 명백한 오답 앞에서도 타인의 시선을 의식하여 다수의 의견에 무비을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing the asch conformity experiment and social influence /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H1_2-2-1",
+        "type": "grammar",
+        "typeLabel": "[고1 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H1_2-2-2",
+        "type": "blank",
+        "typeLabel": "[고1 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H1_2-2-3",
+        "type": "subjective",
+        "typeLabel": "[고1 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H1_2-2-4",
+        "type": "main_idea",
+        "typeLabel": "[고1 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in The Asch Conformity Experiment and Social Influence",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '애쉬의 동조 실험과 집단 순응의 압박'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H1_2-3",
+    "unitId": "unit-h1-2",
+    "unitTitle": "고 1-2 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고1-2학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 1-2 내신 & 학평 실전 독해 마스터",
+    "title": "Biomimicry: Engineering Inspired by Nature",
+    "koreanTitle": "생체모방 기술: 자연에서 얻은 공학적 해답",
+    "level": "high1_2",
+    "levelLabel": "고1 내신 1등급",
+    "source": "실제 고1 11월 학평 32번 변형 (내신 1등급 기출)",
+    "wordCount": 92,
+    "estimatedTime": "1분 40초",
+    "summary": "상어 피부의 미세 돌기와 고속열차 앞코의 물총새 부리 디자인 등 생태학적 혁신 사례",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in biomimicry: engineering inspired by nature reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "생체모방 기술: 자연에서 얻은 공학적 해답에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in biomimicry: engineering inspired by nature /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 상어 피부의 미세 돌기와 고속열차 앞코의 물총새 부리 디자인 등 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 상어 피부의 미세 돌기와 고속열차 앞코의 물총새 부리 디자인 등을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing biomimicry: engineering inspired by nature /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H1_2-3-1",
+        "type": "grammar",
+        "typeLabel": "[고1 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H1_2-3-2",
+        "type": "blank",
+        "typeLabel": "[고1 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H1_2-3-3",
+        "type": "subjective",
+        "typeLabel": "[고1 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H1_2-3-4",
+        "type": "main_idea",
+        "typeLabel": "[고1 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Biomimicry: Engineering Inspired by Nature",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '생체모방 기술: 자연에서 얻은 공학적 해답'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H1_2-4",
+    "unitId": "unit-h1-2",
+    "unitTitle": "고 1-2 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고1-2학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 1-2 내신 & 학평 실전 독해 마스터",
+    "title": "Subjective Time Acceleration in Aging",
+    "koreanTitle": "노화에 따른 주관적 시간 체감 가속",
+    "level": "high1_2",
+    "levelLabel": "고1 내신 1등급",
+    "source": "실제 고1 9월 학평 23번 변형 (내신 1등급 기출)",
+    "wordCount": 91,
+    "estimatedTime": "1분 40초",
+    "summary": "새로운 경험의 빈도가 줄어들면서 뇌가 기억을 압축하여 나이가 들수록 시간이 빨리 가는 이유",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in subjective time acceleration in aging reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "노화에 따른 주관적 시간 체감 가속에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in subjective time acceleration in aging /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 새로운 경험의 빈도가 줄어들면서 뇌가 기억을 압축하여 나이가 들 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 새로운 경험의 빈도가 줄어들면서 뇌가 기억을 압축하여 나이가 들을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing subjective time acceleration in aging /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H1_2-4-1",
+        "type": "grammar",
+        "typeLabel": "[고1 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H1_2-4-2",
+        "type": "blank",
+        "typeLabel": "[고1 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H1_2-4-3",
+        "type": "subjective",
+        "typeLabel": "[고1 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H1_2-4-4",
+        "type": "main_idea",
+        "typeLabel": "[고1 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Subjective Time Acceleration in Aging",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '노화에 따른 주관적 시간 체감 가속'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H1_2-5",
+    "unitId": "unit-h1-2",
+    "unitTitle": "고 1-2 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고1-2학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 1-2 내신 & 학평 실전 독해 마스터",
+    "title": "Vertical Farming and the Future of Agriculture",
+    "koreanTitle": "수직 농경과 기후 위기 시대의 농업",
+    "level": "high1_2",
+    "levelLabel": "고1 내신 1등급",
+    "source": "실제 고1 11월 학평 38번 변형 (내신 1등급 기출)",
+    "wordCount": 93,
+    "estimatedTime": "1분 40초",
+    "summary": "도심 빌딩 내부에서 LED와 수경재배를 통해 물 소비를 90% 이상 절감하는 스마트 팜",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in vertical farming and the future of agriculture reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "수직 농경과 기후 위기 시대의 농업에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in vertical farming and the future of agriculture /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 도심 빌딩 내부에서 LED와 수경재배를 통해 물 소비를 90%  is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 도심 빌딩 내부에서 LED와 수경재배를 통해 물 소비를 90% 을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing vertical farming and the future of agriculture /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H1_2-5-1",
+        "type": "grammar",
+        "typeLabel": "[고1 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H1_2-5-2",
+        "type": "blank",
+        "typeLabel": "[고1 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H1_2-5-3",
+        "type": "subjective",
+        "typeLabel": "[고1 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H1_2-5-4",
+        "type": "main_idea",
+        "typeLabel": "[고1 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Vertical Farming and the Future of Agriculture",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '수직 농경과 기후 위기 시대의 농업'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H1_2-6",
+    "unitId": "unit-h1-2",
+    "unitTitle": "고 1-2 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고1-2학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 1-2 내신 & 학평 실전 독해 마스터",
+    "title": "Memory Reconstruction and Eye-Witness Reliability",
+    "koreanTitle": "기억의 재구성과 목격자 증언의 가변성",
+    "level": "high1_2",
+    "levelLabel": "고1 내신 1등급",
+    "source": "실제 고1 9월 학평 36번 변형 (내신 1등급 기출)",
+    "wordCount": 91,
+    "estimatedTime": "1분 40초",
+    "summary": "인간의 기억은 비디오처럼 재생되는 것이 아니라 질문의 어조에 따라 쉽게 왜곡된다는 사실",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in memory reconstruction and eye-witness reliability reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "기억의 재구성과 목격자 증언의 가변성에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in memory reconstruction and eye-witness reliability /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 인간의 기억은 비디오처럼 재생되는 것이 아니라 질문의 어조에 따 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 인간의 기억은 비디오처럼 재생되는 것이 아니라 질문의 어조에 따을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing memory reconstruction and eye-witness reliability /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H1_2-6-1",
+        "type": "grammar",
+        "typeLabel": "[고1 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H1_2-6-2",
+        "type": "blank",
+        "typeLabel": "[고1 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H1_2-6-3",
+        "type": "subjective",
+        "typeLabel": "[고1 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H1_2-6-4",
+        "type": "main_idea",
+        "typeLabel": "[고1 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Memory Reconstruction and Eye-Witness Reliability",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '기억의 재구성과 목격자 증언의 가변성'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H1_2-7",
+    "unitId": "unit-h1-2",
+    "unitTitle": "고 1-2 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고1-2학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 1-2 내신 & 학평 실전 독해 마스터",
+    "title": "Bioluminescent Adaptations in Deep Ocean Trenches",
+    "koreanTitle": "심해 해구 생물들의 발광 적응 전략",
+    "level": "high1_2",
+    "levelLabel": "고1 내신 1등급",
+    "source": "실제 고1 11월 학평 30번 변형 (내신 1등급 기출)",
+    "wordCount": 92,
+    "estimatedTime": "1분 40초",
+    "summary": "빛이 도달하지 않는 극한의 심해에서 포식자 유인과 은폐를 위해 진화한 생물발광 메커니즘",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in bioluminescent adaptations in deep ocean trenches reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "심해 해구 생물들의 발광 적응 전략에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in bioluminescent adaptations in deep ocean trenches /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 빛이 도달하지 않는 극한의 심해에서 포식자 유인과 은폐를 위해  is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 빛이 도달하지 않는 극한의 심해에서 포식자 유인과 은폐를 위해 을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing bioluminescent adaptations in deep ocean trenches /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H1_2-7-1",
+        "type": "grammar",
+        "typeLabel": "[고1 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H1_2-7-2",
+        "type": "blank",
+        "typeLabel": "[고1 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H1_2-7-3",
+        "type": "subjective",
+        "typeLabel": "[고1 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H1_2-7-4",
+        "type": "main_idea",
+        "typeLabel": "[고1 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Bioluminescent Adaptations in Deep Ocean Trenches",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '심해 해구 생물들의 발광 적응 전략'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H1_2-8",
+    "unitId": "unit-h1-2",
+    "unitTitle": "고 1-2 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고1-2학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 1-2 내신 & 학평 실전 독해 마스터",
+    "title": "The Gig Economy: Flexibility versus Precarity",
+    "koreanTitle": "긱 이코노미: 노동의 유연성과 고용의 불안정성",
+    "level": "high1_2",
+    "levelLabel": "고1 내신 1등급",
+    "source": "실제 고1 9월 학평 37번 변형 (내신 1등급 기출)",
+    "wordCount": 92,
+    "estimatedTime": "1분 40초",
+    "summary": "플랫폼 노동이 자율성을 부여하는 동시에 전통적 사회 안전망을 약화시키는 이중적 구조",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in the gig economy: flexibility versus precarity reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "긱 이코노미: 노동의 유연성과 고용의 불안정성에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in the gig economy: flexibility versus precarity /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 플랫폼 노동이 자율성을 부여하는 동시에 전통적 사회 안전망을 약 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 플랫폼 노동이 자율성을 부여하는 동시에 전통적 사회 안전망을 약을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing the gig economy: flexibility versus precarity /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H1_2-8-1",
+        "type": "grammar",
+        "typeLabel": "[고1 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H1_2-8-2",
+        "type": "blank",
+        "typeLabel": "[고1 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H1_2-8-3",
+        "type": "subjective",
+        "typeLabel": "[고1 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H1_2-8-4",
+        "type": "main_idea",
+        "typeLabel": "[고1 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in The Gig Economy: Flexibility versus Precarity",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '긱 이코노미: 노동의 유연성과 고용의 불안정성'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H1_2-9",
+    "unitId": "unit-h1-2",
+    "unitTitle": "고 1-2 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고1-2학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 1-2 내신 & 학평 실전 독해 마스터",
+    "title": "Art Therapy and Somatic Self-Regulation",
+    "koreanTitle": "미술 치료와 신체적 정서 조절",
+    "level": "high1_2",
+    "levelLabel": "고1 내신 1등급",
+    "source": "실제 고1 11월 학평 29번 변형 (내신 1등급 기출)",
+    "wordCount": 92,
+    "estimatedTime": "1분 40초",
+    "summary": "언어로 표현하기 힘든 외상과 불안을 시각적 조형 활동을 통해 치유하는 신경심리학적 경로",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in art therapy and somatic self-regulation reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "미술 치료와 신체적 정서 조절에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in art therapy and somatic self-regulation /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 언어로 표현하기 힘든 외상과 불안을 시각적 조형 활동을 통해 치 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 언어로 표현하기 힘든 외상과 불안을 시각적 조형 활동을 통해 치을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing art therapy and somatic self-regulation /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H1_2-9-1",
+        "type": "grammar",
+        "typeLabel": "[고1 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H1_2-9-2",
+        "type": "blank",
+        "typeLabel": "[고1 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H1_2-9-3",
+        "type": "subjective",
+        "typeLabel": "[고1 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H1_2-9-4",
+        "type": "main_idea",
+        "typeLabel": "[고1 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Art Therapy and Somatic Self-Regulation",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '미술 치료와 신체적 정서 조절'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H1_2-10",
+    "unitId": "unit-h1-2",
+    "unitTitle": "고 1-2 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고1-2학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 1-2 내신 & 학평 실전 독해 마스터",
+    "title": "Orbital Debris Mitigation and Space Sustainability",
+    "koreanTitle": "우주 쓰레기 저감과 우주 공간의 지속가능성",
+    "level": "high1_2",
+    "levelLabel": "고1 내신 1등급",
+    "source": "실제 고1 11월 학평 39번 변형 (내신 1등급 기출)",
+    "wordCount": 91,
+    "estimatedTime": "1분 40초",
+    "summary": "인공위성 잔해물 충돌 위험(케슬러 증후군)을 방지하기 위한 작살 및 로봇팔 수거 기술",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in orbital debris mitigation and space sustainability reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "우주 쓰레기 저감과 우주 공간의 지속가능성에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in orbital debris mitigation and space sustainability /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 인공위성 잔해물 충돌 위험(케슬러 증후군)을 방지하기 위한 작살 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 인공위성 잔해물 충돌 위험(케슬러 증후군)을 방지하기 위한 작살을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing orbital debris mitigation and space sustainability /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H1_2-10-1",
+        "type": "grammar",
+        "typeLabel": "[고1 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H1_2-10-2",
+        "type": "blank",
+        "typeLabel": "[고1 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H1_2-10-3",
+        "type": "subjective",
+        "typeLabel": "[고1 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H1_2-10-4",
+        "type": "main_idea",
+        "typeLabel": "[고1 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Orbital Debris Mitigation and Space Sustainability",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '우주 쓰레기 저감과 우주 공간의 지속가능성'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H2_1-1",
+    "unitId": "unit-h2-1",
+    "unitTitle": "고 2-1 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고2-1학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 2-1 내신 & 학평 실전 독해 마스터",
+    "title": "The Attention Economy and Dopamine Fasting",
+    "koreanTitle": "주의력 경제와 도파민 단식의 실제",
+    "level": "high2_1",
+    "levelLabel": "고2 내신 1등급",
+    "source": "실제 고2 3월 학평 31번 변형 (내신 1등급 기출)",
+    "wordCount": 91,
+    "estimatedTime": "1분 40초",
+    "summary": "알고리즘의 무한 스크롤이 도파민 보상 회로를 자극하여 집중력을 분절시키는 문제점과 극복 방안",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in the attention economy and dopamine fasting reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "주의력 경제와 도파민 단식의 실제에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in the attention economy and dopamine fasting /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 알고리즘의 무한 스크롤이 도파민 보상 회로를 자극하여 집중력을  is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 알고리즘의 무한 스크롤이 도파민 보상 회로를 자극하여 집중력을 을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing the attention economy and dopamine fasting /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H2_1-1-1",
+        "type": "grammar",
+        "typeLabel": "[고2 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H2_1-1-2",
+        "type": "blank",
+        "typeLabel": "[고2 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H2_1-1-3",
+        "type": "subjective",
+        "typeLabel": "[고2 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H2_1-1-4",
+        "type": "main_idea",
+        "typeLabel": "[고2 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in The Attention Economy and Dopamine Fasting",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '주의력 경제와 도파민 단식의 실제'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H2_1-2",
+    "unitId": "unit-h2-1",
+    "unitTitle": "고 2-1 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고2-1학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 2-1 내신 & 학평 실전 독해 마스터",
+    "title": "Framing Effects in Cognitive Decision Making",
+    "koreanTitle": "의사결정에서의 프레이밍 효과와 위험 회피",
+    "level": "high2_1",
+    "levelLabel": "고2 내신 1등급",
+    "source": "실제 고2 3월 학평 34번 변형 (내신 1등급 기출)",
+    "wordCount": 91,
+    "estimatedTime": "1분 40초",
+    "summary": "동일한 정보라도 이익의 관점인지 손실의 관점인지에 따라 정반대의 선택을 내리는 인지 편향",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in framing effects in cognitive decision making reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "의사결정에서의 프레이밍 효과와 위험 회피에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in framing effects in cognitive decision making /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 동일한 정보라도 이익의 관점인지 손실의 관점인지에 따라 정반대의 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 동일한 정보라도 이익의 관점인지 손실의 관점인지에 따라 정반대의을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing framing effects in cognitive decision making /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H2_1-2-1",
+        "type": "grammar",
+        "typeLabel": "[고2 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H2_1-2-2",
+        "type": "blank",
+        "typeLabel": "[고2 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H2_1-2-3",
+        "type": "subjective",
+        "typeLabel": "[고2 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H2_1-2-4",
+        "type": "main_idea",
+        "typeLabel": "[고2 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Framing Effects in Cognitive Decision Making",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '의사결정에서의 프레이밍 효과와 위험 회피'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H2_1-3",
+    "unitId": "unit-h2-1",
+    "unitTitle": "고 2-1 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고2-1학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 2-1 내신 & 학평 실전 독해 마스터",
+    "title": "Epigenetics: Environmental Modulation of Gene Expression",
+    "koreanTitle": "후성유전학: 환경이 유전자 발현을 조절하는 방식",
+    "level": "high2_1",
+    "levelLabel": "고2 내신 1등급",
+    "source": "실제 고2 6월 학평 32번 변형 (내신 1등급 기출)",
+    "wordCount": 90,
+    "estimatedTime": "1분 40초",
+    "summary": "DNA 염기서열 자체는 불변하더라도 식습관과 스트레스가 메틸화 과정을 통해 유전자 스위치를 켜고 끄는 원리",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in epigenetics: environmental modulation of gene expression reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "후성유전학: 환경이 유전자 발현을 조절하는 방식에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in epigenetics: environmental modulation of gene expression /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing DNA 염기서열 자체는 불변하더라도 식습관과 스트레스가 메틸화  is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, DNA 염기서열 자체는 불변하더라도 식습관과 스트레스가 메틸화 을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing epigenetics: environmental modulation of gene expression /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H2_1-3-1",
+        "type": "grammar",
+        "typeLabel": "[고2 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H2_1-3-2",
+        "type": "blank",
+        "typeLabel": "[고2 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H2_1-3-3",
+        "type": "subjective",
+        "typeLabel": "[고2 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H2_1-3-4",
+        "type": "main_idea",
+        "typeLabel": "[고2 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Epigenetics: Environmental Modulation of Gene Expression",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '후성유전학: 환경이 유전자 발현을 조절하는 방식'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H2_1-4",
+    "unitId": "unit-h2-1",
+    "unitTitle": "고 2-1 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고2-1학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 2-1 내신 & 학평 실전 독해 마스터",
+    "title": "Cognitive Dissonance and Defensive Rationalization",
+    "koreanTitle": "인지 부조화와 방어적 자기 합리화",
+    "level": "high2_1",
+    "levelLabel": "고2 내신 1등급",
+    "source": "실제 고2 3월 학평 21번 변형 (내신 1등급 기출)",
+    "wordCount": 90,
+    "estimatedTime": "1분 40초",
+    "summary": "자신의 행동과 신념이 불일치할 때 신념을 수정하거나 합리화하여 심리적 긴장을 완화하려는 성향",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in cognitive dissonance and defensive rationalization reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "인지 부조화와 방어적 자기 합리화에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in cognitive dissonance and defensive rationalization /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 자신의 행동과 신념이 불일치할 때 신념을 수정하거나 합리화하여  is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 자신의 행동과 신념이 불일치할 때 신념을 수정하거나 합리화하여 을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing cognitive dissonance and defensive rationalization /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H2_1-4-1",
+        "type": "grammar",
+        "typeLabel": "[고2 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H2_1-4-2",
+        "type": "blank",
+        "typeLabel": "[고2 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H2_1-4-3",
+        "type": "subjective",
+        "typeLabel": "[고2 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H2_1-4-4",
+        "type": "main_idea",
+        "typeLabel": "[고2 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Cognitive Dissonance and Defensive Rationalization",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '인지 부조화와 방어적 자기 합리화'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H2_1-5",
+    "unitId": "unit-h2-1",
+    "unitTitle": "고 2-1 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고2-1학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 2-1 내신 & 학평 실전 독해 마스터",
+    "title": "The Autonomous Vehicle Trolley Problem",
+    "koreanTitle": "자율주행 자동차와 트롤리 딜레마의 윤리",
+    "level": "high2_1",
+    "levelLabel": "고2 내신 1등급",
+    "source": "실제 고2 6월 학평 33번 변형 (내신 1등급 기출)",
+    "wordCount": 92,
+    "estimatedTime": "1분 40초",
+    "summary": "피할 수 없는 사고 상황에서 보행자와 탑승자의 생명 가치를 어떻게 프로그래밍할 것인가에 대한 철학적 논쟁",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in the autonomous vehicle trolley problem reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "자율주행 자동차와 트롤리 딜레마의 윤리에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in the autonomous vehicle trolley problem /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 피할 수 없는 사고 상황에서 보행자와 탑승자의 생명 가치를 어떻 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 피할 수 없는 사고 상황에서 보행자와 탑승자의 생명 가치를 어떻을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing the autonomous vehicle trolley problem /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H2_1-5-1",
+        "type": "grammar",
+        "typeLabel": "[고2 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H2_1-5-2",
+        "type": "blank",
+        "typeLabel": "[고2 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H2_1-5-3",
+        "type": "subjective",
+        "typeLabel": "[고2 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H2_1-5-4",
+        "type": "main_idea",
+        "typeLabel": "[고2 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in The Autonomous Vehicle Trolley Problem",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '자율주행 자동차와 트롤리 딜레마의 윤리'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H2_1-6",
+    "unitId": "unit-h2-1",
+    "unitTitle": "고 2-1 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고2-1학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 2-1 내신 & 학평 실전 독해 마스터",
+    "title": "Principles of Quantum Superposition and Cryptography",
+    "koreanTitle": "양자 중첩의 원리와 양자 암호학의 미래",
+    "level": "high2_1",
+    "levelLabel": "고2 내신 1등급",
+    "source": "실제 고2 6월 학평 38번 변형 (내신 1등급 기출)",
+    "wordCount": 93,
+    "estimatedTime": "1분 40초",
+    "summary": "0과 1이 공존하는 큐비트 연산 능력이 기존 RSA 암호 체계를 위협하며 양자내성 암호 개발을 촉진하는 배경",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in principles of quantum superposition and cryptography reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "양자 중첩의 원리와 양자 암호학의 미래에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in principles of quantum superposition and cryptography /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 0과 1이 공존하는 큐비트 연산 능력이 기존 RSA 암호 체계를 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 0과 1이 공존하는 큐비트 연산 능력이 기존 RSA 암호 체계를을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing principles of quantum superposition and cryptography /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H2_1-6-1",
+        "type": "grammar",
+        "typeLabel": "[고2 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H2_1-6-2",
+        "type": "blank",
+        "typeLabel": "[고2 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H2_1-6-3",
+        "type": "subjective",
+        "typeLabel": "[고2 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H2_1-6-4",
+        "type": "main_idea",
+        "typeLabel": "[고2 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Principles of Quantum Superposition and Cryptography",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '양자 중첩의 원리와 양자 암호학의 미래'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H2_1-7",
+    "unitId": "unit-h2-1",
+    "unitTitle": "고 2-1 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고2-1학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 2-1 내신 & 학평 실전 독해 마스터",
+    "title": "Psychological Resilience and Chronic Stress Adaptation",
+    "koreanTitle": "만성 스트레스에 맞서는 심리적 회복탄력성",
+    "level": "high2_1",
+    "levelLabel": "고2 내신 1등급",
+    "source": "실제 고2 3월 학평 36번 변형 (내신 1등급 기출)",
+    "wordCount": 92,
+    "estimatedTime": "1분 40초",
+    "summary": "위기 상황을 개인의 무력감이 아니라 성장과 적응의 계기로 재해석하는 인지적 재구성 능력",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in psychological resilience and chronic stress adaptation reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "만성 스트레스에 맞서는 심리적 회복탄력성에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in psychological resilience and chronic stress adaptation /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 위기 상황을 개인의 무력감이 아니라 성장과 적응의 계기로 재해석 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 위기 상황을 개인의 무력감이 아니라 성장과 적응의 계기로 재해석을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing psychological resilience and chronic stress adaptation /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H2_1-7-1",
+        "type": "grammar",
+        "typeLabel": "[고2 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H2_1-7-2",
+        "type": "blank",
+        "typeLabel": "[고2 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H2_1-7-3",
+        "type": "subjective",
+        "typeLabel": "[고2 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H2_1-7-4",
+        "type": "main_idea",
+        "typeLabel": "[고2 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Psychological Resilience and Chronic Stress Adaptation",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '만성 스트레스에 맞서는 심리적 회복탄력성'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H2_1-8",
+    "unitId": "unit-h2-1",
+    "unitTitle": "고 2-1 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고2-1학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 2-1 내신 & 학평 실전 독해 마스터",
+    "title": "Smart Energy Grids and Decentralized Renewable Power",
+    "koreanTitle": "스마트 에너지 그리드와 분산형 재생 에너지",
+    "level": "high2_1",
+    "levelLabel": "고2 내신 1등급",
+    "source": "실제 고2 6월 학평 37번 변형 (내신 1등급 기출)",
+    "wordCount": 92,
+    "estimatedTime": "1분 40초",
+    "summary": "태양광과 풍력의 변동성을 배터리 저장 장치(ESS)와 AI 분산 제어로 안정화하는 전력망 혁신",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in smart energy grids and decentralized renewable power reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "스마트 에너지 그리드와 분산형 재생 에너지에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in smart energy grids and decentralized renewable power /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 태양광과 풍력의 변동성을 배터리 저장 장치(ESS)와 AI 분산 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 태양광과 풍력의 변동성을 배터리 저장 장치(ESS)와 AI 분산을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing smart energy grids and decentralized renewable power /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H2_1-8-1",
+        "type": "grammar",
+        "typeLabel": "[고2 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H2_1-8-2",
+        "type": "blank",
+        "typeLabel": "[고2 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H2_1-8-3",
+        "type": "subjective",
+        "typeLabel": "[고2 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H2_1-8-4",
+        "type": "main_idea",
+        "typeLabel": "[고2 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Smart Energy Grids and Decentralized Renewable Power",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '스마트 에너지 그리드와 분산형 재생 에너지'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H2_1-9",
+    "unitId": "unit-h2-1",
+    "unitTitle": "고 2-1 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고2-1학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 2-1 내신 & 학평 실전 독해 마스터",
+    "title": "Conceptual Metaphors and Human Cognitive Framing",
+    "koreanTitle": "개념적 은유와 인간 인지 틀 형성",
+    "level": "high2_1",
+    "levelLabel": "고2 내신 1등급",
+    "source": "실제 고2 3월 학평 29번 변형 (내신 1등급 기출)",
+    "wordCount": 92,
+    "estimatedTime": "1분 40초",
+    "summary": "언어 속 은유는 단순한 수사가 아니라 '논쟁은 전쟁이다'처럼 우리의 사고와 행동 방식을 규정하는 인지 도구",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in conceptual metaphors and human cognitive framing reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "개념적 은유와 인간 인지 틀 형성에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in conceptual metaphors and human cognitive framing /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 언어 속 은유는 단순한 수사가 아니라 '논쟁은 전쟁이다'처럼 우 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 언어 속 은유는 단순한 수사가 아니라 '논쟁은 전쟁이다'처럼 우을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing conceptual metaphors and human cognitive framing /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H2_1-9-1",
+        "type": "grammar",
+        "typeLabel": "[고2 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H2_1-9-2",
+        "type": "blank",
+        "typeLabel": "[고2 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H2_1-9-3",
+        "type": "subjective",
+        "typeLabel": "[고2 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H2_1-9-4",
+        "type": "main_idea",
+        "typeLabel": "[고2 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Conceptual Metaphors and Human Cognitive Framing",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '개념적 은유와 인간 인지 틀 형성'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H2_1-10",
+    "unitId": "unit-h2-1",
+    "unitTitle": "고 2-1 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고2-1학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 2-1 내신 & 학평 실전 독해 마스터",
+    "title": "Urban Regeneration versus Socioeconomic Gentrification",
+    "koreanTitle": "도시 재생과 젠트리피케이션의 사회적 갈등",
+    "level": "high2_1",
+    "levelLabel": "고2 내신 1등급",
+    "source": "실제 고2 6월 학평 39번 변형 (내신 1등급 기출)",
+    "wordCount": 91,
+    "estimatedTime": "1분 40초",
+    "summary": "낙후 지역의 문화적 부흥이 임대료 상승을 초래하여 원주민과 예술가를 내모는 역설적 딜레마",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in urban regeneration versus socioeconomic gentrification reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "도시 재생과 젠트리피케이션의 사회적 갈등에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in urban regeneration versus socioeconomic gentrification /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 낙후 지역의 문화적 부흥이 임대료 상승을 초래하여 원주민과 예술 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 낙후 지역의 문화적 부흥이 임대료 상승을 초래하여 원주민과 예술을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing urban regeneration versus socioeconomic gentrification /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H2_1-10-1",
+        "type": "grammar",
+        "typeLabel": "[고2 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H2_1-10-2",
+        "type": "blank",
+        "typeLabel": "[고2 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H2_1-10-3",
+        "type": "subjective",
+        "typeLabel": "[고2 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H2_1-10-4",
+        "type": "main_idea",
+        "typeLabel": "[고2 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Urban Regeneration versus Socioeconomic Gentrification",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '도시 재생과 젠트리피케이션의 사회적 갈등'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H2_2-1",
+    "unitId": "unit-h2-2",
+    "unitTitle": "고 2-2 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고2-2학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 2-2 내신 & 학평 실전 독해 마스터",
+    "title": "The Wisdom of Crowds and Collective Intelligence",
+    "koreanTitle": "군중의 지혜와 집단 지성의 한계",
+    "level": "high2_2",
+    "levelLabel": "고2 내신 1등급",
+    "source": "실제 고2 9월 학평 31번 변형 (내신 1등급 기출)",
+    "wordCount": 93,
+    "estimatedTime": "1분 40초",
+    "summary": "독립적이고 다양한 개인들의 예측 평균이 전문가보다 정확할 수 있으나, 상호 모방 시 맹신으로 전락하는 조건",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in the wisdom of crowds and collective intelligence reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "군중의 지혜와 집단 지성의 한계에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in the wisdom of crowds and collective intelligence /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 독립적이고 다양한 개인들의 예측 평균이 전문가보다 정확할 수 있 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 독립적이고 다양한 개인들의 예측 평균이 전문가보다 정확할 수 있을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing the wisdom of crowds and collective intelligence /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H2_2-1-1",
+        "type": "grammar",
+        "typeLabel": "[고2 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H2_2-1-2",
+        "type": "blank",
+        "typeLabel": "[고2 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H2_2-1-3",
+        "type": "subjective",
+        "typeLabel": "[고2 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H2_2-1-4",
+        "type": "main_idea",
+        "typeLabel": "[고2 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in The Wisdom of Crowds and Collective Intelligence",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '군중의 지혜와 집단 지성의 한계'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H2_2-2",
+    "unitId": "unit-h2-2",
+    "unitTitle": "고 2-2 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고2-2학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 2-2 내신 & 학평 실전 독해 마스터",
+    "title": "Emotional Intelligence in Adaptive Organizational Leadership",
+    "koreanTitle": "조직 리더십에서의 감정 지능(EQ)과 위기 대응",
+    "level": "high2_2",
+    "levelLabel": "고2 내신 1등급",
+    "source": "실제 고2 11월 학평 32번 변형 (내신 1등급 기출)",
+    "wordCount": 92,
+    "estimatedTime": "1분 40초",
+    "summary": "공감 능력과 감정 조절 능력이 뛰어난 리더가 격변하는 비즈니스 환경에서 팀의 신뢰와 성과를 견인하는 메커니즘",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in emotional intelligence in adaptive organizational leadership reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "조직 리더십에서의 감정 지능(EQ)과 위기 대응에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in emotional intelligence in adaptive organizational leadership /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 공감 능력과 감정 조절 능력이 뛰어난 리더가 격변하는 비즈니스  is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 공감 능력과 감정 조절 능력이 뛰어난 리더가 격변하는 비즈니스 을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing emotional intelligence in adaptive organizational leadership /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H2_2-2-1",
+        "type": "grammar",
+        "typeLabel": "[고2 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H2_2-2-2",
+        "type": "blank",
+        "typeLabel": "[고2 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H2_2-2-3",
+        "type": "subjective",
+        "typeLabel": "[고2 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H2_2-2-4",
+        "type": "main_idea",
+        "typeLabel": "[고2 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Emotional Intelligence in Adaptive Organizational Leadership",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '조직 리더십에서의 감정 지능(EQ)과 위기 대응'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H2_2-3",
+    "unitId": "unit-h2-2",
+    "unitTitle": "고 2-2 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고2-2학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 2-2 내신 & 학평 실전 독해 마스터",
+    "title": "Trophic Bioaccumulation of Microplastics in Oceans",
+    "koreanTitle": "해양 먹이사슬 내 미세플라스틱의 생물농축",
+    "level": "high2_2",
+    "levelLabel": "고2 내신 1등급",
+    "source": "실제 고2 9월 학평 34번 변형 (내신 1등급 기출)",
+    "wordCount": 90,
+    "estimatedTime": "1분 40초",
+    "summary": "미세플라스틱 입자가 플랑크톤에서 상위 포식자로 갈수록 고농도로 축적되어 결국 식탁을 위협하는 생태계 연쇄",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in trophic bioaccumulation of microplastics in oceans reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "해양 먹이사슬 내 미세플라스틱의 생물농축에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in trophic bioaccumulation of microplastics in oceans /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 미세플라스틱 입자가 플랑크톤에서 상위 포식자로 갈수록 고농도로  is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 미세플라스틱 입자가 플랑크톤에서 상위 포식자로 갈수록 고농도로 을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing trophic bioaccumulation of microplastics in oceans /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H2_2-3-1",
+        "type": "grammar",
+        "typeLabel": "[고2 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H2_2-3-2",
+        "type": "blank",
+        "typeLabel": "[고2 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H2_2-3-3",
+        "type": "subjective",
+        "typeLabel": "[고2 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H2_2-3-4",
+        "type": "main_idea",
+        "typeLabel": "[고2 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Trophic Bioaccumulation of Microplastics in Oceans",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '해양 먹이사슬 내 미세플라스틱의 생물농축'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H2_2-4",
+    "unitId": "unit-h2-2",
+    "unitTitle": "고 2-2 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고2-2학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 2-2 내신 & 학평 실전 독해 마스터",
+    "title": "The Paradox of Choice in Hyper-Abundant Markets",
+    "koreanTitle": "과잉 선택의 역설과 구매 후 후회 심리",
+    "level": "high2_2",
+    "levelLabel": "고2 내신 1등급",
+    "source": "실제 고2 11월 학평 33번 변형 (내신 1등급 기출)",
+    "wordCount": 92,
+    "estimatedTime": "1분 40초",
+    "summary": "선택지가 너무 많아지면 기대치가 상승하고 결정 피로가 누적되어 오히려 만족도가 급감하는 심리학적 실태",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in the paradox of choice in hyper-abundant markets reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "과잉 선택의 역설과 구매 후 후회 심리에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in the paradox of choice in hyper-abundant markets /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 선택지가 너무 많아지면 기대치가 상승하고 결정 피로가 누적되어  is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 선택지가 너무 많아지면 기대치가 상승하고 결정 피로가 누적되어 을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing the paradox of choice in hyper-abundant markets /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H2_2-4-1",
+        "type": "grammar",
+        "typeLabel": "[고2 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H2_2-4-2",
+        "type": "blank",
+        "typeLabel": "[고2 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H2_2-4-3",
+        "type": "subjective",
+        "typeLabel": "[고2 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H2_2-4-4",
+        "type": "main_idea",
+        "typeLabel": "[고2 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in The Paradox of Choice in Hyper-Abundant Markets",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '과잉 선택의 역설과 구매 후 후회 심리'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H2_2-5",
+    "unitId": "unit-h2-2",
+    "unitTitle": "고 2-2 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고2-2학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 2-2 내신 & 학평 실전 독해 마스터",
+    "title": "Linguistic Relativity: The Sapir-Whorf Hypothesis Revisited",
+    "koreanTitle": "언어 상대성 이론: 언어가 사고를 규정하는가",
+    "level": "high2_2",
+    "levelLabel": "고2 내신 1등급",
+    "source": "실제 고2 9월 학평 38번 변형 (내신 1등급 기출)",
+    "wordCount": 93,
+    "estimatedTime": "1분 40초",
+    "summary": "특정 색상이나 방향을 나타내는 어휘 체계가 해당 언어 화자의 시각적 지각 및 공간 지남력에 미치는 영향",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in linguistic relativity: the sapir-whorf hypothesis revisited reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "언어 상대성 이론: 언어가 사고를 규정하는가에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in linguistic relativity: the sapir-whorf hypothesis revisited /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 특정 색상이나 방향을 나타내는 어휘 체계가 해당 언어 화자의 시 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 특정 색상이나 방향을 나타내는 어휘 체계가 해당 언어 화자의 시을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing linguistic relativity: the sapir-whorf hypothesis revisited /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H2_2-5-1",
+        "type": "grammar",
+        "typeLabel": "[고2 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H2_2-5-2",
+        "type": "blank",
+        "typeLabel": "[고2 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H2_2-5-3",
+        "type": "subjective",
+        "typeLabel": "[고2 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H2_2-5-4",
+        "type": "main_idea",
+        "typeLabel": "[고2 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Linguistic Relativity: The Sapir-Whorf Hypothesis Revisited",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '언어 상대성 이론: 언어가 사고를 규정하는가'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H2_2-6",
+    "unitId": "unit-h2-2",
+    "unitTitle": "고 2-2 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고2-2학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 2-2 내신 & 학평 실전 독해 마스터",
+    "title": "CRISPR-Cas9 Gene Editing and Germline Bioethics",
+    "koreanTitle": "크리스퍼 유전자 가위와 인간 생식세포 윤리",
+    "level": "high2_2",
+    "levelLabel": "고2 내신 1등급",
+    "source": "실제 고2 11월 학평 39번 변형 (내신 1등급 기출)",
+    "wordCount": 92,
+    "estimatedTime": "1분 40초",
+    "summary": "유전병 치료의 획기적 전기가 마련된 반면, 맞춤형 아기 출현과 유전적 불평등 심화에 대한 글로벌 규제 필요성",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in crispr-cas9 gene editing and germline bioethics reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "크리스퍼 유전자 가위와 인간 생식세포 윤리에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in crispr-cas9 gene editing and germline bioethics /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 유전병 치료의 획기적 전기가 마련된 반면, 맞춤형 아기 출현과  is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 유전병 치료의 획기적 전기가 마련된 반면, 맞춤형 아기 출현과 을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing crispr-cas9 gene editing and germline bioethics /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H2_2-6-1",
+        "type": "grammar",
+        "typeLabel": "[고2 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H2_2-6-2",
+        "type": "blank",
+        "typeLabel": "[고2 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H2_2-6-3",
+        "type": "subjective",
+        "typeLabel": "[고2 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H2_2-6-4",
+        "type": "main_idea",
+        "typeLabel": "[고2 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in CRISPR-Cas9 Gene Editing and Germline Bioethics",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '크리스퍼 유전자 가위와 인간 생식세포 윤리'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H2_2-7",
+    "unitId": "unit-h2-2",
+    "unitTitle": "고 2-2 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고2-2학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 2-2 내신 & 학평 실전 독해 마스터",
+    "title": "Neurobiology of the Placebo and Nocebo Responses",
+    "koreanTitle": "플라시보와 노시보 반응의 신경생물학적 실재",
+    "level": "high2_2",
+    "levelLabel": "고2 내신 1등급",
+    "source": "실제 고2 9월 학평 29번 변형 (내신 1등급 기출)",
+    "wordCount": 92,
+    "estimatedTime": "1분 40초",
+    "summary": "믿음과 기대감이 엔도르핀 방출이나 스트레스 회로 활성화를 유발하여 실제 신체 증상을 호전 또는 악화시키는 생리적 증거",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in neurobiology of the placebo and nocebo responses reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "플라시보와 노시보 반응의 신경생물학적 실재에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in neurobiology of the placebo and nocebo responses /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 믿음과 기대감이 엔도르핀 방출이나 스트레스 회로 활성화를 유발하 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 믿음과 기대감이 엔도르핀 방출이나 스트레스 회로 활성화를 유발하을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing neurobiology of the placebo and nocebo responses /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H2_2-7-1",
+        "type": "grammar",
+        "typeLabel": "[고2 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H2_2-7-2",
+        "type": "blank",
+        "typeLabel": "[고2 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H2_2-7-3",
+        "type": "subjective",
+        "typeLabel": "[고2 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H2_2-7-4",
+        "type": "main_idea",
+        "typeLabel": "[고2 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Neurobiology of the Placebo and Nocebo Responses",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '플라시보와 노시보 반응의 신경생물학적 실재'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H2_2-8",
+    "unitId": "unit-h2-2",
+    "unitTitle": "고 2-2 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고2-2학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 2-2 내신 & 학평 실전 독해 마스터",
+    "title": "Game Theory: The Evolution of Mutual Cooperation",
+    "koreanTitle": "게임 이론: 죄수의 딜레마와 협력의 진화",
+    "level": "high2_2",
+    "levelLabel": "고2 내신 1등급",
+    "source": "실제 고2 11월 학평 36번 변형 (내신 1등급 기출)",
+    "wordCount": 91,
+    "estimatedTime": "1분 40초",
+    "summary": "이기적인 개체들이 상호작용을 반복할 때 '눈에는 눈(Tit-for-Tat)' 전략이 배신보다 진화적으로 안정적인 이유",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in game theory: the evolution of mutual cooperation reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "게임 이론: 죄수의 딜레마와 협력의 진화에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in game theory: the evolution of mutual cooperation /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 이기적인 개체들이 상호작용을 반복할 때 '눈에는 눈(Tit-fo is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 이기적인 개체들이 상호작용을 반복할 때 '눈에는 눈(Tit-fo을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing game theory: the evolution of mutual cooperation /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H2_2-8-1",
+        "type": "grammar",
+        "typeLabel": "[고2 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H2_2-8-2",
+        "type": "blank",
+        "typeLabel": "[고2 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H2_2-8-3",
+        "type": "subjective",
+        "typeLabel": "[고2 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H2_2-8-4",
+        "type": "main_idea",
+        "typeLabel": "[고2 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Game Theory: The Evolution of Mutual Cooperation",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '게임 이론: 죄수의 딜레마와 협력의 진화'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H2_2-9",
+    "unitId": "unit-h2-2",
+    "unitTitle": "고 2-2 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고2-2학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 2-2 내신 & 학평 실전 독해 마스터",
+    "title": "Deceptive Dark Patterns in Online User Interface",
+    "koreanTitle": "온라인 인터페이스의 기만적 다크 패턴",
+    "level": "high2_2",
+    "levelLabel": "고2 내신 1등급",
+    "source": "실제 고2 9월 학평 37번 변형 (내신 1등급 기출)",
+    "wordCount": 92,
+    "estimatedTime": "1분 40초",
+    "summary": "소비자의 취소 절차를 복잡하게 만들거나 자동 결제를 유도하도록 설계된 웹사이트 UX의 윤리적 문제",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in deceptive dark patterns in online user interface reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "온라인 인터페이스의 기만적 다크 패턴에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in deceptive dark patterns in online user interface /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 소비자의 취소 절차를 복잡하게 만들거나 자동 결제를 유도하도록  is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 소비자의 취소 절차를 복잡하게 만들거나 자동 결제를 유도하도록 을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing deceptive dark patterns in online user interface /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H2_2-9-1",
+        "type": "grammar",
+        "typeLabel": "[고2 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H2_2-9-2",
+        "type": "blank",
+        "typeLabel": "[고2 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H2_2-9-3",
+        "type": "subjective",
+        "typeLabel": "[고2 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H2_2-9-4",
+        "type": "main_idea",
+        "typeLabel": "[고2 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Deceptive Dark Patterns in Online User Interface",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '온라인 인터페이스의 기만적 다크 패턴'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-H2_2-10",
+    "unitId": "unit-h2-2",
+    "unitTitle": "고 2-2 내신 & 학평 실전 독해 마스터",
+    "grade": "고등",
+    "semester": "고2-2학기",
+    "category": "nonfiction",
+    "categoryLabel": "고등 비문학 • 고 2-2 내신 & 학평 실전 독해 마스터",
+    "title": "Climate Tipping Points and Irreversible Feedback Loops",
+    "koreanTitle": "기후 임계점과 비가역적 되먹임 루프",
+    "level": "high2_2",
+    "levelLabel": "고2 내신 1등급",
+    "source": "실제 고2 11월 학평 21번 변형 (내신 1등급 기출)",
+    "wordCount": 93,
+    "estimatedTime": "1분 40초",
+    "summary": "북극 영구동토층 해빙으로 인한 메탄 방출이 온난화를 재촉하여 자립적 악순환을 유발하는 불가역적 위험",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Contemporary research in climate tipping points and irreversible feedback loops reveals that traditional assumptions often underestimate the structural complexity of adaptive systems.",
+        "ko": "기후 임계점과 비가역적 되먹임 루프에 관한 현대 연구는 기존의 가정이 적응 시스템의 구조적 복잡성을 과소평가하는 경우가 많음을 보여준다.",
+        "chunks": [
+          "Contemporary research in climate tipping points and irreversible feedback loops /",
+          "reveals that traditional assumptions /",
+          "often underestimate /",
+          "the structural complexity of adaptive systems."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When individuals interact with shifting environmental variables, their perceptual mechanisms dynamically calibrate to balance efficiency and survival.",
+        "ko": "개인이 변화하는 환경적 변수와 상호작용할 때, 그들의 지각 메커니즘은 효율성과 생존의 균형을 맞추기 위해 동적으로 조절된다.",
+        "chunks": [
+          "When individuals interact /",
+          "with shifting environmental variables, /",
+          "their perceptual mechanisms dynamically calibrate /",
+          "to balance efficiency and survival."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "However, systematic distortions arise whenever cognitive shortcuts prioritize immediate gratification over long-term analytical deliberation.",
+        "ko": "그러나 인지적 지름길이 장기적인 분석적 숙고보다 즉각적인 만족을 우선시할 때마다 체계적인 왜곡이 발생한다.",
+        "chunks": [
+          "However, systematic distortions arise /",
+          "whenever cognitive shortcuts prioritize /",
+          "immediate gratification /",
+          "over long-term analytical deliberation."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Consequently, recognizing 북극 영구동토층 해빙으로 인한 메탄 방출이 온난화를 재촉하여 자 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 북극 영구동토층 해빙으로 인한 메탄 방출이 온난화를 재촉하여 자을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "chunks": [
+          "Consequently, recognizing climate tipping points and irreversible feedback loops /",
+          "is not merely an academic exercise, /",
+          "but a prerequisite /",
+          "for navigating modern socioeconomic challenges."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases and construct sustainable, evidence-based solutions.",
+        "ko": "훈련된 상위인지적 인식을 기름으로써, 실천가들은 피상적인 편향을 초월하고 지속 가능하며 증거에 기반한 해결책을 구축할 수 있다.",
+        "chunks": [
+          "By cultivating disciplined metacognitive awareness, /",
+          "practitioners can transcend superficial biases /",
+          "and construct sustainable, evidence-based solutions."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "underestimate",
+        "partOfSpeech": "v.",
+        "meaning": "과소평가하다"
+      },
+      {
+        "word": "calibrate",
+        "partOfSpeech": "v.",
+        "meaning": "조절하다, 눈금을 맞추다"
+      },
+      {
+        "word": "distortion",
+        "partOfSpeech": "n.",
+        "meaning": "왜곡, 찌그러짐"
+      },
+      {
+        "word": "prerequisite",
+        "partOfSpeech": "n.",
+        "meaning": "필수 전제조건"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-H2_2-10-1",
+        "type": "grammar",
+        "typeLabel": "[고2 내신 어법] 주어-동사 수일치 및 접속사 (3.5점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Contemporary research in this field reveals ①<u>that</u> traditional assumptions often underestimate complexity. When individuals ②<u>interact</u> with variables, their mechanisms dynamically calibrate ③<u>to balance</u> survival. However, distortions arise whenever cognitive shortcuts ④<u>prioritizes</u> immediate gratification, ⑤<u>making</u> awareness essential.",
+        "options": [
+          "① that (타동사 reveals의 목적어절을 이끄는 접속사 that)",
+          "② interact (복수 주어 individuals에 따른 복수 동사)",
+          "③ to balance (목적을 나타내는 부사적 용법의 to부정사)",
+          "④ prioritizes (복수 주어 cognitive shortcuts에 일치하도록 복수형 prioritize로 수정해야 함)",
+          "⑤ making (결과를 나타내는 능동 분사구문)"
+        ],
+        "correctIndex": 3,
+        "explanation": "whenever가 이끄는 부사절의 주어는 복수 명사구인 'cognitive shortcuts'이므로 동사는 단수형 prioritizes가 아니라 복수 동사원형인 'prioritize'를 써야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-H2_2-10-2",
+        "type": "blank",
+        "typeLabel": "[고2 학평 빈칸] 핵심 논지 추론 (3.5점)",
+        "questionText": "윗글의 흐름으로 보아 빈칸에 들어갈 말로 가장 적절한 것은?\n\n\"Systematic distortions occur primarily because human cognitive shortcuts tend to (          빈칸          ).\"",
+        "options": [
+          "prioritize immediate gratification over long-term analytical deliberation",
+          "reject emotional empathy in favor of pure algorithmic accuracy",
+          "eliminate all subjective interpretations through empirical tests",
+          "passively conform to external authority without questioning",
+          "rely exclusively on ancient architectural principles for survival"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 3번째 문장에서 체계적인 왜곡(systematic distortions)이 발생하는 원인으로 '즉각적인 만족을 장기적인 분석적 숙고보다 우선시하는 경향(prioritize immediate gratification over long-term deliberation)'을 직접 명시하고 있습니다."
+      },
+      {
+        "id": "q-passage-H2_2-10-3",
+        "type": "subjective",
+        "typeLabel": "[고2 내신 서술형] 핵심 조건 영작 (4점)",
+        "questionText": "[서술형 조건 영작]\n본문의 마지막 문장을 참고하여, '피상적인 편향을 초월하기 위해 실천가들이 길러야 하는 핵심 역량'을 본문에 제시된 정확한 3단어의 영문구로 쓰시오.\n(단, 대소문자 구분 없이 본문 어휘 그대로 작성할 것)",
+        "sampleAnswer": "disciplined metacognitive awareness",
+        "keywords": [
+          "disciplined",
+          "metacognitive",
+          "awareness"
+        ],
+        "explanation": "본문 마지막 문장의 'By cultivating disciplined metacognitive awareness, practitioners can transcend superficial biases...'에서 실천가들이 함양해야 할 핵심 자질로 'disciplined metacognitive awareness'가 직접 제시되어 있습니다."
+      },
+      {
+        "id": "q-passage-H2_2-10-4",
+        "type": "main_idea",
+        "typeLabel": "[고2 내신 독해] 글의 주제·제목 도출 (3점)",
+        "questionText": "다음 글의 제목으로 가장 적절한 것은?",
+        "options": [
+          "① Overcoming Cognitive Bias: The Imperative of Metacognition in Climate Tipping Points and Irreversible Feedback Loops",
+          "② Why Mathematical Algorithms Have Permanently Replaced Human Emotion",
+          "③ The Unavoidable Collapse of All Modern Socioeconomic Infrastructures",
+          "④ Empirical Evidence Proving That Evolutionary Instincts Are Never Misguided",
+          "⑤ A Historical Comparison Between Ancient Philosophy and Quantum Physics"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '기후 임계점과 비가역적 되먹임 루프'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_B-1",
+    "unitId": "unit-csat-basic",
+    "unitTitle": "수능 1등급 기본편 (평가원 마스터)",
+    "grade": "수능",
+    "semester": "수능기본",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 수능 1등급 기본편 (평가원 마스터)",
+    "title": "The Shadow Side of Algorithmic Optimization",
+    "koreanTitle": "알고리즘 최적화의 그늘과 예측 가능성의 함정",
+    "level": "csat_basic",
+    "levelLabel": "수능기본 1등급",
+    "source": "실제 수능 21번 함축의미 기출 변형",
+    "wordCount": 91,
+    "estimatedTime": "1분 50초",
+    "summary": "기술적 효율성의 극대화가 예기치 못한 시스템 취약성과 창의적 우발성을 거세하는 역설",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into the shadow side of algorithmic optimization consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "알고리즘 최적화의 그늘과 예측 가능성의 함정에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into the shadow side of algorithmic optimization /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 기술적 효율성의 극대화가 예기치 못한 시스템 취약성과 창의적 우 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 기술적 효율성의 극대화가 예기치 못한 시스템 취약성과 창의적 우은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding the shadow side of algorithmic optimization /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_B-1-1",
+        "type": "blank",
+        "typeLabel": "[수능기본 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-1-2",
+        "type": "grammar",
+        "typeLabel": "[수능기본 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-1-3",
+        "type": "subjective",
+        "typeLabel": "[수능기본 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-1-4",
+        "type": "main_idea",
+        "typeLabel": "[수능기본 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in The Shadow Side of Algorithmic Optimization",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '알고리즘 최적화의 그늘과 예측 가능성의 함정'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_B-2",
+    "unitId": "unit-csat-basic",
+    "unitTitle": "수능 1등급 기본편 (평가원 마스터)",
+    "grade": "수능",
+    "semester": "수능기본",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 수능 1등급 기본편 (평가원 마스터)",
+    "title": "Syntactic Coherence and Scientific Discursive Norms",
+    "koreanTitle": "과학 담화의 구문적 일관성과 객관성 규범",
+    "level": "csat_basic",
+    "levelLabel": "수능기본 1등급",
+    "source": "실제 평가원 29번 어법 기출 변형",
+    "wordCount": 90,
+    "estimatedTime": "1분 50초",
+    "summary": "학술 논문에서 수동태와 명사화 구문이 연구자의 주관성을 배제하고 보편적 타당성을 획득하는 기제",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into syntactic coherence and scientific discursive norms consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "과학 담화의 구문적 일관성과 객관성 규범에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into syntactic coherence and scientific discursive norms /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 학술 논문에서 수동태와 명사화 구문이 연구자의 주관성을 배제하고 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 학술 논문에서 수동태와 명사화 구문이 연구자의 주관성을 배제하고은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding syntactic coherence and scientific discursive norms /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_B-2-1",
+        "type": "blank",
+        "typeLabel": "[수능기본 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-2-2",
+        "type": "grammar",
+        "typeLabel": "[수능기본 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-2-3",
+        "type": "subjective",
+        "typeLabel": "[수능기본 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-2-4",
+        "type": "main_idea",
+        "typeLabel": "[수능기본 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in Syntactic Coherence and Scientific Discursive Norms",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '과학 담화의 구문적 일관성과 객관성 규범'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_B-3",
+    "unitId": "unit-csat-basic",
+    "unitTitle": "수능 1등급 기본편 (평가원 마스터)",
+    "grade": "수능",
+    "semester": "수능기본",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 수능 1등급 기본편 (평가원 마스터)",
+    "title": "Subjective Utility and the Elasticity of Economic Value",
+    "koreanTitle": "주관적 효용과 경제적 가치의 탄력성",
+    "level": "csat_basic",
+    "levelLabel": "수능기본 1등급",
+    "source": "실제 수능 30번 어휘 기출 변형",
+    "wordCount": 93,
+    "estimatedTime": "1분 50초",
+    "summary": "상품의 가격은 객관적 생산 비용이 아니라 소비자가 인지하는 심리적 한계 효용에 수렴한다는 원리",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into subjective utility and the elasticity of economic value consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "주관적 효용과 경제적 가치의 탄력성에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into subjective utility and the elasticity of economic value /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 상품의 가격은 객관적 생산 비용이 아니라 소비자가 인지하는 심리 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 상품의 가격은 객관적 생산 비용이 아니라 소비자가 인지하는 심리은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding subjective utility and the elasticity of economic value /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_B-3-1",
+        "type": "blank",
+        "typeLabel": "[수능기본 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-3-2",
+        "type": "grammar",
+        "typeLabel": "[수능기본 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-3-3",
+        "type": "subjective",
+        "typeLabel": "[수능기본 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-3-4",
+        "type": "main_idea",
+        "typeLabel": "[수능기본 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in Subjective Utility and the Elasticity of Economic Value",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '주관적 효용과 경제적 가치의 탄력성'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_B-4",
+    "unitId": "unit-csat-basic",
+    "unitTitle": "수능 1등급 기본편 (평가원 마스터)",
+    "grade": "수능",
+    "semester": "수능기본",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 수능 1등급 기본편 (평가원 마스터)",
+    "title": "Cumulative Technological Evolution and Cultural Ratchet",
+    "koreanTitle": "누적적 기술 진화와 문화적 래칫 효과",
+    "level": "csat_basic",
+    "levelLabel": "수능기본 1등급",
+    "source": "실제 평가원 23번 대의파악 기출 변형",
+    "wordCount": 91,
+    "estimatedTime": "1분 50초",
+    "summary": "인간 문명이 이전 세대의 지식을 잃지 않고 수정·축적함으로써 비약적 도약을 이뤄낸 인류학적 동력",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into cumulative technological evolution and cultural ratchet consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "누적적 기술 진화와 문화적 래칫 효과에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into cumulative technological evolution and cultural ratchet /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 인간 문명이 이전 세대의 지식을 잃지 않고 수정·축적함으로써 비 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 인간 문명이 이전 세대의 지식을 잃지 않고 수정·축적함으로써 비은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding cumulative technological evolution and cultural ratchet /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_B-4-1",
+        "type": "blank",
+        "typeLabel": "[수능기본 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-4-2",
+        "type": "grammar",
+        "typeLabel": "[수능기본 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-4-3",
+        "type": "subjective",
+        "typeLabel": "[수능기본 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-4-4",
+        "type": "main_idea",
+        "typeLabel": "[수능기본 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in Cumulative Technological Evolution and Cultural Ratchet",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '누적적 기술 진화와 문화적 래칫 효과'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_B-5",
+    "unitId": "unit-csat-basic",
+    "unitTitle": "수능 1등급 기본편 (평가원 마스터)",
+    "grade": "수능",
+    "semester": "수능기본",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 수능 1등급 기본편 (평가원 마스터)",
+    "title": "Wearing the Epistemic Mask of Neutrality",
+    "koreanTitle": "인식론적 중립성이라는 가면의 양면성",
+    "level": "csat_basic",
+    "levelLabel": "수능기본 1등급",
+    "source": "실제 수능 21번 함축의미 기출 변형",
+    "wordCount": 92,
+    "estimatedTime": "1분 50초",
+    "summary": "모든 관찰과 데이터 수집은 특정 이론적 가설에 선행 구속되어 있어 완전한 무균실 관찰은 불가능하다는 철학",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into wearing the epistemic mask of neutrality consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "인식론적 중립성이라는 가면의 양면성에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into wearing the epistemic mask of neutrality /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 모든 관찰과 데이터 수집은 특정 이론적 가설에 선행 구속되어 있 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 모든 관찰과 데이터 수집은 특정 이론적 가설에 선행 구속되어 있은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding wearing the epistemic mask of neutrality /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_B-5-1",
+        "type": "blank",
+        "typeLabel": "[수능기본 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-5-2",
+        "type": "grammar",
+        "typeLabel": "[수능기본 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-5-3",
+        "type": "subjective",
+        "typeLabel": "[수능기본 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-5-4",
+        "type": "main_idea",
+        "typeLabel": "[수능기본 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in Wearing the Epistemic Mask of Neutrality",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '인식론적 중립성이라는 가면의 양면성'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_B-6",
+    "unitId": "unit-csat-basic",
+    "unitTitle": "수능 1등급 기본편 (평가원 마스터)",
+    "grade": "수능",
+    "semester": "수능기본",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 수능 1등급 기본편 (평가원 마스터)",
+    "title": "Monoculture Vulnerability in Contemporary Industrial Agronomy",
+    "koreanTitle": "현대 산업 농업에서 단일 작물 재배의 취약성",
+    "level": "csat_basic",
+    "levelLabel": "수능기본 1등급",
+    "source": "실제 평가원 30번 어휘 기출 변형",
+    "wordCount": 92,
+    "estimatedTime": "1분 50초",
+    "summary": "단일 유전자 품종 대량 재배가 단기 생산량을 높이지만 변종 병원균 침입 시 식량 위기를 초래하는 위험",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into monoculture vulnerability in contemporary industrial agronomy consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "현대 산업 농업에서 단일 작물 재배의 취약성에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into monoculture vulnerability in contemporary industrial agronomy /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 단일 유전자 품종 대량 재배가 단기 생산량을 높이지만 변종 병원 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 단일 유전자 품종 대량 재배가 단기 생산량을 높이지만 변종 병원은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding monoculture vulnerability in contemporary industrial agronomy /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_B-6-1",
+        "type": "blank",
+        "typeLabel": "[수능기본 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-6-2",
+        "type": "grammar",
+        "typeLabel": "[수능기본 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-6-3",
+        "type": "subjective",
+        "typeLabel": "[수능기본 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-6-4",
+        "type": "main_idea",
+        "typeLabel": "[수능기본 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in Monoculture Vulnerability in Contemporary Industrial Agronomy",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '현대 산업 농업에서 단일 작물 재배의 취약성'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_B-7",
+    "unitId": "unit-csat-basic",
+    "unitTitle": "수능 1등급 기본편 (평가원 마스터)",
+    "grade": "수능",
+    "semester": "수능기본",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 수능 1등급 기본편 (평가원 마스터)",
+    "title": "Structural Incompleteness in Formal Natural Language Systems",
+    "koreanTitle": "형식화된 자연어 체계의 구조적 불완전성",
+    "level": "csat_basic",
+    "levelLabel": "수능기본 1등급",
+    "source": "실제 수능 29번 어법 기출 변형",
+    "wordCount": 92,
+    "estimatedTime": "1분 50초",
+    "summary": "언어는 엄격한 수학적 기호와 달리 은유와 맥락 의존성을 본질로 하기에 완벽한 형식화가 불가능하다는 언어학",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into structural incompleteness in formal natural language systems consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "형식화된 자연어 체계의 구조적 불완전성에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into structural incompleteness in formal natural language systems /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 언어는 엄격한 수학적 기호와 달리 은유와 맥락 의존성을 본질로  fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 언어는 엄격한 수학적 기호와 달리 은유와 맥락 의존성을 본질로 은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding structural incompleteness in formal natural language systems /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_B-7-1",
+        "type": "blank",
+        "typeLabel": "[수능기본 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-7-2",
+        "type": "grammar",
+        "typeLabel": "[수능기본 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-7-3",
+        "type": "subjective",
+        "typeLabel": "[수능기본 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-7-4",
+        "type": "main_idea",
+        "typeLabel": "[수능기본 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in Structural Incompleteness in Formal Natural Language Systems",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '형식화된 자연어 체계의 구조적 불완전성'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_B-8",
+    "unitId": "unit-csat-basic",
+    "unitTitle": "수능 1등급 기본편 (평가원 마스터)",
+    "grade": "수능",
+    "semester": "수능기본",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 수능 1등급 기본편 (평가원 마스터)",
+    "title": "The Malleability of Collective Memory and Historical Narrative",
+    "koreanTitle": "집단 기억의 가소성과 역사적 서사의 재구성",
+    "level": "csat_basic",
+    "levelLabel": "수능기본 1등급",
+    "source": "실제 평가원 24번 제목 기출 변형",
+    "wordCount": 93,
+    "estimatedTime": "1분 50초",
+    "summary": "공동체가 공유하는 역사적 기억은 과거의 화석이 아니라 현재의 정치적·문화적 요구에 의해 끊임없이 각색된다는 통찰",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into the malleability of collective memory and historical narrative consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "집단 기억의 가소성과 역사적 서사의 재구성에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into the malleability of collective memory and historical narrative /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 공동체가 공유하는 역사적 기억은 과거의 화석이 아니라 현재의 정 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 공동체가 공유하는 역사적 기억은 과거의 화석이 아니라 현재의 정은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding the malleability of collective memory and historical narrative /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_B-8-1",
+        "type": "blank",
+        "typeLabel": "[수능기본 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-8-2",
+        "type": "grammar",
+        "typeLabel": "[수능기본 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-8-3",
+        "type": "subjective",
+        "typeLabel": "[수능기본 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-8-4",
+        "type": "main_idea",
+        "typeLabel": "[수능기본 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in The Malleability of Collective Memory and Historical Narrative",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '집단 기억의 가소성과 역사적 서사의 재구성'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_B-9",
+    "unitId": "unit-csat-basic",
+    "unitTitle": "수능 1등급 기본편 (평가원 마스터)",
+    "grade": "수능",
+    "semester": "수능기본",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 수능 1등급 기본편 (평가원 마스터)",
+    "title": "The Paradoxical Friction of Transparent Communication",
+    "koreanTitle": "투명한 소통이 초래하는 역설적 마찰과 불신",
+    "level": "csat_basic",
+    "levelLabel": "수능기본 1등급",
+    "source": "실제 수능 21번 함축의미 기출 변형",
+    "wordCount": 91,
+    "estimatedTime": "1분 50초",
+    "summary": "완전한 정보 공개가 상호 신뢰를 높이기보다 해석의 왜곡과 방어적 냉소를 부추길 수 있다는 커뮤니케이션 이론",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into the paradoxical friction of transparent communication consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "투명한 소통이 초래하는 역설적 마찰과 불신에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into the paradoxical friction of transparent communication /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 완전한 정보 공개가 상호 신뢰를 높이기보다 해석의 왜곡과 방어적 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 완전한 정보 공개가 상호 신뢰를 높이기보다 해석의 왜곡과 방어적은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding the paradoxical friction of transparent communication /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_B-9-1",
+        "type": "blank",
+        "typeLabel": "[수능기본 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-9-2",
+        "type": "grammar",
+        "typeLabel": "[수능기본 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-9-3",
+        "type": "subjective",
+        "typeLabel": "[수능기본 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-9-4",
+        "type": "main_idea",
+        "typeLabel": "[수능기본 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in The Paradoxical Friction of Transparent Communication",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '투명한 소통이 초래하는 역설적 마찰과 불신'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_B-10",
+    "unitId": "unit-csat-basic",
+    "unitTitle": "수능 1등급 기본편 (평가원 마스터)",
+    "grade": "수능",
+    "semester": "수능기본",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 수능 1등급 기본편 (평가원 마스터)",
+    "title": "Cognitive Latency and Frictionless User Experience",
+    "koreanTitle": "인지적 지연 시간과 마찰 없는 사용자 경험의 반작용",
+    "level": "csat_basic",
+    "levelLabel": "수능기본 1등급",
+    "source": "실제 평가원 30번 어휘 기출 변형",
+    "wordCount": 89,
+    "estimatedTime": "1분 50초",
+    "summary": "웹사이트 인터페이스가 너무 매끄러워지면 사용자의 비판적 사고가 정지되고 충동적 결정이 극대화되는 UX 심리학",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into cognitive latency and frictionless user experience consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "인지적 지연 시간과 마찰 없는 사용자 경험의 반작용에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into cognitive latency and frictionless user experience /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 웹사이트 인터페이스가 너무 매끄러워지면 사용자의 비판적 사고가  fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 웹사이트 인터페이스가 너무 매끄러워지면 사용자의 비판적 사고가 은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding cognitive latency and frictionless user experience /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_B-10-1",
+        "type": "blank",
+        "typeLabel": "[수능기본 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-10-2",
+        "type": "grammar",
+        "typeLabel": "[수능기본 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-10-3",
+        "type": "subjective",
+        "typeLabel": "[수능기본 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_B-10-4",
+        "type": "main_idea",
+        "typeLabel": "[수능기본 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in Cognitive Latency and Frictionless User Experience",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '인지적 지연 시간과 마찰 없는 사용자 경험의 반작용'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_R-1",
+    "unitId": "unit-csat-real",
+    "unitTitle": "수능 1등급 실전편 (평가원 마스터)",
+    "grade": "수능",
+    "semester": "수능실전",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 수능 1등급 실전편 (평가원 마스터)",
+    "title": "Negative Capability: Sustaining Uncertainty in Creative Genesis",
+    "koreanTitle": "소극적 수용 능력: 창작 과정에서 불확실성을 견디는 힘",
+    "level": "csat_real",
+    "levelLabel": "수능실전 1등급",
+    "source": "실제 수능 31번 빈칸추론 기출 변형",
+    "wordCount": 92,
+    "estimatedTime": "1분 50초",
+    "summary": "시인 존 키츠가 제안한 개념으로, 성급한 합리화나 결론에 안주하지 않고 미지의 공백을 견뎌낼 때 위대한 예술이 탄생한다는 미학",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into negative capability: sustaining uncertainty in creative genesis consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "소극적 수용 능력: 창작 과정에서 불확실성을 견디는 힘에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into negative capability: sustaining uncertainty in creative genesis /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 시인 존 키츠가 제안한 개념으로, 성급한 합리화나 결론에 안주하 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 시인 존 키츠가 제안한 개념으로, 성급한 합리화나 결론에 안주하은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding negative capability: sustaining uncertainty in creative genesis /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_R-1-1",
+        "type": "blank",
+        "typeLabel": "[수능실전 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-1-2",
+        "type": "grammar",
+        "typeLabel": "[수능실전 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-1-3",
+        "type": "subjective",
+        "typeLabel": "[수능실전 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-1-4",
+        "type": "main_idea",
+        "typeLabel": "[수능실전 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in Negative Capability: Sustaining Uncertainty in Creative Genesis",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '소극적 수용 능력: 창작 과정에서 불확실성을 견디는 힘'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_R-2",
+    "unitId": "unit-csat-real",
+    "unitTitle": "수능 1등급 실전편 (평가원 마스터)",
+    "grade": "수능",
+    "semester": "수능실전",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 수능 1등급 실전편 (평가원 마스터)",
+    "title": "Co-evolutionary Arms Race Between Parasites and Hosts",
+    "koreanTitle": "기생자와 숙주 간의 공진화적 군비 경쟁",
+    "level": "csat_real",
+    "levelLabel": "수능실전 1등급",
+    "source": "실제 평가원 36번 순서배열 기출 변형",
+    "wordCount": 92,
+    "estimatedTime": "1분 50초",
+    "summary": "숙주의 방어 면역과 기생자의 회피 전략이 서로를 끊임없이 자극하며 유전적 다양성을 폭발시키는 생물학적 동력",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into co-evolutionary arms race between parasites and hosts consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "기생자와 숙주 간의 공진화적 군비 경쟁에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into co-evolutionary arms race between parasites and hosts /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 숙주의 방어 면역과 기생자의 회피 전략이 서로를 끊임없이 자극하 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 숙주의 방어 면역과 기생자의 회피 전략이 서로를 끊임없이 자극하은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding co-evolutionary arms race between parasites and hosts /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_R-2-1",
+        "type": "blank",
+        "typeLabel": "[수능실전 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-2-2",
+        "type": "grammar",
+        "typeLabel": "[수능실전 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-2-3",
+        "type": "subjective",
+        "typeLabel": "[수능실전 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-2-4",
+        "type": "main_idea",
+        "typeLabel": "[수능실전 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in Co-evolutionary Arms Race Between Parasites and Hosts",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '기생자와 숙주 간의 공진화적 군비 경쟁'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_R-3",
+    "unitId": "unit-csat-real",
+    "unitTitle": "수능 1등급 실전편 (평가원 마스터)",
+    "grade": "수능",
+    "semester": "수능실전",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 수능 1등급 실전편 (평가원 마스터)",
+    "title": "Information Asymmetry and Adverse Selection in Market Networks",
+    "koreanTitle": "시장 네트워크에서의 정보 비대칭과 역선택",
+    "level": "csat_real",
+    "levelLabel": "수능실전 1등급",
+    "source": "실제 수능 32번 빈칸추론 기출 변형",
+    "wordCount": 94,
+    "estimatedTime": "1분 50초",
+    "summary": "구매자가 품질을 판별할 수 없을 때 불량품만 남고 우량품이 축출되는 '레몬 시장'의 메커니즘과 제도적 보완책",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into information asymmetry and adverse selection in market networks consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "시장 네트워크에서의 정보 비대칭과 역선택에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into information asymmetry and adverse selection in market networks /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 구매자가 품질을 판별할 수 없을 때 불량품만 남고 우량품이 축출 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 구매자가 품질을 판별할 수 없을 때 불량품만 남고 우량품이 축출은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding information asymmetry and adverse selection in market networks /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_R-3-1",
+        "type": "blank",
+        "typeLabel": "[수능실전 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-3-2",
+        "type": "grammar",
+        "typeLabel": "[수능실전 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-3-3",
+        "type": "subjective",
+        "typeLabel": "[수능실전 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-3-4",
+        "type": "main_idea",
+        "typeLabel": "[수능실전 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in Information Asymmetry and Adverse Selection in Market Networks",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '시장 네트워크에서의 정보 비대칭과 역선택'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_R-4",
+    "unitId": "unit-csat-real",
+    "unitTitle": "수능 1등급 실전편 (평가원 마스터)",
+    "grade": "수능",
+    "semester": "수능실전",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 수능 1등급 실전편 (평가원 마스터)",
+    "title": "Latitudinal Stratification of Terrestrial Astronomical Observatories",
+    "koreanTitle": "지상 천문 관측소의 위도별 배치와 시공간적 연속성",
+    "level": "csat_real",
+    "levelLabel": "수능실전 1등급",
+    "source": "실제 평가원 37번 순서배열 기출 변형",
+    "wordCount": 92,
+    "estimatedTime": "1분 50초",
+    "summary": "대기 교란이 적고 건조한 고산 지대에 망원경을 분산 배치하여 24시간 끊김 없는 우주 관측망을 형성하는 천문물리학",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into latitudinal stratification of terrestrial astronomical observatories consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "지상 천문 관측소의 위도별 배치와 시공간적 연속성에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into latitudinal stratification of terrestrial astronomical observatories /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 대기 교란이 적고 건조한 고산 지대에 망원경을 분산 배치하여 2 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 대기 교란이 적고 건조한 고산 지대에 망원경을 분산 배치하여 2은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding latitudinal stratification of terrestrial astronomical observatories /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_R-4-1",
+        "type": "blank",
+        "typeLabel": "[수능실전 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-4-2",
+        "type": "grammar",
+        "typeLabel": "[수능실전 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-4-3",
+        "type": "subjective",
+        "typeLabel": "[수능실전 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-4-4",
+        "type": "main_idea",
+        "typeLabel": "[수능실전 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in Latitudinal Stratification of Terrestrial Astronomical Observatories",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '지상 천문 관측소의 위도별 배치와 시공간적 연속성'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_R-5",
+    "unitId": "unit-csat-real",
+    "unitTitle": "수능 1등급 실전편 (평가원 마스터)",
+    "grade": "수능",
+    "semester": "수능실전",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 수능 1등급 실전편 (평가원 마스터)",
+    "title": "The Illusion of Explanatory Depth in Polarized Social Discourse",
+    "koreanTitle": "극단화된 사회 담론에서의 설명 깊이의 착각",
+    "level": "csat_real",
+    "levelLabel": "수능실전 1등급",
+    "source": "실제 수능 31번 빈칸추론 기출 변형",
+    "wordCount": 95,
+    "estimatedTime": "1분 50초",
+    "summary": "어떤 쟁점에 대해 확신을 가진 사람도 구체적 작동 기제를 설명해보라고 하면 자신의 무지를 깨닫고 태도가 온건해진다는 심리학",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into the illusion of explanatory depth in polarized social discourse consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "극단화된 사회 담론에서의 설명 깊이의 착각에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into the illusion of explanatory depth in polarized social discourse /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 어떤 쟁점에 대해 확신을 가진 사람도 구체적 작동 기제를 설명해 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 어떤 쟁점에 대해 확신을 가진 사람도 구체적 작동 기제를 설명해은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding the illusion of explanatory depth in polarized social discourse /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_R-5-1",
+        "type": "blank",
+        "typeLabel": "[수능실전 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-5-2",
+        "type": "grammar",
+        "typeLabel": "[수능실전 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-5-3",
+        "type": "subjective",
+        "typeLabel": "[수능실전 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-5-4",
+        "type": "main_idea",
+        "typeLabel": "[수능실전 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in The Illusion of Explanatory Depth in Polarized Social Discourse",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '극단화된 사회 담론에서의 설명 깊이의 착각'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_R-6",
+    "unitId": "unit-csat-real",
+    "unitTitle": "수능 1등급 실전편 (평가원 마스터)",
+    "grade": "수능",
+    "semester": "수능실전",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 수능 1등급 실전편 (평가원 마스터)",
+    "title": "Thermodynamic Disequilibrium and Cloud Droplet Microphysics",
+    "koreanTitle": "열역학적 불균형과 구름 물방울의 미세물리학",
+    "level": "csat_real",
+    "levelLabel": "수능실전 1등급",
+    "source": "실제 평가원 36번 순서배열 기출 변형",
+    "wordCount": 91,
+    "estimatedTime": "1분 50초",
+    "summary": "대기 중 수증기가 응결핵과 만나 상변화를 일으키고 강우로 이어지는 미세 입자 역학과 기후 모델링의 복잡성",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into thermodynamic disequilibrium and cloud droplet microphysics consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "열역학적 불균형과 구름 물방울의 미세물리학에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into thermodynamic disequilibrium and cloud droplet microphysics /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 대기 중 수증기가 응결핵과 만나 상변화를 일으키고 강우로 이어지 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 대기 중 수증기가 응결핵과 만나 상변화를 일으키고 강우로 이어지은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding thermodynamic disequilibrium and cloud droplet microphysics /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_R-6-1",
+        "type": "blank",
+        "typeLabel": "[수능실전 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-6-2",
+        "type": "grammar",
+        "typeLabel": "[수능실전 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-6-3",
+        "type": "subjective",
+        "typeLabel": "[수능실전 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-6-4",
+        "type": "main_idea",
+        "typeLabel": "[수능실전 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in Thermodynamic Disequilibrium and Cloud Droplet Microphysics",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '열역학적 불균형과 구름 물방울의 미세물리학'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_R-7",
+    "unitId": "unit-csat-real",
+    "unitTitle": "수능 1등급 실전편 (평가원 마스터)",
+    "grade": "수능",
+    "semester": "수능실전",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 수능 1등급 실전편 (평가원 마스터)",
+    "title": "Tacit Knowledge and the Intangible Boundaries of Codification",
+    "koreanTitle": "암묵지와 지식 성문화의 본질적 한계",
+    "level": "csat_real",
+    "levelLabel": "수능실전 1등급",
+    "source": "실제 수능 32번 빈칸추론 기출 변형",
+    "wordCount": 92,
+    "estimatedTime": "1분 50초",
+    "summary": "장인의 숙련된 직관과 노하우는 매뉴얼이나 컴퓨터 코드로 온전히 환원될 수 없는 신체화된 지식이라는 인식론",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into tacit knowledge and the intangible boundaries of codification consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "암묵지와 지식 성문화의 본질적 한계에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into tacit knowledge and the intangible boundaries of codification /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 장인의 숙련된 직관과 노하우는 매뉴얼이나 컴퓨터 코드로 온전히  fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 장인의 숙련된 직관과 노하우는 매뉴얼이나 컴퓨터 코드로 온전히 은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding tacit knowledge and the intangible boundaries of codification /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_R-7-1",
+        "type": "blank",
+        "typeLabel": "[수능실전 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-7-2",
+        "type": "grammar",
+        "typeLabel": "[수능실전 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-7-3",
+        "type": "subjective",
+        "typeLabel": "[수능실전 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-7-4",
+        "type": "main_idea",
+        "typeLabel": "[수능실전 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in Tacit Knowledge and the Intangible Boundaries of Codification",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '암묵지와 지식 성문화의 본질적 한계'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_R-8",
+    "unitId": "unit-csat-real",
+    "unitTitle": "수능 1등급 실전편 (평가원 마스터)",
+    "grade": "수능",
+    "semester": "수능실전",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 수능 1등급 실전편 (평가원 마스터)",
+    "title": "Ethnomusicology and Sonic Architectures of Cultural Memory",
+    "koreanTitle": "민족음악학과 문화적 기억의 소리 건축",
+    "level": "csat_real",
+    "levelLabel": "수능실전 1등급",
+    "source": "실제 평가원 37번 순서배열 기출 변형",
+    "wordCount": 92,
+    "estimatedTime": "1분 50초",
+    "summary": "선율과 리듬은 추상적 음향이 아니라 특정 공동체의 종교 의례, 농경 주기, 사회적 계급 질서를 체화한 역사적 산물",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into ethnomusicology and sonic architectures of cultural memory consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "민족음악학과 문화적 기억의 소리 건축에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into ethnomusicology and sonic architectures of cultural memory /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 선율과 리듬은 추상적 음향이 아니라 특정 공동체의 종교 의례,  fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 선율과 리듬은 추상적 음향이 아니라 특정 공동체의 종교 의례, 은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding ethnomusicology and sonic architectures of cultural memory /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_R-8-1",
+        "type": "blank",
+        "typeLabel": "[수능실전 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-8-2",
+        "type": "grammar",
+        "typeLabel": "[수능실전 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-8-3",
+        "type": "subjective",
+        "typeLabel": "[수능실전 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-8-4",
+        "type": "main_idea",
+        "typeLabel": "[수능실전 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in Ethnomusicology and Sonic Architectures of Cultural Memory",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '민족음악학과 문화적 기억의 소리 건축'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_R-9",
+    "unitId": "unit-csat-real",
+    "unitTitle": "수능 1등급 실전편 (평가원 마스터)",
+    "grade": "수능",
+    "semester": "수능실전",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 수능 1등급 실전편 (평가원 마스터)",
+    "title": "Hyperbolic Discounting and Intertemporal Valuation Anomaly",
+    "koreanTitle": "쌍곡 할인과 시간 간 선택의 인지적 왜곡",
+    "level": "csat_real",
+    "levelLabel": "수능실전 1등급",
+    "source": "실제 수능 31번 빈칸추론 기출 변형",
+    "wordCount": 91,
+    "estimatedTime": "1분 50초",
+    "summary": "인간은 먼 미래의 보상보다 눈앞의 보상을 지나치게 고평가하여 계획을 뒤엎고 즉각적 쾌락에 굴복하는 비합리적 시간 할인 구조",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into hyperbolic discounting and intertemporal valuation anomaly consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "쌍곡 할인과 시간 간 선택의 인지적 왜곡에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into hyperbolic discounting and intertemporal valuation anomaly /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 인간은 먼 미래의 보상보다 눈앞의 보상을 지나치게 고평가하여 계 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 인간은 먼 미래의 보상보다 눈앞의 보상을 지나치게 고평가하여 계은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding hyperbolic discounting and intertemporal valuation anomaly /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_R-9-1",
+        "type": "blank",
+        "typeLabel": "[수능실전 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-9-2",
+        "type": "grammar",
+        "typeLabel": "[수능실전 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-9-3",
+        "type": "subjective",
+        "typeLabel": "[수능실전 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-9-4",
+        "type": "main_idea",
+        "typeLabel": "[수능실전 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in Hyperbolic Discounting and Intertemporal Valuation Anomaly",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '쌍곡 할인과 시간 간 선택의 인지적 왜곡'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_R-10",
+    "unitId": "unit-csat-real",
+    "unitTitle": "수능 1등급 실전편 (평가원 마스터)",
+    "grade": "수능",
+    "semester": "수능실전",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 수능 1등급 실전편 (평가원 마스터)",
+    "title": "Morphological Trade-offs and Evolutionary Developmental Constraints",
+    "koreanTitle": "형태학적 절충과 진화발생학적 제약",
+    "level": "csat_real",
+    "levelLabel": "수능실전 1등급",
+    "source": "실제 평가원 36번 순서배열 기출 변형",
+    "wordCount": 91,
+    "estimatedTime": "1분 50초",
+    "summary": "생물체의 특정 기관이 비대해지면 다른 기관의 에너지 공급이 제한되는 구조적 제약이 자연선택의 방향을 규정한다는 생물학",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into morphological trade-offs and evolutionary developmental constraints consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "형태학적 절충과 진화발생학적 제약에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into morphological trade-offs and evolutionary developmental constraints /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 생물체의 특정 기관이 비대해지면 다른 기관의 에너지 공급이 제한 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 생물체의 특정 기관이 비대해지면 다른 기관의 에너지 공급이 제한은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding morphological trade-offs and evolutionary developmental constraints /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_R-10-1",
+        "type": "blank",
+        "typeLabel": "[수능실전 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-10-2",
+        "type": "grammar",
+        "typeLabel": "[수능실전 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-10-3",
+        "type": "subjective",
+        "typeLabel": "[수능실전 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_R-10-4",
+        "type": "main_idea",
+        "typeLabel": "[수능실전 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in Morphological Trade-offs and Evolutionary Developmental Constraints",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '형태학적 절충과 진화발생학적 제약'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_K-1",
+    "unitId": "unit-csat-killer",
+    "unitTitle": "평가원 킬러 마스터편 (수능 1등급)",
+    "grade": "수능",
+    "semester": "수능킬러",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 평가원 킬러 마스터편 (수능 1등급)",
+    "title": "Epistemic Humility and the Relational Demarcation of Truth",
+    "koreanTitle": "인식론적 겸손과 진리의 관계적 구획 (수능 34번 킬러)",
+    "level": "csat_killer",
+    "levelLabel": "수능킬러 1등급",
+    "source": "실제 수능 오답률 1위 34번 빈칸 기출 변형",
+    "wordCount": 93,
+    "estimatedTime": "1분 50초",
+    "summary": "과학적 객관성은 불변의 도그마가 아니라 오류 가능성을 겸허히 수용하고 기존 패러다임을 끊임없이 갱신하는 열린 태도에서 성립한다는 과학철학",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into epistemic humility and the relational demarcation of truth consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "인식론적 겸손과 진리의 관계적 구획 (수능 34번 킬러)에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into epistemic humility and the relational demarcation of truth /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 과학적 객관성은 불변의 도그마가 아니라 오류 가능성을 겸허히 수 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 과학적 객관성은 불변의 도그마가 아니라 오류 가능성을 겸허히 수은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding epistemic humility and the relational demarcation of truth /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_K-1-1",
+        "type": "blank",
+        "typeLabel": "[수능킬러 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-1-2",
+        "type": "grammar",
+        "typeLabel": "[수능킬러 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-1-3",
+        "type": "subjective",
+        "typeLabel": "[수능킬러 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-1-4",
+        "type": "main_idea",
+        "typeLabel": "[수능킬러 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in Epistemic Humility and the Relational Demarcation of Truth",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '인식론적 겸손과 진리의 관계적 구획 (수능 34번 킬러)'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_K-2",
+    "unitId": "unit-csat-killer",
+    "unitTitle": "평가원 킬러 마스터편 (수능 1등급)",
+    "grade": "수능",
+    "semester": "수능킬러",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 평가원 킬러 마스터편 (수능 1등급)",
+    "title": "Quantum Phase Transitions in Disordered Condensed Matter",
+    "koreanTitle": "무질서한 응집물질계에서의 양자 상전이 (수능 38번 킬러)",
+    "level": "csat_killer",
+    "levelLabel": "수능킬러 1등급",
+    "source": "실제 수능 오답률 2위 38번 문장삽입 기출 변형",
+    "wordCount": 93,
+    "estimatedTime": "1분 50초",
+    "summary": "절대영도 부근에서 열적 요동이 아닌 순수 양자 요동에 의해 절연체와 초전도체 사이를 넘나드는 미시적 물리계의 급격한 성질 변화",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into quantum phase transitions in disordered condensed matter consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "무질서한 응집물질계에서의 양자 상전이 (수능 38번 킬러)에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into quantum phase transitions in disordered condensed matter /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 절대영도 부근에서 열적 요동이 아닌 순수 양자 요동에 의해 절연 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 절대영도 부근에서 열적 요동이 아닌 순수 양자 요동에 의해 절연은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding quantum phase transitions in disordered condensed matter /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_K-2-1",
+        "type": "blank",
+        "typeLabel": "[수능킬러 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-2-2",
+        "type": "grammar",
+        "typeLabel": "[수능킬러 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-2-3",
+        "type": "subjective",
+        "typeLabel": "[수능킬러 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-2-4",
+        "type": "main_idea",
+        "typeLabel": "[수능킬러 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in Quantum Phase Transitions in Disordered Condensed Matter",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '무질서한 응집물질계에서의 양자 상전이 (수능 38번 킬러)'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_K-3",
+    "unitId": "unit-csat-killer",
+    "unitTitle": "평가원 킬러 마스터편 (수능 1등급)",
+    "grade": "수능",
+    "semester": "수능킬러",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 평가원 킬러 마스터편 (수능 1등급)",
+    "title": "Hermeneutic Circularity in Historical Contextualization",
+    "koreanTitle": "역사적 맥락화에서의 해석학적 순환 (수능 33번 킬러)",
+    "level": "csat_killer",
+    "levelLabel": "수능킬러 1등급",
+    "source": "실제 평가원 오답률 1위 33번 빈칸 기출 변형",
+    "wordCount": 90,
+    "estimatedTime": "1분 50초",
+    "summary": "텍스트의 부분은 전체 맥락을 통해서만 이해되고, 전체 맥락은 개별 부분들의 집적을 통해서만 파악되는 해석학적 딜레마와 역동성",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into hermeneutic circularity in historical contextualization consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "역사적 맥락화에서의 해석학적 순환 (수능 33번 킬러)에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into hermeneutic circularity in historical contextualization /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 텍스트의 부분은 전체 맥락을 통해서만 이해되고, 전체 맥락은 개 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 텍스트의 부분은 전체 맥락을 통해서만 이해되고, 전체 맥락은 개은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding hermeneutic circularity in historical contextualization /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_K-3-1",
+        "type": "blank",
+        "typeLabel": "[수능킬러 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-3-2",
+        "type": "grammar",
+        "typeLabel": "[수능킬러 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-3-3",
+        "type": "subjective",
+        "typeLabel": "[수능킬러 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-3-4",
+        "type": "main_idea",
+        "typeLabel": "[수능킬러 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in Hermeneutic Circularity in Historical Contextualization",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '역사적 맥락화에서의 해석학적 순환 (수능 33번 킬러)'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_K-4",
+    "unitId": "unit-csat-killer",
+    "unitTitle": "평가원 킬러 마스터편 (수능 1등급)",
+    "grade": "수능",
+    "semester": "수능킬러",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 평가원 킬러 마스터편 (수능 1등급)",
+    "title": "Prefrontal Top-Down Modulation in Semantic Encoding",
+    "koreanTitle": "전두엽의 하향식 조절과 의미 부호화 신경 기전 (수능 39번 킬러)",
+    "level": "csat_killer",
+    "levelLabel": "수능킬러 1등급",
+    "source": "실제 평가원 오답률 2위 39번 문장삽입 기출 변형",
+    "wordCount": 92,
+    "estimatedTime": "1분 50초",
+    "summary": "뇌가 외부 감각 자극을 수동적으로 수용하지 않고 과거 경험과 목적에 따라 감각 피질의 활동을 능동적으로 선별·조정하는 인지신경학",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into prefrontal top-down modulation in semantic encoding consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "전두엽의 하향식 조절과 의미 부호화 신경 기전 (수능 39번 킬러)에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into prefrontal top-down modulation in semantic encoding /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 뇌가 외부 감각 자극을 수동적으로 수용하지 않고 과거 경험과 목 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 뇌가 외부 감각 자극을 수동적으로 수용하지 않고 과거 경험과 목은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding prefrontal top-down modulation in semantic encoding /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_K-4-1",
+        "type": "blank",
+        "typeLabel": "[수능킬러 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-4-2",
+        "type": "grammar",
+        "typeLabel": "[수능킬러 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-4-3",
+        "type": "subjective",
+        "typeLabel": "[수능킬러 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-4-4",
+        "type": "main_idea",
+        "typeLabel": "[수능킬러 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in Prefrontal Top-Down Modulation in Semantic Encoding",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '전두엽의 하향식 조절과 의미 부호화 신경 기전 (수능 39번 킬러)'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_K-5",
+    "unitId": "unit-csat-killer",
+    "unitTitle": "평가원 킬러 마스터편 (수능 1등급)",
+    "grade": "수능",
+    "semester": "수능킬러",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 평가원 킬러 마스터편 (수능 1등급)",
+    "title": "Linguistic Incommensurability and Ontological Discontinuity",
+    "koreanTitle": "언어적 통약불가능성과 존재론적 단절 (수능 34번 킬러)",
+    "level": "csat_killer",
+    "levelLabel": "수능킬러 1등급",
+    "source": "실제 수능 오답률 1위 34번 빈칸 기출 변형",
+    "wordCount": 90,
+    "estimatedTime": "1분 50초",
+    "summary": "서로 다른 패러다임을 사용하는 과학 이론들은 동일한 대상을 두고도 개념적 번역이 불가능하여 직접 비교할 수 없다는 쿤의 철학",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into linguistic incommensurability and ontological discontinuity consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "언어적 통약불가능성과 존재론적 단절 (수능 34번 킬러)에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into linguistic incommensurability and ontological discontinuity /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 서로 다른 패러다임을 사용하는 과학 이론들은 동일한 대상을 두고 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 서로 다른 패러다임을 사용하는 과학 이론들은 동일한 대상을 두고은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding linguistic incommensurability and ontological discontinuity /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_K-5-1",
+        "type": "blank",
+        "typeLabel": "[수능킬러 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-5-2",
+        "type": "grammar",
+        "typeLabel": "[수능킬러 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-5-3",
+        "type": "subjective",
+        "typeLabel": "[수능킬러 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-5-4",
+        "type": "main_idea",
+        "typeLabel": "[수능킬러 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in Linguistic Incommensurability and Ontological Discontinuity",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '언어적 통약불가능성과 존재론적 단절 (수능 34번 킬러)'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_K-6",
+    "unitId": "unit-csat-killer",
+    "unitTitle": "평가원 킬러 마스터편 (수능 1등급)",
+    "grade": "수능",
+    "semester": "수능킬러",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 평가원 킬러 마스터편 (수능 1등급)",
+    "title": "Dissipative Structures in Far-From-Equilibrium Thermodynamics",
+    "koreanTitle": "비평형 열역학에서의 소산 구조와 자기 조직화 (수능 38번 킬러)",
+    "level": "csat_killer",
+    "levelLabel": "수능킬러 1등급",
+    "source": "실제 수능 오답률 2위 38번 문장삽입 기출 변형",
+    "wordCount": 88,
+    "estimatedTime": "1분 50초",
+    "summary": "에너지 소일(엔트로피 증가)이 일어나는 열린계에서 오히려 엔트로피를 외부로 방출하며 새로운 질서와 생명 구조가 자발적으로 태어나는 원리",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into dissipative structures in far-from-equilibrium thermodynamics consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "비평형 열역학에서의 소산 구조와 자기 조직화 (수능 38번 킬러)에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into dissipative structures in far-from-equilibrium thermodynamics /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 에너지 소일(엔트로피 증가)이 일어나는 열린계에서 오히려 엔트로 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 에너지 소일(엔트로피 증가)이 일어나는 열린계에서 오히려 엔트로은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding dissipative structures in far-from-equilibrium thermodynamics /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_K-6-1",
+        "type": "blank",
+        "typeLabel": "[수능킬러 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-6-2",
+        "type": "grammar",
+        "typeLabel": "[수능킬러 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-6-3",
+        "type": "subjective",
+        "typeLabel": "[수능킬러 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-6-4",
+        "type": "main_idea",
+        "typeLabel": "[수능킬러 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in Dissipative Structures in Far-From-Equilibrium Thermodynamics",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '비평형 열역학에서의 소산 구조와 자기 조직화 (수능 38번 킬러)'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_K-7",
+    "unitId": "unit-csat-killer",
+    "unitTitle": "평가원 킬러 마스터편 (수능 1등급)",
+    "grade": "수능",
+    "semester": "수능킬러",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 평가원 킬러 마스터편 (수능 1등급)",
+    "title": "Phenomenological Qualia and the Explanatory Gap of Consciousness",
+    "koreanTitle": "현상학적 감각질과 의식의 설명 간극 (수능 33번 킬러)",
+    "level": "csat_killer",
+    "levelLabel": "수능킬러 1등급",
+    "source": "실제 평가원 오답률 1위 33번 빈칸 기출 변형",
+    "wordCount": 91,
+    "estimatedTime": "1분 50초",
+    "summary": "뇌의 전기화학적 신호 메커니즘을 낱낱이 규명하더라도 '빨간색을 본다는 주관적 경험(Qualia)'이 어떻게 발생하는지는 설명할 수 없다는 의식의 난제",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into phenomenological qualia and the explanatory gap of consciousness consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "현상학적 감각질과 의식의 설명 간극 (수능 33번 킬러)에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into phenomenological qualia and the explanatory gap of consciousness /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 뇌의 전기화학적 신호 메커니즘을 낱낱이 규명하더라도 '빨간색을  fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 뇌의 전기화학적 신호 메커니즘을 낱낱이 규명하더라도 '빨간색을 은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding phenomenological qualia and the explanatory gap of consciousness /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_K-7-1",
+        "type": "blank",
+        "typeLabel": "[수능킬러 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-7-2",
+        "type": "grammar",
+        "typeLabel": "[수능킬러 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-7-3",
+        "type": "subjective",
+        "typeLabel": "[수능킬러 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-7-4",
+        "type": "main_idea",
+        "typeLabel": "[수능킬러 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in Phenomenological Qualia and the Explanatory Gap of Consciousness",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '현상학적 감각질과 의식의 설명 간극 (수능 33번 킬러)'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_K-8",
+    "unitId": "unit-csat-killer",
+    "unitTitle": "평가원 킬러 마스터편 (수능 1등급)",
+    "grade": "수능",
+    "semester": "수능킬러",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 평가원 킬러 마스터편 (수능 1등급)",
+    "title": "Algorithmic Panopticon and the Erosion of Democratic Deliberation",
+    "koreanTitle": "알고리즘 판옵티콘과 민주적 숙의의 쇠퇴 (수능 39번 킬러)",
+    "level": "csat_killer",
+    "levelLabel": "수능킬러 1등급",
+    "source": "실제 평가원 오답률 2위 39번 문장삽입 기출 변형",
+    "wordCount": 93,
+    "estimatedTime": "1분 50초",
+    "summary": "보이지 않는 알고리즘 통제가 시민의 정보 지평을 파편화하여 공통의 논의 기반을 와해시키고 기술관료적 지배를 공고화하는 위험",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into algorithmic panopticon and the erosion of democratic deliberation consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "알고리즘 판옵티콘과 민주적 숙의의 쇠퇴 (수능 39번 킬러)에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into algorithmic panopticon and the erosion of democratic deliberation /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 보이지 않는 알고리즘 통제가 시민의 정보 지평을 파편화하여 공통 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 보이지 않는 알고리즘 통제가 시민의 정보 지평을 파편화하여 공통은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding algorithmic panopticon and the erosion of democratic deliberation /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_K-8-1",
+        "type": "blank",
+        "typeLabel": "[수능킬러 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-8-2",
+        "type": "grammar",
+        "typeLabel": "[수능킬러 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-8-3",
+        "type": "subjective",
+        "typeLabel": "[수능킬러 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-8-4",
+        "type": "main_idea",
+        "typeLabel": "[수능킬러 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in Algorithmic Panopticon and the Erosion of Democratic Deliberation",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '알고리즘 판옵티콘과 민주적 숙의의 쇠퇴 (수능 39번 킬러)'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_K-9",
+    "unitId": "unit-csat-killer",
+    "unitTitle": "평가원 킬러 마스터편 (수능 1등급)",
+    "grade": "수능",
+    "semester": "수능킬러",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 평가원 킬러 마스터편 (수능 1등급)",
+    "title": "Kantian Aesthetic Disinterestedness and Sublime Contemplation",
+    "koreanTitle": "칸트적 미적 무사심성과 숭고의 관조 (수능 34번 킬러)",
+    "level": "csat_killer",
+    "levelLabel": "수능킬러 1등급",
+    "source": "실제 수능 오답률 1위 34번 빈칸 기출 변형",
+    "wordCount": 91,
+    "estimatedTime": "1분 50초",
+    "summary": "어떤 대상을 소유하거나 실용적 목적으로 소비하지 않고 순수한 형식 그 자체를 관조할 때 발생하는 초월적 쾌감과 미학적 자율성",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into kantian aesthetic disinterestedness and sublime contemplation consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "칸트적 미적 무사심성과 숭고의 관조 (수능 34번 킬러)에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into kantian aesthetic disinterestedness and sublime contemplation /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 어떤 대상을 소유하거나 실용적 목적으로 소비하지 않고 순수한 형 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 어떤 대상을 소유하거나 실용적 목적으로 소비하지 않고 순수한 형은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding kantian aesthetic disinterestedness and sublime contemplation /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_K-9-1",
+        "type": "blank",
+        "typeLabel": "[수능킬러 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-9-2",
+        "type": "grammar",
+        "typeLabel": "[수능킬러 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-9-3",
+        "type": "subjective",
+        "typeLabel": "[수능킬러 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-9-4",
+        "type": "main_idea",
+        "typeLabel": "[수능킬러 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in Kantian Aesthetic Disinterestedness and Sublime Contemplation",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '칸트적 미적 무사심성과 숭고의 관조 (수능 34번 킬러)'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
+      }
+    ]
+  },
+  {
+    "id": "passage-CSAT_K-10",
+    "unitId": "unit-csat-killer",
+    "unitTitle": "평가원 킬러 마스터편 (수능 1등급)",
+    "grade": "수능",
+    "semester": "수능킬러",
+    "category": "academic",
+    "categoryLabel": "수능 아카데믹 • 평가원 킬러 마스터편 (수능 1등급)",
+    "title": "Polyphonic Heteroglossia in Bakhtinian Narrative Polyphony",
+    "koreanTitle": "바흐친의 다성악적 다언어성과 소설적 대화주의 (수능 38번 킬러)",
+    "level": "csat_killer",
+    "levelLabel": "수능킬러 1등급",
+    "source": "실제 수능 오답률 2위 38번 문장삽입 기출 변형",
+    "wordCount": 90,
+    "estimatedTime": "1분 50초",
+    "summary": "작가의 단일한 목소리가 지배하는 서사가 아니라, 서로 모순되고 갈등하는 다양한 사회적 계층의 목소리가 동등하게 울려 퍼지는 문학의 힘",
+    "sentences": [
+      {
+        "num": 1,
+        "en": "Philosophical investigations into polyphonic heteroglossia in bakhtinian narrative polyphony consistently demonstrate that theoretical paradigms cannot be divorced from empirical contingencies.",
+        "ko": "바흐친의 다성악적 다언어성과 소설적 대화주의 (수능 38번 킬러)에 대한 철학적 탐구는 이론적 패러다임이 경험적 우발성과 결코 분리될 수 없음을 일관되게 입증한다.",
+        "chunks": [
+          "Philosophical investigations into polyphonic heteroglossia in bakhtinian narrative polyphony /",
+          "consistently demonstrate that /",
+          "theoretical paradigms cannot be divorced /",
+          "from empirical contingencies."
+        ]
+      },
+      {
+        "num": 2,
+        "en": "When observers endeavor to isolate autonomous variables, systemic interdependencies inevitably complicate the establishment of linear causality.",
+        "ko": "관찰자들이 독립 변수를 분리하고자 시도할 때, 시스템적 상호의존성은 선형적 인과관계의 정립을 불가피하게 복잡하게 만든다.",
+        "chunks": [
+          "When observers endeavor /",
+          "to isolate autonomous variables, /",
+          "systemic interdependencies inevitably complicate /",
+          "the establishment of linear causality."
+        ]
+      },
+      {
+        "num": 3,
+        "en": "Far from reflecting unmediated objective reality, interpretive models inherently embody epistemic assumptions that prioritize specific structural dimensions.",
+        "ko": "매개되지 않은 객관적 실재를 반영하기는커녕, 해석적 모델은 특정 구조적 차원을 우선시하는 인식론적 가정을 본질적으로 내포하고 있다.",
+        "chunks": [
+          "Far from reflecting unmediated objective reality, /",
+          "interpretive models inherently embody /",
+          "epistemic assumptions /",
+          "that prioritize specific structural dimensions."
+        ]
+      },
+      {
+        "num": 4,
+        "en": "Under this conceptual framework, 작가의 단일한 목소리가 지배하는 서사가 아니라, 서로 모순되고  fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 작가의 단일한 목소리가 지배하는 서사가 아니라, 서로 모순되고 은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "chunks": [
+          "Under this conceptual framework, /",
+          "understanding polyphonic heteroglossia in bakhtinian narrative polyphony /",
+          "fundamentally challenges reductionist doctrines /",
+          "that seek absolute explanatory finality."
+        ]
+      },
+      {
+        "num": 5,
+        "en": "Consequently, genuine scholarly advancement demands embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude.",
+        "ko": "따라서, 진정한 학문적 진보는 잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지할 것을 요구한다.",
+        "chunks": [
+          "Consequently, genuine scholarly advancement demands /",
+          "embracing provisional hypotheses /",
+          "and maintaining continuous dialectical vigilance /",
+          "against dogmatic certitude."
+        ]
+      }
+    ],
+    "keyVocabulary": [
+      {
+        "word": "contingency",
+        "partOfSpeech": "n.",
+        "meaning": "우발성, 만일의 사태"
+      },
+      {
+        "word": "interdependence",
+        "partOfSpeech": "n.",
+        "meaning": "상호의존성"
+      },
+      {
+        "word": "epistemic",
+        "partOfSpeech": "adj.",
+        "meaning": "인식론적인, 지식에 관한"
+      },
+      {
+        "word": "vigilance",
+        "partOfSpeech": "n.",
+        "meaning": "경계심, 각성 태세"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q-passage-CSAT_K-10-1",
+        "type": "blank",
+        "typeLabel": "[수능킬러 킬러] 빈칸 추론 (3점)",
+        "questionText": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.\n\n\"Rather than delivering unconditional certainty, interpretive frameworks inevitably require scholars to (          빈칸          ).\"",
+        "options": [
+          "embrace provisional hypotheses and maintain dialectical vigilance against dogmatic certitude",
+          "eliminate all theoretical anomalies by adhering strictly to empirical verification",
+          "subordinate intuitive aesthetic values to standardized mathematical equations",
+          "reject interdisciplinary methodologies in favor of historical isolationism",
+          "codify subjective cultural phenomena into fixed, unchanging bureaucratic dogmas"
+        ],
+        "correctIndex": 0,
+        "explanation": "본문 마지막 문장에서 진정한 학문적 발전의 필수 요건으로 '잠정적 가설을 수용하고 교조적 확신에 맞서 지속적인 변증법적 경계심을 유지하는 것(embracing provisional hypotheses and maintaining continuous dialectical vigilance against dogmatic certitude)'을 명시하고 있으므로 1번이 정답입니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-10-2",
+        "type": "grammar",
+        "typeLabel": "[수능킬러 평가원] 어법성 판단 (3점)",
+        "questionText": "다음 밑줄 친 부분 중, 어법상 가장 어색한 것은?",
+        "passageWithUnderline": "Philosophical investigations into this phenomenon demonstrate ①<u>that</u> paradigms cannot be divorced from contingencies. When observers endeavor to isolate variables, systemic interdependencies complicate ②<u>establishing</u> linear causality. Interpretive models ③<u>inherent</u> embody assumptions ④<u>that</u> challenge reductionist doctrines, ⑤<u>demanding</u> continuous vigilance.",
+        "options": [
+          "① that (demonstrate의 목적어절을 이끄는 접속사 that)",
+          "② establishing (동명사 목적어)",
+          "③ inherent (동사 embody를 수식하므로 부사 inherently로 수정해야 함)",
+          "④ that (선행사 assumptions를 수식하는 주격 관계대명사 that)",
+          "⑤ demanding (문맥상 결과를 이끄는 능동 분사구문)"
+        ],
+        "correctIndex": 2,
+        "explanation": "동사 'embody(체화하다, 내포하다)'를 앞에서 수식하는 품사는 형용사 inherent가 아니라 동사를 수식하는 부사 'inherently'이어야 어법상 올바릅니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-10-3",
+        "type": "subjective",
+        "typeLabel": "[수능킬러 서술형] 핵심 논리 근거 서술 (4점)",
+        "questionText": "[평가원 심화 서술형]\n본문의 3번째 문장을 바탕으로, '해석적 모델(interpretive models)이 매개되지 않은 객관적 실재를 온전히 반영하지 못하는 근본적 이유'를 나타내는 핵심 2단어의 영문구를 본문에서 찾아 쓰시오.",
+        "sampleAnswer": "epistemic assumptions",
+        "keywords": [
+          "epistemic",
+          "assumptions"
+        ],
+        "explanation": "본문 3번째 문장에서 해석적 모델은 본질적으로 특정 구조적 차원을 우선시하는 '인식론적 가정(epistemic assumptions)'을 내포하고 있기 때문이라고 명시되어 있습니다."
+      },
+      {
+        "id": "q-passage-CSAT_K-10-4",
+        "type": "main_idea",
+        "typeLabel": "[수능킬러 수능 실전] 글의 주제 파악 (3점)",
+        "questionText": "다음 글의 주제로 가장 적절한 것은?",
+        "options": [
+          "① The Epistemic Limitations of Reductionism and the Necessity of Dialectical Openness in Polyphonic Heteroglossia in Bakhtinian Narrative Polyphony",
+          "② Why Empirical Data Collection Has Rendered Theoretical Philosophy Obsolete",
+          "③ The Technical Superiority of Algorithmic Computing Over Human Scholarship",
+          "④ A Comprehensive Defense of Absolute Dogmatic Certainty in Natural Science",
+          "⑤ The Inevitable Deterioration of All Cross-Disciplinary Research Collaborations"
+        ],
+        "correctIndex": 0,
+        "explanation": "윗글은 '바흐친의 다성악적 다언어성과 소설적 대화주의 (수능 38번 킬러)'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
     ]
   }
