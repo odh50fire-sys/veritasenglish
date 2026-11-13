@@ -717,6 +717,25 @@ class OCREngine {
             };
         }
 
+        // 능률 VOCA 고등 마스터 3종 확인
+        if (this.currentBookId && (this.currentBookId.startsWith('neungryul-high-') || this.currentBookId.startsWith('neungryul-csat-'))) {
+            const nhList = window.VERITAS_NEUNGRYUL_HIGH_COLLECTIONS || [];
+            const nhCol = nhList.find(c => c.id === this.currentBookId) || nhList[0];
+            const allNhWords = window.VERITAS_NEUNGRYUL_HIGH_WORDS_DATA || [];
+            const pool = nhCol ? allNhWords.filter(r => r.collectionId === nhCol.id) : [];
+            return {
+                id: nhCol ? nhCol.id : this.currentBookId,
+                title: nhCol ? nhCol.title : '능률 VOCA 고등 마스터',
+                badge: nhCol ? `${nhCol.badge} • DAY 01 ~ DAY ${String(nhCol.totalDays || 40).padStart(2, '0')} (총 ${pool.length}단어)` : '능률 고등',
+                description: nhCol ? nhCol.description : '',
+                totalDays: nhCol ? nhCol.totalDays : 40,
+                isNeungryul: false,
+                isNeungryulEtym: false,
+                isNeungryulHigh: true,
+                dataPool: pool
+            };
+        }
+
         // 베리타스 오리지널 마스터 보카 10종 확인
         if (this.currentBookId && this.currentBookId.startsWith('veritas-original-')) {
             const origList = window.VERITAS_ORIGINAL_COLLECTIONS || [];

@@ -1286,6 +1286,7 @@
           targetGrade: '고교 실전 / 수능 1~2등급',
           intro: '수능 1등급 안정권 확보 및 대학 전공 원서 독해를 위한 고급 학술 어휘입니다.',
           books: [
+            { title: '능률 VOCA 고등 기본 [2025]', badge: '고교 기본 1,200단어', desc: '고1~고2 내신 1등급 도약 및 수능 필수 기초 40일 완성' },
             { title: '베리타스 오리지널 Lv.8 어드밴스드', badge: '수능 1등급 600단어', desc: 'EBS 연계 교재 및 수능 킬러 문항 빈출 고급 어휘 600개' },
             { title: 'TED & 글로벌 뉴스 시사 영단어 600', badge: '시사 심화 600단어', desc: 'TED 강연, 뉴욕타임스, BBC 뉴스 빈출 글로벌 시사 경제/과학 어휘' },
             { title: 'Oxford 5000™ Vol.1 (B2 Plus)', badge: '옥스퍼드 1,000어휘', desc: '학술적 논증 및 에세이 작성에 필수적인 C1 진입 어휘' }
@@ -1296,9 +1297,10 @@
           targetGrade: '수능 1등급 킬러 / 텝스·토플 실전',
           intro: '최상위권 변별력 빈칸추론 킬러 문항 및 공인 어학시험 고득점용 어휘입니다.',
           books: [
+            { title: '능률 VOCA 수능 필수 [2025]', badge: '수능 1등급 2,000단어', desc: '평가원 모의고사 및 수능 1~2등급 필수 어휘 60일 완성' },
+            { title: '능률 VOCA 수능 고난도 [2025]', badge: '수능 킬러 2,000단어', desc: '최상위권 변별력 빈칸추론 킬러 문항 및 텝스·토플 실전 50일 완성' },
             { title: '베리타스 오리지널 Lv.9 엑스퍼트', badge: '킬러문항 600단어', desc: '철학, 심리학, 언어학 추상 지문 전용 최상위 600단어' },
-            { title: 'NE능률 리딩튜터 챌린저 3', badge: '고교 심화 780단어', desc: '최상위권 수능 1등급 실전 독해 완성 교재' },
-            { title: '영미권 대학 에세이 학술 어휘 600', badge: '아카데믹 600어휘', desc: '해외 대학 강의, 소논문, 비평 에세이 필수 논리 어휘' }
+            { title: 'NE능률 리딩튜터 챌린저 3', badge: '고교 심화 780단어', desc: '최상위권 수능 1등급 실전 독해 완성 교재' }
           ]
         },
         10: {
@@ -1410,6 +1412,7 @@
         window.VERITAS_CHALLENGER_WORDS_DATA,
         window.SAMPLE_WORDS,
         window.NEUNGRYUL_VOCA_2025_DATA,
+        window.VERITAS_NEUNGRYUL_HIGH_WORDS_DATA,
         window.READING_LEXICON_DATA,
         window.CURATED_VOCABULARY
       ];
@@ -1599,6 +1602,7 @@
         window.SAMPLE_WORDS,
         window.NEUNGRYUL_VOCA_2025_DATA,
         window.NEUNGRYUL_VOCA_2025,
+        window.VERITAS_NEUNGRYUL_HIGH_WORDS_DATA,
         window.READING_LEXICON_DATA,
         window.CURATED_VOCABULARY
       ];

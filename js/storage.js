@@ -2199,6 +2199,15 @@ class StorageManager {
         if (window.VERITAS_OXFORD_WORDS_DATA && window.VERITAS_OXFORD_WORDS_DATA.length > 0) {
             pool = pool.concat(window.VERITAS_OXFORD_WORDS_DATA);
         }
+        if (window.VERITAS_PATHWAYS_WORDS_DATA && window.VERITAS_PATHWAYS_WORDS_DATA.length > 0) {
+            pool = pool.concat(window.VERITAS_PATHWAYS_WORDS_DATA);
+        }
+        if (window.VERITAS_CHALLENGER_WORDS_DATA && window.VERITAS_CHALLENGER_WORDS_DATA.length > 0) {
+            pool = pool.concat(window.VERITAS_CHALLENGER_WORDS_DATA);
+        }
+        if (window.VERITAS_NEUNGRYUL_HIGH_WORDS_DATA && window.VERITAS_NEUNGRYUL_HIGH_WORDS_DATA.length > 0) {
+            pool = pool.concat(window.VERITAS_NEUNGRYUL_HIGH_WORDS_DATA);
+        }
         const dayRows = pool.filter(r => r.collectionId === collectionId && r.DAY === dayStr);
         if (dayRows.length === 0) {
             return { addedCount: 0, day: dayStr, planDate: '' };
@@ -2272,6 +2281,15 @@ class StorageManager {
         }
         if (window.VERITAS_OXFORD_WORDS_DATA && window.VERITAS_OXFORD_WORDS_DATA.length > 0) {
             pool = pool.concat(window.VERITAS_OXFORD_WORDS_DATA);
+        }
+        if (window.VERITAS_PATHWAYS_WORDS_DATA && window.VERITAS_PATHWAYS_WORDS_DATA.length > 0) {
+            pool = pool.concat(window.VERITAS_PATHWAYS_WORDS_DATA);
+        }
+        if (window.VERITAS_CHALLENGER_WORDS_DATA && window.VERITAS_CHALLENGER_WORDS_DATA.length > 0) {
+            pool = pool.concat(window.VERITAS_CHALLENGER_WORDS_DATA);
+        }
+        if (window.VERITAS_NEUNGRYUL_HIGH_WORDS_DATA && window.VERITAS_NEUNGRYUL_HIGH_WORDS_DATA.length > 0) {
+            pool = pool.concat(window.VERITAS_NEUNGRYUL_HIGH_WORDS_DATA);
         }
         let colRows = pool.filter(r => r.collectionId === collectionId);
         if (includePlus === false) {
