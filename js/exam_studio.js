@@ -35,6 +35,15 @@ class ExamStudioEngine {
             'M1': '중1 [Lv.3~4]',
             'M2': '중2 [Lv.5~6]',
             'M3': '중3 [Lv.7~8]',
+            'H1_1': '고 1-1 [Lv.8]',
+            'H1_2': '고 1-2 [Lv.8]',
+            'H2_1': '고 2-1 [Lv.8]',
+            'H2_2': '고 2-2 [Lv.8]',
+            'CSAT_B': '수능 기본 [Lv.9]',
+            'CSAT_R': '수능 실전 [Lv.9]',
+            'CSAT_K': '수능 킬러 [Lv.9]',
+            'HIGH': '고등 내신 1등급 [Lv.8]',
+            'CSAT': '수능 1등급 킬러 [Lv.9]',
             'all': '전학년 통합'
         };
         return map[grade] || grade || '통합';
@@ -123,9 +132,18 @@ class ExamStudioEngine {
                 'M2_2': 'unit-m2-2',
                 'M3_1': 'unit-m3-1',
                 'M3_2': 'unit-m3-2',
+                'H1_1': 'unit-h1-1',
+                'H1_2': 'unit-h1-2',
+                'H2_1': 'unit-h2-1',
+                'H2_2': 'unit-h2-2',
+                'CSAT_B': 'unit-csat-basic',
+                'CSAT_R': 'unit-csat-real',
+                'CSAT_K': 'unit-csat-killer',
                 'M1': '중1',
                 'M2': '중2',
-                'M3': '중3'
+                'M3': '중3',
+                'HIGH': '고등',
+                'CSAT': '수능'
             };
             if (unitMap[selectedGrade]) {
                 const target = unitMap[selectedGrade];

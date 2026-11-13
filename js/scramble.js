@@ -110,7 +110,7 @@ class ScrambleEngine {
 
         if (titleEl) titleEl.textContent = this.currentSentence.title;
         if (badgeEl) {
-            const gradeMap = { PRE_M1: '예비중', M1: '중1 내신', M2: '중2 내신', M3: '중3 내신' };
+            const gradeMap = { PRE_M1: '예비중 입문', M1: '중1 내신', M2: '중2 내신', M3: '중3 심화', H1: '고1 내신 1등급', H2: '고2 내신 1등급', CSAT: '수능 1등급 킬러' };
             badgeEl.textContent = gradeMap[this.currentSentence.grade] || this.currentSentence.grade;
         }
         if (grammarEl) grammarEl.textContent = `핵심 문법: ${this.currentSentence.grammarPoint}`;

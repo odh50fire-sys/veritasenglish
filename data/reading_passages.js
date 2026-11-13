@@ -267,7 +267,28 @@ const READING_PASSAGES = [
         "correctIndex": 1,
         "explanation": "윗글은 '가을에 나뭇잎의 색이 변하는 이유'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 가을에 나뭇잎의 색이 변하는 이유'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of why do leaves change color in autumn? is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '가을에 나뭇잎의 색이 변하는 이유'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-PRE_M1-2",
@@ -384,7 +405,28 @@ const READING_PASSAGES = [
         "correctIndex": 4,
         "explanation": "윗글은 '지하 도시 개미들의 비밀스러운 협동 생활'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'The cooperative social structure and survival strategies of ants underground'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the secret life of ants in an underground city is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '지하 도시 개미들의 비밀스러운 협동 생활'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-PRE_M1-3",
@@ -501,7 +543,28 @@ const READING_PASSAGES = [
         "correctIndex": 2,
         "explanation": "윗글은 '양치기 소년과 거짓말의 대가'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'The serious consequences of repeated dishonesty: A lesson from the shepherd boy'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the boy who cried wolf: a timeless lesson is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '양치기 소년과 거짓말의 대가'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-PRE_M1-4",
@@ -618,7 +681,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '햇빛과 빗방울이 만드는 무지개의 과학'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'How sunlight and raindrops interact through refraction to create a rainbow'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of how does sunlight make a rainbow? is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '햇빛과 빗방울이 만드는 무지개의 과학'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-PRE_M1-5",
@@ -735,7 +819,28 @@ const READING_PASSAGES = [
         "correctIndex": 3,
         "explanation": "윗글은 '토끼와 거북이: 꾸준함의 승리'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'The power of patience and persistence over arrogant overconfidence'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the tortoise and the hare: the power of persistence is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '토끼와 거북이: 꾸준함의 승리'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-PRE_M1-6",
@@ -852,7 +957,28 @@ const READING_PASSAGES = [
         "correctIndex": 1,
         "explanation": "윗글은 '플라스틱 쓰레기와 바다 생물들의 위기'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'The urgent threat of marine plastic pollution and the need for global action'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of plastic pollution and our blue ocean is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '플라스틱 쓰레기와 바다 생물들의 위기'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-PRE_M1-7",
@@ -969,7 +1095,28 @@ const READING_PASSAGES = [
         "correctIndex": 4,
         "explanation": "윗글은 '사자와 작은 생쥐의 은혜 갚기'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'How small acts of kindness and unexpected friendship can save a mighty life'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the lion and the tiny mouse is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '사자와 작은 생쥐의 은혜 갚기'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-PRE_M1-8",
@@ -1086,7 +1233,28 @@ const READING_PASSAGES = [
         "correctIndex": 2,
         "explanation": "윗글은 '우리는 왜 매일 밤 잠을 자고 꿈을 꿀까?'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'The essential biological benefits of sleep and dreams for brain health'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of why do we sleep and dream every night? is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '우리는 왜 매일 밤 잠을 자고 꿈을 꿀까?'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-PRE_M1-9",
@@ -1203,7 +1371,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '아침 식사가 뇌를 깨우는 에너지 과학'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Why eating a nutritious breakfast fuels cognitive performance and energy'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of smart eating: why breakfast fuels your brain is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '아침 식사가 뇌를 깨우는 에너지 과학'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-PRE_M1-10",
@@ -1320,7 +1509,28 @@ const READING_PASSAGES = [
         "correctIndex": 3,
         "explanation": "윗글은 '왕과 구두 수선공의 진정한 행복'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Finding true happiness: Gratitude for simple daily moments over wealth'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the king and the cobbler: true happiness is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '왕과 구두 수선공의 진정한 행복'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M1_1-1",
@@ -1437,7 +1647,28 @@ const READING_PASSAGES = [
         "correctIndex": 1,
         "explanation": "윗글은 '꿀벌의 놀라운 생태와 비밀'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'The vital ecological role of honeybees and their unique communication'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the amazing secrets of honeybees is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '꿀벌의 놀라운 생태와 비밀'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M1_1-2",
@@ -1554,7 +1785,28 @@ const READING_PASSAGES = [
         "correctIndex": 4,
         "explanation": "윗글은 '어린 왕자와 사막 여우의 만남'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'The Little Prince and the Desert Fox''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the little prince and the desert fox is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '어린 왕자와 사막 여우의 만남'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M1_1-3",
@@ -1671,7 +1923,28 @@ const READING_PASSAGES = [
         "correctIndex": 2,
         "explanation": "윗글은 '우리는 수면 중에 왜 꿈을 꿀까?'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'The essential biological benefits of sleep and dreams for brain health'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of why do we dream during sleep? is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '우리는 수면 중에 왜 꿈을 꿀까?'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M1_1-4",
@@ -1788,7 +2061,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '톰 소여의 기발한 울타리 페인트칠'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Tom Sawyer's Clever Fence Painting''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of tom sawyer's clever fence painting is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '톰 소여의 기발한 울타리 페인트칠'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M1_1-5",
@@ -1905,7 +2199,28 @@ const READING_PASSAGES = [
         "correctIndex": 3,
         "explanation": "윗글은 '심해 바다의 가장 깊은 신비'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 심해 바다의 가장 깊은 신비'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the ocean's deepest mysteries is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '심해 바다의 가장 깊은 신비'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M1_1-6",
@@ -2022,7 +2337,28 @@ const READING_PASSAGES = [
         "correctIndex": 1,
         "explanation": "윗글은 '이상한 나라의 앨리스와 회중시계 토끼'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Alice and the White Rabbit's Pocket Watch''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of alice and the white rabbit's pocket watch is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '이상한 나라의 앨리스와 회중시계 토끼'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M1_1-7",
@@ -2139,7 +2475,28 @@ const READING_PASSAGES = [
         "correctIndex": 4,
         "explanation": "윗글은 '식물들은 어떻게 서로 대화할까?'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'The cooperative social structure and survival strategies of ants underground'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of how plants talk to each other is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '식물들은 어떻게 서로 대화할까?'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M1_1-8",
@@ -2256,7 +2613,28 @@ const READING_PASSAGES = [
         "correctIndex": 2,
         "explanation": "윗글은 '걸리버 여행기: 소인국 릴리퍼트'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Gulliver Among the Tiny Lilliputians''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of gulliver among the tiny lilliputians is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '걸리버 여행기: 소인국 릴리퍼트'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M1_1-9",
@@ -2373,7 +2751,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '햇빛으로 만드는 태양광 친환경 에너지'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 햇빛으로 만드는 태양광 친환경 에너지'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the story of renewable solar energy is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '햇빛으로 만드는 태양광 친환경 에너지'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M1_1-10",
@@ -2490,7 +2889,28 @@ const READING_PASSAGES = [
         "correctIndex": 3,
         "explanation": "윗글은 '양치기 소년과 늑대: 신뢰의 소중함'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'The serious consequences of repeated dishonesty: A lesson from the shepherd boy'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the boy who cried wolf: a moral tale is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '양치기 소년과 늑대: 신뢰의 소중함'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M1_2-11",
@@ -2607,7 +3027,28 @@ const READING_PASSAGES = [
         "correctIndex": 1,
         "explanation": "윗글은 '잠들지 않는 심장의 기적'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 잠들지 않는 심장의 기적'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the wonders of the human heart is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '잠들지 않는 심장의 기적'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M1_2-12",
@@ -2724,7 +3165,28 @@ const READING_PASSAGES = [
         "correctIndex": 4,
         "explanation": "윗글은 '크리스마스 캐럴: 스크루지의 거듭남'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'A Christmas Carol: Scrooge's Transformation''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of a christmas carol: scrooge's transformation is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '크리스마스 캐럴: 스크루지의 거듭남'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M1_2-13",
@@ -2841,7 +3303,28 @@ const READING_PASSAGES = [
         "correctIndex": 2,
         "explanation": "윗글은 '철새들은 어떻게 대륙을 건널까?'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 철새들은 어떻게 대륙을 건널까?'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of how migratory birds navigate continents is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '철새들은 어떻게 대륙을 건널까?'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M1_2-14",
@@ -2958,7 +3441,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '오스카 와일드: 행복한 왕자와 제비'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'The Happy Prince and the Little Swallow''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the happy prince and the little swallow is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '오스카 와일드: 행복한 왕자와 제비'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M1_2-15",
@@ -3075,7 +3579,28 @@ const READING_PASSAGES = [
         "correctIndex": 3,
         "explanation": "윗글은 '인간은 색을 어떻게 인지하는가?'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 인간은 색을 어떻게 인지하는가?'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the science behind color perception is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '인간은 색을 어떻게 인지하는가?'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M1_2-16",
@@ -3192,7 +3717,28 @@ const READING_PASSAGES = [
         "correctIndex": 1,
         "explanation": "윗글은 '보물섬: 짐 호킨스와 비밀 지도'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Treasure Island: Jim Hawkins and the Map''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of treasure island: jim hawkins and the map is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '보물섬: 짐 호킨스와 비밀 지도'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M1_2-17",
@@ -3309,7 +3855,28 @@ const READING_PASSAGES = [
         "correctIndex": 4,
         "explanation": "윗글은 '플라스틱 쓰레기와 해양 오염 문제'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'The urgent threat of marine plastic pollution and the need for global action'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the global challenge of plastic waste is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '플라스틱 쓰레기와 해양 오염 문제'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M1_2-18",
@@ -3426,7 +3993,28 @@ const READING_PASSAGES = [
         "correctIndex": 2,
         "explanation": "윗글은 '피노키오: 진실과 정직의 가치'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Pinocchio: The Value of Truth and Honesty''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of pinocchio: the value of truth and honesty is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '피노키오: 진실과 정직의 가치'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M1_2-19",
@@ -3543,7 +4131,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '레오나르도 다빈치의 시대를 앞선 발명'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 레오나르도 다빈치의 시대를 앞선 발명'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the inventions of leonardo da vinci is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '레오나르도 다빈치의 시대를 앞선 발명'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M1_2-20",
@@ -3660,7 +4269,28 @@ const READING_PASSAGES = [
         "correctIndex": 3,
         "explanation": "윗글은 '미녀와 야수: 내면의 진정한 아름다움'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Beauty and the Beast: Seeing Inward Virtue''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of beauty and the beast: seeing inward virtue is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '미녀와 야수: 내면의 진정한 아름다움'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M2_1-21",
@@ -3777,7 +4407,28 @@ const READING_PASSAGES = [
         "correctIndex": 1,
         "explanation": "윗글은 '인터넷이 인류 문화를 바꾼 방식'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 인터넷이 인류 문화를 바꾼 방식'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of how the internet transformed human culture is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '인터넷이 인류 문화를 바꾼 방식'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M2_1-22",
@@ -3894,7 +4545,28 @@ const READING_PASSAGES = [
         "correctIndex": 4,
         "explanation": "윗글은 '오 헨리: 크리스마스 선물 (현자의 선물)'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'The Gift of the Magi: Priceless Sacrifice''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the gift of the magi: priceless sacrifice is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '오 헨리: 크리스마스 선물 (현자의 선물)'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M2_1-23",
@@ -4011,7 +4683,28 @@ const READING_PASSAGES = [
         "correctIndex": 2,
         "explanation": "윗글은 '인간 면역 체계의 정교한 방어선'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 인간 면역 체계의 정교한 방어선'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the mysteries of the human immune system is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '인간 면역 체계의 정교한 방어선'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M2_1-24",
@@ -4128,7 +4821,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '셜록 홈즈: 붉은 머리 연맹의 비밀'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Sherlock Holmes and the Red-Headed League''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of sherlock holmes and the red-headed league is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '셜록 홈즈: 붉은 머리 연맹의 비밀'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M2_1-25",
@@ -4245,7 +4959,28 @@ const READING_PASSAGES = [
         "correctIndex": 3,
         "explanation": "윗글은 '인공 산호초와 해양 생태계 복원'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 인공 산호초와 해양 생태계 복원'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of artificial coral reefs and marine conservation is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '인공 산호초와 해양 생태계 복원'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M2_1-26",
@@ -4362,7 +5097,28 @@ const READING_PASSAGES = [
         "correctIndex": 1,
         "explanation": "윗글은 '메리 셸리: 프랑켄슈타인의 고뇌'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Frankenstein: The Burden of Creation''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of frankenstein: the burden of creation is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '메리 셸리: 프랑켄슈타인의 고뇌'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M2_1-27",
@@ -4479,7 +5235,28 @@ const READING_PASSAGES = [
         "correctIndex": 4,
         "explanation": "윗글은 '미루는 습관(Procrastination)의 심리학'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 미루는 습관(Procrastination)의 심리학'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the psychology behind procrastination is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '미루는 습관(Procrastination)의 심리학'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M2_1-28",
@@ -4596,7 +5373,28 @@ const READING_PASSAGES = [
         "correctIndex": 2,
         "explanation": "윗글은 '비밀의 화원: 자연이 주는 치유의 기적'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'The Secret Garden: Healing Power of Nature''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the secret garden: healing power of nature is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '비밀의 화원: 자연이 주는 치유의 기적'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M2_1-29",
@@ -4713,7 +5511,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '우주 탐사가 지구에 가져다주는 혜택'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 우주 탐사가 지구에 가져다주는 혜택'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of why space exploration matters for earth is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '우주 탐사가 지구에 가져다주는 혜택'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M2_1-30",
@@ -4830,7 +5649,28 @@ const READING_PASSAGES = [
         "correctIndex": 3,
         "explanation": "윗글은 '로빈 후드: 부조리에 맞선 셔우드의 의적'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Robin Hood: Champion of Justice''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of robin hood: champion of justice is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '로빈 후드: 부조리에 맞선 셔우드의 의적'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M2_2-31",
@@ -4947,7 +5787,28 @@ const READING_PASSAGES = [
         "correctIndex": 1,
         "explanation": "윗글은 '습관의 힘: 뇌 속의 신경 루프'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 습관의 힘: 뇌 속의 신경 루프'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the power of habit: neural loops in action is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '습관의 힘: 뇌 속의 신경 루프'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M2_2-32",
@@ -5064,7 +5925,28 @@ const READING_PASSAGES = [
         "correctIndex": 4,
         "explanation": "윗글은 '도리안 그레이의 초상: 양심과 예술'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'The Picture of Dorian Gray: Youth and Conscience''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the picture of dorian gray: youth and conscience is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '도리안 그레이의 초상: 양심과 예술'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M2_2-33",
@@ -5181,7 +6063,28 @@ const READING_PASSAGES = [
         "correctIndex": 2,
         "explanation": "윗글은 '지진과 판구조론: 지구의 꿈틀거림'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 지진과 판구조론: 지구의 꿈틀거림'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the science of earthquakes and plate tectonics is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '지진과 판구조론: 지구의 꿈틀거림'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M2_2-34",
@@ -5298,7 +6201,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '80일간의 세계 일주: 정확성과 끈기'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Around the World in Eighty Days: Precision and Grit''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of around the world in eighty days: precision and grit is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '80일간의 세계 일주: 정확성과 끈기'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M2_2-35",
@@ -5415,7 +6339,28 @@ const READING_PASSAGES = [
         "correctIndex": 3,
         "explanation": "윗글은 '생체 발광: 차가운 생명의 빛'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 생체 발광: 차가운 생명의 빛'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of bioluminescence: cold light in living organisms is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '생체 발광: 차가운 생명의 빛'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M2_2-36",
@@ -5532,7 +6477,28 @@ const READING_PASSAGES = [
         "correctIndex": 1,
         "explanation": "윗글은 '돈키호테: 불가능한 꿈을 향한 기사'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Don Quixote: The Noble Pursuit of Ideals''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of don quixote: the noble pursuit of ideals is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '돈키호테: 불가능한 꿈을 향한 기사'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M2_2-37",
@@ -5649,7 +6615,28 @@ const READING_PASSAGES = [
         "correctIndex": 4,
         "explanation": "윗글은 '현수교와 아치교의 공학 역학'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 현수교와 아치교의 공학 역학'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the architecture of bridges: suspension and arch is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '현수교와 아치교의 공학 역학'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M2_2-38",
@@ -5766,7 +6753,28 @@ const READING_PASSAGES = [
         "correctIndex": 2,
         "explanation": "윗글은 '잭 런던: 야성의 부름'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'The Call of the Wild: Returning to Nature''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the call of the wild: returning to nature is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '잭 런던: 야성의 부름'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M2_2-39",
@@ -5883,7 +6891,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '암호학: 디지털 사생활을 지키는 방패'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 암호학: 디지털 사생활을 지키는 방패'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of how cryptography protects digital privacy is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '암호학: 디지털 사생활을 지키는 방패'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M2_2-40",
@@ -6000,7 +7029,28 @@ const READING_PASSAGES = [
         "correctIndex": 3,
         "explanation": "윗글은 '노인과 바다: 결코 굴복하지 않는 의지'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'The Old Man and the Sea: Indomitable Spirit''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the old man and the sea: indomitable spirit is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '노인과 바다: 결코 굴복하지 않는 의지'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M3_1-41",
@@ -6117,7 +7167,28 @@ const READING_PASSAGES = [
         "correctIndex": 1,
         "explanation": "윗글은 '양자역학: 기묘한 미시 세계의 법칙'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'The cooperative social structure and survival strategies of ants underground'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of quantum mechanics: the strange subatomic realm is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '양자역학: 기묘한 미시 세계의 법칙'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M3_1-42",
@@ -6234,7 +7305,28 @@ const READING_PASSAGES = [
         "correctIndex": 4,
         "explanation": "윗글은 '조지 오웰 1984: 언어와 사고의 통제'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'George Orwell's 1984: Language and Thought''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of george orwell's 1984: language and thought is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '조지 오웰 1984: 언어와 사고의 통제'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M3_1-43",
@@ -6351,7 +7443,28 @@ const READING_PASSAGES = [
         "correctIndex": 2,
         "explanation": "윗글은 '유전자 가위 크리스퍼(CRISPR)와 생명윤리'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 유전자 가위 크리스퍼(CRISPR)와 생명윤리'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the ethics of gene editing and crispr is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '유전자 가위 크리스퍼(CRISPR)와 생명윤리'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M3_1-44",
@@ -6468,7 +7581,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '위대한 개츠비: 물질적 부의 환상'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'The Great Gatsby: The Illusion of Wealth''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the great gatsby: the illusion of wealth is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '위대한 개츠비: 물질적 부의 환상'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M3_1-45",
@@ -6585,7 +7719,28 @@ const READING_PASSAGES = [
         "correctIndex": 3,
         "explanation": "윗글은 '후성유전학: 환경이 유전자를 깨운다'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 후성유전학: 환경이 유전자를 깨운다'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of epigenetics: how environment influences genes is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '후성유전학: 환경이 유전자를 깨운다'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M3_1-46",
@@ -6702,7 +7857,28 @@ const READING_PASSAGES = [
         "correctIndex": 1,
         "explanation": "윗글은 '하퍼 리: 앵무새 죽이기와 양심의 용기'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'To Kill a Mockingbird: Courage and Conscience''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of to kill a mockingbird: courage and conscience is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '하퍼 리: 앵무새 죽이기와 양심의 용기'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M3_1-47",
@@ -6819,7 +7995,28 @@ const READING_PASSAGES = [
         "correctIndex": 4,
         "explanation": "윗글은 '공유지의 비극과 자원 관리의 지혜'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 공유지의 비극과 자원 관리의 지혜'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the economics of tragedy of the commons is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '공유지의 비극과 자원 관리의 지혜'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M3_1-48",
@@ -6936,7 +8133,28 @@ const READING_PASSAGES = [
         "correctIndex": 2,
         "explanation": "윗글은 '오만과 편견: 선입견을 넘어선 진실'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Pride and Prejudice: Beyond First Impressions''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of pride and prejudice: beyond first impressions is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '오만과 편견: 선입견을 넘어선 진실'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M3_1-49",
@@ -7053,7 +8271,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '게임이론과 죄수의 딜레마: 협력의 조건'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 게임이론과 죄수의 딜레마: 협력의 조건'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of game theory and the prisoner's dilemma is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '게임이론과 죄수의 딜레마: 협력의 조건'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M3_1-50",
@@ -7170,7 +8409,28 @@ const READING_PASSAGES = [
         "correctIndex": 3,
         "explanation": "윗글은 '파리대왕: 문명과 야만성의 충돌'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Lord of the Flies: Civilization vs. Savagery''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of lord of the flies: civilization vs. savagery is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '파리대왕: 문명과 야만성의 충돌'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M3_2-51",
@@ -7287,7 +8547,28 @@ const READING_PASSAGES = [
         "correctIndex": 1,
         "explanation": "윗글은 '뇌 가소성과 평생 학습의 회복 탄력성'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'The urgent threat of marine plastic pollution and the need for global action'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of neuroplasticity and lifelong cognitive resilience is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '뇌 가소성과 평생 학습의 회복 탄력성'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M3_2-52",
@@ -7404,7 +8685,28 @@ const READING_PASSAGES = [
         "correctIndex": 4,
         "explanation": "윗글은 '멋진 신세계: 조작된 행복과 인간성'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Brave New World: Manufactured Happiness''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of brave new world: manufactured happiness is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '멋진 신세계: 조작된 행복과 인간성'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M3_2-53",
@@ -7521,7 +8823,28 @@ const READING_PASSAGES = [
         "correctIndex": 2,
         "explanation": "윗글은 '암흑물질과 우주의 거대한 그물망'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 암흑물질과 우주의 거대한 그물망'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of dark matter and the cosmic web is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '암흑물질과 우주의 거대한 그물망'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M3_2-54",
@@ -7638,7 +8961,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '레 미제라블: 자비와 구원의 대서사시'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Les Misérables: The Redeeming Power of Mercy''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of les misérables: the redeeming power of mercy is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '레 미제라블: 자비와 구원의 대서사시'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M3_2-55",
@@ -7755,7 +9099,28 @@ const READING_PASSAGES = [
         "correctIndex": 3,
         "explanation": "윗글은 '페르미 역설: 외계 지적 생명체는 어디에?'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 페르미 역설: 외계 지적 생명체는 어디에?'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the fermi paradox: where are all the aliens? is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '페르미 역설: 외계 지적 생명체는 어디에?'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M3_2-56",
@@ -7872,7 +9237,28 @@ const READING_PASSAGES = [
         "correctIndex": 1,
         "explanation": "윗글은 '셰익스피어 햄릿: 존재와 행동의 고뇌'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Hamlet: The Agony of Moral Hesitation''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of hamlet: the agony of moral hesitation is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '셰익스피어 햄릿: 존재와 행동의 고뇌'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M3_2-57",
@@ -7989,7 +9375,28 @@ const READING_PASSAGES = [
         "correctIndex": 4,
         "explanation": "윗글은 '매몰비용의 오류(Sunk Cost)와 합리적 선택'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 매몰비용의 오류(Sunk Cost)와 합리적 선택'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of behavioral economics and sunk cost fallacy is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '매몰비용의 오류(Sunk Cost)와 합리적 선택'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M3_2-58",
@@ -8106,7 +9513,28 @@ const READING_PASSAGES = [
         "correctIndex": 2,
         "explanation": "윗글은 '카프카 변신: 현대 사회의 소외와 실존'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'The Metamorphosis: Alienation in Modern Society''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of the metamorphosis: alienation in modern society is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '카프카 변신: 현대 사회의 소외와 실존'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M3_2-59",
@@ -8223,7 +9651,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '탄소 포집 기술과 지구 공학(Geotherapy)'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Exploring the fundamental mechanisms and importance of 탄소 포집 기술과 지구 공학(Geotherapy)'입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of atmospheric carbon sequestration and geotherapy is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '탄소 포집 기술과 지구 공학(Geotherapy)'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-M3_2-60",
@@ -8340,7 +9789,28 @@ const READING_PASSAGES = [
         "correctIndex": 3,
         "explanation": "윗글은 '괴테 파우스트: 멈추지 않는 지적 갈망'에 관한 내용으로, 지문 전체의 핵심 논지와 대의를 가장 포괄적이고 정확하게 표현한 것은 'Moral lessons and character wisdom reflected in 'Faust: The Insatiable Quest for Transcendence''입니다. 나머지 선지들은 본문과 정반대이거나 지나치게 지엽적/비약된 내용입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to the passage, the primary mechanism of faust: the insatiable quest for transcendence is driven by natural (A)________, which enables organisms to maintain (B)________ in shifting environments.",
+      "blankA": {
+        "options": [
+          "adaptation",
+          "destruction",
+          "randomness"
+        ],
+        "correct": "adaptation"
+      },
+      "blankB": {
+        "options": [
+          "balance",
+          "instability",
+          "isolation"
+        ],
+        "correct": "balance"
+      },
+      "koreanSummary": "윗글에 따르면, '괴테 파우스트: 멈추지 않는 지적 갈망'의 주요 기전은 자연스러운 (A)적응에 의해 촉진되며, 이는 생물이 변화하는 환경 속에서 (B)균형을 유지할 수 있게 한다.",
+      "explanation": "지문 전체의 핵심 논지에 비추어 볼 때 생태 및 자연의 변화에 대처하는 (A)adaptation(적응)과 (B)balance(균형)이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H1_1-1",
@@ -8355,7 +9825,7 @@ const READING_PASSAGES = [
     "level": "high1_1",
     "levelLabel": "고1 내신 1등급",
     "source": "실제 고1 3월 학평 31번 변형 (내신 1등급 기출)",
-    "wordCount": 92,
+    "wordCount": 91,
     "estimatedTime": "1분 40초",
     "summary": "인공지능의 계산 능력과 인간 고유의 직관 및 윤리적 판단력의 상호보완적 관계",
     "sentences": [
@@ -8394,10 +9864,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 인공지능의 계산 능력과 인간 고유의 직관 및 윤리적 판단력의 상 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 인공지능의 계산 능력과 인간 고유의 직관 및 윤리적 판단력의 상을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of artificial intelligence and human intuition is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 인공지능과 인간 직관의 본질의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing artificial intelligence and human intuition /",
+          "Consequently, recognizing the profound implications /",
+          "of artificial intelligence and human intuition /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -8496,7 +9967,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '인공지능과 인간 직관의 본질'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in artificial intelligence and human intuition enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "optimization",
+          "calculation",
+          "dissipation"
+        ],
+        "correct": "optimization"
+      },
+      "blankB": {
+        "options": [
+          "ambiguity",
+          "rigidity",
+          "fragility"
+        ],
+        "correct": "ambiguity"
+      },
+      "koreanSummary": "인공지능과 인간 직관의 본질의 적응 메커니즘이 즉각적인 (A)optimization을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)ambiguity이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'optimization', 장기적 인지 재구성 차원의 (B)에는 'ambiguity'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H1_1-2",
@@ -8511,7 +10003,7 @@ const READING_PASSAGES = [
     "level": "high1_1",
     "levelLabel": "고1 내신 1등급",
     "source": "실제 고1 3월 학평 24번 변형 (내신 1등급 기출)",
-    "wordCount": 90,
+    "wordCount": 91,
     "estimatedTime": "1분 40초",
     "summary": "스마트폰 청색광이 멜라토닌 분비를 억제하여 청소년 수면의 질을 저하시키는 메커니즘",
     "sentences": [
@@ -8550,10 +10042,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 스마트폰 청색광이 멜라토닌 분비를 억제하여 청소년 수면의 질을  is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 스마트폰 청색광이 멜라토닌 분비를 억제하여 청소년 수면의 질을 을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of circadian rhythms and screen exposure is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 일주기 생체 리듬과 야간 스크린 노출의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing circadian rhythms and screen exposure /",
+          "Consequently, recognizing the profound implications /",
+          "of circadian rhythms and screen exposure /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -8652,7 +10145,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '일주기 생체 리듬과 야간 스크린 노출'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in circadian rhythms and screen exposure enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "suppresses",
+          "accelerates",
+          "dissipation"
+        ],
+        "correct": "suppresses"
+      },
+      "blankB": {
+        "options": [
+          "curtailing",
+          "enhancing",
+          "fragility"
+        ],
+        "correct": "curtailing"
+      },
+      "koreanSummary": "일주기 생체 리듬과 야간 스크린 노출의 적응 메커니즘이 즉각적인 (A)suppresses을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)curtailing이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'suppresses', 장기적 인지 재구성 차원의 (B)에는 'curtailing'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H1_1-3",
@@ -8667,7 +10181,7 @@ const READING_PASSAGES = [
     "level": "high1_1",
     "levelLabel": "고1 내신 1등급",
     "source": "실제 고1 3월 학평 34번 변형 (내신 1등급 기출)",
-    "wordCount": 92,
+    "wordCount": 93,
     "estimatedTime": "1분 40초",
     "summary": "알고리즘 추천 시스템이 기존 신념을 강화하여 사회적 양극화를 유발하는 현상",
     "sentences": [
@@ -8706,10 +10220,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 알고리즘 추천 시스템이 기존 신념을 강화하여 사회적 양극화를 유 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 알고리즘 추천 시스템이 기존 신념을 강화하여 사회적 양극화를 유을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of confirmation bias in the information age is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 정보화 시대의 확증 편향과 필터 버블의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing confirmation bias in the information age /",
+          "Consequently, recognizing the profound implications /",
+          "of confirmation bias in the information age /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -8808,7 +10323,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '정보화 시대의 확증 편향과 필터 버블'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in confirmation bias in the information age enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "reinforces",
+          "dismantles",
+          "dissipation"
+        ],
+        "correct": "reinforces"
+      },
+      "blankB": {
+        "options": [
+          "polarization",
+          "neutrality",
+          "fragility"
+        ],
+        "correct": "polarization"
+      },
+      "koreanSummary": "정보화 시대의 확증 편향과 필터 버블의 적응 메커니즘이 즉각적인 (A)reinforces을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)polarization이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'reinforces', 장기적 인지 재구성 차원의 (B)에는 'polarization'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H1_1-4",
@@ -8823,7 +10359,7 @@ const READING_PASSAGES = [
     "level": "high1_1",
     "levelLabel": "고1 내신 1등급",
     "source": "실제 고1 6월 학평 32번 변형 (내신 1등급 기출)",
-    "wordCount": 93,
+    "wordCount": 91,
     "estimatedTime": "1분 40초",
     "summary": "꿀벌 개체수 감소가 농작물 생산 및 전 지구적 식량 안보에 미치는 파급 효과",
     "sentences": [
@@ -8862,10 +10398,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 꿀벌 개체수 감소가 농작물 생산 및 전 지구적 식량 안보에 미치 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 꿀벌 개체수 감소가 농작물 생산 및 전 지구적 식량 안보에 미치을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of colony collapse disorder and pollinators is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 군집 붕괴 현상과 꽃가루 매개자의 위기의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing colony collapse disorder and pollinators /",
+          "Consequently, recognizing the profound implications /",
+          "of colony collapse disorder and pollinators /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -8964,7 +10501,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '군집 붕괴 현상과 꽃가루 매개자의 위기'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in colony collapse disorder and pollinators enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "decline",
+          "stability",
+          "dissipation"
+        ],
+        "correct": "decline"
+      },
+      "blankB": {
+        "options": [
+          "insecurity",
+          "prosperity",
+          "fragility"
+        ],
+        "correct": "insecurity"
+      },
+      "koreanSummary": "군집 붕괴 현상과 꽃가루 매개자의 위기의 적응 메커니즘이 즉각적인 (A)decline을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)insecurity이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'decline', 장기적 인지 재구성 차원의 (B)에는 'insecurity'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H1_1-5",
@@ -8979,7 +10537,7 @@ const READING_PASSAGES = [
     "level": "high1_1",
     "levelLabel": "고1 내신 1등급",
     "source": "실제 고1 6월 학평 33번 변형 (내신 1등급 기출)",
-    "wordCount": 94,
+    "wordCount": 95,
     "estimatedTime": "1분 40초",
     "summary": "강제나 금전적 보상 대신 선택 설계를 통해 사람들의 행동을 긍정적으로 유도하는 원리",
     "sentences": [
@@ -9018,10 +10576,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 강제나 금전적 보상 대신 선택 설계를 통해 사람들의 행동을 긍정 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 강제나 금전적 보상 대신 선택 설계를 통해 사람들의 행동을 긍정을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of behavioral economics and the power of nudges is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 행동경제학과 넛지의 힘의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing behavioral economics and the power of nudges /",
+          "Consequently, recognizing the profound implications /",
+          "of behavioral economics and the power of nudges /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -9120,7 +10679,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '행동경제학과 넛지의 힘'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in behavioral economics and the power of nudges enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "coercion",
+          "mandates",
+          "dissipation"
+        ],
+        "correct": "coercion"
+      },
+      "blankB": {
+        "options": [
+          "architecture",
+          "passivity",
+          "fragility"
+        ],
+        "correct": "architecture"
+      },
+      "koreanSummary": "행동경제학과 넛지의 힘의 적응 메커니즘이 즉각적인 (A)coercion을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)architecture이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'coercion', 장기적 인지 재구성 차원의 (B)에는 'architecture'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H1_1-6",
@@ -9135,7 +10715,7 @@ const READING_PASSAGES = [
     "level": "high1_1",
     "levelLabel": "고1 내신 1등급",
     "source": "실제 고1 6월 학평 29번 변형 (내신 1등급 기출)",
-    "wordCount": 92,
+    "wordCount": 91,
     "estimatedTime": "1분 40초",
     "summary": "음악 청취가 도파민 방출 및 스트레스 호르몬 감소를 통해 인지 기능에 미치는 영향",
     "sentences": [
@@ -9174,10 +10754,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 음악 청취가 도파민 방출 및 스트레스 호르몬 감소를 통해 인지  is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 음악 청취가 도파민 방출 및 스트레스 호르몬 감소를 통해 인지 을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of neurological resonance of musical harmony is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 음악적 화음의 신경학적 공명과 뇌파의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing neurological resonance of musical harmony /",
+          "Consequently, recognizing the profound implications /",
+          "of neurological resonance of musical harmony /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -9276,7 +10857,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '음악적 화음의 신경학적 공명과 뇌파'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in neurological resonance of musical harmony enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "regulates",
+          "disrupts",
+          "dissipation"
+        ],
+        "correct": "regulates"
+      },
+      "blankB": {
+        "options": [
+          "resilience",
+          "fatigue",
+          "fragility"
+        ],
+        "correct": "resilience"
+      },
+      "koreanSummary": "음악적 화음의 신경학적 공명과 뇌파의 적응 메커니즘이 즉각적인 (A)regulates을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)resilience이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'regulates', 장기적 인지 재구성 차원의 (B)에는 'resilience'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H1_1-7",
@@ -9330,10 +10932,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 기계적 재활용의 품질 저하 한계를 극복하기 위한 근본적 감축 및 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 기계적 재활용의 품질 저하 한계를 극복하기 위한 근본적 감축 및을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of the structural dilemma of plastic recycling is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 플라스틱 재활용의 구조적 한계와 순환 경제의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing the structural dilemma of plastic recycling /",
+          "Consequently, recognizing the profound implications /",
+          "of the structural dilemma of plastic recycling /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -9432,7 +11035,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '플라스틱 재활용의 구조적 한계와 순환 경제'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in the structural dilemma of plastic recycling enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "degradation",
+          "expansion",
+          "dissipation"
+        ],
+        "correct": "degradation"
+      },
+      "blankB": {
+        "options": [
+          "circular",
+          "linear",
+          "fragility"
+        ],
+        "correct": "circular"
+      },
+      "koreanSummary": "플라스틱 재활용의 구조적 한계와 순환 경제의 적응 메커니즘이 즉각적인 (A)degradation을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)circular이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'degradation', 장기적 인지 재구성 차원의 (B)에는 'circular'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H1_1-8",
@@ -9447,7 +11071,7 @@ const READING_PASSAGES = [
     "level": "high1_1",
     "levelLabel": "고1 내신 1등급",
     "source": "실제 고1 6월 학평 36번 변형 (내신 1등급 기출)",
-    "wordCount": 92,
+    "wordCount": 93,
     "estimatedTime": "1분 40초",
     "summary": "소화기관 내 미생물 다양성이 자가면역 질환 예방과 정신 건강에 미치는 결정적 역할",
     "sentences": [
@@ -9486,10 +11110,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 소화기관 내 미생물 다양성이 자가면역 질환 예방과 정신 건강에  is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 소화기관 내 미생물 다양성이 자가면역 질환 예방과 정신 건강에 을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of the gut microbiome and human immunity is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 장내 마이크로바이옴과 인체 면역 체계의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing the gut microbiome and human immunity /",
+          "Consequently, recognizing the profound implications /",
+          "of the gut microbiome and human immunity /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -9588,7 +11213,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '장내 마이크로바이옴과 인체 면역 체계'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in the gut microbiome and human immunity enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "diversity",
+          "uniformity",
+          "dissipation"
+        ],
+        "correct": "diversity"
+      },
+      "blankB": {
+        "options": [
+          "defense",
+          "breakdown",
+          "fragility"
+        ],
+        "correct": "defense"
+      },
+      "koreanSummary": "장내 마이크로바이옴과 인체 면역 체계의 적응 메커니즘이 즉각적인 (A)diversity을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)defense이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'diversity', 장기적 인지 재구성 차원의 (B)에는 'defense'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H1_1-9",
@@ -9603,7 +11249,7 @@ const READING_PASSAGES = [
     "level": "high1_1",
     "levelLabel": "고1 내신 1등급",
     "source": "실제 고1 3월 학평 37번 변형 (내신 1등급 기출)",
-    "wordCount": 92,
+    "wordCount": 91,
     "estimatedTime": "1분 40초",
     "summary": "현대 전력 의존 냉방의 대안으로서 페르시아 바람탑 등 고대 건축 지혜의 재해석",
     "sentences": [
@@ -9642,10 +11288,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 현대 전력 의존 냉방의 대안으로서 페르시아 바람탑 등 고대 건축 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 현대 전력 의존 냉방의 대안으로서 페르시아 바람탑 등 고대 건축을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of passive cooling in ancient architecture is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 고대 건축의 자연 냉방 원리와 지속가능성의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing passive cooling in ancient architecture /",
+          "Consequently, recognizing the profound implications /",
+          "of passive cooling in ancient architecture /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -9744,7 +11391,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '고대 건축의 자연 냉방 원리와 지속가능성'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in passive cooling in ancient architecture enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "renewable",
+          "fossil",
+          "dissipation"
+        ],
+        "correct": "renewable"
+      },
+      "blankB": {
+        "options": [
+          "sustainable",
+          "hazardous",
+          "fragility"
+        ],
+        "correct": "sustainable"
+      },
+      "koreanSummary": "고대 건축의 자연 냉방 원리와 지속가능성의 적응 메커니즘이 즉각적인 (A)renewable을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)sustainable이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'renewable', 장기적 인지 재구성 차원의 (B)에는 'sustainable'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H1_1-10",
@@ -9759,7 +11427,7 @@ const READING_PASSAGES = [
     "level": "high1_1",
     "levelLabel": "고1 내신 1등급",
     "source": "실제 고1 6월 학평 21번 변형 (내신 1등급 기출)",
-    "wordCount": 93,
+    "wordCount": 95,
     "estimatedTime": "1분 40초",
     "summary": "뇌가 에너지를 절약하기 위해 일상 동작을 자동화하는 습관 형성의 신경생물학",
     "sentences": [
@@ -9798,10 +11466,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 뇌가 에너지를 절약하기 위해 일상 동작을 자동화하는 습관 형성의 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 뇌가 에너지를 절약하기 위해 일상 동작을 자동화하는 습관 형성의을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of the habit loop: cue, routine, and reward is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 습관의 고리: 신호, 반복 행동, 그리고 보상의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing the habit loop: cue, routine, and reward /",
+          "Consequently, recognizing the profound implications /",
+          "of the habit loop: cue, routine, and reward /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -9900,7 +11569,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '습관의 고리: 신호, 반복 행동, 그리고 보상'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in the habit loop: cue, routine, and reward enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "automates",
+          "initiates",
+          "dissipation"
+        ],
+        "correct": "automates"
+      },
+      "blankB": {
+        "options": [
+          "conservation",
+          "dissipation",
+          "fragility"
+        ],
+        "correct": "conservation"
+      },
+      "koreanSummary": "습관의 고리: 신호, 반복 행동, 그리고 보상의 적응 메커니즘이 즉각적인 (A)automates을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)conservation이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'automates', 장기적 인지 재구성 차원의 (B)에는 'conservation'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H1_2-1",
@@ -9915,7 +11605,7 @@ const READING_PASSAGES = [
     "level": "high1_2",
     "levelLabel": "고1 내신 1등급",
     "source": "실제 고1 9월 학평 31번 변형 (내신 1등급 기출)",
-    "wordCount": 92,
+    "wordCount": 91,
     "estimatedTime": "1분 40초",
     "summary": "성인이 된 후에도 지속적인 학습과 훈련을 통해 뇌의 시냅스 연결이 물리적으로 변한다는 발견",
     "sentences": [
@@ -9954,10 +11644,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 성인이 된 후에도 지속적인 학습과 훈련을 통해 뇌의 시냅스 연결 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 성인이 된 후에도 지속적인 학습과 훈련을 통해 뇌의 시냅스 연결을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of neuroplasticity: rewiring the adult brain is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 신경가소성: 성인기 두뇌 회로의 재구성의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing neuroplasticity: rewiring the adult brain /",
+          "Consequently, recognizing the profound implications /",
+          "of neuroplasticity: rewiring the adult brain /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -10056,7 +11747,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '신경가소성: 성인기 두뇌 회로의 재구성'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in neuroplasticity: rewiring the adult brain enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "malleable",
+          "rigid",
+          "dissipation"
+        ],
+        "correct": "malleable"
+      },
+      "blankB": {
+        "options": [
+          "adaptation",
+          "deterioration",
+          "fragility"
+        ],
+        "correct": "adaptation"
+      },
+      "koreanSummary": "신경가소성: 성인기 두뇌 회로의 재구성의 적응 메커니즘이 즉각적인 (A)malleable을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)adaptation이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'malleable', 장기적 인지 재구성 차원의 (B)에는 'adaptation'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H1_2-2",
@@ -10071,7 +11783,7 @@ const READING_PASSAGES = [
     "level": "high1_2",
     "levelLabel": "고1 내신 1등급",
     "source": "실제 고1 9월 학평 34번 변형 (내신 1등급 기출)",
-    "wordCount": 93,
+    "wordCount": 95,
     "estimatedTime": "1분 40초",
     "summary": "명백한 오답 앞에서도 타인의 시선을 의식하여 다수의 의견에 무비판적으로 순응하는 심리",
     "sentences": [
@@ -10110,10 +11822,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 명백한 오답 앞에서도 타인의 시선을 의식하여 다수의 의견에 무비 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 명백한 오답 앞에서도 타인의 시선을 의식하여 다수의 의견에 무비을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of the asch conformity experiment and social influence is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 애쉬의 동조 실험과 집단 순응의 압박의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing the asch conformity experiment and social influence /",
+          "Consequently, recognizing the profound implications /",
+          "of the asch conformity experiment and social influence /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -10212,7 +11925,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '애쉬의 동조 실험과 집단 순응의 압박'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in the asch conformity experiment and social influence enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "conforms",
+          "rebels",
+          "dissipation"
+        ],
+        "correct": "conforms"
+      },
+      "blankB": {
+        "options": [
+          "judgment",
+          "intuition",
+          "fragility"
+        ],
+        "correct": "judgment"
+      },
+      "koreanSummary": "애쉬의 동조 실험과 집단 순응의 압박의 적응 메커니즘이 즉각적인 (A)conforms을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)judgment이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'conforms', 장기적 인지 재구성 차원의 (B)에는 'judgment'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H1_2-3",
@@ -10227,7 +11961,7 @@ const READING_PASSAGES = [
     "level": "high1_2",
     "levelLabel": "고1 내신 1등급",
     "source": "실제 고1 11월 학평 32번 변형 (내신 1등급 기출)",
-    "wordCount": 92,
+    "wordCount": 91,
     "estimatedTime": "1분 40초",
     "summary": "상어 피부의 미세 돌기와 고속열차 앞코의 물총새 부리 디자인 등 생태학적 혁신 사례",
     "sentences": [
@@ -10266,10 +12000,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 상어 피부의 미세 돌기와 고속열차 앞코의 물총새 부리 디자인 등 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 상어 피부의 미세 돌기와 고속열차 앞코의 물총새 부리 디자인 등을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of biomimicry: engineering inspired by nature is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 생체모방 기술: 자연에서 얻은 공학적 해답의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing biomimicry: engineering inspired by nature /",
+          "Consequently, recognizing the profound implications /",
+          "of biomimicry: engineering inspired by nature /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -10368,7 +12103,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '생체모방 기술: 자연에서 얻은 공학적 해답'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in biomimicry: engineering inspired by nature enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "mimicking",
+          "opposing",
+          "dissipation"
+        ],
+        "correct": "mimicking"
+      },
+      "blankB": {
+        "options": [
+          "efficiency",
+          "friction",
+          "fragility"
+        ],
+        "correct": "efficiency"
+      },
+      "koreanSummary": "생체모방 기술: 자연에서 얻은 공학적 해답의 적응 메커니즘이 즉각적인 (A)mimicking을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)efficiency이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'mimicking', 장기적 인지 재구성 차원의 (B)에는 'efficiency'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H1_2-4",
@@ -10422,10 +12178,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 새로운 경험의 빈도가 줄어들면서 뇌가 기억을 압축하여 나이가 들 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 새로운 경험의 빈도가 줄어들면서 뇌가 기억을 압축하여 나이가 들을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of subjective time acceleration in aging is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 노화에 따른 주관적 시간 체감 가속의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing subjective time acceleration in aging /",
+          "Consequently, recognizing the profound implications /",
+          "of subjective time acceleration in aging /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -10524,7 +12281,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '노화에 따른 주관적 시간 체감 가속'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in subjective time acceleration in aging enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "novelty",
+          "repetition",
+          "dissipation"
+        ],
+        "correct": "novelty"
+      },
+      "blankB": {
+        "options": [
+          "compression",
+          "expansion",
+          "fragility"
+        ],
+        "correct": "compression"
+      },
+      "koreanSummary": "노화에 따른 주관적 시간 체감 가속의 적응 메커니즘이 즉각적인 (A)novelty을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)compression이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'novelty', 장기적 인지 재구성 차원의 (B)에는 'compression'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H1_2-5",
@@ -10539,7 +12317,7 @@ const READING_PASSAGES = [
     "level": "high1_2",
     "levelLabel": "고1 내신 1등급",
     "source": "실제 고1 11월 학평 38번 변형 (내신 1등급 기출)",
-    "wordCount": 93,
+    "wordCount": 95,
     "estimatedTime": "1분 40초",
     "summary": "도심 빌딩 내부에서 LED와 수경재배를 통해 물 소비를 90% 이상 절감하는 스마트 팜",
     "sentences": [
@@ -10578,10 +12356,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 도심 빌딩 내부에서 LED와 수경재배를 통해 물 소비를 90%  is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 도심 빌딩 내부에서 LED와 수경재배를 통해 물 소비를 90% 을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of vertical farming and the future of agriculture is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 수직 농경과 기후 위기 시대의 농업의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing vertical farming and the future of agriculture /",
+          "Consequently, recognizing the profound implications /",
+          "of vertical farming and the future of agriculture /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -10680,7 +12459,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '수직 농경과 기후 위기 시대의 농업'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in vertical farming and the future of agriculture enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "controlled",
+          "unregulated",
+          "dissipation"
+        ],
+        "correct": "controlled"
+      },
+      "blankB": {
+        "options": [
+          "conservation",
+          "depletion",
+          "fragility"
+        ],
+        "correct": "conservation"
+      },
+      "koreanSummary": "수직 농경과 기후 위기 시대의 농업의 적응 메커니즘이 즉각적인 (A)controlled을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)conservation이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'controlled', 장기적 인지 재구성 차원의 (B)에는 'conservation'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H1_2-6",
@@ -10734,10 +12534,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 인간의 기억은 비디오처럼 재생되는 것이 아니라 질문의 어조에 따 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 인간의 기억은 비디오처럼 재생되는 것이 아니라 질문의 어조에 따을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of memory reconstruction and eye-witness reliability is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 기억의 재구성과 목격자 증언의 가변성의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing memory reconstruction and eye-witness reliability /",
+          "Consequently, recognizing the profound implications /",
+          "of memory reconstruction and eye-witness reliability /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -10836,7 +12637,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '기억의 재구성과 목격자 증언의 가변성'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in memory reconstruction and eye-witness reliability enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "malleability",
+          "invariance",
+          "dissipation"
+        ],
+        "correct": "malleability"
+      },
+      "blankB": {
+        "options": [
+          "distortion",
+          "permanence",
+          "fragility"
+        ],
+        "correct": "distortion"
+      },
+      "koreanSummary": "기억의 재구성과 목격자 증언의 가변성의 적응 메커니즘이 즉각적인 (A)malleability을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)distortion이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'malleability', 장기적 인지 재구성 차원의 (B)에는 'distortion'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H1_2-7",
@@ -10851,7 +12673,7 @@ const READING_PASSAGES = [
     "level": "high1_2",
     "levelLabel": "고1 내신 1등급",
     "source": "실제 고1 11월 학평 30번 변형 (내신 1등급 기출)",
-    "wordCount": 92,
+    "wordCount": 93,
     "estimatedTime": "1분 40초",
     "summary": "빛이 도달하지 않는 극한의 심해에서 포식자 유인과 은폐를 위해 진화한 생물발광 메커니즘",
     "sentences": [
@@ -10890,10 +12712,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 빛이 도달하지 않는 극한의 심해에서 포식자 유인과 은폐를 위해  is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 빛이 도달하지 않는 극한의 심해에서 포식자 유인과 은폐를 위해 을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of bioluminescent adaptations in deep ocean trenches is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 심해 해구 생물들의 발광 적응 전략의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing bioluminescent adaptations in deep ocean trenches /",
+          "Consequently, recognizing the profound implications /",
+          "of bioluminescent adaptations in deep ocean trenches /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -10992,7 +12815,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '심해 해구 생물들의 발광 적응 전략'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in bioluminescent adaptations in deep ocean trenches enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "luminescence",
+          "pigmentation",
+          "dissipation"
+        ],
+        "correct": "luminescence"
+      },
+      "blankB": {
+        "options": [
+          "survival",
+          "extinction",
+          "fragility"
+        ],
+        "correct": "survival"
+      },
+      "koreanSummary": "심해 해구 생물들의 발광 적응 전략의 적응 메커니즘이 즉각적인 (A)luminescence을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)survival이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'luminescence', 장기적 인지 재구성 차원의 (B)에는 'survival'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H1_2-8",
@@ -11007,7 +12851,7 @@ const READING_PASSAGES = [
     "level": "high1_2",
     "levelLabel": "고1 내신 1등급",
     "source": "실제 고1 9월 학평 37번 변형 (내신 1등급 기출)",
-    "wordCount": 92,
+    "wordCount": 93,
     "estimatedTime": "1분 40초",
     "summary": "플랫폼 노동이 자율성을 부여하는 동시에 전통적 사회 안전망을 약화시키는 이중적 구조",
     "sentences": [
@@ -11046,10 +12890,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 플랫폼 노동이 자율성을 부여하는 동시에 전통적 사회 안전망을 약 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 플랫폼 노동이 자율성을 부여하는 동시에 전통적 사회 안전망을 약을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of the gig economy: flexibility versus precarity is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 긱 이코노미: 노동의 유연성과 고용의 불안정성의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing the gig economy: flexibility versus precarity /",
+          "Consequently, recognizing the profound implications /",
+          "of the gig economy: flexibility versus precarity /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -11148,7 +12993,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '긱 이코노미: 노동의 유연성과 고용의 불안정성'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in the gig economy: flexibility versus precarity enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "flexibility",
+          "security",
+          "dissipation"
+        ],
+        "correct": "flexibility"
+      },
+      "blankB": {
+        "options": [
+          "precarity",
+          "stagnation",
+          "fragility"
+        ],
+        "correct": "precarity"
+      },
+      "koreanSummary": "긱 이코노미: 노동의 유연성과 고용의 불안정성의 적응 메커니즘이 즉각적인 (A)flexibility을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)precarity이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'flexibility', 장기적 인지 재구성 차원의 (B)에는 'precarity'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H1_2-9",
@@ -11163,7 +13029,7 @@ const READING_PASSAGES = [
     "level": "high1_2",
     "levelLabel": "고1 내신 1등급",
     "source": "실제 고1 11월 학평 29번 변형 (내신 1등급 기출)",
-    "wordCount": 92,
+    "wordCount": 91,
     "estimatedTime": "1분 40초",
     "summary": "언어로 표현하기 힘든 외상과 불안을 시각적 조형 활동을 통해 치유하는 신경심리학적 경로",
     "sentences": [
@@ -11202,10 +13068,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 언어로 표현하기 힘든 외상과 불안을 시각적 조형 활동을 통해 치 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 언어로 표현하기 힘든 외상과 불안을 시각적 조형 활동을 통해 치을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of art therapy and somatic self-regulation is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 미술 치료와 신체적 정서 조절의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing art therapy and somatic self-regulation /",
+          "Consequently, recognizing the profound implications /",
+          "of art therapy and somatic self-regulation /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -11304,7 +13171,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '미술 치료와 신체적 정서 조절'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in art therapy and somatic self-regulation enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "nonverbal",
+          "verbal",
+          "dissipation"
+        ],
+        "correct": "nonverbal"
+      },
+      "blankB": {
+        "options": [
+          "homeostasis",
+          "agitation",
+          "fragility"
+        ],
+        "correct": "homeostasis"
+      },
+      "koreanSummary": "미술 치료와 신체적 정서 조절의 적응 메커니즘이 즉각적인 (A)nonverbal을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)homeostasis이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'nonverbal', 장기적 인지 재구성 차원의 (B)에는 'homeostasis'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H1_2-10",
@@ -11319,7 +13207,7 @@ const READING_PASSAGES = [
     "level": "high1_2",
     "levelLabel": "고1 내신 1등급",
     "source": "실제 고1 11월 학평 39번 변형 (내신 1등급 기출)",
-    "wordCount": 91,
+    "wordCount": 93,
     "estimatedTime": "1분 40초",
     "summary": "인공위성 잔해물 충돌 위험(케슬러 증후군)을 방지하기 위한 작살 및 로봇팔 수거 기술",
     "sentences": [
@@ -11358,10 +13246,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 인공위성 잔해물 충돌 위험(케슬러 증후군)을 방지하기 위한 작살 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 인공위성 잔해물 충돌 위험(케슬러 증후군)을 방지하기 위한 작살을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of orbital debris mitigation and space sustainability is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 우주 쓰레기 저감과 우주 공간의 지속가능성의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing orbital debris mitigation and space sustainability /",
+          "Consequently, recognizing the profound implications /",
+          "of orbital debris mitigation and space sustainability /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -11460,7 +13349,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '우주 쓰레기 저감과 우주 공간의 지속가능성'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in orbital debris mitigation and space sustainability enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "collateral",
+          "deliberate",
+          "dissipation"
+        ],
+        "correct": "collateral"
+      },
+      "blankB": {
+        "options": [
+          "sustainable",
+          "ephemeral",
+          "fragility"
+        ],
+        "correct": "sustainable"
+      },
+      "koreanSummary": "우주 쓰레기 저감과 우주 공간의 지속가능성의 적응 메커니즘이 즉각적인 (A)collateral을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)sustainable이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'collateral', 장기적 인지 재구성 차원의 (B)에는 'sustainable'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H2_1-1",
@@ -11475,7 +13385,7 @@ const READING_PASSAGES = [
     "level": "high2_1",
     "levelLabel": "고2 내신 1등급",
     "source": "실제 고2 3월 학평 31번 변형 (내신 1등급 기출)",
-    "wordCount": 91,
+    "wordCount": 93,
     "estimatedTime": "1분 40초",
     "summary": "알고리즘의 무한 스크롤이 도파민 보상 회로를 자극하여 집중력을 분절시키는 문제점과 극복 방안",
     "sentences": [
@@ -11514,10 +13424,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 알고리즘의 무한 스크롤이 도파민 보상 회로를 자극하여 집중력을  is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 알고리즘의 무한 스크롤이 도파민 보상 회로를 자극하여 집중력을 을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of the attention economy and dopamine fasting is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 주의력 경제와 도파민 단식의 실제의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing the attention economy and dopamine fasting /",
+          "Consequently, recognizing the profound implications /",
+          "of the attention economy and dopamine fasting /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -11616,7 +13527,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '주의력 경제와 도파민 단식의 실제'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in the attention economy and dopamine fasting enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "fragments",
+          "stabilizes",
+          "dissipation"
+        ],
+        "correct": "fragments"
+      },
+      "blankB": {
+        "options": [
+          "restoration",
+          "distraction",
+          "fragility"
+        ],
+        "correct": "restoration"
+      },
+      "koreanSummary": "주의력 경제와 도파민 단식의 실제의 적응 메커니즘이 즉각적인 (A)fragments을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)restoration이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'fragments', 장기적 인지 재구성 차원의 (B)에는 'restoration'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H2_1-2",
@@ -11631,7 +13563,7 @@ const READING_PASSAGES = [
     "level": "high2_1",
     "levelLabel": "고2 내신 1등급",
     "source": "실제 고2 3월 학평 34번 변형 (내신 1등급 기출)",
-    "wordCount": 91,
+    "wordCount": 93,
     "estimatedTime": "1분 40초",
     "summary": "동일한 정보라도 이익의 관점인지 손실의 관점인지에 따라 정반대의 선택을 내리는 인지 편향",
     "sentences": [
@@ -11670,10 +13602,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 동일한 정보라도 이익의 관점인지 손실의 관점인지에 따라 정반대의 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 동일한 정보라도 이익의 관점인지 손실의 관점인지에 따라 정반대의을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of framing effects in cognitive decision making is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 의사결정에서의 프레이밍 효과와 위험 회피의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing framing effects in cognitive decision making /",
+          "Consequently, recognizing the profound implications /",
+          "of framing effects in cognitive decision making /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -11772,7 +13705,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '의사결정에서의 프레이밍 효과와 위험 회피'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in framing effects in cognitive decision making enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "presentation",
+          "neutrality",
+          "dissipation"
+        ],
+        "correct": "presentation"
+      },
+      "blankB": {
+        "options": [
+          "perception",
+          "rationality",
+          "fragility"
+        ],
+        "correct": "perception"
+      },
+      "koreanSummary": "의사결정에서의 프레이밍 효과와 위험 회피의 적응 메커니즘이 즉각적인 (A)presentation을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)perception이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'presentation', 장기적 인지 재구성 차원의 (B)에는 'perception'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H2_1-3",
@@ -11787,7 +13741,7 @@ const READING_PASSAGES = [
     "level": "high2_1",
     "levelLabel": "고2 내신 1등급",
     "source": "실제 고2 6월 학평 32번 변형 (내신 1등급 기출)",
-    "wordCount": 90,
+    "wordCount": 93,
     "estimatedTime": "1분 40초",
     "summary": "DNA 염기서열 자체는 불변하더라도 식습관과 스트레스가 메틸화 과정을 통해 유전자 스위치를 켜고 끄는 원리",
     "sentences": [
@@ -11826,10 +13780,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing DNA 염기서열 자체는 불변하더라도 식습관과 스트레스가 메틸화  is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, DNA 염기서열 자체는 불변하더라도 식습관과 스트레스가 메틸화 을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of epigenetics: environmental modulation of gene expression is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 후성유전학: 환경이 유전자 발현을 조절하는 방식의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing epigenetics: environmental modulation of gene expression /",
+          "Consequently, recognizing the profound implications /",
+          "of epigenetics: environmental modulation of gene expression /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -11928,7 +13883,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '후성유전학: 환경이 유전자 발현을 조절하는 방식'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in epigenetics: environmental modulation of gene expression enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "regulates",
+          "mutates",
+          "dissipation"
+        ],
+        "correct": "regulates"
+      },
+      "blankB": {
+        "options": [
+          "heritable",
+          "static",
+          "fragility"
+        ],
+        "correct": "heritable"
+      },
+      "koreanSummary": "후성유전학: 환경이 유전자 발현을 조절하는 방식의 적응 메커니즘이 즉각적인 (A)regulates을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)heritable이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'regulates', 장기적 인지 재구성 차원의 (B)에는 'heritable'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H2_1-4",
@@ -11943,7 +13919,7 @@ const READING_PASSAGES = [
     "level": "high2_1",
     "levelLabel": "고2 내신 1등급",
     "source": "실제 고2 3월 학평 21번 변형 (내신 1등급 기출)",
-    "wordCount": 90,
+    "wordCount": 91,
     "estimatedTime": "1분 40초",
     "summary": "자신의 행동과 신념이 불일치할 때 신념을 수정하거나 합리화하여 심리적 긴장을 완화하려는 성향",
     "sentences": [
@@ -11982,10 +13958,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 자신의 행동과 신념이 불일치할 때 신념을 수정하거나 합리화하여  is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 자신의 행동과 신념이 불일치할 때 신념을 수정하거나 합리화하여 을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of cognitive dissonance and defensive rationalization is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 인지 부조화와 방어적 자기 합리화의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing cognitive dissonance and defensive rationalization /",
+          "Consequently, recognizing the profound implications /",
+          "of cognitive dissonance and defensive rationalization /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -12084,7 +14061,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '인지 부조화와 방어적 자기 합리화'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in cognitive dissonance and defensive rationalization enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "inconsistency",
+          "harmony",
+          "dissipation"
+        ],
+        "correct": "inconsistency"
+      },
+      "blankB": {
+        "options": [
+          "rationalization",
+          "critique",
+          "fragility"
+        ],
+        "correct": "rationalization"
+      },
+      "koreanSummary": "인지 부조화와 방어적 자기 합리화의 적응 메커니즘이 즉각적인 (A)inconsistency을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)rationalization이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'inconsistency', 장기적 인지 재구성 차원의 (B)에는 'rationalization'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H2_1-5",
@@ -12099,7 +14097,7 @@ const READING_PASSAGES = [
     "level": "high2_1",
     "levelLabel": "고2 내신 1등급",
     "source": "실제 고2 6월 학평 33번 변형 (내신 1등급 기출)",
-    "wordCount": 92,
+    "wordCount": 91,
     "estimatedTime": "1분 40초",
     "summary": "피할 수 없는 사고 상황에서 보행자와 탑승자의 생명 가치를 어떻게 프로그래밍할 것인가에 대한 철학적 논쟁",
     "sentences": [
@@ -12138,10 +14136,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 피할 수 없는 사고 상황에서 보행자와 탑승자의 생명 가치를 어떻 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 피할 수 없는 사고 상황에서 보행자와 탑승자의 생명 가치를 어떻을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of the autonomous vehicle trolley problem is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 자율주행 자동차와 트롤리 딜레마의 윤리의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing the autonomous vehicle trolley problem /",
+          "Consequently, recognizing the profound implications /",
+          "of the autonomous vehicle trolley problem /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -12240,7 +14239,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '자율주행 자동차와 트롤리 딜레마의 윤리'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in the autonomous vehicle trolley problem enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "unavoidable",
+          "spontaneous",
+          "dissipation"
+        ],
+        "correct": "unavoidable"
+      },
+      "blankB": {
+        "options": [
+          "algorithmic",
+          "instinctive",
+          "fragility"
+        ],
+        "correct": "algorithmic"
+      },
+      "koreanSummary": "자율주행 자동차와 트롤리 딜레마의 윤리의 적응 메커니즘이 즉각적인 (A)unavoidable을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)algorithmic이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'unavoidable', 장기적 인지 재구성 차원의 (B)에는 'algorithmic'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H2_1-6",
@@ -12294,10 +14314,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 0과 1이 공존하는 큐비트 연산 능력이 기존 RSA 암호 체계를 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 0과 1이 공존하는 큐비트 연산 능력이 기존 RSA 암호 체계를을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of principles of quantum superposition and cryptography is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 양자 중첩의 원리와 양자 암호학의 미래의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing principles of quantum superposition and cryptography /",
+          "Consequently, recognizing the profound implications /",
+          "of principles of quantum superposition and cryptography /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -12396,7 +14417,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '양자 중첩의 원리와 양자 암호학의 미래'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in principles of quantum superposition and cryptography enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "superposition",
+          "classical",
+          "dissipation"
+        ],
+        "correct": "superposition"
+      },
+      "blankB": {
+        "options": [
+          "cryptographic",
+          "vulnerable",
+          "fragility"
+        ],
+        "correct": "cryptographic"
+      },
+      "koreanSummary": "양자 중첩의 원리와 양자 암호학의 미래의 적응 메커니즘이 즉각적인 (A)superposition을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)cryptographic이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'superposition', 장기적 인지 재구성 차원의 (B)에는 'cryptographic'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H2_1-7",
@@ -12411,7 +14453,7 @@ const READING_PASSAGES = [
     "level": "high2_1",
     "levelLabel": "고2 내신 1등급",
     "source": "실제 고2 3월 학평 36번 변형 (내신 1등급 기출)",
-    "wordCount": 92,
+    "wordCount": 93,
     "estimatedTime": "1분 40초",
     "summary": "위기 상황을 개인의 무력감이 아니라 성장과 적응의 계기로 재해석하는 인지적 재구성 능력",
     "sentences": [
@@ -12450,10 +14492,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 위기 상황을 개인의 무력감이 아니라 성장과 적응의 계기로 재해석 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 위기 상황을 개인의 무력감이 아니라 성장과 적응의 계기로 재해석을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of psychological resilience and chronic stress adaptation is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 만성 스트레스에 맞서는 심리적 회복탄력성의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing psychological resilience and chronic stress adaptation /",
+          "Consequently, recognizing the profound implications /",
+          "of psychological resilience and chronic stress adaptation /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -12552,7 +14595,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '만성 스트레스에 맞서는 심리적 회복탄력성'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in psychological resilience and chronic stress adaptation enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "adversity",
+          "surrender",
+          "dissipation"
+        ],
+        "correct": "adversity"
+      },
+      "blankB": {
+        "options": [
+          "reframing",
+          "avoidance",
+          "fragility"
+        ],
+        "correct": "reframing"
+      },
+      "koreanSummary": "만성 스트레스에 맞서는 심리적 회복탄력성의 적응 메커니즘이 즉각적인 (A)adversity을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)reframing이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'adversity', 장기적 인지 재구성 차원의 (B)에는 'reframing'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H2_1-8",
@@ -12567,7 +14631,7 @@ const READING_PASSAGES = [
     "level": "high2_1",
     "levelLabel": "고2 내신 1등급",
     "source": "실제 고2 6월 학평 37번 변형 (내신 1등급 기출)",
-    "wordCount": 92,
+    "wordCount": 95,
     "estimatedTime": "1분 40초",
     "summary": "태양광과 풍력의 변동성을 배터리 저장 장치(ESS)와 AI 분산 제어로 안정화하는 전력망 혁신",
     "sentences": [
@@ -12606,10 +14670,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 태양광과 풍력의 변동성을 배터리 저장 장치(ESS)와 AI 분산 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 태양광과 풍력의 변동성을 배터리 저장 장치(ESS)와 AI 분산을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of smart energy grids and decentralized renewable power is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 스마트 에너지 그리드와 분산형 재생 에너지의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing smart energy grids and decentralized renewable power /",
+          "Consequently, recognizing the profound implications /",
+          "of smart energy grids and decentralized renewable power /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -12708,7 +14773,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '스마트 에너지 그리드와 분산형 재생 에너지'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in smart energy grids and decentralized renewable power enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "intermittent",
+          "monolithic",
+          "dissipation"
+        ],
+        "correct": "intermittent"
+      },
+      "blankB": {
+        "options": [
+          "decentralized",
+          "rigid",
+          "fragility"
+        ],
+        "correct": "decentralized"
+      },
+      "koreanSummary": "스마트 에너지 그리드와 분산형 재생 에너지의 적응 메커니즘이 즉각적인 (A)intermittent을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)decentralized이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'intermittent', 장기적 인지 재구성 차원의 (B)에는 'decentralized'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H2_1-9",
@@ -12723,7 +14809,7 @@ const READING_PASSAGES = [
     "level": "high2_1",
     "levelLabel": "고2 내신 1등급",
     "source": "실제 고2 3월 학평 29번 변형 (내신 1등급 기출)",
-    "wordCount": 92,
+    "wordCount": 93,
     "estimatedTime": "1분 40초",
     "summary": "언어 속 은유는 단순한 수사가 아니라 '논쟁은 전쟁이다'처럼 우리의 사고와 행동 방식을 규정하는 인지 도구",
     "sentences": [
@@ -12762,10 +14848,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 언어 속 은유는 단순한 수사가 아니라 '논쟁은 전쟁이다'처럼 우 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 언어 속 은유는 단순한 수사가 아니라 '논쟁은 전쟁이다'처럼 우을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of conceptual metaphors and human cognitive framing is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 개념적 은유와 인간 인지 틀 형성의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing conceptual metaphors and human cognitive framing /",
+          "Consequently, recognizing the profound implications /",
+          "of conceptual metaphors and human cognitive framing /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -12864,7 +14951,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '개념적 은유와 인간 인지 틀 형성'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in conceptual metaphors and human cognitive framing enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "structuring",
+          "embellishing",
+          "dissipation"
+        ],
+        "correct": "structuring"
+      },
+      "blankB": {
+        "options": [
+          "perception",
+          "detachment",
+          "fragility"
+        ],
+        "correct": "perception"
+      },
+      "koreanSummary": "개념적 은유와 인간 인지 틀 형성의 적응 메커니즘이 즉각적인 (A)structuring을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)perception이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'structuring', 장기적 인지 재구성 차원의 (B)에는 'perception'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H2_1-10",
@@ -12918,10 +15026,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 낙후 지역의 문화적 부흥이 임대료 상승을 초래하여 원주민과 예술 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 낙후 지역의 문화적 부흥이 임대료 상승을 초래하여 원주민과 예술을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of urban regeneration versus socioeconomic gentrification is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 도시 재생과 젠트리피케이션의 사회적 갈등의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing urban regeneration versus socioeconomic gentrification /",
+          "Consequently, recognizing the profound implications /",
+          "of urban regeneration versus socioeconomic gentrification /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -13020,7 +15129,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '도시 재생과 젠트리피케이션의 사회적 갈등'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in urban regeneration versus socioeconomic gentrification enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "revitalization",
+          "decay",
+          "dissipation"
+        ],
+        "correct": "revitalization"
+      },
+      "blankB": {
+        "options": [
+          "displacement",
+          "retention",
+          "fragility"
+        ],
+        "correct": "displacement"
+      },
+      "koreanSummary": "도시 재생과 젠트리피케이션의 사회적 갈등의 적응 메커니즘이 즉각적인 (A)revitalization을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)displacement이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'revitalization', 장기적 인지 재구성 차원의 (B)에는 'displacement'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H2_2-1",
@@ -13035,7 +15165,7 @@ const READING_PASSAGES = [
     "level": "high2_2",
     "levelLabel": "고2 내신 1등급",
     "source": "실제 고2 9월 학평 31번 변형 (내신 1등급 기출)",
-    "wordCount": 93,
+    "wordCount": 95,
     "estimatedTime": "1분 40초",
     "summary": "독립적이고 다양한 개인들의 예측 평균이 전문가보다 정확할 수 있으나, 상호 모방 시 맹신으로 전락하는 조건",
     "sentences": [
@@ -13074,10 +15204,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 독립적이고 다양한 개인들의 예측 평균이 전문가보다 정확할 수 있 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 독립적이고 다양한 개인들의 예측 평균이 전문가보다 정확할 수 있을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of the wisdom of crowds and collective intelligence is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 군중의 지혜와 집단 지성의 한계의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing the wisdom of crowds and collective intelligence /",
+          "Consequently, recognizing the profound implications /",
+          "of the wisdom of crowds and collective intelligence /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -13176,7 +15307,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '군중의 지혜와 집단 지성의 한계'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in the wisdom of crowds and collective intelligence enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "diversity",
+          "imitation",
+          "dissipation"
+        ],
+        "correct": "diversity"
+      },
+      "blankB": {
+        "options": [
+          "aggregation",
+          "isolation",
+          "fragility"
+        ],
+        "correct": "aggregation"
+      },
+      "koreanSummary": "군중의 지혜와 집단 지성의 한계의 적응 메커니즘이 즉각적인 (A)diversity을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)aggregation이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'diversity', 장기적 인지 재구성 차원의 (B)에는 'aggregation'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H2_2-2",
@@ -13191,7 +15343,7 @@ const READING_PASSAGES = [
     "level": "high2_2",
     "levelLabel": "고2 내신 1등급",
     "source": "실제 고2 11월 학평 32번 변형 (내신 1등급 기출)",
-    "wordCount": 92,
+    "wordCount": 93,
     "estimatedTime": "1분 40초",
     "summary": "공감 능력과 감정 조절 능력이 뛰어난 리더가 격변하는 비즈니스 환경에서 팀의 신뢰와 성과를 견인하는 메커니즘",
     "sentences": [
@@ -13230,10 +15382,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 공감 능력과 감정 조절 능력이 뛰어난 리더가 격변하는 비즈니스  is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 공감 능력과 감정 조절 능력이 뛰어난 리더가 격변하는 비즈니스 을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of emotional intelligence in adaptive organizational leadership is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 조직 리더십에서의 감정 지능(EQ)과 위기 대응의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing emotional intelligence in adaptive organizational leadership /",
+          "Consequently, recognizing the profound implications /",
+          "of emotional intelligence in adaptive organizational leadership /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -13332,7 +15485,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '조직 리더십에서의 감정 지능(EQ)과 위기 대응'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in emotional intelligence in adaptive organizational leadership enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "empathy",
+          "apathy",
+          "dissipation"
+        ],
+        "correct": "empathy"
+      },
+      "blankB": {
+        "options": [
+          "resilience",
+          "dictatorship",
+          "fragility"
+        ],
+        "correct": "resilience"
+      },
+      "koreanSummary": "조직 리더십에서의 감정 지능(EQ)과 위기 대응의 적응 메커니즘이 즉각적인 (A)empathy을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)resilience이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'empathy', 장기적 인지 재구성 차원의 (B)에는 'resilience'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H2_2-3",
@@ -13347,7 +15521,7 @@ const READING_PASSAGES = [
     "level": "high2_2",
     "levelLabel": "고2 내신 1등급",
     "source": "실제 고2 9월 학평 34번 변형 (내신 1등급 기출)",
-    "wordCount": 90,
+    "wordCount": 93,
     "estimatedTime": "1분 40초",
     "summary": "미세플라스틱 입자가 플랑크톤에서 상위 포식자로 갈수록 고농도로 축적되어 결국 식탁을 위협하는 생태계 연쇄",
     "sentences": [
@@ -13386,10 +15560,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 미세플라스틱 입자가 플랑크톤에서 상위 포식자로 갈수록 고농도로  is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 미세플라스틱 입자가 플랑크톤에서 상위 포식자로 갈수록 고농도로 을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of trophic bioaccumulation of microplastics in oceans is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 해양 먹이사슬 내 미세플라스틱의 생물농축의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing trophic bioaccumulation of microplastics in oceans /",
+          "Consequently, recognizing the profound implications /",
+          "of trophic bioaccumulation of microplastics in oceans /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -13488,7 +15663,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '해양 먹이사슬 내 미세플라스틱의 생물농축'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in trophic bioaccumulation of microplastics in oceans enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "accumulates",
+          "dissolves",
+          "dissipation"
+        ],
+        "correct": "accumulates"
+      },
+      "blankB": {
+        "options": [
+          "trophic",
+          "abyssal",
+          "fragility"
+        ],
+        "correct": "trophic"
+      },
+      "koreanSummary": "해양 먹이사슬 내 미세플라스틱의 생물농축의 적응 메커니즘이 즉각적인 (A)accumulates을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)trophic이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'accumulates', 장기적 인지 재구성 차원의 (B)에는 'trophic'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H2_2-4",
@@ -13503,7 +15699,7 @@ const READING_PASSAGES = [
     "level": "high2_2",
     "levelLabel": "고2 내신 1등급",
     "source": "실제 고2 11월 학평 33번 변형 (내신 1등급 기출)",
-    "wordCount": 92,
+    "wordCount": 95,
     "estimatedTime": "1분 40초",
     "summary": "선택지가 너무 많아지면 기대치가 상승하고 결정 피로가 누적되어 오히려 만족도가 급감하는 심리학적 실태",
     "sentences": [
@@ -13542,10 +15738,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 선택지가 너무 많아지면 기대치가 상승하고 결정 피로가 누적되어  is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 선택지가 너무 많아지면 기대치가 상승하고 결정 피로가 누적되어 을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of the paradox of choice in hyper-abundant markets is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 과잉 선택의 역설과 구매 후 후회 심리의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing the paradox of choice in hyper-abundant markets /",
+          "Consequently, recognizing the profound implications /",
+          "of the paradox of choice in hyper-abundant markets /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -13644,7 +15841,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '과잉 선택의 역설과 구매 후 후회 심리'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in the paradox of choice in hyper-abundant markets enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "abundance",
+          "scarcity",
+          "dissipation"
+        ],
+        "correct": "abundance"
+      },
+      "blankB": {
+        "options": [
+          "dissatisfaction",
+          "fulfillment",
+          "fragility"
+        ],
+        "correct": "dissatisfaction"
+      },
+      "koreanSummary": "과잉 선택의 역설과 구매 후 후회 심리의 적응 메커니즘이 즉각적인 (A)abundance을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)dissatisfaction이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'abundance', 장기적 인지 재구성 차원의 (B)에는 'dissatisfaction'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H2_2-5",
@@ -13698,10 +15916,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 특정 색상이나 방향을 나타내는 어휘 체계가 해당 언어 화자의 시 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 특정 색상이나 방향을 나타내는 어휘 체계가 해당 언어 화자의 시을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of linguistic relativity: the sapir-whorf hypothesis revisited is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 언어 상대성 이론: 언어가 사고를 규정하는가의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing linguistic relativity: the sapir-whorf hypothesis revisited /",
+          "Consequently, recognizing the profound implications /",
+          "of linguistic relativity: the sapir-whorf hypothesis revisited /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -13800,7 +16019,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '언어 상대성 이론: 언어가 사고를 규정하는가'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in linguistic relativity: the sapir-whorf hypothesis revisited enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "linguistic",
+          "universal",
+          "dissipation"
+        ],
+        "correct": "linguistic"
+      },
+      "blankB": {
+        "options": [
+          "cognition",
+          "behavior",
+          "fragility"
+        ],
+        "correct": "cognition"
+      },
+      "koreanSummary": "언어 상대성 이론: 언어가 사고를 규정하는가의 적응 메커니즘이 즉각적인 (A)linguistic을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)cognition이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'linguistic', 장기적 인지 재구성 차원의 (B)에는 'cognition'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H2_2-6",
@@ -13815,7 +16055,7 @@ const READING_PASSAGES = [
     "level": "high2_2",
     "levelLabel": "고2 내신 1등급",
     "source": "실제 고2 11월 학평 39번 변형 (내신 1등급 기출)",
-    "wordCount": 92,
+    "wordCount": 93,
     "estimatedTime": "1분 40초",
     "summary": "유전병 치료의 획기적 전기가 마련된 반면, 맞춤형 아기 출현과 유전적 불평등 심화에 대한 글로벌 규제 필요성",
     "sentences": [
@@ -13854,10 +16094,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 유전병 치료의 획기적 전기가 마련된 반면, 맞춤형 아기 출현과  is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 유전병 치료의 획기적 전기가 마련된 반면, 맞춤형 아기 출현과 을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of crispr-cas9 gene editing and germline bioethics is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 크리스퍼 유전자 가위와 인간 생식세포 윤리의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing crispr-cas9 gene editing and germline bioethics /",
+          "Consequently, recognizing the profound implications /",
+          "of crispr-cas9 gene editing and germline bioethics /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -13956,7 +16197,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '크리스퍼 유전자 가위와 인간 생식세포 윤리'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in crispr-cas9 gene editing and germline bioethics enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "precision",
+          "inaccuracy",
+          "dissipation"
+        ],
+        "correct": "precision"
+      },
+      "blankB": {
+        "options": [
+          "governance",
+          "anarchy",
+          "fragility"
+        ],
+        "correct": "governance"
+      },
+      "koreanSummary": "크리스퍼 유전자 가위와 인간 생식세포 윤리의 적응 메커니즘이 즉각적인 (A)precision을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)governance이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'precision', 장기적 인지 재구성 차원의 (B)에는 'governance'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H2_2-7",
@@ -13971,7 +16233,7 @@ const READING_PASSAGES = [
     "level": "high2_2",
     "levelLabel": "고2 내신 1등급",
     "source": "실제 고2 9월 학평 29번 변형 (내신 1등급 기출)",
-    "wordCount": 92,
+    "wordCount": 95,
     "estimatedTime": "1분 40초",
     "summary": "믿음과 기대감이 엔도르핀 방출이나 스트레스 회로 활성화를 유발하여 실제 신체 증상을 호전 또는 악화시키는 생리적 증거",
     "sentences": [
@@ -14010,10 +16272,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 믿음과 기대감이 엔도르핀 방출이나 스트레스 회로 활성화를 유발하 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 믿음과 기대감이 엔도르핀 방출이나 스트레스 회로 활성화를 유발하을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of neurobiology of the placebo and nocebo responses is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 플라시보와 노시보 반응의 신경생물학적 실재의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing neurobiology of the placebo and nocebo responses /",
+          "Consequently, recognizing the profound implications /",
+          "of neurobiology of the placebo and nocebo responses /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -14112,7 +16375,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '플라시보와 노시보 반응의 신경생물학적 실재'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in neurobiology of the placebo and nocebo responses enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "expectation",
+          "skepticism",
+          "dissipation"
+        ],
+        "correct": "expectation"
+      },
+      "blankB": {
+        "options": [
+          "physiological",
+          "stagnant",
+          "fragility"
+        ],
+        "correct": "physiological"
+      },
+      "koreanSummary": "플라시보와 노시보 반응의 신경생물학적 실재의 적응 메커니즘이 즉각적인 (A)expectation을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)physiological이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'expectation', 장기적 인지 재구성 차원의 (B)에는 'physiological'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H2_2-8",
@@ -14127,7 +16411,7 @@ const READING_PASSAGES = [
     "level": "high2_2",
     "levelLabel": "고2 내신 1등급",
     "source": "실제 고2 11월 학평 36번 변형 (내신 1등급 기출)",
-    "wordCount": 91,
+    "wordCount": 95,
     "estimatedTime": "1분 40초",
     "summary": "이기적인 개체들이 상호작용을 반복할 때 '눈에는 눈(Tit-for-Tat)' 전략이 배신보다 진화적으로 안정적인 이유",
     "sentences": [
@@ -14166,10 +16450,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 이기적인 개체들이 상호작용을 반복할 때 '눈에는 눈(Tit-fo is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 이기적인 개체들이 상호작용을 반복할 때 '눈에는 눈(Tit-fo을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of game theory: the evolution of mutual cooperation is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 게임 이론: 죄수의 딜레마와 협력의 진화의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing game theory: the evolution of mutual cooperation /",
+          "Consequently, recognizing the profound implications /",
+          "of game theory: the evolution of mutual cooperation /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -14268,7 +16553,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '게임 이론: 죄수의 딜레마와 협력의 진화'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in game theory: the evolution of mutual cooperation enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "reciprocity",
+          "defection",
+          "dissipation"
+        ],
+        "correct": "reciprocity"
+      },
+      "blankB": {
+        "options": [
+          "cooperation",
+          "isolation",
+          "fragility"
+        ],
+        "correct": "cooperation"
+      },
+      "koreanSummary": "게임 이론: 죄수의 딜레마와 협력의 진화의 적응 메커니즘이 즉각적인 (A)reciprocity을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)cooperation이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'reciprocity', 장기적 인지 재구성 차원의 (B)에는 'cooperation'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H2_2-9",
@@ -14283,7 +16589,7 @@ const READING_PASSAGES = [
     "level": "high2_2",
     "levelLabel": "고2 내신 1등급",
     "source": "실제 고2 9월 학평 37번 변형 (내신 1등급 기출)",
-    "wordCount": 92,
+    "wordCount": 95,
     "estimatedTime": "1분 40초",
     "summary": "소비자의 취소 절차를 복잡하게 만들거나 자동 결제를 유도하도록 설계된 웹사이트 UX의 윤리적 문제",
     "sentences": [
@@ -14322,10 +16628,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 소비자의 취소 절차를 복잡하게 만들거나 자동 결제를 유도하도록  is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 소비자의 취소 절차를 복잡하게 만들거나 자동 결제를 유도하도록 을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of deceptive dark patterns in online user interface is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 온라인 인터페이스의 기만적 다크 패턴의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing deceptive dark patterns in online user interface /",
+          "Consequently, recognizing the profound implications /",
+          "of deceptive dark patterns in online user interface /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -14424,7 +16731,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '온라인 인터페이스의 기만적 다크 패턴'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in deceptive dark patterns in online user interface enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "manipulate",
+          "empower",
+          "dissipation"
+        ],
+        "correct": "manipulate"
+      },
+      "blankB": {
+        "options": [
+          "transparency",
+          "deception",
+          "fragility"
+        ],
+        "correct": "transparency"
+      },
+      "koreanSummary": "온라인 인터페이스의 기만적 다크 패턴의 적응 메커니즘이 즉각적인 (A)manipulate을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)transparency이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'manipulate', 장기적 인지 재구성 차원의 (B)에는 'transparency'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-H2_2-10",
@@ -14439,7 +16767,7 @@ const READING_PASSAGES = [
     "level": "high2_2",
     "levelLabel": "고2 내신 1등급",
     "source": "실제 고2 11월 학평 21번 변형 (내신 1등급 기출)",
-    "wordCount": 93,
+    "wordCount": 95,
     "estimatedTime": "1분 40초",
     "summary": "북극 영구동토층 해빙으로 인한 메탄 방출이 온난화를 재촉하여 자립적 악순환을 유발하는 불가역적 위험",
     "sentences": [
@@ -14478,10 +16806,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Consequently, recognizing 북극 영구동토층 해빙으로 인한 메탄 방출이 온난화를 재촉하여 자 is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
-        "ko": "결과적으로, 북극 영구동토층 해빙으로 인한 메탄 방출이 온난화를 재촉하여 자을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
+        "en": "Consequently, recognizing the profound implications of climate tipping points and irreversible feedback loops is not merely an academic exercise, but a prerequisite for navigating modern socioeconomic challenges.",
+        "ko": "결과적으로, 기후 임계점과 비가역적 되먹임 루프의 심오한 영향을 인식하는 것은 단순한 학문적 훈련이 아니라 현대 사회경제적 난제를 헤쳐나가기 위한 필수 전제조건이다.",
         "chunks": [
-          "Consequently, recognizing climate tipping points and irreversible feedback loops /",
+          "Consequently, recognizing the profound implications /",
+          "of climate tipping points and irreversible feedback loops /",
           "is not merely an academic exercise, /",
           "but a prerequisite /",
           "for navigating modern socioeconomic challenges."
@@ -14580,7 +16909,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '기후 임계점과 비가역적 되먹임 루프'의 맥락에서 인간이 편향과 즉각적 만족의 한계를 극복하고 상위인지적 인식을 통해 올바른 해결책을 도출해야 함을 역설하고 있으므로 1번 'Overcoming Cognitive Bias: The Imperative of Metacognition...'이 가장 정확한 제목입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "While adaptive mechanisms in climate tipping points and irreversible feedback loops enable immediate (A)________, achieving long-term sustainability requires deliberate (B)________.",
+      "blankA": {
+        "options": [
+          "threshold",
+          "equilibrium",
+          "dissipation"
+        ],
+        "correct": "threshold"
+      },
+      "blankB": {
+        "options": [
+          "irreversible",
+          "reversible",
+          "fragility"
+        ],
+        "correct": "irreversible"
+      },
+      "koreanSummary": "기후 임계점과 비가역적 되먹임 루프의 적응 메커니즘이 즉각적인 (A)threshold을(를) 가능케 하지만, 장기적 지속가능성을 성취하기 위해서는 의도적인 (B)irreversible이(가) 필수적이다.",
+      "explanation": "글의 핵심 대조 구조에 따라, 단기적 반응 차원의 (A)에는 'threshold', 장기적 인지 재구성 차원의 (B)에는 'irreversible'이 들어가는 것이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_B-1",
@@ -14595,7 +16945,7 @@ const READING_PASSAGES = [
     "level": "csat_basic",
     "levelLabel": "수능기본 1등급",
     "source": "실제 수능 21번 함축의미 기출 변형",
-    "wordCount": 91,
+    "wordCount": 93,
     "estimatedTime": "1분 50초",
     "summary": "기술적 효율성의 극대화가 예기치 못한 시스템 취약성과 창의적 우발성을 거세하는 역설",
     "sentences": [
@@ -14634,11 +16984,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 기술적 효율성의 극대화가 예기치 못한 시스템 취약성과 창의적 우 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 기술적 효율성의 극대화가 예기치 못한 시스템 취약성과 창의적 우은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of the shadow side of algorithmic optimization fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 알고리즘 최적화의 그늘과 예측 가능성의 함정에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding the shadow side of algorithmic optimization /",
+          "the rigorous theoretical modeling of the shadow side of algorithmic optimization /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -14736,7 +17086,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '알고리즘 최적화의 그늘과 예측 가능성의 함정'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into the shadow side of algorithmic optimization expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "predictability",
+          "efficiency",
+          "relativity"
+        ],
+        "correct": "predictability"
+      },
+      "blankB": {
+        "options": [
+          "fragility",
+          "stability",
+          "isolation"
+        ],
+        "correct": "fragility"
+      },
+      "koreanSummary": "학자들에 따르면, 알고리즘 최적화의 그늘과 예측 가능성의 함정에 대한 이론적 탐구는 (A)predictability의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)fragility의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'predictability', 진정한 학문적 발전을 위한 태도인 (B)에는 'fragility'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_B-2",
@@ -14751,7 +17122,7 @@ const READING_PASSAGES = [
     "level": "csat_basic",
     "levelLabel": "수능기본 1등급",
     "source": "실제 평가원 29번 어법 기출 변형",
-    "wordCount": 90,
+    "wordCount": 93,
     "estimatedTime": "1분 50초",
     "summary": "학술 논문에서 수동태와 명사화 구문이 연구자의 주관성을 배제하고 보편적 타당성을 획득하는 기제",
     "sentences": [
@@ -14790,11 +17161,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 학술 논문에서 수동태와 명사화 구문이 연구자의 주관성을 배제하고 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 학술 논문에서 수동태와 명사화 구문이 연구자의 주관성을 배제하고은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of syntactic coherence and scientific discursive norms fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 과학 담화의 구문적 일관성과 객관성 규범에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding syntactic coherence and scientific discursive norms /",
+          "the rigorous theoretical modeling of syntactic coherence and scientific discursive norms /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -14892,7 +17263,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '과학 담화의 구문적 일관성과 객관성 규범'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into syntactic coherence and scientific discursive norms expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "impersonality",
+          "subjectivity",
+          "relativity"
+        ],
+        "correct": "impersonality"
+      },
+      "blankB": {
+        "options": [
+          "validity",
+          "ambiguity",
+          "isolation"
+        ],
+        "correct": "validity"
+      },
+      "koreanSummary": "학자들에 따르면, 과학 담화의 구문적 일관성과 객관성 규범에 대한 이론적 탐구는 (A)impersonality의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)validity의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'impersonality', 진정한 학문적 발전을 위한 태도인 (B)에는 'validity'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_B-3",
@@ -14907,7 +17299,7 @@ const READING_PASSAGES = [
     "level": "csat_basic",
     "levelLabel": "수능기본 1등급",
     "source": "실제 수능 30번 어휘 기출 변형",
-    "wordCount": 93,
+    "wordCount": 97,
     "estimatedTime": "1분 50초",
     "summary": "상품의 가격은 객관적 생산 비용이 아니라 소비자가 인지하는 심리적 한계 효용에 수렴한다는 원리",
     "sentences": [
@@ -14946,11 +17338,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 상품의 가격은 객관적 생산 비용이 아니라 소비자가 인지하는 심리 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 상품의 가격은 객관적 생산 비용이 아니라 소비자가 인지하는 심리은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of subjective utility and the elasticity of economic value fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 주관적 효용과 경제적 가치의 탄력성에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding subjective utility and the elasticity of economic value /",
+          "the rigorous theoretical modeling of subjective utility and the elasticity of economic value /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -15048,7 +17440,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '주관적 효용과 경제적 가치의 탄력성'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into subjective utility and the elasticity of economic value expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "perceived",
+          "tangible",
+          "relativity"
+        ],
+        "correct": "perceived"
+      },
+      "blankB": {
+        "options": [
+          "elasticity",
+          "rigidity",
+          "isolation"
+        ],
+        "correct": "elasticity"
+      },
+      "koreanSummary": "학자들에 따르면, 주관적 효용과 경제적 가치의 탄력성에 대한 이론적 탐구는 (A)perceived의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)elasticity의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'perceived', 진정한 학문적 발전을 위한 태도인 (B)에는 'elasticity'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_B-4",
@@ -15063,7 +17476,7 @@ const READING_PASSAGES = [
     "level": "csat_basic",
     "levelLabel": "수능기본 1등급",
     "source": "실제 평가원 23번 대의파악 기출 변형",
-    "wordCount": 91,
+    "wordCount": 93,
     "estimatedTime": "1분 50초",
     "summary": "인간 문명이 이전 세대의 지식을 잃지 않고 수정·축적함으로써 비약적 도약을 이뤄낸 인류학적 동력",
     "sentences": [
@@ -15102,11 +17515,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 인간 문명이 이전 세대의 지식을 잃지 않고 수정·축적함으로써 비 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 인간 문명이 이전 세대의 지식을 잃지 않고 수정·축적함으로써 비은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of cumulative technological evolution and cultural ratchet fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 누적적 기술 진화와 문화적 래칫 효과에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding cumulative technological evolution and cultural ratchet /",
+          "the rigorous theoretical modeling of cumulative technological evolution and cultural ratchet /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -15204,7 +17617,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '누적적 기술 진화와 문화적 래칫 효과'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into cumulative technological evolution and cultural ratchet expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "transmission",
+          "stagnation",
+          "relativity"
+        ],
+        "correct": "transmission"
+      },
+      "blankB": {
+        "options": [
+          "accumulation",
+          "regression",
+          "isolation"
+        ],
+        "correct": "accumulation"
+      },
+      "koreanSummary": "학자들에 따르면, 누적적 기술 진화와 문화적 래칫 효과에 대한 이론적 탐구는 (A)transmission의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)accumulation의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'transmission', 진정한 학문적 발전을 위한 태도인 (B)에는 'accumulation'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_B-5",
@@ -15219,7 +17653,7 @@ const READING_PASSAGES = [
     "level": "csat_basic",
     "levelLabel": "수능기본 1등급",
     "source": "실제 수능 21번 함축의미 기출 변형",
-    "wordCount": 92,
+    "wordCount": 93,
     "estimatedTime": "1분 50초",
     "summary": "모든 관찰과 데이터 수집은 특정 이론적 가설에 선행 구속되어 있어 완전한 무균실 관찰은 불가능하다는 철학",
     "sentences": [
@@ -15258,11 +17692,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 모든 관찰과 데이터 수집은 특정 이론적 가설에 선행 구속되어 있 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 모든 관찰과 데이터 수집은 특정 이론적 가설에 선행 구속되어 있은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of wearing the epistemic mask of neutrality fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 인식론적 중립성이라는 가면의 양면성에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding wearing the epistemic mask of neutrality /",
+          "the rigorous theoretical modeling of wearing the epistemic mask of neutrality /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -15360,7 +17794,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '인식론적 중립성이라는 가면의 양면성'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into wearing the epistemic mask of neutrality expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "presuppositions",
+          "neutrality",
+          "relativity"
+        ],
+        "correct": "presuppositions"
+      },
+      "blankB": {
+        "options": [
+          "provisional",
+          "infallible",
+          "isolation"
+        ],
+        "correct": "provisional"
+      },
+      "koreanSummary": "학자들에 따르면, 인식론적 중립성이라는 가면의 양면성에 대한 이론적 탐구는 (A)presuppositions의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)provisional의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'presuppositions', 진정한 학문적 발전을 위한 태도인 (B)에는 'provisional'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_B-6",
@@ -15375,7 +17830,7 @@ const READING_PASSAGES = [
     "level": "csat_basic",
     "levelLabel": "수능기본 1등급",
     "source": "실제 평가원 30번 어휘 기출 변형",
-    "wordCount": 92,
+    "wordCount": 93,
     "estimatedTime": "1분 50초",
     "summary": "단일 유전자 품종 대량 재배가 단기 생산량을 높이지만 변종 병원균 침입 시 식량 위기를 초래하는 위험",
     "sentences": [
@@ -15414,11 +17869,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 단일 유전자 품종 대량 재배가 단기 생산량을 높이지만 변종 병원 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 단일 유전자 품종 대량 재배가 단기 생산량을 높이지만 변종 병원은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of monoculture vulnerability in contemporary industrial agronomy fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 현대 산업 농업에서 단일 작물 재배의 취약성에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding monoculture vulnerability in contemporary industrial agronomy /",
+          "the rigorous theoretical modeling of monoculture vulnerability in contemporary industrial agronomy /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -15516,7 +17971,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '현대 산업 농업에서 단일 작물 재배의 취약성'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into monoculture vulnerability in contemporary industrial agronomy expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "homogeneity",
+          "diversity",
+          "relativity"
+        ],
+        "correct": "homogeneity"
+      },
+      "blankB": {
+        "options": [
+          "susceptibility",
+          "resilience",
+          "isolation"
+        ],
+        "correct": "susceptibility"
+      },
+      "koreanSummary": "학자들에 따르면, 현대 산업 농업에서 단일 작물 재배의 취약성에 대한 이론적 탐구는 (A)homogeneity의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)susceptibility의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'homogeneity', 진정한 학문적 발전을 위한 태도인 (B)에는 'susceptibility'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_B-7",
@@ -15531,7 +18007,7 @@ const READING_PASSAGES = [
     "level": "csat_basic",
     "levelLabel": "수능기본 1등급",
     "source": "실제 수능 29번 어법 기출 변형",
-    "wordCount": 92,
+    "wordCount": 95,
     "estimatedTime": "1분 50초",
     "summary": "언어는 엄격한 수학적 기호와 달리 은유와 맥락 의존성을 본질로 하기에 완벽한 형식화가 불가능하다는 언어학",
     "sentences": [
@@ -15570,11 +18046,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 언어는 엄격한 수학적 기호와 달리 은유와 맥락 의존성을 본질로  fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 언어는 엄격한 수학적 기호와 달리 은유와 맥락 의존성을 본질로 은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of structural incompleteness in formal natural language systems fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 형식화된 자연어 체계의 구조적 불완전성에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding structural incompleteness in formal natural language systems /",
+          "the rigorous theoretical modeling of structural incompleteness in formal natural language systems /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -15672,7 +18148,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '형식화된 자연어 체계의 구조적 불완전성'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into structural incompleteness in formal natural language systems expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "contextuality",
+          "determinism",
+          "relativity"
+        ],
+        "correct": "contextuality"
+      },
+      "blankB": {
+        "options": [
+          "incompleteness",
+          "precision",
+          "isolation"
+        ],
+        "correct": "incompleteness"
+      },
+      "koreanSummary": "학자들에 따르면, 형식화된 자연어 체계의 구조적 불완전성에 대한 이론적 탐구는 (A)contextuality의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)incompleteness의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'contextuality', 진정한 학문적 발전을 위한 태도인 (B)에는 'incompleteness'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_B-8",
@@ -15687,7 +18184,7 @@ const READING_PASSAGES = [
     "level": "csat_basic",
     "levelLabel": "수능기본 1등급",
     "source": "실제 평가원 24번 제목 기출 변형",
-    "wordCount": 93,
+    "wordCount": 97,
     "estimatedTime": "1분 50초",
     "summary": "공동체가 공유하는 역사적 기억은 과거의 화석이 아니라 현재의 정치적·문화적 요구에 의해 끊임없이 각색된다는 통찰",
     "sentences": [
@@ -15726,11 +18223,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 공동체가 공유하는 역사적 기억은 과거의 화석이 아니라 현재의 정 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 공동체가 공유하는 역사적 기억은 과거의 화석이 아니라 현재의 정은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of the malleability of collective memory and historical narrative fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 집단 기억의 가소성과 역사적 서사의 재구성에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding the malleability of collective memory and historical narrative /",
+          "the rigorous theoretical modeling of the malleability of collective memory and historical narrative /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -15828,7 +18325,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '집단 기억의 가소성과 역사적 서사의 재구성'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into the malleability of collective memory and historical narrative expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "reconstruction",
+          "permanence",
+          "relativity"
+        ],
+        "correct": "reconstruction"
+      },
+      "blankB": {
+        "options": [
+          "malleability",
+          "objectivity",
+          "isolation"
+        ],
+        "correct": "malleability"
+      },
+      "koreanSummary": "학자들에 따르면, 집단 기억의 가소성과 역사적 서사의 재구성에 대한 이론적 탐구는 (A)reconstruction의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)malleability의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'reconstruction', 진정한 학문적 발전을 위한 태도인 (B)에는 'malleability'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_B-9",
@@ -15843,7 +18361,7 @@ const READING_PASSAGES = [
     "level": "csat_basic",
     "levelLabel": "수능기본 1등급",
     "source": "실제 수능 21번 함축의미 기출 변형",
-    "wordCount": 91,
+    "wordCount": 93,
     "estimatedTime": "1분 50초",
     "summary": "완전한 정보 공개가 상호 신뢰를 높이기보다 해석의 왜곡과 방어적 냉소를 부추길 수 있다는 커뮤니케이션 이론",
     "sentences": [
@@ -15882,11 +18400,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 완전한 정보 공개가 상호 신뢰를 높이기보다 해석의 왜곡과 방어적 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 완전한 정보 공개가 상호 신뢰를 높이기보다 해석의 왜곡과 방어적은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of the paradoxical friction of transparent communication fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 투명한 소통이 초래하는 역설적 마찰과 불신에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding the paradoxical friction of transparent communication /",
+          "the rigorous theoretical modeling of the paradoxical friction of transparent communication /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -15984,7 +18502,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '투명한 소통이 초래하는 역설적 마찰과 불신'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into the paradoxical friction of transparent communication expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "transparency",
+          "opacity",
+          "relativity"
+        ],
+        "correct": "transparency"
+      },
+      "blankB": {
+        "options": [
+          "polarization",
+          "consensus",
+          "isolation"
+        ],
+        "correct": "polarization"
+      },
+      "koreanSummary": "학자들에 따르면, 투명한 소통이 초래하는 역설적 마찰과 불신에 대한 이론적 탐구는 (A)transparency의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)polarization의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'transparency', 진정한 학문적 발전을 위한 태도인 (B)에는 'polarization'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_B-10",
@@ -15999,7 +18538,7 @@ const READING_PASSAGES = [
     "level": "csat_basic",
     "levelLabel": "수능기본 1등급",
     "source": "실제 평가원 30번 어휘 기출 변형",
-    "wordCount": 89,
+    "wordCount": 93,
     "estimatedTime": "1분 50초",
     "summary": "웹사이트 인터페이스가 너무 매끄러워지면 사용자의 비판적 사고가 정지되고 충동적 결정이 극대화되는 UX 심리학",
     "sentences": [
@@ -16038,11 +18577,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 웹사이트 인터페이스가 너무 매끄러워지면 사용자의 비판적 사고가  fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 웹사이트 인터페이스가 너무 매끄러워지면 사용자의 비판적 사고가 은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of cognitive latency and frictionless user experience fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 인지적 지연 시간과 마찰 없는 사용자 경험의 반작용에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding cognitive latency and frictionless user experience /",
+          "the rigorous theoretical modeling of cognitive latency and frictionless user experience /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -16140,7 +18679,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '인지적 지연 시간과 마찰 없는 사용자 경험의 반작용'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into cognitive latency and frictionless user experience expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "frictionless",
+          "cumbersome",
+          "relativity"
+        ],
+        "correct": "frictionless"
+      },
+      "blankB": {
+        "options": [
+          "deliberation",
+          "impulsivity",
+          "isolation"
+        ],
+        "correct": "deliberation"
+      },
+      "koreanSummary": "학자들에 따르면, 인지적 지연 시간과 마찰 없는 사용자 경험의 반작용에 대한 이론적 탐구는 (A)frictionless의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)deliberation의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'frictionless', 진정한 학문적 발전을 위한 태도인 (B)에는 'deliberation'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_R-1",
@@ -16155,7 +18715,7 @@ const READING_PASSAGES = [
     "level": "csat_real",
     "levelLabel": "수능실전 1등급",
     "source": "실제 수능 31번 빈칸추론 기출 변형",
-    "wordCount": 92,
+    "wordCount": 95,
     "estimatedTime": "1분 50초",
     "summary": "시인 존 키츠가 제안한 개념으로, 성급한 합리화나 결론에 안주하지 않고 미지의 공백을 견뎌낼 때 위대한 예술이 탄생한다는 미학",
     "sentences": [
@@ -16194,11 +18754,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 시인 존 키츠가 제안한 개념으로, 성급한 합리화나 결론에 안주하 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 시인 존 키츠가 제안한 개념으로, 성급한 합리화나 결론에 안주하은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of negative capability: sustaining uncertainty in creative genesis fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 소극적 수용 능력: 창작 과정에서 불확실성을 견디는 힘에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding negative capability: sustaining uncertainty in creative genesis /",
+          "the rigorous theoretical modeling of negative capability: sustaining uncertainty in creative genesis /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -16296,7 +18856,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '소극적 수용 능력: 창작 과정에서 불확실성을 견디는 힘'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into negative capability: sustaining uncertainty in creative genesis expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "uncertainty",
+          "certitude",
+          "relativity"
+        ],
+        "correct": "uncertainty"
+      },
+      "blankB": {
+        "options": [
+          "originality",
+          "imitation",
+          "isolation"
+        ],
+        "correct": "originality"
+      },
+      "koreanSummary": "학자들에 따르면, 소극적 수용 능력: 창작 과정에서 불확실성을 견디는 힘에 대한 이론적 탐구는 (A)uncertainty의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)originality의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'uncertainty', 진정한 학문적 발전을 위한 태도인 (B)에는 'originality'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_R-2",
@@ -16311,7 +18892,7 @@ const READING_PASSAGES = [
     "level": "csat_real",
     "levelLabel": "수능실전 1등급",
     "source": "실제 평가원 36번 순서배열 기출 변형",
-    "wordCount": 92,
+    "wordCount": 95,
     "estimatedTime": "1분 50초",
     "summary": "숙주의 방어 면역과 기생자의 회피 전략이 서로를 끊임없이 자극하며 유전적 다양성을 폭발시키는 생물학적 동력",
     "sentences": [
@@ -16350,11 +18931,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 숙주의 방어 면역과 기생자의 회피 전략이 서로를 끊임없이 자극하 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 숙주의 방어 면역과 기생자의 회피 전략이 서로를 끊임없이 자극하은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of co-evolutionary arms race between parasites and hosts fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 기생자와 숙주 간의 공진화적 군비 경쟁에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding co-evolutionary arms race between parasites and hosts /",
+          "the rigorous theoretical modeling of co-evolutionary arms race between parasites and hosts /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -16452,7 +19033,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '기생자와 숙주 간의 공진화적 군비 경쟁'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into co-evolutionary arms race between parasites and hosts expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "reciprocal",
+          "static",
+          "relativity"
+        ],
+        "correct": "reciprocal"
+      },
+      "blankB": {
+        "options": [
+          "adaptation",
+          "extinction",
+          "isolation"
+        ],
+        "correct": "adaptation"
+      },
+      "koreanSummary": "학자들에 따르면, 기생자와 숙주 간의 공진화적 군비 경쟁에 대한 이론적 탐구는 (A)reciprocal의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)adaptation의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'reciprocal', 진정한 학문적 발전을 위한 태도인 (B)에는 'adaptation'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_R-3",
@@ -16467,7 +19069,7 @@ const READING_PASSAGES = [
     "level": "csat_real",
     "levelLabel": "수능실전 1등급",
     "source": "실제 수능 32번 빈칸추론 기출 변형",
-    "wordCount": 94,
+    "wordCount": 97,
     "estimatedTime": "1분 50초",
     "summary": "구매자가 품질을 판별할 수 없을 때 불량품만 남고 우량품이 축출되는 '레몬 시장'의 메커니즘과 제도적 보완책",
     "sentences": [
@@ -16506,11 +19108,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 구매자가 품질을 판별할 수 없을 때 불량품만 남고 우량품이 축출 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 구매자가 품질을 판별할 수 없을 때 불량품만 남고 우량품이 축출은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of information asymmetry and adverse selection in market networks fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 시장 네트워크에서의 정보 비대칭과 역선택에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding information asymmetry and adverse selection in market networks /",
+          "the rigorous theoretical modeling of information asymmetry and adverse selection in market networks /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -16608,7 +19210,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '시장 네트워크에서의 정보 비대칭과 역선택'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into information asymmetry and adverse selection in market networks expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "asymmetry",
+          "parity",
+          "relativity"
+        ],
+        "correct": "asymmetry"
+      },
+      "blankB": {
+        "options": [
+          "degradation",
+          "equilibrium",
+          "isolation"
+        ],
+        "correct": "degradation"
+      },
+      "koreanSummary": "학자들에 따르면, 시장 네트워크에서의 정보 비대칭과 역선택에 대한 이론적 탐구는 (A)asymmetry의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)degradation의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'asymmetry', 진정한 학문적 발전을 위한 태도인 (B)에는 'degradation'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_R-4",
@@ -16623,7 +19246,7 @@ const READING_PASSAGES = [
     "level": "csat_real",
     "levelLabel": "수능실전 1등급",
     "source": "실제 평가원 37번 순서배열 기출 변형",
-    "wordCount": 92,
+    "wordCount": 93,
     "estimatedTime": "1분 50초",
     "summary": "대기 교란이 적고 건조한 고산 지대에 망원경을 분산 배치하여 24시간 끊김 없는 우주 관측망을 형성하는 천문물리학",
     "sentences": [
@@ -16662,11 +19285,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 대기 교란이 적고 건조한 고산 지대에 망원경을 분산 배치하여 2 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 대기 교란이 적고 건조한 고산 지대에 망원경을 분산 배치하여 2은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of latitudinal stratification of terrestrial astronomical observatories fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 지상 천문 관측소의 위도별 배치와 시공간적 연속성에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding latitudinal stratification of terrestrial astronomical observatories /",
+          "the rigorous theoretical modeling of latitudinal stratification of terrestrial astronomical observatories /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -16764,7 +19387,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '지상 천문 관측소의 위도별 배치와 시공간적 연속성'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into latitudinal stratification of terrestrial astronomical observatories expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "dispersal",
+          "concentration",
+          "relativity"
+        ],
+        "correct": "dispersal"
+      },
+      "blankB": {
+        "options": [
+          "continuity",
+          "interruption",
+          "isolation"
+        ],
+        "correct": "continuity"
+      },
+      "koreanSummary": "학자들에 따르면, 지상 천문 관측소의 위도별 배치와 시공간적 연속성에 대한 이론적 탐구는 (A)dispersal의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)continuity의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'dispersal', 진정한 학문적 발전을 위한 태도인 (B)에는 'continuity'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_R-5",
@@ -16779,7 +19423,7 @@ const READING_PASSAGES = [
     "level": "csat_real",
     "levelLabel": "수능실전 1등급",
     "source": "실제 수능 31번 빈칸추론 기출 변형",
-    "wordCount": 95,
+    "wordCount": 99,
     "estimatedTime": "1분 50초",
     "summary": "어떤 쟁점에 대해 확신을 가진 사람도 구체적 작동 기제를 설명해보라고 하면 자신의 무지를 깨닫고 태도가 온건해진다는 심리학",
     "sentences": [
@@ -16818,11 +19462,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 어떤 쟁점에 대해 확신을 가진 사람도 구체적 작동 기제를 설명해 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 어떤 쟁점에 대해 확신을 가진 사람도 구체적 작동 기제를 설명해은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of the illusion of explanatory depth in polarized social discourse fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 극단화된 사회 담론에서의 설명 깊이의 착각에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding the illusion of explanatory depth in polarized social discourse /",
+          "the rigorous theoretical modeling of the illusion of explanatory depth in polarized social discourse /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -16920,7 +19564,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '극단화된 사회 담론에서의 설명 깊이의 착각'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into the illusion of explanatory depth in polarized social discourse expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "explanatory",
+          "factual",
+          "relativity"
+        ],
+        "correct": "explanatory"
+      },
+      "blankB": {
+        "options": [
+          "moderation",
+          "radicalization",
+          "isolation"
+        ],
+        "correct": "moderation"
+      },
+      "koreanSummary": "학자들에 따르면, 극단화된 사회 담론에서의 설명 깊이의 착각에 대한 이론적 탐구는 (A)explanatory의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)moderation의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'explanatory', 진정한 학문적 발전을 위한 태도인 (B)에는 'moderation'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_R-6",
@@ -16935,7 +19600,7 @@ const READING_PASSAGES = [
     "level": "csat_real",
     "levelLabel": "수능실전 1등급",
     "source": "실제 평가원 36번 순서배열 기출 변형",
-    "wordCount": 91,
+    "wordCount": 93,
     "estimatedTime": "1분 50초",
     "summary": "대기 중 수증기가 응결핵과 만나 상변화를 일으키고 강우로 이어지는 미세 입자 역학과 기후 모델링의 복잡성",
     "sentences": [
@@ -16974,11 +19639,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 대기 중 수증기가 응결핵과 만나 상변화를 일으키고 강우로 이어지 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 대기 중 수증기가 응결핵과 만나 상변화를 일으키고 강우로 이어지은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of thermodynamic disequilibrium and cloud droplet microphysics fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 열역학적 불균형과 구름 물방울의 미세물리학에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding thermodynamic disequilibrium and cloud droplet microphysics /",
+          "the rigorous theoretical modeling of thermodynamic disequilibrium and cloud droplet microphysics /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -17076,7 +19741,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '열역학적 불균형과 구름 물방울의 미세물리학'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into thermodynamic disequilibrium and cloud droplet microphysics expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "condensation",
+          "evaporation",
+          "relativity"
+        ],
+        "correct": "condensation"
+      },
+      "blankB": {
+        "options": [
+          "disequilibrium",
+          "stagnation",
+          "isolation"
+        ],
+        "correct": "disequilibrium"
+      },
+      "koreanSummary": "학자들에 따르면, 열역학적 불균형과 구름 물방울의 미세물리학에 대한 이론적 탐구는 (A)condensation의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)disequilibrium의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'condensation', 진정한 학문적 발전을 위한 태도인 (B)에는 'disequilibrium'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_R-7",
@@ -17091,7 +19777,7 @@ const READING_PASSAGES = [
     "level": "csat_real",
     "levelLabel": "수능실전 1등급",
     "source": "실제 수능 32번 빈칸추론 기출 변형",
-    "wordCount": 92,
+    "wordCount": 97,
     "estimatedTime": "1분 50초",
     "summary": "장인의 숙련된 직관과 노하우는 매뉴얼이나 컴퓨터 코드로 온전히 환원될 수 없는 신체화된 지식이라는 인식론",
     "sentences": [
@@ -17130,11 +19816,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 장인의 숙련된 직관과 노하우는 매뉴얼이나 컴퓨터 코드로 온전히  fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 장인의 숙련된 직관과 노하우는 매뉴얼이나 컴퓨터 코드로 온전히 은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of tacit knowledge and the intangible boundaries of codification fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 암묵지와 지식 성문화의 본질적 한계에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding tacit knowledge and the intangible boundaries of codification /",
+          "the rigorous theoretical modeling of tacit knowledge and the intangible boundaries of codification /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -17232,7 +19918,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '암묵지와 지식 성문화의 본질적 한계'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into tacit knowledge and the intangible boundaries of codification expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "embodied",
+          "explicit",
+          "relativity"
+        ],
+        "correct": "embodied"
+      },
+      "blankB": {
+        "options": [
+          "unexpressed",
+          "algorithmic",
+          "isolation"
+        ],
+        "correct": "unexpressed"
+      },
+      "koreanSummary": "학자들에 따르면, 암묵지와 지식 성문화의 본질적 한계에 대한 이론적 탐구는 (A)embodied의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)unexpressed의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'embodied', 진정한 학문적 발전을 위한 태도인 (B)에는 'unexpressed'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_R-8",
@@ -17247,7 +19954,7 @@ const READING_PASSAGES = [
     "level": "csat_real",
     "levelLabel": "수능실전 1등급",
     "source": "실제 평가원 37번 순서배열 기출 변형",
-    "wordCount": 92,
+    "wordCount": 95,
     "estimatedTime": "1분 50초",
     "summary": "선율과 리듬은 추상적 음향이 아니라 특정 공동체의 종교 의례, 농경 주기, 사회적 계급 질서를 체화한 역사적 산물",
     "sentences": [
@@ -17286,11 +19993,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 선율과 리듬은 추상적 음향이 아니라 특정 공동체의 종교 의례,  fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 선율과 리듬은 추상적 음향이 아니라 특정 공동체의 종교 의례, 은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of ethnomusicology and sonic architectures of cultural memory fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 민족음악학과 문화적 기억의 소리 건축에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding ethnomusicology and sonic architectures of cultural memory /",
+          "the rigorous theoretical modeling of ethnomusicology and sonic architectures of cultural memory /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -17388,7 +20095,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '민족음악학과 문화적 기억의 소리 건축'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into ethnomusicology and sonic architectures of cultural memory expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "sonic",
+          "abstract",
+          "relativity"
+        ],
+        "correct": "sonic"
+      },
+      "blankB": {
+        "options": [
+          "embodiment",
+          "alienation",
+          "isolation"
+        ],
+        "correct": "embodiment"
+      },
+      "koreanSummary": "학자들에 따르면, 민족음악학과 문화적 기억의 소리 건축에 대한 이론적 탐구는 (A)sonic의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)embodiment의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'sonic', 진정한 학문적 발전을 위한 태도인 (B)에는 'embodiment'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_R-9",
@@ -17403,7 +20131,7 @@ const READING_PASSAGES = [
     "level": "csat_real",
     "levelLabel": "수능실전 1등급",
     "source": "실제 수능 31번 빈칸추론 기출 변형",
-    "wordCount": 91,
+    "wordCount": 93,
     "estimatedTime": "1분 50초",
     "summary": "인간은 먼 미래의 보상보다 눈앞의 보상을 지나치게 고평가하여 계획을 뒤엎고 즉각적 쾌락에 굴복하는 비합리적 시간 할인 구조",
     "sentences": [
@@ -17442,11 +20170,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 인간은 먼 미래의 보상보다 눈앞의 보상을 지나치게 고평가하여 계 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 인간은 먼 미래의 보상보다 눈앞의 보상을 지나치게 고평가하여 계은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of hyperbolic discounting and intertemporal valuation anomaly fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 쌍곡 할인과 시간 간 선택의 인지적 왜곡에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding hyperbolic discounting and intertemporal valuation anomaly /",
+          "the rigorous theoretical modeling of hyperbolic discounting and intertemporal valuation anomaly /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -17544,7 +20272,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '쌍곡 할인과 시간 간 선택의 인지적 왜곡'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into hyperbolic discounting and intertemporal valuation anomaly expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "immediate",
+          "deferred",
+          "relativity"
+        ],
+        "correct": "immediate"
+      },
+      "blankB": {
+        "options": [
+          "inconsistency",
+          "constancy",
+          "isolation"
+        ],
+        "correct": "inconsistency"
+      },
+      "koreanSummary": "학자들에 따르면, 쌍곡 할인과 시간 간 선택의 인지적 왜곡에 대한 이론적 탐구는 (A)immediate의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)inconsistency의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'immediate', 진정한 학문적 발전을 위한 태도인 (B)에는 'inconsistency'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_R-10",
@@ -17559,7 +20308,7 @@ const READING_PASSAGES = [
     "level": "csat_real",
     "levelLabel": "수능실전 1등급",
     "source": "실제 평가원 36번 순서배열 기출 변형",
-    "wordCount": 91,
+    "wordCount": 93,
     "estimatedTime": "1분 50초",
     "summary": "생물체의 특정 기관이 비대해지면 다른 기관의 에너지 공급이 제한되는 구조적 제약이 자연선택의 방향을 규정한다는 생물학",
     "sentences": [
@@ -17598,11 +20347,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 생물체의 특정 기관이 비대해지면 다른 기관의 에너지 공급이 제한 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 생물체의 특정 기관이 비대해지면 다른 기관의 에너지 공급이 제한은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of morphological trade-offs and evolutionary developmental constraints fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 형태학적 절충과 진화발생학적 제약에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding morphological trade-offs and evolutionary developmental constraints /",
+          "the rigorous theoretical modeling of morphological trade-offs and evolutionary developmental constraints /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -17700,7 +20449,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '형태학적 절충과 진화발생학적 제약'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into morphological trade-offs and evolutionary developmental constraints expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "allocation",
+          "limitless",
+          "relativity"
+        ],
+        "correct": "allocation"
+      },
+      "blankB": {
+        "options": [
+          "constraints",
+          "omnipresence",
+          "isolation"
+        ],
+        "correct": "constraints"
+      },
+      "koreanSummary": "학자들에 따르면, 형태학적 절충과 진화발생학적 제약에 대한 이론적 탐구는 (A)allocation의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)constraints의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'allocation', 진정한 학문적 발전을 위한 태도인 (B)에는 'constraints'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_K-1",
@@ -17715,7 +20485,7 @@ const READING_PASSAGES = [
     "level": "csat_killer",
     "levelLabel": "수능킬러 1등급",
     "source": "실제 수능 오답률 1위 34번 빈칸 기출 변형",
-    "wordCount": 93,
+    "wordCount": 97,
     "estimatedTime": "1분 50초",
     "summary": "과학적 객관성은 불변의 도그마가 아니라 오류 가능성을 겸허히 수용하고 기존 패러다임을 끊임없이 갱신하는 열린 태도에서 성립한다는 과학철학",
     "sentences": [
@@ -17754,11 +20524,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 과학적 객관성은 불변의 도그마가 아니라 오류 가능성을 겸허히 수 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 과학적 객관성은 불변의 도그마가 아니라 오류 가능성을 겸허히 수은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of epistemic humility and the relational demarcation of truth fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 인식론적 겸손과 진리의 관계적 구획 (수능 34번 킬러)에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding epistemic humility and the relational demarcation of truth /",
+          "the rigorous theoretical modeling of epistemic humility and the relational demarcation of truth /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -17856,7 +20626,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '인식론적 겸손과 진리의 관계적 구획 (수능 34번 킬러)'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into epistemic humility and the relational demarcation of truth expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "fallibility",
+          "dogmatism",
+          "relativity"
+        ],
+        "correct": "fallibility"
+      },
+      "blankB": {
+        "options": [
+          "self-correction",
+          "finality",
+          "isolation"
+        ],
+        "correct": "self-correction"
+      },
+      "koreanSummary": "학자들에 따르면, 인식론적 겸손과 진리의 관계적 구획 (수능 34번 킬러)에 대한 이론적 탐구는 (A)fallibility의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)self-correction의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'fallibility', 진정한 학문적 발전을 위한 태도인 (B)에는 'self-correction'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_K-2",
@@ -17871,7 +20662,7 @@ const READING_PASSAGES = [
     "level": "csat_killer",
     "levelLabel": "수능킬러 1등급",
     "source": "실제 수능 오답률 2위 38번 문장삽입 기출 변형",
-    "wordCount": 93,
+    "wordCount": 95,
     "estimatedTime": "1분 50초",
     "summary": "절대영도 부근에서 열적 요동이 아닌 순수 양자 요동에 의해 절연체와 초전도체 사이를 넘나드는 미시적 물리계의 급격한 성질 변화",
     "sentences": [
@@ -17910,11 +20701,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 절대영도 부근에서 열적 요동이 아닌 순수 양자 요동에 의해 절연 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 절대영도 부근에서 열적 요동이 아닌 순수 양자 요동에 의해 절연은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of quantum phase transitions in disordered condensed matter fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 무질서한 응집물질계에서의 양자 상전이 (수능 38번 킬러)에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding quantum phase transitions in disordered condensed matter /",
+          "the rigorous theoretical modeling of quantum phase transitions in disordered condensed matter /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -18012,7 +20803,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '무질서한 응집물질계에서의 양자 상전이 (수능 38번 킬러)'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into quantum phase transitions in disordered condensed matter expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "quantum",
+          "classical",
+          "relativity"
+        ],
+        "correct": "quantum"
+      },
+      "blankB": {
+        "options": [
+          "criticality",
+          "thermal",
+          "isolation"
+        ],
+        "correct": "criticality"
+      },
+      "koreanSummary": "학자들에 따르면, 무질서한 응집물질계에서의 양자 상전이 (수능 38번 킬러)에 대한 이론적 탐구는 (A)quantum의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)criticality의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'quantum', 진정한 학문적 발전을 위한 태도인 (B)에는 'criticality'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_K-3",
@@ -18027,7 +20839,7 @@ const READING_PASSAGES = [
     "level": "csat_killer",
     "levelLabel": "수능킬러 1등급",
     "source": "실제 평가원 오답률 1위 33번 빈칸 기출 변형",
-    "wordCount": 90,
+    "wordCount": 91,
     "estimatedTime": "1분 50초",
     "summary": "텍스트의 부분은 전체 맥락을 통해서만 이해되고, 전체 맥락은 개별 부분들의 집적을 통해서만 파악되는 해석학적 딜레마와 역동성",
     "sentences": [
@@ -18066,11 +20878,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 텍스트의 부분은 전체 맥락을 통해서만 이해되고, 전체 맥락은 개 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 텍스트의 부분은 전체 맥락을 통해서만 이해되고, 전체 맥락은 개은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of hermeneutic circularity in historical contextualization fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 역사적 맥락화에서의 해석학적 순환 (수능 33번 킬러)에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding hermeneutic circularity in historical contextualization /",
+          "the rigorous theoretical modeling of hermeneutic circularity in historical contextualization /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -18168,7 +20980,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '역사적 맥락화에서의 해석학적 순환 (수능 33번 킬러)'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into hermeneutic circularity in historical contextualization expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "hermeneutic",
+          "isolated",
+          "relativity"
+        ],
+        "correct": "hermeneutic"
+      },
+      "blankB": {
+        "options": [
+          "interdependence",
+          "linearity",
+          "isolation"
+        ],
+        "correct": "interdependence"
+      },
+      "koreanSummary": "학자들에 따르면, 역사적 맥락화에서의 해석학적 순환 (수능 33번 킬러)에 대한 이론적 탐구는 (A)hermeneutic의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)interdependence의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'hermeneutic', 진정한 학문적 발전을 위한 태도인 (B)에는 'interdependence'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_K-4",
@@ -18183,7 +21016,7 @@ const READING_PASSAGES = [
     "level": "csat_killer",
     "levelLabel": "수능킬러 1등급",
     "source": "실제 평가원 오답률 2위 39번 문장삽입 기출 변형",
-    "wordCount": 92,
+    "wordCount": 93,
     "estimatedTime": "1분 50초",
     "summary": "뇌가 외부 감각 자극을 수동적으로 수용하지 않고 과거 경험과 목적에 따라 감각 피질의 활동을 능동적으로 선별·조정하는 인지신경학",
     "sentences": [
@@ -18222,11 +21055,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 뇌가 외부 감각 자극을 수동적으로 수용하지 않고 과거 경험과 목 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 뇌가 외부 감각 자극을 수동적으로 수용하지 않고 과거 경험과 목은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of prefrontal top-down modulation in semantic encoding fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 전두엽의 하향식 조절과 의미 부호화 신경 기전 (수능 39번 킬러)에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding prefrontal top-down modulation in semantic encoding /",
+          "the rigorous theoretical modeling of prefrontal top-down modulation in semantic encoding /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -18324,7 +21157,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '전두엽의 하향식 조절과 의미 부호화 신경 기전 (수능 39번 킬러)'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into prefrontal top-down modulation in semantic encoding expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "selective",
+          "passive",
+          "relativity"
+        ],
+        "correct": "selective"
+      },
+      "blankB": {
+        "options": [
+          "modulation",
+          "random",
+          "isolation"
+        ],
+        "correct": "modulation"
+      },
+      "koreanSummary": "학자들에 따르면, 전두엽의 하향식 조절과 의미 부호화 신경 기전 (수능 39번 킬러)에 대한 이론적 탐구는 (A)selective의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)modulation의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'selective', 진정한 학문적 발전을 위한 태도인 (B)에는 'modulation'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_K-5",
@@ -18339,7 +21193,7 @@ const READING_PASSAGES = [
     "level": "csat_killer",
     "levelLabel": "수능킬러 1등급",
     "source": "실제 수능 오답률 1위 34번 빈칸 기출 변형",
-    "wordCount": 90,
+    "wordCount": 91,
     "estimatedTime": "1분 50초",
     "summary": "서로 다른 패러다임을 사용하는 과학 이론들은 동일한 대상을 두고도 개념적 번역이 불가능하여 직접 비교할 수 없다는 쿤의 철학",
     "sentences": [
@@ -18378,11 +21232,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 서로 다른 패러다임을 사용하는 과학 이론들은 동일한 대상을 두고 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 서로 다른 패러다임을 사용하는 과학 이론들은 동일한 대상을 두고은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of linguistic incommensurability and ontological discontinuity fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 언어적 통약불가능성과 존재론적 단절 (수능 34번 킬러)에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding linguistic incommensurability and ontological discontinuity /",
+          "the rigorous theoretical modeling of linguistic incommensurability and ontological discontinuity /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -18480,7 +21334,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '언어적 통약불가능성과 존재론적 단절 (수능 34번 킬러)'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into linguistic incommensurability and ontological discontinuity expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "incommensurable",
+          "compatible",
+          "relativity"
+        ],
+        "correct": "incommensurable"
+      },
+      "blankB": {
+        "options": [
+          "discontinuity",
+          "universality",
+          "isolation"
+        ],
+        "correct": "discontinuity"
+      },
+      "koreanSummary": "학자들에 따르면, 언어적 통약불가능성과 존재론적 단절 (수능 34번 킬러)에 대한 이론적 탐구는 (A)incommensurable의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)discontinuity의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'incommensurable', 진정한 학문적 발전을 위한 태도인 (B)에는 'discontinuity'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_K-6",
@@ -18495,7 +21370,7 @@ const READING_PASSAGES = [
     "level": "csat_killer",
     "levelLabel": "수능킬러 1등급",
     "source": "실제 수능 오답률 2위 38번 문장삽입 기출 변형",
-    "wordCount": 88,
+    "wordCount": 91,
     "estimatedTime": "1분 50초",
     "summary": "에너지 소일(엔트로피 증가)이 일어나는 열린계에서 오히려 엔트로피를 외부로 방출하며 새로운 질서와 생명 구조가 자발적으로 태어나는 원리",
     "sentences": [
@@ -18534,11 +21409,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 에너지 소일(엔트로피 증가)이 일어나는 열린계에서 오히려 엔트로 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 에너지 소일(엔트로피 증가)이 일어나는 열린계에서 오히려 엔트로은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of dissipative structures in far-from-equilibrium thermodynamics fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 비평형 열역학에서의 소산 구조와 자기 조직화 (수능 38번 킬러)에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding dissipative structures in far-from-equilibrium thermodynamics /",
+          "the rigorous theoretical modeling of dissipative structures in far-from-equilibrium thermodynamics /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -18636,7 +21511,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '비평형 열역학에서의 소산 구조와 자기 조직화 (수능 38번 킬러)'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into dissipative structures in far-from-equilibrium thermodynamics expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "dissipative",
+          "closed",
+          "relativity"
+        ],
+        "correct": "dissipative"
+      },
+      "blankB": {
+        "options": [
+          "self-organization",
+          "equilibrium",
+          "isolation"
+        ],
+        "correct": "self-organization"
+      },
+      "koreanSummary": "학자들에 따르면, 비평형 열역학에서의 소산 구조와 자기 조직화 (수능 38번 킬러)에 대한 이론적 탐구는 (A)dissipative의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)self-organization의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'dissipative', 진정한 학문적 발전을 위한 태도인 (B)에는 'self-organization'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_K-7",
@@ -18651,7 +21547,7 @@ const READING_PASSAGES = [
     "level": "csat_killer",
     "levelLabel": "수능킬러 1등급",
     "source": "실제 평가원 오답률 1위 33번 빈칸 기출 변형",
-    "wordCount": 91,
+    "wordCount": 97,
     "estimatedTime": "1분 50초",
     "summary": "뇌의 전기화학적 신호 메커니즘을 낱낱이 규명하더라도 '빨간색을 본다는 주관적 경험(Qualia)'이 어떻게 발생하는지는 설명할 수 없다는 의식의 난제",
     "sentences": [
@@ -18690,11 +21586,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 뇌의 전기화학적 신호 메커니즘을 낱낱이 규명하더라도 '빨간색을  fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 뇌의 전기화학적 신호 메커니즘을 낱낱이 규명하더라도 '빨간색을 은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of phenomenological qualia and the explanatory gap of consciousness fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 현상학적 감각질과 의식의 설명 간극 (수능 33번 킬러)에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding phenomenological qualia and the explanatory gap of consciousness /",
+          "the rigorous theoretical modeling of phenomenological qualia and the explanatory gap of consciousness /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -18792,7 +21688,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '현상학적 감각질과 의식의 설명 간극 (수능 33번 킬러)'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into phenomenological qualia and the explanatory gap of consciousness expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "subjective",
+          "objective",
+          "relativity"
+        ],
+        "correct": "subjective"
+      },
+      "blankB": {
+        "options": [
+          "unbridgeable",
+          "algorithmic",
+          "isolation"
+        ],
+        "correct": "unbridgeable"
+      },
+      "koreanSummary": "학자들에 따르면, 현상학적 감각질과 의식의 설명 간극 (수능 33번 킬러)에 대한 이론적 탐구는 (A)subjective의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)unbridgeable의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'subjective', 진정한 학문적 발전을 위한 태도인 (B)에는 'unbridgeable'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_K-8",
@@ -18807,7 +21724,7 @@ const READING_PASSAGES = [
     "level": "csat_killer",
     "levelLabel": "수능킬러 1등급",
     "source": "실제 평가원 오답률 2위 39번 문장삽입 기출 변형",
-    "wordCount": 93,
+    "wordCount": 97,
     "estimatedTime": "1분 50초",
     "summary": "보이지 않는 알고리즘 통제가 시민의 정보 지평을 파편화하여 공통의 논의 기반을 와해시키고 기술관료적 지배를 공고화하는 위험",
     "sentences": [
@@ -18846,11 +21763,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 보이지 않는 알고리즘 통제가 시민의 정보 지평을 파편화하여 공통 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 보이지 않는 알고리즘 통제가 시민의 정보 지평을 파편화하여 공통은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of algorithmic panopticon and the erosion of democratic deliberation fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 알고리즘 판옵티콘과 민주적 숙의의 쇠퇴 (수능 39번 킬러)에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding algorithmic panopticon and the erosion of democratic deliberation /",
+          "the rigorous theoretical modeling of algorithmic panopticon and the erosion of democratic deliberation /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -18948,7 +21865,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '알고리즘 판옵티콘과 민주적 숙의의 쇠퇴 (수능 39번 킬러)'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into algorithmic panopticon and the erosion of democratic deliberation expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "fragmentation",
+          "unification",
+          "relativity"
+        ],
+        "correct": "fragmentation"
+      },
+      "blankB": {
+        "options": [
+          "deliberation",
+          "authoritarianism",
+          "isolation"
+        ],
+        "correct": "deliberation"
+      },
+      "koreanSummary": "학자들에 따르면, 알고리즘 판옵티콘과 민주적 숙의의 쇠퇴 (수능 39번 킬러)에 대한 이론적 탐구는 (A)fragmentation의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)deliberation의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'fragmentation', 진정한 학문적 발전을 위한 태도인 (B)에는 'deliberation'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_K-9",
@@ -18963,7 +21901,7 @@ const READING_PASSAGES = [
     "level": "csat_killer",
     "levelLabel": "수능킬러 1등급",
     "source": "실제 수능 오답률 1위 34번 빈칸 기출 변형",
-    "wordCount": 91,
+    "wordCount": 93,
     "estimatedTime": "1분 50초",
     "summary": "어떤 대상을 소유하거나 실용적 목적으로 소비하지 않고 순수한 형식 그 자체를 관조할 때 발생하는 초월적 쾌감과 미학적 자율성",
     "sentences": [
@@ -19002,11 +21940,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 어떤 대상을 소유하거나 실용적 목적으로 소비하지 않고 순수한 형 fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 어떤 대상을 소유하거나 실용적 목적으로 소비하지 않고 순수한 형은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of kantian aesthetic disinterestedness and sublime contemplation fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 칸트적 미적 무사심성과 숭고의 관조 (수능 34번 킬러)에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding kantian aesthetic disinterestedness and sublime contemplation /",
+          "the rigorous theoretical modeling of kantian aesthetic disinterestedness and sublime contemplation /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -19104,7 +22042,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '칸트적 미적 무사심성과 숭고의 관조 (수능 34번 킬러)'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into kantian aesthetic disinterestedness and sublime contemplation expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "disinterested",
+          "utilitarian",
+          "relativity"
+        ],
+        "correct": "disinterested"
+      },
+      "blankB": {
+        "options": [
+          "transcendence",
+          "possessive",
+          "isolation"
+        ],
+        "correct": "transcendence"
+      },
+      "koreanSummary": "학자들에 따르면, 칸트적 미적 무사심성과 숭고의 관조 (수능 34번 킬러)에 대한 이론적 탐구는 (A)disinterested의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)transcendence의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'disinterested', 진정한 학문적 발전을 위한 태도인 (B)에는 'transcendence'이 가장 적절합니다."
+    }
   },
   {
     "id": "passage-CSAT_K-10",
@@ -19119,7 +22078,7 @@ const READING_PASSAGES = [
     "level": "csat_killer",
     "levelLabel": "수능킬러 1등급",
     "source": "실제 수능 오답률 2위 38번 문장삽입 기출 변형",
-    "wordCount": 90,
+    "wordCount": 93,
     "estimatedTime": "1분 50초",
     "summary": "작가의 단일한 목소리가 지배하는 서사가 아니라, 서로 모순되고 갈등하는 다양한 사회적 계층의 목소리가 동등하게 울려 퍼지는 문학의 힘",
     "sentences": [
@@ -19158,11 +22117,11 @@ const READING_PASSAGES = [
       },
       {
         "num": 4,
-        "en": "Under this conceptual framework, 작가의 단일한 목소리가 지배하는 서사가 아니라, 서로 모순되고  fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
-        "ko": "이러한 개념적 틀 아래에서, 작가의 단일한 목소리가 지배하는 서사가 아니라, 서로 모순되고 은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
+        "en": "Under this conceptual framework, the rigorous theoretical modeling of polyphonic heteroglossia in bakhtinian narrative polyphony fundamentally challenges reductionist doctrines that seek absolute explanatory finality.",
+        "ko": "이러한 개념적 틀 아래에서, 바흐친의 다성악적 다언어성과 소설적 대화주의 (수능 38번 킬러)에 대한 엄밀한 이론적 모델링은 절대적인 설명적 완결성을 추구하는 환원주의적 교리에 근본적으로 이의를 제기한다.",
         "chunks": [
           "Under this conceptual framework, /",
-          "understanding polyphonic heteroglossia in bakhtinian narrative polyphony /",
+          "the rigorous theoretical modeling of polyphonic heteroglossia in bakhtinian narrative polyphony /",
           "fundamentally challenges reductionist doctrines /",
           "that seek absolute explanatory finality."
         ]
@@ -19260,7 +22219,28 @@ const READING_PASSAGES = [
         "correctIndex": 0,
         "explanation": "윗글은 '바흐친의 다성악적 다언어성과 소설적 대화주의 (수능 38번 킬러)'의 학술적 맥락을 바탕으로, 절대적 환원주의의 한계를 지적하고 변증법적 열린 태도와 가설적 수용이 진정한 지적 진보의 핵심임을 논증하고 있으므로 1번이 가장 알맞은 주제입니다."
       }
-    ]
+    ],
+    "summaryBlankClinic": {
+      "summaryText": "According to scholars, theoretical inquiries into polyphonic heteroglossia in bakhtinian narrative polyphony expose the danger of (A)________, necessitating continuous (B)________ in the pursuit of truth.",
+      "blankA": {
+        "options": [
+          "polyphonic",
+          "monologic",
+          "relativity"
+        ],
+        "correct": "polyphonic"
+      },
+      "blankB": {
+        "options": [
+          "heteroglossia",
+          "homogeneity",
+          "isolation"
+        ],
+        "correct": "heteroglossia"
+      },
+      "koreanSummary": "학자들에 따르면, 바흐친의 다성악적 다언어성과 소설적 대화주의 (수능 38번 킬러)에 대한 이론적 탐구는 (A)polyphonic의 위험성을 드러내며, 진리 추구에 있어 지속적인 (B)heteroglossia의 필요성을 역설한다.",
+      "explanation": "본문의 핵심 논지에 따라, 학문적 위험 요인인 (A)에는 'polyphonic', 진정한 학문적 발전을 위한 태도인 (B)에는 'heteroglossia'이 가장 적절합니다."
+    }
   }
 ];
 

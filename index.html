@@ -1914,6 +1914,11 @@
                     <!-- JS 동적 생성: 어법, 빈칸, 일치, 서술형 -->
                 </div>
 
+                <!-- [신규] 수능 40번 문단 요약 빈칸 완성 클리닉 위젯 -->
+                <div id="reading-summary-blank-container" class="mt-4 p-5 rounded-2xl bg-gradient-to-br from-indigo-50/90 via-blue-50/50 to-slate-50 border border-indigo-200/90 shadow-xs space-y-3">
+                    <!-- JS 동적 생성: window.readingEngine.renderSummaryBlankClinic() -->
+                </div>
+
                 <!-- 제출 / 다시 풀기 액션 바 -->
                 <div class="pt-2">
                     <button id="btn-submit-reading-exam" class="w-full py-3.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-98" onclick="window.readingEngine.submitExam()">
@@ -1954,6 +1959,9 @@
                         <button type="button" onclick="window.scrambleEngine.applyFilter('M1')" class="px-3 py-1.5 rounded-lg hover:bg-white text-slate-600">중1</button>
                         <button type="button" onclick="window.scrambleEngine.applyFilter('M2')" class="px-3 py-1.5 rounded-lg hover:bg-white text-slate-600">중2</button>
                         <button type="button" onclick="window.scrambleEngine.applyFilter('M3')" class="px-3 py-1.5 rounded-lg hover:bg-white text-slate-600">중3</button>
+                        <button type="button" onclick="window.scrambleEngine.applyFilter('H1')" class="px-3 py-1.5 rounded-lg hover:bg-white text-slate-700 font-bold hover:text-blue-900">고1 (20선)</button>
+                        <button type="button" onclick="window.scrambleEngine.applyFilter('H2')" class="px-3 py-1.5 rounded-lg hover:bg-white text-slate-700 font-bold hover:text-indigo-900">고2 (20선)</button>
+                        <button type="button" onclick="window.scrambleEngine.applyFilter('CSAT')" class="px-3 py-1.5 rounded-lg hover:bg-white text-slate-700 font-bold hover:text-amber-800">수능 킬러 (30선)</button>
                     </div>
                 </div>
 
@@ -2050,7 +2058,7 @@
                         <div class="space-y-1.5">
                             <label class="block text-xs font-bold text-slate-700">학년 / 시험 범위</label>
                             <select id="exam-gen-grade" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm font-semibold outline-none focus:border-blue-900 focus:bg-white text-slate-900 cursor-pointer">
-                                <option value="all" selected>전 학년 통합 (예비중 ~ 중3 총괄)</option>
+                                <option value="all" selected>전 학년 통합 (예비중 ~ 수능 14개 단원 총괄)</option>
                                 <option value="PRE_M1">예비중 입문 (초6 ~ 중1 기초)</option>
                                 <option value="M1_1">중 1-1 (중1 1학기 내신)</option>
                                 <option value="M1_2">중 1-2 (중1 2학기 내신)</option>
@@ -2058,6 +2066,15 @@
                                 <option value="M2_2">중 2-2 (중2 2학기 내신)</option>
                                 <option value="M3_1">중 3-1 (중3 1학기 내신)</option>
                                 <option value="M3_2">중 3-2 (중3 2학기 내신)</option>
+                                <option value="H1_1">고 1-1 (고1 1학기 내신 & 학평)</option>
+                                <option value="H1_2">고 1-2 (고1 2학기 내신 & 학평)</option>
+                                <option value="H2_1">고 2-1 (고2 1학기 내신 & 학평)</option>
+                                <option value="H2_2">고 2-2 (고2 2학기 내신 & 학평)</option>
+                                <option value="CSAT_B">수능 1등급 기본편 (평가원 실전)</option>
+                                <option value="CSAT_R">수능 1등급 실전편 (평가원 실전)</option>
+                                <option value="CSAT_K">평가원 킬러 마스터편 (수능 1등급)</option>
+                                <option value="HIGH">고등 내신 1등급 총괄 (고1~고2 40선)</option>
+                                <option value="CSAT">수능 1등급 평가원 킬러 총괄 (30선)</option>
                             </select>
                         </div>
 
@@ -2068,6 +2085,7 @@
                                 <option value="10">10문항 (스피드 미니 테스트)</option>
                                 <option value="20" selected>20문항 (표준 중간·기말고사 • 1.5배 EXP)</option>
                                 <option value="25">25문항 (실전 학교 지필평가 • 1.5배 EXP)</option>
+                                <option value="28">28문항 (수능 영어 독해 실전형 • 2배 EXP)</option>
                             </select>
                         </div>
 
@@ -2077,7 +2095,9 @@
                             <select id="exam-gen-time" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm font-semibold outline-none focus:border-blue-900 focus:bg-white text-slate-900 cursor-pointer">
                                 <option value="20">20분</option>
                                 <option value="35">35분</option>
-                                <option value="45" selected>45분 (학교 시험 실전 모드)</option>
+                                <option value="45">45분 (학교 시험 실전 모드)</option>
+                                <option value="50" selected>50분 (고교 정규 지필평가 실전)</option>
+                                <option value="70">70분 (수능 독해 28제 실전 기준)</option>
                                 <option value="0">무제한 (자율 학습 모드)</option>
                             </select>
                         </div>
@@ -3995,5 +4015,35 @@
         </div>
     </div>
 
+    <!-- 본문 단어 실시간 플로팅 툴팁 (Floating Word Popover) -->
+    <div id="reading-floating-word-tooltip" class="fixed z-50 hidden bg-slate-900/95 text-white rounded-2xl shadow-2xl p-4 border border-slate-700/80 max-w-sm backdrop-blur-md transition-all duration-150 select-none">
+        <div class="flex items-center justify-between gap-3 pb-2 border-b border-slate-800">
+            <div class="flex items-center gap-2">
+                <span id="rf-tooltip-word" class="font-serif font-black text-base text-amber-300"></span>
+                <span id="rf-tooltip-pos" class="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-blue-900/80 text-blue-200 border border-blue-700/60"></span>
+            </div>
+            <div class="flex items-center gap-1.5">
+                <button id="rf-tooltip-tts-btn" class="p-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors cursor-pointer" title="발음 듣기">
+                    <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                </button>
+                <button onclick="window.readingEngine.hideFloatingTooltip()" class="p-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors cursor-pointer" title="닫기">
+                    <i data-lucide="x" class="w-3.5 h-3.5"></i>
+                </button>
+            </div>
+        </div>
+        <div class="py-2.5">
+            <div id="rf-tooltip-meaning" class="text-xs sm:text-sm text-slate-100 font-medium leading-relaxed"></div>
+        </div>
+        <div class="pt-2 border-t border-slate-800/80 flex items-center justify-between gap-2">
+            <button id="rf-tooltip-add-btn" class="flex-1 py-1.5 px-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all cursor-pointer">
+                <i data-lucide="bookmark-plus" class="w-3.5 h-3.5"></i>
+                <span>내 단어장에 담기</span>
+            </button>
+            <button id="rf-tooltip-detail-btn" class="py-1.5 px-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-xs flex items-center justify-center gap-1 transition-all cursor-pointer" title="상세 예문 & 어원 사전">
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                <span>상세</span>
+            </button>
+        </div>
+    </div>
 </body>
 </html>

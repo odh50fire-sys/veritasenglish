@@ -44,6 +44,19 @@ class ReadingEngine {
     }
 
     initEventListeners() {
+        document.addEventListener('click', (e) => {
+            const tooltip = document.getElementById('reading-floating-word-tooltip');
+            if (tooltip && !tooltip.classList.contains('hidden')) {
+                if (!tooltip.contains(e.target) && !e.target.classList.contains('reading-word-token')) {
+                    this.hideFloatingTooltip();
+                }
+            }
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                this.hideFloatingTooltip();
+            }
+        });
         // 단축키 또는 이벤트 바인딩
     }
 
@@ -267,8 +280,9 @@ class ReadingEngine {
             `).join('');
         }
 
-        // 우측 실전 내신 문제 렌더링
+        // 우측 실전 내신 문제 및 수능 40번 요약문 클리닉 렌더링
         this.renderQuestions(passage);
+        this.renderSummaryBlankClinic(passage);
 
         if (window.lucide) {
             window.lucide.createIcons();
@@ -300,13 +314,22 @@ class ReadingEngine {
                         } rounded-xl outline-none focus:border-blue-900 focus:bg-white transition-all" placeholder="조건에 맞추어 영문장을 완성하여 입력하세요..." ${isSubmitted ? 'disabled' : ''} oninput="window.readingEngine.setUserAnswer('${q.id}', this.value)">${userAnswer || ''}</textarea>
                         
                         ${isSubmitted ? `
-                            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-1">
-                                <div class="font-bold text-slate-800 flex items-center gap-1">
-                                    <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i>
-                                    <span>모범 답안:</span>
+                            <div class="p-3.5 rounded-xl ${isCorrect ? 'bg-emerald-50/80 border border-emerald-300' : 'bg-amber-50/80 border border-amber-300'} text-xs space-y-2">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-bold flex items-center gap-1 ${isCorrect ? 'text-emerald-900' : 'text-amber-900'}">
+                                        <i data-lucide="${isCorrect ? 'check-circle' : 'alert-circle'}" class="w-4 h-4 ${isCorrect ? 'text-emerald-600' : 'text-amber-600'}"></i>
+                                        <span>서술형 첨삭 클리닉: ${isCorrect ? '만점 (조건 완벽 충족 ✓)' : '부분 점수 / 감점 요인 점검'}</span>
+                                    </span>
+                                    ${q.keywords ? `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-white/80 border ${isCorrect ? 'text-emerald-800 border-emerald-200' : 'text-amber-800 border-amber-200'}">필수 키워드 ${(q.keywords.filter(kw => (userAnswer || '').toLowerCase().includes(kw.toLowerCase())).length)}/${q.keywords.length} 적중</span>` : ''}
                                 </div>
-                                <div class="font-serif italic text-blue-950 font-bold">${q.sampleAnswer || q.expectedAnswer || ""}</div>
-                                <div class="text-slate-600 text-[11px] mt-1">${q.explanation}</div>
+                                <div class="p-2.5 rounded-lg bg-white/90 border border-slate-200/80 space-y-1">
+                                    <div class="font-bold text-slate-800 text-[11px] flex items-center gap-1">
+                                        <i data-lucide="award" class="w-3.5 h-3.5 text-blue-900"></i>
+                                        <span>내신 1등급 표준 모범 답안:</span>
+                                    </div>
+                                    <div class="font-serif italic text-blue-950 font-bold select-text">${q.sampleAnswer || q.expectedAnswer || ""}</div>
+                                </div>
+                                <div class="text-slate-600 text-[11px] leading-relaxed pt-0.5">${q.explanation}</div>
                             </div>
                         ` : ''}
                     </div>
@@ -758,7 +781,7 @@ class ReadingEngine {
         return tokens.map(token => {
             const clean = token.replace(/[^a-zA-Z\-]/g, '').trim();
             if (clean.length > 0 && /^[a-zA-Z]/.test(clean)) {
-                return `<span class="reading-word-token hover:bg-amber-200 hover:text-blue-950 rounded px-0.5 cursor-pointer transition-colors underline decoration-dotted decoration-slate-300 hover:decoration-blue-900" onclick="window.readingEngine.openWordInspector('${clean.replace(/'/g, "\\'")}', ${sentenceNum})" title="클릭하여 단어 사전 추가">${token}</span>`;
+                return `<span class="reading-word-token hover:bg-amber-200 hover:text-blue-950 rounded px-0.5 cursor-pointer transition-colors underline decoration-dotted decoration-slate-300 hover:decoration-blue-900" onclick="window.readingEngine.showFloatingWordTooltip(event, '${clean.replace(/'/g, "\\'")}', ${sentenceNum})" title="클릭하여 실전 툴팁 & 단어장 수납">${token}</span>`;
             }
             return token;
         }).join('');
@@ -779,6 +802,19 @@ class ReadingEngine {
             if (found) {
                 const stdPos = window.posHelper ? window.posHelper.standardizePos(found.partOfSpeech, found.word, found.meaning) : (found.partOfSpeech || '[명]');
                 return { word: found.word, pos: stdPos, meaning: found.meaning };
+            }
+        }
+
+        // 1.5. 전체 지문(140개) Key Vocabulary 교차 검색
+        if (Array.isArray(this.passages)) {
+            for (const p of this.passages) {
+                if (p.keyVocabulary && Array.isArray(p.keyVocabulary)) {
+                    const found = p.keyVocabulary.find(v => v.word && v.word.toLowerCase() === lower);
+                    if (found) {
+                        const stdPos = window.posHelper ? window.posHelper.standardizePos(found.partOfSpeech, found.word, found.meaning) : (found.partOfSpeech || '[명]');
+                        return { word: found.word, pos: stdPos, meaning: found.meaning };
+                    }
+                }
             }
         }
 
@@ -1045,6 +1081,193 @@ class ReadingEngine {
         setTimeout(() => {
             this.closeWordInspector();
         }, 700);
+    }
+
+    /**
+     * 본문 단어 실시간 플로팅 툴팁 (Floating Popover) 노출
+     */
+    showFloatingWordTooltip(e, cleanWord, sentenceNum) {
+        if (!cleanWord) return;
+        if (e && e.stopPropagation) e.stopPropagation();
+
+        const tooltip = document.getElementById('reading-floating-word-tooltip');
+        if (!tooltip) return;
+
+        const foundInfo = this.findWordMeaning(cleanWord);
+        const wordEl = document.getElementById('rf-tooltip-word');
+        const posEl = document.getElementById('rf-tooltip-pos');
+        const meaningEl = document.getElementById('rf-tooltip-meaning');
+        const ttsBtn = document.getElementById('rf-tooltip-tts-btn');
+        const addBtn = document.getElementById('rf-tooltip-add-btn');
+        const detailBtn = document.getElementById('rf-tooltip-detail-btn');
+
+        if (wordEl) wordEl.textContent = cleanWord;
+        if (posEl) posEl.textContent = foundInfo ? foundInfo.pos : '[단어]';
+        if (meaningEl) meaningEl.textContent = foundInfo ? foundInfo.meaning : '사전 정의 탐색 중...';
+
+        if (ttsBtn) {
+            ttsBtn.onclick = (ev) => {
+                ev.stopPropagation();
+                if (window.tts) window.tts.speak(cleanWord);
+            };
+        }
+
+        if (addBtn) {
+            addBtn.innerHTML = '<i data-lucide="bookmark-plus" class="w-3.5 h-3.5"></i> <span>내 단어장에 담기</span>';
+            addBtn.className = 'flex-1 py-1.5 px-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all cursor-pointer';
+            addBtn.onclick = (ev) => {
+                ev.stopPropagation();
+                this.quickAddWordToVoca(cleanWord, foundInfo);
+            };
+        }
+
+        if (detailBtn) {
+            detailBtn.onclick = (ev) => {
+                ev.stopPropagation();
+                this.hideFloatingTooltip();
+                this.openWordInspector(cleanWord, sentenceNum);
+            };
+        }
+
+        tooltip.classList.remove('hidden');
+
+        // 위치 계산
+        const rect = e.currentTarget.getBoundingClientRect();
+        const tooltipWidth = 320;
+        const tooltipHeight = 140;
+
+        let left = rect.left + (rect.width / 2) - (tooltipWidth / 2);
+        if (left < 10) left = 10;
+        if (left + tooltipWidth > window.innerWidth - 10) {
+            left = window.innerWidth - tooltipWidth - 10;
+        }
+
+        let top = rect.top - tooltipHeight - 12;
+        if (top < 10) {
+            top = rect.bottom + 12;
+        }
+
+        tooltip.style.left = `${Math.round(left)}px`;
+        tooltip.style.top = `${Math.round(top)}px`;
+
+        if (window.lucide) window.lucide.createIcons();
+    }
+
+    hideFloatingTooltip() {
+        const tooltip = document.getElementById('reading-floating-word-tooltip');
+        if (tooltip) tooltip.classList.add('hidden');
+    }
+
+    quickAddWordToVoca(cleanWord, foundInfo) {
+        const word = cleanWord;
+        const pos = foundInfo ? foundInfo.pos : '[명]';
+        const meaning = foundInfo ? foundInfo.meaning : '';
+        const currentPassage = this.getCurrentPassage();
+        const sentenceObj = currentPassage?.sentences?.[0];
+        const exEn = foundInfo?.example_en || sentenceObj?.en || '';
+        const exKo = foundInfo?.example_ko || sentenceObj?.ko || '';
+
+        if (window.storage && window.storage.addWord) {
+            window.storage.addWord({
+                word: word,
+                partOfSpeech: pos,
+                meaning: meaning,
+                example: exEn,
+                exampleMeaning: exKo,
+                tag: '독해 본문 어휘'
+            });
+        }
+
+        const addBtn = document.getElementById('rf-tooltip-add-btn');
+        if (addBtn) {
+            addBtn.innerHTML = '<i data-lucide="check" class="w-3.5 h-3.5 text-white"></i> <span>수납 완료!</span>';
+            addBtn.className = 'flex-1 py-1.5 px-3 rounded-xl bg-emerald-600 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all';
+        }
+
+        this.showToast(`✨ '${word}' 단어가 내 단어장에 추가되었습니다!`);
+
+        if (window.lucide) window.lucide.createIcons();
+    }
+
+    /**
+     * 수능 40번 문단 요약 빈칸 완성 위젯 렌더링
+     */
+    renderSummaryBlankClinic(passage) {
+        const container = document.getElementById('reading-summary-blank-container');
+        if (!container) return;
+
+        const clinic = passage?.summaryBlankClinic;
+        if (!clinic) {
+            container.classList.add('hidden');
+            return;
+        }
+        container.classList.remove('hidden');
+
+        const optAHtml = clinic.blankA.options.map(opt => `<option value="${opt}">${opt}</option>`).join('');
+        const optBHtml = clinic.blankB.options.map(opt => `<option value="${opt}">${opt}</option>`).join('');
+
+        let renderedSummary = clinic.summaryText
+            .replace('(A)________', `<select id="sb-select-a" class="mx-1 px-2.5 py-1 rounded-lg bg-white border border-indigo-300 text-indigo-950 font-bold text-xs outline-none focus:ring-2 focus:ring-indigo-500 shadow-2xs">${optAHtml}</select>`)
+            .replace('(B)________', `<select id="sb-select-b" class="mx-1 px-2.5 py-1 rounded-lg bg-white border border-indigo-300 text-indigo-950 font-bold text-xs outline-none focus:ring-2 focus:ring-indigo-500 shadow-2xs">${optBHtml}</select>`);
+
+        container.innerHTML = `
+            <div class="flex items-center justify-between pb-2 border-b border-indigo-200/80">
+                <div class="flex items-center gap-2">
+                    <span class="p-1 rounded-lg bg-indigo-600 text-white"><i data-lucide="file-check" class="w-4 h-4"></i></span>
+                    <h4 class="font-serif font-black text-sm text-indigo-950">수능 40번 문단 요약 빈칸 완성 클리닉</h4>
+                </div>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-indigo-100 text-indigo-900 border border-indigo-300">1등급 요약 추론</span>
+            </div>
+            <p class="font-serif text-slate-800 text-xs sm:text-sm leading-relaxed py-1">
+                ${renderedSummary}
+            </p>
+            <div id="sb-feedback-box" class="hidden p-3 rounded-xl text-xs space-y-1"></div>
+            <div class="pt-1 flex flex-wrap items-center justify-between gap-2">
+                <span class="text-[11px] text-slate-400 font-mono">본문 핵심 논지를 1문장으로 압축하는 수능 핵심 유형</span>
+                <button type="button" id="btn-check-summary-blank" onclick="window.readingEngine.checkSummaryBlankAnswer()" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-sm transition-all flex items-center gap-1.5 cursor-pointer">
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                    <span>요약문 정답 확인</span>
+                </button>
+            </div>
+        `;
+        if (window.lucide) window.lucide.createIcons();
+    }
+
+    checkSummaryBlankAnswer() {
+        const passage = this.getCurrentPassage();
+        const clinic = passage?.summaryBlankClinic;
+        if (!clinic) return;
+
+        const selA = document.getElementById('sb-select-a')?.value;
+        const selB = document.getElementById('sb-select-b')?.value;
+        const isCorrect = (selA === clinic.blankA.correct && selB === clinic.blankB.correct);
+
+        const fbBox = document.getElementById('sb-feedback-box');
+        if (!fbBox) return;
+
+        fbBox.classList.remove('hidden');
+        if (isCorrect) {
+            fbBox.className = 'p-3.5 rounded-xl bg-emerald-50 border border-emerald-300 text-xs space-y-1.5 text-emerald-950 animate-fadeIn';
+            fbBox.innerHTML = `
+                <div class="font-bold flex items-center gap-1 text-emerald-900">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600"></i>
+                    <span>완벽합니다! 1등급 요약문 정답 (A: ${clinic.blankA.correct}, B: ${clinic.blankB.correct})</span>
+                </div>
+                <p class="text-slate-700 text-[11px] leading-relaxed">${clinic.koreanSummary}</p>
+                <p class="text-slate-500 text-[11px]">${clinic.explanation}</p>
+            `;
+        } else {
+            fbBox.className = 'p-3.5 rounded-xl bg-rose-50 border border-rose-300 text-xs space-y-1.5 text-rose-950 animate-fadeIn';
+            fbBox.innerHTML = `
+                <div class="font-bold flex items-center gap-1 text-rose-900">
+                    <i data-lucide="alert-circle" class="w-4 h-4 text-rose-600"></i>
+                    <span>다시 검토해 보세요! 정답은 (A: <strong>${clinic.blankA.correct}</strong>, B: <strong>${clinic.blankB.correct}</strong>) 입니다.</span>
+                </div>
+                <p class="text-slate-700 text-[11px] leading-relaxed">${clinic.koreanSummary}</p>
+                <p class="text-slate-500 text-[11px]">${clinic.explanation}</p>
+            `;
+        }
+        if (window.lucide) window.lucide.createIcons();
     }
 
     showToast(message) {
