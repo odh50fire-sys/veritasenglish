@@ -133,13 +133,17 @@ class PlannerEngine {
 
             const vocabWords = wordsOnDate.filter(w => !w.isReadingPassage);
             const readingPassages = wordsOnDate.filter(w => w.isReadingPassage);
+            const extTasks = (window.storage && typeof window.storage.getTodayExternalTasks === 'function')
+                ? window.storage.getTodayExternalTasks(dateStr)
+                : [];
             const planInfo = window.storage.plans[dateStr] || {};
             const isWordsCompleted = vocabWords.length === 0 || vocabWords.every(w => (w.flashcardDone && w.quizDone) || w.studyCompleted);
             const isPassagesCompleted = readingPassages.length === 0 || readingPassages.every(p => {
                 const r = window.storage.readingRecords && window.storage.readingRecords[p.readingPassageId];
                 return (r && typeof r.score === 'number') || p.studyCompleted;
             });
-            const isDayCompleted = planInfo.isDone === true || ((vocabWords.length > 0 || readingPassages.length > 0) && isWordsCompleted && isPassagesCompleted);
+            const isExtCompleted = extTasks.length === 0 || extTasks.every(t => t.isDone);
+            const isDayCompleted = planInfo.isDone === true || ((vocabWords.length > 0 || readingPassages.length > 0 || extTasks.length > 0) && isWordsCompleted && isPassagesCompleted && isExtCompleted);
 
             let badgesHtml = '';
             if (isDayCompleted) {
@@ -148,6 +152,16 @@ class PlannerEngine {
             if (isRest) {
                 badgesHtml += `<span class="inline-block px-1.5 py-0.5 rounded bg-slate-200 text-slate-700 text-[10px] font-mono">휴식일</span>`;
             } else {
+                if (extTasks.length > 0) {
+                    const doneCount = extTasks.filter(t => t.isDone).length;
+                    badgesHtml += `
+                        <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full ${
+                            doneCount === extTasks.length ? 'bg-emerald-100 text-emerald-900 border border-emerald-300' : 'bg-amber-100 text-amber-900 border border-amber-300'
+                        } text-[10px] font-bold">
+                            <i data-lucide="book-marked" class="w-3 h-3 text-amber-700"></i> 과제 ${doneCount}/${extTasks.length}건
+                        </span>
+                    `;
+                }
                 if (readingPassages.length > 0) {
                     badgesHtml += `
                         <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-indigo-100 text-indigo-900 text-[10px] font-bold">
@@ -376,7 +390,11 @@ class PlannerEngine {
             return 0;
         });
 
-        if (words.length === 0) {
+        const extTasksOnDate = (window.storage && typeof window.storage.getTodayExternalTasks === 'function')
+            ? window.storage.getTodayExternalTasks(this.selectedDateStr)
+            : [];
+
+        if (words.length === 0 && extTasksOnDate.length === 0) {
             const allPlanWords = (window.storage.words || []).filter(w => !String(w.id || '').startsWith('sample-') && w.planDate);
             const scheduledDates = Array.from(new Set(allPlanWords.map(w => w.planDate))).sort();
             let quickJumpHtml = '';
@@ -399,7 +417,7 @@ class PlannerEngine {
             container.innerHTML = `
                 <div class="py-8 px-4 text-center text-slate-400 border border-dashed border-slate-200 rounded-xl">
                     <p class="text-sm font-medium">이 날짜(${this.selectedDateStr})에 배정된 학습 과제가 없습니다.</p>
-                    <p class="text-xs text-slate-400 mt-1">상단의 [독해 단원 배정] 또는 [단어장 계획 배정]으로 학습 일정을 등록해 보세요.</p>
+                    <p class="text-xs text-slate-400 mt-1">상단의 [시중 교재·과제 배정] 또는 [독해 단원 배정]으로 학습 일정을 등록해 보세요.</p>
                     ${quickJumpHtml}
                 </div>
             `;
@@ -414,18 +432,57 @@ class PlannerEngine {
             const r = window.storage.readingRecords && window.storage.readingRecords[p.readingPassageId];
             return (r && typeof r.score === 'number') || p.studyCompleted;
         });
-        const isDayAllDone = dayPlan.isDone === true || ((vocabOnDate.length > 0 || readingOnDate.length > 0) && isVocabDone && isReadingDone);
+        const isExtDone = extTasksOnDate.length === 0 || extTasksOnDate.every(t => t.isDone);
+        const isDayAllDone = dayPlan.isDone === true || ((vocabOnDate.length > 0 || readingOnDate.length > 0 || extTasksOnDate.length > 0) && isVocabDone && isReadingDone && isExtDone);
 
         // 상단 타이틀 갱신
         const listTitleEl = document.getElementById('planner-detail-list-title');
         if (listTitleEl) {
-            if (readingOnDate.length > 0 && vocabOnDate.length > 0) {
-                listTitleEl.textContent = `배정 과제 (독해 ${readingOnDate.length}편 • 어휘 ${vocabOnDate.length}개)`;
-            } else if (readingOnDate.length > 0) {
-                listTitleEl.textContent = `배정 과제 (독해 ${readingOnDate.length}편)`;
-            } else {
-                listTitleEl.textContent = `배정된 단어 목록 (${vocabOnDate.length}단어)`;
-            }
+            const parts = [];
+            if (extTasksOnDate.length > 0) parts.push(`교재/과제 ${extTasksOnDate.length}건`);
+            if (readingOnDate.length > 0) parts.push(`독해 ${readingOnDate.length}편`);
+            if (vocabOnDate.length > 0) parts.push(`어휘 ${vocabOnDate.length}개`);
+            listTitleEl.textContent = parts.length > 0 ? `배정 과제 (${parts.join(' • ')})` : '배정된 과제 목록';
+        }
+
+        // 0. 외부 교재 및 학교 과제 전용 섹션 상단 렌더링
+        if (extTasksOnDate.length > 0) {
+            const extSection = document.createElement('div');
+            extSection.className = 'mb-4 p-3.5 bg-gradient-to-br from-amber-50/70 to-white border border-amber-200 rounded-2xl space-y-2.5 shadow-2xs';
+            extSection.innerHTML = `
+                <div class="flex items-center justify-between text-xs font-bold text-amber-950 pb-2 border-b border-amber-100">
+                    <span class="flex items-center gap-1.5">
+                        <i data-lucide="book-marked" class="w-4 h-4 text-amber-700"></i>
+                        <span>배정된 시중 교재 &amp; 학교 과제 (${extTasksOnDate.length}건)</span>
+                    </span>
+                    <button type="button" onclick="window.assistantEngine && window.assistantEngine.openExternalStudyModal()" class="text-[11px] text-amber-800 hover:underline cursor-pointer">
+                        + 교재 추가
+                    </button>
+                </div>
+                <div class="space-y-2">
+                    ${extTasksOnDate.map(t => `
+                        <div class="p-2.5 rounded-xl bg-white border ${t.isDone ? 'border-emerald-300 bg-emerald-50/20' : 'border-slate-200'} flex items-center justify-between gap-3 shadow-2xs">
+                            <div class="flex items-center gap-2.5">
+                                <span class="text-xl">${t.coverEmoji || '📖'}</span>
+                                <div>
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="font-serif font-bold text-xs text-slate-900 line-clamp-1">${t.title}</span>
+                                        ${t.isDone ? '<span class="px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800 text-[10px] font-bold">✓ 완료</span>' : ''}
+                                    </div>
+                                    <div class="text-[11px] font-mono text-indigo-700">
+                                        오늘 분량: <span class="font-bold">${t.range}</span> (${t.currentProgress}/${t.totalUnits}${t.unitType})
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" onclick="window.assistantEngine && window.assistantEngine.toggleTodayTask('${t.studyId}', '${this.selectedDateStr}')" class="px-3 py-1.5 rounded-lg ${t.isDone ? 'bg-emerald-100 text-emerald-900 border border-emerald-300' : 'bg-slate-900 hover:bg-slate-800 text-white'} font-serif font-bold text-xs transition-all cursor-pointer flex items-center gap-1 shrink-0 active:scale-95">
+                                <i data-lucide="${t.isDone ? 'check' : 'circle'}" class="w-3.5 h-3.5"></i>
+                                <span>${t.isDone ? '완료됨' : '완료 체크'}</span>
+                            </button>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            container.appendChild(extSection);
         }
 
         // 하단 독해 원클릭 바로가기 버튼 갱신
@@ -555,15 +612,19 @@ class PlannerEngine {
         const todayItems = window.storage.getWordsByDate(window.storage.getTodayDateString());
         const todayVocab = todayItems.filter(w => !w.isReadingPassage);
         const todayPassages = todayItems.filter(w => w.isReadingPassage);
+        const extTasks = (window.storage && typeof window.storage.getTodayExternalTasks === 'function')
+            ? window.storage.getTodayExternalTasks(window.storage.getTodayDateString())
+            : [];
 
         const vocabCompleted = todayVocab.filter(w => (w.flashcardDone && w.quizDone) || w.studyCompleted).length;
         const passagesCompleted = todayPassages.filter(p => {
             const r = window.storage.readingRecords && window.storage.readingRecords[p.readingPassageId];
             return (r && typeof r.score === 'number') || p.studyCompleted;
         }).length;
+        const extCompleted = extTasks.filter(t => t.isDone).length;
 
-        const totalTasks = todayVocab.length + (todayPassages.length * 5);
-        const totalCompleted = vocabCompleted + (passagesCompleted * 5);
+        const totalTasks = todayVocab.length + (todayPassages.length * 5) + (extTasks.length * 5);
+        const totalCompleted = vocabCompleted + (passagesCompleted * 5) + (extCompleted * 5);
         const targetDenominator = Math.max(dailyTarget, totalTasks);
         const progressPercent = targetDenominator > 0 ? Math.min(100, Math.round((totalCompleted / targetDenominator) * 100)) : 0;
 
@@ -571,8 +632,13 @@ class PlannerEngine {
         const todayTextEl = document.getElementById("planner-today-progress-text");
         if (todayProgEl) todayProgEl.style.width = `${progressPercent}%`;
         if (todayTextEl) {
-            if (todayPassages.length > 0) {
-                todayTextEl.textContent = `독해 ${passagesCompleted}/${todayPassages.length}편 • 단어 ${vocabCompleted}/${todayVocab.length}개 완료 (${progressPercent}%)`;
+            const parts = [];
+            if (extTasks.length > 0) parts.push(`교재 ${extCompleted}/${extTasks.length}건`);
+            if (todayPassages.length > 0) parts.push(`독해 ${passagesCompleted}/${todayPassages.length}편`);
+            if (todayVocab.length > 0) parts.push(`단어 ${vocabCompleted}/${todayVocab.length}개`);
+
+            if (parts.length > 0) {
+                todayTextEl.textContent = `${parts.join(' • ')} 완료 (${progressPercent}%)`;
             } else {
                 todayTextEl.textContent = `${vocabCompleted} / ${dailyTarget} 단어 마스터 (${progressPercent}%)`;
             }

@@ -759,6 +759,14 @@ class AppController {
 
     renderDashboard() {
         try {
+            if (window.assistantEngine && typeof window.assistantEngine.renderSchoolDDayBanner === 'function') {
+                try {
+                    window.assistantEngine.renderSchoolDDayBanner();
+                } catch (bErr) {
+                    console.error('Error rendering school D-Day banner:', bErr);
+                }
+            }
+
             const stats = window.storage ? window.storage.getStatistics() : { total: 0, mastered: 0, dueCount: 0, weakCount: 0 };
             const todayStr = window.storage ? window.storage.getTodayDateString() : new Date().toISOString().slice(0, 10);
             const todayWords = window.storage ? window.storage.getWordsByDate(todayStr).filter(w => !w.isReadingPassage && ((w.flashcardDone && w.quizDone) || w.studyCompleted)).length : 0;
@@ -916,6 +924,9 @@ class AppController {
 
         const vocabWords = todayItems.filter(w => !w.isReadingPassage);
         const readingWords = todayItems.filter(w => w.isReadingPassage);
+        const externalTasks = (window.storage && typeof window.storage.getTodayExternalTasks === 'function')
+            ? window.storage.getTodayExternalTasks(todayStr)
+            : [];
 
         // 1. 단어장 그룹화 (교재 및 DAY 단위)
         const groupsMap = {};
@@ -1007,7 +1018,7 @@ class AppController {
         });
 
         // 3. 오늘 배정된 학습이 전혀 없는 경우: 가짜 카드를 띄우지 않고 친절한 빈 상태(Empty State) 표시
-        if (vocabGroups.length === 0 && readingPassages.length === 0) {
+        if (vocabGroups.length === 0 && readingPassages.length === 0 && externalTasks.length === 0) {
             const allPlanWords = (window.storage && window.storage.words || []).filter(w => !String(w.id || '').startsWith('sample-') && w.planDate);
             const scheduledDates = Array.from(new Set(allPlanWords.map(w => w.planDate))).sort();
             const futureDates = scheduledDates.filter(d => d > todayStr);
@@ -1037,13 +1048,17 @@ class AppController {
                         </h3>
                         <p class="text-xs text-slate-500 mt-1 leading-relaxed">
                             학습 플래너에서 단어장과 내신 독해 지문 일정을 배정하거나,<br class="hidden sm:inline"/>
-                            교재 등록에서 새로운 단어장을 시작해 보세요.
+                            시중 교재/학원 과제를 등록하여 매일 공부 루틴을 관리해 보세요.
                         </p>
                     </div>
 
                     ${nearestNoticeHtml}
 
                     <div class="flex flex-wrap items-center justify-center gap-2.5 pt-2">
+                        <button type="button" onclick="window.assistantEngine && window.assistantEngine.openExternalStudyModal()" class="px-4 py-2.5 rounded-xl border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-950 font-serif font-bold text-xs flex items-center gap-1.5 shadow-xs transition-all cursor-pointer">
+                            <i data-lucide="book-marked" class="w-4 h-4 text-amber-700"></i>
+                            <span>시중 교재 / 학원 과제 배정</span>
+                        </button>
                         <button type="button" onclick="window.app && window.app.switchTab('planner')" class="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-serif font-bold text-xs flex items-center gap-1.5 shadow-xs transition-all cursor-pointer">
                             <i data-lucide="calendar" class="w-4 h-4 text-amber-300"></i>
                             <span>학습 플래너에서 일정 배정하기</span>
@@ -1054,7 +1069,7 @@ class AppController {
                         </button>
                         <button type="button" onclick="window.app && window.app.switchTab('reading')" class="px-4 py-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-800 font-serif font-bold text-xs flex items-center gap-1.5 shadow-xs transition-all cursor-pointer">
                             <i data-lucide="graduation-cap" class="w-4 h-4 text-emerald-600"></i>
-                            <span>중등 내신 독해 단원 보기</span>
+                            <span>중·고등 내신 독해 단원 보기</span>
                         </button>
                     </div>
                 </div>
@@ -1063,7 +1078,74 @@ class AppController {
             return;
         }
 
-        // 4. 단어장 카드 및 독해 카드 HTML 빌드 (독해 카드를 상단 최우선 배치)
+        // 4. 외부 교재 카드, 독해 카드, 단어장 카드 HTML 빌드 (외부 교재 & 독해 최우선 상단 배치)
+        const externalCardsArr = [];
+        externalTasks.forEach(task => {
+            const progressPercent = task.totalUnits > 0 ? Math.min(100, Math.round((task.currentProgress / task.totalUnits) * 100)) : 0;
+            const catLabels = {
+                grammar: '문법/어법',
+                reading: '독해/구문',
+                sat: '수능/EBS',
+                school_task: '학교 내신',
+                academy: '학원/인강',
+                book: '시중 교재'
+            };
+            const catLabel = catLabels[task.category] || '시중 교재';
+
+            externalCardsArr.push(`
+                <div class="rounded-2xl border ${task.isDone ? 'border-emerald-300 bg-gradient-to-br from-white to-emerald-50/40 ring-emerald-500/20' : 'border-amber-300/80 bg-gradient-to-br from-white to-amber-50/40 ring-amber-500/20'} p-5 shadow-xs relative flex flex-col justify-between hover:shadow-sm transition-all ring-1">
+                    <div>
+                        <!-- 카드 상단: 교재명 & 오늘의 분량 -->
+                        <div class="flex items-start justify-between gap-3 mb-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-11 h-11 rounded-xl ${task.isDone ? 'bg-emerald-100 text-emerald-900 border-emerald-200' : 'bg-amber-100 text-amber-900 border-amber-200'} border flex items-center justify-center text-xl font-bold shrink-0 shadow-xs">
+                                    ${task.coverEmoji || '📖'}
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-2 mb-0.5">
+                                        <span class="px-2 py-0.5 rounded-md ${task.isDone ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-900'} font-mono text-[10px] font-bold">
+                                            ${catLabel}
+                                        </span>
+                                        <span class="text-[11px] font-bold text-slate-500">${task.publisher}</span>
+                                        ${task.isDone ? `<span class="px-1.5 py-0.2 rounded-full bg-emerald-200 text-emerald-900 text-[10px] font-bold">✓ 오늘 완료됨</span>` : ''}
+                                    </div>
+                                    <h3 class="font-serif font-black text-base sm:text-lg text-slate-900 line-clamp-1" title="${task.title}">
+                                        ${task.title}
+                                    </h3>
+                                    <div class="text-xs font-mono font-bold text-indigo-700 mt-0.5">
+                                        오늘 할 일: <span class="px-2 py-0.5 rounded bg-indigo-50 border border-indigo-200">${task.range}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-lg ${task.isDone ? 'bg-emerald-100 text-emerald-800 border-emerald-300' : 'bg-amber-50 text-amber-800 border-amber-200'} font-mono text-[11px] font-bold border shrink-0">
+                                누적 ${task.currentProgress} / ${task.totalUnits} ${task.unitType}
+                            </span>
+                        </div>
+
+                        <!-- 누적 진도 프로그레스 바 -->
+                        <div class="mt-3 pt-3 border-t border-slate-100">
+                            <div class="flex items-center justify-between text-[11px] mb-1">
+                                <span class="text-slate-500 font-medium">전체 누적 완강률</span>
+                                <span class="font-mono font-bold text-slate-700">${progressPercent}%</span>
+                            </div>
+                            <div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-amber-500 to-emerald-600 rounded-full transition-all duration-300" style="width: ${progressPercent}%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 원클릭 완료 체크 버튼 -->
+                    <div class="mt-4 pt-3 border-t border-slate-100">
+                        <button type="button" onclick="window.assistantEngine && window.assistantEngine.toggleTodayTask('${task.studyId}', '${todayStr}')" class="w-full py-2.5 px-4 rounded-xl ${task.isDone ? 'bg-emerald-600 hover:bg-emerald-700 text-white' : 'bg-slate-900 hover:bg-slate-800 text-white'} font-serif font-bold text-xs flex items-center justify-center gap-2 shadow-xs transition-all cursor-pointer active:scale-95">
+                            <i data-lucide="${task.isDone ? 'check-circle-2' : 'circle'}" class="w-4 h-4 ${task.isDone ? 'text-white' : 'text-amber-300'}"></i>
+                            <span>${task.isDone ? '오늘 학습 완료됨 (클릭 시 미완료로 변경)' : '오늘 분량 학습 완료 체크하기 (원클릭)'}</span>
+                        </button>
+                    </div>
+                </div>
+            `);
+        });
+
+        // 독해 카드 빌드
         const readingCardsArr = [];
         readingPassages.forEach(reading => {
             readingCardsArr.push(`
@@ -1174,7 +1256,7 @@ class AppController {
             `);
         });
 
-        const cardsHtmlArr = [...readingCardsArr, ...vocabCardsArr];
+        const cardsHtmlArr = [...externalCardsArr, ...readingCardsArr, ...vocabCardsArr];
 
         // 5. 그리드 컬럼 계산: 1개면 1열, 2개면 2열, 3개 이상이면 반응형 다열
         const totalCards = cardsHtmlArr.length;
@@ -1186,14 +1268,11 @@ class AppController {
         }
 
         const totalVocabCount = vocabWords.length;
-        let summaryBadge = '';
-        if (vocabGroups.length > 0 && readingPassages.length > 0) {
-            summaryBadge = `단어장 ${vocabGroups.length}개 (${totalVocabCount}단어) • 독해 ${readingPassages.length}편`;
-        } else if (vocabGroups.length > 0) {
-            summaryBadge = `단어장 ${vocabGroups.length}개 (총 ${totalVocabCount}단어)`;
-        } else if (readingPassages.length > 0) {
-            summaryBadge = `독해 ${readingPassages.length}편`;
-        }
+        const summaryParts = [];
+        if (externalTasks.length > 0) summaryParts.push(`외부 교재/과제 ${externalTasks.length}건`);
+        if (readingPassages.length > 0) summaryParts.push(`독해 ${readingPassages.length}편`);
+        if (vocabGroups.length > 0) summaryParts.push(`단어장 ${vocabGroups.length}개 (${totalVocabCount}단어)`);
+        const summaryBadge = summaryParts.join(' • ');
 
         container.innerHTML = `
             <div class="rounded-3xl bg-white border border-slate-200/90 shadow-xs p-5 sm:p-6 space-y-4">

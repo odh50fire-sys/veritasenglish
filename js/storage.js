@@ -16,7 +16,9 @@ const LEGACY_STORAGE_KEYS = {
     WRONG_ANSWERS: 'veritas_wrong_answers_v1',
     MOCK_EXAMS: 'veritas_mock_exams_v1',
     CUSTOM_COLLECTIONS: 'veritas_custom_collections_v1',
-    CUSTOM_WORDS: 'veritas_custom_words_v1'
+    CUSTOM_WORDS: 'veritas_custom_words_v1',
+    SCHOOL_PROFILE: 'veritas_school_profile_v1',
+    EXTERNAL_STUDIES: 'veritas_external_studies_v1'
 };
 
 const STORAGE_KEYS = new Proxy({}, {
@@ -346,6 +348,16 @@ class StorageManager {
         this.mockExams = []; // [{ id, title, grade, score, totalQuestions, correctCount, timeSpentSec, date }]
         this.customCollections = []; // 사용자 맞춤 AI 생성 단어장 메타데이터 [{ id, title, badge, category, purpose, level, theme, wordsPerDay, totalDays, totalWords, description, createdAt }]
         this.customWords = []; // 사용자 맞춤 AI 생성 단어 데이터 [{ collectionId, collectionTitle, DAY, 번호, 단어, 영단어, 품사, 뜻, 예문, 해석, 예문해석, category, badge }]
+        this.schoolProfile = {
+            schoolName: '',
+            schoolType: 'middle', // 'middle' | 'high'
+            grade: 2,
+            semester: 1,
+            textbook: null,
+            subTextbook: '',
+            examDDay: null
+        };
+        this.externalStudies = []; // 외부 학습 교재 및 과제 목록
     }
 
     // ------------------------------------------------------------------------
@@ -563,6 +575,8 @@ class StorageManager {
         this.saveMockExams();
         this.saveCustomCollections();
         this.saveCustomWords();
+        this.saveSchoolProfile();
+        this.saveExternalStudies();
     }
 
     loadAll() {
@@ -662,6 +676,20 @@ class StorageManager {
 
             const rawCustomWords = localStorage.getItem(this.getStorageKey('CUSTOM_WORDS')) || localStorage.getItem(LEGACY_STORAGE_KEYS.CUSTOM_WORDS);
             this.customWords = rawCustomWords ? JSON.parse(rawCustomWords) : [];
+
+            const rawSchool = localStorage.getItem(this.getStorageKey('SCHOOL_PROFILE')) || localStorage.getItem(LEGACY_STORAGE_KEYS.SCHOOL_PROFILE);
+            if (rawSchool) {
+                try {
+                    this.schoolProfile = { ...this.schoolProfile, ...JSON.parse(rawSchool) };
+                } catch (e) {}
+            }
+
+            const rawExt = localStorage.getItem(this.getStorageKey('EXTERNAL_STUDIES')) || localStorage.getItem(LEGACY_STORAGE_KEYS.EXTERNAL_STUDIES);
+            if (rawExt) {
+                try {
+                    this.externalStudies = JSON.parse(rawExt);
+                } catch (e) {}
+            }
 
             // 출석(Streak) 일자 갱신 검사
             this.updateDailyStreak();
@@ -3024,6 +3052,193 @@ class StorageManager {
         const resMonth = String(date.getMonth() + 1).padStart(2, '0');
         const resDay = String(date.getDate()).padStart(2, '0');
         return `${resYear}-${resMonth}-${resDay}`;
+    }
+
+    // ------------------------------------------------------------------------
+    // 학교 프로필 & 내신 시험 관리 (School Profile & Exam D-Day)
+    // ------------------------------------------------------------------------
+    getSchoolProfile() {
+        return this.schoolProfile || {
+            schoolName: '',
+            schoolType: 'middle',
+            grade: 2,
+            semester: 1,
+            textbook: null,
+            subTextbook: '',
+            examDDay: null
+        };
+    }
+
+    saveSchoolProfile(profile = null) {
+        if (profile) {
+            this.schoolProfile = { ...this.schoolProfile, ...profile };
+        }
+        try {
+            const key = this.getStorageKey('SCHOOL_PROFILE');
+            localStorage.setItem(key, JSON.stringify(this.schoolProfile));
+            localStorage.setItem(LEGACY_STORAGE_KEYS.SCHOOL_PROFILE, JSON.stringify(this.schoolProfile));
+        } catch (e) {
+            console.error('Failed to save school profile:', e);
+        }
+        return this.schoolProfile;
+    }
+
+    // ------------------------------------------------------------------------
+    // 외부 교재·도서·학습 활동 관리 (External Studies & Books Copilot)
+    // ------------------------------------------------------------------------
+    getExternalStudies() {
+        return this.externalStudies || [];
+    }
+
+    saveExternalStudies(studies = null) {
+        if (studies && Array.isArray(studies)) {
+            this.externalStudies = studies;
+        }
+        try {
+            const key = this.getStorageKey('EXTERNAL_STUDIES');
+            localStorage.setItem(key, JSON.stringify(this.externalStudies));
+            localStorage.setItem(LEGACY_STORAGE_KEYS.EXTERNAL_STUDIES, JSON.stringify(this.externalStudies));
+        } catch (e) {
+            console.error('Failed to save external studies:', e);
+        }
+        return this.externalStudies;
+    }
+
+    /**
+     * 외부 교재/과제 신규 등록 및 스케줄 생성
+     * @param {Object} config { title, publisher, category, coverEmoji, totalUnits, unitType, dailyAmount, scheduledDays, startDate }
+     */
+    addExternalStudy(config) {
+        const id = `ext_${Date.now()}_${Math.random().toString(36).substr(2, 5)}`;
+        const totalUnits = Number(config.totalUnits) || 30;
+        const dailyAmount = Math.max(1, Number(config.dailyAmount) || 1);
+        const unitType = config.unitType || 'page'; // 'page' | 'chapter' | 'unit' | 'day' | 'lesson' | '강'
+        const startDate = config.startDate || this.getTodayDateString();
+        const selectedDays = (config.scheduledDays && config.scheduledDays.length > 0) ? config.scheduledDays : [0, 1, 2, 3, 4, 5, 6];
+
+        const totalSessions = Math.ceil(totalUnits / dailyAmount);
+        const scheduledDates = this.calculateScheduledDates(startDate, totalSessions, selectedDays);
+
+        const scheduleMap = {};
+        for (let i = 0; i < scheduledDates.length; i++) {
+            const d = scheduledDates[i];
+            const startUnit = (i * dailyAmount) + 1;
+            const endUnit = Math.min(totalUnits, (i + 1) * dailyAmount);
+            let label = '';
+            if (unitType === 'page') {
+                label = (startUnit === endUnit) ? `p.${startUnit}` : `p.${startUnit} ~ p.${endUnit}`;
+            } else if (unitType === 'chapter') {
+                label = (startUnit === endUnit) ? `Chapter ${startUnit}` : `Ch.${startUnit} ~ ${endUnit}`;
+            } else if (unitType === 'day') {
+                label = (startUnit === endUnit) ? `DAY ${startUnit}` : `DAY ${startUnit} ~ ${endUnit}`;
+            } else if (unitType === '강') {
+                label = (startUnit === endUnit) ? `${startUnit}강` : `${startUnit}강 ~ ${endUnit}강`;
+            } else {
+                label = (startUnit === endUnit) ? `${unitType} ${startUnit}` : `${unitType} ${startUnit}~${endUnit}`;
+            }
+
+            scheduleMap[d] = {
+                sessionIndex: i,
+                range: label,
+                isDone: false,
+                doneAt: null
+            };
+        }
+
+        const newStudy = {
+            id,
+            title: config.title || '외부 영어 교재',
+            publisher: config.publisher || '시중 교재',
+            category: config.category || 'book',
+            coverEmoji: config.coverEmoji || '📖',
+            totalUnits,
+            unitType,
+            dailyAmount,
+            scheduledDays: selectedDays,
+            startDate: scheduledDates[0] || startDate,
+            endDate: scheduledDates[scheduledDates.length - 1] || startDate,
+            totalSessions,
+            currentProgress: 0,
+            scheduleMap,
+            createdAt: new Date().toISOString()
+        };
+
+        this.externalStudies.push(newStudy);
+        this.saveExternalStudies();
+        return newStudy;
+    }
+
+    deleteExternalStudy(id) {
+        this.externalStudies = this.externalStudies.filter(s => s.id !== id);
+        this.saveExternalStudies();
+        return true;
+    }
+
+    /**
+     * 특정 날짜의 외부 교재 과제 완료 토글
+     * @param {string} studyId 
+     * @param {string} dateStr 
+     * @returns {Object} { isDone, study, allDone }
+     */
+    toggleExternalStudyDayDone(studyId, dateStr = null) {
+        dateStr = dateStr || this.getTodayDateString();
+        const study = this.externalStudies.find(s => s.id === studyId);
+        if (!study || !study.scheduleMap || !study.scheduleMap[dateStr]) return null;
+
+        const session = study.scheduleMap[dateStr];
+        session.isDone = !session.isDone;
+        session.doneAt = session.isDone ? new Date().toISOString() : null;
+
+        let doneSessionsCount = 0;
+        Object.values(study.scheduleMap).forEach(sess => {
+            if (sess.isDone) doneSessionsCount++;
+        });
+
+        study.currentProgress = Math.min(study.totalUnits, doneSessionsCount * study.dailyAmount);
+        const allDone = (doneSessionsCount >= study.totalSessions);
+
+        this.saveExternalStudies();
+
+        if (session.isDone && typeof this.addExp === 'function') {
+            this.addExp(20);
+        }
+
+        return {
+            isDone: session.isDone,
+            study,
+            allDone,
+            currentProgress: study.currentProgress,
+            totalUnits: study.totalUnits
+        };
+    }
+
+    /**
+     * 특정 일자에 배정된 모든 외부 교재/과제 조회
+     */
+    getTodayExternalTasks(dateStr = null) {
+        dateStr = dateStr || this.getTodayDateString();
+        const tasks = [];
+        this.externalStudies.forEach(study => {
+            if (study.scheduleMap && study.scheduleMap[dateStr]) {
+                const sess = study.scheduleMap[dateStr];
+                tasks.push({
+                    studyId: study.id,
+                    title: study.title,
+                    publisher: study.publisher,
+                    category: study.category,
+                    coverEmoji: study.coverEmoji || '📖',
+                    unitType: study.unitType,
+                    dailyAmount: study.dailyAmount,
+                    totalUnits: study.totalUnits,
+                    currentProgress: study.currentProgress || 0,
+                    range: sess.range,
+                    sessionIndex: sess.sessionIndex,
+                    isDone: !!sess.isDone,
+                    doneAt: sess.doneAt
+                });
+            }
+        });
+        return tasks;
     }
 }
 
