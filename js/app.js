@@ -498,7 +498,7 @@ class AppController {
 
         const grade = gradeSelect ? gradeSelect.value : '중등';
         const avatar = avatarInput ? avatarInput.value : '🎓';
-        const seedSample = seedCheckbox ? seedCheckbox.checked : true;
+        const seedSample = false; // 샘플 단어 자동 주입 제거 (완전한 클린 상태로 시작)
 
         try {
             const newUser = window.storage.createUser({

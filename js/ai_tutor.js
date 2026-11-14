@@ -158,7 +158,7 @@
       // 퀵 추천 질문 칩 목록 (6대 핵심 시츄에이션 대표 예시)
       this.quickChips = [
         { label: '📖 도치구문 직독직해 해석', query: '이 문장 어떻게 해석해 "Not only did she finish the report ahead of schedule, but she also prepared the presentation slides for the entire team."' },
-        { label: '🎯 Lv.3 맞춤 단어장 추천', query: '난 레벨 3인데 나에게 맞는 단어장 추천해줘' },
+        { label: '🎯 내 레벨 맞춤 단어장 추천', query: '나에게 맞는 단어장 추천해줘' },
         { label: '💡 intimidating 단어 뜻', query: '혹시 intimidating의 뜻이 뭐니?' },
         { label: '🔍 완화하다 뜻하는 영단어', query: '완화하다를 뜻하는 영단어가 뭐야?' },
         { label: '🩺 도치구문 문법 오류 검사', query: '이 문장의 문법을 확인해줘 "Not only did she finished the report ahead of schedule, but she also prepared the presentation slides for the entire team."' },
@@ -1191,13 +1191,41 @@
     // 4. 레벨별 맞춤 단어장 추천 (Curriculum Recommender)
     // -------------------------------------------------------------------------
     diagnoseRecommendation(query) {
-      let level = 3;
+      let level = null;
+
+      // 1. 질문 내 명시적 레벨 숫자 추출 (예: "레벨 8", "lv.9", "3레벨", "레벨3", "단계")
       const lvlMatch = query.match(/(?:레벨|lv\.?|level)\s*([1-9]|10)/i) || query.match(/([1-9]|10)\s*(?:레벨|단계)/i);
       if (lvlMatch) {
         level = parseInt(lvlMatch[1], 10);
-      } else if (window.levelTestEngine && window.levelTestEngine.currentLevel) {
-        level = window.levelTestEngine.currentLevel;
       }
+
+      // 2. 질문 내 학년/시험/수준 키워드 판별
+      if (!level) {
+        if (/(초등\s*3|초등\s*4|초등\s*기초|파닉스)/i.test(query)) level = 1;
+        else if (/(초등\s*5|초등\s*6|예비중|초등\s*심화)/i.test(query)) level = 2;
+        else if (/(중1|중학\s*1|중학교\s*1)/i.test(query)) level = 3;
+        else if (/(중2-1|중2\s*1학기)/i.test(query)) level = 4;
+        else if (/(중2|중학\s*2|중학교\s*2)/i.test(query)) level = 5;
+        else if (/(중3-1|중3|중학교\s*3)/i.test(query)) level = 7;
+        else if (/(예비고|고1|고등학교\s*1|고등\s*기본)/i.test(query)) level = 8;
+        else if (/(고2|고등학교\s*2)/i.test(query)) level = 8;
+        else if (/(고3|수능|평가원|킬러|모의고사|수능\s*필수|수능\s*고난도)/i.test(query)) level = 9;
+        else if (/(원서|이코노미스트|학술|토플|c2|원어민)/i.test(query)) level = 10;
+      }
+
+      // 3. 쿼리에 레벨/학년 언급이 전혀 없는 경우:
+      // 사용자 프로필의 실제 저장된 레벨(window.storage.getAcademicLevel())을 최우선 반영!
+      if (!level) {
+        if (window.storage && typeof window.storage.getAcademicLevel === 'function') {
+          level = window.storage.getAcademicLevel();
+        } else if (window.storage && window.storage.userProfile && window.storage.userProfile.academicLevel) {
+          level = window.storage.userProfile.academicLevel;
+        } else {
+          level = 3;
+        }
+      }
+
+      level = Math.max(1, Math.min(10, Number(level) || 3));
 
       const recData = this.getLevelCurriculumData(level);
       return {
@@ -1273,34 +1301,34 @@
         },
         7: {
           title: 'Lv.7 마스터 (Master)',
-          targetGrade: '고교 1학년 입문 / 수능 3~4등급',
-          intro: '고교 내신 1등급 및 수능 독해 지문을 수월하게 뚫어내는 고교 필수 어휘입니다.',
+          targetGrade: '중학교 3-1 고난도 내신 / 중학 완성',
+          intro: '중등 최고난도 어휘를 완성하고 고교 진학 후 흔들리지 않는 어휘력을 구축하는 과정입니다.',
           books: [
-            { title: '베리타스 오리지널 Lv.7 마스터', badge: '고1 수능입문 600단어', desc: '고1 모의고사 및 수능 빈출 3개년 필수 어휘 600개' },
-            { title: 'NE능률 리딩튜터 챌린저 1', badge: '고교 입문 40 DAYs', desc: '고교 입문 수준의 다양한 배경지식 독해 연계 750단어' },
-            { title: 'NE능률 Voca 어원편 (2025 개정)', badge: '접두사·어근 분석', desc: '어원으로 단어의 원리를 꿰뚫는 필수 어휘집' }
+            { title: 'NE능률 중학 VOCA 고난도 [2025]', badge: '중등 고난도 1,200단어', desc: '중3 고난도 내신 및 특목/자사고 진학 대비 40일 완성' },
+            { title: '베리타스 오리지널 Lv.7 마스터', badge: '중학 완성 600단어', desc: '중3-1 고난도 내신 및 파생어/실전 구동사 마스터' },
+            { title: '중 3-1 내신 독해 마스터', badge: '내신 기출 10편', desc: '중3-1 핵심 문법과 지문 빈칸/서술형 정복 코스' }
           ]
         },
         8: {
-          title: 'Lv.8 어드밴스드 (Advanced)',
-          targetGrade: '고교 실전 / 수능 1~2등급',
-          intro: '수능 1등급 안정권 확보 및 대학 전공 원서 독해를 위한 고급 학술 어휘입니다.',
+          title: 'Lv.8 이노베이터 (Innovator)',
+          targetGrade: '고1~고2 내신 & 고등 기본',
+          intro: '고1~고2 내신 1등급 도약 및 수능 필수 기초 어휘를 완성하는 정통 고교 라인업입니다.',
           books: [
             { title: '능률 VOCA 고등 기본 [2025]', badge: '고교 기본 1,200단어', desc: '고1~고2 내신 1등급 도약 및 수능 필수 기초 40일 완성' },
-            { title: '베리타스 오리지널 Lv.8 어드밴스드', badge: '수능 1등급 600단어', desc: 'EBS 연계 교재 및 수능 킬러 문항 빈출 고급 어휘 600개' },
-            { title: 'TED & 글로벌 뉴스 시사 영단어 600', badge: '시사 심화 600단어', desc: 'TED 강연, 뉴욕타임스, BBC 뉴스 빈출 글로벌 시사 경제/과학 어휘' },
-            { title: 'Oxford 5000™ Vol.1 (B2 Plus)', badge: '옥스퍼드 1,000어휘', desc: '학술적 논증 및 에세이 작성에 필수적인 C1 진입 어휘' }
+            { title: '능률 VOCA 어원편 [2025]', badge: '접두사·어근 분석', desc: '어원으로 단어의 원리를 꿰뚫는 고교 필수 어휘 765단어' },
+            { title: '고 1-1 내신 & 학평 실전 독해 마스터', badge: '고1 실전 독해', desc: '실제 고1 1학기 내신 및 교육청 학평 기출 10편 완강' },
+            { title: '베리타스 오리지널 Lv.8 이노베이터', badge: '고등 연계 600단어', desc: 'EBS 연계 및 고등 교과서 다빈출 핵심 어휘' }
           ]
         },
         9: {
-          title: 'Lv.9 엑스퍼트 (Expert)',
-          targetGrade: '수능 1등급 킬러 / 텝스·토플 실전',
-          intro: '최상위권 변별력 빈칸추론 킬러 문항 및 공인 어학시험 고득점용 어휘입니다.',
+          title: 'Lv.9 리더 (Leader)',
+          targetGrade: '수능 1등급 & 평가원 킬러',
+          intro: '평가원 모의고사 및 수능 1등급 필수 어휘와 킬러 문항을 완전 정복하는 최상위 라인업입니다.',
           books: [
             { title: '능률 VOCA 수능 필수 [2025]', badge: '수능 1등급 2,000단어', desc: '평가원 모의고사 및 수능 1~2등급 필수 어휘 60일 완성' },
             { title: '능률 VOCA 수능 고난도 [2025]', badge: '수능 킬러 2,000단어', desc: '최상위권 변별력 빈칸추론 킬러 문항 및 텝스·토플 실전 50일 완성' },
-            { title: '베리타스 오리지널 Lv.9 엑스퍼트', badge: '킬러문항 600단어', desc: '철학, 심리학, 언어학 추상 지문 전용 최상위 600단어' },
-            { title: 'NE능률 리딩튜터 챌린저 3', badge: '고교 심화 780단어', desc: '최상위권 수능 1등급 실전 독해 완성 교재' }
+            { title: '수능 1등급 & 평가원 킬러 독해 마스터', badge: '수능 킬러 독해', desc: '실제 수능 및 평가원 최고난도 킬러 지문 완강' },
+            { title: '베리타스 오리지널 Lv.9 리더', badge: '킬러문항 600단어', desc: '철학, 심리학, 언어학 추상 지문 전용 최상위 어휘' }
           ]
         },
         10: {

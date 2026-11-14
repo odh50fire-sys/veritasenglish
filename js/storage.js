@@ -241,29 +241,29 @@ const ACADEMIC_LEVELS = {
         level: 8,
         name: 'Innovator',
         nameKo: '이노베이터',
-        subTitle: '고등 연계',
+        subTitle: '고등 기본',
         badge: 'Lv.8 Innovator',
         color: 'text-amber-400',
         borderColor: 'border-amber-400/40',
         badgeBg: 'bg-amber-500/20 text-amber-300 border-amber-400/30',
-        description: '능률 VOCA 어원편, 중3-2 킬러/고등 연계, 미국 교과서 Step 2',
-        targetGrade: '중 3-2 킬러 및 예비고1 모의고사',
-        recommendedVocas: ['neungryul_etym_2025', 'curated-m3-2', 'curated-us-mid1'],
-        recommendedPassageSemester: '중 3-2'
+        description: '능률 VOCA 고등 기본 [2025], 능률 VOCA 어원편 [2025], 고1 내신 실전 독해',
+        targetGrade: '고1~고2 내신 & 고등 기본',
+        recommendedVocas: ['neungryul_high_basic_2025', 'neungryul_etym_2025'],
+        recommendedPassageSemester: '고 1-1'
     },
     9: {
         level: 9,
         name: 'Leader',
         nameKo: '리더',
-        subTitle: '고등 1~2등급',
+        subTitle: '수능 1등급',
         badge: 'Lv.9 Leader',
         color: 'text-rose-400',
         borderColor: 'border-rose-400/40',
         badgeBg: 'bg-rose-500/20 text-rose-300 border-rose-400/30',
-        description: '수능 1등급 킬러 다의어, 원어민 감정·심경·성격, 영미 명작 문학 & 슬랭',
-        targetGrade: '고1~고2 전국연합 학력평가 1~2등급',
-        recommendedVocas: ['curated-killer', 'curated-emotions', 'curated-literature', 'curated-slang'],
-        recommendedPassageSemester: '중 3-2'
+        description: '능률 VOCA 수능 필수 [2025], 능률 VOCA 수능 고난도 [2025], 수능 1등급 킬러 독해',
+        targetGrade: '수능 1등급 & 평가원 킬러',
+        recommendedVocas: ['neungryul_sat_essential_2025', 'neungryul_sat_adv_2025', 'curated-killer'],
+        recommendedPassageSemester: '수능 킬러'
     },
     10: {
         level: 10,
@@ -447,7 +447,7 @@ class StorageManager {
         return [...this.userRegistry.users];
     }
 
-    createUser({ username, avatar = '🎓', grade = '중등', seedSample = true }) {
+    createUser({ username, avatar = '🎓', grade = '중등', seedSample = false }) {
         const trimmedName = String(username || '').trim() || `학습자 ${this.userRegistry.users.length + 1}`;
         const newId = 'user_' + Date.now();
         const newUser = {
@@ -462,8 +462,8 @@ class StorageManager {
         this.userRegistry.users.push(newUser);
         this.saveUserRegistry();
 
-        // 새 사용자로 즉시 전환
-        this.switchUser(newId, { seedSample });
+        // 새 사용자로 즉시 전환 (샘플 단어 자동 주입 없음)
+        this.switchUser(newId, { seedSample: false });
         return newUser;
     }
 
@@ -485,11 +485,6 @@ class StorageManager {
         // 상태 초기화 및 해당 사용자 데이터 로드
         this.resetState();
         this.loadAll();
-
-        // 새 사용자이고 seedSample 옵션이 켜져 있는데 단어장이 비어있다면 샘플 주입
-        if (options.seedSample && this.words.length === 0) {
-            this.seedSampleWords();
-        }
 
         // 사용자 설정의 studentName 동기화
         if (targetUser.username && this.settings.studentName !== targetUser.username) {
@@ -605,8 +600,17 @@ class StorageManager {
                 this.words = parsedLegacyWords;
                 localStorage.setItem(userWordsKey, JSON.stringify(this.words));
             } else {
-                // 초기 진입 시 샘플 단어 자동 주입
-                this.seedSampleWords();
+                // 초기 진입 시 샘플 단어 자동 주입 제거 (완전한 클린 상태 유지)
+                this.words = [];
+            }
+
+            // 사용자 요청: 자동 16개 샘플 단어(sample-*) 제거
+            if (Array.isArray(this.words) && this.words.length > 0) {
+                const hadSamples = this.words.some(w => String(w.id || '').startsWith('sample-'));
+                if (hadSamples) {
+                    this.words = this.words.filter(w => !String(w.id || '').startsWith('sample-'));
+                    localStorage.setItem(userWordsKey, JSON.stringify(this.words));
+                }
             }
 
             // 기존 등록 단어 중 예문이 비어있거나 구버전 정적 오류 문장인 경우 자동 보강
