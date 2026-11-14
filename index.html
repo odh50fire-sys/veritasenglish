@@ -3392,6 +3392,7 @@
     <script src="data/native_tips_data.js"></script>
     <script src="data/reading_lexicon.js"></script>
     <script src="data/level_test_bank.js"></script>
+    <script src="data/books_catalog.js"></script>
     <script src="data/assistant_data.js"></script>
     
     <script src="js/tts.js"></script>
@@ -4231,23 +4232,23 @@
 
             <!-- 바디 -->
             <div class="p-5 sm:p-6 overflow-y-auto space-y-5 text-xs text-slate-700">
-                <!-- 교재 실시간 검색창 (학교 검색과 동일한 원터치 검색/자동완성 UI) -->
+                <!-- 교재 & 원서 실시간 검색창 (학교 검색과 동일한 원터치 검색/자동완성 UI) -->
                 <div class="space-y-1.5">
                     <label class="block text-[11px] font-semibold text-slate-700 flex items-center justify-between">
                         <span class="flex items-center gap-1.5">
                             <i data-lucide="search" class="w-3.5 h-3.5 text-indigo-700"></i>
-                            <span>시중 교재 실시간 검색 &amp; 정규 목차(TOC) 연동</span>
+                            <span>시중 교재 &amp; 영어 원서 실시간 검색 &amp; 정규 목차(TOC) 연동</span>
                         </span>
-                        <span class="text-[10px] text-indigo-700 font-mono">인기 베스트셀러 100선 및 목차 즉시 검색</span>
+                        <span class="text-[10px] text-indigo-700 font-mono font-bold">국내 교재 624권 + 영어 원서 6,737권 (총 7,361권 완비)</span>
                     </label>
                     <div class="relative">
-                        <input id="ext-book-search-input" type="text" placeholder="예: 마더텅 3800제, 천일문, 자이스토리, 수능특강, 리더스뱅크, 어법끝..." oninput="window.assistantEngine && window.assistantEngine.onBookSearchInput(this.value)" class="w-full pl-9 pr-8 py-2.5 rounded-xl border border-slate-300 bg-white font-serif font-bold text-xs text-slate-900 outline-none focus:border-indigo-600 shadow-2xs">
-                        <i data-lucide="book" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+                        <input id="ext-book-search-input" type="text" placeholder="예: 마더텅, 천일문, 수능특강, Harry Potter, Oxford, Wimpy Kid, 1984, Wonder, Newbery..." oninput="window.assistantEngine && window.assistantEngine.onBookSearchInput(this.value)" class="w-full pl-9 pr-8 py-2.5 rounded-xl border border-slate-300 bg-white font-serif font-bold text-xs text-slate-900 outline-none focus:border-indigo-600 shadow-2xs">
+                        <i data-lucide="book-open" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
                         <button type="button" id="ext-book-search-clear" onclick="window.assistantEngine && window.assistantEngine.clearBookSearch()" class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 cursor-pointer">
                             <i data-lucide="x" class="w-3.5 h-3.5"></i>
                         </button>
                         <!-- 실시간 검색 결과 드롭다운 -->
-                        <div id="ext-book-search-results" class="hidden absolute top-full left-0 right-0 mt-1 max-h-56 overflow-y-auto bg-white border border-slate-200 rounded-xl shadow-xl z-30 divide-y divide-slate-100"></div>
+                        <div id="ext-book-search-results" class="hidden absolute top-full left-0 right-0 mt-1 max-h-64 overflow-y-auto bg-white border border-slate-200 rounded-xl shadow-xl z-30 divide-y divide-slate-100"></div>
                     </div>
                 </div>
 
@@ -4259,9 +4260,10 @@
                 <!-- 탭 1: 인기 베스트셀러 -->
                 <div id="ext-tab-popular" class="space-y-3">
                     <div class="flex items-center justify-between">
-                        <span class="font-bold text-slate-800">대표 시중 교재 프리셋 (클릭 시 자동 세팅):</span>
-                        <div class="flex items-center gap-1">
-                            <button type="button" data-cat="all" onclick="window.assistantEngine.filterBestsellers('all')" class="bestseller-filter-chip px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-indigo-900 text-white border border-indigo-900 cursor-pointer">전체</button>
+                        <span class="font-bold text-slate-800">대표 추천 교재 &amp; 명작 원서:</span>
+                        <div class="flex items-center gap-1 flex-wrap">
+                            <button type="button" data-cat="all" onclick="window.assistantEngine.filterBestsellers('all')" class="bestseller-filter-chip px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-indigo-900 text-white border border-indigo-900 cursor-pointer">전체 (7,361)</button>
+                            <button type="button" data-cat="readers" onclick="window.assistantEngine.filterBestsellers('readers')" class="bestseller-filter-chip px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 cursor-pointer">영어원서·명작</button>
                             <button type="button" data-cat="grammar" onclick="window.assistantEngine.filterBestsellers('grammar')" class="bestseller-filter-chip px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 cursor-pointer">문법</button>
                             <button type="button" data-cat="reading" onclick="window.assistantEngine.filterBestsellers('reading')" class="bestseller-filter-chip px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 cursor-pointer">독해</button>
                             <button type="button" data-cat="sat" onclick="window.assistantEngine.filterBestsellers('sat')" class="bestseller-filter-chip px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 cursor-pointer">수능EBS</button>

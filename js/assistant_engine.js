@@ -303,8 +303,49 @@ class AssistantEngine {
     }
 
     // ------------------------------------------------------------------------
-    // 시중 교재 실시간 검색 & 정규 목차(TOC) 연동 메서드
+    // 시중 교재 & 영어 원서 실시간 검색 & 정규 목차(TOC) 연동 메서드
     // ------------------------------------------------------------------------
+
+    getAllAvailableBooks() {
+        const popular = window.POPULAR_ENGLISH_TEXTBOOKS || [];
+        const expanded = window.EXPANDED_BOOKS_CATALOG || [];
+        const map = new Map();
+        popular.forEach(b => map.set(b.id, b));
+        expanded.forEach(b => {
+            if (!map.has(b.id)) map.set(b.id, b);
+        });
+        return Array.from(map.values());
+    }
+
+    ensureBookTableOfContents(book) {
+        if (!book) return [];
+        if (Array.isArray(book.tableOfContents) && book.tableOfContents.length > 0) {
+            return book.tableOfContents;
+        }
+
+        const total = Math.max(1, Number(book.totalUnits) || 15);
+        const ut = book.unitType || 'chapter';
+        const isNovel = book.isOriginalReader || book.category === 'novel' || book.category === 'reader';
+        const toc = [];
+
+        for (let i = 1; i <= total; i++) {
+            if (isNovel) {
+                toc.push(`Chapter ${i}`);
+            } else if (ut === '강') {
+                toc.push(`${i}강`);
+            } else if (ut === 'day' || ut === 'DAY') {
+                toc.push(`DAY ${i}`);
+            } else if (ut === '회차') {
+                toc.push(`제${i}회 실전 모의고사`);
+            } else if (ut === 'unit' || ut === '단원') {
+                toc.push(`Unit ${i}`);
+            } else {
+                toc.push(`Chapter ${i}`);
+            }
+        }
+        book.tableOfContents = toc;
+        return toc;
+    }
 
     onBookSearchInput(query) {
         const dropdown = document.getElementById('ext-book-search-results');
@@ -320,22 +361,28 @@ class AssistantEngine {
             return;
         }
 
-        const books = window.POPULAR_ENGLISH_TEXTBOOKS || [];
-        const matches = books.filter(b => {
-            const titleMatch = (b.title || '').toLowerCase().includes(cleanQ);
-            const pubMatch = (b.publisher || '').toLowerCase().includes(cleanQ);
-            const catMatch = (b.category || '').toLowerCase().includes(cleanQ);
-            const gradeMatch = (b.gradeTag || '').toLowerCase().includes(cleanQ);
+        const books = this.getAllAvailableBooks();
+        const matches = [];
+        for (let i = 0; i < books.length; i++) {
+            const b = books[i];
+            const titleL = (b.title || '').toLowerCase();
+            const pubL = (b.publisher || '').toLowerCase();
+            const catL = (b.category || '').toLowerCase();
+            const grL = (b.gradeTag || '').toLowerCase();
             const tagMatch = Array.isArray(b.tags) && b.tags.some(t => t.toLowerCase().includes(cleanQ));
-            return titleMatch || pubMatch || catMatch || gradeMatch || tagMatch;
-        }).slice(0, 10);
+
+            if (titleL.includes(cleanQ) || pubL.includes(cleanQ) || catL.includes(cleanQ) || grL.includes(cleanQ) || tagMatch) {
+                matches.push(b);
+                if (matches.length >= 15) break;
+            }
+        }
 
         if (matches.length === 0) {
             dropdown.innerHTML = `
                 <div class="px-4 py-3 text-xs text-slate-500 flex items-center justify-between">
-                    <span>일치하는 등록 교재가 없습니다: "<strong>${query}</strong>"</span>
+                    <span>일치하는 등록 교재/원서가 없습니다: "<strong>${query}</strong>"</span>
                     <button type="button" class="text-indigo-900 font-bold hover:underline cursor-pointer" onclick="window.assistantEngine.selectCustomBookDirect('${query.replace(/'/g, "\\'")}')">
-                        직접 교재명으로 사용 →
+                        직접 도서명으로 등록 →
                     </button>
                 </div>
             `;
@@ -344,16 +391,17 @@ class AssistantEngine {
         }
 
         dropdown.innerHTML = matches.map(b => {
-            const hasToc = Array.isArray(b.tableOfContents) && b.tableOfContents.length > 0;
+            const isOriginal = b.isOriginalReader || b.category === 'novel' || b.category === 'reader';
             return `
                 <div class="px-4 py-3 hover:bg-indigo-50/70 cursor-pointer flex items-center justify-between gap-3 transition-colors" onclick="window.assistantEngine.selectBookFromSearch('${b.id}')">
                     <div class="flex items-center gap-3">
-                        <span class="text-2xl shrink-0">${b.coverEmoji || '📖'}</span>
+                        <span class="text-2xl shrink-0">${b.coverEmoji || (isOriginal ? '📖' : '📘')}</span>
                         <div>
-                            <div class="flex items-center gap-1.5">
+                            <div class="flex items-center gap-1.5 flex-wrap">
+                                <span class="px-1.5 py-0.2 rounded ${isOriginal ? 'bg-purple-100 text-purple-800' : 'bg-blue-100 text-blue-800'} text-[10px] font-mono font-bold">${isOriginal ? '원서' : '교재'}</span>
                                 <span class="px-1.5 py-0.2 rounded bg-slate-100 text-slate-700 text-[10px] font-mono font-bold">${b.gradeTag}</span>
                                 <span class="text-[11px] font-bold text-slate-500">${b.publisher}</span>
-                                ${hasToc ? `<span class="px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800 text-[10px] font-bold">목차 연동 (${b.tableOfContents.length}단원)</span>` : ''}
+                                <span class="px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800 text-[10px] font-bold">목차 연동 (${b.totalUnits}${b.unitType})</span>
                             </div>
                             <h5 class="font-serif font-bold text-xs text-slate-900 line-clamp-1 mt-0.5">${b.title}</h5>
                         </div>
@@ -378,7 +426,7 @@ class AssistantEngine {
     }
 
     selectBookFromSearch(bookId) {
-        const books = window.POPULAR_ENGLISH_TEXTBOOKS || [];
+        const books = this.getAllAvailableBooks();
         const book = books.find(b => b.id === bookId);
         if (!book) return;
 
@@ -455,11 +503,19 @@ class AssistantEngine {
         const container = document.getElementById('bestseller-books-grid');
         if (!container) return;
 
-        const books = window.POPULAR_ENGLISH_TEXTBOOKS || [];
-        const filtered = (categoryFilter === 'all') ? books : books.filter(b => b.category === categoryFilter);
+        const allBooks = this.getAllAvailableBooks();
+        let filtered = [];
+        if (categoryFilter === 'all') {
+            filtered = (window.POPULAR_ENGLISH_TEXTBOOKS || []).slice(0, 22);
+        } else if (categoryFilter === 'readers') {
+            filtered = allBooks.filter(b => b.isOriginalReader || b.category === 'novel' || b.category === 'reader').slice(0, 24);
+        } else {
+            filtered = allBooks.filter(b => b.category === categoryFilter).slice(0, 24);
+        }
 
         container.innerHTML = filtered.map(b => {
             const isSelected = (this.selectedBookPreset && this.selectedBookPreset.id === b.id);
+            const isOriginal = b.isOriginalReader || b.category === 'novel' || b.category === 'reader';
             return `
                 <div class="p-3.5 rounded-xl border transition-all cursor-pointer flex flex-col justify-between ${
                     isSelected 
@@ -468,8 +524,8 @@ class AssistantEngine {
                 }" onclick="window.assistantEngine.selectBestsellerBook('${b.id}')">
                     <div>
                         <div class="flex items-start justify-between gap-2 mb-2">
-                            <span class="text-2xl">${b.coverEmoji}</span>
-                            <span class="px-2 py-0.5 rounded-md bg-slate-100 text-slate-700 text-[10px] font-mono font-bold">${b.gradeTag}</span>
+                            <span class="text-2xl">${b.coverEmoji || (isOriginal ? '📖' : '📘')}</span>
+                            <span class="px-2 py-0.5 rounded-md ${isOriginal ? 'bg-purple-100 text-purple-800' : 'bg-slate-100 text-slate-700'} text-[10px] font-mono font-bold">${b.gradeTag}</span>
                         </div>
                         <h5 class="font-serif font-bold text-xs text-slate-900 line-clamp-1" title="${b.title}">${b.title}</h5>
                         <p class="text-[11px] text-slate-500 font-sans mt-0.5 line-clamp-1">${b.publisher} • 총 ${b.totalUnits}${b.unitType}</p>
@@ -486,7 +542,7 @@ class AssistantEngine {
     filterBestsellers(category) {
         document.querySelectorAll('.bestseller-filter-chip').forEach(chip => {
             const isMatch = (chip.dataset.cat === category);
-            chip.className = `bestseller-filter-chip px-3 py-1 rounded-full text-xs font-serif font-bold border transition-all cursor-pointer ${
+            chip.className = `bestseller-filter-chip px-2.5 py-0.5 rounded-full text-[11px] font-bold border transition-all cursor-pointer ${
                 isMatch ? 'bg-indigo-900 text-white border-indigo-900' : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'
             }`;
         });
@@ -494,10 +550,11 @@ class AssistantEngine {
     }
 
     selectBestsellerBook(bookId) {
-        const books = window.POPULAR_ENGLISH_TEXTBOOKS || [];
+        const books = this.getAllAvailableBooks();
         const book = books.find(b => b.id === bookId);
         if (!book) return;
 
+        this.ensureBookTableOfContents(book);
         this.selectedBookPreset = book;
 
         // 폼 입력란 자동 채우기
