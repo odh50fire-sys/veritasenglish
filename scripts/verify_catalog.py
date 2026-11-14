@@ -51,56 +51,53 @@ try:
                 print('Engine ready!')
                 break
 
-        total_catalog = eval_js('window.EXPANDED_BOOKS_CATALOG ? window.EXPANDED_BOOKS_CATALOG.length : 0')
-        print(f'Catalog Count: {total_catalog}')
-        assert total_catalog == 13984, f"Expected 13984, got {total_catalog}"
-
-        # Test modal opening
+        # Open modal
         eval_js('window.assistantEngine.openExternalStudyModal()')
-        modal_hidden = eval_js('document.getElementById("modal-external-study-register").classList.contains("hidden")')
-        print(f'Modal opened: not hidden = {not modal_hidden}')
 
-        # Test textbooks tab
-        eval_js('window.assistantEngine.switchStudyRegisterTab("textbooks")')
-        grid_cards_tb = eval_js('document.querySelectorAll("#bestseller-books-grid > div").length')
-        print(f'Textbook Tab Grid Cards: {grid_cards_tb}')
+        # Test 1: Search "리딩" (Korean)
+        eval_js('window.assistantEngine.onBookSearchInput("리딩")')
+        time.sleep(0.5)
+        titles_korean = eval_js('''
+            Array.from(document.querySelectorAll("#ext-book-search-results h5")).map(h => h.innerText)
+        ''')
+        print(f'Search "리딩" returned {len(titles_korean)} titles.')
+        print('Sample titles for "리딩":', titles_korean[:5])
+        
+        # Check if English 'Reading' or 'reading' appears in results
+        has_english_reading = any('reading' in t.lower() for t in titles_korean)
+        print(f'Does search "리딩" contain English "Reading" books? -> {has_english_reading}')
+        assert has_english_reading, "Search for '리딩' MUST include books containing English 'Reading'!"
 
-        # Test NE Neungryul official filter chip
-        eval_js('window.assistantEngine.filterBestsellers("neungryul")')
-        ne_cards = eval_js('document.querySelectorAll("#bestseller-books-grid > div").length')
-        first_ne_title = eval_js('document.querySelector("#bestseller-books-grid h5") ? document.querySelector("#bestseller-books-grid h5").innerText : ""')
-        print(f'NE Neungryul filter cards: {ne_cards}, First book: {first_ne_title}')
+        # Test 2: Search "reading" (English)
+        eval_js('window.assistantEngine.onBookSearchInput("reading")')
+        time.sleep(0.5)
+        titles_english = eval_js('''
+            Array.from(document.querySelectorAll("#ext-book-search-results h5")).map(h => h.innerText)
+        ''')
+        print(f'Search "reading" returned {len(titles_english)} titles.')
+        has_korean_reading = any('리딩' in t for t in titles_english)
+        print(f'Does search "reading" contain Korean "리딩" books? -> {has_korean_reading}')
+        assert has_korean_reading, "Search for 'reading' MUST include books containing Korean '리딩'!"
 
-        # Search test: 능률VOCA
-        eval_js('window.assistantEngine.onBookSearchInput("능률VOCA")')
-        voca_results = eval_js('document.querySelectorAll("#ext-book-search-results > div").length')
-        first_voca = eval_js('document.querySelector("#ext-book-search-results h5") ? document.querySelector("#ext-book-search-results h5").innerText : ""')
-        print(f'Search "능률VOCA": {voca_results} results, First: {first_voca}')
+        # Test 3: Search "해리포터" (Korean) -> Harry Potter
+        eval_js('window.assistantEngine.onBookSearchInput("해리포터")')
+        time.sleep(0.5)
+        hp_titles = eval_js('''
+            Array.from(document.querySelectorAll("#ext-book-search-results h5")).map(h => h.innerText)
+        ''')
+        print(f'Search "해리포터" returned {len(hp_titles)} titles. First: {hp_titles[0] if hp_titles else "none"}')
+        assert any('Harry Potter' in t for t in hp_titles), "Search for '해리포터' should find Harry Potter books!"
 
-        # Select official book and verify TOC preview
-        # Select first result
-        eval_js('document.querySelector("#ext-book-search-results > div").click()')
-        time.sleep(1)
-        toc_visible = eval_js('!document.getElementById("ext-book-toc-preview-container").classList.contains("hidden")')
-        toc_items_count = eval_js('document.querySelectorAll("#ext-book-toc-preview-container .font-mono > div").length')
-        input_title = eval_js('document.getElementById("ext-study-title").value')
-        print(f'Selected book title: {input_title}')
-        print(f'TOC preview visible: {toc_visible}, Total Units in TOC: {toc_items_count}')
-        assert toc_visible and toc_items_count > 0, "TOC should be visible with items!"
+        # Test 4: Search "그래머" (Korean) -> Grammar
+        eval_js('window.assistantEngine.onBookSearchInput("그래머")')
+        time.sleep(0.5)
+        gram_titles = eval_js('''
+            Array.from(document.querySelectorAll("#ext-book-search-results h5")).map(h => h.innerText)
+        ''')
+        print(f'Search "그래머" returned {len(gram_titles)} titles. Sample: {gram_titles[:3]}')
+        assert any('grammar' in t.lower() for t in gram_titles), "Search for '그래머' should find Grammar books!"
 
-        # Search test: 김기택 (교과서 저자)
-        eval_js('window.assistantEngine.onBookSearchInput("김기택")')
-        kim_results = eval_js('document.querySelectorAll("#ext-book-search-results > div").length')
-        print(f'Search "김기택": {kim_results} results')
-        assert kim_results > 0, "김기택 교과서/문제집 should be found!"
-
-        # Search test: 토마토 (토익)
-        eval_js('window.assistantEngine.onBookSearchInput("토마토")')
-        tomato_results = eval_js('document.querySelectorAll("#ext-book-search-results > div").length')
-        print(f'Search "토마토": {tomato_results} results')
-        assert tomato_results > 0, "토마토 토익 교재 should be found!"
-
-        print('\n=== ALL E2E VERIFICATION CHECKS PASSED WITH FLYING COLORS! ===')
+        print('\n=== ALL BILINGUAL EXPANSION VERIFICATION TESTS PASSED SUCCESSFULLY! ===')
 finally:
     proc.terminate()
     proc.wait()

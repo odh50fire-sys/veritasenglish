@@ -354,6 +354,86 @@ class AssistantEngine {
         return toc;
     }
 
+    getBilingualSynonymsMap() {
+        return {
+            // 독해 / 리딩
+            '리딩': ['reading', '독해'],
+            'reading': ['리딩', '독해'],
+            '독해': ['reading', '리딩'],
+            '구문': ['syntax', 'sentence', '구문'],
+            
+            // 문법 / 그래머
+            '그래머': ['grammar', '문법'],
+            '그라마': ['grammar', '문법'],
+            'grammar': ['그래머', '문법', '어법'],
+            '문법': ['grammar', '그래머', '어법'],
+            '어법': ['grammar', '어법', '문법'],
+
+            // 어휘 / 단어 / 보카
+            '보카': ['voca', 'vocabulary', '단어', '어휘'],
+            'voca': ['보카', 'vocabulary', '단어', '어휘'],
+            'vocabulary': ['보카', 'voca', '어휘', '단어'],
+            '단어': ['voca', 'vocabulary', '보카', '단어'],
+            '어휘': ['voca', 'vocabulary', '보카', '어휘'],
+            '숙어': ['idiom', '숙어', '이디엄'],
+            '이디엄': ['idiom', '숙어'],
+            'idiom': ['이디엄', '숙어'],
+
+            // 듣기 / 리스닝
+            '리스닝': ['listening', '듣기'],
+            'listening': ['리스닝', '듣기'],
+            '듣기': ['listening', '리스닝'],
+
+            // 쓰기 / 라이팅 / 서술형
+            '라이팅': ['writing', '쓰기', '작문', '서술형'],
+            'writing': ['라이팅', '쓰기', '작문', '서술형'],
+            '쓰기': ['writing', '라이팅', '작문'],
+            '작문': ['writing', '라이팅', '작문'],
+            '서술형': ['writing', '서술형', '주관식'],
+
+            // 말하기 / 스피킹 / 회화
+            '스피킹': ['speaking', '말하기', '회화'],
+            'speaking': ['스피킹', '말하기', '회화'],
+            '회화': ['conversation', 'speaking', '회화'],
+
+            // 주요 원서 / 출판사 / 시리즈
+            '해리포터': ['harry potter', 'potter', '해리 포터'],
+            'harry': ['해리포터', 'harry potter'],
+            'potter': ['해리포터', 'harry potter'],
+            '옥스포드': ['oxford', 'bookworms', 'obw'],
+            'oxford': ['옥스포드', 'bookworms'],
+            '펭귄': ['penguin'],
+            'penguin': ['펭귄'],
+            '캠브릿지': ['cambridge'],
+            '케임브리지': ['cambridge'],
+            'cambridge': ['캠브릿지', '케임브리지'],
+            '맥밀란': ['macmillan'],
+            'macmillan': ['맥밀란'],
+            '뉴베리': ['newbery'],
+            'newbery': ['뉴베리'],
+            '챕터북': ['chapter', 'chapter book'],
+            'chapter': ['챕터북', 'chapter'],
+            '윔피키드': ['wimpy kid', 'wimpy'],
+            'wimpy': ['윔피키드', 'wimpy kid'],
+            '퍼시잭슨': ['percy jackson', 'percy'],
+            '토마토': ['tomato'],
+            'tomato': ['토마토'],
+            '토익': ['toeic'],
+            'toeic': ['토익'],
+            '텝스': ['teps'],
+            'teps': ['텝스'],
+            '오픽': ['opic'],
+            'opic': ['오픽'],
+            '토플': ['toefl'],
+            'toefl': ['토플'],
+            '수능': ['sat', 'csat', '수능특강', '수특'],
+            '모의고사': ['mock', '모의고사', '기출'],
+            '소설': ['novel', 'fiction', '소설', '원서'],
+            '원서': ['reader', 'novel', '원서', 'readers'],
+            'novel': ['소설', '원서', 'novel']
+        };
+    }
+
     onBookSearchInput(query) {
         const dropdown = document.getElementById('ext-book-search-results');
         const clearBtn = document.getElementById('ext-book-search-clear');
@@ -368,23 +448,71 @@ class AssistantEngine {
             return;
         }
 
+        const words = cleanQ.split(/\s+/).filter(Boolean);
+        const synMap = this.getBilingualSynonymsMap();
+
+        // 쿼리 단어별 한·영 동의어 확장 토큰 목록 생성
+        const wordTokensList = words.map(w => {
+            const list = new Set([w]);
+            for (const [key, syns] of Object.entries(synMap)) {
+                if (key === w || (key.length >= 2 && w.includes(key))) {
+                    syns.forEach(s => list.add(s.toLowerCase()));
+                }
+            }
+            return Array.from(list);
+        });
+
+        const allExpandedSyns = new Set();
+        wordTokensList.forEach(list => list.forEach(s => allExpandedSyns.add(s)));
+
         const books = this.getAllAvailableBooks();
-        const matches = [];
+        const scoredMatches = [];
+
         for (let i = 0; i < books.length; i++) {
             const b = books[i];
             const titleL = (b.title || '').toLowerCase();
             const pubL = (b.publisher || '').toLowerCase();
             const catL = (b.category || '').toLowerCase();
             const grL = (b.gradeTag || '').toLowerCase();
-            const tagMatch = Array.isArray(b.tags) && b.tags.some(t => t.toLowerCase().includes(cleanQ));
+            const tagsStr = Array.isArray(b.tags) ? b.tags.join(' ').toLowerCase() : '';
+            const fullSearchable = `${titleL} ${pubL} ${catL} ${grL} ${tagsStr}`;
 
-            if (titleL.includes(cleanQ) || pubL.includes(cleanQ) || catL.includes(cleanQ) || grL.includes(cleanQ) || tagMatch) {
-                matches.push(b);
-                if (matches.length >= 15) break;
+            // 모든 검색 단어가 적어도 하나의 동의어 토큰으로 매칭되는지 확인 (AND 검색)
+            let allWordsMatched = true;
+            for (const tokenList of wordTokensList) {
+                const anyTokenMatched = tokenList.some(tok => fullSearchable.includes(tok));
+                if (!anyTokenMatched) {
+                    allWordsMatched = false;
+                    break;
+                }
+            }
+
+            if (allWordsMatched) {
+                let score = 0;
+                // 제목 일치 가중치
+                if (titleL === cleanQ) score += 200;
+                else if (titleL.startsWith(cleanQ)) score += 100;
+                else if (titleL.includes(cleanQ)) score += 60;
+
+                // 한·영 1:1 직역 동의어 (예: '리딩' <-> 'reading', '그래머' <-> 'grammar') 제목 가중치
+                if ((cleanQ.includes('리딩') && titleL.includes('reading')) || (cleanQ.includes('reading') && titleL.includes('리딩'))) score += 62;
+                if ((cleanQ.includes('그래머') && titleL.includes('grammar')) || (cleanQ.includes('grammar') && titleL.includes('그래머'))) score += 62;
+                if ((cleanQ.includes('보카') && titleL.includes('voca')) || (cleanQ.includes('voca') && titleL.includes('보카'))) score += 62;
+
+                // 일반 동의어 매칭 가중치
+                for (const syn of allExpandedSyns) {
+                    if (titleL.includes(syn)) score += 35;
+                }
+
+                if (pubL.includes(cleanQ)) score += 30;
+                if (tagsStr.includes(cleanQ)) score += 20;
+                if (b.publisher === 'NE능률' || (b.tags && b.tags.includes('NE능률'))) score += 5;
+
+                scoredMatches.push({ book: b, score });
             }
         }
 
-        if (matches.length === 0) {
+        if (scoredMatches.length === 0) {
             dropdown.innerHTML = `
                 <div class="px-4 py-3 text-xs text-slate-500 flex items-center justify-between">
                     <span>일치하는 등록 교재/원서가 없습니다: "<strong>${query}</strong>"</span>
@@ -397,7 +525,17 @@ class AssistantEngine {
             return;
         }
 
-        dropdown.innerHTML = matches.map(b => {
+        scoredMatches.sort((a, b) => b.score - a.score);
+        const matches = scoredMatches.slice(0, 25).map(m => m.book);
+
+        const headerHtml = `
+            <div class="px-3.5 py-1.5 bg-slate-50 border-b border-slate-200/80 flex items-center justify-between text-[11px] text-slate-500 font-mono">
+                <span>검색 결과 <strong>${scoredMatches.length}</strong>건 (한·영 동의어 자동 연동)</span>
+                <span class="text-indigo-700 font-semibold">선택 시 정규 목차 자동 연동</span>
+            </div>
+        `;
+
+        dropdown.innerHTML = headerHtml + matches.map(b => {
             const isOriginal = b.isOriginalReader || b.category === 'novel' || b.category === 'reader';
             return `
                 <div class="px-4 py-3 hover:bg-indigo-50/70 cursor-pointer flex items-center justify-between gap-3 transition-colors" onclick="window.assistantEngine.selectBookFromSearch('${b.id}')">
