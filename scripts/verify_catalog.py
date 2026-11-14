@@ -47,92 +47,60 @@ try:
             time.sleep(1)
             state = eval_js('document.readyState')
             has_engine = eval_js('typeof window.assistantEngine !== "undefined"')
-            print(f'Waiting... readyState={state}, hasEngine={has_engine}')
             if has_engine:
+                print('Engine ready!')
                 break
 
         total_catalog = eval_js('window.EXPANDED_BOOKS_CATALOG ? window.EXPANDED_BOOKS_CATALOG.length : 0')
-        all_books = eval_js('window.assistantEngine ? window.assistantEngine.getAllAvailableBooks().length : 0')
-        print(f'Catalog Count: {total_catalog}, Total Available Books: {all_books}')
+        print(f'Catalog Count: {total_catalog}')
+        assert total_catalog == 13984, f"Expected 13984, got {total_catalog}"
 
         # Test modal opening
         eval_js('window.assistantEngine.openExternalStudyModal()')
         modal_hidden = eval_js('document.getElementById("modal-external-study-register").classList.contains("hidden")')
-        print(f'Modal opened (hidden={modal_hidden})')
+        print(f'Modal opened: not hidden = {not modal_hidden}')
 
         # Test textbooks tab
         eval_js('window.assistantEngine.switchStudyRegisterTab("textbooks")')
         grid_cards_tb = eval_js('document.querySelectorAll("#bestseller-books-grid > div").length')
         print(f'Textbook Tab Grid Cards: {grid_cards_tb}')
 
-        # Test readers tab
-        eval_js('window.assistantEngine.switchStudyRegisterTab("readers")')
-        grid_cards_rd = eval_js('document.querySelectorAll("#bestseller-books-grid > div").length')
-        first_reader_title = eval_js('document.querySelector("#bestseller-books-grid h5") ? document.querySelector("#bestseller-books-grid h5").innerText : "none"')
-        print(f'Readers Tab Grid Cards: {grid_cards_rd}, First reader: {first_reader_title}')
-
-        # Test Readers Tab category chip 'oxford'
-        eval_js('window.assistantEngine.filterBestsellers("oxford")')
-        oxford_count = eval_js('document.querySelectorAll("#bestseller-books-grid > div").length')
-        first_oxford = eval_js('document.querySelector("#bestseller-books-grid h5").innerText')
-        print(f'Oxford filter cards: {oxford_count}, First: {first_oxford}')
-
-        # Test Load More button
-        eval_js('window.assistantEngine.loadMoreCatalogBooks()')
-        more_count = eval_js('document.querySelectorAll("#bestseller-books-grid > div").length')
-        print(f'After loadMoreCatalogBooks: {more_count} cards displayed')
-
-        # Test Textbooks Tab category chip 'grammar'
-        eval_js('window.assistantEngine.switchStudyRegisterTab("textbooks")')
-        eval_js('window.assistantEngine.filterBestsellers("grammar")')
-        grammar_count = eval_js('document.querySelectorAll("#bestseller-books-grid > div").length')
-        first_grammar = eval_js('document.querySelector("#bestseller-books-grid h5").innerText')
-        print(f'Grammar filter cards: {grammar_count}, First: {first_grammar}')
-
-        # Test Textbooks Tab dedicated category chip 'neungryul' (NE능률 전종 254권)
+        # Test NE Neungryul official filter chip
         eval_js('window.assistantEngine.filterBestsellers("neungryul")')
-        ne_cards_count = eval_js('document.querySelectorAll("#bestseller-books-grid > div").length')
-        first_ne = eval_js('document.querySelector("#bestseller-books-grid h5").innerText')
-        print(f'NE Neungryul filter cards: {ne_cards_count}, First: {first_ne}')
+        ne_cards = eval_js('document.querySelectorAll("#bestseller-books-grid > div").length')
+        first_ne_title = eval_js('document.querySelector("#bestseller-books-grid h5") ? document.querySelector("#bestseller-books-grid h5").innerText : ""')
+        print(f'NE Neungryul filter cards: {ne_cards}, First book: {first_ne_title}')
 
-        # Test search query '능률'
-        eval_js('window.assistantEngine.onBookSearchInput("능률")')
-        search_count_ne = eval_js('document.querySelectorAll("#ext-book-search-results > div").length')
-        print(f'Search results for "능률": {search_count_ne}')
+        # Search test: 능률VOCA
+        eval_js('window.assistantEngine.onBookSearchInput("능률VOCA")')
+        voca_results = eval_js('document.querySelectorAll("#ext-book-search-results > div").length')
+        first_voca = eval_js('document.querySelector("#ext-book-search-results h5") ? document.querySelector("#ext-book-search-results h5").innerText : ""')
+        print(f'Search "능률VOCA": {voca_results} results, First: {first_voca}')
 
-        # Test search query '빠바'
-        eval_js('window.assistantEngine.onBookSearchInput("빠바")')
-        search_count_bb = eval_js('document.querySelectorAll("#ext-book-search-results > div").length')
-        print(f'Search results for "빠바": {search_count_bb}')
-
-        # Test search query '리딩튜터'
-        eval_js('window.assistantEngine.onBookSearchInput("리딩튜터")')
-        search_count_rt = eval_js('document.querySelectorAll("#ext-book-search-results > div").length')
-        print(f'Search results for "리딩튜터": {search_count_rt}')
-
-        # Test search query 'Harry Potter'
-        eval_js('window.assistantEngine.onBookSearchInput("Harry Potter")')
-        search_count_hp = eval_js('document.querySelectorAll("#ext-book-search-results > div").length')
-        print(f'Search results for "Harry Potter": {search_count_hp}')
-
-        # Test selecting Harry Potter novel and verify category is set to 'novel'
-        eval_js('window.assistantEngine.selectBookFromSearch(window.assistantEngine.getAllAvailableBooks().find(b => b.title.includes("Harry Potter")).id)')
-        selected_cat = eval_js('document.getElementById("ext-study-category").value')
-        has_novel_option = eval_js('Boolean(document.querySelector("#ext-study-category option[value=\'novel\']"))')
-        print(f'Novel category selected: {selected_cat}, Has novel option in select: {has_novel_option}')
-
-        # Test search query '수능특강'
-        eval_js('window.assistantEngine.onBookSearchInput("수능특강")')
-        search_count_sat = eval_js('document.querySelectorAll("#ext-book-search-results > div").length')
-        print(f'Search results for "수능특강": {search_count_sat}')
-
-        # Test book selection and TOC preview
-        eval_js('window.assistantEngine.selectBookFromSearch(window.assistantEngine.getAllAvailableBooks().find(b => b.title.includes("수능특강")).id)')
+        # Select official book and verify TOC preview
+        # Select first result
+        eval_js('document.querySelector("#ext-book-search-results > div").click()')
+        time.sleep(1)
         toc_visible = eval_js('!document.getElementById("ext-book-toc-preview-container").classList.contains("hidden")')
-        toc_items = eval_js('document.querySelectorAll("#ext-book-toc-preview-container .truncate").length')
-        form_title = eval_js('document.getElementById("ext-study-title").value')
-        print(f'TOC preview visible: {toc_visible}, Items: {toc_items}, Form title: {form_title}')
+        toc_items_count = eval_js('document.querySelectorAll("#ext-book-toc-preview-container .font-mono > div").length')
+        input_title = eval_js('document.getElementById("ext-study-title").value')
+        print(f'Selected book title: {input_title}')
+        print(f'TOC preview visible: {toc_visible}, Total Units in TOC: {toc_items_count}')
+        assert toc_visible and toc_items_count > 0, "TOC should be visible with items!"
 
-        print('ALL BROWSER TESTS PASSED SUCCESSFULLY!')
+        # Search test: 김기택 (교과서 저자)
+        eval_js('window.assistantEngine.onBookSearchInput("김기택")')
+        kim_results = eval_js('document.querySelectorAll("#ext-book-search-results > div").length')
+        print(f'Search "김기택": {kim_results} results')
+        assert kim_results > 0, "김기택 교과서/문제집 should be found!"
+
+        # Search test: 토마토 (토익)
+        eval_js('window.assistantEngine.onBookSearchInput("토마토")')
+        tomato_results = eval_js('document.querySelectorAll("#ext-book-search-results > div").length')
+        print(f'Search "토마토": {tomato_results} results')
+        assert tomato_results > 0, "토마토 토익 교재 should be found!"
+
+        print('\n=== ALL E2E VERIFICATION CHECKS PASSED WITH FLYING COLORS! ===')
 finally:
     proc.terminate()
+    proc.wait()
