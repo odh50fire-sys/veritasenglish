@@ -1113,13 +1113,18 @@ class AppController {
                                         ${task.title}
                                     </h3>
                                     <div class="text-xs font-mono font-bold text-indigo-700 mt-0.5">
-                                        오늘 할 일: <span class="px-2 py-0.5 rounded bg-indigo-50 border border-indigo-200">${task.range}</span>
+                                        오늘 할 일: <span class="px-2 py-0.5 rounded bg-indigo-50 border border-indigo-200 text-indigo-950">${task.tocTitle || task.range}</span>
                                     </div>
                                 </div>
                             </div>
-                            <span class="px-2.5 py-1 rounded-lg ${task.isDone ? 'bg-emerald-100 text-emerald-800 border-emerald-300' : 'bg-amber-50 text-amber-800 border-amber-200'} font-mono text-[11px] font-bold border shrink-0">
-                                누적 ${task.currentProgress} / ${task.totalUnits} ${task.unitType}
-                            </span>
+                            <div class="flex items-center gap-1.5 shrink-0">
+                                <span class="px-2.5 py-1 rounded-lg ${task.isDone ? 'bg-emerald-100 text-emerald-800 border-emerald-300' : 'bg-amber-50 text-amber-800 border-amber-200'} font-mono text-[11px] font-bold border">
+                                    누적 ${task.currentProgress} / ${task.totalUnits} ${task.unitType}
+                                </span>
+                                <button type="button" onclick="window.assistantEngine && window.assistantEngine.deleteExternalStudy('${task.studyId}', '${task.title.replace(/'/g, "\\'")}')" class="p-1.5 rounded-lg text-slate-400 hover:text-red-700 hover:bg-red-50 transition-colors cursor-pointer" title="이 교재 전체 삭제">
+                                    <i data-lucide="trash-2" class="w-4 h-4"></i>
+                                </button>
+                            </div>
                         </div>
 
                         <!-- 누적 진도 프로그레스 바 -->

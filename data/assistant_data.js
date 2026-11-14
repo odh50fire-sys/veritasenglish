@@ -132,7 +132,23 @@ const POPULAR_ENGLISH_TEXTBOOKS = [
         defaultDaily: 1,
         totalPages: 360,
         coverEmoji: "📘",
-        desc: "전국 중학교 최다 채택 1위 영문법 문제집, 14개 챕터 구성"
+        desc: "전국 중학교 최다 채택 1위 영문법 문제집, 14개 챕터 구성",
+        tableOfContents: [
+            "Ch.1 문장의 기초 (품사, 인칭대명사, be동사)",
+            "Ch.2 일반동사 (현재형, 과거형, 부정문과 의문문)",
+            "Ch.3 시제 (현재시제, 과거시제, 미래시제 will)",
+            "Ch.4 조동사 (can, may, must, should)",
+            "Ch.5 명사와 관사 (셀 수 있는 명사, a/an/the)",
+            "Ch.6 대명사 (지시대명사, 재귀대명사)",
+            "Ch.7 형용사와 부사 (원급, 비교급, 최상급)",
+            "Ch.8 문장의 5가지 형식 (1~5형식 구문)",
+            "Ch.9 to부정사 (명사적·형용사적·부사적 용법)",
+            "Ch.10 동명사 (동명사의 역할과 자주 쓰는 표현)",
+            "Ch.11 접속사 (and, but, or, so, when, because)",
+            "Ch.12 전치사 (시간·장소·방향의 전치사)",
+            "Ch.13 의문사 (who, what, where, when, why, how)",
+            "Ch.14 중1 내신 대비 실전 서술형 총정리"
+        ]
     },
     {
         id: "book_mother_3800_m2",
@@ -145,7 +161,25 @@ const POPULAR_ENGLISH_TEXTBOOKS = [
         defaultDaily: 1,
         totalPages: 412,
         coverEmoji: "📘",
-        desc: "중2 내신 필수 문법 총정리 및 서술형 대비 3800제"
+        desc: "중2 내신 필수 문법 총정리 및 서술형 대비 3800제",
+        tableOfContents: [
+            "Ch.1 문장의 기초 (문장 성분과 5형식)",
+            "Ch.2 시제 (과거시제, 현재완료시제 have+p.p.)",
+            "Ch.3 조동사 (can, may, must, should, had better)",
+            "Ch.4 수동태 (능동태 전환, 4형식·5형식 수동태)",
+            "Ch.5 to부정사 (진주어·진목적어, 의문사+to부정사)",
+            "Ch.6 동명사 (동명사 vs to부정사 목적어 구별)",
+            "Ch.7 분사 (현재분사 vs 과거분사, 감정 분사)",
+            "Ch.8 대명사 (부정대명사 one, other, 재귀대명사)",
+            "Ch.9 비교구문 (as~as 원급, 비교급 강조, 최상급)",
+            "Ch.10 관계사 (관계대명사 who, which, that, 생략)",
+            "Ch.11 접속사 (조건/양보 if, although, 간접의문문)",
+            "Ch.12 전치사 (숙어 전치사 및 관용 표현)",
+            "Ch.13 일치와 화법 (수일치, 직접화법·간접화법)",
+            "Ch.14 특수구문 (도치, 강조, 생략, 부정구문)",
+            "Ch.15 1학기 중간·기말고사 대비 서술형 클리닉",
+            "Ch.16 2학기 중간·기말고사 파이널 기출 100선"
+        ]
     },
     {
         id: "book_mother_3800_m3",
@@ -158,7 +192,25 @@ const POPULAR_ENGLISH_TEXTBOOKS = [
         defaultDaily: 1,
         totalPages: 440,
         coverEmoji: "📘",
-        desc: "중3 내신 만점 및 고등 영어 연계 핵심 영문법 마스터"
+        desc: "중3 내신 만점 및 고등 영어 연계 핵심 영문법 마스터",
+        tableOfContents: [
+            "Ch.1 문장의 구조 (지각동사, 사역동사 5형식)",
+            "Ch.2 시제 (과거완료 had+p.p., 시제 일치의 예외)",
+            "Ch.3 조동사 (must have p.p., should have p.p.)",
+            "Ch.4 수동태 (구동사의 수동태, 주의해야 할 수동태)",
+            "Ch.5 to부정사 (to부정사의 의미상의 주어, too~to)",
+            "Ch.6 동명사 (동명사의 관용적 표현 20선)",
+            "Ch.7 분사구문 (분사구문 전환, 독립분사구문)",
+            "Ch.8 관계사 (관계대명사 what, 관계부사 where, when)",
+            "Ch.9 가정법 (가정법 과거, 가정법 과거완료, I wish)",
+            "Ch.10 접속사 (상관접속사 not only A but also B)",
+            "Ch.11 대명사 (it의 다양한 용법, it~that 강조구문)",
+            "Ch.12 형용사와 부사 (비교급 심화, the+비교급)",
+            "Ch.13 일치와 특수구문 (부정어 도치, 장소부사 도치)",
+            "Ch.14 서술형 만점 실전 모의고사 1회",
+            "Ch.15 서술형 만점 실전 모의고사 2회",
+            "Ch.16 고교 진학 대비 수능 연계 어법 총정리"
+        ]
     },
     {
         id: "book_cedu_grammar_end_start",
@@ -171,7 +223,34 @@ const POPULAR_ENGLISH_TEXTBOOKS = [
         defaultDaily: 1,
         totalPages: 240,
         coverEmoji: "📗",
-        desc: "수능 및 고등 내신 어법 문제의 원리를 꿰뚫는 필수 기본서"
+        desc: "수능 및 고등 내신 어법 문제의 원리를 꿰뚫는 필수 기본서",
+        tableOfContents: [
+            "Unit 01 문장의 주어와 동사 찾기",
+            "Unit 02 주어와 동사의 수일치",
+            "Unit 03 수식어 거품 걷어내기",
+            "Unit 04 능동태와 수동태의 판별",
+            "Unit 05 4·5형식 동사의 수동태",
+            "Unit 06 시제와 조동사의 핵심 포인트",
+            "Unit 07 to부정사와 동명사 목적어",
+            "Unit 08 분사의 역할과 분사구문",
+            "Unit 09 분사구문의 주의할 점",
+            "Unit 10 대명사의 일치와 형태",
+            "Unit 11 형용사와 부사의 올바른 자리",
+            "Unit 12 원급·비교급·최상급 포인트",
+            "Unit 13 등위접속사와 병렬구조",
+            "Unit 14 명사절을 이끄는 접속사 that vs what",
+            "Unit 15 관계대명사와 관계부사의 판별",
+            "Unit 16 전치사+관계대명사 완전구문",
+            "Unit 17 부사절 접속사와 전치사 구별",
+            "Unit 18 가정법 과거와 과거완료",
+            "Unit 19 조동사 have p.p. 추론",
+            "Unit 20 부정어 도치와 강조구문",
+            "Unit 21 형용사 vs 부사 빈출 기출",
+            "Unit 22 복합관계사와 접속사 심화",
+            "Unit 23 실전 어법 모의고사 1회",
+            "Unit 24 실전 어법 모의고사 2회",
+            "Unit 25 고1 1학기 내신 어법 킬러 50선"
+        ]
     },
     {
         id: "book_cedu_grammar_end_master",
@@ -184,7 +263,39 @@ const POPULAR_ENGLISH_TEXTBOOKS = [
         defaultDaily: 1,
         totalPages: 280,
         coverEmoji: "📗",
-        desc: "평가원 및 수능 어법 킬러 문항 100% 정복 실전 대비서"
+        desc: "평가원 및 수능 어법 킬러 문항 100% 정복 실전 대비서",
+        tableOfContents: [
+            "Unit 01 주어-동사 원거리 수일치 킬러",
+            "Unit 02 동사 vs 준동사 자리 판별",
+            "Unit 03 능동 vs 수동 목적어 유무 함정",
+            "Unit 04 that / what / which 완벽 분별 공식",
+            "Unit 05 전치사+관계대명사 vs 관계부사",
+            "Unit 06 복합관계대명사와 양보 부사절",
+            "Unit 07 대동사 do / be / have 구별",
+            "Unit 08 분사구문의 능수동과 의미상 주어",
+            "Unit 09 병렬구조 (등위접속사, 상관접속사)",
+            "Unit 10 형용사 보어 vs 부사 수식어",
+            "Unit 11 도치구문 (부정어, 장소, 보어 도치)",
+            "Unit 12 가정법 특수 형태 (혼합가정법, without)",
+            "Unit 13 감정동사 분사 (ing vs ed)",
+            "Unit 14 가주어 it / 가목적어 it 구문",
+            "Unit 15 비교급 표현과 배수사 어순",
+            "Unit 16 평가원 3개년 어법 기출 분석 1",
+            "Unit 17 평가원 3개년 어법 기출 분석 2",
+            "Unit 18 6월 모의평가 어법 킬러 집중 분석",
+            "Unit 19 9월 모의평가 어법 킬러 집중 분석",
+            "Unit 20 수능 실전 어법 고난도 50제",
+            "Unit 21 EBS 연계 어법 변형 모의고사 1",
+            "Unit 22 EBS 연계 어법 변형 모의고사 2",
+            "Unit 23 EBS 연계 어법 변형 모의고사 3",
+            "Unit 24 최상위권 킬러 어법 파이널 1회",
+            "Unit 25 최상위권 킬러 어법 파이널 2회",
+            "Unit 26 최상위권 킬러 어법 파이널 3회",
+            "Unit 27 고난도 서술형 영작 Clinic 1",
+            "Unit 28 고난도 서술형 영작 Clinic 2",
+            "Unit 29 수능 시험장 직전 어법 핵심 10계명",
+            "Unit 30 최종 수능 어법 실전 모의평가"
+        ]
     },
     {
         id: "book_ne_grammar_zone_basic",
@@ -192,12 +303,34 @@ const POPULAR_ENGLISH_TEXTBOOKS = [
         publisher: "NE능률",
         category: "grammar",
         gradeTag: "중3·고1",
-        totalUnits: 40,
-        unitType: "unit",
+        totalUnits: 20,
+        unitType: "chapter",
         defaultDaily: 1,
         totalPages: 320,
         coverEmoji: "📙",
-        desc: "체계적인 문법 개념 학습과 풍부한 예문으로 문법 완성"
+        desc: "체계적인 문법 개념 학습과 풍부한 예문으로 문법 완성",
+        tableOfContents: [
+            "Ch.01 문장의 구성과 동사의 종류",
+            "Ch.02 시제 (현재/과거/완료/진행)",
+            "Ch.03 조동사 (기본 조동사 및 완료형)",
+            "Ch.04 수동태 (다양한 형식의 수동태)",
+            "Ch.05 to부정사의 용법과 의미상 주어",
+            "Ch.06 동명사의 역할과 관용구",
+            "Ch.07 분사와 분사구문의 원리",
+            "Ch.08 명사와 관사, 대명사의 쓰임",
+            "Ch.09 형용사와 부사의 기능",
+            "Ch.10 비교 표현 (원급, 비교급, 최상급)",
+            "Ch.11 관계대명사와 관계부사",
+            "Ch.12 접속사와 절 (명사절, 부사절)",
+            "Ch.13 가정법의 이해와 활용",
+            "Ch.14 전치사와 구동사 표현",
+            "Ch.15 특수구문 (도치, 강조, 생략)",
+            "Ch.16 일치와 화법 전환",
+            "Ch.17 고교 내신 서술형 대비 1",
+            "Ch.18 고교 내신 서술형 대비 2",
+            "Ch.19 실전 영문법 종합 평가 1",
+            "Ch.20 실전 영문법 종합 평가 2"
+        ]
     },
 
     // [구문/독해 베스트셀러]
@@ -207,12 +340,30 @@ const POPULAR_ENGLISH_TEXTBOOKS = [
         publisher: "쎄듀(CEDU)",
         category: "reading",
         gradeTag: "중3·고1",
-        totalUnits: 100,
-        unitType: "unit",
-        defaultDaily: 3,
+        totalUnits: 16,
+        unitType: "chapter",
+        defaultDaily: 1,
         totalPages: 310,
         coverEmoji: "📕",
-        desc: "대한민국 대표 구문 독해 기본서, 1001개 필수 예문 해석 훈련"
+        desc: "대한민국 대표 구문 독해 기본서, 1001개 필수 예문 해석 훈련",
+        tableOfContents: [
+            "Ch.01 기본 문장 구조와 동사 (001~070)",
+            "Ch.02 주어의 다양한 형태 (071~135)",
+            "Ch.03 목적어의 다양한 형태 (136~200)",
+            "Ch.04 보어의 다양한 형태 (201~265)",
+            "Ch.05 동사의 시제와 상 (266~330)",
+            "Ch.06 조동사의 의미와 쓰임 (331~395)",
+            "Ch.07 능동태와 수동태 구문 (396~460)",
+            "Ch.08 to부정사와 동명사 준동사구 (461~530)",
+            "Ch.09 분사와 분사구문 (531~600)",
+            "Ch.10 등위접속사와 병렬구조 (601~670)",
+            "Ch.11 부사절과 접속사 (671~740)",
+            "Ch.12 관계사절에 의한 수식 (741~810)",
+            "Ch.13 전치사구 및 동격 표현 (811~870)",
+            "Ch.14 가정법과 조건 구문 (871~930)",
+            "Ch.15 비교 표현과 최상급 (931~970)",
+            "Ch.16 특수구문: 도치, 강조, 생략 (971~1001)"
+        ]
     },
     {
         id: "book_cedu_1001_core",
@@ -220,12 +371,24 @@ const POPULAR_ENGLISH_TEXTBOOKS = [
         publisher: "쎄듀(CEDU)",
         category: "reading",
         gradeTag: "고1·고2",
-        totalUnits: 50,
-        unitType: "unit",
-        defaultDaily: 2,
+        totalUnits: 10,
+        unitType: "chapter",
+        defaultDaily: 1,
         totalPages: 260,
         coverEmoji: "📕",
-        desc: "고난도 수능 및 모의고사 빈출 구문 집중 훈련서"
+        desc: "고난도 수능 및 모의고사 빈출 구문 집중 훈련서",
+        tableOfContents: [
+            "Ch.01 주어와 동사의 다양한 배치와 수식 (001~050)",
+            "Ch.02 준동사구의 복잡한 수식 구조 (051~100)",
+            "Ch.03 명사절과 보어·목적어의 확장 (101~150)",
+            "Ch.04 다중 수식어와 관계사절 (151~200)",
+            "Ch.05 부사절과 분사구문의 연결 (201~250)",
+            "Ch.06 비교 구문의 다양한 변형 (251~300)",
+            "Ch.07 가정법 및 조건의 함축 의미 (301~350)",
+            "Ch.08 부정 표현과 이중 부정 (351~400)",
+            "Ch.09 도치, 강조, 생략의 긴 문장 (401~450)",
+            "Ch.10 수능 실전 복합 구문 마스터 (451~500)"
+        ]
     },
     {
         id: "book_cedu_1001_master",
@@ -233,12 +396,24 @@ const POPULAR_ENGLISH_TEXTBOOKS = [
         publisher: "쎄듀(CEDU)",
         category: "reading",
         gradeTag: "고2·고3",
-        totalUnits: 50,
-        unitType: "unit",
-        defaultDaily: 2,
+        totalUnits: 10,
+        unitType: "chapter",
+        defaultDaily: 1,
         totalPages: 290,
         coverEmoji: "📕",
-        desc: "수능 1등급 및 최상위권 복합 구문 완벽 정복"
+        desc: "수능 1등급 및 최상위권 복합 구문 완벽 정복",
+        tableOfContents: [
+            "Ch.01 문장 성분의 분리와 삽입 어구 (001~050)",
+            "Ch.02 복잡한 준동사구와 논리 관계 (051~100)",
+            "Ch.03 다층 관계사절과 선행사 추적 (101~150)",
+            "Ch.04 추상적 명사절과 동격절 (151~200)",
+            "Ch.05 은유적 표현과 도치 구문 (201~250)",
+            "Ch.06 함축적 조건문과 가정법 심화 (251~300)",
+            "Ch.07 고난도 비교·대조 논리 구문 (301~350)",
+            "Ch.08 역접·인과 연결사의 복합 논리 (351~400)",
+            "Ch.09 학술 논문 및 인문학 철학 구문 (401~450)",
+            "Ch.10 수능 킬러 빈칸추론 직결 구문 (451~500)"
+        ]
     },
     {
         id: "book_xystory_reading_basic",
@@ -251,7 +426,27 @@ const POPULAR_ENGLISH_TEXTBOOKS = [
         defaultDaily: 1,
         totalPages: 384,
         coverEmoji: "📑",
-        desc: "고1 전국연합 학력평가 기출 유형별 독해 마스터"
+        desc: "고1 전국연합 학력평가 기출 유형별 독해 마스터",
+        tableOfContents: [
+            "Ch.01 글의 목적 및 심경·분위기 추론",
+            "Ch.02 필자의 주장 및 글의 요지 파악",
+            "Ch.03 글의 주제 및 제목 찾기",
+            "Ch.04 밑줄 친 어구의 함축적 의미 추론",
+            "Ch.05 도표 정보 파악 및 실용문 일치",
+            "Ch.06 내용 일치·불일치 (인물·생물·일반)",
+            "Ch.07 어법성 판단 (밑줄 및 네모 어법)",
+            "Ch.08 어휘 적절성 파악 (반의어 문맥)",
+            "Ch.09 빈칸추론 1 (단어 및 짧은 구 완성)",
+            "Ch.10 빈칸추론 2 (긴 구 및 절 완성)",
+            "Ch.11 흐름에 무관한 문장 고르기",
+            "Ch.12 글의 순서 배열하기",
+            "Ch.13 문장 삽입하기 (주어진 문장 위치)",
+            "Ch.14 문단 요약문 완성하기",
+            "Ch.15 장문 독해 (1지문 2문항 세트)",
+            "Ch.16 복합 장문 (1지문 3문항 세트)",
+            "Ch.17 실전 기출 모의고사 1회",
+            "Ch.18 실전 기출 모의고사 2회"
+        ]
     },
     {
         id: "book_xystory_reading_complete",
@@ -259,12 +454,32 @@ const POPULAR_ENGLISH_TEXTBOOKS = [
         publisher: "수경출판사",
         category: "reading",
         gradeTag: "고2",
-        totalUnits: 20,
+        totalUnits: 18,
         unitType: "chapter",
         defaultDaily: 1,
         totalPages: 420,
         coverEmoji: "📑",
-        desc: "고2 학력평가 기출 완벽 분석 및 고난도 빈칸/순서 정복"
+        desc: "고2 학력평가 기출 완벽 분석 및 고난도 빈칸/순서 정복",
+        tableOfContents: [
+            "Ch.01 목적, 심경, 분위기 파악",
+            "Ch.02 주장, 요지, 주제 파악",
+            "Ch.03 제목 찾기 및 함축 의미 추론",
+            "Ch.04 도표 및 내용 일치·불일치",
+            "Ch.05 어법 정확성 판단 (고난도)",
+            "Ch.06 문맥상 적절한 어휘 추론",
+            "Ch.07 빈칸추론 1 (주제 직결형 빈칸)",
+            "Ch.08 빈칸추론 2 (재진술 및 비유 빈칸)",
+            "Ch.09 빈칸추론 3 (킬러 3점 문항 집중)",
+            "Ch.10 흐름과 무관한 문장 찾기",
+            "Ch.11 이어질 글의 순서 배열",
+            "Ch.12 주어진 문장의 위치 찾기 (삽입)",
+            "Ch.13 요약문 완성하기 (어휘 대입)",
+            "Ch.14 장문 독해 1 (제목 + 어휘)",
+            "Ch.15 복합 장문 2 (순서 + 지칭 + 일치)",
+            "Ch.16 고난도 1등급 킬러 모의고사 1회",
+            "Ch.17 고난도 1등급 킬러 모의고사 2회",
+            "Ch.18 실전 수능 완성 모의고사 3회"
+        ]
     },
     {
         id: "book_xystory_reading_sat",
@@ -272,12 +487,32 @@ const POPULAR_ENGLISH_TEXTBOOKS = [
         publisher: "수경출판사",
         category: "reading",
         gradeTag: "고3·N수",
-        totalUnits: 22,
+        totalUnits: 18,
         unitType: "chapter",
         defaultDaily: 1,
         totalPages: 480,
         coverEmoji: "📑",
-        desc: "수능 및 6/9월 평가원 기출 전 문항 완벽 수록 및 킬러 해법"
+        desc: "수능 및 6/9월 평가원 기출 전 문항 완벽 수록 및 킬러 해법",
+        tableOfContents: [
+            "Ch.01 대의 파악 (함축의미, 요지, 주제, 제목)",
+            "Ch.02 세부 정보 및 어법성 판단",
+            "Ch.03 문맥상 부적절한 어휘 파악",
+            "Ch.04 빈칸추론 1 (단어·구 빈칸)",
+            "Ch.05 빈칸추론 2 (문장 빈칸 킬러)",
+            "Ch.06 간접 쓰기 1 (글의 순서 배열 3점)",
+            "Ch.07 간접 쓰기 2 (문장 삽입 3점)",
+            "Ch.08 무관한 문장 및 요약문 완성",
+            "Ch.09 1지문 2문항 장문 독해",
+            "Ch.10 1지문 3문항 복합 장문",
+            "Ch.11 6월 모의평가 기출 완벽 분석",
+            "Ch.12 9월 모의평가 기출 완벽 분석",
+            "Ch.13 최신 수능 실전 기출 분석",
+            "Ch.14 최고난도 킬러 3점 집중 특강 1",
+            "Ch.15 최고난도 킬러 3점 집중 특강 2",
+            "Ch.16 실전 모의고사 1회",
+            "Ch.17 실전 모의고사 2회",
+            "Ch.18 파이널 최종 모의고사 3회"
+        ]
     },
     {
         id: "book_ne_fast_reading_basic",
@@ -290,7 +525,25 @@ const POPULAR_ENGLISH_TEXTBOOKS = [
         defaultDaily: 1,
         totalPages: 216,
         coverEmoji: "📖",
-        desc: "빠바 대표 구문 독해 시리즈, 수능 독해의 기초를 다지는 코스"
+        desc: "빠바 대표 구문 독해 시리즈, 수능 독해의 기초를 다지는 코스",
+        tableOfContents: [
+            "Ch.01 주어의 파악 (긴 주어 끊어 읽기)",
+            "Ch.02 목적어와 보어의 파악",
+            "Ch.03 동사의 시제와 수동태",
+            "Ch.04 조동사와 가정법 구문",
+            "Ch.05 수식어구: 형용사구와 분사",
+            "Ch.06 수식어구: 관계대명사절",
+            "Ch.07 수식어구: 관계부사와 동격",
+            "Ch.08 부사절과 분사구문의 직독직해",
+            "Ch.09 접속사와 병렬구조 파악",
+            "Ch.10 비교 표현과 원급/비교급/최상급",
+            "Ch.11 특수구문: 도치와 강조",
+            "Ch.12 특수구문: 생략과 공통구문",
+            "Ch.13 미니 모의고사 1회 (인문·사회)",
+            "Ch.14 미니 모의고사 2회 (과학·기술)",
+            "Ch.15 미니 모의고사 3회 (예술·문화)",
+            "Ch.16 고1 학평 실전 모의고사"
+        ]
     },
     {
         id: "book_ne_fast_reading_syntax",
@@ -303,7 +556,25 @@ const POPULAR_ENGLISH_TEXTBOOKS = [
         defaultDaily: 1,
         totalPages: 232,
         coverEmoji: "📖",
-        desc: "독해에 바로 적용되는 핵심 구문 16개 테마 총정리"
+        desc: "독해에 바로 적용되는 핵심 구문 16개 테마 총정리",
+        tableOfContents: [
+            "Ch.01 주어의 다양한 수식과 수일치",
+            "Ch.02 목적어의 다양한 형태와 가목적어",
+            "Ch.03 보어의 다양한 형태와 준동사 보어",
+            "Ch.04 능동 vs 수동태의 문맥상 이해",
+            "Ch.05 시제와 조동사의 뉘앙스 파악",
+            "Ch.06 to부정사와 동명사구의 해석",
+            "Ch.07 분사구문의 압축적 독해",
+            "Ch.08 명사절 접속사의 완벽 이해",
+            "Ch.09 관계사절의 제한적·계속적 용법",
+            "Ch.10 부사절의 다양한 논리 관계",
+            "Ch.11 전치사구의 입체적 독해",
+            "Ch.12 비교구문과 배수사 해석",
+            "Ch.13 도치, 강조, 생략 구문의 파악",
+            "Ch.14 긴 문장 구조 분해와 문맥 추론",
+            "Ch.15 고난도 실전 독해 1회",
+            "Ch.16 고난도 실전 독해 2회"
+        ]
     },
     {
         id: "book_visang_readers_bank_5",
@@ -311,12 +582,34 @@ const POPULAR_ENGLISH_TEXTBOOKS = [
         publisher: "비상교육",
         category: "reading",
         gradeTag: "중등",
-        totalUnits: 30,
+        totalUnits: 20,
         unitType: "unit",
         defaultDaily: 1,
         totalPages: 160,
         coverEmoji: "📚",
-        desc: "흥미로운 최신 시사/문화 지문으로 중학 내신 독해 완성"
+        desc: "흥미로운 최신 시사/문화 지문으로 중학 내신 독해 완성",
+        tableOfContents: [
+            "Unit 01 문화와 축제 (Culture & Festivals)",
+            "Unit 02 동물과 자연 (Animals & Nature)",
+            "Unit 03 과학과 발명 (Science & Inventions)",
+            "Unit 04 스포츠와 건강 (Sports & Health)",
+            "Unit 05 인물과 역사 (People & History)",
+            "Unit 06 우주와 환경 (Space & Environment)",
+            "Unit 07 심리와 사회 (Psychology & Society)",
+            "Unit 08 일상과 유머 (Life & Humor)",
+            "Unit 09 미스터리와 탐험 (Mysteries & Adventure)",
+            "Unit 10 음식과 영양 (Food & Nutrition)",
+            "Unit 11 음악과 미술 (Music & Art)",
+            "Unit 12 여행과 랜드마크 (Travel & Landmarks)",
+            "Unit 13 미래와 기술 (Future & Technology)",
+            "Unit 14 문학 이야기 (Literary Stories)",
+            "Unit 15 법과 규칙 (Law & Ethics)",
+            "Unit 16 언어와 소통 (Language & Communication)",
+            "Unit 17 지구와 기후 (Earth & Climate)",
+            "Unit 18 학교와 우정 (School & Friendship)",
+            "Unit 19 내신 서술형 실전 대비 1",
+            "Unit 20 내신 서술형 실전 대비 2"
+        ]
     },
     {
         id: "book_visang_readers_bank_6",
@@ -324,12 +617,34 @@ const POPULAR_ENGLISH_TEXTBOOKS = [
         publisher: "비상교육",
         category: "reading",
         gradeTag: "중3·예비고",
-        totalUnits: 30,
+        totalUnits: 20,
         unitType: "unit",
         defaultDaily: 1,
         totalPages: 168,
         coverEmoji: "📚",
-        desc: "중등 최상위권 및 고등 입문 수준의 영어 독해력 빌드업"
+        desc: "중등 최상위권 및 고등 입문 수준의 영어 독해력 빌드업",
+        tableOfContents: [
+            "Unit 01 인공지능과 미래 사회",
+            "Unit 02 지구 온난화와 기후 정의",
+            "Unit 03 뇌 과학과 기억의 비밀",
+            "Unit 04 행동경제학과 소비 심리",
+            "Unit 05 고대 문명의 불가사의",
+            "Unit 06 현대 미술과 창의성",
+            "Unit 07 유전자 가위와 바이오 혁명",
+            "Unit 08 소셜 미디어와 대인 관계",
+            "Unit 09 영화 속 숨겨진 과학 원리",
+            "Unit 10 세계 빈곤과 공정 무역",
+            "Unit 11 인권과 사회적 약자",
+            "Unit 12 수면과 신체 리듬의 과학",
+            "Unit 13 클래식 음악의 심리적 치유",
+            "Unit 14 우주 탐사와 외계 생명체",
+            "Unit 15 해양 생태계 파괴와 보존",
+            "Unit 16 미디어 리터러시와 가짜 뉴스",
+            "Unit 17 고교 학평 기출 유형 훈련 1",
+            "Unit 18 고교 학평 기출 유형 훈련 2",
+            "Unit 19 예비고1 실전 모의고사 1회",
+            "Unit 20 예비고1 실전 모의고사 2회"
+        ]
     },
 
     // [EBS 수능 연계 시리즈]
@@ -339,12 +654,42 @@ const POPULAR_ENGLISH_TEXTBOOKS = [
         publisher: "한국교육방송공사(EBS)",
         category: "sat",
         gradeTag: "고3·N수",
-        totalUnits: 30,
+        totalUnits: 28,
         unitType: "강",
         defaultDaily: 1,
         totalPages: 288,
         coverEmoji: "🎓",
-        desc: "수능 연계 출제 1순위 대표 교재, 유형편 + 테스트편"
+        desc: "수능 연계 출제 1순위 대표 교재, 유형편 + 테스트편",
+        tableOfContents: [
+            "01강 글의 목적 파악",
+            "02강 심경·분위기 파악",
+            "03강 함축적 의미 추론 (밑줄 의미)",
+            "04강 요지 파악",
+            "05강 주장 파악",
+            "06강 주제 파악",
+            "07강 제목 파악",
+            "08강 도표 정보 파악",
+            "09강 세부 내용 파악 (일치/불일치)",
+            "10강 어법 정확성 파악",
+            "11강 어휘 적절성 파악",
+            "12강 빈칸 내용 추론 1 (단어/짧은 구)",
+            "13강 빈칸 내용 추론 2 (긴 구/절)",
+            "14강 흐름에 무관한 문장",
+            "15강 문단 내 글의 순서 배열",
+            "16강 주어진 문장의 위치 (문장 삽입)",
+            "17강 문단 요약문 완성",
+            "18강 장문 독해 1 (1지문 2문항)",
+            "19강 장문 독해 2 (1지문 3문항)",
+            "20강 철학·심리·역사 교육",
+            "21강 사회·경제·정치 법률",
+            "22강 과학·기술·컴퓨터",
+            "23강 예술·문화·스포츠",
+            "24강 환경·생태·지구과학",
+            "Test 1 실전 모의고사 (1~14번)",
+            "Test 1 실전 모의고사 (15~28번)",
+            "Test 2 실전 모의고사 (1~14번)",
+            "Test 2 실전 모의고사 (15~28번)"
+        ]
     },
     {
         id: "book_ebs_csat_reading_2026",
@@ -357,7 +702,21 @@ const POPULAR_ENGLISH_TEXTBOOKS = [
         defaultDaily: 1,
         totalPages: 264,
         coverEmoji: "🎓",
-        desc: "수능 킬러/준킬러 지문 대비 심화 영어 독해 연습 교재"
+        desc: "수능 킬러/준킬러 지문 대비 심화 영어 독해 연습 교재",
+        tableOfContents: [
+            "01강 빈칸 추론 집중 연습 1 (인문·철학)",
+            "02강 빈칸 추론 집중 연습 2 (사회·과학)",
+            "03강 함축 의미 및 어휘 적절성",
+            "04강 어법 및 문맥상 어휘 판단",
+            "05강 글의 순서 파악 킬러 3점",
+            "06강 주어진 문장 삽입 킬러 3점",
+            "07강 요약문 및 장문 세트 독해",
+            "08강 복합 지문 심화 독해 연습",
+            "Mini Test 1회 (킬러 문항 집중)",
+            "Mini Test 2회 (킬러 문항 집중)",
+            "Mini Test 3회 (킬러 문항 집중)",
+            "Final Test 실전 모의고사 완결"
+        ]
     },
     {
         id: "book_ebs_csat_complete_2026",
@@ -370,7 +729,29 @@ const POPULAR_ENGLISH_TEXTBOOKS = [
         defaultDaily: 1,
         totalPages: 240,
         coverEmoji: "🎓",
-        desc: "실전 모의고사 5회분 수록, 수능 직전 최종 실전 마무리"
+        desc: "실전 모의고사 5회분 수록, 수능 직전 최종 실전 마무리",
+        tableOfContents: [
+            "유형편 01강 목적, 심경, 주장 파악",
+            "유형편 02강 주제, 제목, 밑줄 의미",
+            "유형편 03강 도표, 안내문, 세부 일치",
+            "유형편 04강 어법 및 어휘 파악",
+            "유형편 05강 빈칸 추론 킬러",
+            "유형편 06강 무관한 문장 및 순서 배열",
+            "유형편 07강 문장 삽입 및 요약문",
+            "유형편 08강 장문 독해 세트",
+            "실전 모의고사 1회 (홀수 번호 1~23번)",
+            "실전 모의고사 1회 (짝수 번호 24~45번)",
+            "실전 모의고사 2회 (전반부 1~23번)",
+            "실전 모의고사 2회 (후반부 24~45번)",
+            "실전 모의고사 3회 (전반부 1~23번)",
+            "실전 모의고사 3회 (후반부 24~45번)",
+            "실전 모의고사 4회 (전반부 1~23번)",
+            "실전 모의고사 4회 (후반부 24~45번)",
+            "실전 모의고사 5회 (전반부 1~23번)",
+            "실전 모의고사 5회 (후반부 24~45번)",
+            "수능 파이널 어휘 및 구문 총정리 1",
+            "수능 파이널 어휘 및 구문 총정리 2"
+        ]
     },
 
     // [중등 내신 기출 및 서술형]
@@ -385,7 +766,17 @@ const POPULAR_ENGLISH_TEXTBOOKS = [
         defaultDaily: 1,
         totalPages: 200,
         coverEmoji: "💯",
-        desc: "전국 중학교 기출 족보 및 서술형 100% 대비 내신 특화서"
+        desc: "전국 중학교 기출 족보 및 서술형 100% 대비 내신 특화서",
+        tableOfContents: [
+            "Lesson 1 교과서 어휘·대화문 정복 & 기출 족보",
+            "Lesson 1 교과서 본문 암기 & 서술형 클리닉",
+            "Lesson 2 교과서 어휘·대화문 정복 & 기출 족보",
+            "Lesson 2 교과서 본문 암기 & 서술형 클리닉",
+            "중간고사 대비 실전 모의고사 1회 & 2회",
+            "Lesson 3 교과서 어휘·대화문 & 서술형 클리닉",
+            "Lesson 4 교과서 어휘·대화문 & 서술형 클리닉",
+            "기말고사 대비 파이널 기출 실전 모의고사"
+        ]
     },
     {
         id: "book_internal_exam_custom",
@@ -398,7 +789,19 @@ const POPULAR_ENGLISH_TEXTBOOKS = [
         defaultDaily: 1,
         totalPages: 40,
         coverEmoji: "📝",
-        desc: "학교 선생님이 직접 배부한 본문 빈칸/어법 프린트 과제"
+        desc: "학교 선생님이 직접 배부한 본문 빈칸/어법 프린트 과제",
+        tableOfContents: [
+            "1회차: 교과서 본문 단어 및 숙어 학습지",
+            "2회차: 문법 개념 확인 유인물 1 (기본)",
+            "3회차: 문법 개념 확인 유인물 2 (심화)",
+            "4회차: 교과서 본문 빈칸 완성 1차 프린트",
+            "5회차: 교과서 본문 빈칸 완성 2차 (고난도)",
+            "6회차: 본문 서술형 통문장 암기 프린트",
+            "7회차: 학교 기출 변형 문제 풀이 1회",
+            "8회차: 학교 기출 변형 문제 풀이 2회",
+            "9회차: 최종 오답노트 정리 및 취약점 보완",
+            "10회차: 직전 보강 파이널 실전 모의 테스트"
+        ]
     },
     {
         id: "book_academy_task_custom",
@@ -411,7 +814,21 @@ const POPULAR_ENGLISH_TEXTBOOKS = [
         defaultDaily: 1,
         totalPages: 50,
         coverEmoji: "🏫",
-        desc: "학원 주간 숙제, 단어 테스트, 기출 모의고사 오답 풀이"
+        desc: "학원 주간 숙제, 단어 테스트, 기출 모의고사 오답 풀이",
+        tableOfContents: [
+            "1주차 Day 1: 어휘 암기 및 테스트 준비",
+            "1주차 Day 2: 문법 워크북 홀수 번호 풀기",
+            "1주차 Day 3: 구문 독해 5문항 해석 숙제",
+            "2주차 Day 1: 주간 테스트 오답노트 작성",
+            "2주차 Day 2: 모의고사 1회분 리딩 풀이",
+            "2주차 Day 3: 듣기 평가 20문항 딕테이션",
+            "3주차 Day 1: 내신 대비 본문 어순배열 연습",
+            "3주차 Day 2: 고난도 서술형 10문항 작문",
+            "3주차 Day 3: 학원 주간 총괄 평가 풀이",
+            "4주차 Day 1: 월말고사 대비 파이널 복습 1",
+            "4주차 Day 2: 월말고사 대비 파이널 복습 2",
+            "4주차 Day 3: 월말 성취도 평가 오답 클리닉"
+        ]
     }
 ];
 

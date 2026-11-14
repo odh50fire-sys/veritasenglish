@@ -3119,6 +3119,7 @@ class StorageManager {
         const unitType = config.unitType || 'page'; // 'page' | 'chapter' | 'unit' | 'day' | 'lesson' | '강'
         const startDate = config.startDate || this.getTodayDateString();
         const selectedDays = (config.scheduledDays && config.scheduledDays.length > 0) ? config.scheduledDays : [0, 1, 2, 3, 4, 5, 6];
+        const tableOfContents = Array.isArray(config.tableOfContents) ? config.tableOfContents : null;
 
         const totalSessions = Math.ceil(totalUnits / dailyAmount);
         const scheduledDates = this.calculateScheduledDates(startDate, totalSessions, selectedDays);
@@ -3141,9 +3142,21 @@ class StorageManager {
                 label = (startUnit === endUnit) ? `${unitType} ${startUnit}` : `${unitType} ${startUnit}~${endUnit}`;
             }
 
+            let tocTitle = '';
+            if (tableOfContents && tableOfContents.length > 0) {
+                if (dailyAmount === 1) {
+                    tocTitle = tableOfContents[i] || label;
+                } else {
+                    const sToc = tableOfContents[startUnit - 1] || `${startUnit}`;
+                    const eToc = tableOfContents[endUnit - 1] || `${endUnit}`;
+                    tocTitle = (startUnit === endUnit) ? sToc : `${sToc} ~ ${eToc}`;
+                }
+            }
+
             scheduleMap[d] = {
                 sessionIndex: i,
                 range: label,
+                tocTitle: tocTitle || label,
                 isDone: false,
                 doneAt: null
             };
@@ -3163,6 +3176,7 @@ class StorageManager {
             endDate: scheduledDates[scheduledDates.length - 1] || startDate,
             totalSessions,
             currentProgress: 0,
+            tableOfContents,
             scheduleMap,
             createdAt: new Date().toISOString()
         };
@@ -3236,6 +3250,7 @@ class StorageManager {
                     totalUnits: study.totalUnits,
                     currentProgress: study.currentProgress || 0,
                     range: sess.range,
+                    tocTitle: sess.tocTitle || sess.range,
                     sessionIndex: sess.sessionIndex,
                     isDone: !!sess.isDone,
                     doneAt: sess.doneAt

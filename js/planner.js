@@ -89,6 +89,38 @@ class PlannerEngine {
             }
         }
 
+        // 현재 등록된 외부 교재 및 과제 활성 배너 렌더링 (원클릭 삭제 지원)
+        const activeExtBannerEl = document.getElementById('planner-active-ext-books-bar');
+        const externalStudies = (window.storage && typeof window.storage.getExternalStudies === 'function')
+            ? window.storage.getExternalStudies()
+            : [];
+        if (activeExtBannerEl) {
+            if (externalStudies.length > 0) {
+                activeExtBannerEl.classList.remove('hidden');
+                activeExtBannerEl.innerHTML = `
+                    <span class="text-[11px] font-serif font-bold text-slate-500 flex items-center gap-1 shrink-0">
+                        <i data-lucide="book-marked" class="w-3.5 h-3.5 text-amber-700"></i> 배정된 시중 교재·과제:
+                    </span>
+                    ${externalStudies.map(study => {
+                        const totalDone = Object.values(study.scheduleMap || {}).filter(s => s.isDone).length;
+                        return `
+                            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 hover:bg-amber-100/80 border border-amber-200 text-amber-950 text-xs font-serif font-bold transition-all shadow-2xs">
+                                <span>${study.coverEmoji || '📖'}</span>
+                                <span class="line-clamp-1 max-w-[200px]" title="${study.title}">${study.title}</span>
+                                <span class="font-mono text-[11px] text-amber-700 font-normal">(${study.startDate} ~ ${study.endDate} • ${totalDone}/${study.totalSessions}회)</span>
+                                <button class="ml-1 text-slate-400 hover:text-red-700 cursor-pointer p-0.5 rounded hover:bg-white/80 transition-colors" onclick="window.assistantEngine && window.assistantEngine.deleteExternalStudy('${study.id}', '${study.title.replace(/'/g, "\\'")}')" title="이 교재 전체 삭제">
+                                    <i data-lucide="x" class="w-3 h-3"></i>
+                                </button>
+                            </div>
+                        `;
+                    }).join('')}
+                `;
+            } else {
+                activeExtBannerEl.classList.add('hidden');
+                activeExtBannerEl.innerHTML = '';
+            }
+        }
+
         gridEl.innerHTML = '';
 
         const firstDayIndex = new Date(this.currentYear, this.currentMonth, 1).getDay(); // 0 is Sun
@@ -237,6 +269,10 @@ class PlannerEngine {
         const allWordsOnDate = window.storage.getWordsByDate(this.selectedDateStr);
         container.innerHTML = '';
 
+        const extTasksOnDate = (window.storage && typeof window.storage.getTodayExternalTasks === 'function')
+            ? window.storage.getTodayExternalTasks(this.selectedDateStr)
+            : [];
+
         // 이 날짜에 포함된 능률 VOCA DAY, 테마 단어장 및 중등 독해 단원 일괄 삭제 바 렌더링
         const dayBatchBar = document.getElementById('planner-day-batch-bar');
         const dayBatchChips = document.getElementById('planner-day-batch-chips');
@@ -271,7 +307,7 @@ class PlannerEngine {
         const readingUnitEntries = Object.entries(readingUnitsOnDateMap);
 
         if (dayBatchBar && dayBatchChips) {
-            if (neungryul2025Days.length > 0 || neungryulEtymDays.length > 0 || readingUnitEntries.length > 0 || curatedDaysOnDate.length > 0) {
+            if (neungryul2025Days.length > 0 || neungryulEtymDays.length > 0 || readingUnitEntries.length > 0 || curatedDaysOnDate.length > 0 || extTasksOnDate.length > 0) {
                 dayBatchBar.classList.remove('hidden');
                 
                 let chipsHtml = '';
@@ -307,6 +343,15 @@ class PlannerEngine {
                         <button class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-blue-100 hover:bg-blue-200 border border-blue-300 text-blue-900 text-xs font-mono font-bold transition-all cursor-pointer" onclick="window.plannerEngine.deleteCuratedDayFromPlanner('${item.colId}', '${item.day}', '${item.colTitle}')">
                             <i data-lucide="trash-2" class="w-3.5 h-3.5 text-blue-700"></i>
                             <span>${item.colTitle} ${item.day} 삭제</span>
+                        </button>
+                    `;
+                });
+
+                extTasksOnDate.forEach(item => {
+                    chipsHtml += `
+                        <button class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-amber-100 hover:bg-amber-200 border border-amber-300 text-amber-950 text-xs font-serif font-bold transition-all cursor-pointer" onclick="window.assistantEngine && window.assistantEngine.deleteExternalStudy('${item.studyId}', '${item.title.replace(/'/g, "\\'")}')">
+                            <i data-lucide="trash-2" class="w-3.5 h-3.5 text-amber-700"></i>
+                            <span>[${item.title}] 전체 삭제</span>
                         </button>
                     `;
                 });
@@ -390,10 +435,6 @@ class PlannerEngine {
             return 0;
         });
 
-        const extTasksOnDate = (window.storage && typeof window.storage.getTodayExternalTasks === 'function')
-            ? window.storage.getTodayExternalTasks(this.selectedDateStr)
-            : [];
-
         if (words.length === 0 && extTasksOnDate.length === 0) {
             const allPlanWords = (window.storage.words || []).filter(w => !String(w.id || '').startsWith('sample-') && w.planDate);
             const scheduledDates = Array.from(new Set(allPlanWords.map(w => w.planDate))).sort();
@@ -470,14 +511,19 @@ class PlannerEngine {
                                         ${t.isDone ? '<span class="px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800 text-[10px] font-bold">✓ 완료</span>' : ''}
                                     </div>
                                     <div class="text-[11px] font-mono text-indigo-700">
-                                        오늘 분량: <span class="font-bold">${t.range}</span> (${t.currentProgress}/${t.totalUnits}${t.unitType})
+                                        오늘 분량: <span class="font-bold text-indigo-900">${t.tocTitle || t.range}</span> (${t.currentProgress}/${t.totalUnits}${t.unitType})
                                     </div>
                                 </div>
                             </div>
-                            <button type="button" onclick="window.assistantEngine && window.assistantEngine.toggleTodayTask('${t.studyId}', '${this.selectedDateStr}')" class="px-3 py-1.5 rounded-lg ${t.isDone ? 'bg-emerald-100 text-emerald-900 border border-emerald-300' : 'bg-slate-900 hover:bg-slate-800 text-white'} font-serif font-bold text-xs transition-all cursor-pointer flex items-center gap-1 shrink-0 active:scale-95">
-                                <i data-lucide="${t.isDone ? 'check' : 'circle'}" class="w-3.5 h-3.5"></i>
-                                <span>${t.isDone ? '완료됨' : '완료 체크'}</span>
-                            </button>
+                            <div class="flex items-center gap-1.5 shrink-0">
+                                <button type="button" onclick="window.assistantEngine && window.assistantEngine.toggleTodayTask('${t.studyId}', '${this.selectedDateStr}')" class="px-3 py-1.5 rounded-lg ${t.isDone ? 'bg-emerald-100 text-emerald-900 border border-emerald-300' : 'bg-slate-900 hover:bg-slate-800 text-white'} font-serif font-bold text-xs transition-all cursor-pointer flex items-center gap-1 shrink-0 active:scale-95">
+                                    <i data-lucide="${t.isDone ? 'check' : 'circle'}" class="w-3.5 h-3.5"></i>
+                                    <span>${t.isDone ? '완료됨' : '완료 체크'}</span>
+                                </button>
+                                <button type="button" onclick="window.assistantEngine && window.assistantEngine.deleteExternalStudy('${t.studyId}', '${t.title.replace(/'/g, "\\'")}')" class="p-1.5 rounded-lg text-slate-400 hover:text-red-700 hover:bg-red-50 transition-colors cursor-pointer" title="이 교재 전체 삭제">
+                                    <i data-lucide="trash-2" class="w-4 h-4"></i>
+                                </button>
+                            </div>
                         </div>
                     `).join('')}
                 </div>
@@ -821,6 +867,23 @@ class PlannerEngine {
         }
 
         alert(`🗑️ [${unitTitle}] 관련 학습 과제 총 ${deleted}건이 계획표에서 삭제되었습니다.`);
+    }
+
+    deleteExternalStudyFromPlanner(studyId, title) {
+        if (window.assistantEngine && typeof window.assistantEngine.deleteExternalStudy === 'function') {
+            window.assistantEngine.deleteExternalStudy(studyId, title);
+        } else if (window.storage) {
+            const bookTitle = title || '선택한 교재/과제';
+            if (!confirm(`[${bookTitle}] 학습 계획 및 모든 배정 일정을 전체 삭제하시겠습니까?\n삭제된 일정은 복구할 수 없습니다.`)) {
+                return;
+            }
+            window.storage.deleteExternalStudy(studyId);
+            this.render();
+            if (window.app && window.app.renderDashboard) {
+                window.app.renderDashboard();
+            }
+            alert(`🗑️ [${bookTitle}] 학습 계획이 전체 삭제되었습니다.`);
+        }
     }
 
     /**

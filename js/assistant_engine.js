@@ -282,6 +282,8 @@ class AssistantEngine {
         if (!modal) return;
 
         this.selectedBookPreset = null;
+        this.clearBookSearch();
+        this.renderTocPreview(null);
         this.switchStudyRegisterTab('popular');
         this.renderBestsellerGrid('all');
 
@@ -298,6 +300,140 @@ class AssistantEngine {
     closeExternalStudyModal() {
         const modal = document.getElementById('modal-external-study-register');
         if (modal) modal.classList.add('hidden');
+    }
+
+    // ------------------------------------------------------------------------
+    // 시중 교재 실시간 검색 & 정규 목차(TOC) 연동 메서드
+    // ------------------------------------------------------------------------
+
+    onBookSearchInput(query) {
+        const dropdown = document.getElementById('ext-book-search-results');
+        const clearBtn = document.getElementById('ext-book-search-clear');
+        if (!dropdown) return;
+
+        const cleanQ = String(query || '').trim().toLowerCase();
+        if (clearBtn) clearBtn.classList.toggle('hidden', cleanQ.length === 0);
+
+        if (cleanQ.length < 1) {
+            dropdown.classList.add('hidden');
+            dropdown.innerHTML = '';
+            return;
+        }
+
+        const books = window.POPULAR_ENGLISH_TEXTBOOKS || [];
+        const matches = books.filter(b => {
+            const titleMatch = (b.title || '').toLowerCase().includes(cleanQ);
+            const pubMatch = (b.publisher || '').toLowerCase().includes(cleanQ);
+            const catMatch = (b.category || '').toLowerCase().includes(cleanQ);
+            const gradeMatch = (b.gradeTag || '').toLowerCase().includes(cleanQ);
+            const tagMatch = Array.isArray(b.tags) && b.tags.some(t => t.toLowerCase().includes(cleanQ));
+            return titleMatch || pubMatch || catMatch || gradeMatch || tagMatch;
+        }).slice(0, 10);
+
+        if (matches.length === 0) {
+            dropdown.innerHTML = `
+                <div class="px-4 py-3 text-xs text-slate-500 flex items-center justify-between">
+                    <span>일치하는 등록 교재가 없습니다: "<strong>${query}</strong>"</span>
+                    <button type="button" class="text-indigo-900 font-bold hover:underline cursor-pointer" onclick="window.assistantEngine.selectCustomBookDirect('${query.replace(/'/g, "\\'")}')">
+                        직접 교재명으로 사용 →
+                    </button>
+                </div>
+            `;
+            dropdown.classList.remove('hidden');
+            return;
+        }
+
+        dropdown.innerHTML = matches.map(b => {
+            const hasToc = Array.isArray(b.tableOfContents) && b.tableOfContents.length > 0;
+            return `
+                <div class="px-4 py-3 hover:bg-indigo-50/70 cursor-pointer flex items-center justify-between gap-3 transition-colors" onclick="window.assistantEngine.selectBookFromSearch('${b.id}')">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl shrink-0">${b.coverEmoji || '📖'}</span>
+                        <div>
+                            <div class="flex items-center gap-1.5">
+                                <span class="px-1.5 py-0.2 rounded bg-slate-100 text-slate-700 text-[10px] font-mono font-bold">${b.gradeTag}</span>
+                                <span class="text-[11px] font-bold text-slate-500">${b.publisher}</span>
+                                ${hasToc ? `<span class="px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800 text-[10px] font-bold">목차 연동 (${b.tableOfContents.length}단원)</span>` : ''}
+                            </div>
+                            <h5 class="font-serif font-bold text-xs text-slate-900 line-clamp-1 mt-0.5">${b.title}</h5>
+                        </div>
+                    </div>
+                    <span class="text-indigo-700 text-xs font-bold shrink-0">선택 →</span>
+                </div>
+            `;
+        }).join('');
+        dropdown.classList.remove('hidden');
+    }
+
+    clearBookSearch() {
+        const input = document.getElementById('ext-book-search-input');
+        const dropdown = document.getElementById('ext-book-search-results');
+        const clearBtn = document.getElementById('ext-book-search-clear');
+        if (input) input.value = '';
+        if (dropdown) {
+            dropdown.innerHTML = '';
+            dropdown.classList.add('hidden');
+        }
+        if (clearBtn) clearBtn.classList.add('hidden');
+    }
+
+    selectBookFromSearch(bookId) {
+        const books = window.POPULAR_ENGLISH_TEXTBOOKS || [];
+        const book = books.find(b => b.id === bookId);
+        if (!book) return;
+
+        const input = document.getElementById('ext-book-search-input');
+        const dropdown = document.getElementById('ext-book-search-results');
+        const clearBtn = document.getElementById('ext-book-search-clear');
+        if (input) input.value = book.title;
+        if (dropdown) dropdown.classList.add('hidden');
+        if (clearBtn) clearBtn.classList.remove('hidden');
+
+        this.selectBestsellerBook(bookId);
+    }
+
+    selectCustomBookDirect(title) {
+        const input = document.getElementById('ext-book-search-input');
+        const dropdown = document.getElementById('ext-book-search-results');
+        if (input) input.value = title;
+        if (dropdown) dropdown.classList.add('hidden');
+
+        const titleInput = document.getElementById('ext-study-title');
+        if (titleInput) titleInput.value = title;
+        this.selectedBookPreset = null;
+        this.renderTocPreview(null);
+        this.updateSchedulePreview();
+    }
+
+    renderTocPreview(book) {
+        const container = document.getElementById('ext-book-toc-preview-container');
+        if (!container) return;
+
+        if (!book || !Array.isArray(book.tableOfContents) || book.tableOfContents.length === 0) {
+            container.classList.add('hidden');
+            container.innerHTML = '';
+            return;
+        }
+
+        const toc = book.tableOfContents;
+        container.classList.remove('hidden');
+        container.innerHTML = `
+            <div class="flex items-center justify-between pb-1.5 border-b border-indigo-200/60">
+                <div class="flex items-center gap-1.5 font-serif font-bold text-xs text-indigo-950">
+                    <span class="text-base">${book.coverEmoji || '📖'}</span>
+                    <span>정규 목차 연동 완료 (${toc.length}단원 완비)</span>
+                </div>
+                <span class="text-[10px] text-indigo-700 font-mono font-medium">플래너 배정 시 일자별 목차가 자동 매칭됩니다</span>
+            </div>
+            <div class="max-h-36 overflow-y-auto space-y-1 font-mono text-[11px] text-slate-700 bg-white/90 p-2.5 rounded-xl border border-indigo-100">
+                ${toc.map((chap, idx) => `
+                    <div class="flex items-center gap-2 py-0.5 border-b border-slate-50 last:border-0">
+                        <span class="w-8 text-center px-1 py-0.2 rounded bg-indigo-50 text-indigo-800 text-[10px] font-bold shrink-0">#${idx + 1}</span>
+                        <span class="truncate text-slate-800">${chap}</span>
+                    </div>
+                `).join('')}
+            </div>
+        `;
     }
 
     switchStudyRegisterTab(tabName) {
@@ -379,6 +515,7 @@ class AssistantEngine {
         if (unitTypeSelect) unitTypeSelect.value = book.unitType;
         if (dailyAmountInput) dailyAmountInput.value = book.defaultDaily || 1;
 
+        this.renderTocPreview(book);
         this.renderBestsellerGrid();
         this.updateSchedulePreview();
     }
@@ -499,7 +636,10 @@ class AssistantEngine {
             unitType,
             dailyAmount,
             scheduledDays: selectedDays,
-            startDate
+            startDate,
+            tableOfContents: (this.selectedBookPreset && Array.isArray(this.selectedBookPreset.tableOfContents))
+                ? this.selectedBookPreset.tableOfContents
+                : null
         });
 
         this.closeExternalStudyModal();
@@ -516,6 +656,30 @@ class AssistantEngine {
         }
         if (window.app && window.app.renderDashboard) {
             window.app.renderDashboard();
+        }
+    }
+
+    // ------------------------------------------------------------------------
+    // 외부 교재 및 학습 과제 원클릭 전체 삭제 (대시보드 / 플래너 연동)
+    // ------------------------------------------------------------------------
+
+    deleteExternalStudy(studyId, title) {
+        if (!window.storage) return;
+        const bookTitle = title || '선택한 교재/과제';
+        if (!confirm(`[${bookTitle}] 학습 계획 및 모든 배정 일정을 전체 삭제하시겠습니까?\n삭제된 일정은 복구할 수 없습니다.`)) {
+            return;
+        }
+
+        const success = window.storage.deleteExternalStudy(studyId);
+        if (success) {
+            // 대시보드 및 플래너 즉각 갱신
+            if (window.plannerEngine) {
+                window.plannerEngine.render();
+            }
+            if (window.app && window.app.renderDashboard) {
+                window.app.renderDashboard();
+            }
+            alert(`🗑️ [${bookTitle}] 학습 계획이 전체 삭제되었습니다.`);
         }
     }
 
