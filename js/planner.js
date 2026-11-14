@@ -506,7 +506,8 @@ class PlannerEngine {
                             <div class="flex items-center gap-2.5">
                                 <span class="text-xl">${t.coverEmoji || '📖'}</span>
                                 <div>
-                                    <div class="flex items-center gap-1.5">
+                                    <div class="flex items-center gap-1.5 flex-wrap">
+                                        <span class="px-1.5 py-0.2 rounded ${(t.category === 'novel' || t.category === 'reader') ? 'bg-purple-100 text-purple-800' : 'bg-slate-100 text-slate-700'} text-[10px] font-mono font-bold">${(t.category === 'novel' || t.category === 'reader') ? '원서 읽기' : (t.category === 'grammar' ? '문법' : (t.category === 'reading' ? '독해' : (t.category === 'sat' ? '수능' : (t.category === 'school_task' ? '내신' : (t.category === 'academy' ? '학원' : '교재')))))}</span>
                                         <span class="font-serif font-bold text-xs text-slate-900 line-clamp-1">${t.title}</span>
                                         ${t.isDone ? '<span class="px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800 text-[10px] font-bold">✓ 완료</span>' : ''}
                                     </div>

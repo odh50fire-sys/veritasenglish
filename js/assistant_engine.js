@@ -680,7 +680,13 @@ class AssistantEngine {
 
         if (titleInput) titleInput.value = book.title;
         if (publisherInput) publisherInput.value = book.publisher;
-        if (categorySelect) categorySelect.value = book.category;
+        if (categorySelect) {
+            if (book.category === 'reader' || book.category === 'novel' || book.isOriginalReader) {
+                categorySelect.value = 'novel';
+            } else {
+                categorySelect.value = book.category || 'book';
+            }
+        }
         if (totalUnitsInput) totalUnitsInput.value = book.totalUnits;
         if (unitTypeSelect) unitTypeSelect.value = book.unitType;
         if (dailyAmountInput) dailyAmountInput.value = book.defaultDaily || 1;
@@ -796,6 +802,7 @@ class AssistantEngine {
         else if (cat === 'sat') coverEmoji = '🎓';
         else if (cat === 'school_task') coverEmoji = '📝';
         else if (cat === 'academy') coverEmoji = '🏫';
+        else if (cat === 'novel' || cat === 'reader') coverEmoji = '📖';
 
         const newStudy = window.storage.addExternalStudy({
             title,

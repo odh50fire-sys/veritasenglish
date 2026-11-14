@@ -94,6 +94,12 @@ try:
         search_count_hp = eval_js('document.querySelectorAll("#ext-book-search-results > div").length')
         print(f'Search results for "Harry Potter": {search_count_hp}')
 
+        # Test selecting Harry Potter novel and verify category is set to 'novel'
+        eval_js('window.assistantEngine.selectBookFromSearch(window.assistantEngine.getAllAvailableBooks().find(b => b.title.includes("Harry Potter")).id)')
+        selected_cat = eval_js('document.getElementById("ext-study-category").value')
+        has_novel_option = eval_js('Boolean(document.querySelector("#ext-study-category option[value=\'novel\']"))')
+        print(f'Novel category selected: {selected_cat}, Has novel option in select: {has_novel_option}')
+
         # Test search query '수능특강'
         eval_js('window.assistantEngine.onBookSearchInput("수능특강")')
         search_count_sat = eval_js('document.querySelectorAll("#ext-book-search-results > div").length')

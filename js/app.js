@@ -1083,6 +1083,8 @@ class AppController {
         externalTasks.forEach(task => {
             const progressPercent = task.totalUnits > 0 ? Math.min(100, Math.round((task.currentProgress / task.totalUnits) * 100)) : 0;
             const catLabels = {
+                novel: '원서 읽기',
+                reader: '원서 읽기',
                 grammar: '문법/어법',
                 reading: '독해/구문',
                 sat: '수능/EBS',
