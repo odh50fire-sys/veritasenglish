@@ -1472,10 +1472,10 @@
                         <div class="flex items-center gap-3">
                             <h2 id="planner-month-title" class="font-serif font-black text-2xl text-slate-900">2026년 10월</h2>
                             <div class="flex items-center gap-1">
-                                <button class="p-1.5 rounded-lg hover:bg-slate-100 text-slate-600 transition-colors" onclick="window.plannerEngine.changeMonth(-1)">
+                                <button class="p-1.5 rounded-lg hover:bg-slate-100 text-slate-600 transition-colors cursor-pointer" onclick="window.plannerEngine.changeMonth(-1)">
                                     <i data-lucide="chevron-left" class="w-4 h-4"></i>
                                 </button>
-                                <button class="p-1.5 rounded-lg hover:bg-slate-100 text-slate-600 transition-colors" onclick="window.plannerEngine.changeMonth(1)">
+                                <button class="p-1.5 rounded-lg hover:bg-slate-100 text-slate-600 transition-colors cursor-pointer" onclick="window.plannerEngine.changeMonth(1)">
                                     <i data-lucide="chevron-right" class="w-4 h-4"></i>
                                 </button>
                             </div>
@@ -1486,9 +1486,13 @@
                             <a href="guides/planner.html" class="px-2.5 py-1.5 rounded-lg border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-900 text-xs font-serif font-bold flex items-center gap-1 transition-all shadow-2xs cursor-pointer" title="스마트 학습 플래너 100% 이용 가이드 보기">
                                 <span>ℹ️ 플래너 가이드</span>
                             </a>
+                            <button id="btn-replan-reading" class="px-3 py-1.5 rounded-lg border border-indigo-200 bg-indigo-50 hover:bg-indigo-100 text-indigo-900 text-xs font-serif font-bold flex items-center gap-1.5 transition-all cursor-pointer shadow-2xs" onclick="window.plannerEngine.openReadingPlanModal()" title="독해 단원 학습 일정 배정 및 관리">
+                                <i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-indigo-700"></i>
+                                <span>독해 단원 배정</span>
+                            </button>
                             <button id="btn-replan-voca" class="px-3 py-1.5 rounded-lg border border-blue-200 bg-blue-50 hover:bg-blue-100 text-blue-900 text-xs font-serif font-bold flex items-center gap-1.5 transition-all cursor-pointer shadow-2xs" onclick="window.plannerEngine.openVocaReplanModal()" title="등록된 단어장의 일일 학습 단어 수 및 일정 재배정/수정">
                                 <i data-lucide="sliders-horizontal" class="w-3.5 h-3.5 text-blue-900"></i>
-                                <span>계획 수정·재배정</span>
+                                <span>단어장 계획 배정</span>
                             </button>
                             <button id="btn-open-learning-history" class="px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700 text-xs font-serif font-bold flex items-center gap-1.5 transition-all cursor-pointer shadow-2xs" onclick="window.plannerEngine.openLearningHistoryModal()" title="학습 이력 및 성취 통계 확인">
                                 <i data-lucide="history" class="w-3.5 h-3.5 text-blue-900"></i>
@@ -1499,6 +1503,11 @@
                                 <input id="planner-target-input" type="number" min="5" max="100" class="w-14 px-2 py-1 text-center font-mono font-bold bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-900">
                             </div>
                         </div>
+                    </div>
+
+                    <!-- 등록된 독해 단원 활성 배너 -->
+                    <div id="planner-active-units-bar" class="hidden flex flex-wrap items-center gap-2 pt-2 border-t border-slate-100">
+                        <!-- JS 동적 주입 -->
                     </div>
 
                     <!-- 요일 헤더 -->
@@ -1532,7 +1541,7 @@
                         </div>
 
                         <div class="mt-4 flex items-center justify-between text-xs text-slate-500">
-                            <span>배정된 단어 목록</span>
+                            <span id="planner-detail-list-title" class="font-bold text-slate-700">배정된 과제 목록</span>
                             <div class="flex items-center gap-2 shrink-0">
                                 <button class="text-blue-900 hover:underline font-semibold cursor-pointer" onclick="window.plannerEngine.rescheduleCurrentDateWords()">
                                     전체 날짜 변경 →
@@ -1559,10 +1568,12 @@
                         </div>
                     </div>
 
-                    <div class="pt-4 border-t border-slate-100">
+                    <div class="pt-4 border-t border-slate-100 flex flex-col gap-2">
+                        <!-- 독해 지문 바로 풀기 원클릭 퀵 액션 (독해 과제 배정 시 표시) -->
+                        <div id="planner-reading-quick-action" class="hidden"></div>
                         <button class="w-full py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-xs shadow-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer" onclick="window.plannerEngine.startFlashcardsForSelectedDate();">
                             <i data-lucide="play" class="w-4 h-4"></i>
-                            이 날짜 단어 플래시카드로 시작
+                            <span>이 날짜 단어 플래시카드로 시작</span>
                         </button>
                     </div>
                 </div>
@@ -2807,11 +2818,13 @@
 
             <!-- 1. 대상 콘텐츠 요약 -->
             <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200/80 flex items-center justify-between text-xs">
-                <div>
+                <div class="flex-1 mr-3">
                     <span class="text-slate-400 block text-[11px] font-semibold">학습 대상</span>
                     <span id="batch-plan-target-name" class="font-serif font-bold text-sm text-blue-950">중 1-1 내신 독해 마스터</span>
+                    <select id="batch-plan-unit-select" class="hidden mt-1.5 w-full px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg text-xs font-bold text-slate-800 outline-none focus:border-blue-900 cursor-pointer shadow-2xs" onchange="window.app.onBatchPlanUnitSelectChanged(this.value)">
+                    </select>
                 </div>
-                <span id="batch-plan-total-items-badge" class="px-2.5 py-1 rounded-full bg-blue-100 text-blue-900 font-mono font-bold text-xs">
+                <span id="batch-plan-total-items-badge" class="px-2.5 py-1 rounded-full bg-blue-100 text-blue-900 font-mono font-bold text-xs shrink-0">
                     총 10개 지문
                 </span>
             </div>

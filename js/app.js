@@ -660,7 +660,10 @@ class AppController {
         } else if (tabName === 'reading') {
             this.switchReadingSubTab(this.currentReadingSubTab || 'passages');
         } else if (tabName === 'planner') {
-            window.plannerEngine.render();
+            if (window.plannerEngine) {
+                window.plannerEngine.currentDayBookFilter = 'all';
+                window.plannerEngine.render();
+            }
         } else if (tabName === 'ocr') {
             // OCR 탭 진입 시 날짜 기본값 자동 설정
             const todayStr = window.storage ? window.storage.getTodayDateString() : new Date().toISOString().slice(0, 10);
@@ -923,7 +926,11 @@ class AppController {
             let bookTitle = '';
             let dayLabel = '';
 
-            if (w.curatedCollectionId) {
+            if (w.isReadingVocab) {
+                groupKey = `reading_vocab_${w.readingUnitId || 'r'}`;
+                bookTitle = `${w.tag ? w.tag.replace(' [어휘]', '').replace(' [독해]', '') : '내신 독해'} 연계 어휘`;
+                dayLabel = '오늘 지문 어휘';
+            } else if (w.curatedCollectionId) {
                 groupKey = `curated_${w.curatedCollectionId}_${w.curatedDay || 'ALL'}`;
                 bookTitle = w.curatedCollectionTitle || w.tag || '부교재 테마 단어장';
                 dayLabel = w.curatedDay || '';
@@ -1056,10 +1063,59 @@ class AppController {
             return;
         }
 
-        // 4. 단어장 카드 및 독해 카드 HTML 빌드
-        const cardsHtmlArr = [];
+        // 4. 단어장 카드 및 독해 카드 HTML 빌드 (독해 카드를 상단 최우선 배치)
+        const readingCardsArr = [];
+        readingPassages.forEach(reading => {
+            readingCardsArr.push(`
+                <div class="rounded-2xl border border-emerald-300/80 bg-gradient-to-br from-white to-emerald-50/40 p-5 shadow-xs relative flex flex-col justify-between hover:border-emerald-400 hover:shadow-sm transition-all ring-1 ring-emerald-500/20">
+                    <div>
+                        <!-- 카드 상단: 독해 단원 & 지문 제목 -->
+                        <div class="flex items-start justify-between gap-3 mb-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-11 h-11 rounded-xl bg-emerald-100 text-emerald-900 border border-emerald-200 flex items-center justify-center text-xl font-bold shrink-0 shadow-xs">
+                                    🎓
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-2 mb-0.5">
+                                        <span class="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 font-mono text-[10px] font-bold">오늘의 독해</span>
+                                        <span class="text-[11px] font-bold text-slate-500 line-clamp-1">${reading.unitTitle}</span>
+                                        ${reading.isDone ? `<span class="px-1.5 py-0.2 rounded-full bg-emerald-200 text-emerald-900 text-[10px] font-bold">✓ 완료</span>` : ''}
+                                    </div>
+                                    <h3 class="font-serif font-black text-base sm:text-lg text-slate-900 line-clamp-1" title="${reading.title}">
+                                        ${reading.title}
+                                    </h3>
+                                    ${reading.koreanTitle ? `<p class="text-xs text-slate-500 font-sans mt-0.5 line-clamp-1">${reading.koreanTitle}</p>` : ''}
+                                </div>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-mono text-[11px] font-bold border border-emerald-200 shrink-0">
+                                ${reading.badge}
+                            </span>
+                        </div>
 
-        // 단어장 카드 렌더링
+                        <!-- 지문 독해 핵심 학습 목표 -->
+                        <div class="mt-4 pt-3 border-t border-slate-100">
+                            <div class="p-3 rounded-xl bg-white/80 border border-emerald-100 shadow-2xs">
+                                <div class="text-[11px] font-bold text-emerald-800 mb-1 flex items-center gap-1.5">
+                                    <i data-lucide="target" class="w-3.5 h-3.5 text-emerald-600"></i>
+                                    <span>지문 독해 핵심 학습 목표</span>
+                                </div>
+                                <p class="text-xs text-slate-600 font-sans leading-relaxed line-clamp-2">
+                                    ${reading.learningGoal}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 독해 바로 시작하기 버튼 -->
+                    <button type="button" onclick="window.app && window.app.startReadingPassage('${reading.id}')" class="w-full mt-5 py-2.5 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white font-serif font-bold text-xs flex items-center justify-center gap-1.5 shadow-xs transition-all cursor-pointer">
+                        <span>독해 지문 읽기 & 실전 문제 풀기</span>
+                        <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+            `);
+        });
+
+        const vocabCardsArr = [];
         vocabGroups.forEach(group => {
             const keyWords = (group.newWords.length > 0 ? group.newWords : group.words).slice(0, 4).map(w => w.word);
             const chipsHtml = keyWords.map(kw => `
@@ -1070,7 +1126,7 @@ class AppController {
 
             const isGroupDone = group.words.length > 0 && group.words.every(w => (w.flashcardDone && w.quizDone) || w.studyCompleted);
 
-            cardsHtmlArr.push(`
+            vocabCardsArr.push(`
                 <div class="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-blue-50/30 p-5 shadow-xs relative flex flex-col justify-between hover:border-indigo-300 hover:shadow-sm transition-all">
                     <div>
                         <!-- 카드 상단: 단어장 명칭 및 [🎧 워크맨] 버튼 (해당 단어장 전용) -->
@@ -1118,56 +1174,7 @@ class AppController {
             `);
         });
 
-        // 독해 지문 카드 렌더링
-        readingPassages.forEach(reading => {
-            cardsHtmlArr.push(`
-                <div class="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-emerald-50/30 p-5 shadow-xs relative flex flex-col justify-between hover:border-emerald-300 hover:shadow-sm transition-all">
-                    <div>
-                        <!-- 카드 상단: 독해 단원 & 지문 제목 -->
-                        <div class="flex items-start justify-between gap-3 mb-3">
-                            <div class="flex items-center gap-3">
-                                <div class="w-11 h-11 rounded-xl bg-emerald-100/70 text-emerald-900 border border-emerald-200 flex items-center justify-center text-xl font-bold shrink-0 shadow-xs">
-                                    🎓
-                                </div>
-                                <div>
-                                    <div class="flex items-center gap-2 mb-0.5">
-                                        <span class="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 font-mono text-[10px] font-bold">오늘의 독해</span>
-                                        <span class="text-[11px] font-bold text-slate-500 line-clamp-1">${reading.unitTitle}</span>
-                                        ${reading.isDone ? `<span class="px-1.5 py-0.2 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">완료</span>` : ''}
-                                    </div>
-                                    <h3 class="font-serif font-black text-base sm:text-lg text-slate-900 line-clamp-1" title="${reading.title}">
-                                        ${reading.title}
-                                    </h3>
-                                    ${reading.koreanTitle ? `<p class="text-xs text-slate-500 font-sans mt-0.5 line-clamp-1">${reading.koreanTitle}</p>` : ''}
-                                </div>
-                            </div>
-                            <span class="px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-mono text-[11px] font-bold border border-emerald-200 shrink-0">
-                                ${reading.badge}
-                            </span>
-                        </div>
-
-                        <!-- 지문 독해 핵심 학습 목표 -->
-                        <div class="mt-4 pt-3 border-t border-slate-100">
-                            <div class="p-3 rounded-xl bg-white/80 border border-emerald-100 shadow-2xs">
-                                <div class="text-[11px] font-bold text-emerald-800 mb-1 flex items-center gap-1.5">
-                                    <i data-lucide="target" class="w-3.5 h-3.5 text-emerald-600"></i>
-                                    <span>지문 독해 핵심 학습 목표</span>
-                                </div>
-                                <p class="text-xs text-slate-600 font-sans leading-relaxed line-clamp-2">
-                                    ${reading.learningGoal}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 독해 바로 시작하기 버튼 -->
-                    <button type="button" onclick="window.app && window.app.startReadingPassage('${reading.id}')" class="w-full mt-5 py-2.5 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white font-serif font-bold text-xs flex items-center justify-center gap-1.5 shadow-xs transition-all cursor-pointer">
-                        <span>독해 바로 시작하기</span>
-                        <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
-                    </button>
-                </div>
-            `);
-        });
+        const cardsHtmlArr = [...readingCardsArr, ...vocabCardsArr];
 
         // 5. 그리드 컬럼 계산: 1개면 1열, 2개면 2열, 3개 이상이면 반응형 다열
         const totalCards = cardsHtmlArr.length;
@@ -1864,9 +1871,13 @@ class AppController {
     // 스마트 학습 계획 일괄 배정 모달 (요일 선택 & 시작 소단원/DAY 지정)
     // ------------------------------------------------------------------------
 
-    openReadingBatchPlanModal(unit = null) {
+    openReadingBatchPlanModal(unit = null, allowUnitSelect = false) {
         if (!unit) {
             unit = window.readingEngine ? window.readingEngine.getCurrentUnit() : null;
+        }
+        const units = window.READING_UNITS || (typeof READING_UNITS !== 'undefined' ? READING_UNITS : []);
+        if (!unit && units.length > 0) {
+            unit = units[0];
         }
         if (!unit) return;
 
@@ -1877,13 +1888,15 @@ class AppController {
             type: 'reading',
             targetId: unit.unitId,
             unitTitle: unit.unitTitle,
-            items: unitPassages
+            items: unitPassages,
+            fromTab: this.currentTab
         };
 
         const modal = document.getElementById('modal-batch-plan');
         const modalTitle = document.getElementById('batch-plan-modal-title');
         const modalDesc = document.getElementById('batch-plan-modal-desc');
         const targetName = document.getElementById('batch-plan-target-name');
+        const unitSelect = document.getElementById('batch-plan-unit-select');
         const totalItemsBadge = document.getElementById('batch-plan-total-items-badge');
         const startDateInput = document.getElementById('batch-plan-start-date');
         const startSubunitSelect = document.getElementById('batch-plan-start-subunit');
@@ -1892,6 +1905,16 @@ class AppController {
         if (modalDesc) modalDesc.textContent = '학습 요일(주기)과 시작 소단원을 지정하여 맞춤형 플래너를 생성합니다.';
         if (targetName) targetName.textContent = unit.unitTitle;
         if (totalItemsBadge) totalItemsBadge.textContent = `총 ${unitPassages.length}개 지문`;
+
+        // 단원 선택 드롭다운 채우기 및 노출
+        if (unitSelect) {
+            unitSelect.classList.remove('hidden');
+            unitSelect.innerHTML = units.map(u => `
+                <option value="${u.unitId}" ${u.unitId === unit.unitId ? 'selected' : ''}>
+                    ${u.unitTitle} (${u.grade} ${u.semester} • 10지문)
+                </option>
+            `).join('');
+        }
 
         const todayStr = window.storage ? window.storage.getTodayDateString() : new Date().toISOString().slice(0, 10);
         if (startDateInput) startDateInput.value = todayStr;
@@ -1914,11 +1937,25 @@ class AppController {
         if (window.lucide) window.lucide.createIcons();
     }
 
+    onBatchPlanUnitSelectChanged(unitId) {
+        const units = window.READING_UNITS || (typeof READING_UNITS !== 'undefined' ? READING_UNITS : []);
+        const targetUnit = units.find(u => u.unitId === unitId);
+        if (targetUnit) {
+            this.openReadingBatchPlanModal(targetUnit, true);
+            if (window.readingEngine) {
+                window.readingEngine.selectUnit(unitId);
+            }
+        }
+    }
+
     openVocaBatchPlanModal(book = null) {
         if (!book) {
             book = window.ocrEngine ? window.ocrEngine.getCurrentBookInfo() : null;
         }
         if (!book) return;
+
+        const unitSelect = document.getElementById('batch-plan-unit-select');
+        if (unitSelect) unitSelect.classList.add('hidden');
 
         const dataPool = book.dataPool || [];
         const uniqueDays = Array.from(new Set(dataPool.map(r => r.DAY))).sort();
@@ -1934,7 +1971,8 @@ class AppController {
             dataPool: dataPool,
             totalWords: dataPool.length,
             wordsPerDay: 'default',
-            includePlus: true
+            includePlus: true,
+            fromTab: this.currentTab
         };
 
         const wordsSection = document.getElementById('batch-plan-words-per-day-section');
@@ -2342,7 +2380,10 @@ class AppController {
 
         this.closeBatchPlanModal();
 
+        const originTab = (conf && conf.fromTab) || this.currentTab;
+
         if (window.plannerEngine) {
+            window.plannerEngine.currentDayBookFilter = 'all';
             const todayStr = window.storage.getTodayDateString();
             const todayWords = window.storage.getWordsByDate(todayStr).filter(w => !String(w.id || '').startsWith('sample-'));
             const targetFocusDate = (todayWords.length > 0) ? todayStr : (result && result.startDate ? result.startDate : todayStr);
@@ -2355,6 +2396,15 @@ class AppController {
             window.plannerEngine.render();
         }
         if (this.renderDashboard) this.renderDashboard();
+
+        if (originTab === 'planner') {
+            this.switchTab('planner');
+        } else {
+            const jumpToPlanner = confirm('📅 학습 일정이 성공적으로 배정되었습니다!\n\n지금 [학습 플래너]로 바로 이동하여 배정된 캘린더와 상세 과제를 확인하시겠습니까?');
+            if (jumpToPlanner) {
+                this.switchTab('planner');
+            }
+        }
     }
 
 }

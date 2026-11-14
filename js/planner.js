@@ -58,6 +58,37 @@ class PlannerEngine {
             titleEl.textContent = `${this.currentYear}년 ${monthNames[this.currentMonth]}`;
         }
 
+        // 현재 등록된 독해 단원 활성 배너 렌더링
+        const statusMap = window.storage && window.storage.getReadingUnitStatusMap ? window.storage.getReadingUnitStatusMap() : {};
+        const activeUnits = Object.entries(statusMap).filter(([_, s]) => s.isRegistered);
+        const activeBannerEl = document.getElementById('planner-active-units-bar');
+        if (activeBannerEl) {
+            if (activeUnits.length > 0) {
+                activeBannerEl.classList.remove('hidden');
+                activeBannerEl.innerHTML = `
+                    <span class="text-[11px] font-serif font-bold text-slate-500 flex items-center gap-1 shrink-0">
+                        <i data-lucide="layers" class="w-3.5 h-3.5 text-indigo-700"></i> 배정된 독해 단원:
+                    </span>
+                    ${activeUnits.map(([uId, s]) => {
+                        const unitObj = (window.READING_UNITS || []).find(u => u.unitId === uId);
+                        const title = unitObj ? unitObj.unitTitle : uId;
+                        return `
+                            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 hover:bg-indigo-100/80 border border-indigo-200 text-indigo-900 text-xs font-serif font-bold transition-all shadow-2xs">
+                                <i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-indigo-700"></i>
+                                <span>${title}</span>
+                                <span class="font-mono text-[11px] text-indigo-600 font-normal">(${s.startDate} ~ ${s.endDate} • ${s.passageCount}편)</span>
+                                <button class="ml-1 text-slate-400 hover:text-red-700 cursor-pointer" onclick="window.plannerEngine.deleteReadingUnitFromPlanner('${uId}', '${title}')" title="단원 계획 삭제">
+                                    <i data-lucide="x" class="w-3 h-3"></i>
+                                </button>
+                            </div>
+                        `;
+                    }).join('')}
+                `;
+            } else {
+                activeBannerEl.classList.add('hidden');
+            }
+        }
+
         gridEl.innerHTML = '';
 
         const firstDayIndex = new Date(this.currentYear, this.currentMonth, 1).getDay(); // 0 is Sun
@@ -277,9 +308,9 @@ class PlannerEngine {
         allWordsOnDate.forEach(w => {
             let key = 'etc';
             let label = '기타 단어';
-            if (w.isReadingPassage) {
+            if (w.isReadingPassage || w.isReadingVocab) {
                 key = `reading:${w.readingUnitId || 'r'}`;
-                label = w.tag || '중등 내신 독해';
+                label = w.tag ? w.tag.replace(' [어휘]', '').replace(' [독해]', '') : '내신 독해';
             } else if (w.isNeungryul2025) {
                 key = 'neungryul2025';
                 label = '능률 VOCA 중등 고난도';
@@ -330,13 +361,20 @@ class PlannerEngine {
         // 필터링 적용된 단어 목록
         const words = (this.currentDayBookFilter && this.currentDayBookFilter !== 'all')
             ? allWordsOnDate.filter(w => {
-                if (w.isReadingPassage && `reading:${w.readingUnitId || 'r'}` === this.currentDayBookFilter) return true;
+                if ((w.isReadingPassage || w.isReadingVocab) && `reading:${w.readingUnitId || 'r'}` === this.currentDayBookFilter) return true;
                 if (w.isNeungryul2025 && this.currentDayBookFilter === 'neungryul2025') return true;
                 if (w.isNeungryulEtym && this.currentDayBookFilter === 'neungryul_etym') return true;
                 if (w.curatedCollectionId && `curated:${w.curatedCollectionId}` === this.currentDayBookFilter) return true;
                 return false;
             })
             : allWordsOnDate;
+
+        // 독해 지문 과제를 상단에 최우선 배치
+        words.sort((a, b) => {
+            if (a.isReadingPassage && !b.isReadingPassage) return -1;
+            if (!a.isReadingPassage && b.isReadingPassage) return 1;
+            return 0;
+        });
 
         if (words.length === 0) {
             const allPlanWords = (window.storage.words || []).filter(w => !String(w.id || '').startsWith('sample-') && w.planDate);
@@ -361,7 +399,7 @@ class PlannerEngine {
             container.innerHTML = `
                 <div class="py-8 px-4 text-center text-slate-400 border border-dashed border-slate-200 rounded-xl">
                     <p class="text-sm font-medium">이 날짜(${this.selectedDateStr})에 배정된 학습 과제가 없습니다.</p>
-                    <p class="text-xs text-slate-400 mt-1">교재 등록에서 단어장을 추가하거나 독해 단원을 계획표에 등록해 보세요.</p>
+                    <p class="text-xs text-slate-400 mt-1">상단의 [독해 단원 배정] 또는 [단어장 계획 배정]으로 학습 일정을 등록해 보세요.</p>
                     ${quickJumpHtml}
                 </div>
             `;
@@ -377,6 +415,36 @@ class PlannerEngine {
             return (r && typeof r.score === 'number') || p.studyCompleted;
         });
         const isDayAllDone = dayPlan.isDone === true || ((vocabOnDate.length > 0 || readingOnDate.length > 0) && isVocabDone && isReadingDone);
+
+        // 상단 타이틀 갱신
+        const listTitleEl = document.getElementById('planner-detail-list-title');
+        if (listTitleEl) {
+            if (readingOnDate.length > 0 && vocabOnDate.length > 0) {
+                listTitleEl.textContent = `배정 과제 (독해 ${readingOnDate.length}편 • 어휘 ${vocabOnDate.length}개)`;
+            } else if (readingOnDate.length > 0) {
+                listTitleEl.textContent = `배정 과제 (독해 ${readingOnDate.length}편)`;
+            } else {
+                listTitleEl.textContent = `배정된 단어 목록 (${vocabOnDate.length}단어)`;
+            }
+        }
+
+        // 하단 독해 원클릭 바로가기 버튼 갱신
+        const readingQuickActionEl = document.getElementById('planner-reading-quick-action');
+        if (readingQuickActionEl) {
+            if (readingOnDate.length > 0) {
+                const firstReading = readingOnDate[0];
+                const isPassed = window.storage.readingRecords && window.storage.readingRecords[firstReading.readingPassageId]?.score !== undefined;
+                readingQuickActionEl.classList.remove('hidden');
+                readingQuickActionEl.innerHTML = `
+                    <button class="w-full py-2.5 rounded-xl bg-gradient-to-r from-indigo-900 via-blue-900 to-slate-900 hover:from-indigo-800 hover:to-blue-800 text-white font-serif font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95" onclick="window.readingEngine.selectPassage('${firstReading.readingPassageId}'); window.app.switchTab('reading');">
+                        <i data-lucide="graduation-cap" class="w-4 h-4 text-amber-300"></i>
+                        <span>오늘의 독해 지문 풀기 [${firstReading.word.slice(0, 20)}...] ${isPassed ? '✓ 재도전' : '시작 →'}</span>
+                    </button>
+                `;
+            } else {
+                readingQuickActionEl.classList.add('hidden');
+            }
+        }
 
         if (isDayAllDone) {
             const banner = document.createElement('div');
@@ -484,15 +552,43 @@ class PlannerEngine {
         const stats = window.storage.getStatistics();
         const totalWords = stats.total;
         const dailyTarget = window.storage.settings.dailyTarget || 15;
-        const todayAllWords = window.storage.getWordsByDate(window.storage.getTodayDateString()).filter(w => !w.isReadingPassage);
-        const completedCount = todayAllWords.filter(w => (w.flashcardDone && w.quizDone) || w.studyCompleted).length;
+        const todayItems = window.storage.getWordsByDate(window.storage.getTodayDateString());
+        const todayVocab = todayItems.filter(w => !w.isReadingPassage);
+        const todayPassages = todayItems.filter(w => w.isReadingPassage);
 
-        const progressPercent = Math.min(100, Math.round((completedCount / dailyTarget) * 100));
+        const vocabCompleted = todayVocab.filter(w => (w.flashcardDone && w.quizDone) || w.studyCompleted).length;
+        const passagesCompleted = todayPassages.filter(p => {
+            const r = window.storage.readingRecords && window.storage.readingRecords[p.readingPassageId];
+            return (r && typeof r.score === 'number') || p.studyCompleted;
+        }).length;
+
+        const totalTasks = todayVocab.length + (todayPassages.length * 5);
+        const totalCompleted = vocabCompleted + (passagesCompleted * 5);
+        const targetDenominator = Math.max(dailyTarget, totalTasks);
+        const progressPercent = targetDenominator > 0 ? Math.min(100, Math.round((totalCompleted / targetDenominator) * 100)) : 0;
 
         const todayProgEl = document.getElementById("planner-today-progress-bar");
         const todayTextEl = document.getElementById("planner-today-progress-text");
         if (todayProgEl) todayProgEl.style.width = `${progressPercent}%`;
-        if (todayTextEl) todayTextEl.textContent = `${completedCount} / ${dailyTarget} 단어 마스터 (${progressPercent}%)`;
+        if (todayTextEl) {
+            if (todayPassages.length > 0) {
+                todayTextEl.textContent = `독해 ${passagesCompleted}/${todayPassages.length}편 • 단어 ${vocabCompleted}/${todayVocab.length}개 완료 (${progressPercent}%)`;
+            } else {
+                todayTextEl.textContent = `${vocabCompleted} / ${dailyTarget} 단어 마스터 (${progressPercent}%)`;
+            }
+        }
+    }
+
+    /**
+     * 플래너 내 독해 단원 계획 배정 모달 오픈
+     */
+    openReadingPlanModal() {
+        if (window.app && window.app.openReadingBatchPlanModal) {
+            const currentUnit = window.readingEngine ? window.readingEngine.getCurrentUnit() : null;
+            window.app.openReadingBatchPlanModal(currentUnit, true);
+        } else {
+            if (window.app) window.app.switchTab('reading');
+        }
     }
 
     jumpToDate(dateStr) {
