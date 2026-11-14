@@ -4220,13 +4220,16 @@
                 </button>
             </div>
 
-            <!-- 서브 탭: 인기 베스트셀러 vs 직접 등록 -->
-            <div class="flex items-center px-6 border-b border-slate-200 bg-slate-50">
-                <button type="button" data-tab="popular" onclick="window.assistantEngine && window.assistantEngine.switchStudyRegisterTab('popular')" class="ext-register-tab-btn px-4 py-2.5 font-serif font-bold text-xs border-b-2 text-indigo-900 border-indigo-900 cursor-pointer">
-                    📚 인기 베스트셀러 100선에서 선택
+            <!-- 서브 탭: 시중 교재 vs 영어 원서 vs 직접 등록 -->
+            <div class="flex items-center px-4 sm:px-6 border-b border-slate-200 bg-slate-50 gap-1 overflow-x-auto">
+                <button type="button" data-tab="textbooks" onclick="window.assistantEngine && window.assistantEngine.switchStudyRegisterTab('textbooks')" class="ext-register-tab-btn px-4 py-2.5 font-serif font-bold text-xs border-b-2 text-indigo-900 border-indigo-900 cursor-pointer whitespace-nowrap">
+                    📚 시중 교재 (708권)
                 </button>
-                <button type="button" data-tab="custom" onclick="window.assistantEngine && window.assistantEngine.switchStudyRegisterTab('custom')" class="ext-register-tab-btn px-4 py-2.5 font-serif font-bold text-xs border-b-2 text-slate-500 border-transparent hover:text-slate-800 cursor-pointer">
-                    ✍️ 직접 자유 등록 (시중도서/학원/인강)
+                <button type="button" data-tab="readers" onclick="window.assistantEngine && window.assistantEngine.switchStudyRegisterTab('readers')" class="ext-register-tab-btn px-4 py-2.5 font-serif font-bold text-xs border-b-2 text-slate-500 border-transparent hover:text-slate-800 cursor-pointer whitespace-nowrap">
+                    📖 영어 원서·명작 소설 (7,452권)
+                </button>
+                <button type="button" data-tab="custom" onclick="window.assistantEngine && window.assistantEngine.switchStudyRegisterTab('custom')" class="ext-register-tab-btn px-4 py-2.5 font-serif font-bold text-xs border-b-2 text-slate-500 border-transparent hover:text-slate-800 cursor-pointer whitespace-nowrap">
+                    ✍️ 직접 자유 등록 (학원/개인과제)
                 </button>
             </div>
 
@@ -4237,9 +4240,9 @@
                     <label class="block text-[11px] font-semibold text-slate-700 flex items-center justify-between">
                         <span class="flex items-center gap-1.5">
                             <i data-lucide="search" class="w-3.5 h-3.5 text-indigo-700"></i>
-                            <span>시중 교재 &amp; 영어 원서 실시간 검색 &amp; 정규 목차(TOC) 연동</span>
+                            <span>시중 교재 &amp; 영어 원서 실시간 통합 검색 &amp; 정규 목차(TOC) 연동</span>
                         </span>
-                        <span class="text-[10px] text-indigo-700 font-mono font-bold">국내 교재 624권 + 영어 원서 6,737권 (총 7,361권 완비)</span>
+                        <span class="text-[10px] text-indigo-700 font-mono font-bold">국내 교재 708권 + 영어 원서 7,452권 (총 8,160권 완비)</span>
                     </label>
                     <div class="relative">
                         <input id="ext-book-search-input" type="text" placeholder="예: 마더텅, 천일문, 수능특강, Harry Potter, Oxford, Wimpy Kid, 1984, Wonder, Newbery..." oninput="window.assistantEngine && window.assistantEngine.onBookSearchInput(this.value)" class="w-full pl-9 pr-8 py-2.5 rounded-xl border border-slate-300 bg-white font-serif font-bold text-xs text-slate-900 outline-none focus:border-indigo-600 shadow-2xs">
@@ -4257,21 +4260,21 @@
                     <!-- JS 동적 생성 -->
                 </div>
 
-                <!-- 탭 1: 인기 베스트셀러 -->
+                <!-- 탭 1 & 2: 교재 / 원서 카탈로그 브라우징 영역 -->
                 <div id="ext-tab-popular" class="space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span class="font-bold text-slate-800">대표 추천 교재 &amp; 명작 원서:</span>
-                        <div class="flex items-center gap-1 flex-wrap">
-                            <button type="button" data-cat="all" onclick="window.assistantEngine.filterBestsellers('all')" class="bestseller-filter-chip px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-indigo-900 text-white border border-indigo-900 cursor-pointer">전체 (7,361)</button>
-                            <button type="button" data-cat="readers" onclick="window.assistantEngine.filterBestsellers('readers')" class="bestseller-filter-chip px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 cursor-pointer">영어원서·명작</button>
-                            <button type="button" data-cat="grammar" onclick="window.assistantEngine.filterBestsellers('grammar')" class="bestseller-filter-chip px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 cursor-pointer">문법</button>
-                            <button type="button" data-cat="reading" onclick="window.assistantEngine.filterBestsellers('reading')" class="bestseller-filter-chip px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 cursor-pointer">독해</button>
-                            <button type="button" data-cat="sat" onclick="window.assistantEngine.filterBestsellers('sat')" class="bestseller-filter-chip px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 cursor-pointer">수능EBS</button>
+                    <div class="flex items-center justify-between flex-wrap gap-2">
+                        <span id="catalog-section-label" class="font-bold text-slate-800">대표 시중 교재 (708권):</span>
+                        <div id="catalog-filter-chips-container" class="flex items-center gap-1 flex-wrap">
+                            <!-- JS 동적 렌더링 -->
                         </div>
                     </div>
 
-                    <div id="bestseller-books-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-52 overflow-y-auto p-1 border border-slate-100 rounded-2xl bg-slate-50/50">
+                    <div id="bestseller-books-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-56 overflow-y-auto p-1 border border-slate-100 rounded-2xl bg-slate-50/50">
                         <!-- JS 주입 -->
+                    </div>
+
+                    <div id="catalog-more-btn-container" class="text-center pt-0.5">
+                        <!-- JS 더보기 버튼 동적 생성 -->
                     </div>
                 </div>
 

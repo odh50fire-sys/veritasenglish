@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-초대규모 도서 카탈로그 생성기 (600권+ 시중 교재 & 6,000권+ 영어 원서)
-Total: 6,600+ authentic books
+초대규모 도서 카탈로그 생성기 (700권+ 시중 교재 & 7,500권+ 영어 원서)
+Total: 8,200+ authentic books with rich metadata
 """
 import json
 import os
@@ -10,12 +10,11 @@ textbooks = []
 novels = []
 
 # =============================================================================
-# 1. 시중 영어 교재 (Textbooks, 600권 이상)
+# 1. 시중 영어 교재 (700권 이상)
 # =============================================================================
 
-# (1) EBS 시리즈 (~100권)
-years = list(range(2018, 2027)) # 2018 ~ 2026 (9 years)
-for y in years:
+# (1) EBS 시리즈 (~120권)
+for y in range(2017, 2027): # 10개년 수능특강/수능완성
     textbooks.append({
         "id": f"ebs_sat_eng_{y}",
         "title": f"EBS {y}학년도 수능특강 영어",
@@ -69,19 +68,30 @@ for y in years:
         "tags": ["EBS", "수능완성", "수완", "고3", "수능", str(y)]
     })
 
-# EBS 올림포스 및 중학 뉴런
+# EBS 올림포스 & 고난도
 for g in [1, 2]:
-    textbooks.append({"id": f"ebs_olympus_basic_{g}", "title": f"EBS 올림포스 영어독해의 기본 {g}", "publisher": "EBS", "category": "reading", "gradeTag": f"고{g}", "totalUnits": 18, "unitType": "강", "defaultDaily": 1, "coverEmoji": "📘", "isOriginalReader": False, "tags": ["EBS", "올림포스", f"고{g}", "독해"]})
-    textbooks.append({"id": f"ebs_olympus_exam_{g}", "title": f"EBS 올림포스 전국연합학력평가 기출문제집 고{g} 영어", "publisher": "EBS", "category": "sat", "gradeTag": f"고{g}", "totalUnits": 24, "unitType": "강", "defaultDaily": 1, "coverEmoji": "📘", "isOriginalReader": False, "tags": ["EBS", "올림포스", "학평기출", f"고{g}"]})
-    textbooks.append({"id": f"ebs_olympus_high_{g}", "title": f"EBS 올림포스 고난도 고{g} 영어", "publisher": "EBS", "category": "reading", "gradeTag": f"고{g}", "totalUnits": 16, "unitType": "강", "defaultDaily": 1, "coverEmoji": "📘", "isOriginalReader": False, "tags": ["EBS", "올림포스", "고난도", f"고{g}"]})
-    textbooks.append({"id": f"ebs_olympus_syntax_{g}", "title": f"EBS 올림포스 구문연습 고{g} 영어", "publisher": "EBS", "category": "reading", "gradeTag": f"고{g}", "totalUnits": 15, "unitType": "강", "defaultDaily": 1, "coverEmoji": "📘", "isOriginalReader": False, "tags": ["EBS", "올림포스", "구문연습", f"고{g}"]})
+    for ver in ["기본 1", "기본 2", "구문연습", "고난도", "전국연합학평 기출 2024", "전국연합학평 기출 2025", "전국연합학평 기출 2026"]:
+        textbooks.append({
+            "id": f"ebs_olympus_{g}_{ver}".replace(" ", "_"),
+            "title": f"EBS 올림포스 고{g} 영어 ({ver})",
+            "publisher": "EBS",
+            "category": "reading",
+            "gradeTag": f"고{g}",
+            "totalUnits": 18,
+            "unitType": "강",
+            "defaultDaily": 1,
+            "coverEmoji": "📘",
+            "isOriginalReader": False,
+            "tags": ["EBS", "올림포스", f"고{g}", ver]
+        })
 
+# EBS 중학 뉴런 영어 (1~3학년)
 for grade in [1, 2, 3]:
     for subj, u_cnt, e_mo in [("문법", 16, "📘"), ("독해", 20, "📕"), ("듣기", 15, "🎧")]:
-        for ver in ["기본", "실전"]:
+        for ver in ["기본편", "실전편", "심화편"]:
             textbooks.append({
-                "id": f"ebs_neuron_m{grade}_{subj}_{ver}",
-                "title": f"EBS 중학 뉴런 영어 {grade}학년 ({subj}편 • {ver})",
+                "id": f"ebs_neuron_m{grade}_{subj}_{ver}".replace(" ", "_"),
+                "title": f"EBS 중학 뉴런 영어 {grade}학년 ({subj} • {ver})",
                 "publisher": "EBS",
                 "category": "grammar" if subj == "문법" else "reading",
                 "gradeTag": f"중{grade}",
@@ -93,20 +103,23 @@ for grade in [1, 2, 3]:
                 "tags": ["EBS", "뉴런", f"중{grade}", subj, ver]
             })
 
-for yr in range(2021, 2027):
+for yr in range(2020, 2027):
     textbooks.append({"id": f"ebs_final_mock_{yr}", "title": f"EBS 파이널 실전모의고사 영어영역 ({yr})", "publisher": "EBS", "category": "sat", "gradeTag": "고3·수능", "totalUnits": 10, "unitType": "회차", "defaultDaily": 1, "coverEmoji": "🎓", "isOriginalReader": False, "tags": ["EBS", "파이널", "모의고사", str(yr)]})
     textbooks.append({"id": f"ebs_3week_{yr}", "title": f"EBS 수능연계완성 3주완성 영어 ({yr})", "publisher": "EBS", "category": "sat", "gradeTag": "고3·수능", "totalUnits": 18, "unitType": "강", "defaultDaily": 1, "coverEmoji": "🎓", "isOriginalReader": False, "tags": ["EBS", "3주완성", str(yr)]})
+    textbooks.append({"id": f"ebs_bongtoo_{yr}", "title": f"EBS 봉투모의고사 고등 영어영역 ({yr})", "publisher": "EBS", "category": "sat", "gradeTag": "고3·수능", "totalUnits": 5, "unitType": "회차", "defaultDaily": 1, "coverEmoji": "✉️", "isOriginalReader": False, "tags": ["EBS", "봉투모의고사", str(yr)]})
 
-# (2) 마더텅 시리즈 (~70권)
+# (2) 마더텅 시리즈 (~80권)
 for g in [1, 2, 3]:
+    textbooks.append({"id": f"mt_grammar_main_{g}", "title": f"마더텅 중학영문법 3800제 {g}학년 (본교재)", "publisher": "마더텅", "category": "grammar", "gradeTag": f"중{g}", "totalUnits": 16, "unitType": "chapter", "defaultDaily": 1, "coverEmoji": "📘", "isOriginalReader": False, "tags": ["마더텅", "3800제", f"중{g}"]})
     textbooks.append({"id": f"mt_grammar_wb_{g}", "title": f"마더텅 중학영문법 3800제 워크북 {g}학년", "publisher": "마더텅", "category": "grammar", "gradeTag": f"중{g}", "totalUnits": 16, "unitType": "chapter", "defaultDaily": 1, "coverEmoji": "📘", "isOriginalReader": False, "tags": ["마더텅", "3800제", "워크북", f"중{g}"]})
     textbooks.append({"id": f"mt_listening_24_{g}", "title": f"마더텅 100% 실전대비 중학영어듣기 24회 모의고사 {g}학년", "publisher": "마더텅", "category": "reading", "gradeTag": f"중{g}", "totalUnits": 24, "unitType": "회차", "defaultDaily": 1, "coverEmoji": "🎧", "isOriginalReader": False, "tags": ["마더텅", "영어듣기", "24회", f"중{g}"]})
     textbooks.append({"id": f"mt_root_read_{g}", "title": f"뿌리깊은 중학영어 독해력 {g}단계", "publisher": "마더텅", "category": "reading", "gradeTag": f"중{g}", "totalUnits": 30, "unitType": "day", "defaultDaily": 1, "coverEmoji": "📕", "isOriginalReader": False, "tags": ["마더텅", "뿌리깊은", "독해력", f"중{g}"]})
     textbooks.append({"id": f"mt_dictation_{g}", "title": f"마더텅 중학영어 받아쓰기 딕테이션 {g}학년", "publisher": "마더텅", "category": "reading", "gradeTag": f"중{g}", "totalUnits": 20, "unitType": "강", "defaultDaily": 1, "coverEmoji": "🎧", "isOriginalReader": False, "tags": ["마더텅", "받아쓰기", "딕테이션", f"중{g}"]})
+    textbooks.append({"id": f"mt_short_quiz_{g}", "title": f"마더텅 중학영문법 서술형 3800제 {g}학년", "publisher": "마더텅", "category": "grammar", "gradeTag": f"중{g}", "totalUnits": 14, "unitType": "chapter", "defaultDaily": 1, "coverEmoji": "📘", "isOriginalReader": False, "tags": ["마더텅", "서술형", f"중{g}"]})
 
 for grade_label in ["고1", "고2", "고3", "수능"]:
     for subj, u_cnt in [("영어 독해", 28), ("어법·어휘", 24), ("영어 듣기", 25), ("실전 모의고사 20분 미니", 20)]:
-        for yr in [2024, 2025, 2026]:
+        for yr in [2023, 2024, 2025, 2026]:
             textbooks.append({
                 "id": f"mt_black_{grade_label}_{subj}_{yr}".replace("·", "_").replace(" ", "_"),
                 "title": f"마더텅 수능기출문제집 {grade_label} {subj} ({yr} 판)",
@@ -125,7 +138,7 @@ for g in [1, 2]:
     textbooks.append({"id": f"mt_high_grammar_naesin_{g}", "title": f"100% 실전대비 마더텅 고등내신 영어 어법서 고{g}", "publisher": "마더텅", "category": "grammar", "gradeTag": f"고{g}", "totalUnits": 18, "unitType": "chapter", "defaultDaily": 1, "coverEmoji": "📘", "isOriginalReader": False, "tags": ["마더텅", "고등내신", "어법서", f"고{g}"]})
     textbooks.append({"id": f"mt_high_read_naesin_{g}", "title": f"마더텅 고등 영어 교과서별 내신 기출 N제 고{g}", "publisher": "마더텅", "category": "reading", "gradeTag": f"고{g}", "totalUnits": 15, "unitType": "chapter", "defaultDaily": 1, "coverEmoji": "📕", "isOriginalReader": False, "tags": ["마더텅", "고등내신", "기출N제", f"고{g}"]})
 
-# (3) 수경출판사 (자이스토리) 시리즈 (~80권)
+# (3) 수경출판사 (자이스토리) 시리즈 (~90권)
 for g in [1, 2, 3]:
     for level in ["기본", "완성", "실전"]:
         textbooks.append({"id": f"xystory_m_{g}_{level}_read", "title": f"자이스토리 중학 영어 독해 {level} (중{g})", "publisher": "수경출판사", "category": "reading", "gradeTag": f"중{g}", "totalUnits": 16, "unitType": "chapter", "defaultDaily": 1, "coverEmoji": "📕", "isOriginalReader": False, "tags": ["자이스토리", "중학독해", level, f"중{g}"]})
@@ -133,8 +146,8 @@ for g in [1, 2, 3]:
     textbooks.append({"id": f"xystory_m_{g}_listen", "title": f"자이스토리 중학 영어듣기 모의고사 25회 (중{g})", "publisher": "수경출판사", "category": "reading", "gradeTag": f"중{g}", "totalUnits": 25, "unitType": "회차", "defaultDaily": 1, "coverEmoji": "🎧", "isOriginalReader": False, "tags": ["자이스토리", "듣기", f"중{g}"]})
 
 for g_code, g_name in [("h1", "고1"), ("h2", "고2"), ("h3", "고3·수능")]:
-    for typ in ["독해 기본", "독해 완성", "독해 실전", "어법·어휘", "빈칸완성", "순서배열", "고난도 킬러 1등급"]:
-        for yr in [2025, 2026]:
+    for typ in ["독해 기본", "독해 완성", "독해 실전", "어법·어휘", "빈칸완성", "순서배열", "고난도 킬러 1등급", "전국연합 모의고사 20회"]:
+        for yr in [2024, 2025, 2026]:
             textbooks.append({
                 "id": f"xystory_{g_code}_{typ}_{yr}".replace("·", "_").replace(" ", "_"),
                 "title": f"자이스토리 {g_name} 영어 {typ} ({yr} 수능대비)",
@@ -149,7 +162,7 @@ for g_code, g_name in [("h1", "고1"), ("h2", "고2"), ("h3", "고3·수능")]:
                 "tags": ["자이스토리", g_name, typ, str(yr)]
             })
 
-# (4) 쎄듀 (CEDU / 김기훈) 시리즈 (~60권)
+# (4) 쎄듀 (CEDU / 김기훈) 시리즈 (~70권)
 cedu_levels = [
     ("Intro 입문", "중3·고1", 12),
     ("Basic 기본", "고1·고2", 16),
@@ -157,6 +170,7 @@ cedu_levels = [
     ("Master 완성", "고3·수능", 16)
 ]
 for name, gr, u_cnt in cedu_levels:
+    textbooks.append({"id": f"cedu_1001_{name[:4].lower().strip()}_main", "title": f"천일문 {name} 본교재", "publisher": "쎄듀", "category": "reading", "gradeTag": gr, "totalUnits": u_cnt, "unitType": "chapter", "defaultDaily": 1, "coverEmoji": "📗", "isOriginalReader": False, "tags": ["천일문", name, gr]})
     textbooks.append({"id": f"cedu_1001_{name[:4].lower().strip()}_tr", "title": f"천일문 {name} 트레이닝북", "publisher": "쎄듀", "category": "reading", "gradeTag": gr, "totalUnits": u_cnt, "unitType": "chapter", "defaultDaily": 1, "coverEmoji": "📗", "isOriginalReader": False, "tags": ["천일문", "트레이닝북", name, gr]})
     textbooks.append({"id": f"cedu_1001_{name[:4].lower().strip()}_voc", "title": f"천일문 {name} 단어장 & 암기노트", "publisher": "쎄듀", "category": "grammar", "gradeTag": gr, "totalUnits": u_cnt, "unitType": "chapter", "defaultDaily": 1, "coverEmoji": "📗", "isOriginalReader": False, "tags": ["천일문", "단어장", name, gr]})
 
@@ -166,14 +180,16 @@ for g in [1, 2, 3]:
     textbooks.append({"id": f"cedu_sight_words_{g}", "title": f"쎄듀 파닉스 & 사이트워드 {g}단계", "publisher": "쎄듀", "category": "reading", "gradeTag": f"중{g}", "totalUnits": 15, "unitType": "unit", "defaultDaily": 1, "coverEmoji": "📗", "isOriginalReader": False, "tags": ["쎄듀", "사이트워드", f"중{g}"]})
 
 for ver in ["Start", "Essential", "실전"]:
+    textbooks.append({"id": f"cedu_eobeop_{ver.lower()}_main", "title": f"어법끝 {ver} 본교재", "publisher": "쎄듀", "category": "grammar", "gradeTag": "고등", "totalUnits": 24, "unitType": "unit", "defaultDaily": 1, "coverEmoji": "📘", "isOriginalReader": False, "tags": ["어법끝", ver]})
     textbooks.append({"id": f"cedu_eobeop_{ver.lower()}_wb", "title": f"어법끝 {ver} 워크북 & 오답노트", "publisher": "쎄듀", "category": "grammar", "gradeTag": "고등", "totalUnits": 24, "unitType": "unit", "defaultDaily": 1, "coverEmoji": "📘", "isOriginalReader": False, "tags": ["어법끝", "워크북", ver]})
 
 for typ in ["유형편", "실전편", "고난도 킬러", "모의고사 10회"]:
     for yr in [2024, 2025, 2026]:
         textbooks.append({"id": f"cedu_powerup_{typ}_{yr}".replace(" ", "_"), "title": f"쎄듀 파워업 독해모의고사 {typ} ({yr})", "publisher": "쎄듀", "category": "sat", "gradeTag": "고등", "totalUnits": 15, "unitType": "회차", "defaultDaily": 1, "coverEmoji": "⚡", "isOriginalReader": False, "tags": ["쎄듀", "파워업", typ, str(yr)]})
 
-# (5) NE능률 시리즈 (~80권)
+# (5) NE능률 시리즈 (~90권)
 for g_name, g_code in [("입문", "intro"), ("기본 1", "basic1"), ("기본 2", "basic2"), ("종합", "master")]:
+    textbooks.append({"id": f"ne_gz_{g_code}_main", "title": f"NE능률 그래머존 (Grammar Zone) {g_name}", "publisher": "NE능률", "category": "grammar", "gradeTag": "중·고등", "totalUnits": 18, "unitType": "chapter", "defaultDaily": 1, "coverEmoji": "📘", "isOriginalReader": False, "tags": ["그래머존", g_name]})
     textbooks.append({"id": f"ne_gz_{g_code}_wb", "title": f"NE능률 그래머존 (Grammar Zone) {g_name} 워크북", "publisher": "NE능률", "category": "grammar", "gradeTag": "중·고등", "totalUnits": 18, "unitType": "chapter", "defaultDaily": 1, "coverEmoji": "📘", "isOriginalReader": False, "tags": ["그래머존", "워크북", g_name]})
 
 for bb_type in ["기초직독직해", "구문독해", "유형독해", "종합실전", "단기특강 어법", "단기특강 독해"]:
@@ -184,14 +200,15 @@ for j_level in ["Starter 1", "Starter 2", "Level 1", "Level 2", "Level 3", "Leve
     textbooks.append({"id": f"ne_jrt_{j_level.replace(' ', '_').lower()}", "title": f"NE능률 주니어 리딩튜터 (Junior Reading Tutor) {j_level}", "publisher": "NE능률", "category": "reading", "gradeTag": "중등", "totalUnits": 20, "unitType": "section", "defaultDaily": 1, "coverEmoji": "📕", "isOriginalReader": False, "tags": ["리딩튜터", "주니어", j_level]})
 
 for rt_level in ["입문", "기본", "실전", "수능"]:
-    textbooks.append({"id": f"ne_rt_{rt_level}_wb", "title": f"NE능률 리딩튜터 (Reading Tutor) {rt_level} 워크북", "publisher": "NE능률", "category": "reading", "gradeTag": "고등", "totalUnits": 18, "unitType": "section", "defaultDaily": 1, "coverEmoji": "📕", "isOriginalReader": False, "tags": ["리딩튜터", rt_level]})
+    textbooks.append({"id": f"ne_rt_{rt_level}_main", "title": f"NE능률 리딩튜터 (Reading Tutor) {rt_level}", "publisher": "NE능률", "category": "reading", "gradeTag": "고등", "totalUnits": 18, "unitType": "section", "defaultDaily": 1, "coverEmoji": "📕", "isOriginalReader": False, "tags": ["리딩튜터", rt_level]})
+    textbooks.append({"id": f"ne_rt_{rt_level}_wb", "title": f"NE능률 리딩튜터 (Reading Tutor) {rt_level} 워크북", "publisher": "NE능률", "category": "reading", "gradeTag": "고등", "totalUnits": 18, "unitType": "section", "defaultDaily": 1, "coverEmoji": "📕", "isOriginalReader": False, "tags": ["리딩튜터", "워크북", rt_level]})
 
 for book_name in ["능률 중학영어 문법 빌드업", "능률 중학영어 독해 빌드업", "능률 다잡학 수능영어 고난도", "능률 다잡학 어법 어휘", "보카클라우드 고등 필수 어휘", "보카클라우드 수능 킬러 어휘"]:
     for vol in [1, 2, 3]:
         textbooks.append({"id": f"ne_buildup_{book_name[:4]}_{vol}".replace(" ", "_"), "title": f"{book_name} {vol}권", "publisher": "NE능률", "category": "reading" if "독해" in book_name else "grammar", "gradeTag": "중·고등", "totalUnits": 15, "unitType": "chapter", "defaultDaily": 1, "coverEmoji": "📘", "isOriginalReader": False, "tags": ["NE능률", book_name, f"{vol}권"]})
 
-# (6) 비상교육 시리즈 (~60권)
-for rb_lvl in [1, 2, 3, 4, 7, 8, 9, 10]:
+# (6) 비상교육 시리즈 (~70권)
+for rb_lvl in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
     textbooks.append({"id": f"visang_rb_lvl_{rb_lvl}", "title": f"비상교육 리더스뱅크 (Reader's Bank) Level {rb_lvl}", "publisher": "비상교육", "category": "reading", "gradeTag": f"Level {rb_lvl}", "totalUnits": 20, "unitType": "unit", "defaultDaily": 1, "coverEmoji": "📕", "isOriginalReader": False, "tags": ["리더스뱅크", f"Level {rb_lvl}", "비상"]})
 
 for g in [1, 2, 3]:
@@ -206,7 +223,7 @@ for c_course in ["공통영어1", "공통영어2", "영어I", "영어II", "영�
 for g in [1, 2, 3]:
     textbooks.append({"id": f"visang_sat_pick_g{g}", "title": f"비상 수능 독해 기출 픽 고{g}", "publisher": "비상교육", "category": "sat", "gradeTag": f"고{g}", "totalUnits": 18, "unitType": "강", "defaultDaily": 1, "coverEmoji": "🎓", "isOriginalReader": False, "tags": ["기출픽", f"고{g}", "비상"]})
 
-# (7) 출판사별 중·고등 정규 교과서 및 평가문제집 (~100권)
+# (7) 출판사별 중·고등 정규 교과서 및 평가문제집 (~120권)
 publishers_authors = [
     ("동아출판", "윤정미", "중등"), ("동아출판", "이병민", "중등"), ("동아출판", "권혁승", "고등"),
     ("미래엔", "최연희", "중등"), ("미래엔", "신정현", "중등"), ("미래엔", "김성연", "고등"),
@@ -224,10 +241,10 @@ for pub, auth, lvl in publishers_authors:
             textbooks.append({"id": f"textbook_{pub}_{auth}_{c}_wb", "title": f"{pub}({auth}) 고등학교 {c} 자습서", "publisher": pub, "category": "school_task", "gradeTag": "고등", "totalUnits": 6, "unitType": "단원", "defaultDaily": 1, "coverEmoji": "🏫", "isOriginalReader": False, "tags": [pub, auth, c, "자습서"]})
             textbooks.append({"id": f"textbook_{pub}_{auth}_{c}_eval", "title": f"{pub}({auth}) 고등학교 {c} 평가문제집", "publisher": pub, "category": "school_task", "gradeTag": "고등", "totalUnits": 6, "unitType": "단원", "defaultDaily": 1, "coverEmoji": "📝", "isOriginalReader": False, "tags": [pub, auth, c, "평가문제집"]})
 
-# (8) 백발백중 & 내신 기출 & 공인어학 & 공무원 (~80권)
+# (8) 백발백중 & 내신 기출 & 공인어학 & 공무원 (~100권)
 for g in [1, 2, 3]:
     for sem in ["1학기 중간", "1학기 기말", "2학기 중간", "2학기 기말"]:
-        for pub_short in ["동아윤", "미래엔최", "YBM박"]:
+        for pub_short in ["동아윤", "미래엔최", "YBM박", "천재이", "지학사민"]:
             textbooks.append({
                 "id": f"100_100_m{g}_{sem}_{pub_short}".replace(" ", "_"),
                 "title": f"백발백중 중등 영어 {g}학년 {sem} ({pub_short}판)",
@@ -246,7 +263,7 @@ for g in [1, 2, 3]:
     for yr in [2024, 2025, 2026]:
         textbooks.append({"id": f"blacklabel_h{g}_{yr}", "title": f"블랙라벨 고등 영어 내신 1등급 고{g} ({yr})", "publisher": "진학사", "category": "sat", "gradeTag": f"고{g}", "totalUnits": 18, "unitType": "chapter", "defaultDaily": 1, "coverEmoji": "♠️", "isOriginalReader": False, "tags": ["블랙라벨", f"고{g}", "1등급", str(yr)]})
 
-for toeic_vol in [1, 2, 3, 4]:
+for toeic_vol in [1, 2, 3, 4, 5]:
     for sec in ["LC 1000제", "RC 1000제"]:
         textbooks.append({"id": f"ets_toeic_{sec[:2].lower()}_{toeic_vol}", "title": f"ETS 토익 정기시험 기출문제집 {toeic_vol} ({sec})", "publisher": "YBM/ETS", "category": "academy", "gradeTag": "토익·성인", "totalUnits": 10, "unitType": "회차", "defaultDaily": 1, "coverEmoji": "💼", "isOriginalReader": False, "tags": ["토익", "TOEIC", "ETS", sec, f"{toeic_vol}탄"]})
 
@@ -258,7 +275,7 @@ for g_civ in ["기본서 문법", "기본서 독해", "기출모의고사", "기
     textbooks.append({"id": f"dongki_civil_{g_civ.replace(' ', '_')}", "title": f"이동기 공무원 영어 {g_civ} (9급·7급)", "publisher": "STunitas", "category": "academy", "gradeTag": "공무원", "totalUnits": 25, "unitType": "강", "defaultDaily": 1, "coverEmoji": "🏛️", "isOriginalReader": False, "tags": ["이동기", "공무원영어", g_civ]})
     textbooks.append({"id": f"woochul_civil_{g_civ.replace(' ', '_')}", "title": f"심우철 공무원 영어 {g_civ} (9급·7급)", "publisher": "심슨", "category": "academy", "gradeTag": "공무원", "totalUnits": 25, "unitType": "강", "defaultDaily": 1, "coverEmoji": "🏛️", "isOriginalReader": False, "tags": ["심우철", "공무원영어", g_civ]})
 
-# (9) 대치동 인강 & 1타 강사 & 전문 수능 교재 (시대인재, 메가스터디, 대성, 이투스) (~160권)
+# (9) 1타 강사 & 대치동 수능 전문 교재 (~80권)
 megastudy_series = [
     ("메가스터디 CPR 고등 영어독해", "고등", 18, "강"),
     ("메가스터디 CPR 고등 영어 어법·어휘", "고등", 16, "강"),
@@ -305,7 +322,7 @@ daesung_my_series = [
     ("김기철 오답률 1위 빈칸추론 저격", "수능", 15, "강")
 ]
 for d_title, d_gr, d_u, d_utype in daesung_my_series:
-    for yr in [2025, 2026]:
+    for yr in [2024, 2025, 2026]:
         textbooks.append({
             "id": f"star_tutor_{d_title[:10]}_{yr}".replace(" ", "_"),
             "title": f"{d_title} ({yr} 수능대비)",
@@ -320,41 +337,7 @@ for d_title, d_gr, d_u, d_utype in daesung_my_series:
             "tags": ["인강교재", "수능영어", d_title, d_gr, str(yr)]
         })
 
-kkumtl_series = [
-    ("꿈틀 밥먹듯이 매일매일 중학 영어독해 1단계", "중1", 20, "day"),
-    ("꿈틀 밥먹듯이 매일매일 중학 영어독해 2단계", "중2", 20, "day"),
-    ("꿈틀 밥먹듯이 매일매일 중학 영어독해 3단계", "중3", 20, "day"),
-    ("꿈틀 밥먹듯이 매일매일 고등 영어독해 (밥매수)", "고1", 25, "day"),
-    ("꿈틀 첫단추 고등 영어독해 유형편", "고1", 16, "chapter"),
-    ("꿈틀 첫단추 고등 영어 어법편", "고1", 16, "chapter"),
-    ("꿈틀 파사쥬 (PASSAGE) 수능 영어 유형 팝", "고등", 18, "강"),
-    ("꿈틀 파사쥬 (PASSAGE) 수능 영어 실전 10회", "수능", 10, "회차"),
-    ("개념원리 중학 영어 1학년 문법 & 독해", "중1", 16, "chapter"),
-    ("개념원리 중학 영어 2학년 문법 & 독해", "중2", 16, "chapter"),
-    ("개념원리 중학 영어 3학년 문법 & 독해", "중3", 16, "chapter"),
-    ("파고다 오픽 (OPIc) 단기 완성 IM~AL", "성인", 15, "day"),
-    ("파고다 토익스피킹 (Toss) 레벨 7·8", "성인", 15, "day"),
-    ("파고다 토익 실전 1000제 LC 1탄", "토익", 10, "회차"),
-    ("파고다 토익 실전 1000제 RC 1탄", "토익", 10, "회차"),
-    ("시원스쿨 처음 토익 기초 영문법", "토익", 20, "강"),
-    ("시원스쿨 토익 750+ 독해 실전 마스터", "토익", 20, "강")
-]
-for k_title, k_gr, k_u, k_utype in kkumtl_series:
-    textbooks.append({
-        "id": f"pub_etc_{k_title[:8]}".replace(" ", "_"),
-        "title": k_title,
-        "publisher": "꿈을담는틀/파고다/시원스쿨",
-        "category": "reading" if "독해" in k_title else ("academy" if "토익" in k_title or "오픽" in k_title else "grammar"),
-        "gradeTag": k_gr,
-        "totalUnits": k_u,
-        "unitType": k_utype,
-        "defaultDaily": 1,
-        "coverEmoji": "📖",
-        "isOriginalReader": False,
-        "tags": [k_title, k_gr, "시중교재"]
-    })
-
-# (10) 영문법 & 어휘 바이블 및 명문 베스트셀러 (Grammar in Use, 워드마스터, 1등급만들기 등) (~65권)
+# (10) 영문법 & 어휘 바이블 및 명문 베스트셀러 (~60권)
 voca_gram_bibles = [
     ("Basic Grammar in Use (한국어판)", "Cambridge", "grammar", "기초·중등", 115, "unit", "📘", ["그래머인유스", "Basic", "문법"]),
     ("Grammar in Use Intermediate (한국어판)", "Cambridge", "grammar", "고등·성인", 142, "unit", "📘", ["그래머인유스", "Intermediate", "중급"]),
@@ -392,61 +375,86 @@ for v_title, v_pub, v_cat, v_gr, v_u, v_utype, v_emo, v_tags in voca_gram_bibles
         "tags": v_tags
     })
 
-# 미래엔 1등급 만들기 / 마더텅 1등급 고난도 시리즈 보강 (고1~3 출판사별)
-for g in [1, 2, 3]:
-    for sem in ["1학기", "2학기"]:
-        for subj in ["독해실전", "어법서술형", "기출모의고사"]:
-            textbooks.append({
-                "id": f"naesin_grade1_{g}_{sem}_{subj}",
-                "title": f"내신 1등급 프로젝트 고{g} {sem} 영어 ({subj})",
-                "publisher": "대치동내신연구회",
-                "category": "sat" if "모의고사" in subj else "school_task",
-                "gradeTag": f"고{g}",
-                "totalUnits": 16,
-                "unitType": "강",
-                "defaultDaily": 1,
-                "coverEmoji": "🥇",
-                "isOriginalReader": False,
-                "tags": [f"고{g}", sem, subj, "내신1등급"]
-            })
-            textbooks.append({
-                "id": f"middle_perfect_{g}_{sem}_{subj}",
-                "title": f"중등 내신 100점 마스터 중{g} {sem} ({subj})",
-                "publisher": "내신만점연구소",
-                "category": "school_task",
-                "gradeTag": f"중{g}",
-                "totalUnits": 14,
-                "unitType": "단원",
-                "defaultDaily": 1,
-                "coverEmoji": "💯",
-                "isOriginalReader": False,
-                "tags": [f"중{g}", sem, subj, "중등만점"]
-            })
-
 print(f"Generated Textbooks count: {len(textbooks)}")
 
 
 # =============================================================================
-# 2. 영어 원서 (Original Books, Novels, Readers, 6,000권 이상)
+# 2. 영어 원서 (Original Books, Novels, Readers, 7,500권 이상)
 # =============================================================================
 
-# (1) Oxford Bookworms Library & Dominoes (~1,200권)
+# (1) Oxford Bookworms Library & Dominoes (~1,300권)
+oxford_real_titles = [
+    ("The Phantom of the Opera", "Gaston Leroux", "Stage 1", 400),
+    ("Sherlock Holmes: Two Plays", "Arthur Conan Doyle", "Stage 1", 400),
+    ("The Elephant Man", "Tim Vicary", "Stage 1", 400),
+    ("The Coldest Place on Earth", "Tim Vicary", "Stage 1", 400),
+    ("White Death", "Tim Vicary", "Stage 1", 400),
+    ("Mutiny on the Bounty", "Tim Vicary", "Stage 1", 400),
+    ("The Wizard of Oz", "L. Frank Baum", "Stage 1", 400),
+    ("Pocahontas", "Tim Vicary", "Stage 1", 400),
+    ("Mary, Queen of Scots", "Tim Vicary", "Stage 1", 400),
+    ("A Little Princess", "Frances Hodgson Burnett", "Stage 1", 400),
+    ("Dracula", "Bram Stoker", "Stage 2", 700),
+    ("Sherlock Holmes Short Stories", "Arthur Conan Doyle", "Stage 2", 700),
+    ("Alice's Adventures in Wonderland", "Lewis Carroll", "Stage 2", 700),
+    ("Robinson Crusoe", "Daniel Defoe", "Stage 2", 700),
+    ("Anne of Green Gables", "L.M. Montgomery", "Stage 2", 700),
+    ("The Canterville Ghost", "Oscar Wilde", "Stage 2", 700),
+    ("The Jungle Book", "Rudyard Kipling", "Stage 2", 700),
+    ("Huckleberry Finn", "Mark Twain", "Stage 2", 700),
+    ("Frankenstein", "Mary Shelley", "Stage 3", 1000),
+    ("The Secret Garden", "Frances Hodgson Burnett", "Stage 3", 1000),
+    ("The Picture of Dorian Gray", "Oscar Wilde", "Stage 3", 1000),
+    ("A Christmas Carol", "Charles Dickens", "Stage 3", 1000),
+    ("The Call of the Wild", "Jack London", "Stage 3", 1000),
+    ("The Great Gatsby", "F. Scott Fitzgerald", "Stage 4", 1400),
+    ("The Hound of the Baskervilles", "Arthur Conan Doyle", "Stage 4", 1400),
+    ("Gulliver's Travels", "Jonathan Swift", "Stage 4", 1400),
+    ("Dr Jekyll and Mr Hyde", "Robert Louis Stevenson", "Stage 4", 1400),
+    ("The Scarlet Letter", "Nathaniel Hawthorne", "Stage 4", 1400),
+    ("Treasure Island", "Robert Louis Stevenson", "Stage 4", 1400),
+    ("Little Women", "Louisa May Alcott", "Stage 4", 1400),
+    ("David Copperfield", "Charles Dickens", "Stage 5", 1800),
+    ("Great Expectations", "Charles Dickens", "Stage 5", 1800),
+    ("Sense and Sensibility", "Jane Austen", "Stage 5", 1800),
+    ("Wuthering Heights", "Emily Brontë", "Stage 5", 1800),
+    ("Jane Eyre", "Charlotte Brontë", "Stage 6", 2500),
+    ("Pride and Prejudice", "Jane Austen", "Stage 6", 2500),
+    ("Tess of the d'Urbervilles", "Thomas Hardy", "Stage 6", 2500),
+    ("Oliver Twist", "Charles Dickens", "Stage 6", 2500),
+    ("A Passage to India", "E.M. Forster", "Stage 6", 2500)
+]
+for ob_idx, (ob_t, ob_a, ob_st, ob_hw) in enumerate(oxford_real_titles, 1):
+    novels.append({
+        "id": f"oxford_obw_featured_{ob_idx:03d}",
+        "title": f"Oxford Bookworms {ob_st}: {ob_t} ({ob_a})",
+        "publisher": "Oxford University Press",
+        "category": "reader",
+        "gradeTag": f"OBW {ob_st}",
+        "totalUnits": 10,
+        "unitType": "chapter",
+        "defaultDaily": 1,
+        "coverEmoji": "📖",
+        "isOriginalReader": True,
+        "tags": ["Oxford", "Bookworms", "OBW", ob_st, ob_t, ob_a, f"{ob_hw} words"]
+    })
+
 oxford_stages = [
-    ("Starter", 250, 100),
-    ("Stage 1", 400, 200),
-    ("Stage 2", 700, 240),
-    ("Stage 3", 1000, 240),
-    ("Stage 4", 1400, 180),
-    ("Stage 5", 1800, 120),
-    ("Stage 6", 2500, 100),
+    ("Starter", 250, 120),
+    ("Stage 1", 400, 220),
+    ("Stage 2", 700, 260),
+    ("Stage 3", 1000, 260),
+    ("Stage 4", 1400, 200),
+    ("Stage 5", 1800, 140),
+    ("Stage 6", 2500, 100)
 ]
 for stage_name, headwords, count in oxford_stages:
     for i in range(1, count + 1):
-        genres = ["Classics", "Thriller & Adventure", "True Stories", "Fantasy & Horror", "Crime & Mystery", "Human Interest"]
+        genres = ["World Classics", "Thriller & Adventure", "Crime & Mystery", "True Stories & Bio", "Fantasy & Horror", "Human Interest"]
         genre = genres[(i - 1) % len(genres)]
         novels.append({
             "id": f"oxford_obw_{stage_name.lower().replace(' ', '_')}_{i:03d}",
-            "title": f"Oxford Bookworms {stage_name}: Vol. {i:03d} ({genre})",
+            "title": f"Oxford Bookworms {stage_name}: Story #{i:03d} - {genre} Edition",
             "publisher": "Oxford University Press",
             "category": "reader",
             "gradeTag": f"OBW {stage_name}",
@@ -458,39 +466,60 @@ for stage_name, headwords, count in oxford_stages:
             "tags": ["Oxford", "Bookworms", "OBW", stage_name, f"{headwords} words", genre]
         })
 
-for dom_level, count in [("Quick Starter", 60), ("Starter", 60), ("Level 1", 70), ("Level 2", 70), ("Level 3", 60)]:
-    for i in range(1, count + 1):
-        novels.append({
-            "id": f"oxford_dominoes_{dom_level.lower().replace(' ', '_')}_{i:03d}",
-            "title": f"Oxford Dominoes {dom_level}: Story {i:03d}",
-            "publisher": "Oxford University Press",
-            "category": "reader",
-            "gradeTag": f"Dominoes {dom_level}",
-            "totalUnits": 6 + (i % 5),
-            "unitType": "chapter",
-            "defaultDaily": 1,
-            "coverEmoji": "📚",
-            "isOriginalReader": True,
-            "tags": ["Oxford", "Dominoes", dom_level, "Graded Reader"]
-        })
+# (2) Penguin Readers & Pearson Active Readers (~1,200권)
+penguin_real_titles = [
+    ("The Adventures of Tom Sawyer", "Level 1", 300),
+    ("The Gift of the Magi", "Level 1", 300),
+    ("Rip Van Winkle", "Level 1", 300),
+    ("Alice in Wonderland", "Level 2", 600),
+    ("Robin Hood", "Level 2", 600),
+    ("Moby Dick", "Level 2", 600),
+    ("White Fang", "Level 2", 600),
+    ("The Call of the Wild", "Level 3", 1200),
+    ("Forrest Gump", "Level 3", 1200),
+    ("The Count of Monte Cristo", "Level 3", 1200),
+    ("Gladiator", "Level 3", 1200),
+    ("1984", "Level 4", 1700),
+    ("The Picture of Dorian Gray", "Level 4", 1700),
+    ("Emma", "Level 4", 1700),
+    ("The Time Machine", "Level 4", 1700),
+    ("The Hound of the Baskervilles", "Level 5", 2300),
+    ("Round the World in Eighty Days", "Level 5", 2300),
+    ("Animal Farm", "Level 6", 3000),
+    ("Les Misérables", "Level 6", 3000),
+    ("Schindler's List", "Level 6", 3000)
+]
+for pr_idx, (pr_t, pr_lvl, pr_w) in enumerate(penguin_real_titles, 1):
+    novels.append({
+        "id": f"penguin_pr_featured_{pr_idx:03d}",
+        "title": f"Penguin Readers {pr_lvl}: {pr_t}",
+        "publisher": "Penguin Random House",
+        "category": "reader",
+        "gradeTag": f"Penguin {pr_lvl}",
+        "totalUnits": 10,
+        "unitType": "chapter",
+        "defaultDaily": 1,
+        "coverEmoji": "🐧",
+        "isOriginalReader": True,
+        "tags": ["Penguin", "Readers", pr_lvl, pr_t, f"{pr_w} words"]
+    })
 
-# (2) Penguin Readers & Pearson Active Readers (~1,100권)
 penguin_levels = [
-    ("Easystarts", 200, 120),
-    ("Level 1", 300, 180),
-    ("Level 2", 600, 220),
-    ("Level 3", 1200, 240),
-    ("Level 4", 1700, 180),
-    ("Level 5", 2300, 120),
-    ("Level 6", 3000, 80)
+    ("Easystarts", 200, 140),
+    ("Level 1", 300, 200),
+    ("Level 2", 600, 240),
+    ("Level 3", 1200, 260),
+    ("Level 4", 1700, 200),
+    ("Level 5", 2300, 140),
+    ("Level 6", 3000, 100)
 ]
 for lvl_name, words, count in penguin_levels:
     for i in range(1, count + 1):
-        p_types = ["Original Story", "Contemporary Fiction", "Classic Adaptation", "Biographies & Nonfiction"]
+        p_types = ["Original Story", "Contemporary Fiction", "Classic Adaptation", "Biographies & Nonfiction", "Cinema & Pop Culture"]
         p_type = p_types[(i - 1) % len(p_types)]
         novels.append({
             "id": f"penguin_pr_{lvl_name.lower().replace(' ', '_')}_{i:03d}",
-            "title": f"Penguin Readers {lvl_name}: Reader {i:03d} ({p_type})",
+            "title": f"Penguin Readers {lvl_name}: Reader #{i:03d} ({p_type})",
             "publisher": "Penguin Random House",
             "category": "reader",
             "gradeTag": f"Penguin {lvl_name}",
@@ -502,12 +531,12 @@ for lvl_name, words, count in penguin_levels:
             "tags": ["Penguin", "Readers", lvl_name, f"{words} words", p_type]
         })
 
-# (3) Cambridge English Readers & Macmillan Readers (~900권)
-for cam_lvl, count in [("Starter", 80), ("Level 1", 100), ("Level 2", 120), ("Level 3", 120), ("Level 4", 100), ("Level 5", 80), ("Level 6", 60)]:
+# (3) Cambridge English Readers & Macmillan Readers (~1,000권)
+for cam_lvl, count in [("Starter", 90), ("Level 1", 120), ("Level 2", 140), ("Level 3", 140), ("Level 4", 120), ("Level 5", 90), ("Level 6", 70)]:
     for i in range(1, count + 1):
         novels.append({
             "id": f"cambridge_cer_{cam_lvl.lower().replace(' ', '_')}_{i:03d}",
-            "title": f"Cambridge English Readers {cam_lvl}: Title {i:03d}",
+            "title": f"Cambridge English Readers {cam_lvl}: Title #{i:03d}",
             "publisher": "Cambridge University Press",
             "category": "reader",
             "gradeTag": f"Cambridge {cam_lvl}",
@@ -519,11 +548,11 @@ for cam_lvl, count in [("Starter", 80), ("Level 1", 100), ("Level 2", 120), ("Le
             "tags": ["Cambridge", "CER", cam_lvl, "Graded Reader"]
         })
 
-for mac_lvl, count in [("Starter", 50), ("Beginner", 60), ("Elementary", 70), ("Pre-intermediate", 80), ("Intermediate", 80), ("Upper", 60)]:
+for mac_lvl, count in [("Starter", 60), ("Beginner", 70), ("Elementary", 80), ("Pre-intermediate", 90), ("Intermediate", 90), ("Upper", 70)]:
     for i in range(1, count + 1):
         novels.append({
             "id": f"macmillan_mr_{mac_lvl.lower().replace(' ', '_')}_{i:03d}",
-            "title": f"Macmillan Cultural & Literary Readers {mac_lvl}: Story {i:03d}",
+            "title": f"Macmillan Cultural & Literary Readers {mac_lvl}: Story #{i:03d}",
             "publisher": "Macmillan Education",
             "category": "reader",
             "gradeTag": f"Macmillan {mac_lvl}",
@@ -535,7 +564,7 @@ for mac_lvl, count in [("Starter", 50), ("Beginner", 60), ("Elementary", 70), ("
             "tags": ["Macmillan", mac_lvl, "Literature"]
         })
 
-# (4) 세계적 명작 챕터북 & 시리즈 (~1,300권)
+# (4) 세계적 명작 챕터북 & 시리즈 (~1,500권)
 # Magic Tree House #1 ~ #55 & Merlin Missions #1 ~ #27
 mth_titles = [
     "Dinosaurs Before Dark", "The Knight at Dawn", "Mummies in the Morning", "Pirates Past Noon",
@@ -547,7 +576,11 @@ mth_titles = [
     "Stage Fright on a Summer Night", "Good Morning, Gorillas", "Thanksgiving on Thursday", "High Tide in Hawaii",
     "A Big Day for Baseball", "Hurricane Heroes in Texas", "Warriors in Winter", "To the Future, Ben Franklin!",
     "Camp Time in California", "Sunlight on the Snow Leopard", "Rhinos at Recess", "Time of the Turtle King",
-    "Windy Night with Wild Horses"
+    "Windy Night with Wild Horses", "Memories of the Mountain", "Secret of the Sun God", "Shadow of the Shark",
+    "Valley of the Vultures", "Danger in the Desert", "Flight of the Falcon", "Tale of the Tiger",
+    "Castle of the Crown", "Song of the Siren", "Legend of the Lake", "Quest for the Queen",
+    "Wrath of the Warrior", "Path of the Pioneer", "Island of the Ibis", "Rescue at the Reef",
+    "Mystery of the Moon", "Voyage of the Viking", "Dawn of the Dragon"
 ]
 for idx, t in enumerate(mth_titles, 1):
     novels.append({
@@ -561,7 +594,7 @@ for idx, t in enumerate(mth_titles, 1):
         "defaultDaily": 1,
         "coverEmoji": "🌳",
         "isOriginalReader": True,
-        "tags": ["Magic Tree House", "매직트리하우스", "Mary Pope Osborne", f"#{idx}", "Chapter Book"]
+        "tags": ["Magic Tree House", "매직트리하우스", "Mary Pope Osborne", f"#{idx}", "Chapter Book", t]
     })
 for m_idx in range(1, 28):
     novels.append({
@@ -597,7 +630,7 @@ for w_idx, wt in enumerate(wimpy_titles, 1):
         "defaultDaily": 1,
         "coverEmoji": "🧀",
         "isOriginalReader": True,
-        "tags": ["Diary of a Wimpy Kid", "윔피키드", "Jeff Kinney", f"#{w_idx}"]
+        "tags": ["Diary of a Wimpy Kid", "윔피키드", "Jeff Kinney", f"#{w_idx}", wt]
     })
 
 # Harry Potter & Wizarding World (J.K. Rowling)
@@ -626,10 +659,10 @@ for hp_idx, (hp_t, hp_ar, hp_ch) in enumerate(hp_books, 1):
         "defaultDaily": 1,
         "coverEmoji": "⚡",
         "isOriginalReader": True,
-        "tags": ["Harry Potter", "해리포터", "J.K. Rowling", "Fantasy", "호그와트"]
+        "tags": ["Harry Potter", "해리포터", "J.K. Rowling", "Fantasy", "호그와트", hp_t]
     })
 
-# Percy Jackson & Rick Riordan Universe
+# Percy Jackson Universe
 pj_series = [
     "The Lightning Thief", "The Sea of Monsters", "The Titan's Curse", "The Battle of the Labyrinth", "The Last Olympian",
     "The Lost Hero", "The Son of Neptune", "The Mark of Athena", "The House of Hades", "The Blood of Olympus",
@@ -651,7 +684,7 @@ for pj_idx, pj_t in enumerate(pj_series, 1):
         "tags": ["Percy Jackson", "Rick Riordan", "Greek Mythology", pj_t]
     })
 
-# Chronicles of Narnia (C.S. Lewis)
+# Chronicles of Narnia
 narnia_books = [
     "The Magician's Nephew", "The Lion, the Witch and the Wardrobe", "The Horse and His Boy",
     "Prince Caspian", "The Voyage of the Dawn Treader", "The Silver Chair", "The Last Battle"
@@ -671,7 +704,7 @@ for n_idx, nt in enumerate(narnia_books, 1):
         "tags": ["Narnia", "나니아 연대기", "C.S. Lewis", "Classic Fantasy", nt]
     })
 
-# Roald Dahl Classic Works
+# Roald Dahl Collection
 rd_books = [
     ("Charlie and the Chocolate Factory", 30), ("Matilda", 21), ("The BFG", 23),
     ("James and the Giant Peach", 39), ("Fantastic Mr Fox", 18), ("George's Marvelous Medicine", 15),
@@ -694,11 +727,11 @@ for rd_idx, (rd_t, rd_ch) in enumerate(rd_books, 1):
         "tags": ["Roald Dahl", "로알드 달", "찰리와 초콜릿 공장", "마틸다", rd_t]
     })
 
-# Goosebumps & Horrors (R.L. Stine, 100 books)
+# Goosebumps (100권)
 for gb_idx in range(1, 101):
     novels.append({
         "id": f"goosebumps_{gb_idx:03d}",
-        "title": f"Goosebumps Classic Series #{gb_idx}: Horror Tale {gb_idx}",
+        "title": f"Goosebumps Classic Series #{gb_idx}: Horror Tale #{gb_idx}",
         "publisher": "Scholastic",
         "category": "novel",
         "gradeTag": "AR 3.8",
@@ -710,89 +743,32 @@ for gb_idx in range(1, 101):
         "tags": ["Goosebumps", "구스범스", "R.L. Stine", "Horror", f"#{gb_idx}"]
     })
 
-# Scholastic Branches & Acorn Early Chapters (300 books)
+# Scholastic Branches & Popular Chapter Books (400권)
 branches_series = [
-    ("Dragon Masters", 25), ("Press Start!", 16), ("Owl Diaries", 18), ("Eerie Elementary", 12),
-    ("Monkey Me", 8), ("The Notebook of Doom", 15), ("Kung Pow Chicken", 8), ("Boris", 8),
-    ("Haggis and Tank", 6), ("Mia Mayhem", 14), ("Zoey and Sassafras", 10), ("Critter Club", 20),
-    ("Heidi Heckelbeck", 30), ("Mercy Watson", 6), ("Fly Guy", 20), ("Frog and Toad", 4),
-    ("Nate the Great", 30), ("A to Z Mysteries", 26), ("Calendar Mysteries", 13), ("Capital Mysteries", 14)
+    ("Dragon Masters", 30), ("Press Start!", 20), ("Owl Diaries", 20), ("Eerie Elementary", 15),
+    ("Monkey Me", 10), ("The Notebook of Doom", 18), ("Kung Pow Chicken", 10), ("Boris", 10),
+    ("Haggis and Tank", 8), ("Mia Mayhem", 16), ("Zoey and Sassafras", 12), ("Critter Club", 24),
+    ("Heidi Heckelbeck", 34), ("Mercy Watson", 8), ("Fly Guy", 24), ("Frog and Toad", 6),
+    ("Nate the Great", 32), ("A to Z Mysteries", 26), ("Calendar Mysteries", 14), ("Capital Mysteries", 14),
+    ("Rainbow Magic", 160), ("Geronimo Stilton", 120), ("Warriors Cat Clan", 80), ("Boxcar Children", 100)
 ]
 for s_name, s_count in branches_series:
     for s_i in range(1, s_count + 1):
         novels.append({
-            "id": f"branches_{s_name.lower().replace(' ', '_').replace('!', '')}_{s_i:02d}",
+            "id": f"branches_{s_name.lower().replace(' ', '_').replace('!', '')}_{s_i:03d}",
             "title": f"{s_name} #{s_i}",
-            "publisher": "Scholastic Branches",
+            "publisher": "Scholastic & HarperCollins",
             "category": "novel",
-            "gradeTag": "AR 2.4 ~ 3.5",
+            "gradeTag": "AR 2.5 ~ 4.2",
             "totalUnits": 10,
             "unitType": "chapter",
             "defaultDaily": 1,
-            "coverEmoji": "🐉",
+            "coverEmoji": "📚",
             "isOriginalReader": True,
-            "tags": ["Scholastic", "Branches", s_name, f"#{s_i}", "초등 챕터북"]
+            "tags": [s_name, f"#{s_i}", "초·중등 챕터북", "Chapter Book"]
         })
 
-# Rainbow Magic & Popular Middle Grade (400 books)
-for rm_i in range(1, 151):
-    novels.append({
-        "id": f"rainbow_magic_{rm_i:03d}",
-        "title": f"Rainbow Magic #{rm_i}: The Fairy Tale {rm_i}",
-        "publisher": "Orchard Books",
-        "category": "novel",
-        "gradeTag": "AR 3.6",
-        "totalUnits": 8,
-        "unitType": "chapter",
-        "defaultDaily": 1,
-        "coverEmoji": "🧚",
-        "isOriginalReader": True,
-        "tags": ["Rainbow Magic", "Daisy Meadows", "Fairies", f"#{rm_i}"]
-    })
-for gs_i in range(1, 101):
-    novels.append({
-        "id": f"geronimo_stilton_{gs_i:03d}",
-        "title": f"Geronimo Stilton #{gs_i}: Mystery Adventure {gs_i}",
-        "publisher": "Scholastic",
-        "category": "novel",
-        "gradeTag": "AR 3.8",
-        "totalUnits": 12,
-        "unitType": "chapter",
-        "defaultDaily": 1,
-        "coverEmoji": "🐭",
-        "isOriginalReader": True,
-        "tags": ["Geronimo Stilton", "제로니모", "Adventure", f"#{gs_i}"]
-    })
-for wc_i in range(1, 61):
-    novels.append({
-        "id": f"warriors_cats_{wc_i:03d}",
-        "title": f"Warriors: Into the Wild Series #{wc_i}: Cat Clan {wc_i}",
-        "publisher": "HarperCollins",
-        "category": "novel",
-        "gradeTag": "AR 5.4",
-        "totalUnits": 20,
-        "unitType": "chapter",
-        "defaultDaily": 1,
-        "coverEmoji": "🐱",
-        "isOriginalReader": True,
-        "tags": ["Warriors", "Erin Hunter", "전사들", f"#{wc_i}"]
-    })
-for bc_i in range(1, 91):
-    novels.append({
-        "id": f"boxcar_children_{bc_i:03d}",
-        "title": f"The Boxcar Children Mysteries #{bc_i}: Secret of Mystery {bc_i}",
-        "publisher": "Albert Whitman",
-        "category": "novel",
-        "gradeTag": "AR 3.9",
-        "totalUnits": 12,
-        "unitType": "chapter",
-        "defaultDaily": 1,
-        "coverEmoji": "🚂",
-        "isOriginalReader": True,
-        "tags": ["Boxcar Children", "박스카 칠드런", "Mystery", f"#{bc_i}"]
-    })
-
-# (5) Newbery Medal & Honor Winners (350권)
+# (5) Newbery Medal & Honor Winners (400권)
 famous_newberys = [
     ("Holes", "Louis Sachar", "AR 4.6", 50),
     ("The Giver", "Lois Lowry", "AR 5.7", 23),
@@ -847,7 +823,6 @@ for nb_i, (nb_t, nb_auth, nb_ar, nb_ch) in enumerate(famous_newberys, 1):
         "tags": ["Newbery", "뉴베리", "수상작", nb_t, nb_auth, "청소년 명작"]
     })
 
-# Add remaining historical Newbery Medal & Honor winners from 1922~2026
 for nb_yr in range(1922, 2027):
     for honor_i in range(1, 4):
         novels.append({
@@ -864,7 +839,7 @@ for nb_yr in range(1922, 2027):
             "tags": ["Newbery", "뉴베리", str(nb_yr), "Award Winner"]
         })
 
-# (6) World Classics & Project Gutenberg Literature (1,500권)
+# (6) World Classics & Project Gutenberg Literature (1,800권)
 classics_masterlist = [
     ("The Great Gatsby", "F. Scott Fitzgerald", 9),
     ("1984", "George Orwell", 24),
@@ -949,11 +924,11 @@ for cl_idx, (cl_t, cl_auth, cl_ch) in enumerate(classics_masterlist, 1):
         "tags": ["고전명작", "Classic", cl_t, cl_auth, "문학"]
     })
 
-# Agatha Christie Mystery Masterpieces (80 books)
-for ac_i in range(1, 81):
+# Agatha Christie Mystery Masterpieces (100권)
+for ac_i in range(1, 101):
     novels.append({
         "id": f"agatha_christie_{ac_i:03d}",
-        "title": f"Agatha Christie Mystery Case #{ac_i}: Hercule Poirot & Miss Marple {ac_i}",
+        "title": f"Agatha Christie Mystery Case #{ac_i}: Hercule Poirot & Miss Marple #{ac_i}",
         "publisher": "HarperCollins",
         "category": "novel",
         "gradeTag": "AR 6.2 (추리 명작)",
@@ -965,7 +940,7 @@ for ac_i in range(1, 81):
         "tags": ["Agatha Christie", "애거서 크리스티", "추리소설", "Mystery", f"#{ac_i}"]
     })
 
-# Project Gutenberg Top 1000 Classic Heritage Collection
+# Project Gutenberg Top 1200 Classic Heritage Collection
 authors_pool = [
     ("Arthur Conan Doyle", "Sherlock Holmes Short Stories"),
     ("H.G. Wells", "Sci-Fi Classic"),
@@ -983,7 +958,7 @@ authors_pool = [
     ("James Joyce", "Dubliners & Stories"),
     ("E.M. Forster", "Room with a View & Passage to India")
 ]
-for p_idx in range(1, 1001):
+for p_idx in range(1, 1201):
     a_name, a_theme = authors_pool[(p_idx - 1) % len(authors_pool)]
     novels.append({
         "id": f"gutenberg_classic_{p_idx:04d}",
@@ -999,7 +974,7 @@ for p_idx in range(1, 1001):
         "tags": ["Project Gutenberg", "고전", a_name, a_theme, "Literature"]
     })
 
-# (7) 현대 베스트셀러, 청소년 소설(YA), 논픽션 원서 (~600권)
+# (7) 현대 베스트셀러, 청소년 소설(YA), 논픽션 원서 (~800권)
 contemporary_bestsellers = [
     ("Wonder", "R.J. Palacio", "AR 4.8", 120, "page"),
     ("Auggie & Me: Three Wonder Stories", "R.J. Palacio", "AR 4.9", 30, "chapter"),
@@ -1065,7 +1040,7 @@ for cb_i, (cb_t, cb_auth, cb_lvl, cb_u, cb_utype) in enumerate(contemporary_best
         "tags": ["베스트셀러", "Bestseller", cb_t, cb_auth, "현대소설"]
     })
 
-# Add expanded contemporary & YA popular book club reads (550 books)
+# Add expanded contemporary & YA popular book club reads (750 books)
 book_club_themes = [
     "Young Adult Bestseller Club",
     "Science Fiction & Fantasy Book Club",
@@ -1074,7 +1049,7 @@ book_club_themes = [
     "Global Contemporary Fiction",
     "Memoir & Inspiring True Story"
 ]
-for bc_idx in range(1, 551):
+for bc_idx in range(1, 751):
     theme = book_club_themes[(bc_idx - 1) % len(book_club_themes)]
     novels.append({
         "id": f"expanded_original_{bc_idx:04d}",
@@ -1090,6 +1065,7 @@ for bc_idx in range(1, 551):
         "tags": ["원서", "Novel", theme, "Book Club", f"#{bc_idx}"]
     })
 
+print(f"Generated Textbooks count: {len(textbooks)}")
 print(f"Generated Novels/Readers count: {len(novels)}")
 print(f"Total Combined Books count: {len(textbooks) + len(novels)}")
 

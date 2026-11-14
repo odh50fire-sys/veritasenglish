@@ -8,6 +8,9 @@
 class AssistantEngine {
     constructor() {
         this.selectedBookPreset = null;
+        this.activeCatalogTab = 'textbooks';
+        this.activeCategoryFilter = 'all';
+        this.catalogDisplayLimit = 24;
         this.init();
     }
 
@@ -284,8 +287,8 @@ class AssistantEngine {
         this.selectedBookPreset = null;
         this.clearBookSearch();
         this.renderTocPreview(null);
-        this.switchStudyRegisterTab('popular');
-        this.renderBestsellerGrid('all');
+        this.catalogDisplayLimit = 24;
+        this.switchStudyRegisterTab('textbooks');
 
         const startDateInput = document.getElementById('ext-study-start-date');
         const todayStr = window.storage ? window.storage.getTodayDateString() : new Date().toISOString().slice(0, 10);
@@ -485,35 +488,141 @@ class AssistantEngine {
     }
 
     switchStudyRegisterTab(tabName) {
+        if (tabName === 'popular') tabName = 'textbooks';
+        this.activeCatalogTab = tabName;
+
         document.querySelectorAll('.ext-register-tab-btn').forEach(btn => {
             const isMatch = (btn.dataset.tab === tabName);
-            btn.className = `ext-register-tab-btn px-4 py-2 font-serif font-bold text-xs border-b-2 transition-all cursor-pointer ${
+            btn.className = `ext-register-tab-btn px-4 py-2.5 font-serif font-bold text-xs border-b-2 transition-all cursor-pointer whitespace-nowrap ${
                 isMatch ? 'text-indigo-900 border-indigo-900' : 'text-slate-500 border-transparent hover:text-slate-800'
             }`;
         });
 
-        const popularSec = document.getElementById('ext-tab-popular');
+        const catalogSec = document.getElementById('ext-tab-popular');
         const customSec = document.getElementById('ext-tab-custom');
 
-        if (popularSec) popularSec.classList.toggle('hidden', tabName !== 'popular');
-        if (customSec) customSec.classList.toggle('hidden', tabName !== 'custom');
+        if (tabName === 'custom') {
+            if (catalogSec) catalogSec.classList.add('hidden');
+            if (customSec) customSec.classList.remove('hidden');
+        } else {
+            if (catalogSec) catalogSec.classList.remove('hidden');
+            if (customSec) customSec.classList.add('hidden');
+
+            const labelEl = document.getElementById('catalog-section-label');
+            if (labelEl) {
+                labelEl.textContent = (tabName === 'textbooks') ? '대표 시중 교재 (708권):' : '영어 원서 & 리더스 (7,452권):';
+            }
+
+            this.activeCategoryFilter = 'all';
+            this.catalogDisplayLimit = 24;
+            this.renderCatalogFilterChips();
+            this.renderBestsellerGrid('all');
+        }
     }
 
-    renderBestsellerGrid(categoryFilter = 'all') {
+    renderCatalogFilterChips() {
+        const container = document.getElementById('catalog-filter-chips-container');
+        if (!container) return;
+
+        let chips = [];
+        if (this.activeCatalogTab === 'textbooks') {
+            chips = [
+                { id: 'all', label: '전체 (708)' },
+                { id: 'grammar', label: '문법/어법' },
+                { id: 'reading', label: '독해/구문' },
+                { id: 'sat', label: '수능/EBS' },
+                { id: 'school_task', label: '내신/기출' },
+                { id: 'academy', label: '대치동 인강' }
+            ];
+        } else {
+            chips = [
+                { id: 'all', label: '전체 (7,452)' },
+                { id: 'oxford', label: 'Oxford (1,339)' },
+                { id: 'penguin', label: 'Penguin (1,300)' },
+                { id: 'cambridge', label: 'Cambridge & Mac' },
+                { id: 'chapter', label: '챕터북/판타지' },
+                { id: 'newbery', label: '뉴베리 수상작' },
+                { id: 'classics', label: '세계 명작/고전' },
+                { id: 'bestseller', label: '현대 베스트셀러' }
+            ];
+        }
+
+        container.innerHTML = chips.map(c => {
+            const isMatch = (this.activeCategoryFilter === c.id);
+            return `
+                <button type="button" data-cat="${c.id}" onclick="window.assistantEngine.filterBestsellers('${c.id}')" class="bestseller-filter-chip px-2.5 py-0.5 rounded-full text-[11px] font-bold border transition-all cursor-pointer ${
+                    isMatch ? 'bg-indigo-900 text-white border-indigo-900' : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'
+                }">${c.label}</button>
+            `;
+        }).join('');
+    }
+
+    filterBestsellers(category) {
+        this.activeCategoryFilter = category;
+        this.catalogDisplayLimit = 24;
+        this.renderCatalogFilterChips();
+        this.renderBestsellerGrid(category);
+    }
+
+    loadMoreCatalogBooks() {
+        this.catalogDisplayLimit += 24;
+        this.renderBestsellerGrid(this.activeCategoryFilter);
+    }
+
+    renderBestsellerGrid(categoryFilter = this.activeCategoryFilter || 'all') {
         const container = document.getElementById('bestseller-books-grid');
+        const moreContainer = document.getElementById('catalog-more-btn-container');
         if (!container) return;
 
         const allBooks = this.getAllAvailableBooks();
         let filtered = [];
-        if (categoryFilter === 'all') {
-            filtered = (window.POPULAR_ENGLISH_TEXTBOOKS || []).slice(0, 22);
-        } else if (categoryFilter === 'readers') {
-            filtered = allBooks.filter(b => b.isOriginalReader || b.category === 'novel' || b.category === 'reader').slice(0, 24);
+
+        if (this.activeCatalogTab === 'textbooks') {
+            const textbooks = allBooks.filter(b => !b.isOriginalReader && b.category !== 'novel' && b.category !== 'reader');
+            if (categoryFilter === 'all') {
+                const popularIds = new Set((window.POPULAR_ENGLISH_TEXTBOOKS || []).map(b => b.id));
+                const populars = textbooks.filter(b => popularIds.has(b.id));
+                const others = textbooks.filter(b => !popularIds.has(b.id));
+                filtered = [...populars, ...others];
+            } else {
+                filtered = textbooks.filter(b => b.category === categoryFilter);
+            }
         } else {
-            filtered = allBooks.filter(b => b.category === categoryFilter).slice(0, 24);
+            const readers = allBooks.filter(b => b.isOriginalReader || b.category === 'novel' || b.category === 'reader');
+            if (categoryFilter === 'all') {
+                filtered = readers;
+            } else if (categoryFilter === 'oxford') {
+                filtered = readers.filter(b => (b.publisher || '').toLowerCase().includes('oxford') || (b.tags || []).some(t => /oxford/i.test(t)));
+            } else if (categoryFilter === 'penguin') {
+                filtered = readers.filter(b => (b.publisher || '').toLowerCase().includes('penguin') || (b.tags || []).some(t => /penguin/i.test(t)));
+            } else if (categoryFilter === 'cambridge') {
+                filtered = readers.filter(b => (b.publisher || '').toLowerCase().includes('cambridge') || (b.publisher || '').toLowerCase().includes('macmillan'));
+            } else if (categoryFilter === 'chapter') {
+                filtered = readers.filter(b => (b.publisher || '').toLowerCase().includes('scholastic') || (b.tags || []).some(t => /harry|wimpy|narnia|tree|fantasy|chapter/i.test(t)));
+            } else if (categoryFilter === 'newbery') {
+                filtered = readers.filter(b => (b.publisher || '').toLowerCase().includes('newbery') || (b.tags || []).some(t => /newbery/i.test(t)));
+            } else if (categoryFilter === 'classics') {
+                filtered = readers.filter(b => (b.publisher || '').toLowerCase().includes('gutenberg') || (b.tags || []).some(t => /classic|heritage|gutenberg/i.test(t)));
+            } else if (categoryFilter === 'bestseller') {
+                filtered = readers.filter(b => (b.publisher || '').toLowerCase().includes('bestseller') || (b.tags || []).some(t => /bestseller/i.test(t)));
+            } else {
+                filtered = readers;
+            }
         }
 
-        container.innerHTML = filtered.map(b => {
+        const sliced = filtered.slice(0, this.catalogDisplayLimit);
+
+        if (sliced.length === 0) {
+            container.innerHTML = `
+                <div class="col-span-full py-8 text-center text-xs text-slate-400">
+                    해당 분류의 도서가 없습니다.
+                </div>
+            `;
+            if (moreContainer) moreContainer.innerHTML = '';
+            return;
+        }
+
+        container.innerHTML = sliced.map(b => {
             const isSelected = (this.selectedBookPreset && this.selectedBookPreset.id === b.id);
             const isOriginal = b.isOriginalReader || b.category === 'novel' || b.category === 'reader';
             return `
@@ -537,16 +646,20 @@ class AssistantEngine {
                 </div>
             `;
         }).join('');
-    }
 
-    filterBestsellers(category) {
-        document.querySelectorAll('.bestseller-filter-chip').forEach(chip => {
-            const isMatch = (chip.dataset.cat === category);
-            chip.className = `bestseller-filter-chip px-2.5 py-0.5 rounded-full text-[11px] font-bold border transition-all cursor-pointer ${
-                isMatch ? 'bg-indigo-900 text-white border-indigo-900' : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'
-            }`;
-        });
-        this.renderBestsellerGrid(category);
+        if (moreContainer) {
+            if (sliced.length < filtered.length) {
+                moreContainer.innerHTML = `
+                    <button type="button" onclick="window.assistantEngine.loadMoreCatalogBooks()" class="px-4 py-1.5 rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-xs font-bold text-indigo-900 shadow-2xs cursor-pointer transition-all active:scale-95">
+                        ➕ 더 보기 (현재 ${sliced.length} / 총 ${filtered.length.toLocaleString()}권)
+                    </button>
+                `;
+            } else {
+                moreContainer.innerHTML = `
+                    <span class="text-[10px] text-slate-400 font-mono">전체 ${filtered.length.toLocaleString()}권 표시 완료</span>
+                `;
+            }
+        }
     }
 
     selectBestsellerBook(bookId) {
