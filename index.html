@@ -192,6 +192,28 @@
             <!-- 학교 등록 & 내신 시험 D-Day 맞춤 배너 (Study Copilot) -->
             <div id="dash-school-dday-banner" class="hidden"></div>
 
+            <!-- 외부 시중 교재 & 영어 원서 13,752권 실시간 검색 & 플래너 배정 퀵 배너 -->
+            <div class="p-4 rounded-2xl bg-gradient-to-r from-amber-500/10 via-indigo-500/10 to-blue-500/10 border border-amber-300/60 shadow-xs flex flex-wrap items-center justify-between gap-3">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-400/40 flex items-center justify-center text-xl shrink-0">
+                        📚
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <span class="px-2 py-0.5 rounded-md bg-amber-400/30 text-amber-950 text-[10px] font-mono font-bold">13,752권 초대규모 연동</span>
+                            <span class="text-xs text-indigo-950 font-bold">국내 교재 1,014권 + 영어 원서 12,738권</span>
+                        </div>
+                        <p class="font-serif font-bold text-xs sm:text-sm text-slate-800 mt-0.5">
+                            EBS·마더텅·자이스토리·천일문 &amp; 해리포터·Oxford·Penguin 원서 정규 목차 검색 &amp; 플래너 원클릭 배정
+                        </p>
+                    </div>
+                </div>
+                <button type="button" onclick="window.assistantEngine && window.assistantEngine.openExternalStudyModal()" class="px-4 py-2 rounded-xl bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-400 hover:to-amber-300 text-slate-950 font-serif font-black text-xs transition-all shadow-xs flex items-center gap-1.5 cursor-pointer active:scale-95 shrink-0">
+                    <i data-lucide="search" class="w-3.5 h-3.5"></i>
+                    <span>교재·원서 검색 &amp; 배정하기 →</span>
+                </button>
+            </div>
+
             <!-- 오늘 추천 학습 통합 브리핑 박스 (단어장 + 독해 지문) -->
             <div id="dash-today-learning-container"></div>
 
@@ -1493,9 +1515,9 @@
                                 <i data-lucide="school" class="w-3.5 h-3.5 text-emerald-700"></i>
                                 <span>내 학교·내신 D-Day</span>
                             </button>
-                            <button id="btn-replan-external-study" class="px-3 py-1.5 rounded-lg border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-950 text-xs font-serif font-bold flex items-center gap-1.5 transition-all cursor-pointer shadow-2xs" onclick="window.assistantEngine && window.assistantEngine.openExternalStudyModal()" title="시중 교재(마더텅, 자이스토리 등), 학원 과제, 인강 학습 배정">
+                            <button id="btn-replan-external-study" class="px-3 py-1.5 rounded-lg border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-950 text-xs font-serif font-bold flex items-center gap-1.5 transition-all cursor-pointer shadow-2xs" onclick="window.assistantEngine && window.assistantEngine.openExternalStudyModal()" title="시중 교재(1,014권) & 영어 원서(12,738권) 검색 및 플래너 배정">
                                 <i data-lucide="book-marked" class="w-3.5 h-3.5 text-amber-700"></i>
-                                <span>시중 교재·과제 배정</span>
+                                <span>📚 교재·원서 (13,752권) 배정</span>
                             </button>
                             <button id="btn-replan-reading" class="px-3 py-1.5 rounded-lg border border-indigo-200 bg-indigo-50 hover:bg-indigo-100 text-indigo-900 text-xs font-serif font-bold flex items-center gap-1.5 transition-all cursor-pointer shadow-2xs" onclick="window.plannerEngine.openReadingPlanModal()" title="독해 단원 학습 일정 배정 및 관리">
                                 <i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-indigo-700"></i>
@@ -3392,7 +3414,7 @@
     <script src="data/native_tips_data.js"></script>
     <script src="data/reading_lexicon.js"></script>
     <script src="data/level_test_bank.js"></script>
-    <script src="data/books_catalog.js"></script>
+    <script src="data/books_catalog.js?v=13752"></script>
     <script src="data/assistant_data.js"></script>
     
     <script src="js/tts.js"></script>
@@ -3423,7 +3445,7 @@
     <!-- 베리타스 AI 튜터 (단어 질의응답 & 사이트 기능 가이드 위젯) -->
     <script src="js/ai_tutor.js"></script>
     <!-- 스마트 올인원 영어 학습 어시스턴트 (학교·내신 D-Day, 시중교재 배정 및 원클릭 체크) -->
-    <script src="js/assistant_engine.js"></script>
+    <script src="js/assistant_engine.js?v=13752"></script>
     <script src="js/app.js"></script>
 
     <!-- ======================================================================
