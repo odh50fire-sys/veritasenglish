@@ -89,6 +89,27 @@ try:
         first_grammar = eval_js('document.querySelector("#bestseller-books-grid h5").innerText')
         print(f'Grammar filter cards: {grammar_count}, First: {first_grammar}')
 
+        # Test Textbooks Tab dedicated category chip 'neungryul' (NE능률 전종 254권)
+        eval_js('window.assistantEngine.filterBestsellers("neungryul")')
+        ne_cards_count = eval_js('document.querySelectorAll("#bestseller-books-grid > div").length')
+        first_ne = eval_js('document.querySelector("#bestseller-books-grid h5").innerText')
+        print(f'NE Neungryul filter cards: {ne_cards_count}, First: {first_ne}')
+
+        # Test search query '능률'
+        eval_js('window.assistantEngine.onBookSearchInput("능률")')
+        search_count_ne = eval_js('document.querySelectorAll("#ext-book-search-results > div").length')
+        print(f'Search results for "능률": {search_count_ne}')
+
+        # Test search query '빠바'
+        eval_js('window.assistantEngine.onBookSearchInput("빠바")')
+        search_count_bb = eval_js('document.querySelectorAll("#ext-book-search-results > div").length')
+        print(f'Search results for "빠바": {search_count_bb}')
+
+        # Test search query '리딩튜터'
+        eval_js('window.assistantEngine.onBookSearchInput("리딩튜터")')
+        search_count_rt = eval_js('document.querySelectorAll("#ext-book-search-results > div").length')
+        print(f'Search results for "리딩튜터": {search_count_rt}')
+
         # Test search query 'Harry Potter'
         eval_js('window.assistantEngine.onBookSearchInput("Harry Potter")')
         search_count_hp = eval_js('document.querySelectorAll("#ext-book-search-results > div").length')

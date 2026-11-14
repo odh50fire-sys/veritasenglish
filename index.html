@@ -192,7 +192,7 @@
             <!-- 학교 등록 & 내신 시험 D-Day 맞춤 배너 (Study Copilot) -->
             <div id="dash-school-dday-banner" class="hidden"></div>
 
-            <!-- 외부 시중 교재 & 영어 원서 13,752권 실시간 검색 & 플래너 배정 퀵 배너 -->
+            <!-- 외부 시중 교재 & 영어 원서 13,933권 실시간 검색 & 플래너 배정 퀵 배너 -->
             <div class="p-4 rounded-2xl bg-gradient-to-r from-amber-500/10 via-indigo-500/10 to-blue-500/10 border border-amber-300/60 shadow-xs flex flex-wrap items-center justify-between gap-3">
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-400/40 flex items-center justify-center text-xl shrink-0">
@@ -200,11 +200,11 @@
                     </div>
                     <div>
                         <div class="flex items-center gap-2 flex-wrap">
-                            <span class="px-2 py-0.5 rounded-md bg-amber-400/30 text-amber-950 text-[10px] font-mono font-bold">13,752권 초대규모 연동</span>
-                            <span class="text-xs text-indigo-950 font-bold">국내 교재 1,014권 + 영어 원서 12,738권</span>
+                            <span class="px-2 py-0.5 rounded-md bg-amber-400/30 text-amber-950 text-[10px] font-mono font-bold">13,933권 초대규모 연동</span>
+                            <span class="text-xs text-indigo-950 font-bold">국내 교재 1,195권 + 영어 원서 12,738권 (NE능률 254권 완비)</span>
                         </div>
                         <p class="font-serif font-bold text-xs sm:text-sm text-slate-800 mt-0.5">
-                            EBS·마더텅·자이스토리·천일문 &amp; 해리포터·Oxford·Penguin 원서 정규 목차 검색 &amp; 플래너 원클릭 배정
+                            EBS·마더텅·자이스토리·천일문·NE능률 &amp; 해리포터·Oxford·Penguin 원서 정규 목차 검색 &amp; 플래너 원클릭 배정
                         </p>
                     </div>
                 </div>
@@ -1515,9 +1515,9 @@
                                 <i data-lucide="school" class="w-3.5 h-3.5 text-emerald-700"></i>
                                 <span>내 학교·내신 D-Day</span>
                             </button>
-                            <button id="btn-replan-external-study" class="px-3 py-1.5 rounded-lg border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-950 text-xs font-serif font-bold flex items-center gap-1.5 transition-all cursor-pointer shadow-2xs" onclick="window.assistantEngine && window.assistantEngine.openExternalStudyModal()" title="시중 교재(1,014권) & 영어 원서(12,738권) 검색 및 플래너 배정">
+                            <button id="btn-replan-external-study" class="px-3 py-1.5 rounded-lg border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-950 text-xs font-serif font-bold flex items-center gap-1.5 transition-all cursor-pointer shadow-2xs" onclick="window.assistantEngine && window.assistantEngine.openExternalStudyModal()" title="시중 교재(1,195권) & 영어 원서(12,738권) 검색 및 플래너 배정">
                                 <i data-lucide="book-marked" class="w-3.5 h-3.5 text-amber-700"></i>
-                                <span>📚 교재·원서 (13,752권) 배정</span>
+                                <span>📚 교재·원서 (13,933권) 배정</span>
                             </button>
                             <button id="btn-replan-reading" class="px-3 py-1.5 rounded-lg border border-indigo-200 bg-indigo-50 hover:bg-indigo-100 text-indigo-900 text-xs font-serif font-bold flex items-center gap-1.5 transition-all cursor-pointer shadow-2xs" onclick="window.plannerEngine.openReadingPlanModal()" title="독해 단원 학습 일정 배정 및 관리">
                                 <i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-indigo-700"></i>
@@ -3414,7 +3414,7 @@
     <script src="data/native_tips_data.js"></script>
     <script src="data/reading_lexicon.js"></script>
     <script src="data/level_test_bank.js"></script>
-    <script src="data/books_catalog.js?v=13752"></script>
+    <script src="data/books_catalog.js?v=13933"></script>
     <script src="data/assistant_data.js"></script>
     
     <script src="js/tts.js"></script>
@@ -3445,7 +3445,7 @@
     <!-- 베리타스 AI 튜터 (단어 질의응답 & 사이트 기능 가이드 위젯) -->
     <script src="js/ai_tutor.js"></script>
     <!-- 스마트 올인원 영어 학습 어시스턴트 (학교·내신 D-Day, 시중교재 배정 및 원클릭 체크) -->
-    <script src="js/assistant_engine.js?v=13752"></script>
+    <script src="js/assistant_engine.js?v=13933"></script>
     <script src="js/app.js"></script>
 
     <!-- ======================================================================
@@ -4245,7 +4245,7 @@
             <!-- 서브 탭: 시중 교재 vs 영어 원서 vs 직접 등록 -->
             <div class="flex items-center px-4 sm:px-6 border-b border-slate-200 bg-slate-50 gap-1 overflow-x-auto">
                 <button type="button" data-tab="textbooks" onclick="window.assistantEngine && window.assistantEngine.switchStudyRegisterTab('textbooks')" class="ext-register-tab-btn px-4 py-2.5 font-serif font-bold text-xs border-b-2 text-indigo-900 border-indigo-900 cursor-pointer whitespace-nowrap">
-                    📚 시중 교재 (1,014권)
+                    📚 시중 교재 (1,195권)
                 </button>
                 <button type="button" data-tab="readers" onclick="window.assistantEngine && window.assistantEngine.switchStudyRegisterTab('readers')" class="ext-register-tab-btn px-4 py-2.5 font-serif font-bold text-xs border-b-2 text-slate-500 border-transparent hover:text-slate-800 cursor-pointer whitespace-nowrap">
                     📖 영어 원서·명작 소설 (12,738권)
@@ -4264,7 +4264,7 @@
                             <i data-lucide="search" class="w-3.5 h-3.5 text-indigo-700"></i>
                             <span>시중 교재 &amp; 영어 원서 실시간 통합 검색 &amp; 정규 목차(TOC) 연동</span>
                         </span>
-                        <span class="text-[10px] text-indigo-700 font-mono font-bold">국내 교재 1,014권 + 영어 원서 12,738권 (총 13,752권 완비)</span>
+                        <span class="text-[10px] text-indigo-700 font-mono font-bold">국내 교재 1,195권 + 영어 원서 12,738권 (총 13,933권 완비 • NE능률 254권 수록)</span>
                     </label>
                     <div class="relative">
                         <input id="ext-book-search-input" type="text" placeholder="예: 마더텅, 천일문, 수능특강, Harry Potter, Oxford, Wimpy Kid, 1984, Wonder, Newbery..." oninput="window.assistantEngine && window.assistantEngine.onBookSearchInput(this.value)" class="w-full pl-9 pr-8 py-2.5 rounded-xl border border-slate-300 bg-white font-serif font-bold text-xs text-slate-900 outline-none focus:border-indigo-600 shadow-2xs">

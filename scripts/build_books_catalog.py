@@ -222,25 +222,306 @@ for typ in ["유형편", "실전편", "고난도 킬러", "모의고사 10회", 
     for yr in [2024, 2025, 2026]:
         textbooks.append({"id": f"cedu_powerup_{typ}_{yr}".replace(" ", "_"), "title": f"쎄듀 파워업 독해모의고사 {typ} ({yr})", "publisher": "쎄듀", "category": "sat", "gradeTag": "고등", "totalUnits": 15, "unitType": "회차", "defaultDaily": 1, "coverEmoji": "⚡", "isOriginalReader": False, "tags": ["쎄듀", "파워업", typ, str(yr)]})
 
-# (5) NE능률 (130권)
-for g_name, g_code in [("입문", "intro"), ("기본 1", "basic1"), ("기본 2", "basic2"), ("종합", "master")]:
-    textbooks.append({"id": f"ne_gz_{g_code}_main", "title": f"NE능률 그래머존 (Grammar Zone) {g_name}", "publisher": "NE능률", "category": "grammar", "gradeTag": "중·고등", "totalUnits": 18, "unitType": "chapter", "defaultDaily": 1, "coverEmoji": "📘", "isOriginalReader": False, "tags": ["그래머존", g_name]})
-    textbooks.append({"id": f"ne_gz_{g_code}_wb", "title": f"NE능률 그래머존 (Grammar Zone) {g_name} 워크북", "publisher": "NE능률", "category": "grammar", "gradeTag": "중·고등", "totalUnits": 18, "unitType": "chapter", "defaultDaily": 1, "coverEmoji": "📘", "isOriginalReader": False, "tags": ["그래머존", "워크북", g_name]})
+# (5) NE능률 전 라인업 총망라 (초등·중등·고등·수능·토익 전 분야, 250권+)
+# 1) 능률 VOCA (어휘) 시리즈
+ne_voca_series = [
+    ("능률 VOCA 어원편 2026 (최신개정판)", "고등·수능", 60, "day", "📗", ["능률보카", "어원편", "단어장", "2026"]),
+    ("능률 VOCA 어원편 워크북 & 테스트북", "고등", 60, "day", "📗", ["능률보카", "어원편", "워크북"]),
+    ("능률 VOCA 숙어편 2026", "고등·수능", 45, "day", "📗", ["능률보카", "숙어편", "이디엄"]),
+    ("능률 VOCA 숙어편 워크북", "고등", 45, "day", "📗", ["능률보카", "숙어편", "워크북"]),
+    ("능률 VOCA 수능실전편 2026", "수능", 50, "day", "📗", ["능률보카", "수능실전편", "수능단어"]),
+    ("능률 VOCA 수능실전편 워크북", "수능", 50, "day", "📗", ["능률보카", "수능실전", "워크북"]),
+    ("능률 VOCA 입문편", "중3·고1", 40, "day", "📗", ["능률보카", "입문편"]),
+    ("능률 VOCA 기본편", "고1", 40, "day", "📗", ["능률보카", "기본편"]),
+    ("능률 VOCA 테마편 (주제별 어휘)", "고등", 50, "day", "📗", ["능률보카", "테마편"]),
+    ("능률 중학 VOCA 기초 (1학년)", "중1", 30, "day", "📗", ["능률중학보카", "중1", "기초"]),
+    ("능률 중학 VOCA 기본 (2학년)", "중2", 30, "day", "📗", ["능률중학보카", "중2", "기본"]),
+    ("능률 중학 VOCA 실전 (3학년)", "중3", 30, "day", "📗", ["능률중학보카", "중3", "실전"]),
+    ("능률 VOCA 수능 킬러 고난도 1000", "수능", 40, "day", "⚡", ["능률보카", "수능킬러", "고난도"]),
+    ("보카클라우드 (Voca Cloud) 중학 필수 어휘", "중등", 30, "day", "📘", ["보카클라우드", "중학"]),
+    ("보카클라우드 (Voca Cloud) 고등 필수 어휘", "고등", 40, "day", "📘", ["보카클라우드", "고등"]),
+    ("보카클라우드 (Voca Cloud) 수능 1등급 킬러 어휘", "수능", 40, "day", "🔥", ["보카클라우드", "수능1등급"]),
+    ("보카트레인 (Voca Train) 영단어 트레이닝 1권", "중1", 20, "day", "📗", ["보카트레인", "중1"]),
+    ("보카트레인 (Voca Train) 영단어 트레이닝 2권", "중2", 20, "day", "📗", ["보카트레인", "중2"]),
+    ("보카트레인 (Voca Train) 영단어 트레이닝 3권", "중3", 20, "day", "📗", ["보카트레인", "중3"])
+]
+for nv_t, nv_gr, nv_u, nv_ut, nv_em, nv_tags in ne_voca_series:
+    textbooks.append({
+        "id": f"ne_voca_{nv_t[:10]}".replace(" ", "_").replace("(", "").replace(")", "").replace("•", ""),
+        "title": f"NE능률 {nv_t}",
+        "publisher": "NE능률",
+        "category": "grammar",
+        "gradeTag": nv_gr,
+        "totalUnits": nv_u,
+        "unitType": nv_ut,
+        "defaultDaily": 1,
+        "coverEmoji": nv_em,
+        "isOriginalReader": False,
+        "tags": ["NE능률", "능률"] + nv_tags
+    })
 
-for bb_type in ["기초직독직해", "구문독해", "유형독해", "종합실전", "단기특강 어법", "단기특강 독해"]:
+# 2) 그래머존 (Grammar Zone) 문법 전 시리즈
+gz_levels = [
+    ("입문 (Intro)", "intro", "중3·고1", 16),
+    ("기본 1 (Basic 1)", "basic1", "고1", 18),
+    ("기본 2 (Basic 2)", "basic2", "고1·고2", 18),
+    ("종합 (Master)", "master", "고2·고3", 20),
+    ("중학 1학년", "m1", "중1", 14),
+    ("중학 2학년", "m2", "중2", 14),
+    ("중학 3학년", "m3", "중3", 14)
+]
+for gz_name, gz_code, gz_gr, gz_u in gz_levels:
+    textbooks.append({"id": f"ne_gz_{gz_code}_main", "title": f"NE능률 그래머존 (Grammar Zone) {gz_name} 본교재", "publisher": "NE능률", "category": "grammar", "gradeTag": gz_gr, "totalUnits": gz_u, "unitType": "chapter", "defaultDaily": 1, "coverEmoji": "📘", "isOriginalReader": False, "tags": ["NE능률", "그래머존", "Grammar Zone", gz_name, gz_gr]})
+    textbooks.append({"id": f"ne_gz_{gz_code}_wb", "title": f"NE능률 그래머존 (Grammar Zone) {gz_name} 워크북", "publisher": "NE능률", "category": "grammar", "gradeTag": gz_gr, "totalUnits": gz_u, "unitType": "chapter", "defaultDaily": 1, "coverEmoji": "📘", "isOriginalReader": False, "tags": ["NE능률", "그래머존", "워크북", gz_name, gz_gr]})
+    textbooks.append({"id": f"ne_gz_{gz_code}_train", "title": f"NE능률 그래머존 {gz_name} 그래머 트레이닝북", "publisher": "NE능률", "category": "grammar", "gradeTag": gz_gr, "totalUnits": gz_u, "unitType": "chapter", "defaultDaily": 1, "coverEmoji": "📘", "isOriginalReader": False, "tags": ["NE능률", "그래머존", "트레이닝북", gz_name]})
+
+# 3) 빠른독해 바른독해 (빠바) 구문 & 독해 전 시리즈
+for bb_type, bb_units in [
+    ("기초직독직해", 16), ("구문독해", 18), ("유형독해", 18), ("종합실전", 20),
+    ("단기특강 어법편", 12), ("단기특강 독해편", 12), ("실전모의고사 10회", 10), ("수능 리얼구문", 16)
+]:
     for yr in [2023, 2024, 2025, 2026]:
-        textbooks.append({"id": f"ne_bb_{bb_type}_{yr}".replace(" ", "_"), "title": f"NE능률 빠른독해 바른독해 {bb_type} ({yr})", "publisher": "NE능률", "category": "reading", "gradeTag": "고등", "totalUnits": 16, "unitType": "chapter", "defaultDaily": 1, "coverEmoji": "📕", "isOriginalReader": False, "tags": ["빠른독해바른독해", "빠바", bb_type, str(yr)]})
+        textbooks.append({
+            "id": f"ne_bb_{bb_type}_{yr}".replace(" ", "_"),
+            "title": f"NE능률 빠른독해 바른독해 (빠바) {bb_type} ({yr}판)",
+            "publisher": "NE능률",
+            "category": "reading",
+            "gradeTag": "고등·수능",
+            "totalUnits": bb_units,
+            "unitType": "chapter" if "회" not in bb_type else "회차",
+            "defaultDaily": 1,
+            "coverEmoji": "📕",
+            "isOriginalReader": False,
+            "tags": ["NE능률", "빠른독해바른독해", "빠바", bb_type, str(yr)]
+        })
+    textbooks.append({
+        "id": f"ne_bb_{bb_type}_wb".replace(" ", "_"),
+        "title": f"NE능률 빠른독해 바른독해 {bb_type} 워크북 & 어휘노트",
+        "publisher": "NE능률",
+        "category": "reading",
+        "gradeTag": "고등",
+        "totalUnits": bb_units,
+        "unitType": "chapter",
+        "defaultDaily": 1,
+        "coverEmoji": "📕",
+        "isOriginalReader": False,
+        "tags": ["NE능률", "빠바", "워크북", bb_type]
+    })
 
+# 4) 리딩튜터 (Reading Tutor) 전 시리즈
 for j_level in ["Starter 1", "Starter 2", "Level 1", "Level 2", "Level 3", "Level 4"]:
-    textbooks.append({"id": f"ne_jrt_{j_level.replace(' ', '_').lower()}", "title": f"NE능률 주니어 리딩튜터 (Junior Reading Tutor) {j_level}", "publisher": "NE능률", "category": "reading", "gradeTag": "중등", "totalUnits": 20, "unitType": "section", "defaultDaily": 1, "coverEmoji": "📕", "isOriginalReader": False, "tags": ["리딩튜터", "주니어", j_level]})
+    textbooks.append({"id": f"ne_jrt_{j_level.replace(' ', '_').lower()}_main", "title": f"NE능률 주니어 리딩튜터 (Junior Reading Tutor) {j_level} 본교재", "publisher": "NE능률", "category": "reading", "gradeTag": "중등", "totalUnits": 20, "unitType": "section", "defaultDaily": 1, "coverEmoji": "📕", "isOriginalReader": False, "tags": ["NE능률", "리딩튜터", "주니어", j_level]})
+    textbooks.append({"id": f"ne_jrt_{j_level.replace(' ', '_').lower()}_wb", "title": f"NE능률 주니어 리딩튜터 {j_level} 워크북", "publisher": "NE능률", "category": "reading", "gradeTag": "중등", "totalUnits": 20, "unitType": "section", "defaultDaily": 1, "coverEmoji": "📕", "isOriginalReader": False, "tags": ["NE능률", "리딩튜터", "주니어", "워크북", j_level]})
 
 for rt_level in ["입문", "기본", "실전", "수능"]:
-    textbooks.append({"id": f"ne_rt_{rt_level}_main", "title": f"NE능률 리딩튜터 (Reading Tutor) {rt_level}", "publisher": "NE능률", "category": "reading", "gradeTag": "고등", "totalUnits": 18, "unitType": "section", "defaultDaily": 1, "coverEmoji": "📕", "isOriginalReader": False, "tags": ["리딩튜터", rt_level]})
-    textbooks.append({"id": f"ne_rt_{rt_level}_wb", "title": f"NE능률 리딩튜터 (Reading Tutor) {rt_level} 워크북", "publisher": "NE능률", "category": "reading", "gradeTag": "고등", "totalUnits": 18, "unitType": "section", "defaultDaily": 1, "coverEmoji": "📕", "isOriginalReader": False, "tags": ["리딩튜터", "워크북", rt_level]})
+    textbooks.append({"id": f"ne_rt_{rt_level}_main", "title": f"NE능률 리딩튜터 (Reading Tutor) {rt_level} 본교재", "publisher": "NE능률", "category": "reading", "gradeTag": "고등", "totalUnits": 18, "unitType": "section", "defaultDaily": 1, "coverEmoji": "📕", "isOriginalReader": False, "tags": ["NE능률", "리딩튜터", rt_level]})
+    textbooks.append({"id": f"ne_rt_{rt_level}_wb", "title": f"NE능률 리딩튜터 {rt_level} 워크북 & 어휘테스트", "publisher": "NE능률", "category": "reading", "gradeTag": "고등", "totalUnits": 18, "unitType": "section", "defaultDaily": 1, "coverEmoji": "📕", "isOriginalReader": False, "tags": ["NE능률", "리딩튜터", "워크북", rt_level]})
 
-for book_name in ["능률 중학영어 문법 빌드업", "능률 중학영어 독해 빌드업", "능률 다잡학 수능영어 고난도", "능률 다잡학 어법 어휘", "보카클라우드 고등 필수 어휘", "보카클라우드 수능 킬러 어휘"]:
-    for vol in [1, 2, 3]:
-        textbooks.append({"id": f"ne_buildup_{book_name[:4]}_{vol}".replace(" ", "_"), "title": f"{book_name} {vol}권", "publisher": "NE능률", "category": "reading" if "독해" in book_name else "grammar", "gradeTag": "중·고등", "totalUnits": 15, "unitType": "chapter", "defaultDaily": 1, "coverEmoji": "📘", "isOriginalReader": False, "tags": ["NE능률", book_name, f"{vol}권"]})
+for csat_rt in ["유형독해", "실전독해", "고난도 킬러 3점"]:
+    textbooks.append({"id": f"ne_csat_rt_{csat_rt[:3]}", "title": f"NE능률 수능 리딩튜터 {csat_rt}", "publisher": "NE능률", "category": "sat", "gradeTag": "수능", "totalUnits": 18, "unitType": "강", "defaultDaily": 1, "coverEmoji": "🎓", "isOriginalReader": False, "tags": ["NE능률", "수능리딩튜터", csat_rt]})
+
+for sec_rt in ["어휘뽀개기", "구문뽀개기", "독해뽀개기"]:
+    textbooks.append({"id": f"ne_sec_rt_{sec_rt[:2]}", "title": f"NE능률 섹션뽀개기 리딩튜터 ({sec_rt})", "publisher": "NE능률", "category": "reading", "gradeTag": "중·고등", "totalUnits": 15, "unitType": "section", "defaultDaily": 1, "coverEmoji": "📕", "isOriginalReader": False, "tags": ["NE능률", "섹션뽀개기", sec_rt]})
+
+# 5) 1316 팬클럽 (1316 Fan Club) & 중학 빌드업 전 시리즈
+for fc_subj, fc_emo in [("문법", "📘"), ("독해", "📕"), ("듣기", "🎧")]:
+    for fc_lvl in [1, 2, 3]:
+        textbooks.append({
+            "id": f"ne_1316_{fc_subj}_{fc_lvl}",
+            "title": f"NE능률 1316 팬클럽 {fc_subj} Level {fc_lvl}",
+            "publisher": "NE능률",
+            "category": "grammar" if fc_subj == "문법" else "reading",
+            "gradeTag": f"중{fc_lvl}",
+            "totalUnits": 16,
+            "unitType": "chapter" if fc_subj != "듣기" else "회차",
+            "defaultDaily": 1,
+            "coverEmoji": fc_emo,
+            "isOriginalReader": False,
+            "tags": ["NE능률", "1316팬클럽", "1316", fc_subj, f"Level {fc_lvl}"]
+        })
+
+for bu_subj in ["문법 빌드업", "독해 빌드업", "서술형 빌드업"]:
+    for bu_vol in [1, 2, 3]:
+        textbooks.append({
+            "id": f"ne_buildup_{bu_subj[:2]}_{bu_vol}",
+            "title": f"NE능률 중학영어 {bu_subj} {bu_vol}권",
+            "publisher": "NE능률",
+            "category": "grammar" if "문법" in bu_subj or "서술" in bu_subj else "reading",
+            "gradeTag": f"중{bu_vol}",
+            "totalUnits": 15,
+            "unitType": "chapter",
+            "defaultDaily": 1,
+            "coverEmoji": "📘",
+            "isOriginalReader": False,
+            "tags": ["NE능률", "빌드업", bu_subj, f"{bu_vol}권"]
+        })
+
+for g in [1, 2, 3]:
+    textbooks.append({"id": f"ne_listening_mock_m{g}", "title": f"NE능률 중학영어 듣기모의고사 24회 {g}학년", "publisher": "NE능률", "category": "reading", "gradeTag": f"중{g}", "totalUnits": 24, "unitType": "회차", "defaultDaily": 1, "coverEmoji": "🎧", "isOriginalReader": False, "tags": ["NE능률", "듣기모의고사", f"중{g}"]})
+    textbooks.append({"id": f"ne_seosool_gram_m{g}", "title": f"NE능률 서술형이 되는 중학영문법 {g}학년", "publisher": "NE능률", "category": "grammar", "gradeTag": f"중{g}", "totalUnits": 14, "unitType": "chapter", "defaultDaily": 1, "coverEmoji": "✍️", "isOriginalReader": False, "tags": ["NE능률", "서술형이되는영문법", f"중{g}"]})
+
+# 6) 내신다잡기 & NE능률 정규 교과서/자습서/평가문제집 (김성곤, 양현권)
+for sem in ["1-1", "1-2", "2-1", "2-2", "3-1", "3-2"]:
+    textbooks.append({
+        "id": f"ne_naesin_dajabgi_{sem}",
+        "title": f"NE능률 내신다잡기 중학영어 {sem}",
+        "publisher": "NE능률",
+        "category": "school_task",
+        "gradeTag": f"중{sem[0]}",
+        "totalUnits": 10,
+        "unitType": "단원",
+        "defaultDaily": 1,
+        "coverEmoji": "🏫",
+        "isOriginalReader": False,
+        "tags": ["NE능률", "내신다잡기", sem]
+    })
+
+ne_textbook_authors = [
+    ("김성곤", "중학교 영어 1", "중1", 8), ("김성곤", "중학교 영어 2", "중2", 8), ("김성곤", "중학교 영어 3", "중3", 8),
+    ("양현권", "중학교 영어 1", "중1", 8), ("양현권", "중학교 영어 2", "중2", 8), ("양현권", "중학교 영어 3", "중3", 8),
+    ("김성곤", "고등학교 공통영어 1", "고1", 6), ("김성곤", "고등학교 공통영어 2", "고1", 6),
+    ("김성곤", "고등학교 영어 I", "고등", 6), ("김성곤", "고등학교 영어 II", "고등", 6),
+    ("김성곤", "고등학교 영어독해와 작문", "고등", 6), ("김성곤", "고등학교 심화 영어 I", "고등", 6),
+    ("양현권", "고등학교 영어 I", "고등", 6), ("양현권", "고등학교 영어 II", "고등", 6)
+]
+for ne_auth, ne_tb_t, ne_tb_gr, ne_tb_u in ne_textbook_authors:
+    textbooks.append({"id": f"ne_tb_{ne_auth}_{ne_tb_t}_wb".replace(" ", "_"), "title": f"NE능률({ne_auth}) {ne_tb_t} 자습서", "publisher": "NE능률", "category": "school_task", "gradeTag": ne_tb_gr, "totalUnits": ne_tb_u, "unitType": "단원", "defaultDaily": 1, "coverEmoji": "🏫", "isOriginalReader": False, "tags": ["NE능률", "교과서", ne_auth, ne_tb_t, "자습서"]})
+    textbooks.append({"id": f"ne_tb_{ne_auth}_{ne_tb_t}_eval".replace(" ", "_"), "title": f"NE능률({ne_auth}) {ne_tb_t} 평가문제집", "publisher": "NE능률", "category": "school_task", "gradeTag": ne_tb_gr, "totalUnits": ne_tb_u, "unitType": "단원", "defaultDaily": 1, "coverEmoji": "📝", "isOriginalReader": False, "tags": ["NE능률", "교과서", ne_auth, ne_tb_t, "평가문제집"]})
+
+# 7) 능률 다잡학 & 수능 기출 & THE 상승 & 리얼오리지널
+ne_sat_series = [
+    ("능률 다잡학 수능영어 고난도 빈칸·순서·삽입", 20, "강", "🔥"),
+    ("능률 다잡학 수능영어 어법·어휘 300제", 18, "강", "🔥"),
+    ("THE 상승 (상승 영어) 수능유형편", 16, "강", "⚡"),
+    ("THE 상승 (상승 영어) 구문편", 16, "강", "⚡"),
+    ("THE 상승 (상승 영어) 어법편", 16, "강", "⚡"),
+    ("능률 기출의 한 수 고1 영어독해", 18, "강", "🎯"),
+    ("능률 기출의 한 수 고2 영어독해", 18, "강", "🎯"),
+    ("능률 기출의 한 수 고3 영어독해", 20, "강", "🎯"),
+    ("능률 기출의 한 수 어법·어휘", 18, "강", "🎯"),
+    ("능률 고등 리얼오리지널 3개년 전국연합 모의고사 고1", 12, "회차", "📕"),
+    ("능률 고등 리얼오리지널 3개년 전국연합 모의고사 고2", 12, "회차", "📕"),
+    ("능률 고등 리얼오리지널 3개년 전국연합 모의고사 고3", 12, "회차", "📕")
+]
+for n_sat_t, n_sat_u, n_sat_ut, n_sat_em in ne_sat_series:
+    textbooks.append({
+        "id": f"ne_sat_{n_sat_t[:10]}".replace(" ", "_").replace("·", "_"),
+        "title": f"NE능률 {n_sat_t}",
+        "publisher": "NE능률",
+        "category": "sat",
+        "gradeTag": "고등·수능",
+        "totalUnits": n_sat_u,
+        "unitType": n_sat_ut,
+        "defaultDaily": 1,
+        "coverEmoji": n_sat_em,
+        "isOriginalReader": False,
+        "tags": ["NE능률", "수능영어", n_sat_t]
+    })
+
+# 8) 토마토 (TOMATO) 토익 & 텝스 (능률 어학 브랜드)
+tomato_series = [
+    ("토마토 토익 2학년 입문 LC", "토익", 20, "강", "🎧"),
+    ("토마토 토익 2학년 입문 RC", "토익", 20, "강", "💼"),
+    ("토마토 토익 단기특강 600+", "토익", 15, "강", "⚡"),
+    ("토마토 토익 단기특강 700+", "토익", 15, "강", "⚡"),
+    ("토마토 토익 실전 1000제 LC 1", "토익", 10, "회차", "🎧"),
+    ("토마토 토익 실전 1000제 RC 1", "토익", 10, "회차", "💼"),
+    ("토마토 토익 실전 1000제 LC 2", "토익", 10, "회차", "🎧"),
+    ("토마토 토익 실전 1000제 RC 2", "토익", 10, "회차", "💼"),
+    ("토마토 토익 VOCA 보카 30일 완성", "토익", 30, "day", "📗"),
+    ("토마토 텝스 기본서 문법", "텝스", 20, "강", "📘"),
+    ("토마토 텝스 기본서 어휘", "텝스", 20, "강", "📗"),
+    ("토마토 텝스 기본서 독해", "텝스", 20, "강", "📕"),
+    ("토마토 텝스 기본서 청해", "텝스", 20, "강", "🎧"),
+    ("토마토 텝스 실전모의고사 1000제", "텝스", 10, "회차", "🎯")
+]
+for tm_t, tm_gr, tm_u, tm_ut, tm_em in tomato_series:
+    textbooks.append({
+        "id": f"ne_tomato_{tm_t[:10]}".replace(" ", "_"),
+        "title": f"NE능률 {tm_t}",
+        "publisher": "NE능률(토마토)",
+        "category": "academy",
+        "gradeTag": tm_gr,
+        "totalUnits": tm_u,
+        "unitType": tm_ut,
+        "defaultDaily": 1,
+        "coverEmoji": tm_em,
+        "isOriginalReader": False,
+        "tags": ["NE능률", "토마토", "TOMATO", tm_t, tm_gr]
+    })
+
+# 9) 초등·주니어 능률 빌드앤그로우 & 큐브 시리즈 (ELT / 초등)
+ne_junior_series = [
+    ("Grammar Space Kids 1", "초등", 16, "unit", "📘"),
+    ("Grammar Space Kids 2", "초등", 16, "unit", "📘"),
+    ("Grammar Space Kids 3", "초등", 16, "unit", "📘"),
+    ("Grammar Space Beginner 1", "초등", 16, "unit", "📘"),
+    ("Grammar Space Beginner 2", "초등", 16, "unit", "📘"),
+    ("Grammar Space Beginner 3", "초등", 16, "unit", "📘"),
+    ("Grammar Space 1", "초등·중등", 18, "unit", "📘"),
+    ("Grammar Space 2", "초등·중등", 18, "unit", "📘"),
+    ("Grammar Space 3", "초등·중등", 18, "unit", "📘"),
+    ("Reading Space 1", "초등", 16, "unit", "📕"),
+    ("Reading Space 2", "초등", 16, "unit", "📕"),
+    ("Reading Space 3", "초등", 16, "unit", "📕"),
+    ("Writing Space 1", "초등", 16, "unit", "✍️"),
+    ("Writing Space 2", "초등", 16, "unit", "✍️"),
+    ("Writing Space 3", "초등", 16, "unit", "✍️"),
+    ("그래머 큐브 (Grammar Cube) 1", "초등", 16, "unit", "📘"),
+    ("그래머 큐브 (Grammar Cube) 2", "초등", 16, "unit", "📘"),
+    ("그래머 큐브 (Grammar Cube) 3", "초등", 16, "unit", "📘"),
+    ("리딩 큐브 (Reading Cube) 1", "초등", 16, "unit", "📕"),
+    ("리딩 큐브 (Reading Cube) 2", "초등", 16, "unit", "📕"),
+    ("리딩 큐브 (Reading Cube) 3", "초등", 16, "unit", "📕"),
+    ("인사이드 리딩 (Inside Reading) 1", "중·고등", 15, "chapter", "📕"),
+    ("인사이드 리딩 (Inside Reading) 2", "중·고등", 15, "chapter", "📕"),
+    ("인사이드 리딩 (Inside Reading) 3", "고등", 15, "chapter", "📕"),
+    ("인사이드 그래머 (Inside Grammar) 1", "중등", 14, "chapter", "📘"),
+    ("인사이드 그래머 (Inside Grammar) 2", "중등", 14, "chapter", "📘"),
+    ("인사이드 그래머 (Inside Grammar) 3", "중등", 14, "chapter", "📘"),
+    ("Smart Phonics (스마트 파닉스) 1", "유초등", 16, "unit", "🔤"),
+    ("Smart Phonics (스마트 파닉스) 2", "유초등", 16, "unit", "🔤"),
+    ("Smart Phonics (스마트 파닉스) 3", "유초등", 16, "unit", "🔤"),
+    ("Smart Phonics (스마트 파닉스) 4", "유초등", 16, "unit", "🔤"),
+    ("Smart Phonics (스마트 파닉스) 5", "유초등", 16, "unit", "🔤"),
+    ("Fast Phonics (패스트 파닉스) 1", "초등", 12, "unit", "🔤"),
+    ("Fast Phonics (패스트 파닉스) 2", "초등", 12, "unit", "🔤"),
+    ("Fast Phonics (패스트 파닉스) 3", "초등", 12, "unit", "🔤"),
+    ("Sight Words Story (사이트워드) 1", "초등", 16, "unit", "📖"),
+    ("Sight Words Story (사이트워드) 2", "초등", 16, "unit", "📖"),
+    ("Sight Words Story (사이트워드) 3", "초등", 16, "unit", "📖"),
+    ("Sight Words Story (사이트워드) 4", "초등", 16, "unit", "📖"),
+    ("Easy Talking Kids 1", "초등", 14, "unit", "🗣️"),
+    ("Easy Talking Kids 2", "초등", 14, "unit", "🗣️"),
+    ("Easy Talking Kids 3", "초등", 14, "unit", "🗣️"),
+    ("토마토 토익 기본서 LC 700+", "토익", 20, "강", "🎧"),
+    ("토마토 토익 기본서 RC 700+", "토익", 20, "강", "💼"),
+    ("토마토 토익 실전 1000제 LC 3", "토익", 10, "회차", "🎧"),
+    ("토마토 토익 실전 1000제 RC 3", "토익", 10, "회차", "💼"),
+    ("토마토 토익 파이널 봉투모의고사 5회분", "토익", 5, "회차", "🎯"),
+    ("능률 고등 리얼오리지널 5개년 수능기출 독해", "수능", 24, "강", "🎯"),
+    ("능률 고등 리얼오리지널 5개년 수능기출 어법·어휘", "수능", 20, "강", "🎯"),
+    ("능률 1316 팬클럽 어법·서술형 Level 1", "중1", 16, "chapter", "✍️"),
+    ("능률 1316 팬클럽 어법·서술형 Level 2", "중2", 16, "chapter", "✍️"),
+    ("능률 1316 팬클럽 어법·서술형 Level 3", "중3", 16, "chapter", "✍️"),
+    ("능률 중학영어 고난도 킬러 1학년", "중1", 15, "chapter", "🔥"),
+    ("능률 중학영어 고난도 킬러 2학년", "중2", 15, "chapter", "🔥"),
+    ("능률 중학영어 고난도 킬러 3학년", "중3", 15, "chapter", "🔥")
+]
+for nj_t, nj_gr, nj_u, nj_ut, nj_em in ne_junior_series:
+    textbooks.append({
+        "id": f"ne_bg_{nj_t[:10]}".replace(" ", "_"),
+        "title": f"NE능률 {nj_t}",
+        "publisher": "NE능률(Build&Grow)",
+        "category": "grammar" if "Grammar" in nj_t or "그래머" in nj_t else ("reading" if "Reading" in nj_t or "리딩" in nj_t else "writing"),
+        "gradeTag": nj_gr,
+        "totalUnits": nj_u,
+        "unitType": nj_ut,
+        "defaultDaily": 1,
+        "coverEmoji": nj_em,
+        "isOriginalReader": False,
+        "tags": ["NE능률", "빌드앤그로우", nj_t, nj_gr]
+    })
 
 # (6) 비상교육 (110권)
 for rb_lvl in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
