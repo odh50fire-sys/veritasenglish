@@ -510,7 +510,7 @@ class AssistantEngine {
 
             const labelEl = document.getElementById('catalog-section-label');
             if (labelEl) {
-                labelEl.textContent = (tabName === 'textbooks') ? '대표 시중 교재 (1,195권):' : '영어 원서 & 리더스 (12,738권):';
+                labelEl.textContent = (tabName === 'textbooks') ? '대표 시중 교재 (1,252권):' : '영어 원서 & 리더스 (12,738권):';
             }
 
             this.activeCategoryFilter = 'all';
@@ -527,8 +527,8 @@ class AssistantEngine {
         let chips = [];
         if (this.activeCatalogTab === 'textbooks') {
             chips = [
-                { id: 'all', label: '전체 (1,195)' },
-                { id: 'neungryul', label: 'NE능률 전종 (254)' },
+                { id: 'all', label: '전체 (1,252)' },
+                { id: 'neungryul', label: 'NE능률 전종 (311)' },
                 { id: 'grammar', label: '문법/어법' },
                 { id: 'reading', label: '독해/구문' },
                 { id: 'sat', label: '수능/EBS' },
