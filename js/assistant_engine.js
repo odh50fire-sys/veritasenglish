@@ -510,7 +510,7 @@ class AssistantEngine {
 
             const labelEl = document.getElementById('catalog-section-label');
             if (labelEl) {
-                labelEl.textContent = (tabName === 'textbooks') ? '대표 시중 교재 (708권):' : '영어 원서 & 리더스 (7,452권):';
+                labelEl.textContent = (tabName === 'textbooks') ? '대표 시중 교재 (1,014권):' : '영어 원서 & 리더스 (12,738권):';
             }
 
             this.activeCategoryFilter = 'all';
@@ -527,23 +527,23 @@ class AssistantEngine {
         let chips = [];
         if (this.activeCatalogTab === 'textbooks') {
             chips = [
-                { id: 'all', label: '전체 (708)' },
+                { id: 'all', label: '전체 (1,014)' },
                 { id: 'grammar', label: '문법/어법' },
                 { id: 'reading', label: '독해/구문' },
                 { id: 'sat', label: '수능/EBS' },
                 { id: 'school_task', label: '내신/기출' },
-                { id: 'academy', label: '대치동 인강' }
+                { id: 'academy', label: '대치동 인강·어학' }
             ];
         } else {
             chips = [
-                { id: 'all', label: '전체 (7,452)' },
-                { id: 'oxford', label: 'Oxford (1,339)' },
-                { id: 'penguin', label: 'Penguin (1,300)' },
-                { id: 'cambridge', label: 'Cambridge & Mac' },
-                { id: 'chapter', label: '챕터북/판타지' },
-                { id: 'newbery', label: '뉴베리 수상작' },
-                { id: 'classics', label: '세계 명작/고전' },
-                { id: 'bestseller', label: '현대 베스트셀러' }
+                { id: 'all', label: '전체 (12,738)' },
+                { id: 'oxford', label: 'Oxford (2,200)' },
+                { id: 'penguin', label: 'Penguin (2,200)' },
+                { id: 'cambridge', label: 'Cambridge & Mac (1,900)' },
+                { id: 'chapter', label: '챕터북/판타지 (1,200)' },
+                { id: 'newbery', label: '뉴베리 수상작 (500)' },
+                { id: 'classics', label: '세계 명작/고전 (2,000)' },
+                { id: 'bestseller', label: '현대 베스트셀러 (1,500)' }
             ];
         }
 
