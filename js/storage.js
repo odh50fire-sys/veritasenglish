@@ -2638,6 +2638,144 @@ class StorageManager {
         return map;
     }
 
+    // ------------------------------------------------------------------------
+    // 영문법 클리닉 단원 플래너 연동 (Grammar Clinic Planner Integration)
+    // ------------------------------------------------------------------------
+    registerGrammarUnit(unitNo, dateStr = null) {
+        const bank = window.GRAMMAR_CLINIC_BANK || [];
+        let targetUnit = null;
+        let targetLevel = null;
+        for (const lvl of bank) {
+            const u = (lvl.units || []).find(x => x.unitNo === Number(unitNo));
+            if (u) {
+                targetUnit = u;
+                targetLevel = lvl;
+                break;
+            }
+        }
+        if (!targetUnit) return null;
+
+        const targetDate = dateStr || this.getTodayDateString();
+
+        // 기존 동일 단원 등록 삭제 (중복 방지)
+        this.words = this.words.filter(w => !(w.isGrammarUnit && w.grammarUnitNo === targetUnit.unitNo));
+
+        const item = {
+            id: `grammar-task-unit-${targetUnit.unitNo}`,
+            word: `Unit ${targetUnit.unitNo}. ${targetUnit.title}`,
+            meaning: `[문법클리닉] ${targetUnit.summary}`,
+            partOfSpeech: '문법',
+            example: targetUnit.formulaCards && targetUnit.formulaCards[0] ? targetUnit.formulaCards[0].formula : '',
+            exampleMeaning: targetUnit.formulaCards && targetUnit.formulaCards[0] ? targetUnit.formulaCards[0].example : '',
+            level: targetLevel.level <= 2 ? 'middle' : 'high',
+            tag: `${targetLevel.badge} (${targetUnit.part})`,
+            isGrammarUnit: true,
+            grammarUnitNo: targetUnit.unitNo,
+            grammarLevelCode: targetLevel.levelCode,
+            grammarLevelNum: targetLevel.level,
+            grammarTitle: targetUnit.title,
+            planDate: targetDate,
+            createdAt: Date.now(),
+            stage: 1,
+            nextReviewDate: targetDate,
+            lastReviewed: null,
+            reviewCount: 0,
+            correctCount: 0,
+            wrongCount: 0,
+            isWeak: false
+        };
+
+        this.words.unshift(item);
+        this.saveWords();
+
+        return {
+            unitNo: targetUnit.unitNo,
+            unitTitle: targetUnit.title,
+            planDate: targetDate,
+            levelBadge: targetLevel.badge
+        };
+    }
+
+    registerGrammarLevel(levelCode, startDateStr = null, selectedDaysOfWeek = null, startUnitIndex = 0) {
+        const bank = window.GRAMMAR_CLINIC_BANK || [];
+        const lvl = bank.find(l => l.levelCode === levelCode);
+        if (!lvl) return null;
+
+        const allUnits = lvl.units || [];
+        const targetUnits = allUnits.slice(Math.max(0, startUnitIndex));
+        if (targetUnits.length === 0) return null;
+
+        const start = startDateStr || this.getTodayDateString();
+        const scheduledDates = this.calculateScheduledDates(start, targetUnits.length, selectedDaysOfWeek);
+
+        // 해당 레벨의 기존 문법 계획 정리
+        const targetUnitNos = allUnits.map(u => u.unitNo);
+        this.words = this.words.filter(w => !(w.isGrammarUnit && targetUnitNos.includes(w.grammarUnitNo)));
+
+        const newItems = targetUnits.map((u, idx) => {
+            const planDate = scheduledDates[idx] || start;
+            return {
+                id: `grammar-task-unit-${u.unitNo}`,
+                word: `Unit ${u.unitNo}. ${u.title}`,
+                meaning: `[문법클리닉] ${u.summary}`,
+                partOfSpeech: '문법',
+                example: u.formulaCards && u.formulaCards[0] ? u.formulaCards[0].formula : '',
+                exampleMeaning: u.formulaCards && u.formulaCards[0] ? u.formulaCards[0].example : '',
+                level: lvl.level <= 2 ? 'middle' : 'high',
+                tag: `${lvl.badge} (${u.part})`,
+                isGrammarUnit: true,
+                grammarUnitNo: u.unitNo,
+                grammarLevelCode: lvl.levelCode,
+                grammarLevelNum: lvl.level,
+                grammarTitle: u.title,
+                planDate: planDate,
+                createdAt: Date.now(),
+                stage: 1,
+                nextReviewDate: planDate,
+                lastReviewed: null,
+                reviewCount: 0,
+                correctCount: 0,
+                wrongCount: 0,
+                isWeak: false
+            };
+        });
+
+        this.words = [...newItems, ...this.words];
+        this.saveWords();
+
+        return {
+            levelCode: lvl.levelCode,
+            levelName: lvl.levelName,
+            totalUnits: targetUnits.length,
+            startDate: scheduledDates[0] || start,
+            endDate: scheduledDates[scheduledDates.length - 1] || start
+        };
+    }
+
+    deleteGrammarUnit(unitNo) {
+        const beforeCount = this.words.length;
+        this.words = this.words.filter(w => !(w.isGrammarUnit && w.grammarUnitNo === Number(unitNo)));
+        const deleted = beforeCount - this.words.length;
+        if (deleted > 0) this.saveWords();
+        return deleted;
+    }
+
+    deleteGrammarLevel(levelCode) {
+        const beforeCount = this.words.length;
+        this.words = this.words.filter(w => !(w.isGrammarUnit && w.grammarLevelCode === levelCode));
+        const deleted = beforeCount - this.words.length;
+        if (deleted > 0) this.saveWords();
+        return deleted;
+    }
+
+    deleteAllGrammarUnits() {
+        const beforeCount = this.words.length;
+        this.words = this.words.filter(w => !w.isGrammarUnit);
+        const deleted = beforeCount - this.words.length;
+        if (deleted > 0) this.saveWords();
+        return deleted;
+    }
+
     updateWord(id, updatedFields) {
         const index = this.words.findIndex(w => w.id === id);
         if (index !== -1) {

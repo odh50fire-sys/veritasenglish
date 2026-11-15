@@ -1496,6 +1496,10 @@
                                 <i data-lucide="book-marked" class="w-3.5 h-3.5 text-amber-700"></i>
                                 <span>📚 교재·원서 (13,984권) 배정</span>
                             </button>
+                            <button id="btn-plan-grammar-clinic" class="px-3 py-1.5 rounded-lg border border-emerald-300 bg-emerald-50 hover:bg-emerald-100 text-emerald-950 text-xs font-serif font-bold flex items-center gap-1.5 transition-all cursor-pointer shadow-2xs" onclick="window.grammarClinicEngine && window.grammarClinicEngine.openPlannerScheduleModal()" title="문법 클리닉 40단원 플래너 배정">
+                                <i data-lucide="sparkle" class="w-3.5 h-3.5 text-emerald-700"></i>
+                                <span>📗 문법 단원 배정</span>
+                            </button>
                             <button id="btn-open-learning-history" class="px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700 text-xs font-serif font-bold flex items-center gap-1.5 transition-all cursor-pointer shadow-2xs" onclick="window.plannerEngine.openLearningHistoryModal()" title="학습 이력 및 성취 통계 확인">
                                 <i data-lucide="history" class="w-3.5 h-3.5 text-blue-900"></i>
                                 <span>학습 이력</span>
@@ -1505,6 +1509,11 @@
                                 <input id="planner-target-input" type="number" min="5" max="100" class="w-14 px-2 py-1 text-center font-mono font-bold bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-900">
                             </div>
                         </div>
+                    </div>
+
+                    <!-- 등록된 문법 클리닉 활성 배너 -->
+                    <div id="planner-active-grammar-bar" class="hidden flex flex-wrap items-center gap-2 pt-2 border-t border-slate-100">
+                        <!-- JS 동적 주입 -->
                     </div>
 
                     <!-- 등록된 독해 단원 활성 배너 -->
@@ -1576,6 +1585,8 @@
                     </div>
 
                     <div class="pt-4 border-t border-slate-100 flex flex-col gap-2">
+                        <!-- 문법 단원 바로 풀기 원클릭 퀵 액션 (문법 과제 배정 시 표시) -->
+                        <div id="planner-grammar-quick-action" class="hidden"></div>
                         <!-- 독해 지문 바로 풀기 원클릭 퀵 액션 (독해 과제 배정 시 표시) -->
                         <div id="planner-reading-quick-action" class="hidden"></div>
                         <button class="w-full py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-xs shadow-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer" onclick="window.plannerEngine.startFlashcardsForSelectedDate();">
@@ -3406,6 +3417,149 @@
             <!-- 모달 바디 (스크롤 영역) -->
             <div id="grammar-modal-body" class="p-5 sm:p-6 overflow-y-auto flex-1 space-y-6">
                 <!-- JS 주입 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================================
+         MODAL: 문법 클리닉 단원 플래너 배정 모달 (Grammar Schedule Modal)
+         ====================================================================== -->
+    <div id="modal-grammar-schedule" class="fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-xs hidden flex items-center justify-center p-3 sm:p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-lg w-full overflow-hidden flex flex-col border border-slate-200 animate-in fade-in zoom-in-95 duration-150">
+            <!-- 모달 상단 헤더 -->
+            <div class="p-5 border-b border-slate-100 flex items-center justify-between bg-emerald-50/50">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center shadow-2xs">
+                        <i data-lucide="calendar-plus" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 id="grammar-sched-modal-title" class="font-serif font-black text-base text-slate-900">
+                            문법 클리닉 플래너 배정
+                        </h3>
+                        <p id="grammar-sched-modal-sub" class="text-xs text-slate-500 mt-0.5">
+                            원하는 단원을 선택하여 학습 플래너에 등록하세요.
+                        </p>
+                    </div>
+                </div>
+                <button type="button" onclick="window.grammarClinicEngine.closeScheduleModal()" class="p-2 rounded-xl text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition-colors cursor-pointer">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- 모달 바디 -->
+            <div class="p-6 space-y-5">
+                <!-- 탭: 단일 단원 등록 vs 레벨 8단원 일괄 배정 -->
+                <div class="flex rounded-xl bg-slate-100 p-1 text-xs font-serif font-bold">
+                    <button type="button" id="grammar-sched-tab-single" onclick="window.grammarClinicEngine.setScheduleMode('single')" class="flex-1 py-2 rounded-lg bg-white text-slate-900 shadow-2xs transition-all cursor-pointer">
+                        단일 단원 등록
+                    </button>
+                    <button type="button" id="grammar-sched-tab-batch" onclick="window.grammarClinicEngine.setScheduleMode('batch')" class="flex-1 py-2 rounded-lg text-slate-500 hover:text-slate-900 transition-all cursor-pointer">
+                        레벨(8단원) 일괄 배정
+                    </button>
+                </div>
+
+                <!-- [단일 단원 배정 모드 영역] -->
+                <div id="grammar-sched-single-area" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-serif font-bold text-slate-700 mb-1.5">학습할 문법 단원 선택</label>
+                        <select id="grammar-sched-unit-select" class="w-full px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-emerald-500 text-xs font-medium text-slate-800 outline-none">
+                            <!-- JS 렌더링 -->
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-serif font-bold text-slate-700 mb-1.5">학습 예정일 (배정 날짜)</label>
+                        <div class="flex items-center gap-2">
+                            <input type="date" id="grammar-sched-single-date" class="flex-1 px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-emerald-500 text-xs font-mono font-bold text-slate-800 outline-none">
+                            <button type="button" onclick="window.grammarClinicEngine.setQuickDate(0)" class="px-2.5 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-800 text-xs font-bold font-serif shrink-0 cursor-pointer">오늘</button>
+                            <button type="button" onclick="window.grammarClinicEngine.setQuickDate(1)" class="px-2.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold font-serif shrink-0 cursor-pointer">내일</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- [레벨 일괄 배정 모드 영역] -->
+                <div id="grammar-sched-batch-area" class="space-y-4 hidden">
+                    <div>
+                        <label class="block text-xs font-serif font-bold text-slate-700 mb-1.5">대상 레벨 선택</label>
+                        <select id="grammar-sched-level-select" onchange="window.grammarClinicEngine.onScheduleLevelChanged(this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-emerald-500 text-xs font-medium text-slate-800 outline-none">
+                            <!-- JS 렌더링 -->
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-serif font-bold text-slate-700 mb-1.5">시작 단원</label>
+                        <select id="grammar-sched-start-unit-select" onchange="window.grammarClinicEngine.updateBatchSchedulePreview()" class="w-full px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-emerald-500 text-xs font-medium text-slate-800 outline-none">
+                            <!-- JS 렌더링 -->
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-serif font-bold text-slate-700 mb-1.5">시작 일자</label>
+                        <input type="date" id="grammar-sched-batch-start-date" onchange="window.grammarClinicEngine.updateBatchSchedulePreview()" class="w-full px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-emerald-500 text-xs font-mono font-bold text-slate-800 outline-none">
+                    </div>
+
+                    <!-- 요일 선택 패턴 -->
+                    <div>
+                        <label class="block text-xs font-serif font-bold text-slate-700 mb-1.5">학습 요일(주기) 선택</label>
+                        <div class="flex flex-wrap gap-1.5 mb-2">
+                            <button type="button" onclick="window.grammarClinicEngine.setBatchScheduleDaysPreset('all')" class="grammar-batch-preset px-2.5 py-1 rounded-lg text-[11px] font-bold border bg-emerald-700 text-white border-emerald-700 shadow-2xs cursor-pointer" data-preset="all">매일</button>
+                            <button type="button" onclick="window.grammarClinicEngine.setBatchScheduleDaysPreset('weekdays')" class="grammar-batch-preset px-2.5 py-1 rounded-lg text-[11px] font-bold border bg-white text-slate-600 border-slate-200 hover:bg-slate-100 cursor-pointer" data-preset="weekdays">주중(월~금)</button>
+                            <button type="button" onclick="window.grammarClinicEngine.setBatchScheduleDaysPreset('mwf')" class="grammar-batch-preset px-2.5 py-1 rounded-lg text-[11px] font-bold border bg-white text-slate-600 border-slate-200 hover:bg-slate-100 cursor-pointer" data-preset="mwf">월·수·금</button>
+                            <button type="button" onclick="window.grammarClinicEngine.setBatchScheduleDaysPreset('tt')" class="grammar-batch-preset px-2.5 py-1 rounded-lg text-[11px] font-bold border bg-white text-slate-600 border-slate-200 hover:bg-slate-100 cursor-pointer" data-preset="tt">화·목</button>
+                            <button type="button" onclick="window.grammarClinicEngine.setBatchScheduleDaysPreset('weekend')" class="grammar-batch-preset px-2.5 py-1 rounded-lg text-[11px] font-bold border bg-white text-slate-600 border-slate-200 hover:bg-slate-100 cursor-pointer" data-preset="weekend">주말</button>
+                        </div>
+                        <div class="grid grid-cols-7 gap-1 text-center text-xs font-bold">
+                            <label class="p-1.5 rounded-lg border border-slate-200 bg-slate-50 flex flex-col items-center cursor-pointer">
+                                <span class="text-[10px] text-rose-600 mb-0.5">일</span>
+                                <input type="checkbox" value="0" class="grammar-batch-day-check accent-emerald-600" onchange="window.grammarClinicEngine.updateBatchSchedulePreview()" checked>
+                            </label>
+                            <label class="p-1.5 rounded-lg border border-slate-200 bg-slate-50 flex flex-col items-center cursor-pointer">
+                                <span class="text-[10px] text-slate-600 mb-0.5">월</span>
+                                <input type="checkbox" value="1" class="grammar-batch-day-check accent-emerald-600" onchange="window.grammarClinicEngine.updateBatchSchedulePreview()" checked>
+                            </label>
+                            <label class="p-1.5 rounded-lg border border-slate-200 bg-slate-50 flex flex-col items-center cursor-pointer">
+                                <span class="text-[10px] text-slate-600 mb-0.5">화</span>
+                                <input type="checkbox" value="2" class="grammar-batch-day-check accent-emerald-600" onchange="window.grammarClinicEngine.updateBatchSchedulePreview()" checked>
+                            </label>
+                            <label class="p-1.5 rounded-lg border border-slate-200 bg-slate-50 flex flex-col items-center cursor-pointer">
+                                <span class="text-[10px] text-slate-600 mb-0.5">수</span>
+                                <input type="checkbox" value="3" class="grammar-batch-day-check accent-emerald-600" onchange="window.grammarClinicEngine.updateBatchSchedulePreview()" checked>
+                            </label>
+                            <label class="p-1.5 rounded-lg border border-slate-200 bg-slate-50 flex flex-col items-center cursor-pointer">
+                                <span class="text-[10px] text-slate-600 mb-0.5">목</span>
+                                <input type="checkbox" value="4" class="grammar-batch-day-check accent-emerald-600" onchange="window.grammarClinicEngine.updateBatchSchedulePreview()" checked>
+                            </label>
+                            <label class="p-1.5 rounded-lg border border-slate-200 bg-slate-50 flex flex-col items-center cursor-pointer">
+                                <span class="text-[10px] text-slate-600 mb-0.5">금</span>
+                                <input type="checkbox" value="5" class="grammar-batch-day-check accent-emerald-600" onchange="window.grammarClinicEngine.updateBatchSchedulePreview()" checked>
+                            </label>
+                            <label class="p-1.5 rounded-lg border border-slate-200 bg-slate-50 flex flex-col items-center cursor-pointer">
+                                <span class="text-[10px] text-blue-600 mb-0.5">토</span>
+                                <input type="checkbox" value="6" class="grammar-batch-day-check accent-emerald-600" onchange="window.grammarClinicEngine.updateBatchSchedulePreview()" checked>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 미리보기 영역 -->
+                    <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-1">
+                        <div class="font-bold text-slate-800 flex items-center justify-between">
+                            <span>배정 일정 미리보기:</span>
+                            <span id="grammar-sched-preview-count" class="font-mono text-emerald-700">총 8회차</span>
+                        </div>
+                        <div id="grammar-sched-preview-dates" class="text-slate-600 font-mono text-[11px]">2026-10-15 ~ 2026-10-22</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 모달 푸터 버튼 -->
+            <div class="p-4 border-t border-slate-100 bg-slate-50 flex items-center justify-between gap-3">
+                <button type="button" onclick="window.grammarClinicEngine.closeScheduleModal()" class="px-4 py-2 rounded-xl bg-white border border-slate-200 hover:bg-slate-100 text-slate-600 font-serif font-semibold text-xs cursor-pointer">
+                    취소
+                </button>
+                <button type="button" onclick="window.grammarClinicEngine.executeScheduleRegistration()" class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-serif font-bold text-xs shadow-md transition-all flex items-center gap-1.5 cursor-pointer">
+                    <i data-lucide="check" class="w-4 h-4"></i>
+                    <span>플래너에 배정 완료</span>
+                </button>
             </div>
         </div>
     </div>

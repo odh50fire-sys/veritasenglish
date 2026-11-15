@@ -89,6 +89,34 @@ class PlannerEngine {
             }
         }
 
+        // 현재 등록된 문법 클리닉 단원 배너 렌더링
+        const activeGrammarBannerEl = document.getElementById('planner-active-grammar-bar');
+        if (activeGrammarBannerEl) {
+            const grammarWords = (window.storage.words || []).filter(w => w.isGrammarUnit);
+            if (grammarWords.length > 0) {
+                activeGrammarBannerEl.classList.remove('hidden');
+                const unitCount = new Set(grammarWords.map(w => w.grammarUnitNo)).size;
+                const dates = Array.from(new Set(grammarWords.map(w => w.planDate))).sort();
+                const startDate = dates[0] || '';
+                const endDate = dates[dates.length - 1] || '';
+
+                activeGrammarBannerEl.innerHTML = `
+                    <span class="text-[11px] font-serif font-bold text-slate-500 flex items-center gap-1 shrink-0">
+                        <i data-lucide="sparkle" class="w-3.5 h-3.5 text-emerald-600"></i> 배정된 문법 클리닉:
+                    </span>
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-900 text-xs font-serif font-bold transition-all shadow-2xs">
+                        <span>문법 클리닉 (총 ${unitCount}개 단원)</span>
+                        <span class="font-mono text-[11px] text-emerald-700 font-normal">(${startDate} ~ ${endDate})</span>
+                        <button class="ml-1 text-slate-400 hover:text-red-700 cursor-pointer" onclick="window.plannerEngine.deleteAllGrammarUnitsFromPlanner()" title="문법 계획 전체 삭제">
+                            <i data-lucide="x" class="w-3 h-3"></i>
+                        </button>
+                    </div>
+                `;
+            } else {
+                activeGrammarBannerEl.classList.add('hidden');
+            }
+        }
+
         // 현재 등록된 외부 교재 및 과제 활성 배너 렌더링 (원클릭 삭제 지원)
         const activeExtBannerEl = document.getElementById('planner-active-ext-books-bar');
         const externalStudies = (window.storage && typeof window.storage.getExternalStudies === 'function')
@@ -163,8 +191,9 @@ class PlannerEngine {
                 this.render();
             };
 
-            const vocabWords = wordsOnDate.filter(w => !w.isReadingPassage);
+            const vocabWords = wordsOnDate.filter(w => !w.isReadingPassage && !w.isGrammarUnit);
             const readingPassages = wordsOnDate.filter(w => w.isReadingPassage);
+            const grammarUnits = wordsOnDate.filter(w => w.isGrammarUnit);
             const extTasks = (window.storage && typeof window.storage.getTodayExternalTasks === 'function')
                 ? window.storage.getTodayExternalTasks(dateStr)
                 : [];
@@ -174,8 +203,12 @@ class PlannerEngine {
                 const r = window.storage.readingRecords && window.storage.readingRecords[p.readingPassageId];
                 return (r && typeof r.score === 'number') || p.studyCompleted;
             });
+            const isGrammarCompleted = grammarUnits.length === 0 || grammarUnits.every(g => {
+                const prog = window.grammarClinicEngine && window.grammarClinicEngine.getUnitProgress(g.grammarUnitNo);
+                return (prog && prog.completed) || g.studyCompleted;
+            });
             const isExtCompleted = extTasks.length === 0 || extTasks.every(t => t.isDone);
-            const isDayCompleted = planInfo.isDone === true || ((vocabWords.length > 0 || readingPassages.length > 0 || extTasks.length > 0) && isWordsCompleted && isPassagesCompleted && isExtCompleted);
+            const isDayCompleted = planInfo.isDone === true || ((vocabWords.length > 0 || readingPassages.length > 0 || grammarUnits.length > 0 || extTasks.length > 0) && isWordsCompleted && isPassagesCompleted && isGrammarCompleted && isExtCompleted);
 
             let badgesHtml = '';
             if (isDayCompleted) {
@@ -184,6 +217,19 @@ class PlannerEngine {
             if (isRest) {
                 badgesHtml += `<span class="inline-block px-1.5 py-0.5 rounded bg-slate-200 text-slate-700 text-[10px] font-mono">휴식일</span>`;
             } else {
+                if (grammarUnits.length > 0) {
+                    const allGrammarDone = grammarUnits.every(g => {
+                        const prog = window.grammarClinicEngine && window.grammarClinicEngine.getUnitProgress(g.grammarUnitNo);
+                        return (prog && prog.completed) || g.studyCompleted;
+                    });
+                    badgesHtml += `
+                        <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full ${
+                            allGrammarDone ? 'bg-emerald-100 text-emerald-900 border border-emerald-300' : 'bg-emerald-50 text-emerald-800 border border-emerald-200'
+                        } text-[10px] font-bold">
+                            <i data-lucide="sparkle" class="w-3 h-3 text-emerald-600"></i> 문법 ${grammarUnits.length}단원
+                        </span>
+                    `;
+                }
                 if (extTasks.length > 0) {
                     const doneCount = extTasks.filter(t => t.isDone).length;
                     badgesHtml += `
@@ -367,7 +413,10 @@ class PlannerEngine {
         allWordsOnDate.forEach(w => {
             let key = 'etc';
             let label = '기타 단어';
-            if (w.isReadingPassage || w.isReadingVocab) {
+            if (w.isGrammarUnit) {
+                key = `grammar:${w.grammarLevelCode || 'all'}`;
+                label = `문법 클리닉 (${w.tag || '문법'})`;
+            } else if (w.isReadingPassage || w.isReadingVocab) {
                 key = `reading:${w.readingUnitId || 'r'}`;
                 label = w.tag ? w.tag.replace(' [어휘]', '').replace(' [독해]', '') : '내신 독해';
             } else if (w.isNeungryul2025) {
@@ -420,6 +469,7 @@ class PlannerEngine {
         // 필터링 적용된 단어 목록
         const words = (this.currentDayBookFilter && this.currentDayBookFilter !== 'all')
             ? allWordsOnDate.filter(w => {
+                if (w.isGrammarUnit && `grammar:${w.grammarLevelCode || 'all'}` === this.currentDayBookFilter) return true;
                 if ((w.isReadingPassage || w.isReadingVocab) && `reading:${w.readingUnitId || 'r'}` === this.currentDayBookFilter) return true;
                 if (w.isNeungryul2025 && this.currentDayBookFilter === 'neungryul2025') return true;
                 if (w.isNeungryulEtym && this.currentDayBookFilter === 'neungryul_etym') return true;
@@ -428,8 +478,10 @@ class PlannerEngine {
             })
             : allWordsOnDate;
 
-        // 독해 지문 과제를 상단에 최우선 배치
+        // 문법 단원 및 독해 지문 과제를 상단에 최우선 배치
         words.sort((a, b) => {
+            if (a.isGrammarUnit && !b.isGrammarUnit) return -1;
+            if (!a.isGrammarUnit && b.isGrammarUnit) return 1;
             if (a.isReadingPassage && !b.isReadingPassage) return -1;
             if (!a.isReadingPassage && b.isReadingPassage) return 1;
             return 0;
@@ -466,20 +518,26 @@ class PlannerEngine {
         }
 
         const dayPlan = window.storage.plans[this.selectedDateStr] || {};
-        const vocabOnDate = words.filter(w => !w.isReadingPassage);
+        const vocabOnDate = words.filter(w => !w.isReadingPassage && !w.isGrammarUnit);
         const readingOnDate = words.filter(w => w.isReadingPassage);
+        const grammarOnDate = words.filter(w => w.isGrammarUnit);
         const isVocabDone = vocabOnDate.length === 0 || vocabOnDate.every(w => (w.flashcardDone && w.quizDone) || w.studyCompleted);
         const isReadingDone = readingOnDate.length === 0 || readingOnDate.every(p => {
             const r = window.storage.readingRecords && window.storage.readingRecords[p.readingPassageId];
             return (r && typeof r.score === 'number') || p.studyCompleted;
         });
+        const isGrammarDone = grammarOnDate.length === 0 || grammarOnDate.every(g => {
+            const prog = window.grammarClinicEngine && window.grammarClinicEngine.getUnitProgress(g.grammarUnitNo);
+            return (prog && prog.completed) || g.studyCompleted;
+        });
         const isExtDone = extTasksOnDate.length === 0 || extTasksOnDate.every(t => t.isDone);
-        const isDayAllDone = dayPlan.isDone === true || ((vocabOnDate.length > 0 || readingOnDate.length > 0 || extTasksOnDate.length > 0) && isVocabDone && isReadingDone && isExtDone);
+        const isDayAllDone = dayPlan.isDone === true || ((vocabOnDate.length > 0 || readingOnDate.length > 0 || grammarOnDate.length > 0 || extTasksOnDate.length > 0) && isVocabDone && isReadingDone && isGrammarDone && isExtDone);
 
         // 상단 타이틀 갱신
         const listTitleEl = document.getElementById('planner-detail-list-title');
         if (listTitleEl) {
             const parts = [];
+            if (grammarOnDate.length > 0) parts.push(`문법 ${grammarOnDate.length}단원`);
             if (extTasksOnDate.length > 0) parts.push(`교재/과제 ${extTasksOnDate.length}건`);
             if (readingOnDate.length > 0) parts.push(`독해 ${readingOnDate.length}편`);
             if (vocabOnDate.length > 0) parts.push(`어휘 ${vocabOnDate.length}개`);
@@ -532,6 +590,25 @@ class PlannerEngine {
             container.appendChild(extSection);
         }
 
+        // 하단 문법 클리닉 원클릭 바로가기 버튼 갱신
+        const grammarQuickActionEl = document.getElementById('planner-grammar-quick-action');
+        if (grammarQuickActionEl) {
+            if (grammarOnDate.length > 0) {
+                const firstGrammar = grammarOnDate[0];
+                const prog = window.grammarClinicEngine ? window.grammarClinicEngine.getUnitProgress(firstGrammar.grammarUnitNo) : null;
+                const isPassed = prog && prog.completed;
+                grammarQuickActionEl.classList.remove('hidden');
+                grammarQuickActionEl.innerHTML = `
+                    <button type="button" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-emerald-800 via-teal-800 to-slate-900 hover:from-emerald-700 hover:to-teal-700 text-white font-serif font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95" onclick="window.grammarClinicEngine.openClinicModal(${firstGrammar.grammarUnitNo}); window.app.switchTab('grammar');">
+                        <i data-lucide="sparkle" class="w-4 h-4 text-emerald-300"></i>
+                        <span>오늘의 문법 클리닉 도전 [${firstGrammar.word.slice(0, 24)}...] ${isPassed ? '✓ 재도전' : '시작 →'}</span>
+                    </button>
+                `;
+            } else {
+                grammarQuickActionEl.classList.add('hidden');
+            }
+        }
+
         // 하단 독해 원클릭 바로가기 버튼 갱신
         const readingQuickActionEl = document.getElementById('planner-reading-quick-action');
         if (readingQuickActionEl) {
@@ -566,8 +643,45 @@ class PlannerEngine {
         words.forEach(w => {
             const row = document.createElement('div');
             
+            // 0. 영문법 클리닉 단원 과제인 경우
+            if (w.isGrammarUnit) {
+                const prog = window.grammarClinicEngine ? window.grammarClinicEngine.getUnitProgress(w.grammarUnitNo) : null;
+                const isDone = (prog && prog.completed) || w.studyCompleted;
+                row.className = `p-3.5 ${isDone ? 'bg-emerald-50/70 border-emerald-300' : 'bg-emerald-50/30 border-emerald-200'} border rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 hover:border-emerald-400 transition-all`;
+                row.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-xl ${isDone ? 'bg-emerald-600 text-white' : 'bg-emerald-100 text-emerald-800'} flex items-center justify-center shrink-0 border border-emerald-200 shadow-2xs">
+                            <i data-lucide="sparkle" class="w-4 h-4"></i>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap items-center gap-1.5">
+                                <span class="font-serif font-bold text-slate-900 text-sm">${w.word}</span>
+                                <span class="text-[10px] font-mono bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-bold">${w.tag || '문법클리닉'}</span>
+                                ${isDone ? `
+                                    <span class="text-[10px] font-mono bg-emerald-200 text-emerald-950 border border-emerald-400 px-2 py-0.5 rounded font-bold flex items-center gap-1">
+                                        <i data-lucide="check" class="w-3 h-3 text-emerald-800"></i> ✓ 완료 (${prog ? '★'.repeat(prog.stars || 1) + ' ' + (prog.score || 5) + '점' : '완료'})
+                                    </span>
+                                ` : ''}
+                            </div>
+                            <div class="text-xs text-slate-600 mt-0.5">${w.meaning}</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 self-end sm:self-auto shrink-0">
+                        <button type="button" class="px-3 py-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-serif font-bold text-xs flex items-center gap-1 shadow-2xs transition-all cursor-pointer" onclick="window.grammarClinicEngine.openClinicModal(${w.grammarUnitNo}); window.app.switchTab('grammar');">
+                            <span>클리닉 학습하기</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                        <button type="button" class="btn-reschedule-single text-xs text-slate-500 hover:text-emerald-800 hover:bg-white px-2 py-1 rounded transition-colors cursor-pointer" data-id="${w.id}">
+                            날짜 변경
+                        </button>
+                        <button type="button" class="btn-delete-single text-slate-400 hover:text-red-700 p-1 rounded cursor-pointer" data-id="${w.id}">
+                            <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                `;
+            }
             // 1. 중등 내신 독해 지문 과제인 경우
-            if (w.isReadingPassage) {
+            else if (w.isReadingPassage) {
                 row.className = 'p-3 bg-indigo-50/50 border border-indigo-200 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 hover:border-indigo-400 transition-all';
                 row.innerHTML = `
                     <div class="flex items-center gap-3">
@@ -868,6 +982,30 @@ class PlannerEngine {
         }
 
         alert(`🗑️ [${unitTitle}] 관련 학습 과제 총 ${deleted}건이 계획표에서 삭제되었습니다.`);
+    }
+
+    deleteGrammarUnitFromPlanner(unitNo, title) {
+        if (!confirm(`[Unit ${unitNo}. ${title || '문법 단원'}]의 플래너 배정 일정을 삭제하시겠습니까?`)) {
+            return;
+        }
+        const deleted = window.storage ? window.storage.deleteGrammarUnit(unitNo) : 0;
+        this.render();
+        if (window.app && window.app.renderDashboard) {
+            window.app.renderDashboard();
+        }
+        alert(`🗑️ [Unit ${unitNo}] 문법 계획이 플래너에서 삭제되었습니다.`);
+    }
+
+    deleteAllGrammarUnitsFromPlanner() {
+        if (!confirm('등록된 문법 클리닉 모든 단원의 플래너 배정 일정을 전체 삭제하시겠습니까?')) {
+            return;
+        }
+        const deleted = window.storage ? window.storage.deleteAllGrammarUnits() : 0;
+        this.render();
+        if (window.app && window.app.renderDashboard) {
+            window.app.renderDashboard();
+        }
+        alert(`🗑️ 등록된 문법 클리닉 과제 총 ${deleted}건이 플래너에서 삭제되었습니다.`);
     }
 
     deleteExternalStudyFromPlanner(studyId, title) {

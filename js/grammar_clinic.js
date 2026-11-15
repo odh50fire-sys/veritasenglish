@@ -28,11 +28,27 @@ class GrammarClinicEngine {
             this.data = window.GRAMMAR_CLINIC_BANK || [];
         }
 
-        // 사용자의 진단 레벨 자동 감지 및 기본 탭 설정
+        // 사용자의 진단 레벨 자동 감지 및 중1~수능 단계별 추천 매핑
         if (!this.isInitialized) {
             const userLvl = window.storage ? window.storage.getAcademicLevel() : 3;
-            const codeMap = { 1: 'lv1', 2: 'lv2', 3: 'lv3', 4: 'lv4', 5: 'lv5' };
-            this.currentLevelCode = codeMap[userLvl] || 'lv3';
+            let mappedCode = 'lv1';
+            if (userLvl <= 3) {
+                // Lv.1 Starter, Lv.2 Explorer, Lv.3 Pioneer (중1-1) -> 중1 문법 (lv1)
+                mappedCode = 'lv1';
+            } else if (userLvl <= 5) {
+                // Lv.4 Navigator (중1-2), Lv.5 Challenger (중2-1) -> 중2 문법 (lv2)
+                mappedCode = 'lv2';
+            } else if (userLvl <= 7) {
+                // Lv.6 Strategist (중2-2), Lv.7 Master (중3-1) -> 중3 문법 (lv3)
+                mappedCode = 'lv3';
+            } else if (userLvl === 8) {
+                // Lv.8 Innovator (고1~고2 내신) -> 고교 내신 (lv4)
+                mappedCode = 'lv4';
+            } else {
+                // Lv.9 Leader, Lv.10 Veritas Elite (수능 1등급) -> 수능 킬러 (lv5)
+                mappedCode = 'lv5';
+            }
+            this.currentLevelCode = mappedCode;
             this.isInitialized = true;
         }
 
@@ -112,6 +128,15 @@ class GrammarClinicEngine {
         const stats = this.getLevelStats(this.currentLevelCode);
         const userLvl = window.storage ? window.storage.getAcademicLevel() : 3;
 
+        let recommendedCode = 'lv1';
+        if (userLvl <= 3) recommendedCode = 'lv1';
+        else if (userLvl <= 5) recommendedCode = 'lv2';
+        else if (userLvl <= 7) recommendedCode = 'lv3';
+        else if (userLvl === 8) recommendedCode = 'lv4';
+        else recommendedCode = 'lv5';
+
+        const recommendedLvlObj = this.data.find(lvl => lvl.levelCode === recommendedCode) || this.data[0];
+
         container.innerHTML = `
             <!-- 상단 헤더 & 설명 -->
             <div class="bg-gradient-to-r from-slate-900 via-emerald-950 to-slate-900 rounded-3xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden border border-emerald-500/20">
@@ -121,7 +146,7 @@ class GrammarClinicEngine {
                         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-serif font-bold">
                             <span>📗 VERITAS GRAMMAR CLINIC</span>
                             <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                            <span>수능·내신 5대 레벨 40단원 완성</span>
+                            <span>중1~수능 학년별 5단계 40단원 완성</span>
                         </div>
                         <h2 class="text-2xl sm:text-3xl font-serif font-black tracking-tight text-white flex items-center gap-2">
                             <span>영문법 3단계 처방 클리닉</span>
@@ -142,7 +167,7 @@ class GrammarClinicEngine {
                         </div>
                         <div class="flex items-center justify-between text-[11px] text-slate-400 pt-1 border-t border-white/5">
                             <span>평균 정답률: <strong class="text-white font-mono">${stats.avgScore}%</strong></span>
-                            <span>추천: <strong class="text-emerald-300 font-serif">Lv.${userLvl}</strong></span>
+                            <span>추천: <strong class="text-emerald-300 font-serif">${recommendedLvlObj.badge}</strong></span>
                         </div>
                     </div>
                 </div>
@@ -152,7 +177,7 @@ class GrammarClinicEngine {
             <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-2 px-1">
                 ${this.data.map(lvl => {
                     const isActive = lvl.levelCode === this.currentLevelCode;
-                    const isUserLevel = lvl.level === userLvl;
+                    const isRecommended = lvl.levelCode === recommendedCode;
                     const lvlStat = this.getLevelStats(lvl.levelCode);
                     return `
                         <button type="button" 
@@ -162,9 +187,9 @@ class GrammarClinicEngine {
                                     ? 'bg-white border-emerald-500 shadow-md ring-2 ring-emerald-500/20' 
                                     : 'bg-slate-50/80 hover:bg-white border-slate-200 hover:border-slate-300'
                             }">
-                            ${isUserLevel ? `
+                            ${isRecommended ? `
                                 <span class="absolute -top-2 right-2 px-2 py-0.5 rounded-full bg-sky-600 text-white font-mono text-[9px] font-bold shadow-xs">
-                                    내 레벨
+                                    추천 레벨
                                 </span>
                             ` : ''}
                             <div class="flex items-center justify-between mb-1">
@@ -206,20 +231,30 @@ class GrammarClinicEngine {
                         </div>
                     </div>
 
-                    <!-- 검색 인풋 -->
-                    <div class="relative w-full sm:w-72 shrink-0">
-                        <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
-                        <input type="text" 
-                            id="grammar-search-input"
-                            value="${this.searchQuery}"
-                            placeholder="문법 개념/단원 검색 (관계사, 수일치 등)..."
-                            oninput="window.grammarClinicEngine.handleSearch(this.value)"
-                            class="w-full pl-9 pr-8 py-2 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 text-xs text-slate-800 placeholder-slate-400 transition-all outline-hidden">
-                        ${this.searchQuery ? `
-                            <button type="button" onclick="window.grammarClinicEngine.handleSearch('')" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">
-                                <i data-lucide="x" class="w-3.5 h-3.5"></i>
-                            </button>
-                        ` : ''}
+                    <!-- 레벨 일괄 플래너 배정 버튼 & 검색 인풋 -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 shrink-0">
+                        <button type="button" 
+                            onclick="window.grammarClinicEngine.openLevelBatchScheduleModal('${currentLvlObj.levelCode}')"
+                            class="px-3 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 text-emerald-950 font-serif font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-2xs cursor-pointer"
+                            title="이 레벨의 8개 전 단원을 플래너에 일괄 배정">
+                            <i data-lucide="calendar-range" class="w-4 h-4 text-emerald-700"></i>
+                            <span>📅 Lv.${currentLvlObj.level} 8단원 플래너 배정</span>
+                        </button>
+                        
+                        <div class="relative w-full sm:w-64">
+                            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                            <input type="text" 
+                                id="grammar-search-input"
+                                value="${this.searchQuery}"
+                                placeholder="문법 개념/단원 검색..."
+                                oninput="window.grammarClinicEngine.handleSearch(this.value)"
+                                class="w-full pl-9 pr-8 py-2 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 text-xs text-slate-800 placeholder-slate-400 transition-all outline-hidden">
+                            ${this.searchQuery ? `
+                                <button type="button" onclick="window.grammarClinicEngine.handleSearch('')" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">
+                                    <i data-lucide="x" class="w-3.5 h-3.5"></i>
+                                </button>
+                            ` : ''}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -349,16 +384,25 @@ class GrammarClinicEngine {
                     <div>
                         ${starHtml || `<span class="text-[11px] text-slate-400 font-sans">실전 5문항 + 클리닉</span>`}
                     </div>
-                    <button type="button" 
-                        onclick="window.grammarClinicEngine.openClinicModal(${unit.unitNo})"
-                        class="px-3 py-1.5 rounded-xl ${
-                            isCompleted 
-                                ? 'bg-slate-100 hover:bg-emerald-50 text-slate-700 hover:text-emerald-800' 
-                                : 'bg-emerald-600 hover:bg-emerald-700 text-white'
-                        } font-serif font-bold text-xs shadow-xs transition-all flex items-center gap-1 cursor-pointer">
-                        <span>${isCompleted ? '재도전' : '입장'}</span>
-                        <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
-                    </button>
+                    <div class="flex items-center gap-1.5">
+                        <button type="button" 
+                            onclick="window.grammarClinicEngine.openScheduleModal(${unit.unitNo})"
+                            class="px-2.5 py-1.5 rounded-xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50 text-slate-600 hover:text-emerald-800 font-serif font-bold text-xs shadow-2xs transition-all flex items-center gap-1 cursor-pointer"
+                            title="학습 플래너에 일정 등록">
+                            <i data-lucide="calendar-plus" class="w-3.5 h-3.5 text-emerald-600"></i>
+                            <span>계획</span>
+                        </button>
+                        <button type="button" 
+                            onclick="window.grammarClinicEngine.openClinicModal(${unit.unitNo})"
+                            class="px-3 py-1.5 rounded-xl ${
+                                isCompleted 
+                                    ? 'bg-slate-100 hover:bg-emerald-50 text-slate-700 hover:text-emerald-800' 
+                                    : 'bg-emerald-600 hover:bg-emerald-700 text-white'
+                            } font-serif font-bold text-xs shadow-xs transition-all flex items-center gap-1 cursor-pointer">
+                            <span>${isCompleted ? '재도전' : '입장'}</span>
+                            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         `;
@@ -924,6 +968,244 @@ class GrammarClinicEngine {
         this.quizSubmitted = false;
         this.quizScore = 0;
         this.renderModalContent();
+    }
+
+    // ------------------------------------------------------------------------
+    // 문법 클리닉 단원 플래너 배정 기능 (Planner Scheduling)
+    // ------------------------------------------------------------------------
+    openScheduleModal(unitNo = null) {
+        this.scheduleMode = 'single';
+        this.scheduleTargetUnitNo = unitNo || (this.activeUnit ? this.activeUnit.unitNo : 1);
+        this.populateScheduleModal();
+        const modal = document.getElementById('modal-grammar-schedule');
+        if (modal) modal.classList.remove('hidden');
+        if (window.lucide) window.lucide.createIcons();
+    }
+
+    openLevelBatchScheduleModal(levelCode = null) {
+        this.scheduleMode = 'batch';
+        this.scheduleTargetLevelCode = levelCode || this.currentLevelCode || 'lv1';
+        this.populateScheduleModal();
+        const modal = document.getElementById('modal-grammar-schedule');
+        if (modal) modal.classList.remove('hidden');
+        if (window.lucide) window.lucide.createIcons();
+    }
+
+    openPlannerScheduleModal() {
+        this.openScheduleModal(1);
+    }
+
+    closeScheduleModal() {
+        const modal = document.getElementById('modal-grammar-schedule');
+        if (modal) modal.classList.add('hidden');
+    }
+
+    setScheduleMode(mode) {
+        this.scheduleMode = mode;
+        const singleBtn = document.getElementById('grammar-sched-tab-single');
+        const batchBtn = document.getElementById('grammar-sched-tab-batch');
+        const singleArea = document.getElementById('grammar-sched-single-area');
+        const batchArea = document.getElementById('grammar-sched-batch-area');
+
+        if (mode === 'single') {
+            if (singleBtn) singleBtn.className = 'flex-1 py-2 rounded-lg bg-white text-slate-900 shadow-2xs transition-all cursor-pointer';
+            if (batchBtn) batchBtn.className = 'flex-1 py-2 rounded-lg text-slate-500 hover:text-slate-900 transition-all cursor-pointer';
+            if (singleArea) singleArea.classList.remove('hidden');
+            if (batchArea) batchArea.classList.add('hidden');
+        } else {
+            if (singleBtn) singleBtn.className = 'flex-1 py-2 rounded-lg text-slate-500 hover:text-slate-900 transition-all cursor-pointer';
+            if (batchBtn) batchBtn.className = 'flex-1 py-2 rounded-lg bg-white text-slate-900 shadow-2xs transition-all cursor-pointer';
+            if (singleArea) singleArea.classList.add('hidden');
+            if (batchArea) batchArea.classList.remove('hidden');
+            this.updateBatchSchedulePreview();
+        }
+        if (window.lucide) window.lucide.createIcons();
+    }
+
+    populateScheduleModal() {
+        // 단일 단원 모드 드롭다운
+        const unitSelect = document.getElementById('grammar-sched-unit-select');
+        if (unitSelect) {
+            const options = [];
+            this.data.forEach(lvl => {
+                options.push(`<optgroup label="${lvl.badge} (${lvl.levelName})">`);
+                (lvl.units || []).forEach(u => {
+                    options.push(`<option value="${u.unitNo}" ${u.unitNo === this.scheduleTargetUnitNo ? 'selected' : ''}>Unit ${u.unitNo}. ${u.title} [${u.part}]</option>`);
+                });
+                options.push(`</optgroup>`);
+            });
+            unitSelect.innerHTML = options.join('');
+        }
+
+        const todayStr = window.storage ? window.storage.getTodayDateString() : new Date().toISOString().slice(0, 10);
+        const singleDateInput = document.getElementById('grammar-sched-single-date');
+        if (singleDateInput && !singleDateInput.value) {
+            singleDateInput.value = todayStr;
+        }
+
+        // 레벨 일괄 모드
+        const levelSelect = document.getElementById('grammar-sched-level-select');
+        if (levelSelect) {
+            levelSelect.innerHTML = this.data.map(lvl => `
+                <option value="${lvl.levelCode}" ${lvl.levelCode === this.scheduleTargetLevelCode ? 'selected' : ''}>
+                    ${lvl.badge} - ${lvl.levelName} (${lvl.targetGrade} • 8단원)
+                </option>
+            `).join('');
+        }
+
+        const batchDateInput = document.getElementById('grammar-sched-batch-start-date');
+        if (batchDateInput && !batchDateInput.value) {
+            batchDateInput.value = todayStr;
+        }
+
+        this.onScheduleLevelChanged(this.scheduleTargetLevelCode);
+        this.setScheduleMode(this.scheduleMode);
+    }
+
+    setQuickDate(offsetDays) {
+        const d = new Date();
+        d.setDate(d.getDate() + offsetDays);
+        const dateStr = d.toISOString().slice(0, 10);
+        const singleDateInput = document.getElementById('grammar-sched-single-date');
+        if (singleDateInput) singleDateInput.value = dateStr;
+    }
+
+    onScheduleLevelChanged(levelCode) {
+        this.scheduleTargetLevelCode = levelCode;
+        const lvl = this.data.find(l => l.levelCode === levelCode) || this.data[0];
+        const startSelect = document.getElementById('grammar-sched-start-unit-select');
+        if (startSelect && lvl) {
+            startSelect.innerHTML = (lvl.units || []).map((u, idx) => `
+                <option value="${idx}">
+                    Unit ${u.unitNo}. ${u.title} (${idx + 1}회차부터 총 ${8 - idx}단원 배정)
+                </option>
+            `).join('');
+        }
+        this.updateBatchSchedulePreview();
+    }
+
+    setBatchScheduleDaysPreset(preset) {
+        const presets = {
+            all: [0, 1, 2, 3, 4, 5, 6],
+            weekdays: [1, 2, 3, 4, 5],
+            mwf: [1, 3, 5],
+            tt: [2, 4],
+            weekend: [6, 0]
+        };
+        const active = presets[preset] || presets.all;
+        document.querySelectorAll('.grammar-batch-day-check').forEach(cb => {
+            cb.checked = active.includes(Number(cb.value));
+        });
+
+        document.querySelectorAll('.grammar-batch-preset').forEach(btn => {
+            const isMatch = btn.dataset.preset === preset;
+            btn.className = `grammar-batch-preset px-2.5 py-1 rounded-lg text-[11px] font-bold border transition-all cursor-pointer ${
+                isMatch ? 'bg-emerald-700 text-white border-emerald-700 shadow-2xs' : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-100'
+            }`;
+        });
+
+        this.updateBatchSchedulePreview();
+    }
+
+    getBatchScheduleSelectedDays() {
+        const checked = [];
+        document.querySelectorAll('.grammar-batch-day-check:checked').forEach(cb => {
+            checked.push(Number(cb.value));
+        });
+        return checked;
+    }
+
+    updateBatchSchedulePreview() {
+        const lvl = this.data.find(l => l.levelCode === this.scheduleTargetLevelCode) || this.data[0];
+        const startSelect = document.getElementById('grammar-sched-start-unit-select');
+        const startIdx = startSelect ? Number(startSelect.value) : 0;
+        const totalUnits = Math.max(1, (lvl.units || []).length - startIdx);
+        const startDateInput = document.getElementById('grammar-sched-batch-start-date');
+        const startDate = (startDateInput && startDateInput.value) ? startDateInput.value : new Date().toISOString().slice(0, 10);
+        const selectedDays = this.getBatchScheduleSelectedDays();
+
+        const countEl = document.getElementById('grammar-sched-preview-count');
+        const datesEl = document.getElementById('grammar-sched-preview-dates');
+
+        if (selectedDays.length === 0) {
+            if (countEl) countEl.textContent = '0회차 (요일 선택 필요)';
+            if (datesEl) datesEl.textContent = '학습할 요일을 최소 1개 이상 선택해 주세요.';
+            return;
+        }
+
+        if (window.storage && typeof window.storage.calculateScheduledDates === 'function') {
+            const dates = window.storage.calculateScheduledDates(startDate, totalUnits, selectedDays);
+            if (countEl) countEl.textContent = `총 ${dates.length}회차 배정`;
+            if (datesEl) datesEl.textContent = `${dates[0] || startDate} ~ ${dates[dates.length - 1] || startDate}`;
+        }
+    }
+
+    executeScheduleRegistration() {
+        if (!window.storage) return;
+
+        if (this.scheduleMode === 'single') {
+            const unitSelect = document.getElementById('grammar-sched-unit-select');
+            const dateInput = document.getElementById('grammar-sched-single-date');
+            const unitNo = unitSelect ? Number(unitSelect.value) : this.scheduleTargetUnitNo;
+            const targetDate = (dateInput && dateInput.value) ? dateInput.value : window.storage.getTodayDateString();
+
+            const res = window.storage.registerGrammarUnit(unitNo, targetDate);
+            if (!res) {
+                alert('단원 등록에 실패했습니다. 단원 정보를 확인해 주세요.');
+                return;
+            }
+
+            if (window.confetti) {
+                window.confetti({ particleCount: 40, spread: 60, origin: { y: 0.6 } });
+            }
+
+            alert(`🎉 [Unit ${res.unitNo}. ${res.unitTitle}] 일정이\n${res.planDate} 학습 플래너에 성공적으로 등록되었습니다!`);
+            this.closeScheduleModal();
+
+            if (window.plannerEngine) {
+                window.plannerEngine.render();
+            }
+            if (window.app && window.app.renderDashboard) {
+                window.app.renderDashboard();
+            }
+        } else {
+            const levelSelect = document.getElementById('grammar-sched-level-select');
+            const startSelect = document.getElementById('grammar-sched-start-unit-select');
+            const dateInput = document.getElementById('grammar-sched-batch-start-date');
+
+            const levelCode = levelSelect ? levelSelect.value : this.scheduleTargetLevelCode;
+            const startIdx = startSelect ? Number(startSelect.value) : 0;
+            const startDate = (dateInput && dateInput.value) ? dateInput.value : window.storage.getTodayDateString();
+            const selectedDays = this.getBatchScheduleSelectedDays();
+
+            if (selectedDays.length === 0) {
+                alert('학습을 진행할 요일을 최소 1개 이상 선택해 주세요.');
+                return;
+            }
+
+            const res = window.storage.registerGrammarLevel(levelCode, startDate, selectedDays, startIdx);
+            if (!res) {
+                alert('레벨 일괄 배정에 실패했습니다.');
+                return;
+            }
+
+            if (window.confetti) {
+                window.confetti({ particleCount: 70, spread: 70, origin: { y: 0.6 } });
+            }
+
+            alert(`🎉 [${res.levelName}] 총 ${res.totalUnits}개 단원이 플래너에 성공적으로 배정되었습니다!\n\n` +
+                  `• 배정 기간: ${res.startDate} ~ ${res.endDate}\n` +
+                  `• 지정 요일에 맞추어 플래너 캘린더에 편성되었습니다.`);
+
+            this.closeScheduleModal();
+
+            if (window.plannerEngine) {
+                window.plannerEngine.render();
+            }
+            if (window.app && window.app.renderDashboard) {
+                window.app.renderDashboard();
+            }
+        }
     }
 }
 

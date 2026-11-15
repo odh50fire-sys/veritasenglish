@@ -6,12 +6,12 @@ def generate_grammar_data():
         {
             "level": 1,
             "levelCode": "lv1",
-            "levelName": "중학 기초 문법",
-            "targetGrade": "초등 5·6 ~ 중1",
-            "badge": "Lv.1 Starter",
+            "levelName": "중1 문법",
+            "targetGrade": "중1 내신 & 기초 완성",
+            "badge": "Lv.1 중1 문법",
             "color": "emerald",
             "themeColor": "#059669",
-            "desc": "be동사와 일반동사, 시제, 명사·대명사의 격, 기본 문장 구조를 완벽하게 다지는 입문 코스",
+            "desc": "be동사와 일반동사, 시제, 명사·대명사의 격, 진행형, 조동사, 1·2·3형식 등 중1 내신 핵심 기초",
             "units": [
                 {
                     "unitNo": 1,
@@ -242,12 +242,12 @@ def generate_grammar_data():
         {
             "level": 2,
             "levelCode": "lv2",
-            "levelName": "중학 핵심 문법",
-            "targetGrade": "중2 과정",
-            "badge": "Lv.2 Explorer",
+            "levelName": "중2 문법",
+            "targetGrade": "중2 핵심 내신",
+            "badge": "Lv.2 중2 문법",
             "color": "blue",
             "themeColor": "#2563eb",
-            "desc": "to부정사, 동명사, 현재완료 4대 용법, 수동태 기초 및 비교 구문 등 중2 내신 핵심 문법 완성",
+            "desc": "to부정사 3대 용법, 동명사, 현재완료 4대 용법, 4형식 수여동사, 비교 구문, 수동태 기초 등 중2 핵심",
             "units": [
                 {
                     "unitNo": 9,
@@ -478,12 +478,12 @@ def generate_grammar_data():
         {
             "level": 3,
             "levelCode": "lv3",
-            "levelName": "중학 완성 & 내신 심화",
-            "targetGrade": "중3 과정",
-            "badge": "Lv.3 Pioneer",
+            "levelName": "중3 문법",
+            "targetGrade": "중3 내신 & 고등 선행",
+            "badge": "Lv.3 중3 문법",
             "color": "indigo",
             "themeColor": "#4f46e5",
-            "desc": "5형식 사역·지각동사, 관계대명사/관계부사, 분사구문, 가정법 과거 등 중3 내신 고득점 및 고등 연계 문법",
+            "desc": "5형식 사역·지각동사, 관계대명사/관계부사, 분사구문, 가정법 과거, 간접의문문 등 중3 완성",
             "units": [
                 {
                     "unitNo": 17,
@@ -714,12 +714,12 @@ def generate_grammar_data():
         {
             "level": 4,
             "levelCode": "lv4",
-            "levelName": "고교 내신 & 공통영어",
-            "targetGrade": "고1~고2 과정",
-            "badge": "Lv.4 Challenger",
+            "levelName": "고교 내신",
+            "targetGrade": "고1~고2 공통영어 & 서술형",
+            "badge": "Lv.4 고교 내신",
             "color": "amber",
             "themeColor": "#d97706",
-            "desc": "주어-동사 수일치, 능수동태 심화, 준동사 완료시제, with 분사구문, 복합관계사, 도치 구문 등 고등 1등급 어법",
+            "desc": "주어-동사 수일치, 4·5형식 심화 수동태, 완료·수동 분사구문, 명사절 접속사, 도치 구문 등 고교 서술형",
             "units": [
                 {
                     "unitNo": 25,
@@ -950,9 +950,9 @@ def generate_grammar_data():
         {
             "level": 5,
             "levelCode": "lv5",
-            "levelName": "수능 1등급 킬러 어법",
-            "targetGrade": "고2~고3·수능 파이널",
-            "badge": "Lv.5 Master",
+            "levelName": "수능 킬러",
+            "targetGrade": "수능 1등급 & 모의고사 어법",
+            "badge": "Lv.5 수능 킬러",
             "color": "rose",
             "themeColor": "#e11d48",
             "desc": "수능 29번 어법 10대 빈출 공식: 본동사 vs 준동사, 대동사 do/be, 완전도 판별, 병렬 구조, 형용사/부사 등 킬러 문항 정복",

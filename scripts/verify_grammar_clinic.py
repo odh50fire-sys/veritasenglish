@@ -63,13 +63,15 @@ def run_headless_chrome_test():
     server_thread.start()
 
     chrome_path = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
-    debug_port = 9222
+    debug_port = 9225
+    temp_profile = os.path.join(server_dir, "scripts", "temp_chrome_profile")
 
     chrome_cmd = [
         chrome_path,
         "--headless=new",
         "--disable-gpu",
         "--no-sandbox",
+        f"--user-data-dir={temp_profile}",
         f"--remote-debugging-port={debug_port}",
         f"http://127.0.0.1:{port}/index.html"
     ]
@@ -81,19 +83,19 @@ def run_headless_chrome_test():
         # Check debugging JSON endpoint
         req = urllib.request.urlopen(f"http://127.0.0.1:{debug_port}/json")
         tabs = json.loads(req.read().decode('utf-8'))
-        ws_url = tabs[0].get('webSocketDebuggerUrl')
-        print(f"Chrome headless connected to tab: {tabs[0].get('title', '')}")
+        
+        target_tab = None
+        for t in tabs:
+            if 'index.html' in t.get('url', ''):
+                target_tab = t
+                break
+        if not target_tab:
+            target_tab = tabs[0]
 
-        # Use Python to evaluate JS expressions via DevTools WebSocket
-        # If websocket-client is not installed, we can test via /json or simple node/browser test
-        # Let's check if websocket client is installed
-        import importlib
-        try:
-            import websocket
-        except ImportError:
-            subprocess.run([sys.executable, "-m", "pip", "install", "websocket-client", "-q"], check=False)
-            import websocket
+        ws_url = target_tab.get('webSocketDebuggerUrl')
+        print(f"Chrome headless connected to tab: {target_tab.get('title', '')} ({target_tab.get('url', '')})")
 
+        import websocket
         ws = websocket.create_connection(ws_url)
 
         def eval_js(expression):
@@ -111,6 +113,24 @@ def run_headless_chrome_test():
                     if "value" in result:
                         return result["value"]
                     return resp.get("result", {})
+
+        # Prevent modal alert from hanging
+        eval_js("window.alert = function(msg) { console.log('ALERT:', msg); }")
+
+        # Navigate if needed
+        cur_url = eval_js("window.location.href")
+        if 'index.html' not in cur_url:
+            eval_js(f"window.location.href = 'http://127.0.0.1:{port}/index.html'")
+            time.sleep(2.0)
+
+        eval_js("window.alert = function(msg) { console.log('ALERT:', msg); }")
+
+        # Wait for page to fully load
+        for _ in range(30):
+            ready = eval_js("document.readyState === 'complete' && !!window.GRAMMAR_CLINIC_BANK && !!window.app")
+            if ready:
+                break
+            time.sleep(0.3)
 
         # Test 1: Data bank loaded
         bank_len = eval_js("window.GRAMMAR_CLINIC_BANK ? window.GRAMMAR_CLINIC_BANK.length : 0")
