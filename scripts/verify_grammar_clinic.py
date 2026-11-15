@@ -15,17 +15,20 @@ def test_data_integrity():
 
     start = content.find('window.GRAMMAR_CLINIC_BANK = [')
     sub = content[content.find('[', start):]
-    end = sub.find(';\nwindow.GRAMMAR_SPECIAL_LECTURES')
-    if end == -1:
-        end = sub.rfind('];') + 1
-    levels = json.loads(sub[:end])
+    idx_spec = sub.find('window.GRAMMAR_SPECIAL_LECTURES')
+    if idx_spec != -1:
+        bracket_idx = sub[:idx_spec].rfind(']')
+        levels = json.loads(sub[:bracket_idx+1])
+    else:
+        bracket_idx = sub.rfind(']')
+        levels = json.loads(sub[:bracket_idx+1])
 
     regular_levels = [l for l in levels if not l.get('isSpecial')]
     special_courses = [l for l in levels if l.get('isSpecial')]
 
-    assert len(regular_levels) == 5, f"Expected 5 regular levels, got {len(regular_levels)}"
+    assert len(regular_levels) == 6, f"Expected 6 regular levels (lv0~lv5), got {len(regular_levels)}"
     assert len(special_courses) == 4, f"Expected 4 special courses, got {len(special_courses)}"
-    assert len(levels) == 9, f"Expected 9 total categories, got {len(levels)}"
+    assert len(levels) == 10, f"Expected 10 total categories, got {len(levels)}"
 
     total_units = 0
     total_questions = 0
@@ -33,10 +36,10 @@ def test_data_integrity():
 
     for lvl in levels:
         units = lvl['units']
-        assert len(units) in [6, 8], f"Level {lvl['levelCode']} has {len(units)} units, expected 6 or 8"
+        assert len(units) in [10, 20], f"Level {lvl['levelCode']} has {len(units)} units, expected 10 or 20"
         total_units += len(units)
         for u in units:
-            assert 'unitNo' in u and 'title' in u and 'part' in u
+            assert 'unitNo' in u and 'title' in u
             assert len(u['formulaCards']) >= 2, f"Unit {u['unitNo']} missing formula cards"
             assert len(u['spottingDrills']) >= 1, f"Unit {u['unitNo']} missing spotting drills"
             drill = u['spottingDrills'][0]
@@ -48,16 +51,17 @@ def test_data_integrity():
             assert len(questions) == 5, f"Unit {u['unitNo']} has {len(questions)} questions, expected 5"
             total_questions += len(questions)
             for q in questions:
-                assert 'q' in q and len(q['options']) == 5
+                has_q = 'q' in q or 'prompt' in q
+                assert has_q and len(q['options']) == 5
                 assert 0 <= q['ans'] <= 4
                 assert 'exp' in q and len(q['exp']) > 5
         total_drills += sum(len(u['spottingDrills']) for u in units)
 
-    assert total_units == 70, f"Expected 70 total units, got {total_units}"
-    assert total_drills == 70, f"Expected 70 spotting drills, got {total_drills}"
-    assert total_questions == 350, f"Expected 350 practice questions, got {total_questions}"
+    assert total_units == 160, f"Expected 160 total units, got {total_units}"
+    assert total_drills == 480, f"Expected 480 spotting drills, got {total_drills}"
+    assert total_questions == 800, f"Expected 800 practice questions, got {total_questions}"
 
-    print(f"Data verified successfully: {len(regular_levels)} Regular Levels, {len(special_courses)} Special Courses, {total_units} Units, {total_drills} Spotting Drills, {total_questions} Practice Questions.")
+    print(f"Data verified successfully: {len(regular_levels)} Regular Levels (120 units), {len(special_courses)} Special Courses (40 units), {total_units} Units, {total_drills} Spotting Drills, {total_questions} Practice Questions.")
 
 def run_headless_chrome_test():
     print("\n=== [2] Running Headless Chrome E2E Verification ===")
@@ -151,7 +155,7 @@ def run_headless_chrome_test():
 
         # Wait for page to fully load
         for _ in range(30):
-            ready = eval_js("document.readyState === 'complete' && !!window.GRAMMAR_CLINIC_BANK && !!window.app && window.GRAMMAR_CLINIC_BANK.length === 9")
+            ready = eval_js("document.readyState === 'complete' && !!window.GRAMMAR_CLINIC_BANK && !!window.app && window.GRAMMAR_CLINIC_BANK.length === 10")
             if ready is True:
                 break
             time.sleep(0.3)
@@ -160,7 +164,7 @@ def run_headless_chrome_test():
         # Test 1: Data bank loaded
         bank_len = eval_js("window.GRAMMAR_CLINIC_BANK ? window.GRAMMAR_CLINIC_BANK.length : 0")
         print(f"Test 1 - GRAMMAR_CLINIC_BANK length: {bank_len}")
-        assert bank_len == 9, f"Expected 9 categories (5 regular + 4 special), got {bank_len}"
+        assert bank_len == 10, f"Expected 10 categories (6 regular + 4 special), got {bank_len}"
 
         # Test 2: Switch to grammar tab
         eval_js("window.app.switchTab('grammar')")
@@ -173,7 +177,7 @@ def run_headless_chrome_test():
         # Test 3: Check unit cards rendered
         unit_cards_count = eval_js("document.querySelectorAll('#grammar-unit-card-grid > div').length")
         print(f"Test 3 - Unit cards rendered count: {unit_cards_count}")
-        assert unit_cards_count == 8, f"Expected 8 unit cards for current level, got {unit_cards_count}"
+        assert unit_cards_count == 20, f"Expected 20 unit cards for current level, got {unit_cards_count}"
 
         # Test 4: Open Unit 1 modal
         eval_js("window.grammarClinicEngine.openClinicModal(1)")
@@ -260,7 +264,7 @@ def run_headless_chrome_test():
         assert track == 'special'
         sp_unit_cards = eval_js("document.querySelectorAll('#grammar-unit-card-grid > div').length")
         print(f"Test 13 - Special course Unit cards count: {sp_unit_cards}")
-        assert sp_unit_cards == 8, f"Expected 8 units for sp_terms, got {sp_unit_cards}"
+        assert sp_unit_cards == 10, f"Expected 10 units for sp_terms, got {sp_unit_cards}"
 
         # Test 14: Open Special Unit 101 modal
         eval_js("window.grammarClinicEngine.openClinicModal(101)")

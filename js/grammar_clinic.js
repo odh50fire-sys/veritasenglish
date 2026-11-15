@@ -1,6 +1,6 @@
 /**
  * Veritas English - 영문법 클리닉 엔진 (Grammar Clinic Engine)
- * 5대 레벨 40단원 체계: 개념 공식 마스터 -> 밑줄 어법 클리닉 -> 실전 5제 퀴즈
+ * 6단계 120단원 정규 + 4대 특강 40단원 체계 (총 160단원): 개념 공식 마스터 -> 밑줄 어법 클리닉 -> 실전 5제 퀴즈
  */
 
 class GrammarClinicEngine {
@@ -233,7 +233,7 @@ class GrammarClinicEngine {
                         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-serif font-bold">
                             <span>📗 VERITAS GRAMMAR CLINIC</span>
                             <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                            <span>정규 5단계(40단원) + 테마 4대 특강(30단원) 총 70단원</span>
+                            <span>정규 6단계(120단원) + 테마 4대 특강(40단원) 총 160단원</span>
                         </div>
                         <h2 class="text-2xl sm:text-3xl font-serif font-black tracking-tight text-white flex items-center gap-2">
                             <span>영문법 3단계 처방 클리닉 &amp; 테마 특강</span>
@@ -271,7 +271,7 @@ class GrammarClinicEngine {
                                 : 'text-slate-600 hover:text-slate-900'
                         }">
                         <i data-lucide="book-open" class="w-4 h-4 text-emerald-400"></i>
-                        <span>📚 학년별 정규 과정 (6단계 • 48단원)</span>
+                        <span>📚 학년별 정규 과정 (6단계 • 120단원)</span>
                     </button>
                     <button type="button" 
                         onclick="window.grammarClinicEngine.switchTrack('special')"
@@ -281,7 +281,7 @@ class GrammarClinicEngine {
                                 : 'text-slate-600 hover:text-slate-900'
                         }">
                         <i data-lucide="sparkles" class="w-4 h-4 text-amber-200"></i>
-                        <span>🎓 테마별 문법 특강 (4대 코스 • 30단원)</span>
+                        <span>🎓 테마별 문법 특강 (4대 코스 • 40단원)</span>
                     </button>
                 </div>
 

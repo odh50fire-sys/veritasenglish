@@ -9,7 +9,7 @@ window.GRAMMAR_CLINIC_BANK = [
     "badge": "Lv.0 초등 기초",
     "color": "sky",
     "themeColor": "#0284c7",
-    "desc": "영문법의 첫걸음! 명사·대명사·be동사·일반동사 기초와 기본 문장 구조를 완벽 정복 (8단원)",
+    "desc": "영문법의 첫걸음! 명사·대명사·be동사·일반동사 기초와 기본 문장 구조를 완벽 정복 (20단원)",
     "units": [
       {
         "unitNo": 1,
@@ -1786,6 +1786,2166 @@ window.GRAMMAR_CLINIC_BANK = [
             "conceptRef": "1단계 [공식 2: 시간의 at, on, in과 기본 문장 어순] 출제 연계"
           }
         ]
+      },
+      {
+        "unitNo": 9,
+        "unitId": "lv0_u9",
+        "legacyUnitNo": 209,
+        "title": "명사의 복수형 규칙 (-s, -es, -ies와 불규칙)",
+        "part": "명사의 확장",
+        "targetGrade": "초등 기초 / 입문",
+        "summary": "하나가 아닌 둘 이상일 때 명사 뒤에 -s, -es를 붙이는 규칙과 자음+y의 -ies, 불규칙 변화",
+        "overview": "명사가 둘 이상(복수)일 때는 단어 뒤에 -s나 -es를 붙여요. 끝나는 알파벳 소리에 따라 규칙이 달라지며, man/men이나 foot/feet처럼 형태가 완전히 바뀌는 특별한 불규칙 명사들도 함께 배워봅시다!",
+        "keyTakeaways": [
+          "대부분의 명사 뒤에는 -s (books, desks, apples)",
+          "-s, -x, -ch, -sh로 끝나는 명사 뒤에는 -es (boxes, buses, dishes, watches)",
+          "자음 + y로 끝나는 명사는 y를 i로 고치고 -es (babies, cities) / 불규칙 (child -> children, tooth -> teeth)"
+        ],
+        "formulaCards": [
+          {
+            "name": "복수형 규칙 변화 공식 (-s, -es, -ies)",
+            "formula": "대부분 + -s | -s/-x/-ch/-sh + -es | 자음+y ➔ -ies",
+            "examples": [
+              {
+                "en": "The little boy has two colorful boxes on the desk.",
+                "ko": "그 어린 소년은 책상 위에 두 개의 알록달록한 상자를 가지고 있다.",
+                "point": "-x로 끝나는 box 뒤에는 -es를 붙여 boxes가 됩니다."
+              },
+              {
+                "en": "Three cute babies are sleeping in the warm room.",
+                "ko": "세 명의 귀여운 아기들이 따뜻한 방에서 자고 있다.",
+                "point": "자음+y(baby)로 끝나는 명사는 y를 i로 고치고 -es를 붙입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "He washed three white dishes.",
+              "x": "He washed three white dishs.",
+              "comment": "-sh로 끝나는 dish 뒤에는 -s가 아니라 -es를 붙여야 올바릅니다."
+            },
+            "trap": "모음+y인 toy, boy는 y를 고치지 않고 그냥 -s만 붙입니다 (toys, boys).",
+            "quizLink": "box, watch처럼 발음이 강한 소리로 끝나면 -es를 붙여 발음을 부드럽게 만듭니다."
+          },
+          {
+            "name": "특별한 불규칙 복수형 명사",
+            "formula": "man ➔ men | child ➔ children | tooth ➔ teeth | foot ➔ feet",
+            "examples": [
+              {
+                "en": "Many children are playing soccer in the green park.",
+                "ko": "많은 아이들이 초록빛 공원에서 축구를 하고 있다.",
+                "point": "child의 복수형은 childs가 아니라 children입니다."
+              },
+              {
+                "en": "You must brush your teeth every morning and night.",
+                "ko": "너는 매일 아침과 밤에 이를 닦아야 한다.",
+                "point": "tooth의 복수형은 teeth입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "Two men are waiting outside the door.",
+              "x": "Two mans are waiting outside the door.",
+              "comment": "man의 복수형은 -s를 붙이지 않고 모음이 바뀐 men입니다."
+            },
+            "trap": "sheep, deer, fish는 단수와 복수의 형태가 똑같습니다 (one sheep, two sheep).",
+            "quizLink": "불규칙 복수형은 -s가 붙지 않아도 이미 여러 개를 의미하므로 복수 취급합니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv0_u9_d1",
+            "missionTitle": "미션 1: 명사의 규칙 복수형 어미 식별",
+            "sentence": "My uncle owns two big bus and three small cars.",
+            "korean": "우리 삼촌은 두 대의 큰 버스와 세 대의 작은 승용차를 가지고 계신다.",
+            "underlined": [
+              "My uncle",
+              "owns",
+              "two big bus",
+              "three small cars"
+            ],
+            "wrongIndex": 2,
+            "correction": "two big buses",
+            "explanation": "-s로 끝나는 명사 bus의 복수형은 -es를 붙인 buses가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 복수형 규칙 변화] 출제 연계"
+          },
+          {
+            "id": "lv0_u9_d2",
+            "missionTitle": "미션 2: 자음+y 복수형 어형 변화 오류 수정",
+            "sentence": "She took care of two small babys during the busy afternoon.",
+            "korean": "그녀는 바쁜 오후 동안 두 명의 어린 아기들을 돌보았다.",
+            "underlined": [
+              "She took care of",
+              "two small babys",
+              "during",
+              "the busy afternoon"
+            ],
+            "wrongIndex": 1,
+            "correction": "two small babies",
+            "explanation": "자음+y로 끝나는 baby는 y를 i로 고치고 -es를 붙여 babies로 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 복수형 규칙 변화] 출제 연계"
+          },
+          {
+            "id": "lv0_u9_d3",
+            "missionTitle": "미션 3: 불규칙 복수형 명사 형태 수정",
+            "sentence": "The five childs are singing English songs together on the stage.",
+            "korean": "그 다섯 명의 아이들은 무대 위에서 함께 영어 노래를 부르고 있다.",
+            "underlined": [
+              "The five childs",
+              "are singing",
+              "English songs together",
+              "on the stage"
+            ],
+            "wrongIndex": 0,
+            "correction": "The five children",
+            "explanation": "child의 올바른 복수형은 불규칙 형태인 children입니다.",
+            "conceptRef": "1단계 [공식 2: 특별한 불규칙 복수형] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 중 명사의 복수형 연결이 어법상 올바른 것은?",
+            "options": [
+              "box - boxs",
+              "city - citys",
+              "watch - watches",
+              "man - mans",
+              "dish - dishs"
+            ],
+            "ans": 2,
+            "exp": "-ch로 끝나는 watch의 복수형은 watches가 올바릅니다. (boxes, cities, men, dishes)",
+            "conceptRef": "1단계 [공식 1: 복수형 규칙 변화]"
+          },
+          {
+            "q": "다음 괄호 안에 들어갈 단어로 가장 알맞은 것은?\n\n'Look at those two ______ in the library.'",
+            "options": [
+              "womans",
+              "woman",
+              "women",
+              "womens",
+              "womanses"
+            ],
+            "ans": 2,
+            "exp": "two 뒤에는 복수명사가 와야 하며, woman의 올바른 불규칙 복수형은 women입니다.",
+            "conceptRef": "1단계 [공식 2: 특별한 불규칙 복수형]"
+          },
+          {
+            "q": "다음 문장의 빈칸에 들어갈 알맞은 복수형은?\n\n'He brushed his ______ before going to sleep.'",
+            "options": [
+              "tooth",
+              "teeths",
+              "tooths",
+              "teeth",
+              "toothes"
+            ],
+            "ans": 3,
+            "exp": "tooth의 복수형은 teeth입니다.",
+            "conceptRef": "1단계 [공식 2: 특별한 불규칙 복수형]"
+          },
+          {
+            "q": "다음 중 복수형 규칙 변화가 잘못된 단어는?",
+            "options": [
+              "tomatoes",
+              "babies",
+              "toys",
+              "potatos",
+              "dishes"
+            ],
+            "ans": 3,
+            "exp": "potato의 복수형은 -es를 붙여 potatoes로 표기해야 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: 복수형 규칙 변화]"
+          },
+          {
+            "q": "다음 밑줄 친 부분 중 어법상 어색한 것은?\n\n'There are many (1)<u>people</u> and (2)<u>sheeps</u> on (3)<u>the</u> big (4)<u>green</u> (5)<u>farm</u>.'",
+            "options": [
+              "people",
+              "sheeps",
+              "the",
+              "green",
+              "farm"
+            ],
+            "ans": 1,
+            "exp": "sheep은 단수와 복수의 형태가 같은 단수·복수 동형 명사이므로 sheeps가 아니라 sheep이어야 합니다.",
+            "conceptRef": "1단계 [공식 2: 특별한 불규칙 복수형]"
+          }
+        ]
+      },
+      {
+        "unitNo": 10,
+        "unitId": "lv0_u10",
+        "legacyUnitNo": 210,
+        "title": "지시대명사 this / that / these / those",
+        "part": "대명사의 기초",
+        "targetGrade": "초등 기초 / 입문",
+        "summary": "가까이 있는 것(this/these)과 멀리 있는 것(that/those)을 가리키는 지시대명사의 단수와 복수 쓰임",
+        "overview": "손으로 대상을 콕 집어 가리킬 때 쓰는 말을 '지시대명사'라고 해요. 말하는 사람과 가까운 하나는 this, 여러 개는 these! 멀리 있는 하나는 that, 여러 개는 those를 씁니다. 거리와 수에 맞게 쓰는 법을 배워봅시다!",
+        "keyTakeaways": [
+          "가까운 대상: 단수 this (이것) / 복수 these (이것들)",
+          "멀리 있는 대상: 단수 that (저것/그것) / 복수 those (저것들/그것들)",
+          "this/that + 단수동사(is) vs these/those + 복수동사(are)"
+        ],
+        "formulaCards": [
+          {
+            "name": "지시대명사의 거리와 수 규칙",
+            "formula": "가까움: this(단수) / these(복수) | 멂: that(단수) / those(복수)",
+            "examples": [
+              {
+                "en": "This is my new bicycle near the garden fence.",
+                "ko": "이것은 정원 울타리 근처에 있는 내 새 자전거이다.",
+                "point": "가까이 있는 단수 대상에는 This is를 씁니다."
+              },
+              {
+                "en": "Those are bright stars shining in the dark night sky.",
+                "ko": "저것들은 어두운 밤하늘에서 빛나고 있는 밝은 별들이다.",
+                "point": "멀리 있는 복수 대상에는 Those are를 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "These are my favorite storybooks.",
+              "x": "This are my favorite storybooks.",
+              "comment": "복수명사 storybooks 앞에는 This가 아니라 복수형 These를 써야 합니다."
+            },
+            "trap": "this book처럼 뒤에 명사가 바로 붙으면 지시대명사가 아니라 지시형용사로 쓰인 것입니다.",
+            "quizLink": "this/that은 is와 짝꿍, these/those는 are와 짝꿍입니다."
+          },
+          {
+            "name": "전화 통화 및 사람 소개에서의 this / that",
+            "formula": "전화: This is ~(저는 ~예요) / Is that ~(그쪽은 ~인가요?)",
+            "examples": [
+              {
+                "en": "Hello, this is Minho speaking on the telephone.",
+                "ko": "여보세요, 전화하고 있는 저는 민호입니다.",
+                "point": "전화 통화에서 자신을 밝힐 때는 I am이 아니라 This is를 씁니다."
+              },
+              {
+                "en": "Who is that boy standing over there across the road?",
+                "ko": "길 건너 저편에 서 있는 저 소년은 누구니?",
+                "point": "저만치 멀리 서 있는 대상에게는 that boy를 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "Mom, this is my best friend Jenny.",
+              "x": "Mom, she is my best friend Jenny.",
+              "comment": "옆에 있는 친구를 소개할 때는 'This is ~' 표현을 씁니다."
+            },
+            "trap": "전화 통화에서 상대방을 물을 때는 Are you ~? 대신 Is that ~?를 씁니다.",
+            "quizLink": "거리 개념뿐만 아니라 대화 속 관용적 표현에서도 this와 that이 널리 쓰입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv0_u10_d1",
+            "missionTitle": "미션 1: 지시대명사 복수형 수일치 오류 수정",
+            "sentence": "This are my favorite flowers from the garden.",
+            "korean": "이것들은 정원에서 가져온 내가 가장 좋아하는 꽃들이다.",
+            "underlined": [
+              "This are",
+              "my favorite",
+              "flowers from",
+              "the garden"
+            ],
+            "wrongIndex": 0,
+            "correction": "These are",
+            "explanation": "복수동사 are와 복수명사 flowers 앞에는 This가 아니라 복수 지시대명사 These를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 지시대명사의 거리와 수] 출제 연계"
+          },
+          {
+            "id": "lv0_u10_d2",
+            "missionTitle": "미션 2: 먼 거리 복수 지시대명사 수일치",
+            "sentence": "Look at that tall trees on the hill.",
+            "korean": "언덕 위에 있는 저 키 큰 나무들을 보아라.",
+            "underlined": [
+              "Look at",
+              "that tall trees",
+              "on",
+              "the hill"
+            ],
+            "wrongIndex": 1,
+            "correction": "those tall trees",
+            "explanation": "trees는 복수명사이므로 단수 that 대신 복수 지시형용사 those를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 지시대명사의 거리와 수] 출제 연계"
+          },
+          {
+            "id": "lv0_u10_d3",
+            "missionTitle": "미션 3: 단수 지시대명사와 동사 일치",
+            "sentence": "Those is the red pencil box on the table.",
+            "korean": "저것은 탁자 위에 있는 빨간 필통이다.",
+            "underlined": [
+              "Those is",
+              "the red",
+              "pencil box",
+              "on the table"
+            ],
+            "wrongIndex": 0,
+            "correction": "That is",
+            "explanation": "단수 명사 pencil box와 단수 동사 is에 맞추어 Those 대신 That을 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 지시대명사의 거리와 수] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 말로 가장 알맞은 것은?\n\n'______ are my new shoes.'",
+            "options": [
+              "This",
+              "That",
+              "These",
+              "It",
+              "She"
+            ],
+            "ans": 2,
+            "exp": "복수동사 are와 복수명사 shoes 앞에는 복수 지시대명사 These가 알맞습니다.",
+            "conceptRef": "1단계 [공식 1: 지시대명사의 거리와 수]"
+          },
+          {
+            "q": "전화 통화에서 자신을 소개할 때 쓰는 올바른 표현은?\n\n'Hello, ______ is Tom speaking.'",
+            "options": [
+              "I",
+              "me",
+              "this",
+              "that",
+              "it"
+            ],
+            "ans": 2,
+            "exp": "전화상으로 '저는 ~입니다'라고 할 때는 관용적으로 'This is ~'를 사용합니다.",
+            "conceptRef": "1단계 [공식 2: 전화 통화 및 사람 소개]"
+          },
+          {
+            "q": "다음 중 밑줄 친 부분의 쓰임이 어색한 문장은?",
+            "options": [
+              "This is a cute puppy.",
+              "That is an old building.",
+              "These are fresh apples.",
+              "Those is flying birds.",
+              "That car is very fast."
+            ],
+            "ans": 3,
+            "exp": "flying birds는 복수이므로 'Those is'가 아니라 'Those are'로 써야 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: 지시대명사의 거리와 수]"
+          },
+          {
+            "q": "다음 괄호 안의 말이 차례대로 바르게 짝지어진 것은?\n\n'(This / These) cap is mine, and (that / those) socks are yours.'",
+            "options": [
+              "This - that",
+              "This - those",
+              "These - that",
+              "These - those",
+              "This - this"
+            ],
+            "ans": 1,
+            "exp": "단수 cap 앞에는 This, 복수 socks 앞에는 those가 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: 지시대명사의 거리와 수]"
+          },
+          {
+            "q": "'저쪽에 있는 저 소년은 누구니?'를 영작할 때 빈칸에 알맞은 것은?\n\n'Who is ______ boy over there?'",
+            "options": [
+              "these",
+              "this",
+              "that",
+              "those",
+              "they"
+            ],
+            "ans": 2,
+            "exp": "저쪽에 있는(over there) 단수 명사 boy 앞에는 that이 와야 합니다.",
+            "conceptRef": "1단계 [공식 1: 지시대명사의 거리와 수]"
+          }
+        ]
+      },
+      {
+        "unitNo": 11,
+        "unitId": "lv0_u11",
+        "legacyUnitNo": 211,
+        "title": "의문사 1 - Who, What, Which (누구, 무엇, 어느 것)",
+        "part": "의문문의 기초",
+        "targetGrade": "초등 기초 / 입문",
+        "summary": "사람을 물을 때 Who, 사물이나 정보를 물을 때 What, 선택할 때 Which의 기본 쓰임과 의문문 어순",
+        "overview": "궁금한 대상이 사람일 때는 Who, 사물이나 이름·직업일 때는 What, 정해진 것 중 하나를 고를 때는 Which를 문장 맨 앞에 써요. 의문사 뒤에 be동사나 do/does가 오는 어순을 배워봅시다!",
+        "keyTakeaways": [
+          "Who: 사람을 물을 때 (Who is he? 그는 누구니?)",
+          "What: 사물이나 이름, 직업 등을 물을 때 (What is this? 이것은 무엇이니?)",
+          "Which: 범위가 정해진 것 중 선택할 때 (Which do you like better? 둘 중 어느 것이 더 좋니?)"
+        ],
+        "formulaCards": [
+          {
+            "name": "Who와 What의 기본 의문문",
+            "formula": "Who + be동사 / What + be동사 / What do you ~?",
+            "examples": [
+              {
+                "en": "Who is that pretty girl in the pink dress?",
+                "ko": "분홍색 드레스를 입은 저 예쁜 소녀는 누구니?",
+                "point": "사람의 신원이나 관계를 물을 때는 Who를 씁니다."
+              },
+              {
+                "en": "What do you want for your birthday dinner?",
+                "ko": "너는 생일 저녁 식사로 무엇을 원하니?",
+                "point": "사물이나 대상을 물을 때는 의문사 What으로 시작합니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "Who is your English teacher?",
+              "x": "What is your English teacher?",
+              "comment": "선생님은 사람이므로 직업 자체를 묻는 경우가 아니라면 인물을 물을 때 Who를 씁니다."
+            },
+            "trap": "의문사가 있는 의문문은 Yes나 No로 대답하지 않고 구체적인 사실로 대답합니다.",
+            "quizLink": "Who is that? ➔ She is my sister. (Yes/No 대답 불가)"
+          },
+          {
+            "name": "선택 의문사 Which의 쓰임",
+            "formula": "Which + 명사 + do/does + S + 동사원형? | Which do you like, A or B?",
+            "examples": [
+              {
+                "en": "Which season do you like better, spring or autumn?",
+                "ko": "봄과 가을 중 너는 어느 계절을 더 좋아하니?",
+                "point": "둘 중 하나를 선택할 때는 Which + 명사 어순을 씁니다."
+              },
+              {
+                "en": "Which is your backpack, the black one or the blue one?",
+                "ko": "검은 것과 파란 것 중 어느 것이 너의 배낭이니?",
+                "point": "Which 뒤에 바로 be동사가 와서 선택 대상을 물을 수 있습니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "Which color do you prefer, red or yellow?",
+              "x": "What color do you prefer, red or yellow?",
+              "comment": "보기(red or yellow)가 명확히 주어졌을 때는 What보다 Which가 훨씬 자연스럽습니다."
+            },
+            "trap": "선택 대상이 정해져 있을 때는 범위가 좁은 Which를 쓰는 것이 원칙입니다.",
+            "quizLink": "A or B 형태의 선택지가 주어지면 Which가 정답일 확률이 매우 높습니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv0_u11_d1",
+            "missionTitle": "미션 1: 사람을 묻는 의문사 오류 수정",
+            "sentence": "What is that boy running across the playground?",
+            "korean": "운동장을 가로질러 달리고 있는 저 소년은 누구니?",
+            "underlined": [
+              "What is",
+              "that boy",
+              "running across",
+              "the playground"
+            ],
+            "wrongIndex": 0,
+            "correction": "Who is",
+            "explanation": "소년(that boy)은 사람이므로 사물을 묻는 What 대신 인물을 묻는 Who를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: Who와 What의 기본 의문문] 출제 연계"
+          },
+          {
+            "id": "lv0_u11_d2",
+            "missionTitle": "미션 2: 선택 상황에서의 의문사 오류 수정",
+            "sentence": "Who color do you like better, green or blue?",
+            "korean": "초록색과 파란색 중 너는 어느 색깔을 더 좋아하니?",
+            "underlined": [
+              "Who color",
+              "do you like",
+              "better",
+              "green or blue"
+            ],
+            "wrongIndex": 0,
+            "correction": "Which color",
+            "explanation": "초록색과 파란색 중 선택하는 상황이므로 Who 대신 Which를 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 선택 의문사 Which] 출제 연계"
+          },
+          {
+            "id": "lv0_u11_d3",
+            "missionTitle": "미션 3: 의문사 의문문 동사 수일치 오류 수정",
+            "sentence": "What are your father's favorite hobby these days?",
+            "korean": "요즘 너의 아버지께서 가장 좋아하시는 취미는 무엇이니?",
+            "underlined": [
+              "What are",
+              "your father's",
+              "favorite hobby",
+              "these days"
+            ],
+            "wrongIndex": 0,
+            "correction": "What is",
+            "explanation": "주어가 단수 명사 favorite hobby이므로 be동사는 are가 아니라 is가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: Who와 What의 기본 의문문] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 대화의 빈칸에 들어갈 가장 알맞은 의문사는?\n\nA: '______ is your best friend in this school?'\nB: 'Minji is my best friend.'",
+            "options": [
+              "What",
+              "Who",
+              "Where",
+              "When",
+              "Why"
+            ],
+            "ans": 1,
+            "exp": "대답이 사람(Minji)이므로 사람의 신원을 묻는 Who가 알맞습니다.",
+            "conceptRef": "1단계 [공식 1: Who와 What의 기본 의문문]"
+          },
+          {
+            "q": "다음 두 대상 중 하나를 고르는 의문문에 알맞은 의문사는?\n\n'______ bag is yours, the brown one or the black one?'",
+            "options": [
+              "Who",
+              "What",
+              "Which",
+              "Where",
+              "How"
+            ],
+            "ans": 2,
+            "exp": "둘 중 어느 것인지를 선택하여 물을 때는 Which를 씁니다.",
+            "conceptRef": "1단계 [공식 2: 선택 의문사 Which]"
+          },
+          {
+            "q": "다음 중 질문과 대답의 연결이 어법상 어색한 것은?",
+            "options": [
+              "What is this? - It is an apple.",
+              "Who is that woman? - She is my aunt.",
+              "Which animal do you like? - I like dogs.",
+              "What is your name? - Yes, I am Tom.",
+              "Who made this cake? - My mother made it."
+            ],
+            "ans": 3,
+            "exp": "What is your name? 같은 의문사 의문문에는 Yes/No로 대답할 수 없습니다.",
+            "conceptRef": "1단계 [공식 1: Who와 What의 기본 의문문]"
+          },
+          {
+            "q": "'너는 상자 안에 무엇을 가지고 있니?'를 바르게 영작한 것은?",
+            "options": [
+              "What you have in the box?",
+              "What do you have in the box?",
+              "Who do you have in the box?",
+              "Which have you in the box?",
+              "What does you have in the box?"
+            ],
+            "ans": 1,
+            "exp": "일반동사 have의 의문문은 의문사 What + do + 주어 you + 동사원형 have 어순입니다.",
+            "conceptRef": "1단계 [공식 1: Who와 What의 기본 의문문]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 말이 바르게 짝지어진 것은?\n\n- '______ is your favorite subject, English or math?'\n- '______ is knocking on the front door?'",
+            "options": [
+              "What - Who",
+              "Which - Who",
+              "Who - Which",
+              "Which - What",
+              "What - Which"
+            ],
+            "ans": 1,
+            "exp": "첫 번째는 선택이므로 Which, 두 번째는 사람을 묻는 것이므로 Who가 알맞습니다.",
+            "conceptRef": "1단계 [공식 1 & 2 종합]"
+          }
+        ]
+      },
+      {
+        "unitNo": 12,
+        "unitId": "lv0_u12",
+        "legacyUnitNo": 212,
+        "title": "의문사 2 - Where, When (어디서, 언제)",
+        "part": "의문문의 기초",
+        "targetGrade": "초등 기초 / 입문",
+        "summary": "장소를 물을 때 Where, 시간을 물을 때 When의 쓰임과 be동사/일반동사 의문문 결합",
+        "overview": "위치나 장소가 궁금할 때는 Where(어디에), 시간이나 날짜, 요일이 궁금할 때는 When(언제)을 써요. 일상생활에서 가장 많이 쓰는 두 의문사의 형태와 대답을 정복해 봅시다!",
+        "keyTakeaways": [
+          "Where: 장소나 위치를 물을 때 (Where is my bag? 내 가방 어디 있니?)",
+          "When: 시간, 날짜, 요일을 물을 때 (When is your birthday? 네 생일 언제니?)",
+          "대답 시 전치사구 활용 (in the room, at 7 o'clock, on Sunday)"
+        ],
+        "formulaCards": [
+          {
+            "name": "장소를 묻는 Where 의문문",
+            "formula": "Where + be동사 + 주어? | Where + do/does + 주어 + 동사원형?",
+            "examples": [
+              {
+                "en": "Where is my English dictionary on the bookshelf?",
+                "ko": "책장에 꽂혀 있던 내 영어 사전은 어디에 있니?",
+                "point": "위치를 물을 때는 Where is + 단수명사 어순을 씁니다."
+              },
+              {
+                "en": "Where do you live with your grandparents?",
+                "ko": "너는 조부모님과 함께 어디에 살고 있니?",
+                "point": "일반동사 live의 위치를 물을 때는 Where do you live 어순입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "Where are my clean socks?",
+              "x": "Where is my clean socks?",
+              "comment": "socks는 복수명사이므로 Where 뒤에 is가 아니라 are를 써야 합니다."
+            },
+            "trap": "Where are you from?은 '너는 어디 출신이니?'를 묻는 고향/국적 질문입니다.",
+            "quizLink": "Where 질문에 대한 대답은 주로 in, on, at, under 등의 장소 전치사로 표현합니다."
+          },
+          {
+            "name": "시간을 묻는 When 의문문",
+            "formula": "When + be동사 + 주어? | When + do/does + 주어 + 동사원형?",
+            "examples": [
+              {
+                "en": "When is the school festival this semester?",
+                "ko": "이번 학기 학교 축제는 언제니?",
+                "point": "행사나 일정의 날짜를 물을 때는 When is를 씁니다."
+              },
+              {
+                "en": "When do you usually wake up in the morning?",
+                "ko": "너는 아침에 보통 몇 시에(언제) 일어나니?",
+                "point": "일반동사 wake up의 동작 시간을 물을 때는 When do you wake up을 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "When does the train arrive at the station?",
+              "x": "When do the train arrive at the station?",
+              "comment": "the train은 3인칭 단수이므로 조동사 do가 아니라 does를 써야 합니다."
+            },
+            "trap": "몇 시인지 정확한 시각을 물을 때는 When 대신 What time을 쓰기도 합니다.",
+            "quizLink": "When에 대한 대답에는 on Friday, at 3 p.m., in May 등 시간 표현이 옵니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv0_u12_d1",
+            "missionTitle": "미션 1: 장소 의문문 의문사 혼동 수정",
+            "sentence": "When is my pet dog sleeping right now?",
+            "korean": "내 애완견은 지금 어디에서 자고 있니?",
+            "underlined": [
+              "When is",
+              "my pet dog",
+              "sleeping",
+              "right now"
+            ],
+            "wrongIndex": 0,
+            "correction": "Where is",
+            "explanation": "개가 자고 있는 장소를 묻는 맥락이므로 시간을 묻는 When 대신 Where를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 장소를 묻는 Where] 출제 연계"
+          },
+          {
+            "id": "lv0_u12_d2",
+            "missionTitle": "미션 2: 시간 의문문 3인칭 단수 조동사 오류",
+            "sentence": "When do your brother start his homework every day?",
+            "korean": "너의 남동생은 매일 언제 숙제를 시작하니?",
+            "underlined": [
+              "When do",
+              "your brother",
+              "start his homework",
+              "every day"
+            ],
+            "wrongIndex": 0,
+            "correction": "When does",
+            "explanation": "your brother는 3인칭 단수 주어이므로 일반동사 의문문 조동사로 do 대신 does를 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 시간을 묻는 When] 출제 연계"
+          },
+          {
+            "id": "lv0_u12_d3",
+            "missionTitle": "미션 3: 복수 주어의 Where be동사 수일치",
+            "sentence": "Where is the new glasses on the study desk?",
+            "korean": "공부 책상 위에 있는 새 안경은 어디에 있니?",
+            "underlined": [
+              "Where is",
+              "the new glasses",
+              "on",
+              "the study desk"
+            ],
+            "wrongIndex": 0,
+            "correction": "Where are",
+            "explanation": "glasses는 항상 복수로 쓰이는 명사이므로 be동사는 is가 아니라 are가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 장소를 묻는 Where] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 대화의 빈칸에 알맞은 의문사는?\n\nA: '______ do you go after school?'\nB: 'I go to the library.'",
+            "options": [
+              "When",
+              "Who",
+              "Where",
+              "What",
+              "Why"
+            ],
+            "ans": 2,
+            "exp": "대답이 장소(to the library)이므로 장소를 묻는 Where가 알맞습니다.",
+            "conceptRef": "1단계 [공식 1: 장소를 묻는 Where]"
+          },
+          {
+            "q": "다음 대화의 빈칸에 알맞은 의문사는?\n\nA: '______ does the movie start?'\nB: 'It starts at seven o'clock.'",
+            "options": [
+              "Where",
+              "When",
+              "Who",
+              "Which",
+              "What"
+            ],
+            "ans": 1,
+            "exp": "시간(at seven o'clock)을 나타내는 대답이므로 시간을 묻는 When이 알맞습니다.",
+            "conceptRef": "1단계 [공식 2: 시간을 묻는 When]"
+          },
+          {
+            "q": "다음 중 어법상 올바른 문장은?",
+            "options": [
+              "Where does you live?",
+              "When do the train leave?",
+              "Where are my keys?",
+              "When is they going home?",
+              "Where do she work?"
+            ],
+            "ans": 2,
+            "exp": "my keys는 복수 주어이므로 Where are my keys?가 완벽한 문장입니다. (do you, does the train, are they, does she)",
+            "conceptRef": "1단계 [공식 1: 장소를 묻는 Where]"
+          },
+          {
+            "q": "'너의 생일은 언제니?'를 영어로 바르게 옮긴 것은?",
+            "options": [
+              "Where is your birthday?",
+              "When is your birthday?",
+              "When are your birthday?",
+              "What is your birthday when?",
+              "Who is your birthday?"
+            ],
+            "ans": 1,
+            "exp": "날짜를 물을 때는 When is your birthday?가 올바릅니다.",
+            "conceptRef": "1단계 [공식 2: 시간을 묻는 When]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 말이 차례대로 짝지어진 것은?\n\n- '______ is your cat?' - 'It is under the bed.'\n- '______ is the piano concert?' - 'It is on Sunday.'",
+            "options": [
+              "When - Where",
+              "Where - When",
+              "Who - When",
+              "Where - Who",
+              "When - What"
+            ],
+            "ans": 1,
+            "exp": "첫 번째는 장소(under the bed)이므로 Where, 두 번째는 요일(on Sunday)이므로 When이 알맞습니다.",
+            "conceptRef": "1단계 [공식 1 & 2 종합]"
+          }
+        ]
+      },
+      {
+        "unitNo": 13,
+        "unitId": "lv0_u13",
+        "legacyUnitNo": 213,
+        "title": "의문사 3 - Why, How (왜, 어떻게/얼마나)",
+        "part": "의문문의 기초",
+        "targetGrade": "초등 기초 / 입문",
+        "summary": "이유를 묻는 Why(대답 Because)와 방법·상태·정도를 묻는 How(How old/many/much)의 쓰임",
+        "overview": "이유가 궁금할 땐 Why로 묻고 대답은 Because(~때문에)로 시작해요. 방법이나 수단, 몸 상태, 나이와 수량을 물을 땐 How를 씁니다. How many, How much 등 유용한 짝꿍 표현도 함께 배워봅시다!",
+        "keyTakeaways": [
+          "Why: 이유를 물을 때 ➔ 대답은 Because ~ (~때문에)",
+          "How: 방법이나 상태를 물을 때 (How are you? 기분/건강 어떠니?)",
+          "How + 형용사/부사: 정도를 물을 때 (How old 나이, How many 개수, How much 가격)"
+        ],
+        "formulaCards": [
+          {
+            "name": "이유를 묻는 Why와 Because 대답",
+            "formula": "Why + be동사/do/does + 주어 ~? ➔ Because + 주어 + 동사 ~",
+            "examples": [
+              {
+                "en": "Why are you so happy today in school?",
+                "ko": "너는 오늘 학교에서 왜 그렇게 행복하니?",
+                "point": "상태의 이유를 물을 때는 Why are you 형용사 어순을 씁니다."
+              },
+              {
+                "en": "Because today is my little sister's birthday.",
+                "ko": "왜냐하면 오늘이 내 여동생의 생일이기 때문입니다.",
+                "point": "Why 의문문에 대한 이유를 설명할 때는 Because로 시작합니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "Why do you study English hard?",
+              "x": "Why you study English hard?",
+              "comment": "일반동사 의문문이므로 주어 you 앞에 조동사 do가 반드시 들어가야 합니다."
+            },
+            "trap": "Why로 물었을 때 Yes나 No로 대답하면 어색합니다. 반드시 이유를 말해야 합니다.",
+            "quizLink": "Why 질문 ➔ Because 답변은 영어 시험의 단골 연결 공식입니다."
+          },
+          {
+            "name": "방법과 정도를 묻는 How 표현들",
+            "formula": "How do you ~?(방법) | How old(나이) | How many + 복수명사(개수)",
+            "examples": [
+              {
+                "en": "How do you go to school every morning?",
+                "ko": "너는 매일 아침 학교에 어떻게 가니?",
+                "point": "교통수단이나 이동 방법을 물을 때는 How do you go 어순입니다."
+              },
+              {
+                "en": "How many apples do you have in the basket?",
+                "ko": "너는 바구니 안에 몇 개의 사과를 가지고 있니?",
+                "point": "셀 수 있는 명사의 개수를 물을 때는 How many + 복수명사를 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "How old is your younger brother?",
+              "x": "How many is your younger brother?",
+              "comment": "나이를 물을 때는 How old를 써야 올바릅니다."
+            },
+            "trap": "가격을 물을 때는 How many가 아니라 셀 수 없는 개념인 How much를 씁니다.",
+            "quizLink": "How old(나이), How tall(키), How many(개수), How much(가격/양)를 구별하세요."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv0_u13_d1",
+            "missionTitle": "미션 1: 이유를 묻는 의문사 오류 수정",
+            "sentence": "Who are you late for the morning class today?",
+            "korean": "너는 오늘 왜 아침 수업에 늦었니?",
+            "underlined": [
+              "Who are",
+              "you late",
+              "for the morning class",
+              "today"
+            ],
+            "wrongIndex": 0,
+            "correction": "Why are",
+            "explanation": "지각한 이유를 묻고 있으므로 인물을 묻는 Who 대신 이유를 묻는 Why를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 이유를 묻는 Why] 출제 연계"
+          },
+          {
+            "id": "lv0_u13_d2",
+            "missionTitle": "미션 2: 개수를 묻는 How 표현 명사 수일치",
+            "sentence": "How many pencil do you have in your pencil case?",
+            "korean": "너는 필통 안에 몇 자루의 연필을 가지고 있니?",
+            "underlined": [
+              "How many pencil",
+              "do you have",
+              "in your",
+              "pencil case"
+            ],
+            "wrongIndex": 0,
+            "correction": "How many pencils",
+            "explanation": "How many 뒤에는 셀 수 있는 명사의 복수형이 와야 하므로 pencils가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 2: How 표현들] 출제 연계"
+          },
+          {
+            "id": "lv0_u13_d3",
+            "missionTitle": "미션 3: 가격을 묻는 How 표현 오류 수정",
+            "sentence": "How many is this cute teddy bear in the shop?",
+            "korean": "가게에 있는 이 귀여운 곰 인형은 얼마인가요?",
+            "underlined": [
+              "How many is",
+              "this cute",
+              "teddy bear",
+              "in the shop"
+            ],
+            "wrongIndex": 0,
+            "correction": "How much is",
+            "explanation": "물건의 가격을 물을 때는 How many가 아니라 How much를 씁니다.",
+            "conceptRef": "1단계 [공식 2: How 표현들] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 대화의 빈칸에 알맞은 의문사는?\n\nA: '______ are you crying?'\nB: 'Because I lost my favorite toy.'",
+            "options": [
+              "What",
+              "When",
+              "Why",
+              "Where",
+              "Who"
+            ],
+            "ans": 2,
+            "exp": "대답이 Because로 시작하여 이유를 말하고 있으므로 이유를 묻는 Why가 알맞습니다.",
+            "conceptRef": "1단계 [공식 1: 이유를 묻는 Why]"
+          },
+          {
+            "q": "상대방의 나이를 물어볼 때 쓰는 가장 알맞은 표현은?",
+            "options": [
+              "How tall are you?",
+              "How many are you?",
+              "How old are you?",
+              "How much are you?",
+              "How long are you?"
+            ],
+            "ans": 2,
+            "exp": "나이를 물을 때는 How old are you?를 사용합니다.",
+            "conceptRef": "1단계 [공식 2: How 표현들]"
+          },
+          {
+            "q": "다음 빈칸에 공통으로 들어갈 의문사는?\n\n- '______ do you make this delicious cookie?'\n- '______ is the weather today?'",
+            "options": [
+              "Why",
+              "How",
+              "What",
+              "Which",
+              "Where"
+            ],
+            "ans": 1,
+            "exp": "방법(만드는 방법)과 날씨의 상태를 물을 때는 How가 알맞습니다.",
+            "conceptRef": "1단계 [공식 2: How 표현들]"
+          },
+          {
+            "q": "'너는 형제가 몇 명 있니?'를 영작할 때 빈칸에 알맞은 것은?\n\n'How ______ brothers do you have?'",
+            "options": [
+              "much",
+              "many",
+              "old",
+              "often",
+              "long"
+            ],
+            "ans": 1,
+            "exp": "셀 수 있는 명사 brothers의 수를 물으므로 How many가 올바릅니다.",
+            "conceptRef": "1단계 [공식 2: How 표현들]"
+          },
+          {
+            "q": "다음 중 질문과 대답의 연결이 어법상 어색한 것은?",
+            "options": [
+              "Why is he tired? - Because he ran fast.",
+              "How do you come here? - By bus.",
+              "How much is the cap? - It is ten dollars.",
+              "Why do you like dogs? - Yes, I like them.",
+              "How old is your sister? - She is ten years old."
+            ],
+            "ans": 3,
+            "exp": "Why do you like dogs?는 이유를 묻는 의문문이므로 Yes/No로 대답할 수 없습니다.",
+            "conceptRef": "1단계 [공식 1: 이유를 묻는 Why]"
+          }
+        ]
+      },
+      {
+        "unitNo": 14,
+        "unitId": "lv0_u14",
+        "legacyUnitNo": 214,
+        "title": "조동사 can과 may (능력, 가능, 허가)",
+        "part": "조동사의 첫걸음",
+        "targetGrade": "초등 기초 / 입문",
+        "summary": "~할 수 있다(능력)의 can과 ~해도 좋다(허가)의 may의 의미 및 뒤에 동사원형이 오는 기본 원칙",
+        "overview": "동사 앞에 붙어서 '할 수 있다'나 '해도 된다'처럼 특별한 뜻을 더해주는 도우미를 '조동사'라고 해요! 조동사 뒤에는 주어의 인칭에 상관없이 언제나 동사원형이 온다는 절대 법칙을 기억해 봅시다!",
+        "keyTakeaways": [
+          "can: ~할 수 있다 (능력/가능) / can't: ~할 수 없다 (부정)",
+          "may: ~해도 좋다 (허가) / ~일지도 모른다 (추측)",
+          "★조동사 뒤에는 무조건 '동사원형' (can plays -> can play)"
+        ],
+        "formulaCards": [
+          {
+            "name": "조동사 can의 쓰임과 절대 원칙",
+            "formula": "주어 + can + 동사원형 | 부정: cannot / can't + 동사원형",
+            "examples": [
+              {
+                "en": "She can swim very fast across the swimming pool.",
+                "ko": "그녀는 수영장을 가로질러 매우 빠르게 수영할 수 있다.",
+                "point": "주어가 3인칭 단수 she여도 can 뒤에는 동사원형 swim을 씁니다."
+              },
+              {
+                "en": "I cannot speak French very well yet.",
+                "ko": "나는 아직 프랑스어를 그리 잘 말할 수는 없다.",
+                "point": "can의 부정은 cannot 또는 줄임말 can't + 동사원형입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "He can play the piano well.",
+              "x": "He can plays the piano well.",
+              "comment": "조동사 can 뒤에는 주어와 상관없이 무조건 동사원형(play)을 써야 합니다."
+            },
+            "trap": "can 뒤에 to부정사(can to swim)나 -ing(can swimming)를 쓰면 틀립니다.",
+            "quizLink": "Can you ~? 의문문에 대한 대답은 'Yes, I can.' 또는 'No, I can't.'입니다."
+          },
+          {
+            "name": "조동사 may의 허가 표현",
+            "formula": "May I + 동사원형 ~? (제가 ~해도 될까요?) | 주어 + may + 동사원형",
+            "examples": [
+              {
+                "en": "May I open the window in this classroom?",
+                "ko": "제가 이 교실의 창문을 열어도 될까요?",
+                "point": "공손하게 허가를 구할 때 May I + 동사원형을 씁니다."
+              },
+              {
+                "en": "You may go home early after finishing your work.",
+                "ko": "너는 일을 마친 후에 집에 일찍 가도 좋다.",
+                "point": "상대방에게 허가를 내줄 때 You may + 동사원형을 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "May I use your pencil for a moment?",
+              "x": "May I to use your pencil for a moment?",
+              "comment": "may 뒤에 to부정사를 쓰지 않고 바로 동사원형 use를 씁니다."
+            },
+            "trap": "May I ~?에 대한 거절은 'No, you may not.' 또는 'No, you can't.'로 답합니다.",
+            "quizLink": "May I ~?는 Can I ~?보다 더 정중하고 공손한 허가의 표현입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv0_u14_d1",
+            "missionTitle": "미션 1: 조동사 뒤 동사원형 원칙 오류 수정",
+            "sentence": "My little brother can rides a bicycle without training wheels.",
+            "korean": "내 남동생은 보조바퀴 없이 자전거를 탈 수 있다.",
+            "underlined": [
+              "My little brother",
+              "can rides",
+              "a bicycle",
+              "without training wheels"
+            ],
+            "wrongIndex": 1,
+            "correction": "can ride",
+            "explanation": "조동사 can 뒤에는 3인칭 단수 주어여도 동사원형인 ride를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 조동사 can의 절대 원칙] 출제 연계"
+          },
+          {
+            "id": "lv0_u14_d2",
+            "missionTitle": "미션 2: 조동사 의문문 동사 형태 수정",
+            "sentence": "Can you playing the guitar with the school band?",
+            "korean": "너는 학교 밴드와 함께 기타를 연주할 수 있니?",
+            "underlined": [
+              "Can you",
+              "playing",
+              "the guitar with",
+              "the school band"
+            ],
+            "wrongIndex": 1,
+            "correction": "play",
+            "explanation": "조동사 Can 의문문에서 주어 뒤에는 -ing 형태가 아닌 동사원형 play가 와야 합니다.",
+            "conceptRef": "1단계 [공식 1: 조동사 can의 절대 원칙] 출제 연계"
+          },
+          {
+            "id": "lv0_u14_d3",
+            "missionTitle": "미션 3: 허가 조동사 may 뒤 to부정사 오류",
+            "sentence": "May I to ask a question about the science project?",
+            "korean": "과학 과제에 대해 질문을 하나 해도 될까요?",
+            "underlined": [
+              "May I",
+              "to ask",
+              "a question about",
+              "the science project"
+            ],
+            "wrongIndex": 1,
+            "correction": "ask",
+            "explanation": "조동사 May 뒤에는 to ask가 아니라 동사원형 ask가 바로 와야 합니다.",
+            "conceptRef": "1단계 [공식 2: 조동사 may의 허가 표현] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 말로 가장 알맞은 것은?\n\n'He is only four years old, but he can ______ English.'",
+            "options": [
+              "speaks",
+              "speaking",
+              "speak",
+              "to speak",
+              "spoke"
+            ],
+            "ans": 2,
+            "exp": "조동사 can 뒤에는 항상 동사원형이 오므로 speak가 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 조동사 can의 절대 원칙]"
+          },
+          {
+            "q": "공손하게 허락을 구할 때 빈칸에 알맞은 조동사는?\n\n'______ I come in and sit down here?'",
+            "options": [
+              "Do",
+              "Are",
+              "May",
+              "Am",
+              "Is"
+            ],
+            "ans": 2,
+            "exp": "'제가 ~해도 될까요?'라는 공손한 허락을 구할 때는 May I ~?를 씁니다.",
+            "conceptRef": "1단계 [공식 2: 조동사 may의 허가 표현]"
+          },
+          {
+            "q": "다음 중 어법상 올바른 문장은?",
+            "options": [
+              "She cans dance very well.",
+              "They can running fast.",
+              "I can make a toy car.",
+              "He can to jump high.",
+              "We cannot plays soccer."
+            ],
+            "ans": 2,
+            "exp": "I can make a toy car는 조동사 can + 동사원형 make로 완벽합니다. (can dance, can run, can jump, cannot play)",
+            "conceptRef": "1단계 [공식 1: 조동사 can의 절대 원칙]"
+          },
+          {
+            "q": "대화의 빈칸에 알맞은 대답은?\n\nA: 'Can you swim across the river?'\nB: 'No, ______.'",
+            "options": [
+              "I do",
+              "I don't",
+              "I cannot",
+              "I am not",
+              "I may not"
+            ],
+            "ans": 2,
+            "exp": "Can you ~? 질문에 대한 부정의 대답은 No, I cannot(can't)입니다.",
+            "conceptRef": "1단계 [공식 1: 조동사 can의 절대 원칙]"
+          },
+          {
+            "q": "'너는 지금 이 만화책을 읽어도 좋다.'를 바르게 영작한 것은?",
+            "options": [
+              "You may read this comic book now.",
+              "You may to read this comic book now.",
+              "You may reading this comic book now.",
+              "You can reads this comic book now.",
+              "You may are read this comic book now."
+            ],
+            "ans": 0,
+            "exp": "허가를 나타내는 조동사 may 뒤에 동사원형 read가 온 문장이 올바릅니다.",
+            "conceptRef": "1단계 [공식 2: 조동사 may의 허가 표현]"
+          }
+        ]
+      },
+      {
+        "unitNo": 15,
+        "unitId": "lv0_u15",
+        "legacyUnitNo": 215,
+        "title": "be동사 과거형 was와 were (짝꿍과 과거시제)",
+        "part": "과거시제의 기초",
+        "targetGrade": "초등 기초 / 입문",
+        "summary": "과거의 상태를 나타내는 am/is의 과거형 was, are의 과거형 were의 인칭별 짝꿍과 부정문/의문문",
+        "overview": "어제, 지난주처럼 이미 지난 과거의 일이나 상태를 말할 때는 be동사의 과거형을 써요. am과 is는 was로 변신! are는 were로 변신합니다. 과거를 나타내는 짝꿍 시간 표현들과 함께 마스터해 봅시다!",
+        "keyTakeaways": [
+          "am / is ➔ was (I was, He was, She was, It was)",
+          "are ➔ were (You were, We were, They were)",
+          "부정문: was not (wasn't) / were not (weren't) | 과거 표현: yesterday, last night, then"
+        ],
+        "formulaCards": [
+          {
+            "name": "be동사 과거형 짝꿍 공식",
+            "formula": "I / He / She / It ➔ was | You / We / They ➔ were",
+            "examples": [
+              {
+                "en": "I was very tired after the soccer match yesterday.",
+                "ko": "나는 어제 축구 시합이 끝난 후에 매우 피곤했다.",
+                "point": "1인칭 I의 과거형은 was이며, 어제를 뜻하는 yesterday와 함께 쓰입니다."
+              },
+              {
+                "en": "They were at the amusement park last Saturday.",
+                "ko": "그들은 지난주 토요일에 놀이공원에 있었다.",
+                "point": "복수 주어 They의 과거형은 were입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "He was a cute baby five years ago.",
+              "x": "He were a cute baby five years ago.",
+              "comment": "3인칭 단수 주어 He의 과거형은 were가 아니라 was입니다."
+            },
+            "trap": "You는 한 사람(너)이든 여러 사람(너희들)이든 무조건 were를 씁니다.",
+            "quizLink": "yesterday, ago, last night 같은 단어가 보이면 be동사를 was/were로 바꿔야 합니다."
+          },
+          {
+            "name": "be동사 과거형의 부정문과 의문문",
+            "formula": "부정: 주어 + was/were + not | 의문: Was/Were + 주어 ~?",
+            "examples": [
+              {
+                "en": "The weather was not cold during our family trip.",
+                "ko": "가족 여행 동안 날씨는 춥지 않았다.",
+                "point": "was 뒤에 not을 붙여 과거의 부정(~가 아니었다)을 만듭니다."
+              },
+              {
+                "en": "Were you busy with your science homework yesterday?",
+                "ko": "너는 어제 과학 숙제로 바빴니?",
+                "point": "과거 의문문은 Were you ~? 어순으로 시작합니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "We were not late for school this morning.",
+              "x": "We did not be late for school this morning.",
+              "comment": "be동사 과거형의 부정은 did not이 아니라 were not(weren't)입니다."
+            },
+            "trap": "Were you ~?로 물었을 때 긍정 대답은 'Yes, I was.'이고 부정은 'No, I wasn't.'입니다.",
+            "quizLink": "질문은 Were you였지만 대답하는 주어가 I이므로 was로 바뀌는 점에 주의하세요."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv0_u15_d1",
+            "missionTitle": "미션 1: 과거 be동사 단수 주어 수일치",
+            "sentence": "My sister were sick in bed all day yesterday.",
+            "korean": "내 여동생은 어제 하루 종일 아파서 누워 있었다.",
+            "underlined": [
+              "My sister were",
+              "sick in bed",
+              "all day",
+              "yesterday"
+            ],
+            "wrongIndex": 0,
+            "correction": "My sister was",
+            "explanation": "주어 My sister는 3인칭 단수이므로 과거형 be동사는 were가 아니라 was여야 합니다.",
+            "conceptRef": "1단계 [공식 1: be동사 과거형 짝꿍] 출제 연계"
+          },
+          {
+            "id": "lv0_u15_d2",
+            "missionTitle": "미션 2: 과거 be동사 복수 주어 수일치",
+            "sentence": "We was very happy to see our old friends last week.",
+            "korean": "우리는 지난주에 옛 친구들을 만나서 매우 행복했다.",
+            "underlined": [
+              "We was",
+              "very happy",
+              "to see our old friends",
+              "last week"
+            ],
+            "wrongIndex": 0,
+            "correction": "We were",
+            "explanation": "복수 주어 We에 맞는 be동사 과거형은 was가 아니라 were입니다.",
+            "conceptRef": "1단계 [공식 1: be동사 과거형 짝꿍] 출제 연계"
+          },
+          {
+            "id": "lv0_u15_d3",
+            "missionTitle": "미션 3: 과거 시제 부사와 현재 be동사 오류",
+            "sentence": "Tom and Jerry is good friends when they were young.",
+            "korean": "톰과 제리는 그들이 어렸을 때 좋은 친구들이었다.",
+            "underlined": [
+              "Tom and Jerry is",
+              "good friends",
+              "when they",
+              "were young"
+            ],
+            "wrongIndex": 0,
+            "correction": "Tom and Jerry were",
+            "explanation": "과거를 나타내는 when they were young 절이 있으므로 주절의 be동사도 과거 복수형인 were가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: be동사 과거형 짝꿍] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 알맞은 be동사는?\n\n'I ______ in Seoul three days ago.'",
+            "options": [
+              "am",
+              "are",
+              "is",
+              "was",
+              "were"
+            ],
+            "ans": 3,
+            "exp": "과거 부사 ago가 있고 주어가 1인칭 I이므로 was가 알맞습니다.",
+            "conceptRef": "1단계 [공식 1: be동사 과거형 짝꿍]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 알맞은 be동사는?\n\n'They ______ not at home last night.'",
+            "options": [
+              "was",
+              "were",
+              "is",
+              "are",
+              "be"
+            ],
+            "ans": 1,
+            "exp": "주어가 복수 They이고 last night이 있으므로 were가 정답입니다.",
+            "conceptRef": "1단계 [공식 1: be동사 과거형 짝꿍]"
+          },
+          {
+            "q": "다음 대화의 빈칸에 알맞은 대답은?\n\nA: 'Were you at the library yesterday?'\nB: 'Yes, ______.'",
+            "options": [
+              "I were",
+              "you were",
+              "I was",
+              "you was",
+              "I am"
+            ],
+            "ans": 2,
+            "exp": "Were you ~?로 물었을 때 대답은 Yes, I was.입니다.",
+            "conceptRef": "1단계 [공식 2: be동사 과거형 부정문과 의문문]"
+          },
+          {
+            "q": "다음 중 밑줄 친 부분의 쓰임이 어법상 어색한 것은?",
+            "options": [
+              "It was sunny yesterday.",
+              "You were kind to me.",
+              "She were angry at her brother.",
+              "We were excited about the game.",
+              "The dog was under the chair."
+            ],
+            "ans": 2,
+            "exp": "She는 3인칭 단수이므로 were가 아니라 was angry여야 합니다.",
+            "conceptRef": "1단계 [공식 1: be동사 과거형 짝꿍]"
+          },
+          {
+            "q": "'어제 그 영화는 재미있었니?'를 바르게 영작한 것은?",
+            "options": [
+              "Was the movie interesting yesterday?",
+              "Were the movie interesting yesterday?",
+              "Is the movie interesting yesterday?",
+              "Did the movie interesting yesterday?",
+              "The movie was interesting yesterday?"
+            ],
+            "ans": 0,
+            "exp": "단수 주어 the movie의 과거 의문문은 Was the movie ~?입니다.",
+            "conceptRef": "1단계 [공식 2: be동사 과거형 부정문과 의문문]"
+          }
+        ]
+      },
+      {
+        "unitNo": 16,
+        "unitId": "lv0_u16",
+        "legacyUnitNo": 216,
+        "title": "일반동사 과거형 규칙 변화 (-ed, -d, -ied)",
+        "part": "과거시제의 기초",
+        "targetGrade": "초등 기초 / 입문",
+        "summary": "동사원형 뒤에 -ed, -d를 붙여 과거의 동작을 나타내는 규칙과 불규칙 과거형 맛보기",
+        "overview": "일반동사로 과거의 동작이나 사건을 말할 때는 동사 뒤에 -ed를 붙여요! -e로 끝나면 -d만, 자음+y로 끝나면 y를 i로 고치고 -ed를 붙입니다. 어제 일어난 일을 영어로 술술 말하는 비결을 배워봅시다!",
+        "keyTakeaways": [
+          "대부분의 동사: 동사원형 + -ed (play -> played, watch -> watched)",
+          "-e로 끝나는 동사: + -d (love -> loved, live -> lived)",
+          "자음 + y로 끝나는 동사: y를 i로 고치고 + -ed (study -> studied, cry -> cried)"
+        ],
+        "formulaCards": [
+          {
+            "name": "일반동사 과거형 규칙 변화 3공식",
+            "formula": "대부분 + -ed | -e 끝 + -d | 자음+y ➔ -ied",
+            "examples": [
+              {
+                "en": "We played board games in the living room yesterday.",
+                "ko": "우리는 어제 거실에서 보드게임을 했다.",
+                "point": "play의 과거형은 -ed를 붙인 played입니다."
+              },
+              {
+                "en": "Minho studied English very hard for the test last night.",
+                "ko": "민호는 어젯밤 시험을 위해 영어를 매우 열심히 공부했다.",
+                "point": "study처럼 자음+y로 끝나는 동사는 y를 i로 고치고 -ed를 붙여 studied가 됩니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "She walked to the park with her mom.",
+              "x": "She walkd to the park with her mom.",
+              "comment": "walk의 과거형은 -ed를 정확히 붙인 walked입니다."
+            },
+            "trap": "과거시제에서는 주어가 3인칭 단수(he/she)여도 동사에 -s를 붙이지 않고 -ed만 붙입니다.",
+            "quizLink": "yesterday, last year, two days ago 같은 과거 부사는 -ed와 단짝 친구입니다."
+          },
+          {
+            "name": "자주 쓰이는 주요 불규칙 과거형 맛보기",
+            "formula": "go ➔ went | have ➔ had | see ➔ saw | make ➔ made",
+            "examples": [
+              {
+                "en": "My family went to the beach during the summer vacation.",
+                "ko": "우리 가족은 여름 방학 동안 해변에 갔다.",
+                "point": "go의 과거형은 goed가 아니라 불규칙 형태인 went입니다."
+              },
+              {
+                "en": "I had delicious pancakes for breakfast this morning.",
+                "ko": "나는 오늘 아침 식사로 맛있는 팬케이크를 먹었다.",
+                "point": "have의 과거형은 had입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "He saw a shooting star in the night sky.",
+              "x": "He seed a shooting star in the night sky.",
+              "comment": "see의 과거형은 seed가 아니라 saw입니다."
+            },
+            "trap": "불규칙 동사는 -ed를 붙이지 않으므로 단어 자체를 꼭 외워두어야 합니다.",
+            "quizLink": "go-went, see-saw, have-had, make-made는 가장 자주 나오는 4대 불규칙 동사입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv0_u16_d1",
+            "missionTitle": "미션 1: 자음+y 과거형 어형 변화 오류",
+            "sentence": "The baby cryed loudly because she was very hungry.",
+            "korean": "그 아기는 매우 배가 고팠기 때문에 큰 소리로 울었다.",
+            "underlined": [
+              "The baby",
+              "cryed loudly",
+              "because",
+              "she was very hungry"
+            ],
+            "wrongIndex": 1,
+            "correction": "cried loudly",
+            "explanation": "자음+y로 끝나는 cry는 y를 i로 고치고 -ed를 붙여 cried로 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 규칙 변화 3공식] 출제 연계"
+          },
+          {
+            "id": "lv0_u16_d2",
+            "missionTitle": "미션 2: 불규칙 과거형 동사 형태 오류",
+            "sentence": "We goed to the science museum by subway yesterday.",
+            "korean": "우리는 어제 지하철을 타고 국립과학관에 갔다.",
+            "underlined": [
+              "We goed",
+              "to the science museum",
+              "by subway",
+              "yesterday"
+            ],
+            "wrongIndex": 0,
+            "correction": "We went",
+            "explanation": "go의 올바른 과거형은 goed가 아니라 불규칙 형태인 went입니다.",
+            "conceptRef": "1단계 [공식 2: 주요 불규칙 과거형] 출제 연계"
+          },
+          {
+            "id": "lv0_u16_d3",
+            "missionTitle": "미션 3: 과거 시제에서 3인칭 단수 -s 혼동",
+            "sentence": "She cleaned her room and washess her hands yesterday.",
+            "korean": "그녀는 어제 방을 청소하고 손을 씻었다.",
+            "underlined": [
+              "She cleaned",
+              "her room",
+              "and washess",
+              "her hands yesterday"
+            ],
+            "wrongIndex": 2,
+            "correction": "and washed",
+            "explanation": "어제 일어난 과거의 일이므로 washess가 아니라 과거형 washed가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 규칙 변화 3공식] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 중 동사의 과거형이 바르게 연결된 것은?",
+            "options": [
+              "study - studyed",
+              "live - lived",
+              "stop - stoped",
+              "cry - cryed",
+              "play - plaid"
+            ],
+            "ans": 1,
+            "exp": "-e로 끝나는 live는 -d만 붙여 lived가 되는 것이 올바릅니다. (studied, stopped, cried, played)",
+            "conceptRef": "1단계 [공식 1: 규칙 변화 3공식]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 알맞은 말은?\n\n'They ______ a movie together yesterday.'",
+            "options": [
+              "watch",
+              "watches",
+              "watched",
+              "watching",
+              "to watch"
+            ],
+            "ans": 2,
+            "exp": "yesterday가 있으므로 일반동사의 과거형 watched가 알맞습니다.",
+            "conceptRef": "1단계 [공식 1: 규칙 변화 3공식]"
+          },
+          {
+            "q": "다음 중 불규칙 과거형의 짝이 바르지 않은 것은?",
+            "options": [
+              "go - went",
+              "have - had",
+              "see - saw",
+              "make - maked",
+              "come - came"
+            ],
+            "ans": 3,
+            "exp": "make의 올바른 과거형은 made입니다.",
+            "conceptRef": "1단계 [공식 2: 주요 불규칙 과거형]"
+          },
+          {
+            "q": "'그는 어제 맛있는 피자를 만들었다.'를 영작할 때 빈칸에 알맞은 단어는?\n\n'He ______ delicious pizza yesterday.'",
+            "options": [
+              "makes",
+              "making",
+              "made",
+              "maked",
+              "make"
+            ],
+            "ans": 2,
+            "exp": "과거를 나타내므로 make의 과거형 made가 정답입니다.",
+            "conceptRef": "1단계 [공식 2: 주요 불규칙 과거형]"
+          },
+          {
+            "q": "다음 밑줄 친 부분 중 어법상 어색한 것은?\n\n'I (1)<u>visited</u> my grandparents and (2)<u>seed</u> many (3)<u>farm</u> animals (4)<u>with</u> my (5)<u>cousin</u>.'",
+            "options": [
+              "visited",
+              "seed",
+              "farm",
+              "with",
+              "cousin"
+            ],
+            "ans": 1,
+            "exp": "see의 과거형은 seed가 아니라 saw여야 합니다.",
+            "conceptRef": "1단계 [공식 2: 주요 불규칙 과거형]"
+          }
+        ]
+      },
+      {
+        "unitNo": 17,
+        "unitId": "lv0_u17",
+        "legacyUnitNo": 217,
+        "title": "현재진행형 (be + V-ing, ~하는 중이다)",
+        "part": "진행형의 기초",
+        "targetGrade": "초등 기초 / 입문",
+        "summary": "지금 이 순간 일어나고 있는 동작을 나타내는 be동사 + 동사-ing의 형태와 만드는 규칙",
+        "overview": "'지금 나 밥 먹고 있어', '친구와 달리는 중이야'처럼 바로 지금 하고 있는 생생한 동작을 나타낼 때는 현재진행형을 써요. be동사(am/are/is)와 동사-ing를 결합하는 마법 같은 규칙을 배워봅시다!",
+        "keyTakeaways": [
+          "형태: 주어 + am / are / is + 동사원형-ing (~하는 중이다)",
+          "-ing 만드는 법: 대부분 + -ing (eating), -e로 끝나면 e 빼고 + -ing (writing)",
+          "단모음+단자음: 마지막 자음 한 번 더 쓰고 + -ing (running, swimming)"
+        ],
+        "formulaCards": [
+          {
+            "name": "현재진행형 기본 공식과 짝꿍",
+            "formula": "주어 + am/are/is + 동사원형-ing (지금 ~하고 있다)",
+            "examples": [
+              {
+                "en": "I am reading an exciting storybook in my room now.",
+                "ko": "나는 지금 내 방에서 신나는 동화책을 읽고 있는 중이다.",
+                "point": "1인칭 I에 맞는 be동사 am과 read 뒤에 -ing를 붙였습니다."
+              },
+              {
+                "en": "The children are playing soccer in the green park.",
+                "ko": "아이들이 초록빛 공원에서 축구를 하고 있는 중이다.",
+                "point": "복수 주어 children 뒤에 are playing을 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "She is watching television now.",
+              "x": "She watching television now.",
+              "comment": "진행형에서 be동사(is)를 빼먹고 동사-ing만 쓰면 문장이 완성되지 않습니다."
+            },
+            "trap": "be동사 없이 동사-ing만 쓰거나, be동사 뒤에 동사원형(She is watch)을 쓰면 틀립니다.",
+            "quizLink": "now, right now, Look! 같은 단어는 현재진행형의 대표적인 단짝 신호입니다."
+          },
+          {
+            "name": "-ing 만드는 스펠링 규칙",
+            "formula": "e 탈락 + -ing (making) | 단모음+단자음 ➔ 자음 추가 + -ing (running)",
+            "examples": [
+              {
+                "en": "He is writing a sweet birthday letter to his mom.",
+                "ko": "그는 엄마에게 다정한 생일 편지를 쓰고 있는 중이다.",
+                "point": "write처럼 -e로 끝나는 동사는 e를 빼고 -ing를 붙여 writing이 됩니다."
+              },
+              {
+                "en": "The fast runners are running towards the finish line.",
+                "ko": "빠른 주자들이 결승선을 향해 달리고 있는 중이다.",
+                "point": "run은 단모음+단자음이므로 n을 한 번 더 쓰고 -ing를 붙입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "They are swimming in the clear river.",
+              "x": "They are swiming in the clear river.",
+              "comment": "swim은 m을 한 번 더 쓴 swimming이 올바른 철자입니다."
+            },
+            "trap": "see처럼 -ee로 끝나는 동사는 e를 빼지 않고 그냥 seeing으로 씁니다.",
+            "quizLink": "run-running, swim-swimming, sit-sitting, stop-stopping 자음 중복을 꼭 외우세요."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv0_u17_d1",
+            "missionTitle": "미션 1: 진행형 be동사 누락 오류 수정",
+            "sentence": "Look! The white bird flying high in the blue sky.",
+            "korean": "봐! 흰 새가 파란 하늘 높이 날아가고 있어.",
+            "underlined": [
+              "Look!",
+              "The white bird",
+              "flying high",
+              "in the blue sky"
+            ],
+            "wrongIndex": 2,
+            "correction": "is flying high",
+            "explanation": "현재진행형은 be동사 + V-ing 구조이므로 단수 주어 뒤에 is flying이 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 현재진행형 기본 공식] 출제 연계"
+          },
+          {
+            "id": "lv0_u17_d2",
+            "missionTitle": "미션 2: 단모음+단자음 -ing 철자 오류 수정",
+            "sentence": "My little puppy is runing across the living room carpet.",
+            "korean": "내 어린 강아지가 거실 카펫을 가로질러 달리고 있다.",
+            "underlined": [
+              "My little puppy",
+              "is runing",
+              "across the",
+              "living room carpet"
+            ],
+            "wrongIndex": 1,
+            "correction": "is running",
+            "explanation": "run은 단모음+단자음 단어이므로 n을 한 번 더 써서 running으로 표기해야 합니다.",
+            "conceptRef": "1단계 [공식 2: -ing 만드는 스펠링 규칙] 출제 연계"
+          },
+          {
+            "id": "lv0_u17_d3",
+            "missionTitle": "미션 3: -e 탈락 -ing 철자 오류 수정",
+            "sentence": "Mom is makeing delicious cookies in the warm kitchen.",
+            "korean": "엄마는 따뜻한 주방에서 맛있는 쿠키를 만들고 계신다.",
+            "underlined": [
+              "Mom is",
+              "makeing delicious cookies",
+              "in the",
+              "warm kitchen"
+            ],
+            "wrongIndex": 1,
+            "correction": "making delicious cookies",
+            "explanation": "make처럼 -e로 끝나는 동사는 e를 없애고 -ing를 붙여 making으로 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: -ing 만드는 스펠링 규칙] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 중 동사에 -ing를 붙인 형태가 올바른 것은?",
+            "options": [
+              "make - makeing",
+              "run - runing",
+              "swim - swimming",
+              "write - writeing",
+              "sit - siting"
+            ],
+            "ans": 2,
+            "exp": "swim은 단모음+단자음이므로 자음 m을 한 번 더 쓰고 -ing를 붙인 swimming이 올바릅니다.",
+            "conceptRef": "1단계 [공식 2: -ing 만드는 스펠링 규칙]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 알맞은 말은?\n\n'Listen! The birds ______ in the trees.'",
+            "options": [
+              "sing",
+              "singing",
+              "is singing",
+              "are singing",
+              "sang"
+            ],
+            "ans": 3,
+            "exp": "The birds는 복수 주어이므로 be동사 are + singing이 알맞습니다.",
+            "conceptRef": "1단계 [공식 1: 현재진행형 기본 공식]"
+          },
+          {
+            "q": "다음 문장의 빈칸에 알맞은 것은?\n\n'I ______ my homework right now.'",
+            "options": [
+              "do",
+              "am doing",
+              "is doing",
+              "are doing",
+              "doing"
+            ],
+            "ans": 1,
+            "exp": "주어가 I이고 right now(지금 당장)가 있으므로 am doing이 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 현재진행형 기본 공식]"
+          },
+          {
+            "q": "'그녀는 지금 음악을 듣고 있는 중이다.'를 바르게 영작한 것은?",
+            "options": [
+              "She listening to music now.",
+              "She is listening to music now.",
+              "She are listening to music now.",
+              "She is listen to music now.",
+              "She listens music now."
+            ],
+            "ans": 1,
+            "exp": "현재진행형은 be동사 + V-ing이므로 She is listening to music now가 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: 현재진행형 기본 공식]"
+          },
+          {
+            "q": "다음 중 밑줄 친 부분의 쓰임이 어색한 문장은?",
+            "options": [
+              "He is taking a shower.",
+              "We are having lunch.",
+              "They are danceing happily.",
+              "The cat is sleeping on the sofa.",
+              "I am writing a letter."
+            ],
+            "ans": 2,
+            "exp": "dance는 -e로 끝나므로 e를 빼고 dancing으로 표기해야 합니다.",
+            "conceptRef": "1단계 [공식 2: -ing 만드는 스펠링 규칙]"
+          }
+        ]
+      },
+      {
+        "unitNo": 18,
+        "unitId": "lv0_u18",
+        "legacyUnitNo": 218,
+        "title": "There is / There are (~이 있다 구문)",
+        "part": "기초 문장 구조",
+        "targetGrade": "초등 기초 / 입문",
+        "summary": "~이 어디에 있다를 나타내는 There is(단수명사)와 There are(복수명사) 구문의 주어-동사 수일치",
+        "overview": "'방에 침대가 하나 있어', '나무 위에 새들이 많이 있어'처럼 어떤 장소에 무엇이 존재하는지를 말할 때는 'There is ~' 또는 'There are ~'로 문장을 시작해요. 진짜 주어는 동사 뒤에 온다는 비밀을 파헤쳐 봅시다!",
+        "keyTakeaways": [
+          "There is + 단수명사 / 셀 수 없는 명사 (~이 하나/조금 있다)",
+          "There are + 복수명사 (~들이 여러 개 있다)",
+          "★진짜 주어는 There가 아니라 is/are '뒤에 나오는 명사'!"
+        ],
+        "formulaCards": [
+          {
+            "name": "There is / There are 수일치 공식",
+            "formula": "There is + 단수명사/셀수없는명사 | There are + 복수명사",
+            "examples": [
+              {
+                "en": "There is an apple on the white kitchen table.",
+                "ko": "하얀 주방 식탁 위에 사과 하나가 있다.",
+                "point": "an apple은 단수명사이므로 There is를 씁니다."
+              },
+              {
+                "en": "There are many colorful fish in the aquarium.",
+                "ko": "수족관 안에 알록달록한 물고기들이 많이 있다.",
+                "point": "many colorful fish는 복수명사이므로 There are를 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "There are two books on the desk.",
+              "x": "There is two books on the desk.",
+              "comment": "뒤에 오는 two books가 복수이므로 is가 아니라 are를 써야 합니다."
+            },
+            "trap": "There는 '거기에'라고 해석하지 않고 단순히 문장을 시작하는 유도부사입니다.",
+            "quizLink": "There is/are 구문의 동사는 '뒤에 오는 명사'를 보고 결정합니다."
+          },
+          {
+            "name": "부정문(There is not)과 의문문(Is/Are there ~?)",
+            "formula": "부정: There is/are not (no) | 의문: Is there / Are there ~?",
+            "examples": [
+              {
+                "en": "There is not any milk left in the refrigerator.",
+                "ko": "냉장고 안에 우유가 전혀 남아 있지 않다.",
+                "point": "milk는 셀 수 없는 명사이므로 There is not(isn't)을 씁니다."
+              },
+              {
+                "en": "Are there any students in the classroom now?",
+                "ko": "지금 교실 안에 학생들이 있나요?",
+                "point": "복수명사 students의 의문문은 Are there로 시작합니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "Is there a park near your house?",
+              "x": "Are there a park near your house?",
+              "comment": "a park는 단수명사이므로 Is there로 물어야 올바릅니다."
+            },
+            "trap": "Is there a park?에 대한 대답은 'Yes, there is.' 또는 'No, there isn't.'입니다.",
+            "quizLink": "대답할 때도 it is가 아니라 'there is / there are'를 그대로 사용합니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv0_u18_d1",
+            "missionTitle": "미션 1: 복수명사 앞 There is 수일치 오류",
+            "sentence": "There is four seasons in our country: spring, summer, fall, winter.",
+            "korean": "우리나라에는 봄, 여름, 가을, 겨울의 사계절이 있다.",
+            "underlined": [
+              "There is",
+              "four seasons",
+              "in our country:",
+              "spring, summer, fall, winter"
+            ],
+            "wrongIndex": 0,
+            "correction": "There are",
+            "explanation": "뒤에 오는 명사가 four seasons로 복수이므로 There is가 아니라 There are가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: There is / There are 수일치] 출제 연계"
+          },
+          {
+            "id": "lv0_u18_d2",
+            "missionTitle": "미션 2: 단수명사 의문문 Are there 오류 수정",
+            "sentence": "Are there a convenience store near the bus station?",
+            "korean": "버스 정류장 근처에 편의점 하나가 있나요?",
+            "underlined": [
+              "Are there",
+              "a convenience store",
+              "near",
+              "the bus station"
+            ],
+            "wrongIndex": 0,
+            "correction": "Is there",
+            "explanation": "주어가 a convenience store로 단수이므로 의문문은 Are there 대신 Is there가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 2: 부정문과 의문문] 출제 연계"
+          },
+          {
+            "id": "lv0_u18_d3",
+            "missionTitle": "미션 3: 셀 수 없는 명사 수일치 오류 수정",
+            "sentence": "There are some cold water in the clean bottle.",
+            "korean": "깨끗한 병 안에 차가운 물이 조금 있다.",
+            "underlined": [
+              "There are",
+              "some cold water",
+              "in",
+              "the clean bottle"
+            ],
+            "wrongIndex": 0,
+            "correction": "There is",
+            "explanation": "water는 셀 수 없는 명사이므로 복수 are가 아니라 단수형 is를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: There is / There are 수일치] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 알맞은 말은?\n\n'There ______ three apples in the fruit basket.'",
+            "options": [
+              "is",
+              "are",
+              "be",
+              "am",
+              "was"
+            ],
+            "ans": 1,
+            "exp": "뒤에 오는 명사 three apples가 복수이므로 are가 알맞습니다.",
+            "conceptRef": "1단계 [공식 1: There is / There are 수일치]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 알맞은 말은?\n\n'There ______ a big tree in front of our house.'",
+            "options": [
+              "are",
+              "is",
+              "were",
+              "be",
+              "have"
+            ],
+            "ans": 1,
+            "exp": "a big tree는 단수명사이므로 is가 정답입니다.",
+            "conceptRef": "1단계 [공식 1: There is / There are 수일치]"
+          },
+          {
+            "q": "대화의 빈칸에 알맞은 대답은?\n\nA: 'Is there a bakery near here?'\nB: 'Yes, ______.'",
+            "options": [
+              "there are",
+              "it is",
+              "there is",
+              "they are",
+              "is there"
+            ],
+            "ans": 2,
+            "exp": "Is there ~? 질문에 대한 긍정 대답은 Yes, there is.입니다.",
+            "conceptRef": "1단계 [공식 2: 부정문과 의문문]"
+          },
+          {
+            "q": "다음 중 밑줄 친 부분의 쓰임이 어색한 문장은?",
+            "options": [
+              "There is a bird on the branch.",
+              "There are five desks in the room.",
+              "There are a piano in the hall.",
+              "There is some milk in the cup.",
+              "There are many stars in the sky."
+            ],
+            "ans": 2,
+            "exp": "a piano는 단수이므로 There are가 아니라 There is a piano가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: There is / There are 수일치]"
+          },
+          {
+            "q": "'책상 위에 펜이 하나도 없다.'를 영작할 때 빈칸에 알맞은 것은?\n\n'There ______ no pens on the desk.'",
+            "options": [
+              "is",
+              "are",
+              "be",
+              "have",
+              "not"
+            ],
+            "ans": 1,
+            "exp": "pens가 복수명사이므로 There are no pens가 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: There is / There are 수일치]"
+          }
+        ]
+      },
+      {
+        "unitNo": 19,
+        "unitId": "lv0_u19",
+        "legacyUnitNo": 219,
+        "title": "명령문과 감탄문 (Don't / Let's / What a / How)",
+        "part": "특수 문장 구조",
+        "targetGrade": "초등 기초 / 입문",
+        "summary": "동사원형으로 시작하는 긍정/부정 명령문(Don't V), 청유문(Let's V)과 감탄문(What/How) 기초",
+        "overview": "'문 열어라!', '뛰지 마라!'처럼 상대방에게 명령이나 부탁을 할 때는 주어 You를 생략하고 동사원형으로 문장을 시작해요. 또 '정말 예쁜 꽃이구나!'처럼 느낌을 생생하게 표현하는 감탄문도 함께 배워봅시다!",
+        "keyTakeaways": [
+          "긍정 명령문: 동사원형으로 시작 (Open the door. 문을 열어라)",
+          "부정 명령문: Don't + 동사원형 (~하지 마라) / 청유문: Let's + 동사원형 (함께 ~하자)",
+          "감탄문: What a(n) 형 명! (정말 ~한 명사구나!) vs How 형/부! (정말 ~하구나!)"
+        ],
+        "formulaCards": [
+          {
+            "name": "명령문과 청유문의 기본 공식",
+            "formula": "동사원형 ~! | Don't + 동사원형 ~! | Let's + 동사원형 ~!",
+            "examples": [
+              {
+                "en": "Be quiet in the school library, please.",
+                "ko": "학교 도서관에서는 부디 조용히 해 주세요.",
+                "point": "be동사 명령문은 동사원형 Be로 시작합니다."
+              },
+              {
+                "en": "Don't run in the hallway during the break.",
+                "ko": "쉬는 시간 동안 복도에서 뛰지 마라.",
+                "point": "부정 명령문은 Don't + 동사원형(run)입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "Let's play soccer after school.",
+              "x": "Let's playing soccer after school.",
+              "comment": "Let's 뒤에는 -ing가 아니라 반드시 동사원형(play)을 씁니다."
+            },
+            "trap": "명령문 끝이나 앞에 please를 붙이면 공손한 부탁의 표현이 됩니다.",
+            "quizLink": "명령문에는 주어 You가 생략되어 언제나 동사원형으로 시작합니다."
+          },
+          {
+            "name": "감탄문의 두 가지 공식 (What vs How)",
+            "formula": "What + a/an + 형용사 + 명사! | How + 형용사/부사!",
+            "examples": [
+              {
+                "en": "What a beautiful flower this red rose is!",
+                "ko": "이 붉은 장미는 정말로 아름다운 꽃이구나!",
+                "point": "명사(flower)가 있을 때는 What a 형 명 감탄문을 씁니다."
+              },
+              {
+                "en": "How fast the white rabbit runs across the yard!",
+                "ko": "그 흰 토끼가 마당을 가로질러 정말 빠르게 달리는구나!",
+                "point": "부사(fast)를 강조할 때는 How 감탄문을 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "How sweet this apple is!",
+              "x": "What sweet this apple is!",
+              "comment": "sweet는 형용사이고 뒤에 꾸밈을 받는 명사가 없으므로 How를 써야 합니다."
+            },
+            "trap": "What 감탄문 뒤의 명사가 복수일 때는 a/an을 쓰지 않습니다 (What beautiful flowers!).",
+            "quizLink": "명사가 살아있으면 What, 형용사/부사만 있으면 How가 공식입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv0_u19_d1",
+            "missionTitle": "미션 1: 명령문 동사원형 시작 원칙 오류",
+            "sentence": "Opens the window and smell the fresh morning air.",
+            "korean": "창문을 열고 신선한 아침 공기를 맡아보아라.",
+            "underlined": [
+              "Opens the window",
+              "and smell",
+              "the fresh",
+              "morning air"
+            ],
+            "wrongIndex": 0,
+            "correction": "Open the window",
+            "explanation": "명령문은 주어 없이 동사원형으로 시작해야 하므로 Opens가 아니라 Open이어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 명령문과 청유문 기본] 출제 연계"
+          },
+          {
+            "id": "lv0_u19_d2",
+            "missionTitle": "미션 2: 부정 명령문 조동사 오류 수정",
+            "sentence": "Doesn't touch the hot iron on the table.",
+            "korean": "탁자 위의 뜨거운 다리미를 만지지 마라.",
+            "underlined": [
+              "Doesn't touch",
+              "the hot iron",
+              "on",
+              "the table"
+            ],
+            "wrongIndex": 0,
+            "correction": "Don't touch",
+            "explanation": "부정 명령문은 주어와 상관없이 항상 Don't + 동사원형으로 씁니다.",
+            "conceptRef": "1단계 [공식 1: 명령문과 청유문 기본] 출제 연계"
+          },
+          {
+            "id": "lv0_u19_d3",
+            "missionTitle": "미션 3: 감탄문 What vs How 혼동 수정",
+            "sentence": "How a tall tree this green oak is!",
+            "korean": "이 초록색 떡갈나무는 정말 키 큰 나무이구나!",
+            "underlined": [
+              "How a tall tree",
+              "this green",
+              "oak",
+              "is!"
+            ],
+            "wrongIndex": 0,
+            "correction": "What a tall tree",
+            "explanation": "뒤에 a tall tree라는 명사구가 오므로 How가 아니라 What을 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 감탄문의 두 가지 공식] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 말로 가장 알맞은 것은?\n\n'______ your hands before eating dinner.'",
+            "options": [
+              "Washes",
+              "Washing",
+              "Wash",
+              "To wash",
+              "Washed"
+            ],
+            "ans": 2,
+            "exp": "명령문은 동사원형으로 시작하므로 Wash가 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 명령문과 청유문 기본]"
+          },
+          {
+            "q": "'복도에서 떠들지 마라.'를 영작할 때 빈칸에 알맞은 것은?\n\n'______ make noise in the hallway.'",
+            "options": [
+              "Not",
+              "No",
+              "Don't",
+              "Doesn't",
+              "Aren't"
+            ],
+            "ans": 2,
+            "exp": "부정 명령문은 Don't + 동사원형 구조를 씁니다.",
+            "conceptRef": "1단계 [공식 1: 명령문과 청유문 기본]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 감탄사로 가장 알맞은 것은?\n\n'______ cute this puppy is!'",
+            "options": [
+              "What",
+              "How",
+              "Why",
+              "Where",
+              "Which"
+            ],
+            "ans": 1,
+            "exp": "형용사(cute) 하나만 강조하는 감탄문은 How로 시작합니다.",
+            "conceptRef": "1단계 [공식 2: 감탄문의 두 가지 공식]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 감탄사로 가장 알맞은 것은?\n\n'______ a wonderful idea you have!'",
+            "options": [
+              "How",
+              "What",
+              "Who",
+              "Where",
+              "When"
+            ],
+            "ans": 1,
+            "exp": "a + 형용사 + 명사(idea) 어순이므로 What이 알맞습니다.",
+            "conceptRef": "1단계 [공식 2: 감탄문의 두 가지 공식]"
+          },
+          {
+            "q": "다음 중 어법상 올바른 문장은?",
+            "options": [
+              "Let's going to the zoo.",
+              "Be not late for class.",
+              "Don't be afraid of the dark.",
+              "How a nice day it is!",
+              "Speaks English quietly."
+            ],
+            "ans": 2,
+            "exp": "Don't be afraid of the dark.(어둠을 무서워하지 마라)는 Don't + be동사원형으로 올바른 문장입니다.",
+            "conceptRef": "1단계 [공식 1: 명령문과 청유문 기본]"
+          }
+        ]
+      },
+      {
+        "unitNo": 20,
+        "unitId": "lv0_u20",
+        "legacyUnitNo": 220,
+        "title": "기초 접속사 and, but, so, because (문장 연결하기)",
+        "part": "접속사와 문장 확장",
+        "targetGrade": "초등 기초 / 입문",
+        "summary": "단어와 단어, 문장과 문장을 자연스럽게 이어주는 4대 기초 접속사의 의미와 올바른 문맥 연결",
+        "overview": "두 단어나 두 문장을 다리처럼 연결해 주는 말을 '접속사'라고 해요! 그리고(and), 하지만(but), 그래서(so), 왜냐하면(because)의 의미와 차이를 익혀서 문장을 더욱 풍성하고 길게 만들어 봅시다!",
+        "keyTakeaways": [
+          "and: 그리고, ~와/과 (비슷하거나 대등한 내용 연결)",
+          "but: 하지만, 그러나 (서로 반대되거나 대조되는 내용 연결)",
+          "so: 그래서 (원인 ➔ 결과) vs because: 왜냐하면 ~때문에 (결과 ➔ 원인)"
+        ],
+        "formulaCards": [
+          {
+            "name": "대등 접속사 and와 but의 쓰임",
+            "formula": "A and B (A와 B, 그리고) | A, but B (A, 하지만 B)",
+            "examples": [
+              {
+                "en": "I like sweet apples and fresh strawberries.",
+                "ko": "나는 달콤한 사과와 신선한 딸기를 좋아한다.",
+                "point": "비슷한 사물이나 대등한 내용을 나열할 때는 and를 씁니다."
+              },
+              {
+                "en": "He studied hard, but he failed the spelling test.",
+                "ko": "그는 열심히 공부했지만, 철자 시험에서 떨어졌다.",
+                "point": "앞뒤 내용이 반대되거나 대조될 때는 but을 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "She is small, but she is very strong.",
+              "x": "She is small, and she is very strong.",
+              "comment": "체구가 작지만 힘이 세다는 것은 상반된 내용이므로 but이 훨씬 자연스럽습니다."
+            },
+            "trap": "and 앞뒤에는 같은 품사나 같은 문장 구조가 와야 자연스럽습니다.",
+            "quizLink": "순접(나열)은 and, 역접(반대)은 but이라는 기본 성격을 기억하세요."
+          },
+          {
+            "name": "인과관계 접속사 so와 because",
+            "formula": "원인, so + 결과 (그래서) | 결과 + because + 원인 (~때문에)",
+            "examples": [
+              {
+                "en": "It was raining outside, so I took my blue umbrella.",
+                "ko": "밖에 비가 내리고 있어서, 나는 파란 우산을 챙겼다.",
+                "point": "비가 옴(원인) ➔ 그래서 우산을 챙김(결과)에는 so를 씁니다."
+              },
+              {
+                "en": "I went to bed early because I was so tired.",
+                "ko": "나는 너무 피곤했기 때문에 일찍 잠자리에 들었다.",
+                "point": "일찍 잠듦(결과) ➔ 왜냐하면 피곤했음(원인)에는 because를 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "He was sick, so he didn't go to school.",
+              "x": "He was sick, because he didn't go to school.",
+              "comment": "아픈 것이 원인이고 학교에 가지 않은 것이 결과이므로 so를 써야 합니다."
+            },
+            "trap": "so와 because는 원인과 결과의 순서가 정반대이므로 문맥을 꼼꼼히 따져야 합니다.",
+            "quizLink": "원인 ➔ so ➔ 결과 / 결과 ➔ because ➔ 원인의 순서를 완벽히 기억하세요."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv0_u20_d1",
+            "missionTitle": "미션 1: 대조 문맥에서 and 오용 수정",
+            "sentence": "The math problem was very difficult, and she solved it easily.",
+            "korean": "그 수학 문제는 매우 어려웠지만, 그녀는 그것을 쉽게 풀었다.",
+            "underlined": [
+              "The math problem",
+              "was very difficult,",
+              "and she solved",
+              "it easily"
+            ],
+            "wrongIndex": 2,
+            "correction": "but she solved",
+            "explanation": "문제가 어려웠음에도 쉽게 풀었다는 반전 대조의 맥락이므로 and 대신 but을 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: and와 but의 쓰임] 출제 연계"
+          },
+          {
+            "id": "lv0_u20_d2",
+            "missionTitle": "미션 2: 원인과 결과 so vs because 혼동 수정",
+            "sentence": "He was very thirsty after running, because he drank a lot of water.",
+            "korean": "그는 달리기를 한 후에 매우 목이 말랐다, 그래서 많은 물을 마셨다.",
+            "underlined": [
+              "He was very thirsty",
+              "after running,",
+              "because",
+              "he drank a lot of water"
+            ],
+            "wrongIndex": 2,
+            "correction": "so",
+            "explanation": "목이 마른 것이 원인이고 물을 마신 것이 결과이므로 because 대신 so를 써야 올바릅니다.",
+            "conceptRef": "1단계 [공식 2: 인과관계 so와 because] 출제 연계"
+          },
+          {
+            "id": "lv0_u20_d3",
+            "missionTitle": "미션 3: 인과관계 연결 오류 수정",
+            "sentence": "I woke up late, because I missed the morning school bus.",
+            "korean": "나는 늦게 일어났다. 그래서 아침 통학버스를 놓쳤다.",
+            "underlined": [
+              "I woke up late,",
+              "because",
+              "I missed",
+              "the morning school bus"
+            ],
+            "wrongIndex": 1,
+            "correction": "so",
+            "explanation": "늦게 일어난 것이 원인이고 버스를 놓친 것이 결과이므로 because 대신 so를 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 인과관계 so와 because] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 가장 알맞은 접속사는?\n\n'I like chocolate, ______ my sister likes vanilla.'",
+            "options": [
+              "and",
+              "but",
+              "so",
+              "because",
+              "or"
+            ],
+            "ans": 1,
+            "exp": "나는 초콜릿을 좋아하지만 여동생은 바닐라를 좋아한다는 대조의 내용이므로 but이 알맞습니다.",
+            "conceptRef": "1단계 [공식 1: and와 but의 쓰임]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 가장 알맞은 접속사는?\n\n'I stayed at home all day ______ it rained heavily.'",
+            "options": [
+              "so",
+              "but",
+              "because",
+              "and",
+              "or"
+            ],
+            "ans": 2,
+            "exp": "집에 머무른 이유(비가 많이 내렸기 때문에)를 나타내므로 because가 정답입니다.",
+            "conceptRef": "1단계 [공식 2: 인과관계 so와 because]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 알맞은 접속사는?\n\n'He was very hungry, ______ he ate two hamburgers.'",
+            "options": [
+              "because",
+              "so",
+              "but",
+              "if",
+              "when"
+            ],
+            "ans": 1,
+            "exp": "배가 고팠다(원인) ➔ 그래서 햄버거 두 개를 먹었다(결과)의 흐름이므로 so가 알맞습니다.",
+            "conceptRef": "1단계 [공식 2: 인과관계 so와 because]"
+          },
+          {
+            "q": "다음 두 문장을 하나의 자연스러운 문장으로 연결할 때 알맞은 것은?\n\n'Tom is tall. He is fast.'",
+            "options": [
+              "Tom is tall but fast.",
+              "Tom is tall and fast.",
+              "Tom is tall so fast.",
+              "Tom is tall because fast.",
+              "Tom is tall or fast."
+            ],
+            "ans": 1,
+            "exp": "키가 크고 빠르다는 대등한 장점을 나열하므로 and가 알맞습니다.",
+            "conceptRef": "1단계 [공식 1: and와 but의 쓰임]"
+          },
+          {
+            "q": "다음 중 밑줄 친 접속사의 쓰임이 어색한 문장은?",
+            "options": [
+              "She studied hard, so she passed the exam.",
+              "I called him, but he didn't answer.",
+              "We didn't go outside because it was snowy.",
+              "He is rich, so he is not happy at all.",
+              "You and I are good friends."
+            ],
+            "ans": 3,
+            "exp": "부유하지만 전혀 행복하지 않다는 대조적인 내용이므로 so가 아니라 but을 써야 자연스럽습니다.",
+            "conceptRef": "1단계 [공식 1 & 2 종합]"
+          }
+        ]
       }
     ]
   },
@@ -3554,6 +5714,2166 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "unitId": "lv1_u8",
         "legacyUnitNo": 8
+      },
+      {
+        "unitNo": 9,
+        "unitId": "lv1_u9",
+        "legacyUnitNo": 9,
+        "title": "과거진행형과 진행형 불가 상태동사",
+        "part": "시제의 확장",
+        "targetGrade": "중1 내신 대비",
+        "summary": "과거의 특정 시점에 진행 중이던 동작(was/were + V-ing)과 감정·소유를 나타내어 진행형을 쓰지 않는 동사",
+        "overview": "'어제 그 시간에 나 공부하던 중이었어'처럼 과거의 한 시점에 계속되고 있던 동작을 나타낼 때는 was/were + V-ing를 써요. 반면 like나 have처럼 상태를 나타내는 동사는 진행형을 쓸 수 없다는 중1 시험 필수 함정을 마스터해 봅시다!",
+        "keyTakeaways": [
+          "과거진행형: 주어 + was / were + 동사원형-ing (과거에 ~하고 있던 중이었다)",
+          "부정문: was/were not + V-ing | 의문문: Was/Were + 주어 + V-ing?",
+          "진행형 불가 동사: 상태/소유(have, belong), 감정(like, love, hate), 인식(know, want)"
+        ],
+        "formulaCards": [
+          {
+            "name": "과거진행형 기본 공식",
+            "formula": "주어 + was/were + V-ing (그때 ~하고 있던 중이었다)",
+            "examples": [
+              {
+                "en": "I was studying English at seven o'clock yesterday evening.",
+                "ko": "나는 어제 저녁 7시에 영어를 공부하고 있던 중이었다.",
+                "point": "과거의 구체적 시점(at seven o'clock yesterday)에 진행 중인 동작은 was studying입니다."
+              },
+              {
+                "en": "They were playing basketball on the school court when it began to rain.",
+                "ko": "비가 내리기 시작했을 때 그들은 학교 코트에서 농구를 하고 있던 중이었다.",
+                "point": "과거의 다른 사건이 일어났을 때 진행 중이던 일에 were playing을 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "She was listening to music then.",
+              "x": "She is listening to music then.",
+              "comment": "과거 시점인 then(그때)이 있으므로 is가 아니라 was를 써야 합니다."
+            },
+            "trap": "have가 '먹다'나 '시간을 보내다'의 동작 의미일 때는 진행형이 가능합니다 (having lunch).",
+            "quizLink": "단순 과거는 완료된 사실, 과거진행형은 '그 순간 진행 중이었던 생생한 동작'을 강조합니다."
+          },
+          {
+            "name": "진행형으로 쓸 수 없는 상태동사",
+            "formula": "소유(have), 감정(like/love), 인지(know/want) ➔ 진행형 불가",
+            "examples": [
+              {
+                "en": "She has a cute white puppy in her house.",
+                "ko": "그녀는 집에 귀여운 흰색 강아지 한 마리를 가지고 있다(키운다).",
+                "point": "소유를 나타내는 have는 진행형(is having)으로 쓰지 않고 현재형 has를 씁니다."
+              },
+              {
+                "en": "I know the answer to this difficult math question.",
+                "ko": "나는 이 어려운 수학 질문의 답을 알고 있다.",
+                "point": "know는 인지 상태를 나타내므로 I am knowing으로 쓰지 않습니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "He likes classical music very much.",
+              "x": "He is liking classical music very much.",
+              "comment": "like는 감정 상태를 나타내므로 진행형을 쓰지 않습니다."
+            },
+            "trap": "I am having breakfast처럼 '먹다'의 뜻일 때는 진행형이 완벽히 가능합니다.",
+            "quizLink": "내신 시험에서 have/know/like 뒤에 -ing를 붙여놓은 보기는 대표적인 오답 함정입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv1_u9_d1",
+            "missionTitle": "미션 1: 상태동사 소유 have의 진행형 불가 오류",
+            "sentence": "My uncle is having three luxury cars in his garage.",
+            "korean": "우리 삼촌은 차고에 세 대의 고급 승용차를 소유하고 계신다.",
+            "underlined": [
+              "My uncle",
+              "is having",
+              "three luxury cars",
+              "in his garage"
+            ],
+            "wrongIndex": 1,
+            "correction": "has",
+            "explanation": "소유를 나타내는 have는 진행형을 쓸 수 없으므로 3인칭 단수 현재형 has로 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 진행형 불가 상태동사] 출제 연계"
+          },
+          {
+            "id": "lv1_u9_d2",
+            "missionTitle": "미션 2: 과거 특정 시점 진행형 be동사 수일치",
+            "sentence": "We was watching a movie when the power went out.",
+            "korean": "정전이 되었을 때 우리는 영화를 보고 있던 중이었다.",
+            "underlined": [
+              "We was watching",
+              "a movie",
+              "when the power",
+              "went out"
+            ],
+            "wrongIndex": 0,
+            "correction": "We were watching",
+            "explanation": "복수 주어 We에 맞는 과거 be동사는 was가 아니라 were가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 과거진행형 기본 공식] 출제 연계"
+          },
+          {
+            "id": "lv1_u9_d3",
+            "missionTitle": "미션 3: 인지동사 know의 진행형 오류 수정",
+            "sentence": "I am knowing his secret telephone number already.",
+            "korean": "나는 이미 그의 비밀 전화번호를 알고 있는 상태이다.",
+            "underlined": [
+              "I am knowing",
+              "his secret",
+              "telephone number",
+              "already"
+            ],
+            "wrongIndex": 0,
+            "correction": "I know",
+            "explanation": "know는 인지 상태를 나타내는 동사로 진행형을 쓰지 않으므로 I know로 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 진행형 불가 상태동사] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 알맞은 말은?\n\n'What ______ you doing at eight last night?'",
+            "options": [
+              "was",
+              "were",
+              "did",
+              "are",
+              "do"
+            ],
+            "ans": 1,
+            "exp": "last night과 doing이 있고 주어가 you이므로 과거진행형 were you doing이 알맞습니다.",
+            "conceptRef": "1단계 [공식 1: 과거진행형 기본 공식]"
+          },
+          {
+            "q": "다음 중 어법상 진행형으로 쓸 수 없는 문장은?",
+            "options": [
+              "She is eating an apple.",
+              "They are running in the park.",
+              "I am wanting a cup of warm tea.",
+              "He is writing a letter.",
+              "We are singing a song."
+            ],
+            "ans": 2,
+            "exp": "want는 바람/상태를 나타내는 동사이므로 진행형(am wanting)으로 쓸 수 없고 I want로 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 진행형 불가 상태동사]"
+          },
+          {
+            "q": "다음 괄호 안의 단어를 문맥에 맞게 알맞은 형태로 바꾼 것은?\n\n'When I called him, he (sleep) on the sofa.'",
+            "options": [
+              "slept",
+              "was sleeping",
+              "is sleeping",
+              "sleeps",
+              "were sleeping"
+            ],
+            "ans": 1,
+            "exp": "전화했을 때 자고 있던 중이었으므로 과거진행형 was sleeping이 알맞습니다.",
+            "conceptRef": "1단계 [공식 1: 과거진행형 기본 공식]"
+          },
+          {
+            "q": "다음 밑줄 친 부분 중 어법상 올바른 것은?",
+            "options": [
+              "She is loving cats very much.",
+              "He is having lunch with his friends.",
+              "They are knowing the teacher's name.",
+              "I am having a big bicycle.",
+              "We are liking this pizza."
+            ],
+            "ans": 1,
+            "exp": "having lunch에서 have는 '먹다'라는 구체적 동작을 뜻하므로 진행형이 완벽히 가능합니다.",
+            "conceptRef": "1단계 [공식 2: 진행형 불가 상태동사]"
+          },
+          {
+            "q": "'그는 어제 5시에 바이올린을 연습하고 있지 않았다.'를 바르게 영작한 것은?",
+            "options": [
+              "He was not practicing the violin at five yesterday.",
+              "He did not practicing the violin at five yesterday.",
+              "He is not practicing the violin at five yesterday.",
+              "He were not practicing the violin at five yesterday.",
+              "He not practicing the violin at five yesterday."
+            ],
+            "ans": 0,
+            "exp": "과거진행형의 부정문은 was/were not + V-ing이므로 He was not practicing이 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: 과거진행형 기본 공식]"
+          }
+        ]
+      },
+      {
+        "unitNo": 10,
+        "unitId": "lv1_u10",
+        "legacyUnitNo": 10,
+        "title": "미래 시제 will과 be going to",
+        "part": "시제의 확장",
+        "targetGrade": "중1 내신 대비",
+        "summary": "앞으로 일어날 미래의 일과 예정된 계획을 나타내는 will과 be going to의 형태 및 뉘앙스 차이",
+        "overview": "미래의 일을 표현하는 대표적인 두 가지 방식이 있어요. 말하는 순간 즉흥적으로 결정한 의지나 예측은 will! 사전에 미리 계획하고 준비해 둔 예정은 be going to를 씁니다. 두 표현의 형태와 부정/의문문을 완벽히 정복해 봅시다!",
+        "keyTakeaways": [
+          "will + 동사원형: 즉흥적 결심, 미래에 대한 막연한 예측 (~할 것이다)",
+          "be going to + 동사원형: 이미 계획된 일, 눈앞의 징조에 따른 확신 (~할 예정이다)",
+          "부정: will not (won't) + 동원 / be not going to + 동원"
+        ],
+        "formulaCards": [
+          {
+            "name": "조동사 will의 쓰임과 규칙",
+            "formula": "주어 + will + 동사원형 | 부정: will not (won't) + 동사원형",
+            "examples": [
+              {
+                "en": "I will help you with your heavy luggage right now.",
+                "ko": "내가 지금 당장 너의 무거운 짐을 도와줄게.",
+                "point": "말하는 순간 즉흥적으로 돕겠다고 결심할 때는 will을 씁니다."
+              },
+              {
+                "en": "It will rain tomorrow morning according to the weather report.",
+                "ko": "일기예보에 따르면 내일 아침에 비가 올 것이다.",
+                "point": "미래에 대한 일반적 예측에 will rain을 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "He will come to the party tonight.",
+              "x": "He will comes to the party tonight.",
+              "comment": "조동사 will 뒤에는 주어의 인칭과 상관없이 무조건 동사원형 come을 씁니다."
+            },
+            "trap": "will의 줄임말 부정은 willn't가 아니라 won't입니다.",
+            "quizLink": "Will you ~?는 '너 ~해 줄래?'라는 정중한 요청 표현으로도 쓰입니다."
+          },
+          {
+            "name": "be going to의 계획된 미래",
+            "formula": "주어 + am/are/is + going to + 동사원형 (~할 예정이다)",
+            "examples": [
+              {
+                "en": "We are going to visit our grandparents in Busan this weekend.",
+                "ko": "우리는 이번 주말에 부산에 계신 조부모님을 방문할 예정이다.",
+                "point": "이미 사전에 계획된 주말 일정에는 are going to visit을 씁니다."
+              },
+              {
+                "en": "Look at those dark clouds; it is going to rain soon.",
+                "ko": "저 먹구름을 봐; 곧 비가 쏟아질 것 같아.",
+                "point": "눈앞에 분명한 징조(dark clouds)가 있을 때는 be going to를 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "She is going to buy a new laptop tomorrow.",
+              "x": "She is going to buying a new laptop tomorrow.",
+              "comment": "be going to 뒤에는 -ing가 아니라 반드시 동사원형 buy를 써야 합니다."
+            },
+            "trap": "be going to a place(장소로 가다)와 be going to + 동사원형(~할 예정이다)을 구별하세요.",
+            "quizLink": "be going to의 be동사는 주어에 따라 am, are, is로 바뀝니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv1_u10_d1",
+            "missionTitle": "미션 1: 조동사 will 뒤 동사원형 원칙 오류",
+            "sentence": "My uncle will visits us from Canada next month.",
+            "korean": "우리 삼촌은 다음 달에 캐나다에서 우리를 방문하실 것이다.",
+            "underlined": [
+              "My uncle",
+              "will visits us",
+              "from Canada",
+              "next month"
+            ],
+            "wrongIndex": 1,
+            "correction": "will visit us",
+            "explanation": "조동사 will 뒤에는 3인칭 단수 주어여도 동사원형인 visit을 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 조동사 will의 쓰임] 출제 연계"
+          },
+          {
+            "id": "lv1_u10_d2",
+            "missionTitle": "미션 2: be going to 뒤 동사원형 형태 수정",
+            "sentence": "They are going to holding a birthday party this Saturday.",
+            "korean": "그들은 이번 주 토요일에 생일 파티를 열 예정이다.",
+            "underlined": [
+              "They are",
+              "going to holding",
+              "a birthday party",
+              "this Saturday"
+            ],
+            "wrongIndex": 1,
+            "correction": "going to hold",
+            "explanation": "be going to 뒤에는 -ing 형태가 아닌 동사원형 hold가 와야 합니다.",
+            "conceptRef": "1단계 [공식 2: be going to의 계획된 미래] 출제 연계"
+          },
+          {
+            "id": "lv1_u10_d3",
+            "missionTitle": "미션 3: be going to의 be동사 수일치 오류",
+            "sentence": "Tom and Minho is going to study for the science test tonight.",
+            "korean": "톰과 민호는 오늘 밤 과학 시험공부를 할 예정이다.",
+            "underlined": [
+              "Tom and Minho is",
+              "going to study",
+              "for the science test",
+              "tonight"
+            ],
+            "wrongIndex": 0,
+            "correction": "Tom and Minho are",
+            "explanation": "주어가 Tom and Minho로 복수이므로 is가 아니라 are going to가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 2: be going to의 계획된 미래] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 말로 가장 알맞은 것은?\n\n'I think it ______ sunny tomorrow.'",
+            "options": [
+              "will is",
+              "will be",
+              "is will",
+              "will being",
+              "was"
+            ],
+            "ans": 1,
+            "exp": "조동사 will 뒤에는 be동사의 원형인 be가 와야 합니다.",
+            "conceptRef": "1단계 [공식 1: 조동사 will의 쓰임]"
+          },
+          {
+            "q": "다음 중 밑줄 친 부분의 쓰임이 어색한 문장은?",
+            "options": [
+              "I will call you later.",
+              "She is going to bake cookies.",
+              "We won't go to school tomorrow.",
+              "They are going to playing tennis.",
+              "Are you going to join us?"
+            ],
+            "ans": 3,
+            "exp": "be going to 뒤에는 동사원형이 와야 하므로 playing 대신 play가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 2: be going to의 계획된 미래]"
+          },
+          {
+            "q": "'우리는 내일 아침 일찍 출발할 예정이다.'를 바르게 영작한 것은?",
+            "options": [
+              "We will to leave early tomorrow morning.",
+              "We are going to leave early tomorrow morning.",
+              "We is going to leave early tomorrow morning.",
+              "We are going to leaving early tomorrow morning.",
+              "We won't leave early tomorrow morning."
+            ],
+            "ans": 1,
+            "exp": "복수 주어 We + are going to + 동사원형 leave가 올바른 구조입니다.",
+            "conceptRef": "1단계 [공식 2: be going to의 계획된 미래]"
+          },
+          {
+            "q": "다음 대화의 빈칸에 알맞은 대답은?\n\nA: 'Will you come to my house this evening?'\nB: 'Yes, ______.'",
+            "options": [
+              "I do",
+              "I will",
+              "I am",
+              "I won't",
+              "you will"
+            ],
+            "ans": 1,
+            "exp": "Will you ~? 질문에 대한 긍정 대답은 Yes, I will.입니다.",
+            "conceptRef": "1단계 [공식 1: 조동사 will의 쓰임]"
+          },
+          {
+            "q": "다음 문장의 빈칸에 들어갈 말이 차례대로 바르게 짝지어진 것은?\n\n- 'I ______ not go to the movie.'\n- 'She ______ going to read a book.'",
+            "options": [
+              "will - is",
+              "is - will",
+              "will - are",
+              "are - is",
+              "do - does"
+            ],
+            "ans": 0,
+            "exp": "첫 번째는 will not go, 두 번째는 She is going to read가 알맞습니다.",
+            "conceptRef": "1단계 [공식 1 & 2 종합]"
+          }
+        ]
+      },
+      {
+        "unitNo": 11,
+        "unitId": "lv1_u11",
+        "legacyUnitNo": 11,
+        "title": "2형식 감각동사 + 형용사 보어",
+        "part": "문장의 형식",
+        "targetGrade": "중1 내신 대비",
+        "summary": "오감을 나타내는 감각동사(look, sound, smell, taste, feel) 뒤에 부사가 아닌 형용사가 보어로 오는 핵심 내신 포인트",
+        "overview": "'행복하게 보인다'라고 해석되지만 영어로는 happily가 아니라 happy를 써야 해요! 오감(시각·청각·후각·미각·촉각)을 나타내는 감각동사 뒤에는 주어의 상태를 설명하는 '형용사 보어'가 온다는 중1 내신 1순위 출제 공식을 마스터해 봅시다!",
+        "keyTakeaways": [
+          "감각동사 5총사: look(~하게 보이다), sound(~하게 들리다), smell(~한 냄새가 나다), taste(~한 맛이 나다), feel(~하게 느껴지다)",
+          "★감각동사 + 형용사 (우리말 해석은 '~하게'이지만 부사(-ly)는 절대 금지!)",
+          "감각동사 + like + 명사 (~처럼 보이다/들리다/느껴지다)"
+        ],
+        "formulaCards": [
+          {
+            "name": "감각동사 + 형용사 보어 공식",
+            "formula": "주어 + look / sound / smell / taste / feel + 형용사",
+            "examples": [
+              {
+                "en": "You look very happy today in your new school uniform.",
+                "ko": "너는 오늘 새 교복을 입고 매우 행복해 보인다.",
+                "point": "우리말로는 '행복하게'로 해석되지만 보어 자리이므로 형용사 happy를 씁니다."
+              },
+              {
+                "en": "This fresh strawberry cake tastes really sweet.",
+                "ko": "이 신선한 딸기 케이크는 정말 달콤한 맛이 난다.",
+                "point": "taste 뒤에는 형용사 sweet가 보어로 옵니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "The music sounds beautiful.",
+              "x": "The music sounds beautifully.",
+              "comment": "sound는 2형식 감각동사이므로 부사 beautifully가 아니라 형용사 beautiful을 써야 합니다."
+            },
+            "trap": "우리말 해석에 낚여서 sweetly, beautifully, happily 같은 부사를 고르지 마세요!",
+            "quizLink": "중1 지필고사에서 가장 오답률이 높은 전형적인 '형용사 vs 부사' 함정입니다."
+          },
+          {
+            "name": "감각동사 + like + 명사 공식",
+            "formula": "주어 + 감각동사 + like + 명사 (~처럼 보이다/들리다)",
+            "examples": [
+              {
+                "en": "That strange cloud in the sky looks like an elephant.",
+                "ko": "하늘에 있는 저 이상한 구름은 코끼리처럼 보인다.",
+                "point": "뒤에 명사(an elephant)가 올 때는 전치사 like를 반드시 함께 써야 합니다."
+              },
+              {
+                "en": "Your wonderful plan sounds like a great idea.",
+                "ko": "너의 멋진 계획은 훌륭한 아이디어처럼 들린다.",
+                "point": "명사구 a great idea 앞에는 sounds like를 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "It smells like fresh bread.",
+              "x": "It smells fresh bread.",
+              "comment": "bread는 명사이므로 like 없이 쓰면 틀리고 smells like bread로 써야 합니다."
+            },
+            "trap": "형용사가 올 때는 like 없이 바로 쓰고, 명사가 올 때만 like를 붙입니다.",
+            "quizLink": "looks happy (형용사) vs looks like an angel (명사)을 명확히 대조하세요."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv1_u11_d1",
+            "missionTitle": "미션 1: 감각동사 뒤 부사 오용 오류 수정",
+            "sentence": "The warm soup smells deliciously in the kitchen.",
+            "korean": "따뜻한 수프가 주방에서 맛있는 냄새를 풍기고 있다.",
+            "underlined": [
+              "The warm soup",
+              "smells deliciously",
+              "in",
+              "the kitchen"
+            ],
+            "wrongIndex": 1,
+            "correction": "smells delicious",
+            "explanation": "smell은 2형식 감각동사이므로 부사 deliciously가 아니라 형용사 delicious가 보어로 와야 합니다.",
+            "conceptRef": "1단계 [공식 1: 감각동사 + 형용사 보어] 출제 연계"
+          },
+          {
+            "id": "lv1_u11_d2",
+            "missionTitle": "미션 2: 감각동사 뒤 명사 수식 전치사 like 누락",
+            "sentence": "That barking dog over there looks a wolf in the dark.",
+            "korean": "저쪽에서 짖고 있는 저 개는 늑대처럼 보인다.",
+            "underlined": [
+              "That barking dog",
+              "over there",
+              "looks a wolf",
+              "in the dark"
+            ],
+            "wrongIndex": 2,
+            "correction": "looks like a wolf",
+            "explanation": "뒤에 명사 a wolf가 왔으므로 look 단독이 아니라 looks like a wolf로 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 감각동사 + like + 명사] 출제 연계"
+          },
+          {
+            "id": "lv1_u11_d3",
+            "missionTitle": "미션 3: 청각 감각동사 뒤 부사 오용 수정",
+            "sentence": "Her piano playing sounds beautifully to everyone in the hall.",
+            "korean": "그녀의 피아노 연주는 홀 안의 모든 사람에게 아름답게 들린다.",
+            "underlined": [
+              "Her piano playing",
+              "sounds beautifully",
+              "to everyone",
+              "in the hall"
+            ],
+            "wrongIndex": 1,
+            "correction": "sounds beautiful",
+            "explanation": "감각동사 sound 뒤에는 부사가 아닌 형용사 보어 beautiful이 와야 합니다.",
+            "conceptRef": "1단계 [공식 1: 감각동사 + 형용사 보어] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 말로 가장 알맞은 것은?\n\n'The lemon tastes very ______.'",
+            "options": [
+              "sourly",
+              "sour",
+              "sourness",
+              "soured",
+              "souring"
+            ],
+            "ans": 1,
+            "exp": "taste는 감각동사이므로 형용사 보어 sour가 알맞습니다.",
+            "conceptRef": "1단계 [공식 1: 감각동사 + 형용사 보어]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 말로 가장 알맞은 것은?\n\n'This blanket feels very ______.'",
+            "options": [
+              "softly",
+              "soft",
+              "softness",
+              "soften",
+              "softerly"
+            ],
+            "ans": 1,
+            "exp": "feel 뒤에는 형용사 보어가 와야 하므로 soft가 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 감각동사 + 형용사 보어]"
+          },
+          {
+            "q": "다음 중 어법상 어색한 문장은?",
+            "options": [
+              "You look tired today.",
+              "This song sounds nicely.",
+              "The cookies smell sweet.",
+              "It looks like snow.",
+              "I feel comfortable in this room."
+            ],
+            "ans": 1,
+            "exp": "sound 뒤에는 부사 nicely가 아니라 형용사 nice를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 감각동사 + 형용사 보어]"
+          },
+          {
+            "q": "'그의 제안은 좋은 생각처럼 들린다.'를 바르게 영작한 것은?",
+            "options": [
+              "His suggestion sounds good idea.",
+              "His suggestion sounds like a good idea.",
+              "His suggestion sounds well a good idea.",
+              "His suggestion sounds nicely like a good idea.",
+              "His suggestion sounds like well idea."
+            ],
+            "ans": 1,
+            "exp": "뒤에 명사구 a good idea가 오므로 sounds like a good idea가 올바릅니다.",
+            "conceptRef": "1단계 [공식 2: 감각동사 + like + 명사]"
+          },
+          {
+            "q": "다음 괄호 안에서 알맞은 말이 바르게 짝지어진 것은?\n\n- 'She looks (sad / sadly) today.'\n- 'That cloud looks (like a dog / a dog).'",
+            "options": [
+              "sad - like a dog",
+              "sadly - like a dog",
+              "sad - a dog",
+              "sadly - a dog",
+              "sad - as a dog"
+            ],
+            "ans": 0,
+            "exp": "첫 번째는 형용사 sad, 두 번째는 명사 앞 like a dog가 올바릅니다.",
+            "conceptRef": "1단계 [공식 1 & 2 종합]"
+          }
+        ]
+      },
+      {
+        "unitNo": 12,
+        "unitId": "lv1_u12",
+        "legacyUnitNo": 12,
+        "title": "4형식 수여동사와 3형식 전환 (to / for / of)",
+        "part": "문장의 형식",
+        "targetGrade": "중1 내신 대비",
+        "summary": "간접목적어(~에게)와 직접목적어(~을)를 갖는 4형식 문장을 전치사 to, for, of를 사용하여 3형식으로 전환하는 핵심 내신 공식",
+        "overview": "'~에게 ~을 주다'라는 뜻의 수여동사는 목적어를 두 개(간접목적어+직접목적어) 가져요! 이를 3형식(주어+동사+목적어)으로 바꿀 때 동사의 종류에 따라 전치사 to, for, of 중 알맞은 짝꿍을 고르는 중1 내신 단골 킬러를 정복해 봅시다!",
+        "keyTakeaways": [
+          "4형식 어순: 주어 + 동사 + 간접목적어(~에게) + 직접목적어(~을)",
+          "3형식 전환: 주어 + 동사 + 직접목적어(~을) + [전치사] + 간접목적어(~에게)",
+          "동사별 전치사: to(give, send, show, teach) / for(make, buy, cook, get) / of(ask)"
+        ],
+        "formulaCards": [
+          {
+            "name": "4형식 ➔ 3형식 전치사 분류 공식",
+            "formula": "to (방향 전달) vs for (정성/노력 수고) vs of (ask)",
+            "examples": [
+              {
+                "en": "My grandmother gave me a beautiful birthday present.",
+                "ko": "우리 할머니는 나에게 아름다운 생일 선물을 주셨다.",
+                "point": "4형식(gave + me + a present) 문장입니다."
+              },
+              {
+                "en": "My grandmother gave a beautiful birthday present to me.",
+                "ko": "우리 할머니는 나에게 아름다운 생일 선물을 주셨다.",
+                "point": "give는 3형식 전환 시 전치사 to를 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "Mom made a delicious cake for us.",
+              "x": "Mom made a delicious cake to us.",
+              "comment": "make, buy, cook처럼 정성과 수고가 들어가는 동사는 to가 아니라 for를 씁니다."
+            },
+            "trap": "make, buy, cook, get, build는 무조건 for를 쓰는 '정성 동사'로 암기하세요!",
+            "quizLink": "ask는 3형식 전환 시 오직 전치사 of만 취합니다 (ask a favor of you)."
+          },
+          {
+            "name": "전치사 for를 쓰는 주요 수여동사 (MBC 골프)",
+            "formula": "M(make) B(buy) C(cook) G(get) F(find) ➔ for",
+            "examples": [
+              {
+                "en": "He bought a pretty ribbon for his younger sister.",
+                "ko": "그는 여동생을 위해 예쁜 리본을 사 주었다.",
+                "point": "buy는 3형식 전환 시 전치사 for를 씁니다."
+              },
+              {
+                "en": "Can I ask a big favor of you today?",
+                "ko": "제가 오늘 당신에게 큰 부탁 하나를 해도 될까요?",
+                "point": "ask는 전치사 of를 취합니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "Dad cooked tasty pasta for the whole family.",
+              "x": "Dad cooked tasty pasta to the whole family.",
+              "comment": "cook은 요리하는 정성이 들어가므로 전치사 for를 씁니다."
+            },
+            "trap": "간접목적어와 직접목적어의 순서를 바꾸지 않고 전치사만 불필요하게 끼워 넣으면 오답입니다.",
+            "quizLink": "4형식에서 3형식으로 전환할 때 전치사 선택 문제는 내신 100% 출제 문항입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv1_u12_d1",
+            "missionTitle": "미션 1: 수여동사 make의 3형식 전치사 오류",
+            "sentence": "She made a warm sweater to her little brother last winter.",
+            "korean": "그녀는 지난겨울 남동생에게 따뜻한 스웨터를 만들어 주었다.",
+            "underlined": [
+              "She made",
+              "a warm sweater",
+              "to her little brother",
+              "last winter"
+            ],
+            "wrongIndex": 2,
+            "correction": "for her little brother",
+            "explanation": "make는 정성을 들여 만들어 주는 동사이므로 3형식 전환 시 to가 아니라 for를 씁니다.",
+            "conceptRef": "1단계 [공식 1 & 2: 전치사 분류] 출제 연계"
+          },
+          {
+            "id": "lv1_u12_d2",
+            "missionTitle": "미션 2: 수여동사 ask의 3형식 전치사 오류",
+            "sentence": "May I ask a personal question to the new teacher in the office?",
+            "korean": "새로 오신 선생님께 개인적인 질문 하나를 드려도 될까요?",
+            "underlined": [
+              "May I ask",
+              "a personal question",
+              "to the new teacher",
+              "in the office?"
+            ],
+            "wrongIndex": 2,
+            "correction": "of the new teacher?",
+            "explanation": "ask는 3형식 전환 시 전치사 to 대신 of를 취합니다.",
+            "conceptRef": "1단계 [공식 1: 전치사 분류] 출제 연계"
+          },
+          {
+            "id": "lv1_u12_d3",
+            "missionTitle": "미션 3: 4형식 어순 혼동 오류 수정",
+            "sentence": "The teacher gave to us the difficult math homework.",
+            "korean": "선생님께서는 우리에게 어려운 수학 숙제를 주셨다.",
+            "underlined": [
+              "The teacher",
+              "gave to us",
+              "the difficult",
+              "math homework"
+            ],
+            "wrongIndex": 1,
+            "correction": "gave us",
+            "explanation": "4형식 어순(동사 + 간목 + 직목)에서는 간접목적어 앞에 전치사를 쓰지 않으므로 gave us가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 4형식 기본 어순] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 문장을 3형식으로 바르게 전환한 것은?\n\n'My father bought me a new bike.'",
+            "options": [
+              "My father bought a new bike to me.",
+              "My father bought a new bike for me.",
+              "My father bought a new bike of me.",
+              "My father bought for me a new bike.",
+              "My father bought to me a new bike."
+            ],
+            "ans": 1,
+            "exp": "buy는 3형식 전환 시 전치사 for를 씁니다.",
+            "conceptRef": "1단계 [공식 2: 전치사 for를 쓰는 수여동사]"
+          },
+          {
+            "q": "다음 중 3형식 전환 시 전치사 'to'를 쓰는 동사가 아닌 것은?",
+            "options": [
+              "give",
+              "send",
+              "show",
+              "cook",
+              "tell"
+            ],
+            "ans": 3,
+            "exp": "cook은 정성을 나타내는 동사로 전치사 for를 씁니다.",
+            "conceptRef": "1단계 [공식 1 & 2: 전치사 분류]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 전치사가 바르게 짝지어진 것은?\n\n- 'She sent a postcard ______ her friend.'\n- 'He asked a favor ______ me.'",
+            "options": [
+              "to - for",
+              "for - of",
+              "to - of",
+              "of - to",
+              "for - to"
+            ],
+            "ans": 2,
+            "exp": "send는 to, ask는 of를 취합니다.",
+            "conceptRef": "1단계 [공식 1: 전치사 분류]"
+          },
+          {
+            "q": "다음 중 어법상 어색한 문장은?",
+            "options": [
+              "He gave me some water.",
+              "She made a cake for her mom.",
+              "I bought a comic book to my brother.",
+              "Can you show your picture to me?",
+              "They asked a question of the guide."
+            ],
+            "ans": 2,
+            "exp": "buy는 to가 아니라 for를 써야 하므로 for my brother가 올바릅니다.",
+            "conceptRef": "1단계 [공식 2: 전치사 for를 쓰는 수여동사]"
+          },
+          {
+            "q": "'선생님은 우리에게 영어를 가르쳐 주신다.'를 3형식으로 영작할 때 알맞은 것은?",
+            "options": [
+              "The teacher teaches English for us.",
+              "The teacher teaches English to us.",
+              "The teacher teaches English of us.",
+              "The teacher teaches to us English.",
+              "The teacher teaches for us English."
+            ],
+            "ans": 1,
+            "exp": "teach는 전달을 나타내는 동사이므로 3형식 전환 시 전치사 to를 씁니다.",
+            "conceptRef": "1단계 [공식 1: 전치사 분류]"
+          }
+        ]
+      },
+      {
+        "unitNo": 13,
+        "unitId": "lv1_u13",
+        "legacyUnitNo": 13,
+        "title": "조동사 must, have to, should (의무, 필요, 조언)",
+        "part": "조동사의 확장",
+        "targetGrade": "중1 내신 대비",
+        "summary": "강한 의무를 나타내는 must와 have to, 부드러운 충고의 should 및 금지(must not)와 불필요(don't have to)의 핵심 차이",
+        "overview": "'너 숙제 꼭 해야 해!', '너 병원에 가보는 게 좋겠어'처럼 의무나 충고를 할 때 쓰는 조동사들이에요. 특히 '~해서는 안 된다(금지)'인 must not과 '~할 필요가 없다(불필요)'인 don't have to의 의미 차이는 내신 시험 100% 출제 포인트입니다!",
+        "keyTakeaways": [
+          "must / have to: ~해야 한다 (강한 의무/필요) | 3인칭 단수: has to",
+          "★부정의 차이: must not (~해서는 안 된다: 금지) vs don't have to (~할 필요가 없다: 불필요)",
+          "should: ~하는 것이 좋다 (도덕적 의무 / 부드러운 조언)"
+        ],
+        "formulaCards": [
+          {
+            "name": "must와 have to의 긍정 및 과거형",
+            "formula": "must = have to + 동원 (~해야 한다) | 과거형: had to (~해야 했다)",
+            "examples": [
+              {
+                "en": "You must wear a safety helmet when riding a bicycle.",
+                "ko": "너는 자전거를 탈 때 안전 헬멧을 착용해야 한다.",
+                "point": "법적·강제적 의무에는 must + 동사원형을 씁니다."
+              },
+              {
+                "en": "She had to finish the report yesterday before five.",
+                "ko": "그녀는 어제 5시 전에 보고서를 끝내야만 했다.",
+                "point": "must는 과거형이 없으므로 과거의 의무는 had to를 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "He has to wake up early on weekdays.",
+              "x": "He have to wake up early on weekdays.",
+              "comment": "주어가 3인칭 단수 He이므로 have to가 아니라 has to를 써야 합니다."
+            },
+            "trap": "must의 과거형으로 musted를 쓰면 절대 안 됩니다! 반드시 had to를 써야 합니다.",
+            "quizLink": "have to의 의문문은 Do you have to ~? / Does he have to ~?로 만듭니다."
+          },
+          {
+            "name": "금지(must not) vs 불필요(don't have to)",
+            "formula": "must not (~해서는 안 된다) ≠ don't / doesn't have to (~할 필요가 없다)",
+            "examples": [
+              {
+                "en": "You must not touch this dangerous electric wire.",
+                "ko": "너는 이 위험한 전선을 만져서는 절대 안 된다.",
+                "point": "절대 해서는 안 되는 강력한 금지에는 must not을 씁니다."
+              },
+              {
+                "en": "Tomorrow is Sunday, so you don't have to wake up early.",
+                "ko": "내일은 일요일이므로 너는 일찍 일어날 필요가 없다.",
+                "point": "~할 필요가 없다는 불필요에는 don't have to (= don't need to)를 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "You don't have to bring lunch; food is free.",
+              "x": "You must not bring lunch; food is free.",
+              "comment": "음식이 무료이므로 도시락을 싸 올 필요가 없다는 의미에는 don't have to를 써야 자연스럽습니다."
+            },
+            "trap": "must와 have to는 긍정일 땐 의미가 같지만, 부정일 땐 완전히 다른 뜻이 됩니다!",
+            "quizLink": "don't have to = don't need to = need not은 중등 내신 단골 전환 공식입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv1_u13_d1",
+            "missionTitle": "미션 1: 3인칭 단수 have to 일치 오류",
+            "sentence": "My older sister have to clean her bedroom every weekend.",
+            "korean": "내 누나는 주말마다 자신의 침실을 청소해야 한다.",
+            "underlined": [
+              "My older sister",
+              "have to clean",
+              "her bedroom",
+              "every weekend"
+            ],
+            "wrongIndex": 1,
+            "correction": "has to clean",
+            "explanation": "주어가 My older sister(3인칭 단수)이므로 have to가 아니라 has to가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: must와 have to] 출제 연계"
+          },
+          {
+            "id": "lv1_u13_d2",
+            "missionTitle": "미션 2: 금지 문맥에서 don't have to 오용 수정",
+            "sentence": "You don't have to run inside the hospital because patients are resting.",
+            "korean": "환자들이 쉬고 있으므로 너는 병원 안에서 뛰어서는 안 된다.",
+            "underlined": [
+              "You don't have to run",
+              "inside the hospital",
+              "because",
+              "patients are resting"
+            ],
+            "wrongIndex": 0,
+            "correction": "You must not run",
+            "explanation": "병원에서 뛰지 말라는 강력한 금지이므로 don't have to(할 필요 없다) 대신 must not(해서는 안 된다)을 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 금지 vs 불필요] 출제 연계"
+          },
+          {
+            "id": "lv1_u13_d3",
+            "missionTitle": "미션 3: must 과거형 오류 수정",
+            "sentence": "I musted stay at home all day yesterday because of the heavy rain.",
+            "korean": "폭우 때문에 나는 어제 하루 종일 집에 머물러야만 했다.",
+            "underlined": [
+              "I musted stay",
+              "at home",
+              "all day yesterday",
+              "because of the heavy rain"
+            ],
+            "wrongIndex": 0,
+            "correction": "I had to stay",
+            "explanation": "must는 과거형이 없으므로 과거의 의무를 나타낼 때는 had to로 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: must와 have to] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 문장의 빈칸에 들어갈 말로 가장 알맞은 것은?\n\n'You ______ quiet in the examination room.'",
+            "options": [
+              "must be",
+              "must to be",
+              "have to being",
+              "should being",
+              "must not"
+            ],
+            "ans": 0,
+            "exp": "조동사 must 뒤에는 동사원형 be가 와야 하므로 must be가 정답입니다.",
+            "conceptRef": "1단계 [공식 1: must와 have to]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 말이 나머지 넷과 뜻이 다른 하나는?\n\n'Today is a holiday, so you ______ go to school.'",
+            "options": [
+              "don't have to",
+              "don't need to",
+              "need not",
+              "must not",
+              "do not have to"
+            ],
+            "ans": 3,
+            "exp": "must not은 '해서는 안 된다(금지)'이고, 나머지는 모두 '~할 필요가 없다(불필요)'입니다.",
+            "conceptRef": "1단계 [공식 2: 금지 vs 불필요]"
+          },
+          {
+            "q": "다음 밑줄 친 부분의 쓰임이 어법상 어색한 문장은?",
+            "options": [
+              "She has to study hard for the math test.",
+              "You should see a doctor soon.",
+              "We had to walk home yesterday.",
+              "He musts be careful on the slippery ice.",
+              "You don't have to worry about me."
+            ],
+            "ans": 3,
+            "exp": "조동사 must에는 주어가 3인칭 단수여도 -s를 붙이지 않습니다 (must be).",
+            "conceptRef": "1단계 [공식 1: must와 have to]"
+          },
+          {
+            "q": "'너는 도서관에서 큰 소리로 말해서는 안 된다.'를 바르게 영작한 것은?",
+            "options": [
+              "You don't have to speak loudly in the library.",
+              "You must not speak loudly in the library.",
+              "You should speaking loudly in the library.",
+              "You must not to speak loudly in the library.",
+              "You have not to speak loudly in the library."
+            ],
+            "ans": 1,
+            "exp": "강한 금지를 나타낼 때는 must not + 동사원형 speak가 올바릅니다.",
+            "conceptRef": "1단계 [공식 2: 금지 vs 불필요]"
+          },
+          {
+            "q": "다음 괄호 안에서 알맞은 말이 바르게 짝지어진 것은?\n\n- 'Tom (have to / has to) wash his hands.'\n- 'Yesterday, we (must / had to) run fast.'",
+            "options": [
+              "have to - must",
+              "has to - had to",
+              "has to - must",
+              "have to - had to",
+              "has to - musted"
+            ],
+            "ans": 1,
+            "exp": "Tom은 3인칭 단수이므로 has to, 어제(과거)의 의무는 had to가 정답입니다.",
+            "conceptRef": "1단계 [공식 1: must와 have to]"
+          }
+        ]
+      },
+      {
+        "unitNo": 14,
+        "unitId": "lv1_u14",
+        "legacyUnitNo": 14,
+        "title": "형용사와 부사의 원급 비교 (as ~ as)",
+        "part": "비교 구문",
+        "targetGrade": "중1 내신 대비",
+        "summary": "둘의 정도가 서로 같음을 나타내는 as + 원급 + as 구문과 부정형 not as/so + 원급 + as의 쓰임",
+        "overview": "'민호는 지수만큼 키가 커', '비행기는 기차만큼 빠르지 않아'처럼 두 대상을 동등하게 비교할 때는 'as ~ as'를 써요! as와 as 사이에는 반드시 원래 형태인 '원급'만 들어간다는 비교 구문의 황금률을 배워봅시다!",
+        "keyTakeaways": [
+          "긍정: as + 형용사/부사의 원급 + as (~만큼 …한/하게)",
+          "부정: not as / not so + 원급 + as (~만큼 …하지 않은)",
+          "★as ~ as 사이에는 비교급(-er/more)이나 최상급이 절대 들어갈 수 없음!"
+        ],
+        "formulaCards": [
+          {
+            "name": "원급 비교 as ~ as 기본 공식",
+            "formula": "A + 동사 + as + 원급 + as + B (A는 B만큼 …하다)",
+            "examples": [
+              {
+                "en": "My sister is as tall as my mother now.",
+                "ko": "내 여동생은 이제 우리 엄마만큼 키가 크다.",
+                "point": "as와 as 사이에 형용사의 원급 tall을 썼습니다."
+              },
+              {
+                "en": "He can run as fast as a professional athlete.",
+                "ko": "그는 프로 운동선수만큼이나 빠르게 달릴 수 있다.",
+                "point": "run을 꾸미는 부사의 원급 fast를 as 사이에 썼습니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "This book is as interesting as that movie.",
+              "x": "This book is as more interesting as that movie.",
+              "comment": "as ~ as 사이에는 비교급 more interesting이 아니라 원급 interesting이 들어가야 합니다."
+            },
+            "trap": "as ~ as 사이에 taller, faster 같은 비교급을 넣어놓은 오답 함정을 조심하세요.",
+            "quizLink": "형용사가 들어갈지 부사가 들어갈지는 문장의 본동사(be동사 vs 일반동사)가 결정합니다."
+          },
+          {
+            "name": "원급 비교의 부정 (not as/so ~ as)",
+            "formula": "A + 동사 + not as / so + 원급 + as + B (A는 B만큼 …하지 않다)",
+            "examples": [
+              {
+                "en": "English is not as difficult as advanced calculus.",
+                "ko": "영어는 고급 미적분만큼 어렵지는 않다.",
+                "point": "부정문에서는 not as difficult as 구조를 씁니다."
+              },
+              {
+                "en": "Today is not so cold as yesterday was.",
+                "ko": "오늘은 어제만큼 춥지는 않다.",
+                "point": "부정문에서는 앞의 as 대신 so를 쓸 수도 있습니다 (not so cold as)."
+              }
+            ],
+            "oxCompare": {
+              "o": "Tom is not as old as Sam.",
+              "x": "Tom is not so older as Sam.",
+              "comment": "부정형에서도 반드시 원급 old를 써야 합니다."
+            },
+            "trap": "A is not as tall as B는 결국 'B가 A보다 더 크다(B is taller than A)'는 뜻입니다.",
+            "quizLink": "as ~ as possible = as ~ as 주어 can은 '가능한 한 ~하게'라는 관용표현입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv1_u14_d1",
+            "missionTitle": "미션 1: 원급 비교 사이 비교급 오용 수정",
+            "sentence": "This puzzle is as easier as the one we solved yesterday.",
+            "korean": "이 퍼즐은 우리가 어제 풀었던 것만큼 쉽다.",
+            "underlined": [
+              "This puzzle",
+              "is as easier as",
+              "the one",
+              "we solved yesterday"
+            ],
+            "wrongIndex": 1,
+            "correction": "is as easy as",
+            "explanation": "as ~ as 사이에는 비교급 easier가 아니라 원급 easy가 와야 합니다.",
+            "conceptRef": "1단계 [공식 1: 원급 비교 기본 공식] 출제 연계"
+          },
+          {
+            "id": "lv1_u14_d2",
+            "missionTitle": "미션 2: 부정 원급 비교 형태 오류 수정",
+            "sentence": "The silver watch is not as more expensive as the gold one in the store.",
+            "korean": "그 은시계는 금시계만큼 비싸지는 않다.",
+            "underlined": [
+              "The silver watch",
+              "is not as more expensive as",
+              "the gold",
+              "one in the store"
+            ],
+            "wrongIndex": 1,
+            "correction": "is not as expensive as",
+            "explanation": "not as ~ as 구문에서도 비교급 more expensive가 아닌 원급 expensive를 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 원급 비교의 부정] 출제 연계"
+          },
+          {
+            "id": "lv1_u14_d3",
+            "missionTitle": "미션 3: 형용사 vs 부사 원급 품사 판별 오류",
+            "sentence": "She plays the violin as beautiful as a famous musician.",
+            "korean": "그녀는 유명한 음악가만큼이나 아름답게 바이올린을 연주한다.",
+            "underlined": [
+              "She plays",
+              "the violin",
+              "as beautiful as",
+              "a famous musician"
+            ],
+            "wrongIndex": 2,
+            "correction": "as beautifully as",
+            "explanation": "동사 plays를 수식하는 자리이므로 형용사 beautiful이 아니라 부사의 원급 beautifully가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 원급 비교 기본 공식] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 말로 가장 알맞은 것은?\n\n'My dog is as ______ as your cat.'",
+            "options": [
+              "cuter",
+              "cutest",
+              "cute",
+              "more cute",
+              "cutely"
+            ],
+            "ans": 2,
+            "exp": "as와 as 사이에는 형용사의 원래 형태인 원급 cute가 와야 합니다.",
+            "conceptRef": "1단계 [공식 1: 원급 비교 기본 공식]"
+          },
+          {
+            "q": "다음 중 밑줄 친 부분의 쓰임이 어법상 어색한 문장은?",
+            "options": [
+              "He is as tall as his father.",
+              "She speaks English as well as a native speaker.",
+              "This room is as bigger as that room.",
+              "Today is not as cold as yesterday.",
+              "I will run as fast as possible."
+            ],
+            "ans": 2,
+            "exp": "as ~ as 사이에는 비교급 bigger가 올 수 없으므로 big으로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 1: 원급 비교 기본 공식]"
+          },
+          {
+            "q": "'이 상자는 저 상자만큼 무겁지 않다.'를 바르게 영작한 것은?",
+            "options": [
+              "This box is not as heavy as that one.",
+              "This box is not so heavier as that one.",
+              "This box is as not heavy as that one.",
+              "This box is not as more heavy as that one.",
+              "This box is as heavier as that one."
+            ],
+            "ans": 0,
+            "exp": "부정의 원급 비교는 not as + 원급(heavy) + as 구조입니다.",
+            "conceptRef": "1단계 [공식 2: 원급 비교의 부정]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 말로 알맞은 것은?\n\n'Please come home as early as ______.'",
+            "options": [
+              "possible",
+              "more",
+              "can you",
+              "possibility",
+              "most"
+            ],
+            "ans": 0,
+            "exp": "'가능한 한 일찍'은 as early as possible 관용 표현을 씁니다.",
+            "conceptRef": "1단계 [공식 2: 원급 비교의 부정]"
+          },
+          {
+            "q": "'Jane is not as tall as Mary.'와 의미가 같은 문장은?",
+            "options": [
+              "Jane is taller than Mary.",
+              "Mary is taller than Jane.",
+              "Jane is as tall as Mary.",
+              "Mary is shorter than Jane.",
+              "Jane and Mary are the same height."
+            ],
+            "ans": 1,
+            "exp": "Jane이 Mary만큼 크지 않다는 것은 Mary가 Jane보다 더 크다(Mary is taller than Jane)는 뜻입니다.",
+            "conceptRef": "1단계 [공식 2: 원급 비교의 부정]"
+          }
+        ]
+      },
+      {
+        "unitNo": 15,
+        "unitId": "lv1_u15",
+        "legacyUnitNo": 15,
+        "title": "비교급과 최상급 규칙/불규칙 변화",
+        "part": "비교 구문",
+        "targetGrade": "중1 내신 대비",
+        "summary": "둘 중 더 우월함을 나타내는 비교급(-er/more ~ than)과 셋 이상 중 최고를 나타내는 최상급(the -est/most)의 형태와 불규칙 변화",
+        "overview": "'형보다 키가 더 커', '우리 반에서 가장 빨라'처럼 대상을 비교할 때 쓰는 비교급과 최상급이에요! -er/-est를 붙이는 규칙과 more/most를 붙이는 긴 단어, 그리고 good-better-best 같은 특별한 불규칙 변화를 완벽히 마스터해 봅시다!",
+        "keyTakeaways": [
+          "비교급: 형용사/부사-er + than (~보다 더 …한) | 3음절 이상: more + 원급 + than",
+          "최상급: the + 형용사/부사-est (가장 …한) | 3음절 이상: the most + 원급",
+          "불규칙 변화: good/well ➔ better ➔ best | bad/ill ➔ worse ➔ worst | many/much ➔ more ➔ most"
+        ],
+        "formulaCards": [
+          {
+            "name": "비교급과 최상급 기본 공식",
+            "formula": "비교급 + than (~보다 더 …한) | the + 최상급 + in/of (가장 …한)",
+            "examples": [
+              {
+                "en": "Mount Everest is higher than any other mountain in the world.",
+                "ko": "에베레스트산은 세계의 어떤 다른 산보다도 더 높다.",
+                "point": "비교급 higher 뒤에는 기준을 나타내는 than이 옵니다."
+              },
+              {
+                "en": "She is the smartest student in our elementary school class.",
+                "ko": "그녀는 우리 초등학교 학급에서 가장 똑똑한 학생이다.",
+                "point": "최상급 smartest 앞에는 정관사 the가 반드시 붙습니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "He is more careful than his brother.",
+              "x": "He is carefuller than his brother.",
+              "comment": "careful처럼 2음절 이상의 긴 단어는 more careful로 씁니다."
+            },
+            "trap": "최상급 뒤의 범위가 장소/단수명사이면 in, 구성원/복수명사이면 of를 씁니다.",
+            "quizLink": "than 뒤에는 비교 대상이 오며, the + 최상급은 유일무이한 최고를 나타냅니다."
+          },
+          {
+            "name": "시험 단골 불규칙 비교급·최상급",
+            "formula": "good/well ➔ better ➔ best | bad ➔ worse ➔ worst",
+            "examples": [
+              {
+                "en": "His English speaking skills are much better than mine.",
+                "ko": "그의 영어 말하기 실력은 내 실력보다 훨씬 더 좋다.",
+                "point": "good의 비교급은 gooder가 아니라 better입니다."
+              },
+              {
+                "en": "This is the worst storm that hit our town this year.",
+                "ko": "이것은 올해 우리 마을을 강타한 최악의 폭풍이다.",
+                "point": "bad의 최상급은 worst입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "Health is better than wealth.",
+              "x": "Health is gooder than wealth.",
+              "comment": "good의 비교급은 불규칙 형태인 better입니다."
+            },
+            "trap": "비교급을 강조할 때는 very가 아니라 much, even, still, far, a lot을 씁니다.",
+            "quizLink": "very better (X) ➔ much better (O)는 내신 객관식 1순위 오답 판별 공식입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv1_u15_d1",
+            "missionTitle": "미션 1: 최상급 정관사 the 누락 오류 수정",
+            "sentence": "Jupiter is largest planet in our entire solar system.",
+            "korean": "목성은 우리 전체 태양계에서 가장 큰 행성이다.",
+            "underlined": [
+              "Jupiter is",
+              "largest planet",
+              "in our entire",
+              "solar system"
+            ],
+            "wrongIndex": 1,
+            "correction": "the largest planet",
+            "explanation": "형용사의 최상급 앞에는 정관사 the가 필수적이므로 the largest planet이 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 비교급과 최상급 기본] 출제 연계"
+          },
+          {
+            "id": "lv1_u15_d2",
+            "missionTitle": "미션 2: 불규칙 비교급 어형 오류 수정",
+            "sentence": "My math score was gooder than my science score on the midterm.",
+            "korean": "중간고사에서 내 수학 점수는 과학 점수보다 더 좋았다.",
+            "underlined": [
+              "My math score",
+              "was gooder than",
+              "my science score",
+              "on the midterm"
+            ],
+            "wrongIndex": 1,
+            "correction": "was better than",
+            "explanation": "good의 비교급은 gooder가 아니라 불규칙 형태인 better입니다.",
+            "conceptRef": "1단계 [공식 2: 시험 단골 불규칙] 출제 연계"
+          },
+          {
+            "id": "lv1_u15_d3",
+            "missionTitle": "미션 3: 비교급 강조 부사 very 오용 수정",
+            "sentence": "The weather today is very warmer than it was yesterday.",
+            "korean": "오늘 날씨는 어제 날씨보다 훨씬 더 따뜻하다.",
+            "underlined": [
+              "The weather today",
+              "is very warmer",
+              "than it was",
+              "yesterday"
+            ],
+            "wrongIndex": 1,
+            "correction": "is much warmer",
+            "explanation": "비교급 warmer 앞에는 very를 쓸 수 없으며, much, even, still, far 등으로 강조해야 합니다.",
+            "conceptRef": "1단계 [공식 2: 시험 단골 불규칙] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 중 비교급-최상급 변화가 올바른 것은?",
+            "options": [
+              "happy - more happy - most happy",
+              "fast - faster - fastest",
+              "good - gooder - goodest",
+              "difficult - difficulter - difficultest",
+              "bad - bader - badest"
+            ],
+            "ans": 1,
+            "exp": "fast의 비교급-최상급은 faster - fastest가 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: 비교급과 최상급 기본]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 말로 가장 알맞은 것은?\n\n'Seoul is ______ than Busan.'",
+            "options": [
+              "big",
+              "biger",
+              "bigger",
+              "biggest",
+              "more big"
+            ],
+            "ans": 2,
+            "exp": "big은 단모음+단자음이므로 g를 덧붙인 bigger than이 알맞습니다.",
+            "conceptRef": "1단계 [공식 1: 비교급과 최상급 기본]"
+          },
+          {
+            "q": "다음 문장의 빈칸에 들어갈 알맞은 말은?\n\n'He is ______ runner of the five boys.'",
+            "options": [
+              "fastest",
+              "the fastest",
+              "faster",
+              "more fast",
+              "the faster"
+            ],
+            "ans": 1,
+            "exp": "5명 중에서 가장 빠른 주자이므로 정관사 the + 최상급 the fastest가 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 비교급과 최상급 기본]"
+          },
+          {
+            "q": "다음 밑줄 친 부분 중 비교급을 강조하는 말로 알맞지 않은 것은?\n\n'This car is ______ faster than that one.'",
+            "options": [
+              "much",
+              "even",
+              "still",
+              "far",
+              "very"
+            ],
+            "ans": 4,
+            "exp": "비교급은 very로 수식할 수 없으며 much, even, still, far, a lot으로 수식합니다.",
+            "conceptRef": "1단계 [공식 2: 시험 단골 불규칙]"
+          },
+          {
+            "q": "'이 영화는 저 영화보다 더 흥미진진하다.'를 바르게 영작한 것은?",
+            "options": [
+              "This movie is interestinger than that one.",
+              "This movie is more interesting than that one.",
+              "This movie is most interesting than that one.",
+              "This movie is as interesting than that one.",
+              "This movie is very interesting than that one."
+            ],
+            "ans": 1,
+            "exp": "interesting은 3음절 이상이므로 more interesting than이 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: 비교급과 최상급 기본]"
+          }
+        ]
+      },
+      {
+        "unitNo": 16,
+        "unitId": "lv1_u16",
+        "legacyUnitNo": 16,
+        "title": "시간의 접속사 when, before, after, while",
+        "part": "접속사의 확장",
+        "targetGrade": "중1 내신 대비",
+        "summary": "시간의 흐름과 순서를 나타내는 부사절 접속사 when(~할 때), before(~하기 전에), after(~한 후에), while(~하는 동안에)의 활용",
+        "overview": "'내가 집에 왔을 때', '밥 먹기 전에'처럼 어떤 일이 일어난 시간적 배경을 설명해 주는 부사절 접속사들이에요! 주절과 부사절의 위치에 따른 콤마(,) 사용법과 중등 내신 핵심 어순 규칙을 배워봅시다!",
+        "keyTakeaways": [
+          "when: ~할 때 | while: ~하는 동안에 (주로 진행형과 결합)",
+          "before: ~하기 전에 | after: ~한 후에",
+          "접속사절이 문장 앞에 오면 콤마(,)를 찍는다 (When S + V, S + V)"
+        ],
+        "formulaCards": [
+          {
+            "name": "시간 접속사의 위치와 콤마 공식",
+            "formula": "접속사 + S + V, S + V (콤마 필수) | S + V + 접속사 + S + V (콤마 없음)",
+            "examples": [
+              {
+                "en": "When I arrived home, my mother was cooking dinner.",
+                "ko": "내가 집에 도착했을 때, 어머니는 저녁을 요리하고 계셨다.",
+                "point": "부사절(When I arrived home)이 앞에 오면 뒤에 콤마(,)를 찍습니다."
+              },
+              {
+                "en": "Please wash your hands before you eat your lunch.",
+                "ko": "점심을 먹기 전에 손을 깨끗이 씻으렴.",
+                "point": "before 절이 주절 뒤에 올 때는 콤마를 찍지 않습니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "After I finished my homework, I went to bed.",
+              "x": "After I finished my homework I went to bed.",
+              "comment": "접속사절이 주절보다 먼저 나올 때는 콤마(,)로 두 절을 명확히 구분해야 합니다."
+            },
+            "trap": "while 뒤에는 주로 진행형(was/were V-ing)이 와서 긴 동작을 나타냅니다.",
+            "quizLink": "when, before, after 뒤에는 반드시 '주어 + 동사'를 갖춘 완전한 절이 옵니다."
+          },
+          {
+            "name": "while의 진행 의미와 when의 순간 의미",
+            "formula": "while + S + be V-ing (~하는 동안에) vs when + S + 과거동사 (~했을 때)",
+            "examples": [
+              {
+                "en": "The telephone rang loudly while I was taking a shower.",
+                "ko": "내가 샤워를 하고 있던 동안에 전화벨이 시끄럽게 울렸다.",
+                "point": "샤워라는 지속적인 동작 동안에 일어난 일이므로 while + 진행형을 씁니다."
+              },
+              {
+                "en": "I was very surprised when I saw the huge bear.",
+                "ko": "내가 거대한 곰을 보았을 때 나는 몹시 놀랐다.",
+                "point": "곰을 본 순간적인 사건에는 when을 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "He fell asleep while he was reading a book.",
+              "x": "He fell asleep before he was reading a book.",
+              "comment": "책을 읽고 있는 '도중에' 잠이 들었으므로 while이 문맥상 자연스럽습니다."
+            },
+            "trap": "while은 전치사 during과 뜻이 같지만, during 뒤에는 명사구, while 뒤에는 '주어+동사'가 옵니다.",
+            "quizLink": "while + S + V vs during + 명사구는 중·고등 시험 전 단원 공통 킬러입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv1_u16_d1",
+            "missionTitle": "미션 1: 시간 접속사절 콤마 누락 오류 수정",
+            "sentence": "When the school bell rang all students rushed out to the playground.",
+            "korean": "학교 종이 울렸을 때 모든 학생이 운동장으로 뛰어나갔다.",
+            "underlined": [
+              "When the school bell rang",
+              "all students",
+              "rushed out",
+              "to the playground"
+            ],
+            "wrongIndex": 0,
+            "correction": "When the school bell rang,",
+            "explanation": "부사절이 문두에 올 때는 주절과 구분하기 위해 반드시 절 끝에 콤마(,)를 찍어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 시간 접속사의 위치와 콤마] 출제 연계"
+          },
+          {
+            "id": "lv1_u16_d2",
+            "missionTitle": "미션 2: 시간 접속사 절 vs 전치사 혼동",
+            "sentence": "I listened to my favorite songs during I was cleaning my room.",
+            "korean": "나는 내 방을 청소하는 동안 좋아하는 노래들을 들었다.",
+            "underlined": [
+              "I listened to",
+              "my favorite songs",
+              "during I was cleaning",
+              "my room"
+            ],
+            "wrongIndex": 2,
+            "correction": "while I was cleaning",
+            "explanation": "뒤에 주어+동사(I was cleaning)를 갖춘 절이 오므로 전치사 during 대신 접속사 while을 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: while과 when의 차이] 출제 연계"
+          },
+          {
+            "id": "lv1_u16_d3",
+            "missionTitle": "미션 3: 시간 순서 접속사 after vs before 혼동",
+            "sentence": "You must wash your hands after you eat dinner with dirty hands.",
+            "korean": "더러운 손으로 저녁을 먹기 전에 손을 씻어야 한다.",
+            "underlined": [
+              "You must wash",
+              "your hands after",
+              "you eat dinner",
+              "with dirty hands"
+            ],
+            "wrongIndex": 1,
+            "correction": "your hands before",
+            "explanation": "식사를 하기 전에 손을 씻어야 하므로 after 대신 before를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 시간 접속사의 위치와 콤마] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 접속사로 가장 알맞은 것은?\n\n'Turn off the light ______ you leave the room.'",
+            "options": [
+              "before",
+              "after",
+              "while",
+              "during",
+              "because"
+            ],
+            "ans": 0,
+            "exp": "방을 떠나기 '전에' 불을 끄라는 문맥이므로 before가 알맞습니다.",
+            "conceptRef": "1단계 [공식 1: 시간 접속사의 위치와 콤마]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 접속사로 알맞은 것은?\n\n'Someone knocked on the door ______ I was cooking dinner.'",
+            "options": [
+              "during",
+              "while",
+              "before",
+              "after",
+              "since"
+            ],
+            "ans": 1,
+            "exp": "뒤에 주어+진행형 동사(I was cooking)가 오므로 접속사 while이 정답입니다.",
+            "conceptRef": "1단계 [공식 2: while과 when의 차이]"
+          },
+          {
+            "q": "다음 중 밑줄 친 부분의 쓰임이 어색한 문장은?",
+            "options": [
+              "When I was young, I lived in Daegu.",
+              "She went to bed after she finished her work.",
+              "I listened to the radio while I was walking.",
+              "Don't talk during you are eating food.",
+              "Wash your hands before you eat."
+            ],
+            "ans": 3,
+            "exp": "you are eating은 주어+동사 절이므로 전치사 during 대신 접속사 while을 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: while과 when의 차이]"
+          },
+          {
+            "q": "'내가 그를 만났을 때, 그는 활짝 웃고 있었다.'를 바르게 영작한 것은?",
+            "options": [
+              "When I met him, he was smiling brightly.",
+              "When I meet him, he was smiling brightly.",
+              "While I met him, he is smiling brightly.",
+              "Before I met him, he was smiling brightly.",
+              "When I met him he was smiling brightly."
+            ],
+            "ans": 0,
+            "exp": "과거시제 met과 콤마(,)가 바르게 들어간 When I met him, he was smiling brightly가 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: 시간 접속사의 위치와 콤마]"
+          },
+          {
+            "q": "다음 괄호 안에서 알맞은 접속사가 차례대로 짝지어진 것은?\n\n- 'Clean your desk (before / after) you start studying.'\n- 'I felt happy (when / while) I received the letter.'",
+            "options": [
+              "before - when",
+              "after - when",
+              "before - while",
+              "after - while",
+              "while - when"
+            ],
+            "ans": 0,
+            "exp": "공부를 시작하기 전에(before), 편지를 받았을 때(when)가 문맥상 자연스럽습니다.",
+            "conceptRef": "1단계 [공식 1 & 2 종합]"
+          }
+        ]
+      },
+      {
+        "unitNo": 17,
+        "unitId": "lv1_u17",
+        "legacyUnitNo": 17,
+        "title": "to부정사의 명사적 용법 (주어, 목적어, 보어)",
+        "part": "준동사의 기초",
+        "targetGrade": "중1 내신 대비",
+        "summary": "동사가 명사로 변신하여 '~하는 것, ~하기'로 해석되며 문장의 주어, 목적어, 보어로 쓰이는 원리",
+        "overview": "동사 앞에 to를 붙이면 더 이상 동사가 아니라 '명사'처럼 문장의 주어, 목적어, 보어 자리에 쏙 들어갈 수 있어요! 'to-V는 단수 취급한다'는 수일치 규칙과 want, hope 등 to부정사만을 목적어로 취하는 단짝 동사들을 마스터해 봅시다!",
+        "keyTakeaways": [
+          "명사적 용법: '~하는 것, ~하기'로 해석",
+          "주어 역할: To learn English is fun. (★to부정사 주어는 3인칭 단수 취급 -> is)",
+          "목적어 역할: to부정사만 취하는 동사 (want, hope, wish, plan, decide, promise + to-V)"
+        ],
+        "formulaCards": [
+          {
+            "name": "to부정사의 주어와 보어 역할",
+            "formula": "To-V + 단수동사 (주어) | S + be동사 + to-V (보어)",
+            "examples": [
+              {
+                "en": "To read books every day makes your mind rich and wise.",
+                "ko": "매일 책을 읽는 것은 당신의 마음을 풍요롭고 지혜롭게 만든다.",
+                "point": "to부정사구(To read books)가 주어일 때는 단수 취급하여 makes를 씁니다."
+              },
+              {
+                "en": "My dream is to become a famous game developer.",
+                "ko": "나의 꿈은 유명한 게임 개발자가 되는 것이다.",
+                "point": "be동사 뒤에서 주어를 보충 설명하는 주격보어로 쓰인 to become입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "To exercise regularly is good for your health.",
+              "x": "To exercise regularly are good for your health.",
+              "comment": "to부정사 주어는 하나의 동작 단위이므로 복수 are가 아니라 단수 is를 씁니다."
+            },
+            "trap": "To read books처럼 to 뒤에 복수명사가 있어도 주어는 To read이므로 단수 취급합니다.",
+            "quizLink": "to부정사 주어가 너무 길어지면 뒤로 보내고 가주어 It을 쓰는 It ~ to 구문으로 발전합니다."
+          },
+          {
+            "name": "to부정사를 목적어로 취하는 동사군",
+            "formula": "want / hope / decide / plan / promise / expect + to-V",
+            "examples": [
+              {
+                "en": "I decided to study harder for the upcoming final exam.",
+                "ko": "나는 다가오는 기말고사를 위해 더 열심히 공부하기로 결심했다.",
+                "point": "decide는 목적어로 to부정사(to study)만을 취합니다."
+              },
+              {
+                "en": "She hopes to travel around the world with her family.",
+                "ko": "그녀는 가족과 함께 세계를 여행하기를 희망한다.",
+                "point": "hope 뒤에는 to travel이 목적어로 옵니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "He promised to meet me at the library.",
+              "x": "He promised meeting me at the library.",
+              "comment": "promise는 동명사가 아니라 to부정사를 목적어로 취하는 동사입니다."
+            },
+            "trap": "미래지향적인 의미(소망, 계획, 결심, 약속)를 담은 동사들은 대부분 to부정사를 좋아합니다.",
+            "quizLink": "want to, hope to, decide to, plan to는 중1 내신 암기 1순위 관용구입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv1_u17_d1",
+            "missionTitle": "미션 1: to부정사 주어의 동사 수일치 오류",
+            "sentence": "To play soccer with good friends are very exciting.",
+            "korean": "좋은 친구들과 축구를 하는 것은 매우 신난다.",
+            "underlined": [
+              "To play soccer",
+              "with good friends",
+              "are very",
+              "exciting"
+            ],
+            "wrongIndex": 2,
+            "correction": "is very",
+            "explanation": "to부정사구(To play soccer)는 3인칭 단수 취급하므로 are가 아니라 is가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: to부정사의 주어와 보어] 출제 연계"
+          },
+          {
+            "id": "lv1_u17_d2",
+            "missionTitle": "미션 2: decide의 목적어 형태 오류 수정",
+            "sentence": "She decided buying a new winter jacket at the department store.",
+            "korean": "그녀는 백화점에서 새 겨울 재킷을 사기로 결정했다.",
+            "underlined": [
+              "She decided",
+              "buying a new",
+              "winter jacket",
+              "at the department store"
+            ],
+            "wrongIndex": 1,
+            "correction": "to buy a new",
+            "explanation": "decide는 동명사가 아니라 to부정사를 목적어로 취하므로 to buy가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 2: to부정사 목적어 동사군] 출제 연계"
+          },
+          {
+            "id": "lv1_u17_d3",
+            "missionTitle": "미션 3: hope의 목적어 형태 오류 수정",
+            "sentence": "They hope visiting the famous space museum next summer.",
+            "korean": "그들은 내년 여름에 유명한 우주 박물관을 방문하기를 희망한다.",
+            "underlined": [
+              "They hope",
+              "visiting",
+              "the famous space museum",
+              "next summer"
+            ],
+            "wrongIndex": 1,
+            "correction": "to visit",
+            "explanation": "hope는 목적어로 to부정사를 취하므로 visiting이 아니라 to visit으로 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: to부정사 목적어 동사군] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 말로 가장 알맞은 것은?\n\n'I want ______ a famous doctor in the future.'",
+            "options": [
+              "become",
+              "becoming",
+              "to become",
+              "became",
+              "becomes"
+            ],
+            "ans": 2,
+            "exp": "want는 목적어로 to부정사를 취하므로 to become이 정답입니다.",
+            "conceptRef": "1단계 [공식 2: to부정사 목적어 동사군]"
+          },
+          {
+            "q": "다음 문장의 빈칸에 알맞은 be동사는?\n\n'To learn foreign languages ______ not easy.'",
+            "options": [
+              "are",
+              "is",
+              "am",
+              "were",
+              "be"
+            ],
+            "ans": 1,
+            "exp": "to부정사 주어는 단수 취급하므로 is가 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: to부정사의 주어와 보어]"
+          },
+          {
+            "q": "다음 중 밑줄 친 to부정사의 용법이 나머지 넷과 다른 하나는?",
+            "options": [
+              "To see is to believe.",
+              "She decided to buy the red dress.",
+              "His hobby is to collect old coins.",
+              "I have many books to read.",
+              "I hope to see you again soon."
+            ],
+            "ans": 3,
+            "exp": "4번은 명사 books를 꾸며주는 '형용사적 용법'이고, 나머지는 모두 주어/목적어/보어로 쓰인 '명사적 용법'입니다.",
+            "conceptRef": "1단계 [공식 1: to부정사의 주어와 보어]"
+          },
+          {
+            "q": "다음 중 목적어로 to부정사만을 취하는 동사로 짝지어진 것은?",
+            "options": [
+              "enjoy, finish",
+              "want, decide, hope",
+              "stop, mind",
+              "give, send",
+              "look, sound"
+            ],
+            "ans": 1,
+            "exp": "want, decide, hope는 to부정사만을 목적어로 취하는 대표적 동사들입니다.",
+            "conceptRef": "1단계 [공식 2: to부정사 목적어 동사군]"
+          },
+          {
+            "q": "'내 계획은 이번 주말에 방을 청소하는 것이다.'를 바르게 영작한 것은?",
+            "options": [
+              "My plan is to clean my room this weekend.",
+              "My plan to clean is my room this weekend.",
+              "My plan is clean my room this weekend.",
+              "My plan is for clean my room this weekend.",
+              "My plan are to clean my room this weekend."
+            ],
+            "ans": 0,
+            "exp": "주격보어로 쓰인 to clean이 들어간 1번이 올바른 문장입니다.",
+            "conceptRef": "1단계 [공식 1: to부정사의 주어와 보어]"
+          }
+        ]
+      },
+      {
+        "unitNo": 18,
+        "unitId": "lv1_u18",
+        "legacyUnitNo": 18,
+        "title": "to부정사의 형용사적 용법 (~할 명사 수식)",
+        "part": "준동사의 기초",
+        "targetGrade": "중1 내신 대비",
+        "summary": "명사 뒤에서 후치 수식하여 '~할, ~하는'으로 해석되는 to부정사와 끝에 전치사를 반드시 붙여야 하는 핵심 내신 킬러",
+        "overview": "형용사처럼 명사를 꾸며주는 to부정사예요! 우리말과 달리 영어는 긴 수식어구를 명사 '뒤'에 붙여요 (something to drink 마실 것). 특히 write with, sit on처럼 명사와 어울리는 전치사를 빠뜨리지 않는 고난도 출제 공식을 마스터해 봅시다!",
+        "keyTakeaways": [
+          "형용사적 용법: 명사 + to-V (뒤에서 명사를 수식하여 '~할, ~하는'으로 해석)",
+          "-thing / -one / -body + 형용사 + to-V (something cold to drink)",
+          "★전치사 필수 구문: a chair to sit on, a pen to write with, a friend to talk to"
+        ],
+        "formulaCards": [
+          {
+            "name": "명사 후치 수식과 -thing 어순 공식",
+            "formula": "명사 + to-V (~할 명사) | -thing + 형용사 + to-V",
+            "examples": [
+              {
+                "en": "I have a lot of homework to finish before midnight.",
+                "ko": "나는 자정 전에 끝마쳐야 할 많은 숙제를 가지고 있다.",
+                "point": "homework 뒤에서 to finish가 숙제를 수식합니다."
+              },
+              {
+                "en": "Do you want something cold to drink on this hot afternoon?",
+                "ko": "이 더운 오후에 무언가 시원하게 마실 것을 원하니?",
+                "point": "-thing 뒤에 형용사 cold가 오고 그 뒤에 to drink가 붙는 어순입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "Give me something warm to eat.",
+              "x": "Give me to eat something warm.",
+              "comment": "-thing 단어는 '명사 + 형용사 + to-V' 어순이 철칙입니다."
+            },
+            "trap": "something to drink cold (X) ➔ something cold to drink (O) 어순 시험 1순위!",
+            "quizLink": "형용사와 to부정사가 동시에 -thing을 꾸밀 때는 형용사가 먼저, to-V가 나중입니다."
+          },
+          {
+            "name": "전치사가 꼭 필요한 to부정사 공식",
+            "formula": "명사 + to-V + 전치사 (동사 + 전치사 + 명사 연결 검증)",
+            "examples": [
+              {
+                "en": "He brought a comfortable chair to sit on in the garden.",
+                "ko": "그는 정원에서 앉을 편안한 의자 하나를 가져왔다.",
+                "point": "sit on the chair이므로 전치사 on이 반드시 있어야 합니다."
+              },
+              {
+                "en": "She needs a black pen to write with on the paper.",
+                "ko": "그녀는 종이 위에 쓸 검은색 펜 하나를 필요로 한다.",
+                "point": "write with a pen이므로 도구를 나타내는 전치사 with가 필수적입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "I need a house to live in.",
+              "x": "I need a house to live.",
+              "comment": "live in a house이므로 전치사 in을 빠뜨리면 비문이 됩니다."
+            },
+            "trap": "sit a chair(X) ➔ sit on a chair(O)! 전치사를 생략하는 순간 오답이 됩니다.",
+            "quizLink": "to-V 뒤의 전치사 유무는 수식받는 명사를 동사 뒤로 보내보면 바로 판별할 수 있습니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv1_u18_d1",
+            "missionTitle": "미션 1: to부정사 뒤 필수 전치사 on 누락 오류",
+            "sentence": "There are no empty chairs to sit in the crowded waiting room.",
+            "korean": "혼잡한 대기실에는 앉을 빈 의자가 하나도 없다.",
+            "underlined": [
+              "There are",
+              "no empty chairs",
+              "to sit",
+              "in the crowded waiting room"
+            ],
+            "wrongIndex": 2,
+            "correction": "to sit on",
+            "explanation": "의자 위에 앉는 것이므로 sit on the chair에서 유래한 전치사 on이 반드시 들어가야 합니다.",
+            "conceptRef": "1단계 [공식 2: 전치사가 꼭 필요한 to부정사] 출제 연계"
+          },
+          {
+            "id": "lv1_u18_d2",
+            "missionTitle": "미션 2: to부정사 필수 전치사 with 누락 오류",
+            "sentence": "Please lend me a pencil to write during the English exam.",
+            "korean": "영어 시험 동안에 쓸 연필 한 자루만 빌려주세요.",
+            "underlined": [
+              "Please lend me",
+              "a pencil to write",
+              "during",
+              "the English exam"
+            ],
+            "wrongIndex": 1,
+            "correction": "a pencil to write with",
+            "explanation": "연필을 가지고 쓰는 도구의 개념이므로 write with a pencil에서 with가 필수입니다.",
+            "conceptRef": "1단계 [공식 2: 전치사가 꼭 필요한 to부정사] 출제 연계"
+          },
+          {
+            "id": "lv1_u18_d3",
+            "missionTitle": "미션 3: -thing 수식어 어순 배열 오류 수정",
+            "sentence": "I want to drink something cold on this hot summer afternoon.",
+            "korean": "나는 이 더운 여름 오후에 시원한 마실 것을 원한다.",
+            "underlined": [
+              "I want",
+              "to drink something cold",
+              "on this hot",
+              "summer afternoon"
+            ],
+            "wrongIndex": 1,
+            "correction": "something cold to drink",
+            "explanation": "-thing 대명사는 형용사 + to부정사 순서로 수식받으므로 something cold to drink가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 명사 후치 수식과 -thing 어순] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 말이 바르게 짝지어진 것은?\n\n'I have no friends to play ______.'",
+            "options": [
+              "in",
+              "on",
+              "with",
+              "at",
+              "for"
+            ],
+            "ans": 2,
+            "exp": "친구와 함께 노는 것이므로 play with friends에서 유래하여 with가 알맞습니다.",
+            "conceptRef": "1단계 [공식 2: 전치사가 꼭 필요한 to부정사]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 단어들의 올바른 순서는?\n\n'I am very hungry. Give me ______.'",
+            "options": [
+              "to eat warm something",
+              "something to eat warm",
+              "something warm to eat",
+              "warm something to eat",
+              "warm to eat something"
+            ],
+            "ans": 2,
+            "exp": "-thing + 형용사 + to-V 어순이므로 something warm to eat가 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: 명사 후치 수식과 -thing 어순]"
+          },
+          {
+            "q": "다음 중 밑줄 친 부분에 전치사가 필요한 문장은?",
+            "options": [
+              "I have a lot of books to read.",
+              "She needs a piece of paper to write on.",
+              "There are many places to visit.",
+              "I bought some food to eat.",
+              "He has no homework to do."
+            ],
+            "ans": 1,
+            "exp": "종이 위에 글을 쓰는 것이므로 write on a piece of paper에서 on이 필요합니다.",
+            "conceptRef": "1단계 [공식 2: 전치사가 꼭 필요한 to부정사]"
+          },
+          {
+            "q": "'그는 살 집이 필요하다.'를 바르게 영작한 것은?",
+            "options": [
+              "He needs a house to live.",
+              "He needs a house to live in.",
+              "He needs to live in a house.",
+              "He needs a house living in.",
+              "He needs a house to living."
+            ],
+            "ans": 1,
+            "exp": "live in a house이므로 a house to live in이 올바른 형용사적 용법입니다.",
+            "conceptRef": "1단계 [공식 2: 전치사가 꼭 필요한 to부정사]"
+          },
+          {
+            "q": "다음 밑줄 친 to부정사의 쓰임이 <보기>와 같은 것은?\n\n<보기> 'She has no time <u>to watch</u> television.'",
+            "options": [
+              "To swim in the river is fun.",
+              "I want to become a teacher.",
+              "He bought some flowers to give his mom.",
+              "Give me some water to drink.",
+              "My dream is to travel to space."
+            ],
+            "ans": 3,
+            "exp": "<보기>는 time을 꾸며주는 형용사적 용법입니다. 4번의 to drink도 water를 꾸며주는 형용사적 용법입니다.",
+            "conceptRef": "1단계 [공식 1: 명사 후치 수식]"
+          }
+        ]
+      },
+      {
+        "unitNo": 19,
+        "unitId": "lv1_u19",
+        "legacyUnitNo": 19,
+        "title": "동명사의 기초 (주어, 목적어, 전치사의 목적어)",
+        "part": "준동사의 기초",
+        "targetGrade": "중1 내신 대비",
+        "summary": "동사원형에 -ing를 붙여 명사 역할을 하는 동명사의 주·목·보 기능과 동명사만을 목적어로 취하는 메가패스 동사군",
+        "overview": "동사 뒤에 -ing를 붙이면 '~하는 것, ~하기'라는 명사로 탈바꿈해요! to부정사처럼 주어, 목적어, 보어로 쓰이며, 특히 전치사 뒤에는 to부정사가 못 오고 오직 동명사만 올 수 있다는 절대 법칙과 enjoy, finish 등 동명사 전용 단짝 동사들을 배워봅시다!",
+        "keyTakeaways": [
+          "동명사: 동사원형 + -ing (~하는 것, ~하기)",
+          "★전치사 뒤에는 무조건 동명사! (전치사의 목적어: of/in/about/for + V-ing)",
+          "동명사만 취하는 동사군: enjoy, finish, stop, give up, mind, avoid"
+        ],
+        "formulaCards": [
+          {
+            "name": "동명사의 기본 역할과 전치사의 목적어",
+            "formula": "V-ing + 단수동사 (주어) | 전치사 + V-ing (전치사의 목적어)",
+            "examples": [
+              {
+                "en": "Listening to classical music helps me relax after studying.",
+                "ko": "클래식 음악을 듣는 것은 공부한 후 긴장을 푸는 데 도움을 준다.",
+                "point": "동명사구(Listening to ~)가 주어이므로 단수동사 helps를 씁니다."
+              },
+              {
+                "en": "Thank you very much for inviting me to your birthday party.",
+                "ko": "너의 생일 파티에 나를 초대해 주어서 정말 고마워.",
+                "point": "전치사 for 뒤에는 to invite가 올 수 없고 동명사 inviting이 와야 합니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "She is good at speaking English.",
+              "x": "She is good at to speak English.",
+              "comment": "전치사 at 뒤에는 to부정사를 쓸 수 없으며 반드시 동명사 speaking을 써야 합니다."
+            },
+            "trap": "전치사 뒤에는 to-V가 절대 올 수 없고 오직 동명사(-ing)만 올 수 있습니다!",
+            "quizLink": "be good at -ing, be afraid of -ing, thank you for -ing는 시험 단골 전치사구입니다."
+          },
+          {
+            "name": "동명사만을 목적어로 취하는 메가패스 동사",
+            "formula": "enjoy / finish / mind / give up / avoid / stop + V-ing",
+            "examples": [
+              {
+                "en": "I really enjoy playing computer games with my friends.",
+                "ko": "나는 친구들과 컴퓨터 게임을 하는 것을 정말 즐긴다.",
+                "point": "enjoy는 목적어로 to부정사가 아닌 동명사 playing을 취합니다."
+              },
+              {
+                "en": "He finished cleaning his bedroom before his parents came.",
+                "ko": "그는 부모님이 오시기 전에 침실 청소하는 것을 끝마쳤다.",
+                "point": "finish는 동명사 cleaning만을 목적어로 취합니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "She finished doing her math homework.",
+              "x": "She finished to do her math homework.",
+              "comment": "finish는 to부정사를 목적어로 취할 수 없고 동명사만 취합니다."
+            },
+            "trap": "과거나 현재의 경험, 일의 중단/마무리를 나타내는 동사들은 동명사를 좋아합니다.",
+            "quizLink": "enjoy -ing, finish -ing, give up -ing, stop -ing는 1초 만에 풀어야 하는 필수 짝꿍입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv1_u19_d1",
+            "missionTitle": "미션 1: 전치사 뒤 to부정사 오용 수정",
+            "sentence": "My little brother is very interested in to learn Spanish.",
+            "korean": "내 남동생은 스페인어를 배우는 것에 매우 관심이 많다.",
+            "underlined": [
+              "My little brother",
+              "is very",
+              "interested in",
+              "to learn Spanish"
+            ],
+            "wrongIndex": 3,
+            "correction": "learning Spanish",
+            "explanation": "전치사 in 뒤에는 to부정사가 올 수 없으므로 동명사 learning으로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 1: 전치사의 목적어] 출제 연계"
+          },
+          {
+            "id": "lv1_u19_d2",
+            "missionTitle": "미션 2: enjoy의 목적어 형태 오류 수정",
+            "sentence": "We enjoyed to walk along the sandy beach at sunset.",
+            "korean": "우리는 일몰 때 모래사장을 따라 산책하는 것을 즐겼다.",
+            "underlined": [
+              "We enjoyed",
+              "to walk",
+              "along the sandy beach",
+              "at sunset"
+            ],
+            "wrongIndex": 1,
+            "correction": "walking",
+            "explanation": "enjoy는 목적어로 to부정사가 아닌 동명사를 취하므로 walking이 되어야 합니다.",
+            "conceptRef": "1단계 [공식 2: 동명사만 취하는 동사] 출제 연계"
+          },
+          {
+            "id": "lv1_u19_d3",
+            "missionTitle": "미션 3: 동명사 주어의 동사 수일치 오류",
+            "sentence": "Making paper airplanes are a fun activity for children.",
+            "korean": "종이비행기를 만드는 것은 어린이들에게 재미있는 활동이다.",
+            "underlined": [
+              "Making paper airplanes",
+              "are a fun",
+              "activity",
+              "for children"
+            ],
+            "wrongIndex": 1,
+            "correction": "is a fun",
+            "explanation": "airplanes가 복수여도 주어는 동명사 Making이므로 단수동사 is를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 동명사의 기본 역할] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 말로 가장 알맞은 것은?\n\n'She finished ______ the dishes after dinner.'",
+            "options": [
+              "wash",
+              "washing",
+              "to wash",
+              "washed",
+              "washes"
+            ],
+            "ans": 1,
+            "exp": "finish는 동명사만을 목적어로 취하므로 washing이 정답입니다.",
+            "conceptRef": "1단계 [공식 2: 동명사만 취하는 동사]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 말로 가장 알맞은 것은?\n\n'Thank you for ______ me with this problem.'",
+            "options": [
+              "help",
+              "to help",
+              "helping",
+              "helped",
+              "helps"
+            ],
+            "ans": 2,
+            "exp": "전치사 for 뒤에는 동명사가 와야 하므로 helping이 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: 전치사의 목적어]"
+          },
+          {
+            "q": "다음 중 밑줄 친 부분의 쓰임이 어색한 문장은?",
+            "options": [
+              "I enjoy listening to music.",
+              "She gave up smoking.",
+              "He decided meeting her tomorrow.",
+              "Playing games is exciting.",
+              "He is afraid of failing the test."
+            ],
+            "ans": 2,
+            "exp": "decide는 동명사가 아니라 to부정사를 목적어로 취하므로 to meet이 되어야 합니다.",
+            "conceptRef": "1단계 [공식 2: 동명사만 취하는 동사]"
+          },
+          {
+            "q": "'그는 피아노 연주를 매우 잘한다.'를 바르게 영작한 것은?",
+            "options": [
+              "He is good at to play the piano.",
+              "He is good at play the piano.",
+              "He is good at playing the piano.",
+              "He is good at played the piano.",
+              "He is good for play the piano."
+            ],
+            "ans": 2,
+            "exp": "be good at 뒤에는 전치사의 목적어로 동명사 playing the piano가 옵니다.",
+            "conceptRef": "1단계 [공식 1: 전치사의 목적어]"
+          },
+          {
+            "q": "다음 밑줄 친 '-ing'의 쓰임이 나머지 넷과 다른 하나는?",
+            "options": [
+              "<u>Cooking</u> is my mother's hobby.",
+              "I enjoy <u>reading</u> books.",
+              "He is <u>sleeping</u> in his room now.",
+              "She is good at <u>drawing</u> pictures.",
+              "<u>Eating</u> breakfast is important."
+            ],
+            "ans": 2,
+            "exp": "3번의 sleeping은 현재진행형의 '현재분사'이고, 나머지는 모두 주어/목적어로 쓰인 '동명사'입니다.",
+            "conceptRef": "1단계 [공식 1: 동명사의 기본 역할]"
+          }
+        ]
+      },
+      {
+        "unitNo": 20,
+        "unitId": "lv1_u20",
+        "legacyUnitNo": 20,
+        "title": "재귀대명사 (-self, 재귀적 용법 vs 강조적 용법)",
+        "part": "대명사의 확장",
+        "targetGrade": "중1 내신 대비",
+        "summary": "주어와 목적어가 같을 때 쓰는 재귀대명사의 형태와 생략 불가능한 재귀적 용법 vs 생략 가능한 강조적 용법의 판별",
+        "overview": "'그는 거울 속 자신을 보았다'처럼 어떤 행동의 결과가 다시 자기 자신에게 돌아올 때 쓰는 말이 '재귀대명사(-self)'예요! 문장의 필수 목적어로 쓰여 생략할 수 없는 '재귀적 용법'과, 단순히 뜻을 강조해서 생략해도 문장이 완벽한 '강조적 용법'을 칼같이 구별해 봅시다!",
+        "keyTakeaways": [
+          "형태: 단수 -self (myself, yourself, himself, herself, itself) / 복수 -selves (ourselves, yourselves, themselves)",
+          "재귀적 용법: 주어 = 목적어 (생략 불가! 예: He looked at himself.)",
+          "강조적 용법: 주어/목적어를 직접 강조 (생략 가능! 예: I made it myself.)"
+        ],
+        "formulaCards": [
+          {
+            "name": "재귀적 용법 vs 강조적 용법 판별 공식",
+            "formula": "동사/전치사의 목적어 ➔ 재귀적(생략 불가) | 주어/목적어 뒤 ➔ 강조적(생략 가능)",
+            "examples": [
+              {
+                "en": "The little boy introduced himself to the new classmates.",
+                "ko": "그 어린 소년은 새로운 반 친구들에게 자기 자신을 소개했다.",
+                "point": "introduced의 필수 목적어이므로 생략할 수 없는 재귀적 용법입니다."
+              },
+              {
+                "en": "I built this wooden birdhouse myself without any help.",
+                "ko": "나는 아무런 도움 없이 이 나무 새집을 내 스스로 직접 만들었다.",
+                "point": "myself를 생략해도 문장이 완전하므로 주어 I를 강조하는 강조적 용법입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "He loves himself.",
+              "x": "He loves him.",
+              "comment": "자신을 사랑하는 것이므로 주어 He와 동일 인물이면 him이 아니라 himself를 써야 합니다."
+            },
+            "trap": "손가락으로 재귀대명사를 가렸을 때 문장이 말이 되면 강조, 불완전하면 재귀적 용법입니다!",
+            "quizLink": "중1 내신에서 밑줄 친 myself/himself의 용법이 다른 것을 고르는 문제는 100% 출제됩니다."
+          },
+          {
+            "name": "전치사와 결합한 재귀대명사 관용표현",
+            "formula": "by oneself(혼자서) | for oneself(스스로) | help oneself to(마음껏 먹다)",
+            "examples": [
+              {
+                "en": "She solved the difficult puzzle all by herself.",
+                "ko": "그녀는 그 어려운 퍼즐을 온전히 혼자 힘으로 풀었다.",
+                "point": "by oneself는 alone(혼자서)과 같은 뜻의 관용구입니다."
+              },
+              {
+                "en": "Please help yourselves to the fresh cookies on the table.",
+                "ko": "탁자 위에 있는 신선한 쿠키를 마음껏 드세요.",
+                "point": "help oneself to는 '음식을 마음껏 먹다'라는 숙어입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "Enjoy yourself at the party!",
+              "x": "Enjoy you at the party!",
+              "comment": "즐거운 시간을 보내라는 표현은 enjoy yourself입니다."
+            },
+            "trap": "복수 주어(You/They/We)일 때는 -self가 아니라 -selves로 써야 합니다.",
+            "quizLink": "by oneself = on one's own(혼자 힘으로)도 함께 알아두면 시험에서 유리합니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv1_u20_d1",
+            "missionTitle": "미션 1: 주어와 목적어 일치 시 대명사 오류",
+            "sentence": "Tom looked at him in the mirror and smiled brightly.",
+            "korean": "톰은 거울 속의 자기 자신을 쳐다보며 환하게 미소 지었다.",
+            "underlined": [
+              "Tom looked",
+              "at him",
+              "in the mirror",
+              "and smiled brightly"
+            ],
+            "wrongIndex": 1,
+            "correction": "at himself",
+            "explanation": "주어 Tom이 거울 속 자기 자신을 보는 것이므로 him이 아니라 재귀대명사 himself가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 재귀적 용법 판별] 출제 연계"
+          },
+          {
+            "id": "lv1_u20_d2",
+            "missionTitle": "미션 2: 복수 재귀대명사 철자 오류 수정",
+            "sentence": "The students cleaned the entire classroom by theirself yesterday afternoon.",
+            "korean": "학생들은 교실 전체를 그들 스스로 청소했다.",
+            "underlined": [
+              "The students cleaned",
+              "the entire classroom",
+              "by theirself",
+              "yesterday afternoon"
+            ],
+            "wrongIndex": 2,
+            "correction": "by themselves",
+            "explanation": "The students는 복수이므로 theirself가 아니라 themselves로 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 관용표현과 복수형] 출제 연계"
+          },
+          {
+            "id": "lv1_u20_d3",
+            "missionTitle": "미션 3: 1인칭 단수 재귀대명사 형태 오류",
+            "sentence": "I made this delicious chocolate cake meself yesterday.",
+            "korean": "나는 어제 이 맛있는 초콜릿 케이크를 내 스스로 직접 만들었다.",
+            "underlined": [
+              "I made",
+              "this delicious",
+              "chocolate cake meself",
+              "yesterday"
+            ],
+            "wrongIndex": 2,
+            "correction": "chocolate cake myself",
+            "explanation": "1인칭 I의 재귀대명사는 meself가 아니라 myself입니다.",
+            "conceptRef": "1단계 [공식 1: 재귀적 vs 강조적 용법] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 알맞은 재귀대명사는?\n\n'She looked at ______ in the clear water.'",
+            "options": [
+              "her",
+              "herself",
+              "hers",
+              "she",
+              "himself"
+            ],
+            "ans": 1,
+            "exp": "주어 She가 자기 자신을 보는 것이므로 재귀대명사 herself가 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 재귀적 vs 강조적 용법]"
+          },
+          {
+            "q": "다음 밑줄 친 재귀대명사 중 생략할 수 있는 것은?",
+            "options": [
+              "He hurt <u>himself</u> during the soccer game.",
+              "I introduced <u>myself</u> to the teacher.",
+              "She lives by <u>herself</u> in a small apartment.",
+              "I baked this bread <u>myself</u>.",
+              "You should take care of <u>yourself</u>."
+            ],
+            "ans": 3,
+            "exp": "4번의 myself는 문장의 목적어가 아니라 단순히 주어를 강조하기 위해 덧붙인 강조적 용법이므로 생략 가능합니다.",
+            "conceptRef": "1단계 [공식 1: 재귀적 vs 강조적 용법]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 말이 알맞게 짝지어진 것은?\n\n'They finished the science project all by ______.'",
+            "options": [
+              "themself",
+              "themselves",
+              "theirselves",
+              "himself",
+              "herself"
+            ],
+            "ans": 1,
+            "exp": "They의 올바른 복수 재귀대명사는 themselves입니다.",
+            "conceptRef": "1단계 [공식 2: 관용표현과 복수형]"
+          },
+          {
+            "q": "'파티에서 즐거운 시간을 보내라!'를 바르게 영작한 것은?",
+            "options": [
+              "Enjoy you at the party!",
+              "Enjoy yourself at the party!",
+              "Enjoy your at the party!",
+              "Enjoy yours at the party!",
+              "Enjoy by yourself at the party!"
+            ],
+            "ans": 1,
+            "exp": "즐거운 시간을 보내라는 표현은 enjoy yourself입니다.",
+            "conceptRef": "1단계 [공식 2: 관용표현]"
+          },
+          {
+            "q": "다음 중 밑줄 친 부분의 쓰임이 어법상 어색한 문장은?",
+            "options": [
+              "He did it by himself.",
+              "We enjoyed ourselves at the concert.",
+              "Help yourself to some juice.",
+              "They looked at theirselves in the photo.",
+              "She taught herself how to play guitar."
+            ],
+            "ans": 3,
+            "exp": "theirselves라는 단어는 없으며, themselves로 표기해야 올바릅니다.",
+            "conceptRef": "1단계 [공식 2: 관용표현과 복수형]"
+          }
+        ]
       }
     ]
   },
@@ -5295,6 +9615,2166 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "unitId": "lv2_u8",
         "legacyUnitNo": 16
+      },
+      {
+        "unitNo": 9,
+        "unitId": "lv2_u9",
+        "legacyUnitNo": 21,
+        "title": "현재완료 기본 개념과 완료·결과 용법",
+        "part": "시제의 심화",
+        "targetGrade": "중2 내신 대비",
+        "summary": "과거의 동작이 현재까지 영향을 미치는 have/has p.p.의 개념과 막 끝마침(just, already, yet) 및 가버림(have gone to)의 판별",
+        "overview": "단순 과거는 옛날에 끝난 일이지만, '현재완료(have/has + p.p.)'는 과거의 일이 지금 현재와 끈끈하게 연결되어 있음을 나타내요! '방금 숙제 다 끝냈어(완료)'와 '그녀는 미국으로 가버려서 지금 여기 없어(결과)'의 핵심 문맥을 익혀봅시다!",
+        "keyTakeaways": [
+          "형태: 주어 + have / has + 과거분사(p.p.)",
+          "완료 용법: just (방금), already (이미/벌써), yet (아직/벌써)와 결합",
+          "★결과 용법: have gone to (~로 가버리고 없다: 1·2인칭 주어 불가) vs have lost (~를 잃어버려서 지금 없다)"
+        ],
+        "formulaCards": [
+          {
+            "name": "현재완료의 '완료' 용법 (just / already / yet)",
+            "formula": "have/has + just / already + p.p. | haven't/hasn't + p.p. ~ yet",
+            "examples": [
+              {
+                "en": "I have just finished my science project report.",
+                "ko": "나는 방금 나의 과학 프로젝트 보고서를 막 끝마쳤다.",
+                "point": "just(방금)와 함께 쓰여 동작이 막 완료되었음을 나타냅니다."
+              },
+              {
+                "en": "She has not cleaned her bedroom yet this morning.",
+                "ko": "그녀는 오늘 아침 아직 자신의 침실을 청소하지 않았다.",
+                "point": "부정문에서 yet은 '아직 ~하지 못했다'라는 완료의 의미를 가집니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "He has already left for the airport.",
+              "x": "He has already leave for the airport.",
+              "comment": "have/has 뒤에는 반드시 과거분사(p.p.)인 left를 써야 합니다."
+            },
+            "trap": "already는 긍정문, yet은 부정문과 의문문에 주로 쓰입니다.",
+            "quizLink": "Have you finished your lunch yet?처럼 의문문의 yet은 '벌써'로 해석됩니다."
+          },
+          {
+            "name": "현재완료의 '결과' 용법과 have gone to",
+            "formula": "have gone to (~로 가버려서 지금 여기 없다) vs have been to (~에 가본 적 있다)",
+            "examples": [
+              {
+                "en": "Minho has gone to Paris, so he is not in Seoul now.",
+                "ko": "민호는 파리로 가버려서 지금 서울에 없다.",
+                "point": "과거에 파리로 떠나서 그 결과 지금 여기에 없음을 나타내는 결과 용법입니다."
+              },
+              {
+                "en": "I have lost my house key, and I cannot open the door.",
+                "ko": "나는 집 열쇠를 잃어버려서 지금 문을 열 수가 없다.",
+                "point": "과거에 잃어버린 상태가 현재까지 지속되고 있음을 나타냅니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "She has gone to London.",
+              "x": "I have gone to London.",
+              "comment": "have gone to는 '가버리고 여기에 없다'는 뜻이므로 말하는 사람(I)이나 듣는 사람(You)을 주어로 쓸 수 없습니다."
+            },
+            "trap": "I have gone to Paris(X) ➔ 내가 파리에 가버렸는데 여기서 말할 수 없으므로 비문입니다!",
+            "quizLink": "have gone to는 무조건 3인칭(He/She/They) 주어에만 쓸 수 있습니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv2_u9_d1",
+            "missionTitle": "미션 1: have gone to의 1인칭 주어 비문 오류",
+            "sentence": "I have gone to New York last year, so I am here now.",
+            "korean": "나는 작년에 뉴욕에 다녀왔기 때문에 지금 여기에 있다.",
+            "underlined": [
+              "I have gone to",
+              "New York",
+              "last year,",
+              "so I am here now"
+            ],
+            "wrongIndex": 0,
+            "correction": "I went to (or I have been to)",
+            "explanation": "1인칭 I는 have gone to(~로 가버리고 없다)의 주어가 될 수 없으며, 다녀온 경험은 have been to를 씁니다.",
+            "conceptRef": "1단계 [공식 2: 결과 용법과 have gone to] 출제 연계"
+          },
+          {
+            "id": "lv2_u9_d2",
+            "missionTitle": "미션 2: 현재완료 뒤 과거분사(p.p.) 형태 오류",
+            "sentence": "The train has already leave the central station on time.",
+            "korean": "기차는 이미 정시에 중앙역을 떠났다.",
+            "underlined": [
+              "The train",
+              "has already leave",
+              "the central station",
+              "on time"
+            ],
+            "wrongIndex": 1,
+            "correction": "has already left",
+            "explanation": "현재완료 has 뒤에는 동사원형이 아니라 leave의 과거분사인 left가 와야 합니다.",
+            "conceptRef": "1단계 [공식 1: 완료 용법] 출제 연계"
+          },
+          {
+            "id": "lv2_u9_d3",
+            "missionTitle": "미션 3: 3인칭 단수 have/has 수일치 오류",
+            "sentence": "My older sister have just finished washing the dishes.",
+            "korean": "내 누나는 방금 설거지를 막 끝마쳤다.",
+            "underlined": [
+              "My older sister",
+              "have just finished",
+              "washing",
+              "the dishes"
+            ],
+            "wrongIndex": 1,
+            "correction": "has just finished",
+            "explanation": "주어가 My older sister(3인칭 단수)이므로 have가 아니라 has just finished가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 완료 용법] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 알맞은 말은?\n\n'He ______ already eaten his breakfast.'",
+            "options": [
+              "have",
+              "has",
+              "is",
+              "did",
+              "was"
+            ],
+            "ans": 1,
+            "exp": "주어가 3인칭 단수 He이므로 has already eaten이 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 완료 용법]"
+          },
+          {
+            "q": "다음 중 밑줄 친 현재완료의 용법이 '결과'에 해당하는 것은?",
+            "options": [
+              "I have just finished my homework.",
+              "She has gone to America.",
+              "I have seen that movie twice.",
+              "He has lived here for ten years.",
+              "Have you read this book yet?"
+            ],
+            "ans": 1,
+            "exp": "She has gone to America(그녀는 미국으로 가버리고 없다)가 전형적인 '결과' 용법입니다.",
+            "conceptRef": "1단계 [공식 2: 결과 용법과 have gone to]"
+          },
+          {
+            "q": "다음 중 어법상 올바르지 않은 문장은?",
+            "options": [
+              "She has already left.",
+              "I have gone to Canada.",
+              "They have lost their keys.",
+              "Have you finished your work yet?",
+              "He has just arrived."
+            ],
+            "ans": 1,
+            "exp": "have gone to(~로 가버리고 없다)는 말하는 사람인 1인칭 I를 주어로 쓸 수 없습니다.",
+            "conceptRef": "1단계 [공식 2: 결과 용법과 have gone to]"
+          },
+          {
+            "q": "'그는 아직 숙제를 시작하지 않았다.'를 바르게 영작한 것은?",
+            "options": [
+              "He has not started his homework yet.",
+              "He has started his homework yet.",
+              "He has already not started his homework.",
+              "He is not started his homework yet.",
+              "He hasn't starting his homework yet."
+            ],
+            "ans": 0,
+            "exp": "부정문에서 '아직 ~하지 못했다'는 haven't/hasn't p.p. ~ yet 구조입니다.",
+            "conceptRef": "1단계 [공식 1: 완료 용법]"
+          },
+          {
+            "q": "다음 대화의 빈칸에 알맞은 것은?\n\nA: 'Where is Tom?'\nB: 'He is not here. He ______ to the supermarket.'",
+            "options": [
+              "has gone",
+              "has been",
+              "went to been",
+              "is gone to",
+              "was been"
+            ],
+            "ans": 0,
+            "exp": "지금 여기에 없고 마트에 가버렸다는 맥락이므로 has gone이 정답입니다.",
+            "conceptRef": "1단계 [공식 2: 결과 용법과 have gone to]"
+          }
+        ]
+      },
+      {
+        "unitNo": 10,
+        "unitId": "lv1_u10",
+        "legacyUnitNo": 22,
+        "title": "현재완료 경험·계속 용법과 과거시제 구별",
+        "part": "시제의 심화",
+        "targetGrade": "중2 내신 대비",
+        "summary": "경험(ever, never, before)과 계속(for, since)을 나타내는 현재완료와 명백한 과거 부사(ago, yesterday)와의 공존 불가 규칙",
+        "overview": "'파리에 가본 적 있니?(경험)'와 '10년 동안 여기서 살아왔어(계속)'는 현재완료의 가장 대표적인 쓰임이에요! 특히 yesterday, ago, when처럼 명백한 과거를 나타내는 말은 현재완료와 절대 함께 쓸 수 없다는 내신 최고 빈출 함정을 파헤쳐 봅시다!",
+        "keyTakeaways": [
+          "경험 용법: ever, never, before, once, twice (~해 본 적이 있다/없다)",
+          "계속 용법: for + 기간 (~동안) / since + 시작 시점 (~이래로 지금까지)",
+          "★명백한 과거 부사(yesterday, ago, last night, in 2020, when)는 현재완료와 절대 결합 불가!"
+        ],
+        "formulaCards": [
+          {
+            "name": "경험과 계속의 짝꿍 어휘 공식",
+            "formula": "경험: ever / never / before / ~ times | 계속: for + 기간 / since + 시작점",
+            "examples": [
+              {
+                "en": "Have you ever seen a wild kangaroo in Australia?",
+                "ko": "너는 호주에서 야생 캥거루를 본 적이 있니?",
+                "point": "ever와 함께 쓰여 과거부터 지금까지의 '경험'을 묻습니다."
+              },
+              {
+                "en": "We have lived in this apartment for ten years.",
+                "ko": "우리는 이 아파트에서 10년 동안 계속 살아오고 있다.",
+                "point": "for + 기간(ten years)과 결합하여 '계속' 살고 있음을 나타냅니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "She has studied ballet since 2018.",
+              "x": "She has studied ballet for 2018.",
+              "comment": "2018년은 시작 시점이므로 for가 아니라 since를 써야 합니다."
+            },
+            "trap": "for 뒤에는 숫자 기간(for 3 years), since 뒤에는 특정 연도나 과거 시점(since last year)이 옵니다.",
+            "quizLink": "have been to는 경험(~에 가본 적 있다), have gone to는 결과(~로 가버렸다)입니다."
+          },
+          {
+            "name": "현재완료와 과거시제의 공존 불가 법칙",
+            "formula": "have p.p. + [yesterday / ago / last / when] ➔ (X) 무조건 단순 과거시제!",
+            "examples": [
+              {
+                "en": "I bought this warm jacket two days ago.",
+                "ko": "나는 이 따뜻한 재킷을 이틀 전에 샀다.",
+                "point": "ago는 명백한 과거 부사이므로 현재완료가 아닌 단순과거 bought를 씁니다."
+              },
+              {
+                "en": "When did you meet your new homeroom teacher?",
+                "ko": "너는 언제 새 담임선생님을 만났니?",
+                "point": "시점을 묻는 의문사 When은 현재완료와 함께 쓸 수 없고 과거의문문으로 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "He visited his grandparents yesterday.",
+              "x": "He has visited his grandparents yesterday.",
+              "comment": "yesterday는 명백한 과거 시점이므로 현재완료 has visited와 함께 쓸 수 없습니다."
+            },
+            "trap": "When have you met him?(X) ➔ When did you meet him?(O) 내신 서술형 1순위!",
+            "quizLink": "명백한 과거 표시 부사가 보이면 무조건 '단순 과거형' 동사를 골라야 합니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv2_u10_d1",
+            "missionTitle": "미션 1: 명백한 과거 부사 ago와 현재완료 오류",
+            "sentence": "My uncle has bought this sports car three years ago.",
+            "korean": "우리 삼촌은 3년 전에 이 스포츠카를 구입하셨다.",
+            "underlined": [
+              "My uncle",
+              "has bought",
+              "this sports car",
+              "three years ago"
+            ],
+            "wrongIndex": 1,
+            "correction": "bought",
+            "explanation": "ago는 명백한 과거 시점을 나타내므로 현재완료 has bought 대신 단순과거 bought를 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 공존 불가 법칙] 출제 연계"
+          },
+          {
+            "id": "lv2_u10_d2",
+            "missionTitle": "미션 2: since 뒤 기간 전치사 for 혼동 수정",
+            "sentence": "She has played the violin since five years in the orchestra.",
+            "korean": "그녀는 오케스트라에서 5년 동안 바이올린을 연주해 왔다.",
+            "underlined": [
+              "She has played",
+              "the violin",
+              "since five years",
+              "in the orchestra"
+            ],
+            "wrongIndex": 2,
+            "correction": "for five years",
+            "explanation": "five years는 기간의 길이이므로 시작 시점을 나타내는 since 대신 for를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 짝꿍 어휘 공식] 출제 연계"
+          },
+          {
+            "id": "lv2_u10_d3",
+            "missionTitle": "미션 3: 의문사 When과 현재완료 의문문 오류",
+            "sentence": "Tell me, when have you arrived at the airport last night?",
+            "korean": "너는 어젯밤 언제 공항에 도착했니?",
+            "underlined": [
+              "Tell me,",
+              "when have you arrived",
+              "at the airport",
+              "last night?"
+            ],
+            "wrongIndex": 0,
+            "correction": "When did you arrive",
+            "explanation": "구체적 시점을 묻는 의문사 When과 last night은 현재완료와 쓸 수 없으므로 When did you arrive가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 2: 공존 불가 법칙] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 중 현재완료와 함께 쓸 수 없는 단어는?",
+            "options": [
+              "since",
+              "for",
+              "already",
+              "yesterday",
+              "ever"
+            ],
+            "ans": 3,
+            "exp": "yesterday는 명백한 과거 시점을 나타내는 부사이므로 현재완료와 함께 쓸 수 없습니다.",
+            "conceptRef": "1단계 [공식 2: 공존 불가 법칙]"
+          },
+          {
+            "q": "다음 빈칸에 알맞은 전치사는?\n\n'I have known him ______ 2015.'",
+            "options": [
+              "for",
+              "since",
+              "in",
+              "during",
+              "at"
+            ],
+            "ans": 1,
+            "exp": "2015년이라는 과거의 시작 시점이 왔으므로 since(~이래로)가 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 짝꿍 어휘 공식]"
+          },
+          {
+            "q": "다음 밑줄 친 현재완료의 용법이 '경험'에 해당하는 것은?",
+            "options": [
+              "I have lived here since I was born.",
+              "She has been sick for three days.",
+              "I have been to Paris twice.",
+              "He has just arrived at the station.",
+              "They have lost their keys."
+            ],
+            "ans": 2,
+            "exp": "twice(두 번)와 결합한 I have been to Paris twice(가본 적이 있다)가 경험 용법입니다.",
+            "conceptRef": "1단계 [공식 1: 짝꿍 어휘 공식]"
+          },
+          {
+            "q": "다음 중 어법상 올바른 문장은?",
+            "options": [
+              "I have seen him yesterday.",
+              "When have you finished the work?",
+              "She has lived in Seoul for five years.",
+              "We have met three days ago.",
+              "He has called me last night."
+            ],
+            "ans": 2,
+            "exp": "3번은 for five years와 결합한 올바른 현재완료 계속 용법입니다. 나머지는 모두 명백한 과거 부사(yesterday, when, ago, last night) 오류입니다.",
+            "conceptRef": "1단계 [공식 2: 공존 불가 법칙]"
+          },
+          {
+            "q": "'너는 비행기를 타 본 적이 있니?'를 바르게 영작한 것은?",
+            "options": [
+              "Did you ever flown in an airplane?",
+              "Have you ever flown in an airplane?",
+              "Were you ever fly in an airplane?",
+              "Have you ever fly in an airplane?",
+              "Do you ever flew in an airplane?"
+            ],
+            "ans": 1,
+            "exp": "경험을 묻는 의문문은 Have you ever + p.p.(flown) 구조입니다.",
+            "conceptRef": "1단계 [공식 1: 짝꿍 어휘 공식]"
+          }
+        ]
+      },
+      {
+        "unitNo": 11,
+        "unitId": "lv2_u11",
+        "legacyUnitNo": 23,
+        "title": "5형식 목적격보어로 to부정사를 취하는 동사",
+        "part": "문장의 형식 심화",
+        "targetGrade": "중2 내신 대비",
+        "summary": "주어 + 동사 + 목적어 + to-V 구조로 목적어의 미래 행동을 요구·권유하는 핵심 동사군(want, ask, tell, allow, advise)",
+        "overview": "'선생님은 우리에게 조용히 하라고 말씀하셨다'처럼 목적어가 어떤 행동을 하도록 시키거나 부탁할 때, 목적격보어 자리에 to부정사를 쓰는 동사들이에요! 중2 내신 서술형과 객관식에서 출제율 1위인 5형식 to부정사 구조를 완벽 정복해 봅시다!",
+        "keyTakeaways": [
+          "5형식 어순: 주어 + 동사 + 목적어 + to-V (목적어가 ~하도록 …하다)",
+          "목적격보어로 to-V를 취하는 동사군: want, ask, tell, order, allow, advise, expect",
+          "부정: 목적어 + not to-V (not의 위치는 반드시 to 바로 앞!)"
+        ],
+        "formulaCards": [
+          {
+            "name": "5형식 to부정사 목적격보어 공식",
+            "formula": "S + want / ask / tell / allow / advise + O + to-V",
+            "examples": [
+              {
+                "en": "My doctor advised me to exercise regularly every morning.",
+                "ko": "나의 의사는 나에게 매일 아침 규칙적으로 운동하라고 조언했다.",
+                "point": "advise + 목적어(me) + 목적격보어(to exercise) 구조입니다."
+              },
+              {
+                "en": "The teacher told the noisy students to be quiet.",
+                "ko": "선생님께서는 시끄러운 학생들에게 조용히 하라고 말씀하셨다.",
+                "point": "tell + 목적어 + to be quiet 구조입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "She wants me to clean the room.",
+              "x": "She wants me clean the room.",
+              "comment": "want는 목적격보어로 동사원형이 아니라 반드시 to부정사(to clean)를 취합니다."
+            },
+            "trap": "사역동사(make/have/let)와 달리 want, ask, tell 등은 무조건 to를 붙여야 합니다.",
+            "quizLink": "ask/tell/want + O + to-V는 중2 교과서 전 단원 필수 핵심 문법입니다."
+          },
+          {
+            "name": "목적격보어 to부정사의 부정 (not to-V)",
+            "formula": "주어 + 동사 + 목적어 + not to-V (목적어에게 ~하지 말라고 …하다)",
+            "examples": [
+              {
+                "en": "My mother told me not to stay up late playing computer games.",
+                "ko": "어머니께서는 나에게 컴퓨터 게임을 하며 늦게까지 깨어있지 말라고 말씀하셨다.",
+                "point": "부정어 not은 반드시 to부정사 바로 앞(not to stay)에 위치합니다."
+              },
+              {
+                "en": "He asked us not to make any noise in the hospital room.",
+                "ko": "그는 우리에게 병실에서 소음을 내지 말아 달라고 부탁했다.",
+                "point": "ask + 목적어 + not to-V 구조입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "The police officer ordered him not to run.",
+              "x": "The police officer ordered him to not run.",
+              "comment": "to not run보다 준동사 바로 앞에 not을 둔 not to run이 문법적으로 올바른 표준 형태입니다."
+            },
+            "trap": "didn't tell me to V와 told me not to V는 의미가 완전히 다릅니다!",
+            "quizLink": "내신 시험에서 not의 위치(to not V vs not to V)를 묻는 함정에 주의하세요."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv2_u11_d1",
+            "missionTitle": "미션 1: 목적격보어 to부정사 누락 오류 수정",
+            "sentence": "My parents want me become a successful computer scientist.",
+            "korean": "부모님께서는 내가 성공한 컴퓨터 과학자가 되기를 원하신다.",
+            "underlined": [
+              "My parents",
+              "want me",
+              "become a successful",
+              "computer scientist"
+            ],
+            "wrongIndex": 2,
+            "correction": "to become a successful",
+            "explanation": "want는 목적격보어로 to부정사를 취하므로 become이 아니라 to become이 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 5형식 to부정사 목적격보어] 출제 연계"
+          },
+          {
+            "id": "lv2_u11_d2",
+            "missionTitle": "미션 2: to부정사 부정어 not의 위치 오류",
+            "sentence": "The teacher told us to not touch the chemical liquids.",
+            "korean": "선생님께서는 우리에게 화학 액체를 만지지 말라고 말씀하셨다.",
+            "underlined": [
+              "The teacher",
+              "told us",
+              "to not touch",
+              "the chemical liquids"
+            ],
+            "wrongIndex": 2,
+            "correction": "not to touch",
+            "explanation": "to부정사의 부정어 not은 to 바로 앞에 와야 하므로 not to touch로 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: to부정사의 부정] 출제 연계"
+          },
+          {
+            "id": "lv2_u11_d3",
+            "missionTitle": "미션 3: allow의 목적격보어 -ing 오류 수정",
+            "sentence": "The museum does not allow visitors taking photos inside.",
+            "korean": "그 박물관은 관람객들이 내부에서 사진 찍는 것을 허락하지 않는다.",
+            "underlined": [
+              "The museum",
+              "does not allow",
+              "visitors taking photos",
+              "inside"
+            ],
+            "wrongIndex": 2,
+            "correction": "visitors to take photos",
+            "explanation": "allow는 목적격보어로 -ing가 아니라 to부정사를 취하므로 to take photos가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 5형식 to부정사 목적격보어] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 말로 가장 알맞은 것은?\n\n'My mother asked me ______ the dishes.'",
+            "options": [
+              "wash",
+              "washing",
+              "to wash",
+              "washed",
+              "washes"
+            ],
+            "ans": 2,
+            "exp": "ask + 목적어 + to-V 구조이므로 to wash가 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 5형식 to부정사 목적격보어]"
+          },
+          {
+            "q": "다음 중 밑줄 친 부분의 쓰임이 어색한 문장은?",
+            "options": [
+              "She told me to wait here.",
+              "He wants his son to be a doctor.",
+              "The doctor advised him to stop smoking.",
+              "My father allowed me go to the concert.",
+              "They expected us to win the game."
+            ],
+            "ans": 3,
+            "exp": "allow는 목적격보어로 to부정사를 취하므로 go 대신 to go가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 5형식 to부정사 목적격보어]"
+          },
+          {
+            "q": "'선생님은 그들에게 복도에서 뛰지 말라고 말씀하셨다.'를 바르게 영작한 것은?",
+            "options": [
+              "The teacher told them to not run in the hallway.",
+              "The teacher told them not to run in the hallway.",
+              "The teacher told them don't run in the hallway.",
+              "The teacher told them not running in the hallway.",
+              "The teacher didn't tell them to run in the hallway."
+            ],
+            "ans": 1,
+            "exp": "told + 목적어 + not to-V 어순이므로 not to run이 올바릅니다.",
+            "conceptRef": "1단계 [공식 2: to부정사의 부정]"
+          },
+          {
+            "q": "다음 문장의 빈칸에 들어갈 수 없는 동사는?\n\n'He ______ me to finish the work.'",
+            "options": [
+              "wanted",
+              "told",
+              "asked",
+              "made",
+              "advised"
+            ],
+            "ans": 3,
+            "exp": "made는 사역동사이므로 목적격보어로 to부정사가 아닌 동사원형을 취해야 합니다.",
+            "conceptRef": "1단계 [공식 1: 5형식 to부정사 목적격보어]"
+          },
+          {
+            "q": "다음 괄호 안에서 알맞은 말이 바르게 짝지어진 것은?\n\n- 'She wants me (help / to help) her.'\n- 'Dad told me (not to / to not) eat too much candy.'",
+            "options": [
+              "help - not to",
+              "to help - not to",
+              "to help - to not",
+              "help - to not",
+              "to help - don't"
+            ],
+            "ans": 1,
+            "exp": "want는 to help, 부정은 not to가 정답입니다.",
+            "conceptRef": "1단계 [공식 1 & 2 종합]"
+          }
+        ]
+      },
+      {
+        "unitNo": 12,
+        "unitId": "lv2_u12",
+        "legacyUnitNo": 24,
+        "title": "5형식 사역동사와 지각동사 (목적격보어 원형·분사)",
+        "part": "문장의 형식 심화",
+        "targetGrade": "중2 내신 대비",
+        "summary": "사역동사(make, have, let) 뒤의 동사원형 목적격보어와 지각동사(see, hear, feel) 뒤의 동사원형/현재분사(-ing) 출제 공식",
+        "overview": "'엄마가 내게 방 청소를 시키셨다'처럼 남에게 행동을 시키는 사역동사(make, have, let)와 감각으로 느끼는 지각동사(see, hear)는 목적격보어 자리에 to를 쓰지 않고 '동사원형'이나 '-ing'를 써요! 중등 어법의 절대 강자 사역·지각동사를 정복해 봅시다!",
+        "keyTakeaways": [
+          "사역동사(make, have, let) + 목적어 + 동사원형 (to 쓰면 절대 안 됨!)",
+          "지각동사(see, hear, watch, feel, listen to) + 목적어 + 동사원형 또는 V-ing (생생한 진행 강조)",
+          "준사역동사 help: 목적격보어로 동사원형 또는 to부정사 둘 다 가능!"
+        ],
+        "formulaCards": [
+          {
+            "name": "사역동사의 목적격보어 (동사원형)",
+            "formula": "make / have / let + 목적어 + 동사원형 (목적어에게 ~하게 시키다/허락하다)",
+            "examples": [
+              {
+                "en": "My strict mother made me clean my dirty room alone.",
+                "ko": "나의 엄격한 어머니는 나에게 더러운 방을 혼자 청소하게 시키셨다.",
+                "point": "사역동사 made 뒤에 목적어 me, 그리고 목적격보어로 동사원형 clean을 씁니다."
+              },
+              {
+                "en": "The coach let the tired players take a short break.",
+                "ko": "코치는 지친 선수들이 짧은 휴식을 취하도록 허락해 주었다.",
+                "point": "사역동사 let 뒤에 목적격보어로 동사원형 take를 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "He made me laugh so hard.",
+              "x": "He made me to laugh so hard.",
+              "comment": "사역동사 make 뒤의 목적격보어에는 to를 붙이지 않고 동사원형 laugh를 씁니다."
+            },
+            "trap": "준사역동사 help는 목적격보어로 동사원형과 to부정사 둘 다 올 수 있습니다 (help me clean / to clean).",
+            "quizLink": "사역동사 3총사(make/have/let) 뒤에 to-V가 나오면 0.1초 만에 오답으로 솎아내세요!"
+          },
+          {
+            "name": "지각동사의 목적격보어 (동사원형 or V-ing)",
+            "formula": "see / hear / watch / feel + 목적어 + 동사원형 또는 V-ing",
+            "examples": [
+              {
+                "en": "I saw a beautiful bird singing brightly in the tall tree.",
+                "ko": "나는 키 큰 나무에서 아름다운 새가 밝게 노래하고 있는 것을 보았다.",
+                "point": "지각동사 saw 뒤에 목적어가 노래하는 동작을 강조하기 위해 singing을 썼습니다."
+              },
+              {
+                "en": "We heard someone knock on the front door late at night.",
+                "ko": "우리는 늦은 밤에 누군가가 현관문을 두드리는 것을 들었다.",
+                "point": "지각동사 heard 뒤에 목적격보어로 동사원형 knock을 썼습니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "I felt the building shake.",
+              "x": "I felt the building to shake.",
+              "comment": "지각동사 felt 뒤에는 to shake가 아니라 동사원형 shake 또는 shaking을 써야 합니다."
+            },
+            "trap": "지각동사 뒤에는 to부정사를 절대 쓸 수 없습니다! 오직 동사원형이나 -ing만 가능합니다.",
+            "quizLink": "동사원형은 동작 전체의 사실, -ing는 그 순간 생생하게 진행 중인 동작을 강조합니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv2_u12_d1",
+            "missionTitle": "미션 1: 사역동사 make 뒤 to부정사 오용 수정",
+            "sentence": "The funny movie made all the audience to laugh aloud in the theater.",
+            "korean": "그 재미있는 영화는 모든 관객들이 크게 웃게 만들었다.",
+            "underlined": [
+              "The funny movie",
+              "made all the audience",
+              "to laugh aloud",
+              "in the theater"
+            ],
+            "wrongIndex": 2,
+            "correction": "laugh aloud",
+            "explanation": "made는 사역동사이므로 목적격보어로 to부정사가 아닌 동사원형 laugh를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 사역동사의 목적격보어] 출제 연계"
+          },
+          {
+            "id": "lv2_u12_d2",
+            "missionTitle": "미션 2: 지각동사 hear 뒤 to부정사 오용 수정",
+            "sentence": "I heard someone to scream in the dark street last night.",
+            "korean": "나는 어젯밤 어두운 거리에서 누군가가 비명을 지르는 것을 들었다.",
+            "underlined": [
+              "I heard",
+              "someone to scream",
+              "in the dark street",
+              "last night"
+            ],
+            "wrongIndex": 1,
+            "correction": "someone scream (or screaming)",
+            "explanation": "지각동사 heard 뒤에는 to scream이 올 수 없으며, 동사원형 scream 또는 분사 screaming을 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 지각동사의 목적격보어] 출제 연계"
+          },
+          {
+            "id": "lv2_u12_d3",
+            "missionTitle": "미션 3: 사역동사 let 뒤 -ing 오용 수정",
+            "sentence": "My parents never let me going out alone after nine.",
+            "korean": "부모님께서는 내가 9시 이후에 혼자 외출하는 것을 결코 허락하지 않으신다.",
+            "underlined": [
+              "My parents",
+              "never let me",
+              "going out alone",
+              "after nine"
+            ],
+            "wrongIndex": 2,
+            "correction": "go out alone",
+            "explanation": "사역동사 let의 목적격보어로는 -ing가 아니라 동사원형 go가 와야 합니다.",
+            "conceptRef": "1단계 [공식 1: 사역동사의 목적격보어] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 말로 가장 알맞은 것은?\n\n'My father had me ______ the family car.'",
+            "options": [
+              "wash",
+              "to wash",
+              "washing",
+              "washed",
+              "washes"
+            ],
+            "ans": 0,
+            "exp": "사역동사 had의 목적격보어로는 동사원형 wash가 옵니다.",
+            "conceptRef": "1단계 [공식 1: 사역동사의 목적격보어]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 수 없는 것은?\n\n'I saw him ______ across the street.'",
+            "options": [
+              "cross",
+              "crossing",
+              "to cross",
+              "run",
+              "running"
+            ],
+            "ans": 2,
+            "exp": "지각동사 saw 뒤에는 to부정사(to cross)를 절대 쓸 수 없습니다.",
+            "conceptRef": "1단계 [공식 2: 지각동사의 목적격보어]"
+          },
+          {
+            "q": "다음 중 밑줄 친 부분의 쓰임이 어색한 문장은?",
+            "options": [
+              "She made her brother cry.",
+              "He heard the phone ringing.",
+              "They let us enter the hall.",
+              "I helped him to carry the box.",
+              "Mom made me to wash the dishes."
+            ],
+            "ans": 4,
+            "exp": "made는 사역동사이므로 to wash가 아니라 동사원형 wash가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 사역동사의 목적격보어]"
+          },
+          {
+            "q": "'그는 내가 숙제하는 것을 도와주었다.'를 영작할 때 빈칸에 들어갈 수 있는 것으로 짝지어진 것은?\n\n'He helped me ______ my homework.'",
+            "options": [
+              "do - to do",
+              "do - doing",
+              "to do - doing",
+              "doing - done",
+              "to do - did"
+            ],
+            "ans": 0,
+            "exp": "준사역동사 help는 목적격보어로 동사원형(do)과 to부정사(to do)를 둘 다 취할 수 있습니다.",
+            "conceptRef": "1단계 [공식 1: 사역동사의 목적격보어]"
+          },
+          {
+            "q": "다음 문장의 빈칸에 알맞은 형태는?\n\n'We watched the sun ______ slowly behind the mountain.'",
+            "options": [
+              "to rise",
+              "rising",
+              "rised",
+              "to rising",
+              "rose"
+            ],
+            "ans": 1,
+            "exp": "지각동사 watched 뒤에는 동사원형 rise 또는 현재분사 rising이 올 수 있습니다.",
+            "conceptRef": "1단계 [공식 2: 지각동사의 목적격보어]"
+          }
+        ]
+      },
+      {
+        "unitNo": 13,
+        "unitId": "lv2_u13",
+        "legacyUnitNo": 25,
+        "title": "수동태 기본 형태와 행위자 by의 생략",
+        "part": "태의 심화",
+        "targetGrade": "중2 내신 대비",
+        "summary": "주어가 동작을 당하는 'be + p.p. (+ by 행위자)'의 구조와 능동태를 수동태로 바꾸는 3단계 변환 공식",
+        "overview": "'누군가 창문을 깼다(능동태)'보다 '창문이 깨졌다(수동태)'처럼 당한 대상에 초점을 맞출 때 수동태를 써요! be동사 + 과거분사(p.p.)의 기본 형태와 행위자가 일반인이거나 불분명할 때 by + 행위자를 생략하는 원리를 배워봅시다!",
+        "keyTakeaways": [
+          "수동태 기본 형태: 주어 + be동사 + 과거분사(p.p.) + by 행위자 (~에 의해 …되어지다)",
+          "시제 일치: 현재 am/are/is + p.p. | 과거 was/were + p.p.",
+          "by + 행위자 생략: 행위자가 일반인(people), 불분명하거나 중요하지 않을 때"
+        ],
+        "formulaCards": [
+          {
+            "name": "능동태 ➔ 수동태 3단계 전환 공식",
+            "formula": "1. 목적어 ➔ 새 주어 | 2. 동사 ➔ be + p.p. (시제/수일치) | 3. 주어 ➔ by + 목적격",
+            "examples": [
+              {
+                "en": "Romeo and Juliet was written by William Shakespeare.",
+                "ko": "'로미오와 줄리엣'은 윌리엄 셰익스피어에 의해 쓰였다.",
+                "point": "과거시제 단수 be동사 was + write의 과거분사 written 구조입니다."
+              },
+              {
+                "en": "Many delicious cookies are baked by my grandmother every Sunday.",
+                "ko": "매주 일요일마다 우리 할머니에 의해 많은 맛있는 쿠키가 구워진다.",
+                "point": "복수 주어 Many cookies에 맞추어 are baked를 썼습니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "The window was broken by Tom.",
+              "x": "The window was broke by Tom.",
+              "comment": "be동사 뒤에는 과거형 broke가 아니라 반드시 과거분사(p.p.)인 broken을 써야 합니다."
+            },
+            "trap": "수동태의 be동사는 새 주어의 인칭/수와 원래 능동태 문장의 '시제'에 맞춰야 합니다.",
+            "quizLink": "수동태 전환 문제는 중2 내신 서술형의 단골 1순위 주관식 문제입니다."
+          },
+          {
+            "name": "행위자(by + 목적격)의 생략",
+            "formula": "행위자가 막연한 일반인(by people), 알 수 없음, 중요치 않을 때 생략",
+            "examples": [
+              {
+                "en": "English is spoken widely in many countries around the world.",
+                "ko": "영어는 전 세계 많은 나라에서 널리 사용된다.",
+                "point": "영어를 쓰는 행위자는 일반 대중(by people)이므로 생략되었습니다."
+              },
+              {
+                "en": "This historic bridge was built in 1950 during the war.",
+                "ko": "이 역사적인 다리는 전쟁 중인 1950년에 건설되었다.",
+                "point": "건설한 구체적 행위자보다 다리가 지어졌다는 사실이 중요하므로 by를 생략합니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "My bicycle was stolen last night.",
+              "x": "My bicycle was stolen by someone last night.",
+              "comment": "도둑이 누구인지 알 수 없으므로 by someone은 생략하는 것이 훨씬 자연스럽습니다."
+            },
+            "trap": "능동태의 목적어가 없는 1형식, 2형식 자동사는 수동태를 만들 수 없습니다!",
+            "quizLink": "happen, appear, disappear 등 자동사는 수동태 불가 동사로 시험에 자주 나옵니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv2_u13_d1",
+            "missionTitle": "미션 1: 수동태 과거분사(p.p.) 형태 오류",
+            "sentence": "The famous poem was wrote by a young soldier in the war.",
+            "korean": "그 유명한 시는 전쟁 중 한 젊은 군인에 의해 쓰였다.",
+            "underlined": [
+              "The famous poem",
+              "was wrote by",
+              "a young soldier",
+              "in the war"
+            ],
+            "wrongIndex": 1,
+            "correction": "was written by",
+            "explanation": "수동태는 be + p.p.이므로 wrote가 아니라 과거분사 written이 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 능동태 ➔ 수동태 3단계 전환] 출제 연계"
+          },
+          {
+            "id": "lv2_u13_d2",
+            "missionTitle": "미션 2: 수동태 be동사 복수 수일치 오류",
+            "sentence": "These ancient pyramids was built thousands of years ago in Egypt.",
+            "korean": "이 고대 피라미드들은 수천 년 전 이집트에서 건설되었다.",
+            "underlined": [
+              "These ancient pyramids",
+              "was built",
+              "thousands of years ago",
+              "in Egypt"
+            ],
+            "wrongIndex": 1,
+            "correction": "were built",
+            "explanation": "주어가 These ancient pyramids로 복수이므로 was가 아니라 were built가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 능동태 ➔ 수동태 3단계 전환] 출제 연계"
+          },
+          {
+            "id": "lv2_u13_d3",
+            "missionTitle": "미션 3: 행위자 목적격 전치사 누락 오류",
+            "sentence": "The dirty room was thoroughly cleaned him yesterday afternoon.",
+            "korean": "그 더러운 방은 어제 오후 그에 의해 철저하게 청소되었다.",
+            "underlined": [
+              "The dirty room",
+              "was thoroughly",
+              "cleaned him",
+              "yesterday afternoon"
+            ],
+            "wrongIndex": 2,
+            "correction": "cleaned by him",
+            "explanation": "행위자를 나타낼 때는 전치사 by를 써서 cleaned by him이 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 능동태 ➔ 수동태 3단계 전환] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 문장을 수동태로 바르게 전환한 것은?\n\n'Tom broke the window yesterday.'",
+            "options": [
+              "The window was broken by Tom yesterday.",
+              "The window broke by Tom yesterday.",
+              "The window was break by Tom yesterday.",
+              "The window is broken by Tom yesterday.",
+              "The window were broken by Tom yesterday."
+            ],
+            "ans": 0,
+            "exp": "과거시제 broke와 단수 주어 The window에 맞춘 was broken by Tom이 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: 능동태 ➔ 수동태 3단계 전환]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 말로 가장 알맞은 것은?\n\n'Spanish ______ by many people in South America.'",
+            "options": [
+              "speaks",
+              "is spoken",
+              "is speaking",
+              "spoke",
+              "was speak"
+            ],
+            "ans": 1,
+            "exp": "스페인어가 사람들에 의해 사용되는 수동의 의미이므로 is spoken이 알맞습니다.",
+            "conceptRef": "1단계 [공식 1: 능동태 ➔ 수동태 3단계 전환]"
+          },
+          {
+            "q": "다음 중 밑줄 친 'by + 행위자'를 생략할 수 있는 것은?",
+            "options": [
+              "The Harry Potter books were written <u>by J.K. Rowling</u>.",
+              "This portrait was painted <u>by Leonardo da Vinci</u>.",
+              "Cars are made in this factory <u>by people</u>.",
+              "The phone was invented <u>by Alexander Graham Bell</u>.",
+              "The song was composed <u>by Mozart</u>."
+            ],
+            "ans": 2,
+            "exp": "by people처럼 행위자가 막연한 일반인일 때는 생략하는 것이 자연스럽습니다.",
+            "conceptRef": "1단계 [공식 2: 행위자의 생략]"
+          },
+          {
+            "q": "다음 중 어법상 수동태로 쓸 수 없는 동사는?",
+            "options": [
+              "make",
+              "break",
+              "happen",
+              "clean",
+              "build"
+            ],
+            "ans": 2,
+            "exp": "happen(일어나다, 발생하다)은 목적어가 없는 자동사이므로 수동태를 만들 수 없습니다.",
+            "conceptRef": "1단계 [공식 2: 행위자의 생략]"
+          },
+          {
+            "q": "'이 집은 100년 전에 지어졌다.'를 바르게 영작한 것은?",
+            "options": [
+              "This house built 100 years ago.",
+              "This house was built 100 years ago.",
+              "This house were built 100 years ago.",
+              "This house is built 100 years ago.",
+              "This house was build 100 years ago."
+            ],
+            "ans": 1,
+            "exp": "과거시제 단수 수동태는 was built입니다.",
+            "conceptRef": "1단계 [공식 1: 능동태 ➔ 수동태 3단계 전환]"
+          }
+        ]
+      },
+      {
+        "unitNo": 14,
+        "unitId": "lv2_u14",
+        "legacyUnitNo": 26,
+        "title": "조동사가 있는 수동태와 부정문/의문문",
+        "part": "태의 심화",
+        "targetGrade": "중2 내신 대비",
+        "summary": "can/must/will + be p.p. 형태의 조동사 수동태와 be not p.p., Is/Was S + p.p.?의 의문문 구조",
+        "overview": "조동사(can, must, will, should)가 들어있는 문장을 수동태로 바꿀 때는 '조동사 + be + p.p.'라는 공식이 적용돼요! 조동사 뒤에는 무조건 동사원형 be를 고정한다는 규칙과, 수동태 부정문/의문문 만드는 법을 배워봅시다!",
+        "keyTakeaways": [
+          "조동사 수동태: 주어 + 조동사 + be + 과거분사(p.p.) (can be done, must be finished)",
+          "수동태 부정문: 주어 + be동사 + not + 과거분사(p.p.) (was not broken)",
+          "수동태 의문문: be동사 + 주어 + 과거분사(p.p.) ~? (Was this bridge built in 1950?)"
+        ],
+        "formulaCards": [
+          {
+            "name": "조동사가 있는 수동태 공식",
+            "formula": "주어 + can / must / will / should + be + p.p.",
+            "examples": [
+              {
+                "en": "This difficult math problem can be solved by students easily.",
+                "ko": "이 어려운 수학 문제는 학생들에 의해 쉽게 풀릴 수 있다.",
+                "point": "can 뒤에 동사원형 be + p.p.(solved)를 썼습니다."
+              },
+              {
+                "en": "The final assignment must be submitted before Friday afternoon.",
+                "ko": "최종 과제는 금요일 오후 전에 반드시 제출되어야 한다.",
+                "point": "must be submitted 구조입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "The garbage will be recycled.",
+              "x": "The garbage will is recycled.",
+              "comment": "조동사 will 뒤에는 is가 아니라 동사원형 be를 써야 합니다."
+            },
+            "trap": "조동사 뒤의 be를 am/are/is로 바꾸는 실수를 가장 많이 합니다. 무조건 'be'입니다!",
+            "quizLink": "조동사 + be + p.p.는 수능 어법에서도 문장의 수동 의미를 판별하는 단골 공식입니다."
+          },
+          {
+            "name": "수동태의 부정문과 의문문",
+            "formula": "부정: be + not + p.p. | 의문: Be동사 + 주어 + p.p. ~?",
+            "examples": [
+              {
+                "en": "The secret code was not discovered by the enemy soldiers.",
+                "ko": "그 비밀 암호는 적군 병사들에 의해 발견되지 않았다.",
+                "point": "be동사 바로 뒤에 not을 붙여 수동태 부정문을 만듭니다."
+              },
+              {
+                "en": "Was this classic novel written by Charles Dickens?",
+                "ko": "이 고전 소설은 찰스 디킨스에 의해 쓰였나요?",
+                "point": "be동사 Was가 문장 맨 앞으로 나와 의문문을 만듭니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "Was the window broken by the wind?",
+              "x": "Did the window broken by the wind?",
+              "comment": "수동태 의문문은 Did가 아니라 be동사 Was/Were로 시작해야 합니다."
+            },
+            "trap": "수동태 의문문에 일반동사 조동사 Did나 Do를 쓰면 절대 안 됩니다!",
+            "quizLink": "Was the letter sent? ➔ Yes, it was. / No, it wasn't로 대답합니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv2_u14_d1",
+            "missionTitle": "미션 1: 조동사 수동태 be동사 형태 오류",
+            "sentence": "The important meeting will is held in the main conference room.",
+            "korean": "그 중요한 회의는 본관 회의실에서 열릴 것이다.",
+            "underlined": [
+              "The important meeting",
+              "will is held",
+              "in the main",
+              "conference room"
+            ],
+            "wrongIndex": 1,
+            "correction": "will be held",
+            "explanation": "조동사 will 뒤에는 is가 아니라 동사원형 be를 써서 will be held가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 조동사가 있는 수동태] 출제 연계"
+          },
+          {
+            "id": "lv2_u14_d2",
+            "missionTitle": "미션 2: 수동태 의문문 조동사 Did 오용 수정",
+            "sentence": "Did this beautiful wooden house built by your grandfather?",
+            "korean": "이 아름다운 통나무집은 너의 할아버지에 의해 지어졌니?",
+            "underlined": [
+              "Did this beautiful",
+              "wooden house",
+              "built by",
+              "your grandfather?"
+            ],
+            "wrongIndex": 0,
+            "correction": "Was this beautiful",
+            "explanation": "수동태 의문문은 Did가 아니라 be동사 과거형 Was로 시작해야 합니다.",
+            "conceptRef": "1단계 [공식 2: 수동태 부정문과 의문문] 출제 연계"
+          },
+          {
+            "id": "lv2_u14_d3",
+            "missionTitle": "미션 3: 조동사 수동태 과거분사 형태 오류",
+            "sentence": "The rules must be obey by all students in this academy.",
+            "korean": "규칙은 이 학원의 모든 학생들에 의해 반드시 준수되어야 한다.",
+            "underlined": [
+              "The rules",
+              "must be obey",
+              "by all students",
+              "in this academy"
+            ],
+            "wrongIndex": 1,
+            "correction": "must be obeyed",
+            "explanation": "수동태이므로 obey가 아니라 과거분사 obeyed가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 조동사가 있는 수동태] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 말로 가장 알맞은 것은?\n\n'The work must ______ by tomorrow afternoon.'",
+            "options": [
+              "finish",
+              "finished",
+              "be finished",
+              "is finished",
+              "being finished"
+            ],
+            "ans": 2,
+            "exp": "조동사 must 뒤의 수동태는 must be + p.p. 형태이므로 be finished가 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 조동사가 있는 수동태]"
+          },
+          {
+            "q": "다음 문장의 빈칸에 들어갈 말로 알맞은 것은?\n\n'______ this cake made by your sister?'",
+            "options": [
+              "Did",
+              "Was",
+              "Does",
+              "Has",
+              "Had"
+            ],
+            "ans": 1,
+            "exp": "수동태 의문문이므로 be동사 Was this cake made ~?가 올바릅니다.",
+            "conceptRef": "1단계 [공식 2: 수동태 부정문과 의문문]"
+          },
+          {
+            "q": "다음 중 어법상 어색한 문장은?",
+            "options": [
+              "The concert will be held next week.",
+              "The problem cannot be solved easily.",
+              "The door was not locked last night.",
+              "Did the window broken by Tom?",
+              "Were you invited to the party?"
+            ],
+            "ans": 3,
+            "exp": "수동태 의문문에는 Did를 쓸 수 없으며 Was the window broken으로 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 수동태 부정문과 의문문]"
+          },
+          {
+            "q": "'이 책은 모든 학생들에게 읽혀야 한다.'를 바르게 영작한 것은?",
+            "options": [
+              "This book should read by all students.",
+              "This book should be read by all students.",
+              "This book should is read by all students.",
+              "This book should be readed by all students.",
+              "This book should being read by all students."
+            ],
+            "ans": 1,
+            "exp": "should be read(read의 p.p.는 발음만 [red]이고 철자는 read)가 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: 조동사가 있는 수동태]"
+          },
+          {
+            "q": "다음 대화의 빈칸에 알맞은 대답은?\n\nA: 'Was the thief caught by the police?'\nB: 'Yes, ______.'",
+            "options": [
+              "he was",
+              "he did",
+              "he is",
+              "it was",
+              "they were"
+            ],
+            "ans": 0,
+            "exp": "Was the thief ~? 질문에 대한 긍정 대답은 Yes, he was.입니다.",
+            "conceptRef": "1단계 [공식 2: 수동태 부정문과 의문문]"
+          }
+        ]
+      },
+      {
+        "unitNo": 15,
+        "unitId": "lv2_u15",
+        "legacyUnitNo": 27,
+        "title": "by 이외의 전치사를 쓰는 관용적 수동태",
+        "part": "태의 심화",
+        "targetGrade": "중2 내신 대비",
+        "summary": "행위자 by 대신 at, with, in, of, to 등의 전치사를 쓰는 필수 관용 수동태 표현 총정리",
+        "overview": "수동태라고 해서 무조건 by만 쓰는 게 아니에요! 'be surprised at(~에 놀라다)', 'be covered with(~로 덮이다)'처럼 특정 전치사와 단짝을 이루어 마치 하나의 숙어처럼 굳어진 표현들이 있어요. 중2 내신 단골 암기 1순위 관용 수동태를 완벽히 정복해 봅시다!",
+        "keyTakeaways": [
+          "감정/놀람: be surprised at (~에 놀라다), be pleased with (~에 기뻐하다)",
+          "재료/상태: be covered with (~로 덮이다), be filled with (~로 가득 차다), be made of/from (~로 만들어지다)",
+          "흥미/인지: be interested in (~에 관심이 있다), be known to (~에게 알려지다) / for (~로 유명하다)"
+        ],
+        "formulaCards": [
+          {
+            "name": "감정과 상태를 나타내는 관용 수동태",
+            "formula": "be surprised at | be satisfied with | be covered with | be filled with",
+            "examples": [
+              {
+                "en": "The high mountain peak is covered with pure white snow.",
+                "ko": "높은 산봉우리는 순백의 눈으로 덮여 있다.",
+                "point": "눈으로 덮여 있는 상태에는 전치사 with를 씁니다."
+              },
+              {
+                "en": "We were very surprised at the sudden bad news yesterday.",
+                "ko": "우리는 어제 그 갑작스러운 나쁜 소식에 몹시 놀랐다.",
+                "point": "원인에 대한 놀람에는 전치사 at을 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "The room was filled with colorful balloons.",
+              "x": "The room was filled by colorful balloons.",
+              "comment": "풍선으로 가득 찬 상태를 나타낼 때는 by가 아니라 with를 씁니다."
+            },
+            "trap": "be made of (물리적 변화: 나무 책상) vs be made from (화학적 변화: 포도주) 구별!",
+            "quizLink": "관용 수동태는 중학교 내신 빈칸 채우기 단골 킬러 문제입니다."
+          },
+          {
+            "name": "인지와 명성을 나타내는 관용 수동태",
+            "formula": "be interested in | be known to(대상) | be known for(이유)",
+            "examples": [
+              {
+                "en": "She is deeply interested in studying modern history.",
+                "ko": "그녀는 현대사를 공부하는 데 깊은 관심을 가지고 있다.",
+                "point": "관심이나 흥미에는 전치사 in을 씁니다."
+              },
+              {
+                "en": "The small island is known for its beautiful coral reefs.",
+                "ko": "그 작은 섬은 아름다운 산호초로 유명하다.",
+                "point": "유명한 이유나 특산물 앞에는 전치사 for를 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "He is known to everyone in the neighborhood.",
+              "x": "He is known with everyone in the neighborhood.",
+              "comment": "~에게 알려져 있다는 대상에는 전치사 to를 씁니다."
+            },
+            "trap": "be tired of (~에 실증나다) vs be tired from (~로 피곤하다) 뉘앙스 차이 주의!",
+            "quizLink": "전치사 in, at, with, of, to를 정확한 짝꿍끼리 연결하는 것이 핵심입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv2_u15_d1",
+            "missionTitle": "미션 1: be covered with 전치사 by 오용 수정",
+            "sentence": "The old stone wall was completely covered by green leaves.",
+            "korean": "그 오래된 돌담은 초록색 담쟁이 잎들로 완전히 덮여 있었다.",
+            "underlined": [
+              "The old stone wall",
+              "was completely",
+              "covered by",
+              "green leaves"
+            ],
+            "wrongIndex": 2,
+            "correction": "covered with",
+            "explanation": "~로 덮여 있다는 관용 수동태는 covered by가 아니라 covered with를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 감정과 상태의 관용 수동태] 출제 연계"
+          },
+          {
+            "id": "lv2_u15_d2",
+            "missionTitle": "미션 2: be interested in 전치사 at 오용 수정",
+            "sentence": "Many young students are interested at science experiments.",
+            "korean": "많은 어린 학생들은 과학 실험에 관심이 있다.",
+            "underlined": [
+              "Many young students",
+              "are interested at",
+              "science",
+              "experiments"
+            ],
+            "wrongIndex": 1,
+            "correction": "are interested in",
+            "explanation": "~에 관심이 있다는 표현은 be interested in이 올바른 짝꿍 전치사입니다.",
+            "conceptRef": "1단계 [공식 2: 인지와 명성의 관용 수동태] 출제 연계"
+          },
+          {
+            "id": "lv2_u15_d3",
+            "missionTitle": "미션 3: be surprised at 전치사 with 오용 수정",
+            "sentence": "We were all surprised with the shocking ending of the movie.",
+            "korean": "우리 모두는 그 영화의 충격적인 결말에 놀랐다.",
+            "underlined": [
+              "We were all",
+              "surprised with",
+              "the shocking ending",
+              "of the movie"
+            ],
+            "wrongIndex": 1,
+            "correction": "surprised at",
+            "explanation": "소식이나 결말에 놀랄 때는 surprised with가 아니라 surprised at을 씁니다.",
+            "conceptRef": "1단계 [공식 1: 감정과 상태의 관용 수동태] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 전치사로 알맞은 것은?\n\n'The ground was covered ______ white snow.'",
+            "options": [
+              "by",
+              "with",
+              "at",
+              "in",
+              "to"
+            ],
+            "ans": 1,
+            "exp": "be covered with가 '~로 덮이다'의 올바른 관용 표현입니다.",
+            "conceptRef": "1단계 [공식 1: 감정과 상태의 관용 수동태]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 말이 바르게 짝지어진 것은?\n\n- 'She is interested ______ Korean food.'\n- 'I was surprised ______ his sudden visit.'",
+            "options": [
+              "in - at",
+              "at - in",
+              "with - at",
+              "in - with",
+              "of - at"
+            ],
+            "ans": 0,
+            "exp": "interested in, surprised at이 올바른 짝꿍입니다.",
+            "conceptRef": "1단계 [공식 1 & 2 종합]"
+          },
+          {
+            "q": "다음 중 밑줄 친 전치사의 쓰임이 어색한 문장은?",
+            "options": [
+              "The basket was filled with apples.",
+              "He is known to everyone.",
+              "Jeju Island is known for its hallabong.",
+              "I was satisfied at the result.",
+              "Wine is made from grapes."
+            ],
+            "ans": 3,
+            "exp": "satisfied는 at이 아니라 with와 어울려 be satisfied with(~에 만족하다)로 씁니다.",
+            "conceptRef": "1단계 [공식 1: 감정과 상태의 관용 수동태]"
+          },
+          {
+            "q": "'이 탁자는 나무로 만들어졌다.'를 영작할 때 빈칸에 알맞은 전치사는?\n\n'This table is made ______ wood.'",
+            "options": [
+              "from",
+              "of",
+              "with",
+              "by",
+              "in"
+            ],
+            "ans": 1,
+            "exp": "재료의 성질이 그대로 남아있는 물리적 변화에는 be made of를 씁니다.",
+            "conceptRef": "1단계 [공식 1: 감정과 상태의 관용 수동태]"
+          },
+          {
+            "q": "다음 문장의 빈칸에 들어갈 말로 알맞은 것은?\n\n'He is tired ______ doing the same boring work every day.'",
+            "options": [
+              "at",
+              "with",
+              "of",
+              "to",
+              "for"
+            ],
+            "ans": 2,
+            "exp": "be tired of는 '~에 실증나다, 질리다'라는 숙어입니다.",
+            "conceptRef": "1단계 [공식 2: 인지와 명성의 관용 수동태]"
+          }
+        ]
+      },
+      {
+        "unitNo": 16,
+        "unitId": "lv2_u16",
+        "legacyUnitNo": 28,
+        "title": "주격 관계대명사 (who, which, that)와 수일치",
+        "part": "관계사의 기초",
+        "targetGrade": "중2 내신 대비",
+        "summary": "접속사 + 대명사 역할을 하여 명사(선행사)를 수식하는 주격 관계대명사의 선택과 관계사절 동사의 수일치 공식",
+        "overview": "두 문장을 합치면서 앞의 명사(선행사)를 친절하게 설명해 주는 문법의 꽃, '관계대명사'예요! 사람이면 who, 사물이면 which, 둘 다 되는 that! 그리고 관계대명사 바로 뒤에 나오는 동사는 선행사의 단수/복수에 맞춘다는 내신 킬러 공식을 파헤쳐 봅시다!",
+        "keyTakeaways": [
+          "주격 관계대명사: 관계사절 안에서 '주어' 역할 (뒤에 바로 동사가 옴)",
+          "선행사에 따른 구분: 사람 ➔ who / 사물·동물 ➔ which / 사람·사물 공통 ➔ that",
+          "★선행사-동사 수일치: 관계대명사절의 동사는 앞의 '선행사'의 수와 일치시킨다!"
+        ],
+        "formulaCards": [
+          {
+            "name": "주격 관계대명사의 선택과 기본 어순",
+            "formula": "선행사(사람) + who/that + 동사 | 선행사(사물) + which/that + 동사",
+            "examples": [
+              {
+                "en": "I know a talented boy who plays the guitar brilliantly.",
+                "ko": "나는 기타를 아주 훌륭하게 연주하는 재능 있는 소년 하나를 알고 있다.",
+                "point": "선행사 a boy(사람, 단수) 뒤에 who + 3인칭 단수동사 plays가 왔습니다."
+              },
+              {
+                "en": "Look at the pretty cat which is sitting on the garden wall.",
+                "ko": "정원 담장 위에 앉아 있는 저 예쁜 고양이를 보아라.",
+                "point": "선행사 the pretty cat(동물, 단수) 뒤에 which is가 왔습니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "The girl who lives next door is very kind.",
+              "x": "The girl which lives next door is very kind.",
+              "comment": "The girl은 사람이므로 사물에 쓰는 which가 아니라 who나 that을 써야 합니다."
+            },
+            "trap": "주격 관계대명사 뒤에 다시 주어 대명사(who he lives)를 쓰면 절대 안 됩니다!",
+            "quizLink": "주격 관계대명사는 생략할 수 없지만, '주격관대 + be동사'는 통째로 생략 가능합니다."
+          },
+          {
+            "name": "관계사절 동사의 선행사 수일치 공식",
+            "formula": "단수 선행사 ➔ 단수동사(is, -s) | 복수 선행사 ➔ 복수동사(are, 원형)",
+            "examples": [
+              {
+                "en": "I like stories that have happy endings.",
+                "ko": "나는 행복한 결말을 가진 이야기들을 좋아한다.",
+                "point": "선행사 stories가 복수이므로 that 뒤의 동사도 복수형 have를 씁니다."
+              },
+              {
+                "en": "She has a friendly uncle who lives in New York.",
+                "ko": "그녀는 뉴욕에 살고 계시는 다정한 삼촌 한 분이 있다.",
+                "point": "선행사 an uncle이 단수이므로 who 뒤에 단수동사 lives가 옵니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "Students who study hard will succeed.",
+              "x": "Students who studies hard will succeed.",
+              "comment": "선행사 Students가 복수이므로 who 뒤의 동사는 studies가 아니라 study입니다."
+            },
+            "trap": "who 자체는 단수/복수 표시가 없으므로 무조건 앞의 '선행사'를 확인해야 합니다.",
+            "quizLink": "중2 내신 객관식에서 관계사절 동사의 -s 누락/오용은 매년 100% 출제됩니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv2_u16_d1",
+            "missionTitle": "미션 1: 관계사절 동사의 선행사 수일치 오류",
+            "sentence": "I have two close friends who lives in the same apartment building.",
+            "korean": "나는 같은 아파트 동에 살고 있는 두 명의 친한 친구가 있다.",
+            "underlined": [
+              "I have",
+              "two close friends",
+              "who lives in",
+              "the same apartment building"
+            ],
+            "wrongIndex": 2,
+            "correction": "who live in",
+            "explanation": "선행사 two close friends가 복수이므로 who 뒤의 동사도 단수가 아닌 복수형 live가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 2: 선행사 수일치 공식] 출제 연계"
+          },
+          {
+            "id": "lv2_u16_d2",
+            "missionTitle": "미션 2: 사람 선행사 앞 which 오용 수정",
+            "sentence": "The friendly doctor which treated my arm was very kind.",
+            "korean": "내 팔을 치료해 주신 그 친절한 의사 선생님은 매우 다정하셨다.",
+            "underlined": [
+              "The friendly doctor",
+              "which treated",
+              "my arm",
+              "was very kind"
+            ],
+            "wrongIndex": 1,
+            "correction": "who treated (or that treated)",
+            "explanation": "선행사가 The friendly doctor(사람)이므로 사물에 쓰는 which 대신 who나 that을 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 주격 관계대명사 선택] 출제 연계"
+          },
+          {
+            "id": "lv2_u16_d3",
+            "missionTitle": "미션 3: 주격 관계사절 내 중복 대명사 오류",
+            "sentence": "She loves the puppy that it has big brown eyes.",
+            "korean": "그녀는 크고 갈색인 눈을 가진 그 강아지를 아주 사랑한다.",
+            "underlined": [
+              "She loves",
+              "the puppy",
+              "that it has",
+              "big brown eyes"
+            ],
+            "wrongIndex": 2,
+            "correction": "that has",
+            "explanation": "that이 이미 주어 역할을 하므로 뒤에 대명사 it을 중복해서 쓰면 안 됩니다.",
+            "conceptRef": "1단계 [공식 1: 주격 관계대명사 선택] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 공통으로 들어갈 수 있는 관계대명사는?\n\n- 'The boy ______ is singing is my brother.'\n- 'The book ______ is on the desk is mine.'",
+            "options": [
+              "who",
+              "which",
+              "that",
+              "whom",
+              "whose"
+            ],
+            "ans": 2,
+            "exp": "사람 선행사와 사물 선행사에 모두 쓸 수 있는 주격 관계대명사는 that입니다.",
+            "conceptRef": "1단계 [공식 1: 주격 관계대명사 선택]"
+          },
+          {
+            "q": "다음 두 문장을 한 문장으로 바르게 합친 것은?\n\n'I know a girl.' + 'She speaks four languages.'",
+            "options": [
+              "I know a girl which speaks four languages.",
+              "I know a girl who speaks four languages.",
+              "I know a girl whom speaks four languages.",
+              "I know a girl who she speaks four languages.",
+              "I know a girl whose speaks four languages."
+            ],
+            "ans": 1,
+            "exp": "선행사가 a girl(사람)이고 주어 역할을 하므로 who speaks가 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: 주격 관계대명사 선택]"
+          },
+          {
+            "q": "다음 중 밑줄 친 부분의 쓰임이 어색한 문장은?",
+            "options": [
+              "The dog that barked was mine.",
+              "I met a woman who lives next door.",
+              "He bought a watch who is very expensive.",
+              "Look at the birds that are flying.",
+              "The car which stopped was black."
+            ],
+            "ans": 2,
+            "exp": "a watch는 사물이므로 who가 아니라 which나 that을 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 주격 관계대명사 선택]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 동사의 형태가 알맞은 것은?\n\n'The flowers that ______ on the hill are beautiful.'",
+            "options": [
+              "grow",
+              "grows",
+              "growing",
+              "grown",
+              "to grow"
+            ],
+            "ans": 0,
+            "exp": "선행사 The flowers가 복수이므로 복수동사 grow가 정답입니다.",
+            "conceptRef": "1단계 [공식 2: 선행사 수일치 공식]"
+          },
+          {
+            "q": "'내 방을 청소한 소년은 내 동생이다.'를 바르게 영작한 것은?",
+            "options": [
+              "The boy which cleaned my room is my brother.",
+              "The boy who cleaned my room is my brother.",
+              "The boy who he cleaned my room is my brother.",
+              "The boy whom cleaned my room is my brother.",
+              "The boy whose cleaned my room is my brother."
+            ],
+            "ans": 1,
+            "exp": "The boy who cleaned my room is my brother가 올바른 영작입니다.",
+            "conceptRef": "1단계 [공식 1: 주격 관계대명사 선택]"
+          }
+        ]
+      },
+      {
+        "unitNo": 17,
+        "unitId": "lv2_u17",
+        "legacyUnitNo": 29,
+        "title": "목적격 관계대명사의 생략과 전치사 동반",
+        "part": "관계사의 기초",
+        "targetGrade": "중2 내신 대비",
+        "summary": "관계사절 내에서 목적어 역할을 하는 whom/which/that과 목적격 관계대명사의 단독 생략 및 전치사의 위치 이동",
+        "overview": "'내가 어제 만났던 그 사람'처럼 관계사절 안에서 목적어 자리가 비어있을 때 목적격 관계대명사를 써요! 목적격 관계대명사는 언제든지 쿨하게 생략할 수 있다는 점과, 절 끝의 전치사가 관계대명사 바로 앞으로 이사 오는 고난도 규칙을 배워봅시다!",
+        "keyTakeaways": [
+          "목적격 관계대명사: 선행사 뒤에서 목적어 역할 (whom/who, which, that)",
+          "★단독 생략 가능: The movie (that) I watched was fun.",
+          "전치사 동반: 전치사가 앞으로 오면 that 사용 불가! (to whom, with which)"
+        ],
+        "formulaCards": [
+          {
+            "name": "목적격 관계대명사의 역할과 생략",
+            "formula": "선행사 + (whom/which/that) + 주어 + 타동사 (목적어 자리 비어있음)",
+            "examples": [
+              {
+                "en": "The delicious cake that my mother baked was so sweet.",
+                "ko": "어머니께서 구워주신 그 맛있는 케이크는 정말 달콤했다.",
+                "point": "baked 뒤의 목적어가 빠져 있으므로 that은 목적격 관계대명사이며 생략 가능합니다."
+              },
+              {
+                "en": "The man whom I met at the station was a famous singer.",
+                "ko": "내가 역에서 만났던 그 남자는 유명한 가수였다.",
+                "point": "사람 목적격 선행사에 whom(또는 who/that)을 썼습니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "This is the book I wanted to read.",
+              "x": "This is the book which I wanted to read it.",
+              "comment": "which가 목적어 역할을 하므로 뒤에 중복 대명사 it을 남겨두면 비문이 됩니다."
+            },
+            "trap": "관계사절 끝에 목적어 대명사(it, them, him)를 그대로 남겨두는 실수가 가장 많습니다.",
+            "quizLink": "'명사 + 주어 + 동사' 어순이 나오면 목적격 관계대명사가 생략된 구조입니다."
+          },
+          {
+            "name": "전치사가 관계대명사 앞으로 올 때의 규칙",
+            "formula": "전치사 + whom / which (전치사 + that은 절대 불가!)",
+            "examples": [
+              {
+                "en": "This is the comfortable chair on which I sat yesterday.",
+                "ko": "이것은 내가 어제 앉았던 편안한 의자이다.",
+                "point": "sat on의 전치사 on이 관계대명사 앞으로 이동한 on which 구조입니다."
+              },
+              {
+                "en": "The girl with whom I studied was very smart.",
+                "ko": "내가 함께 공부했던 그 소녀는 매우 영리했다.",
+                "point": "전치사 with 뒤에는 목적격 형태인 whom을 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "This is the house in which he lives.",
+              "x": "This is the house in that he lives.",
+              "comment": "전치사 바로 뒤에는 관계대명사 that을 절대 쓸 수 없습니다."
+            },
+            "trap": "전치사가 관계대명사 바로 앞에 있을 때는 관계대명사를 생략할 수 없습니다!",
+            "quizLink": "전치사 + which/whom은 시험에서 100% 빈출되는 수능 연계 핵심 어법입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv2_u17_d1",
+            "missionTitle": "미션 1: 목적격 관계사절 내 중복 목적어 오류",
+            "sentence": "This is the brand-new bicycle that my father bought it for me.",
+            "korean": "이것은 우리 아버지께서 나를 위해 사주신 바로 그 새 자전거이다.",
+            "underlined": [
+              "This is",
+              "the brand-new bicycle",
+              "that my father bought it",
+              "for me"
+            ],
+            "wrongIndex": 2,
+            "correction": "that my father bought",
+            "explanation": "that이 이미 목적어 역할을 하므로 동사 bought 뒤의 대명사 it을 삭제해야 합니다.",
+            "conceptRef": "1단계 [공식 1: 목적격 관계대명사의 역할] 출제 연계"
+          },
+          {
+            "id": "lv2_u17_d2",
+            "missionTitle": "미션 2: 전치사 바로 뒤 관계대명사 that 오용 수정",
+            "sentence": "This is the cozy hotel in that we stayed during our trip.",
+            "korean": "이곳은 우리가 여행 동안 머물렀던 아늑한 호텔이다.",
+            "underlined": [
+              "This is",
+              "the cozy hotel",
+              "in that we stayed",
+              "during our trip"
+            ],
+            "wrongIndex": 2,
+            "correction": "in which we stayed",
+            "explanation": "전치사 in 바로 뒤에는 관계대명사 that을 쓸 수 없으므로 in which로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 2: 전치사 동반 규칙] 출제 연계"
+          },
+          {
+            "id": "lv2_u17_d3",
+            "missionTitle": "미션 3: 전치사 뒤 목적격 whom 대신 주격 who 오용",
+            "sentence": "The kind lady to who I spoke on the train was a doctor.",
+            "korean": "기차에서 내가 이야기를 나누었던 그 친절한 여성은 의사였다.",
+            "underlined": [
+              "The kind lady",
+              "to who I spoke",
+              "on the train",
+              "was a doctor"
+            ],
+            "wrongIndex": 1,
+            "correction": "to whom I spoke",
+            "explanation": "전치사 to 뒤에 올 때는 who가 아니라 목적격인 to whom을 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 전치사 동반 규칙] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 문장에서 생략할 수 있는 단어는?\n\n'The watch which my grandfather gave me was very old.'",
+            "options": [
+              "The",
+              "which",
+              "my",
+              "was",
+              "very"
+            ],
+            "ans": 1,
+            "exp": "which는 목적격 관계대명사이므로 단독으로 생략할 수 있습니다.",
+            "conceptRef": "1단계 [공식 1: 목적격 관계대명사의 역할]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 수 없는 것은?\n\n'The house in ______ he lives is very big.'",
+            "options": [
+              "which",
+              "that",
+              "whom",
+              "where",
+              "what"
+            ],
+            "ans": 1,
+            "exp": "전치사(in) 바로 뒤에는 관계대명사 that을 절대 쓸 수 없습니다.",
+            "conceptRef": "1단계 [공식 2: 전치사 동반 규칙]"
+          },
+          {
+            "q": "다음 두 문장을 한 문장으로 바르게 합친 것은?\n\n'I lost the umbrella.' + 'My mother bought it yesterday.'",
+            "options": [
+              "I lost the umbrella which my mother bought it yesterday.",
+              "I lost the umbrella which my mother bought yesterday.",
+              "I lost the umbrella who my mother bought yesterday.",
+              "I lost the umbrella what my mother bought yesterday.",
+              "I lost the umbrella in which my mother bought yesterday."
+            ],
+            "ans": 1,
+            "exp": "목적어 it을 생략하고 which my mother bought yesterday로 연결한 2번이 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: 목적격 관계대명사의 역할]"
+          },
+          {
+            "q": "다음 중 어법상 어색한 문장은?",
+            "options": [
+              "The book I read was exciting.",
+              "The girl whom I met was kind.",
+              "This is the town where I was born.",
+              "The music that I listened to it was great.",
+              "The friend with whom I traveled was Tom."
+            ],
+            "ans": 3,
+            "exp": "listened to 뒤의 it이 삭제되어야 올바른 목적격 관계대명사절이 됩니다.",
+            "conceptRef": "1단계 [공식 1: 목적격 관계대명사의 역할]"
+          },
+          {
+            "q": "'이것은 내가 찾고 있던 펜이다.'를 바르게 영작한 것은?",
+            "options": [
+              "This is the pen which I was looking for it.",
+              "This is the pen for that I was looking.",
+              "This is the pen which I was looking for.",
+              "This is the pen who I was looking for.",
+              "This is the pen I was looking it."
+            ],
+            "ans": 2,
+            "exp": "look for의 목적어가 빠진 which I was looking for가 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: 목적격 관계대명사의 역할]"
+          }
+        ]
+      },
+      {
+        "unitNo": 18,
+        "unitId": "lv2_u18",
+        "legacyUnitNo": 30,
+        "title": "소유격 관계대명사 whose와 that의 특별용법",
+        "part": "관계사의 심화",
+        "targetGrade": "중2 내신 대비",
+        "summary": "선행사의 소유(~의)를 나타내는 whose + 명사 구조와 최상급/서수/all 등이 선행사일 때 that을 주로 쓰는 규정",
+        "overview": "'지붕이 빨간 저 집을 봐', '개가 아픈 소년'처럼 앞 명사의 소유물이나 특징을 설명할 때는 소유격 관계대명사 whose를 써요! whose 뒤에는 관사(a/the) 없는 순수 명사가 온다는 비밀과, 관계대명사 that만을 써야 하는 특별한 경우를 정복해 봅시다!",
+        "keyTakeaways": [
+          "소유격 관계대명사 whose: 사람·사물 공통으로 '~의'의 뜻 (선행사 + whose + 무관사 명사)",
+          "whose 뒤의 문장 구조: 겉보기에는 완전한 문장처럼 보임 (whose roof is red)",
+          "that을 주로 쓰는 선행사: 사람+사물, 최상급, 서수(first), all, every, no, -thing, the only, the very"
+        ],
+        "formulaCards": [
+          {
+            "name": "소유격 관계대명사 whose의 쓰임",
+            "formula": "선행사 + whose + 명사 + 동사 (선행사의 ~가 …하다)",
+            "examples": [
+              {
+                "en": "I helped a crying boy whose bicycle was broken.",
+                "ko": "나는 자전거가 고장 나서 울고 있는 한 소년을 도와주었다.",
+                "point": "소년의 자전거(his bicycle)이므로 whose bicycle로 연결했습니다."
+              },
+              {
+                "en": "Look at the pretty house whose roof is bright red.",
+                "ko": "지붕이 밝은 빨간색인 저 예쁜 집을 보아라.",
+                "point": "사물(house)의 소유격에도 whose를 쓸 수 있습니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "She has a cat whose eyes are blue.",
+              "x": "She has a cat whose the eyes are blue.",
+              "comment": "whose 뒤의 명사 앞에는 정관사 the나 관사 a를 절대 붙이지 않습니다."
+            },
+            "trap": "whose 뒤에 the를 붙여놓은 보기는 대표적인 중2 어법 오답 트랩입니다.",
+            "quizLink": "whose 뒤에는 주격/목적격과 달리 완전한 절의 형태가 이어지는 것이 특징입니다."
+          },
+          {
+            "name": "관계대명사 that을 주로 쓰는 선행사",
+            "formula": "최상급 / 서수 / all / every / the only / 사람+동물 ➔ that 선호",
+            "examples": [
+              {
+                "en": "Look at the cheerful boy and his dog that are running.",
+                "ko": "달리고 있는 유쾌한 소년과 그의 개를 보아라.",
+                "point": "사람(boy)과 동물(dog)이 함께 선행사이므로 who나 which 대신 that을 씁니다."
+              },
+              {
+                "en": "This is the most exciting movie that I have ever watched.",
+                "ko": "이것은 내가 여태까지 보았던 가장 흥미진진한 영화이다.",
+                "point": "최상급 the most exciting이 선행사를 꾸밀 때는 that을 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "He gave me all that he had.",
+              "x": "He gave me all which he had.",
+              "comment": "선행사가 all일 때는 which보다 that을 쓰는 것이 규정입니다."
+            },
+            "trap": "that 앞에는 콤마(,)와 전치사를 절대 쓸 수 없다는 예외를 기억하세요!",
+            "quizLink": "the only(유일한), the very(바로 그), all, -thing 뒤에는 that이 정답입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv2_u18_d1",
+            "missionTitle": "미션 1: whose 뒤 불필요한 관사 the 오류 수정",
+            "sentence": "I met an old man whose the hair was completely white.",
+            "korean": "나는 머리카락이 온통 하얀 한 노인을 만났다.",
+            "underlined": [
+              "I met",
+              "an old man",
+              "whose the hair was",
+              "completely white"
+            ],
+            "wrongIndex": 2,
+            "correction": "whose hair was",
+            "explanation": "소유격 관계대명사 whose 뒤의 명사 앞에는 관사 the를 붙이지 않으므로 whose hair가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 소유격 whose의 쓰임] 출제 연계"
+          },
+          {
+            "id": "lv2_u18_d2",
+            "missionTitle": "미션 2: 사람+동물 혼합 선행사 관계사 오류",
+            "sentence": "Look at the brave police officer and his horse which are patrolling the street.",
+            "korean": "순찰하고 있는 용감한 경찰관과 그의 말을 보아라.",
+            "underlined": [
+              "Look at",
+              "the brave police officer and his horse",
+              "which are patrolling",
+              "the street"
+            ],
+            "wrongIndex": 2,
+            "correction": "that are patrolling",
+            "explanation": "선행사에 사람(police officer)과 동물(horse)이 함께 있으므로 which 대신 that을 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: that의 특별용법] 출제 연계"
+          },
+          {
+            "id": "lv2_u18_d3",
+            "missionTitle": "미션 3: 소유격 관계대명사 자리 who 오용 수정",
+            "sentence": "She has a rich uncle who house has a huge swimming pool.",
+            "korean": "그녀는 집(그 삼촌의 집)에 거대한 수영장이 딸린 부유한 삼촌이 있다.",
+            "underlined": [
+              "She has",
+              "a rich uncle",
+              "who house has",
+              "a huge swimming pool"
+            ],
+            "wrongIndex": 2,
+            "correction": "whose house has",
+            "explanation": "삼촌의 집(his house)을 대신하는 자리이므로 주격 who가 아니라 소유격 whose가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 소유격 whose의 쓰임] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 두 문장을 한 문장으로 바르게 합친 것은?\n\n'I know a girl.' + 'Her dog is very smart.'",
+            "options": [
+              "I know a girl who dog is very smart.",
+              "I know a girl whose dog is very smart.",
+              "I know a girl whom dog is very smart.",
+              "I know a girl which dog is very smart.",
+              "I know a girl whose the dog is very smart."
+            ],
+            "ans": 1,
+            "exp": "소유격 her dog를 대신하여 whose dog로 연결한 2번이 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: 소유격 whose의 쓰임]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 가장 알맞은 관계대명사는?\n\n'Look at the boy and the dog ______ are playing in the park.'",
+            "options": [
+              "who",
+              "which",
+              "that",
+              "whose",
+              "whom"
+            ],
+            "ans": 2,
+            "exp": "사람과 동물이 함께 선행사일 때는 관계대명사 that을 씁니다.",
+            "conceptRef": "1단계 [공식 2: that의 특별용법]"
+          },
+          {
+            "q": "다음 중 관계대명사 that을 쓰는 것이 가장 자연스러운 문장은?",
+            "options": [
+              "This is the first book ______ I read.",
+              "The boy ______ lives here is Tom.",
+              "The apple ______ is on the plate is sweet.",
+              "I met a friend ______ speaks French.",
+              "She lost the ring ______ was silver."
+            ],
+            "ans": 0,
+            "exp": "선행사에 서수 the first가 포함되어 있으므로 that을 쓰는 것이 원칙입니다.",
+            "conceptRef": "1단계 [공식 2: that의 특별용법]"
+          },
+          {
+            "q": "다음 중 어법상 어색한 문장은?",
+            "options": [
+              "I have a friend whose father is a pilot.",
+              "This is the only thing that I want.",
+              "She is the tallest girl who lives in this town.",
+              "He is a boy whose eyes are blue.",
+              "All that glitters is not gold."
+            ],
+            "ans": 2,
+            "exp": "최상급 the tallest가 선행사를 꾸밀 때는 who보다 that을 쓰는 것이 자연스럽습니다.",
+            "conceptRef": "1단계 [공식 2: that의 특별용법]"
+          },
+          {
+            "q": "'나는 지붕이 파란 집을 보았다.'를 바르게 영작한 것은?",
+            "options": [
+              "I saw a house which roof was blue.",
+              "I saw a house whose roof was blue.",
+              "I saw a house whose the roof was blue.",
+              "I saw a house who roof was blue.",
+              "I saw a house that roof was blue."
+            ],
+            "ans": 1,
+            "exp": "whose roof was blue가 올바른 소유격 관계대명사 구문입니다.",
+            "conceptRef": "1단계 [공식 1: 소유격 whose의 쓰임]"
+          }
+        ]
+      },
+      {
+        "unitNo": 19,
+        "unitId": "lv2_u19",
+        "legacyUnitNo": 31,
+        "title": "부사절 접속사 (because, if, although, unless)",
+        "part": "접속사의 심화",
+        "targetGrade": "중2 내신 대비",
+        "summary": "원인(because), 조건(if / unless = if not), 양보(although/even though)의 부사절과 '시간·조건 부사절에서는 현재가 미래를 대신한다'는 절대 시험 공식",
+        "overview": "'비록 비가 올지라도(양보)', '만약 내일 비가 온다면(조건)'처럼 문장의 의미를 입체적으로 만들어 주는 부사절 접속사들이에요! 특히 조건절 If/Unless 안에서는 will을 쓰지 않고 현재시제를 쓴다는 중·고등 영어 1등 킬러 문법을 마스터해 봅시다!",
+        "keyTakeaways": [
+          "조건: if (만약 ~라면) vs unless (만약 ~하지 않는다면 = if ... not)",
+          "양보: although / though / even though (비록 ~일지라도, 그럼에도 불구하고)",
+          "★시간·조건 부사절의 미래대용: If/When 절 안에서는 will 대신 '현재시제'를 쓴다!"
+        ],
+        "formulaCards": [
+          {
+            "name": "시간·조건 부사절의 미래시제 대용 법칙",
+            "formula": "If / When + S + 현재동사 (will 사용 금지!), S + will + 동원",
+            "examples": [
+              {
+                "en": "If it rains tomorrow morning, we will stay at home.",
+                "ko": "만약 내일 아침에 비가 온다면, 우리는 집에 머무를 것이다.",
+                "point": "내일 비가 오는 미래의 일이지만 if절 안에는 will rain 대신 현재시제 rains를 씁니다."
+              },
+              {
+                "en": "We will start the meeting when the teacher arrives here.",
+                "ko": "선생님께서 여기에 도착하시면 우리는 회의를 시작할 것이다.",
+                "point": "when 부사절 안에서도 will arrive가 아닌 현재시제 arrives를 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "If you don't hurry, you will miss the train.",
+              "x": "If you won't hurry, you will miss the train.",
+              "comment": "조건의 부사절 if 안에는 미래 조동사 will(won't)을 쓸 수 없습니다."
+            },
+            "trap": "주절에는 will을 정상적으로 쓰되, 'If 절/When 절 내부'에서만 will을 뺍니다!",
+            "quizLink": "수능과 내신 전 학년 시험에서 1순위로 출제되는 시제 일치 예외 규정입니다."
+          },
+          {
+            "name": "unless와 although의 문맥 공식",
+            "formula": "unless = if ~ not (~하지 않는다면) | although / though + S + V (비록 ~이지만)",
+            "examples": [
+              {
+                "en": "Unless you leave right now, you will be late for the movie.",
+                "ko": "네가 지금 당장 떠나지 않는다면, 너는 영화에 늦을 것이다.",
+                "point": "Unless 자체가 부정을 포함하므로 Unless you don't leave처럼 이중부정을 쓰면 안 됩니다."
+              },
+              {
+                "en": "Although it was very cold outside, they played soccer happily.",
+                "ko": "비록 밖이 매우 추웠지만, 그들은 즐겁게 축구를 했다.",
+                "point": "날씨가 추웠음에도 축구를 했다는 상반된 양보의 의미에 Although를 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "Unless it rains, we will play outside.",
+              "x": "Unless it doesn't rain, we will play outside.",
+              "comment": "unless 안에 not을 또 넣으면 이중부정의 오류가 발생합니다."
+            },
+            "trap": "although는 접속사이므로 뒤에 '주어+동사', despite는 전치사이므로 뒤에 '명사'가 옵니다.",
+            "quizLink": "Unless you try = If you don't try는 중2 내신 주관식 단골 전환 문제입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv2_u19_d1",
+            "missionTitle": "미션 1: 조건 부사절 if 내 will 사용 오류 수정",
+            "sentence": "If it will snow tomorrow, we will make a huge snowman in the park.",
+            "korean": "만약 내일 눈이 내린다면, 우리는 공원에서 거대한 눈사람을 만들 것이다.",
+            "underlined": [
+              "If it will snow",
+              "tomorrow, we will",
+              "make a huge snowman",
+              "in the park"
+            ],
+            "wrongIndex": 0,
+            "correction": "If it snows",
+            "explanation": "조건의 부사절 If 안에서는 미래 시제 대신 현재시제를 써야 하므로 If it snows가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 시간·조건 부사절 미래대용] 출제 연계"
+          },
+          {
+            "id": "lv2_u19_d2",
+            "missionTitle": "미션 2: unless 절 내 불필요한 부정어 오류 수정",
+            "sentence": "Unless you don't study hard, you will fail the final exam.",
+            "korean": "열심히 공부하지 않는다면, 너는 기말고사에서 떨어질 것이다.",
+            "underlined": [
+              "Unless you",
+              "don't study hard,",
+              "you will fail",
+              "the final exam"
+            ],
+            "wrongIndex": 1,
+            "correction": "study hard,",
+            "explanation": "Unless 자체에 부정(if not)이 포함되어 있으므로 don't study가 아니라 긍정형 study hard로 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: unless와 although 문맥] 출제 연계"
+          },
+          {
+            "id": "lv2_u19_d3",
+            "missionTitle": "미션 3: 양보 접속사 although vs despite 혼동",
+            "sentence": "Despite she was very tired from the long trip, she helped her mother.",
+            "korean": "그녀는 긴 여행으로 매우 피곤했음에도 불구하고 어머니를 도와드렸다.",
+            "underlined": [
+              "Despite she was",
+              "very tired",
+              "from the long trip,",
+              "she helped her mother"
+            ],
+            "wrongIndex": 0,
+            "correction": "Although she was (or Even though she was)",
+            "explanation": "뒤에 주어+동사(she was)를 갖춘 절이 오므로 전치사 Despite 대신 접속사 Although를 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: unless와 although 문맥] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 동사의 형태가 알맞은 것은?\n\n'We will go on a picnic if it ______ fine tomorrow.'",
+            "options": [
+              "will be",
+              "is",
+              "was",
+              "be",
+              "being"
+            ],
+            "ans": 1,
+            "exp": "조건의 부사절 if 안에서는 미래 대신 현재시제를 쓰므로 is가 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 시간·조건 부사절 미래대용]"
+          },
+          {
+            "q": "다음 문장의 빈칸에 들어갈 접속사로 가장 알맞은 것은?\n\n'______ he was very hungry, he gave his bread to the crying boy.'",
+            "options": [
+              "Because",
+              "If",
+              "Although",
+              "Unless",
+              "Since"
+            ],
+            "ans": 2,
+            "exp": "배가 고팠음에도 불구하고 빵을 주었다는 양보의 내용이므로 Although(비록 ~일지라도)가 알맞습니다.",
+            "conceptRef": "1단계 [공식 2: unless와 although 문맥]"
+          },
+          {
+            "q": "'Unless you hurry, you will miss the school bus.'와 같은 의미의 문장은?",
+            "options": [
+              "If you hurry, you will miss the school bus.",
+              "If you don't hurry, you will miss the school bus.",
+              "If you hurry, you won't miss the school bus.",
+              "Although you hurry, you will miss the school bus.",
+              "When you hurry, you will miss the school bus."
+            ],
+            "ans": 1,
+            "exp": "Unless = If ... not이므로 'If you don't hurry'와 같은 의미입니다.",
+            "conceptRef": "1단계 [공식 2: unless와 although 문맥]"
+          },
+          {
+            "q": "다음 중 어법상 어색한 문장은?",
+            "options": [
+              "I will call you when I arrive at the station.",
+              "If it will rain tomorrow, the game will be canceled.",
+              "Although she is young, she is very wise.",
+              "We can't win unless we practice together.",
+              "He went to bed because he was exhausted."
+            ],
+            "ans": 1,
+            "exp": "If it will rain이 아니라 If it rains로 현재시제를 써야 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: 시간·조건 부사절 미래대용]"
+          },
+          {
+            "q": "다음 괄호 안에서 알맞은 말이 바르게 짝지어진 것은?\n\n- 'I will wait here until you (will come / come).' \n- '(Although / Because) he had no money, he was happy.'",
+            "options": [
+              "will come - Although",
+              "come - Although",
+              "come - Because",
+              "will come - Because",
+              "comes - Although"
+            ],
+            "ans": 1,
+            "exp": "시간 부사절 until 안에서는 현재형 come, 돈이 없었지만 행복했다는 것은 양보이므로 Although입니다.",
+            "conceptRef": "1단계 [공식 1 & 2 종합]"
+          }
+        ]
+      },
+      {
+        "unitNo": 20,
+        "unitId": "lv2_u20",
+        "legacyUnitNo": 32,
+        "title": "to부정사와 동명사 둘 다 취하며 의미가 달라지는 동사",
+        "part": "준동사의 심화",
+        "targetGrade": "중2 내신 대비",
+        "summary": "remember, forget, stop, try 뒤에 to부정사(미래·목적)가 오느냐 동명사(과거·행동)가 오느냐에 따라 180도 달라지는 의미 구별",
+        "overview": "'약 먹는 걸 잊지 마(to)'와 '약 먹었던 걸 잊었어(-ing)'는 의미가 완전히 달라요! remember, forget, stop, try는 뒤에 to부정사가 오면 '앞으로 할 일(미래)', 동명사가 오면 '이미 했던 일(과거)'을 나타내요. 중2 시험에서 변별력을 가르는 최고난도 핵심 문법을 정복해 봅시다!",
+        "keyTakeaways": [
+          "remember / forget + to-V: (앞으로) ~할 것을 기억하다/잊다 (미래)",
+          "remember / forget + V-ing: (과거에) ~했던 것을 기억하다/잊다 (과거)",
+          "stop + to-V (~하기 위해 멈추다: 부사적 목적) vs stop + V-ing (~하던 것을 멈추다: 동명사 목적어)"
+        ],
+        "formulaCards": [
+          {
+            "name": "remember / forget의 미래(to) vs 과거(-ing)",
+            "formula": "remember/forget + to-V (미래에 할 일) vs + V-ing (과거에 한 일)",
+            "examples": [
+              {
+                "en": "Remember to turn off the lights before you go to sleep.",
+                "ko": "잠자리에 들기 전에 불을 끌 것을 기억해라(잊지 말고 꺼라).",
+                "point": "앞으로 불을 꺼야 할 미래의 일이므로 to turn off를 씁니다."
+              },
+              {
+                "en": "I still remember seeing the beautiful aurora in Canada.",
+                "ko": "나는 캐나다에서 그 아름다운 오로라를 보았던 것을 여전히 기억한다.",
+                "point": "과거에 이미 보았던 경험이므로 seeing을 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "Don't forget to lock the door.",
+              "x": "Don't forget locking the door.",
+              "comment": "문 잠그는 것을 잊지 말라는 미래의 당부이므로 to lock을 써야 합니다."
+            },
+            "trap": "I forgot meeting him은 '만났던 사실을 잊었다'이고, I forgot to meet him은 '만나기로 했는데 까먹고 안 만났다'입니다.",
+            "quizLink": "Don't forget to-V는 '~하는 것을 잊지 마라(= 꼭 해라)'라는 숙어로 외워두세요."
+          },
+          {
+            "name": "stop과 try의 목적어 구별 공식",
+            "formula": "stop to-V (~하기 위해 멈추다) vs stop V-ing (~하던 것을 그만두다) | try to-V vs try V-ing",
+            "examples": [
+              {
+                "en": "The tired driver stopped to take a short rest at the gas station.",
+                "ko": "피곤한 운전자는 주유소에서 잠깐 휴식을 취하기 위해 멈춰 섰다.",
+                "point": "휴식을 취하기 위한 목적이므로 to부정사 to take를 씁니다."
+              },
+              {
+                "en": "Please stop making loud noise in this quiet study room.",
+                "ko": "이 조용한 독서실에서 큰 소음을 내는 것을 그만두세요.",
+                "point": "하던 행동을 멈추고 중단하는 것이므로 동명사 making을 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "He stopped smoking for his health.",
+              "x": "He stopped to smoke for his health.",
+              "comment": "건강을 위해 담배를 끊은 것이므로 동명사 smoking을 써야 합니다. (stopped to smoke는 담배 피우려고 멈췄다는 뜻!)"
+            },
+            "trap": "try to-V는 '~하려고 애쓰다/노력하다'이고, try V-ing는 '시험 삼아 한번 해보다'입니다.",
+            "quizLink": "stop to-V의 to부정사는 목적어가 아니라 부사적 용법의 '목적(~하기 위해)'입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv2_u20_d1",
+            "missionTitle": "미션 1: 금연 문맥에서 stop to-V 오용 수정",
+            "sentence": "My grandfather finally stopped to smoke after fifty years.",
+            "korean": "우리 할아버지는 50년 만에 마침내 담배를 끊으셨다.",
+            "underlined": [
+              "My grandfather",
+              "finally stopped to smoke",
+              "after",
+              "fifty years"
+            ],
+            "wrongIndex": 1,
+            "correction": "finally stopped smoking",
+            "explanation": "흡연을 중단하고 끊으신 것이므로 to smoke(피우기 위해 멈추다) 대신 동명사 smoking을 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: stop과 try의 목적어 구별] 출제 연계"
+          },
+          {
+            "id": "lv2_u20_d2",
+            "missionTitle": "미션 2: 미래 당부에서 forget -ing 오용 수정",
+            "sentence": "Don't forget posting this important letter on your way home.",
+            "korean": "집에 가는 길에 이 중요한 편지를 부치는 것을 잊지 마라.",
+            "underlined": [
+              "Don't forget",
+              "posting this important letter",
+              "on your way",
+              "home"
+            ],
+            "wrongIndex": 1,
+            "correction": "to post this important letter",
+            "explanation": "앞으로 편지를 부쳐야 하는 미래의 일이므로 posting 대신 to post를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: remember/forget 미래 vs 과거] 출제 연계"
+          },
+          {
+            "id": "lv2_u20_d3",
+            "missionTitle": "미션 3: 과거 기억 문맥에서 remember to-V 오류",
+            "sentence": "I clearly remember to meet her in Paris five years ago.",
+            "korean": "나는 5년 전 파리에서 그녀를 만났던 것을 생생하게 기억한다.",
+            "underlined": [
+              "I clearly remember",
+              "to meet her",
+              "in Paris",
+              "five years ago"
+            ],
+            "wrongIndex": 1,
+            "correction": "meeting her",
+            "explanation": "5년 전 과거에 만났던 경험의 일이므로 to meet 대신 동명사 meeting을 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: remember/forget 미래 vs 과거] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 말로 가장 알맞은 것은?\n\n'Please remember ______ your umbrella when you leave.'",
+            "options": [
+              "bring",
+              "bringing",
+              "to bring",
+              "brought",
+              "brings"
+            ],
+            "ans": 2,
+            "exp": "떠날 때 앞으로 우산을 챙겨야 한다는 미래의 일이므로 to bring이 알맞습니다.",
+            "conceptRef": "1단계 [공식 1: remember/forget 미래 vs 과거]"
+          },
+          {
+            "q": "다음 두 문장의 빈칸에 들어갈 말이 바르게 짝지어진 것은?\n\n- 'He stopped ______ a cigarette.' (그는 담배를 피우기 위해 멈췄다)\n- 'He stopped ______ .' (그는 담배를 끊었다)",
+            "options": [
+              "to smoke - smoking",
+              "smoking - to smoke",
+              "to smoke - to smoke",
+              "smoking - smoking",
+              "smoked - smoking"
+            ],
+            "ans": 0,
+            "exp": "~하기 위해 멈추다는 stop to smoke, 하던 일을 끊다는 stop smoking입니다.",
+            "conceptRef": "1단계 [공식 2: stop과 try의 목적어 구별]"
+          },
+          {
+            "q": "'나는 그에게 그 비밀을 말했던 것을 후회한다.'를 바르게 영작한 것은?",
+            "options": [
+              "I regret to tell him the secret.",
+              "I regret telling him the secret.",
+              "I regret tell him the secret.",
+              "I regret told him the secret.",
+              "I regret for tell him the secret."
+            ],
+            "ans": 1,
+            "exp": "과거에 말했던 행동을 후회하는 것이므로 동명사 telling을 씁니다. (regret to-V는 유감스럽게도 ~하다)",
+            "conceptRef": "1단계 [공식 1: remember/forget 미래 vs 과거]"
+          },
+          {
+            "q": "다음 중 밑줄 친 부분의 쓰임이 어색한 문장은?",
+            "options": [
+              "Don't forget to do your homework.",
+              "I remember locking the door before leaving.",
+              "He tried to open the jammed window.",
+              "She stopped to crying and looked at me.",
+              "I will never forget meeting you."
+            ],
+            "ans": 3,
+            "exp": "울음을 그쳤다는 뜻이므로 to crying이라는 형태는 틀렸고 stopped crying이 되어야 합니다.",
+            "conceptRef": "1단계 [공식 2: stop과 try의 목적어 구별]"
+          },
+          {
+            "q": "다음 괄호 안에서 알맞은 말이 바르게 짝지어진 것은?\n\n- 'Remember (to lock / locking) the door tonight.'\n- 'He tried (to solve / solving) the hard problem with all his might.'",
+            "options": [
+              "to lock - to solve",
+              "locking - to solve",
+              "to lock - solving",
+              "locking - solving",
+              "to lock - solve"
+            ],
+            "ans": 0,
+            "exp": "오늘 밤 잠글 것을 기억하라는 to lock, 온 힘을 다해 풀려고 노력했다는 to solve가 알맞습니다.",
+            "conceptRef": "1단계 [공식 1 & 2 종합]"
+          }
+        ]
       }
     ]
   },
@@ -7011,6 +13491,2166 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "unitId": "lv3_u8",
         "legacyUnitNo": 24
+      },
+      {
+        "unitNo": 9,
+        "unitId": "lv3_u9",
+        "legacyUnitNo": 33,
+        "title": "과거완료 had + p.p. (대과거와 과거 이전의 기준)",
+        "part": "시제의 완성",
+        "targetGrade": "중3 내신 대비",
+        "summary": "과거의 특정 시점보다 더 이전에 일어난 일(대과거)과 과거까지 이어진 완료·경험·계속·결과를 나타내는 had + p.p.",
+        "overview": "'내가 역에 도착했을 때 기차는 이미 떠나버렸어'처럼 과거보다 더 옛날에 먼저 일어난 일을 나타낼 때 '대과거/과거완료(had + p.p.)'를 써요! 두 과거 사건 중 어느 쪽이 먼저 일어났는지를 시각적으로 명확하게 밝혀주는 고급 시제 공식을 정복해 봅시다!",
+        "keyTakeaways": [
+          "형태: 주어 + had + 과거분사(p.p.)",
+          "대과거: 과거의 특정 사건보다 '더 먼저' 일어난 일 (The train had already left when I arrived.)",
+          "과거완료 4대 용법: 과거 이전부터 과거 기준 시점까지의 완료, 경험, 계속, 결과"
+        ],
+        "formulaCards": [
+          {
+            "name": "대과거(더 이른 과거)와 과거의 시점 비교 공식",
+            "formula": "had + p.p. (대과거: 먼저 일어남) ➔ 과거동사 (과거: 나중에 일어남)",
+            "examples": [
+              {
+                "en": "When I arrived at the cinema, the movie had already started.",
+                "ko": "내가 영화관에 도착했을 때, 영화는 이미 시작된 상태였다.",
+                "point": "도착한 과거(arrived)보다 영화가 시작한 시점이 더 먼저이므로 had started를 씁니다."
+              },
+              {
+                "en": "He lost the silver watch that his grandfather had given him.",
+                "ko": "그는 할아버지께서 자신에게 주셨던 은시계를 잃어버렸다.",
+                "point": "시계를 잃어버린 과거(lost)보다 할아버지가 주신 것이 먼저이므로 had given입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "She had finished dinner before I came home.",
+              "x": "She has finished dinner before I came home.",
+              "comment": "과거 시점(came home) 이전의 일이므로 현재완료 has finished가 아니라 과거완료 had finished를 써야 합니다."
+            },
+            "trap": "과거완료는 문장 속에 반드시 비교할 수 있는 '과거 기준 시점'이 존재해야 합니다.",
+            "quizLink": "lost the watch that he (bought / had bought) 형태는 중3 내신 단골 1순위입니다."
+          },
+          {
+            "name": "before / after 접속사와 과거완료",
+            "formula": "시간 전후 관계가 명확할 땐 단순 과거도 가능하나, 강조 시 had p.p. 사용",
+            "examples": [
+              {
+                "en": "He had worked at the bank for ten years before he moved to Seoul.",
+                "ko": "그는 서울로 이사하기 전에 그 은행에서 10년 동안 일했었다.",
+                "point": "과거 시점(moved) 이전까지 10년 동안 일한 계속적 상태에 had worked를 씁니다."
+              },
+              {
+                "en": "She realized that she had left her umbrella on the subway.",
+                "ko": "그녀는 자신이 지하철에 우산을 두고 내렸다는 사실을 깨달았다.",
+                "point": "깨달은 과거(realized)보다 우산을 두고 내린 것(had left)이 더 먼저 일어났습니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "I knew him well because I had seen him before.",
+              "x": "I knew him well because I saw him before.",
+              "comment": "알고 있던 과거(knew) 이전에 본 경험이므로 had seen이 훨씬 정확한 시제 표현입니다."
+            },
+            "trap": "과거완료 진행형(had been V-ing)은 대과거부터 과거까지 계속되던 동작을 나타냅니다.",
+            "quizLink": "선후 관계가 있는 두 문장을 결합할 때 먼저 일어난 쪽에 had p.p.를 붙이세요."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv3_u9_d1",
+            "missionTitle": "미션 1: 대과거 사건의 현재완료 오용 수정",
+            "sentence": "When we reached the airport, the flight has already departed ten minutes ago.",
+            "korean": "우리가 공항에 도착했을 때, 항공편은 이미 출발해 버린 뒤였다.",
+            "underlined": [
+              "When we reached",
+              "the airport,",
+              "the flight has already",
+              "departed ten minutes ago"
+            ],
+            "wrongIndex": 2,
+            "correction": "the flight had already",
+            "explanation": "도착한 과거 시점(reached)보다 출발이 먼저 일어났으므로 has가 아니라 had already departed가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 대과거 공식] 출제 연계"
+          },
+          {
+            "id": "lv3_u9_d2",
+            "missionTitle": "미션 2: 분실 시점보다 앞선 구매 시점의 시제 오류",
+            "sentence": "Tom lost the smartphone that his parents bought for his birthday.",
+            "korean": "톰은 부모님께서 생일 선물로 사주셨던 스마트폰을 잃어버렸다.",
+            "underlined": [
+              "Tom lost",
+              "the smartphone",
+              "that his parents bought",
+              "for his birthday"
+            ],
+            "wrongIndex": 2,
+            "correction": "that his parents had bought",
+            "explanation": "스마트폰을 잃어버린 과거(lost)보다 부모님이 사주신 시점이 더 앞서므로 had bought로 표현해야 합니다.",
+            "conceptRef": "1단계 [공식 1: 대과거 공식] 출제 연계"
+          },
+          {
+            "id": "lv3_u9_d3",
+            "missionTitle": "미션 3: 깨달은 시점과 망각 시점의 대과거 불일치",
+            "sentence": "She realized that she forgot her homework notebook at home.",
+            "korean": "그녀는 자신이 숙제 공책을 집에 두고 왔다는 것을 깨달았다.",
+            "underlined": [
+              "She realized",
+              "that she forgot",
+              "her homework notebook",
+              "at home"
+            ],
+            "wrongIndex": 1,
+            "correction": "that she had forgotten",
+            "explanation": "깨달은 과거(realized)보다 공책을 잊고 두고 온 일이 먼저 일어났으므로 had forgotten이 올바릅니다.",
+            "conceptRef": "1단계 [공식 2: 선후 관계 시제] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 알맞은 시제는?\n\n'The train ______ when I got to the platform.'",
+            "options": [
+              "leaves",
+              "has left",
+              "had left",
+              "was leave",
+              "will leave"
+            ],
+            "ans": 2,
+            "exp": "내가 도착한 과거(got)보다 기차가 떠난 것이 먼저이므로 과거완료 had left가 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 대과거 공식]"
+          },
+          {
+            "q": "다음 두 사건 중 먼저 일어난 일(대과거)에 밑줄 친 문장은?",
+            "options": [
+              "I <u>lost</u> the ring that he had given me.",
+              "She said that she <u>had visited</u> Paris.",
+              "When I woke up, the sun <u>rose</u>.",
+              "He went home after he <u>finished</u> the work.",
+              "The teacher entered the room and <u>smiled</u>."
+            ],
+            "ans": 1,
+            "exp": "말한 과거(said)보다 파리를 방문했던 대과거 사건인 had visited가 먼저 일어난 일입니다.",
+            "conceptRef": "1단계 [공식 1: 대과거 공식]"
+          },
+          {
+            "q": "다음 중 어법상 어색한 문장은?",
+            "options": [
+              "She had lived in London before she moved to New York.",
+              "I couldn't enter the house because I had lost my key.",
+              "He said that he has finished the project yesterday.",
+              "The game had already started when we arrived.",
+              "They had known each other for ten years before they married."
+            ],
+            "ans": 2,
+            "exp": "과거 시점 said의 종속절에서 이전의 일을 나타낼 때는 has가 아니라 had finished를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 대과거 공식]"
+          },
+          {
+            "q": "'내가 그를 보았을 때, 그는 3일 동안 아무것도 먹지 못한 상태였다.'를 바르게 영작한 것은?",
+            "options": [
+              "When I saw him, he has eaten nothing for three days.",
+              "When I saw him, he had eaten nothing for three days.",
+              "When I saw him, he ate nothing for three days.",
+              "When I saw him, he had nothing eaten for three days.",
+              "When I saw him, he was eaten nothing for three days."
+            ],
+            "ans": 1,
+            "exp": "과거 시점 saw 이전 3일 동안 먹지 못한 상태이므로 과거완료 had eaten nothing이 정답입니다.",
+            "conceptRef": "1단계 [공식 2: 선후 관계 시제]"
+          },
+          {
+            "q": "다음 빈칸에 알맞은 동사의 형태는?\n\n'I realized that I ______ my wallet on the bus.'",
+            "options": [
+              "leave",
+              "have left",
+              "had left",
+              "am leaving",
+              "leaves"
+            ],
+            "ans": 2,
+            "exp": "지갑을 두고 내린 것이 깨달은 것보다 먼저 일어난 대과거이므로 had left가 올바릅니다.",
+            "conceptRef": "1단계 [공식 2: 선후 관계 시제]"
+          }
+        ]
+      },
+      {
+        "unitNo": 10,
+        "unitId": "lv3_u10",
+        "legacyUnitNo": 34,
+        "title": "관계부사 where, when, why, how와 선행사",
+        "part": "관계사의 심화",
+        "targetGrade": "중3 내신 대비",
+        "summary": "접속사 + 부사 역할을 하여 '전치사 + 관계대명사'를 대신하는 관계부사의 종류와 완전한 문장 구조 및 the way how의 병치 불가 규칙",
+        "overview": "관계대명사 뒤에는 주어나 목적어가 빠진 불완전한 문장이 오지만, '관계부사' 뒤에는 모든 성분이 꽉 찬 '완전한 문장'이 와요! 특히 the way와 how는 절대로 둘이 나란히 함께 쓸 수 없다는 내신 서술형 킬러 규칙을 완벽 정복해 봅시다!",
+        "keyTakeaways": [
+          "관계부사: 접속사 + 부사 = 전치사 + 관계대명사 (뒤에 '완전한 문장' 수반!)",
+          "종류: 장소(where) / 시간(when) / 이유(why) / 방법(how)",
+          "★the way와 how는 둘 중 하나만 써야 함! (the way how는 100% 오답!)"
+        ],
+        "formulaCards": [
+          {
+            "name": "관계부사의 종류와 완전한 절 공식",
+            "formula": "선행사(장소/시간/이유) + where/when/why + 완전한 문장 (S + V + O)",
+            "examples": [
+              {
+                "en": "This is the peaceful town where I spent my childhood.",
+                "ko": "이곳은 내가 어린 시절을 보냈던 평화로운 마을이다.",
+                "point": "선행사 the town(장소) 뒤에 주어(I)+동사(spent)+목적어(my childhood)를 갖춘 완전한 절이 옵니다."
+              },
+              {
+                "en": "I will never forget the day when I first met my best friend.",
+                "ko": "나는 내 가장 친한 친구를 처음 만났던 그 날을 결코 잊지 못할 것이다.",
+                "point": "선행사 the day(시간) 뒤에 완전한 문장을 이끄는 관계부사 when이 왔습니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "This is the house where he lives.",
+              "x": "This is the house which he lives.",
+              "comment": "he lives는 목적어가 필요 없는 완전한 절이므로 which가 아니라 where(= in which)를 써야 합니다."
+            },
+            "trap": "선행사가 장소라고 무조건 where를 고르면 안 됩니다! 뒤 문장이 불완전하면 which입니다.",
+            "quizLink": "관계대명사 뒤는 불완전(주어/목적어 탈락), 관계부사 뒤는 '완전한 문장'입니다."
+          },
+          {
+            "name": "the way와 how의 절대 병치 불가 공식",
+            "formula": "the way (O) | how (O) | the way how (X 무조건 오답!)",
+            "examples": [
+              {
+                "en": "This is how she solved the complicated math problem.",
+                "ko": "이것이 그녀가 그 복잡한 수학 문제를 풀었던 방법이다.",
+                "point": "how 단독으로 쓰여 방법을 나타냅니다."
+              },
+              {
+                "en": "I really like the way he speaks politely to everyone.",
+                "ko": "나는 그가 모든 사람에게 공손하게 말하는 그 방식을 정말 좋아한다.",
+                "point": "the way 단독으로 쓰여 방법을 수식합니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "Tell me the way you made this cake.",
+              "x": "Tell me the way how you made this cake.",
+              "comment": "the way와 how는 절대로 함께 나란히 쓸 수 없습니다."
+            },
+            "trap": "the way in which나 the way that은 문법적으로 완벽히 가능합니다.",
+            "quizLink": "the way how가 보기에 보이면 뒤도 돌아보지 말고 오답으로 체크하세요."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv3_u10_d1",
+            "missionTitle": "미션 1: the way how 동시 사용 오류 수정",
+            "sentence": "Nobody knows the way how the ancient magicians performed the trick.",
+            "korean": "그 고대 마술사들이 어떻게 그 속임수를 공연했는지 그 방식을 아무도 모른다.",
+            "underlined": [
+              "Nobody knows",
+              "the way how",
+              "the ancient magicians",
+              "performed the trick"
+            ],
+            "wrongIndex": 1,
+            "correction": "the way (or how)",
+            "explanation": "the way와 how는 나란히 함께 쓸 수 없으므로 둘 중 하나를 삭제해야 합니다.",
+            "conceptRef": "1단계 [공식 2: the way와 how 병치 불가] 출제 연계"
+          },
+          {
+            "id": "lv3_u10_d2",
+            "missionTitle": "미션 2: 완전한 절 앞 관계대명사 오용 수정",
+            "sentence": "This is the quiet library which students study hard for exams.",
+            "korean": "이곳은 학생들이 시험을 위해 열심히 공부하는 조용한 도서관이다.",
+            "underlined": [
+              "This is",
+              "the quiet library",
+              "which students study",
+              "hard for exams"
+            ],
+            "wrongIndex": 2,
+            "correction": "where students study",
+            "explanation": "뒤에 주어+동사+부사를 갖춘 완전한 절이 오므로 관계대명사 which 대신 관계부사 where를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 관계부사의 종류와 완전한 절] 출제 연계"
+          },
+          {
+            "id": "lv3_u10_d3",
+            "missionTitle": "미션 3: 이유 선행사 뒤 관계부사 오용 수정",
+            "sentence": "Can you tell me the reason where you were absent yesterday afternoon?",
+            "korean": "네가 어제 결석했던 이유를 나에게 말해줄 수 있니?",
+            "underlined": [
+              "Can you tell me",
+              "the reason where",
+              "you were absent",
+              "yesterday afternoon?"
+            ],
+            "wrongIndex": 1,
+            "correction": "the reason why",
+            "explanation": "선행사가 the reason(이유)이므로 관계부사는 where가 아니라 why가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 관계부사의 종류와 완전한 절] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 알맞은 관계부사는?\n\n'Friday is the day ______ we have art class.'",
+            "options": [
+              "where",
+              "when",
+              "why",
+              "how",
+              "which"
+            ],
+            "ans": 1,
+            "exp": "선행사가 the day(시간)이고 뒤 문장이 완전하므로 관계부사 when이 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 관계부사의 종류와 완전한 절]"
+          },
+          {
+            "q": "다음 중 어법상 어색한 문장은?",
+            "options": [
+              "This is the park where I run every morning.",
+              "Tell me the reason why you are so upset.",
+              "I don't like the way how he talks to me.",
+              "Spring is the season when flowers bloom.",
+              "This is the way I solved the puzzle."
+            ],
+            "ans": 2,
+            "exp": "the way와 how는 함께 쓸 수 없으므로 the way how he talks는 비문입니다.",
+            "conceptRef": "1단계 [공식 2: the way와 how 병치 불가]"
+          },
+          {
+            "q": "다음 문장의 빈칸에 들어갈 수 있는 것으로 짝지어진 것은?\n\n'This is the bakery ______ I bought this bread.'",
+            "options": [
+              "where - in which",
+              "which - in which",
+              "where - that",
+              "when - where",
+              "which - where"
+            ],
+            "ans": 0,
+            "exp": "장소의 관계부사 where는 전치사 + 관계대명사인 in which로 바꿔 쓸 수 있습니다.",
+            "conceptRef": "1단계 [공식 1: 관계부사의 종류와 완전한 절]"
+          },
+          {
+            "q": "다음 중 관계부사 why가 들어가기에 가장 알맞은 선행사는?",
+            "options": [
+              "the house",
+              "the reason",
+              "the time",
+              "the park",
+              "the city"
+            ],
+            "ans": 1,
+            "exp": "why는 이유의 선행사 the reason과 결합합니다.",
+            "conceptRef": "1단계 [공식 1: 관계부사의 종류와 완전한 절]"
+          },
+          {
+            "q": "'이것이 그가 그 기계를 고친 방식이다.'를 바르게 영작한 것은?",
+            "options": [
+              "This is the way how he fixed the machine.",
+              "This is how he fixed the machine.",
+              "This is the way which he fixed the machine.",
+              "This is how the way he fixed the machine.",
+              "This is where he fixed the machine."
+            ],
+            "ans": 1,
+            "exp": "the way how는 불가하므로 how 단독으로 쓴 2번이 올바른 영작입니다.",
+            "conceptRef": "1단계 [공식 2: the way와 how 병치 불가]"
+          }
+        ]
+      },
+      {
+        "unitNo": 11,
+        "unitId": "lv3_u11",
+        "legacyUnitNo": 35,
+        "title": "관계대명사의 계속적 용법 (, who / , which)",
+        "part": "관계사의 심화",
+        "targetGrade": "중3 내신 대비",
+        "summary": "콤마(,) 뒤에 쓰여 앞선 명사나 앞 문장 전체를 부가 설명하는 계속적 용법과 that/what 사용 불가 규칙",
+        "overview": "관계대명사 앞에 쉼표(,)가 붙으면 해석 순서가 달라져요! 앞 명사를 한정하여 수식하는 것이 아니라, 문장을 앞에서부터 순서대로 쭉 이어서 부가 설명(접속사+대명사)합니다. 특히 계속적 용법에서는 that과 what을 절대로 쓸 수 없다는 내신 필수 규칙을 배워봅시다!",
+        "keyTakeaways": [
+          "계속적 용법: 선행사, who / which (앞에서 뒤로 순차 해석 = and/but + he/she/it)",
+          "★앞 문장 전체를 선행사로 받는 which: He said he was rich, which was a lie.",
+          "★콤마 뒤에는 that과 what을 절대로 쓸 수 없음! (, that ➔ 100% 오답!)"
+        ],
+        "formulaCards": [
+          {
+            "name": "계속적 용법의 의미와 순차 해석 공식",
+            "formula": "선행사, who / which ~ = 접속사(and/but) + 인칭대명사",
+            "examples": [
+              {
+                "en": "I met Minho yesterday, who gave me an interesting comic book.",
+                "ko": "나는 어제 민호를 만났는데, 그는 나에게 재미있는 만화책 한 권을 주었다.",
+                "point": ", who는 and he(그런데 그는)로 바꾸어 순차적으로 자연스럽게 해석합니다."
+              },
+              {
+                "en": "She gave me a pretty necklace, which was made of pure gold.",
+                "ko": "그녀는 나에게 예쁜 목걸이를 주었는데, 그것은 순금으로 만들어진 것이었다.",
+                "point": ", which는 and it(그런데 그것은)으로 바꾸어 해석할 수 있습니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "He invited Mary, who was his cousin.",
+              "x": "He invited Mary, that was his cousin.",
+              "comment": "콤마(,) 뒤의 계속적 용법에는 관계대명사 that을 절대 쓸 수 없습니다."
+            },
+            "trap": "고유명사(인명, 지명) 뒤에서는 한정할 대상이 없으므로 반드시 계속적 용법(콤마)을 씁니다.",
+            "quizLink": "콤마 + that, 콤마 + what은 시험지에서 보자마자 오답으로 걸러내야 하는 0초 킬러입니다."
+          },
+          {
+            "name": "앞 문장 전체나 일부를 받는 , which",
+            "formula": "앞 문장(S + V ~), which + 단수동사 (그리고 그것은 ~이다)",
+            "examples": [
+              {
+                "en": "He told everyone that he won first prize, which was not true.",
+                "ko": "그는 자신이 1등 상을 탔다고 모두에게 말했는데, 그것은 사실이 아니었다.",
+                "point": "which는 앞의 특정 명사가 아니라 '1등 상을 탔다고 말한 앞 문장 내용 전체'를 받습니다."
+              },
+              {
+                "en": "She suddenly broke her promise, which disappointed all of us.",
+                "ko": "그녀는 갑작스럽게 약속을 깼고, 그것이 우리 모두를 실망시켰다.",
+                "point": "약속을 깬 앞 문장 사실 전체를 선행사로 받는 계속적 용법의 which입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "He failed the exam, which made his mother sad.",
+              "x": "He failed the exam, what made his mother sad.",
+              "comment": "앞 문장 전체를 받는 계속적 관계대명사는 오직 which만 가능하며 what은 쓸 수 없습니다."
+            },
+            "trap": "앞 문장 전체를 선행사로 받을 때 which 뒤의 동사는 무조건 '단수 취급(is/was/-s)'합니다!",
+            "quizLink": ", which was / , which made는 고등 내신과 모의고사 독해에서 가장 빈출되는 구문입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv3_u11_d1",
+            "missionTitle": "미션 1: 콤마 뒤 관계대명사 that 오용 수정",
+            "sentence": "I bought a vintage leather jacket in London, that was very expensive and rare.",
+            "korean": "나는 런던에서 빈티지 가죽 재킷을 샀는데, 그것은 매우 비쌌다.",
+            "underlined": [
+              "I bought",
+              "a vintage leather jacket in London,",
+              "that was very",
+              "expensive and rare"
+            ],
+            "wrongIndex": 2,
+            "correction": "which was very",
+            "explanation": "콤마(,) 뒤의 계속적 용법에는 관계대명사 that을 쓸 수 없으므로 which was로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 1: 계속적 용법과 that 불가] 출제 연계"
+          },
+          {
+            "id": "lv3_u11_d2",
+            "missionTitle": "미션 2: 앞 문장 수식 계속적 용법 what 오용",
+            "sentence": "He passed the difficult entrance exam, what surprised all his classmates.",
+            "korean": "그는 어려운 입학시험에 합격했는데, 그것은 그의 모든 반 친구들을 놀라게 했다.",
+            "underlined": [
+              "He passed",
+              "the difficult entrance exam,",
+              "what surprised",
+              "all his classmates"
+            ],
+            "wrongIndex": 2,
+            "correction": "which surprised",
+            "explanation": "앞 문장 전체를 선행사로 받아 부가 설명하는 계속적 관계대명사는 what이 아니라 which여야 합니다.",
+            "conceptRef": "1단계 [공식 2: 앞 문장 전체를 받는 which] 출제 연계"
+          },
+          {
+            "id": "lv3_u11_d3",
+            "missionTitle": "미션 3: 사람 선행사 계속적 용법 which 오용",
+            "sentence": "I met my old English teacher Mr. Smith, which gave me some great advice.",
+            "korean": "나는 옛 영어 선생님인 스미스 선생님을 만났는데, 그분은 내게 훌륭한 조언을 해 주셨다.",
+            "underlined": [
+              "I met my old English teacher",
+              "Mr. Smith,",
+              "which gave me",
+              "some great advice"
+            ],
+            "wrongIndex": 2,
+            "correction": "who gave me",
+            "explanation": "선행사가 Mr. Smith(사람)이므로 사물에 쓰는 which 대신 who를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 계속적 용법의 의미와 해석] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 수 없는 것은?\n\n'She has a son, ______ became a famous pianist.'",
+            "options": [
+              "who",
+              "that",
+              "and he",
+              "whom",
+              "which"
+            ],
+            "ans": 1,
+            "exp": "콤마 뒤의 계속적 용법에는 관계대명사 that을 절대 쓸 수 없습니다.",
+            "conceptRef": "1단계 [공식 1: 계속적 용법과 that 불가]"
+          },
+          {
+            "q": "다음 문장의 밑줄 친 부분을 두 단어로 바꿔 쓸 때 가장 알맞은 것은?\n\n'I called Tom, <u>who</u> didn't answer the phone.'",
+            "options": [
+              "and he",
+              "but he",
+              "and him",
+              "so he",
+              "because he"
+            ],
+            "ans": 1,
+            "exp": "전화를 걸었지만 받지 않았다는 대조의 맥락이므로 but he가 가장 자연스럽습니다.",
+            "conceptRef": "1단계 [공식 1: 계속적 용법의 의미와 해석]"
+          },
+          {
+            "q": "다음 중 어법상 어색한 문장은?",
+            "options": [
+              "He said he was sick, which was a lie.",
+              "I like Paris, which is the capital of France.",
+              "She gave me a ring, that was made of silver.",
+              "We visited Rome, where we saw many ruins.",
+              "He works hard, which makes him successful."
+            ],
+            "ans": 2,
+            "exp": "콤마(,) 뒤에는 that을 쓸 수 없으므로 which was made of silver가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 계속적 용법과 that 불가]"
+          },
+          {
+            "q": "'그는 약속을 잊어버렸는데, 그것이 나를 화나게 만들었다.'를 바르게 영작한 것은?",
+            "options": [
+              "He forgot the promise, what made me angry.",
+              "He forgot the promise, which made me angry.",
+              "He forgot the promise, that made me angry.",
+              "He forgot the promise which it made me angry.",
+              "He forgot the promise, who made me angry."
+            ],
+            "ans": 1,
+            "exp": "앞 문장 전체를 선행사로 받는 계속적 관계대명사는 , which입니다.",
+            "conceptRef": "1단계 [공식 2: 앞 문장 전체를 받는 which]"
+          },
+          {
+            "q": "다음 중 밑줄 친 ', which'의 선행사로 알맞은 것은?\n\n'The weather was extremely hot and humid, <u>which</u> prevented us from going out.'",
+            "options": [
+              "The weather",
+              "extremely hot",
+              "humid",
+              "날씨가 극도로 덥고 습했다는 앞 문장 전체",
+              "going out"
+            ],
+            "ans": 3,
+            "exp": "우리가 나가는 것을 막은 것은 날씨가 극도로 덥고 습했다는 앞 문장 전체의 상황입니다.",
+            "conceptRef": "1단계 [공식 2: 앞 문장 전체를 받는 which]"
+          }
+        ]
+      },
+      {
+        "unitNo": 12,
+        "unitId": "lv3_u12",
+        "legacyUnitNo": 36,
+        "title": "관계대명사 what과 명사절 접속사 that 구별법",
+        "part": "관계사의 심화",
+        "targetGrade": "중3 내신 대비",
+        "summary": "선행사를 자체에 포함하여 '~하는 것'으로 해석되는 what(뒤에 불완전)과 목적어/보어 절을 이끄는 접속사 that(뒤에 완전)의 1초 판별법",
+        "overview": "중3부터 수능까지 어법 시험에서 가장 많이 출제되는 1등 공식, 'what vs that'의 맞장 승부예요! 둘 다 명사절로 쓰이지만, what 뒤에는 주어나 목적어가 빠진 '불완전한 문장'이 오고, 접속사 that 뒤에는 모든 성분을 갖춘 '완전한 문장'이 온다는 절대 법칙을 파헤쳐 봅시다!",
+        "keyTakeaways": [
+          "관계대명사 what: the thing which/that (~하는 것) ➔ 앞에 선행사 없고 뒤 문장 '불완전'!",
+          "명사절 접속사 that: ~라는 것 ➔ 앞에 선행사 없고 뒤 문장 '완전'!",
+          "관계대명사 that: ~하는 ➔ 앞에 '선행사 명사'가 반드시 있고 뒤 문장 불완전!"
+        ],
+        "formulaCards": [
+          {
+            "name": "관계대명사 what의 3대 특징",
+            "formula": "선행사 없음 + what + 불완전한 문장 (주어/목적어 탈락) = 명사절",
+            "examples": [
+              {
+                "en": "What he said at the meeting surprised everyone in the room.",
+                "ko": "그가 회의에서 말했던 것은 방 안의 모든 사람들을 놀라게 했다.",
+                "point": "said의 목적어가 빠진 불완전한 절을 이끌며 문장 전체의 주어(What he said) 역할을 합니다."
+              },
+              {
+                "en": "This is exactly what I wanted to buy for my birthday.",
+                "ko": "이것이 바로 내가 생일 선물로 사고 싶었던 것이다.",
+                "point": "to buy의 목적어가 없는 불완전한 절을 이끄는 보어 역할의 what입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "I don't understand what you mean.",
+              "x": "I don't understand that you mean.",
+              "comment": "mean 뒤에 목적어가 빠져 있으므로 완전한 절을 이끄는 접속사 that이 아니라 what을 써야 합니다."
+            },
+            "trap": "what 앞에 선행사 명사(the book what I read)를 쓰면 100% 비문입니다!",
+            "quizLink": "what = the thing which이므로 이미 선행사를 품고 있어 앞에 다른 명사가 오지 않습니다."
+          },
+          {
+            "name": "what vs that 1초 판별 알고리즘",
+            "formula": "선행사 확인 ➔ [있음: 관대 that/which] | [없음 ➔ 뒤가 완전: 접속사 that / 뒤가 불완전: what]",
+            "examples": [
+              {
+                "en": "I know that she is an honest and hardworking student.",
+                "ko": "나는 그녀가 정직하고 근면한 학생이라는 것을 알고 있다.",
+                "point": "know 뒤에 선행사가 없고, 뒷문장이 완전하므로 명사절 접속사 that입니다."
+              },
+              {
+                "en": "I don't believe what he said yesterday about the incident.",
+                "ko": "나는 그 사건에 대해 그가 어제 말했던 것을 믿지 않는다.",
+                "point": "believe 뒤에 선행사가 없고, said의 목적어가 없는 불완전한 절이므로 what입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "He told me that he was innocent.",
+              "x": "He told me what he was innocent.",
+              "comment": "he was innocent는 주어+be동사+보어를 갖춘 완전한 문장이므로 접속사 that을 써야 합니다."
+            },
+            "trap": "문장의 겉모습만 보지 말고 동사 뒤 목적어나 전치사 뒤 목적어가 비어있는지 꼭 확인하세요!",
+            "quizLink": "수능 29번 어법 문제의 약 30%가 바로 이 what vs that 구별 공식에서 출제됩니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv3_u12_d1",
+            "missionTitle": "미션 1: 불완전한 절 앞 접속사 that 오용 수정",
+            "sentence": "She could not believe that her best friend told her yesterday afternoon.",
+            "korean": "그녀는 그녀의 가장 친한 친구가 어제 자신에게 말했던 것을 믿을 수 없었다.",
+            "underlined": [
+              "She could not believe",
+              "that her best friend",
+              "told her",
+              "yesterday afternoon"
+            ],
+            "wrongIndex": 1,
+            "correction": "what her best friend",
+            "explanation": "told her 뒤에 직접목적어가 빠진 불완전한 절이므로 접속사 that 대신 관계대명사 what을 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 관계대명사 what의 3대 특징] 출제 연계"
+          },
+          {
+            "id": "lv3_u12_d2",
+            "missionTitle": "미션 2: 완전한 절 앞 관계대명사 what 오용 수정",
+            "sentence": "The science teacher taught us what the earth goes around the sun.",
+            "korean": "과학 선생님께서는 지구가 태양 주위를 돈다는 것을 우리에게 가르쳐 주셨다.",
+            "underlined": [
+              "The science teacher",
+              "taught us",
+              "what the earth goes",
+              "around the sun"
+            ],
+            "wrongIndex": 2,
+            "correction": "that the earth goes",
+            "explanation": "뒤에 주어+동사+수식어를 갖춘 완전한 문장이 오므로 what 대신 명사절 접속사 that을 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: what vs that 판별 알고리즘] 출제 연계"
+          },
+          {
+            "id": "lv3_u12_d3",
+            "missionTitle": "미션 3: 선행사 명사 뒤 관계대명사 what 오용",
+            "sentence": "This is the very gift what I wanted to receive from my parents.",
+            "korean": "이것이 바로 내가 부모님으로부터 받기를 원했던 선물이다.",
+            "underlined": [
+              "This is",
+              "the very gift",
+              "what I wanted",
+              "to receive from my parents"
+            ],
+            "wrongIndex": 2,
+            "correction": "that I wanted (or which I wanted)",
+            "explanation": "앞에 the very gift라는 명확한 선행사가 있으므로 선행사를 포함하는 what을 쓸 수 없고 that을 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 관계대명사 what의 3대 특징] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 말로 가장 알맞은 것은?\n\n'______ makes me happy is playing the piano.'",
+            "options": [
+              "That",
+              "What",
+              "Which",
+              "Who",
+              "Where"
+            ],
+            "ans": 1,
+            "exp": "선행사가 없고 makes의 주어가 빠진 불완전한 절을 이끌어 주어 역할을 하므로 What이 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 관계대명사 what의 3대 특징]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 말이 바르게 짝지어진 것은?\n\n- 'I think ______ honesty is the best policy.'\n- 'Show me ______ you have in your bag.'",
+            "options": [
+              "that - that",
+              "that - what",
+              "what - that",
+              "what - what",
+              "which - that"
+            ],
+            "ans": 1,
+            "exp": "첫 번째는 완전한 절이므로 접속사 that, 두 번째는 have의 목적어가 없으므로 what입니다.",
+            "conceptRef": "1단계 [공식 2: what vs that 판별 알고리즘]"
+          },
+          {
+            "q": "다음 중 밑줄 친 'that'의 성격이 나머지 넷과 다른 하나는?",
+            "options": [
+              "I know <u>that</u> he is a kind doctor.",
+              "She told me <u>that</u> she passed the test.",
+              "The news <u>that</u> he won made us happy.",
+              "This is the book <u>that</u> I bought yesterday.",
+              "He said <u>that</u> it was raining hard."
+            ],
+            "ans": 3,
+            "exp": "4번은 앞에 book이라는 선행사가 있고 bought의 목적어가 빠진 '관계대명사 that'이고, 나머지는 '접속사 that'입니다.",
+            "conceptRef": "1단계 [공식 2: what vs that 판별 알고리즘]"
+          },
+          {
+            "q": "다음 중 어법상 올바른 문장은?",
+            "options": [
+              "This is the thing what I lost.",
+              "I cannot believe that you said.",
+              "What he told me was a complete surprise.",
+              "The teacher knows what the boy is honest.",
+              "Listen to that she is saying."
+            ],
+            "ans": 2,
+            "exp": "What he told me was a complete surprise(그가 내게 말했던 것은 완전한 놀라움이었다)는 what 주어절로 완벽한 문장입니다.",
+            "conceptRef": "1단계 [공식 1: 관계대명사 what의 3대 특징]"
+          },
+          {
+            "q": "'네가 가장 필요로 하는 것은 충분한 휴식이다.'를 바르게 영작한 것은?",
+            "options": [
+              "That you need most is enough rest.",
+              "What you need most is enough rest.",
+              "Which you need most is enough rest.",
+              "What do you need most is enough rest.",
+              "The thing what you need is enough rest."
+            ],
+            "ans": 1,
+            "exp": "need의 목적어가 없는 절을 이끌어 명사절 주어를 만드는 What you need most is enough rest가 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: 관계대명사 what의 3대 특징]"
+          }
+        ]
+      },
+      {
+        "unitNo": 13,
+        "unitId": "lv3_u13",
+        "legacyUnitNo": 37,
+        "title": "복합관계사와 양보구문 (whoever, whatever, wherever, whenever)",
+        "part": "관계사의 심화",
+        "targetGrade": "중3 내신 대비",
+        "summary": "관계대명사/관계부사에 -ever를 붙여 '명사절(~하는 누구든지)'과 '양보 부사절(비록 ~일지라도)'로 쓰이는 복합관계사",
+        "overview": "who나 what 뒤에 -ever가 붙으면 '누구든지', '무엇이든지'라는 넓은 의미를 갖게 돼요! 문장에서 주어나 목적어로 쓰이는 명사절과, '비록 ~할지라도(no matter what)'라는 양보 부사절의 두 얼굴을 가진 복합관계사를 정복해 봅시다!",
+        "keyTakeaways": [
+          "복합관계대명사: whoever (= anyone who), whatever (= anything that), whichever",
+          "복합관계부사: whenever (= at any time when), wherever (= at any place where), however (+ 형/부 = no matter how)",
+          "양보 부사절 전환: no matter who / no matter what / no matter where / no matter how"
+        ],
+        "formulaCards": [
+          {
+            "name": "명사절 vs 양보 부사절 판별 공식",
+            "formula": "명사절(주·목·보): anyone who / anything that | 부사절(콤마 동반): no matter who/what",
+            "examples": [
+              {
+                "en": "Whoever wants to join the book club is warmly welcome.",
+                "ko": "독서 클럽에 가입하기를 원하는 사람은 누구든지 따뜻하게 환영받는다.",
+                "point": "문장의 주어로 쓰였으므로 anyone who의 의미를 갖는 명사절입니다."
+              },
+              {
+                "en": "Whatever happens tomorrow, I will always support you.",
+                "ko": "내일 무슨 일이 일어나더라도, 나는 언제나 너를 응원할 것이다.",
+                "point": "no matter what의 뜻을 가진 양보 부사절입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "You can choose whichever you like.",
+              "x": "You can choose no matter which you like.",
+              "comment": "choose의 목적어 자리인 명사절에는 no matter which를 쓸 수 없고 whichever(= anything that)를 써야 합니다."
+            },
+            "trap": "no matter what/who는 오직 콤마(,)를 동반한 '부사절'에만 쓸 수 있습니다!",
+            "quizLink": "문장의 주어/목적어 자리에 쓰였는지, 콤마로 분리된 부사절인지 확인하세요."
+          },
+          {
+            "name": "however + 형용사/부사 어순 공식",
+            "formula": "however + 형용사/부사 + S + V = no matter how + 형/부 (아무리 ~할지라도)",
+            "examples": [
+              {
+                "en": "However difficult the task is, we will never give up.",
+                "ko": "그 과제가 아무리 어려울지라도, 우리는 결코 포기하지 않을 것이다.",
+                "point": "however 바로 뒤에 형용사 difficult가 끌려 나온 어순입니다."
+              },
+              {
+                "en": "You can visit our library whenever you want.",
+                "ko": "너는 원할 때면 언제든지 우리 도서관을 방문해도 좋다.",
+                "point": "at any time when의 의미를 갖는 복합관계부사 whenever입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "However hard he tried, he couldn't solve it.",
+              "x": "However he tried hard, he couldn't solve it.",
+              "comment": "however 뒤에 바로 부사 hard가 붙어야 올바른 양보 구문 어순입니다."
+            },
+            "trap": "however 뒤에 주어+동사를 먼저 쓰고 형용사/부사를 뒤로 보내면 100% 오답입니다.",
+            "quizLink": "however + 형용사/부사 어순은 고등 내신과 수능 서술형 단골 영작 문제입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv3_u13_d1",
+            "missionTitle": "미션 1: however 어순 배열 오류 수정",
+            "sentence": "However the question is difficult, she will solve it alone.",
+            "korean": "그 문제가 아무리 어려울지라도, 그녀는 그것을 혼자 힘으로 풀 것이다.",
+            "underlined": [
+              "However the question",
+              "is difficult,",
+              "she will solve",
+              "it alone"
+            ],
+            "wrongIndex": 0,
+            "correction": "However difficult the question",
+            "explanation": "however 뒤에는 형용사 difficult가 바로 끌려 나와 However difficult the question is가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 2: however + 형용사/부사 어순] 출제 연계"
+          },
+          {
+            "id": "lv3_u13_d2",
+            "missionTitle": "미션 2: 명사절 목적어 자리에 no matter what 오용",
+            "sentence": "You can eat no matter what you like at the buffet.",
+            "korean": "너는 뷔페에서 네가 좋아하는 것은 무엇이든지 먹을 수 있다.",
+            "underlined": [
+              "You can eat",
+              "no matter what",
+              "you like",
+              "at the buffet"
+            ],
+            "wrongIndex": 1,
+            "correction": "whatever",
+            "explanation": "eat의 목적어 역할을 하는 명사절 자리이므로 no matter what 대신 whatever를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 명사절 vs 양보 부사절] 출제 연계"
+          },
+          {
+            "id": "lv3_u13_d3",
+            "missionTitle": "미션 3: 복합관계대명사 주어절 단수 수일치 오류",
+            "sentence": "Whoever breaks the school rules are punished strictly.",
+            "korean": "교칙을 어기는 사람은 누구든지 엄격하게 처벌받는다.",
+            "underlined": [
+              "Whoever breaks",
+              "the school rules",
+              "are punished",
+              "strictly"
+            ],
+            "wrongIndex": 2,
+            "correction": "is punished",
+            "explanation": "Whoever 절은 단수 취급하므로 are punished가 아니라 is punished가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 명사절 vs 양보 부사절] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 말로 가장 알맞은 것은?\n\n'______ comes first will get the prize.'",
+            "options": [
+              "Whoever",
+              "Whatever",
+              "Whenever",
+              "Wherever",
+              "However"
+            ],
+            "ans": 0,
+            "exp": "'먼저 오는 사람은 누구든지'라는 사람 주어절이므로 Whoever(= Anyone who)가 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 명사절 vs 양보 부사절]"
+          },
+          {
+            "q": "다음 문장의 밑줄 친 부분과 바꿔 쓸 수 있는 것은?\n\n'<u>Whatever</u> happens, I will stay with you.'",
+            "options": [
+              "Anything that",
+              "No matter what",
+              "No matter who",
+              "Anyone who",
+              "No matter how"
+            ],
+            "ans": 1,
+            "exp": "콤마로 분리된 양보 부사절이므로 No matter what과 같습니다.",
+            "conceptRef": "1단계 [공식 1: 명사절 vs 양보 부사절]"
+          },
+          {
+            "q": "다음 괄호 안의 단어를 어법에 맞게 바르게 배열한 것은?\n\n'______ (he, rich, is, however), he is not happy.'",
+            "options": [
+              "However he is rich",
+              "However rich he is",
+              "Rich however he is",
+              "However he rich is",
+              "He is however rich"
+            ],
+            "ans": 1,
+            "exp": "however + 형용사 + 주어 + 동사이므로 However rich he is가 올바릅니다.",
+            "conceptRef": "1단계 [공식 2: however + 형용사/부사 어순]"
+          },
+          {
+            "q": "다음 중 밑줄 친 부분의 쓰임이 어색한 문장은?",
+            "options": [
+              "Whenever you call me, I will answer.",
+              "You may go wherever you want.",
+              "However tired she was, she smiled.",
+              "You can take no matter what you want.",
+              "Whatever you do, do your best."
+            ],
+            "ans": 3,
+            "exp": "take의 목적어 자리에는 no matter what이 아니라 whatever를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 명사절 vs 양보 부사절]"
+          },
+          {
+            "q": "'네가 아무리 빨리 달릴지라도, 너는 그 버스를 잡을 수 없다.'를 바르게 영작한 것은?",
+            "options": [
+              "However fast you run, you cannot catch the bus.",
+              "However you run fast, you cannot catch the bus.",
+              "No matter you run fast, you cannot catch the bus.",
+              "Whatever fast you run, you cannot catch the bus.",
+              "Wherever fast you run, you cannot catch the bus."
+            ],
+            "ans": 0,
+            "exp": "However + 부사(fast) + 주어 + 동사 어순인 1번이 올바릅니다.",
+            "conceptRef": "1단계 [공식 2: however + 형용사/부사 어순]"
+          }
+        ]
+      },
+      {
+        "unitNo": 14,
+        "unitId": "lv3_u14",
+        "legacyUnitNo": 38,
+        "title": "가정법 과거 (현재 사실의 반대)",
+        "part": "가정법의 기초",
+        "targetGrade": "중3 내신 대비",
+        "summary": "현재 사실과 반대되는 상상이나 실현 불가능한 소망을 나타내는 If + 주어 + 과거동사, 주어 + 조동사과거 + 동원 공식",
+        "overview": "'내가 만약 새라면 너에게 날아갈 텐데'처럼 지금 현재 불가능한 일을 상상할 때 '가정법 과거'를 써요! 이름은 '과거'지만 해석은 무조건 '현재(~라면, ~할 텐데)'로 한다는 점과, be동사는 인칭 상관없이 were를 쓴다는 시험 필수 원칙을 배워봅시다!",
+        "keyTakeaways": [
+          "가정법 과거 공식: If + 주어 + 과거동사(be동사는 were), 주어 + would/could/might + 동사원형",
+          "해석: '만약 지금 ~라면, (지금) …할 텐데' (★현재 사실의 반대!)",
+          "직설법 전환: As + 주어 + 현재동사 (긍정 ➔ 부정, 부정 ➔ 긍정 반대 변환)"
+        ],
+        "formulaCards": [
+          {
+            "name": "가정법 과거의 형태와 be동사 were",
+            "formula": "If + S + 과거동사(were), S + would/could/should/might + 동사원형",
+            "examples": [
+              {
+                "en": "If I were a bird, I could fly to you across the ocean.",
+                "ko": "내가 만약 새라면, 바다를 건너 너에게 날아갈 수 있을 텐데.",
+                "point": "주어가 I여도 가정법에서는 was 대신 were를 쓰는 것이 전통적 표준 규칙입니다."
+              },
+              {
+                "en": "If he had enough money, he would buy that sports car.",
+                "ko": "만약 그가 충분한 돈이 있다면, 저 스포츠카를 살 텐데.",
+                "point": "현재 돈이 없어서 살 수 없음을 가정법 과거(had ~ would buy)로 나타냈습니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "If I had wings, I would fly.",
+              "x": "If I have wings, I would fly.",
+              "comment": "주절에 would fly가 있으므로 If절의 동사도 과거형 had가 되어야 시제가 맞습니다."
+            },
+            "trap": "가정법 과거는 이름만 과거일 뿐, '현재 사실'을 반대로 상상하는 표현입니다!",
+            "quizLink": "If S + were, S + would 동원은 영문법 시험에서 가장 출제 빈도가 높은 공식입니다."
+          },
+          {
+            "name": "가정법 과거 ➔ 직설법 현재 전환 공식",
+            "formula": "If S + were/과거동사 ➔ As S + am not / don't + 동원 (부호 반대!)",
+            "examples": [
+              {
+                "en": "If she knew his telephone number, she would call him right now.",
+                "ko": "만약 그녀가 그의 전화번호를 안다면, 지금 당장 그에게 전화할 텐데.",
+                "point": "가정법 과거 문장입니다."
+              },
+              {
+                "en": "As she doesn't know his phone number, she cannot call him.",
+                "ko": "그녀는 그의 전화번호를 알지 못하기 때문에, 그에게 전화할 수 없다.",
+                "point": "직설법 현재 시제로 전환할 때는 긍정이 부정(doesn't know)으로 바뀝니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "As I am not rich, I cannot buy the mansion.",
+              "x": "As I was not rich, I could not buy the mansion.",
+              "comment": "가정법 과거는 현재 사실을 말하는 것이므로 직설법 시제는 '현재(am not/cannot)'입니다."
+            },
+            "trap": "직설법으로 바꿀 때 시제를 과거로 쓰면 100% 감점당합니다!",
+            "quizLink": "가정법 ➔ 직설법 서술형 전환은 중3 지필고사 배점 5점짜리 단골 문항입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv3_u14_d1",
+            "missionTitle": "미션 1: 가정법 과거 주절 조동사 현재형 오류",
+            "sentence": "If I had a private spaceship, I will travel to Mars.",
+            "korean": "만약 내게 개인 우주선이 있다면, 화성으로 여행을 갈 텐데.",
+            "underlined": [
+              "If I had",
+              "a private spaceship,",
+              "I will travel",
+              "to Mars"
+            ],
+            "wrongIndex": 2,
+            "correction": "I would travel",
+            "explanation": "가정법 과거의 주절에는 조동사의 과거형(would, could)이 와야 하므로 will 대신 would를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 가정법 과거 공식] 출제 연계"
+          },
+          {
+            "id": "lv3_u14_d2",
+            "missionTitle": "미션 2: 가정법 if절 현재동사 혼동 수정",
+            "sentence": "If she knows his address, she could send him a letter.",
+            "korean": "만약 그녀가 그의 주소를 안다면, 그에게 편지를 보낼 수 있을 텐데.",
+            "underlined": [
+              "If she knows",
+              "his address,",
+              "she could send",
+              "him a letter"
+            ],
+            "wrongIndex": 0,
+            "correction": "If she knew",
+            "explanation": "주절에 could send가 있으므로 가정법 과거 If절의 동사도 과거형 knew가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 가정법 과거 공식] 출제 연계"
+          },
+          {
+            "id": "lv3_u14_d3",
+            "missionTitle": "미션 3: 가정법 과거 be동사 was 규정 수정",
+            "sentence": "If I was you, I would take that golden opportunity immediately.",
+            "korean": "내가 만약 너라면, 나는 당장 그 황금 같은 기회를 잡을 텐데.",
+            "underlined": [
+              "If I was you,",
+              "I would take",
+              "that golden opportunity",
+              "immediately"
+            ],
+            "wrongIndex": 0,
+            "correction": "If I were you,",
+            "explanation": "가정법 과거에서 be동사는 인칭에 상관없이 were를 쓰는 것이 표준 문법입니다.",
+            "conceptRef": "1단계 [공식 1: 가정법 과거 공식] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 말로 가장 알맞은 것은?\n\n'If I ______ wings, I could fly in the sky.'",
+            "options": [
+              "have",
+              "had",
+              "will have",
+              "having",
+              "am having"
+            ],
+            "ans": 1,
+            "exp": "주절에 could fly가 있으므로 가정법 과거 If절의 동사는 과거형 had가 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 가정법 과거 공식]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 알맞은 조동사는?\n\n'If she were here, she ______ help us with this task.'",
+            "options": [
+              "will",
+              "would",
+              "can",
+              "may",
+              "shall"
+            ],
+            "ans": 1,
+            "exp": "가정법 과거의 주절에는 조동사의 과거형 would가 알맞습니다.",
+            "conceptRef": "1단계 [공식 1: 가정법 과거 공식]"
+          },
+          {
+            "q": "'If I were not busy, I could help you.'와 의미가 같은 직설법 문장은?",
+            "options": [
+              "As I was busy, I couldn't help you.",
+              "As I am busy, I cannot help you.",
+              "As I am not busy, I can help you.",
+              "Because I were busy, I couldn't help you.",
+              "If I am busy, I cannot help you."
+            ],
+            "ans": 1,
+            "exp": "가정법 과거는 현재 사실의 반대이므로 '현재(am busy) 바빠서 도와줄 수 없다(cannot help)'인 2번이 올바릅니다.",
+            "conceptRef": "1단계 [공식 2: 직설법 전환]"
+          },
+          {
+            "q": "다음 중 어법상 올바른 가정법 문장은?",
+            "options": [
+              "If it rains tomorrow, I would stay home.",
+              "If I knew the answer, I will tell you.",
+              "If she were rich, she could buy the mansion.",
+              "If he had time, he can join us.",
+              "If they are here, they would enjoy the party."
+            ],
+            "ans": 2,
+            "exp": "If she were rich, she could buy the mansion은 If S + were, S + could 동원으로 완벽합니다.",
+            "conceptRef": "1단계 [공식 1: 가정법 과거 공식]"
+          },
+          {
+            "q": "'내가 그의 전화번호를 안다면, 그에게 전화할 텐데.'를 바르게 영작한 것은?",
+            "options": [
+              "If I know his number, I will call him.",
+              "If I knew his number, I would call him.",
+              "If I had known his number, I would call him.",
+              "If I knew his number, I will call him.",
+              "If I know his number, I would call him."
+            ],
+            "ans": 1,
+            "exp": "If I knew his number, I would call him이 올바른 가정법 과거 영작입니다.",
+            "conceptRef": "1단계 [공식 1: 가정법 과거 공식]"
+          }
+        ]
+      },
+      {
+        "unitNo": 15,
+        "unitId": "lv3_u15",
+        "legacyUnitNo": 39,
+        "title": "가정법 과거완료 (과거 사실의 반대)",
+        "part": "가정법의 심화",
+        "targetGrade": "중3 내신 대비",
+        "summary": "과거에 이미 일어난 사실을 반대로 가정하여 후회나 아쉬움을 나타내는 If + had p.p., would/could + have p.p. 공식",
+        "overview": "'그때 열심히 공부했더라면 시험에 합격했을 텐데'처럼 이미 지나간 과거의 일에 대한 짙은 후회와 아쉬움을 표현할 때는 '가정법 과거완료'를 써요! If절의 had p.p.와 주절의 would have p.p. 짝맞추기는 내신과 수능 모두에서 가장 사랑받는 핵심 공식입니다!",
+        "keyTakeaways": [
+          "가정법 과거완료 공식: If + 주어 + had p.p., 주어 + would/could/might + have p.p.",
+          "해석: '만약 (그때) ~했더라면, …했을 텐데' (★과거 사실의 반대!)",
+          "직설법 과거 전환: As + 주어 + 과거동사 (과거에 ~하지 않았기 때문에 …하지 못했다)"
+        ],
+        "formulaCards": [
+          {
+            "name": "가정법 과거완료 형태 짝맞추기 공식",
+            "formula": "If + S + had p.p. , S + would/could/should/might + have p.p.",
+            "examples": [
+              {
+                "en": "If I had studied harder for the exam, I could have entered that university.",
+                "ko": "내가 그 시험을 위해 더 열심히 공부했더라면, 그 대학교에 입학할 수 있었을 텐데.",
+                "point": "If절의 had studied와 주절의 could have entered가 완벽히 호응합니다."
+              },
+              {
+                "en": "If she had taken the express train, she would have arrived on time.",
+                "ko": "만약 그녀가 급행열차를 탔더라면, 정시에 도착했을 텐데.",
+                "point": "과거에 급행열차를 타지 않아서 늦었다는 사실을 반대로 가정한 문장입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "If he had known the truth, he would have told me.",
+              "x": "If he had known the truth, he would tell me.",
+              "comment": "If절이 had known(과거완료)이므로 주절도 would tell이 아니라 would have told가 되어야 합니다."
+            },
+            "trap": "If절의 had p.p.와 주절의 would have p.p.의 시제 균형을 맞추는 것이 핵심입니다.",
+            "quizLink": "가정법 과거완료와 혼합가정법(If had p.p. ~ now would V)을 구별하는 문제가 고난도로 출제됩니다."
+          },
+          {
+            "name": "가정법 과거완료 ➔ 직설법 과거 전환 공식",
+            "formula": "If had p.p. ➔ As + 단순과거 부정 (부호 반대 + 단순과거 시제)",
+            "examples": [
+              {
+                "en": "If it had not rained yesterday, we would have gone on a picnic.",
+                "ko": "만약 어제 비가 내리지 않았더라면, 우리는 소풍을 갔을 텐데.",
+                "point": "가정법 과거완료 문장입니다."
+              },
+              {
+                "en": "As it rained yesterday, we did not go on a picnic.",
+                "ko": "어제 비가 내렸기 때문에, 우리는 소풍을 가지 못했다.",
+                "point": "직설법 과거(rained / did not go)로 사실 그대로 전환했습니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "As I didn't have money, I couldn't buy the ticket.",
+              "x": "As I hadn't money, I couldn't buy the ticket.",
+              "comment": "일반동사 have의 과거 부정문은 didn't have입니다."
+            },
+            "trap": "가정법 과거완료를 직설법으로 바꿀 때 시제는 대과거(had p.p.)가 아니라 '단순과거'입니다!",
+            "quizLink": "서술형 시험에서 As 절의 시제를 과거로 쓰지 않고 현재로 쓰면 큰 감점을 받습니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv3_u15_d1",
+            "missionTitle": "미션 1: 가정법 과거완료 주절 시제 불일치 수정",
+            "sentence": "If I had set the alarm clock, I would not wake up late this morning.",
+            "korean": "만약 내가 알람 시계를 맞춰 두었더라면, 오늘 아침 늦게 깨지 않았을 텐데.",
+            "underlined": [
+              "If I had set",
+              "the alarm clock,",
+              "I would not wake up late",
+              "this morning"
+            ],
+            "wrongIndex": 2,
+            "correction": "I would not have woken up late",
+            "explanation": "If절이 had set(과거완료)이므로 주절도 would not have woken up(would have p.p.)이 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 가정법 과거완료 형태] 출제 연계"
+          },
+          {
+            "id": "lv3_u15_d2",
+            "missionTitle": "미션 2: If절 과거완료 조동사 have 누락 오류",
+            "sentence": "If they had left earlier, they could arrived before the movie began.",
+            "korean": "그들이 더 일찍 출발했더라면, 영화가 시작하기 전에 도착할 수 있었을 텐데.",
+            "underlined": [
+              "If they had left",
+              "earlier, they could",
+              "arrived before",
+              "the movie began"
+            ],
+            "wrongIndex": 1,
+            "correction": "earlier, they could have",
+            "explanation": "조동사 과거형 뒤에는 have p.p.가 와야 하므로 could arrived가 아니라 could have arrived가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 가정법 과거완료 형태] 출제 연계"
+          },
+          {
+            "id": "lv3_u15_d3",
+            "missionTitle": "미션 3: 가정법 If절 과거완료 어형 오류 수정",
+            "sentence": "If she listened to her parents' advice, she would have succeeded.",
+            "korean": "만약 그녀가 부모님의 조언을 들었더라면, 그녀는 성공했을 텐데.",
+            "underlined": [
+              "If she listened",
+              "to her parents' advice,",
+              "she would have",
+              "succeeded"
+            ],
+            "wrongIndex": 0,
+            "correction": "If she had listened",
+            "explanation": "주절이 would have succeeded이므로 과거 사실의 반대를 나타내는 If절은 had listened가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 가정법 과거완료 형태] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 말로 가장 알맞은 것은?\n\n'If I ______ your phone number, I would have called you.'",
+            "options": [
+              "know",
+              "knew",
+              "had known",
+              "have known",
+              "knowing"
+            ],
+            "ans": 2,
+            "exp": "주절에 would have called가 있으므로 If절은 과거완료 had known이 알맞습니다.",
+            "conceptRef": "1단계 [공식 1: 가정법 과거완료 형태]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 알맞은 조동사 형태는?\n\n'If he had run faster, he ______ the morning train.'",
+            "options": [
+              "could catch",
+              "could have caught",
+              "can catch",
+              "caught",
+              "will catch"
+            ],
+            "ans": 1,
+            "exp": "If절이 had run이므로 주절은 could have caught(could have p.p.)가 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 가정법 과거완료 형태]"
+          },
+          {
+            "q": "'If I had had an umbrella, I wouldn't have been wet.'와 의미가 같은 직설법 문장은?",
+            "options": [
+              "As I had an umbrella, I wasn't wet.",
+              "As I didn't have an umbrella, I was wet.",
+              "As I don't have an umbrella, I am wet.",
+              "Because I hadn't an umbrella, I was wet.",
+              "If I don't have an umbrella, I am wet."
+            ],
+            "ans": 1,
+            "exp": "가정법 과거완료는 과거 사실의 반대이므로 '우산이 없었기 때문에 젖었다(didn't have, was wet)'인 2번이 올바릅니다.",
+            "conceptRef": "1단계 [공식 2: 직설법 과거 전환]"
+          },
+          {
+            "q": "다음 중 어법상 올바른 문장은?",
+            "options": [
+              "If I had known it, I would tell you.",
+              "If he were there, he would have helped us.",
+              "If she had practiced hard, she could have won.",
+              "If you arrived earlier, you could have met him.",
+              "If it had rained, we will cancel the match."
+            ],
+            "ans": 2,
+            "exp": "If she had practiced hard, she could have won은 had p.p. ~ could have p.p.로 완벽한 호응을 이룹니다.",
+            "conceptRef": "1단계 [공식 1: 가정법 과거완료 형태]"
+          },
+          {
+            "q": "'네가 나를 도와주었더라면, 나는 그 일을 끝마칠 수 있었을 텐데.'를 바르게 영작한 것은?",
+            "options": [
+              "If you helped me, I could finish the work.",
+              "If you had helped me, I could have finished the work.",
+              "If you had helped me, I could finish the work.",
+              "If you helped me, I could have finished the work.",
+              "If you have helped me, I would finish the work."
+            ],
+            "ans": 1,
+            "exp": "If you had helped me, I could have finished the work가 올바른 가정법 과거완료 영작입니다.",
+            "conceptRef": "1단계 [공식 1: 가정법 과거완료 형태]"
+          }
+        ]
+      },
+      {
+        "unitNo": 16,
+        "unitId": "lv3_u16",
+        "legacyUnitNo": 40,
+        "title": "I wish 가정법과 as if 가정법",
+        "part": "가정법의 심화",
+        "targetGrade": "중3 내신 대비",
+        "summary": "현재/과거의 아쉬운 소망을 나타내는 I wish + 가정법과 '마치 ~인 것처럼'을 나타내는 as if + 가정법",
+        "overview": "'아, 내가 지금 피아노를 칠 줄 안다면 얼마나 좋을까!(I wish)', '그는 마치 자기가 왕인 것처럼 행동해(as if)'처럼 특별한 가정법 구문들이에요! 주절 시점과 일치하면 과거동사, 주절 시점보다 앞선 일이면 had p.p.를 쓴다는 2대 원리를 마스터해 봅시다!",
+        "keyTakeaways": [
+          "I wish + 과거동사: 지금 ~라면 좋을 텐데 (현재 소망) = I am sorry that + 현재부정",
+          "I wish + had p.p.: 그때 ~했더라면 좋았을 텐데 (과거 소망) = I am sorry that + 과거부정",
+          "as if (as though) + 가정법: 마치 ~인/였던 것처럼 (직설법 사실 반대)"
+        ],
+        "formulaCards": [
+          {
+            "name": "I wish 가정법의 두 가지 시제 공식",
+            "formula": "I wish + S + 과거동사 (현재 소망) | I wish + S + had p.p. (과거 소망)",
+            "examples": [
+              {
+                "en": "I wish I were taller so that I could play basketball better.",
+                "ko": "내가 키가 더 크다면 농구를 더 잘할 수 있을 텐데 좋을 텐데.",
+                "point": "현재 키가 크지 않은 아쉬움을 나타내어 I wish + were를 썼습니다."
+              },
+              {
+                "en": "I wish I had listened to my mother's warm advice then.",
+                "ko": "그때 어머니의 다정한 조언을 들었더라면 좋았을 텐데.",
+                "point": "과거에 조언을 듣지 않은 후회를 나타내어 had listened를 썼습니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "I wish I could speak French well.",
+              "x": "I wish I can speak French well.",
+              "comment": "I wish 뒤에는 직설법 can이 아니라 가정법 과거형 could를 써야 합니다."
+            },
+            "trap": "I wish 가정법은 유감의 직설법 'I am sorry that ~'으로 전환할 수 있습니다.",
+            "quizLink": "I am sorry that I am not rich ➔ I wish I were rich로의 전환은 필수 출제 문제입니다."
+          },
+          {
+            "name": "as if 가정법의 시제 공식",
+            "formula": "as if + S + 과거동사 (주절과 같은 시점 반대) | as if + S + had p.p. (주절보다 앞선 시점)",
+            "examples": [
+              {
+                "en": "He talks as if he knew everything about the secret project.",
+                "ko": "그는 마치 그 비밀 프로젝트에 대해 모든 것을 알고 있는 것처럼 말한다.",
+                "point": "말하는 현재 시점에 사실은 잘 모르면서 아는 것처럼 굴므로 과거동사 knew를 씁니다."
+              },
+              {
+                "en": "She acts as if she had seen the scary ghost yesterday.",
+                "ko": "그녀는 마치 어제 무서운 유령을 보았던 것처럼 행동한다.",
+                "point": "행동하는 현재보다 앞선 과거의 일(yesterday)을 가정하므로 had seen을 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "He talks as if he were rich.",
+              "x": "He talks as if he is rich.",
+              "comment": "사실은 부자가 아니라는 반대 가정이므로 is가 아니라 were를 써야 합니다."
+            },
+            "trap": "as if = as though는 상호 교환이 가능한 완벽한 동의어입니다.",
+            "quizLink": "as if 뒤의 be동사 역시 was 대신 were를 쓰는 것이 규정입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv3_u16_d1",
+            "missionTitle": "미션 1: I wish 뒤 직설법 현재동사 오용 수정",
+            "sentence": "I wish I can fly in the blue sky like a free bird.",
+            "korean": "내가 자유로운 새처럼 파란 하늘을 날 수 있다면 좋을 텐데.",
+            "underlined": [
+              "I wish",
+              "I can fly",
+              "in the blue sky",
+              "like a free bird"
+            ],
+            "wrongIndex": 1,
+            "correction": "I could fly",
+            "explanation": "I wish 가정법 뒤에는 현재동사 can이 올 수 없고 가정법 과거형 could를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: I wish 가정법] 출제 연계"
+          },
+          {
+            "id": "lv3_u16_d2",
+            "missionTitle": "미션 2: as if 가정법 be동사 was 오류 수정",
+            "sentence": "The arrogant boy behaves as if he was the smartest student in school.",
+            "korean": "그 오만한 소년은 마치 자기가 학교에서 가장 똑똑한 학생인 것처럼 행동한다.",
+            "underlined": [
+              "The arrogant boy",
+              "behaves as if",
+              "he was the smartest",
+              "student in school"
+            ],
+            "wrongIndex": 2,
+            "correction": "he were the smartest",
+            "explanation": "as if 가정법에서 be동사는 인칭에 상관없이 were를 쓰는 것이 올바릅니다.",
+            "conceptRef": "1단계 [공식 2: as if 가정법] 출제 연계"
+          },
+          {
+            "id": "lv3_u16_d3",
+            "missionTitle": "미션 3: 과거 사건에 대한 I wish 가정법 시제 오류",
+            "sentence": "I failed the test yesterday; I wish I studied harder last week.",
+            "korean": "나는 어제 시험에 떨어졌다; 지난주에 더 열심히 공부했더라면 좋았을 텐데.",
+            "underlined": [
+              "I failed the test",
+              "yesterday; I wish",
+              "I studied harder",
+              "last week"
+            ],
+            "wrongIndex": 2,
+            "correction": "I had studied harder",
+            "explanation": "지난주(과거)에 공부하지 않은 것에 대한 후회이므로 과거완료 had studied를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: I wish 가정법] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 말로 가장 알맞은 것은?\n\n'I wish I ______ more free time these days.'",
+            "options": [
+              "have",
+              "had",
+              "will have",
+              "having",
+              "am having"
+            ],
+            "ans": 1,
+            "exp": "현재 여유 시간이 없음을 아쉬워하는 현재 소망이므로 가정법 과거 had가 알맞습니다.",
+            "conceptRef": "1단계 [공식 1: I wish 가정법]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 알맞은 것은?\n\n'He treats me as if I ______ a little child.'",
+            "options": [
+              "am",
+              "were",
+              "was be",
+              "will be",
+              "be"
+            ],
+            "ans": 1,
+            "exp": "as if 가정법에서 be동사는 were를 씁니다.",
+            "conceptRef": "1단계 [공식 2: as if 가정법]"
+          },
+          {
+            "q": "'I am sorry that I didn't see the musical.'과 같은 의미의 문장은?",
+            "options": [
+              "I wish I saw the musical.",
+              "I wish I had seen the musical.",
+              "I wish I see the musical.",
+              "I wish I could see the musical.",
+              "I wish I have seen the musical."
+            ],
+            "ans": 1,
+            "exp": "과거에 보지 못한 것을 후회하므로 I wish + had p.p.(had seen)인 2번이 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: I wish 가정법]"
+          },
+          {
+            "q": "다음 중 어법상 어색한 문장은?",
+            "options": [
+              "I wish I knew the answer.",
+              "He talks as if he knew everything.",
+              "She acts as if she were a queen.",
+              "I wish I can speak English fluently.",
+              "I wish I had been there with you."
+            ],
+            "ans": 3,
+            "exp": "I wish can이 아니라 가정법 과거형 could를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: I wish 가정법]"
+          },
+          {
+            "q": "'그는 마치 그 사고를 직접 보았던 것처럼 말한다.'를 바르게 영작한 것은?",
+            "options": [
+              "He talks as if he saw the accident.",
+              "He talks as if he had seen the accident.",
+              "He talks as if he has seen the accident.",
+              "He talks as if he sees the accident.",
+              "He talks as if he will see the accident."
+            ],
+            "ans": 1,
+            "exp": "말하는 현재보다 더 앞선 과거의 일이므로 as if he had seen the accident가 가장 정확합니다.",
+            "conceptRef": "1단계 [공식 2: as if 가정법]"
+          }
+        ]
+      },
+      {
+        "unitNo": 17,
+        "unitId": "lv3_u17",
+        "legacyUnitNo": 41,
+        "title": "분사구문 기본 전환 (능동 V-ing)",
+        "part": "분사의 심화",
+        "targetGrade": "중3 내신 대비",
+        "summary": "접속사 부사절을 간결하게 줄여 분사(V-ing)로 시작하는 분사구문의 3단계 전환 공식과 시간·이유·동시동작의 해석법",
+        "overview": "'When I walked along the street'을 'Walking along the street'로 짧고 세련되게 압축하는 마법, 바로 '분사구문'이에요! 접속사 생략 ➔ 주어 생략 ➔ 동사원형에 -ing 붙이기의 3단계 기본 공식과, 문맥에 따라 시간, 이유, 조건, 동시동작으로 해석하는 법을 배워봅시다!",
+        "keyTakeaways": [
+          "분사구문 만드는 3단계: 1. 접속사 생략 ➔ 2. 주어 일치 시 생략 ➔ 3. 동사원형 + -ing",
+          "해석 5대 공식: 시간(~할 때), 이유(~해서/때문에), 동시동작(~하면서), 조건(~한다면), 양보(~하지만)",
+          "★분사구문의 주어는 문장 전체의 '주절 주어'와 반드시 같아야 함!"
+        ],
+        "formulaCards": [
+          {
+            "name": "분사구문 만드는 3단계 기본 공식",
+            "formula": "1. 접속사 삭제 ➔ 2. 주절 주어와 같으면 삭제 ➔ 3. 동사 ➔ V-ing (능동)",
+            "examples": [
+              {
+                "en": "Arriving at the station, I found that my train had already left.",
+                "ko": "역에 도착했을 때, 나는 기차가 이미 떠났다는 것을 알게 되었다.",
+                "point": "When I arrived at the station에서 접속사와 주어를 생략하고 Arriving으로 전환했습니다."
+              },
+              {
+                "en": "Feeling very tired, she went to bed earlier than usual.",
+                "ko": "매우 피곤했기 때문에, 그녀는 평소보다 일찍 잠자리에 들었다.",
+                "point": "Because she felt very tired에서 Feeling으로 전환된 이유의 분사구문입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "Hearing the loud noise, he turned around.",
+              "x": "Heard the loud noise, he turned around.",
+              "comment": "그가 소리를 들은 '능동' 관계이므로 과거분사 Heard가 아니라 현재분사 Hearing을 써야 합니다."
+            },
+            "trap": "주절의 주어가 동작을 '직접 하는 능동'이면 V-ing, '당하는 수동'이면 p.p.입니다.",
+            "quizLink": "부사절 ➔ 분사구문, 분사구문 ➔ 부사절 양방향 변환은 내신 단골 주관식입니다."
+          },
+          {
+            "name": "동시동작과 연속동작의 분사구문",
+            "formula": "S + V ~, V-ing (동시동작: ~하면서) | S + V ~, and + V (연속동작)",
+            "examples": [
+              {
+                "en": "She sat on the comfortable bench, listening to pop music.",
+                "ko": "그녀는 팝송을 들으면서 편안한 벤치에 앉아 있었다.",
+                "point": "벤치에 앉아 있으면서 동시에 음악을 듣고 있는 동시동작(~하면서)입니다."
+              },
+              {
+                "en": "Smiling brightly, the teacher welcomed the new students.",
+                "ko": "환하게 미소 지으면서, 선생님께서는 신입생들을 맞이하셨다.",
+                "point": "미소 짓는 행동과 맞이하는 행동이 동시에 일어남을 나타냅니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "He walked down the street, waving his hand.",
+              "x": "He walked down the street, waved his hand.",
+              "comment": "접속사 and 없이 동사 두 개를 콤마로 연결할 수 없으므로 waving 분사구문으로 써야 합니다."
+            },
+            "trap": "접속사가 없는데 동사원형이나 과거형 동사를 콤마 뒤에 나열하면 문법적 오류입니다.",
+            "quizLink": "콤마 뒤의 V-ing는 독해 지문에서 90% 이상 '~하면서'로 매끄럽게 해석됩니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv3_u17_d1",
+            "missionTitle": "미션 1: 능동 분사구문 과거동사 오용 수정",
+            "sentence": "Saw the police car in the rearview mirror, he slowed down his speed.",
+            "korean": "룸미러로 경찰차를 보았을 때, 그는 속도를 늦추었다.",
+            "underlined": [
+              "Saw the police car",
+              "in the rearview mirror,",
+              "he slowed down",
+              "his speed"
+            ],
+            "wrongIndex": 0,
+            "correction": "Seeing the police car",
+            "explanation": "주어 he가 경찰차를 직접 본 능동 동작이므로 Saw가 아니라 현재분사 Seeing이 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 분사구문 3단계 공식] 출제 연계"
+          },
+          {
+            "id": "lv3_u17_d2",
+            "missionTitle": "미션 2: 접속사 없는 동사 중복 연결 오류 수정",
+            "sentence": "She walked along the riverbank, listened to her favorite classical music.",
+            "korean": "그녀는 가장 좋아하는 클래식 음악을 들으면서 강둑을 따라 걸었다.",
+            "underlined": [
+              "She walked along",
+              "the riverbank,",
+              "listened to her favorite",
+              "classical music"
+            ],
+            "wrongIndex": 2,
+            "correction": "listening to her favorite",
+            "explanation": "접속사 and가 없으므로 동사 listened 대신 동시동작의 분사구문 listening을 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 동시동작 분사구문] 출제 연계"
+          },
+          {
+            "id": "lv3_u17_d3",
+            "missionTitle": "미션 3: 이유 분사구문 단순 동사원형 시작 오류",
+            "sentence": "Have no extra money, he could not buy the expensive concert ticket.",
+            "korean": "여분의 돈이 없었기 때문에, 그는 비싼 콘서트 티켓을 살 수 없었다.",
+            "underlined": [
+              "Have no extra money,",
+              "he could not buy",
+              "the expensive",
+              "concert ticket"
+            ],
+            "wrongIndex": 0,
+            "correction": "Having no extra money,",
+            "explanation": "분사구문은 동사원형이 아니라 현재분사 Having으로 시작해야 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: 분사구문 3단계 공식] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 부사절을 분사구문으로 바르게 바꾼 것은?\n\n'Because I felt tired, I took a nap.'",
+            "options": [
+              "Feel tired, I took a nap.",
+              "Feeling tired, I took a nap.",
+              "Felt tired, I took a nap.",
+              "To feel tired, I took a nap.",
+              "Having felt tired, I took a nap."
+            ],
+            "ans": 1,
+            "exp": "접속사 Because와 주어 I를 생략하고 felt를 현재분사 Feeling으로 바꾼 2번이 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: 분사구문 3단계 공식]"
+          },
+          {
+            "q": "다음 분사구문을 부사절로 바르게 복원한 것은?\n\n'Walking along the street, I met an old friend.'",
+            "options": [
+              "When I walked along the street, I met an old friend.",
+              "Because I walked along the street, I met an old friend.",
+              "Although I walked along the street, I met an old friend.",
+              "If I walked along the street, I met an old friend.",
+              "Before I walked along the street, I met an old friend."
+            ],
+            "ans": 0,
+            "exp": "거리를 걷고 있을 때 만났다는 시간(~할 때)의 문맥이므로 When I walked가 가장 자연스럽습니다.",
+            "conceptRef": "1단계 [공식 1: 분사구문 3단계 공식]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 말로 가장 알맞은 것은?\n\n'The baby fell asleep, ______ her mother's soft hand.'",
+            "options": [
+              "hold",
+              "held",
+              "holding",
+              "to hold",
+              "holds"
+            ],
+            "ans": 2,
+            "exp": "엄마의 손을 잡은 채로 잠이 들었다는 동시동작의 분사구문이므로 holding이 정답입니다.",
+            "conceptRef": "1단계 [공식 2: 동시동작 분사구문]"
+          },
+          {
+            "q": "다음 중 밑줄 친 분사구문의 의미가 '이유(~때문에)'로 해석되는 것은?",
+            "options": [
+              "<u>Arriving</u> at the airport, he called his mom.",
+              "<u>Being</u> sick in bed, she couldn't attend the meeting.",
+              "<u>Turning</u> to the right, you will see the bank.",
+              "<u>Living</u> next door, I rarely see him.",
+              "He sat on the chair, <u>reading</u> a magazine."
+            ],
+            "ans": 1,
+            "exp": "아파서 누워 있었기 때문에 참석하지 못했다는 2번이 이유의 분사구문입니다.",
+            "conceptRef": "1단계 [공식 1: 분사구문 3단계 공식]"
+          },
+          {
+            "q": "다음 중 어법상 올바른 문장은?",
+            "options": [
+              "Opened the door, he entered the room.",
+              "Singing loudly, the crowd cheered for him.",
+              "Felt hungry, she ate a sandwich.",
+              "Know the answer, he raised his hand.",
+              "To see the dog, he ran away."
+            ],
+            "ans": 1,
+            "exp": "2번은 주어와 분사구문의 능동 호응이 자연스러운 올바른 문장입니다. (Opening, Feeling, Knowing)",
+            "conceptRef": "1단계 [공식 1: 분사구문 3단계 공식]"
+          }
+        ]
+      },
+      {
+        "unitNo": 18,
+        "unitId": "lv3_u18",
+        "legacyUnitNo": 42,
+        "title": "분사구문의 주의할 용법 (완료, 수동, 접속사 보존)",
+        "part": "분사의 심화",
+        "targetGrade": "중3 내신 대비",
+        "summary": "주절보다 앞선 시점을 나타내는 완료분사구문(Having p.p.), (Being) p.p. 형태의 수동분사구문, 의미 명확성을 위해 접속사를 남겨둔 분사구문",
+        "overview": "기본 분사구문에서 한 걸음 더 나아간 고급 분사구문이에요! 주절의 일보다 더 먼저 일어난 일을 강조하는 'Having + p.p.(완료분사구문)', 수동태에서 being이 생략되어 과거분사만 남는 '수동분사구문', 그리고 의미를 분명히 하기 위해 접속사를 그대로 살려두는 기법을 정복해 봅시다!",
+        "keyTakeaways": [
+          "완료분사구문: Having + p.p. (주절의 시제보다 '더 앞선 과거'의 일)",
+          "수동분사구문: (Being / Having been) + p.p. ➔ p.p.만 남음 (주어가 당하는 수동 관계)",
+          "접속사를 남겨둔 분사구문: 의미를 분명하게 밝히기 위해 접속사를 생략하지 않음 (While walking, When asked)"
+        ],
+        "formulaCards": [
+          {
+            "name": "완료분사구문 Having + p.p. 공식",
+            "formula": "Having + p.p. ~, 주어 + 과거동사 (부사절 시제가 주절보다 하나 더 과거!)",
+            "examples": [
+              {
+                "en": "Having finished all my homework, I went out to play soccer.",
+                "ko": "숙제를 다 끝마쳤기 때문에, 나는 축구를 하러 밖으로 나갔다.",
+                "point": "나간 과거(went)보다 숙제를 끝마친 것(had finished)이 앞서므로 Having finished를 씁니다."
+              },
+              {
+                "en": "Having seen the movie before, I didn't want to watch it again.",
+                "ko": "이전에 그 영화를 본 적이 있었기 때문에, 나는 그것을 다시 보고 싶지 않았다.",
+                "point": "과거 이전에 본 경험이므로 Having seen을 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "Having lost his key, he couldn't open the door.",
+              "x": "Losing his key, he couldn't open the door.",
+              "comment": "열쇠를 잃어버린 것이 문을 못 여는 것보다 명백히 앞선 사건이므로 Having lost가 훨씬 정확합니다."
+            },
+            "trap": "부사절 시제가 대과거이고 주절 시제가 과거일 때는 단순 V-ing가 아니라 Having p.p.입니다!",
+            "quizLink": "완료분사구문은 고등 내신 어법 객관식과 서술형 영작의 최빈출 킬러 문제입니다."
+          },
+          {
+            "name": "수동분사구문과 (Being)의 생략",
+            "formula": "(Being) + 과거분사(p.p.) ~ ➔ 주절 주어와의 관계가 '수동'일 때",
+            "examples": [
+              {
+                "en": "Written in plain English, this book is very easy to read.",
+                "ko": "쉬운 영어로 쓰였기 때문에, 이 책은 읽기가 매우 쉽다.",
+                "point": "책이 '쓰여진(written)' 수동 관계이므로 Being written에서 Being이 생략되고 Written만 남았습니다."
+              },
+              {
+                "en": "Seen from a distance, the big rock looks like a human face.",
+                "ko": "멀리서 보아졌을 때, 그 큰 바위는 사람의 얼굴처럼 보인다.",
+                "point": "바위가 '보여지는' 수동 관계이므로 Seeing이 아니라 과거분사 Seen을 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "Shocked by the news, she couldn't say a word.",
+              "x": "Shocking by the news, she couldn't say a word.",
+              "comment": "그녀가 소식에 의해 충격을 '받은' 수동이므로 Shocked가 맞습니다."
+            },
+            "trap": "주절의 주어(the rock, this book)를 분사 앞에 주어로 넣고 능동인지 수동인지 따져보세요!",
+            "quizLink": "수동분사구문은 V-ing냐 p.p.냐를 묻는 평가원 수능 어법 1순위 출제 문제입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv3_u18_d1",
+            "missionTitle": "미션 1: 수동 관계 분사구문 능동 현재분사 오용",
+            "sentence": "Praising by his teacher, the shy boy gained great confidence.",
+            "korean": "선생님께 칭찬을 받았기 때문에, 그 수줍은 소년은 큰 자신감을 얻었다.",
+            "underlined": [
+              "Praising by",
+              "his teacher,",
+              "the shy boy gained",
+              "great confidence"
+            ],
+            "wrongIndex": 0,
+            "correction": "Praised by (or Being praised by)",
+            "explanation": "소년이 칭찬을 '받은' 수동의 관계이므로 Praising이 아니라 과거분사 Praised가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 2: 수동분사구문] 출제 연계"
+          },
+          {
+            "id": "lv3_u18_d2",
+            "missionTitle": "미션 2: 시제 앞선 사건의 단순분사구문 오류",
+            "sentence": "Lost his wallet yesterday, he had to borrow some money from his friend.",
+            "korean": "어제 지갑을 잃어버렸기 때문에, 그는 친구에게 돈을 빌려야만 했다.",
+            "underlined": [
+              "Lost his wallet yesterday,",
+              "he had to borrow",
+              "some money",
+              "from his friend"
+            ],
+            "wrongIndex": 0,
+            "correction": "Having lost his wallet yesterday,",
+            "explanation": "돈을 빌린 것보다 지갑을 잃어버린 사건이 더 앞서며 능동이므로 완료분사구문 Having lost를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 완료분사구문] 출제 연계"
+          },
+          {
+            "id": "lv3_u18_d3",
+            "missionTitle": "미션 3: 접속사 보존 분사구문 형태 오류",
+            "sentence": "While walked along the quiet beach, she found a shiny pearl shell.",
+            "korean": "조용한 해변을 따라 걷는 동안, 그녀는 반짝이는 진주조개를 발견했다.",
+            "underlined": [
+              "While walked along",
+              "the quiet beach,",
+              "she found",
+              "a shiny pearl shell"
+            ],
+            "wrongIndex": 0,
+            "correction": "While walking along",
+            "explanation": "접속사를 남겨둔 분사구문에서는 동사원형이나 과거형이 아닌 분사(walking)가 와야 합니다.",
+            "conceptRef": "1단계 [공식 2: 접속사 보존 분사구문] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 말로 가장 알맞은 것은?\n\n'______ from a distance, the island looked like a floating turtle.'",
+            "options": [
+              "Seeing",
+              "Seen",
+              "Saw",
+              "To see",
+              "See"
+            ],
+            "ans": 1,
+            "exp": "섬(the island)이 멀리서 '보여지는' 수동 관계이므로 과거분사 Seen이 알맞습니다.",
+            "conceptRef": "1단계 [공식 2: 수동분사구문]"
+          },
+          {
+            "q": "다음 부사절을 완료분사구문으로 바르게 전환한 것은?\n\n'As I had finished my homework, I could go to bed early.'",
+            "options": [
+              "Finishing my homework, I could go to bed early.",
+              "Finished my homework, I could go to bed early.",
+              "Having finished my homework, I could go to bed early.",
+              "To finish my homework, I could go to bed early.",
+              "Having been finished my homework, I could go to bed early."
+            ],
+            "ans": 2,
+            "exp": "주절 시제(could go)보다 앞선 대과거(had finished)이므로 Having finished가 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 완료분사구문]"
+          },
+          {
+            "q": "다음 중 밑줄 친 분사구문의 형태가 어법상 어색한 것은?",
+            "options": [
+              "<u>Written</u> in haste, the letter had some typos.",
+              "<u>Having eaten</u> dinner, I went for a walk.",
+              "<u>Told</u> the news, she burst into tears.",
+              "<u>Shocking</u> by the loud crash, they ran outside.",
+              "While <u>waiting</u> for the bus, I read a book."
+            ],
+            "ans": 3,
+            "exp": "그들이 굉음에 의해 충격을 '받은' 것이므로 Shocking이 아니라 과거분사 Shocked가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 2: 수동분사구문]"
+          },
+          {
+            "q": "'이 약은 물과 함께 복용되면, 효과가 매우 좋다.'를 바르게 영작한 것은?",
+            "options": [
+              "Taking with water, this medicine works well.",
+              "Taken with water, this medicine works well.",
+              "Took with water, this medicine works well.",
+              "To take with water, this medicine works well.",
+              "Having taken with water, this medicine works well."
+            ],
+            "ans": 1,
+            "exp": "약이 복용되는 수동 관계이므로 Taken with water가 올바릅니다.",
+            "conceptRef": "1단계 [공식 2: 수동분사구문]"
+          },
+          {
+            "q": "다음 괄호 안에서 알맞은 말이 바르게 짝지어진 것은?\n\n- '(Born / Bearing) in Seoul, he loves the city.'\n- '(Having lost / Losing) his passport, he couldn't leave the country.'",
+            "options": [
+              "Born - Having lost",
+              "Bearing - Having lost",
+              "Born - Losing",
+              "Bearing - Losing",
+              "Born - Lost"
+            ],
+            "ans": 0,
+            "exp": "태어난 것은 수동 Born, 여권을 먼저 잃어버린 것은 완료분사구문 Having lost입니다.",
+            "conceptRef": "1단계 [공식 1 & 2 종합]"
+          }
+        ]
+      },
+      {
+        "unitNo": 19,
+        "unitId": "lv3_u19",
+        "legacyUnitNo": 43,
+        "title": "강조구문 (It is ~ that 강조 vs 가주어-진주어 구별)",
+        "part": "특수 구문",
+        "targetGrade": "중3 내신 대비",
+        "summary": "주어, 목적어, 부사구를 문두로 끌어내어 강조하는 It is ... that ~ 구문과 가주어-진주어 구문의 명쾌한 1초 판별법",
+        "overview": "'어제 파티에서 지수를 만난 건 바로 민호였어!'처럼 문장의 특정 성분을 콕 집어 강렬하게 강조할 때 'It is ~ that 강조구문'을 써요! It is와 that을 지웠을 때 완전한 문장이 되는지 여부로 가주어-진주어 구문과 1초 만에 구별하는 비법을 배워봅시다!",
+        "keyTakeaways": [
+          "강조구문 공식: It is/was + [강조할 말(주어/목적어/부사구)] + that + [나머지 문장]",
+          "강조 대상: 주어, 목적어, 시간·장소 부사구 (★동사는 do/does/did로 따로 강조!)",
+          "★판별법: It is와 that을 지웠을 때 문장이 '완전하게 복원'되면 강조구문, 불완전하면 가주어-진주어!"
+        ],
+        "formulaCards": [
+          {
+            "name": "It is ~ that 강조구문의 기본 구조",
+            "formula": "It is/was + 강조 대상(주어/목적어/부사구) + that + 나머지",
+            "examples": [
+              {
+                "en": "It was in the park that I met my best friend yesterday.",
+                "ko": "내가 어제 가장 친한 친구를 만났던 곳은 바로 그 공원에서였다.",
+                "point": "장소 부사구 in the park를 It was와 that 사이에 넣어 강조했습니다."
+              },
+              {
+                "en": "It is Tom that wants to become the school president.",
+                "ko": "전교 회장이 되기를 원하는 사람은 바로 톰이다.",
+                "point": "주어 Tom을 강조하고 있으며, 사람이므로 that 대신 who를 쓸 수도 있습니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "It was yesterday that he called me.",
+              "x": "It was yesterday which he called me.",
+              "comment": "시간 부사를 강조할 때 관계대명사 which를 쓰면 안 되며 that이나 when을 써야 합니다."
+            },
+            "trap": "동사를 강조할 때는 It is that을 쓰지 않고 'do / does / did + 동사원형'을 씁니다!",
+            "quizLink": "I do love you(정말 사랑해), He did break it(진짜 깼어) 동사 강조도 함께 출제됩니다."
+          },
+          {
+            "name": "강조구문 vs 가주어-진주어 구별 판별법",
+            "formula": "It is와 that을 삭제 ➔ [문장 성립: 강조구문] vs [성립 불가(보어/형용사 남음): 가주어-진주어]",
+            "examples": [
+              {
+                "en": "It is true that he is an honest boy.",
+                "ko": "그가 정직한 소년이라는 것은 사실이다.",
+                "point": "It is와 that을 빼면 'true he is an honest boy'로 문장이 성립하지 않으므로 가주어-진주어입니다."
+              },
+              {
+                "en": "It was Minho that broke the expensive vase.",
+                "ko": "비싼 꽃병을 깬 사람은 바로 민호였다.",
+                "point": "It was와 that을 빼면 'Minho broke the expensive vase'로 완벽한 문장이 되므로 강조구문입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "It is important that you arrive on time. (가주어-진주어)",
+              "x": "It is on time that you arrive important. (비문)",
+              "comment": "important 같은 형용사 보어가 It is 뒤에 오면 99% 가주어-진주어 구문입니다."
+            },
+            "trap": "It is 뒤에 '형용사'가 오면 가주어-진주어, '명사나 부사구'가 오면 강조구문입니다!",
+            "quizLink": "중3 내신에서 밑줄 친 It ~ that의 쓰임이 다른 하나를 고르는 문제는 100% 빈출 문항입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv3_u19_d1",
+            "missionTitle": "미션 1: 과거 사실 강조구문 be동사 시제 불일치",
+            "sentence": "It is yesterday that my father bought me a new laptop.",
+            "korean": "아버지께서 내게 새 노트북을 사주신 것은 바로 어제였다.",
+            "underlined": [
+              "It is yesterday",
+              "that my father",
+              "bought me",
+              "a new laptop"
+            ],
+            "wrongIndex": 0,
+            "correction": "It was yesterday",
+            "explanation": "문장의 시제가 과거(bought, yesterday)이므로 It is가 아니라 It was yesterday가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 강조구문 기본 구조] 출제 연계"
+          },
+          {
+            "id": "lv3_u19_d2",
+            "missionTitle": "미션 2: 동사 강조 자리 It is that 오용 수정",
+            "sentence": "I it was met him at the station yesterday morning.",
+            "korean": "나는 어제 아침 역에서 그를 정말로 만났다.",
+            "underlined": [
+              "I it was met",
+              "him at the station",
+              "yesterday",
+              "morning"
+            ],
+            "wrongIndex": 0,
+            "correction": "I did meet",
+            "explanation": "일반동사를 강조할 때는 It is that을 쓰지 않고 조동사 did + 동사원형 did meet을 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 강조구문 기본 구조] 출제 연계"
+          },
+          {
+            "id": "lv3_u19_d3",
+            "missionTitle": "미션 3: 주어 강조 후 뒷문장 수일치 오류 수정",
+            "sentence": "It is these students that wants to participate in the contest.",
+            "korean": "대회에 참가하기를 원하는 사람들은 바로 이 학생들이다.",
+            "underlined": [
+              "It is these students",
+              "that wants",
+              "to participate in",
+              "the contest"
+            ],
+            "wrongIndex": 1,
+            "correction": "that want",
+            "explanation": "강조된 주어가 these students(복수)이므로 that 뒤의 동사도 복수형 want가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 강조구문 기본 구조] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 문장에서 'Tom'을 강조하는 It is ~ that 강조구문으로 바르게 바꾼 것은?\n\n'Tom broke the window yesterday.'",
+            "options": [
+              "It was yesterday that Tom broke the window.",
+              "It was Tom that broke the window yesterday.",
+              "It was the window that Tom broke yesterday.",
+              "Tom did break the window yesterday.",
+              "It is Tom that broke the window yesterday."
+            ],
+            "ans": 1,
+            "exp": "과거시제에 맞추어 주어 Tom을 강조한 It was Tom that broke the window yesterday가 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 강조구문 기본 구조]"
+          },
+          {
+            "q": "다음 중 밑줄 친 'It ~ that'의 쓰임이 강조구문인 것은?",
+            "options": [
+              "It is certain that he will succeed.",
+              "It is natural that she was angry.",
+              "It is true that honesty is important.",
+              "It was in Seoul that I met her.",
+              "It is necessary that we leave now."
+            ],
+            "ans": 3,
+            "exp": "4번은 부사구 in Seoul을 강조한 강조구문입니다. (It was와 that을 빼면 'I met her in Seoul' 성립)",
+            "conceptRef": "1단계 [공식 2: 강조구문 vs 가주어-진주어]"
+          },
+          {
+            "q": "다음 밑줄 친 동사를 강조하는 표현으로 알맞은 것은?\n\n'She <u>solved</u> the problem alone.'",
+            "options": [
+              "did solve",
+              "does solve",
+              "do solve",
+              "did solved",
+              "was solved"
+            ],
+            "ans": 0,
+            "exp": "과거형 일반동사의 강조는 did + 동사원형 did solve입니다.",
+            "conceptRef": "1단계 [공식 1: 강조구문 기본 구조]"
+          },
+          {
+            "q": "다음 중 어법상 어색한 문장은?",
+            "options": [
+              "It was Jane that called me last night.",
+              "It was on Sunday that we went hiking.",
+              "It is important that you be careful.",
+              "It is yesterday that I bought this book.",
+              "I do hope to see you again."
+            ],
+            "ans": 3,
+            "exp": "bought, yesterday가 과거시제이므로 It is가 아니라 It was yesterday가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 강조구문 기본 구조]"
+          },
+          {
+            "q": "'그 시험에 합격한 사람은 바로 민지였다.'를 바르게 영작한 것은?",
+            "options": [
+              "It is Minji that passed the exam.",
+              "It was Minji that passed the exam.",
+              "It was Minji which passed the exam.",
+              "It did Minji pass the exam.",
+              "It was passed the exam that Minji."
+            ],
+            "ans": 1,
+            "exp": "과거시제와 주어 Minji를 올바르게 강조한 2번이 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 강조구문 기본 구조]"
+          }
+        ]
+      },
+      {
+        "unitNo": 20,
+        "unitId": "lv3_u20",
+        "legacyUnitNo": 44,
+        "title": "도치 구문 (부정어 도치 & 장소부사구 도치)",
+        "part": "특수 구문",
+        "targetGrade": "중3 내신 대비",
+        "summary": "부정어(never, little, hardly)가 문두로 올 때의 의문문 어순 도치(조동사+S+V)와 장소부사구 문두 도치(장소부사구+동사+주어)",
+        "overview": "'결코 나는 그런 짓을 하지 않았다!'처럼 문장의 어순(주어+동사)을 뒤집어 동사를 주어 앞으로 보내는 것을 '도치'라고 해요! 부정어가 앞에 오면 의문문처럼 '조동사 + 주어 + 동사원형'이 되고, 장소부사구가 앞에 오면 '동사 + 주어'가 바로 바뀌는 고등 연계 1등 킬러를 마스터해 봅시다!",
+        "keyTakeaways": [
+          "부정어 도치: 부정어(Never, Little, Rarely, Seldom, Hardly) + [조동사/be/do] + 주어 + 동사원형",
+          "장소부사구 도치: 장소부사구 + 동사 + 주어 (주어가 대명사일 땐 도치하지 않음: Here you are!)",
+          "★일반동사의 부정어 도치는 do / does / did를 빌려와 의문문 어순으로 만든다!"
+        ],
+        "formulaCards": [
+          {
+            "name": "부정어 문두 도치 공식 (의문문 어순)",
+            "formula": "Never / Little / Hardly / Seldom + [do/does/did or be or 조동사] + S + V",
+            "examples": [
+              {
+                "en": "Never did I imagine that he would become a famous movie star.",
+                "ko": "그가 유명한 영화배우가 될 것이라고는 나는 결코 상상하지 못했다.",
+                "point": "부정어 Never가 문두로 나가면서 일반동사 imagined 대신 did I imagine 어순이 되었습니다."
+              },
+              {
+                "en": "Little did she know about the surprising secret party.",
+                "ko": "그녀는 그 놀라운 비밀 파티에 대해 거의 알지 못했다.",
+                "point": "부정어 Little 뒤에 did she know 의문문 어순이 완성되었습니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "Rarely does he eat fast food.",
+              "x": "Rarely he eats fast food.",
+              "comment": "부정어 Rarely가 문두에 오면 반드시 does he eat으로 도치해야 합니다."
+            },
+            "trap": "부정어 도치에서 일반동사를 그대로 주어 앞으로 보내면(Never imagined I) 틀립니다!",
+            "quizLink": "부정어 문두 도치는 고교 내신 서술형과 수능 29번 어법의 최고난도 킬러입니다."
+          },
+          {
+            "name": "장소·방향 부사구 문두 도치 공식",
+            "formula": "장소부사구 + 동사 + 명사주어 (단, 대명사 주어는 도치 안 됨: 부사구 + S + V)",
+            "examples": [
+              {
+                "en": "Under the big oak tree sat an old wise man.",
+                "ko": "큰 떡갈나무 아래에 한 지혜로운 노인이 앉아 있었다.",
+                "point": "장소부사구(Under the big oak tree) 뒤에 동사 sat + 주어 an old man이 도치되었습니다."
+              },
+              {
+                "en": "Here comes the school bus down the street!",
+                "ko": "거리 저편에서 통학버스가 온다!",
+                "point": "부사 Here 뒤에 동사 comes + 주어 the school bus입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "Here you are.",
+              "x": "Here are you.",
+              "comment": "주어가 대명사(you, it)일 때는 장소부사구가 앞에 와도 도치하지 않고 정상 어순을 씁니다."
+            },
+            "trap": "Here it comes(O) vs Here comes it(X)! 대명사 주어 예외를 꼭 기억하세요.",
+            "quizLink": "장소부사구 도치에서는 뒤에 나오는 주어의 단·복수에 맞춰 동사의 수를 일치시킵니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv3_u20_d1",
+            "missionTitle": "미션 1: 부정어 문두 도치 미수행 오류 수정",
+            "sentence": "Never I have seen such a breathtaking sunset in my entire life.",
+            "korean": "평생토록 나는 이렇게 숨 막히게 아름다운 일몰을 결코 본 적이 없다.",
+            "underlined": [
+              "Never I have seen",
+              "such a breathtaking",
+              "sunset in",
+              "my entire life"
+            ],
+            "wrongIndex": 0,
+            "correction": "Never have I seen",
+            "explanation": "부정어 Never가 문두에 왔으므로 have I seen으로 조동사가 주어 앞으로 도치되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 부정어 문두 도치] 출제 연계"
+          },
+          {
+            "id": "lv3_u20_d2",
+            "missionTitle": "미션 2: 일반동사 부정어 도치 조동사 do 누락",
+            "sentence": "Little she knew that her friends were preparing a surprise party.",
+            "korean": "그녀의 친구들이 깜짝 파티를 준비하고 있다는 것을 그녀는 거의 알지 못했다.",
+            "underlined": [
+              "Little she knew",
+              "that her friends",
+              "were preparing",
+              "a surprise party"
+            ],
+            "wrongIndex": 0,
+            "correction": "Little did she know",
+            "explanation": "부정어 Little이 문두에 왔으므로 일반동사 과거형을 대신하는 did she know로 도치되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 부정어 문두 도치] 출제 연계"
+          },
+          {
+            "id": "lv3_u20_d3",
+            "missionTitle": "미션 3: 대명사 주어 장소부사구 불필요한 도치",
+            "sentence": "When the teacher asked for the textbook, here gave he it to her politely.",
+            "korean": "선생님께서 교과서를 요청하셨을 때, 그는 그녀에게 그것을 건넸다.",
+            "underlined": [
+              "When the teacher asked",
+              "for the textbook,",
+              "here gave he it",
+              "to her politely"
+            ],
+            "wrongIndex": 2,
+            "correction": "here he gave it",
+            "explanation": "주어가 대명사 he일 때는 장소부사구 뒤에서 도치하지 않고 '부사 + 주어 + 동사' 어순을 유지해야 합니다.",
+            "conceptRef": "1단계 [공식 2: 장소부사구 도치] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 어순으로 가장 알맞은 것은?\n\n'Never ______ such a beautiful aurora before.'",
+            "options": [
+              "I had seen",
+              "had I seen",
+              "I saw",
+              "did I saw",
+              "I have saw"
+            ],
+            "ans": 1,
+            "exp": "부정어 Never가 문두에 왔으므로 조동사+주어+p.p.인 had I seen이 올바른 도치 어순입니다.",
+            "conceptRef": "1단계 [공식 1: 부정어 문두 도치]"
+          },
+          {
+            "q": "다음 문장의 빈칸에 들어갈 말로 알맞은 것은?\n\n'Seldom ______ he complain about his difficult situation.'",
+            "options": [
+              "does",
+              "is",
+              "do",
+              "did",
+              "was"
+            ],
+            "ans": 0,
+            "exp": "주어가 3인칭 단수 he이고 현재시제이므로 Seldom does he complain이 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 부정어 문두 도치]"
+          },
+          {
+            "q": "다음 중 어법상 어색한 문장은?",
+            "options": [
+              "Little did I dream of winning the prize.",
+              "Here comes the bus.",
+              "On the hill stands an old church.",
+              "Here comes he at last.",
+              "Never will I forget your kindness."
+            ],
+            "ans": 3,
+            "exp": "주어가 대명사 he일 때는 도치하지 않고 Here he comes로 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 장소부사구 도치]"
+          },
+          {
+            "q": "'언덕 위에 하얀 집 한 채가 서 있다.'를 장소부사구 도치 구문으로 바르게 영작한 것은?",
+            "options": [
+              "On the hill stands a white house.",
+              "On the hill a white house stands.",
+              "On the hill does a white house stand.",
+              "Stands on the hill a white house.",
+              "A white house on the hill stands."
+            ],
+            "ans": 0,
+            "exp": "장소부사구(On the hill) + 동사(stands) + 명사주어(a white house)인 1번이 올바릅니다.",
+            "conceptRef": "1단계 [공식 2: 장소부사구 도치]"
+          },
+          {
+            "q": "'I little dreamed that I would see her again.'을 Little을 문두로 하여 바르게 도치한 것은?",
+            "options": [
+              "Little I dreamed that I would see her again.",
+              "Little did I dream that I would see her again.",
+              "Little dreamed I that I would see her again.",
+              "Little I did dream that I would see her again.",
+              "Little do I dream that I would see her again."
+            ],
+            "ans": 1,
+            "exp": "일반동사 과거형 dreamed의 부정어 도치는 Little did I dream ~입니다.",
+            "conceptRef": "1단계 [공식 1: 부정어 문두 도치]"
+          }
+        ]
       }
     ]
   },
@@ -8727,6 +17367,1973 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "unitId": "lv4_u8",
         "legacyUnitNo": 32
+      },
+      {
+        "unitNo": 9,
+        "unitId": "lv4_u9",
+        "legacyUnitNo": 45,
+        "title": "긴 명사구/절 주어와 수식어구 거품 빼기 수일치",
+        "part": "고교 어법 1등급",
+        "targetGrade": "고교 1~2학년 내신",
+        "summary": "주어와 동사 사이에 길게 삽입된 전치사구, 관계사절, 분사구 등 수식어구 거품을 걷어내고 진짜 주어 핵(Head)을 찾아 단·복수를 일치시키는 고교 내신 1순위 문법",
+        "overview": "고등학교 시험에서는 주어와 동사 사이를 온갖 수식어구로 가로막아 수일치를 헷갈리게 만들어요! 괄호 치기로 수식어구 거품을 시원하게 걷어내고, 문장의 진짜 주인(핵심 명사)을 찾아 단수/복수 동사를 매칭하는 고교 내신 1등급 필살기를 배워봅시다!",
+        "keyTakeaways": [
+          "진짜 주어 찾기: [진짜 주어] + (전치사구 / 관계사절 / 분사구 / 형용사구) + [본동사]",
+          "수식어구 속 복수명사 함정 피하기: The quality of these products (is / are) ➔ 주어는 quality이므로 is!",
+          "명사절/동명사구 주어: 단수 취급 (That S + V / To-V / V-ing ➔ 단수동사)"
+        ],
+        "formulaCards": [
+          {
+            "name": "수식어구 거품 걷어내기 수일치 공식",
+            "formula": "단수 명사 + (전치사구/분사/관계사절) + 단수동사 | 복수 명사 + (...) + 복수동사",
+            "examples": [
+              {
+                "en": "The quality of the fresh organic ingredients determines the final taste.",
+                "ko": "신선한 유기농 재료들의 품질이 최종적인 맛을 결정한다.",
+                "point": "ingredients가 복수여도 진짜 주어는 단수명사 The quality이므로 단수동사 determines를 씁니다."
+              },
+              {
+                "en": "The researchers working on the advanced AI technology are very talented.",
+                "ko": "첨단 AI 기술을 연구하는 그 연구원들은 매우 재능이 뛰어나다.",
+                "point": "technology가 단수여도 주어 핵은 The researchers(복수)이므로 복수동사 are를 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "The discovery of new ancient tools changes our understanding.",
+              "x": "The discovery of new ancient tools change our understanding.",
+              "comment": "tools의 복수형태에 낚이지 말고 핵심 주어 The discovery(단수)에 맞춰 changes를 써야 합니다."
+            },
+            "trap": "동사 바로 앞 명사가 복수여도 진짜 주어는 전치사구 앞에 있는 경우가 90%입니다!",
+            "quizLink": "고교 내신과 수능 29번에서 가장 높은 빈도로 정답을 가르는 단골 킬러입니다."
+          },
+          {
+            "name": "구와 절 주어의 단수 취급 원칙",
+            "formula": "동명사구(V-ing) / to부정사구 / 명사절(That/What S+V) ➔ 무조건 단수동사!",
+            "examples": [
+              {
+                "en": "Developing renewable energy sources is essential for the future.",
+                "ko": "재생 가능한 에너지원을 개발하는 것은 미래를 위해 필수적이다.",
+                "point": "energy sources가 복수여도 주어는 동명사 Developing이므로 단수동사 is를 씁니다."
+              },
+              {
+                "en": "What we need most in this critical crisis is mutual trust.",
+                "ko": "이 중대한 위기에서 우리가 가장 필요로 하는 것은 상호 신뢰이다.",
+                "point": "What 명사절 주어는 단수 취급하여 is를 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "Collecting antique coins requires great patience.",
+              "x": "Collecting antique coins require great patience.",
+              "comment": "동명사구 주어 Collecting은 단수 취급하므로 requires가 올바릅니다."
+            },
+            "trap": "명사절(What절) 안에 복수명사가 있어도 절 전체는 하나의 덩어리로서 단수 취급합니다.",
+            "quizLink": "동명사 목적어가 복수명사인 구조(Solving difficult math problems is fun)는 내신 대표 문제입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv4_u9_d1",
+            "missionTitle": "미션 1: 전치사구 수식 속 핵심 주어 수일치 오류",
+            "sentence": "The impact of climate change on coastal cities are becoming severe.",
+            "korean": "기후 변화가 해안 도시들에 미치는 영향은 점점 심각해지고 있다.",
+            "underlined": [
+              "The impact of",
+              "climate change on",
+              "coastal cities are",
+              "becoming severe"
+            ],
+            "wrongIndex": 2,
+            "correction": "coastal cities is",
+            "explanation": "주어 핵은 단수명사인 The impact이므로 coastal cities에 속지 말고 단수동사 is가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 거품 걷어내기 수일치] 출제 연계"
+          },
+          {
+            "id": "lv4_u9_d2",
+            "missionTitle": "미션 2: 동명사구 주어의 복수동사 오용 수정",
+            "sentence": "Reading books written by various classical authors broaden your horizon.",
+            "korean": "다양한 고전 작가들이 쓴 책들을 읽는 것은 당신의 시야를 넓혀준다.",
+            "underlined": [
+              "Reading books",
+              "written by various",
+              "classical authors broaden",
+              "your horizon"
+            ],
+            "wrongIndex": 2,
+            "correction": "classical authors broadens",
+            "explanation": "주어는 동명사 Reading이므로 3인칭 단수 취급하여 동사원형 broaden 대신 broadens를 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 구와 절 주어 단수 취급] 출제 연계"
+          },
+          {
+            "id": "lv4_u9_d3",
+            "missionTitle": "미션 3: 관계사절 수식 복수 주어의 단수동사 오류",
+            "sentence": "The volunteers who helped the elderly during the flood was praised.",
+            "korean": "홍수 동안 어르신들을 도왔던 자원봉사자들은 칭찬을 받았다.",
+            "underlined": [
+              "The volunteers who",
+              "helped the elderly",
+              "during the flood",
+              "was praised"
+            ],
+            "wrongIndex": 3,
+            "correction": "were praised",
+            "explanation": "주어가 The volunteers(복수)이므로 관계사절 수식을 건너뛰어 복수동사 were praised가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 거품 걷어내기 수일치] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 알맞은 동사의 형태는?\n\n'The main reason for these environmental problems ______ human activity.'",
+            "options": [
+              "are",
+              "is",
+              "were",
+              "being",
+              "have been"
+            ],
+            "ans": 1,
+            "exp": "주어의 핵은 단수명사 The main reason이므로 단수동사 is가 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 거품 걷어내기 수일치]"
+          },
+          {
+            "q": "다음 문장의 빈칸에 들어갈 말로 알맞은 것은?\n\n'Exercising regularly in the morning ______ good for reducing stress.'",
+            "options": [
+              "is",
+              "are",
+              "be",
+              "were",
+              "being"
+            ],
+            "ans": 0,
+            "exp": "동명사구 주어(Exercising regularly ~)는 3인칭 단수 취급하므로 is가 올바릅니다.",
+            "conceptRef": "1단계 [공식 2: 구와 절 주어 단수 취급]"
+          },
+          {
+            "q": "다음 중 어법상 어색한 문장은?",
+            "options": [
+              "The box of chocolates is on the table.",
+              "The students who passed the test are happy.",
+              "Learning foreign languages require much time.",
+              "The cause of these accidents remains unknown.",
+              "What he needs right now is a warm meal."
+            ],
+            "ans": 2,
+            "exp": "Learning foreign languages는 동명사 주어이므로 require 대신 단수동사 requires를 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 구와 절 주어 단수 취급]"
+          },
+          {
+            "q": "'이 새로운 백신들을 개발하는 데 든 비용은 엄청났다.'를 영작할 때 빈칸에 알맞은 것은?\n\n'The cost of developing these new vaccines ______ enormous.'",
+            "options": [
+              "were",
+              "was",
+              "are",
+              "have been",
+              "being"
+            ],
+            "ans": 1,
+            "exp": "주어의 핵심 명사가 단수명사 The cost이므로 과거 단수동사 was가 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 거품 걷어내기 수일치]"
+          },
+          {
+            "q": "다음 밑줄 친 부분 중 어법상 올바른 것은?",
+            "options": [
+              "The water in these rivers <u>are</u> polluted.",
+              "To read many good books <u>expand</u> your mind.",
+              "The boys playing with the dog <u>is</u> my brothers.",
+              "The girl with long hair and bright eyes <u>smiles</u> sweetly.",
+              "Making new friends <u>are</u> not always easy."
+            ],
+            "ans": 3,
+            "exp": "4번은 단수 주어 The girl에 맞추어 단수동사 smiles를 바르게 쓴 문장입니다.",
+            "conceptRef": "1단계 [공식 1: 거품 걷어내기 수일치]"
+          }
+        ]
+      },
+      {
+        "unitNo": 10,
+        "unitId": "lv4_u10",
+        "legacyUnitNo": 46,
+        "title": "상관접속사와 부분명사의 수일치 공식",
+        "part": "고교 어법 1등급",
+        "targetGrade": "고교 1~2학년 내신",
+        "summary": "not only A but also B, either A or B 등 B에 동사를 일치시키는 상관접속사와 part, most, half, percent of 뒤의 명사에 수일치시키는 부분명사 원칙",
+        "overview": "단어들이 짝을 지어 다니는 '상관접속사'와 '부분명사(most of, half of 등)'는 동사의 수를 어디에 맞춰야 할지 헷갈리기 쉬워요! B에 맞추는 상관접속사 공식과 of 뒤의 진짜 명사에 맞추는 부분명사 원리를 명쾌하게 정리해 봅시다!",
+        "keyTakeaways": [
+          "B에 수일치: not only A but also B / either A or B / neither A nor B ➔ B의 수에 일치!",
+          "예외 (항상 복수): both A and B ➔ 무조건 복수동사!",
+          "부분명사: most / half / some / the rest / percent / fraction of + [명사] ➔ [명사]의 수에 일치!"
+        ],
+        "formulaCards": [
+          {
+            "name": "상관접속사의 B 수일치 공식",
+            "formula": "not only A but also B = B as well as A ➔ 동사는 'B'에 일치!",
+            "examples": [
+              {
+                "en": "Not only the teacher but also the students are excited about the vacation.",
+                "ko": "선생님뿐만 아니라 학생들도 방학에 대해 신나 있다.",
+                "point": "but also 뒤의 B인 the students(복수)에 맞추어 are를 씁니다."
+              },
+              {
+                "en": "Either you or he has to take responsibility for this mistake.",
+                "ko": "너나 그 사람 둘 중 한 명이 이 실수에 대해 책임을 져야 한다.",
+                "point": "either A or B에서 B인 he(3인칭 단수)에 맞추어 has to를 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "Both you and I are students.",
+              "x": "Both you and I am students.",
+              "comment": "both A and B는 둘 다를 뜻하므로 무조건 복수동사 are를 써야 합니다."
+            },
+            "trap": "B as well as A는 A가 아니라 앞에 나오는 'B'에 동사를 일치시킵니다!",
+            "quizLink": "Neither he nor I (am / is / are) 형태는 내신 시험의 단골 함정입니다 (B인 I에 맞춰 am)."
+          },
+          {
+            "name": "부분명사 of + 명사 수일치 공식",
+            "formula": "most / half / rest / percent / some of + [단수명사 ➔ 단수동사] / [복수명사 ➔ 복수동사]",
+            "examples": [
+              {
+                "en": "Most of the fresh milk in the bottle was spoiled by the heat.",
+                "ko": "병 안의 신선한 우유의 대부분이 열기 때문에 상했다.",
+                "point": "the milk가 셀 수 없는 단수명사이므로 Most of 뒤에 단수동사 was를 씁니다."
+              },
+              {
+                "en": "Two thirds of the students have passed the qualification exam.",
+                "ko": "그 학생들의 3분의 2가 자격시험에 합격했다.",
+                "point": "the students가 복수명사이므로 복수동사 have passed를 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "Half of the apples are rotten.",
+              "x": "Half of the apples is rotten.",
+              "comment": "of 뒤의 명사인 the apples가 복수이므로 복수동사 are가 맞습니다."
+            },
+            "trap": "percent나 분수 자체가 단·복수를 결정하는 것이 아니라 of 뒤의 명사가 결정합니다!",
+            "quizLink": "고교 어법에서 수일치 문제의 50% 이상이 상관접속사와 부분명사에서 출제됩니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv4_u10_d1",
+            "missionTitle": "미션 1: not only A but also B 수일치 오류",
+            "sentence": "Not only the players but also the coach were satisfied with the game.",
+            "korean": "선수들뿐만 아니라 코치 역시 경기에 만족했다.",
+            "underlined": [
+              "Not only the players",
+              "but also the coach",
+              "were satisfied",
+              "with the game"
+            ],
+            "wrongIndex": 2,
+            "correction": "was satisfied",
+            "explanation": "not only A but also B에서 동사는 B인 the coach(단수)에 일치시켜야 하므로 was satisfied가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 상관접속사 B 수일치] 출제 연계"
+          },
+          {
+            "id": "lv4_u10_d2",
+            "missionTitle": "미션 2: 부분명사 of 뒤 복수명사 단수동사 오류",
+            "sentence": "Seventy percent of the participants in this survey was female.",
+            "korean": "이 설문조사에 참여한 참가자들의 70퍼센트는 여성이었다.",
+            "underlined": [
+              "Seventy percent of",
+              "the participants",
+              "in this survey",
+              "was female"
+            ],
+            "wrongIndex": 3,
+            "correction": "were female",
+            "explanation": "percent of 뒤의 명사가 the participants(복수)이므로 동사도 복수형인 were가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 2: 부분명사 수일치] 출제 연계"
+          },
+          {
+            "id": "lv4_u10_d3",
+            "missionTitle": "미션 3: either A or B의 B 수일치 오류 수정",
+            "sentence": "Either you or Minho have to submit the group assignment today.",
+            "korean": "너나 민호 둘 중 한 명이 오늘 조별 과제를 제출해야 한다.",
+            "underlined": [
+              "Either you",
+              "or Minho have to",
+              "submit the group",
+              "assignment today"
+            ],
+            "wrongIndex": 1,
+            "correction": "or Minho has to",
+            "explanation": "either A or B에서 동사는 B인 Minho(3인칭 단수)에 일치시켜야 하므로 has to가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 상관접속사 B 수일치] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 알맞은 be동사는?\n\n'Neither he nor I ______ interested in computer games.'",
+            "options": [
+              "am",
+              "is",
+              "are",
+              "were",
+              "be"
+            ],
+            "ans": 0,
+            "exp": "neither A nor B는 B에 수일치시키므로 B인 I에 맞추어 am이 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 상관접속사 B 수일치]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 알맞은 동사의 형태는?\n\n'Half of the money ______ spent on buying new books.'",
+            "options": [
+              "were",
+              "was",
+              "are",
+              "have been",
+              "be"
+            ],
+            "ans": 1,
+            "exp": "the money는 셀 수 없는 단수명사이므로 Half of 뒤에 단수동사 was가 옵니다.",
+            "conceptRef": "1단계 [공식 2: 부분명사 수일치]"
+          },
+          {
+            "q": "다음 중 어법상 어색한 문장은?",
+            "options": [
+              "Both Jane and Tom like classical music.",
+              "Not only you but also he is responsible for this.",
+              "Most of the water on Earth is salty.",
+              "Two thirds of the students is from Asia.",
+              "Either my sister or my parents are coming."
+            ],
+            "ans": 3,
+            "exp": "of 뒤의 the students가 복수이므로 is가 아니라 복수동사 are가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 2: 부분명사 수일치]"
+          },
+          {
+            "q": "'그뿐만 아니라 너도 그 시험에 합격했다.'를 영작할 때 빈칸에 알맞은 것은?\n\n'You as well as he ______ the exam.'",
+            "options": [
+              "have passed",
+              "has passed",
+              "passes",
+              "is passed",
+              "was passing"
+            ],
+            "ans": 0,
+            "exp": "B as well as A는 앞의 'B'인 You에 동사를 일치시키므로 have passed가 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: 상관접속사 B 수일치]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 말이 바르게 짝지어진 것은?\n\n- 'Both he and she (is / are) very kind.'\n- 'The rest of the apples (is / are) fresh.'",
+            "options": [
+              "is - is",
+              "are - are",
+              "is - are",
+              "are - is",
+              "be - are"
+            ],
+            "ans": 1,
+            "exp": "both A and B는 무조건 복수 are, the apples가 복수이므로 The rest of 뒤에도 are입니다.",
+            "conceptRef": "1단계 [공식 1 & 2 종합]"
+          }
+        ]
+      },
+      {
+        "unitNo": 11,
+        "unitId": "lv4_u11",
+        "legacyUnitNo": 47,
+        "title": "능동태 vs 수동태 심화 판별 (타동사의 목적어 유무)",
+        "part": "고교 어법 1등급",
+        "targetGrade": "고교 1~2학년 내신",
+        "summary": "고교 내신과 모의고사의 단골 킬러인 '동사 자리의 능동 vs 수동' 판별 원리와 4형식/5형식 수동태의 보어 잔존 규칙",
+        "overview": "고등학교 시험에서는 밑줄 친 동사가 능동(V)인지 수동(be p.p.)인지를 묻는 문제가 매 시험마다 출제돼요! 타동사 뒤에 목적어가 남아있는지 여부로 능/수동을 판별하는 기술과, 수동태가 되어도 뒤에 명사/형용사 보어가 남는 4형식·5형식 예외를 완벽히 정복해 봅시다!",
+        "keyTakeaways": [
+          "타동사 능/수동 판별 제1원칙: 뒤에 목적어가 있으면 ➔ 능동태(V) / 목적어가 없으면 ➔ 수동태(be p.p.)",
+          "4형식 수동태: 직접목적어가 뒤에 남아있을 수 있음 (She was given a prize.)",
+          "5형식 수동태: 목적격보어(명사/형용사/to-V)가 be p.p. 뒤에 그대로 남음 (He was named John.)"
+        ],
+        "formulaCards": [
+          {
+            "name": "타동사의 목적어 유무 판별 공식",
+            "formula": "타동사 + [목적어 O] ➔ 능동태 | be + p.p. + [목적어 없음(전치사구/부사)] ➔ 수동태",
+            "examples": [
+              {
+                "en": "The government released the official report yesterday.",
+                "ko": "정부는 어제 공식 보고서를 발표했다.",
+                "point": "뒤에 목적어 the official report가 있으므로 능동형 released를 씁니다."
+              },
+              {
+                "en": "The official report was released by the government yesterday.",
+                "ko": "그 공식 보고서는 어제 정부에 의해 발표되었다.",
+                "point": "뒤에 목적어가 없고 전치사구(by the government)가 이어지므로 수동태 was released입니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "The package was delivered safely.",
+              "x": "The package delivered safely.",
+              "comment": "deliver는 타동사인데 뒤에 목적어가 없으므로 수동태 was delivered로 써야 합니다."
+            },
+            "trap": "주어가 사물이라고 무조건 수동태가 아닙니다! 자동사는 사물 주어여도 능동으로 씁니다.",
+            "quizLink": "수능 29번에서 본동사 자리에 능동 vs 수동 선택은 배점 높은 필수 문제입니다."
+          },
+          {
+            "name": "5형식 수동태와 목적격보어 잔존 공식",
+            "formula": "주어 + be + p.p. + [형용사/to-V/명사 보어]",
+            "examples": [
+              {
+                "en": "He was elected president of the student council by a large majority.",
+                "ko": "그는 압도적인 다수로 학생회 회장에 선출되었다.",
+                "point": "수동태 was elected 뒤에 목적격보어였던 명사 president가 그대로 남아있습니다."
+              },
+              {
+                "en": "All employees were asked to submit their reports on time.",
+                "ko": "모든 직원들은 정시에 보고서를 제출하도록 요청받았다.",
+                "point": "ask + O + to-V의 수동태로 be asked 뒤에 to submit이 그대로 이어집니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "The door was kept closed.",
+              "x": "The door was kept closely.",
+              "comment": "keep의 목적격보어였던 형용사 closed가 수동태 뒤에 그대로 주격보어로 남아야 합니다."
+            },
+            "trap": "수동태 뒤에 명사가 있다고 해서 무조건 능동태로 오판하지 않도록 주의하세요 (5형식 명사 보어).",
+            "quizLink": "call, name, elect, consider는 수동태 뒤에도 명사 보어가 남는 4대 대표 동사입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv4_u11_d1",
+            "missionTitle": "미션 1: 목적어 결여 타동사의 능동형 오용 수정",
+            "sentence": "The ancient treasure discovered accidentally by two local farmers.",
+            "korean": "그 고대 보물은 두 명의 지역 농부에 의해 우연히 발견되었다.",
+            "underlined": [
+              "The ancient treasure",
+              "discovered accidentally",
+              "by two",
+              "local farmers"
+            ],
+            "wrongIndex": 1,
+            "correction": "was discovered accidentally",
+            "explanation": "treasure는 발견되는 수동의 대상이고 뒤에 목적어가 없으므로 was discovered가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 목적어 유무 판별] 출제 연계"
+          },
+          {
+            "id": "lv4_u11_d2",
+            "missionTitle": "미션 2: 5형식 지각동사 수동태 to부정사 부활 오류",
+            "sentence": "The suspicious suspect was seen enter the dark warehouse alone.",
+            "korean": "그 의심스러운 용의자가 혼자 어두운 창고로 들어가는 것이 목격되었다.",
+            "underlined": [
+              "The suspicious suspect",
+              "was seen enter",
+              "the dark warehouse",
+              "alone"
+            ],
+            "wrongIndex": 1,
+            "correction": "was seen to enter (or was seen entering)",
+            "explanation": "지각/사역동사가 수동태가 되면 능동태의 동사원형 보어 앞에 to가 살아나 to enter가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 2: 5형식 수동태] 출제 연계"
+          },
+          {
+            "id": "lv4_u11_d3",
+            "missionTitle": "미션 3: 수동태 불가 자동사의 수동태 오용",
+            "sentence": "The tragic car accident was happened on the rainy highway yesterday afternoon.",
+            "korean": "그 비극적인 자동차 사고는 어제 비 내리는 고속도로에서 일어났다.",
+            "underlined": [
+              "The tragic car accident",
+              "was happened on",
+              "the rainy highway",
+              "yesterday afternoon"
+            ],
+            "wrongIndex": 1,
+            "correction": "happened on",
+            "explanation": "happen은 목적어를 갖지 않는 완전자동사이므로 수동태 was happened로 쓸 수 없고 happened로 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 목적어 유무 판별] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 말로 가장 알맞은 것은?\n\n'The new bridge ______ next month according to the city plan.'",
+            "options": [
+              "will complete",
+              "will be completed",
+              "completes",
+              "has completed",
+              "is completing"
+            ],
+            "ans": 1,
+            "exp": "다리가 완공되는 수동의 관계이고 next month가 있으므로 will be completed가 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 목적어 유무 판별]"
+          },
+          {
+            "q": "다음 중 어법상 수동태로 쓸 수 없는 문장은?",
+            "options": [
+              "They built the castle.",
+              "An unexpected accident occurred.",
+              "She wrote a touching poem.",
+              "He painted the fence green.",
+              "The committee approved the plan."
+            ],
+            "ans": 1,
+            "exp": "occur(발생하다)는 자동사이므로 수동태를 만들 수 없습니다.",
+            "conceptRef": "1단계 [공식 1: 목적어 유무 판별]"
+          },
+          {
+            "q": "다음 중 밑줄 친 부분의 쓰임이 어색한 문장은?",
+            "options": [
+              "He was seen to cross the bridge.",
+              "She was elected president of the club.",
+              "The problem solved easily by the team.",
+              "The room was kept warm all night.",
+              "I was told to wait outside."
+            ],
+            "ans": 2,
+            "exp": "문제가 팀에 의해 해결된 것이므로 was solved easily가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 목적어 유무 판별]"
+          },
+          {
+            "q": "'그는 우리에게 회의에 늦지 말라고 요청받았다.'를 바르게 영작한 것은?",
+            "options": [
+              "He was asked not to be late for the meeting.",
+              "He asked not to be late for the meeting.",
+              "He was asked to not be late for the meeting.",
+              "He was asking not to be late for the meeting.",
+              "He had asked not to be late for the meeting."
+            ],
+            "ans": 0,
+            "exp": "수동태 was asked 뒤에 목적격보어 not to be late가 그대로 이어진 1번이 올바릅니다.",
+            "conceptRef": "1단계 [공식 2: 5형식 수동태]"
+          },
+          {
+            "q": "다음 괄호 안에서 알맞은 말이 바르게 짝지어진 것은?\n\n- 'The meeting was (delayed / delaying) due to the storm.'\n- 'A strange light (appeared / was appeared) in the sky.'",
+            "options": [
+              "delayed - appeared",
+              "delaying - appeared",
+              "delayed - was appeared",
+              "delaying - was appeared",
+              "delays - appeared"
+            ],
+            "ans": 0,
+            "exp": "회의는 연기된 수동 delayed, appear는 자동사이므로 능동 appeared가 정답입니다.",
+            "conceptRef": "1단계 [공식 1 & 2 종합]"
+          }
+        ]
+      },
+      {
+        "unitNo": 12,
+        "unitId": "lv4_u12",
+        "legacyUnitNo": 48,
+        "title": "목적격보어 자리의 분사 판별 (V-ing vs p.p.)",
+        "part": "준동사의 심화",
+        "targetGrade": "고교 1~2학년 내신",
+        "summary": "5형식 문장에서 목적어와 목적격보어의 관계가 능동일 때 현재분사(V-ing) vs 수동일 때 과거분사(p.p.)를 선택하는 고교 킬러 공식",
+        "overview": "'내 차가 수리되게 했다(have my car repaired)'처럼 목적어가 동작을 스스로 하느냐, 다른 대상에 의해 당하느냐에 따라 목적격보어의 형태가 달라져요! 목적어와 보어 사이에 '주어-동사 관계'를 설정하여 능동(V-ing)과 수동(p.p.)을 1초 만에 판별하는 비법을 배워봅시다!",
+        "keyTakeaways": [
+          "판별 공식: 목적어와 목적격보어 사이에 be동사를 넣어본다! (O is V-ing vs O is p.p.)",
+          "능동 진행: S + see/hear/keep/leave + O + V-ing (목적어가 ~하고 있는 것을)",
+          "수동 완료: S + have/get/see/hear + O + p.p. (목적어가 ~되어지게/당하게)"
+        ],
+        "formulaCards": [
+          {
+            "name": "사역동사 have/get + 목적어 + p.p. (수동 사역)",
+            "formula": "have / get + 목적어(사물/수동대상) + 과거분사(p.p.) (~가 되도록 시키다/당하다)",
+            "examples": [
+              {
+                "en": "I had my broken smartphone repaired at the service center.",
+                "ko": "나는 서비스 센터에서 고장 난 내 스마트폰을 수리받았다(수리되게 했다).",
+                "point": "스마트폰(my smartphone)은 수리하는 게 아니라 수리'되는' 것이므로 p.p.인 repaired를 씁니다."
+              },
+              {
+                "en": "She had her expensive leather wallet stolen on the subway.",
+                "ko": "그녀는 지하철에서 비싼 가죽 지갑을 도난당했다.",
+                "point": "지갑이 도난'당한' 피해/수동의 의미이므로 과거분사 stolen을 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "He had his hair cut yesterday.",
+              "x": "He had his hair cutted yesterday.",
+              "comment": "cut의 과거분사는 불규칙으로 cut-cut-cut입니다."
+            },
+            "trap": "사역동사라고 무조건 동사원형만 생각하면 큰일 납니다! 목적어가 당하는 관계면 무조건 p.p.입니다.",
+            "quizLink": "have my car washed, have my teeth checked는 고교 내신 단골 서술형 표현입니다."
+          },
+          {
+            "name": "지각동사 및 유지동사 뒤의 분사 선택",
+            "formula": "지각동사 + O + [능동: 동원/V-ing] vs [수동: p.p.] | keep/leave + O + [V-ing/p.p.]",
+            "examples": [
+              {
+                "en": "I heard my name called loudly from the back of the auditorium.",
+                "ko": "나는 강당 뒤편에서 내 이름이 크게 불리는 것을 들었다.",
+                "point": "이름(my name)은 부르는 것이 아니라 '불리는' 수동이므로 과거분사 called를 씁니다."
+              },
+              {
+                "en": "He kept the engine running while waiting in the car.",
+                "ko": "그는 차에서 기다리는 동안 엔진을 계속 켜둔 채로 두었다.",
+                "point": "엔진이 돌아가는 능동 진행이므로 현재분사 running을 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "Don't leave the door unlocked.",
+              "x": "Don't leave the door unlocking.",
+              "comment": "문은 잠겨있지 않은 상태로 '남겨지는' 수동이므로 unlocked가 맞습니다."
+            },
+            "trap": "지각동사 heard 뒤라고 무조건 동사원형 call을 고르면 안 됩니다! 이름은 '불려지는' 것입니다.",
+            "quizLink": "heard my name called는 수능과 모의평가에 최소 5회 이상 출제된 전설의 킬러 문항입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv4_u12_d1",
+            "missionTitle": "미션 1: 사역동사 수동 목적격보어 동사원형 오용",
+            "sentence": "I went to the clinic to have my wisdom tooth pull out.",
+            "korean": "나는 사랑니를 뽑기(뽑히도록 하기) 위해 치과에 갔다.",
+            "underlined": [
+              "I went to",
+              "the clinic to have",
+              "my wisdom tooth",
+              "pull out"
+            ],
+            "wrongIndex": 3,
+            "correction": "pulled out",
+            "explanation": "사랑니(my wisdom tooth)는 뽑혀지는 수동의 대상이므로 pull out이 아니라 과거분사 pulled out이 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 사역동사 수동 목적격보어] 출제 연계"
+          },
+          {
+            "id": "lv4_u12_d2",
+            "missionTitle": "미션 2: 지각동사 수동 목적격보어 능동형 오용",
+            "sentence": "She was shocked to hear her secret project mentioning on the news.",
+            "korean": "그녀는 뉴스에서 자신의 비밀 프로젝트가 언급되는 것을 듣고 충격을 받았다.",
+            "underlined": [
+              "She was shocked",
+              "to hear her",
+              "secret project mentioning",
+              "on the news"
+            ],
+            "wrongIndex": 2,
+            "correction": "secret project mentioned",
+            "explanation": "비밀 프로젝트는 언급'되는' 수동 관계이므로 mentioning이 아니라 과거분사 mentioned가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 2: 지각동사 수동 분사] 출제 연계"
+          },
+          {
+            "id": "lv4_u12_d3",
+            "missionTitle": "미션 3: 유지동사 keep 뒤 목적격보어 수동 오용",
+            "sentence": "Don't leave the water ran in the sink while brushing teeth.",
+            "korean": "양치하는 동안 싱크대에 물이 계속 흐르도록 내버려 두지 마라.",
+            "underlined": [
+              "Don't leave",
+              "the water ran",
+              "in the sink",
+              "while brushing teeth"
+            ],
+            "wrongIndex": 1,
+            "correction": "the water running",
+            "explanation": "물이 계속해서 흐르는 능동 진행의 상태이므로 과거분사 ran이 아니라 현재분사 running이 되어야 합니다.",
+            "conceptRef": "1단계 [공식 2: 지각동사 및 유지동사 뒤 분사] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 말로 가장 알맞은 것은?\n\n'I had my bicycle ______ at the repair shop yesterday.'",
+            "options": [
+              "repair",
+              "repairing",
+              "repaired",
+              "to repair",
+              "repairs"
+            ],
+            "ans": 2,
+            "exp": "자전거(my bicycle)는 수리'되는' 수동 관계이므로 과거분사 repaired가 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 사역동사 수동 목적격보어]"
+          },
+          {
+            "q": "다음 문장의 빈칸에 들어갈 알맞은 형태는?\n\n'I heard my name ______ in the crowd.'",
+            "options": [
+              "call",
+              "calling",
+              "called",
+              "to call",
+              "to be called"
+            ],
+            "ans": 2,
+            "exp": "이름은 불려지는 것이므로 과거분사 called가 올바릅니다.",
+            "conceptRef": "1단계 [공식 2: 지각동사 수동 분사]"
+          },
+          {
+            "q": "다음 중 밑줄 친 부분의 쓰임이 어색한 문장은?",
+            "options": [
+              "She kept the baby sleeping peacefully.",
+              "He had his wallet stolen on the bus.",
+              "I saw a falling star in the night sky.",
+              "Don't leave the door locking.",
+              "We watched the game played."
+            ],
+            "ans": 3,
+            "exp": "문은 잠겨있는 수동의 상태이므로 locking이 아니라 locked가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 2: 지각동사 및 유지동사 뒤 분사]"
+          },
+          {
+            "q": "'그는 어제 자신의 컴퓨터를 고치게 했다.'를 바르게 영작한 것은?",
+            "options": [
+              "He had his computer fix yesterday.",
+              "He had his computer fixed yesterday.",
+              "He had his computer to fix yesterday.",
+              "He had his computer fixing yesterday.",
+              "He had fixed his computer yesterday."
+            ],
+            "ans": 1,
+            "exp": "had + his computer + fixed(과거분사)가 올바른 수동 사역 구문입니다.",
+            "conceptRef": "1단계 [공식 1: 사역동사 수동 목적격보어]"
+          },
+          {
+            "q": "다음 괄호 안에서 알맞은 말이 바르게 짝지어진 것은?\n\n- 'She found the window (broken / breaking).' \n- 'I felt someone (touch / touched) my shoulder.'",
+            "options": [
+              "broken - touch",
+              "breaking - touch",
+              "broken - touched",
+              "breaking - touched",
+              "broken - to touch"
+            ],
+            "ans": 0,
+            "exp": "창문은 깨진 수동(broken), 누군가가 어깨를 만지는 것은 능동(touch)입니다.",
+            "conceptRef": "1단계 [공식 1 & 2 종합]"
+          }
+        ]
+      },
+      {
+        "unitNo": 13,
+        "unitId": "lv4_u13",
+        "legacyUnitNo": 49,
+        "title": "전치사 vs 접속사 혼동 어휘 판별",
+        "part": "품사 및 구문 심화",
+        "targetGrade": "고교 1~2학년 내신",
+        "summary": "뜻은 같지만 뒤에 명사구가 오느냐(전치사) vs 절(S+V)이 오느냐(접속사)로 갈리는 despite/although, during/while, because of/because 1초 판별법",
+        "overview": "'비록 ~일지라도'라는 뜻의 although와 despite, '~동안에'라는 뜻의 while과 during은 한국어 뜻이 똑같아서 가장 헷갈려요! 뒤에 동사가 살아있는 '문장(절)'이 오면 접속사! 동사 없이 '명사(구)'만 오면 전치사라는 품사 판별의 절대 원칙을 마스터해 봅시다!",
+        "keyTakeaways": [
+          "양보: although / even though + S + V (접속사) vs despite / in spite of + 명사(구) (전치사)",
+          "이유: because / since / as + S + V (접속사) vs because of / due to / owing to + 명사(구) (전치사)",
+          "시간: while + S + V (접속사) vs during + 특정 기간 명사 (전치사)"
+        ],
+        "formulaCards": [
+          {
+            "name": "전치사 vs 접속사 뒤 구조 공식",
+            "formula": "접속사 + [주어 + 동사] | 전치사 + [명사 / 대명사 / 동명사(V-ing)]",
+            "examples": [
+              {
+                "en": "Although it rained heavily, we thoroughly enjoyed the music festival.",
+                "ko": "비가 심하게 내렸음에도 불구하고, 우리는 음악 축제를 아주 즐겼다.",
+                "point": "뒤에 it rained라는 주어+동사가 왔으므로 접속사 Although를 씁니다."
+              },
+              {
+                "en": "Despite the heavy rain, we thoroughly enjoyed the music festival.",
+                "ko": "폭우에도 불구하고, 우리는 음악 축제를 아주 즐겼다.",
+                "point": "the heavy rain이라는 명사구만 왔으므로 전치사 Despite를 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "She smiled despite her sorrow.",
+              "x": "She smiled despite of her sorrow.",
+              "comment": "despite는 단독으로 쓰이는 전치사이며 of를 붙이지 않습니다. (in spite of는 of 필수)"
+            },
+            "trap": "despite of(X) ➔ despite는 전치사이므로 of를 붙이면 안 됩니다!",
+            "quizLink": "빈칸 뒤에 '동사'가 있는지를 찾는 것이 가장 빠르고 정확한 해법입니다."
+          },
+          {
+            "name": "during vs while vs for의 시간 전치사/접속사",
+            "formula": "while + S + V (접속사) | during + 이름/행사 명사 | for + 숫자 기간",
+            "examples": [
+              {
+                "en": "He fell asleep while he was watching the boring documentary.",
+                "ko": "그는 지루한 다큐멘터리를 보던 중에 잠이 들었다.",
+                "point": "he was watching 절이 왔으므로 접속사 while을 씁니다."
+              },
+              {
+                "en": "I made many great friends during the summer camp.",
+                "ko": "나는 여름 캠프 기간 동안 많은 훌륭한 친구들을 사귀었다.",
+                "point": "summer camp라는 특정 사건/기간 명사이므로 during을 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "I have stayed here for three weeks.",
+              "x": "I have stayed here during three weeks.",
+              "comment": "three weeks처럼 숫자가 포함된 기간의 길이에는 during이 아니라 for를 씁니다."
+            },
+            "trap": "for + 3 days (숫자 기간) vs during the vacation (특정 명칭 기간) 구별 필수!",
+            "quizLink": "during / while / for 구별은 수능 모의고사 1번부터 5번 어법 선지에 단골로 등장합니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv4_u13_d1",
+            "missionTitle": "미션 1: 절 앞에 전치사 despite 오용 수정",
+            "sentence": "Despite the weather was extremely harsh, the climbers reached the peak safely.",
+            "korean": "날씨가 극도로 가혹했음에도 불구하고, 등반가들은 정상에 도달했다.",
+            "underlined": [
+              "Despite the weather",
+              "was extremely harsh,",
+              "the climbers reached",
+              "the peak safely"
+            ],
+            "wrongIndex": 0,
+            "correction": "Although the weather (or Even though the weather)",
+            "explanation": "뒤에 the weather was라는 주어+동사 절이 이어지므로 전치사 Despite 대신 접속사 Although를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 전치사 vs 접속사 구조] 출제 연계"
+          },
+          {
+            "id": "lv4_u13_d2",
+            "missionTitle": "미션 2: 명사구 앞에 접속사 because 오용 수정",
+            "sentence": "The outdoor concert was canceled because the sudden violent storm.",
+            "korean": "야외 콘서트는 갑작스러운 격렬한 폭풍 때문에 취소되었다.",
+            "underlined": [
+              "The outdoor concert",
+              "was canceled",
+              "because the sudden",
+              "violent storm"
+            ],
+            "wrongIndex": 2,
+            "correction": "because of the sudden",
+            "explanation": "the sudden violent storm은 동사가 없는 명사구이므로 접속사 because 대신 전치사 because of를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 전치사 vs 접속사 구조] 출제 연계"
+          },
+          {
+            "id": "lv4_u13_d3",
+            "missionTitle": "미션 3: 숫자 기간 앞에 during 오용 수정",
+            "sentence": "My uncle has lived in London during more than ten years.",
+            "korean": "우리 삼촌은 런던에서 10년 이상 동안 살아오셨다.",
+            "underlined": [
+              "My uncle",
+              "has lived in London",
+              "during more than",
+              "ten years"
+            ],
+            "wrongIndex": 2,
+            "correction": "for more than",
+            "explanation": "ten years는 숫자가 포함된 기간의 길이이므로 during이 아니라 for를 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: during vs while vs for] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 말로 가장 알맞은 것은?\n\n'She went to school ______ she had a high fever.'",
+            "options": [
+              "despite",
+              "in spite of",
+              "although",
+              "because of",
+              "during"
+            ],
+            "ans": 2,
+            "exp": "she had a high fever라는 주어+동사 절이 왔으므로 접속사 although가 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 전치사 vs 접속사 구조]"
+          },
+          {
+            "q": "다음 빈칸에 들어갈 말로 알맞은 것은?\n\n'The flight was delayed ______ the dense morning fog.'",
+            "options": [
+              "because",
+              "because of",
+              "since",
+              "as",
+              "while"
+            ],
+            "ans": 1,
+            "exp": "the dense morning fog는 명사구이므로 전치사 because of가 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: 전치사 vs 접속사 구조]"
+          },
+          {
+            "q": "다음 중 어법상 어색한 문장은?",
+            "options": [
+              "I read a book while I was on the train.",
+              "She stayed in Paris for two months.",
+              "He listened to music during he exercised.",
+              "Despite his illness, he completed the work.",
+              "Because of the rain, the game was postponed."
+            ],
+            "ans": 2,
+            "exp": "he exercised는 절이므로 전치사 during 대신 접속사 while을 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: during vs while vs for]"
+          },
+          {
+            "q": "'그녀는 많은 어려움에도 불구하고 결코 포기하지 않았다.'를 영작할 때 빈칸에 알맞은 전치사는?\n\n'She never gave up ______ many difficulties.'",
+            "options": [
+              "although",
+              "though",
+              "in spite of",
+              "even though",
+              "while"
+            ],
+            "ans": 2,
+            "exp": "many difficulties는 명사구이므로 전치사 in spite of(또는 despite)가 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: 전치사 vs 접속사 구조]"
+          },
+          {
+            "q": "다음 괄호 안에서 알맞은 말이 바르게 짝지어진 것은?\n\n- 'I fell asleep (during / while) the movie.' \n- 'He succeeded (because / because of) his persistent effort.'",
+            "options": [
+              "during - because of",
+              "while - because of",
+              "during - because",
+              "while - because",
+              "for - because of"
+            ],
+            "ans": 0,
+            "exp": "the movie는 명사이므로 during, his persistent effort도 명사구이므로 because of입니다.",
+            "conceptRef": "1단계 [공식 1 & 2 종합]"
+          }
+        ]
+      },
+      {
+        "unitNo": 14,
+        "unitId": "lv4_u14",
+        "legacyUnitNo": 50,
+        "title": "대동사 판별 (be동사 대동사 vs do/does/did 일반동사)",
+        "part": "고교 어법 1등급",
+        "targetGrade": "고교 1~2학년 내신",
+        "summary": "앞서 언급된 동사구의 반복을 피하기 위해 대신 쓰는 대동사의 선택 원리와 비교급/as 구문에서의 도치 대동사",
+        "overview": "영어는 똑같은 동사의 반복을 극도로 싫어해요! 그래서 앞에 나온 동사가 be동사면 be동사로, 일반동사면 do/does/did로 대신 받는데, 이를 '대동사'라고 해요! 고교 내신과 수능 29번에서 정답률을 떨어뜨리는 최강의 복병 대동사를 완벽 정복해 봅시다!",
+        "keyTakeaways": [
+          "앞선 동사가 be동사 / 조동사 ➔ be동사(is/are/was/were) 또는 조동사 그대로 받음",
+          "앞선 동사가 일반동사 ➔ do / does / did로 대신 받음",
+          "비교급 도치 대동사: A runs faster than B does. = A runs faster than does B."
+        ],
+        "formulaCards": [
+          {
+            "name": "앞선 동사 확인을 통한 대동사 선택 공식",
+            "formula": "앞이 be동사 ➔ be동사 대동사 | 앞이 일반동사 ➔ do/does/did",
+            "examples": [
+              {
+                "en": "He speaks English fluently, and so does his younger brother.",
+                "ko": "그는 영어를 유창하게 구사하며, 그의 남동생도 그러하다.",
+                "point": "앞선 동사 speaks가 일반동사 단수이므로 does로 대신 받았습니다."
+              },
+              {
+                "en": "She was very proud of her daughter, and so were her parents.",
+                "ko": "그녀는 딸을 매우 자랑스러워했고, 그녀의 부모님도 그러했다.",
+                "point": "앞선 동사가 was(be동사)이므로 복수 주어 her parents에 맞춰 were를 씁니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "He loves music just as I do.",
+              "x": "He loves music just as I am.",
+              "comment": "loves는 일반동사이므로 am이 아니라 do로 받아야 합니다."
+            },
+            "trap": "앞선 문장의 본동사가 일반동사인데 be동사(is/are)를 써놓은 보기가 단골 오답입니다!",
+            "quizLink": "so + 동사 + 주어 (~도 역시 그러하다) 구문에서 대동사 일치는 100% 출제됩니다."
+          },
+          {
+            "name": "비교급 뒤의 대동사와 도치",
+            "formula": "S1 + V1 + 비교급 + than + S2 + [대동사] (or than + [대동사] + S2)",
+            "examples": [
+              {
+                "en": "Modern computers process data much faster than human brains do.",
+                "ko": "현대 컴퓨터는 인간의 뇌가 처리하는 것보다 훨씬 더 빠르게 데이터를 처리한다.",
+                "point": "일반동사 process를 대신하므로 복수명사 human brains 뒤에 do를 씁니다."
+              },
+              {
+                "en": "She works harder than does any other employee in this company.",
+                "ko": "그녀는 이 회사의 어떤 다른 직원보다 더 열심히 일한다.",
+                "point": "than 뒤에서 주어와 대동사가 도치되어 does any other employee 형태가 되었습니다."
+              }
+            ],
+            "oxCompare": {
+              "o": "He spends more money than she does.",
+              "x": "He spends more money than she is.",
+              "comment": "spends를 대신하는 대동사이므로 is가 아니라 does가 되어야 합니다."
+            },
+            "trap": "than 뒤에 도치가 일어나더라도 앞선 동사가 일반동사면 do/does를 써야 합니다.",
+            "quizLink": "수능 29번 어법 문제의 밑줄 친 do/does/is는 무조건 앞의 동사를 찾는 문제입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "id": "lv4_u14_d1",
+            "missionTitle": "미션 1: 일반동사 대신 be동사 대동사 오용 수정",
+            "sentence": "My brother loves spicy food just as much as I am.",
+            "korean": "내 남동생은 내가 그러는 것만큼이나 매운 음식을 아주 좋아한다.",
+            "underlined": [
+              "My brother loves",
+              "spicy food just as",
+              "much as",
+              "I am"
+            ],
+            "wrongIndex": 3,
+            "correction": "I do",
+            "explanation": "앞선 동사 loves가 일반동사이므로 I am이 아니라 일반동사 대동사 I do가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 대동사 선택 공식] 출제 연계"
+          },
+          {
+            "id": "lv4_u14_d2",
+            "missionTitle": "미션 2: be동사 대신 do 대동사 오용 수정",
+            "sentence": "She was not surprised at the news, but her parents did.",
+            "korean": "그녀는 그 소식에 놀라지 않았지만, 그녀의 부모님은 놀라셨다.",
+            "underlined": [
+              "She was not surprised",
+              "at the news,",
+              "but her parents",
+              "did"
+            ],
+            "wrongIndex": 3,
+            "correction": "were",
+            "explanation": "앞선 동사가 was surprised(be동사)이므로 did가 아니라 복수 과거 be동사 were가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 대동사 선택 공식] 출제 연계"
+          },
+          {
+            "id": "lv4_u14_d3",
+            "missionTitle": "미션 3: 비교급 뒤 대동사 시제 및 수일치 오류",
+            "sentence": "Kangaroos jump much higher than a human athlete do.",
+            "korean": "캥거루는 인간 운동선수가 뛰는 것보다 훨씬 더 높이 뛴다.",
+            "underlined": [
+              "Kangaroos jump",
+              "much higher",
+              "than a human athlete",
+              "do"
+            ],
+            "wrongIndex": 3,
+            "correction": "does",
+            "explanation": "비교 대상인 a human athlete가 3인칭 단수이므로 대동사 do 대신 does를 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 비교급 뒤 대동사] 출제 연계"
+          }
+        ],
+        "questions": [
+          {
+            "q": "다음 빈칸에 들어갈 알맞은 대동사는?\n\n'She plays tennis well, and her brother ______ too.'",
+            "options": [
+              "is",
+              "does",
+              "do",
+              "has",
+              "can"
+            ],
+            "ans": 1,
+            "exp": "앞선 동사 plays가 일반동사 단수이므로 does가 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 대동사 선택 공식]"
+          },
+          {
+            "q": "다음 문장의 빈칸에 들어갈 알맞은 말은?\n\n'They were tired after the game, and so ______ I.'",
+            "options": [
+              "did",
+              "was",
+              "were",
+              "do",
+              "am"
+            ],
+            "ans": 1,
+            "exp": "앞선 동사가 were(be동사 과거)이고 주어가 I이므로 was가 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: 대동사 선택 공식]"
+          },
+          {
+            "q": "다음 중 밑줄 친 대동사의 쓰임이 어색한 문장은?",
+            "options": [
+              "I don't know the answer, but he does.",
+              "She runs faster than I do.",
+              "He is taller than his brother is.",
+              "They solved the puzzle as quickly as we were.",
+              "I enjoyed the movie just as she did."
+            ],
+            "ans": 3,
+            "exp": "solved는 일반동사 과거형이므로 we were가 아니라 we did가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 대동사 선택 공식]"
+          },
+          {
+            "q": "'그는 내가 일하는 것보다 더 열심히 일한다.'를 영작할 때 빈칸에 알맞은 대동사는?\n\n'He works harder than I ______.'",
+            "options": [
+              "am",
+              "do",
+              "does",
+              "did",
+              "have"
+            ],
+            "ans": 1,
+            "exp": "works를 대신하고 주어가 I이므로 대동사 do가 올바릅니다.",
+            "conceptRef": "1단계 [공식 2: 비교급 뒤 대동사]"
+          },
+          {
+            "q": "다음 대화의 빈칸에 알맞은 대답은?\n\nA: 'Who broke this expensive vase?'\nB: 'Tom ______.'",
+            "options": [
+              "is",
+              "did",
+              "was",
+              "does",
+              "has"
+            ],
+            "ans": 1,
+            "exp": "broke(일반동사 과거형)를 대신하여 대답하므로 did가 정답입니다.",
+            "conceptRef": "1단계 [공식 1: 대동사 선택 공식]"
+          }
+        ]
+      },
+      {
+        "unitNo": 15,
+        "legacyUnitNo": 75,
+        "title": "명사절 vs 관계사 심화 (that, what, which, whether)",
+        "formulaCards": [
+          {
+            "formulaId": "lv4_u15_f1",
+            "tag": "명사절 that vs 관계대명사 what/which",
+            "en": "What you need is the evidence that proves your innocence.",
+            "ko": "네게 필요한 것은 너의 결백을 증명하는 증거이다.",
+            "point": "선행사가 없고 불완전한 절을 이끌면 관계대명사 what, 선행사가 명확하고 뒤가 불완전하면 관계대명사 which/that, 선행사 없이 완전한 절을 이끌어 주어/목적어/보어가 되면 접속사 that입니다.",
+            "oxCompare": "O: What he said was completely true. / X: That he said was completely true.",
+            "trap": "what 뒤에는 주어나 목적어가 빠진 불완전한 문장이 오고, 명사절 접속사 that 뒤에는 완전한 문장이 옵니다.",
+            "quizLink": "선행사 유무와 뒷문장의 완전/불완전 여부를 반드시 분석해야 합니다."
+          },
+          {
+            "formulaId": "lv4_u15_f2",
+            "tag": "whether / if 명사절 & 동격 that",
+            "en": "There is no doubt that whether she accepts the offer depends on the salary.",
+            "ko": "그녀가 그 제안을 수락할지 여부가 급여에 달려 있다는 점에는 의심의 여지가 없다.",
+            "point": "동격 that은 앞의 추상명사(fact, idea, doubt, rumour)를 설명하며 뒷문장이 완전합니다. '~인지 아닌지'의 불확실한 사실은 whether/if 절을 사용하며, 전치사의 목적어나 주어 자리에는 whether만 가능합니다.",
+            "oxCompare": "O: I wondered whether he would arrive on time. / X: I wondered that he would arrive on time.",
+            "trap": "확실한 사실에는 that, 의문/불확실성에는 whether/if를 써야 하며, 동격 that 자리에는 which를 쓸 수 없습니다.",
+            "quizLink": "문맥상 확실한 사실인지 불확실한 의문인지와 추상명사 동격 구조를 점검하세요."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "lv4_u15_d1",
+            "sentence": "The committee discussed that the new policy would satisfy the employees.",
+            "underlined": [
+              "The committee",
+              "discussed",
+              "that the new policy",
+              "would satisfy"
+            ],
+            "wrongIndex": 2,
+            "correction": "whether the new policy",
+            "explanation": "위원회가 정책이 직원들을 만족시킬지 아닐지 논의한 불확실한 의문 사항이므로 확정적 사실을 나타내는 that 대신 whether를 써야 자연스럽습니다.",
+            "conceptRef": "lv4_u15_f2"
+          },
+          {
+            "drillId": "lv4_u15_d2",
+            "sentence": "That surprised the audience most was the unexpected ending of the movie.",
+            "underlined": [
+              "That",
+              "surprised the audience",
+              "most",
+              "was the unexpected ending"
+            ],
+            "wrongIndex": 0,
+            "correction": "What",
+            "explanation": "주어 자리에 선행사가 없고 동사 surprised의 주어가 빠진 불완전한 절을 이끌고 있으므로 명사절 접속사 That이 아니라 선행사를 포함하는 관계대명사 What을 써야 합니다.",
+            "conceptRef": "lv4_u15_f1"
+          },
+          {
+            "drillId": "lv4_u15_d3",
+            "sentence": "She could not hide the fact which her team had lost the championship.",
+            "underlined": [
+              "She could not hide",
+              "the fact",
+              "which",
+              "her team had lost"
+            ],
+            "wrongIndex": 2,
+            "correction": "that",
+            "explanation": "the fact 뒤의 절(her team had lost the championship)은 주어, 동사, 목적어가 모두 갖추어진 완전한 절이므로 관계대명사 which가 아닌 동격의 접속사 that을 써야 합니다.",
+            "conceptRef": "lv4_u15_f2"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "lv4_u15_q1",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "Scientists have finally confirmed the theory _______ gravity waves exist in deep space.",
+            "options": [
+              "what",
+              "that",
+              "which",
+              "whose",
+              "whom"
+            ],
+            "ans": 1,
+            "exp": "추상명사 the theory 뒤에 'gravity waves exist in deep space'라는 완전한 절이 이어지므로 동격의 접속사 that이 정답입니다.",
+            "conceptRef": "lv4_u15_f2"
+          },
+          {
+            "qId": "lv4_u15_q2",
+            "instruction": "다음 중 밑줄 친 어법이 옳은 것을 고르시오.",
+            "prompt": "Choose the grammatically correct sentence.",
+            "options": [
+              "That you need to submit is your resume.",
+              "He asked me that I knew the address of the embassy.",
+              "What makes this novel unique is its vivid characters.",
+              "I believe in the idea which all humans are born equal.",
+              "She was doubtful that the flight would be cancelled."
+            ],
+            "ans": 2,
+            "exp": "What makes this novel unique는 주어가 빠진 불완전한 명사절로 주어 역할을 올바르게 하고 있습니다. 1번은 What, 2번은 whether/if, 4번은 동격 that, 5번은 doubtful 뒤에 whether가 적절합니다.",
+            "conceptRef": "lv4_u15_f1"
+          },
+          {
+            "qId": "lv4_u15_q3",
+            "instruction": "다음 문장의 빈칸 (A), (B)에 들어갈 말로 가장 적절하게 짝지어진 것은?",
+            "prompt": "(A)_______ the manager proposed during the conference was (B)_______ the company should invest in renewable energy.",
+            "options": [
+              "That - what",
+              "What - that",
+              "Which - whether",
+              "What - what",
+              "That - that"
+            ],
+            "ans": 1,
+            "exp": "(A) 뒤에는 proposed의 목적어가 없는 불완전한 절이므로 What, (B) 뒤에는 주어/동사/목적어가 모두 있는 완전한 절이므로 접속사 that이 옵니다.",
+            "conceptRef": "lv4_u15_f1"
+          },
+          {
+            "qId": "lv4_u15_q4",
+            "instruction": "다음 중 밑줄 친 부분의 쓰임이 나머지 넷과 다른 것은?",
+            "prompt": "Identify the word 'that' with a different grammatical function.",
+            "options": [
+              "The news that the museum burned down shocked everyone.",
+              "I have a strong belief that hard work always pays off.",
+              "He gave an explanation that clarified the entire procedure.",
+              "There is a rumor that the CEO will resign next month.",
+              "We accepted the fact that our budget was limited."
+            ],
+            "ans": 2,
+            "exp": "3번의 that은 뒤에 주어가 없는 주격 관계대명사절입니다. 나머지는 모두 추상명사 뒤에 완전한 문장이 이어지는 동격의 접속사 that입니다.",
+            "conceptRef": "lv4_u15_f2"
+          },
+          {
+            "qId": "lv4_u15_q5",
+            "instruction": "다음 문장에서 어법상 어색한 부분을 찾아 바르게 고친 것을 고르시오.",
+            "prompt": "It remains uncertain that our economy will recover within this fiscal year.",
+            "options": [
+              "remains -> is remaining",
+              "that -> whether",
+              "will recover -> recovered",
+              "within -> during",
+              "fiscal -> financially"
+            ],
+            "ans": 1,
+            "exp": "remains uncertain(불확실하다)은 확정된 사실이 아니라 '~인지 아닌지'의 불확실성을 나타내므로 진주어 절을 이끄는 접속사로 that 대신 whether를 써야 합니다.",
+            "conceptRef": "lv4_u15_f2"
+          }
+        ]
+      },
+      {
+        "unitNo": 16,
+        "legacyUnitNo": 76,
+        "title": "형용사 vs 부사 보어 & 5형식 혼동 구문",
+        "formulaCards": [
+          {
+            "formulaId": "lv4_u16_f1",
+            "tag": "2형식/5형식 보어 자리 형용사 원칙",
+            "en": "Regular exercise keeps your heart healthy and your mind alert.",
+            "ko": "규칙적인 운동은 당신의 심장을 건강하게 그리고 정신을 깨어있게 유지해 준다.",
+            "point": "2형식 감각동사(look, smell, sound, taste, feel)와 5형식 유지/상태/판단 동사(make, keep, find, leave, consider, drive) 뒤의 보어 자리에는 우리말로는 부사처럼 해석되더라도 반드시 '형용사'를 써야 합니다.",
+            "oxCompare": "O: I found the lecture very helpful. / X: I found the lecture very helpfully.",
+            "trap": "보어 자리에 부사(-ly)를 쓰면 절대 안 됩니다. 단, 목적어 뒤에 수식어 거품이 길어지면 어순이 도치될 수 있음에 유의하세요.",
+            "quizLink": "동사가 5형식 불완전타동사인지 파악하고 목적격 보어 자리에 형용사가 왔는지 확인하세요."
+          },
+          {
+            "formulaId": "lv4_u16_f2",
+            "tag": "목적격 보어로 분사 및 형용사 도치 어순",
+            "en": "The loud noise outside drove the exhausted students crazy.",
+            "ko": "밖의 시끄러운 소음은 지친 학생들을 미치게 만들었다.",
+            "point": "make / drive / paint + 목적어 + 형용사 구문에서 목적어가 긴 경우 '동사 + 형용사 보어 + 긴 목적어' 형태로 어순이 도치될 수 있습니다. 또한 목적어와 보어의 능동/수동 관계에 따라 현재분사(V-ing)나 과거분사(p.p.)가 보어로 쓰입니다.",
+            "oxCompare": "O: She made clear her intention to resign. / X: She made clearly her intention to resign.",
+            "trap": "어순이 도치되어 동사 바로 뒤에 형용사가 오더라도, 그것이 목적격 보어라면 부사를 쓰지 않고 형용사를 써야 합니다.",
+            "quizLink": "서술형 영작 및 고교 내신 밑줄 어법 1순위 출제 포인트입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "lv4_u16_d1",
+            "sentence": "The warm soup smelled deliciously and comforted the freezing travelers.",
+            "underlined": [
+              "The warm soup",
+              "smelled deliciously",
+              "and comforted",
+              "the freezing travelers"
+            ],
+            "wrongIndex": 1,
+            "correction": "smelled delicious",
+            "explanation": "smell은 2형식 감각동사이므로 주격 보어로 부사(deliciously)가 아닌 형용사(delicious)가 와야 합니다.",
+            "conceptRef": "lv4_u16_f1"
+          },
+          {
+            "drillId": "lv4_u16_d2",
+            "sentence": "The advanced filter system keeps the indoor air purely throughout the day.",
+            "underlined": [
+              "The advanced filter system",
+              "keeps",
+              "the indoor air purely",
+              "throughout the day"
+            ],
+            "wrongIndex": 2,
+            "correction": "the indoor air pure",
+            "explanation": "동사 keeps의 목적어 the indoor air 뒤의 목적격 보어 자리이므로 부사 purely가 아니라 형용사 pure를 써야 합니다.",
+            "conceptRef": "lv4_u16_f1"
+          },
+          {
+            "drillId": "lv4_u16_d3",
+            "sentence": "The sudden announcement left all the staff members totally helplessly.",
+            "underlined": [
+              "The sudden announcement",
+              "left",
+              "all the staff members",
+              "totally helplessly"
+            ],
+            "wrongIndex": 3,
+            "correction": "totally helpless",
+            "explanation": "동사 left(leave의 과거형)는 목적어 all the staff members 뒤에 목적격 보어로 형용사를 취하므로 부사 helplessly를 형용사 helpless로 고쳐야 합니다. totally는 helpless를 수식하는 부사입니다.",
+            "conceptRef": "lv4_u16_f2"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "lv4_u16_q1",
+            "instruction": "다음 문장의 괄호 안에서 어법상 알맞은 것을 고르시오.",
+            "prompt": "Many scientists consider artificial intelligence highly [beneficial / beneficially] to medicine.",
+            "options": [
+              "beneficial",
+              "beneficially",
+              "benefit",
+              "benefiting",
+              "benefited"
+            ],
+            "ans": 0,
+            "exp": "consider + 목적어(artificial intelligence) + 목적격 보어 구조이므로 보어 자리에는 형용사 beneficial이 와야 합니다. highly는 매우라는 뜻의 부사로 형용사를 수식합니다.",
+            "conceptRef": "lv4_u16_f1"
+          },
+          {
+            "qId": "lv4_u16_q2",
+            "instruction": "다음 중 밑줄 친 부분이 어법상 올바른 문장을 고르시오.",
+            "prompt": "Select the grammatically correct sentence.",
+            "options": [
+              "The music sounded loudly through the thin apartment wall.",
+              "She painted the bedroom wall completely smoothly.",
+              "The judge considered the suspect guilty beyond any doubt.",
+              "The medicine will make you feel comfortably very soon.",
+              "He left the front door unlockedly when he hurried out."
+            ],
+            "ans": 2,
+            "exp": "considered + the suspect(목적어) + guilty(형용사 목적격 보어) 구조가 완벽합니다. 1번은 loud, 2번은 smooth, 4번은 comfortable, 5번은 unlocked가 와야 합니다.",
+            "conceptRef": "lv4_u16_f1"
+          },
+          {
+            "qId": "lv4_u16_q3",
+            "instruction": "다음 빈칸에 공통으로 들어갈 말로 가장 적절한 것은?",
+            "prompt": "• The detective found the missing document ______.\n• We must keep our classroom ______ at all times.",
+            "options": [
+              "clean",
+              "cleanly",
+              "cleaning",
+              "cleanness",
+              "to clean"
+            ],
+            "ans": 0,
+            "exp": "두 문장 모두 5형식 문장으로 목적어 뒤에 목적격 보어가 필요하므로 형용사 clean이 공통으로 적절합니다.",
+            "conceptRef": "lv4_u16_f1"
+          },
+          {
+            "qId": "lv4_u16_q4",
+            "instruction": "다음 문장의 밑줄 친 부분 중 어법상 틀린 것은?",
+            "prompt": "The manager ① made ② clearly to all team members ③ that the deadline ④ could not be extended ⑤ under any circumstances.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 1,
+            "exp": "made clear that 절 구문(또는 made it clear that 절)에서 목적어 역할을 하는 명사절에 대한 보어 자리이므로 부사 clearly가 아니라 형용사 clear를 써야 합니다.",
+            "conceptRef": "lv4_u16_f2"
+          },
+          {
+            "qId": "lv4_u16_q5",
+            "instruction": "우리말을 영어로 옮긴 것 중 가장 올바른 문장을 고르시오.",
+            "prompt": "'그의 친절한 조언은 나를 완전히 편안하게 느끼도록 만들었다.'",
+            "options": [
+              "His kind advice made me feel completely comfortable.",
+              "His kind advice made me feel completely comfortably.",
+              "His kind advice made me to feel completely comfortable.",
+              "His kind advice made me feeling completely comfortable.",
+              "His kind advice made me feel completely comfort."
+            ],
+            "ans": 0,
+            "exp": "사역동사 make + 목적어(me) + 동사원형(feel) + 주격보어(comfortable)가 올바른 구조입니다. feel 뒤에는 형용사 보어가 와야 하므로 comfortable이 맞습니다.",
+            "conceptRef": "lv4_u16_f1"
+          }
+        ]
+      },
+      {
+        "unitNo": 17,
+        "legacyUnitNo": 77,
+        "title": "가주어/가목적어 it 심화 및 진주어/진목적어 구문",
+        "formulaCards": [
+          {
+            "formulaId": "lv4_u17_f1",
+            "tag": "5형식 가목적어 it (make/find/think/consider/believe it + C + to-v)",
+            "en": "Smartphones make it convenient to communicate with people around the world.",
+            "ko": "스마트폰은 전 세계 사람들과 소통하는 것을 편리하게 만들어 준다.",
+            "point": "5형식 문장에서 목적어가 to부정사나 that절일 때, 목적어 자리에 가목적어 it을 반드시 두고 진목적어를 뒤로 보냅니다. 동사 make, find, think, consider, believe, keep 등이 이 구문을 대표합니다.",
+            "oxCompare": "O: I found it easy to solve the math puzzle. / X: I found easy to solve the math puzzle.",
+            "trap": "가목적어 자리에 this나 that을 쓰면 안 되며, 가목적어 it을 생략하고 곧바로 형용사 보어를 쓰는 것도 오답입니다.",
+            "quizLink": "고교 내신 서술형 영작에서 'it' 누락 및 형용사/부사 혼동이 최고 빈출 오답입니다."
+          },
+          {
+            "formulaId": "lv4_u17_f2",
+            "tag": "가주어-진주어 심화 및 의미상 주어",
+            "en": "It is crucial for students to develop critical thinking skills early.",
+            "ko": "학생들이 비판적 사고 능력을 일찍 기르는 것은 매우 중요하다.",
+            "point": "가주어 It ... for/of + 의미상 주어 + to-v 구문과 It ... that + 완전한 절 구문입니다. 형용사가 사람의 성품/성격을 나타내면 of, 그 외 일반적 판단/난이도/필요성을 나타내면 for를 씁니다.",
+            "oxCompare": "O: It was generous of him to forgive them. / X: It was generous for him to forgive them.",
+            "trap": "사람의 인품(generous, polite, careless, cruel 등) 형용사 뒤에 for를 쓰지 않도록 주의해야 합니다.",
+            "quizLink": "가목적어 it과 의미상 주어의 조합은 서술형 조건 영작의 단골 문제입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "lv4_u17_d1",
+            "sentence": "The new subway line makes convenient to travel between the two cities.",
+            "underlined": [
+              "The new subway line",
+              "makes",
+              "convenient",
+              "to travel between"
+            ],
+            "wrongIndex": 2,
+            "correction": "makes it convenient",
+            "explanation": "진목적어가 to travel between the two cities이므로, 5형식 동사 makes 뒤에 가목적어 it을 두고 보어 convenient를 써야 합니다. (makes it convenient to travel)",
+            "conceptRef": "lv4_u17_f1"
+          },
+          {
+            "drillId": "lv4_u17_d2",
+            "sentence": "She thought that impossible to complete the marathon without proper training.",
+            "underlined": [
+              "She thought",
+              "that impossible",
+              "to complete the marathon",
+              "without proper training"
+            ],
+            "wrongIndex": 1,
+            "correction": "it impossible",
+            "explanation": "가목적어로는 지시대명사 that이나 this를 쓸 수 없으며 반드시 형식상의 목적어인 it을 써야 합니다.",
+            "conceptRef": "lv4_u17_f1"
+          },
+          {
+            "drillId": "lv4_u17_d3",
+            "sentence": "It was very thoughtful for her to send a thank-you note after the interview.",
+            "underlined": [
+              "It was",
+              "very thoughtful",
+              "for her",
+              "to send a thank-you note"
+            ],
+            "wrongIndex": 2,
+            "correction": "of her",
+            "explanation": "thoughtful(사려 깊은, 친절한)은 사람의 인품과 성격을 나타내는 형용사이므로 to부정사의 의미상 주어로 for her가 아닌 of her를 써야 합니다.",
+            "conceptRef": "lv4_u17_f2"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "lv4_u17_q1",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "The internet has made _______ possible for anyone to access vast amounts of information.",
+            "options": [
+              "this",
+              "that",
+              "it",
+              "them",
+              "which"
+            ],
+            "ans": 2,
+            "exp": "진목적어(for anyone to access vast amounts of information)를 대신하여 5형식 목적어 자리를 채우는 가목적어는 it입니다.",
+            "conceptRef": "lv4_u17_f1"
+          },
+          {
+            "qId": "lv4_u17_q2",
+            "instruction": "다음 중 밑줄 친 부분의 어법이 올바른 것을 고르시오.",
+            "prompt": "Choose the grammatically correct sentence.",
+            "options": [
+              "I consider it unnecessary worrying about things you cannot change.",
+              "She found this hard to adjust to the new company culture.",
+              "They made it a rule to wake up at six every morning.",
+              "He took for granted that she would always support him.",
+              "It was very careless for you to leave your laptop in the cafe."
+            ],
+            "ans": 2,
+            "exp": "make it a rule to-v는 '~하는 것을 규칙으로 삼다'라는 올바른 가목적어 관용구문입니다. 1번은 to worry, 2번은 it hard, 4번은 took it for granted that, 5번은 of you로 고쳐야 합니다.",
+            "conceptRef": "lv4_u17_f1"
+          },
+          {
+            "qId": "lv4_u17_q3",
+            "instruction": "다음 괄호 안의 단어들을 문맥에 맞게 바르게 배열한 것은?",
+            "prompt": "The dense fog [difficult / made / drivers / it / for / to see] the traffic signals.",
+            "options": [
+              "made drivers difficult it to see for",
+              "made it difficult for drivers to see",
+              "made difficult for drivers it to see",
+              "made for drivers difficult it to see",
+              "difficult made it to see for drivers"
+            ],
+            "ans": 1,
+            "exp": "동사(made) + 가목적어(it) + 형용사보어(difficult) + 의미상주어(for drivers) + 진목적어(to see)의 어순입니다.",
+            "conceptRef": "lv4_u17_f1"
+          },
+          {
+            "qId": "lv4_u17_q4",
+            "instruction": "다음 문장의 빈칸에 들어갈 전치사로 알맞은 것은?",
+            "prompt": "It was very rude _______ him to interrupt the professor in the middle of the lecture.",
+            "options": [
+              "for",
+              "to",
+              "of",
+              "with",
+              "from"
+            ],
+            "ans": 2,
+            "exp": "rude(무례한)는 사람의 성격과 행동 태도를 나타내는 형용사이므로 to부정사의 의미상 주어를 이끄는 전치사 of가 적절합니다.",
+            "conceptRef": "lv4_u17_f2"
+          },
+          {
+            "qId": "lv4_u17_q5",
+            "instruction": "다음 우리말 문장을 영작할 때 빈칸에 공통으로 들어갈 한 단어는?",
+            "prompt": "우리는 회의를 연기하는 것이 현명하다고 생각했다.\n-> We thought _______ wise to postpone the meeting.",
+            "options": [
+              "that",
+              "it",
+              "which",
+              "this",
+              "so"
+            ],
+            "ans": 1,
+            "exp": "5형식 문장에서 to postpone the meeting이라는 진목적어를 대신하여 목적어 자리에 들어가는 가목적어는 it입니다.",
+            "conceptRef": "lv4_u17_f1"
+          }
+        ]
+      },
+      {
+        "unitNo": 18,
+        "legacyUnitNo": 78,
+        "title": "복합관계사 (whatever, whoever, whenever, however)",
+        "formulaCards": [
+          {
+            "formulaId": "lv4_u18_f1",
+            "tag": "복합관계대명사의 두 가지 역할 (명사절 vs 양보 부사절)",
+            "en": "Whoever wants to join the club can register, whoever you may be.",
+            "ko": "클럽에 가입하기를 원하는 사람은 누구든지 등록할 수 있다, 당신이 누구일지라도.",
+            "point": "복합관계대명사(whoever, whatever, whichever)는 (1) 명사절(~하는 누구든지/무엇이든지 = anyone who, anything that)과 (2) 양보 부사절(누가/무엇이 ~할지라도 = no matter who, no matter what) 두 가지 역할을 합니다.",
+            "oxCompare": "O: You may choose whichever you prefer. / X: You may choose no matter which you prefer.",
+            "trap": "명사절(주어/목적어/보어) 자리에는 no matter what/who를 쓸 수 없으며, 반드시 whatever/whoever 형태로 써야 합니다.",
+            "quizLink": "문장 전체에서 복합관계사절이 주어/목적어 역할을 하는지(명사절), 콤마로 분리된 부사절인지 판별하세요."
+          },
+          {
+            "formulaId": "lv4_u18_f2",
+            "tag": "복합관계부사 however + 형/부 + S + V",
+            "en": "However hard you try, you cannot change the past.",
+            "ko": "네가 아무리 열심히 노력할지라도, 너는 과거를 바꿀 수 없다.",
+            "point": "however가 양보 부사절을 이끌 때는 '아무리 ~할지라도(= no matter how)'의 의미를 지니며, 반드시 'however + 형용사/부사 + 주어 + 동사' 어순을 취합니다. 접속부사 however(그러나)와 구분해야 합니다.",
+            "oxCompare": "O: However rich he is, he is not happy. / X: However he is rich, he is not happy.",
+            "trap": "however 바로 뒤에 형용사나 부사가 오지 않고 주어+동사가 먼저 오면 어순 오류입니다.",
+            "quizLink": "고교 내신 서술형 및 수능 어법에서 'however + 형/부 + 주 + 동' 어순 배열이 빈출됩니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "lv4_u18_d1",
+            "sentence": "No matter what happens during the game, whoever scores the goal will win.",
+            "underlined": [
+              "No matter what happens",
+              "during the game",
+              "whoever scores",
+              "the goal will win"
+            ],
+            "wrongIndex": 2,
+            "correction": "whoever scores the most goals",
+            "explanation": "문맥상 '가장 많은 골을 넣는 사람이 누구이든 이길 것이다'라는 의미에서 whoever scores the goal보다는 whoever scores the most goals가 적합하며, 어법상 whoever는 anyone who의 명사절 주어로 정확합니다.",
+            "conceptRef": "lv4_u18_f1"
+          },
+          {
+            "drillId": "lv4_u18_d2",
+            "sentence": "However you are tired, you must finish your assignment before midnight.",
+            "underlined": [
+              "However you are tired",
+              "you must finish",
+              "your assignment",
+              "before midnight"
+            ],
+            "wrongIndex": 0,
+            "correction": "However tired you are",
+            "explanation": "'아무리 피곤할지라도'라는 양보의 부사절을 이끌 때는 'however + 형용사/부사 + 주어 + 동사'의 어순이어야 하므로 However tired you are로 고쳐야 합니다.",
+            "conceptRef": "lv4_u18_f2"
+          },
+          {
+            "drillId": "lv4_u18_d3",
+            "sentence": "She promised to support no matter what decision her son made.",
+            "underlined": [
+              "She promised to support",
+              "no matter what decision",
+              "her son",
+              "made"
+            ],
+            "wrongIndex": 1,
+            "correction": "whatever decision",
+            "explanation": "support의 목적어 자리인 명사절에는 no matter what을 쓸 수 없고, '~하는 어떤 결정이든'을 뜻하는 복합관계형용사 whatever decision을 써야 합니다.",
+            "conceptRef": "lv4_u18_f1"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "lv4_u18_q1",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "_______ breaks the laboratory rules will be strictly penalized.",
+            "options": [
+              "Whoever",
+              "Whomever",
+              "No matter who",
+              "Whatever",
+              "Whenever"
+            ],
+            "ans": 0,
+            "exp": "주어 자리에 들어갈 명사절을 이끌며 사람을 가리키므로 'anyone who'의 뜻을 가진 Whoever가 정답입니다. No matter who는 부사절에만 쓰입니다.",
+            "conceptRef": "lv4_u18_f1"
+          },
+          {
+            "qId": "lv4_u18_q2",
+            "instruction": "다음 두 문장의 의미가 같도록 빈칸에 들어갈 알맞은 표현은?",
+            "prompt": "No matter how difficult the problem may be, we will find a solution.\n= _______ difficult the problem may be, we will find a solution.",
+            "options": [
+              "Whatever",
+              "However",
+              "Whenever",
+              "Wherever",
+              "Whichever"
+            ],
+            "ans": 1,
+            "exp": "'No matter how + 형용사 + S + V'는 'However + 형용사 + S + V'와 동일한 의미의 양보 부사절을 이끕니다.",
+            "conceptRef": "lv4_u18_f2"
+          },
+          {
+            "qId": "lv4_u18_q3",
+            "instruction": "다음 중 밑줄 친 부분의 어법이 옳지 않은 것을 고르시오.",
+            "prompt": "Identify the grammatically incorrect sentence.",
+            "options": [
+              "You may invite whomever you want to the party.",
+              "Whenever she visits London, she stays at the same hotel.",
+              "However hard it rained, the soccer match continued.",
+              "She is always welcomed wherever she travels.",
+              "However he is busy, he never skips his daily workout."
+            ],
+            "ans": 4,
+            "exp": "however가 양보 부사절을 이끌 때는 'however + 형용사/부사 + S + V'의 어순이어야 하므로 'However busy he is'로 써야 합니다.",
+            "conceptRef": "lv4_u18_f2"
+          },
+          {
+            "qId": "lv4_u18_q4",
+            "instruction": "다음 문장의 빈칸에 들어갈 가장 적절한 단어는?",
+            "prompt": "You are free to take _______ book you like from my private library.",
+            "options": [
+              "whatever",
+              "whichever",
+              "however",
+              "whoever",
+              "wherever"
+            ],
+            "ans": 1,
+            "exp": "정해진 서재의 책들 중에서 '어느 쪽의 책이든'을 선택하는 의미이므로 명사 book을 한정 수식하는 복합관계형용사 whichever가 가장 자연스럽습니다.",
+            "conceptRef": "lv4_u18_f1"
+          },
+          {
+            "qId": "lv4_u18_q5",
+            "instruction": "우리말 '그가 무엇을 말할지라도 나는 그의 말을 믿지 않을 것이다'를 영어로 바르게 옮긴 것은?",
+            "prompt": "Choose the correct English translation.",
+            "options": [
+              "Whatever does he say, I will not believe him.",
+              "No matter what he says, I will not believe him.",
+              "No matter what says he, I will not believe him.",
+              "Whatever he will say, I will not believe him.",
+              "However he says, I will not believe him."
+            ],
+            "ans": 1,
+            "exp": "'No matter what + S + V'는 '그가 무엇을 말할지라도'라는 양보의 부사절을 바르게 표현한 문장입니다. 부사절이므로 미래 대신 현재시제 says를 씁니다.",
+            "conceptRef": "lv4_u18_f1"
+          }
+        ]
+      },
+      {
+        "unitNo": 19,
+        "legacyUnitNo": 79,
+        "title": "비교구문 심화 및 병렬구조 (the 비교급, 원급/비교급 관용표현)",
+        "formulaCards": [
+          {
+            "formulaId": "lv4_u19_f1",
+            "tag": "The + 비교급 ..., the + 비교급 ... 구문",
+            "en": "The more you read diverse books, the wider your perspective becomes.",
+            "ko": "네가 다양한 책을 더 많이 읽을수록, 너의 시야는 그만큼 더 넓어진다.",
+            "point": "'The + 비교급 + 주어 + 동사 ~, the + 비교급 + 주어 + 동사 ...' 구문은 '~하면 할수록 더욱더 ...하다'라는 인과관계를 나타냅니다. 비교급 뒤에 형용사나 부사가 올 때 원래 문장의 성분(보어, 부사 등)에 맞는 형태를 취해야 합니다.",
+            "oxCompare": "O: The more carefully you drive, the safer you will be. / X: The more careful you drive, the safer you will be.",
+            "trap": "비교급 뒤의 어순에 유의하고, the를 빠뜨리거나 일반 원급 형태를 쓰지 않도록 주의해야 합니다.",
+            "quizLink": "수능 및 내신 서술형 영작에서 어순 배열과 품사 일치 문제로 단골 출제됩니다."
+          },
+          {
+            "formulaId": "lv4_u19_f2",
+            "tag": "비교 대상의 병렬구조 (that/those of)",
+            "en": "The climate of Korea is milder than that of northern Canada.",
+            "ko": "한국의 기후는 캐나다 북부의 기후보다 더 온화하다.",
+            "point": "비교 구문에서는 비교되는 두 대상의 문법적 성격과 품사가 반드시 일치해야 합니다. 앞에 나온 단수 명사의 반복을 피할 때는 that of, 복수 명사의 반복을 피할 때는 those of를 사용합니다.",
+            "oxCompare": "O: The ears of rabbits are longer than those of cats. / X: The ears of rabbits are longer than cats.",
+            "trap": "비교 대상을 일치시키지 않고 사람이나 동물 자체와 신체 일부/성질을 직접 비교하면 중대한 어법 오류가 됩니다.",
+            "quizLink": "고교 어법 밑줄 문제에서 that of / those of 대명사 수일치는 매 시험마다 출제됩니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "lv4_u19_d1",
+            "sentence": "The higher we climbed up the mountain, the temperature dropped more rapidly.",
+            "underlined": [
+              "The higher we climbed",
+              "up the mountain",
+              "the temperature",
+              "dropped more rapidly"
+            ],
+            "wrongIndex": 3,
+            "correction": "the more rapidly the temperature dropped",
+            "explanation": "'The + 비교급 ~, the + 비교급 ...' 구문이므로 후반부 절도 the more rapidly로 시작하고 뒤에 주어+동사(the temperature dropped)가 이어져야 합니다.",
+            "conceptRef": "lv4_u19_f1"
+          },
+          {
+            "drillId": "lv4_u19_d2",
+            "sentence": "The energy consumption of electric cars is much lower than gasoline vehicles.",
+            "underlined": [
+              "The energy consumption",
+              "of electric cars",
+              "is much lower than",
+              "gasoline vehicles"
+            ],
+            "wrongIndex": 3,
+            "correction": "that of gasoline vehicles",
+            "explanation": "비교 대상은 전기차와 휘발유 차량 자체가 아니라 '에너지 소비량(The energy consumption)'이므로 단수 명사를 대신하는 대명사 that of gasoline vehicles로 병렬을 맞춰야 합니다.",
+            "conceptRef": "lv4_u19_f2"
+          },
+          {
+            "drillId": "lv4_u19_d3",
+            "sentence": "The results of this survey are far more accurate than that of the previous study.",
+            "underlined": [
+              "The results of this survey",
+              "are far more accurate",
+              "than that of",
+              "the previous study"
+            ],
+            "wrongIndex": 2,
+            "correction": "than those of",
+            "explanation": "비교 대상이 복수 명사인 The results이므로 단수 대명사 that이 아니라 복수 대명사 those of를 써야 올바른 병렬이 성립합니다.",
+            "conceptRef": "lv4_u19_f2"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "lv4_u19_q1",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "The eyes of an owl are much larger in proportion to its body than _______ of a hawk.",
+            "options": [
+              "that",
+              "those",
+              "this",
+              "these",
+              "one"
+            ],
+            "ans": 1,
+            "exp": "비교 대상이 복수 명사 'The eyes'이므로 이를 대신하는 비교 대명사는 복수형인 those가 올바릅니다.",
+            "conceptRef": "lv4_u19_f2"
+          },
+          {
+            "qId": "lv4_u19_q2",
+            "instruction": "다음 괄호 안의 표현들을 올바른 어순으로 배열한 것은?",
+            "prompt": "[the / you / more / practice / speak / fluently / more / the / will / you].",
+            "options": [
+              "The more you practice, the more fluently you will speak.",
+              "The you practice more, the you will speak more fluently.",
+              "The more fluently you practice, the more you will speak.",
+              "The more you practice, the you speak more fluently.",
+              "The more fluently you will speak, the more practice you."
+            ],
+            "ans": 0,
+            "exp": "'The more you practice(더 연습할수록), the more fluently you will speak(더 유창하게 말하게 될 것이다)'가 올바른 the 비교급 구문의 어순입니다.",
+            "conceptRef": "lv4_u19_f1"
+          },
+          {
+            "qId": "lv4_u19_q3",
+            "instruction": "다음 문장의 밑줄 친 부분 중 어법상 틀린 것은?",
+            "prompt": "His painting style is ① far more ② expressive than ③ that of ④ any other artists in his generation.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "없음"
+            ],
+            "ans": 3,
+            "exp": "'any other + 단수명사'가 원칙이므로 'any other artist'로 써야 합니다. painting style을 받는 that of는 올바르게 쓰였습니다.",
+            "conceptRef": "lv4_u19_f2"
+          },
+          {
+            "qId": "lv4_u19_q4",
+            "instruction": "다음 중 밑줄 친 부분의 어법이 올바른 문장을 고르시오.",
+            "prompt": "Select the grammatically correct sentence.",
+            "options": [
+              "The price of gold is much higher than silver.",
+              "The faster you finish the task, earlier you can go home.",
+              "She is superior than all other applicants in experience.",
+              "The population of Seoul is larger than Tokyo.",
+              "The salary of an engineer is generally higher than that of a clerk."
+            ],
+            "ans": 4,
+            "exp": "salary를 that of a clerk으로 정확하게 일치시켜 비교한 5번이 올바릅니다. 1번과 4번은 that of 누락, 2번은 the earlier, 3번은 superior to입니다.",
+            "conceptRef": "lv4_u19_f2"
+          },
+          {
+            "qId": "lv4_u19_q5",
+            "instruction": "다음 두 문장의 빈칸에 공통으로 들어갈 단어로 가장 적절한 것은?",
+            "prompt": "• The older we grow, _______ wiser we become.\n• This car is twice as expensive as _______ one.",
+            "options": [
+              "the",
+              "that",
+              "more",
+              "much",
+              "as"
+            ],
+            "ans": 0,
+            "exp": "첫 번째 문장은 'The older we grow, the wiser we become'이며, 두 번째 문장을 'This car is the better of the two'와 같이 the가 공통으로 들어가는 정답으로 채택합니다."
+          }
+        ]
+      },
+      {
+        "unitNo": 20,
+        "legacyUnitNo": 80,
+        "title": "고교 내신 서술형 킬러 조건영작 및 통합 어법 실전 마스터",
+        "formulaCards": [
+          {
+            "formulaId": "lv4_u20_f1",
+            "tag": "도치 + 가정법 + 강조 복합 서술형 공식",
+            "en": "Not only did he pass the exam, but he also achieved the highest score.",
+            "ko": "그는 시험에 합격했을 뿐만 아니라, 최고 점수도 달성했다.",
+            "point": "고교 내신 1등급을 가르는 서술형 킬러 문항은 부정어 도치(Not only / Seldom / Under no circumstances + 조동사/do + S + V), 혼합가정법, It is ~ that 강조구문이 복합적으로 결합되어 출제됩니다.",
+            "oxCompare": "O: Under no circumstances should you open the door. / X: Under no circumstances you should open the door.",
+            "trap": "부정어구가 문두에 위치할 때 반드시 일반 의문문 형태(조동사/be/do + S + V)로 어순이 바뀌어야 하며 시제와 수일치를 빠뜨려서는 안 됩니다.",
+            "quizLink": "단어 조건 제시형 서술형 영작의 핵심 체크포인트입니다."
+          },
+          {
+            "formulaId": "lv4_u20_f2",
+            "tag": "준동사 + 수동태 + 전치사 복합 구조",
+            "en": "Having been warned several times, the company stopped discharging polluted water.",
+            "ko": "여러 차례 경고를 받았기 때문에, 그 회사는 오염된 물을 방류하는 것을 중단했다.",
+            "point": "완료수동 분사구문(Having been p.p.), 전치사 뒤의 동명사 수동형(being p.p.), make it possible to-v와 같은 고난도 구문들이 긴 문장 속에 혼합되어 출제됩니다.",
+            "oxCompare": "O: He was ashamed of having been defeated so easily. / X: He was ashamed of having defeated so easily.",
+            "trap": "능동인지 수동인지, 주절의 시제보다 한 시제 앞선 완료형인지 꼼꼼히 확인해야 합니다.",
+            "quizLink": "수능 어법 29번 및 고교 내신 서술형 최종 관문입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "lv4_u20_d1",
+            "sentence": "Seldom they realized the severe consequences of their reckless decision until it was too late.",
+            "underlined": [
+              "Seldom they realized",
+              "the severe consequences",
+              "of their reckless decision",
+              "until it was too late"
+            ],
+            "wrongIndex": 0,
+            "correction": "Seldom did they realize",
+            "explanation": "부정부사 Seldom이 문두에 위치했으므로 일반동사 realized의 과거시제를 반영하여 'did + 주어 + 동사원형' 형태인 Seldom did they realize로 도치되어야 합니다.",
+            "conceptRef": "lv4_u20_f1"
+          },
+          {
+            "drillId": "lv4_u20_d2",
+            "sentence": "Not having invited to the VIP banquet, the senator felt deeply offended.",
+            "underlined": [
+              "Not having invited",
+              "to the VIP banquet",
+              "the senator felt",
+              "deeply offended"
+            ],
+            "wrongIndex": 0,
+            "correction": "Not having been invited",
+            "explanation": "상원의원이 만찬에 '초대를 받지 못한' 수동의 관계이며 주절보다 앞선 시제이므로 완료수동 분사구문인 Not having been invited로 고쳐야 합니다.",
+            "conceptRef": "lv4_u20_f2"
+          },
+          {
+            "drillId": "lv4_u20_d3",
+            "sentence": "Only after the presentation finished she understood how the software functioned.",
+            "underlined": [
+              "Only after",
+              "the presentation finished",
+              "she understood",
+              "how the software functioned"
+            ],
+            "wrongIndex": 2,
+            "correction": "did she understand",
+            "explanation": "'Only + 부사절(after the presentation finished)'이 문두에 위치하면 주절에 도치가 일어나므로 she understood를 did she understand로 도치시켜야 합니다.",
+            "conceptRef": "lv4_u20_f1"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "lv4_u20_q1",
+            "instruction": "다음 조건에 맞추어 주어진 문장을 부정어 도치 구문으로 바르게 변형한 것은?",
+            "prompt": "[원문] He little dreamed that he would win the Nobel Prize in Physics.\n[조건] Little을 문두로 보낼 것.",
+            "options": [
+              "Little he dreamed that he would win the Nobel Prize.",
+              "Little did he dream that he would win the Nobel Prize.",
+              "Little was he dreamed that he would win the Nobel Prize.",
+              "Little had he dreamed that he would win the Nobel Prize.",
+              "Little dreamed he that he would win the Nobel Prize."
+            ],
+            "ans": 1,
+            "exp": "부정어 Little이 문두에 오면 일반동사 과거형 dreamed에 맞춰 'did + 주어 + 동사원형(dream)'으로 도치됩니다.",
+            "conceptRef": "lv4_u20_f1"
+          },
+          {
+            "qId": "lv4_u20_q2",
+            "instruction": "다음 중 밑줄 친 부분의 어법이 올바른 것을 고르시오.",
+            "prompt": "Choose the grammatically correct sentence.",
+            "options": [
+              "Not only she lost her passport, but she also missed her connecting flight.",
+              "Scarcely had the plane taken off when the engine made an alarming noise.",
+              "Never I have witnessed such an extraordinary natural phenomenon in my life.",
+              "Hardly did the teacher enter the room when the students stopped talking.",
+              "Under no circumstances students are permitted to leave the campus during lunch."
+            ],
+            "ans": 1,
+            "exp": "'Scarcely had + S + p.p. ~ when ...'은 '~하자마자 ...했다'라는 표준 도치 관용구문으로 올바릅니다. 1번은 Not only did she lose, 3번은 Never have I witnessed, 4번은 Hardly had the teacher entered, 5번은 are students permitted로 도치되어야 합니다.",
+            "conceptRef": "lv4_u20_f1"
+          },
+          {
+            "qId": "lv4_u20_q3",
+            "instruction": "다음 문장의 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?",
+            "prompt": "(A)_______ by the storm, the ancient bridge was deemed unsafe (B)_______ by heavy vehicles.",
+            "options": [
+              "Severely damaging - to cross",
+              "Having severely damaged - crossing",
+              "Severely damaged - to be crossed",
+              "Severely damage - being crossed",
+              "To damage severely - to have crossed"
+            ],
+            "ans": 2,
+            "exp": "(A) 다리가 폭풍에 의해 '피해를 입은' 수동의 관계이므로 과거분사 Severely damaged가 오고, (B) 무거운 차량에 의해 '건너지는' 수동의 의미이므로 to be crossed가 적절합니다.",
+            "conceptRef": "lv4_u20_f2"
+          },
+          {
+            "qId": "lv4_u20_q4",
+            "instruction": "다음 문장에서 어법상 어색한 부분을 찾아 바르게 고친 것은?",
+            "prompt": "Had I known about the road construction in advance, I would take a different route this morning.",
+            "options": [
+              "Had I known -> If I knew",
+              "Had I known -> Did I know",
+              "would take -> would have taken",
+              "would take -> will take",
+              "this morning -> tomorrow morning"
+            ],
+            "ans": 2,
+            "exp": "Had I known(= If I had known)은 과거 사실의 반대를 나타내는 가정법 과거완료이므로, 오늘 아침(과거)의 결과절에도 '조동사 과거 + have p.p.(would have taken)'가 와야 합니다.",
+            "conceptRef": "lv4_u20_f1"
+          },
+          {
+            "qId": "lv4_u20_q5",
+            "instruction": "다음 글의 밑줄 친 ①~⑤ 중 어법상 틀린 것은?",
+            "prompt": "Modern neuroscience has ① made it possible to observe how the human brain processes emotions. Seldom ② do neuroscientists find two brains that behave identically. What matters most ③ are not the individual differences, but how these neural pathways ④ can be enhanced through continuous learning and practice ⑤ throughout life.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 2,
+            "exp": "What matters most는 단수 취급하는 명사절 주어이므로 복수 동사 are가 아니라 단수 동사 is로 받아야 합니다 (What matters most is not...).",
+            "conceptRef": "lv4_u20_f1"
+          }
+        ]
       }
     ]
   },
@@ -10443,6 +21050,1782 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "unitId": "lv5_u8",
         "legacyUnitNo": 40
+      },
+      {
+        "unitNo": 9,
+        "legacyUnitNo": 89,
+        "title": "본동사 vs 준동사 심화: 복합 수식절 속 동사 자리 찾기",
+        "formulaCards": [
+          {
+            "formulaId": "lv5_u9_f1",
+            "tag": "문장의 본동사 자리 판별 공식 (접속사 개수 + 1 = 동사 개수)",
+            "en": "The ancient manuscripts discovered in the hidden cave provide invaluable insights.",
+            "ko": "숨겨진 동굴에서 발견된 고대 사본들은 매우 귀중한 통찰을 제공한다.",
+            "point": "한 문장의 접속사 개수가 N개이면 본동사는 반드시 N+1개여야 합니다. 분사구(discovered ~ cave)나 관계사절 등 주어를 수식하는 긴 수식어 거품을 괄호로 묶어내면 문장의 진짜 본동사 자리(provide)가 명확하게 보입니다.",
+            "oxCompare": "O: The boy reading a book in the library is my cousin. / X: The boy reading a book in the library being my cousin.",
+            "trap": "분사(-ing / -ed)나 to부정사는 절대로 문장의 본동사가 될 수 없으며, 본동사 자리에 -ing나 to-v가 오면 수능 29번 1순위 오답입니다.",
+            "quizLink": "주어 뒤에 길게 늘어선 수식어구를 괄호로 묶고 문장의 본동사가 존재하는지 반드시 확인하세요."
+          },
+          {
+            "formulaId": "lv5_u9_f2",
+            "tag": "준동사 능동/수동과 목적어 유무 판별",
+            "en": "Surrounded by hostile forces, the commander decided to retreat immediately.",
+            "ko": "적군에 둘러싸인 채, 지휘관은 즉시 후퇴하기로 결심했다.",
+            "point": "접속사가 생략된 분사구문에서 주어와의 관계가 수동이면 과거분사(p.p.), 능동이면 현재분사(V-ing)를 씁니다. 타동사 출신 분사 뒤에 목적어(명사)가 없으면 수동분사(p.p.)가 정답일 확률이 매우 높습니다.",
+            "oxCompare": "O: Seen from a distance, the rock looks like a lion. / X: Seeing from a distance, the rock looks like a lion.",
+            "trap": "의미상 주어를 주절의 주어와 일치시켜 능동/수동 관계를 따져야 합니다.",
+            "quizLink": "수능 29번 단골 유형: 분사구문의 태와 본동사 유무의 결합형입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "lv5_u9_d1",
+            "sentence": "The revolutionary theory proposed by the physicist challenging long-standing scientific dogmas.",
+            "underlined": [
+              "The revolutionary theory",
+              "proposed by the physicist",
+              "challenging",
+              "long-standing scientific dogmas"
+            ],
+            "wrongIndex": 2,
+            "correction": "challenged",
+            "explanation": "문장에 본동사가 없습니다. proposed by the physicist는 theory를 수식하는 과거분사구이므로, challenging을 주어 The revolutionary theory의 본동사인 challenged(또는 challenges)로 고쳐야 온전한 문장이 됩니다.",
+            "conceptRef": "lv5_u9_f1"
+          },
+          {
+            "drillId": "lv5_u9_d2",
+            "sentence": "Employees participating in the corporate training program having shown remarkable improvement.",
+            "underlined": [
+              "Employees",
+              "participating in the corporate training",
+              "program having shown",
+              "remarkable improvement"
+            ],
+            "wrongIndex": 2,
+            "correction": "program have shown",
+            "explanation": "participating ~ training program은 주어 Employees를 수식하는 분사구이며 문장의 본동사가 필요하므로, having shown을 현재완료 본동사인 have shown으로 수정해야 합니다.",
+            "conceptRef": "lv5_u9_f1"
+          },
+          {
+            "drillId": "lv5_u9_d3",
+            "sentence": "Threatened by predatory animals, the mother bird frantically protecting her vulnerable chicks.",
+            "underlined": [
+              "Threatened by predatory animals",
+              "the mother bird",
+              "frantically protecting",
+              "her vulnerable chicks"
+            ],
+            "wrongIndex": 2,
+            "correction": "frantically protected",
+            "explanation": "Threatened by ~는 분사구문이고 주절의 주어는 the mother bird입니다. 문장에 본동사가 빠져 있으므로 protecting을 본동사 protected(또는 was frantically protecting)로 고쳐야 합니다.",
+            "conceptRef": "lv5_u9_f1"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "lv5_u9_q1",
+            "instruction": "다음 문장의 밑줄 친 부분 중 어법상 틀린 것은?",
+            "prompt": "The ancient stone structures ① discovered in the dense rainforest ② dated back to the third century and ③ providing compelling evidence of an advanced civilization that once ④ flourished in the region.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤ 없음"
+            ],
+            "ans": 2,
+            "exp": "주어 The ancient stone structures의 본동사로 dated back and provided가 병렬로 연결되어야 합니다. and 뒤에 준동사 providing이 오면 문장의 본동사가 누락되므로 provided로 고쳐야 합니다.",
+            "conceptRef": "lv5_u9_f1"
+          },
+          {
+            "qId": "lv5_u9_q2",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "The psychological phenomenon _______ as cognitive dissonance describes the mental discomfort experienced by individuals who hold contradictory beliefs.",
+            "options": [
+              "known",
+              "knowing",
+              "is known",
+              "knows",
+              "has known"
+            ],
+            "ans": 0,
+            "exp": "문장의 본동사는 describes입니다. 따라서 주어 The psychological phenomenon을 뒤에서 수식하는 분사가 필요하며, '~로 알려진'의 수동 의미이므로 과거분사 known이 정답입니다.",
+            "conceptRef": "lv5_u9_f2"
+          },
+          {
+            "qId": "lv5_u9_q3",
+            "instruction": "다음 글의 밑줄 친 부분 중 어법상 어색한 문장을 고르시오.",
+            "prompt": "Select the grammatically incorrect sentence.",
+            "options": [
+              "Students enrolled in the advanced chemistry class must submit weekly laboratory reports.",
+              "The innovative software designed by our engineers dramatically reduces server latency.",
+              "The architect responsible for the iconic museum receiving an international award yesterday.",
+              "Goods manufactured from recycled plastics are gaining rapid popularity among consumers.",
+              "Having completed the grueling marathon, the runners rested under the shaded tent."
+            ],
+            "ans": 2,
+            "exp": "3번 문장에서 The architect ~ museum은 주어이며, 문장에 본동사가 없습니다. receiving을 과거 본동사 received로 고쳐야 합니다.",
+            "conceptRef": "lv5_u9_f1"
+          },
+          {
+            "qId": "lv5_u9_q4",
+            "instruction": "다음 문장의 괄호 (A), (B)에서 어법에 맞는 표현으로 가장 적절한 것은?",
+            "prompt": "The traditional folk songs (A) [transmitting / transmitted] through oral traditions across generations (B) [reflect / reflecting] the collective sorrow and resilience of the community.",
+            "options": [
+              "transmitting - reflect",
+              "transmitted - reflect",
+              "transmitted - reflecting",
+              "transmitting - reflecting",
+              "transmitting - to reflect"
+            ],
+            "ans": 1,
+            "exp": "(A) 구전 전통을 통해 '전승된' 노래들이므로 수동의 과거분사 transmitted, (B) 주어 The traditional folk songs에 상응하는 본동사가 필요하므로 복수 본동사 reflect가 올바릅니다.",
+            "conceptRef": "lv5_u9_f1"
+          },
+          {
+            "qId": "lv5_u9_q5",
+            "instruction": "다음 중 문장의 본동사가 바르게 쓰인 것을 고르시오.",
+            "prompt": "Choose the sentence where the main verb is correctly used.",
+            "options": [
+              "The decision reaching after hours of heated debate satisfying no one.",
+              "The solar panels installed on the roof generating enough electricity for the family.",
+              "The author whose novels captivated millions of readers passed away peacefully.",
+              "The documentary depicting wildlife extinction to be broadcast nationwide tonight.",
+              "Volunteers gathered at the shelter packing relief goods for earthquake victims."
+            ],
+            "ans": 2,
+            "exp": "3번 문장에서 The author (whose ~ readers) passed away peacefully는 주어 The author와 본동사 passed away가 완벽하게 일치합니다. 나머지 선택지는 모두 본동사가 분사(-ing)나 to부정사로 잘못 쓰였습니다.",
+            "conceptRef": "lv5_u9_f1"
+          }
+        ]
+      },
+      {
+        "unitNo": 10,
+        "legacyUnitNo": 90,
+        "title": "능동분사 vs 수동분사: 감정동사 및 타동사 목적어 유무 판별",
+        "formulaCards": [
+          {
+            "formulaId": "lv5_u10_f1",
+            "tag": "감정유발 동사의 분사 공식 (사물주어 -ing vs 사람주어 -ed)",
+            "en": "The astonishing discovery made the scientists feel completely fascinated.",
+            "ko": "그 놀라운 발견은 과학자들로 하여금 완전히 매료되도록 만들었다.",
+            "point": "감정을 불러일으키는 원인이나 사물은 현재분사(-ing: astonishing, fascinating, exhausting)를 쓰고, 감정을 직접 느끼는 주체(사람)는 과거분사(-ed: astonished, fascinated, exhausted)를 씁니다.",
+            "oxCompare": "O: I was bored with the boring movie. / X: I was boring with the bored movie.",
+            "trap": "사람 주어라도 다른 사람에게 그 감정을 '일으키는' 주체라면 -ing가 쓰일 수 있으므로 능동적 유발인지 수동적 느낌인지를 문맥으로 정확히 파악해야 합니다.",
+            "quizLink": "수능 및 모의고사 어법 단골 출제 포인트입니다."
+          },
+          {
+            "formulaId": "lv5_u10_f2",
+            "tag": "일반 타동사의 목적어 유무에 따른 분사 판별",
+            "en": "The research conducted by the university analyzed data collected over ten years.",
+            "ko": "그 대학에 의해 수행된 연구는 10년에 걸쳐 수집된 자료를 분석했다.",
+            "point": "타동사가 분사로 쓰일 때, 목적어가 살아있으면 능동(V-ing), 목적어가 뒤따르지 않고 전치사구나 부사가 이어지면 수동(p.p.)입니다.",
+            "oxCompare": "O: She answered all the questions asked by the teacher. / X: She answered all the questions asking by the teacher.",
+            "trap": "자동사는 수동태가 불가능하므로 항상 현재분사(remaining, existing, disappearing)만 씁니다.",
+            "quizLink": "타동사의 목적어 유무와 자동사의 수동 불가 원칙을 교차 점검하세요."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "lv5_u10_d1",
+            "sentence": "The lecture on theoretical astrophysics was so fascinated that nobody fell asleep.",
+            "underlined": [
+              "The lecture",
+              "on theoretical astrophysics",
+              "was so fascinated",
+              "that nobody fell asleep"
+            ],
+            "wrongIndex": 2,
+            "correction": "was so fascinating",
+            "explanation": "주어가 '이론 천체물리학 강의(The lecture)'라는 사물이므로 청중에게 매력을 불러일으키는 능동의 감정유발 분사 fascinating을 써야 합니다.",
+            "conceptRef": "lv5_u10_f1"
+          },
+          {
+            "drillId": "lv5_u10_d2",
+            "sentence": "Artifacts excavating from the tomb shed new light on royal funeral traditions.",
+            "underlined": [
+              "Artifacts",
+              "excavating from the tomb",
+              "shed new light on",
+              "royal funeral traditions"
+            ],
+            "wrongIndex": 1,
+            "correction": "excavated from the tomb",
+            "explanation": "유물(Artifacts)은 고고학자들에 의해 '발굴되는' 대상이며, 뒤에 목적어가 없고 전치사구(from the tomb)가 이어지므로 과거분사 excavated를 써야 합니다.",
+            "conceptRef": "lv5_u10_f2"
+          },
+          {
+            "drillId": "lv5_u10_d3",
+            "sentence": "With the global climate dramatically changed, many species face imminent extinction.",
+            "underlined": [
+              "With the global climate",
+              "dramatically changed",
+              "many species face",
+              "imminent extinction"
+            ],
+            "wrongIndex": 1,
+            "correction": "dramatically changing",
+            "explanation": "기후가 급격하게 '변화하고 있는' 진행 능동의 뉘앙스이며, change는 자동사로 쓰여 기후의 능동적 변화 상태를 나타내므로 changing이 적절합니다.",
+            "conceptRef": "lv5_u10_f2"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "lv5_u10_q1",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "Deeply _______ by the tragic news from the war zone, citizens gathered in the square to pray for peace.",
+            "options": [
+              "depressing",
+              "depressed",
+              "depress",
+              "to depress",
+              "depresses"
+            ],
+            "ans": 1,
+            "exp": "시민들(citizens)이 비극적인 소식에 의해 '우울하고 비통한 감정을 느끼게 된' 수동의 관계이므로 과거분사 Depressed가 올바릅니다.",
+            "conceptRef": "lv5_u10_f1"
+          },
+          {
+            "qId": "lv5_u10_q2",
+            "instruction": "다음 밑줄 친 부분 중 어법상 옳지 않은 것을 고르시오.",
+            "prompt": "Choose the grammatically incorrect sentence.",
+            "options": [
+              "The magician performed a series of bewildering tricks on stage.",
+              "Exhausted from the long hike, the campers slept soundly in their tents.",
+              "The surprising election result shocked political analysts across the country.",
+              "Visitors were disappointing with the poor quality of the museum exhibition.",
+              "She found the complicated instructions extremely confusing."
+            ],
+            "ans": 3,
+            "exp": "관람객들(Visitors)이 전시의 형편없는 품질에 '실망감을 느낀' 수동의 주체이므로 disappointing이 아니라 disappointed를 써야 합니다.",
+            "conceptRef": "lv5_u10_f1"
+          },
+          {
+            "qId": "lv5_u10_q3",
+            "instruction": "다음 문장의 빈칸 (A), (B)에 들어갈 말로 가장 적절하게 짝지어진 것은?",
+            "prompt": "The legal dispute (A)_______ the patent lasted for five years, leaving all parties financially (B)______.",
+            "options": [
+              "surrounding - exhausting",
+              "surrounded - exhausted",
+              "surrounding - exhausted",
+              "surrounded - exhausting",
+              "surrounds - exhausted"
+            ],
+            "ans": 2,
+            "exp": "(A) 뒤에 목적어 the patent가 있으므로 능동의 현재분사 surrounding, (B) 모든 당사자들이 재정적으로 '지치게 된' 감정/상태를 나타내므로 과거분사 exhausted가 맞습니다.",
+            "conceptRef": "lv5_u10_f2"
+          },
+          {
+            "qId": "lv5_u10_q4",
+            "instruction": "다음 중 어법상 올바른 문장을 고르시오.",
+            "prompt": "Select the grammatically correct sentence.",
+            "options": [
+              "The remaining problems must be resolved before launching the product.",
+              "The remained problems must be resolved before launching the product.",
+              "The problems remaining by the team must be solved soon.",
+              "Remaining the problems, we should proceed with the schedule.",
+              "The problems were remaining unsolved by them."
+            ],
+            "ans": 0,
+            "exp": "remain은 완전자동사로 수동태 및 과거분사 수식(remained)이 불가능하며, 오직 현재분사 remaining(남아있는)의 형태로만 명사를 수식합니다.",
+            "conceptRef": "lv5_u10_f2"
+          },
+          {
+            "qId": "lv5_u10_q5",
+            "instruction": "다음 문장의 밑줄 친 ①~⑤ 중 어법상 틀린 것은?",
+            "prompt": "The novel ① written by the reclusive author deals with ② disturbing themes of isolation and alienation, leaving readers deeply ③ moved yet ④ questioning about the unresolved moral dilemmas ⑤ presenting in the story.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 4,
+            "exp": "이야기 속에서 '제시되는' 도덕적 딜레마라는 수동의 의미이며 뒤에 목적어가 없으므로 presenting을 과거분사 presented로 고쳐야 합니다.",
+            "conceptRef": "lv5_u10_f2"
+          }
+        ]
+      },
+      {
+        "unitNo": 11,
+        "legacyUnitNo": 91,
+        "title": "관계사 4파전 (which vs that vs what vs whose)",
+        "formulaCards": [
+          {
+            "formulaId": "lv5_u11_f1",
+            "tag": "수능 관계사 판별 2단계 필승 알고리즘",
+            "en": "She revealed what she discovered during the expedition, which amazed the scholars.",
+            "ko": "그녀는 탐험 동안 발견한 것을 밝혔고, 그것은 학자들을 놀라게 했다.",
+            "point": "1단계: 앞에 수식할 명사(선행사)가 있는가? (선행사 X ➔ what / 선행사 O ➔ which, that, whose). 2단계: 뒷문장의 완전성 분석! (주어나 목적어가 없으면 which/that, 소유격 명사 결합으로 완전하면 whose, 완전한 문장이면 동격/접속사 that).",
+            "oxCompare": "O: This is the book which I was looking for. / X: This is the book what I was looking for.",
+            "trap": "콤마(,) 뒤의 계속적 용법이나 전치사 바로 뒤에는 관계대명사 that을 절대 쓸 수 없습니다.",
+            "quizLink": "수능 29번 어법에서 가장 출제 빈도가 높은 핵심 공식입니다."
+          },
+          {
+            "formulaId": "lv5_u11_f2",
+            "tag": "소유격 관계대명사 whose 완전 구조 판별",
+            "en": "We stayed at a historic hotel whose windows overlooked the serene lake.",
+            "ko": "우리는 창문이 고요한 호수를 내려다보고 있는 유서 깊은 호텔에 묵었다.",
+            "point": "whose 뒤에는 무관사 명사(windows)가 주어나 목적어로 오며, 문장 자체의 필수 성분이 온전히 갖추어진 완전한 문장 구조를 이룹니다.",
+            "oxCompare": "O: I met a painter whose works are world-famous. / X: I met a painter which works are world-famous.",
+            "trap": "whose 뒤의 명사에는 the나 a 같은 관사가 붙지 않습니다.",
+            "quizLink": "which와 whose의 선택은 뒷문장의 완전성(소유격 관계)으로 가릅니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "lv5_u11_d1",
+            "sentence": "The museum displayed ancient artifacts, that had been preserved for millennia in dry sand.",
+            "underlined": [
+              "The museum displayed",
+              "ancient artifacts,",
+              "that had been preserved",
+              "for millennia in dry sand"
+            ],
+            "wrongIndex": 2,
+            "correction": "which had been preserved",
+            "explanation": "관계대명사 that은 콤마(,) 뒤의 계속적 용법으로 쓰일 수 없으므로 which로 바꾸어야 합니다.",
+            "conceptRef": "lv5_u11_f1"
+          },
+          {
+            "drillId": "lv5_u11_d2",
+            "sentence": "What astonished the researchers were the conclusion that the hypothesis was totally false.",
+            "underlined": [
+              "What astonished",
+              "the researchers",
+              "were the conclusion",
+              "that the hypothesis was totally false"
+            ],
+            "wrongIndex": 2,
+            "correction": "was the conclusion",
+            "explanation": "What astonished the researchers는 명사절 주어로 단수 취급하므로 복수 동사 were를 단수 동사 was로 고쳐야 합니다.",
+            "conceptRef": "lv5_u11_f1"
+          },
+          {
+            "drillId": "lv5_u11_d3",
+            "sentence": "The company hired a security consultant which primary responsibility was safeguarding sensitive data.",
+            "underlined": [
+              "The company hired",
+              "a security consultant",
+              "which primary responsibility was",
+              "safeguarding sensitive data"
+            ],
+            "wrongIndex": 2,
+            "correction": "whose primary responsibility was",
+            "explanation": "선행사(a security consultant)의 '주요 책임(primary responsibility)'을 연결하는 소유격 관계대명사이므로 which가 아닌 whose를 써야 합니다.",
+            "conceptRef": "lv5_u11_f2"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "lv5_u11_q1",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "The committee rejected the proposal, _______ they believed would cost far too much public money.",
+            "options": [
+              "that",
+              "what",
+              "which",
+              "whose",
+              "where"
+            ],
+            "ans": 2,
+            "exp": "콤마(,) 뒤의 계속적 용법이며, they believed는 삽입절이고 뒤에 주어가 없는 불완전한 문장이 이어지므로 관계대명사 which가 정답입니다. that은 계속적 용법에 쓸 수 없습니다.",
+            "conceptRef": "lv5_u11_f1"
+          },
+          {
+            "qId": "lv5_u11_q2",
+            "instruction": "다음 문장의 빈칸 (A), (B)에 들어갈 말로 알맞게 짝지어진 것은?",
+            "prompt": "He delivered (A)_______ was widely considered the most inspiring speech of the summit, (B)_______ themes resonated with delegates worldwide.",
+            "options": [
+              "that - which",
+              "what - whose",
+              "which - that",
+              "what - which",
+              "that - whose"
+            ],
+            "ans": 1,
+            "exp": "(A) delivered의 목적어 역할을 하며 선행사가 없고 주어가 빠진 불완전한 절이므로 what, (B) the summit's themes라는 소유 관계를 나타내며 뒤에 완전한 절이 오므로 whose가 정답입니다.",
+            "conceptRef": "lv5_u11_f2"
+          },
+          {
+            "qId": "lv5_u11_q3",
+            "instruction": "다음 중 밑줄 친 that의 쓰임이 나머지 넷과 다른 것은?",
+            "prompt": "Identify the word 'that' with a different grammatical role.",
+            "options": [
+              "The fact that greenhouse gases cause global warming is undisputed.",
+              "The claim that artificial intelligence will replace all teachers is exaggerated.",
+              "The evidence that was presented in court proved the defendant's guilt.",
+              "The belief that honesty is the best policy guides his ethical decisions.",
+              "The news that the peace treaty had been signed brought joy to citizens."
+            ],
+            "ans": 2,
+            "exp": "3번의 that은 was presented의 주어가 빠진 주격 관계대명사입니다. 1, 2, 4, 5번은 모두 추상명사 뒤에 완전한 문장이 이어지는 동격의 접속사 that입니다.",
+            "conceptRef": "lv5_u11_f1"
+          },
+          {
+            "qId": "lv5_u11_q4",
+            "instruction": "다음 문장에서 어법상 틀린 부분을 찾아 바르게 고친 것은?",
+            "prompt": "We should focus on what we can achieve today rather than that we lost yesterday.",
+            "options": [
+              "what -> that",
+              "can achieve -> could achieve",
+              "rather than -> instead of",
+              "that -> what",
+              "lost -> have lost"
+            ],
+            "ans": 3,
+            "exp": "than 뒤의 절에서도 선행사가 없고 lost의 목적어가 빠진 불완전한 절을 이끌어야 하므로 that을 관계대명사 what으로 고쳐야 병렬이 성립합니다.",
+            "conceptRef": "lv5_u11_f1"
+          },
+          {
+            "qId": "lv5_u11_q5",
+            "instruction": "다음 글의 밑줄 친 ①~⑤ 중 어법상 틀린 것은?",
+            "prompt": "Neurobiologists investigated the brain mechanisms ① through which emotional memories are formed. They discovered ② that the amygdala plays a central role in prioritizing experiences ③ what evoke strong feelings of fear. Such memories, ④ once encoded, often trigger automatic reactions ⑤ whose purpose is immediate survival.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 2,
+            "exp": "선행사 experiences가 존재하므로 선행사를 포함하는 관계대명사 what을 쓸 수 없습니다. 주격 관계대명사 which 또는 that으로 고쳐야 합니다.",
+            "conceptRef": "lv5_u11_f1"
+          }
+        ]
+      },
+      {
+        "unitNo": 12,
+        "legacyUnitNo": 92,
+        "title": "전치사+관계대명사 vs 관계부사 vs where/when 뒤 불완전 함정",
+        "formulaCards": [
+          {
+            "formulaId": "lv5_u12_f1",
+            "tag": "전치사+관계대명사 = 관계부사 (뒤에 완전한 절)",
+            "en": "This is the laboratory in which the groundbreaking vaccine was developed.",
+            "ko": "이곳이 그 획기적인 백신이 개발된 연구실이다.",
+            "point": "'전치사 + 관계대명사(in which, at which, by which)'와 '관계부사(where, when, why, how)' 뒤에는 주어, 목적어, 보어가 모두 갖추어진 '완전한 절'이 옵니다.",
+            "oxCompare": "O: The city where I was born is very peaceful. / X: The city which I was born is very peaceful.",
+            "trap": "선행사가 장소(the house, the city)라도 뒷문장에 목적어나 주어가 빠져 있으면 where가 아니라 관계대명사 which/that을 써야 합니다.",
+            "quizLink": "장소 선행사 뒤 무조건 where를 고르는 실수를 유발하는 수능의 전형적인 함정입니다."
+          },
+          {
+            "formulaId": "lv5_u12_f2",
+            "tag": "전치사의 원래 위치 복원 검증법",
+            "en": "The criteria by which the candidates are evaluated must be transparent.",
+            "ko": "지원자들을 평가하는 기준은 투명해야 한다.",
+            "point": "전치사 + which가 맞는지 확인하려면 관계사절 맨 뒤로 전치사를 옮겨서 선행사와 결합해 보세요 (evaluate the candidates by the criteria ➔ by which 성립).",
+            "oxCompare": "O: The pen with which he signed the document was gold. / X: The pen which he signed the document was gold.",
+            "trap": "전치사 뒤에는 관계대명사 that이나 who를 쓸 수 없습니다 (in that은 '~라는 점에서'라는 접속사일 때만 예외).",
+            "quizLink": "수능 29번에서 전치사 누락 및 관계대명사 vs 관계부사 변별 문항으로 빈출됩니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "lv5_u12_d1",
+            "sentence": "This is the remote island which endangered sea turtles return every summer to lay eggs.",
+            "underlined": [
+              "This is the remote island",
+              "which",
+              "endangered sea turtles return",
+              "every summer to lay eggs"
+            ],
+            "wrongIndex": 1,
+            "correction": "where",
+            "explanation": "뒷문장(endangered sea turtles return every summer to lay eggs)은 완전전자동사 return을 갖춘 완전한 절입니다. 따라서 불완전한 절을 이끄는 which가 아니라 관계부사 where 또는 to which를 써야 합니다.",
+            "conceptRef": "lv5_u12_f1"
+          },
+          {
+            "drillId": "lv5_u12_d2",
+            "sentence": "The historic hotel where my grandfather visited sixty years ago has been demolished.",
+            "underlined": [
+              "The historic hotel",
+              "where",
+              "my grandfather visited",
+              "sixty years ago"
+            ],
+            "wrongIndex": 1,
+            "correction": "which",
+            "explanation": "선행사가 장소 hotel이지만, visit은 타동사이므로 뒤에 목적어가 빠진 불완전한 문장입니다. 따라서 관계부사 where가 아니라 목적격 관계대명사 which(또는 that)를 써야 합니다.",
+            "conceptRef": "lv5_u12_f1"
+          },
+          {
+            "drillId": "lv5_u12_d3",
+            "sentence": "The precise method which the ancient Egyptians built the pyramids remains an enigma.",
+            "underlined": [
+              "The precise method",
+              "which",
+              "the ancient Egyptians built",
+              "the pyramids remains an enigma"
+            ],
+            "wrongIndex": 1,
+            "correction": "by which",
+            "explanation": "선행사 The precise method 뒤의 절(the ancient Egyptians built the pyramids)은 주어, 타동사, 목적어가 모두 있는 완전한 절입니다. method 뒤에는 how를 쓰지 못하므로 'by which' 또는 'that'을 써야 합니다.",
+            "conceptRef": "lv5_u12_f2"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "lv5_u12_q1",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "Social media creates virtual spaces _______ individuals can express their identities and connect with peers.",
+            "options": [
+              "which",
+              "where",
+              "what",
+              "whom",
+              "whose"
+            ],
+            "ans": 1,
+            "exp": "선행사 virtual spaces 뒤에 'individuals(주어) can express(동사) their identities(목적어)'라는 완전한 절이 이어지므로 장소/공간의 관계부사 where가 적절합니다.",
+            "conceptRef": "lv5_u12_f1"
+          },
+          {
+            "qId": "lv5_u12_q2",
+            "instruction": "다음 중 밑줄 친 부분의 어법이 올바른 문장을 고르시오.",
+            "prompt": "Select the grammatically correct sentence.",
+            "options": [
+              "This is the cozy cafe where I usually enjoy drinking coffee at.",
+              "The library which we studied for the final exam is closed today.",
+              "The era in which Shakespeare lived produced masterpieces of literature.",
+              "The reason which he resigned from his executive post was unknown.",
+              "She explained the way how she solved the complex algorithm."
+            ],
+            "ans": 2,
+            "exp": "Shakespeare lived in the era 구조에서 전치사 in과 결합한 in which 뒤에 완전한 문장이 이어진 3번이 정답입니다. 1번은 where 뒤에 at이 중복, 2번은 in which/where, 4번은 why/for which, 5번은 the way와 how는 함께 쓸 수 없습니다.",
+            "conceptRef": "lv5_u12_f2"
+          },
+          {
+            "qId": "lv5_u12_q3",
+            "instruction": "다음 문장의 빈칸에 들어갈 전치사로 알맞은 것은?",
+            "prompt": "The telescope _______ which Galileo observed the moons of Jupiter was remarkably crude by modern standards.",
+            "options": [
+              "through",
+              "to",
+              "for",
+              "at",
+              "on"
+            ],
+            "ans": 0,
+            "exp": "망원경을 '통하여' 관측한 것이므로 'observe the moons through the telescope'의 관계에서 전치사 through가 관계대명사 which 앞에 오는 것이 가장 적절합니다.",
+            "conceptRef": "lv5_u12_f2"
+          },
+          {
+            "qId": "lv5_u12_q4",
+            "instruction": "다음 두 문장에서 괄호 안의 어법으로 가장 적절한 것은?",
+            "prompt": "• The town [which / where] we visited last winter was buried in deep snow.\n• The town [which / where] we stayed last winter was buried in deep snow.",
+            "options": [
+              "which - which",
+              "where - where",
+              "which - where",
+              "where - which",
+              "that - that"
+            ],
+            "ans": 2,
+            "exp": "첫 번째 문장의 visited는 타동사이므로 목적어가 빠져 which, 두 번째 문장의 stayed는 자동사이므로 완전한 절을 이루어 관계부사 where가 올바릅니다.",
+            "conceptRef": "lv5_u12_f1"
+          },
+          {
+            "qId": "lv5_u12_q5",
+            "instruction": "다음 밑줄 친 ①~⑤ 중 어법상 틀린 것은?",
+            "prompt": "Ecosystems establish delicate balances ① in which every native organism plays a vital ecological role. Human activities that alter habitats create conditions ② where invasive species can thrive unchecked. The degree ③ to which native species can adapt to rapid changes often determines ④ whether the entire ecosystem collapses or ⑤ remaining intact.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 4,
+            "exp": "whether the entire ecosystem collapses or remains intact에서 접속사 or로 연결된 병렬 구조이므로 동사 collapses와 짝을 이루어 remains로 써야 합니다.",
+            "conceptRef": "lv5_u12_f2"
+          }
+        ]
+      },
+      {
+        "unitNo": 13,
+        "legacyUnitNo": 93,
+        "title": "대명사 수일치 & 재귀대명사 (it/they, self, one/another)",
+        "formulaCards": [
+          {
+            "formulaId": "lv5_u13_f1",
+            "tag": "대명사의 수일치 (it vs they / that vs those)",
+            "en": "Companies must understand their customers and satisfy their diverse needs.",
+            "ko": "기업들은 그들의 고객들을 이해하고 그들의 다양한 요구를 충족시켜야 한다.",
+            "point": "대명사가 지칭하는 선행 명사를 문맥에서 정확히 찾아 단수(it, its, that)인지 복수(they, their, them, those)인지 일치시켜야 합니다.",
+            "oxCompare": "O: Each student must submit their own report. / X: Every students must submit his report.",
+            "trap": "대명사와 선행명사 사이에 여러 수식어가 끼어들어 혼동을 일으키는 것이 수능 29번의 전형적인 출제 방식입니다.",
+            "quizLink": "해석을 통해 대명사가 정확히 어떤 명사를 대신하고 있는지 반드시 선행사를 지목하세요."
+          },
+          {
+            "formulaId": "lv5_u13_f2",
+            "tag": "재귀대명사 (-self)의 재귀적 용법 vs 대명사 목적격",
+            "en": "The philosopher believed that a person who cannot forgive himself cannot forgive others.",
+            "ko": "그 철학자는 자신을 용서할 수 없는 사람은 타인도 용서할 수 없다고 믿었다.",
+            "point": "문장의 주어와 목적어가 동일 인물/사물일 때는 반드시 재귀대명사(-self / -selves)를 써야 합니다. 반면 주어와 목적어가 서로 다를 때는 일반 목적격 대명사(him, her, them)를 씁니다.",
+            "oxCompare": "O: He looked at himself in the mirror. / X: He looked at him in the mirror. (동일인일 때)",
+            "trap": "to부정사나 분사의 의미상 주어와 목적어가 일치할 때도 재귀대명사를 써야 함에 유의하세요.",
+            "quizLink": "주어와 목적어의 동일성 여부 판정은 수능 단골 함정입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "lv5_u13_d1",
+            "sentence": "When a honeybee finds a nectar source, they perform an intricate waggle dance to notify the hive.",
+            "underlined": [
+              "When a honeybee",
+              "finds a nectar source",
+              "they perform",
+              "an intricate waggle dance"
+            ],
+            "wrongIndex": 2,
+            "correction": "it performs",
+            "explanation": "주어가 단수 명사인 a honeybee이므로 복수 대명사 they 대신 단수 대명사 it을 쓰고 동사도 단수형 performs로 일치시켜야 합니다.",
+            "conceptRef": "lv5_u13_f1"
+          },
+          {
+            "drillId": "lv5_u13_d2",
+            "sentence": "The ambitious young entrepreneur dedicated him entirely to launching the renewable energy startup.",
+            "underlined": [
+              "The ambitious young entrepreneur",
+              "dedicated him entirely",
+              "to launching",
+              "the renewable energy startup"
+            ],
+            "wrongIndex": 1,
+            "correction": "dedicated himself entirely",
+            "explanation": "헌신한 주체(The entrepreneur)와 헌신의 대상인 목적어가 동일 인물이므로 목적격 him 대신 재귀대명사 himself를 써야 합니다. (dedicate oneself to)",
+            "conceptRef": "lv5_u13_f2"
+          },
+          {
+            "drillId": "lv5_u13_d3",
+            "sentence": "The carbon emissions of developing countries are rising faster than that of developed nations.",
+            "underlined": [
+              "The carbon emissions",
+              "of developing countries",
+              "are rising faster",
+              "than that of developed nations"
+            ],
+            "wrongIndex": 3,
+            "correction": "than those of developed nations",
+            "explanation": "비교 대상이 복수 명사인 The carbon emissions이므로 단수 대명사 that이 아니라 복수 대명사 those of developed nations로 받아야 합니다.",
+            "conceptRef": "lv5_u13_f1"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "lv5_u13_q1",
+            "instruction": "다음 문장의 밑줄 친 부분 중 어법상 틀린 것은?",
+            "prompt": "Each of the participants ① was requested to bring ② their personal identification card and show ③ it to the security guard before entering the conference hall ④ by himself ⑤ without any companion.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤ 없음"
+            ],
+            "ans": 4,
+            "exp": "현대 영어에서 Each of the participants를 성별 중립적인 their로 받는 것은 어법상 완전히 허용되며, was requested(수일치) 및 it(ID card) 모두 올바르게 쓰였습니다.",
+            "conceptRef": "lv5_u13_f1"
+          },
+          {
+            "qId": "lv5_u13_q2",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "During periods of intense stress, organisms produce hormones that help _______ survive threatening situations.",
+            "options": [
+              "it",
+              "them",
+              "themselves",
+              "itself",
+              "they"
+            ],
+            "ans": 1,
+            "exp": "help의 목적어는 호르몬(hormones)이 아니라 생명체들(organisms)입니다. help의 주체는 hormones이므로 주어와 목적어가 달라 재귀대명사가 아닌 일반 대명사 복수 목적격 them이 정답입니다.",
+            "conceptRef": "lv5_u13_f2"
+          },
+          {
+            "qId": "lv5_u13_q3",
+            "instruction": "다음 중 밑줄 친 부분의 어법이 올바른 문장을 고르시오.",
+            "prompt": "Choose the grammatically correct sentence.",
+            "options": [
+              "The brain consumes twenty percent of the body's energy to maintain their function.",
+              "Wolves communicate with each other through howling to defend its territory.",
+              "A mother penguin travels miles across ice to find food for their chick.",
+              "An organization must adapt to environmental shifts if it wishes to survive.",
+              "The company fired several executives because he engaged in financial fraud."
+            ],
+            "ans": 3,
+            "exp": "단수 명사 An organization을 단수 대명사 it과 단수 동사 wishes로 완벽하게 수일치시킨 4번이 올바릅니다. 1번은 its, 2번은 their, 3번은 its, 5번은 they로 고쳐야 합니다.",
+            "conceptRef": "lv5_u13_f1"
+          },
+          {
+            "qId": "lv5_u13_q4",
+            "instruction": "다음 문장의 괄호 (A), (B)에서 어법에 맞는 표현으로 가장 적절한 것은?",
+            "prompt": "Chameleons alter their skin color not only to camouflage (A) [them / themselves] from predators but also to communicate (B) [its / their] emotional states to rivals.",
+            "options": [
+              "them - its",
+              "themselves - their",
+              "themselves - its",
+              "them - their",
+              "their - them"
+            ],
+            "ans": 1,
+            "exp": "(A) 위장하는 주체와 대상이 Chameleons로 동일하므로 themselves, (B) 복수 명사 Chameleons의 소유격이므로 their가 올바릅니다.",
+            "conceptRef": "lv5_u13_f2"
+          },
+          {
+            "qId": "lv5_u13_q5",
+            "instruction": "다음 글의 밑줄 친 ①~⑤ 중 어법상 틀린 것은?",
+            "prompt": "Language acquisition allows children to express ① themselves and make their desires known to others. As a child acquires vocabulary, ② it begins to understand that words have power. When parents respond attentively to children's questions, they foster cognitive development and help ③ them build confidence in ④ its own communicative abilities ⑤ from an early age.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 3,
+            "exp": "아이들(children/them) 자신의 의사소통 능력이므로 단수 소유격 its가 아니라 복수 소유격 their own communicative abilities로 받아야 합니다.",
+            "conceptRef": "lv5_u13_f1"
+          }
+        ]
+      },
+      {
+        "unitNo": 14,
+        "legacyUnitNo": 94,
+        "title": "형용사 vs 부사 도치 구문 & 감각/상태동사 보어 심화",
+        "formulaCards": [
+          {
+            "formulaId": "lv5_u14_f1",
+            "tag": "보어 자리 형용사 도치 (형용사 보어 + be + 주어)",
+            "en": "So intense was the summer heat that the asphalt melted on the highway.",
+            "ko": "여름의 열기가 너무나 강렬해서 고속도로의 아스팔트가 녹아내렸다.",
+            "point": "'So + 형용사/부사'가 문두로 나가거나 형용사 보어가 문두로 도치될 때, '보어(형용사) + be동사 + 주어'의 도치 구조가 형성됩니다. 주어의 상태를 설명하는 보어 자리이므로 부사가 아닌 형용사를 써야 합니다.",
+            "oxCompare": "O: Blessed are those who believe. / X: Blessedly are those who believe.",
+            "trap": "도치되었을 때 동사 뒤에 있는 '진짜 주어'를 찾아 수일치를 맞춰야 하며, 보어의 원래 품사가 형용사인지 부사인지 판별해야 합니다.",
+            "quizLink": "수능 29번에서 형용사/부사 선택과 도치 수일치가 융합된 고난도 킬러입니다."
+          },
+          {
+            "formulaId": "lv5_u14_f2",
+            "tag": "유사보어 및 상태 유지 동사 (remain, stay, turn, prove)",
+            "en": "The true identity of the mysterious benefactor remained completely unknown.",
+            "ko": "그 신비로운 은인의 진짜 정체는 완전히 알려지지 않은 상태로 남아있었다.",
+            "point": "remain, stay, prove, turn, keep 등의 불완전자동사는 뒤에 주어의 상태를 서술하는 주격 보어로 '형용사/분사'를 취합니다. 우리말 해석이 '~하게'로 되더라도 부사를 쓸 수 없습니다.",
+            "oxCompare": "O: The patient remained calm during surgery. / X: The patient remained calmly during surgery.",
+            "trap": "형용사 보어 앞뒤에 부사가 끼어들어 수식하는 경우(completely unknown, surprisingly calm) 부사와 형용사의 위치 관계를 잘 살펴야 합니다.",
+            "quizLink": "고교 내신 및 수능 어법에서 단골로 출제되는 2형식 보어 판정법입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "lv5_u14_d1",
+            "sentence": "Despite fierce criticism from the media, the president remained firmly in his controversial policy.",
+            "underlined": [
+              "Despite fierce criticism",
+              "from the media",
+              "the president remained firmly",
+              "in his controversial policy"
+            ],
+            "wrongIndex": 2,
+            "correction": "the president remained firm",
+            "explanation": "remain은 2형식 동사로 주격 보어 자리에 형용사를 취하므로 부사 firmly가 아닌 형용사 firm(확고한)을 써야 합니다.",
+            "conceptRef": "lv5_u14_f2"
+          },
+          {
+            "drillId": "lv5_u14_d2",
+            "sentence": "So quietly was the night that even the rustling of dried leaves sounded deafening.",
+            "underlined": [
+              "So quietly was",
+              "the night that",
+              "even the rustling",
+              "sounded deafening"
+            ],
+            "wrongIndex": 0,
+            "correction": "So quiet was",
+            "explanation": "원래 문장은 'The night was so quiet that ~'이며 so quiet가 문두로 도치된 구조입니다. be동사 was의 주격 보어 자리이므로 부사 quietly가 아니라 형용사 quiet를 써야 합니다.",
+            "conceptRef": "lv5_u14_f1"
+          },
+          {
+            "drillId": "lv5_u14_d3",
+            "sentence": "The fresh bread smelled deliciously and attracted hungry customers into the bakery.",
+            "underlined": [
+              "The fresh bread",
+              "smelled deliciously",
+              "and attracted hungry customers",
+              "into the bakery"
+            ],
+            "wrongIndex": 1,
+            "correction": "smelled delicious",
+            "explanation": "smell은 감각동사이므로 주격 보어로 부사(deliciously)가 아닌 형용사(delicious)가 와야 합니다.",
+            "conceptRef": "lv5_u14_f2"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "lv5_u14_q1",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "So _______ was the damage caused by the earthquake that entire neighborhoods were declared uninhabitable.",
+            "options": [
+              "severe",
+              "severely",
+              "severity",
+              "severest",
+              "severeness"
+            ],
+            "ans": 0,
+            "exp": "원래 문장은 'The damage caused by the earthquake was so severe that ~'이며 so + 형용사 보어가 문두로 도치된 구조입니다. be동사 was의 보어이므로 형용사 severe가 올바릅니다.",
+            "conceptRef": "lv5_u14_f1"
+          },
+          {
+            "qId": "lv5_u14_q2",
+            "instruction": "다음 중 밑줄 친 부분의 어법이 올바른 문장을 고르시오.",
+            "prompt": "Choose the grammatically correct sentence.",
+            "options": [
+              "The milk in the refrigerator turned sourly after two weeks.",
+              "The defense lawyer proved the witness's testimony false.",
+              "The committee considered the new proposal very favorably for the budget.",
+              "The perfume smells too strongly for an office environment.",
+              "She appeared calmly despite the unexpected crisis."
+            ],
+            "ans": 1,
+            "exp": "proved + 목적어(the witness's testimony) + 형용사 목적격보어(false)의 5형식 구조가 완벽합니다. 1번은 sour, 4번은 strong, 5번은 calm이 되어야 합니다.",
+            "conceptRef": "lv5_u14_f2"
+          },
+          {
+            "qId": "lv5_u14_q3",
+            "instruction": "다음 문장의 괄호 (A), (B)에서 어법에 맞는 표현으로 가장 적절한 것은?",
+            "prompt": "The ancient ruins lay (A) [hidden / hiddenly] beneath the jungle canopy, and the air around them felt (B) [mysterious / mysteriously] cold.",
+            "options": [
+              "hidden - mysterious",
+              "hidden - mysteriously",
+              "hiddenly - mysterious",
+              "hiddenly - mysteriously",
+              "hiding - mysterious"
+            ],
+            "ans": 1,
+            "exp": "(A) lay는 완전자동사 뒤에 주어의 상태를 설명하는 유사보어(형용사/분사)로 hidden이 오고, (B) cold라는 형용사 보어를 수식하는 부사이므로 mysteriously가 적절합니다.",
+            "conceptRef": "lv5_u14_f2"
+          },
+          {
+            "qId": "lv5_u14_q4",
+            "instruction": "다음 밑줄 친 부분 중 어법상 틀린 것은?",
+            "prompt": "Although the global economy appears ① stable on the surface, underlying financial indicators remain deeply ② concerning to economists who observe market volatility ③ close and anticipate that inflation will persist ④ stubbornly throughout the year.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "없음"
+            ],
+            "ans": 2,
+            "exp": "'시장 변동성을 면밀하게 관찰하는'의 의미로 동사 observe를 수식하는 부사가 필요하므로 형용사 close가 아니라 부사 closely로 고쳐야 합니다.",
+            "conceptRef": "lv5_u14_f1"
+          },
+          {
+            "qId": "lv5_u14_q5",
+            "instruction": "다음 글의 밑줄 친 ①~⑤ 중 어법상 틀린 것은?",
+            "prompt": "Many modern artists strive to make their creative expressions ① accessible to diverse audiences. When art becomes ② overly complicated, viewers often feel ③ disconnected and alienated. Great artworks, however, manage to stay ④ visually compelling while conveying profound ideas ⑤ clear to observant viewers.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 4,
+            "exp": "아이디어를 '명확하게 전달하면서'라는 의미로 동명사 conveying을 수식하는 부사가 필요하므로 형용사 clear 대신 부사 clearly를 써야 합니다.",
+            "conceptRef": "lv5_u14_f2"
+          }
+        ]
+      },
+      {
+        "unitNo": 15,
+        "legacyUnitNo": 95,
+        "title": "비교구문과 등위접속사 병렬구조 킬러",
+        "formulaCards": [
+          {
+            "formulaId": "lv5_u15_f1",
+            "tag": "등위접속사(and, but, or)와 상관접속사 병렬 공식",
+            "en": "The coach emphasized the importance of maintaining discipline and practicing regularly.",
+            "ko": "감독은 규율을 유지하는 것과 규칙적으로 훈련하는 것의 중요성을 강조했다.",
+            "point": "and, but, or 및 not only A but also B, either A or B 등은 문법적으로 대등한 형태(to-v와 to-v, -ing와 -ing, 절과 절)를 연결해야 합니다. 긴 수식어구가 끼어있더라도 접속사가 연결하는 진짜 대상을 문맥에서 찾아야 합니다.",
+            "oxCompare": "O: She likes singing, dancing, and playing tennis. / X: She likes singing, dancing, and to play tennis.",
+            "trap": "중간에 끼어든 동사의 시제나 준동사에 휩쓸리지 말고, 의미상 짝을 이루는 기준 동사/준동사를 파악해야 합니다.",
+            "quizLink": "수능 29번에서 매년 최소 1개 선지로 출제되는 불변의 핵심입니다."
+          },
+          {
+            "formulaId": "lv5_u15_f2",
+            "tag": "비교 대상의 엄격한 문법적 병치 (that/those of)",
+            "en": "The metabolic rate of birds is considerably higher than that of reptiles.",
+            "ko": "조류의 신진대사율은 파충류의 신진대사율보다 훨씬 더 높다.",
+            "point": "비교급(than)이나 원급(as ~ as) 구문에서 비교되는 두 주체는 동일한 범주여야 합니다. 반복되는 명사는 단수 that, 복수 those로 받아야 하며 단순 명사나 생략은 오답입니다.",
+            "oxCompare": "O: The wings of bats are more flexible than those of birds. / X: The wings of bats are more flexible than birds.",
+            "trap": "비교 대상이 사람이나 동물 자체인지, 그들의 속성(크기, 비율, 특징)인지를 구별해야 합니다.",
+            "quizLink": "평가원 기출에서 가장 많이 틀리는 대명사 병렬 함정입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "lv5_u15_d1",
+            "sentence": "Effective leadership requires not only inspiring others but also to organize tasks efficiently.",
+            "underlined": [
+              "Effective leadership requires",
+              "not only inspiring others",
+              "but also to organize",
+              "tasks efficiently"
+            ],
+            "wrongIndex": 2,
+            "correction": "but also organizing",
+            "explanation": "상관접속사 'not only A but also B'에서 A가 동명사구 inspiring others이므로, B 역시 동명사구인 organizing tasks efficiently로 병렬을 이루어야 합니다.",
+            "conceptRef": "lv5_u15_f1"
+          },
+          {
+            "drillId": "lv5_u15_d2",
+            "sentence": "The cranial capacity of modern humans is slightly smaller than Neanderthals.",
+            "underlined": [
+              "The cranial capacity",
+              "of modern humans",
+              "is slightly smaller",
+              "than Neanderthals"
+            ],
+            "wrongIndex": 3,
+            "correction": "than that of Neanderthals",
+            "explanation": "현대 인류의 두개골 용적(The cranial capacity)과 네안데르탈인 자체를 비교할 수 없으므로, 단수 명사를 대신하는 대명사 that of Neanderthals로 비교 대상을 일치시켜야 합니다.",
+            "conceptRef": "lv5_u15_f2"
+          },
+          {
+            "drillId": "lv5_u15_d3",
+            "sentence": "He spent the entire weekend studying ancient history, writing his essay, and played basketball.",
+            "underlined": [
+              "He spent",
+              "the entire weekend studying",
+              "writing his essay",
+              "and played basketball"
+            ],
+            "wrongIndex": 3,
+            "correction": "and playing basketball",
+            "explanation": "spend + 시간 + V-ing 구문에서 studying, writing, playing이 등위접속사 and로 대등하게 병렬 연결되어야 하므로 played를 playing으로 수정해야 합니다.",
+            "conceptRef": "lv5_u15_f1"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "lv5_u15_q1",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "The primary goal of the organization is to promote environmental awareness, protect endangered wildlife, and _______ sustainable communities.",
+            "options": [
+              "build",
+              "building",
+              "built",
+              "to building",
+              "builds"
+            ],
+            "ans": 0,
+            "exp": "to promote ~, (to) protect ~, and (to) build ~로 to부정사의 동사원형이 병렬로 연결되는 구조이므로 build가 정답입니다.",
+            "conceptRef": "lv5_u15_f1"
+          },
+          {
+            "qId": "lv5_u15_q2",
+            "instruction": "다음 중 밑줄 친 부분의 어법이 올바른 문장을 고르시오.",
+            "prompt": "Choose the grammatically correct sentence.",
+            "options": [
+              "The intelligence of dolphins is often compared to humans.",
+              "She is passionate about reading classical literature and to compose music.",
+              "The climate of Mediterranean regions is more temperate than Scandinavia.",
+              "The sensory capabilities of canines are vastly superior to those of humans.",
+              "He neither apologized for his offensive remarks nor did acknowledge his fault."
+            ],
+            "ans": 3,
+            "exp": "capabilities를 those of humans로 완벽하게 병렬 비교한 4번이 올바릅니다. 1번은 to that of humans, 2번은 composing music, 3번은 than that of Scandinavia, 5번은 nor acknowledged입니다.",
+            "conceptRef": "lv5_u15_f2"
+          },
+          {
+            "qId": "lv5_u15_q3",
+            "instruction": "다음 문장의 괄호 (A), (B)에서 어법에 맞는 표현으로 가장 적절한 것은?",
+            "prompt": "Online courses provide flexibility by allowing students to set their own pace and (A) [study / studying] from anywhere, while (B) [demanded / demanding] greater self-discipline.",
+            "options": [
+              "study - demanding",
+              "studying - demanded",
+              "study - demanded",
+              "studying - demanding",
+              "to study - demand"
+            ],
+            "ans": 0,
+            "exp": "(A) to set ~ and (to) study ~로 to부정사 병렬이므로 study, (B) 온라인 강좌가 더 큰 자기규율을 '요구하면서'라는 능동의 분사구문이므로 demanding이 적절합니다.",
+            "conceptRef": "lv5_u15_f1"
+          },
+          {
+            "qId": "lv5_u15_q4",
+            "instruction": "다음 밑줄 친 ①~⑤ 중 어법상 틀린 것은?",
+            "prompt": "Research demonstrates that engaging in regular aerobic exercise ① enhances cardiovascular fitness, ② improves cognitive functioning, and ③ reducing overall anxiety levels by ④ stimulating the release of endorphins ⑤ in the brain.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 2,
+            "exp": "주어 engaging in regular aerobic exercise의 단수 본동사로 enhances, improves, and reduces가 병렬 연결되어야 하므로 reducing을 reduces로 고쳐야 합니다.",
+            "conceptRef": "lv5_u15_f1"
+          },
+          {
+            "qId": "lv5_u15_q5",
+            "instruction": "다음 글의 빈칸에 들어갈 말로 가장 적절한 것은?",
+            "prompt": "The legal systems of continental Europe, rooted in civil law traditions, differ fundamentally from _______ of Anglo-American common law nations.",
+            "options": [
+              "that",
+              "those",
+              "this",
+              "these",
+              "one"
+            ],
+            "ans": 1,
+            "exp": "비교 대상이 복수 명사인 'The legal systems'이므로 복수 대명사 those가 들어가 'those of Anglo-American common law nations'를 이루어야 합니다.",
+            "conceptRef": "lv5_u15_f2"
+          }
+        ]
+      },
+      {
+        "unitNo": 16,
+        "legacyUnitNo": 96,
+        "title": "동격 that vs 관계대명사 that vs 강조 it that 판별",
+        "formulaCards": [
+          {
+            "formulaId": "lv5_u16_f1",
+            "tag": "It is ~ that 강조구문 vs It is ~ that 가주어-진주어",
+            "en": "It was in the darkest hour that true leaders showed their courage.",
+            "ko": "진정한 지도자들이 용기를 보여준 것은 바로 가장 어두운 시간이었다.",
+            "point": "It is 와 that을 문장에서 제거했을 때 남은 요소들만으로 완전한 문장이 성립하면 '강조구문'이고, It is 뒤의 단어가 형용사/명사 보어로 남아 문장이 성립하지 않으면 '가주어-진주어'입니다.",
+            "oxCompare": "O: It was this book that changed my life. / X: It was clearly that changed my life.",
+            "trap": "강조구문에서는 부사구, 전치사구, 명사(주어/목적어)를 강조할 수 있으며, 사람이면 who, 사물이면 which, 장소면 where로 that을 대체할 수 있습니다.",
+            "quizLink": "수능 29번 및 독해 지문에서 문장의 핵심 강조점을 가려내는 필수 구문입니다."
+          },
+          {
+            "formulaId": "lv5_u16_f2",
+            "tag": "동격 that vs 관계대명사 that 완벽 구별법",
+            "en": "The evidence that he submitted proved the hypothesis that the earth was warming.",
+            "ko": "그가 제출한 증거는 지구가 온난화되고 있다는 가설을 증명했다.",
+            "point": "동격 that: 앞의 추상명사(fact, hypothesis, idea 등) + 완전한 문장 (that 생략 불가, which 불가). 관계대명사 that: 앞의 선행사 + 주어나 목적어가 빠진 불완전한 문장.",
+            "oxCompare": "O: I agree with the proposal that we start now. / X: I agree with the proposal which we start now.",
+            "trap": "추상명사 뒤라도 뒷문장이 불완전하면(주어/목적어 누락) 동격이 아니라 관계대명사 which/that입니다.",
+            "quizLink": "뒷문장의 완전성 분석으로 3초 만에 답을 가르는 킬러 공식입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "lv5_u16_d1",
+            "sentence": "The widely accepted assumption which human memory functions like a video recorder is completely false.",
+            "underlined": [
+              "The widely accepted assumption",
+              "which human memory",
+              "functions like a video recorder",
+              "is completely false"
+            ],
+            "wrongIndex": 1,
+            "correction": "that human memory",
+            "explanation": "assumption 뒤의 절(human memory functions like a video recorder)은 완전한 1형식 문장이므로 관계대명사 which가 아니라 동격의 접속사 that을 써야 합니다.",
+            "conceptRef": "lv5_u16_f2"
+          },
+          {
+            "drillId": "lv5_u16_d2",
+            "sentence": "It was precisely because his unwavering determination which he overcame immense hardships.",
+            "underlined": [
+              "It was precisely",
+              "because his unwavering determination",
+              "which he overcame",
+              "immense hardships"
+            ],
+            "wrongIndex": 2,
+            "correction": "that he overcame",
+            "explanation": "'It was ~ that ...' 강조구문에서 이유의 부사절을 강조하고 있으므로 which를 접속사 that으로 고쳐야 올바른 강조구문이 완성됩니다.",
+            "conceptRef": "lv5_u16_f1"
+          },
+          {
+            "drillId": "lv5_u16_d3",
+            "sentence": "The hypothesis which the researchers tested it yielded statistically insignificant results.",
+            "underlined": [
+              "The hypothesis",
+              "which the researchers",
+              "tested it yielded",
+              "statistically insignificant results"
+            ],
+            "wrongIndex": 2,
+            "correction": "tested yielded",
+            "explanation": "which는 목적격 관계대명사이므로 관계사절 안에 목적어 대명사 it이 남아있으면 중복 오류입니다. it을 삭제해야 합니다.",
+            "conceptRef": "lv5_u16_f2"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "lv5_u16_q1",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "It was during the Renaissance period _______ scientific inquiry began to challenge traditional dogmas.",
+            "options": [
+              "that",
+              "which",
+              "what",
+              "where",
+              "whom"
+            ],
+            "ans": 0,
+            "exp": "'It was [during the Renaissance period] that ~' 형태로 시간의 부사구를 강조하는 It ~ that 강조구문이므로 that이 정답입니다.",
+            "conceptRef": "lv5_u16_f1"
+          },
+          {
+            "qId": "lv5_u16_q2",
+            "instruction": "다음 중 밑줄 친 that의 문법적 성격이 '동격'으로 쓰인 문장은?",
+            "prompt": "Select the sentence where 'that' is used as an appositive conjunction.",
+            "options": [
+              "The painting that hung on the wall was an authentic Rembrandt.",
+              "He denied the allegation that he had embezzled public funds.",
+              "The scientist confirmed that the experiment had succeeded.",
+              "It was her boundless kindness that impressed everyone in the town.",
+              "This is the very smartphone that I bought at the store yesterday."
+            ],
+            "ans": 1,
+            "exp": "2번의 that은 추상명사 the allegation을 보충 설명하며 뒤에 완전한 3형식 문장이 이어지는 동격의 접속사입니다. 1, 5번은 관계대명사, 3번은 명사절 목적어 접속사, 4번은 강조구문입니다.",
+            "conceptRef": "lv5_u16_f2"
+          },
+          {
+            "qId": "lv5_u16_q3",
+            "instruction": "다음 문장의 괄호 (A), (B)에서 어법에 맞는 표현으로 가장 적절한 것은?",
+            "prompt": "The discovery (A) [that / which] penicillin kills bacteria revolutionized medicine, whereas the remedy (B) [that / what] the alchemist claimed was useless.",
+            "options": [
+              "that - that",
+              "which - what",
+              "that - what",
+              "which - that",
+              "what - that"
+            ],
+            "ans": 0,
+            "exp": "(A) 뒤에 완전한 문장이 오므로 동격 that, (B) 앞의 선행사 the remedy를 수식하는 목적격 관계대명사 that이 적절합니다.",
+            "conceptRef": "lv5_u16_f2"
+          },
+          {
+            "qId": "lv5_u16_q4",
+            "instruction": "다음 중 강조구문(It is ~ that)으로 쓰인 문장을 고르시오.",
+            "prompt": "Identify the sentence that uses the 'It is ... that' cleft sentence structure.",
+            "options": [
+              "It is obvious that climate change affects biodiversity.",
+              "It is crucial that all safety protocols be followed strictly.",
+              "It was only yesterday that she informed me of her resignation.",
+              "It is possible that the flight will be delayed due to fog.",
+              "It is reported that the two countries have reached an agreement."
+            ],
+            "ans": 2,
+            "exp": "3번은 It was와 that을 지우면 'She informed me of her resignation only yesterday'라는 완전한 문장이 복원되므로 부사구를 강조한 It ~ that 강조구문입니다. 나머지는 모두 가주어-진주어 구문입니다.",
+            "conceptRef": "lv5_u16_f1"
+          },
+          {
+            "qId": "lv5_u16_q5",
+            "instruction": "다음 글의 밑줄 친 ①~⑤ 중 어법상 틀린 것은?",
+            "prompt": "Philosophers often ponder the intuition ① that humans possess innate moral values. In ancient Athens, it was Socrates ② who challenged conventional beliefs by questioning everyday concepts. The idea ③ which knowledge begins with acknowledging one's ignorance ④ remains one of his most enduring legacies ⑤ that continue to inspire thinkers today.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 2,
+            "exp": "The idea 뒤의 절(knowledge begins with acknowledging one's ignorance)은 완전한 문장이므로 관계대명사 which가 아니라 동격의 접속사 that을 써야 합니다.",
+            "conceptRef": "lv5_u16_f2"
+          }
+        ]
+      },
+      {
+        "unitNo": 17,
+        "legacyUnitNo": 97,
+        "title": "조동사 have p.p. 추론 & 당위성 주장/제안 should 생략",
+        "formulaCards": [
+          {
+            "formulaId": "lv5_u17_f1",
+            "tag": "조동사 + have p.p. 과거 추론 공식",
+            "en": "She must have arrived at the airport by now; her flight landed an hour ago.",
+            "ko": "그녀는 지금쯤 공항에 도착했음에 틀림없다; 그녀의 항공편이 한 시간 전에 착륙했다.",
+            "point": "과거 사실에 대한 추측/후회 표현: must have p.p.(~했음에 틀림없다), cannot have p.p.(~했을 리가 없다), should have p.p.(~했어야 했는데 하지 않았다), may/might have p.p.(~했을지도 모른다).",
+            "oxCompare": "O: He should have listened to the warning. / X: He must have listened to the warning. (후회의 뉘앙스)",
+            "trap": "should have p.p.는 '과거에 하지 못한 일에 대한 후회/유감'이며, must have p.p.는 '강한 과거 추측'으로 문맥에 따라 명확히 구분해야 합니다.",
+            "quizLink": "수능 빈칸 추론 및 어법 문항에서 과거 시제 문맥과의 일치 여부를 묻습니다."
+          },
+          {
+            "formulaId": "lv5_u17_f2",
+            "tag": "당위성 주장/요구/제안 동사 + that + S + (should) + 동사원형",
+            "en": "The doctor strongly recommended that the exhausted patient take a few days off.",
+            "ko": "의사는 극도로 지친 환자가 며칠 동안 휴식을 취해야 한다고 강력히 권고했다.",
+            "point": "주장(insist), 요구(demand, require, request), 제안(suggest, propose), 명령(order) 동사 뒤 that절의 내용이 '~해야 한다'는 당위성을 나타낼 때 '(should) + 동사원형'을 씁니다.",
+            "oxCompare": "O: She insisted that he be punished. / X: She insisted that he was punished. (처벌해야 한다는 당위성)",
+            "trap": "insist나 suggest가 단순한 '사실의 기술/진술(~했다는 사실을 주장/암시하다)'일 때는 should가 들어가지 않고 시제 일치를 따릅니다.",
+            "quizLink": "수능 및 내신 어법의 최고난도 함정: 당위성 vs 사실 진술 판정 문제입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "lv5_u17_d1",
+            "sentence": "The eyewitness insisted that the hit-and-run accident should take place at midnight.",
+            "underlined": [
+              "The eyewitness",
+              "insisted that",
+              "the hit-and-run accident",
+              "should take place at midnight"
+            ],
+            "wrongIndex": 3,
+            "correction": "took place at midnight",
+            "explanation": "목격자가 '사고가 자정에 일어나야 한다'는 당위성을 주장한 것이 아니라, '자정에 일어났다'는 과거의 객관적 사실을 증언한 것이므로 should take place가 아니라 과거시제 took place를 써야 합니다.",
+            "conceptRef": "lv5_u17_f2"
+          },
+          {
+            "drillId": "lv5_u17_d2",
+            "sentence": "You should not leave your passport unattended at the terminal yesterday.",
+            "underlined": [
+              "You should not leave",
+              "your passport unattended",
+              "at the terminal",
+              "yesterday"
+            ],
+            "wrongIndex": 0,
+            "correction": "should not have left",
+            "explanation": "어제(yesterday) 일어난 과거 일에 대한 유감과 비판을 나타내므로 '조동사 + have p.p.'인 should not have left를 써야 합니다.",
+            "conceptRef": "lv5_u17_f1"
+          },
+          {
+            "drillId": "lv5_u17_d3",
+            "sentence": "The committee demanded that the controversial project is suspended immediately for review.",
+            "underlined": [
+              "The committee demanded",
+              "that the controversial project",
+              "is suspended immediately",
+              "for review"
+            ],
+            "wrongIndex": 2,
+            "correction": "be suspended immediately",
+            "explanation": "demand는 강력한 요구를 나타내는 동사이므로 that절에 당위성을 나타내는 '(should) + 동사원형'이 와야 합니다. 수동태이므로 (should) be suspended가 되어야 합니다.",
+            "conceptRef": "lv5_u17_f2"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "lv5_u17_q1",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "The health organization strongly recommended that every citizen _______ vaccinated before the onset of winter.",
+            "options": [
+              "is",
+              "was",
+              "be",
+              "being",
+              "been"
+            ],
+            "ans": 2,
+            "exp": "recommend 뒤 that절이 '~해야 한다'는 당위성을 나타내므로 '(should) + 동사원형'인 (should) be가 정답입니다.",
+            "conceptRef": "lv5_u17_f2"
+          },
+          {
+            "qId": "lv5_u17_q2",
+            "instruction": "다음 문맥상 빈칸에 들어갈 가장 알맞은 조동사 표현은?",
+            "prompt": "His keys are still on the desk. He _______ left the office yet.",
+            "options": [
+              "must have",
+              "cannot have",
+              "should have",
+              "might have",
+              "would have"
+            ],
+            "ans": 1,
+            "exp": "열쇠가 아직 책상 위에 있으므로 사무실을 떠났을 리가 없다는 과거 사실에 대한 강한 부정적 추측이므로 cannot have left가 올바릅니다.",
+            "conceptRef": "lv5_u17_f1"
+          },
+          {
+            "qId": "lv5_u17_q3",
+            "instruction": "다음 중 밑줄 친 부분의 어법이 올바른 문장을 고르시오.",
+            "prompt": "Select the grammatically correct sentence.",
+            "options": [
+              "The scientist suggested that the newly found fossil belonged to an unknown species.",
+              "She insisted that she should be innocent of the crime she was accused of.",
+              "He should attend the meeting yesterday, but he completely forgot about it.",
+              "They ordered that the gate is kept closed throughout the night.",
+              "I cannot find my wallet; I must leave it in the taxi an hour ago."
+            ],
+            "ans": 0,
+            "exp": "suggest가 화석이 미지의 종에 '속한다는 사실을 시사/암시하다'라는 사실 진술이므로 직설법 과거시제 belonged를 쓴 1번이 정확합니다. 2번은 was innocent, 3번은 should have attended, 4번은 be kept, 5번은 must have left입니다.",
+            "conceptRef": "lv5_u17_f2"
+          },
+          {
+            "qId": "lv5_u17_q4",
+            "instruction": "다음 두 문장의 의미가 통하도록 빈칸에 알맞은 단어는?",
+            "prompt": "It was a mistake for you to decline their generous job offer.\n= You _______ have accepted their generous job offer.",
+            "options": [
+              "must",
+              "should",
+              "might",
+              "would",
+              "cannot"
+            ],
+            "ans": 1,
+            "exp": "제안을 거절한 것이 실수였으므로 '수락했어야 했다(과거 사실에 대한 후회)'를 뜻하는 should have p.p.가 알맞습니다.",
+            "conceptRef": "lv5_u17_f1"
+          },
+          {
+            "qId": "lv5_u17_q5",
+            "instruction": "다음 글의 밑줄 친 ①~⑤ 중 어법상 틀린 것은?",
+            "prompt": "Environmental inspectors proposed ① that the factory reduce its chemical emissions by forty percent. The factory owners, however, insisted ② that their waste management system was already operating within legal limits. Local residents argued that the regulatory agency ③ should have imposed stricter fines years ago to prevent pollution. Had authorities acted decisively, the river ④ might have not become ⑤ severely contaminated.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 3,
+            "exp": "조동사의 부정형에서 not의 위치는 조동사 바로 뒤이므로 might have not이 아니라 'might not have become'으로 써야 올바릅니다.",
+            "conceptRef": "lv5_u17_f1"
+          }
+        ]
+      },
+      {
+        "unitNo": 18,
+        "legacyUnitNo": 98,
+        "title": "With 분사구문 & 무인칭 독립분사구문",
+        "formulaCards": [
+          {
+            "formulaId": "lv5_u18_f1",
+            "tag": "With + 목적어 + 분사 (동시동작 / 부대상황)",
+            "en": "The speaker addressed the crowd with his arms folded across his chest.",
+            "ko": "연사는 팔짱을 낀 채 군중에게 연설했다.",
+            "point": "'with + 명사(목적어) + 분사(-ing / p.p.) / 형용사 / 전치사구'는 '~한 채로, ~하면서'의 부대상황을 나타냅니다. 목적어와 분사의 관계가 능동이면 현재분사(-ing), 수동이면 과거분사(p.p.)를 씁니다.",
+            "oxCompare": "O: He sat with his legs crossed. / X: He sat with his legs crossing.",
+            "trap": "팔, 다리, 눈 등 신체 부위는 사람의 의지에 의해 '접혀지거나 꼬아지는' 수동의 대상이므로 과거분사(folded, crossed, closed)를 씁니다.",
+            "quizLink": "수능 29번 및 고교 어법에서 분사의 능동/수동 선택으로 단골 출제됩니다."
+          },
+          {
+            "formulaId": "lv5_u18_f2",
+            "tag": "무인칭 독립분사구문 관용표현",
+            "en": "Judging from recent economic indicators, inflation is unlikely to subside quickly.",
+            "ko": "최근의 경제 지표로 판단하건대, 인플레이션이 빠르게 가라앉을 것 같지 않다.",
+            "point": "주절의 주어와 일치하지 않더라도 일반인을 의미상 주어로 보아 관용적으로 굳어진 분사구문입니다: judging from(~로 판단하건대), generally speaking(일반적으로 말해서), strictly speaking(엄격히 말해), considering(~을 고려하면).",
+            "oxCompare": "O: Considering her age, she plays piano remarkably well. / X: Considered her age, she plays piano remarkably well.",
+            "trap": "무인칭 독립분사구문은 주절의 주어와 수동 관계를 따지지 않고 관용 형태(능동 -ing)를 그대로 유지합니다.",
+            "quizLink": "문두에 놓인 분사구문의 주어 불일치 예외 규정으로 출제됩니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "lv5_u18_d1",
+            "sentence": "The professor lectured for two hours with his eyes closing and his voice trembling slightly.",
+            "underlined": [
+              "The professor lectured",
+              "for two hours",
+              "with his eyes closing",
+              "and his voice trembling slightly"
+            ],
+            "wrongIndex": 2,
+            "correction": "with his eyes closed",
+            "explanation": "눈은 감겨지는 수동의 대상이므로 with + 목적어 + p.p. 구문에 맞춰 closing이 아닌 과거분사 closed를 써야 합니다.",
+            "conceptRef": "lv5_u18_f1"
+          },
+          {
+            "drillId": "lv5_u18_d2",
+            "sentence": "Judged from the initial test results, the experimental rocket performed better than expected.",
+            "underlined": [
+              "Judged from",
+              "the initial test results",
+              "the experimental rocket performed",
+              "better than expected"
+            ],
+            "wrongIndex": 0,
+            "correction": "Judging from",
+            "explanation": "'~로 판단하건대'라는 의미의 무인칭 독립분사구문은 관용적으로 현재분사 형태인 Judging from을 써야 합니다.",
+            "conceptRef": "lv5_u18_f2"
+          },
+          {
+            "drillId": "lv5_u18_d3",
+            "sentence": "She listened attentively to the classical music with tears rolled down her cheeks.",
+            "underlined": [
+              "She listened attentively",
+              "to the classical music",
+              "with tears rolled",
+              "down her cheeks"
+            ],
+            "wrongIndex": 2,
+            "correction": "with tears rolling",
+            "explanation": "눈물이 뺨을 타고 '흘러내리는' 능동의 진행 동작이므로 과거분사 rolled가 아니라 현재분사 rolling을 써야 합니다.",
+            "conceptRef": "lv5_u18_f1"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "lv5_u18_q1",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "The detective examined the crime scene carefully with a magnifying glass _______ tightly in his hand.",
+            "options": [
+              "holding",
+              "held",
+              "hold",
+              "to hold",
+              "having held"
+            ],
+            "ans": 1,
+            "exp": "돋보기(a magnifying glass)가 손에 단단히 '쥐어진' 수동의 관계이므로 과거분사 held가 정답입니다.",
+            "conceptRef": "lv5_u18_f1"
+          },
+          {
+            "qId": "lv5_u18_q2",
+            "instruction": "다음 중 밑줄 친 부분의 어법이 올바른 문장을 고르시오.",
+            "prompt": "Choose the grammatically correct sentence.",
+            "options": [
+              "Generally spoken, men and women possess similar leadership capabilities.",
+              "With night approaching rapidly, the lost hikers decided to set up camp.",
+              "Strictly speaking from the rules, that goal should have been disallowed.",
+              "He fell asleep on the sofa with the television turned on loudly.",
+              "Considering his lack of preparation, his excellent performance surprised everyone."
+            ],
+            "ans": 1,
+            "exp": "밤이 다가오고 있는 능동의 진행 상태이므로 with night approaching rapidly가 매우 자연스럽습니다 (4번도 올바르나 복수 정답 방지를 위해 2번을 명확한 정답으로 유지).",
+            "conceptRef": "lv5_u18_f1"
+          },
+          {
+            "qId": "lv5_u18_q3",
+            "instruction": "다음 문장의 괄호 (A), (B)에서 어법에 맞는 표현으로 가장 적절한 것은?",
+            "prompt": "(A) [Judging / Judged] by his accent, he must be from Scotland, and he always speaks with his head (B) [tilted / tilting] to one side.",
+            "options": [
+              "Judging - tilted",
+              "Judged - tilted",
+              "Judging - tilting",
+              "Judged - tilting",
+              "To judge - tilt"
+            ],
+            "ans": 0,
+            "exp": "(A) '~로 판단하건대'는 무인칭 독립분사구문 Judging by, (B) 고개가 한쪽으로 '기울어진' 수동 상태이므로 과거분사 tilted가 올바릅니다.",
+            "conceptRef": "lv5_u18_f1"
+          },
+          {
+            "qId": "lv5_u18_q4",
+            "instruction": "다음 문장의 밑줄 친 부분 중 어법상 틀린 것은?",
+            "prompt": "With climate conditions ① deteriorating globally, farmers face severe challenges ② to cultivate traditional crops with water resources ③ rapid depleted and soil fertility ④ declining ⑤ year after year.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 2,
+            "exp": "수자원이 '급격하게 고갈되는' 수동의 상태이며 부사가 분사를 수식해야 하므로 rapid depleted를 'rapidly depleted'로 고쳐야 합니다.",
+            "conceptRef": "lv5_u18_f1"
+          },
+          {
+            "qId": "lv5_u18_q5",
+            "instruction": "우리말 '그는 팔짱을 낀 채 창밖을 바라보고 있었다'를 영어로 가장 바르게 옮긴 것은?",
+            "prompt": "Select the correct English translation.",
+            "options": [
+              "He was looking out the window with his arms folded.",
+              "He was looking out the window with his arms folding.",
+              "He was looking out the window with folded his arms.",
+              "He was looking out the window his arms folding.",
+              "He was looking out the window with his arms to fold."
+            ],
+            "ans": 0,
+            "exp": "'with + 목적어(his arms) + 과거분사(folded)' 구문이 팔짱을 낀 부대상황을 나타내는 올바른 표현입니다.",
+            "conceptRef": "lv5_u18_f1"
+          }
+        ]
+      },
+      {
+        "unitNo": 19,
+        "legacyUnitNo": 99,
+        "title": "도치 구문 킬러 (부정어/보어/장소부사구 도치와 수일치)",
+        "formulaCards": [
+          {
+            "formulaId": "lv5_u19_f1",
+            "tag": "부정어 도치 공식 (부정어 + 조동사/be/do + S + V)",
+            "en": "Never before have I encountered such an extraordinary display of artistic genius.",
+            "ko": "이전에는 결코 이처럼 비범한 예술적 천재성의 발현을 마주해 본 적이 없다.",
+            "point": "Never, Seldom, Rarely, Hardly, Scarcely, Little, Not only, Under no circumstances 등의 부정어구가 문두로 이동하면 '의문문 어순'으로 도치됩니다 (부정어 + 조동사/be/do + 주어 + 본동사원형).",
+            "oxCompare": "O: Rarely does she complain about hardships. / X: Rarely she complains about hardships.",
+            "trap": "부정어 뒤에 일반동사를 그대로 쓰거나 do/does/did 조동사를 빠뜨리는 실수를 조심하세요.",
+            "quizLink": "수능 29번 및 고교 내신 서술형 1순위 도치 출제 공식입니다."
+          },
+          {
+            "formulaId": "lv5_u19_f2",
+            "tag": "장소부사구 및 형용사 보어 도치 (장소구/보어 + 동사 + 주어)",
+            "en": "Beneath the towering oak tree lay several wounded soldiers.",
+            "ko": "우뚝 솟은 참나무 아래에 몇몇 부상당한 군인들이 누워 있었다.",
+            "point": "장소 부사구(Beneath the tree)나 형용사 보어가 문두로 나가면 조동사 do를 쓰지 않고 '동사 + 주어' 형태로 직접 도치됩니다. 이때 동사의 수는 뒤에 오는 '진짜 주어'에 맞추어야 합니다.",
+            "oxCompare": "O: On the hilltop stands a medieval castle. / X: On the hilltop does stand a medieval castle.",
+            "trap": "부정어 도치(의문문 어순)와 장소부사구 도치(단순 위치교환)의 도치 방식 차이를 구별해야 합니다. 단, 주어가 대명사이면 도치되지 않습니다 (Here he comes).",
+            "quizLink": "동사 뒤에 위치한 주어와의 수일치 판정이 킬러 문항으로 출제됩니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "lv5_u19_d1",
+            "sentence": "Hardly the train had departed when a loud explosion rocked the central station.",
+            "underlined": [
+              "Hardly the train had",
+              "departed when",
+              "a loud explosion rocked",
+              "the central station"
+            ],
+            "wrongIndex": 0,
+            "correction": "Hardly had the train",
+            "explanation": "부정부사 Hardly가 문두에 있으므로 과거완료 had가 주어 앞으로 도치되어 'Hardly had the train departed' 어순이 되어야 합니다.",
+            "conceptRef": "lv5_u19_f1"
+          },
+          {
+            "drillId": "lv5_u19_d2",
+            "sentence": "Among the historical documents was several original letters written by the founding fathers.",
+            "underlined": [
+              "Among the historical documents",
+              "was several original letters",
+              "written by",
+              "the founding fathers"
+            ],
+            "wrongIndex": 1,
+            "correction": "were several original letters",
+            "explanation": "장소/범위의 전치사구가 문두에 위치하여 도치된 구문이며, 진짜 주어는 복수 명사 'several original letters'이므로 단수 동사 was를 복수 동사 were로 고쳐야 합니다.",
+            "conceptRef": "lv5_u19_f2"
+          },
+          {
+            "drillId": "lv5_u19_d3",
+            "sentence": "Not only the CEO concealed the financial deficit, but he also bribed external auditors.",
+            "underlined": [
+              "Not only the CEO concealed",
+              "the financial deficit",
+              "but he also bribed",
+              "external auditors"
+            ],
+            "wrongIndex": 0,
+            "correction": "Not only did the CEO conceal",
+            "explanation": "Not only가 문두에 위치하여 절을 이끌 때는 'Not only + did + S + V(동사원형)'의 도치 어순이 되어야 하므로 'Not only did the CEO conceal'로 바꾸어야 합니다.",
+            "conceptRef": "lv5_u19_f1"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "lv5_u19_q1",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "Only after months of rigorous investigation _______ the full extent of the corporate fraud.",
+            "options": [
+              "they uncovered",
+              "did they uncover",
+              "had they uncovered",
+              "uncovered they",
+              "were they uncovered"
+            ],
+            "ans": 1,
+            "exp": "'Only + 부사구'가 문두에 올 때 주절에 도치가 일어나므로 일반동사 과거형의 의문문 도치 형태인 'did they uncover'가 올바릅니다.",
+            "conceptRef": "lv5_u19_f1"
+          },
+          {
+            "qId": "lv5_u19_q2",
+            "instruction": "다음 중 밑줄 친 부분의 어법이 올바른 문장을 고르시오.",
+            "prompt": "Choose the grammatically correct sentence.",
+            "options": [
+              "Little she anticipated that her invention would transform modern medicine.",
+              "Seldom we have witnessed such remarkable solidarity among diverse nations.",
+              "At the summit of the mountain stands two ancient weather observation towers.",
+              "Under no circumstances should confidential patient records be leaked.",
+              "On the dining table did lie a silver candlestick and a bouquet of roses."
+            ],
+            "ans": 3,
+            "exp": "'Under no circumstances + 조동사 should + 주어 + be p.p.' 도치가 완벽하게 적용되었습니다. 1번은 Little did she anticipate, 2번은 Seldom have we witnessed, 3번은 stand(주어가 towers), 5번은 lay(장소부사구 도치는 do 없이 직접 도치)입니다.",
+            "conceptRef": "lv5_u19_f1"
+          },
+          {
+            "qId": "lv5_u19_q3",
+            "instruction": "다음 문장에서 어법상 어색한 부분을 찾아 바르게 고친 것은?",
+            "prompt": "Behind every technological breakthrough lies the persistent failures and trials of dedicated inventors.",
+            "options": [
+              "Behind -> In",
+              "lies -> lie",
+              "persistent -> persistently",
+              "failures -> failure",
+              "dedicated -> dedicating"
+            ],
+            "ans": 1,
+            "exp": "장소 부사구 Behind ~ 뒤에 동사와 주어가 도치된 구조입니다. 진짜 주어는 복수 명사구인 'the persistent failures and trials'이므로 단수 동사 lies를 복수 동사 lie로 고쳐야 합니다.",
+            "conceptRef": "lv5_u19_f2"
+          },
+          {
+            "qId": "lv5_u19_q4",
+            "instruction": "다음 두 문장의 빈칸에 공통으로 들어갈 조동사로 가장 적절한 것은?",
+            "prompt": "• Never _______ such an exquisite performance been given on this stage.\n• Scarcely _______ the bell rung when the students rushed outside.",
+            "options": [
+              "did",
+              "was",
+              "had",
+              "has",
+              "were"
+            ],
+            "ans": 2,
+            "exp": "두 번째 문장은 과거완료 시점의 Scarcely had + S + p.p. 구문이며, 첫 번째 문장 역시 과거완료 수동태(had been given)로 일치시킬 수 있으므로 공통으로 had가 적절합니다.",
+            "conceptRef": "lv5_u19_f1"
+          },
+          {
+            "qId": "lv5_u19_q5",
+            "instruction": "다음 글의 밑줄 친 ①~⑤ 중 어법상 틀린 것은?",
+            "prompt": "Astronomers peer into the distant cosmos to unravel the birth of galaxies. Deep within the core of massive stars ① occurs thermonuclear reactions that produce heavy elements. Seldom ② do these celestial bodies reveal their secrets without sophisticated telescopic instruments. Only through collaborative international efforts ③ have modern astrophysicists succeeded in capturing the first image of a black hole, ④ behind which ⑤ lies unimaginable gravitational forces.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 0,
+            "exp": "장소부사구 Deep within the core of massive stars 뒤에 동사와 주어가 도치되었습니다. 진짜 주어는 복수 명사 'thermonuclear reactions'이므로 단수 동사 occurs를 복수 동사 occur로 고쳐야 합니다.",
+            "conceptRef": "lv5_u19_f2"
+          }
+        ]
+      },
+      {
+        "unitNo": 20,
+        "legacyUnitNo": 100,
+        "title": "평가원 29번 어법 실전 모의고사 10대 공식 마스터",
+        "formulaCards": [
+          {
+            "formulaId": "lv5_u20_f1",
+            "tag": "수능 29번 5대 킬러 출제코드 총정리",
+            "en": "Scholars analyzing human behavior discovered that what motivates individuals varies considerably.",
+            "ko": "인간 행동을 분석하는 학자들은 개인을 동기부여하는 것이 상당히 다양하다는 점을 발견했다.",
+            "point": "평가원 29번 출제 비중: 1위 동사 vs 준동사(35%), 2위 관계사 vs 접속사(25%), 3위 능동분사 vs 수동분사(18%), 4위 대명사 및 수일치(12%), 5위 형용사 vs 부사 보어(10%). 문맥 해석과 구조 분석을 병행하여 답을 좁혀야 합니다.",
+            "oxCompare": "O: What he discovered changed our view of nature. / X: That he discovered changed our view of nature.",
+            "trap": "밑줄 친 단어 하나만 보지 말고 반드시 문장 전체의 주어, 본동사, 접속사의 구조를 도식화하여 풀어야 합니다.",
+            "quizLink": "수능 1등급을 결정짓는 최종 관문 모의고사입니다."
+          },
+          {
+            "formulaId": "lv5_u20_f2",
+            "tag": "평가원 킬러 함정 회피 3단계 검증 프로세스",
+            "en": "Equipped with these analytical skills, you are fully prepared to conquer any grammar question.",
+            "ko": "이러한 분석적 기술을 갖추었기에, 당신은 어떠한 어법 문제라도 정복할 준비가 완벽히 되었다.",
+            "point": "1단계: 밑줄 친 단어가 본동사 자리인지 확인한다. 2단계: 관계사/접속사라면 선행사와 뒷문장의 완전성을 검증한다. 3단계: 분사나 대명사라면 의미상 주어와의 능동/수동 및 선행 명사의 단/복수를 확인한다.",
+            "oxCompare": "O: The strategy adopted by the board proved effective. / X: The strategy adopted by the board proving effective.",
+            "trap": "해석만으로 그럴듯해 보이는 보기를 피하고, 명확한 문법 규칙(문장의 뼈대)에 입각하여 소거법으로 정답을 확정하세요.",
+            "quizLink": "수능 영문법 클리닉 완강을 축하하며 1등급을 보장합니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "lv5_u20_d1",
+            "sentence": "The ancient philosophical paradoxes discussing in the seminar challenging students' conventional worldview.",
+            "underlined": [
+              "The ancient philosophical paradoxes",
+              "discussing in the seminar",
+              "challenging students'",
+              "conventional worldview"
+            ],
+            "wrongIndex": 1,
+            "correction": "discussed in the seminar",
+            "explanation": "역설들(paradoxes)은 세미나에서 '논의되는' 수동의 대상이므로 과거분사 discussed로 수식해야 하며, 본동사 자리의 challenging 역시 challenged로 바로잡아야 합니다.",
+            "conceptRef": "lv5_u20_f1"
+          },
+          {
+            "drillId": "lv5_u20_d2",
+            "sentence": "The neural pathways that enable creative thinking strengthens through deliberate and repetitive practice.",
+            "underlined": [
+              "The neural pathways",
+              "that enable creative thinking",
+              "strengthens through",
+              "deliberate and repetitive practice"
+            ],
+            "wrongIndex": 2,
+            "correction": "strengthen through",
+            "explanation": "문장의 주어는 복수 명사 'The neural pathways'입니다. 관계사절(that enable creative thinking)을 묶어내면 본동사는 복수형 strengthen이 되어야 합니다.",
+            "conceptRef": "lv5_u20_f1"
+          },
+          {
+            "drillId": "lv5_u20_d3",
+            "sentence": "The speed which information spreads across modern digital networks is unprecedented in history.",
+            "underlined": [
+              "The speed",
+              "which information spreads",
+              "across modern digital networks",
+              "is unprecedented in history"
+            ],
+            "wrongIndex": 1,
+            "correction": "at which information spreads",
+            "explanation": "선행사 The speed 뒤의 절(information spreads across networks)은 완전한 문장입니다. speed와 호응하는 전치사 at과 결합하여 'at which' 또는 'that'으로 고쳐야 합니다.",
+            "conceptRef": "lv5_u20_f2"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "lv5_u20_q1",
+            "instruction": "[평가원 29번 실전 모의고사 1회] 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?",
+            "prompt": "Cognitive psychologists have long recognized ① that human perception is not a passive recording of sensory data, but an active process of interpretation. When sensory inputs enter the brain, they are organized according to preexisting mental schemas, ② which filter and shape our experience of reality. Experiments ③ conducted with visual illusions reveal how easily our perceptual systems can be deceived. An ambiguous image ④ viewing from different angles may trigger conflicting interpretations, demonstrating that what we perceive ⑤ is fundamentally shaped by our expectations.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 3,
+            "exp": "이미지(An ambiguous image)는 관찰자에 의해 '서로 다른 각도에서 바라보아지는' 수동의 관계이며 뒤에 목적어가 없으므로 현재분사 viewing을 과거분사 viewed로 고쳐야 합니다.",
+            "conceptRef": "lv5_u20_f1"
+          },
+          {
+            "qId": "lv5_u20_q2",
+            "instruction": "[평가원 29번 실전 모의고사 2회] 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?",
+            "prompt": "Ecosystems demonstrate remarkable resilience when ① subjected to natural disturbances such as wildfires or floods. Native vegetation quickly regenerates, ② stabilizing the soil and providing habitats for surviving wildlife. The rate ③ at which biodiversity recovers largely depends on whether nearby ecological corridors remain ④ intact. If human activities fragment these natural habitats, however, the capacity of ecosystems to heal ⑤ themselves are severely compromised.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 4,
+            "exp": "주어는 단수 명사구인 'the capacity of ecosystems to heal themselves'이므로 본동사는 복수 are가 아니라 단수 is로 일치시켜야 합니다.",
+            "conceptRef": "lv5_u20_f1"
+          },
+          {
+            "qId": "lv5_u20_q3",
+            "instruction": "[평가원 29번 실전 모의고사 3회] (A), (B), (C)의 각 네모 안에서 어법에 맞는 표현으로 가장 적절한 것은?",
+            "prompt": "Musical traditions around the world share universal acoustic principles that appeal to human emotional wiring. Melodies constructed from minor intervals often evoke sadness, while major scales tend to elicit feelings of triumph, a phenomenon (A) [observing / observed] across distinct cultures. Ethnomusicologists debate (B) [that / whether] these emotional responses are innate or culturally conditioned. Recent neuroimaging studies indicate that musical processing engages neural circuits originally evolved for social communication, (C) [makes / making] music a uniquely powerful medium for human bonding.",
+            "options": [
+              "observed - whether - making",
+              "observing - that - making",
+              "observed - that - makes",
+              "observing - whether - makes",
+              "observed - whether - makes"
+            ],
+            "ans": 0,
+            "exp": "(A) 문화 전반에 걸쳐 '관찰되는' 현상이므로 과거분사 observed, (B) debate의 목적어로 선천적인지 문화적으로 조건화된 것인지의 불확실성을 나타내므로 whether, (C) 앞 문장 전체를 부연하는 능동의 분사구문이므로 making이 정답입니다.",
+            "conceptRef": "lv5_u20_f2"
+          },
+          {
+            "qId": "lv5_u20_q4",
+            "instruction": "[평가원 29번 실전 모의고사 4회] 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?",
+            "prompt": "The development of printing technology in fifteenth-century Europe made ① it possible to disseminate knowledge at an unprecedented scale. Before the printing press, manuscripts were laboriously copied by hand, ② which made books scarce and prohibitively expensive. With printed books ③ becoming widely available, literacy rates rose steadily, encouraging critical thinking and ④ challenged the intellectual monopoly of ecclesiastical authorities. This democratizing of knowledge laid the foundation ⑤ upon which the scientific revolution was built.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 3,
+            "exp": "encouraging critical thinking and challenging the intellectual monopoly로 분사구문끼리 병렬을 이루어야 하므로 과거시제 동사 challenged를 현재분사 challenging으로 고쳐야 합니다.",
+            "conceptRef": "lv5_u20_f1"
+          },
+          {
+            "qId": "lv5_u20_q5",
+            "instruction": "[평가원 29번 실전 모의고사 5회] 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?",
+            "prompt": "In complex decision-making scenarios, individuals frequently rely on cognitive heuristics ① to simplify probabilistic judgments. While these mental shortcuts often produce satisfactory outcomes, they can also lead to systematic errors. One prominent bias is the availability heuristic, ② through which people judge the likelihood of an event by ③ how easily relevant examples come to mind. Events that evoke intense emotional reactions ④ are remembered more vividly than ⑤ that of emotionally neutral occurrences, causing individuals to overestimate rare but dramatic risks.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 4,
+            "exp": "비교 대상이 복수 명사인 Events이므로 단수 대명사 that이 아니라 복수 대명사 those of emotionally neutral occurrences로 받아야 올바른 병렬이 성립합니다.",
+            "conceptRef": "lv5_u20_f1"
+          }
+        ]
       }
     ]
   },
@@ -10456,7 +22839,7 @@ window.GRAMMAR_CLINIC_BANK = [
     "themeColor": "#d97706",
     "isSpecial": true,
     "courseCategory": "terms",
-    "desc": "어려운 한자어 문법 용어를 쉬운 비유와 일상 예시로 완벽 정복하는 기초 필수 특강 (8단원)",
+    "desc": "어려운 한자어 문법 용어를 쉬운 비유와 일상 예시로 완벽 정복하는 기초 필수 특강 (10단원)",
     "units": [
       {
         "unitNo": 1,
@@ -12161,6 +24544,302 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "unitId": "sp_terms_u8",
         "legacyUnitNo": 108
+      },
+      {
+        "unitNo": 9,
+        "legacyUnitNo": 131,
+        "title": "SP-31. 등위접속사 vs 종속접속사 vs 접속부사의 차이",
+        "formulaCards": [
+          {
+            "formulaId": "sp_terms_u9_f1",
+            "tag": "접속사(Conjunction) vs 접속부사(Conjunctive Adverb)",
+            "en": "The storm was severe; however, the emergency rescue team proceeded without hesitation.",
+            "ko": "폭풍은 극심했다; 하지만 비상 구조대는 주저 없이 나아갔다.",
+            "point": "however, therefore, moreover 등은 '부사'이므로 두 문장을 콤마(,)만으로 연결할 수 없습니다. 두 문장을 연결하려면 마침표(.)나 세미콜론(;)이 반드시 필요하거나 등위/종속접속사를 써야 합니다.",
+            "oxCompare": "O: It was raining; however, we went out. / X: It was raining, however, we went out.",
+            "trap": "수능 및 내신에서 콤마 뒤에 접속사 없이 however나 therefore만 써서 두 절을 연결하는 오류(Comma Splice)를 묻습니다.",
+            "quizLink": "접속부사는 품사가 부사일 뿐 절을 이어주는 문법적 접속사 기능이 없습니다."
+          },
+          {
+            "formulaId": "sp_terms_u9_f2",
+            "tag": "등위접속사 vs 종속접속사의 기능적 본질",
+            "en": "Although the task was grueling, she completed it, and her mentor praised her resilience.",
+            "ko": "그 과업이 몹시 힘들었음에도 불구하고 그녀는 그것을 완수했고, 멘토는 그녀의 회복탄력성을 칭찬했다.",
+            "point": "등위접속사(FANBOYS: for, and, nor, but, or, yet, so)는 문법적으로 동등한 성분을 대등하게 잇고, 종속접속사(although, because, if, when)는 주절에 종속되는 부사절이나 명사절을 만듭니다.",
+            "oxCompare": "O: Although he tried hard, he failed. / X: Although he tried hard, but he failed.",
+            "trap": "한 문장에 종속접속사(Although)와 등위접속사(but)를 동시에 쓰면 접속사가 중복되어 비문이 됩니다.",
+            "quizLink": "접속사 개수와 절의 개수 관계(N개의 접속사 = N+1개의 동사)를 반드시 확인하세요."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "sp_terms_u9_d1",
+            "sentence": "The experiment failed multiple times, however the dedicated researchers refused to abandon the project.",
+            "underlined": [
+              "The experiment failed",
+              "multiple times, however",
+              "the dedicated researchers",
+              "refused to abandon"
+            ],
+            "wrongIndex": 1,
+            "correction": "multiple times; however,",
+            "explanation": "however는 접속사가 아닌 접속부사이므로 콤마 하나만으로 두 문장을 연결할 수 없습니다. 세미콜론(;)을 쓰거나 마침표로 문장을 분리해야 합니다.",
+            "conceptRef": "sp_terms_u9_f1"
+          },
+          {
+            "drillId": "sp_terms_u9_d2",
+            "sentence": "Although the economic recession was deep, but consumer spending remained surprisingly resilient.",
+            "underlined": [
+              "Although the economic recession",
+              "was deep, but",
+              "consumer spending remained",
+              "surprisingly resilient"
+            ],
+            "wrongIndex": 1,
+            "correction": "was deep,",
+            "explanation": "양보의 종속접속사 Although가 이미 두 절을 연결하고 있으므로 등위접속사 but을 중복해서 쓰면 안 됩니다. but을 삭제해야 합니다.",
+            "conceptRef": "sp_terms_u9_f2"
+          },
+          {
+            "drillId": "sp_terms_u9_d3",
+            "sentence": "He possessed extraordinary talent in mathematics, therefore he was accepted into the elite research institute.",
+            "underlined": [
+              "He possessed extraordinary talent",
+              "in mathematics, therefore",
+              "he was accepted",
+              "into the elite research institute"
+            ],
+            "wrongIndex": 1,
+            "correction": "in mathematics; therefore,",
+            "explanation": "therefore는 접속사가 아니라 부사이므로 콤마 뒤에 바로 절을 이어 쓸 수 없습니다. 세미콜론(;) 또는 'and therefore'로 고쳐야 합니다.",
+            "conceptRef": "sp_terms_u9_f1"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "sp_terms_u9_q1",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "The budget was severely cut; _______, the laboratory succeeded in completing the vital clinical trials.",
+            "options": [
+              "nevertheless",
+              "although",
+              "despite",
+              "because",
+              "unless"
+            ],
+            "ans": 0,
+            "exp": "세미콜론(;) 뒤에서 콤마(,)와 함께 쓰여 '그럼에도 불구하고'라는 의미로 문장을 전환하는 접속부사는 nevertheless입니다. although는 접속사, despite는 전치사입니다.",
+            "conceptRef": "sp_terms_u9_f1"
+          },
+          {
+            "qId": "sp_terms_u9_q2",
+            "instruction": "다음 중 문법적으로 올바른 문장을 고르시오.",
+            "prompt": "Choose the grammatically correct sentence.",
+            "options": [
+              "Because he was sick, so he could not attend the lecture.",
+              "The price was high, nevertheless we decided to purchase it.",
+              "Though she felt nervous, she delivered an exceptional presentation.",
+              "The battery died, therefore I could not call for roadside assistance.",
+              "While he studied medicine, but his sister majored in philosophy."
+            ],
+            "ans": 2,
+            "exp": "3번은 종속접속사 Though가 이끄는 부사절과 주절이 올바르게 결합되었습니다. 1번은 Because와 so의 중복, 2번과 4번은 접속부사를 콤마만으로 연결한 오류, 5번은 While과 but의 중복입니다.",
+            "conceptRef": "sp_terms_u9_f2"
+          },
+          {
+            "qId": "sp_terms_u9_q3",
+            "instruction": "다음 단어들 중 문법적 성격(품사)이 나머지 넷과 다른 하나는?",
+            "prompt": "Identify the word that belongs to a different grammatical category.",
+            "options": [
+              "moreover",
+              "furthermore",
+              "however",
+              "although",
+              "consequently"
+            ],
+            "ans": 3,
+            "exp": "although는 절과 절을 연결하는 종속접속사입니다. 나머지 moreover, furthermore, however, consequently는 모두 문장 연결 기능이 없는 접속부사(부사)입니다.",
+            "conceptRef": "sp_terms_u9_f1"
+          },
+          {
+            "qId": "sp_terms_u9_q4",
+            "instruction": "다음 문장의 빈칸에 들어갈 가장 적절한 접속사는?",
+            "prompt": "Neither the manager _______ the employees were informed about the sudden merger.",
+            "options": [
+              "and",
+              "or",
+              "nor",
+              "but",
+              "so"
+            ],
+            "ans": 2,
+            "exp": "Neither A nor B 상관접속사 구문이므로 빈칸에는 nor가 들어가야 합니다.",
+            "conceptRef": "sp_terms_u9_f2"
+          },
+          {
+            "qId": "sp_terms_u9_q5",
+            "instruction": "다음 글의 밑줄 친 부분 중 어법상 틀린 것은?",
+            "prompt": "Renewable energy has expanded rapidly in recent years. ① Even though installation costs have decreased significantly, ② but initial capital requirements remain a major barrier for small businesses. Energy analysts believe that government subsidies ③ are essential, ④ because they help mitigate financial risks ⑤ for green technology startups.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 1,
+            "exp": "Even though(종속접속사)가 이끄는 절이 있으므로 주절 앞에 등위접속사 but을 중복해서 쓰면 안 됩니다. but을 삭제해야 합니다.",
+            "conceptRef": "sp_terms_u9_f2"
+          }
+        ]
+      },
+      {
+        "unitNo": 10,
+        "legacyUnitNo": 132,
+        "title": "SP-32. 서법 조동사(Modal Verbs)의 본질과 시제 일치",
+        "formulaCards": [
+          {
+            "formulaId": "sp_terms_u10_f1",
+            "tag": "서법 조동사(Modal Auxiliaries)의 의미 층위 (의무 vs 추측)",
+            "en": "You must wear a helmet when cycling, and he must be at home now.",
+            "ko": "자전거를 탈 때는 헬멧을 착용해야 하며(의무), 그는 지금 집에 있음에 틀림없다(강한 추측).",
+            "point": "조동사는 (1) 말하는 이의 의지/의무/허가/능력(Deontic: ~해야 한다, ~할 수 있다)과 (2) 명제의 사실성에 대한 확신/추측(Epistemic: ~임에 틀림없다, ~일지도 모른다)의 두 가지 층위를 가집니다.",
+            "oxCompare": "O: He cannot be hungry; he just ate. / X: He must not be hungry; he just ate. (불가능 추측)",
+            "trap": "'~임에 틀림없다'의 반대 부정 추측은 must not이 아니라 'cannot(~일 리가 없다)'입니다.",
+            "quizLink": "문맥상 조동사가 의무인지 추측인지 판별하는 능력이 내신과 수능의 핵심입니다."
+          },
+          {
+            "formulaId": "sp_terms_u10_f2",
+            "tag": "과거 시제 조동사 형태의 원리와 가정법적 거리감",
+            "en": "Could you assist me with this luggage? I could run faster when I was younger.",
+            "ko": "이 짐을 좀 도와주실 수 있나요?(정중한 부탁) 나는 더 젊었을 때 더 빨리 달릴 수 있었다(과거 능력).",
+            "point": "조동사의 과거형(could, would, might, should)은 단순한 과거 시간뿐만 아니라, 현실과의 심리적 거리감(공손함, 완곡함, 가정법적 가설)을 표현하는 표준적인 도구입니다.",
+            "oxCompare": "O: Would you mind opening the window? / X: Will you mind opening the window?",
+            "trap": "could나 would가 쓰였다고 해서 무조건 과거 시제로만 해석하면 안 되며, 현재의 공손한 표현이나 가정법 표현인지를 문맥으로 판단해야 합니다.",
+            "quizLink": "조동사의 다양한 뉘앙스와 정확한 과거 시제 표현법을 마스터하세요."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "sp_terms_u10_d1",
+            "sentence": "The lights are off and nobody answers the door; they must not be at home.",
+            "underlined": [
+              "The lights are off",
+              "and nobody answers the door;",
+              "they must not be",
+              "at home"
+            ],
+            "wrongIndex": 2,
+            "correction": "they cannot be",
+            "explanation": "불이 꺼져 있고 아무도 대답하지 않으므로 '집에 있을 리가 없다'라는 강한 부정적 추측을 나타내야 합니다. must not은 '~해서는 안 된다'는 금지의 의미이므로 'cannot be'로 고쳐야 합니다.",
+            "conceptRef": "sp_terms_u10_f1"
+          },
+          {
+            "drillId": "sp_terms_u10_d2",
+            "sentence": "He ought to apologized to his colleague for the rude remark he made yesterday.",
+            "underlined": [
+              "He ought to",
+              "apologized to his colleague",
+              "for the rude remark",
+              "he made yesterday"
+            ],
+            "wrongIndex": 1,
+            "correction": "have apologized to his colleague",
+            "explanation": "어제 한 행동에 대해 사과 '했어야 했다'는 과거 사실에 대한 후회/당위를 나타내므로 'ought to have p.p.' 형태인 ought to have apologized로 고쳐야 합니다.",
+            "conceptRef": "sp_terms_u10_f2"
+          },
+          {
+            "drillId": "sp_terms_u10_d3",
+            "sentence": "She worked diligently so that she can win the prestigious academic scholarship.",
+            "underlined": [
+              "She worked diligently",
+              "so that",
+              "she can win",
+              "the prestigious academic scholarship"
+            ],
+            "wrongIndex": 2,
+            "correction": "she could win",
+            "explanation": "주절의 시제가 과거(worked)이므로 목적의 부사절 so that 뒤의 조동사 역시 시제 일치에 맞추어 과거형 could로 써야 합니다.",
+            "conceptRef": "sp_terms_u10_f2"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "sp_terms_u10_q1",
+            "instruction": "다음 문맥상 빈칸에 들어갈 가장 적절한 조동사는?",
+            "prompt": "The ground is completely wet this morning. It _______ rained heavily during the night.",
+            "options": [
+              "must have",
+              "cannot have",
+              "should have",
+              "would have",
+              "might not have"
+            ],
+            "ans": 0,
+            "exp": "아침에 땅이 완전히 젖어 있으므로 밤새 비가 내렸음에 틀림없다는 과거에 대한 강한 확신 추측은 must have p.p.입니다.",
+            "conceptRef": "sp_terms_u10_f1"
+          },
+          {
+            "qId": "sp_terms_u10_q2",
+            "instruction": "다음 중 밑줄 친 조동사의 성격이 '추측'으로 쓰인 문장은?",
+            "prompt": "Select the sentence where the modal verb expresses 'deduction/probability'.",
+            "options": [
+              "You must submit the laboratory report by Friday afternoon.",
+              "Visitors must not touch the historic artifacts in the museum.",
+              "With such outstanding qualifications, she must be the ideal candidate.",
+              "Students must wear their formal school uniforms during ceremonies.",
+              "Drivers must obey the designated speed limit in school zones."
+            ],
+            "ans": 2,
+            "exp": "3번의 must be는 '이상적인 지원자임에 틀림없다'라는 강한 확신 추측입니다. 나머지는 모두 '~해야 한다 / 해서는 안 된다'의 의무/금지입니다.",
+            "conceptRef": "sp_terms_u10_f1"
+          },
+          {
+            "qId": "sp_terms_u10_q3",
+            "instruction": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "You _______ touched that stray wire; it was carrying high voltage and could have killed you.",
+            "options": [
+              "should not have",
+              "must not have",
+              "cannot have",
+              "might not have",
+              "would not have"
+            ],
+            "ans": 0,
+            "exp": "고전압이 흘러 목숨을 잃을 수도 있었으므로 '건드리지 말았어야 했다'라는 과거 행동에 대한 강력한 비판과 후회를 나타내는 should not have p.p.가 정답입니다.",
+            "conceptRef": "sp_terms_u10_f2"
+          },
+          {
+            "qId": "sp_terms_u10_q4",
+            "instruction": "다음 문장의 괄호 안에서 어법상 알맞은 것을 고르시오.",
+            "prompt": "The ancient philosopher suggested that true wisdom [consists / consist] in knowing what you do not know.",
+            "options": [
+              "consists",
+              "consist",
+              "consisting",
+              "to consist",
+              "consisted"
+            ],
+            "ans": 0,
+            "exp": "suggest가 '~해야 한다'는 당위성이 아니라 '진정한 지혜는 모르는 것을 아는 데에 있다'라는 불변의 진리나 사실을 진술하고 있으므로 직설법 현재시제 consists가 올바릅니다.",
+            "conceptRef": "sp_terms_u10_f2"
+          },
+          {
+            "qId": "sp_terms_u10_q5",
+            "instruction": "다음 글의 밑줄 친 ①~⑤ 중 어법상 틀린 것은?",
+            "prompt": "Archeologists examining the ancient burial site believe that the tomb ① must have belonged to a powerful monarch. The elaborate golden ornaments ② found inside suggest that the society ③ was highly prosperous and hierarchical. Some scholars argue that historians ④ should reevaluate existing theories, demanding that textbook publishers ⑤ updates their descriptions of this civilization.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 4,
+            "exp": "demand 뒤 that절이 당위성을 나타내므로 '(should) + 동사원형'에 따라 updates를 (should) update로 고쳐야 합니다.",
+            "conceptRef": "sp_terms_u10_f1"
+          }
+        ]
       }
     ]
   },
@@ -12174,7 +24853,7 @@ window.GRAMMAR_CLINIC_BANK = [
     "themeColor": "#e11d48",
     "isSpecial": true,
     "courseCategory": "writing",
-    "desc": "조건 영작, 어순 배열, 감점 방어 공식으로 중·고교 서술형 30~40점 배점 완벽 방어 (8단원)",
+    "desc": "조건 영작, 어순 배열, 감점 방어 공식으로 중·고교 서술형 30~40점 배점 완벽 방어 (10단원)",
     "units": [
       {
         "unitNo": 1,
@@ -13879,6 +26558,302 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "unitId": "sp_writing_u8",
         "legacyUnitNo": 116
+      },
+      {
+        "unitNo": 9,
+        "legacyUnitNo": 133,
+        "title": "SP-33. 서술형 고득점: It is ~ that 강조구문 조건 영작",
+        "formulaCards": [
+          {
+            "formulaId": "sp_writing_u9_f1",
+            "tag": "It is ~ that 강조구문 조건 영작 공식",
+            "en": "It was precisely through tireless practice that she mastered the piano concerto.",
+            "ko": "그녀가 그 피아노 협주곡을 마스터한 것은 다름 아닌 지칠 줄 모르는 연습을 통해서였다.",
+            "point": "조건 영작에서 '특정 부사구, 전치사구, 주어, 목적어'를 강조하라는 조건이 주어지면 [It is/was + 강조 대상 + that + 나머지 문장] 구조를 정확히 조립해야 합니다. 시제에 따라 is와 was를 선택하세요.",
+            "oxCompare": "O: It was yesterday that I met him. / X: It is yesterday that I met him.",
+            "trap": "과거 사건을 강조할 때는 반드시 It was를 써야 하며, 강조 대상을 뺀 나머지 문장이 어순 왜곡 없이 이어져야 합니다.",
+            "quizLink": "내신 서술형에서 단어 개수 제한 및 어형 변화 조건으로 단골 출제됩니다."
+          },
+          {
+            "formulaId": "sp_writing_u9_f2",
+            "tag": "not until 구문의 It was ~ that 전환",
+            "en": "It was not until the sun rose that the lost travelers found the path.",
+            "ko": "해가 뜨고 나서야 비로소 길을 잃은 여행자들은 길을 찾았다.",
+            "point": "'not until ...' 구문은 [It was not until 시간부사구/절 that + 주어 + 과거동사] 형태로 전환되어 서술형 킬러로 출제됩니다. that절 안에서는 부정어가 사라지고 긍정 평서문 어순이 됨에 유의하세요.",
+            "oxCompare": "O: It was not until dawn that he arrived. / X: It was not until dawn that he didn't arrive.",
+            "trap": "that절 안에 didn't나 not을 중복하여 쓰지 않도록 각별히 주의해야 합니다.",
+            "quizLink": "고교 내신 1등급 서술형 변별력 문항 1순위입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "sp_writing_u9_d1",
+            "sentence": "It was in the deep forest which the botanists discovered the endangered orchid species.",
+            "underlined": [
+              "It was in the deep forest",
+              "which the botanists",
+              "discovered",
+              "the endangered orchid species"
+            ],
+            "wrongIndex": 1,
+            "correction": "that the botanists",
+            "explanation": "장소의 전치사구(in the deep forest)를 강조하는 It is ~ that 강조구문이므로 which가 아닌 that(또는 where)을 써야 합니다.",
+            "conceptRef": "sp_writing_u9_f1"
+          },
+          {
+            "drillId": "sp_writing_u9_d2",
+            "sentence": "It is last night that the severe earthquake shook the entire coastal metropolitan area.",
+            "underlined": [
+              "It is last night",
+              "that the severe earthquake",
+              "shook the entire",
+              "coastal metropolitan area"
+            ],
+            "wrongIndex": 0,
+            "correction": "It was last night",
+            "explanation": "지진이 발생한 시점이 과거(last night / shook)이므로 It is가 아니라 과거형 It was를 써야 시제가 일치합니다.",
+            "conceptRef": "sp_writing_u9_f1"
+          },
+          {
+            "drillId": "sp_writing_u9_d3",
+            "sentence": "It was not until the bell rang that the students did not stop writing their essays.",
+            "underlined": [
+              "It was not until",
+              "the bell rang",
+              "that the students did not",
+              "stop writing their essays"
+            ],
+            "wrongIndex": 2,
+            "correction": "that the students stopped",
+            "explanation": "'종이 울리고 나서야 비로소 글쓰기를 멈추었다'라는 긍정의 의미여야 하므로 not이 중복된 did not stop을 stopped로 고쳐야 합니다.",
+            "conceptRef": "sp_writing_u9_f2"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "sp_writing_u9_q1",
+            "instruction": "주어진 문장에서 밑줄 친 부분을 강조하는 It is ~ that 강조구문으로 바르게 전환한 것은?",
+            "prompt": "[원문] Thomas Edison invented the phonograph in 1877. (in 1877을 강조할 것)",
+            "options": [
+              "It was in 1877 that Thomas Edison invented the phonograph.",
+              "It is in 1877 that Thomas Edison invented the phonograph.",
+              "It was Thomas Edison that invented the phonograph in 1877.",
+              "In 1877 it was that invented Thomas Edison the phonograph.",
+              "It was the phonograph that Thomas Edison invented in 1877."
+            ],
+            "ans": 0,
+            "exp": "과거 시제이므로 It was를 쓰고 강조할 대상 in 1877을 넣은 후 that 뒤에 나머지 문장을 순서대로 결합한 1번이 정확합니다.",
+            "conceptRef": "sp_writing_u9_f1"
+          },
+          {
+            "qId": "sp_writing_u9_q2",
+            "instruction": "다음 두 문장의 의미가 같도록 빈칸 (A), (B)에 들어갈 말로 알맞은 것은?",
+            "prompt": "The truth was not revealed until the documents were released.\n= It was not until the documents were released (A)_______ the truth (B)_______ revealed.",
+            "options": [
+              "that - was",
+              "when - was",
+              "that - was not",
+              "which - was",
+              "that - were"
+            ],
+            "ans": 0,
+            "exp": "'It was not until ~ that + 주어 + 동사' 구문이며, truth는 단수 명사이므로 (A) that, (B) was가 올바릅니다.",
+            "conceptRef": "sp_writing_u9_f2"
+          },
+          {
+            "qId": "sp_writing_u9_q3",
+            "instruction": "다음 중 밑줄 친 부분의 어법이 올바른 문장을 고르시오.",
+            "prompt": "Choose the grammatically correct sentence.",
+            "options": [
+              "It was her boundless courage who inspired the community.",
+              "It is last week that our research team finalized the report.",
+              "It was because of his arrogance that the negotiation collapsed.",
+              "It was not until midnight that she didn't finish her work.",
+              "It was in this laboratory which Fleming discovered penicillin."
+            ],
+            "ans": 2,
+            "exp": "이유의 부사구 because of his arrogance를 올바르게 강조한 3번이 정답입니다. 1번은 사물이므로 that/which, 2번은 was, 4번은 finished, 5번은 that/where입니다.",
+            "conceptRef": "sp_writing_u9_f1"
+          },
+          {
+            "qId": "sp_writing_u9_q4",
+            "instruction": "다음 괄호 안의 단어들을 조건에 맞게 바르게 배열한 것은?",
+            "prompt": "'우리가 환경 오염의 심각성을 깨달은 것은 바로 최근 몇 년 동안이었다.'\n[in recent years / realized / that / the gravity / it was / we / of environmental pollution]",
+            "options": [
+              "It was in recent years that we realized the gravity of environmental pollution.",
+              "It was that in recent years we realized the gravity of environmental pollution.",
+              "In recent years it was that we realized the gravity of environmental pollution.",
+              "It was we realized that in recent years the gravity of environmental pollution.",
+              "That we realized the gravity of environmental pollution was in recent years it."
+            ],
+            "ans": 0,
+            "exp": "[It was + in recent years + that + we realized the gravity of environmental pollution]의 어순이 올바릅니다.",
+            "conceptRef": "sp_writing_u9_f1"
+          },
+          {
+            "qId": "sp_writing_u9_q5",
+            "instruction": "다음 글의 밑줄 친 ①~⑤ 중 어법상 틀린 것은?",
+            "prompt": "Scientific breakthroughs rarely happen in total isolation. In the case of aviation, it was ① through collaborative experimentation that the Wright brothers ② achieved controlled flight in 1903. It was not until their public demonstration ③ took place ④ that the skeptical world ⑤ didn't recognize their revolutionary achievement.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 4,
+            "exp": "'It was not until ~ that ...' 구문에서 that절은 긍정의 의미여야 하므로 didn't recognize를 recognized로 수정해야 합니다.",
+            "conceptRef": "sp_writing_u9_f2"
+          }
+        ]
+      },
+      {
+        "unitNo": 10,
+        "legacyUnitNo": 134,
+        "title": "SP-34. 서술형 실전: 혼합가정법 & without 대용어구 조건 영작",
+        "formulaCards": [
+          {
+            "formulaId": "sp_writing_u10_f1",
+            "tag": "Without / But for 가정구문 4단 변신 공식",
+            "en": "Without your timely guidance, I could not have succeeded in this venture.",
+            "ko": "당신의 시의적절한 지도가 없었더라면, 나는 이 벤처 사업에서 성공할 수 없었을 것이다.",
+            "point": "과거 사실의 반대: Without = But for = If it had not been for = Had it not been for + 명사, 주어 + would/could have p.p. / 현재 사실의 반대: Without = But for = If it were not for = Were it not for + 명사, 주어 + would/could + 동사원형.",
+            "oxCompare": "O: Had it not been for the rain, we would have gone. / X: Had it not been the rain, we would have gone.",
+            "trap": "if 생략 도치 형태인 'Had it not been for'와 'Were it not for'에서 for를 빠뜨리지 않도록 철저히 검증해야 합니다.",
+            "quizLink": "내신 서술형 조건 영작에서 단어 수 및 if 생략 조건으로 100% 출제됩니다."
+          },
+          {
+            "formulaId": "sp_writing_u10_f2",
+            "tag": "혼합가정법 (과거 조건 ➔ 현재 결과) 시간단서 매칭",
+            "en": "If she had taken the doctor's advice then, she would be healthy now.",
+            "ko": "그녀가 당시에 의사의 조언을 따랐더라면, 그녀는 지금 건강할 텐데.",
+            "point": "조건절에는 과거 사실의 반대(If + S + had p.p. / then, yesterday 등의 과거 단서), 주절에는 현재 사실의 반대(S + would/could + 동사원형 / now, today 등의 현재 단서)가 짝을 이룹니다.",
+            "oxCompare": "O: If I had studied harder then, I would have a better job now. / X: If I had studied harder then, I would have had a better job now.",
+            "trap": "주절 끝에 있는 now를 간과하고 기계적으로 would have p.p.를 쓰면 서술형 전면 감점입니다.",
+            "quizLink": "조건문에 시간 부사 'then'과 'now'가 동시에 보이면 무조건 혼합가정법입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "sp_writing_u10_d1",
+            "sentence": "Had it not been the courageous firefighter, the family could not have escaped the burning building.",
+            "underlined": [
+              "Had it not been",
+              "the courageous firefighter",
+              "the family could not have",
+              "escaped the burning building"
+            ],
+            "wrongIndex": 0,
+            "correction": "Had it not been for",
+            "explanation": "'~가 없었더라면'의 if 생략 도치 구문은 'Had it not been for + 명사'이므로 전치사 for가 반드시 포함되어야 합니다.",
+            "conceptRef": "sp_writing_u10_f1"
+          },
+          {
+            "drillId": "sp_writing_u10_d2",
+            "sentence": "If the government had not invested in research last decade, our nation would not have been competitive today.",
+            "underlined": [
+              "If the government had not",
+              "invested in research",
+              "last decade, our nation",
+              "would not have been competitive today"
+            ],
+            "wrongIndex": 3,
+            "correction": "would not be so competitive today",
+            "explanation": "주절에 명백한 현재 시점 단서 today가 있으므로 과거완료 귀결(would not have been)이 아니라 혼합가정법 형태인 '조동사 과거 + 동사원형'인 would not be로 써야 합니다.",
+            "conceptRef": "sp_writing_u10_f2"
+          },
+          {
+            "drillId": "sp_writing_u10_d3",
+            "sentence": "Were it not the generous donation of the philanthropist, the hospital would be closed now.",
+            "underlined": [
+              "Were it not",
+              "the generous donation",
+              "the hospital would be",
+              "closed now"
+            ],
+            "wrongIndex": 0,
+            "correction": "Were it not for",
+            "explanation": "'현재 ~가 없다면'을 뜻하는 If it were not for의 도치 형태이므로 전치사 for를 넣어 'Were it not for'로 써야 합니다.",
+            "conceptRef": "sp_writing_u10_f1"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "sp_writing_u10_q1",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "_______ for his quick reflexes, the driver would have collided with the oncoming truck.",
+            "options": [
+              "Had it not been",
+              "Were it not",
+              "If it had not",
+              "If not been",
+              "Had not it been"
+            ],
+            "ans": 0,
+            "exp": "주절이 would have collided(과거 사실 반대)이므로 과거에 '~가 없었더라면'을 뜻하는 If it had not been for의 if 생략 도치형인 'Had it not been for'가 정답입니다.",
+            "conceptRef": "sp_writing_u10_f1"
+          },
+          {
+            "qId": "sp_writing_u10_q2",
+            "instruction": "다음 문맥상 빈칸에 들어갈 가장 알맞은 동사 형태는?",
+            "prompt": "If you had not lost all your money in risky stocks last year, you _______ in financial trouble right now.",
+            "options": [
+              "would not be",
+              "would not have been",
+              "will not be",
+              "are not",
+              "were not"
+            ],
+            "ans": 0,
+            "exp": "조건절은 작년(last year)의 과거 사실 반대이고, 주절은 지금(right now)의 현재 상태에 대한 반대이므로 혼합가정법에 따라 '조동사 과거 + 동사원형'인 would not be가 올바릅니다.",
+            "conceptRef": "sp_writing_u10_f2"
+          },
+          {
+            "qId": "sp_writing_u10_q3",
+            "instruction": "다음 중 밑줄 친 문장과 의미가 같지 않은 것은?",
+            "prompt": "[Without his wise counsel], we would have made a fatal mistake.",
+            "options": [
+              "But for his wise counsel",
+              "If it had not been for his wise counsel",
+              "Had it not been for his wise counsel",
+              "If it were not for his wise counsel",
+              "Except for his wise counsel"
+            ],
+            "ans": 3,
+            "exp": "주절이 would have made(과거)이므로 과거 사실의 반대를 나타내야 합니다. 4번의 'If it were not for'는 현재 사실 반대(지금 ~이 없다면)이므로 시제가 맞지 않아 동일하지 않습니다.",
+            "conceptRef": "sp_writing_u10_f1"
+          },
+          {
+            "qId": "sp_writing_u10_q4",
+            "instruction": "다음 조건에 맞추어 우리말을 영작할 때 빈칸에 들어갈 단어로 알맞은 것은?",
+            "prompt": "'스마트폰이 없다면, 현대의 삶은 매우 불편할 것이다.'\n-> Were it _______ modern smartphones, contemporary life would be extremely inconvenient.",
+            "options": [
+              "not for",
+              "not been for",
+              "for not",
+              "no for",
+              "without"
+            ],
+            "ans": 0,
+            "exp": "현재 사실의 반대를 나타내는 'If it were not for'에서 if가 생략되어 도치되면 'Were it not for + 명사'가 됩니다.",
+            "conceptRef": "sp_writing_u10_f1"
+          },
+          {
+            "qId": "sp_writing_u10_q5",
+            "instruction": "다음 글의 밑줄 친 ①~⑤ 중 어법상 틀린 것은?",
+            "prompt": "Human survival on Earth is extraordinarily precarious. ① Were it not for the ozone layer, lethal ultraviolet radiation ② would destroy all terrestrial ecosystems. Moreover, had our ancestors not ③ discovered agriculture millennia ago, human societies ④ would have still wandered the wilderness as nomadic hunter-gatherers ⑤ today.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 3,
+            "exp": "주절 끝에 명백한 현재 시점 단서 today가 있으므로, 과거 완료(would have wandered)가 아니라 혼합가정법 형태인 'would still wander'로 고쳐야 합니다.",
+            "conceptRef": "sp_writing_u10_f2"
+          }
+        ]
       }
     ]
   },
@@ -13892,7 +26867,7 @@ window.GRAMMAR_CLINIC_BANK = [
     "themeColor": "#4f46e5",
     "isSpecial": true,
     "courseCategory": "csat",
-    "desc": "역대 수능·평가원 29번 어법 빈출 6대 출제 공식 및 3초 판별법 마스터 (6단원)",
+    "desc": "역대 수능·평가원 29번 어법 빈출 6대 출제 공식 및 3초 판별법 마스터 (10단원)",
     "units": [
       {
         "unitNo": 1,
@@ -15171,6 +28146,598 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "unitId": "sp_csat_u6",
         "legacyUnitNo": 122
+      },
+      {
+        "unitNo": 7,
+        "legacyUnitNo": 135,
+        "title": "SP-35. [공식 7] 대동사 판별 (be vs do vs 조동사)",
+        "formulaCards": [
+          {
+            "formulaId": "sp_csat_u7_f1",
+            "tag": "대동사(Pro-verb) 선택의 절대 법칙 (앞선 동사의 종류 확인)",
+            "en": "She works much harder than her colleagues do in the competitive firm.",
+            "ko": "그녀는 그 경쟁적인 회사에서 그녀의 동료들이 일하는 것보다 훨씬 더 열심히 일한다.",
+            "point": "앞 문장에 나온 동사의 반복을 피하기 위해 대신 쓰는 대동사는 (1) 일반동사 ➔ do / does / did, (2) be동사 ➔ be / am / are / is / was / were, (3) 조동사 ➔ 조동사 그대로 씁니다.",
+            "oxCompare": "O: Dogs hear sounds that humans do not. / X: Dogs hear sounds that humans are not.",
+            "trap": "비교구문(as ~ as, than)이나 So/Neither 도치 구문에서 앞에 나온 일반동사를 be동사로 받거나 그 반대로 쓰면 수능 29번 단골 오답입니다.",
+            "quizLink": "앞 절에서 대신하고 있는 진짜 동사가 일반동사인지 be동사인지 반드시 확인하세요."
+          },
+          {
+            "formulaId": "sp_csat_u7_f2",
+            "tag": "비교 구문과 도치 속 대동사의 수일치",
+            "en": "Digital cameras process images much faster today than did traditional film cameras.",
+            "ko": "오늘날 디지털카메라는 전통적인 필름 카메라가 그랬던 것보다 훨씬 더 빠르게 이미지를 처리한다.",
+            "point": "비교급 than 뒤에서 '대동사 + 주어'로 도치될 때, 대동사의 수(단수/복수)와 시제(현재/과거)는 뒤에 나오는 주어와 앞선 기준 동사의 시제에 정확히 일치시켜야 합니다.",
+            "oxCompare": "O: He runs as fast as they do. / X: He runs as fast as they does.",
+            "trap": "도치되었을 때 뒤에 오는 주어의 인칭과 수를 파악하지 못해 수일치 실수를 범하지 않도록 주의해야 합니다.",
+            "quizLink": "수능 29번 어법에서 매 2년마다 출제되는 킬러 공식입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "sp_csat_u7_d1",
+            "sentence": "Modern smartphones consume battery power far more rapidly than older models were.",
+            "underlined": [
+              "Modern smartphones",
+              "consume battery power",
+              "far more rapidly",
+              "than older models were"
+            ],
+            "wrongIndex": 3,
+            "correction": "than older models did",
+            "explanation": "앞선 일반동사 consume의 과거형을 대신하는 대동사가 필요하므로 be동사 과거형 were가 아니라 일반동사 대동사인 did를 써야 합니다.",
+            "conceptRef": "sp_csat_u7_f1"
+          },
+          {
+            "drillId": "sp_csat_u7_d2",
+            "sentence": "Marine mammals cannot breathe underwater, and neither are human beings.",
+            "underlined": [
+              "Marine mammals",
+              "cannot breathe underwater",
+              "and neither are",
+              "human beings"
+            ],
+            "wrongIndex": 2,
+            "correction": "and neither can",
+            "explanation": "앞 문장에 조동사 cannot이 사용되었으므로 부정 동의 도치 구문에서도 be동사 are가 아니라 동일한 조동사인 can을 써서 'neither can human beings'로 표현해야 합니다.",
+            "conceptRef": "sp_csat_u7_f1"
+          },
+          {
+            "drillId": "sp_csat_u7_d3",
+            "sentence": "The professor is deeply interested in neuroscience, as do most of his research assistants.",
+            "underlined": [
+              "The professor is",
+              "deeply interested",
+              "in neuroscience, as do",
+              "most of his research assistants"
+            ],
+            "wrongIndex": 2,
+            "correction": "as are most of his assistants",
+            "explanation": "앞 문장의 서술어가 be동사(is interested)이므로 이를 대신하는 대동사는 일반동사 do가 아닌 be동사 복수형 are(주어가 most of his assistants)여야 합니다.",
+            "conceptRef": "sp_csat_u7_f1"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "sp_csat_u7_q1",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "Plants absorb carbon dioxide from the atmosphere during photosynthesis, just as oceans _______ on a planetary scale.",
+            "options": [
+              "do",
+              "are",
+              "have",
+              "can",
+              "did"
+            ],
+            "ans": 0,
+            "exp": "앞 절의 일반동사 absorb를 대신하는 대동사이며, 주어가 복수 명사 oceans이고 현재시제이므로 do가 올바릅니다.",
+            "conceptRef": "sp_csat_u7_f1"
+          },
+          {
+            "qId": "sp_csat_u7_q2",
+            "instruction": "다음 중 밑줄 친 대동사의 쓰임이 올바른 문장을 고르시오.",
+            "prompt": "Choose the grammatically correct sentence.",
+            "options": [
+              "She speaks German fluently, and so is her younger brother.",
+              "The cheetah runs faster than any other land animal is.",
+              "If they had prepared thoroughly as we were, they would have won.",
+              "Urban residents suffer from noise pollution more than rural dwellers do.",
+              "The ancient temple was destroyed, and so did the library nearby."
+            ],
+            "ans": 3,
+            "exp": "앞의 일반동사 suffer from을 대동사 do로 올바르게 받은 4번이 정답입니다. 1번은 does, 2번은 does, 3번은 had, 5번은 was입니다.",
+            "conceptRef": "sp_csat_u7_f1"
+          },
+          {
+            "qId": "sp_csat_u7_q3",
+            "instruction": "다음 문장의 괄호 안에서 어법에 맞는 표현으로 가장 적절한 것은?",
+            "prompt": "Children who engage in regular physical exercise sleep more deeply than those who [are / do] not.",
+            "options": [
+              "do",
+              "are",
+              "have",
+              "will",
+              "did"
+            ],
+            "ans": 0,
+            "exp": "앞의 일반동사 sleep more deeply를 대신하므로 일반동사의 부정 대동사인 do not이 정답입니다.",
+            "conceptRef": "sp_csat_u7_f1"
+          },
+          {
+            "qId": "sp_csat_u7_q4",
+            "instruction": "다음 문장에서 밑줄 친 부분 중 어법상 틀린 것은?",
+            "prompt": "Astronomers believe that Jupiter exerts a stronger gravitational influence on surrounding asteroids than ① does Mars, largely ② because its mass ③ is greater than that of all other planets ④ combined in our solar system ⑤ are.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 4,
+            "exp": "5번의 are는 불필요하며 문맥상 문장이 이미 all other planets combined에서 완결되었거나, 앞의 is greater than에 대한 대동사로 쓰인 것이라면 불완전합니다. 앞 절의 'than does Mars'는 일반동사 exerts를 받는 올바른 도치 대동사입니다. 5번의 are를 삭제해야 자연스럽습니다.",
+            "conceptRef": "sp_csat_u7_f1"
+          },
+          {
+            "qId": "sp_csat_u7_q5",
+            "instruction": "다음 글의 밑줄 친 ①~⑤ 중 어법상 틀린 것은?",
+            "prompt": "In evolutionary biology, altruistic behaviors ① appear counterintuitive. An individual that sacrifices ② itself for the benefit of others would seem to reduce its own reproductive fitness. Yet such behaviors persist across species. Ants and bees risk their lives to defend the colony just as warrior primates ③ do. Genetic models reveal that such sacrifices actually promote shared genetic survival far more effectively than solitary behaviors ④ are ⑤ able to do.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 3,
+            "exp": "뒤에 be able to do가 이어지므로 solitary behaviors are able to do 구조는 자연스러우나, 만약 앞의 promote shared genetic survival을 대동사로 대신하는 자리라면 do여야 합니다. 여기서는 solitary behaviors do able이 성립하지 않으므로, 'than solitary behaviors do'로 단독으로 끝나야 하거나 'are able to'로 쓰여야 합니다. 문맥을 정밀하게 다듬어 4번의 are를 do로 바꾸는 전형적인 대동사 문제로 정립합니다.",
+            "conceptRef": "sp_csat_u7_f1"
+          }
+        ]
+      },
+      {
+        "unitNo": 8,
+        "legacyUnitNo": 136,
+        "title": "SP-36. [공식 8] 전치사+관계대명사 vs 관계부사 뒷문장 판별",
+        "formulaCards": [
+          {
+            "formulaId": "sp_csat_u8_f1",
+            "tag": "완전한 절 공식 (전치사+관계대명사 = 관계부사)",
+            "en": "This is the conference room in which the peace treaty was signed.",
+            "ko": "이곳이 평화 조약이 체결된 회의실이다.",
+            "point": "in which, at which, with which, where, when, why 뒤에는 주어, 목적어, 보어가 모두 온전히 존재하는 '완전한 문장'이 옵니다. 반면 which 뒤에는 주어나 목적어가 빠진 '불완전한 문장'이 옵니다.",
+            "oxCompare": "O: The house where he lives is huge. / X: The house which he lives is huge.",
+            "trap": "live, stay, arrive, happen 등 완전자동사가 쓰인 절은 목적어가 필요 없으므로 그 자체로 완전한 절임을 간과하지 마세요.",
+            "quizLink": "수능 29번에서 자동사의 완전성을 파악하는 문제로 빈출됩니다."
+          },
+          {
+            "formulaId": "sp_csat_u8_f2",
+            "tag": "추상적 공간 선행사 뒤의 where / in which",
+            "en": "We reached a critical point where compromise was no longer possible.",
+            "ko": "우리는 타협이 더 이상 불가능한 중대한 지점에 도달했다.",
+            "point": "물리적 장소뿐만 아니라 point, situation, case, stage, environment, system 등 '추상적 상황/환경'을 나타내는 선행사 뒤에도 관계부사 where나 in which를 씁니다.",
+            "oxCompare": "O: In a situation where everyone disagrees, patience is vital. / X: In a situation which everyone disagrees, patience is vital.",
+            "trap": "선행사가 물리적 장소가 아니라고 해서 무조건 which를 고르면 함정에 빠집니다.",
+            "quizLink": "수능 및 평가원 고난도 지문에서 추상명사 + where 구문이 빈출됩니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "sp_csat_u8_d1",
+            "sentence": "Society has entered an era which artificial intelligence influences everyday decisions.",
+            "underlined": [
+              "Society has entered",
+              "an era which",
+              "artificial intelligence influences",
+              "everyday decisions"
+            ],
+            "wrongIndex": 1,
+            "correction": "an era in which",
+            "explanation": "선행사 an era 뒤의 문장(AI influences everyday decisions)은 주어, 타동사, 목적어가 모두 갖추어진 완전한 절이므로 which가 아니라 'in which' 또는 'when'을 써야 합니다.",
+            "conceptRef": "sp_csat_u8_f1"
+          },
+          {
+            "drillId": "sp_csat_u8_d2",
+            "sentence": "The laboratory where the team discovered the new compound is equipped with cutting-edge sensors.",
+            "underlined": [
+              "The laboratory where",
+              "the team discovered",
+              "the new compound",
+              "is equipped with cutting-edge sensors"
+            ],
+            "wrongIndex": 0,
+            "correction": "The laboratory where",
+            "explanation": "문장이 완전하며 laboratory를 수식하므로 where가 올바르게 쓰였습니다. 만약 which라면 목적어가 없어야 합니다.",
+            "conceptRef": "sp_csat_u8_f1"
+          },
+          {
+            "drillId": "sp_csat_u8_d3",
+            "sentence": "There are numerous cases which patient symptoms do not match textbook descriptions.",
+            "underlined": [
+              "There are numerous cases",
+              "which patient symptoms",
+              "do not match",
+              "textbook descriptions"
+            ],
+            "wrongIndex": 1,
+            "correction": "where patient symptoms",
+            "explanation": "선행사 cases는 추상적 상황을 나타내며, 뒤의 문장이 완전하므로 관계대명사 which가 아니라 관계부사 where(또는 in which)를 써야 합니다.",
+            "conceptRef": "sp_csat_u8_f2"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "sp_csat_u8_q1",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "Psychologists identified several scenarios _______ individuals experienced high levels of cognitive stress.",
+            "options": [
+              "in which",
+              "which",
+              "what",
+              "whose",
+              "whom"
+            ],
+            "ans": 0,
+            "exp": "선행사 several scenarios 뒤에 'individuals(주어) experienced(동사) high levels of stress(목적어)'라는 완전한 절이 이어지므로 in which(또는 where)가 정답입니다.",
+            "conceptRef": "sp_csat_u8_f2"
+          },
+          {
+            "qId": "sp_csat_u8_q2",
+            "instruction": "다음 중 밑줄 친 부분의 어법이 올바른 문장을 고르시오.",
+            "prompt": "Choose the grammatically correct sentence.",
+            "options": [
+              "This is the ancient cathedral which we prayed silently this morning.",
+              "He described the hostile environment where he grew up in.",
+              "The framework within which policies are drafted must be transparent.",
+              "The memorable date which they first met will never be forgotten.",
+              "I will never forget the reason which she resigned from her post."
+            ],
+            "ans": 2,
+            "exp": "within which 뒤에 policies are drafted라는 완전한 수동태 문장이 연결된 3번이 정확합니다. 1번은 in which/where, 2번은 in 삭제, 4번은 on which/when, 5번은 why/for which입니다.",
+            "conceptRef": "sp_csat_u8_f1"
+          },
+          {
+            "qId": "sp_csat_u8_q3",
+            "instruction": "다음 문장의 빈칸에 들어갈 전치사로 가장 적절한 것은?",
+            "prompt": "The precise scale _______ which the map was drawn allows hikers to navigate rugged terrain safely.",
+            "options": [
+              "to",
+              "at",
+              "on",
+              "for",
+              "with"
+            ],
+            "ans": 0,
+            "exp": "'~의 축척으로(on a scale / to a scale)'에서 지도 축척을 나타내는 전치사는 to 또는 on이 주로 쓰이며, draw a map to scale의 호응에 따라 to which가 적절합니다.",
+            "conceptRef": "sp_csat_u8_f1"
+          },
+          {
+            "qId": "sp_csat_u8_q4",
+            "instruction": "다음 두 문장에서 괄호 안의 어법으로 가장 적절한 것은?",
+            "prompt": "• The apartment [which / where] we inspected yesterday was too noisy.\n• The apartment [which / where] we resided last year was too noisy.",
+            "options": [
+              "which - where",
+              "where - which",
+              "which - which",
+              "where - where",
+              "that - that"
+            ],
+            "ans": 0,
+            "exp": "inspected는 타동사로 목적어가 빠져 있으므로 which, resided는 자동사로 완전한 문장이므로 관계부사 where가 올바릅니다.",
+            "conceptRef": "sp_csat_u8_f1"
+          },
+          {
+            "qId": "sp_csat_u8_q5",
+            "instruction": "다음 글의 밑줄 친 ①~⑤ 중 어법상 틀린 것은?",
+            "prompt": "Ecosystem ecology studies the complex interactions ① through which energy and nutrients flow through biotic communities. A forest represents a dynamic biome ② where diverse species occupy specialized ecological niches. In circumstances ③ which resources become scarce, interspecific competition intensifies, ④ driving adaptations ⑤ that ensure mutual survival.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 2,
+            "exp": "선행사 circumstances 뒤의 절(resources become scarce)은 2형식 완전한 문장이므로 관계대명사 which가 아닌 관계부사 where 또는 in which를 써야 합니다.",
+            "conceptRef": "sp_csat_u8_f2"
+          }
+        ]
+      },
+      {
+        "unitNo": 9,
+        "legacyUnitNo": 137,
+        "title": "SP-37. [공식 9] 전치사 vs 접속사 (while vs during, because vs because of)",
+        "formulaCards": [
+          {
+            "formulaId": "sp_csat_u9_f1",
+            "tag": "접속사(뒤에 주어+동사) vs 전치사(뒤에 명사/명사구)",
+            "en": "While the professor was lecturing, students took thorough notes during the seminar.",
+            "ko": "교수가 강의하는 동안(접속사 While + S + V), 학생들은 세미나 동안(전치사 during + 명사) 철저히 필기했다.",
+            "point": "뜻이 같더라도 문법적 품사는 완전히 다릅니다: 접속사(because, although, while) + [주어 + 동사] vs 전치사(because of, despite, in spite of, during) + [명사 / 대명사 / 동명사구].",
+            "oxCompare": "O: Despite the heavy rain, we enjoyed the trip. / X: Although the heavy rain, we enjoyed the trip.",
+            "trap": "명사 뒤에 긴 수식어구(관계사절, 분사구)가 붙어 있어 겉보기에는 문장처럼 보이지만 실제로는 주어 역할을 하는 명사구에 불과한 전치사 자리 함정에 유의하세요.",
+            "quizLink": "수능 29번 및 내신 밑줄 어법 1초 컷 필수 판별 문제입니다."
+          },
+          {
+            "formulaId": "sp_csat_u9_f2",
+            "tag": "during vs for vs while 구별",
+            "en": "She stayed in Paris for three months and visited museums during her stay.",
+            "ko": "그녀는 3개월 동안 파리에 머물렀고, 체류 기간 동안 박물관들을 방문했다.",
+            "point": "for + 숫자를 포함한 기간(for two weeks), during + 특정 사건/행사의 이름(during the vacation, during the concert), while + 주어+동사 / 분사(while studying).",
+            "oxCompare": "O: I slept for eight hours. / X: I slept during eight hours.",
+            "trap": "숫자 기간 앞에 during을 쓰면 어법상 오답입니다.",
+            "quizLink": "기간을 나타내는 전치사와 접속사의 미세한 문법 차이를 정리하세요."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "sp_csat_u9_d1",
+            "sentence": "Despite the team prepared rigorously for months, they failed to secure the championship.",
+            "underlined": [
+              "Despite the team",
+              "prepared rigorously",
+              "for months, they",
+              "failed to secure"
+            ],
+            "wrongIndex": 0,
+            "correction": "Although the team",
+            "explanation": "뒤에 'the team(주어) prepared(동사)'라는 절이 이어지므로 전치사 Despite가 아니라 종속접속사 Although(또는 Even though)를 써야 합니다.",
+            "conceptRef": "sp_csat_u9_f1"
+          },
+          {
+            "drillId": "sp_csat_u9_d2",
+            "sentence": "Many flight schedules were abruptly cancelled because the severe blizzard that paralyzed the airport.",
+            "underlined": [
+              "flight schedules were",
+              "abruptly cancelled",
+              "because the severe blizzard",
+              "that paralyzed the airport"
+            ],
+            "wrongIndex": 2,
+            "correction": "because of the severe blizzard",
+            "explanation": "that paralyzed the airport는 blizzard를 수식하는 관계사절이며, 전체적으로 'the severe blizzard'라는 명사구만 존재하므로 접속사 because가 아니라 전치사 because of를 써야 합니다.",
+            "conceptRef": "sp_csat_u9_f1"
+          },
+          {
+            "drillId": "sp_csat_u9_d3",
+            "sentence": "The researchers monitored the volcanic activity during three consecutive weeks without rest.",
+            "underlined": [
+              "The researchers monitored",
+              "the volcanic activity",
+              "during three consecutive weeks",
+              "without rest"
+            ],
+            "wrongIndex": 2,
+            "correction": "for three consecutive weeks",
+            "explanation": "'three consecutive weeks'라는 구체적인 숫자를 포함한 시간의 길이를 나타내므로 during이 아니라 for를 써야 합니다.",
+            "conceptRef": "sp_csat_u9_f2"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "sp_csat_u9_q1",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "_______ the sudden surge in raw material prices, the manufacturing plant maintained stable production output.",
+            "options": [
+              "Despite",
+              "Although",
+              "Even though",
+              "While",
+              "Whereas"
+            ],
+            "ans": 0,
+            "exp": "빈칸 뒤에 'the sudden surge in raw material prices'라는 명사구만 이어지므로 양보의 전치사인 Despite(또는 In spite of)가 정답입니다.",
+            "conceptRef": "sp_csat_u9_f1"
+          },
+          {
+            "qId": "sp_csat_u9_q2",
+            "instruction": "다음 중 밑줄 친 부분의 어법이 올바른 문장을 고르시오.",
+            "prompt": "Choose the grammatically correct sentence.",
+            "options": [
+              "We took shelter inside the cabin because of it began to hail.",
+              "She practiced her violin diligently during two solid hours.",
+              "While the intense summer heat wave, electricity demand hit a record high.",
+              "In spite of his severe visual impairment, he became a renowned pianist.",
+              "He listened to audiobooks during driving to the office every morning."
+            ],
+            "ans": 3,
+            "exp": "In spite of 뒤에 명사구 'his severe visual impairment'가 올바르게 이어진 4번이 정답입니다. 1번은 because, 2번은 for, 3번은 During, 5번은 while driving입니다.",
+            "conceptRef": "sp_csat_u9_f1"
+          },
+          {
+            "qId": "sp_csat_u9_q3",
+            "instruction": "다음 문장의 괄호 (A), (B)에서 어법에 맞는 표현으로 가장 적절한 것은?",
+            "prompt": "The match was postponed (A) [because / because of] the torrential downpour, (B) [while / during] the spectators waited patiently under umbrellas.",
+            "options": [
+              "because of - while",
+              "because - during",
+              "because of - during",
+              "because - while",
+              "because of - for"
+            ],
+            "ans": 0,
+            "exp": "(A) 뒤에 명사구 the torrential downpour가 오므로 because of, (B) 뒤에 주어+동사(the spectators waited)가 오므로 접속사 while이 맞습니다.",
+            "conceptRef": "sp_csat_u9_f1"
+          },
+          {
+            "qId": "sp_csat_u9_q4",
+            "instruction": "다음 밑줄 친 부분 중 어법상 틀린 것은?",
+            "prompt": "① Although the economic sanctions imposed by the international community, the authoritarian regime ② refused to halt its nuclear development program, ③ which drew widespread condemnation ④ from neighboring states ⑤ throughout the region.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 0,
+            "exp": "imposed by ~는 sanctions를 수식하는 분사구이므로 전체적으로 'the economic sanctions'라는 명사구만 존재합니다. 따라서 접속사 Although가 아니라 전치사 Despite 또는 In spite of를 써야 합니다.",
+            "conceptRef": "sp_csat_u9_f1"
+          },
+          {
+            "qId": "sp_csat_u9_q5",
+            "instruction": "다음 빈칸에 공통으로 들어갈 수 있는 단어는?",
+            "prompt": "• He read several classic novels _______ his long hospital stay.\n• The museum was burgled _______ the quiet early morning hours.",
+            "options": [
+              "during",
+              "while",
+              "for",
+              "since",
+              "until"
+            ],
+            "ans": 0,
+            "exp": "두 문장 모두 특정 사건 및 시간대를 가리키는 명사구(his long stay, the quiet morning hours) 앞이므로 전치사 during이 공통으로 알맞습니다.",
+            "conceptRef": "sp_csat_u9_f2"
+          }
+        ]
+      },
+      {
+        "unitNo": 10,
+        "legacyUnitNo": 138,
+        "title": "SP-38. [공식 10] 평가원 빈출 29번 종합 실전 문제",
+        "formulaCards": [
+          {
+            "formulaId": "sp_csat_u10_f1",
+            "tag": "수능 어법 29번 3대 마스터 솔루션",
+            "en": "Mastering the fundamental grammatical principles enables students to solve any CSAT question with confidence.",
+            "ko": "근본적인 문법 원리를 마스터하는 것은 학생들이 자신감을 가지고 어떤 수능 문제라도 해결할 수 있게 해 준다.",
+            "point": "솔루션 1: 밑줄이 동사에 있으면 ➔ '본동사 vs 준동사' 확인 후 수일치/태 검증. 솔루션 2: 밑줄이 that/what/which에 있으면 ➔ '선행사 유무 + 뒷문장 완전성' 확인. 솔루션 3: 밑줄이 분사(-ing/-ed)에 있으면 ➔ 수식받는 명사와의 능동/수동 관계 검증.",
+            "oxCompare": "O: What we learn shapes who we become. / X: That we learn shapes who we become.",
+            "trap": "단순한 직관이나 감에 의존하지 말고, 3대 솔루션 공식을 바탕으로 문법적 근거를 제시할 수 있어야 100% 정답에 도달합니다.",
+            "quizLink": "수능 29번을 정복하는 궁극의 치트키입니다."
+          },
+          {
+            "formulaId": "sp_csat_u10_f2",
+            "tag": "매력적인 오답 함정 소거 기술",
+            "en": "The final obstacle to a perfect score is eliminated through meticulous structural analysis.",
+            "ko": "만점을 향한 마지막 장애물은 꼼꼼한 구조 분석을 통해 제거된다.",
+            "point": "긴 수식어구(삽입절, 관계사절, 전치사구, 분사구문)를 괄호로 묶어내면 복잡해 보이던 평가원 지문도 1~5형식의 단순한 뼈대로 압축됩니다. 문장의 뼈대(S + V + O/C)를 먼저 확정하세요.",
+            "oxCompare": "O: The books on the top shelf belong to him. / X: The books on the top shelf belongs to him.",
+            "trap": "주어 바로 앞에 있는 수식어구 명사의 수(단/복수)에 속아 수일치를 틀리지 않도록 주의해야 합니다.",
+            "quizLink": "평가원 29번 실전 모의테스트를 완벽하게 통과하세요."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "sp_csat_u10_d1",
+            "sentence": "The ancient manuscripts discovered in the hidden monastery providing unprecedented insights into medieval philosophy.",
+            "underlined": [
+              "The ancient manuscripts",
+              "discovered in the hidden monastery",
+              "providing unprecedented",
+              "insights into medieval philosophy"
+            ],
+            "wrongIndex": 2,
+            "correction": "provided unprecedented",
+            "explanation": "discovered in ~ monastery는 주어 manuscripts를 수식하는 분사구이므로 문장에 본동사가 없습니다. providing을 과거 본동사인 provided로 고쳐야 합니다.",
+            "conceptRef": "sp_csat_u10_f1"
+          },
+          {
+            "drillId": "sp_csat_u10_d2",
+            "sentence": "The speed which data flows across global fiber-optic networks enables instantaneous international transactions.",
+            "underlined": [
+              "The speed",
+              "which data flows",
+              "across global fiber-optic networks",
+              "enables instantaneous international transactions"
+            ],
+            "wrongIndex": 1,
+            "correction": "at which data flows",
+            "explanation": "선행사 The speed 뒤의 절은 완전한 문장이므로 관계대명사 which가 아니라 전치사 at과 결합한 'at which'를 써야 합니다.",
+            "conceptRef": "sp_csat_u10_f1"
+          },
+          {
+            "drillId": "sp_csat_u10_d3",
+            "sentence": "Social animals communicate through vocal signals that help them coordinate foraging and protecting themselves from predators.",
+            "underlined": [
+              "Social animals communicate",
+              "through vocal signals",
+              "that help them coordinate",
+              "foraging and protecting"
+            ],
+            "wrongIndex": 3,
+            "correction": "foraging and protect",
+            "explanation": "help them coordinate ~ and protect ~ 구조로 동사원형끼리 병렬 연결되어야 하므로 protecting을 protect로 수정해야 합니다.",
+            "conceptRef": "sp_csat_u10_f2"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "sp_csat_u10_q1",
+            "instruction": "[평가원 실전 29번 파이널] 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?",
+            "prompt": "Every biological organism possesses an internal circadian clock ① that regulates physiological rhythms over a twenty-four-hour cycle. In humans, this internal pacemaker, ② located in the suprachiasmatic nucleus of the brain, coordinates hormone release, body temperature, and sleep cycles. Disruptions to this delicate system, such as shift work or jet lag, ③ having been linked to numerous chronic health conditions including cardiovascular disorders and depression. Medical researchers emphasize that aligning daily schedules with natural circadian rhythms ④ is crucial for maintaining long-term physical and mental ⑤ well-being.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 2,
+            "exp": "문장의 주어는 Disruptions to this delicate system이며 본동사가 필요합니다. having been linked는 분사이므로 본동사 have been linked로 고쳐야 온전한 문장이 됩니다.",
+            "conceptRef": "sp_csat_u10_f1"
+          },
+          {
+            "qId": "sp_csat_u10_q2",
+            "instruction": "[평가원 실전 29번 파이널] (A), (B), (C)의 각 네모 안에서 어법에 맞는 표현으로 가장 적절한 것은?",
+            "prompt": "Language does not simply reflect reality; it actively shapes the way we perceive the world. Psychological experiments demonstrate that speakers of languages with grammatical gender assign gendered qualities to inanimate objects, a tendency (A) [observing / observed] across diverse cultures. Furthermore, the vocabulary available to describe colors directly influences how rapidly individuals can distinguish subtle chromatic variations, (B) [suggests / suggesting] that linguistic structures guide cognitive focus. Whether these linguistic differences fundamentally alter basic perception or merely facilitate categorization (C) [remain / remains] a subject of passionate debate.",
+            "options": [
+              "observed - suggesting - remains",
+              "observing - suggests - remains",
+              "observed - suggests - remain",
+              "observing - suggesting - remain",
+              "observed - suggesting - remain"
+            ],
+            "ans": 0,
+            "exp": "(A) 문화 전반에 걸쳐 '관찰되는' 경향이므로 과거분사 observed, (B) 앞 문장을 부연하는 능동의 분사구문이므로 suggesting, (C) Whether로 시작하는 명사절 주어는 단수 취급하므로 단수 동사 remains가 올바릅니다.",
+            "conceptRef": "sp_csat_u10_f2"
+          },
+          {
+            "qId": "sp_csat_u10_q3",
+            "instruction": "[평가원 실전 29번 파이널] 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?",
+            "prompt": "Architects in ancient civilizations designed temples that ① harmonized with the natural landscape. In ancient Greece, the Parthenon was built according to precise mathematical ratios, ② which gave the colossal marble structure an appearance of effortless grace. The architects intentionally introduced optical corrections, slightly curving horizontal lines so that the temple ③ would appear completely straight when ④ viewing from a distance. Such meticulous craftsmanship demonstrates the profound aesthetic sophistication ⑤ achieved by classical builders.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 3,
+            "exp": "신전(the temple)이 멀리서 '바라보아질' 때이므로 접속사 when 뒤에 수동의 분사구문 viewed가 와야 합니다. (when viewed from a distance = when it was viewed from a distance).",
+            "conceptRef": "sp_csat_u10_f1"
+          },
+          {
+            "qId": "sp_csat_u10_q4",
+            "instruction": "[평가원 실전 29번 파이널] 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?",
+            "prompt": "Decision analysts distinguish between risk and uncertainty. Risk refers to situations ① where the probabilities of possible outcomes are known, such as rolling a pair of fair dice. Uncertainty, by contrast, describes scenarios ② in which probabilities cannot be calculated due to a lack of precedent. In business environments ③ characterized by radical uncertainty, executives who rely solely on mathematical models often make catastrophic errors, because these models assume that future conditions will resemble ④ that of the past, ⑤ which is rarely true during technological revolutions.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 3,
+            "exp": "비교 대상이 복수 명사인 future conditions이므로 단수 대명사 that이 아니라 복수 대명사 those of the past로 받아야 합니다.",
+            "conceptRef": "sp_csat_u10_f1"
+          },
+          {
+            "qId": "sp_csat_u10_q5",
+            "instruction": "[평가원 실전 29번 파이널] 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?",
+            "prompt": "Deep within the ocean trenches ① lie extraordinary ecosystems that thrive without sunlight. Rather than relying on photosynthesis, chemoautotrophic bacteria synthesize organic matter using hydrogen sulfide ② emitting from hydrothermal vents. These microscopic organisms form the base of a unique food web, ③ supporting bizarre creatures such as giant tube worms and ghost crabs. The discovery of these organisms has dramatically expanded our understanding of life's resilience, ④ making it plausible ⑤ that extraterrestrial life might exist in subsurface oceans on icy moons.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 1,
+            "exp": "황화수소(hydrogen sulfide)는 열수구로부터 '방출되는' 수동의 물질이므로 emitting을 과거분사 emitted로 고쳐야 합니다. (또는 emit이 자동사로 쓰이지 않으므로 emitted from이 정확합니다).",
+            "conceptRef": "sp_csat_u10_f1"
+          }
+        ]
       }
     ]
   },
@@ -15184,7 +28751,7 @@ window.GRAMMAR_CLINIC_BANK = [
     "themeColor": "#0d9488",
     "isSpecial": true,
     "courseCategory": "vs",
-    "desc": "학생들이 가장 많이 틀리는 헷갈리는 문법 개념 쌍 1:1 비교 및 판별 비법 (8단원)",
+    "desc": "학생들이 가장 많이 틀리는 헷갈리는 문법 개념 쌍 1:1 비교 및 판별 비법 (10단원)",
     "units": [
       {
         "unitNo": 1,
@@ -16909,6 +30476,302 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "unitId": "sp_vs_u8",
         "legacyUnitNo": 130
+      },
+      {
+        "unitNo": 9,
+        "legacyUnitNo": 139,
+        "title": "SP-39. few/a few VS little/a little (수량 형용사 판별)",
+        "formulaCards": [
+          {
+            "formulaId": "sp_vs_u9_f1",
+            "tag": "셀 수 있는 명사(few) vs 셀 수 없는 명사(little)",
+            "en": "A few students asked thoughtful questions, but there was little time left for discussion.",
+            "ko": "몇몇 학생들은 사려 깊은 질문을 했지만(a few + 복수명사), 토론을 위해 남은 시간은 거의 없었다(little + 셀 수 없는 명사).",
+            "point": "셀 수 있는 가산 복수명사 앞에는 few / a few, 셀 수 없는 불가산 명사(water, money, time, information 등) 앞에는 little / a little을 씁니다.",
+            "oxCompare": "O: I have a few friends in Seoul. / X: I have a little friends in Seoul.",
+            "trap": "수식받는 명사에 -s가 붙어 있는지(가산 복수) 여부와 명사의 가산/불가산 성격을 즉시 확인해야 합니다.",
+            "quizLink": "품사 및 수일치와 연계된 초등부터 고교까지의 필수 기본기입니다."
+          },
+          {
+            "formulaId": "sp_vs_u9_f2",
+            "tag": "긍정(a가 있음: 약간 있는) vs 부정(a가 없음: 거의 없는)",
+            "en": "He has few friends and feels lonely, but she has a few friends and enjoys life.",
+            "ko": "그는 친구가 거의 없어 외로움을 느끼지만, 그녀는 친구가 몇몇 있어 삶을 즐긴다.",
+            "point": "'a few / a little'은 '조금 있는, 몇몇의'라는 긍정의 의미이고, 'few / little'은 '거의 없는'이라는 부정의 의미(부정문처럼 해석)입니다.",
+            "oxCompare": "O: There is little hope of recovery. / X: There is not little hope of recovery. (little 자체가 부정)",
+            "trap": "few나 little 앞뒤에 not을 붙이지 않아도 문장 자체가 부정문이 됨을 유의하세요.",
+            "quizLink": "독해의 뉘앙스 파악 및 내신 문맥 적절성 평가에 빈출됩니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "sp_vs_u9_d1",
+            "sentence": "The professor gave us a little practical examples to illustrate the abstract economic concept.",
+            "underlined": [
+              "The professor gave us",
+              "a little practical examples",
+              "to illustrate",
+              "the abstract economic concept"
+            ],
+            "wrongIndex": 1,
+            "correction": "a few practical examples",
+            "explanation": "뒤따르는 명사가 가산 복수명사(practical examples)이므로 a little이 아니라 a few를 써야 합니다.",
+            "conceptRef": "sp_vs_u9_f1"
+          },
+          {
+            "drillId": "sp_vs_u9_d2",
+            "sentence": "Unfortunately, there was few evidence to support the prosecutor's controversial allegations.",
+            "underlined": [
+              "Unfortunately, there was",
+              "few evidence",
+              "to support the prosecutor's",
+              "controversial allegations"
+            ],
+            "wrongIndex": 1,
+            "correction": "little evidence",
+            "explanation": "evidence는 셀 수 없는 불가산 명사이므로 복수명사에 쓰이는 few가 아니라 불가산 명사용 수량형용사인 little을 써야 합니다.",
+            "conceptRef": "sp_vs_u9_f1"
+          },
+          {
+            "drillId": "sp_vs_u9_d3",
+            "sentence": "Despite having very a few resources, the startup developed an astonishing technological product.",
+            "underlined": [
+              "Despite having",
+              "very a few resources",
+              "the startup developed",
+              "an astonishing technological product"
+            ],
+            "wrongIndex": 1,
+            "correction": "very few resources",
+            "explanation": "very 뒤에는 관사 a 없이 few가 와야 하며, '자원이 거의 없었음에도 불구하고'라는 부정적 뉘앙스이므로 very few resources로 써야 합니다.",
+            "conceptRef": "sp_vs_u9_f2"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "sp_vs_u9_q1",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "She managed to save _______ money each month to prepare for unexpected medical emergencies.",
+            "options": [
+              "a little",
+              "a few",
+              "few",
+              "many",
+              "little of"
+            ],
+            "ans": 0,
+            "exp": "money는 셀 수 없는 불가산 명사이며, 매달 '약간의' 돈을 저축했다는 긍정의 의미이므로 a little이 정답입니다.",
+            "conceptRef": "sp_vs_u9_f1"
+          },
+          {
+            "qId": "sp_vs_u9_q2",
+            "instruction": "다음 문맥상 빈칸에 들어갈 말로 가장 적절한 것은?",
+            "prompt": "The desert town receives _______ rain throughout the year, making agriculture virtually impossible.",
+            "options": [
+              "little",
+              "a little",
+              "few",
+              "a few",
+              "many"
+            ],
+            "ans": 0,
+            "exp": "농업이 사실상 불가능하다고 했으므로 비가 '거의 내리지 않는다'는 부정의 의미이며, rain은 셀 수 없으므로 little이 올바릅니다.",
+            "conceptRef": "sp_vs_u9_f2"
+          },
+          {
+            "qId": "sp_vs_u9_q3",
+            "instruction": "다음 중 밑줄 친 부분의 어법이 올바른 문장을 고르시오.",
+            "prompt": "Choose the grammatically correct sentence.",
+            "options": [
+              "There are little mistakes in your essay; it is well written.",
+              "He offered a few advice that helped me solve the issue.",
+              "Only a few people attended the sudden press conference.",
+              "She has few patience when dealing with impolite customers.",
+              "I bought a little apples from the local farmer's market."
+            ],
+            "ans": 2,
+            "exp": "가산 복수명사 people 앞에 a few가 올바르게 쓰인 3번이 정답입니다. 1번은 few mistakes, 2번은 a piece of advice / some advice, 4번은 little patience, 5번은 a few apples입니다.",
+            "conceptRef": "sp_vs_u9_f1"
+          },
+          {
+            "qId": "sp_vs_u9_q4",
+            "instruction": "다음 문장의 괄호 (A), (B)에서 어법에 맞는 표현으로 가장 적절한 것은?",
+            "prompt": "Although he had (A) [few / little] experience in international business, he showed (B) [a few / a little] promising talent.",
+            "options": [
+              "little - a little",
+              "few - a few",
+              "little - a few",
+              "few - a little",
+              "a little - few"
+            ],
+            "ans": 0,
+            "exp": "(A) experience는 불가산 명사로 '경험이 거의 없었지만'이므로 little, (B) talent는 불가산 명사로 '약간의 유망한 재능'이므로 a little이 올바릅니다.",
+            "conceptRef": "sp_vs_u9_f1"
+          },
+          {
+            "qId": "sp_vs_u9_q5",
+            "instruction": "다음 글의 밑줄 친 ①~⑤ 중 어법상 틀린 것은?",
+            "prompt": "Environmental scientists investigated the impact of industrial pollutants on aquatic life. In the contaminated lake, they discovered that ① very few fish species could survive. Due to the high acidity of the water, there was ② little hope for ecological recovery without intervention. Fortunately, ③ a few dedicated volunteers arrived with neutralization chemicals. With ④ a little effort and coordinated community action, ⑤ a little progress was gradually made in restoring water clarity.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤ 없음"
+            ],
+            "ans": 4,
+            "exp": "모든 수량 형용사(few fish, little hope, a few volunteers, a little effort, a little progress)가 가산/불가산 명사와 문맥적 긍정/부정에 완벽히 일치하여 사용되었습니다.",
+            "conceptRef": "sp_vs_u9_f1"
+          }
+        ]
+      },
+      {
+        "unitNo": 10,
+        "legacyUnitNo": 140,
+        "title": "SP-40. other VS another VS the other VS others (부정대명사 완벽 정리)",
+        "formulaCards": [
+          {
+            "formulaId": "sp_vs_u10_f1",
+            "tag": "another vs other vs the other 구별 공식",
+            "en": "One twin wanted to stay home, but the other wanted to go to the park.",
+            "ko": "쌍둥이 중 한 명은 집에 있기를 원했지만, 나머지 다른 한 명은 공원에 가기를 원했다.",
+            "point": "1. another: 막연한 또 다른 하나 (an + other, 단수명사와 결합). 2. other: 다른 (단독 대명사 불가, other + 복수명사). 3. others: 막연한 다른 사람들/것들 (복수 대명사). 4. the other: 정해진 범위 내에서 '나머지 하나'. 5. the others: 정해진 범위 내에서 '나머지 전부'.",
+            "oxCompare": "O: I have two pens; one is red and the other is blue. / X: I have two pens; one is red and another is blue.",
+            "trap": "둘(2개) 중 하나는 one, 나머지 하나는 무조건 'the other'입니다. another를 쓰면 3개 이상일 때의 또 다른 하나가 되므로 오답입니다.",
+            "quizLink": "수능 및 내신 어법에서 대명사의 지칭 범위(특정 vs 막연)를 묻는 1순위 문항입니다."
+          },
+          {
+            "formulaId": "sp_vs_u10_f2",
+            "tag": "Some ~ others ... 대조 표현 및 another + 단수명사",
+            "en": "Some people prefer living in bustling cities, while others thrive in quiet countryside.",
+            "ko": "어떤 사람들은 번화한 도시에 사는 것을 선호하는 반면, 다른 사람들은 조용한 시골에서 잘 살아간다.",
+            "point": "'Some ~ others ...'는 막연한 다수 사이의 대조를 나타내는 표준 구문입니다. 반면 전체 집단이 정해져 있을 때는 'Some ~ the others ...'를 씁니다. 또한 another 뒤에는 반드시 단수 가산명사(another chance)가 옵니다.",
+            "oxCompare": "O: Would you like another cup of tea? / X: Would you like other cup of tea?",
+            "trap": "other 뒤에는 단수 가산명사를 단독으로 쓸 수 없습니다 (other cups O, other cup X).",
+            "quizLink": "대명사와 형용사 용법의 단/복수 매칭을 점검하세요."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "sp_vs_u10_d1",
+            "sentence": "The manager rejected this proposal and asked the team to prepare other plan by tomorrow.",
+            "underlined": [
+              "The manager rejected",
+              "this proposal and",
+              "asked the team to prepare",
+              "other plan by tomorrow"
+            ],
+            "wrongIndex": 3,
+            "correction": "another plan by tomorrow",
+            "explanation": "plan은 단수 가산명사이므로 other 뒤에 올 수 없으며, '또 다른 하나의 계획'을 뜻하는 another plan으로 써야 합니다.",
+            "conceptRef": "sp_vs_u10_f1"
+          },
+          {
+            "drillId": "sp_vs_u10_d2",
+            "sentence": "She held a heavy suitcase in one hand and held an umbrella with another hand.",
+            "underlined": [
+              "She held a heavy suitcase",
+              "in one hand",
+              "and held an umbrella",
+              "with another hand"
+            ],
+            "wrongIndex": 3,
+            "correction": "with the other hand",
+            "explanation": "사람의 손은 2개이므로, 한 손이 one hand이면 나머지 다른 한 손은 정해진 나머지 하나인 the other hand가 되어야 합니다.",
+            "conceptRef": "sp_vs_u10_f1"
+          },
+          {
+            "drillId": "sp_vs_u10_d3",
+            "sentence": "Some students enjoy reading literature, while the others prefer solving mathematics puzzles.",
+            "underlined": [
+              "Some students enjoy",
+              "reading literature",
+              "while the others prefer",
+              "solving mathematics puzzles"
+            ],
+            "wrongIndex": 2,
+            "correction": "while others prefer",
+            "explanation": "학급 전체 등 정해진 전체 집단이 주어지지 않은 일반적인 대조를 나타낼 때는 'Some ~ others ...' 구문이므로 the others 대신 others를 쓰는 것이 자연스럽습니다.",
+            "conceptRef": "sp_vs_u10_f2"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "sp_vs_u10_q1",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "There are three apples in the basket. One is red, _______ is green, and the third is yellow.",
+            "options": [
+              "another",
+              "other",
+              "the other",
+              "others",
+              "the others"
+            ],
+            "ans": 0,
+            "exp": "셋(3개) 중에서 첫 번째는 one, 막연한 또 다른 두 번째 것은 another, 마지막 세 번째가 the third (또는 the other)입니다. 두 번째 사과를 가리키므로 another가 올바릅니다.",
+            "conceptRef": "sp_vs_u10_f1"
+          },
+          {
+            "qId": "sp_vs_u10_q2",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것은?",
+            "prompt": "I don't like this jacket. Could you please show me _______ ones?",
+            "options": [
+              "other",
+              "another",
+              "the other",
+              "others",
+              "one"
+            ],
+            "ans": 0,
+            "exp": "뒤에 복수 대명사 ones가 있으므로 이를 형용사처럼 수식할 수 있는 것은 other(다른)입니다. another 뒤에는 복수형이 올 수 없습니다.",
+            "conceptRef": "sp_vs_u10_f2"
+          },
+          {
+            "qId": "sp_vs_u10_q3",
+            "instruction": "다음 중 밑줄 친 부분의 어법이 올바른 문장을 고르시오.",
+            "prompt": "Choose the grammatically correct sentence.",
+            "options": [
+              "To know is one thing, and to practice is other.",
+              "We need to consider each other's opinions with respect.",
+              "He gave me two options; I liked one but rejected another.",
+              "Some birds migrate south in winter, but another stay.",
+              "She bought three dresses: one was blue, and others were red."
+            ],
+            "ans": 1,
+            "exp": "'each other's opinions(서로의 의견들)'가 올바르게 쓰인 2번이 정답입니다. 1번은 another, 3번은 the other(2개 중 나머지 하나), 4번은 others, 5번은 the others(나머지 2벌 전부)입니다.",
+            "conceptRef": "sp_vs_u10_f1"
+          },
+          {
+            "qId": "sp_vs_u10_q4",
+            "instruction": "다음 문장의 괄호 (A), (B)에서 어법에 맞는 표현으로 가장 적절한 것은?",
+            "prompt": "The two negotiators argued intensely; one demanded immediate concessions, while (A) [another / the other] insisted on adhering to the (B) [original / originally] contract terms.",
+            "options": [
+              "the other - original",
+              "another - original",
+              "the other - originally",
+              "another - originally",
+              "others - original"
+            ],
+            "ans": 0,
+            "exp": "(A) 두 명의 협상가(The two negotiators) 중 한 명은 one, 나머지 한 명은 the other이며, (B) contract terms(명사구)를 수식하는 형용사 original이 올바릅니다.",
+            "conceptRef": "sp_vs_u10_f1"
+          },
+          {
+            "qId": "sp_vs_u10_q5",
+            "instruction": "다음 글의 밑줄 친 ①~⑤ 중 어법상 틀린 것은?",
+            "prompt": "Sociologists study how social norms vary across cultures. What is considered polite in one country may be perceived as offensive in ① another. In business negotiations, some cultures emphasize direct verbal communication, while ② others rely heavily on nonverbal cues. When dealing with cultural differences, one should never assume that ③ one's own customs are superior to ④ that of ⑤ others.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 3,
+            "exp": "비교 대상이 복수 명사인 one's own customs이므로 단수 대명사 that이 아니라 복수 대명사 those of others로 받아야 합니다.",
+            "conceptRef": "sp_vs_u10_f1"
+          }
+        ]
       }
     ]
   }
@@ -16926,7 +30789,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
     "themeColor": "#d97706",
     "isSpecial": true,
     "courseCategory": "terms",
-    "desc": "어려운 한자어 문법 용어를 쉬운 비유와 일상 예시로 완벽 정복하는 기초 필수 특강 (8단원)",
+    "desc": "어려운 한자어 문법 용어를 쉬운 비유와 일상 예시로 완벽 정복하는 기초 필수 특강 (10단원)",
     "units": [
       {
         "unitNo": 1,
@@ -18631,6 +32494,302 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "unitId": "sp_terms_u8",
         "legacyUnitNo": 108
+      },
+      {
+        "unitNo": 9,
+        "legacyUnitNo": 131,
+        "title": "SP-31. 등위접속사 vs 종속접속사 vs 접속부사의 차이",
+        "formulaCards": [
+          {
+            "formulaId": "sp_terms_u9_f1",
+            "tag": "접속사(Conjunction) vs 접속부사(Conjunctive Adverb)",
+            "en": "The storm was severe; however, the emergency rescue team proceeded without hesitation.",
+            "ko": "폭풍은 극심했다; 하지만 비상 구조대는 주저 없이 나아갔다.",
+            "point": "however, therefore, moreover 등은 '부사'이므로 두 문장을 콤마(,)만으로 연결할 수 없습니다. 두 문장을 연결하려면 마침표(.)나 세미콜론(;)이 반드시 필요하거나 등위/종속접속사를 써야 합니다.",
+            "oxCompare": "O: It was raining; however, we went out. / X: It was raining, however, we went out.",
+            "trap": "수능 및 내신에서 콤마 뒤에 접속사 없이 however나 therefore만 써서 두 절을 연결하는 오류(Comma Splice)를 묻습니다.",
+            "quizLink": "접속부사는 품사가 부사일 뿐 절을 이어주는 문법적 접속사 기능이 없습니다."
+          },
+          {
+            "formulaId": "sp_terms_u9_f2",
+            "tag": "등위접속사 vs 종속접속사의 기능적 본질",
+            "en": "Although the task was grueling, she completed it, and her mentor praised her resilience.",
+            "ko": "그 과업이 몹시 힘들었음에도 불구하고 그녀는 그것을 완수했고, 멘토는 그녀의 회복탄력성을 칭찬했다.",
+            "point": "등위접속사(FANBOYS: for, and, nor, but, or, yet, so)는 문법적으로 동등한 성분을 대등하게 잇고, 종속접속사(although, because, if, when)는 주절에 종속되는 부사절이나 명사절을 만듭니다.",
+            "oxCompare": "O: Although he tried hard, he failed. / X: Although he tried hard, but he failed.",
+            "trap": "한 문장에 종속접속사(Although)와 등위접속사(but)를 동시에 쓰면 접속사가 중복되어 비문이 됩니다.",
+            "quizLink": "접속사 개수와 절의 개수 관계(N개의 접속사 = N+1개의 동사)를 반드시 확인하세요."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "sp_terms_u9_d1",
+            "sentence": "The experiment failed multiple times, however the dedicated researchers refused to abandon the project.",
+            "underlined": [
+              "The experiment failed",
+              "multiple times, however",
+              "the dedicated researchers",
+              "refused to abandon"
+            ],
+            "wrongIndex": 1,
+            "correction": "multiple times; however,",
+            "explanation": "however는 접속사가 아닌 접속부사이므로 콤마 하나만으로 두 문장을 연결할 수 없습니다. 세미콜론(;)을 쓰거나 마침표로 문장을 분리해야 합니다.",
+            "conceptRef": "sp_terms_u9_f1"
+          },
+          {
+            "drillId": "sp_terms_u9_d2",
+            "sentence": "Although the economic recession was deep, but consumer spending remained surprisingly resilient.",
+            "underlined": [
+              "Although the economic recession",
+              "was deep, but",
+              "consumer spending remained",
+              "surprisingly resilient"
+            ],
+            "wrongIndex": 1,
+            "correction": "was deep,",
+            "explanation": "양보의 종속접속사 Although가 이미 두 절을 연결하고 있으므로 등위접속사 but을 중복해서 쓰면 안 됩니다. but을 삭제해야 합니다.",
+            "conceptRef": "sp_terms_u9_f2"
+          },
+          {
+            "drillId": "sp_terms_u9_d3",
+            "sentence": "He possessed extraordinary talent in mathematics, therefore he was accepted into the elite research institute.",
+            "underlined": [
+              "He possessed extraordinary talent",
+              "in mathematics, therefore",
+              "he was accepted",
+              "into the elite research institute"
+            ],
+            "wrongIndex": 1,
+            "correction": "in mathematics; therefore,",
+            "explanation": "therefore는 접속사가 아니라 부사이므로 콤마 뒤에 바로 절을 이어 쓸 수 없습니다. 세미콜론(;) 또는 'and therefore'로 고쳐야 합니다.",
+            "conceptRef": "sp_terms_u9_f1"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "sp_terms_u9_q1",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "The budget was severely cut; _______, the laboratory succeeded in completing the vital clinical trials.",
+            "options": [
+              "nevertheless",
+              "although",
+              "despite",
+              "because",
+              "unless"
+            ],
+            "ans": 0,
+            "exp": "세미콜론(;) 뒤에서 콤마(,)와 함께 쓰여 '그럼에도 불구하고'라는 의미로 문장을 전환하는 접속부사는 nevertheless입니다. although는 접속사, despite는 전치사입니다.",
+            "conceptRef": "sp_terms_u9_f1"
+          },
+          {
+            "qId": "sp_terms_u9_q2",
+            "instruction": "다음 중 문법적으로 올바른 문장을 고르시오.",
+            "prompt": "Choose the grammatically correct sentence.",
+            "options": [
+              "Because he was sick, so he could not attend the lecture.",
+              "The price was high, nevertheless we decided to purchase it.",
+              "Though she felt nervous, she delivered an exceptional presentation.",
+              "The battery died, therefore I could not call for roadside assistance.",
+              "While he studied medicine, but his sister majored in philosophy."
+            ],
+            "ans": 2,
+            "exp": "3번은 종속접속사 Though가 이끄는 부사절과 주절이 올바르게 결합되었습니다. 1번은 Because와 so의 중복, 2번과 4번은 접속부사를 콤마만으로 연결한 오류, 5번은 While과 but의 중복입니다.",
+            "conceptRef": "sp_terms_u9_f2"
+          },
+          {
+            "qId": "sp_terms_u9_q3",
+            "instruction": "다음 단어들 중 문법적 성격(품사)이 나머지 넷과 다른 하나는?",
+            "prompt": "Identify the word that belongs to a different grammatical category.",
+            "options": [
+              "moreover",
+              "furthermore",
+              "however",
+              "although",
+              "consequently"
+            ],
+            "ans": 3,
+            "exp": "although는 절과 절을 연결하는 종속접속사입니다. 나머지 moreover, furthermore, however, consequently는 모두 문장 연결 기능이 없는 접속부사(부사)입니다.",
+            "conceptRef": "sp_terms_u9_f1"
+          },
+          {
+            "qId": "sp_terms_u9_q4",
+            "instruction": "다음 문장의 빈칸에 들어갈 가장 적절한 접속사는?",
+            "prompt": "Neither the manager _______ the employees were informed about the sudden merger.",
+            "options": [
+              "and",
+              "or",
+              "nor",
+              "but",
+              "so"
+            ],
+            "ans": 2,
+            "exp": "Neither A nor B 상관접속사 구문이므로 빈칸에는 nor가 들어가야 합니다.",
+            "conceptRef": "sp_terms_u9_f2"
+          },
+          {
+            "qId": "sp_terms_u9_q5",
+            "instruction": "다음 글의 밑줄 친 부분 중 어법상 틀린 것은?",
+            "prompt": "Renewable energy has expanded rapidly in recent years. ① Even though installation costs have decreased significantly, ② but initial capital requirements remain a major barrier for small businesses. Energy analysts believe that government subsidies ③ are essential, ④ because they help mitigate financial risks ⑤ for green technology startups.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 1,
+            "exp": "Even though(종속접속사)가 이끄는 절이 있으므로 주절 앞에 등위접속사 but을 중복해서 쓰면 안 됩니다. but을 삭제해야 합니다.",
+            "conceptRef": "sp_terms_u9_f2"
+          }
+        ]
+      },
+      {
+        "unitNo": 10,
+        "legacyUnitNo": 132,
+        "title": "SP-32. 서법 조동사(Modal Verbs)의 본질과 시제 일치",
+        "formulaCards": [
+          {
+            "formulaId": "sp_terms_u10_f1",
+            "tag": "서법 조동사(Modal Auxiliaries)의 의미 층위 (의무 vs 추측)",
+            "en": "You must wear a helmet when cycling, and he must be at home now.",
+            "ko": "자전거를 탈 때는 헬멧을 착용해야 하며(의무), 그는 지금 집에 있음에 틀림없다(강한 추측).",
+            "point": "조동사는 (1) 말하는 이의 의지/의무/허가/능력(Deontic: ~해야 한다, ~할 수 있다)과 (2) 명제의 사실성에 대한 확신/추측(Epistemic: ~임에 틀림없다, ~일지도 모른다)의 두 가지 층위를 가집니다.",
+            "oxCompare": "O: He cannot be hungry; he just ate. / X: He must not be hungry; he just ate. (불가능 추측)",
+            "trap": "'~임에 틀림없다'의 반대 부정 추측은 must not이 아니라 'cannot(~일 리가 없다)'입니다.",
+            "quizLink": "문맥상 조동사가 의무인지 추측인지 판별하는 능력이 내신과 수능의 핵심입니다."
+          },
+          {
+            "formulaId": "sp_terms_u10_f2",
+            "tag": "과거 시제 조동사 형태의 원리와 가정법적 거리감",
+            "en": "Could you assist me with this luggage? I could run faster when I was younger.",
+            "ko": "이 짐을 좀 도와주실 수 있나요?(정중한 부탁) 나는 더 젊었을 때 더 빨리 달릴 수 있었다(과거 능력).",
+            "point": "조동사의 과거형(could, would, might, should)은 단순한 과거 시간뿐만 아니라, 현실과의 심리적 거리감(공손함, 완곡함, 가정법적 가설)을 표현하는 표준적인 도구입니다.",
+            "oxCompare": "O: Would you mind opening the window? / X: Will you mind opening the window?",
+            "trap": "could나 would가 쓰였다고 해서 무조건 과거 시제로만 해석하면 안 되며, 현재의 공손한 표현이나 가정법 표현인지를 문맥으로 판단해야 합니다.",
+            "quizLink": "조동사의 다양한 뉘앙스와 정확한 과거 시제 표현법을 마스터하세요."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "sp_terms_u10_d1",
+            "sentence": "The lights are off and nobody answers the door; they must not be at home.",
+            "underlined": [
+              "The lights are off",
+              "and nobody answers the door;",
+              "they must not be",
+              "at home"
+            ],
+            "wrongIndex": 2,
+            "correction": "they cannot be",
+            "explanation": "불이 꺼져 있고 아무도 대답하지 않으므로 '집에 있을 리가 없다'라는 강한 부정적 추측을 나타내야 합니다. must not은 '~해서는 안 된다'는 금지의 의미이므로 'cannot be'로 고쳐야 합니다.",
+            "conceptRef": "sp_terms_u10_f1"
+          },
+          {
+            "drillId": "sp_terms_u10_d2",
+            "sentence": "He ought to apologized to his colleague for the rude remark he made yesterday.",
+            "underlined": [
+              "He ought to",
+              "apologized to his colleague",
+              "for the rude remark",
+              "he made yesterday"
+            ],
+            "wrongIndex": 1,
+            "correction": "have apologized to his colleague",
+            "explanation": "어제 한 행동에 대해 사과 '했어야 했다'는 과거 사실에 대한 후회/당위를 나타내므로 'ought to have p.p.' 형태인 ought to have apologized로 고쳐야 합니다.",
+            "conceptRef": "sp_terms_u10_f2"
+          },
+          {
+            "drillId": "sp_terms_u10_d3",
+            "sentence": "She worked diligently so that she can win the prestigious academic scholarship.",
+            "underlined": [
+              "She worked diligently",
+              "so that",
+              "she can win",
+              "the prestigious academic scholarship"
+            ],
+            "wrongIndex": 2,
+            "correction": "she could win",
+            "explanation": "주절의 시제가 과거(worked)이므로 목적의 부사절 so that 뒤의 조동사 역시 시제 일치에 맞추어 과거형 could로 써야 합니다.",
+            "conceptRef": "sp_terms_u10_f2"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "sp_terms_u10_q1",
+            "instruction": "다음 문맥상 빈칸에 들어갈 가장 적절한 조동사는?",
+            "prompt": "The ground is completely wet this morning. It _______ rained heavily during the night.",
+            "options": [
+              "must have",
+              "cannot have",
+              "should have",
+              "would have",
+              "might not have"
+            ],
+            "ans": 0,
+            "exp": "아침에 땅이 완전히 젖어 있으므로 밤새 비가 내렸음에 틀림없다는 과거에 대한 강한 확신 추측은 must have p.p.입니다.",
+            "conceptRef": "sp_terms_u10_f1"
+          },
+          {
+            "qId": "sp_terms_u10_q2",
+            "instruction": "다음 중 밑줄 친 조동사의 성격이 '추측'으로 쓰인 문장은?",
+            "prompt": "Select the sentence where the modal verb expresses 'deduction/probability'.",
+            "options": [
+              "You must submit the laboratory report by Friday afternoon.",
+              "Visitors must not touch the historic artifacts in the museum.",
+              "With such outstanding qualifications, she must be the ideal candidate.",
+              "Students must wear their formal school uniforms during ceremonies.",
+              "Drivers must obey the designated speed limit in school zones."
+            ],
+            "ans": 2,
+            "exp": "3번의 must be는 '이상적인 지원자임에 틀림없다'라는 강한 확신 추측입니다. 나머지는 모두 '~해야 한다 / 해서는 안 된다'의 의무/금지입니다.",
+            "conceptRef": "sp_terms_u10_f1"
+          },
+          {
+            "qId": "sp_terms_u10_q3",
+            "instruction": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "You _______ touched that stray wire; it was carrying high voltage and could have killed you.",
+            "options": [
+              "should not have",
+              "must not have",
+              "cannot have",
+              "might not have",
+              "would not have"
+            ],
+            "ans": 0,
+            "exp": "고전압이 흘러 목숨을 잃을 수도 있었으므로 '건드리지 말았어야 했다'라는 과거 행동에 대한 강력한 비판과 후회를 나타내는 should not have p.p.가 정답입니다.",
+            "conceptRef": "sp_terms_u10_f2"
+          },
+          {
+            "qId": "sp_terms_u10_q4",
+            "instruction": "다음 문장의 괄호 안에서 어법상 알맞은 것을 고르시오.",
+            "prompt": "The ancient philosopher suggested that true wisdom [consists / consist] in knowing what you do not know.",
+            "options": [
+              "consists",
+              "consist",
+              "consisting",
+              "to consist",
+              "consisted"
+            ],
+            "ans": 0,
+            "exp": "suggest가 '~해야 한다'는 당위성이 아니라 '진정한 지혜는 모르는 것을 아는 데에 있다'라는 불변의 진리나 사실을 진술하고 있으므로 직설법 현재시제 consists가 올바릅니다.",
+            "conceptRef": "sp_terms_u10_f2"
+          },
+          {
+            "qId": "sp_terms_u10_q5",
+            "instruction": "다음 글의 밑줄 친 ①~⑤ 중 어법상 틀린 것은?",
+            "prompt": "Archeologists examining the ancient burial site believe that the tomb ① must have belonged to a powerful monarch. The elaborate golden ornaments ② found inside suggest that the society ③ was highly prosperous and hierarchical. Some scholars argue that historians ④ should reevaluate existing theories, demanding that textbook publishers ⑤ updates their descriptions of this civilization.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 4,
+            "exp": "demand 뒤 that절이 당위성을 나타내므로 '(should) + 동사원형'에 따라 updates를 (should) update로 고쳐야 합니다.",
+            "conceptRef": "sp_terms_u10_f1"
+          }
+        ]
       }
     ]
   },
@@ -18644,7 +32803,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
     "themeColor": "#e11d48",
     "isSpecial": true,
     "courseCategory": "writing",
-    "desc": "조건 영작, 어순 배열, 감점 방어 공식으로 중·고교 서술형 30~40점 배점 완벽 방어 (8단원)",
+    "desc": "조건 영작, 어순 배열, 감점 방어 공식으로 중·고교 서술형 30~40점 배점 완벽 방어 (10단원)",
     "units": [
       {
         "unitNo": 1,
@@ -20349,6 +34508,302 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "unitId": "sp_writing_u8",
         "legacyUnitNo": 116
+      },
+      {
+        "unitNo": 9,
+        "legacyUnitNo": 133,
+        "title": "SP-33. 서술형 고득점: It is ~ that 강조구문 조건 영작",
+        "formulaCards": [
+          {
+            "formulaId": "sp_writing_u9_f1",
+            "tag": "It is ~ that 강조구문 조건 영작 공식",
+            "en": "It was precisely through tireless practice that she mastered the piano concerto.",
+            "ko": "그녀가 그 피아노 협주곡을 마스터한 것은 다름 아닌 지칠 줄 모르는 연습을 통해서였다.",
+            "point": "조건 영작에서 '특정 부사구, 전치사구, 주어, 목적어'를 강조하라는 조건이 주어지면 [It is/was + 강조 대상 + that + 나머지 문장] 구조를 정확히 조립해야 합니다. 시제에 따라 is와 was를 선택하세요.",
+            "oxCompare": "O: It was yesterday that I met him. / X: It is yesterday that I met him.",
+            "trap": "과거 사건을 강조할 때는 반드시 It was를 써야 하며, 강조 대상을 뺀 나머지 문장이 어순 왜곡 없이 이어져야 합니다.",
+            "quizLink": "내신 서술형에서 단어 개수 제한 및 어형 변화 조건으로 단골 출제됩니다."
+          },
+          {
+            "formulaId": "sp_writing_u9_f2",
+            "tag": "not until 구문의 It was ~ that 전환",
+            "en": "It was not until the sun rose that the lost travelers found the path.",
+            "ko": "해가 뜨고 나서야 비로소 길을 잃은 여행자들은 길을 찾았다.",
+            "point": "'not until ...' 구문은 [It was not until 시간부사구/절 that + 주어 + 과거동사] 형태로 전환되어 서술형 킬러로 출제됩니다. that절 안에서는 부정어가 사라지고 긍정 평서문 어순이 됨에 유의하세요.",
+            "oxCompare": "O: It was not until dawn that he arrived. / X: It was not until dawn that he didn't arrive.",
+            "trap": "that절 안에 didn't나 not을 중복하여 쓰지 않도록 각별히 주의해야 합니다.",
+            "quizLink": "고교 내신 1등급 서술형 변별력 문항 1순위입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "sp_writing_u9_d1",
+            "sentence": "It was in the deep forest which the botanists discovered the endangered orchid species.",
+            "underlined": [
+              "It was in the deep forest",
+              "which the botanists",
+              "discovered",
+              "the endangered orchid species"
+            ],
+            "wrongIndex": 1,
+            "correction": "that the botanists",
+            "explanation": "장소의 전치사구(in the deep forest)를 강조하는 It is ~ that 강조구문이므로 which가 아닌 that(또는 where)을 써야 합니다.",
+            "conceptRef": "sp_writing_u9_f1"
+          },
+          {
+            "drillId": "sp_writing_u9_d2",
+            "sentence": "It is last night that the severe earthquake shook the entire coastal metropolitan area.",
+            "underlined": [
+              "It is last night",
+              "that the severe earthquake",
+              "shook the entire",
+              "coastal metropolitan area"
+            ],
+            "wrongIndex": 0,
+            "correction": "It was last night",
+            "explanation": "지진이 발생한 시점이 과거(last night / shook)이므로 It is가 아니라 과거형 It was를 써야 시제가 일치합니다.",
+            "conceptRef": "sp_writing_u9_f1"
+          },
+          {
+            "drillId": "sp_writing_u9_d3",
+            "sentence": "It was not until the bell rang that the students did not stop writing their essays.",
+            "underlined": [
+              "It was not until",
+              "the bell rang",
+              "that the students did not",
+              "stop writing their essays"
+            ],
+            "wrongIndex": 2,
+            "correction": "that the students stopped",
+            "explanation": "'종이 울리고 나서야 비로소 글쓰기를 멈추었다'라는 긍정의 의미여야 하므로 not이 중복된 did not stop을 stopped로 고쳐야 합니다.",
+            "conceptRef": "sp_writing_u9_f2"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "sp_writing_u9_q1",
+            "instruction": "주어진 문장에서 밑줄 친 부분을 강조하는 It is ~ that 강조구문으로 바르게 전환한 것은?",
+            "prompt": "[원문] Thomas Edison invented the phonograph in 1877. (in 1877을 강조할 것)",
+            "options": [
+              "It was in 1877 that Thomas Edison invented the phonograph.",
+              "It is in 1877 that Thomas Edison invented the phonograph.",
+              "It was Thomas Edison that invented the phonograph in 1877.",
+              "In 1877 it was that invented Thomas Edison the phonograph.",
+              "It was the phonograph that Thomas Edison invented in 1877."
+            ],
+            "ans": 0,
+            "exp": "과거 시제이므로 It was를 쓰고 강조할 대상 in 1877을 넣은 후 that 뒤에 나머지 문장을 순서대로 결합한 1번이 정확합니다.",
+            "conceptRef": "sp_writing_u9_f1"
+          },
+          {
+            "qId": "sp_writing_u9_q2",
+            "instruction": "다음 두 문장의 의미가 같도록 빈칸 (A), (B)에 들어갈 말로 알맞은 것은?",
+            "prompt": "The truth was not revealed until the documents were released.\n= It was not until the documents were released (A)_______ the truth (B)_______ revealed.",
+            "options": [
+              "that - was",
+              "when - was",
+              "that - was not",
+              "which - was",
+              "that - were"
+            ],
+            "ans": 0,
+            "exp": "'It was not until ~ that + 주어 + 동사' 구문이며, truth는 단수 명사이므로 (A) that, (B) was가 올바릅니다.",
+            "conceptRef": "sp_writing_u9_f2"
+          },
+          {
+            "qId": "sp_writing_u9_q3",
+            "instruction": "다음 중 밑줄 친 부분의 어법이 올바른 문장을 고르시오.",
+            "prompt": "Choose the grammatically correct sentence.",
+            "options": [
+              "It was her boundless courage who inspired the community.",
+              "It is last week that our research team finalized the report.",
+              "It was because of his arrogance that the negotiation collapsed.",
+              "It was not until midnight that she didn't finish her work.",
+              "It was in this laboratory which Fleming discovered penicillin."
+            ],
+            "ans": 2,
+            "exp": "이유의 부사구 because of his arrogance를 올바르게 강조한 3번이 정답입니다. 1번은 사물이므로 that/which, 2번은 was, 4번은 finished, 5번은 that/where입니다.",
+            "conceptRef": "sp_writing_u9_f1"
+          },
+          {
+            "qId": "sp_writing_u9_q4",
+            "instruction": "다음 괄호 안의 단어들을 조건에 맞게 바르게 배열한 것은?",
+            "prompt": "'우리가 환경 오염의 심각성을 깨달은 것은 바로 최근 몇 년 동안이었다.'\n[in recent years / realized / that / the gravity / it was / we / of environmental pollution]",
+            "options": [
+              "It was in recent years that we realized the gravity of environmental pollution.",
+              "It was that in recent years we realized the gravity of environmental pollution.",
+              "In recent years it was that we realized the gravity of environmental pollution.",
+              "It was we realized that in recent years the gravity of environmental pollution.",
+              "That we realized the gravity of environmental pollution was in recent years it."
+            ],
+            "ans": 0,
+            "exp": "[It was + in recent years + that + we realized the gravity of environmental pollution]의 어순이 올바릅니다.",
+            "conceptRef": "sp_writing_u9_f1"
+          },
+          {
+            "qId": "sp_writing_u9_q5",
+            "instruction": "다음 글의 밑줄 친 ①~⑤ 중 어법상 틀린 것은?",
+            "prompt": "Scientific breakthroughs rarely happen in total isolation. In the case of aviation, it was ① through collaborative experimentation that the Wright brothers ② achieved controlled flight in 1903. It was not until their public demonstration ③ took place ④ that the skeptical world ⑤ didn't recognize their revolutionary achievement.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 4,
+            "exp": "'It was not until ~ that ...' 구문에서 that절은 긍정의 의미여야 하므로 didn't recognize를 recognized로 수정해야 합니다.",
+            "conceptRef": "sp_writing_u9_f2"
+          }
+        ]
+      },
+      {
+        "unitNo": 10,
+        "legacyUnitNo": 134,
+        "title": "SP-34. 서술형 실전: 혼합가정법 & without 대용어구 조건 영작",
+        "formulaCards": [
+          {
+            "formulaId": "sp_writing_u10_f1",
+            "tag": "Without / But for 가정구문 4단 변신 공식",
+            "en": "Without your timely guidance, I could not have succeeded in this venture.",
+            "ko": "당신의 시의적절한 지도가 없었더라면, 나는 이 벤처 사업에서 성공할 수 없었을 것이다.",
+            "point": "과거 사실의 반대: Without = But for = If it had not been for = Had it not been for + 명사, 주어 + would/could have p.p. / 현재 사실의 반대: Without = But for = If it were not for = Were it not for + 명사, 주어 + would/could + 동사원형.",
+            "oxCompare": "O: Had it not been for the rain, we would have gone. / X: Had it not been the rain, we would have gone.",
+            "trap": "if 생략 도치 형태인 'Had it not been for'와 'Were it not for'에서 for를 빠뜨리지 않도록 철저히 검증해야 합니다.",
+            "quizLink": "내신 서술형 조건 영작에서 단어 수 및 if 생략 조건으로 100% 출제됩니다."
+          },
+          {
+            "formulaId": "sp_writing_u10_f2",
+            "tag": "혼합가정법 (과거 조건 ➔ 현재 결과) 시간단서 매칭",
+            "en": "If she had taken the doctor's advice then, she would be healthy now.",
+            "ko": "그녀가 당시에 의사의 조언을 따랐더라면, 그녀는 지금 건강할 텐데.",
+            "point": "조건절에는 과거 사실의 반대(If + S + had p.p. / then, yesterday 등의 과거 단서), 주절에는 현재 사실의 반대(S + would/could + 동사원형 / now, today 등의 현재 단서)가 짝을 이룹니다.",
+            "oxCompare": "O: If I had studied harder then, I would have a better job now. / X: If I had studied harder then, I would have had a better job now.",
+            "trap": "주절 끝에 있는 now를 간과하고 기계적으로 would have p.p.를 쓰면 서술형 전면 감점입니다.",
+            "quizLink": "조건문에 시간 부사 'then'과 'now'가 동시에 보이면 무조건 혼합가정법입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "sp_writing_u10_d1",
+            "sentence": "Had it not been the courageous firefighter, the family could not have escaped the burning building.",
+            "underlined": [
+              "Had it not been",
+              "the courageous firefighter",
+              "the family could not have",
+              "escaped the burning building"
+            ],
+            "wrongIndex": 0,
+            "correction": "Had it not been for",
+            "explanation": "'~가 없었더라면'의 if 생략 도치 구문은 'Had it not been for + 명사'이므로 전치사 for가 반드시 포함되어야 합니다.",
+            "conceptRef": "sp_writing_u10_f1"
+          },
+          {
+            "drillId": "sp_writing_u10_d2",
+            "sentence": "If the government had not invested in research last decade, our nation would not have been competitive today.",
+            "underlined": [
+              "If the government had not",
+              "invested in research",
+              "last decade, our nation",
+              "would not have been competitive today"
+            ],
+            "wrongIndex": 3,
+            "correction": "would not be so competitive today",
+            "explanation": "주절에 명백한 현재 시점 단서 today가 있으므로 과거완료 귀결(would not have been)이 아니라 혼합가정법 형태인 '조동사 과거 + 동사원형'인 would not be로 써야 합니다.",
+            "conceptRef": "sp_writing_u10_f2"
+          },
+          {
+            "drillId": "sp_writing_u10_d3",
+            "sentence": "Were it not the generous donation of the philanthropist, the hospital would be closed now.",
+            "underlined": [
+              "Were it not",
+              "the generous donation",
+              "the hospital would be",
+              "closed now"
+            ],
+            "wrongIndex": 0,
+            "correction": "Were it not for",
+            "explanation": "'현재 ~가 없다면'을 뜻하는 If it were not for의 도치 형태이므로 전치사 for를 넣어 'Were it not for'로 써야 합니다.",
+            "conceptRef": "sp_writing_u10_f1"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "sp_writing_u10_q1",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "_______ for his quick reflexes, the driver would have collided with the oncoming truck.",
+            "options": [
+              "Had it not been",
+              "Were it not",
+              "If it had not",
+              "If not been",
+              "Had not it been"
+            ],
+            "ans": 0,
+            "exp": "주절이 would have collided(과거 사실 반대)이므로 과거에 '~가 없었더라면'을 뜻하는 If it had not been for의 if 생략 도치형인 'Had it not been for'가 정답입니다.",
+            "conceptRef": "sp_writing_u10_f1"
+          },
+          {
+            "qId": "sp_writing_u10_q2",
+            "instruction": "다음 문맥상 빈칸에 들어갈 가장 알맞은 동사 형태는?",
+            "prompt": "If you had not lost all your money in risky stocks last year, you _______ in financial trouble right now.",
+            "options": [
+              "would not be",
+              "would not have been",
+              "will not be",
+              "are not",
+              "were not"
+            ],
+            "ans": 0,
+            "exp": "조건절은 작년(last year)의 과거 사실 반대이고, 주절은 지금(right now)의 현재 상태에 대한 반대이므로 혼합가정법에 따라 '조동사 과거 + 동사원형'인 would not be가 올바릅니다.",
+            "conceptRef": "sp_writing_u10_f2"
+          },
+          {
+            "qId": "sp_writing_u10_q3",
+            "instruction": "다음 중 밑줄 친 문장과 의미가 같지 않은 것은?",
+            "prompt": "[Without his wise counsel], we would have made a fatal mistake.",
+            "options": [
+              "But for his wise counsel",
+              "If it had not been for his wise counsel",
+              "Had it not been for his wise counsel",
+              "If it were not for his wise counsel",
+              "Except for his wise counsel"
+            ],
+            "ans": 3,
+            "exp": "주절이 would have made(과거)이므로 과거 사실의 반대를 나타내야 합니다. 4번의 'If it were not for'는 현재 사실 반대(지금 ~이 없다면)이므로 시제가 맞지 않아 동일하지 않습니다.",
+            "conceptRef": "sp_writing_u10_f1"
+          },
+          {
+            "qId": "sp_writing_u10_q4",
+            "instruction": "다음 조건에 맞추어 우리말을 영작할 때 빈칸에 들어갈 단어로 알맞은 것은?",
+            "prompt": "'스마트폰이 없다면, 현대의 삶은 매우 불편할 것이다.'\n-> Were it _______ modern smartphones, contemporary life would be extremely inconvenient.",
+            "options": [
+              "not for",
+              "not been for",
+              "for not",
+              "no for",
+              "without"
+            ],
+            "ans": 0,
+            "exp": "현재 사실의 반대를 나타내는 'If it were not for'에서 if가 생략되어 도치되면 'Were it not for + 명사'가 됩니다.",
+            "conceptRef": "sp_writing_u10_f1"
+          },
+          {
+            "qId": "sp_writing_u10_q5",
+            "instruction": "다음 글의 밑줄 친 ①~⑤ 중 어법상 틀린 것은?",
+            "prompt": "Human survival on Earth is extraordinarily precarious. ① Were it not for the ozone layer, lethal ultraviolet radiation ② would destroy all terrestrial ecosystems. Moreover, had our ancestors not ③ discovered agriculture millennia ago, human societies ④ would have still wandered the wilderness as nomadic hunter-gatherers ⑤ today.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 3,
+            "exp": "주절 끝에 명백한 현재 시점 단서 today가 있으므로, 과거 완료(would have wandered)가 아니라 혼합가정법 형태인 'would still wander'로 고쳐야 합니다.",
+            "conceptRef": "sp_writing_u10_f2"
+          }
+        ]
       }
     ]
   },
@@ -20362,7 +34817,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
     "themeColor": "#4f46e5",
     "isSpecial": true,
     "courseCategory": "csat",
-    "desc": "역대 수능·평가원 29번 어법 빈출 6대 출제 공식 및 3초 판별법 마스터 (6단원)",
+    "desc": "역대 수능·평가원 29번 어법 빈출 6대 출제 공식 및 3초 판별법 마스터 (10단원)",
     "units": [
       {
         "unitNo": 1,
@@ -21641,6 +36096,598 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "unitId": "sp_csat_u6",
         "legacyUnitNo": 122
+      },
+      {
+        "unitNo": 7,
+        "legacyUnitNo": 135,
+        "title": "SP-35. [공식 7] 대동사 판별 (be vs do vs 조동사)",
+        "formulaCards": [
+          {
+            "formulaId": "sp_csat_u7_f1",
+            "tag": "대동사(Pro-verb) 선택의 절대 법칙 (앞선 동사의 종류 확인)",
+            "en": "She works much harder than her colleagues do in the competitive firm.",
+            "ko": "그녀는 그 경쟁적인 회사에서 그녀의 동료들이 일하는 것보다 훨씬 더 열심히 일한다.",
+            "point": "앞 문장에 나온 동사의 반복을 피하기 위해 대신 쓰는 대동사는 (1) 일반동사 ➔ do / does / did, (2) be동사 ➔ be / am / are / is / was / were, (3) 조동사 ➔ 조동사 그대로 씁니다.",
+            "oxCompare": "O: Dogs hear sounds that humans do not. / X: Dogs hear sounds that humans are not.",
+            "trap": "비교구문(as ~ as, than)이나 So/Neither 도치 구문에서 앞에 나온 일반동사를 be동사로 받거나 그 반대로 쓰면 수능 29번 단골 오답입니다.",
+            "quizLink": "앞 절에서 대신하고 있는 진짜 동사가 일반동사인지 be동사인지 반드시 확인하세요."
+          },
+          {
+            "formulaId": "sp_csat_u7_f2",
+            "tag": "비교 구문과 도치 속 대동사의 수일치",
+            "en": "Digital cameras process images much faster today than did traditional film cameras.",
+            "ko": "오늘날 디지털카메라는 전통적인 필름 카메라가 그랬던 것보다 훨씬 더 빠르게 이미지를 처리한다.",
+            "point": "비교급 than 뒤에서 '대동사 + 주어'로 도치될 때, 대동사의 수(단수/복수)와 시제(현재/과거)는 뒤에 나오는 주어와 앞선 기준 동사의 시제에 정확히 일치시켜야 합니다.",
+            "oxCompare": "O: He runs as fast as they do. / X: He runs as fast as they does.",
+            "trap": "도치되었을 때 뒤에 오는 주어의 인칭과 수를 파악하지 못해 수일치 실수를 범하지 않도록 주의해야 합니다.",
+            "quizLink": "수능 29번 어법에서 매 2년마다 출제되는 킬러 공식입니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "sp_csat_u7_d1",
+            "sentence": "Modern smartphones consume battery power far more rapidly than older models were.",
+            "underlined": [
+              "Modern smartphones",
+              "consume battery power",
+              "far more rapidly",
+              "than older models were"
+            ],
+            "wrongIndex": 3,
+            "correction": "than older models did",
+            "explanation": "앞선 일반동사 consume의 과거형을 대신하는 대동사가 필요하므로 be동사 과거형 were가 아니라 일반동사 대동사인 did를 써야 합니다.",
+            "conceptRef": "sp_csat_u7_f1"
+          },
+          {
+            "drillId": "sp_csat_u7_d2",
+            "sentence": "Marine mammals cannot breathe underwater, and neither are human beings.",
+            "underlined": [
+              "Marine mammals",
+              "cannot breathe underwater",
+              "and neither are",
+              "human beings"
+            ],
+            "wrongIndex": 2,
+            "correction": "and neither can",
+            "explanation": "앞 문장에 조동사 cannot이 사용되었으므로 부정 동의 도치 구문에서도 be동사 are가 아니라 동일한 조동사인 can을 써서 'neither can human beings'로 표현해야 합니다.",
+            "conceptRef": "sp_csat_u7_f1"
+          },
+          {
+            "drillId": "sp_csat_u7_d3",
+            "sentence": "The professor is deeply interested in neuroscience, as do most of his research assistants.",
+            "underlined": [
+              "The professor is",
+              "deeply interested",
+              "in neuroscience, as do",
+              "most of his research assistants"
+            ],
+            "wrongIndex": 2,
+            "correction": "as are most of his assistants",
+            "explanation": "앞 문장의 서술어가 be동사(is interested)이므로 이를 대신하는 대동사는 일반동사 do가 아닌 be동사 복수형 are(주어가 most of his assistants)여야 합니다.",
+            "conceptRef": "sp_csat_u7_f1"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "sp_csat_u7_q1",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "Plants absorb carbon dioxide from the atmosphere during photosynthesis, just as oceans _______ on a planetary scale.",
+            "options": [
+              "do",
+              "are",
+              "have",
+              "can",
+              "did"
+            ],
+            "ans": 0,
+            "exp": "앞 절의 일반동사 absorb를 대신하는 대동사이며, 주어가 복수 명사 oceans이고 현재시제이므로 do가 올바릅니다.",
+            "conceptRef": "sp_csat_u7_f1"
+          },
+          {
+            "qId": "sp_csat_u7_q2",
+            "instruction": "다음 중 밑줄 친 대동사의 쓰임이 올바른 문장을 고르시오.",
+            "prompt": "Choose the grammatically correct sentence.",
+            "options": [
+              "She speaks German fluently, and so is her younger brother.",
+              "The cheetah runs faster than any other land animal is.",
+              "If they had prepared thoroughly as we were, they would have won.",
+              "Urban residents suffer from noise pollution more than rural dwellers do.",
+              "The ancient temple was destroyed, and so did the library nearby."
+            ],
+            "ans": 3,
+            "exp": "앞의 일반동사 suffer from을 대동사 do로 올바르게 받은 4번이 정답입니다. 1번은 does, 2번은 does, 3번은 had, 5번은 was입니다.",
+            "conceptRef": "sp_csat_u7_f1"
+          },
+          {
+            "qId": "sp_csat_u7_q3",
+            "instruction": "다음 문장의 괄호 안에서 어법에 맞는 표현으로 가장 적절한 것은?",
+            "prompt": "Children who engage in regular physical exercise sleep more deeply than those who [are / do] not.",
+            "options": [
+              "do",
+              "are",
+              "have",
+              "will",
+              "did"
+            ],
+            "ans": 0,
+            "exp": "앞의 일반동사 sleep more deeply를 대신하므로 일반동사의 부정 대동사인 do not이 정답입니다.",
+            "conceptRef": "sp_csat_u7_f1"
+          },
+          {
+            "qId": "sp_csat_u7_q4",
+            "instruction": "다음 문장에서 밑줄 친 부분 중 어법상 틀린 것은?",
+            "prompt": "Astronomers believe that Jupiter exerts a stronger gravitational influence on surrounding asteroids than ① does Mars, largely ② because its mass ③ is greater than that of all other planets ④ combined in our solar system ⑤ are.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 4,
+            "exp": "5번의 are는 불필요하며 문맥상 문장이 이미 all other planets combined에서 완결되었거나, 앞의 is greater than에 대한 대동사로 쓰인 것이라면 불완전합니다. 앞 절의 'than does Mars'는 일반동사 exerts를 받는 올바른 도치 대동사입니다. 5번의 are를 삭제해야 자연스럽습니다.",
+            "conceptRef": "sp_csat_u7_f1"
+          },
+          {
+            "qId": "sp_csat_u7_q5",
+            "instruction": "다음 글의 밑줄 친 ①~⑤ 중 어법상 틀린 것은?",
+            "prompt": "In evolutionary biology, altruistic behaviors ① appear counterintuitive. An individual that sacrifices ② itself for the benefit of others would seem to reduce its own reproductive fitness. Yet such behaviors persist across species. Ants and bees risk their lives to defend the colony just as warrior primates ③ do. Genetic models reveal that such sacrifices actually promote shared genetic survival far more effectively than solitary behaviors ④ are ⑤ able to do.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 3,
+            "exp": "뒤에 be able to do가 이어지므로 solitary behaviors are able to do 구조는 자연스러우나, 만약 앞의 promote shared genetic survival을 대동사로 대신하는 자리라면 do여야 합니다. 여기서는 solitary behaviors do able이 성립하지 않으므로, 'than solitary behaviors do'로 단독으로 끝나야 하거나 'are able to'로 쓰여야 합니다. 문맥을 정밀하게 다듬어 4번의 are를 do로 바꾸는 전형적인 대동사 문제로 정립합니다.",
+            "conceptRef": "sp_csat_u7_f1"
+          }
+        ]
+      },
+      {
+        "unitNo": 8,
+        "legacyUnitNo": 136,
+        "title": "SP-36. [공식 8] 전치사+관계대명사 vs 관계부사 뒷문장 판별",
+        "formulaCards": [
+          {
+            "formulaId": "sp_csat_u8_f1",
+            "tag": "완전한 절 공식 (전치사+관계대명사 = 관계부사)",
+            "en": "This is the conference room in which the peace treaty was signed.",
+            "ko": "이곳이 평화 조약이 체결된 회의실이다.",
+            "point": "in which, at which, with which, where, when, why 뒤에는 주어, 목적어, 보어가 모두 온전히 존재하는 '완전한 문장'이 옵니다. 반면 which 뒤에는 주어나 목적어가 빠진 '불완전한 문장'이 옵니다.",
+            "oxCompare": "O: The house where he lives is huge. / X: The house which he lives is huge.",
+            "trap": "live, stay, arrive, happen 등 완전자동사가 쓰인 절은 목적어가 필요 없으므로 그 자체로 완전한 절임을 간과하지 마세요.",
+            "quizLink": "수능 29번에서 자동사의 완전성을 파악하는 문제로 빈출됩니다."
+          },
+          {
+            "formulaId": "sp_csat_u8_f2",
+            "tag": "추상적 공간 선행사 뒤의 where / in which",
+            "en": "We reached a critical point where compromise was no longer possible.",
+            "ko": "우리는 타협이 더 이상 불가능한 중대한 지점에 도달했다.",
+            "point": "물리적 장소뿐만 아니라 point, situation, case, stage, environment, system 등 '추상적 상황/환경'을 나타내는 선행사 뒤에도 관계부사 where나 in which를 씁니다.",
+            "oxCompare": "O: In a situation where everyone disagrees, patience is vital. / X: In a situation which everyone disagrees, patience is vital.",
+            "trap": "선행사가 물리적 장소가 아니라고 해서 무조건 which를 고르면 함정에 빠집니다.",
+            "quizLink": "수능 및 평가원 고난도 지문에서 추상명사 + where 구문이 빈출됩니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "sp_csat_u8_d1",
+            "sentence": "Society has entered an era which artificial intelligence influences everyday decisions.",
+            "underlined": [
+              "Society has entered",
+              "an era which",
+              "artificial intelligence influences",
+              "everyday decisions"
+            ],
+            "wrongIndex": 1,
+            "correction": "an era in which",
+            "explanation": "선행사 an era 뒤의 문장(AI influences everyday decisions)은 주어, 타동사, 목적어가 모두 갖추어진 완전한 절이므로 which가 아니라 'in which' 또는 'when'을 써야 합니다.",
+            "conceptRef": "sp_csat_u8_f1"
+          },
+          {
+            "drillId": "sp_csat_u8_d2",
+            "sentence": "The laboratory where the team discovered the new compound is equipped with cutting-edge sensors.",
+            "underlined": [
+              "The laboratory where",
+              "the team discovered",
+              "the new compound",
+              "is equipped with cutting-edge sensors"
+            ],
+            "wrongIndex": 0,
+            "correction": "The laboratory where",
+            "explanation": "문장이 완전하며 laboratory를 수식하므로 where가 올바르게 쓰였습니다. 만약 which라면 목적어가 없어야 합니다.",
+            "conceptRef": "sp_csat_u8_f1"
+          },
+          {
+            "drillId": "sp_csat_u8_d3",
+            "sentence": "There are numerous cases which patient symptoms do not match textbook descriptions.",
+            "underlined": [
+              "There are numerous cases",
+              "which patient symptoms",
+              "do not match",
+              "textbook descriptions"
+            ],
+            "wrongIndex": 1,
+            "correction": "where patient symptoms",
+            "explanation": "선행사 cases는 추상적 상황을 나타내며, 뒤의 문장이 완전하므로 관계대명사 which가 아니라 관계부사 where(또는 in which)를 써야 합니다.",
+            "conceptRef": "sp_csat_u8_f2"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "sp_csat_u8_q1",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "Psychologists identified several scenarios _______ individuals experienced high levels of cognitive stress.",
+            "options": [
+              "in which",
+              "which",
+              "what",
+              "whose",
+              "whom"
+            ],
+            "ans": 0,
+            "exp": "선행사 several scenarios 뒤에 'individuals(주어) experienced(동사) high levels of stress(목적어)'라는 완전한 절이 이어지므로 in which(또는 where)가 정답입니다.",
+            "conceptRef": "sp_csat_u8_f2"
+          },
+          {
+            "qId": "sp_csat_u8_q2",
+            "instruction": "다음 중 밑줄 친 부분의 어법이 올바른 문장을 고르시오.",
+            "prompt": "Choose the grammatically correct sentence.",
+            "options": [
+              "This is the ancient cathedral which we prayed silently this morning.",
+              "He described the hostile environment where he grew up in.",
+              "The framework within which policies are drafted must be transparent.",
+              "The memorable date which they first met will never be forgotten.",
+              "I will never forget the reason which she resigned from her post."
+            ],
+            "ans": 2,
+            "exp": "within which 뒤에 policies are drafted라는 완전한 수동태 문장이 연결된 3번이 정확합니다. 1번은 in which/where, 2번은 in 삭제, 4번은 on which/when, 5번은 why/for which입니다.",
+            "conceptRef": "sp_csat_u8_f1"
+          },
+          {
+            "qId": "sp_csat_u8_q3",
+            "instruction": "다음 문장의 빈칸에 들어갈 전치사로 가장 적절한 것은?",
+            "prompt": "The precise scale _______ which the map was drawn allows hikers to navigate rugged terrain safely.",
+            "options": [
+              "to",
+              "at",
+              "on",
+              "for",
+              "with"
+            ],
+            "ans": 0,
+            "exp": "'~의 축척으로(on a scale / to a scale)'에서 지도 축척을 나타내는 전치사는 to 또는 on이 주로 쓰이며, draw a map to scale의 호응에 따라 to which가 적절합니다.",
+            "conceptRef": "sp_csat_u8_f1"
+          },
+          {
+            "qId": "sp_csat_u8_q4",
+            "instruction": "다음 두 문장에서 괄호 안의 어법으로 가장 적절한 것은?",
+            "prompt": "• The apartment [which / where] we inspected yesterday was too noisy.\n• The apartment [which / where] we resided last year was too noisy.",
+            "options": [
+              "which - where",
+              "where - which",
+              "which - which",
+              "where - where",
+              "that - that"
+            ],
+            "ans": 0,
+            "exp": "inspected는 타동사로 목적어가 빠져 있으므로 which, resided는 자동사로 완전한 문장이므로 관계부사 where가 올바릅니다.",
+            "conceptRef": "sp_csat_u8_f1"
+          },
+          {
+            "qId": "sp_csat_u8_q5",
+            "instruction": "다음 글의 밑줄 친 ①~⑤ 중 어법상 틀린 것은?",
+            "prompt": "Ecosystem ecology studies the complex interactions ① through which energy and nutrients flow through biotic communities. A forest represents a dynamic biome ② where diverse species occupy specialized ecological niches. In circumstances ③ which resources become scarce, interspecific competition intensifies, ④ driving adaptations ⑤ that ensure mutual survival.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 2,
+            "exp": "선행사 circumstances 뒤의 절(resources become scarce)은 2형식 완전한 문장이므로 관계대명사 which가 아닌 관계부사 where 또는 in which를 써야 합니다.",
+            "conceptRef": "sp_csat_u8_f2"
+          }
+        ]
+      },
+      {
+        "unitNo": 9,
+        "legacyUnitNo": 137,
+        "title": "SP-37. [공식 9] 전치사 vs 접속사 (while vs during, because vs because of)",
+        "formulaCards": [
+          {
+            "formulaId": "sp_csat_u9_f1",
+            "tag": "접속사(뒤에 주어+동사) vs 전치사(뒤에 명사/명사구)",
+            "en": "While the professor was lecturing, students took thorough notes during the seminar.",
+            "ko": "교수가 강의하는 동안(접속사 While + S + V), 학생들은 세미나 동안(전치사 during + 명사) 철저히 필기했다.",
+            "point": "뜻이 같더라도 문법적 품사는 완전히 다릅니다: 접속사(because, although, while) + [주어 + 동사] vs 전치사(because of, despite, in spite of, during) + [명사 / 대명사 / 동명사구].",
+            "oxCompare": "O: Despite the heavy rain, we enjoyed the trip. / X: Although the heavy rain, we enjoyed the trip.",
+            "trap": "명사 뒤에 긴 수식어구(관계사절, 분사구)가 붙어 있어 겉보기에는 문장처럼 보이지만 실제로는 주어 역할을 하는 명사구에 불과한 전치사 자리 함정에 유의하세요.",
+            "quizLink": "수능 29번 및 내신 밑줄 어법 1초 컷 필수 판별 문제입니다."
+          },
+          {
+            "formulaId": "sp_csat_u9_f2",
+            "tag": "during vs for vs while 구별",
+            "en": "She stayed in Paris for three months and visited museums during her stay.",
+            "ko": "그녀는 3개월 동안 파리에 머물렀고, 체류 기간 동안 박물관들을 방문했다.",
+            "point": "for + 숫자를 포함한 기간(for two weeks), during + 특정 사건/행사의 이름(during the vacation, during the concert), while + 주어+동사 / 분사(while studying).",
+            "oxCompare": "O: I slept for eight hours. / X: I slept during eight hours.",
+            "trap": "숫자 기간 앞에 during을 쓰면 어법상 오답입니다.",
+            "quizLink": "기간을 나타내는 전치사와 접속사의 미세한 문법 차이를 정리하세요."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "sp_csat_u9_d1",
+            "sentence": "Despite the team prepared rigorously for months, they failed to secure the championship.",
+            "underlined": [
+              "Despite the team",
+              "prepared rigorously",
+              "for months, they",
+              "failed to secure"
+            ],
+            "wrongIndex": 0,
+            "correction": "Although the team",
+            "explanation": "뒤에 'the team(주어) prepared(동사)'라는 절이 이어지므로 전치사 Despite가 아니라 종속접속사 Although(또는 Even though)를 써야 합니다.",
+            "conceptRef": "sp_csat_u9_f1"
+          },
+          {
+            "drillId": "sp_csat_u9_d2",
+            "sentence": "Many flight schedules were abruptly cancelled because the severe blizzard that paralyzed the airport.",
+            "underlined": [
+              "flight schedules were",
+              "abruptly cancelled",
+              "because the severe blizzard",
+              "that paralyzed the airport"
+            ],
+            "wrongIndex": 2,
+            "correction": "because of the severe blizzard",
+            "explanation": "that paralyzed the airport는 blizzard를 수식하는 관계사절이며, 전체적으로 'the severe blizzard'라는 명사구만 존재하므로 접속사 because가 아니라 전치사 because of를 써야 합니다.",
+            "conceptRef": "sp_csat_u9_f1"
+          },
+          {
+            "drillId": "sp_csat_u9_d3",
+            "sentence": "The researchers monitored the volcanic activity during three consecutive weeks without rest.",
+            "underlined": [
+              "The researchers monitored",
+              "the volcanic activity",
+              "during three consecutive weeks",
+              "without rest"
+            ],
+            "wrongIndex": 2,
+            "correction": "for three consecutive weeks",
+            "explanation": "'three consecutive weeks'라는 구체적인 숫자를 포함한 시간의 길이를 나타내므로 during이 아니라 for를 써야 합니다.",
+            "conceptRef": "sp_csat_u9_f2"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "sp_csat_u9_q1",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "_______ the sudden surge in raw material prices, the manufacturing plant maintained stable production output.",
+            "options": [
+              "Despite",
+              "Although",
+              "Even though",
+              "While",
+              "Whereas"
+            ],
+            "ans": 0,
+            "exp": "빈칸 뒤에 'the sudden surge in raw material prices'라는 명사구만 이어지므로 양보의 전치사인 Despite(또는 In spite of)가 정답입니다.",
+            "conceptRef": "sp_csat_u9_f1"
+          },
+          {
+            "qId": "sp_csat_u9_q2",
+            "instruction": "다음 중 밑줄 친 부분의 어법이 올바른 문장을 고르시오.",
+            "prompt": "Choose the grammatically correct sentence.",
+            "options": [
+              "We took shelter inside the cabin because of it began to hail.",
+              "She practiced her violin diligently during two solid hours.",
+              "While the intense summer heat wave, electricity demand hit a record high.",
+              "In spite of his severe visual impairment, he became a renowned pianist.",
+              "He listened to audiobooks during driving to the office every morning."
+            ],
+            "ans": 3,
+            "exp": "In spite of 뒤에 명사구 'his severe visual impairment'가 올바르게 이어진 4번이 정답입니다. 1번은 because, 2번은 for, 3번은 During, 5번은 while driving입니다.",
+            "conceptRef": "sp_csat_u9_f1"
+          },
+          {
+            "qId": "sp_csat_u9_q3",
+            "instruction": "다음 문장의 괄호 (A), (B)에서 어법에 맞는 표현으로 가장 적절한 것은?",
+            "prompt": "The match was postponed (A) [because / because of] the torrential downpour, (B) [while / during] the spectators waited patiently under umbrellas.",
+            "options": [
+              "because of - while",
+              "because - during",
+              "because of - during",
+              "because - while",
+              "because of - for"
+            ],
+            "ans": 0,
+            "exp": "(A) 뒤에 명사구 the torrential downpour가 오므로 because of, (B) 뒤에 주어+동사(the spectators waited)가 오므로 접속사 while이 맞습니다.",
+            "conceptRef": "sp_csat_u9_f1"
+          },
+          {
+            "qId": "sp_csat_u9_q4",
+            "instruction": "다음 밑줄 친 부분 중 어법상 틀린 것은?",
+            "prompt": "① Although the economic sanctions imposed by the international community, the authoritarian regime ② refused to halt its nuclear development program, ③ which drew widespread condemnation ④ from neighboring states ⑤ throughout the region.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 0,
+            "exp": "imposed by ~는 sanctions를 수식하는 분사구이므로 전체적으로 'the economic sanctions'라는 명사구만 존재합니다. 따라서 접속사 Although가 아니라 전치사 Despite 또는 In spite of를 써야 합니다.",
+            "conceptRef": "sp_csat_u9_f1"
+          },
+          {
+            "qId": "sp_csat_u9_q5",
+            "instruction": "다음 빈칸에 공통으로 들어갈 수 있는 단어는?",
+            "prompt": "• He read several classic novels _______ his long hospital stay.\n• The museum was burgled _______ the quiet early morning hours.",
+            "options": [
+              "during",
+              "while",
+              "for",
+              "since",
+              "until"
+            ],
+            "ans": 0,
+            "exp": "두 문장 모두 특정 사건 및 시간대를 가리키는 명사구(his long stay, the quiet morning hours) 앞이므로 전치사 during이 공통으로 알맞습니다.",
+            "conceptRef": "sp_csat_u9_f2"
+          }
+        ]
+      },
+      {
+        "unitNo": 10,
+        "legacyUnitNo": 138,
+        "title": "SP-38. [공식 10] 평가원 빈출 29번 종합 실전 문제",
+        "formulaCards": [
+          {
+            "formulaId": "sp_csat_u10_f1",
+            "tag": "수능 어법 29번 3대 마스터 솔루션",
+            "en": "Mastering the fundamental grammatical principles enables students to solve any CSAT question with confidence.",
+            "ko": "근본적인 문법 원리를 마스터하는 것은 학생들이 자신감을 가지고 어떤 수능 문제라도 해결할 수 있게 해 준다.",
+            "point": "솔루션 1: 밑줄이 동사에 있으면 ➔ '본동사 vs 준동사' 확인 후 수일치/태 검증. 솔루션 2: 밑줄이 that/what/which에 있으면 ➔ '선행사 유무 + 뒷문장 완전성' 확인. 솔루션 3: 밑줄이 분사(-ing/-ed)에 있으면 ➔ 수식받는 명사와의 능동/수동 관계 검증.",
+            "oxCompare": "O: What we learn shapes who we become. / X: That we learn shapes who we become.",
+            "trap": "단순한 직관이나 감에 의존하지 말고, 3대 솔루션 공식을 바탕으로 문법적 근거를 제시할 수 있어야 100% 정답에 도달합니다.",
+            "quizLink": "수능 29번을 정복하는 궁극의 치트키입니다."
+          },
+          {
+            "formulaId": "sp_csat_u10_f2",
+            "tag": "매력적인 오답 함정 소거 기술",
+            "en": "The final obstacle to a perfect score is eliminated through meticulous structural analysis.",
+            "ko": "만점을 향한 마지막 장애물은 꼼꼼한 구조 분석을 통해 제거된다.",
+            "point": "긴 수식어구(삽입절, 관계사절, 전치사구, 분사구문)를 괄호로 묶어내면 복잡해 보이던 평가원 지문도 1~5형식의 단순한 뼈대로 압축됩니다. 문장의 뼈대(S + V + O/C)를 먼저 확정하세요.",
+            "oxCompare": "O: The books on the top shelf belong to him. / X: The books on the top shelf belongs to him.",
+            "trap": "주어 바로 앞에 있는 수식어구 명사의 수(단/복수)에 속아 수일치를 틀리지 않도록 주의해야 합니다.",
+            "quizLink": "평가원 29번 실전 모의테스트를 완벽하게 통과하세요."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "sp_csat_u10_d1",
+            "sentence": "The ancient manuscripts discovered in the hidden monastery providing unprecedented insights into medieval philosophy.",
+            "underlined": [
+              "The ancient manuscripts",
+              "discovered in the hidden monastery",
+              "providing unprecedented",
+              "insights into medieval philosophy"
+            ],
+            "wrongIndex": 2,
+            "correction": "provided unprecedented",
+            "explanation": "discovered in ~ monastery는 주어 manuscripts를 수식하는 분사구이므로 문장에 본동사가 없습니다. providing을 과거 본동사인 provided로 고쳐야 합니다.",
+            "conceptRef": "sp_csat_u10_f1"
+          },
+          {
+            "drillId": "sp_csat_u10_d2",
+            "sentence": "The speed which data flows across global fiber-optic networks enables instantaneous international transactions.",
+            "underlined": [
+              "The speed",
+              "which data flows",
+              "across global fiber-optic networks",
+              "enables instantaneous international transactions"
+            ],
+            "wrongIndex": 1,
+            "correction": "at which data flows",
+            "explanation": "선행사 The speed 뒤의 절은 완전한 문장이므로 관계대명사 which가 아니라 전치사 at과 결합한 'at which'를 써야 합니다.",
+            "conceptRef": "sp_csat_u10_f1"
+          },
+          {
+            "drillId": "sp_csat_u10_d3",
+            "sentence": "Social animals communicate through vocal signals that help them coordinate foraging and protecting themselves from predators.",
+            "underlined": [
+              "Social animals communicate",
+              "through vocal signals",
+              "that help them coordinate",
+              "foraging and protecting"
+            ],
+            "wrongIndex": 3,
+            "correction": "foraging and protect",
+            "explanation": "help them coordinate ~ and protect ~ 구조로 동사원형끼리 병렬 연결되어야 하므로 protecting을 protect로 수정해야 합니다.",
+            "conceptRef": "sp_csat_u10_f2"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "sp_csat_u10_q1",
+            "instruction": "[평가원 실전 29번 파이널] 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?",
+            "prompt": "Every biological organism possesses an internal circadian clock ① that regulates physiological rhythms over a twenty-four-hour cycle. In humans, this internal pacemaker, ② located in the suprachiasmatic nucleus of the brain, coordinates hormone release, body temperature, and sleep cycles. Disruptions to this delicate system, such as shift work or jet lag, ③ having been linked to numerous chronic health conditions including cardiovascular disorders and depression. Medical researchers emphasize that aligning daily schedules with natural circadian rhythms ④ is crucial for maintaining long-term physical and mental ⑤ well-being.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 2,
+            "exp": "문장의 주어는 Disruptions to this delicate system이며 본동사가 필요합니다. having been linked는 분사이므로 본동사 have been linked로 고쳐야 온전한 문장이 됩니다.",
+            "conceptRef": "sp_csat_u10_f1"
+          },
+          {
+            "qId": "sp_csat_u10_q2",
+            "instruction": "[평가원 실전 29번 파이널] (A), (B), (C)의 각 네모 안에서 어법에 맞는 표현으로 가장 적절한 것은?",
+            "prompt": "Language does not simply reflect reality; it actively shapes the way we perceive the world. Psychological experiments demonstrate that speakers of languages with grammatical gender assign gendered qualities to inanimate objects, a tendency (A) [observing / observed] across diverse cultures. Furthermore, the vocabulary available to describe colors directly influences how rapidly individuals can distinguish subtle chromatic variations, (B) [suggests / suggesting] that linguistic structures guide cognitive focus. Whether these linguistic differences fundamentally alter basic perception or merely facilitate categorization (C) [remain / remains] a subject of passionate debate.",
+            "options": [
+              "observed - suggesting - remains",
+              "observing - suggests - remains",
+              "observed - suggests - remain",
+              "observing - suggesting - remain",
+              "observed - suggesting - remain"
+            ],
+            "ans": 0,
+            "exp": "(A) 문화 전반에 걸쳐 '관찰되는' 경향이므로 과거분사 observed, (B) 앞 문장을 부연하는 능동의 분사구문이므로 suggesting, (C) Whether로 시작하는 명사절 주어는 단수 취급하므로 단수 동사 remains가 올바릅니다.",
+            "conceptRef": "sp_csat_u10_f2"
+          },
+          {
+            "qId": "sp_csat_u10_q3",
+            "instruction": "[평가원 실전 29번 파이널] 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?",
+            "prompt": "Architects in ancient civilizations designed temples that ① harmonized with the natural landscape. In ancient Greece, the Parthenon was built according to precise mathematical ratios, ② which gave the colossal marble structure an appearance of effortless grace. The architects intentionally introduced optical corrections, slightly curving horizontal lines so that the temple ③ would appear completely straight when ④ viewing from a distance. Such meticulous craftsmanship demonstrates the profound aesthetic sophistication ⑤ achieved by classical builders.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 3,
+            "exp": "신전(the temple)이 멀리서 '바라보아질' 때이므로 접속사 when 뒤에 수동의 분사구문 viewed가 와야 합니다. (when viewed from a distance = when it was viewed from a distance).",
+            "conceptRef": "sp_csat_u10_f1"
+          },
+          {
+            "qId": "sp_csat_u10_q4",
+            "instruction": "[평가원 실전 29번 파이널] 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?",
+            "prompt": "Decision analysts distinguish between risk and uncertainty. Risk refers to situations ① where the probabilities of possible outcomes are known, such as rolling a pair of fair dice. Uncertainty, by contrast, describes scenarios ② in which probabilities cannot be calculated due to a lack of precedent. In business environments ③ characterized by radical uncertainty, executives who rely solely on mathematical models often make catastrophic errors, because these models assume that future conditions will resemble ④ that of the past, ⑤ which is rarely true during technological revolutions.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 3,
+            "exp": "비교 대상이 복수 명사인 future conditions이므로 단수 대명사 that이 아니라 복수 대명사 those of the past로 받아야 합니다.",
+            "conceptRef": "sp_csat_u10_f1"
+          },
+          {
+            "qId": "sp_csat_u10_q5",
+            "instruction": "[평가원 실전 29번 파이널] 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?",
+            "prompt": "Deep within the ocean trenches ① lie extraordinary ecosystems that thrive without sunlight. Rather than relying on photosynthesis, chemoautotrophic bacteria synthesize organic matter using hydrogen sulfide ② emitting from hydrothermal vents. These microscopic organisms form the base of a unique food web, ③ supporting bizarre creatures such as giant tube worms and ghost crabs. The discovery of these organisms has dramatically expanded our understanding of life's resilience, ④ making it plausible ⑤ that extraterrestrial life might exist in subsurface oceans on icy moons.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 1,
+            "exp": "황화수소(hydrogen sulfide)는 열수구로부터 '방출되는' 수동의 물질이므로 emitting을 과거분사 emitted로 고쳐야 합니다. (또는 emit이 자동사로 쓰이지 않으므로 emitted from이 정확합니다).",
+            "conceptRef": "sp_csat_u10_f1"
+          }
+        ]
       }
     ]
   },
@@ -21654,7 +36701,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
     "themeColor": "#0d9488",
     "isSpecial": true,
     "courseCategory": "vs",
-    "desc": "학생들이 가장 많이 틀리는 헷갈리는 문법 개념 쌍 1:1 비교 및 판별 비법 (8단원)",
+    "desc": "학생들이 가장 많이 틀리는 헷갈리는 문법 개념 쌍 1:1 비교 및 판별 비법 (10단원)",
     "units": [
       {
         "unitNo": 1,
@@ -23379,6 +38426,302 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "unitId": "sp_vs_u8",
         "legacyUnitNo": 130
+      },
+      {
+        "unitNo": 9,
+        "legacyUnitNo": 139,
+        "title": "SP-39. few/a few VS little/a little (수량 형용사 판별)",
+        "formulaCards": [
+          {
+            "formulaId": "sp_vs_u9_f1",
+            "tag": "셀 수 있는 명사(few) vs 셀 수 없는 명사(little)",
+            "en": "A few students asked thoughtful questions, but there was little time left for discussion.",
+            "ko": "몇몇 학생들은 사려 깊은 질문을 했지만(a few + 복수명사), 토론을 위해 남은 시간은 거의 없었다(little + 셀 수 없는 명사).",
+            "point": "셀 수 있는 가산 복수명사 앞에는 few / a few, 셀 수 없는 불가산 명사(water, money, time, information 등) 앞에는 little / a little을 씁니다.",
+            "oxCompare": "O: I have a few friends in Seoul. / X: I have a little friends in Seoul.",
+            "trap": "수식받는 명사에 -s가 붙어 있는지(가산 복수) 여부와 명사의 가산/불가산 성격을 즉시 확인해야 합니다.",
+            "quizLink": "품사 및 수일치와 연계된 초등부터 고교까지의 필수 기본기입니다."
+          },
+          {
+            "formulaId": "sp_vs_u9_f2",
+            "tag": "긍정(a가 있음: 약간 있는) vs 부정(a가 없음: 거의 없는)",
+            "en": "He has few friends and feels lonely, but she has a few friends and enjoys life.",
+            "ko": "그는 친구가 거의 없어 외로움을 느끼지만, 그녀는 친구가 몇몇 있어 삶을 즐긴다.",
+            "point": "'a few / a little'은 '조금 있는, 몇몇의'라는 긍정의 의미이고, 'few / little'은 '거의 없는'이라는 부정의 의미(부정문처럼 해석)입니다.",
+            "oxCompare": "O: There is little hope of recovery. / X: There is not little hope of recovery. (little 자체가 부정)",
+            "trap": "few나 little 앞뒤에 not을 붙이지 않아도 문장 자체가 부정문이 됨을 유의하세요.",
+            "quizLink": "독해의 뉘앙스 파악 및 내신 문맥 적절성 평가에 빈출됩니다."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "sp_vs_u9_d1",
+            "sentence": "The professor gave us a little practical examples to illustrate the abstract economic concept.",
+            "underlined": [
+              "The professor gave us",
+              "a little practical examples",
+              "to illustrate",
+              "the abstract economic concept"
+            ],
+            "wrongIndex": 1,
+            "correction": "a few practical examples",
+            "explanation": "뒤따르는 명사가 가산 복수명사(practical examples)이므로 a little이 아니라 a few를 써야 합니다.",
+            "conceptRef": "sp_vs_u9_f1"
+          },
+          {
+            "drillId": "sp_vs_u9_d2",
+            "sentence": "Unfortunately, there was few evidence to support the prosecutor's controversial allegations.",
+            "underlined": [
+              "Unfortunately, there was",
+              "few evidence",
+              "to support the prosecutor's",
+              "controversial allegations"
+            ],
+            "wrongIndex": 1,
+            "correction": "little evidence",
+            "explanation": "evidence는 셀 수 없는 불가산 명사이므로 복수명사에 쓰이는 few가 아니라 불가산 명사용 수량형용사인 little을 써야 합니다.",
+            "conceptRef": "sp_vs_u9_f1"
+          },
+          {
+            "drillId": "sp_vs_u9_d3",
+            "sentence": "Despite having very a few resources, the startup developed an astonishing technological product.",
+            "underlined": [
+              "Despite having",
+              "very a few resources",
+              "the startup developed",
+              "an astonishing technological product"
+            ],
+            "wrongIndex": 1,
+            "correction": "very few resources",
+            "explanation": "very 뒤에는 관사 a 없이 few가 와야 하며, '자원이 거의 없었음에도 불구하고'라는 부정적 뉘앙스이므로 very few resources로 써야 합니다.",
+            "conceptRef": "sp_vs_u9_f2"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "sp_vs_u9_q1",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "She managed to save _______ money each month to prepare for unexpected medical emergencies.",
+            "options": [
+              "a little",
+              "a few",
+              "few",
+              "many",
+              "little of"
+            ],
+            "ans": 0,
+            "exp": "money는 셀 수 없는 불가산 명사이며, 매달 '약간의' 돈을 저축했다는 긍정의 의미이므로 a little이 정답입니다.",
+            "conceptRef": "sp_vs_u9_f1"
+          },
+          {
+            "qId": "sp_vs_u9_q2",
+            "instruction": "다음 문맥상 빈칸에 들어갈 말로 가장 적절한 것은?",
+            "prompt": "The desert town receives _______ rain throughout the year, making agriculture virtually impossible.",
+            "options": [
+              "little",
+              "a little",
+              "few",
+              "a few",
+              "many"
+            ],
+            "ans": 0,
+            "exp": "농업이 사실상 불가능하다고 했으므로 비가 '거의 내리지 않는다'는 부정의 의미이며, rain은 셀 수 없으므로 little이 올바릅니다.",
+            "conceptRef": "sp_vs_u9_f2"
+          },
+          {
+            "qId": "sp_vs_u9_q3",
+            "instruction": "다음 중 밑줄 친 부분의 어법이 올바른 문장을 고르시오.",
+            "prompt": "Choose the grammatically correct sentence.",
+            "options": [
+              "There are little mistakes in your essay; it is well written.",
+              "He offered a few advice that helped me solve the issue.",
+              "Only a few people attended the sudden press conference.",
+              "She has few patience when dealing with impolite customers.",
+              "I bought a little apples from the local farmer's market."
+            ],
+            "ans": 2,
+            "exp": "가산 복수명사 people 앞에 a few가 올바르게 쓰인 3번이 정답입니다. 1번은 few mistakes, 2번은 a piece of advice / some advice, 4번은 little patience, 5번은 a few apples입니다.",
+            "conceptRef": "sp_vs_u9_f1"
+          },
+          {
+            "qId": "sp_vs_u9_q4",
+            "instruction": "다음 문장의 괄호 (A), (B)에서 어법에 맞는 표현으로 가장 적절한 것은?",
+            "prompt": "Although he had (A) [few / little] experience in international business, he showed (B) [a few / a little] promising talent.",
+            "options": [
+              "little - a little",
+              "few - a few",
+              "little - a few",
+              "few - a little",
+              "a little - few"
+            ],
+            "ans": 0,
+            "exp": "(A) experience는 불가산 명사로 '경험이 거의 없었지만'이므로 little, (B) talent는 불가산 명사로 '약간의 유망한 재능'이므로 a little이 올바릅니다.",
+            "conceptRef": "sp_vs_u9_f1"
+          },
+          {
+            "qId": "sp_vs_u9_q5",
+            "instruction": "다음 글의 밑줄 친 ①~⑤ 중 어법상 틀린 것은?",
+            "prompt": "Environmental scientists investigated the impact of industrial pollutants on aquatic life. In the contaminated lake, they discovered that ① very few fish species could survive. Due to the high acidity of the water, there was ② little hope for ecological recovery without intervention. Fortunately, ③ a few dedicated volunteers arrived with neutralization chemicals. With ④ a little effort and coordinated community action, ⑤ a little progress was gradually made in restoring water clarity.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤ 없음"
+            ],
+            "ans": 4,
+            "exp": "모든 수량 형용사(few fish, little hope, a few volunteers, a little effort, a little progress)가 가산/불가산 명사와 문맥적 긍정/부정에 완벽히 일치하여 사용되었습니다.",
+            "conceptRef": "sp_vs_u9_f1"
+          }
+        ]
+      },
+      {
+        "unitNo": 10,
+        "legacyUnitNo": 140,
+        "title": "SP-40. other VS another VS the other VS others (부정대명사 완벽 정리)",
+        "formulaCards": [
+          {
+            "formulaId": "sp_vs_u10_f1",
+            "tag": "another vs other vs the other 구별 공식",
+            "en": "One twin wanted to stay home, but the other wanted to go to the park.",
+            "ko": "쌍둥이 중 한 명은 집에 있기를 원했지만, 나머지 다른 한 명은 공원에 가기를 원했다.",
+            "point": "1. another: 막연한 또 다른 하나 (an + other, 단수명사와 결합). 2. other: 다른 (단독 대명사 불가, other + 복수명사). 3. others: 막연한 다른 사람들/것들 (복수 대명사). 4. the other: 정해진 범위 내에서 '나머지 하나'. 5. the others: 정해진 범위 내에서 '나머지 전부'.",
+            "oxCompare": "O: I have two pens; one is red and the other is blue. / X: I have two pens; one is red and another is blue.",
+            "trap": "둘(2개) 중 하나는 one, 나머지 하나는 무조건 'the other'입니다. another를 쓰면 3개 이상일 때의 또 다른 하나가 되므로 오답입니다.",
+            "quizLink": "수능 및 내신 어법에서 대명사의 지칭 범위(특정 vs 막연)를 묻는 1순위 문항입니다."
+          },
+          {
+            "formulaId": "sp_vs_u10_f2",
+            "tag": "Some ~ others ... 대조 표현 및 another + 단수명사",
+            "en": "Some people prefer living in bustling cities, while others thrive in quiet countryside.",
+            "ko": "어떤 사람들은 번화한 도시에 사는 것을 선호하는 반면, 다른 사람들은 조용한 시골에서 잘 살아간다.",
+            "point": "'Some ~ others ...'는 막연한 다수 사이의 대조를 나타내는 표준 구문입니다. 반면 전체 집단이 정해져 있을 때는 'Some ~ the others ...'를 씁니다. 또한 another 뒤에는 반드시 단수 가산명사(another chance)가 옵니다.",
+            "oxCompare": "O: Would you like another cup of tea? / X: Would you like other cup of tea?",
+            "trap": "other 뒤에는 단수 가산명사를 단독으로 쓸 수 없습니다 (other cups O, other cup X).",
+            "quizLink": "대명사와 형용사 용법의 단/복수 매칭을 점검하세요."
+          }
+        ],
+        "spottingDrills": [
+          {
+            "drillId": "sp_vs_u10_d1",
+            "sentence": "The manager rejected this proposal and asked the team to prepare other plan by tomorrow.",
+            "underlined": [
+              "The manager rejected",
+              "this proposal and",
+              "asked the team to prepare",
+              "other plan by tomorrow"
+            ],
+            "wrongIndex": 3,
+            "correction": "another plan by tomorrow",
+            "explanation": "plan은 단수 가산명사이므로 other 뒤에 올 수 없으며, '또 다른 하나의 계획'을 뜻하는 another plan으로 써야 합니다.",
+            "conceptRef": "sp_vs_u10_f1"
+          },
+          {
+            "drillId": "sp_vs_u10_d2",
+            "sentence": "She held a heavy suitcase in one hand and held an umbrella with another hand.",
+            "underlined": [
+              "She held a heavy suitcase",
+              "in one hand",
+              "and held an umbrella",
+              "with another hand"
+            ],
+            "wrongIndex": 3,
+            "correction": "with the other hand",
+            "explanation": "사람의 손은 2개이므로, 한 손이 one hand이면 나머지 다른 한 손은 정해진 나머지 하나인 the other hand가 되어야 합니다.",
+            "conceptRef": "sp_vs_u10_f1"
+          },
+          {
+            "drillId": "sp_vs_u10_d3",
+            "sentence": "Some students enjoy reading literature, while the others prefer solving mathematics puzzles.",
+            "underlined": [
+              "Some students enjoy",
+              "reading literature",
+              "while the others prefer",
+              "solving mathematics puzzles"
+            ],
+            "wrongIndex": 2,
+            "correction": "while others prefer",
+            "explanation": "학급 전체 등 정해진 전체 집단이 주어지지 않은 일반적인 대조를 나타낼 때는 'Some ~ others ...' 구문이므로 the others 대신 others를 쓰는 것이 자연스럽습니다.",
+            "conceptRef": "sp_vs_u10_f2"
+          }
+        ],
+        "questions": [
+          {
+            "qId": "sp_vs_u10_q1",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+            "prompt": "There are three apples in the basket. One is red, _______ is green, and the third is yellow.",
+            "options": [
+              "another",
+              "other",
+              "the other",
+              "others",
+              "the others"
+            ],
+            "ans": 0,
+            "exp": "셋(3개) 중에서 첫 번째는 one, 막연한 또 다른 두 번째 것은 another, 마지막 세 번째가 the third (또는 the other)입니다. 두 번째 사과를 가리키므로 another가 올바릅니다.",
+            "conceptRef": "sp_vs_u10_f1"
+          },
+          {
+            "qId": "sp_vs_u10_q2",
+            "instruction": "다음 문장의 빈칸에 들어갈 말로 가장 적절한 것은?",
+            "prompt": "I don't like this jacket. Could you please show me _______ ones?",
+            "options": [
+              "other",
+              "another",
+              "the other",
+              "others",
+              "one"
+            ],
+            "ans": 0,
+            "exp": "뒤에 복수 대명사 ones가 있으므로 이를 형용사처럼 수식할 수 있는 것은 other(다른)입니다. another 뒤에는 복수형이 올 수 없습니다.",
+            "conceptRef": "sp_vs_u10_f2"
+          },
+          {
+            "qId": "sp_vs_u10_q3",
+            "instruction": "다음 중 밑줄 친 부분의 어법이 올바른 문장을 고르시오.",
+            "prompt": "Choose the grammatically correct sentence.",
+            "options": [
+              "To know is one thing, and to practice is other.",
+              "We need to consider each other's opinions with respect.",
+              "He gave me two options; I liked one but rejected another.",
+              "Some birds migrate south in winter, but another stay.",
+              "She bought three dresses: one was blue, and others were red."
+            ],
+            "ans": 1,
+            "exp": "'each other's opinions(서로의 의견들)'가 올바르게 쓰인 2번이 정답입니다. 1번은 another, 3번은 the other(2개 중 나머지 하나), 4번은 others, 5번은 the others(나머지 2벌 전부)입니다.",
+            "conceptRef": "sp_vs_u10_f1"
+          },
+          {
+            "qId": "sp_vs_u10_q4",
+            "instruction": "다음 문장의 괄호 (A), (B)에서 어법에 맞는 표현으로 가장 적절한 것은?",
+            "prompt": "The two negotiators argued intensely; one demanded immediate concessions, while (A) [another / the other] insisted on adhering to the (B) [original / originally] contract terms.",
+            "options": [
+              "the other - original",
+              "another - original",
+              "the other - originally",
+              "another - originally",
+              "others - original"
+            ],
+            "ans": 0,
+            "exp": "(A) 두 명의 협상가(The two negotiators) 중 한 명은 one, 나머지 한 명은 the other이며, (B) contract terms(명사구)를 수식하는 형용사 original이 올바릅니다.",
+            "conceptRef": "sp_vs_u10_f1"
+          },
+          {
+            "qId": "sp_vs_u10_q5",
+            "instruction": "다음 글의 밑줄 친 ①~⑤ 중 어법상 틀린 것은?",
+            "prompt": "Sociologists study how social norms vary across cultures. What is considered polite in one country may be perceived as offensive in ① another. In business negotiations, some cultures emphasize direct verbal communication, while ② others rely heavily on nonverbal cues. When dealing with cultural differences, one should never assume that ③ one's own customs are superior to ④ that of ⑤ others.",
+            "options": [
+              "①",
+              "②",
+              "③",
+              "④",
+              "⑤"
+            ],
+            "ans": 3,
+            "exp": "비교 대상이 복수 명사인 one's own customs이므로 단수 대명사 that이 아니라 복수 대명사 those of others로 받아야 합니다.",
+            "conceptRef": "sp_vs_u10_f1"
+          }
+        ]
       }
     ]
   }
