@@ -9,4 +9,5 @@ __pycache__/
 !manifest.json
 !data/nebooks_official_final.json
 scratch/
+scripts/temp_chrome_profile/
 

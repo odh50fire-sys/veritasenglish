@@ -840,6 +840,33 @@
                     </div>
                 </div>
 
+                <!-- 📗 영문법 클리닉 40단원 플래너 배정 안내 배너 -->
+                <div class="mt-8 rounded-2xl border border-emerald-200 bg-gradient-to-r from-emerald-50 via-teal-50 to-white p-5 sm:p-6 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-md">
+                            <i data-lucide="sparkle" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h3 class="font-serif font-black text-base sm:text-lg text-slate-900">영문법 3단계 처방 클리닉 단원 계획 등록</h3>
+                                <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold font-mono">5대 레벨 • 40단원</span>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                                중1 기초 문법부터 수능 1등급 킬러 어법까지! 원하는 단원이나 레벨 전체(8단원)를 학습 플래너에 배정하여 체계적으로 정복하세요.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 shrink-0">
+                        <button type="button" onclick="window.grammarClinicEngine && window.grammarClinicEngine.openPlannerScheduleModal()" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-serif font-bold text-xs shadow-md transition-all flex items-center gap-1.5 cursor-pointer">
+                            <i data-lucide="calendar-plus" class="w-4 h-4"></i>
+                            <span>📅 문법 단원 계획 등록</span>
+                        </button>
+                        <button type="button" onclick="window.app && window.app.switchTab('grammar')" class="px-4 py-2.5 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-serif font-semibold text-xs transition-all cursor-pointer">
+                            <span>클리닉 입장</span>
+                        </button>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -3391,14 +3418,23 @@
                         <span id="grammar-modal-level-badge" class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold font-mono">
                             Lv.1 Starter
                         </span>
+                        <span id="grammar-modal-scheduled-badge" class="hidden px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-amber-300 text-[11px] font-bold font-mono">
+                            📅 계획 배정됨
+                        </span>
                     </div>
                     <h3 id="grammar-modal-title" class="font-serif font-black text-base sm:text-lg text-slate-900">
                         Unit 1. be동사와 일반동사의 현재·과거형
                     </h3>
                 </div>
-                <button type="button" onclick="window.grammarClinicEngine.closeClinicModal()" class="p-2 rounded-xl text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition-colors cursor-pointer">
-                    <i data-lucide="x" class="w-5 h-5"></i>
-                </button>
+                <div class="flex items-center gap-2">
+                    <button type="button" id="btn-modal-schedule-this-unit" onclick="window.grammarClinicEngine.openScheduleModalFromClinic()" class="px-3 py-1.5 rounded-xl border border-emerald-300 bg-emerald-50 hover:bg-emerald-100 text-emerald-950 font-serif font-bold text-xs flex items-center gap-1.5 shadow-2xs transition-all cursor-pointer" title="이 단원을 학습 플래너에 배정">
+                        <i data-lucide="calendar-plus" class="w-4 h-4 text-emerald-700"></i>
+                        <span>📅 플래너 계획 등록</span>
+                    </button>
+                    <button type="button" onclick="window.grammarClinicEngine.closeClinicModal()" class="p-2 rounded-xl text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition-colors cursor-pointer">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
             </div>
 
             <!-- 3단계 스텝 네비게이션 탭 -->
@@ -3424,7 +3460,7 @@
     <!-- ======================================================================
          MODAL: 문법 클리닉 단원 플래너 배정 모달 (Grammar Schedule Modal)
          ====================================================================== -->
-    <div id="modal-grammar-schedule" class="fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-xs hidden flex items-center justify-center p-3 sm:p-4">
+    <div id="modal-grammar-schedule" class="fixed inset-0 z-[60] bg-slate-900/70 backdrop-blur-xs hidden flex items-center justify-center p-3 sm:p-4">
         <div class="bg-white rounded-3xl shadow-2xl max-w-lg w-full overflow-hidden flex flex-col border border-slate-200 animate-in fade-in zoom-in-95 duration-150">
             <!-- 모달 상단 헤더 -->
             <div class="p-5 border-b border-slate-100 flex items-center justify-between bg-emerald-50/50">

@@ -48,7 +48,11 @@ def test_data_integrity():
 
 def run_headless_chrome_test():
     print("\n=== [2] Running Headless Chrome E2E Verification ===")
-    port = 8765
+    import socket
+    import tempfile
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.bind(('127.0.0.1', 0))
+        port = s.getsockname()[1]
     server_dir = os.path.abspath(os.getcwd())
 
     class CustomHandler(http.server.SimpleHTTPRequestHandler):
@@ -63,8 +67,10 @@ def run_headless_chrome_test():
     server_thread.start()
 
     chrome_path = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
-    debug_port = 9225
-    temp_profile = os.path.join(server_dir, "scripts", "temp_chrome_profile")
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.bind(('127.0.0.1', 0))
+        debug_port = s.getsockname()[1]
+    temp_profile = tempfile.mkdtemp()
 
     chrome_cmd = [
         chrome_path,

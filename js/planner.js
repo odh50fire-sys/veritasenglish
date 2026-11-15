@@ -508,9 +508,19 @@ class PlannerEngine {
                 `;
             }
             container.innerHTML = `
-                <div class="py-8 px-4 text-center text-slate-400 border border-dashed border-slate-200 rounded-xl">
-                    <p class="text-sm font-medium">이 날짜(${this.selectedDateStr})에 배정된 학습 과제가 없습니다.</p>
-                    <p class="text-xs text-slate-400 mt-1">상단의 [시중 교재·과제 배정] 또는 [독해 단원 배정]으로 학습 일정을 등록해 보세요.</p>
+                <div class="py-8 px-4 text-center text-slate-400 border border-dashed border-slate-200 rounded-xl space-y-3">
+                    <p class="text-sm font-medium text-slate-600">이 날짜(${this.selectedDateStr})에 배정된 학습 과제가 없습니다.</p>
+                    <p class="text-xs text-slate-400">상단의 [문법 단원 배정], [시중 교재·과제 배정] 또는 [독해 단원 배정]으로 학습 일정을 등록해 보세요.</p>
+                    <div class="flex flex-wrap items-center justify-center gap-2 pt-1">
+                        <button type="button" onclick="window.grammarClinicEngine && window.grammarClinicEngine.openScheduleModalForDate('${this.selectedDateStr}')" class="px-3 py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 text-emerald-950 font-serif font-bold text-xs flex items-center gap-1.5 shadow-2xs transition-all cursor-pointer">
+                            <i data-lucide="sparkle" class="w-3.5 h-3.5 text-emerald-700"></i>
+                            <span>📗 이 날짜에 문법 단원 배정</span>
+                        </button>
+                        <button type="button" onclick="window.assistantEngine && window.assistantEngine.openExternalStudyModal()" class="px-3 py-1.5 rounded-lg bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-950 font-serif font-bold text-xs flex items-center gap-1.5 shadow-2xs transition-all cursor-pointer">
+                            <i data-lucide="book-marked" class="w-3.5 h-3.5 text-amber-700"></i>
+                            <span>📚 교재·원서 배정</span>
+                        </button>
+                    </div>
                     ${quickJumpHtml}
                 </div>
             `;

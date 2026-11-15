@@ -2760,6 +2760,11 @@ class StorageManager {
         return deleted;
     }
 
+    getScheduledGrammarUnit(unitNo) {
+        if (!Array.isArray(this.words)) return null;
+        return this.words.find(w => w.isGrammarUnit && Number(w.grammarUnitNo) === Number(unitNo)) || null;
+    }
+
     deleteGrammarLevel(levelCode) {
         const beforeCount = this.words.length;
         this.words = this.words.filter(w => !(w.isGrammarUnit && w.grammarLevelCode === levelCode));

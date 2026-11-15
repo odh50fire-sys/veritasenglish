@@ -332,6 +332,16 @@ class GrammarClinicEngine {
         const score = prog ? prog.score : 0;
         const stars = prog ? prog.stars : 0;
 
+        const scheduled = window.storage ? window.storage.getScheduledGrammarUnit(unit.unitNo) : null;
+        let scheduledBadge = '';
+        if (scheduled && scheduled.planDate) {
+            scheduledBadge = `
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold font-mono bg-amber-100 text-amber-900 border border-amber-300" title="학습 플래너 배정일: ${scheduled.planDate}">
+                    📅 ${scheduled.planDate.slice(5)} 계획
+                </span>
+            `;
+        }
+
         let starHtml = '';
         if (isCompleted) {
             starHtml = `
@@ -349,11 +359,14 @@ class GrammarClinicEngine {
                         <span class="px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 font-mono text-[10px] font-bold">
                             Unit ${unit.unitNo}
                         </span>
-                        <span class="px-2 py-0.5 rounded-full text-[10px] font-bold ${
-                            isCompleted ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-500'
-                        }">
-                            ${isCompleted ? '완료' : '학습 전'}
-                        </span>
+                        <div class="flex items-center gap-1.5">
+                            ${scheduledBadge}
+                            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold ${
+                                isCompleted ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-500'
+                            }">
+                                ${isCompleted ? '완료' : '학습 전'}
+                            </span>
+                        </div>
                     </div>
 
                     <div>
@@ -387,10 +400,10 @@ class GrammarClinicEngine {
                     <div class="flex items-center gap-1.5">
                         <button type="button" 
                             onclick="window.grammarClinicEngine.openScheduleModal(${unit.unitNo})"
-                            class="px-2.5 py-1.5 rounded-xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50 text-slate-600 hover:text-emerald-800 font-serif font-bold text-xs shadow-2xs transition-all flex items-center gap-1 cursor-pointer"
+                            class="px-2.5 py-1.5 rounded-xl border border-emerald-300 hover:border-emerald-600 bg-emerald-50/70 hover:bg-emerald-100 text-emerald-950 font-serif font-bold text-xs shadow-2xs transition-all flex items-center gap-1 cursor-pointer"
                             title="학습 플래너에 일정 등록">
-                            <i data-lucide="calendar-plus" class="w-3.5 h-3.5 text-emerald-600"></i>
-                            <span>계획</span>
+                            <i data-lucide="calendar-plus" class="w-3.5 h-3.5 text-emerald-700"></i>
+                            <span>계획 등록</span>
                         </button>
                         <button type="button" 
                             onclick="window.grammarClinicEngine.openClinicModal(${unit.unitNo})"
@@ -478,11 +491,21 @@ class GrammarClinicEngine {
 
         const headerTitle = document.getElementById('grammar-modal-title');
         const headerBadge = document.getElementById('grammar-modal-level-badge');
+        const schedBadge = document.getElementById('grammar-modal-scheduled-badge');
         const bodyContainer = document.getElementById('grammar-modal-body');
 
         if (headerTitle) headerTitle.textContent = `Unit ${unit.unitNo}. ${unit.title}`;
         if (headerBadge) {
             headerBadge.textContent = `${unit.levelInfo ? unit.levelInfo.badge : ''} • ${unit.part}`;
+        }
+        if (schedBadge) {
+            const scheduled = window.storage ? window.storage.getScheduledGrammarUnit(unit.unitNo) : null;
+            if (scheduled && scheduled.planDate) {
+                schedBadge.textContent = `📅 ${scheduled.planDate} 플래너 배정됨`;
+                schedBadge.classList.remove('hidden');
+            } else {
+                schedBadge.classList.add('hidden');
+            }
         }
 
         // 스텝 네비게이션 탭 상태 동기화
@@ -872,7 +895,14 @@ class GrammarClinicEngine {
                             <span>5문항 채점 및 결과 확인</span>
                         </button>
                     ` : `
-                        <div class="flex items-center gap-2">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <button type="button" 
+                                onclick="window.grammarClinicEngine.openScheduleModalFromClinic()"
+                                class="px-4 py-2 rounded-xl border border-emerald-300 bg-emerald-50 hover:bg-emerald-100 text-emerald-950 font-serif font-bold text-xs transition-all flex items-center gap-1.5 cursor-pointer"
+                                title="이 단원을 플래너 일정에 등록">
+                                <i data-lucide="calendar-plus" class="w-3.5 h-3.5 text-emerald-700"></i>
+                                <span>📅 플래너 계획 등록</span>
+                            </button>
                             <button type="button" 
                                 onclick="window.grammarClinicEngine.retryQuiz()"
                                 class="px-4 py-2 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 font-serif font-bold text-xs transition-all flex items-center gap-1.5 cursor-pointer">
@@ -975,8 +1005,9 @@ class GrammarClinicEngine {
     // ------------------------------------------------------------------------
     openScheduleModal(unitNo = null) {
         this.scheduleMode = 'single';
-        this.scheduleTargetUnitNo = unitNo || (this.activeUnit ? this.activeUnit.unitNo : 1);
+        this.scheduleTargetUnitNo = unitNo ? Number(unitNo) : (this.activeUnit ? this.activeUnit.unitNo : 1);
         this.populateScheduleModal();
+        this.setScheduleMode('single');
         const modal = document.getElementById('modal-grammar-schedule');
         if (modal) modal.classList.remove('hidden');
         if (window.lucide) window.lucide.createIcons();
@@ -986,13 +1017,34 @@ class GrammarClinicEngine {
         this.scheduleMode = 'batch';
         this.scheduleTargetLevelCode = levelCode || this.currentLevelCode || 'lv1';
         this.populateScheduleModal();
+        this.setScheduleMode('batch');
         const modal = document.getElementById('modal-grammar-schedule');
         if (modal) modal.classList.remove('hidden');
         if (window.lucide) window.lucide.createIcons();
     }
 
+    openScheduleModalFromClinic() {
+        if (!this.activeUnit) return;
+        this.openScheduleModal(this.activeUnit.unitNo);
+    }
+
+    openScheduleModalForDate(dateStr) {
+        this.openScheduleModal(null);
+        const singleDateInput = document.getElementById('grammar-sched-single-date');
+        if (singleDateInput && dateStr) {
+            singleDateInput.value = dateStr;
+        }
+    }
+
     openPlannerScheduleModal() {
-        this.openScheduleModal(1);
+        const selectedDate = (window.plannerEngine && window.plannerEngine.selectedDateStr) 
+            ? window.plannerEngine.selectedDateStr 
+            : (window.storage ? window.storage.getTodayDateString() : new Date().toISOString().slice(0, 10));
+        this.openScheduleModal(null);
+        const singleDateInput = document.getElementById('grammar-sched-single-date');
+        if (singleDateInput && selectedDate) {
+            singleDateInput.value = selectedDate;
+        }
     }
 
     closeScheduleModal() {
@@ -1030,7 +1082,7 @@ class GrammarClinicEngine {
             this.data.forEach(lvl => {
                 options.push(`<optgroup label="${lvl.badge} (${lvl.levelName})">`);
                 (lvl.units || []).forEach(u => {
-                    options.push(`<option value="${u.unitNo}" ${u.unitNo === this.scheduleTargetUnitNo ? 'selected' : ''}>Unit ${u.unitNo}. ${u.title} [${u.part}]</option>`);
+                    options.push(`<option value="${u.unitNo}" ${Number(u.unitNo) === Number(this.scheduleTargetUnitNo) ? 'selected' : ''}>Unit ${u.unitNo}. ${u.title} [${u.part}]</option>`);
                 });
                 options.push(`</optgroup>`);
             });
@@ -1038,9 +1090,12 @@ class GrammarClinicEngine {
         }
 
         const todayStr = window.storage ? window.storage.getTodayDateString() : new Date().toISOString().slice(0, 10);
+        const defaultDate = (window.plannerEngine && window.plannerEngine.selectedDateStr) 
+            ? window.plannerEngine.selectedDateStr 
+            : todayStr;
         const singleDateInput = document.getElementById('grammar-sched-single-date');
-        if (singleDateInput && !singleDateInput.value) {
-            singleDateInput.value = todayStr;
+        if (singleDateInput) {
+            singleDateInput.value = defaultDate;
         }
 
         // 레벨 일괄 모드
@@ -1168,6 +1223,10 @@ class GrammarClinicEngine {
             if (window.app && window.app.renderDashboard) {
                 window.app.renderDashboard();
             }
+            this.renderStatsOnly();
+            if (this.activeUnit) {
+                this.renderModalContent();
+            }
         } else {
             const levelSelect = document.getElementById('grammar-sched-level-select');
             const startSelect = document.getElementById('grammar-sched-start-unit-select');
@@ -1204,6 +1263,10 @@ class GrammarClinicEngine {
             }
             if (window.app && window.app.renderDashboard) {
                 window.app.renderDashboard();
+            }
+            this.renderStatsOnly();
+            if (this.activeUnit) {
+                this.renderModalContent();
             }
         }
     }
