@@ -30,24 +30,27 @@ class GrammarClinicEngine {
             this.data = window.GRAMMAR_CLINIC_BANK || [];
         }
 
-        // 사용자의 진단 레벨 자동 감지 및 중1~수능 단계별 추천 매핑
+        // 사용자의 진단 레벨 자동 감지 및 초등~수능 단계별 추천 매핑
         if (!this.isInitialized) {
             const userLvl = window.storage ? window.storage.getAcademicLevel() : 3;
             let mappedCode = 'lv1';
-            if (userLvl <= 3) {
-                // Lv.1 Starter, Lv.2 Explorer, Lv.3 Pioneer (중1-1) -> 중1 문법 (lv1)
+            if (userLvl <= 2) {
+                // Lv.1 Starter, Lv.2 Explorer -> 초등 기초 문법 (lv0)
+                mappedCode = 'lv0';
+            } else if (userLvl <= 4) {
+                // Lv.3 Pioneer, Lv.4 Navigator -> 중1 문법 (lv1)
                 mappedCode = 'lv1';
-            } else if (userLvl <= 5) {
-                // Lv.4 Navigator (중1-2), Lv.5 Challenger (중2-1) -> 중2 문법 (lv2)
+            } else if (userLvl <= 6) {
+                // Lv.5 Challenger, Lv.6 Strategist -> 중2 문법 (lv2)
                 mappedCode = 'lv2';
             } else if (userLvl <= 7) {
-                // Lv.6 Strategist (중2-2), Lv.7 Master (중3-1) -> 중3 문법 (lv3)
+                // Lv.7 Master -> 중3 문법 (lv3)
                 mappedCode = 'lv3';
             } else if (userLvl === 8) {
-                // Lv.8 Innovator (고1~고2 내신) -> 고교 내신 (lv4)
+                // Lv.8 Innovator -> 고교 내신 (lv4)
                 mappedCode = 'lv4';
             } else {
-                // Lv.9 Leader, Lv.10 Veritas Elite (수능 1등급) -> 수능 킬러 (lv5)
+                // Lv.9 Leader, Lv.10 Veritas Elite -> 수능 킬러 (lv5)
                 mappedCode = 'lv5';
             }
             this.currentLevelCode = mappedCode;
@@ -268,7 +271,7 @@ class GrammarClinicEngine {
                                 : 'text-slate-600 hover:text-slate-900'
                         }">
                         <i data-lucide="book-open" class="w-4 h-4 text-emerald-400"></i>
-                        <span>📚 학년별 정규 과정 (5단계 • 40단원)</span>
+                        <span>📚 학년별 정규 과정 (6단계 • 48단원)</span>
                     </button>
                     <button type="button" 
                         onclick="window.grammarClinicEngine.switchTrack('special')"
@@ -474,7 +477,7 @@ class GrammarClinicEngine {
         const unitBadgeLabel = levelObj.isSpecial ? `특강 ${unit.unitNo}강` : `Unit ${unit.unitNo}`;
 
         return `
-            <div class="bg-white rounded-2xl border ${isCompleted ? 'border-emerald-300 ring-1 ring-emerald-200/50' : 'border-slate-200'} p-5 flex flex-col justify-between hover:shadow-lg transition-all duration-200 group">
+            <div data-unit-id="${unit.unitId || unit.unitNo}" class="bg-white rounded-2xl border ${isCompleted ? 'border-emerald-300 ring-1 ring-emerald-200/50' : 'border-slate-200'} p-5 flex flex-col justify-between hover:shadow-lg transition-all duration-200 group">
                 <div class="space-y-3">
                     <div class="flex items-center justify-between gap-2">
                         <span class="px-2 py-0.5 rounded-md bg-slate-100 text-slate-700 font-mono text-[10px] font-bold">
@@ -1502,7 +1505,9 @@ class GrammarClinicEngine {
                 options.push(`<optgroup label="${groupTitle}">`);
                 (lvl.units || []).forEach(u => {
                     const unitLabel = lvl.isSpecial ? `특강 ${u.unitNo}강. ${u.title}` : `Unit ${u.unitNo}. ${u.title}`;
-                    const isSelected = (u.unitId && u.unitId === this.scheduleTargetUnitId) || (Number(u.legacyUnitNo) === Number(this.scheduleTargetUnitNo));
+                    const isSelected = this.scheduleTargetUnitId 
+                        ? (u.unitId === this.scheduleTargetUnitId)
+                        : (lvl.levelCode === this.scheduleTargetLevelCode && u.unitNo === this.scheduleTargetUnitNo);
                     options.push(`<option value="${u.unitId || u.unitNo}" ${isSelected ? 'selected' : ''}>[${lvl.badge}] ${unitLabel} (${u.part})</option>`);
                 });
                 options.push(`</optgroup>`);
@@ -1629,7 +1634,7 @@ class GrammarClinicEngine {
             const unitRef = unitSelect ? unitSelect.value : (this.scheduleTargetUnitId || this.scheduleTargetUnitNo);
             const targetDate = (dateInput && dateInput.value) ? dateInput.value : window.storage.getTodayDateString();
 
-            const res = window.storage.registerGrammarUnit(unitRef, targetDate);
+            const res = window.storage.registerGrammarUnit(unitRef, targetDate, this.scheduleTargetLevelCode);
             if (!res) {
                 alert('단원 등록에 실패했습니다. 단원 정보를 확인해 주세요.');
                 return;

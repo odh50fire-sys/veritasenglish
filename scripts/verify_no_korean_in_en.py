@@ -44,7 +44,8 @@ for lvl in bank:
         assert len(u['spottingDrills']) == 3
         total_drills += 3
 
-print(f"Total spotting drills verified: {total_drills} (exactly 3 per unit across all 70 units)")
+unit_count = sum(len(lvl['units']) for lvl in bank)
+print(f"Total spotting drills verified: {total_drills} (exactly 3 per unit across all {unit_count} units in {len(bank)} levels)")
 
 # Also check questions
 total_questions = 0
@@ -53,6 +54,6 @@ for lvl in bank:
         assert len(u['questions']) == 5
         total_questions += 5
 
-print(f"Total questions verified: {total_questions} (exactly 5 per unit across all 70 units)")
+print(f"Total questions verified: {total_questions} (exactly 5 per unit across all {unit_count} units in {len(bank)} levels)")
 
-print("\n>>> ALL CHECKS PASSED: ZERO KOREAN IN 'en', ZERO GENERIC KO, ALL 70 UNITS 100% COMPLETE! <<<")
+print(f"\n>>> ALL CHECKS PASSED: ZERO KOREAN IN 'en', ZERO GENERIC KO, ALL {unit_count} UNITS 100% COMPLETE! <<<")
