@@ -132,6 +132,8 @@ def run_headless_chrome_test():
                 resp = json.loads(ws.recv())
                 if resp.get("id") == msg_id:
                     result = resp.get("result", {}).get("result", {})
+                    if "exceptionDetails" in resp.get("result", {}):
+                        print("EXCEPTION in", expression, resp.get("result", {}).get("exceptionDetails"))
                     if "value" in result:
                         return result["value"]
                     return resp.get("result", {})
@@ -149,10 +151,11 @@ def run_headless_chrome_test():
 
         # Wait for page to fully load
         for _ in range(30):
-            ready = eval_js("document.readyState === 'complete' && !!window.GRAMMAR_CLINIC_BANK && !!window.app")
-            if ready:
+            ready = eval_js("document.readyState === 'complete' && !!window.GRAMMAR_CLINIC_BANK && !!window.app && window.GRAMMAR_CLINIC_BANK.length === 9")
+            if ready is True:
                 break
             time.sleep(0.3)
+        print("DEBUG ready status:", ready)
 
         # Test 1: Data bank loaded
         bank_len = eval_js("window.GRAMMAR_CLINIC_BANK ? window.GRAMMAR_CLINIC_BANK.length : 0")

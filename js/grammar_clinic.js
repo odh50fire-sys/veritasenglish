@@ -718,25 +718,11 @@ class GrammarClinicEngine {
                         [수능·내신 킬러 어법 처방전]
                     </div>
 
-                    <!-- 밑줄 선택 문장 영역 -->
-                    <div class="p-6 rounded-2xl bg-slate-900 text-white font-serif text-base sm:text-lg leading-loose tracking-wide">
-                        <p class="flex flex-wrap items-center gap-y-3 gap-x-2">
-                            ${drill.underlined.map((word, idx) => `
-                                <button type="button" 
-                                    id="spot-btn-${idx}"
-                                    onclick="window.grammarClinicEngine.checkSpotting(${idx}, ${drill.wrongIndex})"
-                                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg border-2 transition-all font-mono font-medium cursor-pointer ${
-                                        isSolved && idx === drill.wrongIndex
-                                            ? 'border-emerald-400 bg-emerald-500/20 text-emerald-300 ring-2 ring-emerald-400/50'
-                                            : 'border-slate-600 hover:border-amber-400 hover:bg-amber-400/10 text-slate-100'
-                                    }">
-                                    <span class="text-xs px-1.5 py-0.2 rounded bg-slate-800 text-slate-400 font-bold">
-                                        ${idx + 1}
-                                    </span>
-                                    <span class="underline decoration-1 underline-offset-4">${word}</span>
-                                </button>
-                            `).join(' ')}
-                        </p>
+                    <!-- 밑줄 선택 문장 영역 (실제 완전한 문장 내 밑줄 인라인 렌더링) -->
+                    <div class="p-6 sm:p-7 rounded-2xl bg-slate-900 text-white font-serif text-base sm:text-lg leading-loose tracking-wide border border-slate-800 shadow-inner">
+                        <div class="leading-loose sm:leading-loose">
+                            ${this.renderSpottingSentenceInline(drill, isSolved)}
+                        </div>
                     </div>
 
                     <!-- 피드백 메시지 컨테이너 -->
@@ -773,6 +759,64 @@ class GrammarClinicEngine {
         `;
     }
 
+    /**
+     * 밑줄 어법 문장 인라인 렌더링
+     * - 완전한 원문 문장(sentence)의 어순과 맥락을 100% 보존
+     * - 밑줄 대상 어구 4개를 문장 내 정확한 위치에 번호 배지(①, ②, ③, ④)와 밑줄 버튼으로 인라인 삽입
+     */
+    renderSpottingSentenceInline(drill, isSolved) {
+        const sentence = drill.sentence || '';
+        const underlined = drill.underlined || [];
+        const wrongIdx = drill.wrongIndex;
+
+        let html = '';
+        let curIdx = 0;
+
+        for (let i = 0; i < underlined.length; i++) {
+            const target = underlined[i];
+            const pos = sentence.indexOf(target, curIdx);
+            if (pos === -1) {
+                continue;
+            }
+
+            // 앞선 일반 문장 텍스트
+            const beforeText = sentence.slice(curIdx, pos);
+            if (beforeText) {
+                html += `<span>${beforeText}</span>`;
+            }
+
+            // 인라인 번호 밑줄 버튼
+            const isTargetWrong = (i === wrongIdx);
+            const isHighlight = isSolved && isTargetWrong;
+
+            html += `
+                <button type="button"
+                    id="spot-btn-${i}"
+                    onclick="window.grammarClinicEngine.checkSpotting(${i}, ${wrongIdx})"
+                    class="inline-flex items-center gap-1 mx-1 my-0.5 px-2.5 py-0.5 rounded-lg border-2 font-mono font-semibold transition-all cursor-pointer select-none align-middle ${
+                        isHighlight
+                            ? 'border-emerald-400 bg-emerald-500/25 text-emerald-300 ring-2 ring-emerald-400/50 shadow-sm'
+                            : 'border-slate-600 hover:border-amber-400 hover:bg-amber-400/10 text-slate-100'
+                    }">
+                    <span class="text-xs px-1.5 py-0.2 rounded bg-slate-800 text-amber-300 font-bold">
+                        ${i + 1}
+                    </span>
+                    <span class="underline decoration-2 underline-offset-4 decoration-amber-400/80">${target}</span>
+                </button>
+            `;
+
+            curIdx = pos + target.length;
+        }
+
+        // 남은 뒷부분 문장 텍스트
+        const afterText = sentence.slice(curIdx);
+        if (afterText) {
+            html += `<span>${afterText}</span>`;
+        }
+
+        return html || sentence;
+    }
+
     checkSpotting(clickedIdx, wrongIdx) {
         const feedbackContainer = document.getElementById('spotting-feedback-container');
         const nextBtn = document.getElementById('spotting-next-step-btn');
@@ -790,7 +834,7 @@ class GrammarClinicEngine {
             // 버튼 스타일 업데이트
             const correctBtn = document.getElementById(`spot-btn-${clickedIdx}`);
             if (correctBtn) {
-                correctBtn.className = 'inline-flex items-center gap-1.5 px-3 py-1 rounded-lg border-2 border-emerald-400 bg-emerald-500/20 text-emerald-300 ring-2 ring-emerald-400/50 font-mono font-medium cursor-pointer';
+                correctBtn.className = 'inline-flex items-center gap-1 mx-1 my-0.5 px-2.5 py-0.5 rounded-lg border-2 border-emerald-400 bg-emerald-500/25 text-emerald-300 ring-2 ring-emerald-400/50 font-mono font-semibold cursor-pointer align-middle shadow-sm';
             }
             if (nextBtn) {
                 nextBtn.className = 'px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white shadow-md font-serif font-bold text-sm transition-all flex items-center gap-2 cursor-pointer';
