@@ -1187,10 +1187,21 @@ def generate_grammar_data():
     return levels
 
 if __name__ == '__main__':
-    data = generate_grammar_data()
-    js_content = "/**\n * Veritas English - 영문법 클리닉 5대 레벨 40단원 전체 데이터베이스\n * 5 Levels x 8 Units = 40 Units (200 Practice Questions + 40 Error Spotting Drills)\n */\n"
-    js_content += "window.GRAMMAR_CLINIC_BANK = " + json.dumps(data, ensure_ascii=False, indent=2) + ";\n"
+    import os
+    import sys
+    sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+    from build_special_lectures_data import get_special_lectures_courses
+
+    regular_levels = generate_grammar_data()
+    special_courses = get_special_lectures_courses()
+    all_data = regular_levels + special_courses
+
+    js_content = "/**\n * Veritas English - 영문법 클리닉 정규 5대 레벨 40단원 + 테마별 4대 특강 30단원 (총 70단원)\n"
+    js_content += " * 정규 과정: Lv.1 중1 ~ Lv.5 수능 킬러 (40단원, 200문항, 40 어법 클리닉)\n"
+    js_content += " * 테마 특강: 용어 특강, 서술형 특강, 수능 29번 특강, 혼동 문법 VS 특강 (30단원, 150문항, 30 어법 클리닉)\n */\n"
+    js_content += "window.GRAMMAR_CLINIC_BANK = " + json.dumps(all_data, ensure_ascii=False, indent=2) + ";\n"
+    js_content += "window.GRAMMAR_SPECIAL_LECTURES = " + json.dumps(special_courses, ensure_ascii=False, indent=2) + ";\n"
     
     with open('data/grammar_clinic_data.js', 'w', encoding='utf-8') as f:
         f.write(js_content)
-    print("Successfully built data/grammar_clinic_data.js with 5 levels and 40 units!")
+    print(f"Successfully built data/grammar_clinic_data.js with {len(regular_levels)} regular levels and {len(special_courses)} special courses (Total {len(all_data)} categories, {sum(len(l['units']) for l in all_data)} units)!")

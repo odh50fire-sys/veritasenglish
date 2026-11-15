@@ -6,6 +6,7 @@
 class GrammarClinicEngine {
     constructor() {
         this.data = window.GRAMMAR_CLINIC_BANK || [];
+        this.currentTrack = 'regular'; // 'regular' (정규 5단계) | 'special' (테마 4대 특강)
         this.currentLevelCode = 'lv1';
         this.searchQuery = '';
         
@@ -124,7 +125,16 @@ class GrammarClinicEngine {
         const container = document.getElementById('grammar-clinic-app-container');
         if (!container) return;
 
-        const currentLvlObj = this.data.find(lvl => lvl.levelCode === this.currentLevelCode) || this.data[0];
+        const regularLevels = this.data.filter(lvl => !lvl.isSpecial);
+        const specialCourses = this.data.filter(lvl => lvl.isSpecial);
+        const activeList = this.currentTrack === 'special' ? specialCourses : regularLevels;
+
+        let currentLvlObj = this.data.find(lvl => lvl.levelCode === this.currentLevelCode);
+        if (!currentLvlObj) {
+            currentLvlObj = activeList[0] || this.data[0];
+            this.currentLevelCode = currentLvlObj.levelCode;
+        }
+
         const stats = this.getLevelStats(this.currentLevelCode);
         const userLvl = window.storage ? window.storage.getAcademicLevel() : 3;
 
@@ -146,10 +156,10 @@ class GrammarClinicEngine {
                         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-serif font-bold">
                             <span>📗 VERITAS GRAMMAR CLINIC</span>
                             <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                            <span>중1~수능 학년별 5단계 40단원 완성</span>
+                            <span>정규 5단계(40단원) + 테마 4대 특강(30단원) 총 70단원</span>
                         </div>
                         <h2 class="text-2xl sm:text-3xl font-serif font-black tracking-tight text-white flex items-center gap-2">
-                            <span>영문법 3단계 처방 클리닉</span>
+                            <span>영문법 3단계 처방 클리닉 &amp; 테마 특강</span>
                         </h2>
                         <p class="text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
                             개념 공식 암기(<span class="text-emerald-300 font-semibold">1단계</span>) ➔ 밑줄 오류 즉각 진단(<span class="text-emerald-300 font-semibold">2단계</span>) ➔ 실전 5제 출제 공식 마스터(<span class="text-emerald-300 font-semibold">3단계</span>)로 수능 29번 어법과 중·고교 서술형을 100% 정복합니다.
@@ -159,7 +169,7 @@ class GrammarClinicEngine {
                     <!-- 전체 진척 요약 카드 -->
                     <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-white/10 shrink-0 min-w-[240px] flex flex-col gap-2">
                         <div class="flex items-center justify-between text-xs text-slate-300">
-                            <span>현재 레벨 달성도</span>
+                            <span>현재 코스 달성도</span>
                             <span class="font-bold text-emerald-400 font-mono text-sm">${stats.completed} / ${stats.total} 단원 (${stats.percentage}%)</span>
                         </div>
                         <div class="w-full bg-black/40 h-2.5 rounded-full overflow-hidden">
@@ -173,18 +183,51 @@ class GrammarClinicEngine {
                 </div>
             </div>
 
-            <!-- 5대 레벨 선택 탭 바 -->
+            <!-- 정규 과정 vs 테마 특강 트랙 전환 탭 -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 pb-2">
+                <div class="inline-flex p-1 rounded-2xl bg-slate-100 border border-slate-200 text-xs font-serif font-bold">
+                    <button type="button" 
+                        onclick="window.grammarClinicEngine.switchTrack('regular')"
+                        class="px-4 py-2 rounded-xl transition-all cursor-pointer flex items-center gap-2 ${
+                            this.currentTrack === 'regular' 
+                                ? 'bg-slate-900 text-white shadow-xs' 
+                                : 'text-slate-600 hover:text-slate-900'
+                        }">
+                        <i data-lucide="book-open" class="w-4 h-4 text-emerald-400"></i>
+                        <span>📚 학년별 정규 과정 (5단계 • 40단원)</span>
+                    </button>
+                    <button type="button" 
+                        onclick="window.grammarClinicEngine.switchTrack('special')"
+                        class="px-4 py-2 rounded-xl transition-all cursor-pointer flex items-center gap-2 ${
+                            this.currentTrack === 'special' 
+                                ? 'bg-gradient-to-r from-amber-600 to-amber-500 text-white shadow-xs' 
+                                : 'text-slate-600 hover:text-slate-900'
+                        }">
+                        <i data-lucide="sparkles" class="w-4 h-4 text-amber-200"></i>
+                        <span>🎓 테마별 문법 특강 (4대 코스 • 30단원)</span>
+                    </button>
+                </div>
+
+                <div class="text-xs text-slate-500 font-medium flex items-center gap-1.5">
+                    <span class="inline-block w-2 h-2 rounded-full ${this.currentTrack === 'special' ? 'bg-amber-500 animate-pulse' : 'bg-emerald-500'}"></span>
+                    <span>${this.currentTrack === 'special' ? '문법 용어 ➔ 서술형 ➔ 수능 29번 ➔ 혼동 문법 4대 집중 코스' : '중1 기초부터 수능 1등급까지 학년별 정규 로드맵'}</span>
+                </div>
+            </div>
+
+            <!-- 선택된 트랙에 따른 레벨/코스 탭 바 -->
             <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-2 px-1">
-                ${this.data.map(lvl => {
+                ${activeList.map(lvl => {
                     const isActive = lvl.levelCode === this.currentLevelCode;
-                    const isRecommended = lvl.levelCode === recommendedCode;
+                    const isRecommended = lvl.levelCode === recommendedCode && !lvl.isSpecial;
                     const lvlStat = this.getLevelStats(lvl.levelCode);
                     return `
                         <button type="button" 
                             onclick="window.grammarClinicEngine.switchLevel('${lvl.levelCode}')"
-                            class="group relative flex-1 min-w-[155px] p-3.5 rounded-2xl border text-left transition-all cursor-pointer ${
+                            class="group relative flex-1 min-w-[160px] p-3.5 rounded-2xl border text-left transition-all cursor-pointer ${
                                 isActive 
-                                    ? 'bg-white border-emerald-500 shadow-md ring-2 ring-emerald-500/20' 
+                                    ? (lvl.isSpecial 
+                                        ? 'bg-white border-amber-500 shadow-md ring-2 ring-amber-500/20' 
+                                        : 'bg-white border-emerald-500 shadow-md ring-2 ring-emerald-500/20')
                                     : 'bg-slate-50/80 hover:bg-white border-slate-200 hover:border-slate-300'
                             }">
                             ${isRecommended ? `
@@ -194,12 +237,14 @@ class GrammarClinicEngine {
                             ` : ''}
                             <div class="flex items-center justify-between mb-1">
                                 <span class="px-2 py-0.5 rounded-md text-[10px] font-bold font-mono ${
-                                    isActive ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-200 text-slate-600 group-hover:bg-slate-300'
+                                    isActive 
+                                        ? (lvl.isSpecial ? 'bg-amber-100 text-amber-900 border border-amber-300' : 'bg-emerald-100 text-emerald-800') 
+                                        : 'bg-slate-200 text-slate-600 group-hover:bg-slate-300'
                                 }">
                                     ${lvl.badge}
                                 </span>
-                                <span class="text-[11px] font-mono font-bold ${isActive ? 'text-emerald-700' : 'text-slate-400'}">
-                                    ${lvlStat.completed}/8 완료
+                                <span class="text-[11px] font-mono font-bold ${isActive ? (lvl.isSpecial ? 'text-amber-700' : 'text-emerald-700') : 'text-slate-400'}">
+                                    ${lvlStat.completed}/${lvlStat.total} 완료
                                 </span>
                             </div>
                             <div class="font-serif font-bold text-xs sm:text-sm text-slate-900 truncate">
@@ -217,13 +262,13 @@ class GrammarClinicEngine {
             <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-5 shadow-xs space-y-4">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-serif font-bold text-base shadow-xs shrink-0">
-                            Lv.${currentLvlObj.level}
+                        <div class="w-10 h-10 rounded-xl ${currentLvlObj.isSpecial ? 'bg-amber-100 text-amber-800' : 'bg-emerald-100 text-emerald-700'} flex items-center justify-center font-serif font-bold text-sm shadow-xs shrink-0">
+                            ${currentLvlObj.isSpecial ? '★' : 'Lv.' + currentLvlObj.level}
                         </div>
                         <div>
                             <div class="flex items-center gap-2">
                                 <h3 class="font-serif font-bold text-base sm:text-lg text-slate-900">${currentLvlObj.levelName}</h3>
-                                <span class="px-2 py-0.5 rounded-full text-xs font-bold bg-slate-100 text-slate-700 border border-slate-200">
+                                <span class="px-2 py-0.5 rounded-full text-xs font-bold ${currentLvlObj.isSpecial ? 'bg-amber-100 text-amber-900 border border-amber-300' : 'bg-slate-100 text-slate-700 border border-slate-200'}">
                                     ${currentLvlObj.targetGrade}
                                 </span>
                             </div>
@@ -235,10 +280,10 @@ class GrammarClinicEngine {
                     <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 shrink-0">
                         <button type="button" 
                             onclick="window.grammarClinicEngine.openLevelBatchScheduleModal('${currentLvlObj.levelCode}')"
-                            class="px-3 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 text-emerald-950 font-serif font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-2xs cursor-pointer"
-                            title="이 레벨의 8개 전 단원을 플래너에 일괄 배정">
-                            <i data-lucide="calendar-range" class="w-4 h-4 text-emerald-700"></i>
-                            <span>📅 Lv.${currentLvlObj.level} 8단원 플래너 배정</span>
+                            class="px-3 py-2 rounded-xl ${currentLvlObj.isSpecial ? 'bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-950' : 'bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 text-emerald-950'} font-serif font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-2xs cursor-pointer"
+                            title="이 코스의 전 단원을 플래너에 일괄 배정">
+                            <i data-lucide="calendar-range" class="w-4 h-4 ${currentLvlObj.isSpecial ? 'text-amber-700' : 'text-emerald-700'}"></i>
+                            <span>📅 ${currentLvlObj.badge} ${(currentLvlObj.units || []).length}단원 플래너 배정</span>
                         </button>
                         
                         <div class="relative w-full sm:w-64">
@@ -426,6 +471,29 @@ class GrammarClinicEngine {
     // ------------------------------------------------------------------------
     switchLevel(levelCode) {
         this.currentLevelCode = levelCode;
+        const lvl = this.data.find(l => l.levelCode === levelCode);
+        if (lvl && lvl.isSpecial) {
+            this.currentTrack = 'special';
+        } else if (lvl) {
+            this.currentTrack = 'regular';
+        }
+        this.searchQuery = '';
+        this.render();
+    }
+
+    switchTrack(track) {
+        this.currentTrack = track;
+        if (track === 'special') {
+            const specialLevels = this.data.filter(lvl => lvl.isSpecial);
+            if (!specialLevels.some(lvl => lvl.levelCode === this.currentLevelCode)) {
+                this.currentLevelCode = specialLevels[0] ? specialLevels[0].levelCode : 'sp_terms';
+            }
+        } else {
+            const regularLevels = this.data.filter(lvl => !lvl.isSpecial);
+            if (!regularLevels.some(lvl => lvl.levelCode === this.currentLevelCode)) {
+                this.currentLevelCode = regularLevels[0] ? regularLevels[0].levelCode : 'lv1';
+            }
+        }
         this.searchQuery = '';
         this.render();
     }
@@ -1080,9 +1148,11 @@ class GrammarClinicEngine {
         if (unitSelect) {
             const options = [];
             this.data.forEach(lvl => {
-                options.push(`<optgroup label="${lvl.badge} (${lvl.levelName})">`);
+                const groupTitle = lvl.isSpecial ? `🎓 [특강] ${lvl.badge} - ${lvl.levelName}` : `📚 [정규] ${lvl.badge} (${lvl.levelName})`;
+                options.push(`<optgroup label="${groupTitle}">`);
                 (lvl.units || []).forEach(u => {
-                    options.push(`<option value="${u.unitNo}" ${Number(u.unitNo) === Number(this.scheduleTargetUnitNo) ? 'selected' : ''}>Unit ${u.unitNo}. ${u.title} [${u.part}]</option>`);
+                    const unitLabel = (u.title.startsWith('SP-') || u.title.startsWith('Unit ')) ? u.title : `Unit ${u.unitNo}. ${u.title}`;
+                    options.push(`<option value="${u.unitNo}" ${Number(u.unitNo) === Number(this.scheduleTargetUnitNo) ? 'selected' : ''}>${unitLabel} [${u.part}]</option>`);
                 });
                 options.push(`</optgroup>`);
             });
@@ -1103,7 +1173,7 @@ class GrammarClinicEngine {
         if (levelSelect) {
             levelSelect.innerHTML = this.data.map(lvl => `
                 <option value="${lvl.levelCode}" ${lvl.levelCode === this.scheduleTargetLevelCode ? 'selected' : ''}>
-                    ${lvl.badge} - ${lvl.levelName} (${lvl.targetGrade} • 8단원)
+                    ${lvl.isSpecial ? '🎓 [특강] ' : '📚 [정규] '}${lvl.badge} - ${lvl.levelName} (${lvl.targetGrade} • ${(lvl.units || []).length}단원)
                 </option>
             `).join('');
         }
@@ -1130,11 +1200,15 @@ class GrammarClinicEngine {
         const lvl = this.data.find(l => l.levelCode === levelCode) || this.data[0];
         const startSelect = document.getElementById('grammar-sched-start-unit-select');
         if (startSelect && lvl) {
-            startSelect.innerHTML = (lvl.units || []).map((u, idx) => `
-                <option value="${idx}">
-                    Unit ${u.unitNo}. ${u.title} (${idx + 1}회차부터 총 ${8 - idx}단원 배정)
-                </option>
-            `).join('');
+            const totalUnits = (lvl.units || []).length;
+            startSelect.innerHTML = (lvl.units || []).map((u, idx) => {
+                const label = (u.title.startsWith('SP-') || u.title.startsWith('Unit ')) ? u.title : `Unit ${u.unitNo}. ${u.title}`;
+                return `
+                    <option value="${idx}">
+                        ${label} (${idx + 1}회차부터 총 ${totalUnits - idx}단원 배정)
+                    </option>
+                `;
+            }).join('');
         }
         this.updateBatchSchedulePreview();
     }

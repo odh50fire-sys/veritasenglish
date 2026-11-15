@@ -13,18 +13,27 @@ def test_data_integrity():
     with open('data/grammar_clinic_data.js', 'r', encoding='utf-8') as f:
         content = f.read()
 
-    start = content.find('[')
-    end = content.rfind(']') + 1
-    levels = json.loads(content[start:end])
+    start = content.find('window.GRAMMAR_CLINIC_BANK = [')
+    sub = content[content.find('[', start):]
+    end = sub.find(';\nwindow.GRAMMAR_SPECIAL_LECTURES')
+    if end == -1:
+        end = sub.rfind('];') + 1
+    levels = json.loads(sub[:end])
 
-    assert len(levels) == 5, f"Expected 5 levels, got {len(levels)}"
+    regular_levels = [l for l in levels if not l.get('isSpecial')]
+    special_courses = [l for l in levels if l.get('isSpecial')]
+
+    assert len(regular_levels) == 5, f"Expected 5 regular levels, got {len(regular_levels)}"
+    assert len(special_courses) == 4, f"Expected 4 special courses, got {len(special_courses)}"
+    assert len(levels) == 9, f"Expected 9 total categories, got {len(levels)}"
+
     total_units = 0
     total_questions = 0
     total_drills = 0
 
     for lvl in levels:
         units = lvl['units']
-        assert len(units) == 8, f"Level {lvl['level']} has {len(units)} units, expected 8"
+        assert len(units) in [6, 8], f"Level {lvl['levelCode']} has {len(units)} units, expected 6 or 8"
         total_units += len(units)
         for u in units:
             assert 'unitNo' in u and 'title' in u and 'part' in u
@@ -44,7 +53,11 @@ def test_data_integrity():
                 assert 'exp' in q and len(q['exp']) > 5
         total_drills += sum(len(u['spottingDrills']) for u in units)
 
-    print(f"Data verified successfully: 5 Levels, {total_units} Units, {total_drills} Spotting Drills, {total_questions} Practice Questions.")
+    assert total_units == 70, f"Expected 70 total units, got {total_units}"
+    assert total_drills == 70, f"Expected 70 spotting drills, got {total_drills}"
+    assert total_questions == 350, f"Expected 350 practice questions, got {total_questions}"
+
+    print(f"Data verified successfully: {len(regular_levels)} Regular Levels, {len(special_courses)} Special Courses, {total_units} Units, {total_drills} Spotting Drills, {total_questions} Practice Questions.")
 
 def run_headless_chrome_test():
     print("\n=== [2] Running Headless Chrome E2E Verification ===")
@@ -61,7 +74,10 @@ def run_headless_chrome_test():
         def log_message(self, format, *args):
             pass
 
-    server = socketserver.TCPServer(("127.0.0.1", port), CustomHandler)
+    class ThreadingTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
+        daemon_threads = True
+
+    server = ThreadingTCPServer(("127.0.0.1", port), CustomHandler)
     server_thread = threading.Thread(target=server.serve_forever)
     server_thread.daemon = True
     server_thread.start()
@@ -141,7 +157,7 @@ def run_headless_chrome_test():
         # Test 1: Data bank loaded
         bank_len = eval_js("window.GRAMMAR_CLINIC_BANK ? window.GRAMMAR_CLINIC_BANK.length : 0")
         print(f"Test 1 - GRAMMAR_CLINIC_BANK length: {bank_len}")
-        assert bank_len == 5, f"Expected 5 levels, got {bank_len}"
+        assert bank_len == 9, f"Expected 9 categories (5 regular + 4 special), got {bank_len}"
 
         # Test 2: Switch to grammar tab
         eval_js("window.app.switchTab('grammar')")
@@ -233,8 +249,31 @@ def run_headless_chrome_test():
         # Clear search
         eval_js("window.grammarClinicEngine.handleSearch('')")
 
+        # Test 13: Track switching to Special Lectures
+        eval_js("window.grammarClinicEngine.switchTrack('special')")
+        time.sleep(0.3)
+        track = eval_js("window.grammarClinicEngine.currentTrack")
+        print(f"Test 13 - Switched track: {track} (Expected 'special')")
+        assert track == 'special'
+        sp_unit_cards = eval_js("document.querySelectorAll('#grammar-unit-card-grid > div').length")
+        print(f"Test 13 - Special course Unit cards count: {sp_unit_cards}")
+        assert sp_unit_cards == 8, f"Expected 8 units for sp_terms, got {sp_unit_cards}"
+
+        # Test 14: Open Special Unit 101 modal
+        eval_js("window.grammarClinicEngine.openClinicModal(101)")
+        time.sleep(0.3)
+        sp_modal_title = eval_js("document.getElementById('grammar-modal-title').textContent")
+        print(f"Test 14 - Special unit modal title: {sp_modal_title}")
+        assert "SP-01" in sp_modal_title
+        eval_js("window.grammarClinicEngine.closeClinicModal()")
+
+        # Test 15: Register Special Unit 101 to planner via storage
+        res_sp = eval_js("window.storage.registerGrammarUnit(101, '2026-11-20')")
+        print(f"Test 15 - Register Special Unit 101: {res_sp}")
+        assert res_sp and res_sp.get('unitNo') == 101
+
         ws.close()
-        print("\n>>> ALL 12 E2E VERIFICATION TESTS PASSED SUCCESSFULLY! <<<")
+        print("\n>>> ALL 15 E2E VERIFICATION TESTS PASSED SUCCESSFULLY! <<<")
 
     finally:
         proc.terminate()

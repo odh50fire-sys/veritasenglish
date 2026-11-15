@@ -2660,9 +2660,13 @@ class StorageManager {
         // 기존 동일 단원 등록 삭제 (중복 방지)
         this.words = this.words.filter(w => !(w.isGrammarUnit && w.grammarUnitNo === targetUnit.unitNo));
 
+        const itemWord = (targetUnit.title.startsWith('SP-') || targetUnit.title.startsWith('Unit '))
+            ? targetUnit.title
+            : `Unit ${targetUnit.unitNo}. ${targetUnit.title}`;
+
         const item = {
             id: `grammar-task-unit-${targetUnit.unitNo}`,
-            word: `Unit ${targetUnit.unitNo}. ${targetUnit.title}`,
+            word: itemWord,
             meaning: `[문법클리닉] ${targetUnit.summary}`,
             partOfSpeech: '문법',
             example: targetUnit.formulaCards && targetUnit.formulaCards[0] ? targetUnit.formulaCards[0].formula : '',
@@ -2714,9 +2718,12 @@ class StorageManager {
 
         const newItems = targetUnits.map((u, idx) => {
             const planDate = scheduledDates[idx] || start;
+            const itemWord = (u.title.startsWith('SP-') || u.title.startsWith('Unit '))
+                ? u.title
+                : `Unit ${u.unitNo}. ${u.title}`;
             return {
                 id: `grammar-task-unit-${u.unitNo}`,
-                word: `Unit ${u.unitNo}. ${u.title}`,
+                word: itemWord,
                 meaning: `[문법클리닉] ${u.summary}`,
                 partOfSpeech: '문법',
                 example: u.formulaCards && u.formulaCards[0] ? u.formulaCards[0].formula : '',
