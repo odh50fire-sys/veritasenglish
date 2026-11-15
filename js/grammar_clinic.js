@@ -612,67 +612,184 @@ class GrammarClinicEngine {
     renderStep1Concept() {
         const unit = this.activeUnit;
         const formulaCards = unit.formulaCards || [];
+        const overview = unit.overview || unit.summary || '';
+        const takeaways = unit.keyTakeaways || [];
 
         return `
             <div class="space-y-6 animate-in fade-in duration-200">
-                <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-start gap-3">
-                    <div class="w-8 h-8 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 text-sm">
-                        <i data-lucide="book-open" class="w-4 h-4"></i>
+                <!-- 상단 학습 목표 및 개요 배너 -->
+                <div class="p-5 rounded-2xl bg-gradient-to-br from-emerald-50 via-teal-50 to-emerald-50 border border-emerald-200/90 shadow-2xs space-y-3">
+                    <div class="flex items-start gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-xs">
+                            <i data-lucide="book-open" class="w-4 h-4"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 font-mono text-[10px] font-bold">1단계 개념 마스터</span>
+                                <h4 class="font-serif font-bold text-base text-emerald-950">${unit.title}</h4>
+                            </div>
+                            <p class="text-xs sm:text-sm text-emerald-900/90 mt-1 leading-relaxed font-sans">${overview}</p>
+                        </div>
                     </div>
-                    <div>
-                        <h4 class="font-serif font-bold text-sm text-emerald-950">핵심 문법 공식 & 출제 패턴</h4>
-                        <p class="text-xs text-emerald-800 mt-0.5">${unit.summary}</p>
-                    </div>
+
+                    ${takeaways.length > 0 ? `
+                        <div class="pt-3 border-t border-emerald-200/70">
+                            <div class="text-[11px] font-bold text-emerald-900 mb-1.5 flex items-center gap-1.5">
+                                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-700"></i>
+                                <span>오늘 반드시 잡아야 할 3대 절대 법칙</span>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                                ${takeaways.map((tw, idx) => `
+                                    <div class="p-2.5 rounded-xl bg-white/80 border border-emerald-200 text-xs text-slate-800 flex items-start gap-2 shadow-2xs">
+                                        <span class="w-4 h-4 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">${idx + 1}</span>
+                                        <span class="leading-relaxed font-medium">${tw}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    ` : ''}
                 </div>
 
                 <!-- 공식 카드 목록 -->
-                <div class="space-y-5">
-                    ${formulaCards.map((fc, idx) => `
-                        <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs space-y-3.5">
-                            <div class="flex items-center gap-2">
-                                <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs font-mono font-bold">
-                                    ${idx + 1}
-                                </span>
-                                <h5 class="font-serif font-bold text-base text-slate-900">${fc.name}</h5>
-                            </div>
+                <div class="space-y-6">
+                    ${formulaCards.map((fc, idx) => {
+                        const rules = fc.rules || [];
+                        const examples = fc.examples || [];
+                        const oxList = fc.oxCompare || [];
 
-                            <!-- 핵심 공식 박스 -->
-                            <div class="p-3.5 rounded-xl bg-slate-900 text-emerald-300 font-mono text-xs sm:text-sm font-semibold tracking-wide border border-emerald-500/30 flex items-center justify-between">
-                                <span>📐 ${fc.formula}</span>
-                            </div>
-
-                            <!-- 대표 예문 -->
-                            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-3">
-                                <div class="text-xs sm:text-sm text-slate-800 font-medium">
-                                    <strong class="text-slate-500 font-normal mr-1.5">[예문]</strong>
-                                    ${fc.example}
+                        return `
+                            <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-xs space-y-4 hover:border-emerald-300 transition-all">
+                                <!-- 카드 헤더 -->
+                                <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-100">
+                                    <div class="flex items-center gap-2.5">
+                                        <span class="w-7 h-7 rounded-xl bg-slate-900 text-emerald-300 flex items-center justify-center text-xs font-mono font-bold shadow-2xs">
+                                            0${idx + 1}
+                                        </span>
+                                        <h5 class="font-serif font-black text-base sm:text-lg text-slate-900">${fc.name}</h5>
+                                    </div>
+                                    ${fc.quizLink ? `
+                                        <span class="px-2.5 py-1 rounded-lg bg-teal-50 border border-teal-200 text-teal-800 text-[11px] font-mono font-bold flex items-center gap-1">
+                                            <i data-lucide="target" class="w-3 h-3 text-teal-600"></i>
+                                            <span>3단계 퀴즈 직결</span>
+                                        </span>
+                                    ` : ''}
                                 </div>
-                                <button type="button" 
-                                    onclick="window.ttsEngine && window.ttsEngine.speak('${fc.example.replace(/'/g, "\\'")}')" 
-                                    class="p-2 rounded-lg bg-white hover:bg-slate-200 text-slate-600 transition-colors shrink-0 shadow-2xs" 
-                                    title="원어민 발음 듣기">
-                                    <i data-lucide="volume-2" class="w-4 h-4"></i>
-                                </button>
-                            </div>
 
-                            <!-- 출제자의 함정 -->
-                            ${fc.trap ? `
-                                <div class="p-3 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-900 flex items-start gap-2">
-                                    <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
-                                    <div>
-                                        <strong class="font-bold text-amber-950">출제자의 함정:</strong> ${fc.trap}
+                                <!-- 1. 개념 상세 설명 -->
+                                ${fc.desc ? `
+                                    <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs sm:text-sm text-slate-700 leading-relaxed font-sans">
+                                        <div class="text-[11px] font-bold text-slate-500 mb-1 flex items-center gap-1">
+                                            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-indigo-600"></i>
+                                            <span>개념 원리 이해하기</span>
+                                        </div>
+                                        ${fc.desc}
+                                    </div>
+                                ` : ''}
+
+                                <!-- 2. 핵심 문형 공식 박스 -->
+                                <div class="p-4 rounded-xl bg-slate-900 text-emerald-300 font-mono text-xs sm:text-sm font-bold tracking-wide border border-emerald-500/30 flex items-center justify-between shadow-xs">
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-base">📐</span>
+                                        <span class="whitespace-pre-line">${fc.formula}</span>
                                     </div>
                                 </div>
-                            ` : ''}
-                        </div>
-                    `).join('')}
+
+                                <!-- 3. 세부 규칙 및 형태 변화표 -->
+                                ${rules.length > 0 ? `
+                                    <div class="space-y-1.5 pt-1">
+                                        <div class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                                            <i data-lucide="layers" class="w-3.5 h-3.5 text-emerald-600"></i>
+                                            <span>형태 변화 및 세부 적용 규칙</span>
+                                        </div>
+                                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                            ${rules.map(r => `
+                                                <div class="p-2.5 rounded-xl bg-slate-50/80 border border-slate-200 text-xs text-slate-800 flex flex-col gap-0.5">
+                                                    <span class="font-bold text-[11px] text-emerald-800 font-mono">▸ ${r.title}</span>
+                                                    <span class="text-slate-600 leading-relaxed">${r.detail}</span>
+                                                </div>
+                                            `).join('')}
+                                        </div>
+                                    </div>
+                                ` : ''}
+
+                                <!-- 4. 대표 실전 예문 및 해석 -->
+                                <div class="space-y-2 pt-1">
+                                    <div class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                                        <i data-lucide="message-square" class="w-3.5 h-3.5 text-blue-600"></i>
+                                        <span>대표 실전 예문 & 해석</span>
+                                    </div>
+                                    ${(examples.length > 0 ? examples : [{ en: fc.example, ko: '핵심 적용 예문', point: '' }]).map(exItem => `
+                                        <div class="p-3 rounded-xl bg-indigo-50/40 border border-indigo-100 flex items-start justify-between gap-3">
+                                            <div class="text-xs sm:text-sm text-slate-800 space-y-1 min-w-0">
+                                                <div class="font-serif font-bold text-indigo-950">${exItem.en}</div>
+                                                ${exItem.ko ? `<div class="text-xs text-slate-500 font-sans">${exItem.ko}</div>` : ''}
+                                                ${exItem.point ? `<div class="text-[11px] font-mono text-emerald-700 font-semibold">💡 ${exItem.point}</div>` : ''}
+                                            </div>
+                                            <button type="button" 
+                                                onclick="window.ttsEngine && window.ttsEngine.speak('${(exItem.en || '').replace(/'/g, "\\'")}')" 
+                                                class="p-2 rounded-lg bg-white hover:bg-indigo-100 text-indigo-700 transition-colors shrink-0 shadow-2xs border border-indigo-200" 
+                                                title="원어민 발음 듣기">
+                                                <i data-lucide="volume-2" class="w-4 h-4"></i>
+                                            </button>
+                                        </div>
+                                    `).join('')}
+                                </div>
+
+                                <!-- 5. 시험 단골 O vs X 비교 클리닉 -->
+                                ${oxList.length > 0 ? `
+                                    <div class="space-y-2 pt-1">
+                                        <div class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                                            <i data-lucide="check-square" class="w-3.5 h-3.5 text-amber-600"></i>
+                                            <span>시험 단골 ⭕ vs ❌ 실전 비교 클리닉</span>
+                                        </div>
+                                        <div class="space-y-1.5">
+                                            ${oxList.map(ox => `
+                                                <div class="p-3 rounded-xl bg-amber-50/40 border border-amber-200/80 text-xs space-y-1">
+                                                    <div class="flex items-center gap-2 text-emerald-800 font-bold">
+                                                        <span class="w-4 h-4 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[10px]">O</span>
+                                                        <span class="font-serif">${ox.correct}</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-2 text-rose-700 font-semibold">
+                                                        <span class="w-4 h-4 rounded-full bg-rose-600 text-white flex items-center justify-center text-[10px]">X</span>
+                                                        <span class="font-serif line-through">${ox.wrong}</span>
+                                                    </div>
+                                                    <div class="text-[11px] text-slate-600 font-sans pt-0.5 pl-6">
+                                                        👉 ${ox.reason}
+                                                    </div>
+                                                </div>
+                                            `).join('')}
+                                        </div>
+                                    </div>
+                                ` : ''}
+
+                                <!-- 6. 출제자의 함정 및 서술형 감점 팁 -->
+                                ${fc.trap ? `
+                                    <div class="p-3.5 rounded-xl bg-rose-50/70 border border-rose-200 text-xs text-rose-950 flex items-start gap-2.5">
+                                        <i data-lucide="alert-triangle" class="w-4 h-4 text-rose-600 shrink-0 mt-0.5"></i>
+                                        <div class="leading-relaxed">
+                                            <strong class="font-bold text-rose-900">내신·수능 출제자의 함정:</strong> ${fc.trap}
+                                        </div>
+                                    </div>
+                                ` : ''}
+
+                                <!-- 7. 3단계 퀴즈 출제 연계 알림 -->
+                                ${fc.quizLink ? `
+                                    <div class="p-2.5 rounded-xl bg-teal-50 border border-teal-200 text-[11px] text-teal-900 flex items-center gap-2 font-mono">
+                                        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-teal-600 shrink-0"></i>
+                                        <span>${fc.quizLink}</span>
+                                    </div>
+                                ` : ''}
+                            </div>
+                        `;
+                    }).join('')}
                 </div>
 
                 <!-- 하단 버튼: 스텝 2로 이동 -->
-                <div class="pt-4 flex justify-end">
+                <div class="pt-4 flex items-center justify-between">
+                    <span class="text-xs text-slate-500 font-serif">공식과 예문을 완벽히 숙지했다면 2단계 어법 클리닉으로 이동하세요.</span>
                     <button type="button" 
                         onclick="window.grammarClinicEngine.setStep(2)"
-                        class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-serif font-bold text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer">
+                        class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-serif font-bold text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer active:scale-95">
                         <span>개념 완료! 2단계 [밑줄 오류 찾기] 도전</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
@@ -922,7 +1039,7 @@ class GrammarClinicEngine {
                             } p-5 sm:p-6 shadow-xs space-y-4">
                                 <!-- 문항 헤더 -->
                                 <div class="flex items-start justify-between gap-3">
-                                    <div class="flex items-start gap-2.5">
+                                    <div class="flex items-start gap-2.5 min-w-0">
                                         <span class="w-6 h-6 rounded-lg ${
                                             isSubmitted 
                                                 ? (isCorrect ? 'bg-emerald-600 text-white' : 'bg-rose-600 text-white') 
@@ -930,9 +1047,17 @@ class GrammarClinicEngine {
                                         } flex items-center justify-center text-xs font-mono font-bold shrink-0 mt-0.5">
                                             Q${qIdx + 1}
                                         </span>
-                                        <h5 class="font-serif font-bold text-sm sm:text-base text-slate-900 whitespace-pre-line leading-relaxed">
-                                            ${qItem.q}
-                                        </h5>
+                                        <div class="space-y-1 min-w-0">
+                                            <div class="flex items-center gap-1.5 flex-wrap">
+                                                <span class="px-2 py-0.5 rounded-md bg-emerald-50 border border-emerald-200 text-emerald-800 text-[10px] font-mono font-bold inline-flex items-center gap-1">
+                                                    <i data-lucide="sparkle" class="w-3 h-3 text-emerald-600"></i>
+                                                    <span>${qItem.conceptRef || '1단계 학습 개념 연계'}</span>
+                                                </span>
+                                            </div>
+                                            <h5 class="font-serif font-bold text-sm sm:text-base text-slate-900 whitespace-pre-line leading-relaxed">
+                                                ${qItem.q}
+                                            </h5>
+                                        </div>
                                     </div>
                                     ${isSubmitted ? `
                                         <span class="px-2.5 py-0.5 rounded-full text-xs font-bold shrink-0 ${
