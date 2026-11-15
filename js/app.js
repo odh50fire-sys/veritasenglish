@@ -773,7 +773,7 @@ class AppController {
 
             const stats = window.storage ? window.storage.getStatistics() : { total: 0, mastered: 0, dueCount: 0, weakCount: 0 };
             const todayStr = window.storage ? window.storage.getTodayDateString() : new Date().toISOString().slice(0, 10);
-            const todayWords = window.storage ? window.storage.getWordsByDate(todayStr).filter(w => !w.isReadingPassage && ((w.flashcardDone && w.quizDone) || w.studyCompleted)).length : 0;
+            const todayWords = window.storage ? window.storage.getWordsByDate(todayStr).filter(w => !w.isReadingPassage && !w.isGrammarUnit && ((w.flashcardDone && w.quizDone) || w.studyCompleted)).length : 0;
             const target = (window.storage && window.storage.settings && window.storage.settings.dailyTarget) || 15;
 
             // 헤더 학생 이름
@@ -909,6 +909,19 @@ class AppController {
     }
 
     /**
+     * 오늘 문법 클리닉 단원 바로 학습하기 (문법 클리닉 탭 & 유닛 모달 직접 연동)
+     */
+    startGrammarUnitStudy(unitNo) {
+        this.switchTab('grammar');
+        setTimeout(() => {
+            const clinic = window.grammarClinicEngine || window.grammarClinic;
+            if (clinic && typeof clinic.openClinicModal === 'function') {
+                clinic.openClinicModal(Number(unitNo));
+            }
+        }, 50);
+    }
+
+    /**
      * 홈 대시보드: 환영 배너 직하단 '오늘의 학습' 동적 브리핑 박스 렌더링
      * - 실제 오늘 계획된 단어장 및 독해 지문만 100% 동적으로 렌더링
      * - 단어장만 있으면 단어장 카드만, 독해만 있으면 독해 카드만 표시
@@ -926,8 +939,9 @@ class AppController {
             ? window.storage.getWordsByDate(todayStr)
             : ((window.storage && window.storage.words) ? window.storage.words.filter(w => w.planDate === todayStr) : []);
 
-        const vocabWords = todayItems.filter(w => !w.isReadingPassage);
-        const readingWords = todayItems.filter(w => w.isReadingPassage);
+        const grammarUnits = todayItems.filter(w => w.isGrammarUnit);
+        const readingWords = todayItems.filter(w => w.isReadingPassage && !w.isGrammarUnit);
+        const vocabWords = todayItems.filter(w => !w.isReadingPassage && !w.isGrammarUnit);
         const externalTasks = (window.storage && typeof window.storage.getTodayExternalTasks === 'function')
             ? window.storage.getTodayExternalTasks(todayStr)
             : [];
@@ -1022,7 +1036,7 @@ class AppController {
         });
 
         // 3. 오늘 배정된 학습이 전혀 없는 경우: 가짜 카드를 띄우지 않고 친절한 빈 상태(Empty State) 표시
-        if (vocabGroups.length === 0 && readingPassages.length === 0 && externalTasks.length === 0) {
+        if (vocabGroups.length === 0 && readingPassages.length === 0 && grammarUnits.length === 0 && externalTasks.length === 0) {
             const allPlanWords = (window.storage && window.storage.words || []).filter(w => !String(w.id || '').startsWith('sample-') && w.planDate);
             const scheduledDates = Array.from(new Set(allPlanWords.map(w => w.planDate))).sort();
             const futureDates = scheduledDates.filter(d => d > todayStr);
@@ -1052,7 +1066,7 @@ class AppController {
                         </h3>
                         <p class="text-xs text-slate-500 mt-1 leading-relaxed">
                             학습 플래너에서 단어장과 내신 독해 지문 일정을 배정하거나,<br class="hidden sm:inline"/>
-                            시중 교재/학원 과제를 등록하여 매일 공부 루틴을 관리해 보세요.
+                            영문법 클리닉 단원 및 시중 교재 과제를 등록하여 매일 공부 루틴을 관리해 보세요.
                         </p>
                     </div>
 
@@ -1062,6 +1076,10 @@ class AppController {
                         <button type="button" onclick="window.assistantEngine && window.assistantEngine.openExternalStudyModal()" class="px-4 py-2.5 rounded-xl border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-950 font-serif font-bold text-xs flex items-center gap-1.5 shadow-xs transition-all cursor-pointer">
                             <i data-lucide="book-marked" class="w-4 h-4 text-amber-700"></i>
                             <span>시중 교재 / 학원 과제 배정</span>
+                        </button>
+                        <button type="button" onclick="window.app && window.app.switchTab('grammar')" class="px-4 py-2.5 rounded-xl border border-indigo-200 bg-indigo-50 hover:bg-indigo-100 text-indigo-950 font-serif font-bold text-xs flex items-center gap-1.5 shadow-xs transition-all cursor-pointer">
+                            <i data-lucide="sparkle" class="w-4 h-4 text-indigo-600"></i>
+                            <span>영문법 클리닉 단원 등록</span>
                         </button>
                         <button type="button" onclick="window.app && window.app.switchTab('planner')" class="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-serif font-bold text-xs flex items-center gap-1.5 shadow-xs transition-all cursor-pointer">
                             <i data-lucide="calendar" class="w-4 h-4 text-amber-300"></i>
@@ -1267,7 +1285,71 @@ class AppController {
             `);
         });
 
-        const cardsHtmlArr = [...externalCardsArr, ...readingCardsArr, ...vocabCardsArr];
+        // 문법 클리닉 카드 빌드 (외부 교재 직하단 및 독해와 함께 최우선 배치)
+        const grammarCardsArr = [];
+        grammarUnits.forEach(w => {
+            const prog = (window.grammarClinicEngine && typeof window.grammarClinicEngine.getUnitProgress === 'function')
+                ? window.grammarClinicEngine.getUnitProgress(w.grammarUnitNo)
+                : (window.storage && typeof window.storage.getGrammarUnitProgress === 'function'
+                    ? window.storage.getGrammarUnitProgress(w.grammarUnitNo)
+                    : null);
+            const isDone = (prog && prog.completed) || w.studyCompleted;
+            const cleanTitle = w.grammarTitle || w.word || `Unit ${w.grammarUnitNo}`;
+            const summary = (w.meaning || '').replace(/^\[문법클리닉\]\s*/, '').trim();
+
+            grammarCardsArr.push(`
+                <div class="rounded-2xl border ${isDone ? 'border-emerald-300/80 bg-gradient-to-br from-white to-emerald-50/40 ring-emerald-500/20' : 'border-indigo-300/80 bg-gradient-to-br from-white to-indigo-50/40 ring-indigo-500/20'} p-5 shadow-xs relative flex flex-col justify-between hover:border-indigo-400 hover:shadow-sm transition-all ring-1">
+                    <div>
+                        <!-- 카드 상단: 문법 단원 명칭 & 레벨 -->
+                        <div class="flex items-start justify-between gap-3 mb-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-11 h-11 rounded-xl ${isDone ? 'bg-emerald-100 text-emerald-900 border-emerald-200' : 'bg-indigo-100 text-indigo-900 border-indigo-200'} border flex items-center justify-center text-xl font-bold shrink-0 shadow-xs">
+                                    📝
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-2 mb-0.5">
+                                        <span class="px-2 py-0.5 rounded-md ${isDone ? 'bg-emerald-100 text-emerald-800' : 'bg-indigo-100 text-indigo-800'} font-mono text-[10px] font-bold">오늘의 문법 클리닉</span>
+                                        <span class="text-[11px] font-bold text-slate-500 line-clamp-1">${w.tag || '영문법 클리닉'}</span>
+                                        ${isDone ? `<span class="px-1.5 py-0.2 rounded-full bg-emerald-200 text-emerald-900 text-[10px] font-bold">✓ 완료 (${prog ? (prog.score || 5) + '/5점' : '학습 완료'})</span>` : ''}
+                                    </div>
+                                    <h3 class="font-serif font-black text-base sm:text-lg text-slate-900 line-clamp-1" title="${cleanTitle}">
+                                        ${cleanTitle}
+                                    </h3>
+                                    ${summary ? `<p class="text-xs text-slate-500 font-sans mt-0.5 line-clamp-1">${summary}</p>` : ''}
+                                </div>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-lg ${isDone ? 'bg-emerald-50 text-emerald-700 border-emerald-200' : 'bg-indigo-50 text-indigo-700 border-indigo-200'} font-mono text-[11px] font-bold border shrink-0">
+                                ${isDone ? `★ ${prog ? (prog.stars || 1) : 1}개 획득` : '3단계 클리닉'}
+                            </span>
+                        </div>
+
+                        <!-- 핵심 공식 미리보기 -->
+                        ${w.example ? `
+                        <div class="mt-4 pt-3 border-t border-slate-100">
+                            <div class="p-3 rounded-xl bg-white/90 border border-indigo-100 shadow-2xs">
+                                <div class="text-[11px] font-bold text-indigo-900 mb-1 flex items-center gap-1.5">
+                                    <i data-lucide="sparkle" class="w-3.5 h-3.5 text-indigo-600"></i>
+                                    <span>핵심 문법 공식 & 예문</span>
+                                </div>
+                                <div class="font-mono text-xs font-bold text-slate-800 bg-slate-50 px-2 py-1 rounded border border-slate-200/80 mb-1">
+                                    ${w.example}
+                                </div>
+                                ${w.exampleMeaning ? `<div class="text-[11px] text-slate-600 font-sans leading-relaxed line-clamp-1">${w.exampleMeaning}</div>` : ''}
+                            </div>
+                        </div>
+                        ` : ''}
+                    </div>
+
+                    <!-- 문법 클리닉 유닛 입장 버튼 -->
+                    <button type="button" onclick="window.app && window.app.startGrammarUnitStudy(${w.grammarUnitNo})" class="w-full mt-5 py-2.5 px-4 rounded-xl ${isDone ? 'bg-emerald-700 hover:bg-emerald-800' : 'bg-gradient-to-r from-indigo-600 to-violet-700 hover:from-indigo-500 hover:to-violet-600'} text-white font-serif font-bold text-xs flex items-center justify-center gap-1.5 shadow-xs transition-all cursor-pointer active:scale-95">
+                        <span>${isDone ? '문법 클리닉 유닛 재도전하기' : '문법 유닛 입장 & 클리닉 풀기'}</span>
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-300"></i>
+                    </button>
+                </div>
+            `);
+        });
+
+        const cardsHtmlArr = [...externalCardsArr, ...grammarCardsArr, ...readingCardsArr, ...vocabCardsArr];
 
         // 5. 그리드 컬럼 계산: 1개면 1열, 2개면 2열, 3개 이상이면 반응형 다열
         const totalCards = cardsHtmlArr.length;
@@ -1281,6 +1363,7 @@ class AppController {
         const totalVocabCount = vocabWords.length;
         const summaryParts = [];
         if (externalTasks.length > 0) summaryParts.push(`외부 교재/과제 ${externalTasks.length}건`);
+        if (grammarUnits.length > 0) summaryParts.push(`문법 클리닉 ${grammarUnits.length}단원`);
         if (readingPassages.length > 0) summaryParts.push(`독해 ${readingPassages.length}편`);
         if (vocabGroups.length > 0) summaryParts.push(`단어장 ${vocabGroups.length}개 (${totalVocabCount}단어)`);
         const summaryBadge = summaryParts.join(' • ');

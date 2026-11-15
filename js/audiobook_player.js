@@ -103,10 +103,10 @@ class AudiobookPlayer {
     const words = (window.storage && window.storage.words) ? window.storage.words : [];
     const today = window.storage ? window.storage.getTodayDateString() : new Date().toISOString().slice(0, 10);
     
-    // 복습 단어(stage >= 1 또는 isReadingPassage)를 제외하고 오늘 학습 배정된 신규 단어(stage === 0 or undefined) 추출
-    let newWords = words.filter(w => !w.isReadingPassage && w.planDate === today && (!w.stage || w.stage === 0));
+    // 복습 단어(stage >= 1 또는 isReadingPassage, isGrammarUnit)를 제외하고 오늘 학습 배정된 신규 단어(stage === 0 or undefined) 추출
+    let newWords = words.filter(w => !w.isReadingPassage && !w.isGrammarUnit && w.planDate === today && (!w.stage || w.stage === 0));
     if (newWords.length === 0) {
-      newWords = words.filter(w => !w.isReadingPassage && w.planDate === today);
+      newWords = words.filter(w => !w.isReadingPassage && !w.isGrammarUnit && w.planDate === today);
     }
 
     if (newWords.length > 0) {

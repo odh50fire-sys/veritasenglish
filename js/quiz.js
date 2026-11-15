@@ -72,7 +72,7 @@ class QuizEngine {
         const scope = options.scope || this.currentScope || 'today';
         this.currentScope = scope;
 
-        const allWords = (window.storage.words || []).filter(w => !w.isReadingPassage);
+        const allWords = (window.storage.words || []).filter(w => !w.isReadingPassage && !w.isGrammarUnit);
         const nonSamples = allWords.filter(w => !String(w.id || '').startsWith('sample-'));
         const basePool = nonSamples.length >= 4 ? nonSamples : allWords;
         const today = window.storage.getTodayDateString();
@@ -80,7 +80,7 @@ class QuizEngine {
         let candidatePool = [];
 
         if (options.wordPool && Array.isArray(options.wordPool)) {
-            candidatePool = options.wordPool.filter(w => !w.isReadingPassage);
+            candidatePool = options.wordPool.filter(w => !w.isReadingPassage && !w.isGrammarUnit);
         } else if (scope === 'today') {
             const todayNonSamples = nonSamples.filter(w => w.planDate === today);
             if (todayNonSamples.length >= 4) {
@@ -109,7 +109,7 @@ class QuizEngine {
                 candidatePool = pastWords.length >= 4 ? pastWords : (candidatePool.length > 0 ? candidatePool : pastWords);
             }
         } else if (scope === 'weak') {
-            candidatePool = window.storage.getWeakWords().filter(w => !w.isReadingPassage);
+            candidatePool = window.storage.getWeakWords().filter(w => !w.isReadingPassage && !w.isGrammarUnit);
             if (candidatePool.length < 4) {
                 const stage1Words = basePool.filter(w => (w.stage || 1) === 1);
                 candidatePool = stage1Words.length >= 4 ? stage1Words : [...basePool];
@@ -258,7 +258,7 @@ class QuizEngine {
 
         // 오답 보기 3개 무작위 선별
         const allOtherMeanings = window.storage.words
-            .filter(w => w.id !== currentWord.id && w.meaning !== currentWord.meaning && !w.isReadingPassage)
+            .filter(w => w.id !== currentWord.id && w.meaning !== currentWord.meaning && !w.isReadingPassage && !w.isGrammarUnit)
             .map(w => w.meaning);
 
         const distractorPool = [...new Set(allOtherMeanings)].sort(() => Math.random() - 0.5).slice(0, 3);
@@ -475,7 +475,7 @@ class QuizEngine {
 
         const otherWords = (window.storage && window.storage.words ? window.storage.words : [])
             .filter(w => {
-                if (w.id === currentWord.id || w.isReadingPassage || !w.word) return false;
+                if (w.id === currentWord.id || w.isReadingPassage || w.isGrammarUnit || !w.word) return false;
                 if (w.word.toLowerCase() === currentWord.word.toLowerCase()) return false;
                 const wordsCount = w.word.trim().split(/\s+/).length;
                 if (isProverb) return wordsCount >= 4 || w.word.includes('.');

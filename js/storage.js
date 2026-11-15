@@ -1419,10 +1419,11 @@ class StorageManager {
         if (!this.plans[dateStr]) {
             this.plans[dateStr] = { restDay: false, memo: '', isDone: false };
         }
-        const dayWords = this.getWordsByDate(dateStr).filter(w => !w.isReadingPassage);
-        const dayPassages = this.getWordsByDate(dateStr).filter(w => w.isReadingPassage);
+        const dayWords = this.getWordsByDate(dateStr).filter(w => !w.isReadingPassage && !w.isGrammarUnit);
+        const dayPassages = this.getWordsByDate(dateStr).filter(w => w.isReadingPassage && !w.isGrammarUnit);
+        const dayGrammar = this.getWordsByDate(dateStr).filter(w => w.isGrammarUnit);
 
-        const hasAnyItems = dayWords.length > 0 || dayPassages.length > 0;
+        const hasAnyItems = dayWords.length > 0 || dayPassages.length > 0 || dayGrammar.length > 0;
         if (!hasAnyItems) return false;
 
         const wordsCompleted = dayWords.length === 0 || dayWords.every(w => (w.flashcardDone && w.quizDone) || w.studyCompleted);
@@ -1430,8 +1431,12 @@ class StorageManager {
             const r = this.readingRecords && this.readingRecords[p.readingPassageId];
             return (r && typeof r.score === 'number') || p.studyCompleted;
         });
+        const grammarCompleted = dayGrammar.length === 0 || dayGrammar.every(g => {
+            const r = this.getGrammarUnitProgress(g.grammarUnitNo);
+            return (r && r.completed) || g.studyCompleted;
+        });
 
-        const allCompleted = wordsCompleted && passagesCompleted;
+        const allCompleted = wordsCompleted && passagesCompleted && grammarCompleted;
 
         this.plans[dateStr].flashcardDone = dayWords.some(w => w.flashcardDone);
         this.plans[dateStr].quizDone = dayWords.some(w => w.quizDone);
@@ -2841,7 +2846,7 @@ class StorageManager {
 
     getDueReviewWords() {
         const today = this.getTodayDateString();
-        const vocabWords = this.words.filter(w => !w.isReadingPassage);
+        const vocabWords = this.words.filter(w => !w.isReadingPassage && !w.isGrammarUnit);
         // 에빙하우스 복습 대상 선정:
         // 오늘 신규 학습하는 단어(planDate === today)는 당일 신규 학습 대상이므로 순수 복습 큐에서는 엄격히 제외
         // 단, 단어사전 등에서 "단어 까먹었을 때(lastForgotten)" 원클릭 리셋된 단어는 당일 복습 큐에 포함
@@ -2871,7 +2876,7 @@ class StorageManager {
     }
 
     getWeakWords() {
-        return this.words.filter(w => !w.isReadingPassage && (w.isWeak || (w.wrongCount > 0 && w.wrongCount >= w.correctCount)));
+        return this.words.filter(w => !w.isReadingPassage && !w.isGrammarUnit && (w.isWeak || (w.wrongCount > 0 && w.wrongCount >= w.correctCount)));
     }
 
     /**
@@ -3075,7 +3080,7 @@ class StorageManager {
     }
 
     getStatistics() {
-        const vocabWords = this.words.filter(w => !w.isReadingPassage);
+        const vocabWords = this.words.filter(w => !w.isReadingPassage && !w.isGrammarUnit);
         const total = vocabWords.length;
         const stages = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
         let totalCorrect = 0;

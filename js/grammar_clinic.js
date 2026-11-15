@@ -512,6 +512,7 @@ class GrammarClinicEngine {
     // 단원 클리닉 모달 열기 & 3단계 제어
     // ------------------------------------------------------------------------
     openClinicModal(unitNo) {
+        unitNo = Number(unitNo);
         // Find unit across all levels
         let foundUnit = null;
         let foundLevel = null;
@@ -546,6 +547,9 @@ class GrammarClinicEngine {
         }
         this.activeUnit = null;
         this.renderStatsOnly();
+        if (window.app && typeof window.app.renderTodayLearningBox === 'function') {
+            window.app.renderTodayLearningBox();
+        }
     }
 
     setStep(stepNo) {
@@ -1056,6 +1060,13 @@ class GrammarClinicEngine {
         // 축하 폭죽 효과 (4점 이상)
         if (score >= 4 && window.confetti) {
             window.confetti({ particleCount: 50, spread: 70, origin: { y: 0.6 } });
+        }
+
+        if (window.app && typeof window.app.renderTodayLearningBox === 'function') {
+            window.app.renderTodayLearningBox();
+        }
+        if (window.plannerEngine && typeof window.plannerEngine.render === 'function') {
+            window.plannerEngine.render();
         }
 
         this.renderModalContent();

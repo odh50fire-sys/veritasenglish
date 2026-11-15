@@ -23,7 +23,10 @@ def run_grammar_planner_test():
         def log_message(self, format, *args):
             pass
 
-    server = socketserver.TCPServer(("127.0.0.1", port), CustomHandler)
+    class ThreadingTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
+        daemon_threads = True
+
+    server = ThreadingTCPServer(("127.0.0.1", port), CustomHandler)
     server_thread = threading.Thread(target=server.serve_forever)
     server_thread.daemon = True
     server_thread.start()

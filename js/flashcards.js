@@ -103,12 +103,12 @@ class FlashcardEngine {
      */
     loadDeck(filter = 'today', customList = null) {
         this.currentFilter = filter;
-        const allWords = (window.storage.words || []).filter(w => !w.isReadingPassage);
+        const allWords = (window.storage.words || []).filter(w => !w.isReadingPassage && !w.isGrammarUnit);
         const nonSamples = allWords.filter(w => !String(w.id || '').startsWith('sample-'));
         const today = window.storage.getTodayDateString();
 
         if (customList && Array.isArray(customList)) {
-            this.deck = customList.filter(w => !w.isReadingPassage);
+            this.deck = customList.filter(w => !w.isReadingPassage && !w.isGrammarUnit);
         } else if (filter === 'today') {
             // 1순위: 오늘 배정된 등록 단어 (샘플 제외 우선)
             const todayNonSamples = nonSamples.filter(w => w.planDate === today);
@@ -136,7 +136,7 @@ class FlashcardEngine {
                 this.deck = (nonSamples.length > 0 ? nonSamples : allWords).slice(0, 20);
             }
         } else if (filter === 'weak') {
-            this.deck = window.storage.getWeakWords().filter(w => !w.isReadingPassage);
+            this.deck = window.storage.getWeakWords().filter(w => !w.isReadingPassage && !w.isGrammarUnit);
         } else {
             this.deck = nonSamples.length > 0 ? [...nonSamples] : [...allWords];
         }
