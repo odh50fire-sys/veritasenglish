@@ -52,8 +52,8 @@
         <div class="w-full max-w-[1700px] mx-auto px-4 sm:px-5 lg:px-6">
             <div class="flex items-center justify-between h-16 gap-2">
                 
-                <!-- 브랜드 로고 & 슬로건 -->
-                <div class="flex items-center gap-3 cursor-pointer shrink-0" onclick="window.app && window.app.switchTab('dashboard')">
+                <!-- 브랜드 로고 & 슬로건 (클릭 시 대시보드 이동) -->
+                <div class="flex items-center gap-3 cursor-pointer shrink-0" onclick="window.app && window.app.switchTab('dashboard')" title="베리타스 잉글리시 대시보드로 이동" data-goto-tab="dashboard">
                     <div class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center text-amber-400 shadow-sm border border-slate-800">
                         <i data-lucide="graduation-cap" class="w-6 h-6"></i>
                     </div>
@@ -69,11 +69,8 @@
 
                 <!-- 메인 네비게이션 탭 (시인성 강화 text-sm) -->
                 <nav class="hidden md:flex items-center space-x-0.5 lg:space-x-1 xl:space-x-1.5 flex-nowrap overflow-x-auto no-scrollbar shrink min-w-0">
-                    <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1.5 text-sm font-semibold transition-colors border-b-2 border-transparent active-nav-tab" data-tab="dashboard">
-                        <span class="flex items-center gap-1.5"><i data-lucide="layout-dashboard" class="w-4 h-4 shrink-0"></i> 대시보드</span>
-                    </button>
                     <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1.5 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="ocr">
-                        <span class="flex items-center gap-1.5"><i data-lucide="camera" class="w-4 h-4 text-blue-800 shrink-0"></i> 교재 등록</span>
+                        <span class="flex items-center gap-1.5"><i data-lucide="camera" class="w-4 h-4 text-blue-800 shrink-0"></i> 단어장 등록</span>
                     </button>
                     <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1.5 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="flashcards">
                         <span class="flex items-center gap-1.5"><i data-lucide="layers" class="w-4 h-4 shrink-0"></i> 플래시카드</span>
@@ -84,17 +81,17 @@
                     <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1.5 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="review">
                         <span class="flex items-center gap-1.5"><i data-lucide="repeat" class="w-4 h-4 text-emerald-700 shrink-0"></i> 망각곡선 복습</span>
                     </button>
+                    <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1.5 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="grammar">
+                        <span class="flex items-center gap-1.5"><i data-lucide="sparkle" class="w-4 h-4 text-emerald-600 shrink-0"></i> 문법 클리닉</span>
+                    </button>
+                    <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1.5 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="reading">
+                        <span class="flex items-center gap-1.5"><i data-lucide="graduation-cap" class="w-4 h-4 text-indigo-700 shrink-0"></i> 내신 대비</span>
+                    </button>
                     <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1.5 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="expressions">
                         <span class="flex items-center gap-1.5"><i data-lucide="sparkles" class="w-4 h-4 text-amber-600 shrink-0"></i> 원어민 표현</span>
                     </button>
                     <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1.5 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="dictionary">
                         <span class="flex items-center gap-1.5"><i data-lucide="book-open-check" class="w-4 h-4 text-blue-800 shrink-0"></i> 단어 사전</span>
-                    </button>
-                    <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1.5 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="reading">
-                        <span class="flex items-center gap-1.5"><i data-lucide="graduation-cap" class="w-4 h-4 text-indigo-700 shrink-0"></i> 내신 대비</span>
-                    </button>
-                    <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1.5 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="grammar">
-                        <span class="flex items-center gap-1.5"><i data-lucide="sparkle" class="w-4 h-4 text-emerald-600 shrink-0"></i> 문법 클리닉</span>
                     </button>
                     <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1.5 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="planner">
                         <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-4 h-4 shrink-0"></i> 학습 플래너</span>
@@ -130,16 +127,15 @@
 
         <!-- 모바일 하단 탭 바 -->
         <div class="md:hidden flex overflow-x-auto py-2 px-3 border-t border-slate-100 bg-white gap-2 text-xs">
-            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="dashboard">대시보드</button>
-            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="ocr">📸 교재등록</button>
+            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="ocr">📸 단어장등록</button>
             <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="flashcards">🎴 플래시카드</button>
-            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="quiz">🧠 퀴즈</button>
-            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="review">🔄 SRS복습</button>
-            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="expressions">💡 원어민표현</button>
-            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="dictionary">📖 사전</button>
-            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="reading">🎓 내신대비</button>
+            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="quiz">🧠 스마트퀴즈</button>
+            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="review">🔄 망각곡선복습</button>
             <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="grammar">📗 문법클리닉</button>
-            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="planner">📅 플래너</button>
+            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="reading">🎓 내신대비</button>
+            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="expressions">💡 원어민표현</button>
+            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="dictionary">📖 단어사전</button>
+            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="planner">📅 학습플래너</button>
         </div>
     </header>
 
