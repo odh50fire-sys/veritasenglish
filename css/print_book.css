@@ -1040,3 +1040,46 @@
   }
 }
 
+/* ==========================================================================
+   Clinic Studio A4 Sheet Component (화면 A4 시뮬레이션 & 인쇄 1:1 매칭)
+   ========================================================================== */
+.clinic-a4-sheet {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 16mm 14mm;
+  margin: 0 auto 28px auto;
+  background: #ffffff;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  box-sizing: border-box;
+  position: relative;
+  page-break-after: always;
+  break-after: page;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+  .clinic-a4-sheet {
+    width: 210mm !important;
+    height: 297mm !important;
+    min-height: 297mm !important;
+    max-height: 297mm !important;
+    padding: 15mm 13mm !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+}
+
+
