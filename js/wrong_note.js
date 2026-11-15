@@ -93,7 +93,8 @@ class WrongNoteEngine {
             reading: { text: '내신 독해', bg: 'bg-indigo-100 text-indigo-800' },
             quiz: { text: '단어 퀴즈', bg: 'bg-amber-100 text-amber-800' },
             scramble: { text: '서술형 어순배열', bg: 'bg-rose-100 text-rose-800' },
-            exam: { text: '실전 모의고사', bg: 'bg-blue-100 text-blue-800' }
+            exam: { text: '실전 모의고사', bg: 'bg-blue-100 text-blue-800' },
+            grammar: { text: '문법 클리닉', bg: 'bg-emerald-100 text-emerald-800' }
         };
 
         container.innerHTML = items.map(item => {

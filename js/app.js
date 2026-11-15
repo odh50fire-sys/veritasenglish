@@ -659,6 +659,10 @@ class AppController {
             window.dictionaryEngine.render();
         } else if (tabName === 'reading') {
             this.switchReadingSubTab(this.currentReadingSubTab || 'passages');
+        } else if (tabName === 'grammar') {
+            if (window.grammarClinicEngine) {
+                window.grammarClinicEngine.init();
+            }
         } else if (tabName === 'planner') {
             if (window.plannerEngine) {
                 window.plannerEngine.currentDayBookFilter = 'all';

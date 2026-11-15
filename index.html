@@ -93,6 +93,9 @@
                     <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1.5 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="reading">
                         <span class="flex items-center gap-1.5"><i data-lucide="graduation-cap" class="w-4 h-4 text-indigo-700 shrink-0"></i> 내신 대비</span>
                     </button>
+                    <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1.5 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="grammar">
+                        <span class="flex items-center gap-1.5"><i data-lucide="sparkle" class="w-4 h-4 text-emerald-600 shrink-0"></i> 문법 클리닉</span>
+                    </button>
                     <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1.5 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="planner">
                         <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-4 h-4 shrink-0"></i> 학습 플래너</span>
                     </button>
@@ -135,6 +138,7 @@
             <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="expressions">💡 원어민표현</button>
             <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="dictionary">📖 사전</button>
             <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="reading">🎓 내신대비</button>
+            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="grammar">📗 문법클리닉</button>
             <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="planner">📅 플래너</button>
         </div>
     </header>
@@ -366,14 +370,14 @@
                         </div>
                     </div>
 
-                    <!-- 3대 퀵 액션 카드 -->
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6 pt-6 border-t border-slate-100">
+                    <!-- 4대 퀵 액션 카드 -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6 pt-6 border-t border-slate-100">
                         <button class="p-3.5 rounded-xl border border-slate-200 hover:border-blue-900 hover:bg-blue-50/40 text-left transition-all group" data-goto-tab="flashcards">
                             <div class="text-blue-900 mb-1 group-hover:scale-105 transition-transform">
                                 <i data-lucide="layers" class="w-5 h-5"></i>
                             </div>
                             <div class="font-serif font-bold text-sm text-slate-900">플래시카드 학습</div>
-                            <div class="text-[11px] text-slate-500">3D 플립 & 발음 듣기</div>
+                            <div class="text-[11px] text-slate-500">3D 플립 &amp; 발음 듣기</div>
                         </button>
 
                         <button class="p-3.5 rounded-xl border border-slate-200 hover:border-blue-900 hover:bg-blue-50/40 text-left transition-all group" data-goto-tab="quiz">
@@ -381,7 +385,16 @@
                                 <i data-lucide="award" class="w-5 h-5"></i>
                             </div>
                             <div class="font-serif font-bold text-sm text-slate-900">스마트 퀴즈 풀기</div>
-                            <div class="text-[11px] text-slate-500">4지선다 & 스펠링</div>
+                            <div class="text-[11px] text-slate-500">4지선다 &amp; 스펠링</div>
+                        </button>
+
+                        <button class="p-3.5 rounded-xl border border-emerald-200 hover:border-emerald-600 hover:bg-emerald-50/40 text-left transition-all group" data-goto-tab="grammar">
+                            <div class="text-emerald-700 mb-1 group-hover:scale-105 transition-transform flex items-center justify-between">
+                                <i data-lucide="sparkle" class="w-5 h-5"></i>
+                                <span class="text-[10px] font-bold text-emerald-800 bg-emerald-100 px-1.5 py-0.5 rounded">NEW</span>
+                            </div>
+                            <div class="font-serif font-bold text-sm text-slate-900">문법 클리닉</div>
+                            <div class="text-[11px] text-slate-500">5대 레벨 40단원</div>
                         </button>
 
                         <a href="intro.html" class="p-3.5 rounded-xl border border-amber-300/80 bg-amber-50/40 hover:bg-amber-50 hover:border-amber-400 text-left transition-all group block" title="베리타스 잉글리시 서비스 이용방법 및 3분 학습 가이드 보기">
@@ -1370,6 +1383,7 @@
                     <button type="button" onclick="window.wrongNote.setFilter('quiz')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 font-semibold text-amber-800 hover:bg-amber-50">단어 퀴즈</button>
                     <button type="button" onclick="window.wrongNote.setFilter('scramble')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 font-semibold text-rose-800 hover:bg-rose-50">서술형 어순배열</button>
                     <button type="button" onclick="window.wrongNote.setFilter('exam')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 font-semibold text-blue-800 hover:bg-blue-50">모의고사</button>
+                    <button type="button" onclick="window.wrongNote.setFilter('grammar')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 font-semibold text-emerald-800 hover:bg-emerald-50">문법 클리닉</button>
                 </div>
 
                 <!-- 해결 상태 필터 -->
@@ -2258,10 +2272,16 @@
                 </div>
             </div>
             </div>
-</section>
-        
+        </section>
 
-
+        <!-- ======================================================================
+             TAB: 문법 클리닉 (Grammar Clinic)
+             ====================================================================== -->
+        <section id="tab-grammar" class="tab-content hidden space-y-6">
+            <div id="grammar-clinic-app-container" class="space-y-6">
+                <!-- JS 렌더링 -->
+            </div>
+        </section>
 
     </main>
 
@@ -3351,6 +3371,48 @@
             </div>
         </div>
     </div>
+
+    <!-- ======================================================================
+         MODAL: 영문법 3단계 처방 클리닉 모달 (Grammar Clinic Modal)
+         ====================================================================== -->
+    <div id="modal-grammar-clinic" class="fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-xs hidden flex items-center justify-center p-3 sm:p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[92vh] overflow-hidden flex flex-col border border-slate-200 animate-in fade-in zoom-in-95 duration-150">
+            <!-- 모달 상단 헤더 -->
+            <div class="p-5 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
+                <div class="space-y-1">
+                    <div class="flex items-center gap-2">
+                        <span id="grammar-modal-level-badge" class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold font-mono">
+                            Lv.1 Starter
+                        </span>
+                    </div>
+                    <h3 id="grammar-modal-title" class="font-serif font-black text-base sm:text-lg text-slate-900">
+                        Unit 1. be동사와 일반동사의 현재·과거형
+                    </h3>
+                </div>
+                <button type="button" onclick="window.grammarClinicEngine.closeClinicModal()" class="p-2 rounded-xl text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition-colors cursor-pointer">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- 3단계 스텝 네비게이션 탭 -->
+            <div class="p-3 bg-slate-100/60 border-b border-slate-200/80 flex items-center gap-2">
+                <button type="button" id="grammar-step-btn-1" onclick="window.grammarClinicEngine.setStep(1)" class="flex-1 py-2 px-2 rounded-xl text-xs font-serif font-bold bg-slate-900 text-white shadow-xs flex items-center justify-center gap-1.5 cursor-pointer">
+                    <span>1단계. 💡 개념 마스터</span>
+                </button>
+                <button type="button" id="grammar-step-btn-2" onclick="window.grammarClinicEngine.setStep(2)" class="flex-1 py-2 px-2 rounded-xl text-xs font-serif font-bold bg-white text-slate-600 border border-slate-200 flex items-center justify-center gap-1.5 cursor-pointer">
+                    <span>2단계. 🔍 밑줄 어법 클리닉</span>
+                </button>
+                <button type="button" id="grammar-step-btn-3" onclick="window.grammarClinicEngine.setStep(3)" class="flex-1 py-2 px-2 rounded-xl text-xs font-serif font-bold bg-white text-slate-600 border border-slate-200 flex items-center justify-center gap-1.5 cursor-pointer">
+                    <span>3단계. 📝 실전 5제 퀴즈</span>
+                </button>
+            </div>
+
+            <!-- 모달 바디 (스크롤 영역) -->
+            <div id="grammar-modal-body" class="p-5 sm:p-6 overflow-y-auto flex-1 space-y-6">
+                <!-- JS 주입 -->
+            </div>
+        </div>
+    </div>
 <!-- 전역 토스트 알림 컨테이너 -->
     <div id="global-toast-container" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex flex-col gap-2 pointer-events-none"></div>
 
@@ -3405,6 +3467,9 @@
     <script src="js/ai_tutor.js"></script>
     <!-- 스마트 올인원 영어 학습 어시스턴트 (학교·내신 D-Day, 시중교재 배정 및 원클릭 체크) -->
     <script src="js/assistant_engine.js?v=13985"></script>
+    <!-- 영문법 클리닉 5대 레벨 40단원 데이터 및 인터랙티브 엔진 -->
+    <script src="data/grammar_clinic_data.js"></script>
+    <script src="js/grammar_clinic.js"></script>
     <script src="js/app.js"></script>
 
     <!-- ======================================================================
