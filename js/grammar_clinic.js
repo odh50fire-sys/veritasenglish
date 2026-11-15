@@ -260,8 +260,8 @@ class GrammarClinicEngine {
                 </div>
             </div>
 
-            <!-- 정규 과정 vs 테마 특강 트랙 전환 탭 -->
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 pb-2">
+            <!-- 정규 과정 vs 테마 특강 트랙 전환 탭 & 부교재 스튜디오 바로가기 -->
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-slate-200 pb-2">
                 <div class="inline-flex p-1 rounded-2xl bg-slate-100 border border-slate-200 text-xs font-serif font-bold">
                     <button type="button" 
                         onclick="window.grammarClinicEngine.switchTrack('regular')"
@@ -285,9 +285,14 @@ class GrammarClinicEngine {
                     </button>
                 </div>
 
-                <div class="text-xs text-slate-500 font-medium flex items-center gap-1.5">
-                    <span class="inline-block w-2 h-2 rounded-full ${this.currentTrack === 'special' ? 'bg-amber-500 animate-pulse' : 'bg-emerald-500'}"></span>
-                    <span>${this.currentTrack === 'special' ? '문법 용어 ➔ 서술형 ➔ 수능 29번 ➔ 혼동 문법 4대 집중 코스' : '중1 기초부터 수능 1등급까지 학년별 정규 로드맵'}</span>
+                <!-- 3대 부교재 스튜디오 원클릭 진입 버튼 -->
+                <div class="flex items-center gap-2">
+                    <button type="button" 
+                        onclick="window.clinicStudioEngine && window.clinicStudioEngine.open('grammar', '${this.currentLevelCode}', 1)"
+                        class="px-3.5 py-2 rounded-2xl bg-gradient-to-r from-emerald-600 via-teal-600 to-indigo-600 hover:from-emerald-500 hover:to-indigo-500 text-white font-serif font-bold text-xs shadow-xs flex items-center gap-1.5 transition-all cursor-pointer hover:shadow-md">
+                        <i data-lucide="book-marked" class="w-4 h-4 text-amber-300"></i>
+                        <span>📖 3대 부교재 스튜디오 (문법 • 독해 • 쓰기)</span>
+                    </button>
                 </div>
             </div>
 
@@ -522,6 +527,13 @@ class GrammarClinicEngine {
                         ${starHtml || `<span class="text-[11px] text-slate-400 font-sans">실전 5문항 + 클리닉</span>`}
                     </div>
                     <div class="flex items-center gap-1.5">
+                        <button type="button" 
+                            onclick="window.clinicStudioEngine && window.clinicStudioEngine.open('grammar', '${levelObj.levelCode}', ${unit.unitNo})"
+                            class="px-2.5 py-1.5 rounded-xl border border-indigo-200 hover:border-indigo-400 bg-indigo-50/70 hover:bg-indigo-100 text-indigo-950 font-serif font-bold text-xs shadow-2xs transition-all flex items-center gap-1 cursor-pointer"
+                            title="이 단원의 문법·독해·쓰기 3대 부교재 스튜디오 열기">
+                            <i data-lucide="book-marked" class="w-3.5 h-3.5 text-indigo-700"></i>
+                            <span>부교재</span>
+                        </button>
                         <button type="button" 
                             onclick="window.grammarClinicEngine.openScheduleModal('${unit.unitId || unit.unitNo}', '${levelObj.levelCode}')"
                             class="px-2.5 py-1.5 rounded-xl border border-emerald-300 hover:border-emerald-600 bg-emerald-50/70 hover:bg-emerald-100 text-emerald-950 font-serif font-bold text-xs shadow-2xs transition-all flex items-center gap-1 cursor-pointer"

@@ -997,3 +997,46 @@
   word-break: break-word !important;
   overflow-wrap: anywhere !important;
 }
+
+/* ==========================================================================
+   Clinic Studio Print Rules (3대 클리닉 A4 출판 규격 인쇄)
+   ========================================================================== */
+@media print {
+  body.overflow-hidden {
+    overflow: visible !important;
+  }
+  body > *:not(#modal-clinic-studio) {
+    display: none !important;
+  }
+  #modal-clinic-studio {
+    position: static !important;
+    display: block !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    z-index: auto !important;
+  }
+  #modal-clinic-studio > div {
+    max-width: 100% !important;
+    max-height: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+  #clinic-studio-toolbar {
+    display: none !important;
+  }
+  #clinic-studio-content {
+    background: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+  }
+  .clinic-paper {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
