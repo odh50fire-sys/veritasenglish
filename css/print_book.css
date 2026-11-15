@@ -570,6 +570,8 @@
     padding: 0 !important;
     width: 100% !important;
     height: auto !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
   /* A4 용지 규격 */
@@ -1079,7 +1081,120 @@
     break-after: page !important;
     box-sizing: border-box !important;
     overflow: hidden !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 }
+
+/* ==========================================================================
+   프리미엄 비주얼 색채 & 대형 타이포그래피 시스템 (Vibrant Palette & Typography)
+   ========================================================================== */
+
+/* 1. 품사별 컬러 배지 */
+.pos-badge-v {
+  background-color: #dbeafe !important;
+  color: #1e40af !important;
+  border: 1px solid #93c5fd !important;
+  font-weight: 700 !important;
+  font-size: 10px !important;
+  padding: 1px 6px !important;
+  border-radius: 4px !important;
+}
+.pos-badge-n {
+  background-color: #d1fae5 !important;
+  color: #065f46 !important;
+  border: 1px solid #6ee7b7 !important;
+  font-weight: 700 !important;
+  font-size: 10px !important;
+  padding: 1px 6px !important;
+  border-radius: 4px !important;
+}
+.pos-badge-a {
+  background-color: #fef3c7 !important;
+  color: #92400e !important;
+  border: 1px solid #fcd34d !important;
+  font-weight: 700 !important;
+  font-size: 10px !important;
+  padding: 1px 6px !important;
+  border-radius: 4px !important;
+}
+.pos-badge-ad {
+  background-color: #ede9fe !important;
+  color: #5b21b6 !important;
+  border: 1px solid #c4b5fd !important;
+  font-weight: 700 !important;
+  font-size: 10px !important;
+  padding: 1px 6px !important;
+  border-radius: 4px !important;
+}
+.pos-badge-prep,
+.pos-badge-conj {
+  background-color: #ffe4e6 !important;
+  color: #9f1239 !important;
+  border: 1px solid #fecdd3 !important;
+  font-weight: 700 !important;
+  font-size: 10px !important;
+  padding: 1px 6px !important;
+  border-radius: 4px !important;
+}
+
+/* 2. 형광펜 하이라이트 효과 */
+.highlight-mint {
+  background: linear-gradient(120deg, rgba(167, 243, 208, 0.7) 0%, rgba(110, 231, 183, 0.7) 100%);
+  padding: 0 4px;
+  border-radius: 3px;
+  font-weight: 700;
+  color: #064e3b;
+}
+.highlight-sky {
+  background: linear-gradient(120deg, rgba(186, 230, 253, 0.7) 0%, rgba(125, 211, 252, 0.7) 100%);
+  padding: 0 4px;
+  border-radius: 3px;
+  font-weight: 700;
+  color: #0c4a6e;
+}
+.highlight-amber {
+  background: linear-gradient(120deg, rgba(254, 240, 138, 0.8) 0%, rgba(253, 224, 71, 0.8) 100%);
+  padding: 0 4px;
+  border-radius: 3px;
+  font-weight: 700;
+  color: #713f12;
+}
+.highlight-rose {
+  background: linear-gradient(120deg, rgba(254, 205, 211, 0.7) 0%, rgba(253, 164, 175, 0.7) 100%);
+  padding: 0 4px;
+  border-radius: 3px;
+  font-weight: 700;
+  color: #881337;
+}
+
+/* 3. 영작 작성란 라인 스타일 */
+.writing-ruled-line {
+  border-bottom: 1.5px dashed #cbd5e1;
+  height: 28px;
+  width: 100%;
+  display: block;
+}
+.writing-grid-box {
+  background-size: 20px 20px;
+  background-image: 
+    linear-gradient(to right, rgba(203, 213, 225, 0.4) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(203, 213, 225, 0.4) 1px, transparent 1px);
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+/* 4. 와이드 어휘 카드 & 큼직한 타이포그래피 */
+.voca-card-wide {
+  padding: 10px 14px;
+  border-radius: 12px;
+  border-left-width: 4px;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+.voca-card-wide:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+}
+
 
 

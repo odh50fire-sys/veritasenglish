@@ -1197,6 +1197,17 @@
       return pagesHtml;
     }
 
+        getPosBadgeClass(pos) {
+      if (!pos) return 'studio-word-pos';
+      const p = String(pos).toLowerCase().trim();
+      if (p.startsWith('v')) return 'pos-badge-v';
+      if (p.startsWith('n')) return 'pos-badge-n';
+      if (p.startsWith('a') && !p.startsWith('ad')) return 'pos-badge-a';
+      if (p.startsWith('ad')) return 'pos-badge-ad';
+      if (p.startsWith('prep') || p.startsWith('conj')) return 'pos-badge-prep';
+      return 'pos-badge-n';
+    },
+
     renderWordCard(w, seriesKey) {
       const displayWord = w.word || 'VOCA';
 
@@ -1212,7 +1223,7 @@
                 <div class="flex items-baseline gap-1.5 min-w-0">
                   <span class="studio-word-num">${String(w.num).padStart(2, '0')}.</span>
                   <span class="studio-word-lemma">${displayWord}</span>
-                  ${w.pos ? `<span class="studio-word-pos shrink-0">${w.pos}</span>` : ''}
+                  ${w.pos ? `<span class="${this.getPosBadgeClass(w.pos)} shrink-0">${w.pos}</span>` : ''}
                 </div>
                 <div class="studio-checks shrink-0">
                   <span>1<span class="studio-check-box ml-0.5"></span></span>
@@ -1253,7 +1264,7 @@
                 <div class="flex items-baseline gap-1.5 min-w-0">
                   <span class="studio-word-num">${String(w.num).padStart(2, '0')}.</span>
                   <span class="studio-word-lemma">${displayWord}</span>
-                  ${w.pos ? `<span class="studio-word-pos font-serif shrink-0">${w.pos}</span>` : ''}
+                  ${w.pos ? `<span class="${this.getPosBadgeClass(w.pos)} shrink-0">${w.pos}</span>` : ''}
                 </div>
                 <div class="studio-checks shrink-0">
                   <span>1<span class="studio-check-box ml-0.5"></span></span>
@@ -1544,7 +1555,7 @@
               <div class="flex items-baseline gap-1.5 min-w-0">
                 <span class="studio-word-num">${String(w.num).padStart(2, '0')}.</span>
                 <span class="studio-word-lemma">${displayWord}</span>
-                ${w.pos ? `<span class="studio-word-pos shrink-0">${w.pos}</span>` : ''}
+                ${w.pos ? `<span class="${this.getPosBadgeClass(w.pos)} shrink-0">${w.pos}</span>` : ''}
               </div>
               <div class="studio-checks shrink-0">
                 <span>1<span class="studio-check-box ml-0.5"></span></span>
@@ -1687,7 +1698,7 @@
       const wb = this.getWorkbookData(dayKey, words);
 
       // 워크북 문항 수에 따라 2페이지 분할하여 A4 높이 넘침 원천 차단
-      const needsTwoPages = wb.total > 10;
+      const needsTwoPages = true; // 2페이지 여유 분배로 큼직한 폰트 및 시원한 가독성 보장
 
       if (!needsTwoPages) {
         return `
@@ -1802,20 +1813,23 @@
     renderWorkbookSection1(wb) {
       if (!wb.section1.length) return '';
       return `
-        <div class="studio-wb-section-title">
-          <span>Section 1. 우리말 뜻을 보고 알맞은 영단어를 철자로 완성하시오. (${this.rangeLabel(wb.section1)})</span>
-          <span class="text-[10px] font-normal text-slate-500">Spelling &amp; Recall</span>
+        <div class="p-2.5 rounded-xl bg-teal-50/80 border border-teal-200 flex items-center justify-between text-xs mt-3 mb-2.5 shadow-2xs">
+          <span class="font-bold text-teal-950 flex items-center gap-1.5">
+            <span class="px-2 py-0.5 rounded bg-teal-700 text-white font-mono text-[10px] font-bold">SECTION 1</span>
+            <span class="font-serif">우리말 뜻을 보고 알맞은 영단어를 철자로 완성하시오. (${this.rangeLabel(wb.section1)})</span>
+          </span>
+          <span class="text-[10px] font-mono text-teal-700 font-bold bg-white px-2 py-0.5 rounded border border-teal-200">Spelling &amp; Recall</span>
         </div>
-        <div class="grid grid-cols-2 gap-2.5">
+        <div class="grid grid-cols-2 gap-3">
           ${wb.section1.map(q => `
-            <div class="studio-wb-qitem flex flex-col justify-between p-2 rounded border border-slate-200">
-              <div class="text-xs font-semibold text-slate-800 leading-snug mb-1.5 flex items-baseline gap-1">
-                <span class="studio-wb-qnum">${q.no}.</span>
+            <div class="studio-wb-qitem flex flex-col justify-between p-3 rounded-xl border border-teal-200/80 bg-white shadow-2xs">
+              <div class="text-xs sm:text-[13px] font-bold text-slate-900 leading-snug mb-2 flex items-baseline gap-1.5">
+                <span class="font-serif font-black text-teal-800">[${String(q.no).padStart(2, '0')}]</span>
                 <span class="break-words">${q.meaning}</span>
               </div>
-              <div class="flex items-center justify-between gap-2 pt-1 border-t border-slate-100">
-                <span class="studio-wb-hint shrink-0">${q.hint}</span>
-                <span class="studio-wb-cloze-blank flex-1 max-w-[220px]"></span>
+              <div class="flex items-center justify-between gap-2 pt-2 border-t border-slate-100">
+                <span class="text-xs font-mono font-bold text-teal-900 bg-teal-50 px-2 py-0.5 rounded border border-teal-200 shrink-0">${q.hint}</span>
+                <span class="studio-wb-cloze-blank flex-1 max-w-[220px] border-b-2 border-teal-600"></span>
               </div>
             </div>
           `).join('')}
@@ -1826,22 +1840,25 @@
     renderWorkbookSection2(wb) {
       if (!wb.section2.length) return '';
       return `
-        <div class="studio-wb-section-title mt-4">
-          <span>Section 2. 문맥을 읽고 빈칸에 들어갈 알맞은 어휘를 문장에 맞는 형태로 쓰시오. (${this.rangeLabel(wb.section2)})</span>
-          <span class="text-[10px] font-normal text-slate-500">Context Cloze</span>
+        <div class="p-2.5 rounded-xl bg-indigo-50/80 border border-indigo-200 flex items-center justify-between text-xs mt-4 mb-2.5 shadow-2xs">
+          <span class="font-bold text-indigo-950 flex items-center gap-1.5">
+            <span class="px-2 py-0.5 rounded bg-indigo-700 text-white font-mono text-[10px] font-bold">SECTION 2</span>
+            <span class="font-serif">문맥을 읽고 빈칸에 들어갈 알맞은 어휘를 완성하시오. (${this.rangeLabel(wb.section2)})</span>
+          </span>
+          <span class="text-[10px] font-mono text-indigo-700 font-bold bg-white px-2 py-0.5 rounded border border-indigo-200">Context Cloze</span>
         </div>
-        <div class="space-y-2">
+        <div class="space-y-2.5">
           ${wb.section2.map(q => `
-            <div class="studio-wb-qitem p-2.5 border border-slate-200">
-              <div class="text-xs text-slate-900 leading-relaxed font-serif">
-                <span class="studio-wb-qnum font-sans font-bold">${q.no}.</span>
+            <div class="studio-wb-qitem p-3.5 border-2 border-indigo-100 rounded-xl bg-white shadow-2xs space-y-1.5">
+              <div class="text-xs sm:text-[13.5px] text-slate-950 leading-relaxed font-serif font-medium">
+                <span class="font-sans font-black text-indigo-800 mr-1.5">[${String(q.no).padStart(2, '0')}]</span>
                 <span>${q.sentenceHtml}</span>
               </div>
-              <div class="text-[11px] text-slate-500 mt-2 pl-4 flex items-center justify-between flex-wrap gap-2">
-                <span class="max-w-[60%]">[해석] ${q.translation}</span>
-                <div class="flex items-center gap-1 font-bold text-slate-800 shrink-0">
-                  <span>정답:</span>
-                  <span class="inline-block w-40 sm:w-52 border-b-2 border-slate-700"></span>
+              <div class="text-xs text-slate-600 pl-4 flex items-center justify-between flex-wrap gap-2 pt-1 border-t border-slate-100">
+                <span class="max-w-[65%] font-sans text-slate-600">[해석] ${q.translation}</span>
+                <div class="flex items-center gap-2 font-bold text-indigo-950 shrink-0">
+                  <span class="text-xs">정답:</span>
+                  <span class="inline-block w-44 sm:w-56 border-b-2 border-indigo-600 h-5"></span>
                 </div>
               </div>
             </div>
@@ -1853,34 +1870,37 @@
     renderWorkbookSection3(wb) {
       if (!wb.section3.length) return '';
       return `
-        <div class="studio-wb-section-title mt-2">
-          <span>Section 3. 왼쪽의 영단어와 오른쪽의 알맞은 의미를 바르게 연결하시오. (${this.rangeLabel(wb.section3)})</span>
-          <span class="text-[10px] font-normal text-slate-500">Meaning Match</span>
+        <div class="p-2.5 rounded-xl bg-amber-50/80 border border-amber-200 flex items-center justify-between text-xs mt-3 mb-2.5 shadow-2xs">
+          <span class="font-bold text-amber-950 flex items-center gap-1.5">
+            <span class="px-2 py-0.5 rounded bg-amber-700 text-white font-mono text-[10px] font-bold">SECTION 3</span>
+            <span class="font-serif">왼쪽의 영단어와 오른쪽의 알맞은 의미를 바르게 연결하시오. (${this.rangeLabel(wb.section3)})</span>
+          </span>
+          <span class="text-[10px] font-mono text-amber-700 font-bold bg-white px-2 py-0.5 rounded border border-amber-200">Meaning Match</span>
         </div>
-        <div class="grid grid-cols-2 gap-4 p-2.5 bg-slate-50 rounded-lg border border-slate-200 text-xs">
-          <div class="space-y-2">
+        <div class="grid grid-cols-2 gap-4 p-3 bg-amber-50/30 rounded-2xl border border-amber-200 text-xs">
+          <div class="space-y-2.5">
             ${wb.section3.map(q => `
-              <div class="flex items-center justify-between p-1.5 bg-white rounded border border-slate-200">
-                <span class="font-bold text-slate-900 break-words pr-2">
-                  <strong class="text-blue-900 mr-1.5">${q.no}.</strong>${q.word || 'VOCA'}
+              <div class="flex items-center justify-between p-2.5 bg-white rounded-xl border border-slate-200 shadow-2xs">
+                <span class="font-bold text-slate-950 text-xs sm:text-[13px] break-words pr-2">
+                  <strong class="text-blue-900 mr-2 font-mono">${String(q.no).padStart(2, '0')}.</strong>${q.word || 'VOCA'}
                 </span>
-                <span class="w-2.5 h-2.5 rounded-full bg-slate-300 inline-block shrink-0"></span>
+                <span class="w-3 h-3 rounded-full bg-slate-300 inline-block shrink-0"></span>
               </div>
             `).join('')}
           </div>
-          <div class="space-y-2">
+          <div class="space-y-2.5">
             ${wb.s3Options.map(o => `
-              <div class="flex items-center justify-between p-1.5 bg-white rounded border border-slate-200">
-                <span class="w-2.5 h-2.5 rounded-full bg-slate-300 inline-block shrink-0"></span>
-                <span class="pl-2 text-slate-800 font-medium break-words">
-                  <strong class="text-emerald-800 mr-1.5">(${o.label})</strong>${o.meaning}
+              <div class="flex items-center justify-between p-2.5 bg-white rounded-xl border border-slate-200 shadow-2xs">
+                <span class="w-3 h-3 rounded-full bg-slate-300 inline-block shrink-0"></span>
+                <span class="pl-2 text-slate-900 font-medium text-xs sm:text-[12.5px] break-words">
+                  <strong class="text-emerald-800 mr-2 font-mono">(${o.label})</strong>${o.meaning}
                 </span>
               </div>
             `).join('')}
           </div>
         </div>
-        <div class="mt-2 text-right text-[11px] text-slate-600 font-medium leading-relaxed">
-          연결 정답: ${wb.section3.map(q => `${q.no}-[ &nbsp;&nbsp; ]`).join(' &nbsp; ')}
+        <div class="mt-2.5 text-right text-xs text-slate-700 font-bold leading-relaxed bg-white p-2 rounded-xl border border-slate-200">
+          연결 정답: ${wb.section3.map(q => `${q.no}-[ &nbsp;&nbsp; ]`).join(' &nbsp;&nbsp;&nbsp; ')}
         </div>
       `;
     }
