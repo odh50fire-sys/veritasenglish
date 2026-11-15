@@ -49,7 +49,7 @@ window.GRAMMAR_CLINIC_BANK = [
               {
                 "en": "Are you ready for the final exam?",
                 "ko": "너는 기말시험 준비가 되었니?",
-                "point": "의문문: Are + 주어(you) ~?"
+                "point": "be동사 의문문: Are + 주어(you) ~?"
               }
             ],
             "oxCompare": [
@@ -96,9 +96,9 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "3인칭 단수 주어 My father + watch에 -es -> watches"
               },
               {
-                "en": "He didn't go to the park yesterday.",
+                "en": "He did not go to the park yesterday.",
                 "ko": "그는 어제 공원에 가지 않았다.",
-                "point": "didn't 뒤에는 반드시 동사원형 go (went 쓰면 오답!)"
+                "point": "did not(didn't) 뒤에는 반드시 동사원형 go"
               },
               {
                 "en": "Did you see the doctor yesterday?",
@@ -274,17 +274,17 @@ window.GRAMMAR_CLINIC_BANK = [
               {
                 "en": "Three children are playing with their puppies.",
                 "ko": "세 명의 아이들이 강아지들과 놀고 있다.",
-                "point": "child의 복수형은 children (childs는 오답)"
+                "point": "child의 불규칙 복수형 children / puppy의 자음+y 복수형 puppies"
               },
               {
                 "en": "I brushed my teeth after breakfast.",
                 "ko": "나는 아침 식사 후에 이를 닦았다.",
-                "point": "tooth의 복수형은 teeth (tooths는 오답)"
+                "point": "tooth의 불규칙 복수형 teeth"
               },
               {
                 "en": "The autumn leaves turn beautiful red and yellow.",
                 "ko": "가을 나뭇잎들이 아름다운 붉은색과 노란색으로 변한다.",
-                "point": "leaf의 복수형은 leaves"
+                "point": "leaf(-f로 끝나는 명사)의 복수형 leaves"
               }
             ],
             "oxCompare": [
@@ -322,8 +322,8 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "This camera is not mine. It is hers.",
-                "ko": "이 카메라는 내 것이 아니다. 그것은 그녀의 것이다.",
+                "en": "This camera is not mine, but it is hers.",
+                "ko": "이 카메라는 내 것이 아니라 그녀의 것이다.",
                 "point": "mine(= my camera), hers(= her camera) 소유대명사"
               },
               {
@@ -334,7 +334,7 @@ window.GRAMMAR_CLINIC_BANK = [
               {
                 "en": "The teacher gave him and me some books.",
                 "ko": "선생님은 그와 나에게 몇 권의 책을 주셨다.",
-                "point": "gave의 목적어 병렬 -> him and me (him and I는 오답)"
+                "point": "gave의 목적어 병렬 -> him and me (I 쓰면 오답)"
               }
             ],
             "oxCompare": [
@@ -503,19 +503,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "I want to drink something cold because it is too hot.",
-                "ko": "날씨가 너무 더워서 시원한 것을 마시고 싶다.",
-                "point": "something + cold (cold something은 오답)"
+                "en": "She bought a delicate antique vase at the auction.",
+                "ko": "그녀는 경매에서 우아한 골동품 꽃병을 샀다.",
+                "point": "명사 vase를 앞에서 직접 수식하는 한정적 용법"
               },
               {
-                "en": "The pizza smells delicious and the music sounds good.",
-                "ko": "피자는 맛있는 냄새가 나고 음악은 좋게 들린다.",
-                "point": "감각동사 smell/sound 뒤에는 형용사 delicious, good (deliciously, well은 오답)"
-              },
-              {
-                "en": "They live in a very friendly neighborhood.",
-                "ko": "그들은 매우 친근한 동네에 산다.",
-                "point": "friendly는 -ly로 끝나지만 명사(friend)+ly이므로 형용사"
+                "en": "The peaceful garden remained quiet throughout the morning.",
+                "ko": "평화로운 정원은 아침 내내 조용함을 유지했다.",
+                "point": "2형식 연결동사 remained의 주격 보어로 쓰인 서술적 용법"
               }
             ],
             "oxCompare": [
@@ -557,19 +552,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "He worked hard, but he could hardly finish the task in time.",
-                "ko": "그는 열심히 일했지만, 제시간에 그 과제를 거의 끝낼 수 없었다.",
-                "point": "worked hard(열심히 일함) vs could hardly finish(거의 끝내지 못함)"
+                "en": "The high speed train runs very fast on the new track.",
+                "ko": "고속 열차는 새 선로 위를 매우 빠르게 달린다.",
+                "point": "fast는 형용사와 부사 형태가 동일 (fastly는 없는 단어)"
               },
               {
-                "en": "He is a fast learner, and he runs fast.",
-                "ko": "그는 빠른 학습자이고, 빨리 달린다.",
-                "point": "첫 fast는 명사 수식 형용사, 둘째 fast는 동사 수식 부사 (fastly는 없는 단어)"
-              },
-              {
-                "en": "The train arrived very late yesterday.",
-                "ko": "어제 기차가 매우 늦게 도착했다.",
-                "point": "늦게 도착한 것은 late (lately는 '최근에'라는 뜻이라 어색함)"
+                "en": "He worked hard all week, so he could hardly open his eyes.",
+                "ko": "그는 한 주 내내 열심히 일해서, 거의 눈을 뜰 수 없었다.",
+                "point": "hard(열심히: 부사) vs hardly(거의 ~않다: 빈도부사)"
               }
             ],
             "oxCompare": [
@@ -740,9 +730,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "Where do you live? When did she arrive?",
-                "ko": "일반 의문사 의문문 어순의 대표 적용 예문입니다.",
-                "point": "공식 [의문사 + be동사/조동사/do(does/did) + 주어 + 동사원형...?]의 핵심 적용 문맥"
+                "en": "Where did you buy this stylish jacket yesterday?",
+                "ko": "너는 어제 이 멋진 재킷을 어디에서 샀니?",
+                "point": "의문사(Where) + 조동사(did) + 주어(you) + 동사원형(buy)"
+              },
+              {
+                "en": "Why is the baby crying so loudly right now?",
+                "ko": "아기가 지금 왜 이렇게 크게 울고 있니?",
+                "point": "의문사(Why) + be동사(is) + 주어(the baby) + 현재분사(crying)"
               }
             ],
             "oxCompare": [
@@ -776,9 +771,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "Who broke the window? What happened yesterday?",
-                "ko": "의문사가 주어인 경우의 대표 적용 예문입니다.",
-                "point": "공식 [의문사(주어) + 동사 + 목적어...?]의 핵심 적용 문맥"
+                "en": "Who broke the glass window in the living room?",
+                "ko": "누가 거실 유리창을 깨뜨렸니?",
+                "point": "의문사 Who가 직접 주어이므로 did break가 아니라 broke 바로 연결"
+              },
+              {
+                "en": "What happened to your bicycle yesterday afternoon?",
+                "ko": "어제 오후에 네 자전거에 무슨 일이 있었니?",
+                "point": "What이 주어이므로 일반동사 과거형 happened가 바로 연결"
               }
             ],
             "oxCompare": [
@@ -943,9 +943,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "He is writing an email now. They were sleeping at midnight.",
-                "ko": "진행형의 기본 형태의 대표 적용 예문입니다.",
-                "point": "공식 [am/are/is + 동사원형-ing (현재진행) / was/were + -ing (과거진행)]의 핵심 적용 문맥"
+                "en": "They are building a modern bridge over the river.",
+                "ko": "그들은 강 위에 현대적인 다리를 건설하고 있다.",
+                "point": "현재진행형: are(be동사 현재형) + building(V-ing)"
+              },
+              {
+                "en": "She was writing an important email when I entered the office.",
+                "ko": "내가 사무실에 들어갔을 때 그녀는 중요한 이메일을 작성하고 있었다.",
+                "point": "과거진행형: was(be동사 과거형) + writing(V-ing)"
               }
             ],
             "oxCompare": [
@@ -979,9 +984,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "I have two dogs (o) / I am having two dogs (x)",
-                "ko": "진행형 불가 동사 (상태동사)의 대표 적용 예문입니다.",
-                "point": "공식 [소유(have, belong), 감정(like, love), 인지(know, understand), 감각(hear)]의 핵심 적용 문맥"
+                "en": "I know the answer to that difficult question.",
+                "ko": "나는 그 어려운 질문에 대한 답을 알고 있다.",
+                "point": "인식/상태 동사 know는 진행형(am knowing) 불가"
+              },
+              {
+                "en": "He resembles his grandfather in many ways.",
+                "ko": "그는 여러 면에서 그의 할아버지를 닮았다.",
+                "point": "상태/유사 동사 resemble은 진행형(is resembling) 불가"
               }
             ],
             "oxCompare": [
@@ -1146,9 +1156,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "She can speak French. You must be quiet here.",
-                "ko": "조동사의 기본 원칙의 대표 적용 예문입니다.",
-                "point": "공식 [조동사 + 동사원형 (3인칭 단수 -s 불가, 조동사 연속 2개 사용 불가)]의 핵심 적용 문맥"
+                "en": "You can speak fluent English after sufficient practice.",
+                "ko": "충분한 연습 후에 너는 유창한 영어를 구사할 수 있다.",
+                "point": "조동사 can 뒤에는 반드시 동사원형 speak"
+              },
+              {
+                "en": "We must protect the endangered wildlife in this forest.",
+                "ko": "우리는 이 숲의 멸종 위기 야생동물을 보호해야 한다.",
+                "point": "조동사 must 뒤에는 동사원형 protect 필수"
               }
             ],
             "oxCompare": [
@@ -1182,9 +1197,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "You must not touch this. You don't have to hurry.",
-                "ko": "must vs must not vs don't have to의 대표 적용 예문입니다.",
-                "point": "공식 [must(강한 의무) / must not(금지: ~해선 안 된다) / don't have to(~할 필요가 없다)]의 핵심 적용 문맥"
+                "en": "You must not touch the fragile ancient artifacts.",
+                "ko": "너는 깨지기 쉬운 고대 유물들을 만져서는 안 된다.",
+                "point": "must not: 강한 금지 (~해서는 절대 안 된다)"
+              },
+              {
+                "en": "You do not have to wear a suit to the casual party.",
+                "ko": "너는 그 캐주얼 파티에 정장을 입고 갈 필요가 없다.",
+                "point": "do not have to: 불필요 (~할 필요가 없다)"
               }
             ],
             "oxCompare": [
@@ -1349,9 +1369,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "The sun rises. (1) / She became a doctor. (2) / I bought a bike. (3)",
-                "ko": "1·2·3형식의 구조의 대표 적용 예문입니다.",
-                "point": "공식 [1형식(S+V) / 2형식(S+V+SC: 주격보어) / 3형식(S+V+O: 목적어)]의 핵심 적용 문맥"
+                "en": "The early morning sun rises in the east.",
+                "ko": "이른 아침 태양은 동쪽에서 뜬다.",
+                "point": "1형식: 주어(The sun) + 완전자동사(rises) + 수식어구"
+              },
+              {
+                "en": "The experienced detective inspected the crime scene thoroughly.",
+                "ko": "숙련된 형사는 범죄 현장을 철저하게 조사했다.",
+                "point": "3형식: 주어 + 완전타동사(inspected) + 목적어(the crime scene)"
               }
             ],
             "oxCompare": [
@@ -1385,9 +1410,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "This soup tastes delicious. You look tired.",
-                "ko": "2형식 감각동사의 대표 적용 예문입니다.",
-                "point": "공식 [look, sound, smell, taste, feel + 형용사]의 핵심 적용 문맥"
+                "en": "The fresh bread smells delicious in the bakery.",
+                "ko": "빵집 안에서 갓 구운 빵 냄새가 아주 맛있게 난다.",
+                "point": "감각동사 smells 뒤에 부사 deliciously가 아닌 형용사 delicious 필수"
+              },
+              {
+                "en": "Her voice sounded calm despite the unexpected emergency.",
+                "ko": "예기치 못한 비상사태에도 불구하고 그녀의 목소리는 침착하게 들렸다.",
+                "point": "감각동사 sounded 뒤 주격 보어로 형용사 calm 사용"
               }
             ],
             "oxCompare": [
@@ -1552,9 +1582,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "Hurry up, and you will catch the train. Hurry up, or you will be late.",
-                "ko": "명령문, and / or의 대표 적용 예문입니다.",
-                "point": "공식 [명령문, and ~ (~해라, 그러면 ...) / 명령문, or ~ (~해라, 그렇지 않으면 ...)]의 핵심 적용 문맥"
+                "en": "Start early in the morning, and you will arrive before sunset.",
+                "ko": "아침 일찍 출발해라, 그러면 일몰 전에 도착할 것이다.",
+                "point": "명령문, and ~: ~해라, 그러면 ...할 것이다"
+              },
+              {
+                "en": "Hurry up now, or you will miss the express train.",
+                "ko": "지금 서둘러라, 그렇지 않으면 급행열차를 놓칠 것이다.",
+                "point": "명령문, or ~: ~해라, 그렇지 않으면 ...할 것이다"
               }
             ],
             "oxCompare": [
@@ -1588,9 +1623,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "What a pretty girl she is! / How fast he runs!",
-                "ko": "감탄문 공식의 대표 적용 예문입니다.",
-                "point": "공식 [What + a/an + 형용사 + 명사 (+ 주어 + 동사)! / How + 형용사/부사 (+ 주어 + 동사)!]의 핵심 적용 문맥"
+                "en": "What a magnificent view this ancient temple is!",
+                "ko": "이 고대 사원은 참으로 웅장한 경치이구나!",
+                "point": "What + a(n) + 형용사(magnificent) + 명사(view) + 주어 + 동사!"
+              },
+              {
+                "en": "How brightly the stars shine in the clear night sky!",
+                "ko": "맑은 밤하늘에 별들이 얼마나 밝게 빛나는가!",
+                "point": "How + 부사(brightly) + 주어(the stars) + 동사(shine)!"
               }
             ],
             "oxCompare": [
@@ -1767,9 +1807,19 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "To read books is fun. (명사) / I have no books to read. (형용사) / I went to buy books. (부사)",
-                "ko": "to부정사의 3대 용법 판별의 대표 적용 예문입니다.",
-                "point": "공식 [명사적(~하기/것: 주·목·보) / 형용사적(~할: 명사수식) / 부사적(~하기 위해, 해서: 목적/감정원인)]의 핵심 적용 문맥"
+                "en": "To read classic literature inspires creative writing.",
+                "ko": "고전문학을 읽는 것은 창의적인 글쓰기에 영감을 준다.",
+                "point": "명사적 용법: 문장의 주어 역할 (~하는 것)"
+              },
+              {
+                "en": "I need a quiet library room to study for the exam.",
+                "ko": "나는 시험공부를 할 조용한 도서관 방이 필요하다.",
+                "point": "형용사적 용법: 명사 a quiet library room 수식 (~할)"
+              },
+              {
+                "en": "He woke up early to catch the first express train.",
+                "ko": "그는 첫 급행열차를 타기 위해 일찍 일어났다.",
+                "point": "부사적 용법: 목적을 나타냄 (~하기 위하여)"
               }
             ],
             "oxCompare": [
@@ -1803,9 +1853,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "I don't know what to do next. (= what I should do)",
-                "ko": "의문사 + to부정사의 대표 적용 예문입니다.",
-                "point": "공식 [what/how/where/when + to부정사 = 명사구]의 핵심 적용 문맥"
+                "en": "She asked the travel guide where to visit in the historic city.",
+                "ko": "그녀는 여행 가이드에게 그 역사 도시에서 어디를 방문해야 할지 물었다.",
+                "point": "where to visit = where she should visit (명사구 역할)"
+              },
+              {
+                "en": "The professor explained how to solve the complex equation.",
+                "ko": "교수님은 그 복잡한 방정식을 푸는 방법을 설명하셨다.",
+                "point": "how to solve = how we should solve (방법을 나타내는 목적어)"
               }
             ],
             "oxCompare": [
@@ -1970,9 +2025,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "I enjoy playing tennis. / I want to play tennis.",
-                "ko": "목적어 취급 동사 공식의 대표 적용 예문입니다.",
-                "point": "공식 [to부정사만: want, hope, wish, decide, plan, promise / 동명사만: enjoy, finish, avoid, mind, practice, give up]의 핵심 적용 문맥"
+                "en": "They decided to launch the educational initiative next spring.",
+                "ko": "그들은 내년 봄에 교육 계획을 시작하기로 결정했다.",
+                "point": "decide는 미래지향 동사로 to부정사(to launch)만을 목적어로 취함"
+              },
+              {
+                "en": "We enjoyed watching the sunset over the horizon.",
+                "ko": "우리는 지평선 너머로 해가 지는 것을 감상하는 것을 즐겼다.",
+                "point": "enjoy는 동명사(watching)만을 목적어로 취함"
               }
             ],
             "oxCompare": [
@@ -2006,9 +2066,19 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "Remember to lock the door. / I remember meeting her.",
-                "ko": "remember / forget / stop의 대표 적용 예문입니다.",
-                "point": "공식 [remember/forget + to부정사(미래: ~할 것을) / + -ing(과거: ~했던 것을) / stop to V(~하기 위해 멈추다) / stop -ing(~하던 것을 멈추다)]의 핵심 적용 문맥"
+                "en": "Please remember to submit your research paper by Friday.",
+                "ko": "금요일까지 연구 보고서를 제출할 것을 잊지 말고 기억하세요.",
+                "point": "remember + to V: 미래에 해야 할 일"
+              },
+              {
+                "en": "I distinctly remember locking the office door before leaving.",
+                "ko": "나는 떠나기 전에 사무실 문을 잠갔던 것을 뚜렷이 기억한다.",
+                "point": "remember + -ing: 과거에 이미 했던 일"
+              },
+              {
+                "en": "The tired driver stopped to take a short nap.",
+                "ko": "피곤한 운전자는 짧은 낮잠을 자기 위해 멈추었다.",
+                "point": "stop + to V: ~하기 위해 가던 길을 멈추다"
               }
             ],
             "oxCompare": [
@@ -2173,9 +2243,19 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "I have lived here for 5 years. She has gone to Paris.",
-                "ko": "현재완료 4대 용법 구별 짝꿍 부사의 대표 적용 예문입니다.",
-                "point": "공식 [완료(just, already, yet) / 경험(ever, never, before, once) / 계속(for + 기간, since + 시작시점) / 결과(have gone to: 가고 없다, have lost)]의 핵심 적용 문맥"
+                "en": "She has just finished writing her graduation thesis.",
+                "ko": "그녀는 방금 졸업 논문 작성을 마쳤다.",
+                "point": "완료: just, already, yet과 결합"
+              },
+              {
+                "en": "I have visited that historic museum three times.",
+                "ko": "나는 그 역사 박물관을 세 번 방문해 본 적이 있다.",
+                "point": "경험: ever, never, before, three times 등과 결합"
+              },
+              {
+                "en": "They have lived in this coastal town since 2010.",
+                "ko": "그들은 2010년 이래로 이 해안 마을에 살아왔다.",
+                "point": "계속: since, for + 기간과 결합"
               }
             ],
             "oxCompare": [
@@ -2209,9 +2289,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "I have met him yesterday. (x) -> I met him yesterday. (o)",
-                "ko": "과거 특정 시점 부사 결합 금지의 대표 적용 예문입니다.",
-                "point": "공식 [yesterday, ago, last ~, in + 연도, when 의문문과는 현재완료 불가 (단순과거 사용)]의 핵심 적용 문맥"
+                "en": "The famous scientist discovered the cosmic anomaly two years ago.",
+                "ko": "그 유명한 과학자는 2년 전에 우주 이상 현상을 발견했다.",
+                "point": "two years ago는 명백한 과거 부사이므로 현재완료 대신 단순과거 discovered 사용"
+              },
+              {
+                "en": "When did you first meet your current business partner?",
+                "ko": "너는 언제 현재의 사업 파트너를 처음 만났니?",
+                "point": "When 의문문은 특정 시점을 묻기 때문에 현재완료(When have you met) 불가"
               }
             ],
             "oxCompare": [
@@ -2376,9 +2461,19 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "She made me a cake. -> She made a cake for me.",
-                "ko": "수여동사 4형식 ➔ 3형식 전치사 분류의 대표 적용 예문입니다.",
-                "point": "공식 [to: give, send, tell, show, lend / for: make, buy, cook, get, find / of: ask]의 핵심 적용 문맥"
+                "en": "The teacher gave a helpful book to each student.",
+                "ko": "선생님은 각 학생에게 유익한 책 한 권을 주셨다.",
+                "point": "give 계열(give, send, show, teach)은 전치사 to 사용"
+              },
+              {
+                "en": "My uncle made a wooden bookshelf for me.",
+                "ko": "삼촌은 나를 위해 원목 책장을 만들어 주셨다.",
+                "point": "make 계열(make, buy, cook, find)은 전치사 for 사용"
+              },
+              {
+                "en": "May I ask a personal favor of you?",
+                "ko": "제가 당신에게 개인적인 부탁 하나를 해도 될까요?",
+                "point": "ask 동사는 전치사 of 사용"
               }
             ],
             "oxCompare": [
@@ -2412,9 +2507,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "It looks nice. (형용사) / It looks like a doll. (명사)",
-                "ko": "감각동사 + like + 명사의 대표 적용 예문입니다.",
-                "point": "공식 [look/sound/smell/taste/feel + 형용사 OR + like + 명사]의 핵심 적용 문맥"
+                "en": "The fresh soup tastes rich and savory.",
+                "ko": "신선한 수프는 풍부하고 깊은 맛이 난다.",
+                "point": "감각동사 tastes + 형용사(rich and savory)"
+              },
+              {
+                "en": "That towering cloud looks like a giant castle in the sky.",
+                "ko": "저 우뚝 솟은 구름은 하늘의 거대한 성처럼 보인다.",
+                "point": "감각동사 looks + like + 명사(a giant castle)"
               }
             ],
             "oxCompare": [
@@ -2579,9 +2679,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "He is as tall as his father. She is not so old as I thought.",
-                "ko": "원급 비교와 부정의 대표 적용 예문입니다.",
-                "point": "공식 [as + 원급(형용사/부사) + as / not as[so] + 원급 + as]의 핵심 적용 문맥"
+                "en": "Her latest novel is as compelling as her debut work.",
+                "ko": "그녀의 최신 소설은 그녀의 데뷔작만큼 흥미진진하다.",
+                "point": "as + 원급(compelling) + as: ~만큼 ...한"
+              },
+              {
+                "en": "This small battery is not as heavy as the old model.",
+                "ko": "이 소형 배터리는 이전 모델만큼 무겁지 않다.",
+                "point": "not as(so) + 원급 + as: ~만큼 ...하지 않은"
               }
             ],
             "oxCompare": [
@@ -2615,9 +2720,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "This phone is much better than that one.",
-                "ko": "비교급 강조 부사의 대표 적용 예문입니다.",
-                "point": "공식 [much, even, still, far, a lot + 비교급 (훨씬)]의 핵심 적용 문맥"
+                "en": "The new supercomputer processes data much faster than previous systems.",
+                "ko": "새 슈퍼컴퓨터는 이전 시스템들보다 훨씬 더 빠르게 데이터를 처리한다.",
+                "point": "비교급 faster 강조: much, far, even, still, a lot (very는 비교급 수식 불가)"
+              },
+              {
+                "en": "This mountain path is far steeper than we anticipated.",
+                "ko": "이 산길은 우리가 예상했던 것보다 훨씬 더 가파르다.",
+                "point": "비교급 steeper를 강조하는 부사 far"
               }
             ],
             "oxCompare": [
@@ -2782,9 +2892,19 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "I used to play the piano. / Wood is used to make paper. / I am used to getting up early.",
-                "ko": "used to vs be used to의 대표 적용 예문입니다.",
-                "point": "공식 [used to + V원형(~하곤 했다) / be used to + V원형(~하는 데 사용되다) / be used to + -ing(~에 익숙하다)]의 핵심 적용 문맥"
+                "en": "There used to be a grand opera house on this corner.",
+                "ko": "이 모퉁이에 웅장한 오페라 극장이 하나 있곤 했다.",
+                "point": "used to + 동사원형: 과거의 상태나 규칙적 습관 (~이 있었다 / ~하곤 했다)"
+              },
+              {
+                "en": "Solar panels are used to generate eco-friendly electricity.",
+                "ko": "태양광 패널은 친환경 전기를 생산하는 데 사용된다.",
+                "point": "be used to + 동사원형: use의 수동태 (~하는 데 사용되다)"
+              },
+              {
+                "en": "She is used to working under intense deadline pressure.",
+                "ko": "그녀는 강한 마감 압박 속에서 일하는 것에 익숙하다.",
+                "point": "be used to + -ing: ~에 익숙하다 (= be accustomed to)"
               }
             ],
             "oxCompare": [
@@ -2818,9 +2938,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "You had better leave now. You had better not stay up late.",
-                "ko": "had better와 would rather의 대표 적용 예문입니다.",
-                "point": "공식 [had better + 동사원형 (~하는 게 낫다) / had better not + 동사원형]의 핵심 적용 문맥"
+                "en": "You had better take an umbrella because it looks like rain.",
+                "ko": "비가 올 것 같으니 너는 우산을 챙기는 편이 낫겠다.",
+                "point": "had better + 동사원형: ~하는 편이 낫다 (부정: had better not)"
+              },
+              {
+                "en": "I would rather stay home than attend that noisy banquet.",
+                "ko": "나는 저 시끄러운 연회에 참석하느니 차라리 집에 머물겠다.",
+                "point": "would rather A than B: B하느니 차라리 A하겠다"
               }
             ],
             "oxCompare": [
@@ -2985,9 +3110,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "The telephone was invented by Bell. (능동: Bell invented the telephone.)",
-                "ko": "수동태 기본 공식의 대표 적용 예문입니다.",
-                "point": "공식 [주어 + be동사 + 과거분사(p.p.) + (by + 행위자)]의 핵심 적용 문맥"
+                "en": "The historic cathedral was designed by a visionary architect.",
+                "ko": "그 역사적인 대성당은 비전을 가진 한 건축가에 의해 설계되었다.",
+                "point": "주어 + be동사(was) + 과거분사(designed) + by 행위자"
+              },
+              {
+                "en": "Modern vaccines are distributed safely across all regions.",
+                "ko": "현대 백신들은 모든 지역에 안전하게 보급된다.",
+                "point": "현재 시제 복수 수동태: are + distributed"
               }
             ],
             "oxCompare": [
@@ -3021,9 +3151,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "The accident was happened. (x) -> The accident happened. (o)",
-                "ko": "수동태 불가 동사 (자동사)의 대표 적용 예문입니다.",
-                "point": "공식 [appear, disappear, happen, occur, consist of, belong to]의 핵심 적용 문맥"
+                "en": "A severe earthquake occurred near the coastal islands yesterday.",
+                "ko": "어제 해안 섬 근처에서 강한 지진이 발생했다.",
+                "point": "occur는 완전자동사로 목적어가 없으므로 수동태(was occurred) 절대 불가"
+              },
+              {
+                "en": "The mysterious footprints disappeared in the fresh snow.",
+                "ko": "그 신비한 발자국들은 새로 내린 눈 속으로 사라졌다.",
+                "point": "disappear는 자동사이므로 수동태(were disappeared) 불가"
               }
             ],
             "oxCompare": [
@@ -3188,9 +3323,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "If it rains tomorrow, we will stay home. (If it will rain - x)",
-                "ko": "시간·조건 부사절의 대원칙의 대표 적용 예문입니다.",
-                "point": "공식 [시간(when, while, after)이나 조건(if, unless) 부사절에서는 '미래시제 대신 현재시제' 사용!]의 핵심 적용 문맥"
+                "en": "If it rains tomorrow, the outdoor baseball tournament will be postponed.",
+                "ko": "만약 내일 비가 온다면, 야외 야구 토너먼트는 연기될 것이다.",
+                "point": "조건 부사절(If)에서는 내일 일이라도 will rain 대신 현재시제 rains 사용"
+              },
+              {
+                "en": "We will start the meeting as soon as the director arrives.",
+                "ko": "우리는 이사님이 도착하자마자 회의를 시작할 것이다.",
+                "point": "시간 부사절(as soon as)에서는 will arrive 대신 현재시제 arrives 사용"
               }
             ],
             "oxCompare": [
@@ -3224,9 +3364,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "Unless you hurry, you will be late. (= If you don't hurry, ...)",
-                "ko": "if vs unless의 대표 적용 예문입니다.",
-                "point": "공식 [unless = if ~ not (~하지 않는다면)]의 핵심 적용 문맥"
+                "en": "You cannot pass the proficiency test unless you practice diligently.",
+                "ko": "부지런히 연습하지 않는다면 너는 숙련도 시험에 통과할 수 없다.",
+                "point": "unless = if not (만약 ~하지 않는다면, 자체에 부정이 포함됨)"
+              },
+              {
+                "en": "Do not enter the laboratory unless authorized by the supervisor.",
+                "ko": "관리자의 승인을 받지 않는 한 실험실에 들어가지 마라.",
+                "point": "unless 조건절: 예외적 조건 규정"
               }
             ],
             "oxCompare": [
@@ -3403,9 +3548,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "She made him clean the room. / I heard someone singing.",
-                "ko": "사역동사와 지각동사의 목적격보어의 대표 적용 예문입니다.",
-                "point": "공식 [사역동사(make, have, let) + 목적어 + 동사원형 / 지각동사(see, hear, feel) + 목적어 + 동사원형 or 현재분사(-ing)]의 핵심 적용 문맥"
+                "en": "The teacher had all students revise their essays carefully.",
+                "ko": "선생님은 모든 학생들에게 에세이를 신중하게 수정하도록 시키셨다.",
+                "point": "사역동사 had의 목적격 보어로 동사원형 revise 사용"
+              },
+              {
+                "en": "I heard someone knocking loudly on the front door.",
+                "ko": "나는 누군가가 현관문을 세게 두드리는 소리를 들었다.",
+                "point": "지각동사 heard의 목적격 보어로 진행 느낌의 현재분사 knocking 사용"
               }
             ],
             "oxCompare": [
@@ -3439,9 +3589,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "My mom told me to clean my room. He asked me to help him.",
-                "ko": "to부정사를 목적격보어로 취하는 일반 5형식 동사의 대표 적용 예문입니다.",
-                "point": "공식 [want, tell, order, ask, allow, expect, advise + 목적어 + to부정사]의 핵심 적용 문맥"
+                "en": "The doctor advised the patient to exercise regularly.",
+                "ko": "의사는 환자에게 규칙적으로 운동할 것을 조언했다.",
+                "point": "advise + 목적어 + to부정사(to exercise)"
+              },
+              {
+                "en": "The strict policy encourages employees to develop new skills.",
+                "ko": "그 엄격한 정책은 직원들이 새로운 기술을 개발하도록 장려한다.",
+                "point": "encourage + 목적어 + to부정사(to develop)"
               }
             ],
             "oxCompare": [
@@ -3606,9 +3761,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "The girl who won the race is Jane. / A dog whose tail is short.",
-                "ko": "관계대명사의 격 판별의 대표 적용 예문입니다.",
-                "point": "공식 [주격: 선행사 + who/which/that + 동사 / 목적격: 선행사 + who(m)/which/that + S + V / 소유격: 선행사 + whose + 명사]의 핵심 적용 문맥"
+                "en": "The scientist who discovered the rare fossil received an international award.",
+                "ko": "그 희귀 화석을 발견한 과학자는 국제적인 상을 받았다.",
+                "point": "주격 관계대명사 who: 뒤에 주어가 없는 불완전절 연결"
+              },
+              {
+                "en": "The researcher whose laboratory was featured in the journal gave an inspiring lecture.",
+                "ko": "연구실이 학술지에 실렸던 그 연구자는 감명 깊은 강연을 했다.",
+                "point": "소유격 관계대명사 whose + 선행사의 소유물(laboratory)"
               }
             ],
             "oxCompare": [
@@ -3642,9 +3802,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "The movie (which) I watched yesterday was exciting.",
-                "ko": "목적격 관계대명사의 생략의 대표 적용 예문입니다.",
-                "point": "공식 [타동사의 목적어나 전치사의 목적어로 쓰인 관계대명사는 단독 생략 가능]의 핵심 적용 문맥"
+                "en": "This is the rare historical document which historians have studied for decades.",
+                "ko": "이것은 역사가들이 수십 년 동안 연구해 온 희귀한 역사 문서이다.",
+                "point": "studied의 목적어 역할을 하는 목적격 관계대명사 which는 생략 가능"
+              },
+              {
+                "en": "The generous mentor whom she respected deeply offered great career advice.",
+                "ko": "그녀가 깊이 존경했던 너그러운 멘토는 훌륭한 진로 조언을 제공했다.",
+                "point": "respected의 목적어 역할을 하는 목적격 관계대명사 whom 생략 가능"
               }
             ],
             "oxCompare": [
@@ -3809,9 +3974,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "Show me what you bought. (선행사x, 불완전) / Show me the book that you bought. (선행사o, 불완전)",
-                "ko": "what vs that 구별 공식 (수능·내신 1위 빈출)의 대표 적용 예문입니다.",
-                "point": "공식 [what: 선행사 없음 + 뒷문장 불완전 (주어나 목적어 없음) / that: 선행사 명사 있음 + 뒷문장 불완전]의 핵심 적용 문맥"
+                "en": "Show me what you bought at the antique market yesterday.",
+                "ko": "네가 어제 골동품 시장에서 무엇을 샀는지 나에게 보여줘라.",
+                "point": "선행사가 없고 bought의 목적어가 빠진 불완전절을 이끄는 관계대명사 what"
+              },
+              {
+                "en": "Show me the antique camera that you bought at the market.",
+                "ko": "시장에서 네가 샀던 그 골동품 카메라를 나에게 보여줘라.",
+                "point": "선행사(the antique camera)가 있으므로 목적격 관계대명사 that 사용"
               }
             ],
             "oxCompare": [
@@ -3845,9 +4015,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "This is the only thing that I want.",
-                "ko": "that만을 쓰는 경우의 대표 적용 예문입니다.",
-                "point": "공식 [최상급, 서수, the only, the very, -thing 대명사, 사람+동물이 선행사일 때]의 핵심 적용 문맥"
+                "en": "This is the very book that helped me understand quantum mechanics.",
+                "ko": "이것이 바로 내가 양자역학을 이해하는 데 도움을 준 바로 그 책이다.",
+                "point": "선행사에 the very가 붙어 있어 관계대명사 that을 우선 사용"
+              },
+              {
+                "en": "He answered all questions that the interview committee asked.",
+                "ko": "그는 면접 위원회가 질문했던 모든 문항에 답했다.",
+                "point": "선행사가 all일 때 관계대명사 that 선호"
               }
             ],
             "oxCompare": [
@@ -4012,9 +4187,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "This is the house where I was born. (= in which I was born)",
-                "ko": "관계부사 = 전치사 + 관계대명사의 대표 적용 예문입니다.",
-                "point": "공식 [where (= in/at which) / when (= in/on/at which) / why (= for which) / how (= in which)]의 핵심 적용 문맥"
+                "en": "This is the peaceful seaside town where I spent my childhood.",
+                "ko": "이곳은 내가 어린 시절을 보냈던 평화로운 바닷가 마을이다.",
+                "point": "where = in which (뒤 절이 주어, 동사, 목적어를 갖춘 완전한 절)"
+              },
+              {
+                "en": "I remember the memorable day when we first won the championship.",
+                "ko": "나는 우리가 처음으로 우승을 차지했던 기억에 남는 그날을 기억한다.",
+                "point": "when = on which (시간 선행사 + 완전한 절)"
               }
             ],
             "oxCompare": [
@@ -4048,9 +4228,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "This is the way how he solved it. (x) -> This is the way he solved it. (o)",
-                "ko": "the way how의 병기 금지의 대표 적용 예문입니다.",
-                "point": "공식 [the way와 how는 절대로 나란히 쓸 수 없음! the way만 쓰거나, how만 쓰거나, the way in which/that으로 씀]의 핵심 적용 문맥"
+                "en": "Tell me the way you managed to solve this intricate dilemma.",
+                "ko": "네가 이 복잡한 딜레마를 어떻게 해결해 냈는지 그 방법을 말해줘라.",
+                "point": "the way how는 함께 쓸 수 없으며 the way 단독 또는 how 단독 사용"
+              },
+              {
+                "en": "This article explains how the ancient civilization built the grand monument.",
+                "ko": "이 기사는 고대 문명이 어떻게 그 웅장한 기념물을 세웠는지 설명한다.",
+                "point": "how 단독으로 방법을 나타내는 명사절을 이끎"
               }
             ],
             "oxCompare": [
@@ -4215,9 +4400,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "the sleeping baby / a broken window / the boy running in the park",
-                "ko": "분사의 형용사적 수식의 대표 적용 예문입니다.",
-                "point": "공식 [명사 앞/뒤에서 수식: 수식받는 명사와의 관계가 능동이면 -ing, 수동이면 p.p.]의 핵심 적용 문맥"
+                "en": "The fallen leaves covered the stone path in the autumn forest.",
+                "ko": "떨어진 나뭇잎들이 가을 숲의 돌길을 뒤덮었다.",
+                "point": "fallen: 낙하가 완료된 수동/완료 의미의 과거분사 명사 수식"
+              },
+              {
+                "en": "The singing birds greeted the hikers with cheerful melodies.",
+                "ko": "노래하는 새들이 경쾌한 선율로 등산객들을 맞이했다.",
+                "point": "singing: 능동/진행 의미의 현재분사 명사 수식"
               }
             ],
             "oxCompare": [
@@ -4251,9 +4441,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "The movie was boring. / I was bored with the movie.",
-                "ko": "감정유발 동사의 분사 공식의 대표 적용 예문입니다.",
-                "point": "공식 [사물이 주어/수식대상이면 -ing (감정 유발) / 사람이 주어/수식대상이면 p.p. (감정 느낌)]의 핵심 적용 문맥"
+                "en": "The astonishing magic trick surprised everyone in the auditorium.",
+                "ko": "놀라운 마술은 강당에 있던 모든 사람을 놀라게 했다.",
+                "point": "감정을 유발하는 사물(trick) 수식 -> 현재분사 astonishing"
+              },
+              {
+                "en": "The fascinated spectators watched the celestial eclipse in silence.",
+                "ko": "매료된 관람객들은 침묵 속에서 일식을 지켜보았다.",
+                "point": "감정을 느끼는 사람(spectators) 수식 -> 과거분사 fascinated"
               }
             ],
             "oxCompare": [
@@ -4418,9 +4613,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "As I felt tired, I went to bed early. ➔ Feeling tired, I went to bed early.",
-                "ko": "분사구문 만들기 3단계의 대표 적용 예문입니다.",
-                "point": "공식 [1) 접속사 생략 ➔ 2) 주절과 같은 주어 생략 ➔ 3) 동사원형에 -ing 붙이기]의 핵심 적용 문맥"
+                "en": "Walking along the coastal trail, we admired the scenic cliffs.",
+                "ko": "해안 산책로를 걸으면서, 우리는 경치 좋은 절벽에 감탄했다.",
+                "point": "접속사(While)와 주어(we) 생략 후 동사를 V-ing(Walking)로 전환"
+              },
+              {
+                "en": "Seen from a distance, the ancient fortress looked like a sleeping giant.",
+                "ko": "멀리서 바라보았을 때, 그 고대 요새는 잠자는 거인처럼 보였다.",
+                "point": "수동태 분사구문: (Being) Seen from a distance (과거분사만 남음)"
               }
             ],
             "oxCompare": [
@@ -4454,9 +4654,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "As I didn't know his address, ... ➔ Not knowing his address, ...",
-                "ko": "분사구문의 부정의 대표 적용 예문입니다.",
-                "point": "공식 [Not[Never] + V-ing (분사 바로 앞에 not 배치)]의 핵심 적용 문맥"
+                "en": "Not knowing the correct password, he was unable to unlock the vault.",
+                "ko": "올바른 암호를 알지 못했기 때문에, 그는 금고를 열 수 없었다.",
+                "point": "분사구문의 부정어 Not은 반드시 분사 바로 앞(Not knowing)에 위치"
+              },
+              {
+                "en": "Never having visited the capital city, she relied on a street map.",
+                "ko": "수도를 방문해 본 적이 전혀 없었기 때문에, 그녀는 시내 지도에 의존했다.",
+                "point": "강조 부정어 Never가 완료분사구문(having visited) 바로 앞에 위치"
               }
             ],
             "oxCompare": [
@@ -4621,9 +4826,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "If I had wings, I could fly to you. (지금 날개가 없어서 날아갈 수 없다)",
-                "ko": "가정법 과거 공식의 대표 적용 예문입니다.",
-                "point": "공식 [If + 주어 + 과거동사(be동사는 were), 주어 + would/could/should/might + 동사원형]의 핵심 적용 문맥"
+                "en": "If I had wings, I could fly across the ocean to visit you.",
+                "ko": "내게 날개가 있다면, 너를 만나러 바다를 건너 날아갈 수 있을 텐데.",
+                "point": "If + 주어 + 과거동사(had), 주어 + 조동사 과거형(could) + 동사원형(fly)"
+              },
+              {
+                "en": "If she were here with us, she would offer brilliant suggestions.",
+                "ko": "그녀가 지금 우리와 함께 있다면, 훌륭한 제안들을 내놓을 텐데.",
+                "point": "가정법 과거에서 be동사는 인칭에 상관없이 were 사용"
               }
             ],
             "oxCompare": [
@@ -4657,9 +4867,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "I wish I were rich. / He talks as if he knew everything.",
-                "ko": "I wish / as if 가정법의 대표 적용 예문입니다.",
-                "point": "공식 [I wish + 주어 + 과거동사 (~라면 좋을 텐데) / as if + 주어 + 과거동사 (마치 ~인 것처럼)]의 핵심 적용 문맥"
+                "en": "I wish I could speak several foreign languages fluently.",
+                "ko": "내가 여러 외국어를 유창하게 구사할 수 있다면 좋을 텐데.",
+                "point": "I wish + 주어 + 가정법 과거(could speak): 현재 이룰 수 없는 소망"
+              },
+              {
+                "en": "He talks about the royal family as if he were an aristocrat.",
+                "ko": "그는 마치 자신이 귀족인 것처럼 왕실에 관해 이야기한다.",
+                "point": "as if + 가정법 과거(were): 현재 사실과 반대되는 가정을 나타냄"
               }
             ],
             "oxCompare": [
@@ -4824,9 +5039,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "Do you know who she is? / I wonder if she is coming.",
-                "ko": "간접의문문의 기본 어순의 대표 적용 예문입니다.",
-                "point": "공식 [의문사 + 주어 + 동사 (의문사가 없으면 if/whether + 주어 + 동사)]의 핵심 적용 문맥"
+                "en": "Please tell me where the nearest pharmacy is located.",
+                "ko": "가장 가까운 약국이 어디에 위치해 있는지 말씀해 주십시오.",
+                "point": "간접의문문 평서문 어순: 의문사(where) + 주어(the pharmacy) + 동사(is located)"
+              },
+              {
+                "en": "Do you know what time the next train arrives at the station?",
+                "ko": "다음 열차가 몇 시에 역에 도착하는지 아시나요?",
+                "point": "의문사구(what time) + 주어(the next train) + 동사(arrives)"
               }
             ],
             "oxCompare": [
@@ -4860,9 +5080,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "Do you think who he is? (x) ➔ Who do you think he is? (o)",
-                "ko": "생각·추측 동사일 때 의문사 전치의 대표 적용 예문입니다.",
-                "point": "공식 [think, believe, guess, suppose, imagine이 주절 동사이면 의문사가 문장 맨 앞으로 이동!]의 핵심 적용 문맥"
+                "en": "Who do you think will win the championship tournament this year?",
+                "ko": "올해 누가 챔피언십 토너먼트에서 우승할 것이라고 생각하십니까?",
+                "point": "think, believe, suppose, guess 동사에서는 의문사(Who)가 문두로 이동"
+              },
+              {
+                "en": "What do you believe is the primary cause of climate change?",
+                "ko": "기후 변화의 주요 원인이 무엇이라고 생각하십니까?",
+                "point": "believe 동사의 간접의문문: 의문사 What이 문장 맨 앞으로 이동"
               }
             ],
             "oxCompare": [
@@ -5039,9 +5264,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "The quality of these organic apples is (o) / are (x) very high.",
-                "ko": "수식어구 거품 빼기 공식의 대표 적용 예문입니다.",
-                "point": "공식 [주어 + [전치사구 / 관계사절 / 분사구 / 형용사구] + 진짜 동사]의 핵심 적용 문맥"
+                "en": "The quality of these organic agricultural products is outstanding.",
+                "ko": "이 유기농 농산물들의 품질은 매우 뛰어나다.",
+                "point": "전치사구(of these organic...) 거품을 빼면 단수 주어 The quality이므로 단수동사 is 사용"
+              },
+              {
+                "en": "The discovery of novel medical treatments for rare diseases has saved lives.",
+                "ko": "희귀 질환에 대한 새로운 의학적 치료법의 발견은 생명을 구했다.",
+                "point": "복수명사 treatments에 현혹되지 않고 핵심 주어 discovery에 맞춰 단수동사 has 사용"
               }
             ],
             "oxCompare": [
@@ -5075,9 +5305,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "Most of the water is polluted. / Most of the students are diligent.",
-                "ko": "부분 표현의 수일치의 대표 적용 예문입니다.",
-                "point": "공식 [most / some / half / the rest / 분수 / percent + of + 명사 ➔ of 뒤의 명사에 수일치]의 핵심 적용 문맥"
+                "en": "Most of the fresh drinking water is stored in underground tanks.",
+                "ko": "신선한 식수의 대부분은 지하 탱크에 보관된다.",
+                "point": "Most of + 단수/불가산명사(the fresh drinking water) -> 단수동사 is"
+              },
+              {
+                "en": "Two thirds of the survey respondents were optimistic about the future.",
+                "ko": "설문 응답자의 3분의 2는 미래에 대해 낙관적이었다.",
+                "point": "분수 of + 복수명사(the survey respondents) -> 복수동사 were"
               }
             ],
             "oxCompare": [
@@ -5242,9 +5477,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "He made me study. ➔ I was made to study by him.",
-                "ko": "사역·지각동사 수동태 시 to부정사 부활 공식의 대표 적용 예문입니다.",
-                "point": "공식 [능동: S + make/see + O + V원형 ➔ 수동: O + be made/seen + to V원형!]의 핵심 적용 문맥"
+                "en": "All team members were made to sign the nondisclosure agreement.",
+                "ko": "모든 팀원은 비밀유지 계약서에 서명하도록 강제되었다.",
+                "point": "능동태 사역동사의 동사원형 목적격 보어가 수동태가 되면서 to sign으로 부활"
+              },
+              {
+                "en": "The suspect was seen to enter the building late at night.",
+                "ko": "그 용의자는 늦은 밤 건물 안으로 들어가는 것이 목격되었다.",
+                "point": "지각동사 see의 수동태(was seen) 뒤에 to enter로 전환"
               }
             ],
             "oxCompare": [
@@ -5278,9 +5518,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "A prize was given to her. (for her - x)",
-                "ko": "수여동사 4형식 수동태의 대표 적용 예문입니다.",
-                "point": "공식 [직접목적어가 주어로 올 때: DO + be p.p. + to/for/of + IO]의 핵심 적용 문맥"
+                "en": "The brilliant scientist was awarded a prestigious medal by the committee.",
+                "ko": "그 뛰어난 과학자는 위원회로부터 권위 있는 메달을 수여받았다.",
+                "point": "간접목적어가 주어로 나간 수동태: 직접목적어 a prestigious medal은 그대로 유지"
+              },
+              {
+                "en": "A generous scholarship was offered to promising young researchers.",
+                "ko": "유망한 젊은 연구자들에게 넉넉한 장학금이 제공되었다.",
+                "point": "직접목적어가 주어로 나간 수동태: 사람 목적어 앞에 전치사 to 결합"
               }
             ],
             "oxCompare": [
@@ -5445,9 +5690,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "He seems to have been rich in the past. (= It seems that he was rich.)",
-                "ko": "완료부정사와 완료동명사 공식의 대표 적용 예문입니다.",
-                "point": "공식 [to have p.p. / having p.p. = 주절의 시제보다 한 시제 앞선 사건]의 핵심 적용 문맥"
+                "en": "He seems to have forgotten the appointment we made last week.",
+                "ko": "그는 우리가 지난주에 했던 약속을 이미 잊어버린 것처럼 보인다.",
+                "point": "to have forgotten: 주절의 현재 시제(seems)보다 앞선 과거 사건 표현"
+              },
+              {
+                "en": "She admitted to having made a careless calculation error.",
+                "ko": "그녀는 부주의한 계산 실수를 저질렀던 것을 인정했다.",
+                "point": "having made: 주절의 과거 시제(admitted)보다 더 앞선 대과거 사건 표현"
               }
             ],
             "oxCompare": [
@@ -5481,9 +5731,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "I don't like being treated like a child.",
-                "ko": "준동사의 수동태의 대표 적용 예문입니다.",
-                "point": "공식 [to be p.p. / being p.p. (완료수동: to have been p.p. / having been p.p.)]의 핵심 적용 문맥"
+                "en": "The famous author dislikes being interrupted while writing novels.",
+                "ko": "그 유명한 작가는 소설을 쓰는 동안 방해받는 것을 싫어한다.",
+                "point": "being interrupted: 방해를 받는 수동의 의미를 지닌 수동 동명사"
+              },
+              {
+                "en": "No one enjoys being criticized in front of large crowds.",
+                "ko": "어느 누구도 많은 군중 앞에서 비판받는 것을 즐기지 않는다.",
+                "point": "being criticized: 수동태 동명사 표현"
               }
             ],
             "oxCompare": [
@@ -5648,9 +5903,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "with his arms folded (팔짱을 낀 채: 수동) / with tears running down (눈물을 흘리며: 능동)",
-                "ko": "with + 명사 + 분사(-ing / p.p.)의 대표 적용 예문입니다.",
-                "point": "공식 [명사와 분사의 관계가 능동이면 -ing, 수동이면 p.p.]의 핵심 적용 문맥"
+                "en": "She was listening attentively with her arms folded.",
+                "ko": "그녀는 팔짱을 낀 채 주의 깊게 듣고 있었다.",
+                "point": "팔(her arms)은 신체 부위로서 꼬아지는 수동 관계이므로 과거분사 folded 사용"
+              },
+              {
+                "en": "He fell asleep on the porch with the gentle rain falling.",
+                "ko": "그는 부드러운 비가 내리는 가운데 베란다에서 잠이 들었다.",
+                "point": "비(rain)가 스스로 내리는 능동 관계이므로 현재분사 falling 사용"
               }
             ],
             "oxCompare": [
@@ -5684,9 +5944,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "Judging from his accent, he must be from Australia.",
-                "ko": "독립분사구문의 관용표현의 대표 적용 예문입니다.",
-                "point": "공식 [frankly speaking(솔직히 말해서), strictly speaking(엄격히 말해), judging from(~로 판단하건대)]의 핵심 적용 문맥"
+                "en": "Judging from his extensive credentials, he is well qualified for the job.",
+                "ko": "그의 폭넓은 자격 요건으로 미루어 보건대, 그는 그 직무에 적합한 자격을 갖추고 있다.",
+                "point": "Judging from ~: ~로 미루어 판단하건대 (독립분사구문 관용구)"
+              },
+              {
+                "en": "Strictly speaking, modern whales evolved from land-dwelling mammals.",
+                "ko": "엄격히 말해서, 현대 고래는 육지 서식 포유류로부터 진화했다.",
+                "point": "Strictly speaking: 엄격히 말하자면"
               }
             ],
             "oxCompare": [
@@ -5851,9 +6116,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "I know that he is honest. / I wonder whether he is honest. / This is what I want.",
-                "ko": "that vs what vs whether 명사절 3대 공식의 대표 적용 예문입니다.",
-                "point": "공식 [that: 완전한 절 + 확실한 사실 / what: 불완전한 절 + 선행사 없음 / whether: 완전한 절 + 불확실성(~인지 아닌지)]의 핵심 적용 문맥"
+                "en": "The survey confirms that consumers prefer sustainable energy solutions.",
+                "ko": "그 조사는 소비자들이 지속 가능한 에너지 솔루션을 선호한다는 점을 확인해 준다.",
+                "point": "명사절 접속사 that: 뒤에 완전한 절(주어, 동사, 목적어 완비)을 이끎"
+              },
+              {
+                "en": "What impressed the interviewers most was her articulate communication.",
+                "ko": "면접관들에게 가장 깊은 인상을 준 것은 그녀의 또렷한 의사소통 능력이었다.",
+                "point": "관계대명사 what: 선행사 없이 주어가 빠진 불완전절을 이끎"
               }
             ],
             "oxCompare": [
@@ -5887,9 +6157,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "Whether he comes or not is important. (If he comes or not - x)",
-                "ko": "if절의 제약의 대표 적용 예문입니다.",
-                "point": "공식 [if는 오직 타동사의 목적어절로만 쓰이며, 주어나 전치사의 목적어, or not 직후에는 whether만 가능]의 핵심 적용 문맥"
+                "en": "The committee deliberated on whether the strategic plan was viable.",
+                "ko": "위원회는 그 전략 계획이 실행 가능한지 여부를 신중히 검토했다.",
+                "point": "전치사 on의 목적어절 자리에는 if를 쓸 수 없으며 반드시 whether 사용"
+              },
+              {
+                "en": "Whether the experiment succeeds or fails depends on temperature control.",
+                "ko": "실험이 성공할지 실패할지는 온도 조절에 달려 있다.",
+                "point": "문장의 주어 자리에는 if절 불가, whether절 사용 필수"
               }
             ],
             "oxCompare": [
@@ -6054,9 +6329,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "However hard you try, you cannot change the past.",
-                "ko": "however + 형용사/부사 + 주어 + 동사의 대표 적용 예문입니다.",
-                "point": "공식 [however = no matter how (아무리 ~할지라도)]의 핵심 적용 문맥"
+                "en": "However difficult the coding challenge is, she never gives up until solving it.",
+                "ko": "그 코딩 과제가 아무리 어려울지라도, 그녀는 해결할 때까지 결코 포기하지 않는다.",
+                "point": "복합관계부사 however + 형용사(difficult) + 주어 + 동사: 양보 부사절"
+              },
+              {
+                "en": "However fast you drive, you cannot reach the terminal in ten minutes.",
+                "ko": "네가 아무리 빠르게 운전할지라도, 10분 만에 터미널에 도착할 수는 없다.",
+                "point": "however + 부사(fast) + 주어 + 동사"
               }
             ],
             "oxCompare": [
@@ -6090,9 +6370,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "Whatever you do matters. (명사절) / Whatever happens, stay calm. (양보절)",
-                "ko": "whatever / whoever의 대표 적용 예문입니다.",
-                "point": "공식 [명사절(anything that / anyone who) vs 양보부사절(no matter what / no matter who)]의 핵심 적용 문맥"
+                "en": "You may invite whoever wants to participate in our charity marathon.",
+                "ko": "우리의 자선 마라톤에 참여하기를 원하는 사람은 누구든지 초대해도 좋습니다.",
+                "point": "whoever: 뒤따르는 절(wants...)의 주어 역할을 하는 복합관계대명사"
+              },
+              {
+                "en": "Whatever decisions you make today will influence your entire career.",
+                "ko": "네가 오늘 내리는 어떤 결정이든 너의 전체 경력에 영향을 미칠 것이다.",
+                "point": "Whatever + 명사(decisions): 복합관계형용사 역할"
               }
             ],
             "oxCompare": [
@@ -6257,9 +6542,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "If I had known your number, I would have called you. (번호를 몰라서 전화 못 했다)",
-                "ko": "가정법 과거완료 공식의 대표 적용 예문입니다.",
-                "point": "공식 [If + 주어 + had p.p., 주어 + would/could/should/might + have p.p.]의 핵심 적용 문맥"
+                "en": "If the rescue team had arrived earlier, more hikers would have been saved.",
+                "ko": "구조대가 더 일찍 도착했더라면, 더 많은 등산객이 구조되었을 텐데.",
+                "point": "If + 주어 + had p.p., 주어 + would have p.p. (과거 사실의 반대)"
+              },
+              {
+                "en": "If she had followed the safety guidelines, she would not have injured her hand.",
+                "ko": "그녀가 안전 수칙을 준수했더라면, 손을 다치지 않았을 텐데.",
+                "point": "가정법 과거완료 주절: would not have injured"
               }
             ],
             "oxCompare": [
@@ -6293,9 +6583,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "If he had taken my advice then, he would be successful now.",
-                "ko": "혼합가정법 (수능 단골 출제)의 대표 적용 예문입니다.",
-                "point": "공식 [If + had p.p. (과거에 ~했더라면), 주어 + would + 동사원형 + now (지금 ~할 텐데)]의 핵심 적용 문맥"
+                "en": "If he had taken the medication yesterday, he would feel much better now.",
+                "ko": "만약 그가 어제 약을 복용했더라면, 그는 지금 훨씬 더 몸 상태가 좋을 텐데.",
+                "point": "조건절은 과거 사실 반대(had taken) + 주절은 현재 시제 부사 now와 호응하여 would feel 사용"
+              },
+              {
+                "en": "If we had not missed the flight last night, we would be in Rome today.",
+                "ko": "어젯밤 우리가 비행기를 놓치지 않았더라면, 우리는 오늘 로마에 있을 텐데.",
+                "point": "과거 조건(had not missed)과 현재 결과(would be ... today)가 결합된 혼합가정법"
               }
             ],
             "oxCompare": [
@@ -6460,9 +6755,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "Little did I dream that I would win. / Never have I seen such a sight.",
-                "ko": "부정어 도치 공식 (수능 1순위)의 대표 적용 예문입니다.",
-                "point": "공식 [부정어(Never, Hardly, Rarely, Seldom, Little, Not only) + 조동사/do/be + 주어 + 동사원형]의 핵심 적용 문맥"
+                "en": "Hardly had the runner crossed the finish line when he collapsed onto the grass.",
+                "ko": "그 주자는 결승선을 통과하자마자 잔디밭 위로 쓰러졌다.",
+                "point": "부정어 Hardly가 문두에 오면 [조동사 had + 주어 + p.p.] 어순으로 도치"
+              },
+              {
+                "en": "Not only did she pass the bar exam, but she also earned the highest score.",
+                "ko": "그녀는 사법시험에 합격했을 뿐만 아니라, 최고 득점까지 기록했다.",
+                "point": "Not only 문두 도치: [조동사 did + 주어 + 동사원형 pass] 어순"
               }
             ],
             "oxCompare": [
@@ -6496,9 +6796,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "Under the tree sat an old man. (대명사 주어일 때는 도치 안 됨: Under the tree he sat.)",
-                "ko": "장소·방향 부사구 도치의 대표 적용 예문입니다.",
-                "point": "공식 [장소부사구 + 1형식 동사 + 명사 주어]의 핵심 적용 문맥"
+                "en": "Behind the ancient castle walls was hidden a secret escape tunnel.",
+                "ko": "고대 성벽 뒤편에는 비밀 탈출 터널 하나가 숨겨져 있었다.",
+                "point": "장소부사구 문두 도치: [동사 was hidden + 주어 a secret escape tunnel]"
+              },
+              {
+                "en": "On the top of the hill stood a magnificent white marble monument.",
+                "ko": "언덕 꼭대기에 웅장한 흰 대리석 기념물이 우뚝 서 있었다.",
+                "point": "장소부사구 도치: 동사 stood 뒤에 명사 주어 a magnificent... 위치"
               }
             ],
             "oxCompare": [
@@ -6675,9 +6980,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "The people [living in this area] are (o) / being (x) exposed to noise.",
-                "ko": "본동사 찾기 3단계 검증법의 대표 적용 예문입니다.",
-                "point": "공식 [1) 문장 전체의 접속사/관계사 개수 세기 ➔ 2) 수식어구(괄호 묶기) ➔ 3) 진짜 동사 자리인지 준동사 자리인지 판별]의 핵심 적용 문맥"
+                "en": "The profound impact of digital algorithms on cognitive development remains a contentious topic.",
+                "ko": "디지털 알고리즘이 인지 발달에 미치는 심오한 영향은 여전히 논쟁적인 주제로 남아 있다.",
+                "point": "수식어구(of digital algorithms on cognitive development)를 제외한 핵심 주어 impact의 본동사는 remains"
+              },
+              {
+                "en": "Ancient manuscripts preserved in subterranean vaults display remarkable endurance.",
+                "ko": "지하 금고에 보존된 고대 필사본들은 놀라운 내구성을 보여준다.",
+                "point": "preserved는 분사 수식어구이며 문장의 진짜 본동사는 display"
               }
             ],
             "oxCompare": [
@@ -6711,9 +7021,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "He walked into the room and sat down. (접속사 1개 -> 동사 2개)",
-                "ko": "동사 수 = 접속사 수 + 1의 대표 적용 예문입니다.",
-                "point": "공식 [접속사가 없으면 문장에 본동사는 오직 1개만 허용!]의 핵심 적용 문맥"
+                "en": "He walked into the conference room and sat down beside his colleagues.",
+                "ko": "그는 회의실로 걸어 들어가 동료들 곁에 앉았다.",
+                "point": "접속사 and 1개 -> 본동사 walked, sat 2개 성립"
+              },
+              {
+                "en": "Because economic factors fluctuated wildly, the central bank raised interest rates.",
+                "ko": "경제 요인들이 심하게 요동쳤기 때문에 중앙은행은 금리를 인상했다.",
+                "point": "종속접속사 Because 1개 -> 동사 fluctuated, raised 2개 구성"
               }
             ],
             "oxCompare": [
@@ -6878,9 +7193,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "He runs faster than I do. (runs 대신) / She is happier than she was. (was happy 대신)",
-                "ko": "대동사 판별 2단계 원칙의 대표 적용 예문입니다.",
-                "point": "공식 [1) 대신 받는 앞선 동사가 일반동사이면 ➔ do / does / did 사용\n2) 앞선 동사가 be동사/조동사이면 ➔ be / 조동사 그대로 사용]의 핵심 적용 문맥"
+                "en": "Modern neural networks do not process information in the exact same manner as the human brain does.",
+                "ko": "현대 신경망은 인간의 뇌가 처리하는 것과 완전히 동일한 방식으로 정보를 처리하지는 않는다.",
+                "point": "일반동사구(processes information)를 대신하므로 be동사가 아닌 does 사용"
+              },
+              {
+                "en": "The quarterly economic indicators were far more volatile than they currently are.",
+                "ko": "분기 경제 지표들은 현재 그러한 것보다 훨씬 더 불안정했다.",
+                "point": "앞 절의 서술어가 be동사이므로 뒤 절에서도 대동사 are 사용"
               }
             ],
             "oxCompare": [
@@ -6914,9 +7234,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "I like jazz. - So do I. / I am tired. - So am I.",
-                "ko": "So + 동사 + 주어 / Neither + 동사 + 주어의 대표 적용 예문입니다.",
-                "point": "공식 [~도 또한 그렇다 / ~도 또한 그렇지 않다 (앞 문장의 동사 종류에 따라 do or be 결정)]의 핵심 적용 문맥"
+                "en": "She enjoys exploring ancient historical ruins, and so do her fellow archaeologists.",
+                "ko": "그녀는 고대 역사 유적지를 탐험하는 것을 즐기며, 그녀의 동료 고고학자들도 그러하다.",
+                "point": "긍정 동의: [So + 일반동사 대동사 do + 복수 주어 her fellow archaeologists]"
+              },
+              {
+                "en": "The manager did not approve the budget proposal, and neither did the board of directors.",
+                "ko": "관리자는 예산안을 승인하지 않았으며, 이사회도 마찬가지로 승인하지 않았다.",
+                "point": "부정 동의: [Neither + 과거 대동사 did + 주어 the board of directors]"
               }
             ],
             "oxCompare": [
@@ -7081,9 +7406,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "The rumor that he resigned is true. (동격: 완전) / The rumor that I heard is true. (관계사: 불완전)",
-                "ko": "수능 어법 만점 완전도 매트릭스의 대표 적용 예문입니다.",
-                "point": "공식 [1) 선행사 O + 불완전 ➔ 관계대명사 (which, who, that)\n2) 선행사 O + 완전 ➔ 관계부사 (where, when, why) or 동격 that\n3) 선행사 X + 불완전 ➔ 관계대명사 what\n4) 선행사 X + 완전 ➔ 명사절 that or whether]의 핵심 적용 문맥"
+                "en": "The committee deliberated on whether the proposed space exploration mission could be funded.",
+                "ko": "위원회는 제안된 우주 탐사 임무에 자금이 지원될 수 있는지 여부를 논의했다.",
+                "point": "전치사 on의 목적어절이 주어와 수동태 동사를 갖춘 완전한 문장이므로 whether 사용"
+              },
+              {
+                "en": "Solar efficiency has rapidly evolved to a stage where it exceeds traditional fossil fuel power.",
+                "ko": "태양광 발전 효율은 전통 화석 연료의 발전을 능가하는 단계까지 빠르게 진화했다.",
+                "point": "선행사 a stage 뒤의 절이 완전하므로 관계대명사 which가 아닌 관계부사 where 사용"
               }
             ],
             "oxCompare": [
@@ -7117,9 +7447,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "the music which I listened to (불완전) / the music to which I listened (완전)",
-                "ko": "자동사 + 전치사 주의의 대표 적용 예문입니다.",
-                "point": "공식 [listen to, rely on, wait for 등 전치사가 문장 끝에 남아있으면 불완전한 문장!]의 핵심 적용 문맥"
+                "en": "This is the relaxing ambient music which I listened to during my study sessions.",
+                "ko": "이것은 내가 공부하는 동안 들었던 편안한 배경 음악이다.",
+                "point": "listened to 뒤의 목적어가 빠진 불완전절 -> 목적격 관계대명사 which"
+              },
+              {
+                "en": "This is the relaxing ambient music to which I listened during my study sessions.",
+                "ko": "이것은 내가 공부하는 동안 들었던 편안한 배경 음악이다.",
+                "point": "전치사 to가 관계사 앞으로 이동(to which)하여 뒤 절은 완전한 구조"
               }
             ],
             "oxCompare": [
@@ -7284,9 +7619,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "He likes swimming, hiking, and to run. (x) ➔ ... and running. (o)",
-                "ko": "등위접속사의 병렬 구조 공식의 대표 적용 예문입니다.",
-                "point": "공식 [A and/but/or B ➔ A와 B는 문법적 품사와 형태(to V - to V, -ing - -ing, 절 - 절)가 반드시 같아야 함!]의 핵심 적용 문맥"
+                "en": "The committee decided to postpone the symposium and reevaluate the entire budget.",
+                "ko": "위원회는 심포지엄을 연기하고 전체 예산을 재평가하기로 결정했다.",
+                "point": "등위접속사 and가 to postpone과 (to) reevaluate의 동사원형 병렬 연결"
+              },
+              {
+                "en": "The novel is remarkable for its rich prose and innovative narrative structure.",
+                "ko": "그 소설은 풍부한 산문과 혁신적인 서사 구조로 주목할 만하다.",
+                "point": "전치사 for의 목적어 명사구 2개가 and로 대등하게 병렬 연결"
               }
             ],
             "oxCompare": [
@@ -7320,9 +7660,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "Success requires not only working hard but also working smart.",
-                "ko": "상관접속사의 병렬의 대표 적용 예문입니다.",
-                "point": "공식 [both A and B / not A but B / not only A but also B / either A or B / neither A nor B]의 핵심 적용 문맥"
+                "en": "Effective leadership requires not only inspiring team members but also allocating resources wisely.",
+                "ko": "효과적인 리더십은 팀원들에게 영감을 주는 것뿐만 아니라 자원을 현명하게 배분하는 것을 요구한다.",
+                "point": "not only 동명사(inspiring) but also 동명사(allocating) 문법적 형태 일치"
+              },
+              {
+                "en": "The experimental drug proved to be neither toxic nor ineffective during the clinical trial.",
+                "ko": "그 실험 약물은 임상 시험 동안 독성이 있지도 효과가 없지도 않은 것으로 판명되었다.",
+                "point": "neither 형용사(toxic) nor 형용사(ineffective) 품사 병치"
               }
             ],
             "oxCompare": [
@@ -7487,9 +7832,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "The exercise made his muscles strong (o) / strongly (x).",
-                "ko": "5형식 목적격보어 형용사 킬러 (수능 단골)의 대표 적용 예문입니다.",
-                "point": "공식 [make / find / keep / leave / consider + 목적어 + 형용사 (부사 절대 불가!)]의 핵심 적용 문맥"
+                "en": "The advanced soundproofing material makes the vehicle cabin extremely quiet.",
+                "ko": "첨단 방음재는 차량 실내를 극도로 조용하게 만들어 준다.",
+                "point": "makes(동사) + cabin(목적어) + quiet(목적격 보어로 형용사 필수, 부사 quietly 불가)"
+              },
+              {
+                "en": "Regular aerobic exercise helps people keep their cardiovascular systems healthy.",
+                "ko": "규칙적인 유산소 운동은 사람들이 심혈관계를 건강하게 유지하도록 돕는다.",
+                "point": "keep(동사) + cardiovascular systems(목적어) + healthy(형용사 보어)"
               }
             ],
             "oxCompare": [
@@ -7523,9 +7873,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "a remarkably successful project (부사가 형용사 successful 수식)",
-                "ko": "형용사와 부사의 수식 대상의 대표 적용 예문입니다.",
-                "point": "공식 [형용사 ➔ 명사 수식 / 부사 ➔ 동사, 형용사, 다른 부사, 문장 전체 수식]의 핵심 적용 문맥"
+                "en": "The team launched a remarkably successful marketing campaign across social media.",
+                "ko": "그 팀은 소셜 미디어 전반에 걸쳐 놀라울 정도로 성공적인 마케팅 캠페인을 개시했다.",
+                "point": "부사 remarkably가 뒤의 형용사 successful을 수식하고, successful이 명사 campaign을 수식"
+              },
+              {
+                "en": "The injured passenger seemed comfortable during the medical evacuation.",
+                "ko": "부상당한 승객은 의료 이송 도중 편안해 보였다.",
+                "point": "2형식 감각/상태동사 seemed의 주격 보어 자리이므로 부사가 아닌 형용사 comfortable 사용"
               }
             ],
             "oxCompare": [
@@ -7690,9 +8045,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "The ears of an elephant are larger than those of an ape.",
-                "ko": "비교 구문에서의 that of / those of의 대표 적용 예문입니다.",
-                "point": "공식 [단수 명사 대신 ➔ that of / 복수 명사 대신 ➔ those of]의 핵심 적용 문맥"
+                "en": "The linguistic structures of indigenous languages are as intricate as those of modern tongues.",
+                "ko": "토착 언어들의 언어학적 구조는 현대 언어들의 구조만큼이나 복잡하다.",
+                "point": "비교 대상이 복수명사 The linguistic structures이므로 that이 아닌 those 사용"
+              },
+              {
+                "en": "The average salary in metropolitan areas is higher than that in rural districts.",
+                "ko": "대도시 지역의 평균 급여는 농촌 지역의 평균 급여보다 더 높다.",
+                "point": "단수명사 The average salary를 대신하는 대명사 that 사용"
               }
             ],
             "oxCompare": [
@@ -7726,9 +8086,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "He looked at himself in the mirror. (재귀) / He solved it himself. (강조)",
-                "ko": "재귀대명사의 재귀용법 vs 강조용법의 대표 적용 예문입니다.",
-                "point": "공식 [주어와 목적어가 같으면 반드시 재귀대명사 사용 (생략 불가) / 강조용법은 생략 가능]의 핵심 적용 문맥"
+                "en": "Individuals who isolate themselves from community support suffer higher stress levels.",
+                "ko": "공동체의 지원으로부터 자기 자신을 고립시키는 개인들은 더 높은 스트레스 수준을 겪는다.",
+                "point": "isolate의 주어 who(individuals)와 목적어가 같으므로 재귀대명사 themselves 필수 (생략 불가)"
+              },
+              {
+                "en": "The lead author herself verified all experimental calculations before publication.",
+                "ko": "수석 저자 자신이 논문 발표 전에 모든 실험 계산을 직접 검증했다.",
+                "point": "주어 The lead author를 강조하는 용법 (생략 가능)"
               }
             ],
             "oxCompare": [
@@ -7893,9 +8258,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "during the summer vacation / while I was on vacation / despite the rain / although it rained",
-                "ko": "수능 빈출 전치사 vs 접속사 쌍의 대표 적용 예문입니다.",
-                "point": "공식 [전치사(+명사구) vs 접속사(+S+V)\n• during vs while\n• because of / due to / owing to vs because / as / since\n• despite / in spite of vs although / though / even though]의 핵심 적용 문맥"
+                "en": "While the scientific crew was collecting marine samples, unusual weather arose.",
+                "ko": "과학 탐사대가 해양 표본을 채취하고 있는 동안에, 기상 이변이 일어났다.",
+                "point": "뒤에 주어와 동사를 갖춘 절이 오므로 전치사 During 대신 접속사 While 사용"
+              },
+              {
+                "en": "The space flight was postponed because unfavorable upper atmospheric winds persisted.",
+                "ko": "불리한 상층 대기풍이 지속되었기 때문에 우주 비행은 연기되었다.",
+                "point": "뒤에 주어와 동사가 오는 절이므로 because of 대신 접속사 because 사용"
               }
             ],
             "oxCompare": [
@@ -7929,9 +8299,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "I stayed in London for two weeks during the summer.",
-                "ko": "for vs during의 대표 적용 예문입니다.",
-                "point": "공식 [for + 숫자 기간 (for three days) / during + 특정 기간 명사 (during the winter break)]의 핵심 적용 문맥"
+                "en": "She worked abroad at the international research institute for three years.",
+                "ko": "그녀는 해외의 국제 연구소에서 3년 동안 일했다.",
+                "point": "for + 구체적인 숫자 기간 (three years)"
+              },
+              {
+                "en": "Spectators took numerous photos during the annual cultural festival.",
+                "ko": "관람객들은 연례 문화 축제 기간 동안 수많은 사진을 찍었다.",
+                "point": "during + 특정 행사나 사건의 명사 (the festival)"
               }
             ],
             "oxCompare": [
@@ -8096,9 +8471,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "평가원은 복잡한 수식어구 사이에 진짜 본동사가 있는지를 가장 먼저 묻습니다.",
-                "ko": "수능 29번 3대 킬러 유형의 대표 적용 예문입니다.",
-                "point": "공식 [1위: 동사 vs 준동사 (본동사 부재 낚시)\n2위: 관계사 vs 접속사 (what vs that, which vs in which)\n3위: 능동 vs 수동 (분사의 수식 대상 확인)]의 핵심 적용 문맥"
+                "en": "The behavioral mechanism through which migratory birds navigate across continents remains a mystery.",
+                "ko": "철새들이 대륙을 가로질러 길을 찾는 행동학적 메커니즘은 여전히 미스터리로 남아 있다.",
+                "point": "관계사절(through which...) 거품을 빼고 주어 mechanism에 대한 본동사 remains 판별"
+              },
+              {
+                "en": "Psychologists view memory not as a static recording but as an active reconstructive process.",
+                "ko": "심리학자들은 기억을 정적인 기록물이 아니라 능동적인 재구성 과정으로 바라본다.",
+                "point": "not A but B 구문과 형용사-명사의 자연스러운 어순 결합"
               }
             ],
             "oxCompare": [
@@ -8132,9 +8512,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "[주어] + (수식어 거품...) + [본동사] + [목적어/보어]",
-                "ko": "수능 어법 1등급 30초 검증 팁의 대표 적용 예문입니다.",
-                "point": "공식 [밑줄 친 단어의 앞뒤 3단어만 보지 말고, 반드시 문장 전체의 '주어'와 '본동사'를 먼저 찾아 괄호 묶기를 실행할 것!]의 핵심 적용 문맥"
+                "en": "A prominent biologist investigating deep sea hydrothermal vents discovered a new crustacean species.",
+                "ko": "심해 열수구를 조사하던 한 저명한 생물학자가 새로운 갑각류 종을 발견했다.",
+                "point": "주어(biologist) + 수식어 분사구(investigating...) + 본동사(discovered)의 3단 구조 분석"
+              },
+              {
+                "en": "The innovative solar cells developed by the research institute convert sunlight into usable electricity efficiently.",
+                "ko": "그 연구소에 의해 개발된 혁신적인 태양전지는 햇빛을 사용 가능한 전기로 효율적으로 변환한다.",
+                "point": "수동 분사구(developed by...) 거품 제거 후 본동사 convert의 수일치 확인"
               }
             ],
             "oxCompare": [
@@ -8313,9 +8698,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "'Tom Cruise'라는 배우(명사)가 영화에서 '탐정'(주어) 역할을 맡을 수도 있고, '범인'(목적어) 역할을 맡을 수도 있습니다.",
-                "ko": "품사(8품사)는 '배우', 문장 성분은 '배역'의 대표 적용 예문입니다.",
-                "point": "공식 [품사 = 단어 자체의 태생 (명사, 대명사, 동사, 형용사, 부사, 전치사, 접속사, 감탄사)\n문장 성분 = 문장에서 맡은 역할 (주어, 동사, 목적어, 보어, 수식어)]의 핵심 적용 문맥"
+                "en": "The passionate actor delivered an unforgettable monologue on stage.",
+                "ko": "그 열정적인 배우는 무대 위에서 잊을 수 없는 독백을 전했다.",
+                "point": "The actor(품사: 명사)가 문장에서 주어 역할을 수행"
+              },
+              {
+                "en": "The audience admired the celebrated actor with standing applause.",
+                "ko": "관객들은 기립박수를 보내며 그 유명한 배우에게 감탄했다.",
+                "point": "the celebrated actor(품사: 명사)가 admired의 목적어 역할을 수행"
               }
             ],
             "oxCompare": [
@@ -8349,9 +8739,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "She(주어-대명사) made(동사) him(목적어-대명사) happy(보어-형용사).",
-                "ko": "문장 성분의 4대 뼈대 (주/동/목/보)의 대표 적용 예문입니다.",
-                "point": "공식 [주어(Subject: 은/는/이/가) + 동사(Verb: ~하다/이다) + 목적어(Object: ~을/를/에게) + 보어(Complement: 보충 설명)]의 핵심 적용 문맥"
+                "en": "She made him happy with her thoughtful encouragement.",
+                "ko": "그녀는 사려 깊은 격려로 그를 행복하게 만들어 주었다.",
+                "point": "주어(She) + 동사(made) + 목적어(him) + 보어(happy)"
+              },
+              {
+                "en": "The members elected him chairperson of the executive committee.",
+                "ko": "회원들은 그를 집행위원회 의장으로 선출했다.",
+                "point": "목적어 him의 신분을 보충 설명하는 목적격 보어 chairperson"
               }
             ],
             "oxCompare": [
@@ -8516,9 +8911,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "Birds fly. (새가 난다 - 자동사, 목적어 없음)\nI love you. (나는 너를 사랑한다 - 타동사, you가 목적어)",
-                "ko": "자동사(Vi) vs 타동사(Vt)의 판별법의 대표 적용 예문입니다.",
-                "point": "공식 [자동사 (Intransitive) : 주어 혼자 행동 완료! 뒤에 목적어(~을/를) 불필요! (sleep, cry, smile, arrive)\n타동사 (Transitive) : 동작을 받는 대상(목적어)이 반드시 필요! (like, make, buy, visit)]의 핵심 적용 문맥"
+                "en": "Migratory birds fly south every autumn without getting lost.",
+                "ko": "철새들은 매년 가을 길을 잃지 않고 남쪽으로 날아간다.",
+                "point": "fly: 목적어가 필요 없는 완전자동사 (1형식)"
+              },
+              {
+                "en": "Astronomers discovered an Earth-sized exoplanet orbiting a distant star.",
+                "ko": "천문학자들은 먼 별을 공전하는 지구 크기의 외계 행성을 발견했다.",
+                "point": "discovered: 뒤에 목적어(an Earth-sized exoplanet)가 반드시 필요한 타동사"
               }
             ],
             "oxCompare": [
@@ -8552,9 +8952,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "동사가 어떤 친구(목적어, 보어)를 필요로 하느냐에 따라 5가지 형식이 결정됩니다.",
-                "ko": "1~5형식의 탄생 비밀의 대표 적용 예문입니다.",
-                "point": "공식 [1형식: S + V (완전자동사)\n2형식: S + V + C (불완전자동사: 보어 필요)\n3형식: S + V + O (완전타동사: 목적어 1개)\n4형식: S + V + IO + DO (수여동사: 목적어 2개)\n5형식: S + V + O + OC (불완전타동사: 목적어+보어)]의 핵심 적용 문맥"
+                "en": "The little child gave his grandmother a delicate origami flower.",
+                "ko": "어린아이는 할머니께 정교한 종이접기 꽃을 드렸다.",
+                "point": "4형식: 간접목적어(his grandmother) + 직접목적어(a delicate origami flower)"
+              },
+              {
+                "en": "The unexpected discovery proved the historical theory correct.",
+                "ko": "그 예기치 못한 발견은 그 역사적 이론이 옳다는 것을 증명했다.",
+                "point": "5형식: 목적어(the historical theory) + 목적격 보어(correct)"
               }
             ],
             "oxCompare": [
@@ -8719,9 +9124,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "He is a doctor. (He = doctor, 주격보어-명사)\nShe feels tired. (She = tired 상태, 주격보어-형용사)\nWe painted the wall blue. (wall = blue 상태, 목적격보어)",
-                "ko": "보어(Complement) = '보충 설명해 주는 말'의 대표 적용 예문입니다.",
-                "point": "공식 [주격 보어 (Subject Complement) : 주어의 정체(명사)나 상태(형용사)를 보충 ➔ [주어 = 보어]\n목적격 보어 (Object Complement) : 목적어의 정체나 상태·동작을 보충 ➔ [목적어 = 보어]]의 핵심 적용 문맥"
+                "en": "She became a world-renowned pediatric neurosurgeon after years of study.",
+                "ko": "그녀는 수년간의 연구 끝에 세계적으로 유명한 소아 신경외과 의사가 되었다.",
+                "point": "명사 주격 보어: 주어 She의 정체와 직업을 보충 설명 (She = neurosurgeon)"
+              },
+              {
+                "en": "The exhausted marathon runners remained cheerful despite the relentless rain.",
+                "ko": "지친 마라톤 선수들은 가차 없는 비에도 불구하고 여전히 밝은 표정을 유지했다.",
+                "point": "형용사 주격 보어: 주어 runners의 감정/기분 상태를 보충 설명"
               }
             ],
             "oxCompare": [
@@ -8755,9 +9165,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "It smells deliciously. (X) ➔ It smells delicious. (O: 맛있게 냄새난다)",
-                "ko": "감각동사 뒤에는 반드시 형용사 보어!의 대표 적용 예문입니다.",
-                "point": "공식 [look, smell, taste, sound, feel + 형용사 (O) / + 부사 (X)]의 핵심 적용 문맥"
+                "en": "The freshly baked apple pie smelled sweet throughout the kitchen.",
+                "ko": "갓 구운 사과파이 냄새가 부엌 전체에 달콤하게 풍겼다.",
+                "point": "감각동사 smelled 뒤에는 부사 sweetly가 아닌 형용사 sweet 필수"
+              },
+              {
+                "en": "The velvet fabric feels remarkably smooth to the touch.",
+                "ko": "그 벨벳 원단은 손으로 만졌을 때 놀라울 정도로 부드럽게 느껴진다.",
+                "point": "감각동사 feels 뒤에 형용사 보어 smooth 사용"
               }
             ],
             "oxCompare": [
@@ -8922,9 +9337,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "I like play soccer. (X: 본동사 2개 충돌)\nI like to play soccer. (O: to부정사)\nI like playing soccer. (O: 동명사)",
-                "ko": "준동사(Verbal) = '동사에 준하지만 다른 품사로 변신한 것'의 대표 적용 예문입니다.",
-                "point": "공식 [한 문장에 본동사는 오직 1개! 다른 동사를 또 쓰려면 준동사로 변신시켜야 함!\n1. to부정사 (to + V) : 명사, 형용사, 부사 중 역할이 '아직 정해지지 않음(不定)'\n2. 동명사 (V-ing) : 동사를 '명사(~하기, ~하는 것)'로 변신\n3. 분사 (V-ing / p.p.) : 동사를 '형용사(~하는, ~된)'로 변신]의 핵심 적용 문맥"
+                "en": "To master advanced astrophysics requires decades of dedicated scholarship.",
+                "ko": "첨단 천체물리학을 마스터하는 것은 수십 년간의 헌신적인 학문 연구를 필요로 한다.",
+                "point": "to부정사(To master): 동사 master가 명사적 주어 역할로 변신"
+              },
+              {
+                "en": "Solving complex mathematical riddles brings him immense personal satisfaction.",
+                "ko": "복잡한 수학적 수수께끼를 푸는 것은 그에게 커다란 개인적 만족감을 안겨준다.",
+                "point": "동명사(Solving): 동사가 명사 역할을 하며 목적어(riddles)를 동반"
               }
             ],
             "oxCompare": [
@@ -8958,9 +9378,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "Smoking is bad. (동명사 주어) / a sleeping dog (분사 수식)",
-                "ko": "준동사 3형제의 품사 요약표의 대표 적용 예문입니다.",
-                "point": "공식 [• to부정사 ➔ 명사적, 형용사적, 부사적 용법\n• 동명사 ➔ 주어, 목적어, 보어 (명사 역할만)\n• 분사 ➔ 명사 수식, 주격/목적격 보어 (형용사 역할만)]의 핵심 적용 문맥"
+                "en": "Swimming in cold ocean water strengthens your cardiovascular endurance.",
+                "ko": "차가운 바닷물에서 수영하는 것은 심혈관 지구력을 강화해 준다.",
+                "point": "동명사(명사 역할): 문장의 주어 자리"
+              },
+              {
+                "en": "The sleeping baby smiled peacefully in the gentle crib.",
+                "ko": "잠든 아기는 아늑한 아기 침대에서 평화롭게 미소 지었다.",
+                "point": "현재분사(형용사 역할): 명사 baby를 수식"
               }
             ],
             "oxCompare": [
@@ -9125,9 +9550,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "I know a boy. + He speaks four languages.\n➔ I know a boy [who speaks four languages]. (a boy = 선행사, who = 관계대명사)",
-                "ko": "'관계대명사' = 접속사(문장 연결) + 대명사(명사 대신)의 대표 적용 예문입니다.",
-                "point": "공식 [관계대명사 = 문장과 문장을 연결하는 '접속사' + 겹치는 명사를 대신하는 '대명사'\n선행사(先行詞) = '앞에(先) 먼저 걸어간(行) 단어(詞)' ➔ 관계대명사 바로 앞에 있는 꾸밈받는 명사!]의 핵심 적용 문맥"
+                "en": "I met a gifted violinist who speaks four languages with natural fluency.",
+                "ko": "나는 4개 국어를 모국어처럼 자연스럽고 유창하게 구사하는 재능 있는 바이올리니스트를 만났다.",
+                "point": "who = and he/she (두 문장을 이어주는 접속사이자 주어를 대신하는 주격 관계대명사)"
+              },
+              {
+                "en": "The museum displays ancient jewelry which royal families wore centuries ago.",
+                "ko": "그 박물관은 수세기 전 왕실 가문들이 착용했던 고대 장신구들을 전시하고 있다.",
+                "point": "which = and it/them (접속사 + 목적어 대명사 역할 결합)"
               }
             ],
             "oxCompare": [
@@ -9161,9 +9591,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "the car [which was made in Korea] ➔ 한국에서 만들어진(형용사처럼 수식) 자동차",
-                "ko": "관계대명사절은 형용사절이다!의 대표 적용 예문입니다.",
-                "point": "공식 [관계대명사 덩어리 전체는 선행사(명사)를 꾸며주는 '형용사' 역할을 합니다.]의 핵심 적용 문맥"
+                "en": "The modern electric vehicle which was designed in Germany achieved top safety ratings.",
+                "ko": "독일에서 설계된 그 현대적인 전기차는 최고 안전 등급을 획득했다.",
+                "point": "which절 전체가 선행 명사 vehicle을 꾸며주는 거대한 형용사절"
+              },
+              {
+                "en": "Students who cultivate consistent daily study habits achieve remarkable academic progress.",
+                "ko": "꾸준한 일일 공부 습관을 기르는 학생들은 눈부신 학업적 진전을 이룬다.",
+                "point": "who절이 선행사 Students를 형용사처럼 수식"
               }
             ],
             "oxCompare": [
@@ -9328,9 +9763,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "Shakespeare wrote Hamlet. (능동태: 셰익스피어가 햄릿을 썼다)\n➔ Hamlet was written by Shakespeare. (수동태: 햄릿이 쓰여졌다)",
-                "ko": "수동태는 '당하는 녀석'을 주인공으로 세우는 문법의 대표 적용 예문입니다.",
-                "point": "공식 [능동태 : [주어]가 [목적어]를 ~하다.\n수동태 : [목적어]가 [be + 과거분사(p.p.)] 당하다 + (by 행위자)]의 핵심 적용 문맥"
+                "en": "The revolutionary concept car was unveiled by the chief engineer yesterday.",
+                "ko": "그 혁신적인 콘셉트카는 어제 수석 수석 엔지니어에 의해 베일을 벗었다.",
+                "point": "능동태의 목적어 car가 주어로 이동하여 [was unveiled by ...] 형태로 표현"
+              },
+              {
+                "en": "Magnificent Renaissance masterpieces were carefully restored by museum conservators.",
+                "ko": "웅장한 르네상스 걸작들은 박물관 복원 전문가들에 의해 세심하게 복원되었다.",
+                "point": "복수 주어 masterpieces에 대한 과거 수동태 were restored"
               }
             ],
             "oxCompare": [
@@ -9364,9 +9804,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "The door is locked. (문이 잠겨진 상태이다)",
-                "ko": "왜 be동사 + p.p. 형태일까?의 대표 적용 예문입니다.",
-                "point": "공식 [be동사(~인 상태이다) + p.p.(완료·수동 의미의 형용사) = '~되어진 상태로 존재하다']의 핵심 적용 문맥"
+                "en": "The library door is locked every night at ten o'clock.",
+                "ko": "도서관 문은 매일 밤 10시에 잠긴다.",
+                "point": "is(현재 상태) + locked(잠긴 완료 상태): 잠긴 상태에 도달함을 나타냄"
+              },
+              {
+                "en": "The ancient manuscripts are preserved in temperature-controlled vaults.",
+                "ko": "고대 필사본들은 온도가 조절되는 금고 안에 보존되어 있다.",
+                "point": "are + preserved: 보존된 상태를 유지하고 있음을 표현"
               }
             ],
             "oxCompare": [
@@ -9531,9 +9976,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "because of the rain (구: 주어+동사 없음) vs because it rained (절: it 주어 + rained 동사)",
-                "ko": "구(Phrase) vs 절(Clause)의 결정적 차이의 대표 적용 예문입니다.",
-                "point": "공식 [구 (Phrase) : 2개 이상의 단어가 모였지만 [주어 + 동사]가 없음! (in the morning, to play soccer, very quickly)\n절 (Clause) : 2개 이상의 단어가 모여 [주어 + 동사] 관계를 이룸! (because he was tired, that she loved me)]의 핵심 적용 문맥"
+                "en": "Despite the severe winter storm, the delivery drivers completed their routes.",
+                "ko": "혹독한 겨울 폭풍에도 불구하고 배달 기사들은 노선을 완수했다.",
+                "point": "Despite the severe winter storm: 주어와 동사가 없는 전치사구(Phrase)"
+              },
+              {
+                "en": "Although the winter storm was severe, the delivery drivers completed their routes.",
+                "ko": "겨울 폭풍이 혹독했음에도 불구하고 배달 기사들은 노선을 완수했다.",
+                "point": "Although the winter storm was severe: 주어와 동사를 갖춘 부사절(Clause)"
               }
             ],
             "oxCompare": [
@@ -9567,9 +10017,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "접속사가 붙어있는 쪽이 종속절(부사절/명사절/형용사절)입니다.",
-                "ko": "주절(Independent) vs 종속절(Dependent)의 대표 적용 예문입니다.",
-                "point": "공식 [주절 = 문장의 주인! 혼자서도 문장 성립 (I stayed at home)\n종속절 = 접속사를 달고 주절에 딸려 붙은 보조 절 (because it was raining)]의 핵심 적용 문맥"
+                "en": "When the conductor raised his baton, the symphony orchestra began to play.",
+                "ko": "지휘자가 지휘봉을 들어 올렸을 때, 교향악단은 연주를 시작했다.",
+                "point": "When...baton: 혼자 설 수 없는 종속절 / the orchestra...play: 스스로 문장이 되는 주절"
+              },
+              {
+                "en": "Because fossil fuel reserves are depleting, nations must develop renewable energy sources.",
+                "ko": "화석 연료 매장량이 고갈되고 있기 때문에, 국가들은 신재생 에너지원을 개발해야 한다.",
+                "point": "종속 부사절(Because...)과 독립된 완전한 주절(nations must...)"
               }
             ],
             "oxCompare": [
@@ -9734,9 +10189,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "a sleeping baby (자고 있는 아기 - 아기의 범위를 한정)\nThe baby is sleeping. (아기가 자고 있다 - 아기의 상태를 서술)",
-                "ko": "한정적(Attributive) vs 서술적(Predicative)의 어원의 대표 적용 예문입니다.",
-                "point": "공식 [한정적 용법 : 명사의 범위를 좁혀서(한정하여) 직접 꾸밈 ➔ [형용사 + 명사]\n서술적 용법 : 주어의 상태를 동사와 함께 서술(설명)함 ➔ [주어 + be동사 + 형용사(보어)]]의 핵심 적용 문맥"
+                "en": "The dedicated marine biologist observed the sleeping otter gently.",
+                "ko": "헌신적인 해양 생물학자는 잠든 수달을 조심스럽게 관찰했다.",
+                "point": "한정적 용법: 형용사 sleeping이 명사 otter를 앞에서 직접 수식"
+              },
+              {
+                "en": "The tired child was fast asleep in his mother's arms.",
+                "ko": "지친 아이는 어머니의 품 안에서 깊이 잠들어 있었다.",
+                "point": "서술적 용법: a-로 시작하는 형용사 asleep은 명사 수식 불가, be동사의 보어로만 쓰임"
               }
             ],
             "oxCompare": [
@@ -9770,9 +10230,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "He has two sons who became doctors. (의사가 된 아들이 2명 있다 - 아들이 더 있을 수 있음)\nHe has two sons, who became doctors. (아들이 딱 2명 있는데, 둘 다 의사가 되었다)",
-                "ko": "관계대명사의 한정용법 vs 계속적 용법(콤마)의 대표 적용 예문입니다.",
-                "point": "공식 [한정용법 (콤마 없음) : 뒤에서 명사를 수식 (~하는 선행사)\n계속적 용법 (콤마 있음) : 앞에서부터 순서대로 보충 설명 (그런데 그 사람은/그것은 ~하다)]의 핵심 적용 문맥"
+                "en": "He has two daughters who became successful aerospace engineers.",
+                "ko": "그에게는 성공한 항공우주 엔지니어가 된 두 딸이 있다.",
+                "point": "한정적 용법: 딸들 중 항공우주 엔지니어가 된 딸이 둘 있다는 의미 (다른 딸이 더 있을 수 있음)"
+              },
+              {
+                "en": "He has two daughters, who became successful aerospace engineers.",
+                "ko": "그에게는 딸이 둘 있는데, 그 둘 다 성공한 항공우주 엔지니어가 되었다.",
+                "point": "계속적 용법(콤마): 딸은 오직 둘뿐이며 부가적으로 그들의 성공을 설명함"
               }
             ],
             "oxCompare": [
@@ -9951,9 +10416,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "It is difficult for me to solve this puzzle. / It was very kind of you to invite us.",
-                "ko": "It (가주어) ~ for/of (의미상 주어) + to V (진주어)의 대표 적용 예문입니다.",
-                "point": "공식 [It is [형용사] + for + [목적격] + to [동사원형] ...\n(단, 사람의 성품 형용사 kind, rude, polite, foolish 뒤에는 of + 목적격)]의 핵심 적용 문맥"
+                "en": "It is essential for young researchers to publish their findings in reputable journals.",
+                "ko": "젊은 연구자들에게 연구 결과를 저명한 학술지에 발표하는 것은 필수적이다.",
+                "point": "일반 형용사 essential 뒤 의미상 주어 [for + 목적격]"
+              },
+              {
+                "en": "It was very thoughtful of him to send a handwritten thank-you letter.",
+                "ko": "손으로 쓴 감사 편지를 보내다니 그는 참으로 사려 깊었다.",
+                "point": "사람 성격/성품 형용사 thoughtful 뒤 의미상 주어 [of + 목적격]"
               }
             ],
             "oxCompare": [
@@ -9987,9 +10457,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "He was too tired to walk. = He was so tired that he could not walk.",
-                "ko": "too ~ to V ➔ so ~ that ... can't 변환 공식의 대표 적용 예문입니다.",
-                "point": "공식 [too [형용사/부사] to V = so [형용사/부사] that + 주어 + cannot/could not + V]의 핵심 적용 문맥"
+                "en": "The math problem was too complex for middle school students to solve.",
+                "ko": "그 수학 문제는 중학생들이 풀기에는 너무 복잡했다.",
+                "point": "too ~ to부정사 구문 (목적어 생략 확인)"
+              },
+              {
+                "en": "The math problem was so complex that middle school students could not solve it.",
+                "ko": "그 수학 문제는 너무 복잡해서 중학생들이 그것을 풀 수 없었다.",
+                "point": "so ~ that ... can't 구문에서는 목적어 it을 반드시 살려 적어야 서술형 감점을 피함"
               }
             ],
             "oxCompare": [
@@ -10154,9 +10629,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "This is the house in which I was born. = This is the house where I was born.",
-                "ko": "전치사 + 관계대명사 ➔ 관계부사 치환의 대표 적용 예문입니다.",
-                "point": "공식 [in/at/on + which = where (장소) / in/on/at + which = when (시간)\nfor + which = why (이유) / in which = how (방법)]의 핵심 적용 문맥"
+                "en": "This is the renowned laboratory in which the Nobel laureate conducted his experiments.",
+                "ko": "이곳은 노벨상 수상자가 실험을 진행했던 유명한 연구소이다.",
+                "point": "장소 선행사 + in which -> 관계부사 where 치환 가능"
+              },
+              {
+                "en": "I will cherish the unforgettable afternoon on which we signed the partnership agreement.",
+                "ko": "나는 우리가 파트너십 협약에 서명했던 잊지 못할 그 오후를 소중히 간직할 것이다.",
+                "point": "시간 선행사 + on which -> 관계부사 when 치환 가능"
               }
             ],
             "oxCompare": [
@@ -10190,9 +10670,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "The boy is my brother. + You met him yesterday.\n➔ The boy [whom you met yesterday] is my brother.",
-                "ko": "서술형 관계사 영작 3단계 공식의 대표 적용 예문입니다.",
-                "point": "공식 [1단계: 공통 명사(선행사) 찾기\n2단계: 뒷문장 겹치는 대명사 지우고 알맞은 관계사(who/which/whose) 선택\n3단계: 선행사 바로 뒤에 관계사절 통째로 삽입하기]의 핵심 적용 문맥"
+                "en": "The architect who designed the modern library received an international design award.",
+                "ko": "그 현대적인 도서관을 설계한 건축가는 국제 디자인상을 수상했다.",
+                "point": "공통명사 파악 -> 접속사+대명사 통합 -> 주격 관계대명사 who 영작"
+              },
+              {
+                "en": "The rare historical manuscripts which the team uncovered in the crypt are priceless.",
+                "ko": "그 팀이 지하실에서 발견한 희귀한 역사적 필사본들은 값을 매길 수 없을 정도로 귀중하다.",
+                "point": "목적어 대명사 삭제 후 목적격 관계대명사 which 영작 (중복 대명사 제거 필수)"
               }
             ],
             "oxCompare": [
@@ -10357,9 +10842,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "As he felt tired, he went to bed early. ➔ Feeling tired, he went to bed early.",
-                "ko": "부사절 ➔ 분사구문 3단계 변환 공식의 대표 적용 예문입니다.",
-                "point": "공식 [1단계: 접속사 생략 (의미 강조 시 남겨둘 수 있음)\n2단계: 주절 주어와 같으면 부사절 주어 생략\n3단계: 동사를 현재분사(V-ing)로 변환 (시제가 앞서면 having p.p.)]의 핵심 적용 문맥"
+                "en": "Finishing his laboratory report, the tired student turned off the desktop monitor.",
+                "ko": "실험실 보고서를 다 마친 후, 지친 학생은 컴퓨터 모니터를 껐다.",
+                "point": "접속사 As/After 생략 + 주어 he 생략 + 동사 finished를 Finishing으로 전환"
+              },
+              {
+                "en": "Having lived in London for a decade, she understands British cultural nuances thoroughly.",
+                "ko": "런던에서 10년 동안 살았었기 때문에, 그녀는 영국 문화의 뉘앙스를 철저히 이해한다.",
+                "point": "주절의 시제(understands)보다 앞선 시제이므로 완료분사구문 Having lived 사용"
               }
             ],
             "oxCompare": [
@@ -10393,9 +10883,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "with his arms crossed (팔짱을 낀 채로 - 팔은 꼬아진 것이므로 p.p.)\nwith the dog following her (개가 그녀를 따라오면서 - 개가 능동적으로 따르므로 V-ing)",
-                "ko": "with + 목적어 + 분사 (부대상황 서술형)의 대표 적용 예문입니다.",
-                "point": "공식 [with + [목적어] + [V-ing(능동)] / [p.p.(수동)] : ~한 채로, ~하면서]의 핵심 적용 문맥"
+                "en": "The lecturer explained the theory with his hands gesturing expressively.",
+                "ko": "강사는 손을 생생하게 표현하듯 움직이며 그 이론을 설명했다.",
+                "point": "손(his hands)이 스스로 제스처를 취하는 능동 관계 -> 현재분사 gesturing"
+              },
+              {
+                "en": "He sat on the park bench with his legs crossed comfortably.",
+                "ko": "그는 다리를 편안하게 꼰 채 공원 벤치에 앉아 있었다.",
+                "point": "다리(his legs)는 꼬아지는 수동 관계 -> 과거분사 crossed"
               }
             ],
             "oxCompare": [
@@ -10560,9 +11055,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "If it were not for water, we could not survive.\n= Were it not for water, we could not survive.\n= Without water, we could not survive.",
-                "ko": "'~이 없다면' 4대 동의어 영작 공식의 대표 적용 예문입니다.",
-                "point": "공식 [1. If it were not for [명사]\n2. Were it not for [명사] (if 생략 도치)\n3. Without [명사]\n4. But for [명사]]의 핵심 적용 문맥"
+                "en": "Without fresh water and sunlight, terrestrial life could not survive on Earth.",
+                "ko": "신선한 물과 햇빛이 없다면, 지구상의 육상 생명체는 생존할 수 없을 것이다.",
+                "point": "Without + 명사 = But for + 명사 = If it were not for ~ = Were it not for ~"
+              },
+              {
+                "en": "Were it not for your generous guidance, I would have abandoned the project.",
+                "ko": "당신의 너그러운 지도가 없었더라면, 나는 그 프로젝트를 포기했을 것입니다.",
+                "point": "If it had not been for ~ 의 if 생략 도치형: Had it not been for ~"
               }
             ],
             "oxCompare": [
@@ -10596,9 +11096,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "Had I known the truth, I would have told you.",
-                "ko": "가정법 if 생략 시 도치 규칙의 대표 적용 예문입니다.",
-                "point": "공식 [if가 생략되면 주어와 조동사/be동사의 위치가 뒤바뀜!\n• If I were you ➔ Were I you\n• If he had studied ➔ Had he studied\n• If you should need help ➔ Should you need help]의 핵심 적용 문맥"
+                "en": "Had the meteorologists forecasted the storm accurately, the coastal residents would have evacuated.",
+                "ko": "기상학자들이 폭풍을 정확하게 예보했더라면, 해안 주민들은 대피했을 것이다.",
+                "point": "If had forecasted -> if 생략 도치: Had the meteorologists forecasted"
+              },
+              {
+                "en": "Were she to accept the executive position, the company would prosper.",
+                "ko": "그녀가 그 임원직을 수락한다면, 회사는 번영할 것이다.",
+                "point": "If she were to accept -> Were she to accept 도치"
               }
             ],
             "oxCompare": [
@@ -10763,9 +11268,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "He ran so fast that nobody could catch him.\nIt was such a hot day that we went swimming.",
-                "ko": "so + 형용사/부사 + that vs such + a + 형용사 + 명사 + that의 대표 적용 예문입니다.",
-                "point": "공식 [• so + [형용사/부사] + that + S + V : 너무 ~해서 ...하다\n• such + a/an + [형용사] + [명사] + that + S + V : 대단히 ~한 명사여서 ...하다]의 핵심 적용 문맥"
+                "en": "The mathematical proof was so intricate that even professors deliberated for hours.",
+                "ko": "그 수학적 증명은 너무 복잡해서 교수들조차 몇 시간 동안 논의했다.",
+                "point": "so + 형용사(intricate) + that + 완전한 절"
+              },
+              {
+                "en": "It was such a compelling presentation that the investors approved the entire budget immediately.",
+                "ko": "그것은 너무나도 설득력 있는 발표여서 투자자들은 즉시 전체 예산을 승인했다.",
+                "point": "such + a + 형용사(compelling) + 명사(presentation) + that 절"
               }
             ],
             "oxCompare": [
@@ -10799,9 +11309,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "I woke up early so that I could catch the first train.",
-                "ko": "so that 붙어있을 때 (목적: ~하기 위하여)의 대표 적용 예문입니다.",
-                "point": "공식 [S + V + so that + S + can/may + V : ~하기 위해서 (= in order that)]의 핵심 적용 문맥"
+                "en": "We installed high efficiency insulation so that we could reduce winter heating costs.",
+                "ko": "우리는 겨울철 난방비를 줄일 수 있도록 고효율 단열재를 설치했다.",
+                "point": "so that + 주어 + 조동사(can/could): 목적 (~하기 위하여 = in order that)"
+              },
+              {
+                "en": "The speaker used a microphone so that everyone in the auditorium could hear clearly.",
+                "ko": "발표자는 강당에 있는 모든 사람이 명확하게 들을 수 있도록 마이크를 사용했다.",
+                "point": "so that 뒤 조동사 could 결합"
               }
             ],
             "oxCompare": [
@@ -10966,9 +11481,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "My mom made me clean my room. (능동: clean)\nI had my bicycle repaired yesterday. (수동: repaired - 자전거는 수리당함)",
-                "ko": "사역동사(make, have, let)의 목적격 보어의 대표 적용 예문입니다.",
-                "point": "공식 [• 목적어와 능동 관계 ➔ [동사원형 (Root)]\n• 목적어와 수동 관계 ➔ [과거분사 (p.p.)]]의 핵심 적용 문맥"
+                "en": "The head coach made all players practice defensive drills after the game.",
+                "ko": "감독은 모든 선수에게 경기 후 수비 훈련을 연습하도록 시켰다.",
+                "point": "사역동사 made의 목적격 보어로 동사원형 practice 사용"
+              },
+              {
+                "en": "I had my broken smartphone repaired at the official service center.",
+                "ko": "나는 내 고장 난 스마트폰을 공식 서비스 센터에서 수리받았다.",
+                "point": "스마트폰은 수리되는 수동 관계이므로 과거분사 repaired 사용"
               }
             ],
             "oxCompare": [
@@ -11002,9 +11522,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "I heard someone calling my name. (calling / call)\nI heard my name called in the crowd. (called - 내 이름은 불려짐)",
-                "ko": "지각동사(see, watch, hear, feel, notice)의 목적격 보어의 대표 적용 예문입니다.",
-                "point": "공식 [• 능동 동작 진행 중 ➔ [현재분사 (V-ing)] 또는 [동사원형]\n• 수동 동작 ➔ [과거분사 (p.p.)]]의 핵심 적용 문맥"
+                "en": "We watched the brilliant fireworks light up the night sky over the harbor.",
+                "ko": "우리는 항구 위 밤하늘을 찬란한 불꽃이 환하게 밝히는 것을 지켜보았다.",
+                "point": "지각동사 watched + 목적어 + 동사원형 light (또는 현재분사 lighting)"
+              },
+              {
+                "en": "She felt her heart beating rapidly before stepping onto the stage.",
+                "ko": "그녀는 무대에 오르기 직전 심장이 빠르게 뛰고 있는 것을 느꼈다.",
+                "point": "지각동사 felt + 목적어 + 진행 느낌의 현재분사 beating"
               }
             ],
             "oxCompare": [
@@ -11169,9 +11694,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "I have never seen such a sunset. ➔ Never have I seen such a sunset.\nHe little dreamed that he would win. ➔ Little did he dream that he would win.",
-                "ko": "부정어구 도치 공식 (의문문 어순과 100% 동일)의 대표 적용 예문입니다.",
-                "point": "공식 [부정어 (Never, Rarely, Seldom, Little, Hardly, Scarcely, Not only) + [조동사/be/do] + [주어] + [동사원형] ...]의 핵심 적용 문맥"
+                "en": "Seldom did the dedicated scientist leave the laboratory before midnight.",
+                "ko": "헌신적인 과학자는 자정 전에 연구실을 떠나는 법이 거의 없었다.",
+                "point": "부정부사 Seldom 문두 도치: [조동사 did + 주어 scientist + 동사원형 leave]"
+              },
+              {
+                "en": "Little did we imagine that our humble research project would transform medicine.",
+                "ko": "우리의 소박한 연구 프로젝트가 의학을 혁신할 줄은 거의 상상조치 못했다.",
+                "point": "Little 문두 도치: [did + we + imagine]"
               }
             ],
             "oxCompare": [
@@ -11205,9 +11735,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "On the hill stands a white castle. (명사 주어 ➔ 도치)\nHere comes the bus. (명사 주어) vs Here it comes. (대명사 주어 it ➔ 도치 안 됨)",
-                "ko": "장소 부사구 도치 공식의 대표 적용 예문입니다.",
-                "point": "공식 [장소 부사구 + [동사] + [주어] (단, 주어가 대명사이면 도치 안 됨: 부사구 + 대명사주어 + 동사)]의 핵심 적용 문맥"
+                "en": "Under the ancient oak tree in the village square sat an old storyteller.",
+                "ko": "마을 광장의 고대 떡갈나무 아래에 한 노년의 이야기꾼이 앉아 있었다.",
+                "point": "장소부사구 도치: 동사 sat 뒤에 명사 주어 an old storyteller 위치"
+              },
+              {
+                "en": "Into the crowded conference room walked the world-renowned philosopher.",
+                "ko": "혼잡한 회의실 안으로 세계적으로 저명한 철학자가 걸어 들어왔다.",
+                "point": "방향 부사구 문두 위치 시 [동사 walked + 명사 주어 philosopher]"
               }
             ],
             "oxCompare": [
@@ -11372,9 +11907,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "He write a letter yesterday. (X: 시제·철자 오류)\n➔ He wrote a letter yesterday. (O)",
-                "ko": "서술형 0점 방지 3대 셀프 검독 체크리스트의 대표 적용 예문입니다.",
-                "point": "공식 [1. [수일치]: 주어가 3인칭 단수인데 동사에 -s/-es를 빠뜨리지 않았는가?\n2. [시제일치]: 주절이 과거인데 종속절에 현재를 쓰거나, 불규칙 과거형 스펠링을 틀리지 않았는가?\n3. [관사 및 명사 수]: 셀 수 있는 단수 명사 앞에 a/an을 빠뜨리거나 복수 -s를 누락하지 않았는가?]의 핵심 적용 문맥"
+                "en": "Each of the registered participants has submitted a valid identification card.",
+                "ko": "등록된 참가자들 각자는 유효한 신분증을 제출했다.",
+                "point": "수일치 점검: Each of 복수명사의 핵심 주어는 단수 Each이므로 has 사용"
+              },
+              {
+                "en": "She wrote an articulate summary of the scientific lecture yesterday.",
+                "ko": "그녀는 어제 과학 강연에 대한 또렷한 요약본을 작성했다.",
+                "point": "시제 일치 점검: yesterday 부사와 호응하는 과거형 wrote 확인"
               }
             ],
             "oxCompare": [
@@ -11408,9 +11948,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "The company was founded in 1995.",
-                "ko": "혼동되는 불규칙 동사 3단 변화 주의보의 대표 적용 예문입니다.",
-                "point": "공식 [• find - found - found (찾다) vs found - founded - founded (설립하다)\n• fall - fell - fallen (떨어지다) vs fell - felled - felled (쓰러뜨리다)\n• choose - chose - chosen / lose - lost - lost]의 핵심 적용 문맥"
+                "en": "The exhausted marathon runner lay down on the lawn to catch his breath.",
+                "ko": "지친 마라톤 주자는 숨을 고르기 위해 잔디밭 위에 누웠다.",
+                "point": "자동사 lie(눕다)의 과거형 lay (타동사 lay의 과거형 laid 쓰면 감점)"
+              },
+              {
+                "en": "The librarian laid the fragile manuscript carefully upon the velvet cloth.",
+                "ko": "사서는 깨지기 쉬운 필사본을 벨벳 천 위에 조심스럽게 놓았다.",
+                "point": "타동사 lay(놓다)의 과거형 laid (목적어 manuscript가 있으므로 laid가 정답)"
               }
             ],
             "oxCompare": [
@@ -11589,9 +12134,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "The scientist, along with his assistants, [discovering / discovered] a new vaccine. (본동사가 없으므로 discovered가 정답)",
-                "ko": "수능 29번 1순위: '동사 자리 vs 준동사 자리'의 대표 적용 예문입니다.",
-                "point": "공식 [문장의 본동사 개수 = [접속사/관계사의 개수 + 1]\n접속사가 없으면 문장에 본동사는 무조건 1개여야 함!]의 핵심 적용 문맥"
+                "en": "The rapid advancement of artificial intelligence technologies creates unprecedented challenges.",
+                "ko": "인공지능 기술의 급격한 발전은 전례 없는 도전과제들을 만들어낸다.",
+                "point": "문장의 주어 The rapid advancement 뒤에 준동사가 아닌 단수 본동사 creates 필수"
+              },
+              {
+                "en": "Architects specializing in sustainable urban infrastructure designed the eco-friendly complex.",
+                "ko": "지속 가능한 도시 인프라를 전문으로 하는 건축가들이 친환경 단지를 설계했다.",
+                "point": "specializing은 수식어 분사구이며 문장의 본동사는 designed"
               }
             ],
             "oxCompare": [
@@ -11625,9 +12175,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "The books (written by the famous author) [was / were] translated into 20 languages.",
-                "ko": "3초 컷 판별 프로세스의 대표 적용 예문입니다.",
-                "point": "공식 [1. 밑줄 친 단어가 동사/준동사 형태인지 확인\n2. 문장 맨 앞부터 주어를 찾고 수식어구 괄호 묶기 ( ) \n3. 문장에 진짜 본동사가 이미 존재하는지 확인]의 핵심 적용 문맥"
+                "en": "The lead scientist, accompanied by several diligent research assistants, discovered a novel element.",
+                "ko": "수석 과학자는 몇몇 근면한 연구 조교들을 대동하고서 새로운 원소를 발견했다.",
+                "point": "수식어구 거품(accompanied by...)을 걷어내면 문장에 본동사 discovered가 명확히 보임"
+              },
+              {
+                "en": "Marine biologists observing deep sea coral reefs recorded unexpected acoustic signals.",
+                "ko": "심해 산호초를 관찰하던 해양 생물학자들은 예기치 못한 음향 신호를 기록했다.",
+                "point": "observing은 분사 수식어이며 문장의 본동사는 recorded"
               }
             ],
             "oxCompare": [
@@ -11792,9 +12347,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "I know [that] she is honest. (선행사X, 뒤 완전 ➔ 접속사 that)\nI know [what] she likes. (선행사X, likes의 목적어 빠짐 ➔ what)",
-                "ko": "that vs what 3초 판별 알고리즘의 대표 적용 예문입니다.",
-                "point": "공식 [1단계: 앞을 본다 (선행사 명사가 있는가?)\n  • 선행사 있음 ➔ [that 또는 which]\n  • 선행사 없음 ➔ 2단계로 이동\n2단계: 뒤를 본다 (문장이 완전한가?)\n  • 뒤가 완전 ➔ 접속사 [that]\n  • 뒤가 불완전 ➔ 관계대명사 [what] (~하는 것)]의 핵심 적용 문맥"
+                "en": "The clinical psychologist discovered that patients who meditate regularly experience less stress.",
+                "ko": "그 임상 심리학자는 규칙적으로 명상하는 환자들이 스트레스를 덜 경험한다는 사실을 발견했다.",
+                "point": "선행사 없고 뒤 문장이 주어와 목적어를 갖춘 완전한 절 -> 접속사 that"
+              },
+              {
+                "en": "Marine biologists investigated what triggers the sudden migration of whales.",
+                "ko": "해양 생물학자들은 무엇이 고래들의 갑작스러운 이동을 유발하는지 조사했다.",
+                "point": "선행사 없고 주어가 빠진 불완전절 -> 관계대명사/의문대명사 what"
               }
             ],
             "oxCompare": [
@@ -11828,9 +12388,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "the news that he died (동격 that: 뒤 완전)\nthe news that he heard (관계대명사 that: heard의 목적어 빠짐)",
-                "ko": "동격의 that vs 관계대명사 that의 대표 적용 예문입니다.",
-                "point": "공식 [• 동격 that : 앞 명사(fact, idea, news, evidence) + 뒤 [완전한 문장]\n• 관대 that : 앞 명사(선행사) + 뒤 [주어나 목적어 빠진 불완전한 문장]]의 핵심 적용 문맥"
+                "en": "The news that the peace treaty had been signed brought relief to the nation.",
+                "ko": "평화 조약이 체결되었다는 소식은 온 나라에 안도감을 안겨주었다.",
+                "point": "추상명사 news 뒤에 완전한 수동태 절이 이어지므로 동격의 접속사 that"
+              },
+              {
+                "en": "The alarming news that we heard on the radio this morning turned out to be false.",
+                "ko": "오늘 아침 우리가 라디오에서 들었던 그 충격적인 소식은 거짓으로 판명되었다.",
+                "point": "heard의 목적어가 빠진 불완전한 절이므로 목적격 관계대명사 that"
               }
             ],
             "oxCompare": [
@@ -11995,9 +12560,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "falling leaves (떨어지고 있는 나뭇잎 - 능동·진행)\nfallen leaves (이미 다 떨어진 나뭇잎 - 완료·수동)\nthe boy (inviting / invited) to the party ➔ 초대받은 소년이므로 invited!",
-                "ko": "분사의 능동 vs 수동 3초 판별 공식의 대표 적용 예문입니다.",
-                "point": "공식 [1. 수식받는 [명사]를 찾는다.\n2. 그 명사가 직접 행동을 하는 주체인가? ➔ [V-ing (현재분사)]\n3. 그 명사가 행동을 당하는 대상인가? ➔ [p.p. (과거분사)]]의 핵심 적용 문맥"
+                "en": "Ancient stone monuments discovered by archaeologists provide invaluable cultural insights.",
+                "ko": "고고학자들에 의해 발견된 고대 석조 기념물들은 매우 귀중한 문화적 통찰을 제공한다.",
+                "point": "기념물이 발견되는 대상이므로 수동 관계의 과거분사 discovered 사용"
+              },
+              {
+                "en": "The little boy observed the sparkling stars shining brightly in the midnight sky.",
+                "ko": "어린 소년은 한밤중 하늘에서 밝게 빛나고 있는 반짝이는 별들을 관찰했다.",
+                "point": "별이 스스로 빛나는 능동 관계이므로 현재분사 shining 사용"
               }
             ],
             "oxCompare": [
@@ -12031,9 +12601,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "He was disappointing with the result. (X) ➔ He was disappointed with the result. (O)",
-                "ko": "감정 유발 분사 킬러 공식의 대표 적용 예문입니다.",
-                "point": "공식 [• 사람 주어/명사 ➔ 감정을 느낌 ➔ [-ed (p.p.)] (I am interested, bored, excited)\n• 사물 주어/명사 ➔ 감정을 유발함 ➔ [-ing] (The movie is interesting, boring, exciting)]의 핵심 적용 문맥"
+                "en": "The audience remained completely fascinated throughout the astonishing acrobatics show.",
+                "ko": "관객들은 그 놀라운 곡예 쇼 내내 완전히 매료된 채로 머물렀다.",
+                "point": "관객(사람)이 감정을 느끼므로 과거분사 fascinated, 쇼(사물)는 놀라움을 주므로 현재분사 astonishing"
+              },
+              {
+                "en": "The disappointing survey results motivated the executive team to reconsider their strategy.",
+                "ko": "실망스러운 설문 결과는 임원진이 전략을 재검토하도록 자극했다.",
+                "point": "결과(사물)가 실망감을 유발하므로 현재분사 disappointing"
               }
             ],
             "oxCompare": [
@@ -12198,9 +12773,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "The climate of Korea is milder than [that] of Russia. (that = the climate 단수)\nThe ears of rabbits are longer than [those] of cats. (those = the ears 복수)",
-                "ko": "수능 단골 대명사 비교: that vs those의 대표 적용 예문입니다.",
-                "point": "공식 [비교 대상의 반복을 피하기 위한 대명사:\n• 앞 명사가 단수 명사 ➔ [that of ...]\n• 앞 명사가 복수 명사 ➔ [those of ...]]의 핵심 적용 문맥"
+                "en": "The eyes of nocturnal predators are significantly larger than those of diurnal animals.",
+                "ko": "야행성 포식자의 눈은 주행성 동물의 눈보다 훨씬 더 크다.",
+                "point": "비교 대상이 복수명사 The eyes이므로 대명사 those 사용 (that 쓰면 오답)"
+              },
+              {
+                "en": "The energy consumption of electric cars is much lower than that of gasoline vehicles.",
+                "ko": "전기차의 에너지 소비량은 가솔린 자동차의 에너지 소비량보다 훨씬 낮다.",
+                "point": "단수명사 The energy consumption을 대신하는 대명사 that 사용"
               }
             ],
             "oxCompare": [
@@ -12234,9 +12814,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "Companies must listen to their customers and satisfy [their / its] needs.",
-                "ko": "대명사 it vs them 추적법의 대표 적용 예문입니다.",
-                "point": "공식 [대명사에 밑줄이 그어져 있으면 반드시 해석을 통해 '그것이 가리키는 진짜 명사'를 앞 문장에서 찾아 단/복수를 대조할 것!]의 핵심 적용 문맥"
+                "en": "When predators approach their nests, parent birds fake injury to distract them from their chicks.",
+                "ko": "포식자들이 둥지에 접근할 때, 어미 새들은 새끼들로부터 포식자들의 주의를 돌리기 위해 부상을 가장한다.",
+                "point": "지칭 대상이 복수명사 predators이므로 목적격 대명사 them 사용 (it 쓰면 오답)"
+              },
+              {
+                "en": "If a modern corporation loses its customer trust, it can hardly recover its market standing.",
+                "ko": "만약 현대 기업이 고객의 신뢰를 잃는다면, 그 기업은 시장에서의 입지를 거의 회복할 수 없다.",
+                "point": "단수명사 a modern corporation을 지칭하므로 it 사용"
               }
             ],
             "oxCompare": [
@@ -12401,9 +12986,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "He kept the room warm. (O: 방을 따뜻하게 유지했다)\nHe kept the room warmly. (X: 우리말 해석이 '~하게'여도 부사 불가!)",
-                "ko": "보어 자리는 형용사, 수식어 자리는 부사!의 대표 적용 예문입니다.",
-                "point": "공식 [• 주어 + 불완전동사(remain, stay, keep, look, feel) + [형용사 보어]\n• 주어 + 동사 + 목적어 + [형용사 목적격보어] (make, keep, leave, find)]의 핵심 적용 문맥"
+                "en": "The delicate chemical solution tasted bitter, indicating severe contamination.",
+                "ko": "그 섬세한 화학 용액은 쓴맛이 났는데, 이는 심각한 오염을 나타냈다.",
+                "point": "2형식 감각동사 tasted 뒤 주격 보어 자리이므로 부사 bitterly가 아닌 형용사 bitter 필수"
+              },
+              {
+                "en": "The judge considered the newly presented forensic evidence conclusive.",
+                "ko": "판사는 새로 제시된 법의학적 증거가 결정적이라고 여겼다.",
+                "point": "5형식 consider의 목적격 보어 자리이므로 형용사 conclusive 사용"
               }
             ],
             "oxCompare": [
@@ -12437,9 +13027,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "He worked hardly. (X: 그는 거의 일하지 않았다) ➔ He worked hard. (O: 열심히 일했다)",
-                "ko": "형용사와 부사 형태가 같거나 뜻이 달라지는 어휘의 대표 적용 예문입니다.",
-                "point": "공식 [• hard (열심히, 단단한) vs hardly (거의 ~않다)\n• late (늦게, 늦은) vs lately (최근에)\n• high (높게, 높은) vs highly (매우, 대단히)\n• near (가까이) vs nearly (거의)]의 핵심 적용 문맥"
+                "en": "The dedicated medical researcher worked hard to develop the vaccine.",
+                "ko": "헌신적인 의학 연구원은 백신을 개발하기 위해 열심히 일했다.",
+                "point": "hard: 열심히 (부사) / hardly: 거의 ~않다 (부정부사)"
+              },
+              {
+                "en": "The express train arrived late due to heavy snowfall on the tracks.",
+                "ko": "급행열차는 선로 위의 폭설로 인해 늦게 도착했다.",
+                "point": "late: 늦게 (시간적 지연) / lately: 최근에"
               }
             ],
             "oxCompare": [
@@ -12604,9 +13199,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "He likes swimming, hiking, and to run. (X) ➔ swimming, hiking, and running. (O)",
-                "ko": "등위접속사(and/but/or)의 저울 원리의 대표 적용 예문입니다.",
-                "point": "공식 [A and B 구조에서 A와 B는 문법적으로 대등한 형태여야 함!\n• to V and (to) V\n• V-ing and V-ing\n• 형용사 and 형용사 / 명사 and 명사]의 핵심 적용 문맥"
+                "en": "The investigative report involved collecting data, analyzing trends, and publishing findings.",
+                "ko": "그 탐사 보고서는 데이터 수집, 동향 분석, 그리고 연구 결과 발표를 포함했다.",
+                "point": "동명사 목적어 3개가 and로 대등하게 병렬 연결 (to publish 쓰면 오답)"
+              },
+              {
+                "en": "The professor spoke clearly, persuasively, and passionately to the young audience.",
+                "ko": "교수님은 젊은 청중들에게 명확하고, 설득력 있고, 열정적으로 말씀하셨다.",
+                "point": "부사 3개가 and로 균형 있게 병렬 배치"
               }
             ],
             "oxCompare": [
@@ -12640,9 +13240,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "She decided not only to study abroad but also to learn a new language.",
-                "ko": "상관접속사의 병렬 구조의 대표 적용 예문입니다.",
-                "point": "공식 [• not only A but also B\n• either A or B / neither A nor B\n• both A and B\n• not A but B]의 핵심 적용 문맥"
+                "en": "The ambitious project was designed both to conserve energy and to protect local ecology.",
+                "ko": "그 야심 찬 프로젝트는 에너지를 절약하고 지역 생태계를 보호하기 위해 모두 설계되었다.",
+                "point": "both A and B: to conserve와 to protect의 to부정사 병렬 일치"
+              },
+              {
+                "en": "She preferred publishing her essay in an independent journal to submitting it to state media.",
+                "ko": "그녀는 에세이를 국영 언론에 제출하기보다 독립 저널에 출판하는 것을 선호했다.",
+                "point": "prefer A to B: 동명사 publishing과 submitting의 형태적 대칭"
               }
             ],
             "oxCompare": [
@@ -12821,9 +13426,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "I decided to study harder. / She finished doing her homework.",
-                "ko": "to부정사 vs 동명사 목적어 암기 공식의 대표 적용 예문입니다.",
-                "point": "공식 [• to부정사만 취함 (미래/계획/소망) : want, hope, wish, decide, plan, promise, refuse\n• 동명사만 취함 (과거/경험/중단/회피) : enjoy, finish, give up, avoid, mind, postpone, practice]의 핵심 적용 문맥"
+                "en": "The international committee decided to launch the green energy initiative.",
+                "ko": "국제 위원회는 친환경 에너지 구상을 시작하기로 결정했다.",
+                "point": "decide, hope, plan, promise 계열은 미래지향적이므로 to부정사 목적어만 취함"
+              },
+              {
+                "en": "We thoroughly enjoyed visiting the ancient coastal ruins during our expedition.",
+                "ko": "우리는 탐사 기간 동안 고대 해안 유적지를 방문한 것을 대단히 즐겼다.",
+                "point": "enjoy, finish, avoid, suggest 계열은 동명사(-ing) 목적어만 취함"
               }
             ],
             "oxCompare": [
@@ -12857,9 +13467,19 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "Remember to lock the door. (문 잠글 것을 기억해라)\nI remember locking the door. (문 잠갔던 것을 기억한다)",
-                "ko": "둘 다 취하지만 의미가 180도 달라지는 동사 4총사의 대표 적용 예문입니다.",
-                "point": "공식 [• remember/forget + to V (미래: ~할 것을 기억/잊다)\n• remember/forget + V-ing (과거: ~했던 것을 기억/잊다)\n• stop + to V (~하기 위해 멈추다) vs stop + V-ing (~하던 것을 그만두다)\n• try + to V (~하려고 애쓰다/노력하다) vs try + V-ing (시험 삼아 한번 해보다)]의 핵심 적용 문맥"
+                "en": "Please remember to lock the front gate before retiring for the night.",
+                "ko": "밤에 잠자리에 들기 전에 현관문을 잠글 것을 잊지 말고 기억하세요.",
+                "point": "remember + to V: 미래에 해야 할 일"
+              },
+              {
+                "en": "I vividly remember locking the front gate before I went to bed.",
+                "ko": "나는 잠자리에 들기 전에 현관문을 잠갔던 것을 생생하게 기억한다.",
+                "point": "remember + -ing: 과거에 이미 했던 일"
+              },
+              {
+                "en": "The doctor advised him to stop smoking to improve his lung capacity.",
+                "ko": "의사는 그의 폐활량을 향상시키기 위해 금연할 것을 조언했다.",
+                "point": "stop + -ing: ~하던 것을 그만두다 / stop + to V: ~하기 위해 가던 길을 멈추다"
               }
             ],
             "oxCompare": [
@@ -13024,9 +13644,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "I have met him yesterday. (X) ➔ I met him yesterday. (O)\nWhen have you arrived? (X) ➔ When did you arrive? (O)",
-                "ko": "단순과거 시제와만 어울리는 '명백한 과거 시점 부사'의 대표 적용 예문입니다.",
-                "point": "공식 [yesterday, ~ ago, in + 과거 연도(in 2015), last ~, when (의문사) 뒤에는\n절대로 현재완료(have p.p.)를 쓸 수 없고, 오직 [단순과거 시제]만 사용 가능!]의 핵심 적용 문맥"
+                "en": "The prominent astrophysicist discovered the cosmic anomaly two years ago.",
+                "ko": "그 저명한 천체물리학자는 2년 전에 우주 이상 현상을 발견했다.",
+                "point": "two years ago는 명백한 과거 시점 부사이므로 현재완료(has discovered) 절대 불가, 단순과거 discovered 사용"
+              },
+              {
+                "en": "She graduated from the medical university last winter with high honors.",
+                "ko": "그녀는 지난겨울에 의과대학을 우수한 성적으로 졸업했다.",
+                "point": "last winter 부사와 호응하는 단순과거 동사 graduated"
               }
             ],
             "oxCompare": [
@@ -13060,9 +13685,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "He has gone to Paris. (그는 파리로 가버려서 지금 여기에 없다)\nI have been to Paris twice. (나는 파리에 두 번 가본 적이 있다)",
-                "ko": "have been to vs have gone to의 대표 적용 예문입니다.",
-                "point": "공식 [• have been to [장소] : ~에 가본 적이 있다 (경험) / ~에 다녀왔다\n• have gone to [장소] : ~로 가버렸다 (결과: 지금 여기 없음)]의 핵심 적용 문맥"
+                "en": "The lead researcher has gone to Geneva to attend the physics symposium.",
+                "ko": "수석 연구원은 물리학 심포지엄에 참석하기 위해 제네바로 가버렸다.",
+                "point": "have gone to: ~로 가버렸다 (지금 여기에 없음, 결과)"
+              },
+              {
+                "en": "I have been to Geneva twice to conduct collaborative experiments.",
+                "ko": "나는 공동 실험을 수행하기 위해 제네바에 두 번 가본 적이 있다.",
+                "point": "have been to: ~에 가본 적이 있다 (경험)"
               }
             ],
             "oxCompare": [
@@ -13227,9 +13857,19 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "• The book [that I bought] is good. (관대: bought의 목적어 없음)\n• I know [that she is kind]. (명사절 접속사: 뒤 완전)\n• The idea [that we should help others] is noble. (동격: 뒤 완전)",
-                "ko": "that의 3대 정체성 판별 공식의 대표 적용 예문입니다.",
-                "point": "공식 [1. [관계대명사 that] : 앞 선행사 있음 + 뒤 [불완전한 문장] (주어나 목적어 빠짐)\n2. [명사절 접속사 that] : 앞 선행사 없음(동사 뒤) + 뒤 [완전한 문장] (~라는 것을)\n3. [동격의 접속사 that] : 앞 추상명사 있음 + 뒤 [완전한 문장] (~라는 내용의)]의 핵심 적용 문맥"
+                "en": "The insightful scientific book that I read yesterday influenced my worldview.",
+                "ko": "내가 어제 읽었던 그 통찰력 있는 과학 서적은 내 세계관에 영향을 미쳤다.",
+                "point": "관계대명사 that: 선행사 book이 있고 read의 목적어가 빠진 불완전절"
+              },
+              {
+                "en": "Sociologists believe that regular social interaction promotes psychological wellbeing.",
+                "ko": "사회학자들은 규칙적인 사회적 상호작용이 심리적 안녕을 증진한다고 믿는다.",
+                "point": "명사절 접속사 that: 선행사 없고 뒤 절이 완전함"
+              },
+              {
+                "en": "The shocking news that the polar ice caps are melting rapidly alarmed scientists.",
+                "ko": "극지방 빙하가 빠르게 녹고 있다는 충격적인 소식은 과학자들을 놀라게 했다.",
+                "point": "동격 접속사 that: 추상명사 news와 의미상 동격을 이루는 완전한 절"
               }
             ],
             "oxCompare": [
@@ -13263,9 +13903,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "There is no evidence that he committed the crime.",
-                "ko": "동격 that과 자주 결합하는 대표 추상명사의 대표 적용 예문입니다.",
-                "point": "공식 [fact(사실), news(소식), idea(생각), belief(믿음), rumor(소문), evidence(증거), hope(희망)]의 핵심 적용 문맥"
+                "en": "The widespread belief that hard work guarantees success motivates many students.",
+                "ko": "근면함이 성공을 보장한다는 널리 퍼진 믿음은 많은 학생들에게 동기를 부여한다.",
+                "point": "추상명사 belief + 동격 접속사 that + 완전한 절"
+              },
+              {
+                "en": "There is no conclusive evidence that the suspect entered the bank vault.",
+                "ko": "용의자가 은행 금고에 침입했다는 결정적인 증거는 없다.",
+                "point": "추상명사 evidence + 동격 접속사 that"
               }
             ],
             "oxCompare": [
@@ -13430,9 +14075,19 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "• I used to play soccer. (축구하곤 했다)\n• Wood is used to make paper. (종이를 만드는 데 사용된다)\n• I am used to waking up early. (일찍 일어나는 데 익숙하다)",
-                "ko": "used to 3총사 완전 정복 공식의 대표 적용 예문입니다.",
-                "point": "공식 [1. used to + [동사원형] : (과거에) ~하곤 했다 / ~이었다 (지금은 아님)\n2. be used to + [동사원형] : ~하는 데 '사용되다' (use의 수동태! 주어는 보통 사물)\n3. be used to + [V-ing / 명사] : ~에 '익숙하다' (= be accustomed to, 주어는 보통 사람)]의 핵심 적용 문맥"
+                "en": "My grandfather used to take long morning walks in the countryside.",
+                "ko": "나의 할아버지는 시골에서 아침에 긴 산책을 하곤 하셨다.",
+                "point": "used to + 동사원형: 과거의 규칙적 습관이나 상태 (지금은 아님)"
+              },
+              {
+                "en": "Reinforced titanium is used to construct aircraft wings for durability.",
+                "ko": "강화 티타늄은 내구성을 위해 항공기 날개를 제작하는 데 사용된다.",
+                "point": "be used to + 동사원형: use의 수동태 (~하는 데 사용되다)"
+              },
+              {
+                "en": "The seasoned arctic explorer is used to enduring freezing temperatures.",
+                "ko": "노련한 북극 탐험가는 영하의 혹한을 견뎌내는 데 익숙하다.",
+                "point": "be used to + -ing: ~에 익숙하다 (= be accustomed to)"
               }
             ],
             "oxCompare": [
@@ -13466,9 +14121,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "He is used to spicy food.",
-                "ko": "3초 컷 판별 요령의 대표 적용 예문입니다.",
-                "point": "공식 [• 앞에 be동사가 없는가? ➔ 무조건 [used to + V] (~하곤 했다)\n• 앞에 be동사가 있고 주어가 사물인가? ➔ [be used to + V] (사용되다)\n• 앞에 be동사가 있고 주어가 사람인가? ➔ [be used to + -ing] (익숙하다)]의 핵심 적용 문맥"
+                "en": "Natural gas is used to heat residential homes during the winter months.",
+                "ko": "천연가스는 겨울철 동안 주거용 주택을 난방하는 데 사용된다.",
+                "point": "사물 주어(Natural gas)가 난방하는 데 사용되므로 [be used to + 동사원형 heat]"
+              },
+              {
+                "en": "The night shift nurse is used to staying awake throughout the quiet night.",
+                "ko": "야간 근무 간호사는 조용한 밤새도록 깨어 있는 것에 익숙하다.",
+                "point": "사람 주어가 깨어 있는 것에 익숙하므로 [be used to + 동명사 staying]"
               }
             ],
             "oxCompare": [
@@ -13633,9 +14293,19 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "• He lay on the grass yesterday. (눕다 lie의 과거형 lay)\n• She laid the baby on the bed. (눕히다 lay의 과거형 laid)\n• Don't lie to me. (거짓말하다)",
-                "ko": "lie vs lay 3단 변화 끝장 비교표의 대표 적용 예문입니다.",
-                "point": "공식 [1. lie - lay - lain - lying (자동사: 눕다, 놓여있다) ➔ 뒤에 목적어 없음!\n2. lay - laid - laid - laying (타동사: 놓다, 두다, 알을 낳다) ➔ 뒤에 목적어(~을/를) 필수!\n3. lie - lied - lied - lying (자동사: 거짓말하다)]의 핵심 적용 문맥"
+                "en": "The weary traveler lay down on the soft grass and fell fast asleep.",
+                "ko": "지친 여행자는 부드러운 잔디 위에 누워 깊은 잠에 빠졌다.",
+                "point": "자동사 lie(눕다)의 과거형 lay (목적어 없음)"
+              },
+              {
+                "en": "The mother laid the sleeping infant gently in the wooden cradle.",
+                "ko": "어머니는 잠든 아기를 원목 요람에 부드럽게 눕혔다.",
+                "point": "타동사 lay(눕히다/놓다)의 과거형 laid (목적어 infant가 있음)"
+              },
+              {
+                "en": "A deceitful witness lied under oath during the courtroom trial.",
+                "ko": "거짓된 증인은 법정 재판 중에 선서하고 거짓말을 했다.",
+                "point": "자동사 lie(거짓말하다)의 규칙 과거형 lied"
               }
             ],
             "oxCompare": [
@@ -13669,9 +14339,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "He [laid] his hand on my shoulder. (목적어 hand가 있으므로 laid)",
-                "ko": "3초 컷 판별 공식의 대표 적용 예문입니다.",
-                "point": "공식 [빈칸 바로 뒤를 본다!\n• 뒤에 목적어(~을/를)가 있는가? ➔ [lay 계열 (lay/laid)]\n• 뒤에 전치사구(on, in, down)나 부사가 오는가? ➔ [lie 계열 (lie/lay/lain)]]의 핵심 적용 문맥"
+                "en": "He laid his hand gently on his son's shoulder to comfort him.",
+                "ko": "그는 아들을 위로하기 위해 아들의 어깨 위에 손을 가만히 얹었다.",
+                "point": "뒤에 목적어 his hand가 있으므로 타동사 lay의 과거형 laid 사용"
+              },
+              {
+                "en": "Ancient ruins lay hidden beneath the dense jungle foliage for centuries.",
+                "ko": "고대 유적들은 수세기 동안 빽빽한 정글 나뭇잎 아래에 숨겨져 있었다.",
+                "point": "목적어 없이 수식어구만 이어지므로 자동사 lie의 과거형 lay 사용"
               }
             ],
             "oxCompare": [
@@ -13836,9 +14511,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "It was [Tom] that broke the window. ➔ Tom broke the window. (완전 성립 ➔ 강조구문)\nIt is [true] that he broke the window. ➔ True he broke the window. (불성립 ➔ 가주어/진주어)",
-                "ko": "It ~ that 강조구문 vs 가주어/진주어 3초 판별 공식의 대표 적용 예문입니다.",
-                "point": "공식 [문장에서 [It is/was]와 [that]을 손으로 가려본다!\n• 가렸을 때 남은 단어들로 문장이 완벽하게 성립하면? ➔ [강조 구문]\n• 가렸을 때 문장이 말이 안 되고 불완전하면? ➔ [가주어 / 진주어]]의 핵심 적용 문맥"
+                "en": "It was the diligent researcher that discovered the novel antibiotic.",
+                "ko": "그 새로운 항생제를 발견한 것은 바로 그 근면한 연구원이었다.",
+                "point": "It was와 that을 가렸을 때 완전한 문장(The researcher discovered...)이 되므로 강조구문"
+              },
+              {
+                "en": "It is true that renewable energy costs have decreased substantially.",
+                "ko": "신재생 에너지 비용이 상당히 감소했다는 것은 사실이다.",
+                "point": "It is와 that을 가렸을 때 형용사 true가 혼자 남아 문장이 성립하지 않으므로 가주어/진주어 구문"
               }
             ],
             "oxCompare": [
@@ -13872,9 +14552,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "I found it difficult to solve the problem.",
-                "ko": "가목적어 it 구문 (MBCDF 공식)의 대표 적용 예문입니다.",
-                "point": "공식 [make, believe, consider, deem, find + it(가목적어) + [형용사 목적격보어] + to V / that절(진목적어)]의 핵심 적용 문맥"
+                "en": "Smartphones make it possible for people to work from anywhere in the world.",
+                "ko": "스마트폰은 사람들이 세상 어디에서나 일하는 것을 가능하게 만들어 준다.",
+                "point": "make(동사) + it(가목적어) + possible(목적격 보어) + to work...(진목적어)"
+              },
+              {
+                "en": "The manager found it necessary to upgrade corporate cybersecurity protocols immediately.",
+                "ko": "관리자는 기업 사이버 보안 프로토콜을 즉시 업그레이드하는 것이 필수적임을 알게 되었다.",
+                "point": "find + it(가목적어) + necessary(보어) + to upgrade(진목적어)"
               }
             ],
             "oxCompare": [
@@ -14039,9 +14724,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "• Although it was raining (접속사)\n• Despite the rain (전치사)\n• while I was sleeping vs during the summer vacation vs for two hours",
-                "ko": "접속사 vs 전치사 대표 맞수 3대장의 대표 적용 예문입니다.",
-                "point": "공식 [1. [비록 ~일지라도] : 접속사 [although / even though] + S + V vs 전치사 [despite / in spite of] + 명사(구)\n2. [~때문에] : 접속사 [because / as / since] + S + V vs 전치사 [because of / due to / owing to] + 명사(구)\n3. [~동안에] : 접속사 [while] + S + V vs 전치사 [during] + 특정 기간 명사 vs 전치사 [for] + 숫자 기간]의 핵심 적용 문맥"
+                "en": "Although the economic recession was severe, the innovative tech firm expanded.",
+                "ko": "비록 경기 침체가 심각했지만, 그 혁신적인 기술 기업은 확장했다.",
+                "point": "접속사 Although + 주어와 동사를 갖춘 부사절"
+              },
+              {
+                "en": "Despite the severe economic recession, the innovative tech firm expanded.",
+                "ko": "심각한 경기 침체에도 불구하고, 그 혁신적인 기술 기업은 확장했다.",
+                "point": "전치사 Despite + 명사구(the severe economic recession)"
               }
             ],
             "oxCompare": [
@@ -14075,9 +14765,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "Because of he was ill (X) ➔ Because he was ill (O)",
-                "ko": "3초 컷 판별법의 대표 적용 예문입니다.",
-                "point": "공식 [빈칸 뒤에 '동사'가 있는지만 확인하라!\n• 주어 + 동사가 있으면 ➔ 무조건 [접속사]\n• 동사 없이 명사 덩어리만 있으면 ➔ 무조건 [전치사]]의 핵심 적용 문맥"
+                "en": "The outdoor festival was canceled because the hurricane approached the coastline.",
+                "ko": "허리케인이 해안선에 접근했기 때문에 야외 축제는 취소되었다.",
+                "point": "뒤에 주어와 동사가 있는 절이 이어지므로 접속사 because 사용"
+              },
+              {
+                "en": "The outdoor festival was canceled because of the approaching hurricane.",
+                "ko": "접근하는 허리케인 때문에 야외 축제는 취소되었다.",
+                "point": "뒤에 명사구만 이어지므로 전치사구 because of 사용"
               }
             ],
             "oxCompare": [
@@ -14242,9 +14937,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "• Not all birds can fly. (모든 새가 날 수 있는 것은 아니다 - 펭귄은 못 낢: 부분부정)\n• No birds can fly. (어떤 새도 날 수 없다: 완전부정)\n• I don't like both of them. (둘 다 좋아하는 건 아냐 - 한 명만 좋아함: 부분부정)\n• I like neither of them. (둘 다 안 좋아함: 완전부정)",
-                "ko": "부분부정 vs 완전부정 공식 비교의 대표 적용 예문입니다.",
-                "point": "공식 [1. [부분부정] : not + 전체를 나타내는 말 (all, every, both, always, completely)\n  ➔ '모두가 ~인 것은 아니다 (일부는 그렇고 일부는 아니다)'\n2. [완전부정] : none, neither, no one, never\n  ➔ '아무도/전혀 ~가 아니다 (100% 전면 부정)']의 핵심 적용 문맥"
+                "en": "Not all wealthy individuals are completely content with their lives.",
+                "ko": "모든 부유한 개인이 자신의 삶에 전적으로 만족하는 것은 아니다.",
+                "point": "not all: 부분부정 (만족하는 사람도 있고 그렇지 않은 사람도 있음)"
+              },
+              {
+                "en": "None of the applicants met all the rigorous technical requirements.",
+                "ko": "지원자들 중 어느 누구도 엄격한 기술적 요건을 모두 충족하지 못했다.",
+                "point": "None of: 완전부정 (0명)"
               }
             ],
             "oxCompare": [
@@ -14278,9 +14978,14 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "examples": [
               {
-                "en": "Rich people are not always happy. (부자라고 항상 행복한 것은 아니다)",
-                "ko": "부분부정 주요 관용 표현의 대표 적용 예문입니다.",
-                "point": "공식 [• not always : 항상 ~인 것은 아니다\n• not necessarily : 반드시 ~인 것은 아니다\n• not entirely : 전적으로 ~인 것은 아니다]의 핵심 적용 문맥"
+                "en": "Advanced artificial intelligence is not necessarily superior to human intuition.",
+                "ko": "첨단 인공지능이 인간의 직관보다 반드시 우월한 것은 아니다.",
+                "point": "not necessarily: 반드시 ~인 것은 아니다 (부분부정 관용구)"
+              },
+              {
+                "en": "A high price does not always guarantee superior product quality.",
+                "ko": "높은 가격이 항상 우수한 제품 품질을 보장하는 것은 아니다.",
+                "point": "not always: 항상 ~인 것은 아니다 (부분부정)"
               }
             ],
             "oxCompare": [
@@ -14463,9 +15168,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "'Tom Cruise'라는 배우(명사)가 영화에서 '탐정'(주어) 역할을 맡을 수도 있고, '범인'(목적어) 역할을 맡을 수도 있습니다.",
-                "ko": "품사(8품사)는 '배우', 문장 성분은 '배역'의 대표 적용 예문입니다.",
-                "point": "공식 [품사 = 단어 자체의 태생 (명사, 대명사, 동사, 형용사, 부사, 전치사, 접속사, 감탄사)\n문장 성분 = 문장에서 맡은 역할 (주어, 동사, 목적어, 보어, 수식어)]의 핵심 적용 문맥"
+                "en": "The passionate actor delivered an unforgettable monologue on stage.",
+                "ko": "그 열정적인 배우는 무대 위에서 잊을 수 없는 독백을 전했다.",
+                "point": "The actor(품사: 명사)가 문장에서 주어 역할을 수행"
+              },
+              {
+                "en": "The audience admired the celebrated actor with standing applause.",
+                "ko": "관객들은 기립박수를 보내며 그 유명한 배우에게 감탄했다.",
+                "point": "the celebrated actor(품사: 명사)가 admired의 목적어 역할을 수행"
               }
             ],
             "oxCompare": [
@@ -14499,9 +15209,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "She(주어-대명사) made(동사) him(목적어-대명사) happy(보어-형용사).",
-                "ko": "문장 성분의 4대 뼈대 (주/동/목/보)의 대표 적용 예문입니다.",
-                "point": "공식 [주어(Subject: 은/는/이/가) + 동사(Verb: ~하다/이다) + 목적어(Object: ~을/를/에게) + 보어(Complement: 보충 설명)]의 핵심 적용 문맥"
+                "en": "She made him happy with her thoughtful encouragement.",
+                "ko": "그녀는 사려 깊은 격려로 그를 행복하게 만들어 주었다.",
+                "point": "주어(She) + 동사(made) + 목적어(him) + 보어(happy)"
+              },
+              {
+                "en": "The members elected him chairperson of the executive committee.",
+                "ko": "회원들은 그를 집행위원회 의장으로 선출했다.",
+                "point": "목적어 him의 신분을 보충 설명하는 목적격 보어 chairperson"
               }
             ],
             "oxCompare": [
@@ -14666,9 +15381,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "Birds fly. (새가 난다 - 자동사, 목적어 없음)\nI love you. (나는 너를 사랑한다 - 타동사, you가 목적어)",
-                "ko": "자동사(Vi) vs 타동사(Vt)의 판별법의 대표 적용 예문입니다.",
-                "point": "공식 [자동사 (Intransitive) : 주어 혼자 행동 완료! 뒤에 목적어(~을/를) 불필요! (sleep, cry, smile, arrive)\n타동사 (Transitive) : 동작을 받는 대상(목적어)이 반드시 필요! (like, make, buy, visit)]의 핵심 적용 문맥"
+                "en": "Migratory birds fly south every autumn without getting lost.",
+                "ko": "철새들은 매년 가을 길을 잃지 않고 남쪽으로 날아간다.",
+                "point": "fly: 목적어가 필요 없는 완전자동사 (1형식)"
+              },
+              {
+                "en": "Astronomers discovered an Earth-sized exoplanet orbiting a distant star.",
+                "ko": "천문학자들은 먼 별을 공전하는 지구 크기의 외계 행성을 발견했다.",
+                "point": "discovered: 뒤에 목적어(an Earth-sized exoplanet)가 반드시 필요한 타동사"
               }
             ],
             "oxCompare": [
@@ -14702,9 +15422,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "동사가 어떤 친구(목적어, 보어)를 필요로 하느냐에 따라 5가지 형식이 결정됩니다.",
-                "ko": "1~5형식의 탄생 비밀의 대표 적용 예문입니다.",
-                "point": "공식 [1형식: S + V (완전자동사)\n2형식: S + V + C (불완전자동사: 보어 필요)\n3형식: S + V + O (완전타동사: 목적어 1개)\n4형식: S + V + IO + DO (수여동사: 목적어 2개)\n5형식: S + V + O + OC (불완전타동사: 목적어+보어)]의 핵심 적용 문맥"
+                "en": "The little child gave his grandmother a delicate origami flower.",
+                "ko": "어린아이는 할머니께 정교한 종이접기 꽃을 드렸다.",
+                "point": "4형식: 간접목적어(his grandmother) + 직접목적어(a delicate origami flower)"
+              },
+              {
+                "en": "The unexpected discovery proved the historical theory correct.",
+                "ko": "그 예기치 못한 발견은 그 역사적 이론이 옳다는 것을 증명했다.",
+                "point": "5형식: 목적어(the historical theory) + 목적격 보어(correct)"
               }
             ],
             "oxCompare": [
@@ -14869,9 +15594,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "He is a doctor. (He = doctor, 주격보어-명사)\nShe feels tired. (She = tired 상태, 주격보어-형용사)\nWe painted the wall blue. (wall = blue 상태, 목적격보어)",
-                "ko": "보어(Complement) = '보충 설명해 주는 말'의 대표 적용 예문입니다.",
-                "point": "공식 [주격 보어 (Subject Complement) : 주어의 정체(명사)나 상태(형용사)를 보충 ➔ [주어 = 보어]\n목적격 보어 (Object Complement) : 목적어의 정체나 상태·동작을 보충 ➔ [목적어 = 보어]]의 핵심 적용 문맥"
+                "en": "She became a world-renowned pediatric neurosurgeon after years of study.",
+                "ko": "그녀는 수년간의 연구 끝에 세계적으로 유명한 소아 신경외과 의사가 되었다.",
+                "point": "명사 주격 보어: 주어 She의 정체와 직업을 보충 설명 (She = neurosurgeon)"
+              },
+              {
+                "en": "The exhausted marathon runners remained cheerful despite the relentless rain.",
+                "ko": "지친 마라톤 선수들은 가차 없는 비에도 불구하고 여전히 밝은 표정을 유지했다.",
+                "point": "형용사 주격 보어: 주어 runners의 감정/기분 상태를 보충 설명"
               }
             ],
             "oxCompare": [
@@ -14905,9 +15635,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "It smells deliciously. (X) ➔ It smells delicious. (O: 맛있게 냄새난다)",
-                "ko": "감각동사 뒤에는 반드시 형용사 보어!의 대표 적용 예문입니다.",
-                "point": "공식 [look, smell, taste, sound, feel + 형용사 (O) / + 부사 (X)]의 핵심 적용 문맥"
+                "en": "The freshly baked apple pie smelled sweet throughout the kitchen.",
+                "ko": "갓 구운 사과파이 냄새가 부엌 전체에 달콤하게 풍겼다.",
+                "point": "감각동사 smelled 뒤에는 부사 sweetly가 아닌 형용사 sweet 필수"
+              },
+              {
+                "en": "The velvet fabric feels remarkably smooth to the touch.",
+                "ko": "그 벨벳 원단은 손으로 만졌을 때 놀라울 정도로 부드럽게 느껴진다.",
+                "point": "감각동사 feels 뒤에 형용사 보어 smooth 사용"
               }
             ],
             "oxCompare": [
@@ -15072,9 +15807,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "I like play soccer. (X: 본동사 2개 충돌)\nI like to play soccer. (O: to부정사)\nI like playing soccer. (O: 동명사)",
-                "ko": "준동사(Verbal) = '동사에 준하지만 다른 품사로 변신한 것'의 대표 적용 예문입니다.",
-                "point": "공식 [한 문장에 본동사는 오직 1개! 다른 동사를 또 쓰려면 준동사로 변신시켜야 함!\n1. to부정사 (to + V) : 명사, 형용사, 부사 중 역할이 '아직 정해지지 않음(不定)'\n2. 동명사 (V-ing) : 동사를 '명사(~하기, ~하는 것)'로 변신\n3. 분사 (V-ing / p.p.) : 동사를 '형용사(~하는, ~된)'로 변신]의 핵심 적용 문맥"
+                "en": "To master advanced astrophysics requires decades of dedicated scholarship.",
+                "ko": "첨단 천체물리학을 마스터하는 것은 수십 년간의 헌신적인 학문 연구를 필요로 한다.",
+                "point": "to부정사(To master): 동사 master가 명사적 주어 역할로 변신"
+              },
+              {
+                "en": "Solving complex mathematical riddles brings him immense personal satisfaction.",
+                "ko": "복잡한 수학적 수수께끼를 푸는 것은 그에게 커다란 개인적 만족감을 안겨준다.",
+                "point": "동명사(Solving): 동사가 명사 역할을 하며 목적어(riddles)를 동반"
               }
             ],
             "oxCompare": [
@@ -15108,9 +15848,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "Smoking is bad. (동명사 주어) / a sleeping dog (분사 수식)",
-                "ko": "준동사 3형제의 품사 요약표의 대표 적용 예문입니다.",
-                "point": "공식 [• to부정사 ➔ 명사적, 형용사적, 부사적 용법\n• 동명사 ➔ 주어, 목적어, 보어 (명사 역할만)\n• 분사 ➔ 명사 수식, 주격/목적격 보어 (형용사 역할만)]의 핵심 적용 문맥"
+                "en": "Swimming in cold ocean water strengthens your cardiovascular endurance.",
+                "ko": "차가운 바닷물에서 수영하는 것은 심혈관 지구력을 강화해 준다.",
+                "point": "동명사(명사 역할): 문장의 주어 자리"
+              },
+              {
+                "en": "The sleeping baby smiled peacefully in the gentle crib.",
+                "ko": "잠든 아기는 아늑한 아기 침대에서 평화롭게 미소 지었다.",
+                "point": "현재분사(형용사 역할): 명사 baby를 수식"
               }
             ],
             "oxCompare": [
@@ -15275,9 +16020,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "I know a boy. + He speaks four languages.\n➔ I know a boy [who speaks four languages]. (a boy = 선행사, who = 관계대명사)",
-                "ko": "'관계대명사' = 접속사(문장 연결) + 대명사(명사 대신)의 대표 적용 예문입니다.",
-                "point": "공식 [관계대명사 = 문장과 문장을 연결하는 '접속사' + 겹치는 명사를 대신하는 '대명사'\n선행사(先行詞) = '앞에(先) 먼저 걸어간(行) 단어(詞)' ➔ 관계대명사 바로 앞에 있는 꾸밈받는 명사!]의 핵심 적용 문맥"
+                "en": "I met a gifted violinist who speaks four languages with natural fluency.",
+                "ko": "나는 4개 국어를 모국어처럼 자연스럽고 유창하게 구사하는 재능 있는 바이올리니스트를 만났다.",
+                "point": "who = and he/she (두 문장을 이어주는 접속사이자 주어를 대신하는 주격 관계대명사)"
+              },
+              {
+                "en": "The museum displays ancient jewelry which royal families wore centuries ago.",
+                "ko": "그 박물관은 수세기 전 왕실 가문들이 착용했던 고대 장신구들을 전시하고 있다.",
+                "point": "which = and it/them (접속사 + 목적어 대명사 역할 결합)"
               }
             ],
             "oxCompare": [
@@ -15311,9 +16061,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "the car [which was made in Korea] ➔ 한국에서 만들어진(형용사처럼 수식) 자동차",
-                "ko": "관계대명사절은 형용사절이다!의 대표 적용 예문입니다.",
-                "point": "공식 [관계대명사 덩어리 전체는 선행사(명사)를 꾸며주는 '형용사' 역할을 합니다.]의 핵심 적용 문맥"
+                "en": "The modern electric vehicle which was designed in Germany achieved top safety ratings.",
+                "ko": "독일에서 설계된 그 현대적인 전기차는 최고 안전 등급을 획득했다.",
+                "point": "which절 전체가 선행 명사 vehicle을 꾸며주는 거대한 형용사절"
+              },
+              {
+                "en": "Students who cultivate consistent daily study habits achieve remarkable academic progress.",
+                "ko": "꾸준한 일일 공부 습관을 기르는 학생들은 눈부신 학업적 진전을 이룬다.",
+                "point": "who절이 선행사 Students를 형용사처럼 수식"
               }
             ],
             "oxCompare": [
@@ -15478,9 +16233,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "Shakespeare wrote Hamlet. (능동태: 셰익스피어가 햄릿을 썼다)\n➔ Hamlet was written by Shakespeare. (수동태: 햄릿이 쓰여졌다)",
-                "ko": "수동태는 '당하는 녀석'을 주인공으로 세우는 문법의 대표 적용 예문입니다.",
-                "point": "공식 [능동태 : [주어]가 [목적어]를 ~하다.\n수동태 : [목적어]가 [be + 과거분사(p.p.)] 당하다 + (by 행위자)]의 핵심 적용 문맥"
+                "en": "The revolutionary concept car was unveiled by the chief engineer yesterday.",
+                "ko": "그 혁신적인 콘셉트카는 어제 수석 수석 엔지니어에 의해 베일을 벗었다.",
+                "point": "능동태의 목적어 car가 주어로 이동하여 [was unveiled by ...] 형태로 표현"
+              },
+              {
+                "en": "Magnificent Renaissance masterpieces were carefully restored by museum conservators.",
+                "ko": "웅장한 르네상스 걸작들은 박물관 복원 전문가들에 의해 세심하게 복원되었다.",
+                "point": "복수 주어 masterpieces에 대한 과거 수동태 were restored"
               }
             ],
             "oxCompare": [
@@ -15514,9 +16274,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "The door is locked. (문이 잠겨진 상태이다)",
-                "ko": "왜 be동사 + p.p. 형태일까?의 대표 적용 예문입니다.",
-                "point": "공식 [be동사(~인 상태이다) + p.p.(완료·수동 의미의 형용사) = '~되어진 상태로 존재하다']의 핵심 적용 문맥"
+                "en": "The library door is locked every night at ten o'clock.",
+                "ko": "도서관 문은 매일 밤 10시에 잠긴다.",
+                "point": "is(현재 상태) + locked(잠긴 완료 상태): 잠긴 상태에 도달함을 나타냄"
+              },
+              {
+                "en": "The ancient manuscripts are preserved in temperature-controlled vaults.",
+                "ko": "고대 필사본들은 온도가 조절되는 금고 안에 보존되어 있다.",
+                "point": "are + preserved: 보존된 상태를 유지하고 있음을 표현"
               }
             ],
             "oxCompare": [
@@ -15681,9 +16446,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "because of the rain (구: 주어+동사 없음) vs because it rained (절: it 주어 + rained 동사)",
-                "ko": "구(Phrase) vs 절(Clause)의 결정적 차이의 대표 적용 예문입니다.",
-                "point": "공식 [구 (Phrase) : 2개 이상의 단어가 모였지만 [주어 + 동사]가 없음! (in the morning, to play soccer, very quickly)\n절 (Clause) : 2개 이상의 단어가 모여 [주어 + 동사] 관계를 이룸! (because he was tired, that she loved me)]의 핵심 적용 문맥"
+                "en": "Despite the severe winter storm, the delivery drivers completed their routes.",
+                "ko": "혹독한 겨울 폭풍에도 불구하고 배달 기사들은 노선을 완수했다.",
+                "point": "Despite the severe winter storm: 주어와 동사가 없는 전치사구(Phrase)"
+              },
+              {
+                "en": "Although the winter storm was severe, the delivery drivers completed their routes.",
+                "ko": "겨울 폭풍이 혹독했음에도 불구하고 배달 기사들은 노선을 완수했다.",
+                "point": "Although the winter storm was severe: 주어와 동사를 갖춘 부사절(Clause)"
               }
             ],
             "oxCompare": [
@@ -15717,9 +16487,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "접속사가 붙어있는 쪽이 종속절(부사절/명사절/형용사절)입니다.",
-                "ko": "주절(Independent) vs 종속절(Dependent)의 대표 적용 예문입니다.",
-                "point": "공식 [주절 = 문장의 주인! 혼자서도 문장 성립 (I stayed at home)\n종속절 = 접속사를 달고 주절에 딸려 붙은 보조 절 (because it was raining)]의 핵심 적용 문맥"
+                "en": "When the conductor raised his baton, the symphony orchestra began to play.",
+                "ko": "지휘자가 지휘봉을 들어 올렸을 때, 교향악단은 연주를 시작했다.",
+                "point": "When...baton: 혼자 설 수 없는 종속절 / the orchestra...play: 스스로 문장이 되는 주절"
+              },
+              {
+                "en": "Because fossil fuel reserves are depleting, nations must develop renewable energy sources.",
+                "ko": "화석 연료 매장량이 고갈되고 있기 때문에, 국가들은 신재생 에너지원을 개발해야 한다.",
+                "point": "종속 부사절(Because...)과 독립된 완전한 주절(nations must...)"
               }
             ],
             "oxCompare": [
@@ -15884,9 +16659,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "a sleeping baby (자고 있는 아기 - 아기의 범위를 한정)\nThe baby is sleeping. (아기가 자고 있다 - 아기의 상태를 서술)",
-                "ko": "한정적(Attributive) vs 서술적(Predicative)의 어원의 대표 적용 예문입니다.",
-                "point": "공식 [한정적 용법 : 명사의 범위를 좁혀서(한정하여) 직접 꾸밈 ➔ [형용사 + 명사]\n서술적 용법 : 주어의 상태를 동사와 함께 서술(설명)함 ➔ [주어 + be동사 + 형용사(보어)]]의 핵심 적용 문맥"
+                "en": "The dedicated marine biologist observed the sleeping otter gently.",
+                "ko": "헌신적인 해양 생물학자는 잠든 수달을 조심스럽게 관찰했다.",
+                "point": "한정적 용법: 형용사 sleeping이 명사 otter를 앞에서 직접 수식"
+              },
+              {
+                "en": "The tired child was fast asleep in his mother's arms.",
+                "ko": "지친 아이는 어머니의 품 안에서 깊이 잠들어 있었다.",
+                "point": "서술적 용법: a-로 시작하는 형용사 asleep은 명사 수식 불가, be동사의 보어로만 쓰임"
               }
             ],
             "oxCompare": [
@@ -15920,9 +16700,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "He has two sons who became doctors. (의사가 된 아들이 2명 있다 - 아들이 더 있을 수 있음)\nHe has two sons, who became doctors. (아들이 딱 2명 있는데, 둘 다 의사가 되었다)",
-                "ko": "관계대명사의 한정용법 vs 계속적 용법(콤마)의 대표 적용 예문입니다.",
-                "point": "공식 [한정용법 (콤마 없음) : 뒤에서 명사를 수식 (~하는 선행사)\n계속적 용법 (콤마 있음) : 앞에서부터 순서대로 보충 설명 (그런데 그 사람은/그것은 ~하다)]의 핵심 적용 문맥"
+                "en": "He has two daughters who became successful aerospace engineers.",
+                "ko": "그에게는 성공한 항공우주 엔지니어가 된 두 딸이 있다.",
+                "point": "한정적 용법: 딸들 중 항공우주 엔지니어가 된 딸이 둘 있다는 의미 (다른 딸이 더 있을 수 있음)"
+              },
+              {
+                "en": "He has two daughters, who became successful aerospace engineers.",
+                "ko": "그에게는 딸이 둘 있는데, 그 둘 다 성공한 항공우주 엔지니어가 되었다.",
+                "point": "계속적 용법(콤마): 딸은 오직 둘뿐이며 부가적으로 그들의 성공을 설명함"
               }
             ],
             "oxCompare": [
@@ -16101,9 +16886,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "It is difficult for me to solve this puzzle. / It was very kind of you to invite us.",
-                "ko": "It (가주어) ~ for/of (의미상 주어) + to V (진주어)의 대표 적용 예문입니다.",
-                "point": "공식 [It is [형용사] + for + [목적격] + to [동사원형] ...\n(단, 사람의 성품 형용사 kind, rude, polite, foolish 뒤에는 of + 목적격)]의 핵심 적용 문맥"
+                "en": "It is essential for young researchers to publish their findings in reputable journals.",
+                "ko": "젊은 연구자들에게 연구 결과를 저명한 학술지에 발표하는 것은 필수적이다.",
+                "point": "일반 형용사 essential 뒤 의미상 주어 [for + 목적격]"
+              },
+              {
+                "en": "It was very thoughtful of him to send a handwritten thank-you letter.",
+                "ko": "손으로 쓴 감사 편지를 보내다니 그는 참으로 사려 깊었다.",
+                "point": "사람 성격/성품 형용사 thoughtful 뒤 의미상 주어 [of + 목적격]"
               }
             ],
             "oxCompare": [
@@ -16137,9 +16927,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "He was too tired to walk. = He was so tired that he could not walk.",
-                "ko": "too ~ to V ➔ so ~ that ... can't 변환 공식의 대표 적용 예문입니다.",
-                "point": "공식 [too [형용사/부사] to V = so [형용사/부사] that + 주어 + cannot/could not + V]의 핵심 적용 문맥"
+                "en": "The math problem was too complex for middle school students to solve.",
+                "ko": "그 수학 문제는 중학생들이 풀기에는 너무 복잡했다.",
+                "point": "too ~ to부정사 구문 (목적어 생략 확인)"
+              },
+              {
+                "en": "The math problem was so complex that middle school students could not solve it.",
+                "ko": "그 수학 문제는 너무 복잡해서 중학생들이 그것을 풀 수 없었다.",
+                "point": "so ~ that ... can't 구문에서는 목적어 it을 반드시 살려 적어야 서술형 감점을 피함"
               }
             ],
             "oxCompare": [
@@ -16304,9 +17099,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "This is the house in which I was born. = This is the house where I was born.",
-                "ko": "전치사 + 관계대명사 ➔ 관계부사 치환의 대표 적용 예문입니다.",
-                "point": "공식 [in/at/on + which = where (장소) / in/on/at + which = when (시간)\nfor + which = why (이유) / in which = how (방법)]의 핵심 적용 문맥"
+                "en": "This is the renowned laboratory in which the Nobel laureate conducted his experiments.",
+                "ko": "이곳은 노벨상 수상자가 실험을 진행했던 유명한 연구소이다.",
+                "point": "장소 선행사 + in which -> 관계부사 where 치환 가능"
+              },
+              {
+                "en": "I will cherish the unforgettable afternoon on which we signed the partnership agreement.",
+                "ko": "나는 우리가 파트너십 협약에 서명했던 잊지 못할 그 오후를 소중히 간직할 것이다.",
+                "point": "시간 선행사 + on which -> 관계부사 when 치환 가능"
               }
             ],
             "oxCompare": [
@@ -16340,9 +17140,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "The boy is my brother. + You met him yesterday.\n➔ The boy [whom you met yesterday] is my brother.",
-                "ko": "서술형 관계사 영작 3단계 공식의 대표 적용 예문입니다.",
-                "point": "공식 [1단계: 공통 명사(선행사) 찾기\n2단계: 뒷문장 겹치는 대명사 지우고 알맞은 관계사(who/which/whose) 선택\n3단계: 선행사 바로 뒤에 관계사절 통째로 삽입하기]의 핵심 적용 문맥"
+                "en": "The architect who designed the modern library received an international design award.",
+                "ko": "그 현대적인 도서관을 설계한 건축가는 국제 디자인상을 수상했다.",
+                "point": "공통명사 파악 -> 접속사+대명사 통합 -> 주격 관계대명사 who 영작"
+              },
+              {
+                "en": "The rare historical manuscripts which the team uncovered in the crypt are priceless.",
+                "ko": "그 팀이 지하실에서 발견한 희귀한 역사적 필사본들은 값을 매길 수 없을 정도로 귀중하다.",
+                "point": "목적어 대명사 삭제 후 목적격 관계대명사 which 영작 (중복 대명사 제거 필수)"
               }
             ],
             "oxCompare": [
@@ -16507,9 +17312,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "As he felt tired, he went to bed early. ➔ Feeling tired, he went to bed early.",
-                "ko": "부사절 ➔ 분사구문 3단계 변환 공식의 대표 적용 예문입니다.",
-                "point": "공식 [1단계: 접속사 생략 (의미 강조 시 남겨둘 수 있음)\n2단계: 주절 주어와 같으면 부사절 주어 생략\n3단계: 동사를 현재분사(V-ing)로 변환 (시제가 앞서면 having p.p.)]의 핵심 적용 문맥"
+                "en": "Finishing his laboratory report, the tired student turned off the desktop monitor.",
+                "ko": "실험실 보고서를 다 마친 후, 지친 학생은 컴퓨터 모니터를 껐다.",
+                "point": "접속사 As/After 생략 + 주어 he 생략 + 동사 finished를 Finishing으로 전환"
+              },
+              {
+                "en": "Having lived in London for a decade, she understands British cultural nuances thoroughly.",
+                "ko": "런던에서 10년 동안 살았었기 때문에, 그녀는 영국 문화의 뉘앙스를 철저히 이해한다.",
+                "point": "주절의 시제(understands)보다 앞선 시제이므로 완료분사구문 Having lived 사용"
               }
             ],
             "oxCompare": [
@@ -16543,9 +17353,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "with his arms crossed (팔짱을 낀 채로 - 팔은 꼬아진 것이므로 p.p.)\nwith the dog following her (개가 그녀를 따라오면서 - 개가 능동적으로 따르므로 V-ing)",
-                "ko": "with + 목적어 + 분사 (부대상황 서술형)의 대표 적용 예문입니다.",
-                "point": "공식 [with + [목적어] + [V-ing(능동)] / [p.p.(수동)] : ~한 채로, ~하면서]의 핵심 적용 문맥"
+                "en": "The lecturer explained the theory with his hands gesturing expressively.",
+                "ko": "강사는 손을 생생하게 표현하듯 움직이며 그 이론을 설명했다.",
+                "point": "손(his hands)이 스스로 제스처를 취하는 능동 관계 -> 현재분사 gesturing"
+              },
+              {
+                "en": "He sat on the park bench with his legs crossed comfortably.",
+                "ko": "그는 다리를 편안하게 꼰 채 공원 벤치에 앉아 있었다.",
+                "point": "다리(his legs)는 꼬아지는 수동 관계 -> 과거분사 crossed"
               }
             ],
             "oxCompare": [
@@ -16710,9 +17525,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "If it were not for water, we could not survive.\n= Were it not for water, we could not survive.\n= Without water, we could not survive.",
-                "ko": "'~이 없다면' 4대 동의어 영작 공식의 대표 적용 예문입니다.",
-                "point": "공식 [1. If it were not for [명사]\n2. Were it not for [명사] (if 생략 도치)\n3. Without [명사]\n4. But for [명사]]의 핵심 적용 문맥"
+                "en": "Without fresh water and sunlight, terrestrial life could not survive on Earth.",
+                "ko": "신선한 물과 햇빛이 없다면, 지구상의 육상 생명체는 생존할 수 없을 것이다.",
+                "point": "Without + 명사 = But for + 명사 = If it were not for ~ = Were it not for ~"
+              },
+              {
+                "en": "Were it not for your generous guidance, I would have abandoned the project.",
+                "ko": "당신의 너그러운 지도가 없었더라면, 나는 그 프로젝트를 포기했을 것입니다.",
+                "point": "If it had not been for ~ 의 if 생략 도치형: Had it not been for ~"
               }
             ],
             "oxCompare": [
@@ -16746,9 +17566,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "Had I known the truth, I would have told you.",
-                "ko": "가정법 if 생략 시 도치 규칙의 대표 적용 예문입니다.",
-                "point": "공식 [if가 생략되면 주어와 조동사/be동사의 위치가 뒤바뀜!\n• If I were you ➔ Were I you\n• If he had studied ➔ Had he studied\n• If you should need help ➔ Should you need help]의 핵심 적용 문맥"
+                "en": "Had the meteorologists forecasted the storm accurately, the coastal residents would have evacuated.",
+                "ko": "기상학자들이 폭풍을 정확하게 예보했더라면, 해안 주민들은 대피했을 것이다.",
+                "point": "If had forecasted -> if 생략 도치: Had the meteorologists forecasted"
+              },
+              {
+                "en": "Were she to accept the executive position, the company would prosper.",
+                "ko": "그녀가 그 임원직을 수락한다면, 회사는 번영할 것이다.",
+                "point": "If she were to accept -> Were she to accept 도치"
               }
             ],
             "oxCompare": [
@@ -16913,9 +17738,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "He ran so fast that nobody could catch him.\nIt was such a hot day that we went swimming.",
-                "ko": "so + 형용사/부사 + that vs such + a + 형용사 + 명사 + that의 대표 적용 예문입니다.",
-                "point": "공식 [• so + [형용사/부사] + that + S + V : 너무 ~해서 ...하다\n• such + a/an + [형용사] + [명사] + that + S + V : 대단히 ~한 명사여서 ...하다]의 핵심 적용 문맥"
+                "en": "The mathematical proof was so intricate that even professors deliberated for hours.",
+                "ko": "그 수학적 증명은 너무 복잡해서 교수들조차 몇 시간 동안 논의했다.",
+                "point": "so + 형용사(intricate) + that + 완전한 절"
+              },
+              {
+                "en": "It was such a compelling presentation that the investors approved the entire budget immediately.",
+                "ko": "그것은 너무나도 설득력 있는 발표여서 투자자들은 즉시 전체 예산을 승인했다.",
+                "point": "such + a + 형용사(compelling) + 명사(presentation) + that 절"
               }
             ],
             "oxCompare": [
@@ -16949,9 +17779,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "I woke up early so that I could catch the first train.",
-                "ko": "so that 붙어있을 때 (목적: ~하기 위하여)의 대표 적용 예문입니다.",
-                "point": "공식 [S + V + so that + S + can/may + V : ~하기 위해서 (= in order that)]의 핵심 적용 문맥"
+                "en": "We installed high efficiency insulation so that we could reduce winter heating costs.",
+                "ko": "우리는 겨울철 난방비를 줄일 수 있도록 고효율 단열재를 설치했다.",
+                "point": "so that + 주어 + 조동사(can/could): 목적 (~하기 위하여 = in order that)"
+              },
+              {
+                "en": "The speaker used a microphone so that everyone in the auditorium could hear clearly.",
+                "ko": "발표자는 강당에 있는 모든 사람이 명확하게 들을 수 있도록 마이크를 사용했다.",
+                "point": "so that 뒤 조동사 could 결합"
               }
             ],
             "oxCompare": [
@@ -17116,9 +17951,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "My mom made me clean my room. (능동: clean)\nI had my bicycle repaired yesterday. (수동: repaired - 자전거는 수리당함)",
-                "ko": "사역동사(make, have, let)의 목적격 보어의 대표 적용 예문입니다.",
-                "point": "공식 [• 목적어와 능동 관계 ➔ [동사원형 (Root)]\n• 목적어와 수동 관계 ➔ [과거분사 (p.p.)]]의 핵심 적용 문맥"
+                "en": "The head coach made all players practice defensive drills after the game.",
+                "ko": "감독은 모든 선수에게 경기 후 수비 훈련을 연습하도록 시켰다.",
+                "point": "사역동사 made의 목적격 보어로 동사원형 practice 사용"
+              },
+              {
+                "en": "I had my broken smartphone repaired at the official service center.",
+                "ko": "나는 내 고장 난 스마트폰을 공식 서비스 센터에서 수리받았다.",
+                "point": "스마트폰은 수리되는 수동 관계이므로 과거분사 repaired 사용"
               }
             ],
             "oxCompare": [
@@ -17152,9 +17992,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "I heard someone calling my name. (calling / call)\nI heard my name called in the crowd. (called - 내 이름은 불려짐)",
-                "ko": "지각동사(see, watch, hear, feel, notice)의 목적격 보어의 대표 적용 예문입니다.",
-                "point": "공식 [• 능동 동작 진행 중 ➔ [현재분사 (V-ing)] 또는 [동사원형]\n• 수동 동작 ➔ [과거분사 (p.p.)]]의 핵심 적용 문맥"
+                "en": "We watched the brilliant fireworks light up the night sky over the harbor.",
+                "ko": "우리는 항구 위 밤하늘을 찬란한 불꽃이 환하게 밝히는 것을 지켜보았다.",
+                "point": "지각동사 watched + 목적어 + 동사원형 light (또는 현재분사 lighting)"
+              },
+              {
+                "en": "She felt her heart beating rapidly before stepping onto the stage.",
+                "ko": "그녀는 무대에 오르기 직전 심장이 빠르게 뛰고 있는 것을 느꼈다.",
+                "point": "지각동사 felt + 목적어 + 진행 느낌의 현재분사 beating"
               }
             ],
             "oxCompare": [
@@ -17319,9 +18164,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "I have never seen such a sunset. ➔ Never have I seen such a sunset.\nHe little dreamed that he would win. ➔ Little did he dream that he would win.",
-                "ko": "부정어구 도치 공식 (의문문 어순과 100% 동일)의 대표 적용 예문입니다.",
-                "point": "공식 [부정어 (Never, Rarely, Seldom, Little, Hardly, Scarcely, Not only) + [조동사/be/do] + [주어] + [동사원형] ...]의 핵심 적용 문맥"
+                "en": "Seldom did the dedicated scientist leave the laboratory before midnight.",
+                "ko": "헌신적인 과학자는 자정 전에 연구실을 떠나는 법이 거의 없었다.",
+                "point": "부정부사 Seldom 문두 도치: [조동사 did + 주어 scientist + 동사원형 leave]"
+              },
+              {
+                "en": "Little did we imagine that our humble research project would transform medicine.",
+                "ko": "우리의 소박한 연구 프로젝트가 의학을 혁신할 줄은 거의 상상조치 못했다.",
+                "point": "Little 문두 도치: [did + we + imagine]"
               }
             ],
             "oxCompare": [
@@ -17355,9 +18205,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "On the hill stands a white castle. (명사 주어 ➔ 도치)\nHere comes the bus. (명사 주어) vs Here it comes. (대명사 주어 it ➔ 도치 안 됨)",
-                "ko": "장소 부사구 도치 공식의 대표 적용 예문입니다.",
-                "point": "공식 [장소 부사구 + [동사] + [주어] (단, 주어가 대명사이면 도치 안 됨: 부사구 + 대명사주어 + 동사)]의 핵심 적용 문맥"
+                "en": "Under the ancient oak tree in the village square sat an old storyteller.",
+                "ko": "마을 광장의 고대 떡갈나무 아래에 한 노년의 이야기꾼이 앉아 있었다.",
+                "point": "장소부사구 도치: 동사 sat 뒤에 명사 주어 an old storyteller 위치"
+              },
+              {
+                "en": "Into the crowded conference room walked the world-renowned philosopher.",
+                "ko": "혼잡한 회의실 안으로 세계적으로 저명한 철학자가 걸어 들어왔다.",
+                "point": "방향 부사구 문두 위치 시 [동사 walked + 명사 주어 philosopher]"
               }
             ],
             "oxCompare": [
@@ -17522,9 +18377,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "He write a letter yesterday. (X: 시제·철자 오류)\n➔ He wrote a letter yesterday. (O)",
-                "ko": "서술형 0점 방지 3대 셀프 검독 체크리스트의 대표 적용 예문입니다.",
-                "point": "공식 [1. [수일치]: 주어가 3인칭 단수인데 동사에 -s/-es를 빠뜨리지 않았는가?\n2. [시제일치]: 주절이 과거인데 종속절에 현재를 쓰거나, 불규칙 과거형 스펠링을 틀리지 않았는가?\n3. [관사 및 명사 수]: 셀 수 있는 단수 명사 앞에 a/an을 빠뜨리거나 복수 -s를 누락하지 않았는가?]의 핵심 적용 문맥"
+                "en": "Each of the registered participants has submitted a valid identification card.",
+                "ko": "등록된 참가자들 각자는 유효한 신분증을 제출했다.",
+                "point": "수일치 점검: Each of 복수명사의 핵심 주어는 단수 Each이므로 has 사용"
+              },
+              {
+                "en": "She wrote an articulate summary of the scientific lecture yesterday.",
+                "ko": "그녀는 어제 과학 강연에 대한 또렷한 요약본을 작성했다.",
+                "point": "시제 일치 점검: yesterday 부사와 호응하는 과거형 wrote 확인"
               }
             ],
             "oxCompare": [
@@ -17558,9 +18418,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "The company was founded in 1995.",
-                "ko": "혼동되는 불규칙 동사 3단 변화 주의보의 대표 적용 예문입니다.",
-                "point": "공식 [• find - found - found (찾다) vs found - founded - founded (설립하다)\n• fall - fell - fallen (떨어지다) vs fell - felled - felled (쓰러뜨리다)\n• choose - chose - chosen / lose - lost - lost]의 핵심 적용 문맥"
+                "en": "The exhausted marathon runner lay down on the lawn to catch his breath.",
+                "ko": "지친 마라톤 주자는 숨을 고르기 위해 잔디밭 위에 누웠다.",
+                "point": "자동사 lie(눕다)의 과거형 lay (타동사 lay의 과거형 laid 쓰면 감점)"
+              },
+              {
+                "en": "The librarian laid the fragile manuscript carefully upon the velvet cloth.",
+                "ko": "사서는 깨지기 쉬운 필사본을 벨벳 천 위에 조심스럽게 놓았다.",
+                "point": "타동사 lay(놓다)의 과거형 laid (목적어 manuscript가 있으므로 laid가 정답)"
               }
             ],
             "oxCompare": [
@@ -17739,9 +18604,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "The scientist, along with his assistants, [discovering / discovered] a new vaccine. (본동사가 없으므로 discovered가 정답)",
-                "ko": "수능 29번 1순위: '동사 자리 vs 준동사 자리'의 대표 적용 예문입니다.",
-                "point": "공식 [문장의 본동사 개수 = [접속사/관계사의 개수 + 1]\n접속사가 없으면 문장에 본동사는 무조건 1개여야 함!]의 핵심 적용 문맥"
+                "en": "The rapid advancement of artificial intelligence technologies creates unprecedented challenges.",
+                "ko": "인공지능 기술의 급격한 발전은 전례 없는 도전과제들을 만들어낸다.",
+                "point": "문장의 주어 The rapid advancement 뒤에 준동사가 아닌 단수 본동사 creates 필수"
+              },
+              {
+                "en": "Architects specializing in sustainable urban infrastructure designed the eco-friendly complex.",
+                "ko": "지속 가능한 도시 인프라를 전문으로 하는 건축가들이 친환경 단지를 설계했다.",
+                "point": "specializing은 수식어 분사구이며 문장의 본동사는 designed"
               }
             ],
             "oxCompare": [
@@ -17775,9 +18645,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "The books (written by the famous author) [was / were] translated into 20 languages.",
-                "ko": "3초 컷 판별 프로세스의 대표 적용 예문입니다.",
-                "point": "공식 [1. 밑줄 친 단어가 동사/준동사 형태인지 확인\n2. 문장 맨 앞부터 주어를 찾고 수식어구 괄호 묶기 ( ) \n3. 문장에 진짜 본동사가 이미 존재하는지 확인]의 핵심 적용 문맥"
+                "en": "The lead scientist, accompanied by several diligent research assistants, discovered a novel element.",
+                "ko": "수석 과학자는 몇몇 근면한 연구 조교들을 대동하고서 새로운 원소를 발견했다.",
+                "point": "수식어구 거품(accompanied by...)을 걷어내면 문장에 본동사 discovered가 명확히 보임"
+              },
+              {
+                "en": "Marine biologists observing deep sea coral reefs recorded unexpected acoustic signals.",
+                "ko": "심해 산호초를 관찰하던 해양 생물학자들은 예기치 못한 음향 신호를 기록했다.",
+                "point": "observing은 분사 수식어이며 문장의 본동사는 recorded"
               }
             ],
             "oxCompare": [
@@ -17942,9 +18817,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "I know [that] she is honest. (선행사X, 뒤 완전 ➔ 접속사 that)\nI know [what] she likes. (선행사X, likes의 목적어 빠짐 ➔ what)",
-                "ko": "that vs what 3초 판별 알고리즘의 대표 적용 예문입니다.",
-                "point": "공식 [1단계: 앞을 본다 (선행사 명사가 있는가?)\n  • 선행사 있음 ➔ [that 또는 which]\n  • 선행사 없음 ➔ 2단계로 이동\n2단계: 뒤를 본다 (문장이 완전한가?)\n  • 뒤가 완전 ➔ 접속사 [that]\n  • 뒤가 불완전 ➔ 관계대명사 [what] (~하는 것)]의 핵심 적용 문맥"
+                "en": "The clinical psychologist discovered that patients who meditate regularly experience less stress.",
+                "ko": "그 임상 심리학자는 규칙적으로 명상하는 환자들이 스트레스를 덜 경험한다는 사실을 발견했다.",
+                "point": "선행사 없고 뒤 문장이 주어와 목적어를 갖춘 완전한 절 -> 접속사 that"
+              },
+              {
+                "en": "Marine biologists investigated what triggers the sudden migration of whales.",
+                "ko": "해양 생물학자들은 무엇이 고래들의 갑작스러운 이동을 유발하는지 조사했다.",
+                "point": "선행사 없고 주어가 빠진 불완전절 -> 관계대명사/의문대명사 what"
               }
             ],
             "oxCompare": [
@@ -17978,9 +18858,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "the news that he died (동격 that: 뒤 완전)\nthe news that he heard (관계대명사 that: heard의 목적어 빠짐)",
-                "ko": "동격의 that vs 관계대명사 that의 대표 적용 예문입니다.",
-                "point": "공식 [• 동격 that : 앞 명사(fact, idea, news, evidence) + 뒤 [완전한 문장]\n• 관대 that : 앞 명사(선행사) + 뒤 [주어나 목적어 빠진 불완전한 문장]]의 핵심 적용 문맥"
+                "en": "The news that the peace treaty had been signed brought relief to the nation.",
+                "ko": "평화 조약이 체결되었다는 소식은 온 나라에 안도감을 안겨주었다.",
+                "point": "추상명사 news 뒤에 완전한 수동태 절이 이어지므로 동격의 접속사 that"
+              },
+              {
+                "en": "The alarming news that we heard on the radio this morning turned out to be false.",
+                "ko": "오늘 아침 우리가 라디오에서 들었던 그 충격적인 소식은 거짓으로 판명되었다.",
+                "point": "heard의 목적어가 빠진 불완전한 절이므로 목적격 관계대명사 that"
               }
             ],
             "oxCompare": [
@@ -18145,9 +19030,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "falling leaves (떨어지고 있는 나뭇잎 - 능동·진행)\nfallen leaves (이미 다 떨어진 나뭇잎 - 완료·수동)\nthe boy (inviting / invited) to the party ➔ 초대받은 소년이므로 invited!",
-                "ko": "분사의 능동 vs 수동 3초 판별 공식의 대표 적용 예문입니다.",
-                "point": "공식 [1. 수식받는 [명사]를 찾는다.\n2. 그 명사가 직접 행동을 하는 주체인가? ➔ [V-ing (현재분사)]\n3. 그 명사가 행동을 당하는 대상인가? ➔ [p.p. (과거분사)]]의 핵심 적용 문맥"
+                "en": "Ancient stone monuments discovered by archaeologists provide invaluable cultural insights.",
+                "ko": "고고학자들에 의해 발견된 고대 석조 기념물들은 매우 귀중한 문화적 통찰을 제공한다.",
+                "point": "기념물이 발견되는 대상이므로 수동 관계의 과거분사 discovered 사용"
+              },
+              {
+                "en": "The little boy observed the sparkling stars shining brightly in the midnight sky.",
+                "ko": "어린 소년은 한밤중 하늘에서 밝게 빛나고 있는 반짝이는 별들을 관찰했다.",
+                "point": "별이 스스로 빛나는 능동 관계이므로 현재분사 shining 사용"
               }
             ],
             "oxCompare": [
@@ -18181,9 +19071,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "He was disappointing with the result. (X) ➔ He was disappointed with the result. (O)",
-                "ko": "감정 유발 분사 킬러 공식의 대표 적용 예문입니다.",
-                "point": "공식 [• 사람 주어/명사 ➔ 감정을 느낌 ➔ [-ed (p.p.)] (I am interested, bored, excited)\n• 사물 주어/명사 ➔ 감정을 유발함 ➔ [-ing] (The movie is interesting, boring, exciting)]의 핵심 적용 문맥"
+                "en": "The audience remained completely fascinated throughout the astonishing acrobatics show.",
+                "ko": "관객들은 그 놀라운 곡예 쇼 내내 완전히 매료된 채로 머물렀다.",
+                "point": "관객(사람)이 감정을 느끼므로 과거분사 fascinated, 쇼(사물)는 놀라움을 주므로 현재분사 astonishing"
+              },
+              {
+                "en": "The disappointing survey results motivated the executive team to reconsider their strategy.",
+                "ko": "실망스러운 설문 결과는 임원진이 전략을 재검토하도록 자극했다.",
+                "point": "결과(사물)가 실망감을 유발하므로 현재분사 disappointing"
               }
             ],
             "oxCompare": [
@@ -18348,9 +19243,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "The climate of Korea is milder than [that] of Russia. (that = the climate 단수)\nThe ears of rabbits are longer than [those] of cats. (those = the ears 복수)",
-                "ko": "수능 단골 대명사 비교: that vs those의 대표 적용 예문입니다.",
-                "point": "공식 [비교 대상의 반복을 피하기 위한 대명사:\n• 앞 명사가 단수 명사 ➔ [that of ...]\n• 앞 명사가 복수 명사 ➔ [those of ...]]의 핵심 적용 문맥"
+                "en": "The eyes of nocturnal predators are significantly larger than those of diurnal animals.",
+                "ko": "야행성 포식자의 눈은 주행성 동물의 눈보다 훨씬 더 크다.",
+                "point": "비교 대상이 복수명사 The eyes이므로 대명사 those 사용 (that 쓰면 오답)"
+              },
+              {
+                "en": "The energy consumption of electric cars is much lower than that of gasoline vehicles.",
+                "ko": "전기차의 에너지 소비량은 가솔린 자동차의 에너지 소비량보다 훨씬 낮다.",
+                "point": "단수명사 The energy consumption을 대신하는 대명사 that 사용"
               }
             ],
             "oxCompare": [
@@ -18384,9 +19284,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "Companies must listen to their customers and satisfy [their / its] needs.",
-                "ko": "대명사 it vs them 추적법의 대표 적용 예문입니다.",
-                "point": "공식 [대명사에 밑줄이 그어져 있으면 반드시 해석을 통해 '그것이 가리키는 진짜 명사'를 앞 문장에서 찾아 단/복수를 대조할 것!]의 핵심 적용 문맥"
+                "en": "When predators approach their nests, parent birds fake injury to distract them from their chicks.",
+                "ko": "포식자들이 둥지에 접근할 때, 어미 새들은 새끼들로부터 포식자들의 주의를 돌리기 위해 부상을 가장한다.",
+                "point": "지칭 대상이 복수명사 predators이므로 목적격 대명사 them 사용 (it 쓰면 오답)"
+              },
+              {
+                "en": "If a modern corporation loses its customer trust, it can hardly recover its market standing.",
+                "ko": "만약 현대 기업이 고객의 신뢰를 잃는다면, 그 기업은 시장에서의 입지를 거의 회복할 수 없다.",
+                "point": "단수명사 a modern corporation을 지칭하므로 it 사용"
               }
             ],
             "oxCompare": [
@@ -18551,9 +19456,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "He kept the room warm. (O: 방을 따뜻하게 유지했다)\nHe kept the room warmly. (X: 우리말 해석이 '~하게'여도 부사 불가!)",
-                "ko": "보어 자리는 형용사, 수식어 자리는 부사!의 대표 적용 예문입니다.",
-                "point": "공식 [• 주어 + 불완전동사(remain, stay, keep, look, feel) + [형용사 보어]\n• 주어 + 동사 + 목적어 + [형용사 목적격보어] (make, keep, leave, find)]의 핵심 적용 문맥"
+                "en": "The delicate chemical solution tasted bitter, indicating severe contamination.",
+                "ko": "그 섬세한 화학 용액은 쓴맛이 났는데, 이는 심각한 오염을 나타냈다.",
+                "point": "2형식 감각동사 tasted 뒤 주격 보어 자리이므로 부사 bitterly가 아닌 형용사 bitter 필수"
+              },
+              {
+                "en": "The judge considered the newly presented forensic evidence conclusive.",
+                "ko": "판사는 새로 제시된 법의학적 증거가 결정적이라고 여겼다.",
+                "point": "5형식 consider의 목적격 보어 자리이므로 형용사 conclusive 사용"
               }
             ],
             "oxCompare": [
@@ -18587,9 +19497,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "He worked hardly. (X: 그는 거의 일하지 않았다) ➔ He worked hard. (O: 열심히 일했다)",
-                "ko": "형용사와 부사 형태가 같거나 뜻이 달라지는 어휘의 대표 적용 예문입니다.",
-                "point": "공식 [• hard (열심히, 단단한) vs hardly (거의 ~않다)\n• late (늦게, 늦은) vs lately (최근에)\n• high (높게, 높은) vs highly (매우, 대단히)\n• near (가까이) vs nearly (거의)]의 핵심 적용 문맥"
+                "en": "The dedicated medical researcher worked hard to develop the vaccine.",
+                "ko": "헌신적인 의학 연구원은 백신을 개발하기 위해 열심히 일했다.",
+                "point": "hard: 열심히 (부사) / hardly: 거의 ~않다 (부정부사)"
+              },
+              {
+                "en": "The express train arrived late due to heavy snowfall on the tracks.",
+                "ko": "급행열차는 선로 위의 폭설로 인해 늦게 도착했다.",
+                "point": "late: 늦게 (시간적 지연) / lately: 최근에"
               }
             ],
             "oxCompare": [
@@ -18754,9 +19669,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "He likes swimming, hiking, and to run. (X) ➔ swimming, hiking, and running. (O)",
-                "ko": "등위접속사(and/but/or)의 저울 원리의 대표 적용 예문입니다.",
-                "point": "공식 [A and B 구조에서 A와 B는 문법적으로 대등한 형태여야 함!\n• to V and (to) V\n• V-ing and V-ing\n• 형용사 and 형용사 / 명사 and 명사]의 핵심 적용 문맥"
+                "en": "The investigative report involved collecting data, analyzing trends, and publishing findings.",
+                "ko": "그 탐사 보고서는 데이터 수집, 동향 분석, 그리고 연구 결과 발표를 포함했다.",
+                "point": "동명사 목적어 3개가 and로 대등하게 병렬 연결 (to publish 쓰면 오답)"
+              },
+              {
+                "en": "The professor spoke clearly, persuasively, and passionately to the young audience.",
+                "ko": "교수님은 젊은 청중들에게 명확하고, 설득력 있고, 열정적으로 말씀하셨다.",
+                "point": "부사 3개가 and로 균형 있게 병렬 배치"
               }
             ],
             "oxCompare": [
@@ -18790,9 +19710,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "She decided not only to study abroad but also to learn a new language.",
-                "ko": "상관접속사의 병렬 구조의 대표 적용 예문입니다.",
-                "point": "공식 [• not only A but also B\n• either A or B / neither A nor B\n• both A and B\n• not A but B]의 핵심 적용 문맥"
+                "en": "The ambitious project was designed both to conserve energy and to protect local ecology.",
+                "ko": "그 야심 찬 프로젝트는 에너지를 절약하고 지역 생태계를 보호하기 위해 모두 설계되었다.",
+                "point": "both A and B: to conserve와 to protect의 to부정사 병렬 일치"
+              },
+              {
+                "en": "She preferred publishing her essay in an independent journal to submitting it to state media.",
+                "ko": "그녀는 에세이를 국영 언론에 제출하기보다 독립 저널에 출판하는 것을 선호했다.",
+                "point": "prefer A to B: 동명사 publishing과 submitting의 형태적 대칭"
               }
             ],
             "oxCompare": [
@@ -18971,9 +19896,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "I decided to study harder. / She finished doing her homework.",
-                "ko": "to부정사 vs 동명사 목적어 암기 공식의 대표 적용 예문입니다.",
-                "point": "공식 [• to부정사만 취함 (미래/계획/소망) : want, hope, wish, decide, plan, promise, refuse\n• 동명사만 취함 (과거/경험/중단/회피) : enjoy, finish, give up, avoid, mind, postpone, practice]의 핵심 적용 문맥"
+                "en": "The international committee decided to launch the green energy initiative.",
+                "ko": "국제 위원회는 친환경 에너지 구상을 시작하기로 결정했다.",
+                "point": "decide, hope, plan, promise 계열은 미래지향적이므로 to부정사 목적어만 취함"
+              },
+              {
+                "en": "We thoroughly enjoyed visiting the ancient coastal ruins during our expedition.",
+                "ko": "우리는 탐사 기간 동안 고대 해안 유적지를 방문한 것을 대단히 즐겼다.",
+                "point": "enjoy, finish, avoid, suggest 계열은 동명사(-ing) 목적어만 취함"
               }
             ],
             "oxCompare": [
@@ -19007,9 +19937,19 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "Remember to lock the door. (문 잠글 것을 기억해라)\nI remember locking the door. (문 잠갔던 것을 기억한다)",
-                "ko": "둘 다 취하지만 의미가 180도 달라지는 동사 4총사의 대표 적용 예문입니다.",
-                "point": "공식 [• remember/forget + to V (미래: ~할 것을 기억/잊다)\n• remember/forget + V-ing (과거: ~했던 것을 기억/잊다)\n• stop + to V (~하기 위해 멈추다) vs stop + V-ing (~하던 것을 그만두다)\n• try + to V (~하려고 애쓰다/노력하다) vs try + V-ing (시험 삼아 한번 해보다)]의 핵심 적용 문맥"
+                "en": "Please remember to lock the front gate before retiring for the night.",
+                "ko": "밤에 잠자리에 들기 전에 현관문을 잠글 것을 잊지 말고 기억하세요.",
+                "point": "remember + to V: 미래에 해야 할 일"
+              },
+              {
+                "en": "I vividly remember locking the front gate before I went to bed.",
+                "ko": "나는 잠자리에 들기 전에 현관문을 잠갔던 것을 생생하게 기억한다.",
+                "point": "remember + -ing: 과거에 이미 했던 일"
+              },
+              {
+                "en": "The doctor advised him to stop smoking to improve his lung capacity.",
+                "ko": "의사는 그의 폐활량을 향상시키기 위해 금연할 것을 조언했다.",
+                "point": "stop + -ing: ~하던 것을 그만두다 / stop + to V: ~하기 위해 가던 길을 멈추다"
               }
             ],
             "oxCompare": [
@@ -19174,9 +20114,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "I have met him yesterday. (X) ➔ I met him yesterday. (O)\nWhen have you arrived? (X) ➔ When did you arrive? (O)",
-                "ko": "단순과거 시제와만 어울리는 '명백한 과거 시점 부사'의 대표 적용 예문입니다.",
-                "point": "공식 [yesterday, ~ ago, in + 과거 연도(in 2015), last ~, when (의문사) 뒤에는\n절대로 현재완료(have p.p.)를 쓸 수 없고, 오직 [단순과거 시제]만 사용 가능!]의 핵심 적용 문맥"
+                "en": "The prominent astrophysicist discovered the cosmic anomaly two years ago.",
+                "ko": "그 저명한 천체물리학자는 2년 전에 우주 이상 현상을 발견했다.",
+                "point": "two years ago는 명백한 과거 시점 부사이므로 현재완료(has discovered) 절대 불가, 단순과거 discovered 사용"
+              },
+              {
+                "en": "She graduated from the medical university last winter with high honors.",
+                "ko": "그녀는 지난겨울에 의과대학을 우수한 성적으로 졸업했다.",
+                "point": "last winter 부사와 호응하는 단순과거 동사 graduated"
               }
             ],
             "oxCompare": [
@@ -19210,9 +20155,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "He has gone to Paris. (그는 파리로 가버려서 지금 여기에 없다)\nI have been to Paris twice. (나는 파리에 두 번 가본 적이 있다)",
-                "ko": "have been to vs have gone to의 대표 적용 예문입니다.",
-                "point": "공식 [• have been to [장소] : ~에 가본 적이 있다 (경험) / ~에 다녀왔다\n• have gone to [장소] : ~로 가버렸다 (결과: 지금 여기 없음)]의 핵심 적용 문맥"
+                "en": "The lead researcher has gone to Geneva to attend the physics symposium.",
+                "ko": "수석 연구원은 물리학 심포지엄에 참석하기 위해 제네바로 가버렸다.",
+                "point": "have gone to: ~로 가버렸다 (지금 여기에 없음, 결과)"
+              },
+              {
+                "en": "I have been to Geneva twice to conduct collaborative experiments.",
+                "ko": "나는 공동 실험을 수행하기 위해 제네바에 두 번 가본 적이 있다.",
+                "point": "have been to: ~에 가본 적이 있다 (경험)"
               }
             ],
             "oxCompare": [
@@ -19377,9 +20327,19 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "• The book [that I bought] is good. (관대: bought의 목적어 없음)\n• I know [that she is kind]. (명사절 접속사: 뒤 완전)\n• The idea [that we should help others] is noble. (동격: 뒤 완전)",
-                "ko": "that의 3대 정체성 판별 공식의 대표 적용 예문입니다.",
-                "point": "공식 [1. [관계대명사 that] : 앞 선행사 있음 + 뒤 [불완전한 문장] (주어나 목적어 빠짐)\n2. [명사절 접속사 that] : 앞 선행사 없음(동사 뒤) + 뒤 [완전한 문장] (~라는 것을)\n3. [동격의 접속사 that] : 앞 추상명사 있음 + 뒤 [완전한 문장] (~라는 내용의)]의 핵심 적용 문맥"
+                "en": "The insightful scientific book that I read yesterday influenced my worldview.",
+                "ko": "내가 어제 읽었던 그 통찰력 있는 과학 서적은 내 세계관에 영향을 미쳤다.",
+                "point": "관계대명사 that: 선행사 book이 있고 read의 목적어가 빠진 불완전절"
+              },
+              {
+                "en": "Sociologists believe that regular social interaction promotes psychological wellbeing.",
+                "ko": "사회학자들은 규칙적인 사회적 상호작용이 심리적 안녕을 증진한다고 믿는다.",
+                "point": "명사절 접속사 that: 선행사 없고 뒤 절이 완전함"
+              },
+              {
+                "en": "The shocking news that the polar ice caps are melting rapidly alarmed scientists.",
+                "ko": "극지방 빙하가 빠르게 녹고 있다는 충격적인 소식은 과학자들을 놀라게 했다.",
+                "point": "동격 접속사 that: 추상명사 news와 의미상 동격을 이루는 완전한 절"
               }
             ],
             "oxCompare": [
@@ -19413,9 +20373,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "There is no evidence that he committed the crime.",
-                "ko": "동격 that과 자주 결합하는 대표 추상명사의 대표 적용 예문입니다.",
-                "point": "공식 [fact(사실), news(소식), idea(생각), belief(믿음), rumor(소문), evidence(증거), hope(희망)]의 핵심 적용 문맥"
+                "en": "The widespread belief that hard work guarantees success motivates many students.",
+                "ko": "근면함이 성공을 보장한다는 널리 퍼진 믿음은 많은 학생들에게 동기를 부여한다.",
+                "point": "추상명사 belief + 동격 접속사 that + 완전한 절"
+              },
+              {
+                "en": "There is no conclusive evidence that the suspect entered the bank vault.",
+                "ko": "용의자가 은행 금고에 침입했다는 결정적인 증거는 없다.",
+                "point": "추상명사 evidence + 동격 접속사 that"
               }
             ],
             "oxCompare": [
@@ -19580,9 +20545,19 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "• I used to play soccer. (축구하곤 했다)\n• Wood is used to make paper. (종이를 만드는 데 사용된다)\n• I am used to waking up early. (일찍 일어나는 데 익숙하다)",
-                "ko": "used to 3총사 완전 정복 공식의 대표 적용 예문입니다.",
-                "point": "공식 [1. used to + [동사원형] : (과거에) ~하곤 했다 / ~이었다 (지금은 아님)\n2. be used to + [동사원형] : ~하는 데 '사용되다' (use의 수동태! 주어는 보통 사물)\n3. be used to + [V-ing / 명사] : ~에 '익숙하다' (= be accustomed to, 주어는 보통 사람)]의 핵심 적용 문맥"
+                "en": "My grandfather used to take long morning walks in the countryside.",
+                "ko": "나의 할아버지는 시골에서 아침에 긴 산책을 하곤 하셨다.",
+                "point": "used to + 동사원형: 과거의 규칙적 습관이나 상태 (지금은 아님)"
+              },
+              {
+                "en": "Reinforced titanium is used to construct aircraft wings for durability.",
+                "ko": "강화 티타늄은 내구성을 위해 항공기 날개를 제작하는 데 사용된다.",
+                "point": "be used to + 동사원형: use의 수동태 (~하는 데 사용되다)"
+              },
+              {
+                "en": "The seasoned arctic explorer is used to enduring freezing temperatures.",
+                "ko": "노련한 북극 탐험가는 영하의 혹한을 견뎌내는 데 익숙하다.",
+                "point": "be used to + -ing: ~에 익숙하다 (= be accustomed to)"
               }
             ],
             "oxCompare": [
@@ -19616,9 +20591,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "He is used to spicy food.",
-                "ko": "3초 컷 판별 요령의 대표 적용 예문입니다.",
-                "point": "공식 [• 앞에 be동사가 없는가? ➔ 무조건 [used to + V] (~하곤 했다)\n• 앞에 be동사가 있고 주어가 사물인가? ➔ [be used to + V] (사용되다)\n• 앞에 be동사가 있고 주어가 사람인가? ➔ [be used to + -ing] (익숙하다)]의 핵심 적용 문맥"
+                "en": "Natural gas is used to heat residential homes during the winter months.",
+                "ko": "천연가스는 겨울철 동안 주거용 주택을 난방하는 데 사용된다.",
+                "point": "사물 주어(Natural gas)가 난방하는 데 사용되므로 [be used to + 동사원형 heat]"
+              },
+              {
+                "en": "The night shift nurse is used to staying awake throughout the quiet night.",
+                "ko": "야간 근무 간호사는 조용한 밤새도록 깨어 있는 것에 익숙하다.",
+                "point": "사람 주어가 깨어 있는 것에 익숙하므로 [be used to + 동명사 staying]"
               }
             ],
             "oxCompare": [
@@ -19783,9 +20763,19 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "• He lay on the grass yesterday. (눕다 lie의 과거형 lay)\n• She laid the baby on the bed. (눕히다 lay의 과거형 laid)\n• Don't lie to me. (거짓말하다)",
-                "ko": "lie vs lay 3단 변화 끝장 비교표의 대표 적용 예문입니다.",
-                "point": "공식 [1. lie - lay - lain - lying (자동사: 눕다, 놓여있다) ➔ 뒤에 목적어 없음!\n2. lay - laid - laid - laying (타동사: 놓다, 두다, 알을 낳다) ➔ 뒤에 목적어(~을/를) 필수!\n3. lie - lied - lied - lying (자동사: 거짓말하다)]의 핵심 적용 문맥"
+                "en": "The weary traveler lay down on the soft grass and fell fast asleep.",
+                "ko": "지친 여행자는 부드러운 잔디 위에 누워 깊은 잠에 빠졌다.",
+                "point": "자동사 lie(눕다)의 과거형 lay (목적어 없음)"
+              },
+              {
+                "en": "The mother laid the sleeping infant gently in the wooden cradle.",
+                "ko": "어머니는 잠든 아기를 원목 요람에 부드럽게 눕혔다.",
+                "point": "타동사 lay(눕히다/놓다)의 과거형 laid (목적어 infant가 있음)"
+              },
+              {
+                "en": "A deceitful witness lied under oath during the courtroom trial.",
+                "ko": "거짓된 증인은 법정 재판 중에 선서하고 거짓말을 했다.",
+                "point": "자동사 lie(거짓말하다)의 규칙 과거형 lied"
               }
             ],
             "oxCompare": [
@@ -19819,9 +20809,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "He [laid] his hand on my shoulder. (목적어 hand가 있으므로 laid)",
-                "ko": "3초 컷 판별 공식의 대표 적용 예문입니다.",
-                "point": "공식 [빈칸 바로 뒤를 본다!\n• 뒤에 목적어(~을/를)가 있는가? ➔ [lay 계열 (lay/laid)]\n• 뒤에 전치사구(on, in, down)나 부사가 오는가? ➔ [lie 계열 (lie/lay/lain)]]의 핵심 적용 문맥"
+                "en": "He laid his hand gently on his son's shoulder to comfort him.",
+                "ko": "그는 아들을 위로하기 위해 아들의 어깨 위에 손을 가만히 얹었다.",
+                "point": "뒤에 목적어 his hand가 있으므로 타동사 lay의 과거형 laid 사용"
+              },
+              {
+                "en": "Ancient ruins lay hidden beneath the dense jungle foliage for centuries.",
+                "ko": "고대 유적들은 수세기 동안 빽빽한 정글 나뭇잎 아래에 숨겨져 있었다.",
+                "point": "목적어 없이 수식어구만 이어지므로 자동사 lie의 과거형 lay 사용"
               }
             ],
             "oxCompare": [
@@ -19986,9 +20981,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "It was [Tom] that broke the window. ➔ Tom broke the window. (완전 성립 ➔ 강조구문)\nIt is [true] that he broke the window. ➔ True he broke the window. (불성립 ➔ 가주어/진주어)",
-                "ko": "It ~ that 강조구문 vs 가주어/진주어 3초 판별 공식의 대표 적용 예문입니다.",
-                "point": "공식 [문장에서 [It is/was]와 [that]을 손으로 가려본다!\n• 가렸을 때 남은 단어들로 문장이 완벽하게 성립하면? ➔ [강조 구문]\n• 가렸을 때 문장이 말이 안 되고 불완전하면? ➔ [가주어 / 진주어]]의 핵심 적용 문맥"
+                "en": "It was the diligent researcher that discovered the novel antibiotic.",
+                "ko": "그 새로운 항생제를 발견한 것은 바로 그 근면한 연구원이었다.",
+                "point": "It was와 that을 가렸을 때 완전한 문장(The researcher discovered...)이 되므로 강조구문"
+              },
+              {
+                "en": "It is true that renewable energy costs have decreased substantially.",
+                "ko": "신재생 에너지 비용이 상당히 감소했다는 것은 사실이다.",
+                "point": "It is와 that을 가렸을 때 형용사 true가 혼자 남아 문장이 성립하지 않으므로 가주어/진주어 구문"
               }
             ],
             "oxCompare": [
@@ -20022,9 +21022,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "I found it difficult to solve the problem.",
-                "ko": "가목적어 it 구문 (MBCDF 공식)의 대표 적용 예문입니다.",
-                "point": "공식 [make, believe, consider, deem, find + it(가목적어) + [형용사 목적격보어] + to V / that절(진목적어)]의 핵심 적용 문맥"
+                "en": "Smartphones make it possible for people to work from anywhere in the world.",
+                "ko": "스마트폰은 사람들이 세상 어디에서나 일하는 것을 가능하게 만들어 준다.",
+                "point": "make(동사) + it(가목적어) + possible(목적격 보어) + to work...(진목적어)"
+              },
+              {
+                "en": "The manager found it necessary to upgrade corporate cybersecurity protocols immediately.",
+                "ko": "관리자는 기업 사이버 보안 프로토콜을 즉시 업그레이드하는 것이 필수적임을 알게 되었다.",
+                "point": "find + it(가목적어) + necessary(보어) + to upgrade(진목적어)"
               }
             ],
             "oxCompare": [
@@ -20189,9 +21194,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "• Although it was raining (접속사)\n• Despite the rain (전치사)\n• while I was sleeping vs during the summer vacation vs for two hours",
-                "ko": "접속사 vs 전치사 대표 맞수 3대장의 대표 적용 예문입니다.",
-                "point": "공식 [1. [비록 ~일지라도] : 접속사 [although / even though] + S + V vs 전치사 [despite / in spite of] + 명사(구)\n2. [~때문에] : 접속사 [because / as / since] + S + V vs 전치사 [because of / due to / owing to] + 명사(구)\n3. [~동안에] : 접속사 [while] + S + V vs 전치사 [during] + 특정 기간 명사 vs 전치사 [for] + 숫자 기간]의 핵심 적용 문맥"
+                "en": "Although the economic recession was severe, the innovative tech firm expanded.",
+                "ko": "비록 경기 침체가 심각했지만, 그 혁신적인 기술 기업은 확장했다.",
+                "point": "접속사 Although + 주어와 동사를 갖춘 부사절"
+              },
+              {
+                "en": "Despite the severe economic recession, the innovative tech firm expanded.",
+                "ko": "심각한 경기 침체에도 불구하고, 그 혁신적인 기술 기업은 확장했다.",
+                "point": "전치사 Despite + 명사구(the severe economic recession)"
               }
             ],
             "oxCompare": [
@@ -20225,9 +21235,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "Because of he was ill (X) ➔ Because he was ill (O)",
-                "ko": "3초 컷 판별법의 대표 적용 예문입니다.",
-                "point": "공식 [빈칸 뒤에 '동사'가 있는지만 확인하라!\n• 주어 + 동사가 있으면 ➔ 무조건 [접속사]\n• 동사 없이 명사 덩어리만 있으면 ➔ 무조건 [전치사]]의 핵심 적용 문맥"
+                "en": "The outdoor festival was canceled because the hurricane approached the coastline.",
+                "ko": "허리케인이 해안선에 접근했기 때문에 야외 축제는 취소되었다.",
+                "point": "뒤에 주어와 동사가 있는 절이 이어지므로 접속사 because 사용"
+              },
+              {
+                "en": "The outdoor festival was canceled because of the approaching hurricane.",
+                "ko": "접근하는 허리케인 때문에 야외 축제는 취소되었다.",
+                "point": "뒤에 명사구만 이어지므로 전치사구 because of 사용"
               }
             ],
             "oxCompare": [
@@ -20392,9 +21407,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "• Not all birds can fly. (모든 새가 날 수 있는 것은 아니다 - 펭귄은 못 낢: 부분부정)\n• No birds can fly. (어떤 새도 날 수 없다: 완전부정)\n• I don't like both of them. (둘 다 좋아하는 건 아냐 - 한 명만 좋아함: 부분부정)\n• I like neither of them. (둘 다 안 좋아함: 완전부정)",
-                "ko": "부분부정 vs 완전부정 공식 비교의 대표 적용 예문입니다.",
-                "point": "공식 [1. [부분부정] : not + 전체를 나타내는 말 (all, every, both, always, completely)\n  ➔ '모두가 ~인 것은 아니다 (일부는 그렇고 일부는 아니다)'\n2. [완전부정] : none, neither, no one, never\n  ➔ '아무도/전혀 ~가 아니다 (100% 전면 부정)']의 핵심 적용 문맥"
+                "en": "Not all wealthy individuals are completely content with their lives.",
+                "ko": "모든 부유한 개인이 자신의 삶에 전적으로 만족하는 것은 아니다.",
+                "point": "not all: 부분부정 (만족하는 사람도 있고 그렇지 않은 사람도 있음)"
+              },
+              {
+                "en": "None of the applicants met all the rigorous technical requirements.",
+                "ko": "지원자들 중 어느 누구도 엄격한 기술적 요건을 모두 충족하지 못했다.",
+                "point": "None of: 완전부정 (0명)"
               }
             ],
             "oxCompare": [
@@ -20428,9 +21448,14 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "examples": [
               {
-                "en": "Rich people are not always happy. (부자라고 항상 행복한 것은 아니다)",
-                "ko": "부분부정 주요 관용 표현의 대표 적용 예문입니다.",
-                "point": "공식 [• not always : 항상 ~인 것은 아니다\n• not necessarily : 반드시 ~인 것은 아니다\n• not entirely : 전적으로 ~인 것은 아니다]의 핵심 적용 문맥"
+                "en": "Advanced artificial intelligence is not necessarily superior to human intuition.",
+                "ko": "첨단 인공지능이 인간의 직관보다 반드시 우월한 것은 아니다.",
+                "point": "not necessarily: 반드시 ~인 것은 아니다 (부분부정 관용구)"
+              },
+              {
+                "en": "A high price does not always guarantee superior product quality.",
+                "ko": "높은 가격이 항상 우수한 제품 품질을 보장하는 것은 아니다.",
+                "point": "not always: 항상 ~인 것은 아니다 (부분부정)"
               }
             ],
             "oxCompare": [
