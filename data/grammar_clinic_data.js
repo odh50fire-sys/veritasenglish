@@ -1,4 +1,9 @@
-// Veritas English - Grammar Clinic Data Bank
+/**
+ * VERITAS ENGLISH - GRAMMAR CLINIC DATA BANK (160 UNITS TOTAL)
+ * - Regular Curriculum: Lv.0 (초등) ~ Lv.5 (수능 킬러) 6개 레벨 × 20단원 = 120단원
+ * - Theme Special Lectures: 용어구문 / 서술형 / 수능어법 / 혼동문법 4대 코스 × 10강 = 40단원
+ */
+
 window.GRAMMAR_CLINIC_BANK = [
   {
     "level": 0,
@@ -1804,7 +1809,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "복수형 규칙 변화 공식 (-s, -es, -ies)",
+            "desc": "",
             "formula": "대부분 + -s | -s/-x/-ch/-sh + -es | 자음+y ➔ -ies",
+            "rules": [],
             "examples": [
               {
                 "en": "The little boy has two colorful boxes on the desk.",
@@ -1817,17 +1824,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "자음+y(baby)로 끝나는 명사는 y를 i로 고치고 -es를 붙입니다."
               }
             ],
-            "oxCompare": {
-              "o": "He washed three white dishes.",
-              "x": "He washed three white dishs.",
-              "comment": "-sh로 끝나는 dish 뒤에는 -s가 아니라 -es를 붙여야 올바릅니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "He washed three white dishes.",
+                "wrong": "He washed three white dishs.",
+                "reason": "-sh로 끝나는 dish 뒤에는 -s가 아니라 -es를 붙여야 올바릅니다."
+              }
+            ],
             "trap": "모음+y인 toy, boy는 y를 고치지 않고 그냥 -s만 붙입니다 (toys, boys).",
             "quizLink": "box, watch처럼 발음이 강한 소리로 끝나면 -es를 붙여 발음을 부드럽게 만듭니다."
           },
           {
             "name": "특별한 불규칙 복수형 명사",
+            "desc": "",
             "formula": "man ➔ men | child ➔ children | tooth ➔ teeth | foot ➔ feet",
+            "rules": [],
             "examples": [
               {
                 "en": "Many children are playing soccer in the green park.",
@@ -1840,11 +1851,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "tooth의 복수형은 teeth입니다."
               }
             ],
-            "oxCompare": {
-              "o": "Two men are waiting outside the door.",
-              "x": "Two mans are waiting outside the door.",
-              "comment": "man의 복수형은 -s를 붙이지 않고 모음이 바뀐 men입니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Two men are waiting outside the door.",
+                "wrong": "Two mans are waiting outside the door.",
+                "reason": "man의 복수형은 -s를 붙이지 않고 모음이 바뀐 men입니다."
+              }
+            ],
             "trap": "sheep, deer, fish는 단수와 복수의 형태가 똑같습니다 (one sheep, two sheep).",
             "quizLink": "불규칙 복수형은 -s가 붙지 않아도 이미 여러 개를 의미하므로 복수 취급합니다."
           }
@@ -1984,7 +1997,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "지시대명사의 거리와 수 규칙",
+            "desc": "",
             "formula": "가까움: this(단수) / these(복수) | 멂: that(단수) / those(복수)",
+            "rules": [],
             "examples": [
               {
                 "en": "This is my new bicycle near the garden fence.",
@@ -1997,17 +2012,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "멀리 있는 복수 대상에는 Those are를 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "These are my favorite storybooks.",
-              "x": "This are my favorite storybooks.",
-              "comment": "복수명사 storybooks 앞에는 This가 아니라 복수형 These를 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "These are my favorite storybooks.",
+                "wrong": "This are my favorite storybooks.",
+                "reason": "복수명사 storybooks 앞에는 This가 아니라 복수형 These를 써야 합니다."
+              }
+            ],
             "trap": "this book처럼 뒤에 명사가 바로 붙으면 지시대명사가 아니라 지시형용사로 쓰인 것입니다.",
             "quizLink": "this/that은 is와 짝꿍, these/those는 are와 짝꿍입니다."
           },
           {
             "name": "전화 통화 및 사람 소개에서의 this / that",
+            "desc": "",
             "formula": "전화: This is ~(저는 ~예요) / Is that ~(그쪽은 ~인가요?)",
+            "rules": [],
             "examples": [
               {
                 "en": "Hello, this is Minho speaking on the telephone.",
@@ -2020,11 +2039,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "저만치 멀리 서 있는 대상에게는 that boy를 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "Mom, this is my best friend Jenny.",
-              "x": "Mom, she is my best friend Jenny.",
-              "comment": "옆에 있는 친구를 소개할 때는 'This is ~' 표현을 씁니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Mom, this is my best friend Jenny.",
+                "wrong": "Mom, she is my best friend Jenny.",
+                "reason": "옆에 있는 친구를 소개할 때는 'This is ~' 표현을 씁니다."
+              }
+            ],
             "trap": "전화 통화에서 상대방을 물을 때는 Are you ~? 대신 Is that ~?를 씁니다.",
             "quizLink": "거리 개념뿐만 아니라 대화 속 관용적 표현에서도 this와 that이 널리 쓰입니다."
           }
@@ -2164,7 +2185,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "Who와 What의 기본 의문문",
+            "desc": "",
             "formula": "Who + be동사 / What + be동사 / What do you ~?",
+            "rules": [],
             "examples": [
               {
                 "en": "Who is that pretty girl in the pink dress?",
@@ -2177,17 +2200,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "사물이나 대상을 물을 때는 의문사 What으로 시작합니다."
               }
             ],
-            "oxCompare": {
-              "o": "Who is your English teacher?",
-              "x": "What is your English teacher?",
-              "comment": "선생님은 사람이므로 직업 자체를 묻는 경우가 아니라면 인물을 물을 때 Who를 씁니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Who is your English teacher?",
+                "wrong": "What is your English teacher?",
+                "reason": "선생님은 사람이므로 직업 자체를 묻는 경우가 아니라면 인물을 물을 때 Who를 씁니다."
+              }
+            ],
             "trap": "의문사가 있는 의문문은 Yes나 No로 대답하지 않고 구체적인 사실로 대답합니다.",
             "quizLink": "Who is that? ➔ She is my sister. (Yes/No 대답 불가)"
           },
           {
             "name": "선택 의문사 Which의 쓰임",
+            "desc": "",
             "formula": "Which + 명사 + do/does + S + 동사원형? | Which do you like, A or B?",
+            "rules": [],
             "examples": [
               {
                 "en": "Which season do you like better, spring or autumn?",
@@ -2200,11 +2227,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "Which 뒤에 바로 be동사가 와서 선택 대상을 물을 수 있습니다."
               }
             ],
-            "oxCompare": {
-              "o": "Which color do you prefer, red or yellow?",
-              "x": "What color do you prefer, red or yellow?",
-              "comment": "보기(red or yellow)가 명확히 주어졌을 때는 What보다 Which가 훨씬 자연스럽습니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Which color do you prefer, red or yellow?",
+                "wrong": "What color do you prefer, red or yellow?",
+                "reason": "보기(red or yellow)가 명확히 주어졌을 때는 What보다 Which가 훨씬 자연스럽습니다."
+              }
+            ],
             "trap": "선택 대상이 정해져 있을 때는 범위가 좁은 Which를 쓰는 것이 원칙입니다.",
             "quizLink": "A or B 형태의 선택지가 주어지면 Which가 정답일 확률이 매우 높습니다."
           }
@@ -2344,7 +2373,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "장소를 묻는 Where 의문문",
+            "desc": "",
             "formula": "Where + be동사 + 주어? | Where + do/does + 주어 + 동사원형?",
+            "rules": [],
             "examples": [
               {
                 "en": "Where is my English dictionary on the bookshelf?",
@@ -2357,17 +2388,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "일반동사 live의 위치를 물을 때는 Where do you live 어순입니다."
               }
             ],
-            "oxCompare": {
-              "o": "Where are my clean socks?",
-              "x": "Where is my clean socks?",
-              "comment": "socks는 복수명사이므로 Where 뒤에 is가 아니라 are를 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Where are my clean socks?",
+                "wrong": "Where is my clean socks?",
+                "reason": "socks는 복수명사이므로 Where 뒤에 is가 아니라 are를 써야 합니다."
+              }
+            ],
             "trap": "Where are you from?은 '너는 어디 출신이니?'를 묻는 고향/국적 질문입니다.",
             "quizLink": "Where 질문에 대한 대답은 주로 in, on, at, under 등의 장소 전치사로 표현합니다."
           },
           {
             "name": "시간을 묻는 When 의문문",
+            "desc": "",
             "formula": "When + be동사 + 주어? | When + do/does + 주어 + 동사원형?",
+            "rules": [],
             "examples": [
               {
                 "en": "When is the school festival this semester?",
@@ -2380,11 +2415,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "일반동사 wake up의 동작 시간을 물을 때는 When do you wake up을 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "When does the train arrive at the station?",
-              "x": "When do the train arrive at the station?",
-              "comment": "the train은 3인칭 단수이므로 조동사 do가 아니라 does를 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "When does the train arrive at the station?",
+                "wrong": "When do the train arrive at the station?",
+                "reason": "the train은 3인칭 단수이므로 조동사 do가 아니라 does를 써야 합니다."
+              }
+            ],
             "trap": "몇 시인지 정확한 시각을 물을 때는 When 대신 What time을 쓰기도 합니다.",
             "quizLink": "When에 대한 대답에는 on Friday, at 3 p.m., in May 등 시간 표현이 옵니다."
           }
@@ -2524,7 +2561,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "이유를 묻는 Why와 Because 대답",
+            "desc": "",
             "formula": "Why + be동사/do/does + 주어 ~? ➔ Because + 주어 + 동사 ~",
+            "rules": [],
             "examples": [
               {
                 "en": "Why are you so happy today in school?",
@@ -2537,17 +2576,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "Why 의문문에 대한 이유를 설명할 때는 Because로 시작합니다."
               }
             ],
-            "oxCompare": {
-              "o": "Why do you study English hard?",
-              "x": "Why you study English hard?",
-              "comment": "일반동사 의문문이므로 주어 you 앞에 조동사 do가 반드시 들어가야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Why do you study English hard?",
+                "wrong": "Why you study English hard?",
+                "reason": "일반동사 의문문이므로 주어 you 앞에 조동사 do가 반드시 들어가야 합니다."
+              }
+            ],
             "trap": "Why로 물었을 때 Yes나 No로 대답하면 어색합니다. 반드시 이유를 말해야 합니다.",
             "quizLink": "Why 질문 ➔ Because 답변은 영어 시험의 단골 연결 공식입니다."
           },
           {
             "name": "방법과 정도를 묻는 How 표현들",
+            "desc": "",
             "formula": "How do you ~?(방법) | How old(나이) | How many + 복수명사(개수)",
+            "rules": [],
             "examples": [
               {
                 "en": "How do you go to school every morning?",
@@ -2560,11 +2603,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "셀 수 있는 명사의 개수를 물을 때는 How many + 복수명사를 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "How old is your younger brother?",
-              "x": "How many is your younger brother?",
-              "comment": "나이를 물을 때는 How old를 써야 올바릅니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "How old is your younger brother?",
+                "wrong": "How many is your younger brother?",
+                "reason": "나이를 물을 때는 How old를 써야 올바릅니다."
+              }
+            ],
             "trap": "가격을 물을 때는 How many가 아니라 셀 수 없는 개념인 How much를 씁니다.",
             "quizLink": "How old(나이), How tall(키), How many(개수), How much(가격/양)를 구별하세요."
           }
@@ -2704,7 +2749,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "조동사 can의 쓰임과 절대 원칙",
+            "desc": "",
             "formula": "주어 + can + 동사원형 | 부정: cannot / can't + 동사원형",
+            "rules": [],
             "examples": [
               {
                 "en": "She can swim very fast across the swimming pool.",
@@ -2717,17 +2764,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "can의 부정은 cannot 또는 줄임말 can't + 동사원형입니다."
               }
             ],
-            "oxCompare": {
-              "o": "He can play the piano well.",
-              "x": "He can plays the piano well.",
-              "comment": "조동사 can 뒤에는 주어와 상관없이 무조건 동사원형(play)을 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "He can play the piano well.",
+                "wrong": "He can plays the piano well.",
+                "reason": "조동사 can 뒤에는 주어와 상관없이 무조건 동사원형(play)을 써야 합니다."
+              }
+            ],
             "trap": "can 뒤에 to부정사(can to swim)나 -ing(can swimming)를 쓰면 틀립니다.",
             "quizLink": "Can you ~? 의문문에 대한 대답은 'Yes, I can.' 또는 'No, I can't.'입니다."
           },
           {
             "name": "조동사 may의 허가 표현",
+            "desc": "",
             "formula": "May I + 동사원형 ~? (제가 ~해도 될까요?) | 주어 + may + 동사원형",
+            "rules": [],
             "examples": [
               {
                 "en": "May I open the window in this classroom?",
@@ -2740,11 +2791,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "상대방에게 허가를 내줄 때 You may + 동사원형을 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "May I use your pencil for a moment?",
-              "x": "May I to use your pencil for a moment?",
-              "comment": "may 뒤에 to부정사를 쓰지 않고 바로 동사원형 use를 씁니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "May I use your pencil for a moment?",
+                "wrong": "May I to use your pencil for a moment?",
+                "reason": "may 뒤에 to부정사를 쓰지 않고 바로 동사원형 use를 씁니다."
+              }
+            ],
             "trap": "May I ~?에 대한 거절은 'No, you may not.' 또는 'No, you can't.'로 답합니다.",
             "quizLink": "May I ~?는 Can I ~?보다 더 정중하고 공손한 허가의 표현입니다."
           }
@@ -2884,7 +2937,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "be동사 과거형 짝꿍 공식",
+            "desc": "",
             "formula": "I / He / She / It ➔ was | You / We / They ➔ were",
+            "rules": [],
             "examples": [
               {
                 "en": "I was very tired after the soccer match yesterday.",
@@ -2897,17 +2952,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "복수 주어 They의 과거형은 were입니다."
               }
             ],
-            "oxCompare": {
-              "o": "He was a cute baby five years ago.",
-              "x": "He were a cute baby five years ago.",
-              "comment": "3인칭 단수 주어 He의 과거형은 were가 아니라 was입니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "He was a cute baby five years ago.",
+                "wrong": "He were a cute baby five years ago.",
+                "reason": "3인칭 단수 주어 He의 과거형은 were가 아니라 was입니다."
+              }
+            ],
             "trap": "You는 한 사람(너)이든 여러 사람(너희들)이든 무조건 were를 씁니다.",
             "quizLink": "yesterday, ago, last night 같은 단어가 보이면 be동사를 was/were로 바꿔야 합니다."
           },
           {
             "name": "be동사 과거형의 부정문과 의문문",
+            "desc": "",
             "formula": "부정: 주어 + was/were + not | 의문: Was/Were + 주어 ~?",
+            "rules": [],
             "examples": [
               {
                 "en": "The weather was not cold during our family trip.",
@@ -2920,11 +2979,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "과거 의문문은 Were you ~? 어순으로 시작합니다."
               }
             ],
-            "oxCompare": {
-              "o": "We were not late for school this morning.",
-              "x": "We did not be late for school this morning.",
-              "comment": "be동사 과거형의 부정은 did not이 아니라 were not(weren't)입니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "We were not late for school this morning.",
+                "wrong": "We did not be late for school this morning.",
+                "reason": "be동사 과거형의 부정은 did not이 아니라 were not(weren't)입니다."
+              }
+            ],
             "trap": "Were you ~?로 물었을 때 긍정 대답은 'Yes, I was.'이고 부정은 'No, I wasn't.'입니다.",
             "quizLink": "질문은 Were you였지만 대답하는 주어가 I이므로 was로 바뀌는 점에 주의하세요."
           }
@@ -3064,7 +3125,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "일반동사 과거형 규칙 변화 3공식",
+            "desc": "",
             "formula": "대부분 + -ed | -e 끝 + -d | 자음+y ➔ -ied",
+            "rules": [],
             "examples": [
               {
                 "en": "We played board games in the living room yesterday.",
@@ -3077,17 +3140,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "study처럼 자음+y로 끝나는 동사는 y를 i로 고치고 -ed를 붙여 studied가 됩니다."
               }
             ],
-            "oxCompare": {
-              "o": "She walked to the park with her mom.",
-              "x": "She walkd to the park with her mom.",
-              "comment": "walk의 과거형은 -ed를 정확히 붙인 walked입니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "She walked to the park with her mom.",
+                "wrong": "She walkd to the park with her mom.",
+                "reason": "walk의 과거형은 -ed를 정확히 붙인 walked입니다."
+              }
+            ],
             "trap": "과거시제에서는 주어가 3인칭 단수(he/she)여도 동사에 -s를 붙이지 않고 -ed만 붙입니다.",
             "quizLink": "yesterday, last year, two days ago 같은 과거 부사는 -ed와 단짝 친구입니다."
           },
           {
             "name": "자주 쓰이는 주요 불규칙 과거형 맛보기",
+            "desc": "",
             "formula": "go ➔ went | have ➔ had | see ➔ saw | make ➔ made",
+            "rules": [],
             "examples": [
               {
                 "en": "My family went to the beach during the summer vacation.",
@@ -3100,11 +3167,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "have의 과거형은 had입니다."
               }
             ],
-            "oxCompare": {
-              "o": "He saw a shooting star in the night sky.",
-              "x": "He seed a shooting star in the night sky.",
-              "comment": "see의 과거형은 seed가 아니라 saw입니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "He saw a shooting star in the night sky.",
+                "wrong": "He seed a shooting star in the night sky.",
+                "reason": "see의 과거형은 seed가 아니라 saw입니다."
+              }
+            ],
             "trap": "불규칙 동사는 -ed를 붙이지 않으므로 단어 자체를 꼭 외워두어야 합니다.",
             "quizLink": "go-went, see-saw, have-had, make-made는 가장 자주 나오는 4대 불규칙 동사입니다."
           }
@@ -3244,7 +3313,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "현재진행형 기본 공식과 짝꿍",
+            "desc": "",
             "formula": "주어 + am/are/is + 동사원형-ing (지금 ~하고 있다)",
+            "rules": [],
             "examples": [
               {
                 "en": "I am reading an exciting storybook in my room now.",
@@ -3257,17 +3328,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "복수 주어 children 뒤에 are playing을 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "She is watching television now.",
-              "x": "She watching television now.",
-              "comment": "진행형에서 be동사(is)를 빼먹고 동사-ing만 쓰면 문장이 완성되지 않습니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "She is watching television now.",
+                "wrong": "She watching television now.",
+                "reason": "진행형에서 be동사(is)를 빼먹고 동사-ing만 쓰면 문장이 완성되지 않습니다."
+              }
+            ],
             "trap": "be동사 없이 동사-ing만 쓰거나, be동사 뒤에 동사원형(She is watch)을 쓰면 틀립니다.",
             "quizLink": "now, right now, Look! 같은 단어는 현재진행형의 대표적인 단짝 신호입니다."
           },
           {
             "name": "-ing 만드는 스펠링 규칙",
+            "desc": "",
             "formula": "e 탈락 + -ing (making) | 단모음+단자음 ➔ 자음 추가 + -ing (running)",
+            "rules": [],
             "examples": [
               {
                 "en": "He is writing a sweet birthday letter to his mom.",
@@ -3280,11 +3355,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "run은 단모음+단자음이므로 n을 한 번 더 쓰고 -ing를 붙입니다."
               }
             ],
-            "oxCompare": {
-              "o": "They are swimming in the clear river.",
-              "x": "They are swiming in the clear river.",
-              "comment": "swim은 m을 한 번 더 쓴 swimming이 올바른 철자입니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "They are swimming in the clear river.",
+                "wrong": "They are swiming in the clear river.",
+                "reason": "swim은 m을 한 번 더 쓴 swimming이 올바른 철자입니다."
+              }
+            ],
             "trap": "see처럼 -ee로 끝나는 동사는 e를 빼지 않고 그냥 seeing으로 씁니다.",
             "quizLink": "run-running, swim-swimming, sit-sitting, stop-stopping 자음 중복을 꼭 외우세요."
           }
@@ -3424,7 +3501,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "There is / There are 수일치 공식",
+            "desc": "",
             "formula": "There is + 단수명사/셀수없는명사 | There are + 복수명사",
+            "rules": [],
             "examples": [
               {
                 "en": "There is an apple on the white kitchen table.",
@@ -3437,17 +3516,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "many colorful fish는 복수명사이므로 There are를 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "There are two books on the desk.",
-              "x": "There is two books on the desk.",
-              "comment": "뒤에 오는 two books가 복수이므로 is가 아니라 are를 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "There are two books on the desk.",
+                "wrong": "There is two books on the desk.",
+                "reason": "뒤에 오는 two books가 복수이므로 is가 아니라 are를 써야 합니다."
+              }
+            ],
             "trap": "There는 '거기에'라고 해석하지 않고 단순히 문장을 시작하는 유도부사입니다.",
             "quizLink": "There is/are 구문의 동사는 '뒤에 오는 명사'를 보고 결정합니다."
           },
           {
             "name": "부정문(There is not)과 의문문(Is/Are there ~?)",
+            "desc": "",
             "formula": "부정: There is/are not (no) | 의문: Is there / Are there ~?",
+            "rules": [],
             "examples": [
               {
                 "en": "There is not any milk left in the refrigerator.",
@@ -3460,11 +3543,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "복수명사 students의 의문문은 Are there로 시작합니다."
               }
             ],
-            "oxCompare": {
-              "o": "Is there a park near your house?",
-              "x": "Are there a park near your house?",
-              "comment": "a park는 단수명사이므로 Is there로 물어야 올바릅니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Is there a park near your house?",
+                "wrong": "Are there a park near your house?",
+                "reason": "a park는 단수명사이므로 Is there로 물어야 올바릅니다."
+              }
+            ],
             "trap": "Is there a park?에 대한 대답은 'Yes, there is.' 또는 'No, there isn't.'입니다.",
             "quizLink": "대답할 때도 it is가 아니라 'there is / there are'를 그대로 사용합니다."
           }
@@ -3604,7 +3689,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "명령문과 청유문의 기본 공식",
+            "desc": "",
             "formula": "동사원형 ~! | Don't + 동사원형 ~! | Let's + 동사원형 ~!",
+            "rules": [],
             "examples": [
               {
                 "en": "Be quiet in the school library, please.",
@@ -3617,17 +3704,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "부정 명령문은 Don't + 동사원형(run)입니다."
               }
             ],
-            "oxCompare": {
-              "o": "Let's play soccer after school.",
-              "x": "Let's playing soccer after school.",
-              "comment": "Let's 뒤에는 -ing가 아니라 반드시 동사원형(play)을 씁니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Let's play soccer after school.",
+                "wrong": "Let's playing soccer after school.",
+                "reason": "Let's 뒤에는 -ing가 아니라 반드시 동사원형(play)을 씁니다."
+              }
+            ],
             "trap": "명령문 끝이나 앞에 please를 붙이면 공손한 부탁의 표현이 됩니다.",
             "quizLink": "명령문에는 주어 You가 생략되어 언제나 동사원형으로 시작합니다."
           },
           {
             "name": "감탄문의 두 가지 공식 (What vs How)",
+            "desc": "",
             "formula": "What + a/an + 형용사 + 명사! | How + 형용사/부사!",
+            "rules": [],
             "examples": [
               {
                 "en": "What a beautiful flower this red rose is!",
@@ -3640,11 +3731,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "부사(fast)를 강조할 때는 How 감탄문을 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "How sweet this apple is!",
-              "x": "What sweet this apple is!",
-              "comment": "sweet는 형용사이고 뒤에 꾸밈을 받는 명사가 없으므로 How를 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "How sweet this apple is!",
+                "wrong": "What sweet this apple is!",
+                "reason": "sweet는 형용사이고 뒤에 꾸밈을 받는 명사가 없으므로 How를 써야 합니다."
+              }
+            ],
             "trap": "What 감탄문 뒤의 명사가 복수일 때는 a/an을 쓰지 않습니다 (What beautiful flowers!).",
             "quizLink": "명사가 살아있으면 What, 형용사/부사만 있으면 How가 공식입니다."
           }
@@ -3784,7 +3877,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "대등 접속사 and와 but의 쓰임",
+            "desc": "",
             "formula": "A and B (A와 B, 그리고) | A, but B (A, 하지만 B)",
+            "rules": [],
             "examples": [
               {
                 "en": "I like sweet apples and fresh strawberries.",
@@ -3797,17 +3892,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "앞뒤 내용이 반대되거나 대조될 때는 but을 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "She is small, but she is very strong.",
-              "x": "She is small, and she is very strong.",
-              "comment": "체구가 작지만 힘이 세다는 것은 상반된 내용이므로 but이 훨씬 자연스럽습니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "She is small, but she is very strong.",
+                "wrong": "She is small, and she is very strong.",
+                "reason": "체구가 작지만 힘이 세다는 것은 상반된 내용이므로 but이 훨씬 자연스럽습니다."
+              }
+            ],
             "trap": "and 앞뒤에는 같은 품사나 같은 문장 구조가 와야 자연스럽습니다.",
             "quizLink": "순접(나열)은 and, 역접(반대)은 but이라는 기본 성격을 기억하세요."
           },
           {
             "name": "인과관계 접속사 so와 because",
+            "desc": "",
             "formula": "원인, so + 결과 (그래서) | 결과 + because + 원인 (~때문에)",
+            "rules": [],
             "examples": [
               {
                 "en": "It was raining outside, so I took my blue umbrella.",
@@ -3820,11 +3919,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "일찍 잠듦(결과) ➔ 왜냐하면 피곤했음(원인)에는 because를 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "He was sick, so he didn't go to school.",
-              "x": "He was sick, because he didn't go to school.",
-              "comment": "아픈 것이 원인이고 학교에 가지 않은 것이 결과이므로 so를 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "He was sick, so he didn't go to school.",
+                "wrong": "He was sick, because he didn't go to school.",
+                "reason": "아픈 것이 원인이고 학교에 가지 않은 것이 결과이므로 so를 써야 합니다."
+              }
+            ],
             "trap": "so와 because는 원인과 결과의 순서가 정반대이므로 문맥을 꼼꼼히 따져야 합니다.",
             "quizLink": "원인 ➔ so ➔ 결과 / 결과 ➔ because ➔ 원인의 순서를 완벽히 기억하세요."
           }
@@ -4659,10 +4760,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "일반 의문사 의문문 어순",
-            "formula": "의문사 + be동사/조동사/do(does/did) + 주어 + 동사원형...?",
-            "example": "Where do you live? When did she arrive?",
-            "trap": "Yes/No로 대답할 수 없으며, 시제에 맞게 do/does/did를 일치시켜야 함!",
             "desc": "일반 의문사 의문문 어순은(는) 문장의 종류 영역에서 가장 빈출되는 핵심 문법입니다. 구체적인 정보를 묻는 의문사 의문문의 어순과 의문사가 주어인 특수 어순의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "의문사 + be동사/조동사/do(does/did) + 주어 + 동사원형...?",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -4696,14 +4795,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "Yes/No로 대답할 수 없으며, 시제에 맞게 do/does/did를 일치시켜야 함!"
               }
             ],
+            "trap": "Yes/No로 대답할 수 없으며, 시제에 맞게 do/does/did를 일치시켜야 함!",
             "quizLink": "3단계 실전 퀴즈에서 [일반 의문사 의문문 어순] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "의문사가 주어인 경우",
-            "formula": "의문사(주어) + 동사 + 목적어...?",
-            "example": "Who broke the window? What happened yesterday?",
-            "trap": "의문사 자체가 주어일 때는 do/does/did 조동사를 쓰지 않고 바로 동사가 옴!",
             "desc": "의문사가 주어인 경우은(는) 문장의 종류 영역에서 가장 빈출되는 핵심 문법입니다. 구체적인 정보를 묻는 의문사 의문문의 어순과 의문사가 주어인 특수 어순의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "의문사(주어) + 동사 + 목적어...?",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -4737,6 +4835,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "의문사 자체가 주어일 때는 do/does/did 조동사를 쓰지 않고 바로 동사가 옴!"
               }
             ],
+            "trap": "의문사 자체가 주어일 때는 do/does/did 조동사를 쓰지 않고 바로 동사가 옴!",
             "quizLink": "3단계 실전 퀴즈에서 [의문사가 주어인 경우] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -4872,10 +4971,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "진행형의 기본 형태",
-            "formula": "am/are/is + 동사원형-ing (현재진행) / was/were + -ing (과거진행)",
-            "example": "He is writing an email now. They were sleeping at midnight.",
-            "trap": "단모음+단자음일 때 마지막 자음 중복! (run -> running, swim -> swimming)",
             "desc": "진행형의 기본 형태은(는) 시제 영역에서 가장 빈출되는 핵심 문법입니다. 지금 진행 중인 동작(be + -ing)과 진행형으로 쓸 수 없는 상태 동사의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "am/are/is + 동사원형-ing (현재진행) / was/were + -ing (과거진행)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -4909,14 +5006,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "단모음+단자음일 때 마지막 자음 중복! (run -> running, swim -> swimming)"
               }
             ],
+            "trap": "단모음+단자음일 때 마지막 자음 중복! (run -> running, swim -> swimming)",
             "quizLink": "3단계 실전 퀴즈에서 [진행형의 기본 형태] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "진행형 불가 동사 (상태동사)",
-            "formula": "소유(have, belong), 감정(like, love), 인지(know, understand), 감각(hear)",
-            "example": "I have two dogs (o) / I am having two dogs (x)",
-            "trap": "have가 '먹다, 시간을 보내다'의 동작 의미일 때는 진행형 가능! (I am having lunch)",
             "desc": "진행형 불가 동사 (상태동사)은(는) 시제 영역에서 가장 빈출되는 핵심 문법입니다. 지금 진행 중인 동작(be + -ing)과 진행형으로 쓸 수 없는 상태 동사의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "소유(have, belong), 감정(like, love), 인지(know, understand), 감각(hear)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -4950,6 +5046,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "have가 '먹다, 시간을 보내다'의 동작 의미일 때는 진행형 가능! (I am having lunch)"
               }
             ],
+            "trap": "have가 '먹다, 시간을 보내다'의 동작 의미일 때는 진행형 가능! (I am having lunch)",
             "quizLink": "3단계 실전 퀴즈에서 [진행형 불가 동사 (상태동사)] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -5085,10 +5182,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "조동사의 기본 원칙",
-            "formula": "조동사 + 동사원형 (3인칭 단수 -s 불가, 조동사 연속 2개 사용 불가)",
-            "example": "She can speak French. You must be quiet here.",
-            "trap": "She can speaks (x) -> She can speak (o), will can (x) -> will be able to (o)",
             "desc": "조동사의 기본 원칙은(는) 조동사 영역에서 가장 빈출되는 핵심 문법입니다. 능력, 허가, 의무, 충고를 나타내는 기본 조동사의 쓰임과 동사원형 원칙의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "조동사 + 동사원형 (3인칭 단수 -s 불가, 조동사 연속 2개 사용 불가)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -5122,14 +5217,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "She can speaks (x) -> She can speak (o), will can (x) -> will be able to (o)"
               }
             ],
+            "trap": "She can speaks (x) -> She can speak (o), will can (x) -> will be able to (o)",
             "quizLink": "3단계 실전 퀴즈에서 [조동사의 기본 원칙] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "must vs must not vs don't have to",
-            "formula": "must(강한 의무) / must not(금지: ~해선 안 된다) / don't have to(~할 필요가 없다)",
-            "example": "You must not touch this. You don't have to hurry.",
-            "trap": "must not은 금지, don't have to는 불필요로 의미가 완전히 다름!",
             "desc": "must vs must not vs don't have to은(는) 조동사 영역에서 가장 빈출되는 핵심 문법입니다. 능력, 허가, 의무, 충고를 나타내는 기본 조동사의 쓰임과 동사원형 원칙의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "must(강한 의무) / must not(금지: ~해선 안 된다) / don't have to(~할 필요가 없다)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -5163,6 +5257,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "must not은 금지, don't have to는 불필요로 의미가 완전히 다름!"
               }
             ],
+            "trap": "must not은 금지, don't have to는 불필요로 의미가 완전히 다름!",
             "quizLink": "3단계 실전 퀴즈에서 [must vs must not vs don't have to] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -5298,10 +5393,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "1·2·3형식의 구조",
-            "formula": "1형식(S+V) / 2형식(S+V+SC: 주격보어) / 3형식(S+V+O: 목적어)",
-            "example": "The sun rises. (1) / She became a doctor. (2) / I bought a bike. (3)",
-            "trap": "전치사구는 수식어(M)이므로 문장 형식 성분에 포함되지 않음! (He lives in Seoul - 1형식)",
             "desc": "1·2·3형식의 구조은(는) 문장 구조 영역에서 가장 빈출되는 핵심 문법입니다. 주어(S), 동사(V), 목적어(O), 보어(C)의 개념과 1·2·3형식 문장 분석의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1형식(S+V) / 2형식(S+V+SC: 주격보어) / 3형식(S+V+O: 목적어)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -5335,14 +5428,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "전치사구는 수식어(M)이므로 문장 형식 성분에 포함되지 않음! (He lives in Seoul - 1형식)"
               }
             ],
+            "trap": "전치사구는 수식어(M)이므로 문장 형식 성분에 포함되지 않음! (He lives in Seoul - 1형식)",
             "quizLink": "3단계 실전 퀴즈에서 [1·2·3형식의 구조] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "2형식 감각동사",
-            "formula": "look, sound, smell, taste, feel + 형용사",
-            "example": "This soup tastes delicious. You look tired.",
-            "trap": "우리말로는 '달콤하게'로 해석되어 sweetly를 쓰고 싶지만 보어 자리이므로 sweet(형용사)을 쓴다.",
             "desc": "2형식 감각동사은(는) 문장 구조 영역에서 가장 빈출되는 핵심 문법입니다. 주어(S), 동사(V), 목적어(O), 보어(C)의 개념과 1·2·3형식 문장 분석의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "look, sound, smell, taste, feel + 형용사",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -5376,6 +5468,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "우리말로는 '달콤하게'로 해석되어 sweetly를 쓰고 싶지만 보어 자리이므로 sweet(형용사)을 쓴다."
               }
             ],
+            "trap": "우리말로는 '달콤하게'로 해석되어 sweetly를 쓰고 싶지만 보어 자리이므로 sweet(형용사)을 쓴다.",
             "quizLink": "3단계 실전 퀴즈에서 [2형식 감각동사] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -5511,10 +5604,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "명령문, and / or",
-            "formula": "명령문, and ~ (~해라, 그러면 ...) / 명령문, or ~ (~해라, 그렇지 않으면 ...)",
-            "example": "Hurry up, and you will catch the train. Hurry up, or you will be late.",
-            "trap": "or는 '그렇지 않으면(otherwise)'의 경고 의미!",
             "desc": "명령문, and / or은(는) 문장의 연결 영역에서 가장 빈출되는 핵심 문법입니다. 등위접속사(and, but, or, so), 명령문 + and/or, 감탄문(What a / How)의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "명령문, and ~ (~해라, 그러면 ...) / 명령문, or ~ (~해라, 그렇지 않으면 ...)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -5548,14 +5639,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "or는 '그렇지 않으면(otherwise)'의 경고 의미!"
               }
             ],
+            "trap": "or는 '그렇지 않으면(otherwise)'의 경고 의미!",
             "quizLink": "3단계 실전 퀴즈에서 [명령문, and / or] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "감탄문 공식",
-            "formula": "What + a/an + 형용사 + 명사 (+ 주어 + 동사)! / How + 형용사/부사 (+ 주어 + 동사)!",
-            "example": "What a pretty girl she is! / How fast he runs!",
-            "trap": "명사가 있으면 What, 순수 형용사/부사만 있으면 How!",
             "desc": "감탄문 공식은(는) 문장의 연결 영역에서 가장 빈출되는 핵심 문법입니다. 등위접속사(and, but, or, so), 명령문 + and/or, 감탄문(What a / How)의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "What + a/an + 형용사 + 명사 (+ 주어 + 동사)! / How + 형용사/부사 (+ 주어 + 동사)!",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -5589,6 +5679,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "명사가 있으면 What, 순수 형용사/부사만 있으면 How!"
               }
             ],
+            "trap": "명사가 있으면 What, 순수 형용사/부사만 있으면 How!",
             "quizLink": "3단계 실전 퀴즈에서 [감탄문 공식] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -5732,7 +5823,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "과거진행형 기본 공식",
+            "desc": "",
             "formula": "주어 + was/were + V-ing (그때 ~하고 있던 중이었다)",
+            "rules": [],
             "examples": [
               {
                 "en": "I was studying English at seven o'clock yesterday evening.",
@@ -5745,17 +5838,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "과거의 다른 사건이 일어났을 때 진행 중이던 일에 were playing을 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "She was listening to music then.",
-              "x": "She is listening to music then.",
-              "comment": "과거 시점인 then(그때)이 있으므로 is가 아니라 was를 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "She was listening to music then.",
+                "wrong": "She is listening to music then.",
+                "reason": "과거 시점인 then(그때)이 있으므로 is가 아니라 was를 써야 합니다."
+              }
+            ],
             "trap": "have가 '먹다'나 '시간을 보내다'의 동작 의미일 때는 진행형이 가능합니다 (having lunch).",
             "quizLink": "단순 과거는 완료된 사실, 과거진행형은 '그 순간 진행 중이었던 생생한 동작'을 강조합니다."
           },
           {
             "name": "진행형으로 쓸 수 없는 상태동사",
+            "desc": "",
             "formula": "소유(have), 감정(like/love), 인지(know/want) ➔ 진행형 불가",
+            "rules": [],
             "examples": [
               {
                 "en": "She has a cute white puppy in her house.",
@@ -5768,11 +5865,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "know는 인지 상태를 나타내므로 I am knowing으로 쓰지 않습니다."
               }
             ],
-            "oxCompare": {
-              "o": "He likes classical music very much.",
-              "x": "He is liking classical music very much.",
-              "comment": "like는 감정 상태를 나타내므로 진행형을 쓰지 않습니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "He likes classical music very much.",
+                "wrong": "He is liking classical music very much.",
+                "reason": "like는 감정 상태를 나타내므로 진행형을 쓰지 않습니다."
+              }
+            ],
             "trap": "I am having breakfast처럼 '먹다'의 뜻일 때는 진행형이 완벽히 가능합니다.",
             "quizLink": "내신 시험에서 have/know/like 뒤에 -ing를 붙여놓은 보기는 대표적인 오답 함정입니다."
           }
@@ -5912,7 +6011,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "조동사 will의 쓰임과 규칙",
+            "desc": "",
             "formula": "주어 + will + 동사원형 | 부정: will not (won't) + 동사원형",
+            "rules": [],
             "examples": [
               {
                 "en": "I will help you with your heavy luggage right now.",
@@ -5925,17 +6026,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "미래에 대한 일반적 예측에 will rain을 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "He will come to the party tonight.",
-              "x": "He will comes to the party tonight.",
-              "comment": "조동사 will 뒤에는 주어의 인칭과 상관없이 무조건 동사원형 come을 씁니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "He will come to the party tonight.",
+                "wrong": "He will comes to the party tonight.",
+                "reason": "조동사 will 뒤에는 주어의 인칭과 상관없이 무조건 동사원형 come을 씁니다."
+              }
+            ],
             "trap": "will의 줄임말 부정은 willn't가 아니라 won't입니다.",
             "quizLink": "Will you ~?는 '너 ~해 줄래?'라는 정중한 요청 표현으로도 쓰입니다."
           },
           {
             "name": "be going to의 계획된 미래",
+            "desc": "",
             "formula": "주어 + am/are/is + going to + 동사원형 (~할 예정이다)",
+            "rules": [],
             "examples": [
               {
                 "en": "We are going to visit our grandparents in Busan this weekend.",
@@ -5948,11 +6053,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "눈앞에 분명한 징조(dark clouds)가 있을 때는 be going to를 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "She is going to buy a new laptop tomorrow.",
-              "x": "She is going to buying a new laptop tomorrow.",
-              "comment": "be going to 뒤에는 -ing가 아니라 반드시 동사원형 buy를 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "She is going to buy a new laptop tomorrow.",
+                "wrong": "She is going to buying a new laptop tomorrow.",
+                "reason": "be going to 뒤에는 -ing가 아니라 반드시 동사원형 buy를 써야 합니다."
+              }
+            ],
             "trap": "be going to a place(장소로 가다)와 be going to + 동사원형(~할 예정이다)을 구별하세요.",
             "quizLink": "be going to의 be동사는 주어에 따라 am, are, is로 바뀝니다."
           }
@@ -6092,7 +6199,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "감각동사 + 형용사 보어 공식",
+            "desc": "",
             "formula": "주어 + look / sound / smell / taste / feel + 형용사",
+            "rules": [],
             "examples": [
               {
                 "en": "You look very happy today in your new school uniform.",
@@ -6105,17 +6214,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "taste 뒤에는 형용사 sweet가 보어로 옵니다."
               }
             ],
-            "oxCompare": {
-              "o": "The music sounds beautiful.",
-              "x": "The music sounds beautifully.",
-              "comment": "sound는 2형식 감각동사이므로 부사 beautifully가 아니라 형용사 beautiful을 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "The music sounds beautiful.",
+                "wrong": "The music sounds beautifully.",
+                "reason": "sound는 2형식 감각동사이므로 부사 beautifully가 아니라 형용사 beautiful을 써야 합니다."
+              }
+            ],
             "trap": "우리말 해석에 낚여서 sweetly, beautifully, happily 같은 부사를 고르지 마세요!",
             "quizLink": "중1 지필고사에서 가장 오답률이 높은 전형적인 '형용사 vs 부사' 함정입니다."
           },
           {
             "name": "감각동사 + like + 명사 공식",
+            "desc": "",
             "formula": "주어 + 감각동사 + like + 명사 (~처럼 보이다/들리다)",
+            "rules": [],
             "examples": [
               {
                 "en": "That strange cloud in the sky looks like an elephant.",
@@ -6128,11 +6241,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "명사구 a great idea 앞에는 sounds like를 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "It smells like fresh bread.",
-              "x": "It smells fresh bread.",
-              "comment": "bread는 명사이므로 like 없이 쓰면 틀리고 smells like bread로 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "It smells like fresh bread.",
+                "wrong": "It smells fresh bread.",
+                "reason": "bread는 명사이므로 like 없이 쓰면 틀리고 smells like bread로 써야 합니다."
+              }
+            ],
             "trap": "형용사가 올 때는 like 없이 바로 쓰고, 명사가 올 때만 like를 붙입니다.",
             "quizLink": "looks happy (형용사) vs looks like an angel (명사)을 명확히 대조하세요."
           }
@@ -6272,7 +6387,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "4형식 ➔ 3형식 전치사 분류 공식",
+            "desc": "",
             "formula": "to (방향 전달) vs for (정성/노력 수고) vs of (ask)",
+            "rules": [],
             "examples": [
               {
                 "en": "My grandmother gave me a beautiful birthday present.",
@@ -6285,17 +6402,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "give는 3형식 전환 시 전치사 to를 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "Mom made a delicious cake for us.",
-              "x": "Mom made a delicious cake to us.",
-              "comment": "make, buy, cook처럼 정성과 수고가 들어가는 동사는 to가 아니라 for를 씁니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Mom made a delicious cake for us.",
+                "wrong": "Mom made a delicious cake to us.",
+                "reason": "make, buy, cook처럼 정성과 수고가 들어가는 동사는 to가 아니라 for를 씁니다."
+              }
+            ],
             "trap": "make, buy, cook, get, build는 무조건 for를 쓰는 '정성 동사'로 암기하세요!",
             "quizLink": "ask는 3형식 전환 시 오직 전치사 of만 취합니다 (ask a favor of you)."
           },
           {
             "name": "전치사 for를 쓰는 주요 수여동사 (MBC 골프)",
+            "desc": "",
             "formula": "M(make) B(buy) C(cook) G(get) F(find) ➔ for",
+            "rules": [],
             "examples": [
               {
                 "en": "He bought a pretty ribbon for his younger sister.",
@@ -6308,11 +6429,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "ask는 전치사 of를 취합니다."
               }
             ],
-            "oxCompare": {
-              "o": "Dad cooked tasty pasta for the whole family.",
-              "x": "Dad cooked tasty pasta to the whole family.",
-              "comment": "cook은 요리하는 정성이 들어가므로 전치사 for를 씁니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Dad cooked tasty pasta for the whole family.",
+                "wrong": "Dad cooked tasty pasta to the whole family.",
+                "reason": "cook은 요리하는 정성이 들어가므로 전치사 for를 씁니다."
+              }
+            ],
             "trap": "간접목적어와 직접목적어의 순서를 바꾸지 않고 전치사만 불필요하게 끼워 넣으면 오답입니다.",
             "quizLink": "4형식에서 3형식으로 전환할 때 전치사 선택 문제는 내신 100% 출제 문항입니다."
           }
@@ -6452,7 +6575,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "must와 have to의 긍정 및 과거형",
+            "desc": "",
             "formula": "must = have to + 동원 (~해야 한다) | 과거형: had to (~해야 했다)",
+            "rules": [],
             "examples": [
               {
                 "en": "You must wear a safety helmet when riding a bicycle.",
@@ -6465,17 +6590,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "must는 과거형이 없으므로 과거의 의무는 had to를 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "He has to wake up early on weekdays.",
-              "x": "He have to wake up early on weekdays.",
-              "comment": "주어가 3인칭 단수 He이므로 have to가 아니라 has to를 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "He has to wake up early on weekdays.",
+                "wrong": "He have to wake up early on weekdays.",
+                "reason": "주어가 3인칭 단수 He이므로 have to가 아니라 has to를 써야 합니다."
+              }
+            ],
             "trap": "must의 과거형으로 musted를 쓰면 절대 안 됩니다! 반드시 had to를 써야 합니다.",
             "quizLink": "have to의 의문문은 Do you have to ~? / Does he have to ~?로 만듭니다."
           },
           {
             "name": "금지(must not) vs 불필요(don't have to)",
+            "desc": "",
             "formula": "must not (~해서는 안 된다) ≠ don't / doesn't have to (~할 필요가 없다)",
+            "rules": [],
             "examples": [
               {
                 "en": "You must not touch this dangerous electric wire.",
@@ -6488,11 +6617,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "~할 필요가 없다는 불필요에는 don't have to (= don't need to)를 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "You don't have to bring lunch; food is free.",
-              "x": "You must not bring lunch; food is free.",
-              "comment": "음식이 무료이므로 도시락을 싸 올 필요가 없다는 의미에는 don't have to를 써야 자연스럽습니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "You don't have to bring lunch; food is free.",
+                "wrong": "You must not bring lunch; food is free.",
+                "reason": "음식이 무료이므로 도시락을 싸 올 필요가 없다는 의미에는 don't have to를 써야 자연스럽습니다."
+              }
+            ],
             "trap": "must와 have to는 긍정일 땐 의미가 같지만, 부정일 땐 완전히 다른 뜻이 됩니다!",
             "quizLink": "don't have to = don't need to = need not은 중등 내신 단골 전환 공식입니다."
           }
@@ -6632,7 +6763,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "원급 비교 as ~ as 기본 공식",
+            "desc": "",
             "formula": "A + 동사 + as + 원급 + as + B (A는 B만큼 …하다)",
+            "rules": [],
             "examples": [
               {
                 "en": "My sister is as tall as my mother now.",
@@ -6645,17 +6778,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "run을 꾸미는 부사의 원급 fast를 as 사이에 썼습니다."
               }
             ],
-            "oxCompare": {
-              "o": "This book is as interesting as that movie.",
-              "x": "This book is as more interesting as that movie.",
-              "comment": "as ~ as 사이에는 비교급 more interesting이 아니라 원급 interesting이 들어가야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "This book is as interesting as that movie.",
+                "wrong": "This book is as more interesting as that movie.",
+                "reason": "as ~ as 사이에는 비교급 more interesting이 아니라 원급 interesting이 들어가야 합니다."
+              }
+            ],
             "trap": "as ~ as 사이에 taller, faster 같은 비교급을 넣어놓은 오답 함정을 조심하세요.",
             "quizLink": "형용사가 들어갈지 부사가 들어갈지는 문장의 본동사(be동사 vs 일반동사)가 결정합니다."
           },
           {
             "name": "원급 비교의 부정 (not as/so ~ as)",
+            "desc": "",
             "formula": "A + 동사 + not as / so + 원급 + as + B (A는 B만큼 …하지 않다)",
+            "rules": [],
             "examples": [
               {
                 "en": "English is not as difficult as advanced calculus.",
@@ -6668,11 +6805,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "부정문에서는 앞의 as 대신 so를 쓸 수도 있습니다 (not so cold as)."
               }
             ],
-            "oxCompare": {
-              "o": "Tom is not as old as Sam.",
-              "x": "Tom is not so older as Sam.",
-              "comment": "부정형에서도 반드시 원급 old를 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Tom is not as old as Sam.",
+                "wrong": "Tom is not so older as Sam.",
+                "reason": "부정형에서도 반드시 원급 old를 써야 합니다."
+              }
+            ],
             "trap": "A is not as tall as B는 결국 'B가 A보다 더 크다(B is taller than A)'는 뜻입니다.",
             "quizLink": "as ~ as possible = as ~ as 주어 can은 '가능한 한 ~하게'라는 관용표현입니다."
           }
@@ -6812,7 +6951,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "비교급과 최상급 기본 공식",
+            "desc": "",
             "formula": "비교급 + than (~보다 더 …한) | the + 최상급 + in/of (가장 …한)",
+            "rules": [],
             "examples": [
               {
                 "en": "Mount Everest is higher than any other mountain in the world.",
@@ -6825,17 +6966,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "최상급 smartest 앞에는 정관사 the가 반드시 붙습니다."
               }
             ],
-            "oxCompare": {
-              "o": "He is more careful than his brother.",
-              "x": "He is carefuller than his brother.",
-              "comment": "careful처럼 2음절 이상의 긴 단어는 more careful로 씁니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "He is more careful than his brother.",
+                "wrong": "He is carefuller than his brother.",
+                "reason": "careful처럼 2음절 이상의 긴 단어는 more careful로 씁니다."
+              }
+            ],
             "trap": "최상급 뒤의 범위가 장소/단수명사이면 in, 구성원/복수명사이면 of를 씁니다.",
             "quizLink": "than 뒤에는 비교 대상이 오며, the + 최상급은 유일무이한 최고를 나타냅니다."
           },
           {
             "name": "시험 단골 불규칙 비교급·최상급",
+            "desc": "",
             "formula": "good/well ➔ better ➔ best | bad ➔ worse ➔ worst",
+            "rules": [],
             "examples": [
               {
                 "en": "His English speaking skills are much better than mine.",
@@ -6848,11 +6993,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "bad의 최상급은 worst입니다."
               }
             ],
-            "oxCompare": {
-              "o": "Health is better than wealth.",
-              "x": "Health is gooder than wealth.",
-              "comment": "good의 비교급은 불규칙 형태인 better입니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Health is better than wealth.",
+                "wrong": "Health is gooder than wealth.",
+                "reason": "good의 비교급은 불규칙 형태인 better입니다."
+              }
+            ],
             "trap": "비교급을 강조할 때는 very가 아니라 much, even, still, far, a lot을 씁니다.",
             "quizLink": "very better (X) ➔ much better (O)는 내신 객관식 1순위 오답 판별 공식입니다."
           }
@@ -6992,7 +7139,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "시간 접속사의 위치와 콤마 공식",
+            "desc": "",
             "formula": "접속사 + S + V, S + V (콤마 필수) | S + V + 접속사 + S + V (콤마 없음)",
+            "rules": [],
             "examples": [
               {
                 "en": "When I arrived home, my mother was cooking dinner.",
@@ -7005,17 +7154,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "before 절이 주절 뒤에 올 때는 콤마를 찍지 않습니다."
               }
             ],
-            "oxCompare": {
-              "o": "After I finished my homework, I went to bed.",
-              "x": "After I finished my homework I went to bed.",
-              "comment": "접속사절이 주절보다 먼저 나올 때는 콤마(,)로 두 절을 명확히 구분해야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "After I finished my homework, I went to bed.",
+                "wrong": "After I finished my homework I went to bed.",
+                "reason": "접속사절이 주절보다 먼저 나올 때는 콤마(,)로 두 절을 명확히 구분해야 합니다."
+              }
+            ],
             "trap": "while 뒤에는 주로 진행형(was/were V-ing)이 와서 긴 동작을 나타냅니다.",
             "quizLink": "when, before, after 뒤에는 반드시 '주어 + 동사'를 갖춘 완전한 절이 옵니다."
           },
           {
             "name": "while의 진행 의미와 when의 순간 의미",
+            "desc": "",
             "formula": "while + S + be V-ing (~하는 동안에) vs when + S + 과거동사 (~했을 때)",
+            "rules": [],
             "examples": [
               {
                 "en": "The telephone rang loudly while I was taking a shower.",
@@ -7028,11 +7181,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "곰을 본 순간적인 사건에는 when을 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "He fell asleep while he was reading a book.",
-              "x": "He fell asleep before he was reading a book.",
-              "comment": "책을 읽고 있는 '도중에' 잠이 들었으므로 while이 문맥상 자연스럽습니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "He fell asleep while he was reading a book.",
+                "wrong": "He fell asleep before he was reading a book.",
+                "reason": "책을 읽고 있는 '도중에' 잠이 들었으므로 while이 문맥상 자연스럽습니다."
+              }
+            ],
             "trap": "while은 전치사 during과 뜻이 같지만, during 뒤에는 명사구, while 뒤에는 '주어+동사'가 옵니다.",
             "quizLink": "while + S + V vs during + 명사구는 중·고등 시험 전 단원 공통 킬러입니다."
           }
@@ -7172,7 +7327,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "to부정사의 주어와 보어 역할",
+            "desc": "",
             "formula": "To-V + 단수동사 (주어) | S + be동사 + to-V (보어)",
+            "rules": [],
             "examples": [
               {
                 "en": "To read books every day makes your mind rich and wise.",
@@ -7185,17 +7342,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "be동사 뒤에서 주어를 보충 설명하는 주격보어로 쓰인 to become입니다."
               }
             ],
-            "oxCompare": {
-              "o": "To exercise regularly is good for your health.",
-              "x": "To exercise regularly are good for your health.",
-              "comment": "to부정사 주어는 하나의 동작 단위이므로 복수 are가 아니라 단수 is를 씁니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "To exercise regularly is good for your health.",
+                "wrong": "To exercise regularly are good for your health.",
+                "reason": "to부정사 주어는 하나의 동작 단위이므로 복수 are가 아니라 단수 is를 씁니다."
+              }
+            ],
             "trap": "To read books처럼 to 뒤에 복수명사가 있어도 주어는 To read이므로 단수 취급합니다.",
             "quizLink": "to부정사 주어가 너무 길어지면 뒤로 보내고 가주어 It을 쓰는 It ~ to 구문으로 발전합니다."
           },
           {
             "name": "to부정사를 목적어로 취하는 동사군",
+            "desc": "",
             "formula": "want / hope / decide / plan / promise / expect + to-V",
+            "rules": [],
             "examples": [
               {
                 "en": "I decided to study harder for the upcoming final exam.",
@@ -7208,11 +7369,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "hope 뒤에는 to travel이 목적어로 옵니다."
               }
             ],
-            "oxCompare": {
-              "o": "He promised to meet me at the library.",
-              "x": "He promised meeting me at the library.",
-              "comment": "promise는 동명사가 아니라 to부정사를 목적어로 취하는 동사입니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "He promised to meet me at the library.",
+                "wrong": "He promised meeting me at the library.",
+                "reason": "promise는 동명사가 아니라 to부정사를 목적어로 취하는 동사입니다."
+              }
+            ],
             "trap": "미래지향적인 의미(소망, 계획, 결심, 약속)를 담은 동사들은 대부분 to부정사를 좋아합니다.",
             "quizLink": "want to, hope to, decide to, plan to는 중1 내신 암기 1순위 관용구입니다."
           }
@@ -7352,7 +7515,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "명사 후치 수식과 -thing 어순 공식",
+            "desc": "",
             "formula": "명사 + to-V (~할 명사) | -thing + 형용사 + to-V",
+            "rules": [],
             "examples": [
               {
                 "en": "I have a lot of homework to finish before midnight.",
@@ -7365,17 +7530,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "-thing 뒤에 형용사 cold가 오고 그 뒤에 to drink가 붙는 어순입니다."
               }
             ],
-            "oxCompare": {
-              "o": "Give me something warm to eat.",
-              "x": "Give me to eat something warm.",
-              "comment": "-thing 단어는 '명사 + 형용사 + to-V' 어순이 철칙입니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Give me something warm to eat.",
+                "wrong": "Give me to eat something warm.",
+                "reason": "-thing 단어는 '명사 + 형용사 + to-V' 어순이 철칙입니다."
+              }
+            ],
             "trap": "something to drink cold (X) ➔ something cold to drink (O) 어순 시험 1순위!",
             "quizLink": "형용사와 to부정사가 동시에 -thing을 꾸밀 때는 형용사가 먼저, to-V가 나중입니다."
           },
           {
             "name": "전치사가 꼭 필요한 to부정사 공식",
+            "desc": "",
             "formula": "명사 + to-V + 전치사 (동사 + 전치사 + 명사 연결 검증)",
+            "rules": [],
             "examples": [
               {
                 "en": "He brought a comfortable chair to sit on in the garden.",
@@ -7388,11 +7557,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "write with a pen이므로 도구를 나타내는 전치사 with가 필수적입니다."
               }
             ],
-            "oxCompare": {
-              "o": "I need a house to live in.",
-              "x": "I need a house to live.",
-              "comment": "live in a house이므로 전치사 in을 빠뜨리면 비문이 됩니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "I need a house to live in.",
+                "wrong": "I need a house to live.",
+                "reason": "live in a house이므로 전치사 in을 빠뜨리면 비문이 됩니다."
+              }
+            ],
             "trap": "sit a chair(X) ➔ sit on a chair(O)! 전치사를 생략하는 순간 오답이 됩니다.",
             "quizLink": "to-V 뒤의 전치사 유무는 수식받는 명사를 동사 뒤로 보내보면 바로 판별할 수 있습니다."
           }
@@ -7532,7 +7703,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "동명사의 기본 역할과 전치사의 목적어",
+            "desc": "",
             "formula": "V-ing + 단수동사 (주어) | 전치사 + V-ing (전치사의 목적어)",
+            "rules": [],
             "examples": [
               {
                 "en": "Listening to classical music helps me relax after studying.",
@@ -7545,17 +7718,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "전치사 for 뒤에는 to invite가 올 수 없고 동명사 inviting이 와야 합니다."
               }
             ],
-            "oxCompare": {
-              "o": "She is good at speaking English.",
-              "x": "She is good at to speak English.",
-              "comment": "전치사 at 뒤에는 to부정사를 쓸 수 없으며 반드시 동명사 speaking을 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "She is good at speaking English.",
+                "wrong": "She is good at to speak English.",
+                "reason": "전치사 at 뒤에는 to부정사를 쓸 수 없으며 반드시 동명사 speaking을 써야 합니다."
+              }
+            ],
             "trap": "전치사 뒤에는 to-V가 절대 올 수 없고 오직 동명사(-ing)만 올 수 있습니다!",
             "quizLink": "be good at -ing, be afraid of -ing, thank you for -ing는 시험 단골 전치사구입니다."
           },
           {
             "name": "동명사만을 목적어로 취하는 메가패스 동사",
+            "desc": "",
             "formula": "enjoy / finish / mind / give up / avoid / stop + V-ing",
+            "rules": [],
             "examples": [
               {
                 "en": "I really enjoy playing computer games with my friends.",
@@ -7568,11 +7745,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "finish는 동명사 cleaning만을 목적어로 취합니다."
               }
             ],
-            "oxCompare": {
-              "o": "She finished doing her math homework.",
-              "x": "She finished to do her math homework.",
-              "comment": "finish는 to부정사를 목적어로 취할 수 없고 동명사만 취합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "She finished doing her math homework.",
+                "wrong": "She finished to do her math homework.",
+                "reason": "finish는 to부정사를 목적어로 취할 수 없고 동명사만 취합니다."
+              }
+            ],
             "trap": "과거나 현재의 경험, 일의 중단/마무리를 나타내는 동사들은 동명사를 좋아합니다.",
             "quizLink": "enjoy -ing, finish -ing, give up -ing, stop -ing는 1초 만에 풀어야 하는 필수 짝꿍입니다."
           }
@@ -7712,7 +7891,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "재귀적 용법 vs 강조적 용법 판별 공식",
+            "desc": "",
             "formula": "동사/전치사의 목적어 ➔ 재귀적(생략 불가) | 주어/목적어 뒤 ➔ 강조적(생략 가능)",
+            "rules": [],
             "examples": [
               {
                 "en": "The little boy introduced himself to the new classmates.",
@@ -7725,17 +7906,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "myself를 생략해도 문장이 완전하므로 주어 I를 강조하는 강조적 용법입니다."
               }
             ],
-            "oxCompare": {
-              "o": "He loves himself.",
-              "x": "He loves him.",
-              "comment": "자신을 사랑하는 것이므로 주어 He와 동일 인물이면 him이 아니라 himself를 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "He loves himself.",
+                "wrong": "He loves him.",
+                "reason": "자신을 사랑하는 것이므로 주어 He와 동일 인물이면 him이 아니라 himself를 써야 합니다."
+              }
+            ],
             "trap": "손가락으로 재귀대명사를 가렸을 때 문장이 말이 되면 강조, 불완전하면 재귀적 용법입니다!",
             "quizLink": "중1 내신에서 밑줄 친 myself/himself의 용법이 다른 것을 고르는 문제는 100% 출제됩니다."
           },
           {
             "name": "전치사와 결합한 재귀대명사 관용표현",
+            "desc": "",
             "formula": "by oneself(혼자서) | for oneself(스스로) | help oneself to(마음껏 먹다)",
+            "rules": [],
             "examples": [
               {
                 "en": "She solved the difficult puzzle all by herself.",
@@ -7748,11 +7933,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "help oneself to는 '음식을 마음껏 먹다'라는 숙어입니다."
               }
             ],
-            "oxCompare": {
-              "o": "Enjoy yourself at the party!",
-              "x": "Enjoy you at the party!",
-              "comment": "즐거운 시간을 보내라는 표현은 enjoy yourself입니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Enjoy yourself at the party!",
+                "wrong": "Enjoy you at the party!",
+                "reason": "즐거운 시간을 보내라는 표현은 enjoy yourself입니다."
+              }
+            ],
             "trap": "복수 주어(You/They/We)일 때는 -self가 아니라 -selves로 써야 합니다.",
             "quizLink": "by oneself = on one's own(혼자 힘으로)도 함께 알아두면 시험에서 유리합니다."
           }
@@ -7896,10 +8083,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "to부정사의 3대 용법 판별",
-            "formula": "명사적(~하기/것: 주·목·보) / 형용사적(~할: 명사수식) / 부사적(~하기 위해, 해서: 목적/감정원인)",
-            "example": "To read books is fun. (명사) / I have no books to read. (형용사) / I went to buy books. (부사)",
-            "trap": "형용사적 용법에서 전치사가 필요한 경우 주의! (a chair to sit on, a friend to talk with)",
             "desc": "to부정사의 3대 용법 판별은(는) 준동사 영역에서 가장 빈출되는 핵심 문법입니다. to부정사의 3대 용법 판별과 목적·결과·원인·형용사 수식의 다양한 부사적 쓰임의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "명사적(~하기/것: 주·목·보) / 형용사적(~할: 명사수식) / 부사적(~하기 위해, 해서: 목적/감정원인)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -7938,14 +8123,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "형용사적 용법에서 전치사가 필요한 경우 주의! (a chair to sit on, a friend to talk with)"
               }
             ],
+            "trap": "형용사적 용법에서 전치사가 필요한 경우 주의! (a chair to sit on, a friend to talk with)",
             "quizLink": "3단계 실전 퀴즈에서 [to부정사의 3대 용법 판별] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "의문사 + to부정사",
-            "formula": "what/how/where/when + to부정사 = 명사구",
-            "example": "I don't know what to do next. (= what I should do)",
-            "trap": "why + to부정사는 영어에 존재하지 않음!",
             "desc": "의문사 + to부정사은(는) 준동사 영역에서 가장 빈출되는 핵심 문법입니다. to부정사의 3대 용법 판별과 목적·결과·원인·형용사 수식의 다양한 부사적 쓰임의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "what/how/where/when + to부정사 = 명사구",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -7979,6 +8163,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "why + to부정사는 영어에 존재하지 않음!"
               }
             ],
+            "trap": "why + to부정사는 영어에 존재하지 않음!",
             "quizLink": "3단계 실전 퀴즈에서 [의문사 + to부정사] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -8114,10 +8299,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "목적어 취급 동사 공식",
-            "formula": "to부정사만: want, hope, wish, decide, plan, promise / 동명사만: enjoy, finish, avoid, mind, practice, give up",
-            "example": "I enjoy playing tennis. / I want to play tennis.",
-            "trap": "enjoy to play (x), decide playing (x)",
             "desc": "목적어 취급 동사 공식은(는) 준동사 영역에서 가장 빈출되는 핵심 문법입니다. 동명사의 주·목·보 역할, 동명사만/to부정사만 취하는 동사, 둘 다 취하며 의미가 달라지는 동사의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "to부정사만: want, hope, wish, decide, plan, promise / 동명사만: enjoy, finish, avoid, mind, practice, give up",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -8151,14 +8334,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "enjoy to play (x), decide playing (x)"
               }
             ],
+            "trap": "enjoy to play (x), decide playing (x)",
             "quizLink": "3단계 실전 퀴즈에서 [목적어 취급 동사 공식] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "remember / forget / stop",
-            "formula": "remember/forget + to부정사(미래: ~할 것을) / + -ing(과거: ~했던 것을) / stop to V(~하기 위해 멈추다) / stop -ing(~하던 것을 멈추다)",
-            "example": "Remember to lock the door. / I remember meeting her.",
-            "trap": "stop to smoke(담배를 피우기 위해 가던 길을 멈추다) vs stop smoking(금연하다)",
             "desc": "remember / forget / stop은(는) 준동사 영역에서 가장 빈출되는 핵심 문법입니다. 동명사의 주·목·보 역할, 동명사만/to부정사만 취하는 동사, 둘 다 취하며 의미가 달라지는 동사의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "remember/forget + to부정사(미래: ~할 것을) / + -ing(과거: ~했던 것을) / stop to V(~하기 위해 멈추다) / stop -ing(~하던 것을 멈추다)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -8197,6 +8379,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "stop to smoke(담배를 피우기 위해 가던 길을 멈추다) vs stop smoking(금연하다)"
               }
             ],
+            "trap": "stop to smoke(담배를 피우기 위해 가던 길을 멈추다) vs stop smoking(금연하다)",
             "quizLink": "3단계 실전 퀴즈에서 [remember / forget / stop] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -8332,10 +8515,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "현재완료 4대 용법 구별 짝꿍 부사",
-            "formula": "완료(just, already, yet) / 경험(ever, never, before, once) / 계속(for + 기간, since + 시작시점) / 결과(have gone to: 가고 없다, have lost)",
-            "example": "I have lived here for 5 years. She has gone to Paris.",
-            "trap": "have been to(~에 가본 적 있다: 경험) vs have gone to(~에 가버렸다: 결과)",
             "desc": "현재완료 4대 용법 구별 짝꿍 부사은(는) 시제 영역에서 가장 빈출되는 핵심 문법입니다. have/has + p.p.의 구조와 4대 용법(완료·경험·계속·결과) 및 과거시점 부사 결합 금지 원칙의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "완료(just, already, yet) / 경험(ever, never, before, once) / 계속(for + 기간, since + 시작시점) / 결과(have gone to: 가고 없다, have lost)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -8374,14 +8555,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "have been to(~에 가본 적 있다: 경험) vs have gone to(~에 가버렸다: 결과)"
               }
             ],
+            "trap": "have been to(~에 가본 적 있다: 경험) vs have gone to(~에 가버렸다: 결과)",
             "quizLink": "3단계 실전 퀴즈에서 [현재완료 4대 용법 구별 짝꿍 부사] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "과거 특정 시점 부사 결합 금지",
-            "formula": "yesterday, ago, last ~, in + 연도, when 의문문과는 현재완료 불가 (단순과거 사용)",
-            "example": "I have met him yesterday. (x) -> I met him yesterday. (o)",
-            "trap": "When have you arrived? (x) -> When did you arrive? (o)",
             "desc": "과거 특정 시점 부사 결합 금지은(는) 시제 영역에서 가장 빈출되는 핵심 문법입니다. have/has + p.p.의 구조와 4대 용법(완료·경험·계속·결과) 및 과거시점 부사 결합 금지 원칙의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "yesterday, ago, last ~, in + 연도, when 의문문과는 현재완료 불가 (단순과거 사용)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -8415,6 +8595,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "When have you arrived? (x) -> When did you arrive? (o)"
               }
             ],
+            "trap": "When have you arrived? (x) -> When did you arrive? (o)",
             "quizLink": "3단계 실전 퀴즈에서 [과거 특정 시점 부사 결합 금지] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -8550,10 +8731,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "수여동사 4형식 ➔ 3형식 전치사 분류",
-            "formula": "to: give, send, tell, show, lend / for: make, buy, cook, get, find / of: ask",
-            "example": "She made me a cake. -> She made a cake for me.",
-            "trap": "make, buy, cook류는 정성이 들어가므로 전치사 for를 씀!",
             "desc": "수여동사 4형식 ➔ 3형식 전치사 분류은(는) 문장 구조 영역에서 가장 빈출되는 핵심 문법입니다. 감각동사 뒤 형용사 보어, 4형식(S+V+IO+DO) 수여동사의 3형식 전치사(to, for, of) 전환의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "to: give, send, tell, show, lend / for: make, buy, cook, get, find / of: ask",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -8592,14 +8771,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "make, buy, cook류는 정성이 들어가므로 전치사 for를 씀!"
               }
             ],
+            "trap": "make, buy, cook류는 정성이 들어가므로 전치사 for를 씀!",
             "quizLink": "3단계 실전 퀴즈에서 [수여동사 4형식 ➔ 3형식 전치사 분류] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "감각동사 + like + 명사",
-            "formula": "look/sound/smell/taste/feel + 형용사 OR + like + 명사",
-            "example": "It looks nice. (형용사) / It looks like a doll. (명사)",
-            "trap": "looks like nice (x) -> look 뒤에 명사가 오려면 반드시 like 필요!",
             "desc": "감각동사 + like + 명사은(는) 문장 구조 영역에서 가장 빈출되는 핵심 문법입니다. 감각동사 뒤 형용사 보어, 4형식(S+V+IO+DO) 수여동사의 3형식 전치사(to, for, of) 전환의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "look/sound/smell/taste/feel + 형용사 OR + like + 명사",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -8633,6 +8811,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "looks like nice (x) -> look 뒤에 명사가 오려면 반드시 like 필요!"
               }
             ],
+            "trap": "looks like nice (x) -> look 뒤에 명사가 오려면 반드시 like 필요!",
             "quizLink": "3단계 실전 퀴즈에서 [감각동사 + like + 명사] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -8768,10 +8947,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "원급 비교와 부정",
-            "formula": "as + 원급(형용사/부사) + as / not as[so] + 원급 + as",
-            "example": "He is as tall as his father. She is not so old as I thought.",
-            "trap": "as와 as 사이에는 반드시 '원급'만 와야 함! (as taller as - x)",
             "desc": "원급 비교와 부정은(는) 형용사와 부사 영역에서 가장 빈출되는 핵심 문법입니다. as ~ as 원급 비교, 비교급 + than, the + 최상급 + in/of 및 불규칙 비교급 변화의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "as + 원급(형용사/부사) + as / not as[so] + 원급 + as",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -8805,14 +8982,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "as와 as 사이에는 반드시 '원급'만 와야 함! (as taller as - x)"
               }
             ],
+            "trap": "as와 as 사이에는 반드시 '원급'만 와야 함! (as taller as - x)",
             "quizLink": "3단계 실전 퀴즈에서 [원급 비교와 부정] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "비교급 강조 부사",
-            "formula": "much, even, still, far, a lot + 비교급 (훨씬)",
-            "example": "This phone is much better than that one.",
-            "trap": "very는 비교급을 절대 수식할 수 없음! (very better - x)",
             "desc": "비교급 강조 부사은(는) 형용사와 부사 영역에서 가장 빈출되는 핵심 문법입니다. as ~ as 원급 비교, 비교급 + than, the + 최상급 + in/of 및 불규칙 비교급 변화의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "much, even, still, far, a lot + 비교급 (훨씬)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -8846,6 +9022,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "very는 비교급을 절대 수식할 수 없음! (very better - x)"
               }
             ],
+            "trap": "very는 비교급을 절대 수식할 수 없음! (very better - x)",
             "quizLink": "3단계 실전 퀴즈에서 [비교급 강조 부사] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -8981,10 +9158,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "used to vs be used to",
-            "formula": "used to + V원형(~하곤 했다) / be used to + V원형(~하는 데 사용되다) / be used to + -ing(~에 익숙하다)",
-            "example": "I used to play the piano. / Wood is used to make paper. / I am used to getting up early.",
-            "trap": "수능과 내신에서 가장 많이 출제되는 3대 used to 혼동 유형!",
             "desc": "used to vs be used to은(는) 조동사 영역에서 가장 빈출되는 핵심 문법입니다. have to의 시제별 변화, used to(~하곤 했다 vs 과거의 상태), would like to 및 had better의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "used to + V원형(~하곤 했다) / be used to + V원형(~하는 데 사용되다) / be used to + -ing(~에 익숙하다)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -9023,14 +9198,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "수능과 내신에서 가장 많이 출제되는 3대 used to 혼동 유형!"
               }
             ],
+            "trap": "수능과 내신에서 가장 많이 출제되는 3대 used to 혼동 유형!",
             "quizLink": "3단계 실전 퀴즈에서 [used to vs be used to] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "had better와 would rather",
-            "formula": "had better + 동사원형 (~하는 게 낫다) / had better not + 동사원형",
-            "example": "You had better leave now. You had better not stay up late.",
-            "trap": "had better not의 위치! not had better (x)",
             "desc": "had better와 would rather은(는) 조동사 영역에서 가장 빈출되는 핵심 문법입니다. have to의 시제별 변화, used to(~하곤 했다 vs 과거의 상태), would like to 및 had better의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "had better + 동사원형 (~하는 게 낫다) / had better not + 동사원형",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -9064,6 +9238,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "had better not의 위치! not had better (x)"
               }
             ],
+            "trap": "had better not의 위치! not had better (x)",
             "quizLink": "3단계 실전 퀴즈에서 [had better와 would rather] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -9199,10 +9374,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "수동태 기본 공식",
-            "formula": "주어 + be동사 + 과거분사(p.p.) + (by + 행위자)",
-            "example": "The telephone was invented by Bell. (능동: Bell invented the telephone.)",
-            "trap": "수동태의 시제와 수는 be동사(is, are, was, were)가 표현함!",
             "desc": "수동태 기본 공식은(는) 태(Voice) 영역에서 가장 빈출되는 핵심 문법입니다. 능동태를 수동태로 전환하는 원리, 시제별 수동태, 행위자 by의 생략의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "주어 + be동사 + 과거분사(p.p.) + (by + 행위자)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -9236,14 +9409,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "수동태의 시제와 수는 be동사(is, are, was, were)가 표현함!"
               }
             ],
+            "trap": "수동태의 시제와 수는 be동사(is, are, was, were)가 표현함!",
             "quizLink": "3단계 실전 퀴즈에서 [수동태 기본 공식] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "수동태 불가 동사 (자동사)",
-            "formula": "appear, disappear, happen, occur, consist of, belong to",
-            "example": "The accident was happened. (x) -> The accident happened. (o)",
-            "trap": "자동사는 목적어가 없으므로 수동태 자체가 불가능함!",
             "desc": "수동태 불가 동사 (자동사)은(는) 태(Voice) 영역에서 가장 빈출되는 핵심 문법입니다. 능동태를 수동태로 전환하는 원리, 시제별 수동태, 행위자 by의 생략의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "appear, disappear, happen, occur, consist of, belong to",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -9277,6 +9449,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "자동사는 목적어가 없으므로 수동태 자체가 불가능함!"
               }
             ],
+            "trap": "자동사는 목적어가 없으므로 수동태 자체가 불가능함!",
             "quizLink": "3단계 실전 퀴즈에서 [수동태 불가 동사 (자동사)] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -9412,10 +9585,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "시간·조건 부사절의 대원칙",
-            "formula": "시간(when, while, after)이나 조건(if, unless) 부사절에서는 '미래시제 대신 현재시제' 사용!",
-            "example": "If it rains tomorrow, we will stay home. (If it will rain - x)",
-            "trap": "주절은 미래(will stay)를 쓰지만, if절 안에서는 반드시 현재형(rains)을 써야 함!",
             "desc": "시간·조건 부사절의 대원칙은(는) 문장의 연결 영역에서 가장 빈출되는 핵심 문법입니다. 부사절 접속사(when, while, because, if, although)와 시간·조건 부사절의 현재 시제 원칙의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "시간(when, while, after)이나 조건(if, unless) 부사절에서는 '미래시제 대신 현재시제' 사용!",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -9449,14 +9620,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "주절은 미래(will stay)를 쓰지만, if절 안에서는 반드시 현재형(rains)을 써야 함!"
               }
             ],
+            "trap": "주절은 미래(will stay)를 쓰지만, if절 안에서는 반드시 현재형(rains)을 써야 함!",
             "quizLink": "3단계 실전 퀴즈에서 [시간·조건 부사절의 대원칙] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "if vs unless",
-            "formula": "unless = if ~ not (~하지 않는다면)",
-            "example": "Unless you hurry, you will be late. (= If you don't hurry, ...)",
-            "trap": "unless 절 안에는 이미 부정의 의미가 있으므로 not을 또 쓰면 안 됨!",
             "desc": "if vs unless은(는) 문장의 연결 영역에서 가장 빈출되는 핵심 문법입니다. 부사절 접속사(when, while, because, if, although)와 시간·조건 부사절의 현재 시제 원칙의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "unless = if ~ not (~하지 않는다면)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -9490,6 +9660,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "unless 절 안에는 이미 부정의 의미가 있으므로 not을 또 쓰면 안 됨!"
               }
             ],
+            "trap": "unless 절 안에는 이미 부정의 의미가 있으므로 not을 또 쓰면 안 됨!",
             "quizLink": "3단계 실전 퀴즈에서 [if vs unless] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -9633,7 +9804,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "현재완료의 '완료' 용법 (just / already / yet)",
+            "desc": "",
             "formula": "have/has + just / already + p.p. | haven't/hasn't + p.p. ~ yet",
+            "rules": [],
             "examples": [
               {
                 "en": "I have just finished my science project report.",
@@ -9646,17 +9819,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "부정문에서 yet은 '아직 ~하지 못했다'라는 완료의 의미를 가집니다."
               }
             ],
-            "oxCompare": {
-              "o": "He has already left for the airport.",
-              "x": "He has already leave for the airport.",
-              "comment": "have/has 뒤에는 반드시 과거분사(p.p.)인 left를 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "He has already left for the airport.",
+                "wrong": "He has already leave for the airport.",
+                "reason": "have/has 뒤에는 반드시 과거분사(p.p.)인 left를 써야 합니다."
+              }
+            ],
             "trap": "already는 긍정문, yet은 부정문과 의문문에 주로 쓰입니다.",
             "quizLink": "Have you finished your lunch yet?처럼 의문문의 yet은 '벌써'로 해석됩니다."
           },
           {
             "name": "현재완료의 '결과' 용법과 have gone to",
+            "desc": "",
             "formula": "have gone to (~로 가버려서 지금 여기 없다) vs have been to (~에 가본 적 있다)",
+            "rules": [],
             "examples": [
               {
                 "en": "Minho has gone to Paris, so he is not in Seoul now.",
@@ -9669,11 +9846,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "과거에 잃어버린 상태가 현재까지 지속되고 있음을 나타냅니다."
               }
             ],
-            "oxCompare": {
-              "o": "She has gone to London.",
-              "x": "I have gone to London.",
-              "comment": "have gone to는 '가버리고 여기에 없다'는 뜻이므로 말하는 사람(I)이나 듣는 사람(You)을 주어로 쓸 수 없습니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "She has gone to London.",
+                "wrong": "I have gone to London.",
+                "reason": "have gone to는 '가버리고 여기에 없다'는 뜻이므로 말하는 사람(I)이나 듣는 사람(You)을 주어로 쓸 수 없습니다."
+              }
+            ],
             "trap": "I have gone to Paris(X) ➔ 내가 파리에 가버렸는데 여기서 말할 수 없으므로 비문입니다!",
             "quizLink": "have gone to는 무조건 3인칭(He/She/They) 주어에만 쓸 수 있습니다."
           }
@@ -9813,7 +9992,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "경험과 계속의 짝꿍 어휘 공식",
+            "desc": "",
             "formula": "경험: ever / never / before / ~ times | 계속: for + 기간 / since + 시작점",
+            "rules": [],
             "examples": [
               {
                 "en": "Have you ever seen a wild kangaroo in Australia?",
@@ -9826,17 +10007,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "for + 기간(ten years)과 결합하여 '계속' 살고 있음을 나타냅니다."
               }
             ],
-            "oxCompare": {
-              "o": "She has studied ballet since 2018.",
-              "x": "She has studied ballet for 2018.",
-              "comment": "2018년은 시작 시점이므로 for가 아니라 since를 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "She has studied ballet since 2018.",
+                "wrong": "She has studied ballet for 2018.",
+                "reason": "2018년은 시작 시점이므로 for가 아니라 since를 써야 합니다."
+              }
+            ],
             "trap": "for 뒤에는 숫자 기간(for 3 years), since 뒤에는 특정 연도나 과거 시점(since last year)이 옵니다.",
             "quizLink": "have been to는 경험(~에 가본 적 있다), have gone to는 결과(~로 가버렸다)입니다."
           },
           {
             "name": "현재완료와 과거시제의 공존 불가 법칙",
+            "desc": "",
             "formula": "have p.p. + [yesterday / ago / last / when] ➔ (X) 무조건 단순 과거시제!",
+            "rules": [],
             "examples": [
               {
                 "en": "I bought this warm jacket two days ago.",
@@ -9849,11 +10034,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "시점을 묻는 의문사 When은 현재완료와 함께 쓸 수 없고 과거의문문으로 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "He visited his grandparents yesterday.",
-              "x": "He has visited his grandparents yesterday.",
-              "comment": "yesterday는 명백한 과거 시점이므로 현재완료 has visited와 함께 쓸 수 없습니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "He visited his grandparents yesterday.",
+                "wrong": "He has visited his grandparents yesterday.",
+                "reason": "yesterday는 명백한 과거 시점이므로 현재완료 has visited와 함께 쓸 수 없습니다."
+              }
+            ],
             "trap": "When have you met him?(X) ➔ When did you meet him?(O) 내신 서술형 1순위!",
             "quizLink": "명백한 과거 표시 부사가 보이면 무조건 '단순 과거형' 동사를 골라야 합니다."
           }
@@ -9993,7 +10180,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "5형식 to부정사 목적격보어 공식",
+            "desc": "",
             "formula": "S + want / ask / tell / allow / advise + O + to-V",
+            "rules": [],
             "examples": [
               {
                 "en": "My doctor advised me to exercise regularly every morning.",
@@ -10006,17 +10195,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "tell + 목적어 + to be quiet 구조입니다."
               }
             ],
-            "oxCompare": {
-              "o": "She wants me to clean the room.",
-              "x": "She wants me clean the room.",
-              "comment": "want는 목적격보어로 동사원형이 아니라 반드시 to부정사(to clean)를 취합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "She wants me to clean the room.",
+                "wrong": "She wants me clean the room.",
+                "reason": "want는 목적격보어로 동사원형이 아니라 반드시 to부정사(to clean)를 취합니다."
+              }
+            ],
             "trap": "사역동사(make/have/let)와 달리 want, ask, tell 등은 무조건 to를 붙여야 합니다.",
             "quizLink": "ask/tell/want + O + to-V는 중2 교과서 전 단원 필수 핵심 문법입니다."
           },
           {
             "name": "목적격보어 to부정사의 부정 (not to-V)",
+            "desc": "",
             "formula": "주어 + 동사 + 목적어 + not to-V (목적어에게 ~하지 말라고 …하다)",
+            "rules": [],
             "examples": [
               {
                 "en": "My mother told me not to stay up late playing computer games.",
@@ -10029,11 +10222,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "ask + 목적어 + not to-V 구조입니다."
               }
             ],
-            "oxCompare": {
-              "o": "The police officer ordered him not to run.",
-              "x": "The police officer ordered him to not run.",
-              "comment": "to not run보다 준동사 바로 앞에 not을 둔 not to run이 문법적으로 올바른 표준 형태입니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "The police officer ordered him not to run.",
+                "wrong": "The police officer ordered him to not run.",
+                "reason": "to not run보다 준동사 바로 앞에 not을 둔 not to run이 문법적으로 올바른 표준 형태입니다."
+              }
+            ],
             "trap": "didn't tell me to V와 told me not to V는 의미가 완전히 다릅니다!",
             "quizLink": "내신 시험에서 not의 위치(to not V vs not to V)를 묻는 함정에 주의하세요."
           }
@@ -10173,7 +10368,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "사역동사의 목적격보어 (동사원형)",
+            "desc": "",
             "formula": "make / have / let + 목적어 + 동사원형 (목적어에게 ~하게 시키다/허락하다)",
+            "rules": [],
             "examples": [
               {
                 "en": "My strict mother made me clean my dirty room alone.",
@@ -10186,17 +10383,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "사역동사 let 뒤에 목적격보어로 동사원형 take를 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "He made me laugh so hard.",
-              "x": "He made me to laugh so hard.",
-              "comment": "사역동사 make 뒤의 목적격보어에는 to를 붙이지 않고 동사원형 laugh를 씁니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "He made me laugh so hard.",
+                "wrong": "He made me to laugh so hard.",
+                "reason": "사역동사 make 뒤의 목적격보어에는 to를 붙이지 않고 동사원형 laugh를 씁니다."
+              }
+            ],
             "trap": "준사역동사 help는 목적격보어로 동사원형과 to부정사 둘 다 올 수 있습니다 (help me clean / to clean).",
             "quizLink": "사역동사 3총사(make/have/let) 뒤에 to-V가 나오면 0.1초 만에 오답으로 솎아내세요!"
           },
           {
             "name": "지각동사의 목적격보어 (동사원형 or V-ing)",
+            "desc": "",
             "formula": "see / hear / watch / feel + 목적어 + 동사원형 또는 V-ing",
+            "rules": [],
             "examples": [
               {
                 "en": "I saw a beautiful bird singing brightly in the tall tree.",
@@ -10209,11 +10410,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "지각동사 heard 뒤에 목적격보어로 동사원형 knock을 썼습니다."
               }
             ],
-            "oxCompare": {
-              "o": "I felt the building shake.",
-              "x": "I felt the building to shake.",
-              "comment": "지각동사 felt 뒤에는 to shake가 아니라 동사원형 shake 또는 shaking을 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "I felt the building shake.",
+                "wrong": "I felt the building to shake.",
+                "reason": "지각동사 felt 뒤에는 to shake가 아니라 동사원형 shake 또는 shaking을 써야 합니다."
+              }
+            ],
             "trap": "지각동사 뒤에는 to부정사를 절대 쓸 수 없습니다! 오직 동사원형이나 -ing만 가능합니다.",
             "quizLink": "동사원형은 동작 전체의 사실, -ing는 그 순간 생생하게 진행 중인 동작을 강조합니다."
           }
@@ -10353,7 +10556,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "능동태 ➔ 수동태 3단계 전환 공식",
+            "desc": "",
             "formula": "1. 목적어 ➔ 새 주어 | 2. 동사 ➔ be + p.p. (시제/수일치) | 3. 주어 ➔ by + 목적격",
+            "rules": [],
             "examples": [
               {
                 "en": "Romeo and Juliet was written by William Shakespeare.",
@@ -10366,17 +10571,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "복수 주어 Many cookies에 맞추어 are baked를 썼습니다."
               }
             ],
-            "oxCompare": {
-              "o": "The window was broken by Tom.",
-              "x": "The window was broke by Tom.",
-              "comment": "be동사 뒤에는 과거형 broke가 아니라 반드시 과거분사(p.p.)인 broken을 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "The window was broken by Tom.",
+                "wrong": "The window was broke by Tom.",
+                "reason": "be동사 뒤에는 과거형 broke가 아니라 반드시 과거분사(p.p.)인 broken을 써야 합니다."
+              }
+            ],
             "trap": "수동태의 be동사는 새 주어의 인칭/수와 원래 능동태 문장의 '시제'에 맞춰야 합니다.",
             "quizLink": "수동태 전환 문제는 중2 내신 서술형의 단골 1순위 주관식 문제입니다."
           },
           {
             "name": "행위자(by + 목적격)의 생략",
+            "desc": "",
             "formula": "행위자가 막연한 일반인(by people), 알 수 없음, 중요치 않을 때 생략",
+            "rules": [],
             "examples": [
               {
                 "en": "English is spoken widely in many countries around the world.",
@@ -10389,11 +10598,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "건설한 구체적 행위자보다 다리가 지어졌다는 사실이 중요하므로 by를 생략합니다."
               }
             ],
-            "oxCompare": {
-              "o": "My bicycle was stolen last night.",
-              "x": "My bicycle was stolen by someone last night.",
-              "comment": "도둑이 누구인지 알 수 없으므로 by someone은 생략하는 것이 훨씬 자연스럽습니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "My bicycle was stolen last night.",
+                "wrong": "My bicycle was stolen by someone last night.",
+                "reason": "도둑이 누구인지 알 수 없으므로 by someone은 생략하는 것이 훨씬 자연스럽습니다."
+              }
+            ],
             "trap": "능동태의 목적어가 없는 1형식, 2형식 자동사는 수동태를 만들 수 없습니다!",
             "quizLink": "happen, appear, disappear 등 자동사는 수동태 불가 동사로 시험에 자주 나옵니다."
           }
@@ -10533,7 +10744,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "조동사가 있는 수동태 공식",
+            "desc": "",
             "formula": "주어 + can / must / will / should + be + p.p.",
+            "rules": [],
             "examples": [
               {
                 "en": "This difficult math problem can be solved by students easily.",
@@ -10546,17 +10759,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "must be submitted 구조입니다."
               }
             ],
-            "oxCompare": {
-              "o": "The garbage will be recycled.",
-              "x": "The garbage will is recycled.",
-              "comment": "조동사 will 뒤에는 is가 아니라 동사원형 be를 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "The garbage will be recycled.",
+                "wrong": "The garbage will is recycled.",
+                "reason": "조동사 will 뒤에는 is가 아니라 동사원형 be를 써야 합니다."
+              }
+            ],
             "trap": "조동사 뒤의 be를 am/are/is로 바꾸는 실수를 가장 많이 합니다. 무조건 'be'입니다!",
             "quizLink": "조동사 + be + p.p.는 수능 어법에서도 문장의 수동 의미를 판별하는 단골 공식입니다."
           },
           {
             "name": "수동태의 부정문과 의문문",
+            "desc": "",
             "formula": "부정: be + not + p.p. | 의문: Be동사 + 주어 + p.p. ~?",
+            "rules": [],
             "examples": [
               {
                 "en": "The secret code was not discovered by the enemy soldiers.",
@@ -10569,11 +10786,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "be동사 Was가 문장 맨 앞으로 나와 의문문을 만듭니다."
               }
             ],
-            "oxCompare": {
-              "o": "Was the window broken by the wind?",
-              "x": "Did the window broken by the wind?",
-              "comment": "수동태 의문문은 Did가 아니라 be동사 Was/Were로 시작해야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Was the window broken by the wind?",
+                "wrong": "Did the window broken by the wind?",
+                "reason": "수동태 의문문은 Did가 아니라 be동사 Was/Were로 시작해야 합니다."
+              }
+            ],
             "trap": "수동태 의문문에 일반동사 조동사 Did나 Do를 쓰면 절대 안 됩니다!",
             "quizLink": "Was the letter sent? ➔ Yes, it was. / No, it wasn't로 대답합니다."
           }
@@ -10713,7 +10932,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "감정과 상태를 나타내는 관용 수동태",
+            "desc": "",
             "formula": "be surprised at | be satisfied with | be covered with | be filled with",
+            "rules": [],
             "examples": [
               {
                 "en": "The high mountain peak is covered with pure white snow.",
@@ -10726,17 +10947,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "원인에 대한 놀람에는 전치사 at을 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "The room was filled with colorful balloons.",
-              "x": "The room was filled by colorful balloons.",
-              "comment": "풍선으로 가득 찬 상태를 나타낼 때는 by가 아니라 with를 씁니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "The room was filled with colorful balloons.",
+                "wrong": "The room was filled by colorful balloons.",
+                "reason": "풍선으로 가득 찬 상태를 나타낼 때는 by가 아니라 with를 씁니다."
+              }
+            ],
             "trap": "be made of (물리적 변화: 나무 책상) vs be made from (화학적 변화: 포도주) 구별!",
             "quizLink": "관용 수동태는 중학교 내신 빈칸 채우기 단골 킬러 문제입니다."
           },
           {
             "name": "인지와 명성을 나타내는 관용 수동태",
+            "desc": "",
             "formula": "be interested in | be known to(대상) | be known for(이유)",
+            "rules": [],
             "examples": [
               {
                 "en": "She is deeply interested in studying modern history.",
@@ -10749,11 +10974,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "유명한 이유나 특산물 앞에는 전치사 for를 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "He is known to everyone in the neighborhood.",
-              "x": "He is known with everyone in the neighborhood.",
-              "comment": "~에게 알려져 있다는 대상에는 전치사 to를 씁니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "He is known to everyone in the neighborhood.",
+                "wrong": "He is known with everyone in the neighborhood.",
+                "reason": "~에게 알려져 있다는 대상에는 전치사 to를 씁니다."
+              }
+            ],
             "trap": "be tired of (~에 실증나다) vs be tired from (~로 피곤하다) 뉘앙스 차이 주의!",
             "quizLink": "전치사 in, at, with, of, to를 정확한 짝꿍끼리 연결하는 것이 핵심입니다."
           }
@@ -10893,7 +11120,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "주격 관계대명사의 선택과 기본 어순",
+            "desc": "",
             "formula": "선행사(사람) + who/that + 동사 | 선행사(사물) + which/that + 동사",
+            "rules": [],
             "examples": [
               {
                 "en": "I know a talented boy who plays the guitar brilliantly.",
@@ -10906,17 +11135,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "선행사 the pretty cat(동물, 단수) 뒤에 which is가 왔습니다."
               }
             ],
-            "oxCompare": {
-              "o": "The girl who lives next door is very kind.",
-              "x": "The girl which lives next door is very kind.",
-              "comment": "The girl은 사람이므로 사물에 쓰는 which가 아니라 who나 that을 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "The girl who lives next door is very kind.",
+                "wrong": "The girl which lives next door is very kind.",
+                "reason": "The girl은 사람이므로 사물에 쓰는 which가 아니라 who나 that을 써야 합니다."
+              }
+            ],
             "trap": "주격 관계대명사 뒤에 다시 주어 대명사(who he lives)를 쓰면 절대 안 됩니다!",
             "quizLink": "주격 관계대명사는 생략할 수 없지만, '주격관대 + be동사'는 통째로 생략 가능합니다."
           },
           {
             "name": "관계사절 동사의 선행사 수일치 공식",
+            "desc": "",
             "formula": "단수 선행사 ➔ 단수동사(is, -s) | 복수 선행사 ➔ 복수동사(are, 원형)",
+            "rules": [],
             "examples": [
               {
                 "en": "I like stories that have happy endings.",
@@ -10929,11 +11162,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "선행사 an uncle이 단수이므로 who 뒤에 단수동사 lives가 옵니다."
               }
             ],
-            "oxCompare": {
-              "o": "Students who study hard will succeed.",
-              "x": "Students who studies hard will succeed.",
-              "comment": "선행사 Students가 복수이므로 who 뒤의 동사는 studies가 아니라 study입니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Students who study hard will succeed.",
+                "wrong": "Students who studies hard will succeed.",
+                "reason": "선행사 Students가 복수이므로 who 뒤의 동사는 studies가 아니라 study입니다."
+              }
+            ],
             "trap": "who 자체는 단수/복수 표시가 없으므로 무조건 앞의 '선행사'를 확인해야 합니다.",
             "quizLink": "중2 내신 객관식에서 관계사절 동사의 -s 누락/오용은 매년 100% 출제됩니다."
           }
@@ -11073,7 +11308,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "목적격 관계대명사의 역할과 생략",
+            "desc": "",
             "formula": "선행사 + (whom/which/that) + 주어 + 타동사 (목적어 자리 비어있음)",
+            "rules": [],
             "examples": [
               {
                 "en": "The delicious cake that my mother baked was so sweet.",
@@ -11086,17 +11323,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "사람 목적격 선행사에 whom(또는 who/that)을 썼습니다."
               }
             ],
-            "oxCompare": {
-              "o": "This is the book I wanted to read.",
-              "x": "This is the book which I wanted to read it.",
-              "comment": "which가 목적어 역할을 하므로 뒤에 중복 대명사 it을 남겨두면 비문이 됩니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "This is the book I wanted to read.",
+                "wrong": "This is the book which I wanted to read it.",
+                "reason": "which가 목적어 역할을 하므로 뒤에 중복 대명사 it을 남겨두면 비문이 됩니다."
+              }
+            ],
             "trap": "관계사절 끝에 목적어 대명사(it, them, him)를 그대로 남겨두는 실수가 가장 많습니다.",
             "quizLink": "'명사 + 주어 + 동사' 어순이 나오면 목적격 관계대명사가 생략된 구조입니다."
           },
           {
             "name": "전치사가 관계대명사 앞으로 올 때의 규칙",
+            "desc": "",
             "formula": "전치사 + whom / which (전치사 + that은 절대 불가!)",
+            "rules": [],
             "examples": [
               {
                 "en": "This is the comfortable chair on which I sat yesterday.",
@@ -11109,11 +11350,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "전치사 with 뒤에는 목적격 형태인 whom을 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "This is the house in which he lives.",
-              "x": "This is the house in that he lives.",
-              "comment": "전치사 바로 뒤에는 관계대명사 that을 절대 쓸 수 없습니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "This is the house in which he lives.",
+                "wrong": "This is the house in that he lives.",
+                "reason": "전치사 바로 뒤에는 관계대명사 that을 절대 쓸 수 없습니다."
+              }
+            ],
             "trap": "전치사가 관계대명사 바로 앞에 있을 때는 관계대명사를 생략할 수 없습니다!",
             "quizLink": "전치사 + which/whom은 시험에서 100% 빈출되는 수능 연계 핵심 어법입니다."
           }
@@ -11253,7 +11496,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "소유격 관계대명사 whose의 쓰임",
+            "desc": "",
             "formula": "선행사 + whose + 명사 + 동사 (선행사의 ~가 …하다)",
+            "rules": [],
             "examples": [
               {
                 "en": "I helped a crying boy whose bicycle was broken.",
@@ -11266,17 +11511,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "사물(house)의 소유격에도 whose를 쓸 수 있습니다."
               }
             ],
-            "oxCompare": {
-              "o": "She has a cat whose eyes are blue.",
-              "x": "She has a cat whose the eyes are blue.",
-              "comment": "whose 뒤의 명사 앞에는 정관사 the나 관사 a를 절대 붙이지 않습니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "She has a cat whose eyes are blue.",
+                "wrong": "She has a cat whose the eyes are blue.",
+                "reason": "whose 뒤의 명사 앞에는 정관사 the나 관사 a를 절대 붙이지 않습니다."
+              }
+            ],
             "trap": "whose 뒤에 the를 붙여놓은 보기는 대표적인 중2 어법 오답 트랩입니다.",
             "quizLink": "whose 뒤에는 주격/목적격과 달리 완전한 절의 형태가 이어지는 것이 특징입니다."
           },
           {
             "name": "관계대명사 that을 주로 쓰는 선행사",
+            "desc": "",
             "formula": "최상급 / 서수 / all / every / the only / 사람+동물 ➔ that 선호",
+            "rules": [],
             "examples": [
               {
                 "en": "Look at the cheerful boy and his dog that are running.",
@@ -11289,11 +11538,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "최상급 the most exciting이 선행사를 꾸밀 때는 that을 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "He gave me all that he had.",
-              "x": "He gave me all which he had.",
-              "comment": "선행사가 all일 때는 which보다 that을 쓰는 것이 규정입니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "He gave me all that he had.",
+                "wrong": "He gave me all which he had.",
+                "reason": "선행사가 all일 때는 which보다 that을 쓰는 것이 규정입니다."
+              }
+            ],
             "trap": "that 앞에는 콤마(,)와 전치사를 절대 쓸 수 없다는 예외를 기억하세요!",
             "quizLink": "the only(유일한), the very(바로 그), all, -thing 뒤에는 that이 정답입니다."
           }
@@ -11433,7 +11684,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "시간·조건 부사절의 미래시제 대용 법칙",
+            "desc": "",
             "formula": "If / When + S + 현재동사 (will 사용 금지!), S + will + 동원",
+            "rules": [],
             "examples": [
               {
                 "en": "If it rains tomorrow morning, we will stay at home.",
@@ -11446,17 +11699,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "when 부사절 안에서도 will arrive가 아닌 현재시제 arrives를 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "If you don't hurry, you will miss the train.",
-              "x": "If you won't hurry, you will miss the train.",
-              "comment": "조건의 부사절 if 안에는 미래 조동사 will(won't)을 쓸 수 없습니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "If you don't hurry, you will miss the train.",
+                "wrong": "If you won't hurry, you will miss the train.",
+                "reason": "조건의 부사절 if 안에는 미래 조동사 will(won't)을 쓸 수 없습니다."
+              }
+            ],
             "trap": "주절에는 will을 정상적으로 쓰되, 'If 절/When 절 내부'에서만 will을 뺍니다!",
             "quizLink": "수능과 내신 전 학년 시험에서 1순위로 출제되는 시제 일치 예외 규정입니다."
           },
           {
             "name": "unless와 although의 문맥 공식",
+            "desc": "",
             "formula": "unless = if ~ not (~하지 않는다면) | although / though + S + V (비록 ~이지만)",
+            "rules": [],
             "examples": [
               {
                 "en": "Unless you leave right now, you will be late for the movie.",
@@ -11469,11 +11726,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "날씨가 추웠음에도 축구를 했다는 상반된 양보의 의미에 Although를 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "Unless it rains, we will play outside.",
-              "x": "Unless it doesn't rain, we will play outside.",
-              "comment": "unless 안에 not을 또 넣으면 이중부정의 오류가 발생합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Unless it rains, we will play outside.",
+                "wrong": "Unless it doesn't rain, we will play outside.",
+                "reason": "unless 안에 not을 또 넣으면 이중부정의 오류가 발생합니다."
+              }
+            ],
             "trap": "although는 접속사이므로 뒤에 '주어+동사', despite는 전치사이므로 뒤에 '명사'가 옵니다.",
             "quizLink": "Unless you try = If you don't try는 중2 내신 주관식 단골 전환 문제입니다."
           }
@@ -11613,7 +11872,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "remember / forget의 미래(to) vs 과거(-ing)",
+            "desc": "",
             "formula": "remember/forget + to-V (미래에 할 일) vs + V-ing (과거에 한 일)",
+            "rules": [],
             "examples": [
               {
                 "en": "Remember to turn off the lights before you go to sleep.",
@@ -11626,17 +11887,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "과거에 이미 보았던 경험이므로 seeing을 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "Don't forget to lock the door.",
-              "x": "Don't forget locking the door.",
-              "comment": "문 잠그는 것을 잊지 말라는 미래의 당부이므로 to lock을 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Don't forget to lock the door.",
+                "wrong": "Don't forget locking the door.",
+                "reason": "문 잠그는 것을 잊지 말라는 미래의 당부이므로 to lock을 써야 합니다."
+              }
+            ],
             "trap": "I forgot meeting him은 '만났던 사실을 잊었다'이고, I forgot to meet him은 '만나기로 했는데 까먹고 안 만났다'입니다.",
             "quizLink": "Don't forget to-V는 '~하는 것을 잊지 마라(= 꼭 해라)'라는 숙어로 외워두세요."
           },
           {
             "name": "stop과 try의 목적어 구별 공식",
+            "desc": "",
             "formula": "stop to-V (~하기 위해 멈추다) vs stop V-ing (~하던 것을 그만두다) | try to-V vs try V-ing",
+            "rules": [],
             "examples": [
               {
                 "en": "The tired driver stopped to take a short rest at the gas station.",
@@ -11649,11 +11914,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "하던 행동을 멈추고 중단하는 것이므로 동명사 making을 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "He stopped smoking for his health.",
-              "x": "He stopped to smoke for his health.",
-              "comment": "건강을 위해 담배를 끊은 것이므로 동명사 smoking을 써야 합니다. (stopped to smoke는 담배 피우려고 멈췄다는 뜻!)"
-            },
+            "oxCompare": [
+              {
+                "correct": "He stopped smoking for his health.",
+                "wrong": "He stopped to smoke for his health.",
+                "reason": "건강을 위해 담배를 끊은 것이므로 동명사 smoking을 써야 합니다. (stopped to smoke는 담배 피우려고 멈췄다는 뜻!)"
+              }
+            ],
             "trap": "try to-V는 '~하려고 애쓰다/노력하다'이고, try V-ing는 '시험 삼아 한번 해보다'입니다.",
             "quizLink": "stop to-V의 to부정사는 목적어가 아니라 부사적 용법의 '목적(~하기 위해)'입니다."
           }
@@ -11797,10 +12064,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "사역동사와 지각동사의 목적격보어",
-            "formula": "사역동사(make, have, let) + 목적어 + 동사원형 / 지각동사(see, hear, feel) + 목적어 + 동사원형 or 현재분사(-ing)",
-            "example": "She made him clean the room. / I heard someone singing.",
-            "trap": "목적어와 보어의 관계가 수동이면 사역/지각 상관없이 무조건 과거분사(p.p.)! (I had my hair cut.)",
             "desc": "사역동사와 지각동사의 목적격보어은(는) 문장 구조 영역에서 가장 빈출되는 핵심 문법입니다. 사역동사(make/have/let), 지각동사(see/hear/watch/feel), help/get의 목적격보어 형태 완벽 정리의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "사역동사(make, have, let) + 목적어 + 동사원형 / 지각동사(see, hear, feel) + 목적어 + 동사원형 or 현재분사(-ing)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -11834,14 +12099,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "목적어와 보어의 관계가 수동이면 사역/지각 상관없이 무조건 과거분사(p.p.)! (I had my hair cut.)"
               }
             ],
+            "trap": "목적어와 보어의 관계가 수동이면 사역/지각 상관없이 무조건 과거분사(p.p.)! (I had my hair cut.)",
             "quizLink": "3단계 실전 퀴즈에서 [사역동사와 지각동사의 목적격보어] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "to부정사를 목적격보어로 취하는 일반 5형식 동사",
-            "formula": "want, tell, order, ask, allow, expect, advise + 목적어 + to부정사",
-            "example": "My mom told me to clean my room. He asked me to help him.",
-            "trap": "사역/지각동사가 아닌 일반 5형식 동사는 목적격보어 자리에 반드시 to부정사가 옴!",
             "desc": "to부정사를 목적격보어로 취하는 일반 5형식 동사은(는) 문장 구조 영역에서 가장 빈출되는 핵심 문법입니다. 사역동사(make/have/let), 지각동사(see/hear/watch/feel), help/get의 목적격보어 형태 완벽 정리의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "want, tell, order, ask, allow, expect, advise + 목적어 + to부정사",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -11875,6 +12139,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "사역/지각동사가 아닌 일반 5형식 동사는 목적격보어 자리에 반드시 to부정사가 옴!"
               }
             ],
+            "trap": "사역/지각동사가 아닌 일반 5형식 동사는 목적격보어 자리에 반드시 to부정사가 옴!",
             "quizLink": "3단계 실전 퀴즈에서 [to부정사를 목적격보어로 취하는 일반 5형식 동사] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -12010,10 +12275,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "관계대명사의 격 판별",
-            "formula": "주격: 선행사 + who/which/that + 동사 / 목적격: 선행사 + who(m)/which/that + S + V / 소유격: 선행사 + whose + 명사",
-            "example": "The girl who won the race is Jane. / A dog whose tail is short.",
-            "trap": "주격 관계대명사 뒤의 동사는 선행사의 인칭과 수에 일치시켜야 함!",
             "desc": "관계대명사의 격 판별은(는) 관계사 영역에서 가장 빈출되는 핵심 문법입니다. 선행사(사람/사물)에 따른 who, which, that의 격별 쓰임과 소유격 whose, 목적격 생략의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "주격: 선행사 + who/which/that + 동사 / 목적격: 선행사 + who(m)/which/that + S + V / 소유격: 선행사 + whose + 명사",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -12047,14 +12310,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "주격 관계대명사 뒤의 동사는 선행사의 인칭과 수에 일치시켜야 함!"
               }
             ],
+            "trap": "주격 관계대명사 뒤의 동사는 선행사의 인칭과 수에 일치시켜야 함!",
             "quizLink": "3단계 실전 퀴즈에서 [관계대명사의 격 판별] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "목적격 관계대명사의 생략",
-            "formula": "타동사의 목적어나 전치사의 목적어로 쓰인 관계대명사는 단독 생략 가능",
-            "example": "The movie (which) I watched yesterday was exciting.",
-            "trap": "전치사가 관계대명사 바로 앞에 있을 때는 생략 불가! (the house in which I live)",
             "desc": "목적격 관계대명사의 생략은(는) 관계사 영역에서 가장 빈출되는 핵심 문법입니다. 선행사(사람/사물)에 따른 who, which, that의 격별 쓰임과 소유격 whose, 목적격 생략의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "타동사의 목적어나 전치사의 목적어로 쓰인 관계대명사는 단독 생략 가능",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -12088,6 +12350,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "전치사가 관계대명사 바로 앞에 있을 때는 생략 불가! (the house in which I live)"
               }
             ],
+            "trap": "전치사가 관계대명사 바로 앞에 있을 때는 생략 불가! (the house in which I live)",
             "quizLink": "3단계 실전 퀴즈에서 [목적격 관계대명사의 생략] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -12223,10 +12486,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "what vs that 구별 공식 (수능·내신 1위 빈출)",
-            "formula": "what: 선행사 없음 + 뒷문장 불완전 (주어나 목적어 없음) / that: 선행사 명사 있음 + 뒷문장 불완전",
-            "example": "Show me what you bought. (선행사x, 불완전) / Show me the book that you bought. (선행사o, 불완전)",
-            "trap": "명사절 접속사 that은 선행사 없고 뒷문장이 '완전'함!",
             "desc": "what vs that 구별 공식 (수능·내신 1위 빈출)은(는) 관계사 영역에서 가장 빈출되는 핵심 문법입니다. 선행사를 포함하는 관계대명사 what(= the thing which)과 선행사가 필요한 that의 구조적 판별의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "what: 선행사 없음 + 뒷문장 불완전 (주어나 목적어 없음) / that: 선행사 명사 있음 + 뒷문장 불완전",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -12260,14 +12521,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "명사절 접속사 that은 선행사 없고 뒷문장이 '완전'함!"
               }
             ],
+            "trap": "명사절 접속사 that은 선행사 없고 뒷문장이 '완전'함!",
             "quizLink": "3단계 실전 퀴즈에서 [what vs that 구별 공식 (수능·내신 1위 빈출)] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "that만을 쓰는 경우",
-            "formula": "최상급, 서수, the only, the very, -thing 대명사, 사람+동물이 선행사일 때",
-            "example": "This is the only thing that I want.",
-            "trap": "전치사 뒤나 계속적 용법(콤마 뒤)에는 that 사용 불가! (, that - x / in that은 '~라는 점에서'라는 부사절)",
             "desc": "that만을 쓰는 경우은(는) 관계사 영역에서 가장 빈출되는 핵심 문법입니다. 선행사를 포함하는 관계대명사 what(= the thing which)과 선행사가 필요한 that의 구조적 판별의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "최상급, 서수, the only, the very, -thing 대명사, 사람+동물이 선행사일 때",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -12301,6 +12561,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "전치사 뒤나 계속적 용법(콤마 뒤)에는 that 사용 불가! (, that - x / in that은 '~라는 점에서'라는 부사절)"
               }
             ],
+            "trap": "전치사 뒤나 계속적 용법(콤마 뒤)에는 that 사용 불가! (, that - x / in that은 '~라는 점에서'라는 부사절)",
             "quizLink": "3단계 실전 퀴즈에서 [that만을 쓰는 경우] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -12436,10 +12697,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "관계부사 = 전치사 + 관계대명사",
-            "formula": "where (= in/at which) / when (= in/on/at which) / why (= for which) / how (= in which)",
-            "example": "This is the house where I was born. (= in which I was born)",
-            "trap": "관계대명사 뒤는 불완전한 문장이지만, 관계부사 뒤는 '완전한 문장'이 옴!",
             "desc": "관계부사 = 전치사 + 관계대명사은(는) 관계사 영역에서 가장 빈출되는 핵심 문법입니다. 장소, 시간, 이유, 방법의 관계부사와 '전치사 + 관계대명사' 전환, the way how의 병기 불가의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "where (= in/at which) / when (= in/on/at which) / why (= for which) / how (= in which)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -12473,14 +12732,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "관계대명사 뒤는 불완전한 문장이지만, 관계부사 뒤는 '완전한 문장'이 옴!"
               }
             ],
+            "trap": "관계대명사 뒤는 불완전한 문장이지만, 관계부사 뒤는 '완전한 문장'이 옴!",
             "quizLink": "3단계 실전 퀴즈에서 [관계부사 = 전치사 + 관계대명사] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "the way how의 병기 금지",
-            "formula": "the way와 how는 절대로 나란히 쓸 수 없음! the way만 쓰거나, how만 쓰거나, the way in which/that으로 씀",
-            "example": "This is the way how he solved it. (x) -> This is the way he solved it. (o)",
-            "trap": "중·고등 내신 시험 단골 출제 1위 함정!",
             "desc": "the way how의 병기 금지은(는) 관계사 영역에서 가장 빈출되는 핵심 문법입니다. 장소, 시간, 이유, 방법의 관계부사와 '전치사 + 관계대명사' 전환, the way how의 병기 불가의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "the way와 how는 절대로 나란히 쓸 수 없음! the way만 쓰거나, how만 쓰거나, the way in which/that으로 씀",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -12514,6 +12772,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "중·고등 내신 시험 단골 출제 1위 함정!"
               }
             ],
+            "trap": "중·고등 내신 시험 단골 출제 1위 함정!",
             "quizLink": "3단계 실전 퀴즈에서 [the way how의 병기 금지] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -12649,10 +12908,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "분사의 형용사적 수식",
-            "formula": "명사 앞/뒤에서 수식: 수식받는 명사와의 관계가 능동이면 -ing, 수동이면 p.p.",
-            "example": "the sleeping baby / a broken window / the boy running in the park",
-            "trap": "수식받는 명사가 챕터, 규칙 등 사물이면 p.p. 형태가 많음!",
             "desc": "분사의 형용사적 수식은(는) 준동사 영역에서 가장 빈출되는 핵심 문법입니다. 능동·진행의 현재분사(-ing) vs 수동·완료의 과거분사(p.p.), 감정을 유발하는 -ing vs 감정을 느끼는 p.p.의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "명사 앞/뒤에서 수식: 수식받는 명사와의 관계가 능동이면 -ing, 수동이면 p.p.",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -12686,14 +12943,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "수식받는 명사가 챕터, 규칙 등 사물이면 p.p. 형태가 많음!"
               }
             ],
+            "trap": "수식받는 명사가 챕터, 규칙 등 사물이면 p.p. 형태가 많음!",
             "quizLink": "3단계 실전 퀴즈에서 [분사의 형용사적 수식] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "감정유발 동사의 분사 공식",
-            "formula": "사물이 주어/수식대상이면 -ing (감정 유발) / 사람이 주어/수식대상이면 p.p. (감정 느낌)",
-            "example": "The movie was boring. / I was bored with the movie.",
-            "trap": "I am interesting in science. (x) -> I am interested in science. (o)",
             "desc": "감정유발 동사의 분사 공식은(는) 준동사 영역에서 가장 빈출되는 핵심 문법입니다. 능동·진행의 현재분사(-ing) vs 수동·완료의 과거분사(p.p.), 감정을 유발하는 -ing vs 감정을 느끼는 p.p.의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "사물이 주어/수식대상이면 -ing (감정 유발) / 사람이 주어/수식대상이면 p.p. (감정 느낌)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -12727,6 +12983,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "I am interesting in science. (x) -> I am interested in science. (o)"
               }
             ],
+            "trap": "I am interesting in science. (x) -> I am interested in science. (o)",
             "quizLink": "3단계 실전 퀴즈에서 [감정유발 동사의 분사 공식] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -12862,10 +13119,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "분사구문 만들기 3단계",
-            "formula": "1) 접속사 생략 ➔ 2) 주절과 같은 주어 생략 ➔ 3) 동사원형에 -ing 붙이기",
-            "example": "As I felt tired, I went to bed early. ➔ Feeling tired, I went to bed early.",
-            "trap": "부사절의 주어와 주절의 주어가 다르면 분사 앞에 주어를 남겨둬야 함 (독립분사구문)!",
             "desc": "분사구문 만들기 3단계은(는) 준동사 영역에서 가장 빈출되는 핵심 문법입니다. 부사절(접속사+S+V)을 분사구문(V-ing)으로 줄이는 공식과 부정형(not + V-ing)의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1) 접속사 생략 ➔ 2) 주절과 같은 주어 생략 ➔ 3) 동사원형에 -ing 붙이기",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -12899,14 +13154,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "부사절의 주어와 주절의 주어가 다르면 분사 앞에 주어를 남겨둬야 함 (독립분사구문)!"
               }
             ],
+            "trap": "부사절의 주어와 주절의 주어가 다르면 분사 앞에 주어를 남겨둬야 함 (독립분사구문)!",
             "quizLink": "3단계 실전 퀴즈에서 [분사구문 만들기 3단계] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "분사구문의 부정",
-            "formula": "Not[Never] + V-ing (분사 바로 앞에 not 배치)",
-            "example": "As I didn't know his address, ... ➔ Not knowing his address, ...",
-            "trap": "Knowing not his address (x) -> 반드시 분사 앞에 Not!",
             "desc": "분사구문의 부정은(는) 준동사 영역에서 가장 빈출되는 핵심 문법입니다. 부사절(접속사+S+V)을 분사구문(V-ing)으로 줄이는 공식과 부정형(not + V-ing)의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "Not[Never] + V-ing (분사 바로 앞에 not 배치)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -12940,6 +13194,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "Knowing not his address (x) -> 반드시 분사 앞에 Not!"
               }
             ],
+            "trap": "Knowing not his address (x) -> 반드시 분사 앞에 Not!",
             "quizLink": "3단계 실전 퀴즈에서 [분사구문의 부정] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -13075,10 +13330,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "가정법 과거 공식",
-            "formula": "If + 주어 + 과거동사(be동사는 were), 주어 + would/could/should/might + 동사원형",
-            "example": "If I had wings, I could fly to you. (지금 날개가 없어서 날아갈 수 없다)",
-            "trap": "가정법 과거는 형태는 과거지만 해석은 '현재'로 함!",
             "desc": "가정법 과거 공식은(는) 가정법 영역에서 가장 빈출되는 핵심 문법입니다. 현재 사실의 반대를 상상하는 가정법 과거(If + 과거동사, S + would + 동원)와 직설법 전환의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "If + 주어 + 과거동사(be동사는 were), 주어 + would/could/should/might + 동사원형",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -13112,14 +13365,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "가정법 과거는 형태는 과거지만 해석은 '현재'로 함!"
               }
             ],
+            "trap": "가정법 과거는 형태는 과거지만 해석은 '현재'로 함!",
             "quizLink": "3단계 실전 퀴즈에서 [가정법 과거 공식] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "I wish / as if 가정법",
-            "formula": "I wish + 주어 + 과거동사 (~라면 좋을 텐데) / as if + 주어 + 과거동사 (마치 ~인 것처럼)",
-            "example": "I wish I were rich. / He talks as if he knew everything.",
-            "trap": "as if 뒤에 과거동사가 오면 주절 시점과 같은 시점의 반대를 나타냄!",
             "desc": "I wish / as if 가정법은(는) 가정법 영역에서 가장 빈출되는 핵심 문법입니다. 현재 사실의 반대를 상상하는 가정법 과거(If + 과거동사, S + would + 동원)와 직설법 전환의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "I wish + 주어 + 과거동사 (~라면 좋을 텐데) / as if + 주어 + 과거동사 (마치 ~인 것처럼)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -13153,6 +13405,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "as if 뒤에 과거동사가 오면 주절 시점과 같은 시점의 반대를 나타냄!"
               }
             ],
+            "trap": "as if 뒤에 과거동사가 오면 주절 시점과 같은 시점의 반대를 나타냄!",
             "quizLink": "3단계 실전 퀴즈에서 [I wish / as if 가정법] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -13288,10 +13541,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "간접의문문의 기본 어순",
-            "formula": "의문사 + 주어 + 동사 (의문사가 없으면 if/whether + 주어 + 동사)",
-            "example": "Do you know who she is? / I wonder if she is coming.",
-            "trap": "Who is she?의 직접의문문 어순을 그대로 넣지 않도록 주의!",
             "desc": "간접의문문의 기본 어순은(는) 문장의 결합 영역에서 가장 빈출되는 핵심 문법입니다. 의문사 + 주어 + 동사(의·주·동) 평서문 어순과 주절 동사가 think/believe일 때 의문사 전치의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "의문사 + 주어 + 동사 (의문사가 없으면 if/whether + 주어 + 동사)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -13325,14 +13576,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "Who is she?의 직접의문문 어순을 그대로 넣지 않도록 주의!"
               }
             ],
+            "trap": "Who is she?의 직접의문문 어순을 그대로 넣지 않도록 주의!",
             "quizLink": "3단계 실전 퀴즈에서 [간접의문문의 기본 어순] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "생각·추측 동사일 때 의문사 전치",
-            "formula": "think, believe, guess, suppose, imagine이 주절 동사이면 의문사가 문장 맨 앞으로 이동!",
-            "example": "Do you think who he is? (x) ➔ Who do you think he is? (o)",
-            "trap": "Yes/No 대답이 불가능하기 때문에 의문사가 맨 앞으로 나감!",
             "desc": "생각·추측 동사일 때 의문사 전치은(는) 문장의 결합 영역에서 가장 빈출되는 핵심 문법입니다. 의문사 + 주어 + 동사(의·주·동) 평서문 어순과 주절 동사가 think/believe일 때 의문사 전치의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "think, believe, guess, suppose, imagine이 주절 동사이면 의문사가 문장 맨 앞으로 이동!",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -13366,6 +13616,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "Yes/No 대답이 불가능하기 때문에 의문사가 맨 앞으로 나감!"
               }
             ],
+            "trap": "Yes/No 대답이 불가능하기 때문에 의문사가 맨 앞으로 나감!",
             "quizLink": "3단계 실전 퀴즈에서 [생각·추측 동사일 때 의문사 전치] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -13509,7 +13760,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "대과거(더 이른 과거)와 과거의 시점 비교 공식",
+            "desc": "",
             "formula": "had + p.p. (대과거: 먼저 일어남) ➔ 과거동사 (과거: 나중에 일어남)",
+            "rules": [],
             "examples": [
               {
                 "en": "When I arrived at the cinema, the movie had already started.",
@@ -13522,17 +13775,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "시계를 잃어버린 과거(lost)보다 할아버지가 주신 것이 먼저이므로 had given입니다."
               }
             ],
-            "oxCompare": {
-              "o": "She had finished dinner before I came home.",
-              "x": "She has finished dinner before I came home.",
-              "comment": "과거 시점(came home) 이전의 일이므로 현재완료 has finished가 아니라 과거완료 had finished를 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "She had finished dinner before I came home.",
+                "wrong": "She has finished dinner before I came home.",
+                "reason": "과거 시점(came home) 이전의 일이므로 현재완료 has finished가 아니라 과거완료 had finished를 써야 합니다."
+              }
+            ],
             "trap": "과거완료는 문장 속에 반드시 비교할 수 있는 '과거 기준 시점'이 존재해야 합니다.",
             "quizLink": "lost the watch that he (bought / had bought) 형태는 중3 내신 단골 1순위입니다."
           },
           {
             "name": "before / after 접속사와 과거완료",
+            "desc": "",
             "formula": "시간 전후 관계가 명확할 땐 단순 과거도 가능하나, 강조 시 had p.p. 사용",
+            "rules": [],
             "examples": [
               {
                 "en": "He had worked at the bank for ten years before he moved to Seoul.",
@@ -13545,11 +13802,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "깨달은 과거(realized)보다 우산을 두고 내린 것(had left)이 더 먼저 일어났습니다."
               }
             ],
-            "oxCompare": {
-              "o": "I knew him well because I had seen him before.",
-              "x": "I knew him well because I saw him before.",
-              "comment": "알고 있던 과거(knew) 이전에 본 경험이므로 had seen이 훨씬 정확한 시제 표현입니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "I knew him well because I had seen him before.",
+                "wrong": "I knew him well because I saw him before.",
+                "reason": "알고 있던 과거(knew) 이전에 본 경험이므로 had seen이 훨씬 정확한 시제 표현입니다."
+              }
+            ],
             "trap": "과거완료 진행형(had been V-ing)은 대과거부터 과거까지 계속되던 동작을 나타냅니다.",
             "quizLink": "선후 관계가 있는 두 문장을 결합할 때 먼저 일어난 쪽에 had p.p.를 붙이세요."
           }
@@ -13689,7 +13948,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "관계부사의 종류와 완전한 절 공식",
+            "desc": "",
             "formula": "선행사(장소/시간/이유) + where/when/why + 완전한 문장 (S + V + O)",
+            "rules": [],
             "examples": [
               {
                 "en": "This is the peaceful town where I spent my childhood.",
@@ -13702,17 +13963,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "선행사 the day(시간) 뒤에 완전한 문장을 이끄는 관계부사 when이 왔습니다."
               }
             ],
-            "oxCompare": {
-              "o": "This is the house where he lives.",
-              "x": "This is the house which he lives.",
-              "comment": "he lives는 목적어가 필요 없는 완전한 절이므로 which가 아니라 where(= in which)를 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "This is the house where he lives.",
+                "wrong": "This is the house which he lives.",
+                "reason": "he lives는 목적어가 필요 없는 완전한 절이므로 which가 아니라 where(= in which)를 써야 합니다."
+              }
+            ],
             "trap": "선행사가 장소라고 무조건 where를 고르면 안 됩니다! 뒤 문장이 불완전하면 which입니다.",
             "quizLink": "관계대명사 뒤는 불완전(주어/목적어 탈락), 관계부사 뒤는 '완전한 문장'입니다."
           },
           {
             "name": "the way와 how의 절대 병치 불가 공식",
+            "desc": "",
             "formula": "the way (O) | how (O) | the way how (X 무조건 오답!)",
+            "rules": [],
             "examples": [
               {
                 "en": "This is how she solved the complicated math problem.",
@@ -13725,11 +13990,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "the way 단독으로 쓰여 방법을 수식합니다."
               }
             ],
-            "oxCompare": {
-              "o": "Tell me the way you made this cake.",
-              "x": "Tell me the way how you made this cake.",
-              "comment": "the way와 how는 절대로 함께 나란히 쓸 수 없습니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Tell me the way you made this cake.",
+                "wrong": "Tell me the way how you made this cake.",
+                "reason": "the way와 how는 절대로 함께 나란히 쓸 수 없습니다."
+              }
+            ],
             "trap": "the way in which나 the way that은 문법적으로 완벽히 가능합니다.",
             "quizLink": "the way how가 보기에 보이면 뒤도 돌아보지 말고 오답으로 체크하세요."
           }
@@ -13869,7 +14136,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "계속적 용법의 의미와 순차 해석 공식",
+            "desc": "",
             "formula": "선행사, who / which ~ = 접속사(and/but) + 인칭대명사",
+            "rules": [],
             "examples": [
               {
                 "en": "I met Minho yesterday, who gave me an interesting comic book.",
@@ -13882,17 +14151,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": ", which는 and it(그런데 그것은)으로 바꾸어 해석할 수 있습니다."
               }
             ],
-            "oxCompare": {
-              "o": "He invited Mary, who was his cousin.",
-              "x": "He invited Mary, that was his cousin.",
-              "comment": "콤마(,) 뒤의 계속적 용법에는 관계대명사 that을 절대 쓸 수 없습니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "He invited Mary, who was his cousin.",
+                "wrong": "He invited Mary, that was his cousin.",
+                "reason": "콤마(,) 뒤의 계속적 용법에는 관계대명사 that을 절대 쓸 수 없습니다."
+              }
+            ],
             "trap": "고유명사(인명, 지명) 뒤에서는 한정할 대상이 없으므로 반드시 계속적 용법(콤마)을 씁니다.",
             "quizLink": "콤마 + that, 콤마 + what은 시험지에서 보자마자 오답으로 걸러내야 하는 0초 킬러입니다."
           },
           {
             "name": "앞 문장 전체나 일부를 받는 , which",
+            "desc": "",
             "formula": "앞 문장(S + V ~), which + 단수동사 (그리고 그것은 ~이다)",
+            "rules": [],
             "examples": [
               {
                 "en": "He told everyone that he won first prize, which was not true.",
@@ -13905,11 +14178,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "약속을 깬 앞 문장 사실 전체를 선행사로 받는 계속적 용법의 which입니다."
               }
             ],
-            "oxCompare": {
-              "o": "He failed the exam, which made his mother sad.",
-              "x": "He failed the exam, what made his mother sad.",
-              "comment": "앞 문장 전체를 받는 계속적 관계대명사는 오직 which만 가능하며 what은 쓸 수 없습니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "He failed the exam, which made his mother sad.",
+                "wrong": "He failed the exam, what made his mother sad.",
+                "reason": "앞 문장 전체를 받는 계속적 관계대명사는 오직 which만 가능하며 what은 쓸 수 없습니다."
+              }
+            ],
             "trap": "앞 문장 전체를 선행사로 받을 때 which 뒤의 동사는 무조건 '단수 취급(is/was/-s)'합니다!",
             "quizLink": ", which was / , which made는 고등 내신과 모의고사 독해에서 가장 빈출되는 구문입니다."
           }
@@ -14049,7 +14324,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "관계대명사 what의 3대 특징",
+            "desc": "",
             "formula": "선행사 없음 + what + 불완전한 문장 (주어/목적어 탈락) = 명사절",
+            "rules": [],
             "examples": [
               {
                 "en": "What he said at the meeting surprised everyone in the room.",
@@ -14062,17 +14339,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "to buy의 목적어가 없는 불완전한 절을 이끄는 보어 역할의 what입니다."
               }
             ],
-            "oxCompare": {
-              "o": "I don't understand what you mean.",
-              "x": "I don't understand that you mean.",
-              "comment": "mean 뒤에 목적어가 빠져 있으므로 완전한 절을 이끄는 접속사 that이 아니라 what을 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "I don't understand what you mean.",
+                "wrong": "I don't understand that you mean.",
+                "reason": "mean 뒤에 목적어가 빠져 있으므로 완전한 절을 이끄는 접속사 that이 아니라 what을 써야 합니다."
+              }
+            ],
             "trap": "what 앞에 선행사 명사(the book what I read)를 쓰면 100% 비문입니다!",
             "quizLink": "what = the thing which이므로 이미 선행사를 품고 있어 앞에 다른 명사가 오지 않습니다."
           },
           {
             "name": "what vs that 1초 판별 알고리즘",
+            "desc": "",
             "formula": "선행사 확인 ➔ [있음: 관대 that/which] | [없음 ➔ 뒤가 완전: 접속사 that / 뒤가 불완전: what]",
+            "rules": [],
             "examples": [
               {
                 "en": "I know that she is an honest and hardworking student.",
@@ -14085,11 +14366,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "believe 뒤에 선행사가 없고, said의 목적어가 없는 불완전한 절이므로 what입니다."
               }
             ],
-            "oxCompare": {
-              "o": "He told me that he was innocent.",
-              "x": "He told me what he was innocent.",
-              "comment": "he was innocent는 주어+be동사+보어를 갖춘 완전한 문장이므로 접속사 that을 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "He told me that he was innocent.",
+                "wrong": "He told me what he was innocent.",
+                "reason": "he was innocent는 주어+be동사+보어를 갖춘 완전한 문장이므로 접속사 that을 써야 합니다."
+              }
+            ],
             "trap": "문장의 겉모습만 보지 말고 동사 뒤 목적어나 전치사 뒤 목적어가 비어있는지 꼭 확인하세요!",
             "quizLink": "수능 29번 어법 문제의 약 30%가 바로 이 what vs that 구별 공식에서 출제됩니다."
           }
@@ -14229,7 +14512,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "명사절 vs 양보 부사절 판별 공식",
+            "desc": "",
             "formula": "명사절(주·목·보): anyone who / anything that | 부사절(콤마 동반): no matter who/what",
+            "rules": [],
             "examples": [
               {
                 "en": "Whoever wants to join the book club is warmly welcome.",
@@ -14242,17 +14527,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "no matter what의 뜻을 가진 양보 부사절입니다."
               }
             ],
-            "oxCompare": {
-              "o": "You can choose whichever you like.",
-              "x": "You can choose no matter which you like.",
-              "comment": "choose의 목적어 자리인 명사절에는 no matter which를 쓸 수 없고 whichever(= anything that)를 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "You can choose whichever you like.",
+                "wrong": "You can choose no matter which you like.",
+                "reason": "choose의 목적어 자리인 명사절에는 no matter which를 쓸 수 없고 whichever(= anything that)를 써야 합니다."
+              }
+            ],
             "trap": "no matter what/who는 오직 콤마(,)를 동반한 '부사절'에만 쓸 수 있습니다!",
             "quizLink": "문장의 주어/목적어 자리에 쓰였는지, 콤마로 분리된 부사절인지 확인하세요."
           },
           {
             "name": "however + 형용사/부사 어순 공식",
+            "desc": "",
             "formula": "however + 형용사/부사 + S + V = no matter how + 형/부 (아무리 ~할지라도)",
+            "rules": [],
             "examples": [
               {
                 "en": "However difficult the task is, we will never give up.",
@@ -14265,11 +14554,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "at any time when의 의미를 갖는 복합관계부사 whenever입니다."
               }
             ],
-            "oxCompare": {
-              "o": "However hard he tried, he couldn't solve it.",
-              "x": "However he tried hard, he couldn't solve it.",
-              "comment": "however 뒤에 바로 부사 hard가 붙어야 올바른 양보 구문 어순입니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "However hard he tried, he couldn't solve it.",
+                "wrong": "However he tried hard, he couldn't solve it.",
+                "reason": "however 뒤에 바로 부사 hard가 붙어야 올바른 양보 구문 어순입니다."
+              }
+            ],
             "trap": "however 뒤에 주어+동사를 먼저 쓰고 형용사/부사를 뒤로 보내면 100% 오답입니다.",
             "quizLink": "however + 형용사/부사 어순은 고등 내신과 수능 서술형 단골 영작 문제입니다."
           }
@@ -14409,7 +14700,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "가정법 과거의 형태와 be동사 were",
+            "desc": "",
             "formula": "If + S + 과거동사(were), S + would/could/should/might + 동사원형",
+            "rules": [],
             "examples": [
               {
                 "en": "If I were a bird, I could fly to you across the ocean.",
@@ -14422,17 +14715,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "현재 돈이 없어서 살 수 없음을 가정법 과거(had ~ would buy)로 나타냈습니다."
               }
             ],
-            "oxCompare": {
-              "o": "If I had wings, I would fly.",
-              "x": "If I have wings, I would fly.",
-              "comment": "주절에 would fly가 있으므로 If절의 동사도 과거형 had가 되어야 시제가 맞습니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "If I had wings, I would fly.",
+                "wrong": "If I have wings, I would fly.",
+                "reason": "주절에 would fly가 있으므로 If절의 동사도 과거형 had가 되어야 시제가 맞습니다."
+              }
+            ],
             "trap": "가정법 과거는 이름만 과거일 뿐, '현재 사실'을 반대로 상상하는 표현입니다!",
             "quizLink": "If S + were, S + would 동원은 영문법 시험에서 가장 출제 빈도가 높은 공식입니다."
           },
           {
             "name": "가정법 과거 ➔ 직설법 현재 전환 공식",
+            "desc": "",
             "formula": "If S + were/과거동사 ➔ As S + am not / don't + 동원 (부호 반대!)",
+            "rules": [],
             "examples": [
               {
                 "en": "If she knew his telephone number, she would call him right now.",
@@ -14445,11 +14742,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "직설법 현재 시제로 전환할 때는 긍정이 부정(doesn't know)으로 바뀝니다."
               }
             ],
-            "oxCompare": {
-              "o": "As I am not rich, I cannot buy the mansion.",
-              "x": "As I was not rich, I could not buy the mansion.",
-              "comment": "가정법 과거는 현재 사실을 말하는 것이므로 직설법 시제는 '현재(am not/cannot)'입니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "As I am not rich, I cannot buy the mansion.",
+                "wrong": "As I was not rich, I could not buy the mansion.",
+                "reason": "가정법 과거는 현재 사실을 말하는 것이므로 직설법 시제는 '현재(am not/cannot)'입니다."
+              }
+            ],
             "trap": "직설법으로 바꿀 때 시제를 과거로 쓰면 100% 감점당합니다!",
             "quizLink": "가정법 ➔ 직설법 서술형 전환은 중3 지필고사 배점 5점짜리 단골 문항입니다."
           }
@@ -14589,7 +14888,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "가정법 과거완료 형태 짝맞추기 공식",
+            "desc": "",
             "formula": "If + S + had p.p. , S + would/could/should/might + have p.p.",
+            "rules": [],
             "examples": [
               {
                 "en": "If I had studied harder for the exam, I could have entered that university.",
@@ -14602,17 +14903,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "과거에 급행열차를 타지 않아서 늦었다는 사실을 반대로 가정한 문장입니다."
               }
             ],
-            "oxCompare": {
-              "o": "If he had known the truth, he would have told me.",
-              "x": "If he had known the truth, he would tell me.",
-              "comment": "If절이 had known(과거완료)이므로 주절도 would tell이 아니라 would have told가 되어야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "If he had known the truth, he would have told me.",
+                "wrong": "If he had known the truth, he would tell me.",
+                "reason": "If절이 had known(과거완료)이므로 주절도 would tell이 아니라 would have told가 되어야 합니다."
+              }
+            ],
             "trap": "If절의 had p.p.와 주절의 would have p.p.의 시제 균형을 맞추는 것이 핵심입니다.",
             "quizLink": "가정법 과거완료와 혼합가정법(If had p.p. ~ now would V)을 구별하는 문제가 고난도로 출제됩니다."
           },
           {
             "name": "가정법 과거완료 ➔ 직설법 과거 전환 공식",
+            "desc": "",
             "formula": "If had p.p. ➔ As + 단순과거 부정 (부호 반대 + 단순과거 시제)",
+            "rules": [],
             "examples": [
               {
                 "en": "If it had not rained yesterday, we would have gone on a picnic.",
@@ -14625,11 +14930,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "직설법 과거(rained / did not go)로 사실 그대로 전환했습니다."
               }
             ],
-            "oxCompare": {
-              "o": "As I didn't have money, I couldn't buy the ticket.",
-              "x": "As I hadn't money, I couldn't buy the ticket.",
-              "comment": "일반동사 have의 과거 부정문은 didn't have입니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "As I didn't have money, I couldn't buy the ticket.",
+                "wrong": "As I hadn't money, I couldn't buy the ticket.",
+                "reason": "일반동사 have의 과거 부정문은 didn't have입니다."
+              }
+            ],
             "trap": "가정법 과거완료를 직설법으로 바꿀 때 시제는 대과거(had p.p.)가 아니라 '단순과거'입니다!",
             "quizLink": "서술형 시험에서 As 절의 시제를 과거로 쓰지 않고 현재로 쓰면 큰 감점을 받습니다."
           }
@@ -14769,7 +15076,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "I wish 가정법의 두 가지 시제 공식",
+            "desc": "",
             "formula": "I wish + S + 과거동사 (현재 소망) | I wish + S + had p.p. (과거 소망)",
+            "rules": [],
             "examples": [
               {
                 "en": "I wish I were taller so that I could play basketball better.",
@@ -14782,17 +15091,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "과거에 조언을 듣지 않은 후회를 나타내어 had listened를 썼습니다."
               }
             ],
-            "oxCompare": {
-              "o": "I wish I could speak French well.",
-              "x": "I wish I can speak French well.",
-              "comment": "I wish 뒤에는 직설법 can이 아니라 가정법 과거형 could를 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "I wish I could speak French well.",
+                "wrong": "I wish I can speak French well.",
+                "reason": "I wish 뒤에는 직설법 can이 아니라 가정법 과거형 could를 써야 합니다."
+              }
+            ],
             "trap": "I wish 가정법은 유감의 직설법 'I am sorry that ~'으로 전환할 수 있습니다.",
             "quizLink": "I am sorry that I am not rich ➔ I wish I were rich로의 전환은 필수 출제 문제입니다."
           },
           {
             "name": "as if 가정법의 시제 공식",
+            "desc": "",
             "formula": "as if + S + 과거동사 (주절과 같은 시점 반대) | as if + S + had p.p. (주절보다 앞선 시점)",
+            "rules": [],
             "examples": [
               {
                 "en": "He talks as if he knew everything about the secret project.",
@@ -14805,11 +15118,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "행동하는 현재보다 앞선 과거의 일(yesterday)을 가정하므로 had seen을 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "He talks as if he were rich.",
-              "x": "He talks as if he is rich.",
-              "comment": "사실은 부자가 아니라는 반대 가정이므로 is가 아니라 were를 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "He talks as if he were rich.",
+                "wrong": "He talks as if he is rich.",
+                "reason": "사실은 부자가 아니라는 반대 가정이므로 is가 아니라 were를 써야 합니다."
+              }
+            ],
             "trap": "as if = as though는 상호 교환이 가능한 완벽한 동의어입니다.",
             "quizLink": "as if 뒤의 be동사 역시 was 대신 were를 쓰는 것이 규정입니다."
           }
@@ -14949,7 +15264,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "분사구문 만드는 3단계 기본 공식",
+            "desc": "",
             "formula": "1. 접속사 삭제 ➔ 2. 주절 주어와 같으면 삭제 ➔ 3. 동사 ➔ V-ing (능동)",
+            "rules": [],
             "examples": [
               {
                 "en": "Arriving at the station, I found that my train had already left.",
@@ -14962,17 +15279,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "Because she felt very tired에서 Feeling으로 전환된 이유의 분사구문입니다."
               }
             ],
-            "oxCompare": {
-              "o": "Hearing the loud noise, he turned around.",
-              "x": "Heard the loud noise, he turned around.",
-              "comment": "그가 소리를 들은 '능동' 관계이므로 과거분사 Heard가 아니라 현재분사 Hearing을 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Hearing the loud noise, he turned around.",
+                "wrong": "Heard the loud noise, he turned around.",
+                "reason": "그가 소리를 들은 '능동' 관계이므로 과거분사 Heard가 아니라 현재분사 Hearing을 써야 합니다."
+              }
+            ],
             "trap": "주절의 주어가 동작을 '직접 하는 능동'이면 V-ing, '당하는 수동'이면 p.p.입니다.",
             "quizLink": "부사절 ➔ 분사구문, 분사구문 ➔ 부사절 양방향 변환은 내신 단골 주관식입니다."
           },
           {
             "name": "동시동작과 연속동작의 분사구문",
+            "desc": "",
             "formula": "S + V ~, V-ing (동시동작: ~하면서) | S + V ~, and + V (연속동작)",
+            "rules": [],
             "examples": [
               {
                 "en": "She sat on the comfortable bench, listening to pop music.",
@@ -14985,11 +15306,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "미소 짓는 행동과 맞이하는 행동이 동시에 일어남을 나타냅니다."
               }
             ],
-            "oxCompare": {
-              "o": "He walked down the street, waving his hand.",
-              "x": "He walked down the street, waved his hand.",
-              "comment": "접속사 and 없이 동사 두 개를 콤마로 연결할 수 없으므로 waving 분사구문으로 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "He walked down the street, waving his hand.",
+                "wrong": "He walked down the street, waved his hand.",
+                "reason": "접속사 and 없이 동사 두 개를 콤마로 연결할 수 없으므로 waving 분사구문으로 써야 합니다."
+              }
+            ],
             "trap": "접속사가 없는데 동사원형이나 과거형 동사를 콤마 뒤에 나열하면 문법적 오류입니다.",
             "quizLink": "콤마 뒤의 V-ing는 독해 지문에서 90% 이상 '~하면서'로 매끄럽게 해석됩니다."
           }
@@ -15129,7 +15452,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "완료분사구문 Having + p.p. 공식",
+            "desc": "",
             "formula": "Having + p.p. ~, 주어 + 과거동사 (부사절 시제가 주절보다 하나 더 과거!)",
+            "rules": [],
             "examples": [
               {
                 "en": "Having finished all my homework, I went out to play soccer.",
@@ -15142,17 +15467,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "과거 이전에 본 경험이므로 Having seen을 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "Having lost his key, he couldn't open the door.",
-              "x": "Losing his key, he couldn't open the door.",
-              "comment": "열쇠를 잃어버린 것이 문을 못 여는 것보다 명백히 앞선 사건이므로 Having lost가 훨씬 정확합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Having lost his key, he couldn't open the door.",
+                "wrong": "Losing his key, he couldn't open the door.",
+                "reason": "열쇠를 잃어버린 것이 문을 못 여는 것보다 명백히 앞선 사건이므로 Having lost가 훨씬 정확합니다."
+              }
+            ],
             "trap": "부사절 시제가 대과거이고 주절 시제가 과거일 때는 단순 V-ing가 아니라 Having p.p.입니다!",
             "quizLink": "완료분사구문은 고등 내신 어법 객관식과 서술형 영작의 최빈출 킬러 문제입니다."
           },
           {
             "name": "수동분사구문과 (Being)의 생략",
+            "desc": "",
             "formula": "(Being) + 과거분사(p.p.) ~ ➔ 주절 주어와의 관계가 '수동'일 때",
+            "rules": [],
             "examples": [
               {
                 "en": "Written in plain English, this book is very easy to read.",
@@ -15165,11 +15494,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "바위가 '보여지는' 수동 관계이므로 Seeing이 아니라 과거분사 Seen을 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "Shocked by the news, she couldn't say a word.",
-              "x": "Shocking by the news, she couldn't say a word.",
-              "comment": "그녀가 소식에 의해 충격을 '받은' 수동이므로 Shocked가 맞습니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Shocked by the news, she couldn't say a word.",
+                "wrong": "Shocking by the news, she couldn't say a word.",
+                "reason": "그녀가 소식에 의해 충격을 '받은' 수동이므로 Shocked가 맞습니다."
+              }
+            ],
             "trap": "주절의 주어(the rock, this book)를 분사 앞에 주어로 넣고 능동인지 수동인지 따져보세요!",
             "quizLink": "수동분사구문은 V-ing냐 p.p.냐를 묻는 평가원 수능 어법 1순위 출제 문제입니다."
           }
@@ -15309,7 +15640,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "It is ~ that 강조구문의 기본 구조",
+            "desc": "",
             "formula": "It is/was + 강조 대상(주어/목적어/부사구) + that + 나머지",
+            "rules": [],
             "examples": [
               {
                 "en": "It was in the park that I met my best friend yesterday.",
@@ -15322,17 +15655,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "주어 Tom을 강조하고 있으며, 사람이므로 that 대신 who를 쓸 수도 있습니다."
               }
             ],
-            "oxCompare": {
-              "o": "It was yesterday that he called me.",
-              "x": "It was yesterday which he called me.",
-              "comment": "시간 부사를 강조할 때 관계대명사 which를 쓰면 안 되며 that이나 when을 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "It was yesterday that he called me.",
+                "wrong": "It was yesterday which he called me.",
+                "reason": "시간 부사를 강조할 때 관계대명사 which를 쓰면 안 되며 that이나 when을 써야 합니다."
+              }
+            ],
             "trap": "동사를 강조할 때는 It is that을 쓰지 않고 'do / does / did + 동사원형'을 씁니다!",
             "quizLink": "I do love you(정말 사랑해), He did break it(진짜 깼어) 동사 강조도 함께 출제됩니다."
           },
           {
             "name": "강조구문 vs 가주어-진주어 구별 판별법",
+            "desc": "",
             "formula": "It is와 that을 삭제 ➔ [문장 성립: 강조구문] vs [성립 불가(보어/형용사 남음): 가주어-진주어]",
+            "rules": [],
             "examples": [
               {
                 "en": "It is true that he is an honest boy.",
@@ -15345,11 +15682,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "It was와 that을 빼면 'Minho broke the expensive vase'로 완벽한 문장이 되므로 강조구문입니다."
               }
             ],
-            "oxCompare": {
-              "o": "It is important that you arrive on time. (가주어-진주어)",
-              "x": "It is on time that you arrive important. (비문)",
-              "comment": "important 같은 형용사 보어가 It is 뒤에 오면 99% 가주어-진주어 구문입니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "It is important that you arrive on time. (가주어-진주어)",
+                "wrong": "It is on time that you arrive important. (비문)",
+                "reason": "important 같은 형용사 보어가 It is 뒤에 오면 99% 가주어-진주어 구문입니다."
+              }
+            ],
             "trap": "It is 뒤에 '형용사'가 오면 가주어-진주어, '명사나 부사구'가 오면 강조구문입니다!",
             "quizLink": "중3 내신에서 밑줄 친 It ~ that의 쓰임이 다른 하나를 고르는 문제는 100% 빈출 문항입니다."
           }
@@ -15489,7 +15828,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "부정어 문두 도치 공식 (의문문 어순)",
+            "desc": "",
             "formula": "Never / Little / Hardly / Seldom + [do/does/did or be or 조동사] + S + V",
+            "rules": [],
             "examples": [
               {
                 "en": "Never did I imagine that he would become a famous movie star.",
@@ -15502,17 +15843,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "부정어 Little 뒤에 did she know 의문문 어순이 완성되었습니다."
               }
             ],
-            "oxCompare": {
-              "o": "Rarely does he eat fast food.",
-              "x": "Rarely he eats fast food.",
-              "comment": "부정어 Rarely가 문두에 오면 반드시 does he eat으로 도치해야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Rarely does he eat fast food.",
+                "wrong": "Rarely he eats fast food.",
+                "reason": "부정어 Rarely가 문두에 오면 반드시 does he eat으로 도치해야 합니다."
+              }
+            ],
             "trap": "부정어 도치에서 일반동사를 그대로 주어 앞으로 보내면(Never imagined I) 틀립니다!",
             "quizLink": "부정어 문두 도치는 고교 내신 서술형과 수능 29번 어법의 최고난도 킬러입니다."
           },
           {
             "name": "장소·방향 부사구 문두 도치 공식",
+            "desc": "",
             "formula": "장소부사구 + 동사 + 명사주어 (단, 대명사 주어는 도치 안 됨: 부사구 + S + V)",
+            "rules": [],
             "examples": [
               {
                 "en": "Under the big oak tree sat an old wise man.",
@@ -15525,11 +15870,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "부사 Here 뒤에 동사 comes + 주어 the school bus입니다."
               }
             ],
-            "oxCompare": {
-              "o": "Here you are.",
-              "x": "Here are you.",
-              "comment": "주어가 대명사(you, it)일 때는 장소부사구가 앞에 와도 도치하지 않고 정상 어순을 씁니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Here you are.",
+                "wrong": "Here are you.",
+                "reason": "주어가 대명사(you, it)일 때는 장소부사구가 앞에 와도 도치하지 않고 정상 어순을 씁니다."
+              }
+            ],
             "trap": "Here it comes(O) vs Here comes it(X)! 대명사 주어 예외를 꼭 기억하세요.",
             "quizLink": "장소부사구 도치에서는 뒤에 나오는 주어의 단·복수에 맞춰 동사의 수를 일치시킵니다."
           }
@@ -15673,10 +16020,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "수식어구 거품 빼기 공식",
-            "formula": "주어 + [전치사구 / 관계사절 / 분사구 / 형용사구] + 진짜 동사",
-            "example": "The quality of these organic apples is (o) / are (x) very high.",
-            "trap": "동사 바로 앞의 복수 명사(apples)에 현혹되지 말고 핵심 명사(The quality)를 볼 것!",
             "desc": "수식어구 거품 빼기 공식은(는) 일치(Agreement) 영역에서 가장 빈출되는 핵심 문법입니다. 전치사구, 분사구, 관계사절 등 주어와 동사 사이를 가로막는 수식어구를 발라내고 진짜 주어 찾기의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "주어 + [전치사구 / 관계사절 / 분사구 / 형용사구] + 진짜 동사",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -15710,14 +16055,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "동사 바로 앞의 복수 명사(apples)에 현혹되지 말고 핵심 명사(The quality)를 볼 것!"
               }
             ],
+            "trap": "동사 바로 앞의 복수 명사(apples)에 현혹되지 말고 핵심 명사(The quality)를 볼 것!",
             "quizLink": "3단계 실전 퀴즈에서 [수식어구 거품 빼기 공식] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "부분 표현의 수일치",
-            "formula": "most / some / half / the rest / 분수 / percent + of + 명사 ➔ of 뒤의 명사에 수일치",
-            "example": "Most of the water is polluted. / Most of the students are diligent.",
-            "trap": "부분 표현 자체는 단복수가 없으므로 of 뒤의 명사가 단수면 단수, 복수면 복수!",
             "desc": "부분 표현의 수일치은(는) 일치(Agreement) 영역에서 가장 빈출되는 핵심 문법입니다. 전치사구, 분사구, 관계사절 등 주어와 동사 사이를 가로막는 수식어구를 발라내고 진짜 주어 찾기의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "most / some / half / the rest / 분수 / percent + of + 명사 ➔ of 뒤의 명사에 수일치",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -15751,6 +16095,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "부분 표현 자체는 단복수가 없으므로 of 뒤의 명사가 단수면 단수, 복수면 복수!"
               }
             ],
+            "trap": "부분 표현 자체는 단복수가 없으므로 of 뒤의 명사가 단수면 단수, 복수면 복수!",
             "quizLink": "3단계 실전 퀴즈에서 [부분 표현의 수일치] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -15886,10 +16231,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "사역·지각동사 수동태 시 to부정사 부활 공식",
-            "formula": "능동: S + make/see + O + V원형 ➔ 수동: O + be made/seen + to V원형!",
-            "example": "He made me study. ➔ I was made to study by him.",
-            "trap": "능동태에서는 동사원형이었던 목적격보어가 수동태가 되면 반드시 to부정사로 바뀜!",
             "desc": "사역·지각동사 수동태 시 to부정사 부활 공식은(는) 태(Voice) 영역에서 가장 빈출되는 핵심 문법입니다. 간접목적어와 직접목적어를 활용한 4형식 수동태, 지각/사역동사의 수동태 시 to부정사 부활의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "능동: S + make/see + O + V원형 ➔ 수동: O + be made/seen + to V원형!",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -15923,14 +16266,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "능동태에서는 동사원형이었던 목적격보어가 수동태가 되면 반드시 to부정사로 바뀜!"
               }
             ],
+            "trap": "능동태에서는 동사원형이었던 목적격보어가 수동태가 되면 반드시 to부정사로 바뀜!",
             "quizLink": "3단계 실전 퀴즈에서 [사역·지각동사 수동태 시 to부정사 부활 공식] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "수여동사 4형식 수동태",
-            "formula": "직접목적어가 주어로 올 때: DO + be p.p. + to/for/of + IO",
-            "example": "A prize was given to her. (for her - x)",
-            "trap": "give류는 to, make/buy류는 수동태에서 직접목적어만 주어로 쓸 수 있음!",
             "desc": "수여동사 4형식 수동태은(는) 태(Voice) 영역에서 가장 빈출되는 핵심 문법입니다. 간접목적어와 직접목적어를 활용한 4형식 수동태, 지각/사역동사의 수동태 시 to부정사 부활의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "직접목적어가 주어로 올 때: DO + be p.p. + to/for/of + IO",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -15964,6 +16306,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "give류는 to, make/buy류는 수동태에서 직접목적어만 주어로 쓸 수 있음!"
               }
             ],
+            "trap": "give류는 to, make/buy류는 수동태에서 직접목적어만 주어로 쓸 수 있음!",
             "quizLink": "3단계 실전 퀴즈에서 [수여동사 4형식 수동태] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -16099,10 +16442,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "완료부정사와 완료동명사 공식",
-            "formula": "to have p.p. / having p.p. = 주절의 시제보다 한 시제 앞선 사건",
-            "example": "He seems to have been rich in the past. (= It seems that he was rich.)",
-            "trap": "to be rich는 현재 부자인 것처럼 보이는 것이고, to have been rich는 과거에 부자였던 것!",
             "desc": "완료부정사와 완료동명사 공식은(는) 준동사 영역에서 가장 빈출되는 핵심 문법입니다. 주절 시점보다 앞선 때를 나타내는 to have p.p. / having p.p.와 준동사 수동태의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "to have p.p. / having p.p. = 주절의 시제보다 한 시제 앞선 사건",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -16136,14 +16477,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "to be rich는 현재 부자인 것처럼 보이는 것이고, to have been rich는 과거에 부자였던 것!"
               }
             ],
+            "trap": "to be rich는 현재 부자인 것처럼 보이는 것이고, to have been rich는 과거에 부자였던 것!",
             "quizLink": "3단계 실전 퀴즈에서 [완료부정사와 완료동명사 공식] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "준동사의 수동태",
-            "formula": "to be p.p. / being p.p. (완료수동: to have been p.p. / having been p.p.)",
-            "example": "I don't like being treated like a child.",
-            "trap": "행위를 당하는 대상이면 준동사도 반드시 수동형을 써야 함!",
             "desc": "준동사의 수동태은(는) 준동사 영역에서 가장 빈출되는 핵심 문법입니다. 주절 시점보다 앞선 때를 나타내는 to have p.p. / having p.p.와 준동사 수동태의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "to be p.p. / being p.p. (완료수동: to have been p.p. / having been p.p.)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -16177,6 +16517,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "행위를 당하는 대상이면 준동사도 반드시 수동형을 써야 함!"
               }
             ],
+            "trap": "행위를 당하는 대상이면 준동사도 반드시 수동형을 써야 함!",
             "quizLink": "3단계 실전 퀴즈에서 [준동사의 수동태] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -16312,10 +16653,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "with + 명사 + 분사(-ing / p.p.)",
-            "formula": "명사와 분사의 관계가 능동이면 -ing, 수동이면 p.p.",
-            "example": "with his arms folded (팔짱을 낀 채: 수동) / with tears running down (눈물을 흘리며: 능동)",
-            "trap": "다리를 꼰 채(with his legs crossed), 입을 꽉 다문 채(with his mouth closed)는 모두 p.p.!",
             "desc": "with + 명사 + 분사(-ing / p.p.)은(는) 준동사 영역에서 가장 빈출되는 핵심 문법입니다. with + 명사 + 분사(동시동작/부대상황: ~한 채로)와 의미상 주어가 다른 독립분사구문의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "명사와 분사의 관계가 능동이면 -ing, 수동이면 p.p.",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -16349,14 +16688,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "다리를 꼰 채(with his legs crossed), 입을 꽉 다문 채(with his mouth closed)는 모두 p.p.!"
               }
             ],
+            "trap": "다리를 꼰 채(with his legs crossed), 입을 꽉 다문 채(with his mouth closed)는 모두 p.p.!",
             "quizLink": "3단계 실전 퀴즈에서 [with + 명사 + 분사(-ing / p.p.)] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "독립분사구문의 관용표현",
-            "formula": "frankly speaking(솔직히 말해서), strictly speaking(엄격히 말해), judging from(~로 판단하건대)",
-            "example": "Judging from his accent, he must be from Australia.",
-            "trap": "인칭주어와 무관하게 독립적으로 쓰이는 비인칭 독립분사구문!",
             "desc": "독립분사구문의 관용표현은(는) 준동사 영역에서 가장 빈출되는 핵심 문법입니다. with + 명사 + 분사(동시동작/부대상황: ~한 채로)와 의미상 주어가 다른 독립분사구문의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "frankly speaking(솔직히 말해서), strictly speaking(엄격히 말해), judging from(~로 판단하건대)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -16390,6 +16728,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "인칭주어와 무관하게 독립적으로 쓰이는 비인칭 독립분사구문!"
               }
             ],
+            "trap": "인칭주어와 무관하게 독립적으로 쓰이는 비인칭 독립분사구문!",
             "quizLink": "3단계 실전 퀴즈에서 [독립분사구문의 관용표현] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -16525,10 +16864,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "that vs what vs whether 명사절 3대 공식",
-            "formula": "that: 완전한 절 + 확실한 사실 / what: 불완전한 절 + 선행사 없음 / whether: 완전한 절 + 불확실성(~인지 아닌지)",
-            "example": "I know that he is honest. / I wonder whether he is honest. / This is what I want.",
-            "trap": "doubt, wonder, not sure 뒤에는 that이 아니라 if/whether를 씀!",
             "desc": "that vs what vs whether 명사절 3대 공식은(는) 절과 접속사 영역에서 가장 빈출되는 핵심 문법입니다. 확실한 사실(that) vs 불확실한 의문(if/whether) vs 불완전한 선행사포함(what)의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "that: 완전한 절 + 확실한 사실 / what: 불완전한 절 + 선행사 없음 / whether: 완전한 절 + 불확실성(~인지 아닌지)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -16562,14 +16899,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "doubt, wonder, not sure 뒤에는 that이 아니라 if/whether를 씀!"
               }
             ],
+            "trap": "doubt, wonder, not sure 뒤에는 that이 아니라 if/whether를 씀!",
             "quizLink": "3단계 실전 퀴즈에서 [that vs what vs whether 명사절 3대 공식] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "if절의 제약",
-            "formula": "if는 오직 타동사의 목적어절로만 쓰이며, 주어나 전치사의 목적어, or not 직후에는 whether만 가능",
-            "example": "Whether he comes or not is important. (If he comes or not - x)",
-            "trap": "전치사 뒤: about whether (o) / about if (x)",
             "desc": "if절의 제약은(는) 절과 접속사 영역에서 가장 빈출되는 핵심 문법입니다. 확실한 사실(that) vs 불확실한 의문(if/whether) vs 불완전한 선행사포함(what)의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "if는 오직 타동사의 목적어절로만 쓰이며, 주어나 전치사의 목적어, or not 직후에는 whether만 가능",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -16603,6 +16939,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "전치사 뒤: about whether (o) / about if (x)"
               }
             ],
+            "trap": "전치사 뒤: about whether (o) / about if (x)",
             "quizLink": "3단계 실전 퀴즈에서 [if절의 제약] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -16738,10 +17075,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "however + 형용사/부사 + 주어 + 동사",
-            "formula": "however = no matter how (아무리 ~할지라도)",
-            "example": "However hard you try, you cannot change the past.",
-            "trap": "however 뒤에 형용사나 부사가 바로 붙어야 함! (However you try hard - x)",
             "desc": "however + 형용사/부사 + 주어 + 동사은(는) 관계사 영역에서 가장 빈출되는 핵심 문법입니다. 복합관계대명사의 명사절/양보부사절 쓰임과 복합관계부사의 시간/장소/양보(however + 형/부) 공식의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "however = no matter how (아무리 ~할지라도)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -16775,14 +17110,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "however 뒤에 형용사나 부사가 바로 붙어야 함! (However you try hard - x)"
               }
             ],
+            "trap": "however 뒤에 형용사나 부사가 바로 붙어야 함! (However you try hard - x)",
             "quizLink": "3단계 실전 퀴즈에서 [however + 형용사/부사 + 주어 + 동사] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "whatever / whoever",
-            "formula": "명사절(anything that / anyone who) vs 양보부사절(no matter what / no matter who)",
-            "example": "Whatever you do matters. (명사절) / Whatever happens, stay calm. (양보절)",
-            "trap": "문장 내에서 주어/목적어로 쓰이면 명사절, 콤마로 분리되면 양보부사절!",
             "desc": "whatever / whoever은(는) 관계사 영역에서 가장 빈출되는 핵심 문법입니다. 복합관계대명사의 명사절/양보부사절 쓰임과 복합관계부사의 시간/장소/양보(however + 형/부) 공식의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "명사절(anything that / anyone who) vs 양보부사절(no matter what / no matter who)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -16816,6 +17150,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "문장 내에서 주어/목적어로 쓰이면 명사절, 콤마로 분리되면 양보부사절!"
               }
             ],
+            "trap": "문장 내에서 주어/목적어로 쓰이면 명사절, 콤마로 분리되면 양보부사절!",
             "quizLink": "3단계 실전 퀴즈에서 [whatever / whoever] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -16951,10 +17286,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "가정법 과거완료 공식",
-            "formula": "If + 주어 + had p.p., 주어 + would/could/should/might + have p.p.",
-            "example": "If I had known your number, I would have called you. (번호를 몰라서 전화 못 했다)",
-            "trap": "과거 사실을 반대로 가정하므로 해석은 '과거'로 함!",
             "desc": "가정법 과거완료 공식은(는) 가정법 영역에서 가장 빈출되는 핵심 문법입니다. 과거 사실의 반대(If + had p.p., S + would have p.p.)와 과거의 원인이 현재에 영향을 주는 혼합가정법의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "If + 주어 + had p.p., 주어 + would/could/should/might + have p.p.",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -16988,14 +17321,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "과거 사실을 반대로 가정하므로 해석은 '과거'로 함!"
               }
             ],
+            "trap": "과거 사실을 반대로 가정하므로 해석은 '과거'로 함!",
             "quizLink": "3단계 실전 퀴즈에서 [가정법 과거완료 공식] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "혼합가정법 (수능 단골 출제)",
-            "formula": "If + had p.p. (과거에 ~했더라면), 주어 + would + 동사원형 + now (지금 ~할 텐데)",
-            "example": "If he had taken my advice then, he would be successful now.",
-            "trap": "주절 끝에 now, today 같은 '현재 시점 부사'가 힌트로 주어짐!",
             "desc": "혼합가정법 (수능 단골 출제)은(는) 가정법 영역에서 가장 빈출되는 핵심 문법입니다. 과거 사실의 반대(If + had p.p., S + would have p.p.)와 과거의 원인이 현재에 영향을 주는 혼합가정법의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "If + had p.p. (과거에 ~했더라면), 주어 + would + 동사원형 + now (지금 ~할 텐데)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -17029,6 +17361,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "주절 끝에 now, today 같은 '현재 시점 부사'가 힌트로 주어짐!"
               }
             ],
+            "trap": "주절 끝에 now, today 같은 '현재 시점 부사'가 힌트로 주어짐!",
             "quizLink": "3단계 실전 퀴즈에서 [혼합가정법 (수능 단골 출제)] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -17164,10 +17497,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "부정어 도치 공식 (수능 1순위)",
-            "formula": "부정어(Never, Hardly, Rarely, Seldom, Little, Not only) + 조동사/do/be + 주어 + 동사원형",
-            "example": "Little did I dream that I would win. / Never have I seen such a sight.",
-            "trap": "일반동사일 때는 반드시 do/does/did를 주어 앞으로 끄집어내야 함!",
             "desc": "부정어 도치 공식 (수능 1순위)은(는) 특수 구문 영역에서 가장 빈출되는 핵심 문법입니다. 부정어(Never, Seldom, Little, Hardly) 강조 시 의문문 어순 도치, 장소부사구 강조 시 V+S 도치의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "부정어(Never, Hardly, Rarely, Seldom, Little, Not only) + 조동사/do/be + 주어 + 동사원형",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -17201,14 +17532,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "일반동사일 때는 반드시 do/does/did를 주어 앞으로 끄집어내야 함!"
               }
             ],
+            "trap": "일반동사일 때는 반드시 do/does/did를 주어 앞으로 끄집어내야 함!",
             "quizLink": "3단계 실전 퀴즈에서 [부정어 도치 공식 (수능 1순위)] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "장소·방향 부사구 도치",
-            "formula": "장소부사구 + 1형식 동사 + 명사 주어",
-            "example": "Under the tree sat an old man. (대명사 주어일 때는 도치 안 됨: Under the tree he sat.)",
-            "trap": "주어가 대명사(he, they)이면 어순이 바뀌지 않음!",
             "desc": "장소·방향 부사구 도치은(는) 특수 구문 영역에서 가장 빈출되는 핵심 문법입니다. 부정어(Never, Seldom, Little, Hardly) 강조 시 의문문 어순 도치, 장소부사구 강조 시 V+S 도치의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "장소부사구 + 1형식 동사 + 명사 주어",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -17242,6 +17572,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "주어가 대명사(he, they)이면 어순이 바뀌지 않음!"
               }
             ],
+            "trap": "주어가 대명사(he, they)이면 어순이 바뀌지 않음!",
             "quizLink": "3단계 실전 퀴즈에서 [장소·방향 부사구 도치] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -17385,7 +17716,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "수식어구 거품 걷어내기 수일치 공식",
+            "desc": "",
             "formula": "단수 명사 + (전치사구/분사/관계사절) + 단수동사 | 복수 명사 + (...) + 복수동사",
+            "rules": [],
             "examples": [
               {
                 "en": "The quality of the fresh organic ingredients determines the final taste.",
@@ -17398,17 +17731,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "technology가 단수여도 주어 핵은 The researchers(복수)이므로 복수동사 are를 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "The discovery of new ancient tools changes our understanding.",
-              "x": "The discovery of new ancient tools change our understanding.",
-              "comment": "tools의 복수형태에 낚이지 말고 핵심 주어 The discovery(단수)에 맞춰 changes를 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "The discovery of new ancient tools changes our understanding.",
+                "wrong": "The discovery of new ancient tools change our understanding.",
+                "reason": "tools의 복수형태에 낚이지 말고 핵심 주어 The discovery(단수)에 맞춰 changes를 써야 합니다."
+              }
+            ],
             "trap": "동사 바로 앞 명사가 복수여도 진짜 주어는 전치사구 앞에 있는 경우가 90%입니다!",
             "quizLink": "고교 내신과 수능 29번에서 가장 높은 빈도로 정답을 가르는 단골 킬러입니다."
           },
           {
             "name": "구와 절 주어의 단수 취급 원칙",
+            "desc": "",
             "formula": "동명사구(V-ing) / to부정사구 / 명사절(That/What S+V) ➔ 무조건 단수동사!",
+            "rules": [],
             "examples": [
               {
                 "en": "Developing renewable energy sources is essential for the future.",
@@ -17421,11 +17758,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "What 명사절 주어는 단수 취급하여 is를 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "Collecting antique coins requires great patience.",
-              "x": "Collecting antique coins require great patience.",
-              "comment": "동명사구 주어 Collecting은 단수 취급하므로 requires가 올바릅니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Collecting antique coins requires great patience.",
+                "wrong": "Collecting antique coins require great patience.",
+                "reason": "동명사구 주어 Collecting은 단수 취급하므로 requires가 올바릅니다."
+              }
+            ],
             "trap": "명사절(What절) 안에 복수명사가 있어도 절 전체는 하나의 덩어리로서 단수 취급합니다.",
             "quizLink": "동명사 목적어가 복수명사인 구조(Solving difficult math problems is fun)는 내신 대표 문제입니다."
           }
@@ -17565,7 +17904,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "상관접속사의 B 수일치 공식",
+            "desc": "",
             "formula": "not only A but also B = B as well as A ➔ 동사는 'B'에 일치!",
+            "rules": [],
             "examples": [
               {
                 "en": "Not only the teacher but also the students are excited about the vacation.",
@@ -17578,17 +17919,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "either A or B에서 B인 he(3인칭 단수)에 맞추어 has to를 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "Both you and I are students.",
-              "x": "Both you and I am students.",
-              "comment": "both A and B는 둘 다를 뜻하므로 무조건 복수동사 are를 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Both you and I are students.",
+                "wrong": "Both you and I am students.",
+                "reason": "both A and B는 둘 다를 뜻하므로 무조건 복수동사 are를 써야 합니다."
+              }
+            ],
             "trap": "B as well as A는 A가 아니라 앞에 나오는 'B'에 동사를 일치시킵니다!",
             "quizLink": "Neither he nor I (am / is / are) 형태는 내신 시험의 단골 함정입니다 (B인 I에 맞춰 am)."
           },
           {
             "name": "부분명사 of + 명사 수일치 공식",
+            "desc": "",
             "formula": "most / half / rest / percent / some of + [단수명사 ➔ 단수동사] / [복수명사 ➔ 복수동사]",
+            "rules": [],
             "examples": [
               {
                 "en": "Most of the fresh milk in the bottle was spoiled by the heat.",
@@ -17601,11 +17946,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "the students가 복수명사이므로 복수동사 have passed를 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "Half of the apples are rotten.",
-              "x": "Half of the apples is rotten.",
-              "comment": "of 뒤의 명사인 the apples가 복수이므로 복수동사 are가 맞습니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Half of the apples are rotten.",
+                "wrong": "Half of the apples is rotten.",
+                "reason": "of 뒤의 명사인 the apples가 복수이므로 복수동사 are가 맞습니다."
+              }
+            ],
             "trap": "percent나 분수 자체가 단·복수를 결정하는 것이 아니라 of 뒤의 명사가 결정합니다!",
             "quizLink": "고교 어법에서 수일치 문제의 50% 이상이 상관접속사와 부분명사에서 출제됩니다."
           }
@@ -17745,7 +18092,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "타동사의 목적어 유무 판별 공식",
+            "desc": "",
             "formula": "타동사 + [목적어 O] ➔ 능동태 | be + p.p. + [목적어 없음(전치사구/부사)] ➔ 수동태",
+            "rules": [],
             "examples": [
               {
                 "en": "The government released the official report yesterday.",
@@ -17758,17 +18107,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "뒤에 목적어가 없고 전치사구(by the government)가 이어지므로 수동태 was released입니다."
               }
             ],
-            "oxCompare": {
-              "o": "The package was delivered safely.",
-              "x": "The package delivered safely.",
-              "comment": "deliver는 타동사인데 뒤에 목적어가 없으므로 수동태 was delivered로 써야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "The package was delivered safely.",
+                "wrong": "The package delivered safely.",
+                "reason": "deliver는 타동사인데 뒤에 목적어가 없으므로 수동태 was delivered로 써야 합니다."
+              }
+            ],
             "trap": "주어가 사물이라고 무조건 수동태가 아닙니다! 자동사는 사물 주어여도 능동으로 씁니다.",
             "quizLink": "수능 29번에서 본동사 자리에 능동 vs 수동 선택은 배점 높은 필수 문제입니다."
           },
           {
             "name": "5형식 수동태와 목적격보어 잔존 공식",
+            "desc": "",
             "formula": "주어 + be + p.p. + [형용사/to-V/명사 보어]",
+            "rules": [],
             "examples": [
               {
                 "en": "He was elected president of the student council by a large majority.",
@@ -17781,11 +18134,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "ask + O + to-V의 수동태로 be asked 뒤에 to submit이 그대로 이어집니다."
               }
             ],
-            "oxCompare": {
-              "o": "The door was kept closed.",
-              "x": "The door was kept closely.",
-              "comment": "keep의 목적격보어였던 형용사 closed가 수동태 뒤에 그대로 주격보어로 남아야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "The door was kept closed.",
+                "wrong": "The door was kept closely.",
+                "reason": "keep의 목적격보어였던 형용사 closed가 수동태 뒤에 그대로 주격보어로 남아야 합니다."
+              }
+            ],
             "trap": "수동태 뒤에 명사가 있다고 해서 무조건 능동태로 오판하지 않도록 주의하세요 (5형식 명사 보어).",
             "quizLink": "call, name, elect, consider는 수동태 뒤에도 명사 보어가 남는 4대 대표 동사입니다."
           }
@@ -17925,7 +18280,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "사역동사 have/get + 목적어 + p.p. (수동 사역)",
+            "desc": "",
             "formula": "have / get + 목적어(사물/수동대상) + 과거분사(p.p.) (~가 되도록 시키다/당하다)",
+            "rules": [],
             "examples": [
               {
                 "en": "I had my broken smartphone repaired at the service center.",
@@ -17938,17 +18295,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "지갑이 도난'당한' 피해/수동의 의미이므로 과거분사 stolen을 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "He had his hair cut yesterday.",
-              "x": "He had his hair cutted yesterday.",
-              "comment": "cut의 과거분사는 불규칙으로 cut-cut-cut입니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "He had his hair cut yesterday.",
+                "wrong": "He had his hair cutted yesterday.",
+                "reason": "cut의 과거분사는 불규칙으로 cut-cut-cut입니다."
+              }
+            ],
             "trap": "사역동사라고 무조건 동사원형만 생각하면 큰일 납니다! 목적어가 당하는 관계면 무조건 p.p.입니다.",
             "quizLink": "have my car washed, have my teeth checked는 고교 내신 단골 서술형 표현입니다."
           },
           {
             "name": "지각동사 및 유지동사 뒤의 분사 선택",
+            "desc": "",
             "formula": "지각동사 + O + [능동: 동원/V-ing] vs [수동: p.p.] | keep/leave + O + [V-ing/p.p.]",
+            "rules": [],
             "examples": [
               {
                 "en": "I heard my name called loudly from the back of the auditorium.",
@@ -17961,11 +18322,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "엔진이 돌아가는 능동 진행이므로 현재분사 running을 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "Don't leave the door unlocked.",
-              "x": "Don't leave the door unlocking.",
-              "comment": "문은 잠겨있지 않은 상태로 '남겨지는' 수동이므로 unlocked가 맞습니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "Don't leave the door unlocked.",
+                "wrong": "Don't leave the door unlocking.",
+                "reason": "문은 잠겨있지 않은 상태로 '남겨지는' 수동이므로 unlocked가 맞습니다."
+              }
+            ],
             "trap": "지각동사 heard 뒤라고 무조건 동사원형 call을 고르면 안 됩니다! 이름은 '불려지는' 것입니다.",
             "quizLink": "heard my name called는 수능과 모의평가에 최소 5회 이상 출제된 전설의 킬러 문항입니다."
           }
@@ -18105,7 +18468,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "전치사 vs 접속사 뒤 구조 공식",
+            "desc": "",
             "formula": "접속사 + [주어 + 동사] | 전치사 + [명사 / 대명사 / 동명사(V-ing)]",
+            "rules": [],
             "examples": [
               {
                 "en": "Although it rained heavily, we thoroughly enjoyed the music festival.",
@@ -18118,17 +18483,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "the heavy rain이라는 명사구만 왔으므로 전치사 Despite를 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "She smiled despite her sorrow.",
-              "x": "She smiled despite of her sorrow.",
-              "comment": "despite는 단독으로 쓰이는 전치사이며 of를 붙이지 않습니다. (in spite of는 of 필수)"
-            },
+            "oxCompare": [
+              {
+                "correct": "She smiled despite her sorrow.",
+                "wrong": "She smiled despite of her sorrow.",
+                "reason": "despite는 단독으로 쓰이는 전치사이며 of를 붙이지 않습니다. (in spite of는 of 필수)"
+              }
+            ],
             "trap": "despite of(X) ➔ despite는 전치사이므로 of를 붙이면 안 됩니다!",
             "quizLink": "빈칸 뒤에 '동사'가 있는지를 찾는 것이 가장 빠르고 정확한 해법입니다."
           },
           {
             "name": "during vs while vs for의 시간 전치사/접속사",
+            "desc": "",
             "formula": "while + S + V (접속사) | during + 이름/행사 명사 | for + 숫자 기간",
+            "rules": [],
             "examples": [
               {
                 "en": "He fell asleep while he was watching the boring documentary.",
@@ -18141,11 +18510,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "summer camp라는 특정 사건/기간 명사이므로 during을 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "I have stayed here for three weeks.",
-              "x": "I have stayed here during three weeks.",
-              "comment": "three weeks처럼 숫자가 포함된 기간의 길이에는 during이 아니라 for를 씁니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "I have stayed here for three weeks.",
+                "wrong": "I have stayed here during three weeks.",
+                "reason": "three weeks처럼 숫자가 포함된 기간의 길이에는 during이 아니라 for를 씁니다."
+              }
+            ],
             "trap": "for + 3 days (숫자 기간) vs during the vacation (특정 명칭 기간) 구별 필수!",
             "quizLink": "during / while / for 구별은 수능 모의고사 1번부터 5번 어법 선지에 단골로 등장합니다."
           }
@@ -18285,7 +18656,9 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "앞선 동사 확인을 통한 대동사 선택 공식",
+            "desc": "",
             "formula": "앞이 be동사 ➔ be동사 대동사 | 앞이 일반동사 ➔ do/does/did",
+            "rules": [],
             "examples": [
               {
                 "en": "He speaks English fluently, and so does his younger brother.",
@@ -18298,17 +18671,21 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "앞선 동사가 was(be동사)이므로 복수 주어 her parents에 맞춰 were를 씁니다."
               }
             ],
-            "oxCompare": {
-              "o": "He loves music just as I do.",
-              "x": "He loves music just as I am.",
-              "comment": "loves는 일반동사이므로 am이 아니라 do로 받아야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "He loves music just as I do.",
+                "wrong": "He loves music just as I am.",
+                "reason": "loves는 일반동사이므로 am이 아니라 do로 받아야 합니다."
+              }
+            ],
             "trap": "앞선 문장의 본동사가 일반동사인데 be동사(is/are)를 써놓은 보기가 단골 오답입니다!",
             "quizLink": "so + 동사 + 주어 (~도 역시 그러하다) 구문에서 대동사 일치는 100% 출제됩니다."
           },
           {
             "name": "비교급 뒤의 대동사와 도치",
+            "desc": "",
             "formula": "S1 + V1 + 비교급 + than + S2 + [대동사] (or than + [대동사] + S2)",
+            "rules": [],
             "examples": [
               {
                 "en": "Modern computers process data much faster than human brains do.",
@@ -18321,11 +18698,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "point": "than 뒤에서 주어와 대동사가 도치되어 does any other employee 형태가 되었습니다."
               }
             ],
-            "oxCompare": {
-              "o": "He spends more money than she does.",
-              "x": "He spends more money than she is.",
-              "comment": "spends를 대신하는 대동사이므로 is가 아니라 does가 되어야 합니다."
-            },
+            "oxCompare": [
+              {
+                "correct": "He spends more money than she does.",
+                "wrong": "He spends more money than she is.",
+                "reason": "spends를 대신하는 대동사이므로 is가 아니라 does가 되어야 합니다."
+              }
+            ],
             "trap": "than 뒤에 도치가 일어나더라도 앞선 동사가 일반동사면 do/does를 써야 합니다.",
             "quizLink": "수능 29번 어법 문제의 밑줄 친 do/does/is는 무조건 앞의 동사를 찾는 문제입니다."
           }
@@ -18454,22 +18833,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "명사절 vs 관계사 심화 (that, what, which, whether)",
         "formulaCards": [
           {
-            "formulaId": "lv4_u15_f1",
-            "tag": "명사절 that vs 관계대명사 what/which",
-            "en": "What you need is the evidence that proves your innocence.",
-            "ko": "네게 필요한 것은 너의 결백을 증명하는 증거이다.",
-            "point": "선행사가 없고 불완전한 절을 이끌면 관계대명사 what, 선행사가 명확하고 뒤가 불완전하면 관계대명사 which/that, 선행사 없이 완전한 절을 이끌어 주어/목적어/보어가 되면 접속사 that입니다.",
-            "oxCompare": "O: What he said was completely true. / X: That he said was completely true.",
+            "name": "명사절 that vs 관계대명사 what/which",
+            "desc": "선행사가 없고 불완전한 절을 이끌면 관계대명사 what, 선행사가 명확하고 뒤가 불완전하면 관계대명사 which/that, 선행사 없이 완전한 절을 이끌어 주어/목적어/보어가 되면 접속사 that입니다.",
+            "formula": "명사절 that vs 관계대명사 what/which",
+            "rules": [],
+            "examples": [
+              {
+                "en": "What you need is the evidence that proves your innocence.",
+                "ko": "네게 필요한 것은 너의 결백을 증명하는 증거이다.",
+                "point": "선행사가 없고 불완전한 절을 이끌면 관계대명사 what, 선행사가 명확하고 뒤가 불완전하면 관계대명사 which/that, 선행사 없이 완전한 절을 이끌어 주어/목적어/보어가 되면 접속사 that입니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "What he said was completely true.",
+                "wrong": "That he said was completely true.",
+                "reason": "what 뒤에는 주어나 목적어가 빠진 불완전한 문장이 오고, 명사절 접속사 that 뒤에는 완전한 문장이 옵니다."
+              }
+            ],
             "trap": "what 뒤에는 주어나 목적어가 빠진 불완전한 문장이 오고, 명사절 접속사 that 뒤에는 완전한 문장이 옵니다.",
             "quizLink": "선행사 유무와 뒷문장의 완전/불완전 여부를 반드시 분석해야 합니다."
           },
           {
-            "formulaId": "lv4_u15_f2",
-            "tag": "whether / if 명사절 & 동격 that",
-            "en": "There is no doubt that whether she accepts the offer depends on the salary.",
-            "ko": "그녀가 그 제안을 수락할지 여부가 급여에 달려 있다는 점에는 의심의 여지가 없다.",
-            "point": "동격 that은 앞의 추상명사(fact, idea, doubt, rumour)를 설명하며 뒷문장이 완전합니다. '~인지 아닌지'의 불확실한 사실은 whether/if 절을 사용하며, 전치사의 목적어나 주어 자리에는 whether만 가능합니다.",
-            "oxCompare": "O: I wondered whether he would arrive on time. / X: I wondered that he would arrive on time.",
+            "name": "whether / if 명사절 & 동격 that",
+            "desc": "동격 that은 앞의 추상명사(fact, idea, doubt, rumour)를 설명하며 뒷문장이 완전합니다. '~인지 아닌지'의 불확실한 사실은 whether/if 절을 사용하며, 전치사의 목적어나 주어 자리에는 whether만 가능합니다.",
+            "formula": "whether / if 명사절 & 동격 that",
+            "rules": [],
+            "examples": [
+              {
+                "en": "There is no doubt that whether she accepts the offer depends on the salary.",
+                "ko": "그녀가 그 제안을 수락할지 여부가 급여에 달려 있다는 점에는 의심의 여지가 없다.",
+                "point": "동격 that은 앞의 추상명사(fact, idea, doubt, rumour)를 설명하며 뒷문장이 완전합니다. '~인지 아닌지'의 불확실한 사실은 whether/if 절을 사용하며, 전치사의 목적어나 주어 자리에는 whether만 가능합니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "I wondered whether he would arrive on time.",
+                "wrong": "I wondered that he would arrive on time.",
+                "reason": "확실한 사실에는 that, 의문/불확실성에는 whether/if를 써야 하며, 동격 that 자리에는 which를 쓸 수 없습니다."
+              }
+            ],
             "trap": "확실한 사실에는 that, 의문/불확실성에는 whether/if를 써야 하며, 동격 that 자리에는 which를 쓸 수 없습니다.",
             "quizLink": "문맥상 확실한 사실인지 불확실한 의문인지와 추상명사 동격 구조를 점검하세요."
           }
@@ -18602,22 +19005,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "형용사 vs 부사 보어 & 5형식 혼동 구문",
         "formulaCards": [
           {
-            "formulaId": "lv4_u16_f1",
-            "tag": "2형식/5형식 보어 자리 형용사 원칙",
-            "en": "Regular exercise keeps your heart healthy and your mind alert.",
-            "ko": "규칙적인 운동은 당신의 심장을 건강하게 그리고 정신을 깨어있게 유지해 준다.",
-            "point": "2형식 감각동사(look, smell, sound, taste, feel)와 5형식 유지/상태/판단 동사(make, keep, find, leave, consider, drive) 뒤의 보어 자리에는 우리말로는 부사처럼 해석되더라도 반드시 '형용사'를 써야 합니다.",
-            "oxCompare": "O: I found the lecture very helpful. / X: I found the lecture very helpfully.",
+            "name": "2형식/5형식 보어 자리 형용사 원칙",
+            "desc": "2형식 감각동사(look, smell, sound, taste, feel)와 5형식 유지/상태/판단 동사(make, keep, find, leave, consider, drive) 뒤의 보어 자리에는 우리말로는 부사처럼 해석되더라도 반드시 '형용사'를 써야 합니다.",
+            "formula": "2형식/5형식 보어 자리 형용사 원칙",
+            "rules": [],
+            "examples": [
+              {
+                "en": "Regular exercise keeps your heart healthy and your mind alert.",
+                "ko": "규칙적인 운동은 당신의 심장을 건강하게 그리고 정신을 깨어있게 유지해 준다.",
+                "point": "2형식 감각동사(look, smell, sound, taste, feel)와 5형식 유지/상태/판단 동사(make, keep, find, leave, consider, drive) 뒤의 보어 자리에는 우리말로는 부사처럼 해석되더라도 반드시 '형용사'를 써야 합니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "I found the lecture very helpful.",
+                "wrong": "I found the lecture very helpfully.",
+                "reason": "보어 자리에 부사(-ly)를 쓰면 절대 안 됩니다. 단, 목적어 뒤에 수식어 거품이 길어지면 어순이 도치될 수 있음에 유의하세요."
+              }
+            ],
             "trap": "보어 자리에 부사(-ly)를 쓰면 절대 안 됩니다. 단, 목적어 뒤에 수식어 거품이 길어지면 어순이 도치될 수 있음에 유의하세요.",
             "quizLink": "동사가 5형식 불완전타동사인지 파악하고 목적격 보어 자리에 형용사가 왔는지 확인하세요."
           },
           {
-            "formulaId": "lv4_u16_f2",
-            "tag": "목적격 보어로 분사 및 형용사 도치 어순",
-            "en": "The loud noise outside drove the exhausted students crazy.",
-            "ko": "밖의 시끄러운 소음은 지친 학생들을 미치게 만들었다.",
-            "point": "make / drive / paint + 목적어 + 형용사 구문에서 목적어가 긴 경우 '동사 + 형용사 보어 + 긴 목적어' 형태로 어순이 도치될 수 있습니다. 또한 목적어와 보어의 능동/수동 관계에 따라 현재분사(V-ing)나 과거분사(p.p.)가 보어로 쓰입니다.",
-            "oxCompare": "O: She made clear her intention to resign. / X: She made clearly her intention to resign.",
+            "name": "목적격 보어로 분사 및 형용사 도치 어순",
+            "desc": "make / drive / paint + 목적어 + 형용사 구문에서 목적어가 긴 경우 '동사 + 형용사 보어 + 긴 목적어' 형태로 어순이 도치될 수 있습니다. 또한 목적어와 보어의 능동/수동 관계에 따라 현재분사(V-ing)나 과거분사(p.p.)가 보어로 쓰입니다.",
+            "formula": "목적격 보어로 분사 및 형용사 도치 어순",
+            "rules": [],
+            "examples": [
+              {
+                "en": "The loud noise outside drove the exhausted students crazy.",
+                "ko": "밖의 시끄러운 소음은 지친 학생들을 미치게 만들었다.",
+                "point": "make / drive / paint + 목적어 + 형용사 구문에서 목적어가 긴 경우 '동사 + 형용사 보어 + 긴 목적어' 형태로 어순이 도치될 수 있습니다. 또한 목적어와 보어의 능동/수동 관계에 따라 현재분사(V-ing)나 과거분사(p.p.)가 보어로 쓰입니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "She made clear her intention to resign.",
+                "wrong": "She made clearly her intention to resign.",
+                "reason": "어순이 도치되어 동사 바로 뒤에 형용사가 오더라도, 그것이 목적격 보어라면 부사를 쓰지 않고 형용사를 써야 합니다."
+              }
+            ],
             "trap": "어순이 도치되어 동사 바로 뒤에 형용사가 오더라도, 그것이 목적격 보어라면 부사를 쓰지 않고 형용사를 써야 합니다.",
             "quizLink": "서술형 영작 및 고교 내신 밑줄 어법 1순위 출제 포인트입니다."
           }
@@ -18750,22 +19177,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "가주어/가목적어 it 심화 및 진주어/진목적어 구문",
         "formulaCards": [
           {
-            "formulaId": "lv4_u17_f1",
-            "tag": "5형식 가목적어 it (make/find/think/consider/believe it + C + to-v)",
-            "en": "Smartphones make it convenient to communicate with people around the world.",
-            "ko": "스마트폰은 전 세계 사람들과 소통하는 것을 편리하게 만들어 준다.",
-            "point": "5형식 문장에서 목적어가 to부정사나 that절일 때, 목적어 자리에 가목적어 it을 반드시 두고 진목적어를 뒤로 보냅니다. 동사 make, find, think, consider, believe, keep 등이 이 구문을 대표합니다.",
-            "oxCompare": "O: I found it easy to solve the math puzzle. / X: I found easy to solve the math puzzle.",
+            "name": "5형식 가목적어 it (make/find/think/consider/believe it + C + to-v)",
+            "desc": "5형식 문장에서 목적어가 to부정사나 that절일 때, 목적어 자리에 가목적어 it을 반드시 두고 진목적어를 뒤로 보냅니다. 동사 make, find, think, consider, believe, keep 등이 이 구문을 대표합니다.",
+            "formula": "5형식 가목적어 it (make/find/think/consider/believe it + C + to-v)",
+            "rules": [],
+            "examples": [
+              {
+                "en": "Smartphones make it convenient to communicate with people around the world.",
+                "ko": "스마트폰은 전 세계 사람들과 소통하는 것을 편리하게 만들어 준다.",
+                "point": "5형식 문장에서 목적어가 to부정사나 that절일 때, 목적어 자리에 가목적어 it을 반드시 두고 진목적어를 뒤로 보냅니다. 동사 make, find, think, consider, believe, keep 등이 이 구문을 대표합니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "I found it easy to solve the math puzzle.",
+                "wrong": "I found easy to solve the math puzzle.",
+                "reason": "가목적어 자리에 this나 that을 쓰면 안 되며, 가목적어 it을 생략하고 곧바로 형용사 보어를 쓰는 것도 오답입니다."
+              }
+            ],
             "trap": "가목적어 자리에 this나 that을 쓰면 안 되며, 가목적어 it을 생략하고 곧바로 형용사 보어를 쓰는 것도 오답입니다.",
             "quizLink": "고교 내신 서술형 영작에서 'it' 누락 및 형용사/부사 혼동이 최고 빈출 오답입니다."
           },
           {
-            "formulaId": "lv4_u17_f2",
-            "tag": "가주어-진주어 심화 및 의미상 주어",
-            "en": "It is crucial for students to develop critical thinking skills early.",
-            "ko": "학생들이 비판적 사고 능력을 일찍 기르는 것은 매우 중요하다.",
-            "point": "가주어 It ... for/of + 의미상 주어 + to-v 구문과 It ... that + 완전한 절 구문입니다. 형용사가 사람의 성품/성격을 나타내면 of, 그 외 일반적 판단/난이도/필요성을 나타내면 for를 씁니다.",
-            "oxCompare": "O: It was generous of him to forgive them. / X: It was generous for him to forgive them.",
+            "name": "가주어-진주어 심화 및 의미상 주어",
+            "desc": "가주어 It ... for/of + 의미상 주어 + to-v 구문과 It ... that + 완전한 절 구문입니다. 형용사가 사람의 성품/성격을 나타내면 of, 그 외 일반적 판단/난이도/필요성을 나타내면 for를 씁니다.",
+            "formula": "가주어-진주어 심화 및 의미상 주어",
+            "rules": [],
+            "examples": [
+              {
+                "en": "It is crucial for students to develop critical thinking skills early.",
+                "ko": "학생들이 비판적 사고 능력을 일찍 기르는 것은 매우 중요하다.",
+                "point": "가주어 It ... for/of + 의미상 주어 + to-v 구문과 It ... that + 완전한 절 구문입니다. 형용사가 사람의 성품/성격을 나타내면 of, 그 외 일반적 판단/난이도/필요성을 나타내면 for를 씁니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "It was generous of him to forgive them.",
+                "wrong": "It was generous for him to forgive them.",
+                "reason": "사람의 인품(generous, polite, careless, cruel 등) 형용사 뒤에 for를 쓰지 않도록 주의해야 합니다."
+              }
+            ],
             "trap": "사람의 인품(generous, polite, careless, cruel 등) 형용사 뒤에 for를 쓰지 않도록 주의해야 합니다.",
             "quizLink": "가목적어 it과 의미상 주어의 조합은 서술형 조건 영작의 단골 문제입니다."
           }
@@ -18898,22 +19349,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "복합관계사 (whatever, whoever, whenever, however)",
         "formulaCards": [
           {
-            "formulaId": "lv4_u18_f1",
-            "tag": "복합관계대명사의 두 가지 역할 (명사절 vs 양보 부사절)",
-            "en": "Whoever wants to join the club can register, whoever you may be.",
-            "ko": "클럽에 가입하기를 원하는 사람은 누구든지 등록할 수 있다, 당신이 누구일지라도.",
-            "point": "복합관계대명사(whoever, whatever, whichever)는 (1) 명사절(~하는 누구든지/무엇이든지 = anyone who, anything that)과 (2) 양보 부사절(누가/무엇이 ~할지라도 = no matter who, no matter what) 두 가지 역할을 합니다.",
-            "oxCompare": "O: You may choose whichever you prefer. / X: You may choose no matter which you prefer.",
+            "name": "복합관계대명사의 두 가지 역할 (명사절 vs 양보 부사절)",
+            "desc": "복합관계대명사(whoever, whatever, whichever)는 (1) 명사절(~하는 누구든지/무엇이든지 = anyone who, anything that)과 (2) 양보 부사절(누가/무엇이 ~할지라도 = no matter who, no matter what) 두 가지 역할을 합니다.",
+            "formula": "복합관계대명사의 두 가지 역할 (명사절 vs 양보 부사절)",
+            "rules": [],
+            "examples": [
+              {
+                "en": "Whoever wants to join the club can register, whoever you may be.",
+                "ko": "클럽에 가입하기를 원하는 사람은 누구든지 등록할 수 있다, 당신이 누구일지라도.",
+                "point": "복합관계대명사(whoever, whatever, whichever)는 (1) 명사절(~하는 누구든지/무엇이든지 = anyone who, anything that)과 (2) 양보 부사절(누가/무엇이 ~할지라도 = no matter who, no matter what) 두 가지 역할을 합니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "You may choose whichever you prefer.",
+                "wrong": "You may choose no matter which you prefer.",
+                "reason": "명사절(주어/목적어/보어) 자리에는 no matter what/who를 쓸 수 없으며, 반드시 whatever/whoever 형태로 써야 합니다."
+              }
+            ],
             "trap": "명사절(주어/목적어/보어) 자리에는 no matter what/who를 쓸 수 없으며, 반드시 whatever/whoever 형태로 써야 합니다.",
             "quizLink": "문장 전체에서 복합관계사절이 주어/목적어 역할을 하는지(명사절), 콤마로 분리된 부사절인지 판별하세요."
           },
           {
-            "formulaId": "lv4_u18_f2",
-            "tag": "복합관계부사 however + 형/부 + S + V",
-            "en": "However hard you try, you cannot change the past.",
-            "ko": "네가 아무리 열심히 노력할지라도, 너는 과거를 바꿀 수 없다.",
-            "point": "however가 양보 부사절을 이끌 때는 '아무리 ~할지라도(= no matter how)'의 의미를 지니며, 반드시 'however + 형용사/부사 + 주어 + 동사' 어순을 취합니다. 접속부사 however(그러나)와 구분해야 합니다.",
-            "oxCompare": "O: However rich he is, he is not happy. / X: However he is rich, he is not happy.",
+            "name": "복합관계부사 however + 형/부 + S + V",
+            "desc": "however가 양보 부사절을 이끌 때는 '아무리 ~할지라도(= no matter how)'의 의미를 지니며, 반드시 'however + 형용사/부사 + 주어 + 동사' 어순을 취합니다. 접속부사 however(그러나)와 구분해야 합니다.",
+            "formula": "복합관계부사 however + 형/부 + S + V",
+            "rules": [],
+            "examples": [
+              {
+                "en": "However hard you try, you cannot change the past.",
+                "ko": "네가 아무리 열심히 노력할지라도, 너는 과거를 바꿀 수 없다.",
+                "point": "however가 양보 부사절을 이끌 때는 '아무리 ~할지라도(= no matter how)'의 의미를 지니며, 반드시 'however + 형용사/부사 + 주어 + 동사' 어순을 취합니다. 접속부사 however(그러나)와 구분해야 합니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "However rich he is, he is not happy.",
+                "wrong": "However he is rich, he is not happy.",
+                "reason": "however 바로 뒤에 형용사나 부사가 오지 않고 주어+동사가 먼저 오면 어순 오류입니다."
+              }
+            ],
             "trap": "however 바로 뒤에 형용사나 부사가 오지 않고 주어+동사가 먼저 오면 어순 오류입니다.",
             "quizLink": "고교 내신 서술형 및 수능 어법에서 'however + 형/부 + 주 + 동' 어순 배열이 빈출됩니다."
           }
@@ -19046,22 +19521,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "비교구문 심화 및 병렬구조 (the 비교급, 원급/비교급 관용표현)",
         "formulaCards": [
           {
-            "formulaId": "lv4_u19_f1",
-            "tag": "The + 비교급 ..., the + 비교급 ... 구문",
-            "en": "The more you read diverse books, the wider your perspective becomes.",
-            "ko": "네가 다양한 책을 더 많이 읽을수록, 너의 시야는 그만큼 더 넓어진다.",
-            "point": "'The + 비교급 + 주어 + 동사 ~, the + 비교급 + 주어 + 동사 ...' 구문은 '~하면 할수록 더욱더 ...하다'라는 인과관계를 나타냅니다. 비교급 뒤에 형용사나 부사가 올 때 원래 문장의 성분(보어, 부사 등)에 맞는 형태를 취해야 합니다.",
-            "oxCompare": "O: The more carefully you drive, the safer you will be. / X: The more careful you drive, the safer you will be.",
+            "name": "The + 비교급 ..., the + 비교급 ... 구문",
+            "desc": "'The + 비교급 + 주어 + 동사 ~, the + 비교급 + 주어 + 동사 ...' 구문은 '~하면 할수록 더욱더 ...하다'라는 인과관계를 나타냅니다. 비교급 뒤에 형용사나 부사가 올 때 원래 문장의 성분(보어, 부사 등)에 맞는 형태를 취해야 합니다.",
+            "formula": "The + 비교급 ..., the + 비교급 ... 구문",
+            "rules": [],
+            "examples": [
+              {
+                "en": "The more you read diverse books, the wider your perspective becomes.",
+                "ko": "네가 다양한 책을 더 많이 읽을수록, 너의 시야는 그만큼 더 넓어진다.",
+                "point": "'The + 비교급 + 주어 + 동사 ~, the + 비교급 + 주어 + 동사 ...' 구문은 '~하면 할수록 더욱더 ...하다'라는 인과관계를 나타냅니다. 비교급 뒤에 형용사나 부사가 올 때 원래 문장의 성분(보어, 부사 등)에 맞는 형태를 취해야 합니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "The more carefully you drive, the safer you will be.",
+                "wrong": "The more careful you drive, the safer you will be.",
+                "reason": "비교급 뒤의 어순에 유의하고, the를 빠뜨리거나 일반 원급 형태를 쓰지 않도록 주의해야 합니다."
+              }
+            ],
             "trap": "비교급 뒤의 어순에 유의하고, the를 빠뜨리거나 일반 원급 형태를 쓰지 않도록 주의해야 합니다.",
             "quizLink": "수능 및 내신 서술형 영작에서 어순 배열과 품사 일치 문제로 단골 출제됩니다."
           },
           {
-            "formulaId": "lv4_u19_f2",
-            "tag": "비교 대상의 병렬구조 (that/those of)",
-            "en": "The climate of Korea is milder than that of northern Canada.",
-            "ko": "한국의 기후는 캐나다 북부의 기후보다 더 온화하다.",
-            "point": "비교 구문에서는 비교되는 두 대상의 문법적 성격과 품사가 반드시 일치해야 합니다. 앞에 나온 단수 명사의 반복을 피할 때는 that of, 복수 명사의 반복을 피할 때는 those of를 사용합니다.",
-            "oxCompare": "O: The ears of rabbits are longer than those of cats. / X: The ears of rabbits are longer than cats.",
+            "name": "비교 대상의 병렬구조 (that/those of)",
+            "desc": "비교 구문에서는 비교되는 두 대상의 문법적 성격과 품사가 반드시 일치해야 합니다. 앞에 나온 단수 명사의 반복을 피할 때는 that of, 복수 명사의 반복을 피할 때는 those of를 사용합니다.",
+            "formula": "비교 대상의 병렬구조 (that/those of)",
+            "rules": [],
+            "examples": [
+              {
+                "en": "The climate of Korea is milder than that of northern Canada.",
+                "ko": "한국의 기후는 캐나다 북부의 기후보다 더 온화하다.",
+                "point": "비교 구문에서는 비교되는 두 대상의 문법적 성격과 품사가 반드시 일치해야 합니다. 앞에 나온 단수 명사의 반복을 피할 때는 that of, 복수 명사의 반복을 피할 때는 those of를 사용합니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "The ears of rabbits are longer than those of cats.",
+                "wrong": "The ears of rabbits are longer than cats.",
+                "reason": "비교 대상을 일치시키지 않고 사람이나 동물 자체와 신체 일부/성질을 직접 비교하면 중대한 어법 오류가 됩니다."
+              }
+            ],
             "trap": "비교 대상을 일치시키지 않고 사람이나 동물 자체와 신체 일부/성질을 직접 비교하면 중대한 어법 오류가 됩니다.",
             "quizLink": "고교 어법 밑줄 문제에서 that of / those of 대명사 수일치는 매 시험마다 출제됩니다."
           }
@@ -19193,22 +19692,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "고교 내신 서술형 킬러 조건영작 및 통합 어법 실전 마스터",
         "formulaCards": [
           {
-            "formulaId": "lv4_u20_f1",
-            "tag": "도치 + 가정법 + 강조 복합 서술형 공식",
-            "en": "Not only did he pass the exam, but he also achieved the highest score.",
-            "ko": "그는 시험에 합격했을 뿐만 아니라, 최고 점수도 달성했다.",
-            "point": "고교 내신 1등급을 가르는 서술형 킬러 문항은 부정어 도치(Not only / Seldom / Under no circumstances + 조동사/do + S + V), 혼합가정법, It is ~ that 강조구문이 복합적으로 결합되어 출제됩니다.",
-            "oxCompare": "O: Under no circumstances should you open the door. / X: Under no circumstances you should open the door.",
+            "name": "도치 + 가정법 + 강조 복합 서술형 공식",
+            "desc": "고교 내신 1등급을 가르는 서술형 킬러 문항은 부정어 도치(Not only / Seldom / Under no circumstances + 조동사/do + S + V), 혼합가정법, It is ~ that 강조구문이 복합적으로 결합되어 출제됩니다.",
+            "formula": "도치 + 가정법 + 강조 복합 서술형 공식",
+            "rules": [],
+            "examples": [
+              {
+                "en": "Not only did he pass the exam, but he also achieved the highest score.",
+                "ko": "그는 시험에 합격했을 뿐만 아니라, 최고 점수도 달성했다.",
+                "point": "고교 내신 1등급을 가르는 서술형 킬러 문항은 부정어 도치(Not only / Seldom / Under no circumstances + 조동사/do + S + V), 혼합가정법, It is ~ that 강조구문이 복합적으로 결합되어 출제됩니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "Under no circumstances should you open the door.",
+                "wrong": "Under no circumstances you should open the door.",
+                "reason": "부정어구가 문두에 위치할 때 반드시 일반 의문문 형태(조동사/be/do + S + V)로 어순이 바뀌어야 하며 시제와 수일치를 빠뜨려서는 안 됩니다."
+              }
+            ],
             "trap": "부정어구가 문두에 위치할 때 반드시 일반 의문문 형태(조동사/be/do + S + V)로 어순이 바뀌어야 하며 시제와 수일치를 빠뜨려서는 안 됩니다.",
             "quizLink": "단어 조건 제시형 서술형 영작의 핵심 체크포인트입니다."
           },
           {
-            "formulaId": "lv4_u20_f2",
-            "tag": "준동사 + 수동태 + 전치사 복합 구조",
-            "en": "Having been warned several times, the company stopped discharging polluted water.",
-            "ko": "여러 차례 경고를 받았기 때문에, 그 회사는 오염된 물을 방류하는 것을 중단했다.",
-            "point": "완료수동 분사구문(Having been p.p.), 전치사 뒤의 동명사 수동형(being p.p.), make it possible to-v와 같은 고난도 구문들이 긴 문장 속에 혼합되어 출제됩니다.",
-            "oxCompare": "O: He was ashamed of having been defeated so easily. / X: He was ashamed of having defeated so easily.",
+            "name": "준동사 + 수동태 + 전치사 복합 구조",
+            "desc": "완료수동 분사구문(Having been p.p.), 전치사 뒤의 동명사 수동형(being p.p.), make it possible to-v와 같은 고난도 구문들이 긴 문장 속에 혼합되어 출제됩니다.",
+            "formula": "준동사 + 수동태 + 전치사 복합 구조",
+            "rules": [],
+            "examples": [
+              {
+                "en": "Having been warned several times, the company stopped discharging polluted water.",
+                "ko": "여러 차례 경고를 받았기 때문에, 그 회사는 오염된 물을 방류하는 것을 중단했다.",
+                "point": "완료수동 분사구문(Having been p.p.), 전치사 뒤의 동명사 수동형(being p.p.), make it possible to-v와 같은 고난도 구문들이 긴 문장 속에 혼합되어 출제됩니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "He was ashamed of having been defeated so easily.",
+                "wrong": "He was ashamed of having defeated so easily.",
+                "reason": "능동인지 수동인지, 주절의 시제보다 한 시제 앞선 완료형인지 꼼꼼히 확인해야 합니다."
+              }
+            ],
             "trap": "능동인지 수동인지, 주절의 시제보다 한 시제 앞선 완료형인지 꼼꼼히 확인해야 합니다.",
             "quizLink": "수능 어법 29번 및 고교 내신 서술형 최종 관문입니다."
           }
@@ -19356,10 +19879,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "본동사 찾기 3단계 검증법",
-            "formula": "1) 문장 전체의 접속사/관계사 개수 세기 ➔ 2) 수식어구(괄호 묶기) ➔ 3) 진짜 동사 자리인지 준동사 자리인지 판별",
-            "example": "The people [living in this area] are (o) / being (x) exposed to noise.",
-            "trap": "문장에 본동사가 없는데 -ing나 to V를 밑줄 쳐놓고 낚는 것이 평가원 1위 패턴!",
             "desc": "본동사 찾기 3단계 검증법은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 수능 어법 출제율 1위: 한 문장에는 반드시 하나의 본동사가 존재해야 하며, 접속사 수 = 동사 수 - 1의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1) 문장 전체의 접속사/관계사 개수 세기 ➔ 2) 수식어구(괄호 묶기) ➔ 3) 진짜 동사 자리인지 준동사 자리인지 판별",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -19393,14 +19914,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "문장에 본동사가 없는데 -ing나 to V를 밑줄 쳐놓고 낚는 것이 평가원 1위 패턴!"
               }
             ],
+            "trap": "문장에 본동사가 없는데 -ing나 to V를 밑줄 쳐놓고 낚는 것이 평가원 1위 패턴!",
             "quizLink": "3단계 실전 퀴즈에서 [본동사 찾기 3단계 검증법] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "동사 수 = 접속사 수 + 1",
-            "formula": "접속사가 없으면 문장에 본동사는 오직 1개만 허용!",
-            "example": "He walked into the room and sat down. (접속사 1개 -> 동사 2개)",
-            "trap": "분사(-ing, p.p.)는 동사가 아니라 형용사이므로 본동사 역할을 할 수 없음!",
             "desc": "동사 수 = 접속사 수 + 1은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 수능 어법 출제율 1위: 한 문장에는 반드시 하나의 본동사가 존재해야 하며, 접속사 수 = 동사 수 - 1의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "접속사가 없으면 문장에 본동사는 오직 1개만 허용!",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -19434,6 +19954,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "분사(-ing, p.p.)는 동사가 아니라 형용사이므로 본동사 역할을 할 수 없음!"
               }
             ],
+            "trap": "분사(-ing, p.p.)는 동사가 아니라 형용사이므로 본동사 역할을 할 수 없음!",
             "quizLink": "3단계 실전 퀴즈에서 [동사 수 = 접속사 수 + 1] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -19569,10 +20090,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "대동사 판별 2단계 원칙",
-            "formula": "1) 대신 받는 앞선 동사가 일반동사이면 ➔ do / does / did 사용\n2) 앞선 동사가 be동사/조동사이면 ➔ be / 조동사 그대로 사용",
-            "example": "He runs faster than I do. (runs 대신) / She is happier than she was. (was happy 대신)",
-            "trap": "as / than 뒤의 도치 구문에서 do vs be 밑줄 문제는 평가원 단골 킬러!",
             "desc": "대동사 판별 2단계 원칙은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 앞서 언급된 동사구를 대신 받는 do/does/did vs be동사(am/is/are/was/were)의 엄격한 판별의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1) 대신 받는 앞선 동사가 일반동사이면 ➔ do / does / did 사용\n2) 앞선 동사가 be동사/조동사이면 ➔ be / 조동사 그대로 사용",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -19606,14 +20125,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "as / than 뒤의 도치 구문에서 do vs be 밑줄 문제는 평가원 단골 킬러!"
               }
             ],
+            "trap": "as / than 뒤의 도치 구문에서 do vs be 밑줄 문제는 평가원 단골 킬러!",
             "quizLink": "3단계 실전 퀴즈에서 [대동사 판별 2단계 원칙] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "So + 동사 + 주어 / Neither + 동사 + 주어",
-            "formula": "~도 또한 그렇다 / ~도 또한 그렇지 않다 (앞 문장의 동사 종류에 따라 do or be 결정)",
-            "example": "I like jazz. - So do I. / I am tired. - So am I.",
-            "trap": "Neither do I vs Neither am I!",
             "desc": "So + 동사 + 주어 / Neither + 동사 + 주어은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 앞서 언급된 동사구를 대신 받는 do/does/did vs be동사(am/is/are/was/were)의 엄격한 판별의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "~도 또한 그렇다 / ~도 또한 그렇지 않다 (앞 문장의 동사 종류에 따라 do or be 결정)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -19647,6 +20165,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "Neither do I vs Neither am I!"
               }
             ],
+            "trap": "Neither do I vs Neither am I!",
             "quizLink": "3단계 실전 퀴즈에서 [So + 동사 + 주어 / Neither + 동사 + 주어] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -19782,10 +20301,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "수능 어법 만점 완전도 매트릭스",
-            "formula": "1) 선행사 O + 불완전 ➔ 관계대명사 (which, who, that)\n2) 선행사 O + 완전 ➔ 관계부사 (where, when, why) or 동격 that\n3) 선행사 X + 불완전 ➔ 관계대명사 what\n4) 선행사 X + 완전 ➔ 명사절 that or whether",
-            "example": "The rumor that he resigned is true. (동격: 완전) / The rumor that I heard is true. (관계사: 불완전)",
-            "trap": "동격의 that 뒤는 완전한 문장이 오므로 which로 절대 바꿀 수 없음!",
             "desc": "수능 어법 만점 완전도 매트릭스은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. that, which, what, where, whether의 뒷문장 완전/불완전 여부와 선행사 유무에 따른 수능 공식의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1) 선행사 O + 불완전 ➔ 관계대명사 (which, who, that)\n2) 선행사 O + 완전 ➔ 관계부사 (where, when, why) or 동격 that\n3) 선행사 X + 불완전 ➔ 관계대명사 what\n4) 선행사 X + 완전 ➔ 명사절 that or whether",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -19819,14 +20336,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "동격의 that 뒤는 완전한 문장이 오므로 which로 절대 바꿀 수 없음!"
               }
             ],
+            "trap": "동격의 that 뒤는 완전한 문장이 오므로 which로 절대 바꿀 수 없음!",
             "quizLink": "3단계 실전 퀴즈에서 [수능 어법 만점 완전도 매트릭스] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "자동사 + 전치사 주의",
-            "formula": "listen to, rely on, wait for 등 전치사가 문장 끝에 남아있으면 불완전한 문장!",
-            "example": "the music which I listened to (불완전) / the music to which I listened (완전)",
-            "trap": "전치사가 뒤에 남아있으면 관계대명사, 전치사가 관계사 앞으로 이동하면 완전한 구조!",
             "desc": "자동사 + 전치사 주의은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. that, which, what, where, whether의 뒷문장 완전/불완전 여부와 선행사 유무에 따른 수능 공식의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "listen to, rely on, wait for 등 전치사가 문장 끝에 남아있으면 불완전한 문장!",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -19860,6 +20376,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "전치사가 뒤에 남아있으면 관계대명사, 전치사가 관계사 앞으로 이동하면 완전한 구조!"
               }
             ],
+            "trap": "전치사가 뒤에 남아있으면 관계대명사, 전치사가 관계사 앞으로 이동하면 완전한 구조!",
             "quizLink": "3단계 실전 퀴즈에서 [자동사 + 전치사 주의] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -19995,10 +20512,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "등위접속사의 병렬 구조 공식",
-            "formula": "A and/but/or B ➔ A와 B는 문법적 품사와 형태(to V - to V, -ing - -ing, 절 - 절)가 반드시 같아야 함!",
-            "example": "He likes swimming, hiking, and to run. (x) ➔ ... and running. (o)",
-            "trap": "수능에서는 긴 문장 끝의 and 뒤에 밑줄을 그어 앞선 병렬 대상을 찾게 함!",
             "desc": "등위접속사의 병렬 구조 공식은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. and, but, or 및 not only A but also B, either A or B에서 A와 B의 문법적 형태 일치의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "A and/but/or B ➔ A와 B는 문법적 품사와 형태(to V - to V, -ing - -ing, 절 - 절)가 반드시 같아야 함!",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -20032,14 +20547,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "수능에서는 긴 문장 끝의 and 뒤에 밑줄을 그어 앞선 병렬 대상을 찾게 함!"
               }
             ],
+            "trap": "수능에서는 긴 문장 끝의 and 뒤에 밑줄을 그어 앞선 병렬 대상을 찾게 함!",
             "quizLink": "3단계 실전 퀴즈에서 [등위접속사의 병렬 구조 공식] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "상관접속사의 병렬",
-            "formula": "both A and B / not A but B / not only A but also B / either A or B / neither A nor B",
-            "example": "Success requires not only working hard but also working smart.",
-            "trap": "A가 전치사구면 B도 전치사구, A가 절이면 B도 절!",
             "desc": "상관접속사의 병렬은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. and, but, or 및 not only A but also B, either A or B에서 A와 B의 문법적 형태 일치의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "both A and B / not A but B / not only A but also B / either A or B / neither A nor B",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -20073,6 +20587,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "A가 전치사구면 B도 전치사구, A가 절이면 B도 절!"
               }
             ],
+            "trap": "A가 전치사구면 B도 전치사구, A가 절이면 B도 절!",
             "quizLink": "3단계 실전 퀴즈에서 [상관접속사의 병렬] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -20208,10 +20723,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "5형식 목적격보어 형용사 킬러 (수능 단골)",
-            "formula": "make / find / keep / leave / consider + 목적어 + 형용사 (부사 절대 불가!)",
-            "example": "The exercise made his muscles strong (o) / strongly (x).",
-            "trap": "우리말로는 '강하게'로 해석되어 strongly를 고르고 싶지만 목적격보어 자리이므로 형용사 strong!",
             "desc": "5형식 목적격보어 형용사 킬러 (수능 단골)은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 불완전자동사의 주격보어, 5형식 목적격보어 자리의 형용사 vs 수식어구 부사의 판정의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "make / find / keep / leave / consider + 목적어 + 형용사 (부사 절대 불가!)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -20245,14 +20758,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "우리말로는 '강하게'로 해석되어 strongly를 고르고 싶지만 목적격보어 자리이므로 형용사 strong!"
               }
             ],
+            "trap": "우리말로는 '강하게'로 해석되어 strongly를 고르고 싶지만 목적격보어 자리이므로 형용사 strong!",
             "quizLink": "3단계 실전 퀴즈에서 [5형식 목적격보어 형용사 킬러 (수능 단골)] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "형용사와 부사의 수식 대상",
-            "formula": "형용사 ➔ 명사 수식 / 부사 ➔ 동사, 형용사, 다른 부사, 문장 전체 수식",
-            "example": "a remarkably successful project (부사가 형용사 successful 수식)",
-            "trap": "명사 바로 앞이어도 형용사를 수식할 때는 부사를 써야 함!",
             "desc": "형용사와 부사의 수식 대상은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 불완전자동사의 주격보어, 5형식 목적격보어 자리의 형용사 vs 수식어구 부사의 판정의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "형용사 ➔ 명사 수식 / 부사 ➔ 동사, 형용사, 다른 부사, 문장 전체 수식",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -20286,6 +20798,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "명사 바로 앞이어도 형용사를 수식할 때는 부사를 써야 함!"
               }
             ],
+            "trap": "명사 바로 앞이어도 형용사를 수식할 때는 부사를 써야 함!",
             "quizLink": "3단계 실전 퀴즈에서 [형용사와 부사의 수식 대상] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -20421,10 +20934,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "비교 구문에서의 that of / those of",
-            "formula": "단수 명사 대신 ➔ that of / 복수 명사 대신 ➔ those of",
-            "example": "The ears of an elephant are larger than those of an ape.",
-            "trap": "앞선 명사가 The ears(복수)이므로 that of an ape (x) -> those of an ape (o)!",
             "desc": "비교 구문에서의 that of / those of은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 비교 대상의 대명사 수일치 that/those, 주어와 목적어가 같을 때의 재귀대명사(-self)의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "단수 명사 대신 ➔ that of / 복수 명사 대신 ➔ those of",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -20458,14 +20969,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "앞선 명사가 The ears(복수)이므로 that of an ape (x) -> those of an ape (o)!"
               }
             ],
+            "trap": "앞선 명사가 The ears(복수)이므로 that of an ape (x) -> those of an ape (o)!",
             "quizLink": "3단계 실전 퀴즈에서 [비교 구문에서의 that of / those of] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "재귀대명사의 재귀용법 vs 강조용법",
-            "formula": "주어와 목적어가 같으면 반드시 재귀대명사 사용 (생략 불가) / 강조용법은 생략 가능",
-            "example": "He looked at himself in the mirror. (재귀) / He solved it himself. (강조)",
-            "trap": "주어와 목적어가 같은 인물인데 him을 쓰면 다른 사람을 가리키게 됨!",
             "desc": "재귀대명사의 재귀용법 vs 강조용법은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 비교 대상의 대명사 수일치 that/those, 주어와 목적어가 같을 때의 재귀대명사(-self)의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "주어와 목적어가 같으면 반드시 재귀대명사 사용 (생략 불가) / 강조용법은 생략 가능",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -20499,6 +21009,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "주어와 목적어가 같은 인물인데 him을 쓰면 다른 사람을 가리키게 됨!"
               }
             ],
+            "trap": "주어와 목적어가 같은 인물인데 him을 쓰면 다른 사람을 가리키게 됨!",
             "quizLink": "3단계 실전 퀴즈에서 [재귀대명사의 재귀용법 vs 강조용법] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -20634,10 +21145,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "수능 빈출 전치사 vs 접속사 쌍",
-            "formula": "전치사(+명사구) vs 접속사(+S+V)\n• during vs while\n• because of / due to / owing to vs because / as / since\n• despite / in spite of vs although / though / even though",
-            "example": "during the summer vacation / while I was on vacation / despite the rain / although it rained",
-            "trap": "despite of (x) ➔ despite는 전치사이므로 of를 붙이지 않음!",
             "desc": "수능 빈출 전치사 vs 접속사 쌍은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 뒤에 명사(구)가 오는 전치사 vs 뒤에 주어+동사(절)가 오는 접속사의 절대 판별의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "전치사(+명사구) vs 접속사(+S+V)\n• during vs while\n• because of / due to / owing to vs because / as / since\n• despite / in spite of vs although / though / even though",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -20671,14 +21180,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "despite of (x) ➔ despite는 전치사이므로 of를 붙이지 않음!"
               }
             ],
+            "trap": "despite of (x) ➔ despite는 전치사이므로 of를 붙이지 않음!",
             "quizLink": "3단계 실전 퀴즈에서 [수능 빈출 전치사 vs 접속사 쌍] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "for vs during",
-            "formula": "for + 숫자 기간 (for three days) / during + 특정 기간 명사 (during the winter break)",
-            "example": "I stayed in London for two weeks during the summer.",
-            "trap": "for the vacation (x) -> during the vacation (o)",
             "desc": "for vs during은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 뒤에 명사(구)가 오는 전치사 vs 뒤에 주어+동사(절)가 오는 접속사의 절대 판별의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "for + 숫자 기간 (for three days) / during + 특정 기간 명사 (during the winter break)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -20712,6 +21220,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "for the vacation (x) -> during the vacation (o)"
               }
             ],
+            "trap": "for the vacation (x) -> during the vacation (o)",
             "quizLink": "3단계 실전 퀴즈에서 [for vs during] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -20847,10 +21356,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "수능 29번 3대 킬러 유형",
-            "formula": "1위: 동사 vs 준동사 (본동사 부재 낚시)\n2위: 관계사 vs 접속사 (what vs that, which vs in which)\n3위: 능동 vs 수동 (분사의 수식 대상 확인)",
-            "example": "평가원은 복잡한 수식어구 사이에 진짜 본동사가 있는지를 가장 먼저 묻습니다.",
-            "trap": "문장 구조 분석 없이 단어만 보고 해석으로 풀려고 하면 100% 함정에 빠짐!",
             "desc": "수능 29번 3대 킬러 유형은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 역대 평가원 수능 29번 어법 문항 10개년 완벽 분석 및 1등급 판별 10대 골든 룰의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1위: 동사 vs 준동사 (본동사 부재 낚시)\n2위: 관계사 vs 접속사 (what vs that, which vs in which)\n3위: 능동 vs 수동 (분사의 수식 대상 확인)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -20884,14 +21391,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "문장 구조 분석 없이 단어만 보고 해석으로 풀려고 하면 100% 함정에 빠짐!"
               }
             ],
+            "trap": "문장 구조 분석 없이 단어만 보고 해석으로 풀려고 하면 100% 함정에 빠짐!",
             "quizLink": "3단계 실전 퀴즈에서 [수능 29번 3대 킬러 유형] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "수능 어법 1등급 30초 검증 팁",
-            "formula": "밑줄 친 단어의 앞뒤 3단어만 보지 말고, 반드시 문장 전체의 '주어'와 '본동사'를 먼저 찾아 괄호 묶기를 실행할 것!",
-            "example": "[주어] + (수식어 거품...) + [본동사] + [목적어/보어]",
-            "trap": "문장이 4~5줄로 길어질수록 접속사의 개수와 동사의 개수를 대조하는 것이 핵심!",
             "desc": "수능 어법 1등급 30초 검증 팁은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 역대 평가원 수능 29번 어법 문항 10개년 완벽 분석 및 1등급 판별 10대 골든 룰의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "밑줄 친 단어의 앞뒤 3단어만 보지 말고, 반드시 문장 전체의 '주어'와 '본동사'를 먼저 찾아 괄호 묶기를 실행할 것!",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -20925,6 +21431,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "문장이 4~5줄로 길어질수록 접속사의 개수와 동사의 개수를 대조하는 것이 핵심!"
               }
             ],
+            "trap": "문장이 4~5줄로 길어질수록 접속사의 개수와 동사의 개수를 대조하는 것이 핵심!",
             "quizLink": "3단계 실전 퀴즈에서 [수능 어법 1등급 30초 검증 팁] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -21057,22 +21564,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "본동사 vs 준동사 심화: 복합 수식절 속 동사 자리 찾기",
         "formulaCards": [
           {
-            "formulaId": "lv5_u9_f1",
-            "tag": "문장의 본동사 자리 판별 공식 (접속사 개수 + 1 = 동사 개수)",
-            "en": "The ancient manuscripts discovered in the hidden cave provide invaluable insights.",
-            "ko": "숨겨진 동굴에서 발견된 고대 사본들은 매우 귀중한 통찰을 제공한다.",
-            "point": "한 문장의 접속사 개수가 N개이면 본동사는 반드시 N+1개여야 합니다. 분사구(discovered ~ cave)나 관계사절 등 주어를 수식하는 긴 수식어 거품을 괄호로 묶어내면 문장의 진짜 본동사 자리(provide)가 명확하게 보입니다.",
-            "oxCompare": "O: The boy reading a book in the library is my cousin. / X: The boy reading a book in the library being my cousin.",
+            "name": "문장의 본동사 자리 판별 공식 (접속사 개수 + 1 = 동사 개수)",
+            "desc": "한 문장의 접속사 개수가 N개이면 본동사는 반드시 N+1개여야 합니다. 분사구(discovered ~ cave)나 관계사절 등 주어를 수식하는 긴 수식어 거품을 괄호로 묶어내면 문장의 진짜 본동사 자리(provide)가 명확하게 보입니다.",
+            "formula": "문장의 본동사 자리 판별 공식 (접속사 개수 + 1 = 동사 개수)",
+            "rules": [],
+            "examples": [
+              {
+                "en": "The ancient manuscripts discovered in the hidden cave provide invaluable insights.",
+                "ko": "숨겨진 동굴에서 발견된 고대 사본들은 매우 귀중한 통찰을 제공한다.",
+                "point": "한 문장의 접속사 개수가 N개이면 본동사는 반드시 N+1개여야 합니다. 분사구(discovered ~ cave)나 관계사절 등 주어를 수식하는 긴 수식어 거품을 괄호로 묶어내면 문장의 진짜 본동사 자리(provide)가 명확하게 보입니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "The boy reading a book in the library is my cousin.",
+                "wrong": "The boy reading a book in the library being my cousin.",
+                "reason": "분사(-ing / -ed)나 to부정사는 절대로 문장의 본동사가 될 수 없으며, 본동사 자리에 -ing나 to-v가 오면 수능 29번 1순위 오답입니다."
+              }
+            ],
             "trap": "분사(-ing / -ed)나 to부정사는 절대로 문장의 본동사가 될 수 없으며, 본동사 자리에 -ing나 to-v가 오면 수능 29번 1순위 오답입니다.",
             "quizLink": "주어 뒤에 길게 늘어선 수식어구를 괄호로 묶고 문장의 본동사가 존재하는지 반드시 확인하세요."
           },
           {
-            "formulaId": "lv5_u9_f2",
-            "tag": "준동사 능동/수동과 목적어 유무 판별",
-            "en": "Surrounded by hostile forces, the commander decided to retreat immediately.",
-            "ko": "적군에 둘러싸인 채, 지휘관은 즉시 후퇴하기로 결심했다.",
-            "point": "접속사가 생략된 분사구문에서 주어와의 관계가 수동이면 과거분사(p.p.), 능동이면 현재분사(V-ing)를 씁니다. 타동사 출신 분사 뒤에 목적어(명사)가 없으면 수동분사(p.p.)가 정답일 확률이 매우 높습니다.",
-            "oxCompare": "O: Seen from a distance, the rock looks like a lion. / X: Seeing from a distance, the rock looks like a lion.",
+            "name": "준동사 능동/수동과 목적어 유무 판별",
+            "desc": "접속사가 생략된 분사구문에서 주어와의 관계가 수동이면 과거분사(p.p.), 능동이면 현재분사(V-ing)를 씁니다. 타동사 출신 분사 뒤에 목적어(명사)가 없으면 수동분사(p.p.)가 정답일 확률이 매우 높습니다.",
+            "formula": "준동사 능동/수동과 목적어 유무 판별",
+            "rules": [],
+            "examples": [
+              {
+                "en": "Surrounded by hostile forces, the commander decided to retreat immediately.",
+                "ko": "적군에 둘러싸인 채, 지휘관은 즉시 후퇴하기로 결심했다.",
+                "point": "접속사가 생략된 분사구문에서 주어와의 관계가 수동이면 과거분사(p.p.), 능동이면 현재분사(V-ing)를 씁니다. 타동사 출신 분사 뒤에 목적어(명사)가 없으면 수동분사(p.p.)가 정답일 확률이 매우 높습니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "Seen from a distance, the rock looks like a lion.",
+                "wrong": "Seeing from a distance, the rock looks like a lion.",
+                "reason": "의미상 주어를 주절의 주어와 일치시켜 능동/수동 관계를 따져야 합니다."
+              }
+            ],
             "trap": "의미상 주어를 주절의 주어와 일치시켜 능동/수동 관계를 따져야 합니다.",
             "quizLink": "수능 29번 단골 유형: 분사구문의 태와 본동사 유무의 결합형입니다."
           }
@@ -21205,22 +21736,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "능동분사 vs 수동분사: 감정동사 및 타동사 목적어 유무 판별",
         "formulaCards": [
           {
-            "formulaId": "lv5_u10_f1",
-            "tag": "감정유발 동사의 분사 공식 (사물주어 -ing vs 사람주어 -ed)",
-            "en": "The astonishing discovery made the scientists feel completely fascinated.",
-            "ko": "그 놀라운 발견은 과학자들로 하여금 완전히 매료되도록 만들었다.",
-            "point": "감정을 불러일으키는 원인이나 사물은 현재분사(-ing: astonishing, fascinating, exhausting)를 쓰고, 감정을 직접 느끼는 주체(사람)는 과거분사(-ed: astonished, fascinated, exhausted)를 씁니다.",
-            "oxCompare": "O: I was bored with the boring movie. / X: I was boring with the bored movie.",
+            "name": "감정유발 동사의 분사 공식 (사물주어 -ing vs 사람주어 -ed)",
+            "desc": "감정을 불러일으키는 원인이나 사물은 현재분사(-ing: astonishing, fascinating, exhausting)를 쓰고, 감정을 직접 느끼는 주체(사람)는 과거분사(-ed: astonished, fascinated, exhausted)를 씁니다.",
+            "formula": "감정유발 동사의 분사 공식 (사물주어 -ing vs 사람주어 -ed)",
+            "rules": [],
+            "examples": [
+              {
+                "en": "The astonishing discovery made the scientists feel completely fascinated.",
+                "ko": "그 놀라운 발견은 과학자들로 하여금 완전히 매료되도록 만들었다.",
+                "point": "감정을 불러일으키는 원인이나 사물은 현재분사(-ing: astonishing, fascinating, exhausting)를 쓰고, 감정을 직접 느끼는 주체(사람)는 과거분사(-ed: astonished, fascinated, exhausted)를 씁니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "I was bored with the boring movie.",
+                "wrong": "I was boring with the bored movie.",
+                "reason": "사람 주어라도 다른 사람에게 그 감정을 '일으키는' 주체라면 -ing가 쓰일 수 있으므로 능동적 유발인지 수동적 느낌인지를 문맥으로 정확히 파악해야 합니다."
+              }
+            ],
             "trap": "사람 주어라도 다른 사람에게 그 감정을 '일으키는' 주체라면 -ing가 쓰일 수 있으므로 능동적 유발인지 수동적 느낌인지를 문맥으로 정확히 파악해야 합니다.",
             "quizLink": "수능 및 모의고사 어법 단골 출제 포인트입니다."
           },
           {
-            "formulaId": "lv5_u10_f2",
-            "tag": "일반 타동사의 목적어 유무에 따른 분사 판별",
-            "en": "The research conducted by the university analyzed data collected over ten years.",
-            "ko": "그 대학에 의해 수행된 연구는 10년에 걸쳐 수집된 자료를 분석했다.",
-            "point": "타동사가 분사로 쓰일 때, 목적어가 살아있으면 능동(V-ing), 목적어가 뒤따르지 않고 전치사구나 부사가 이어지면 수동(p.p.)입니다.",
-            "oxCompare": "O: She answered all the questions asked by the teacher. / X: She answered all the questions asking by the teacher.",
+            "name": "일반 타동사의 목적어 유무에 따른 분사 판별",
+            "desc": "타동사가 분사로 쓰일 때, 목적어가 살아있으면 능동(V-ing), 목적어가 뒤따르지 않고 전치사구나 부사가 이어지면 수동(p.p.)입니다.",
+            "formula": "일반 타동사의 목적어 유무에 따른 분사 판별",
+            "rules": [],
+            "examples": [
+              {
+                "en": "The research conducted by the university analyzed data collected over ten years.",
+                "ko": "그 대학에 의해 수행된 연구는 10년에 걸쳐 수집된 자료를 분석했다.",
+                "point": "타동사가 분사로 쓰일 때, 목적어가 살아있으면 능동(V-ing), 목적어가 뒤따르지 않고 전치사구나 부사가 이어지면 수동(p.p.)입니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "She answered all the questions asked by the teacher.",
+                "wrong": "She answered all the questions asking by the teacher.",
+                "reason": "자동사는 수동태가 불가능하므로 항상 현재분사(remaining, existing, disappearing)만 씁니다."
+              }
+            ],
             "trap": "자동사는 수동태가 불가능하므로 항상 현재분사(remaining, existing, disappearing)만 씁니다.",
             "quizLink": "타동사의 목적어 유무와 자동사의 수동 불가 원칙을 교차 점검하세요."
           }
@@ -21353,22 +21908,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "관계사 4파전 (which vs that vs what vs whose)",
         "formulaCards": [
           {
-            "formulaId": "lv5_u11_f1",
-            "tag": "수능 관계사 판별 2단계 필승 알고리즘",
-            "en": "She revealed what she discovered during the expedition, which amazed the scholars.",
-            "ko": "그녀는 탐험 동안 발견한 것을 밝혔고, 그것은 학자들을 놀라게 했다.",
-            "point": "1단계: 앞에 수식할 명사(선행사)가 있는가? (선행사 X ➔ what / 선행사 O ➔ which, that, whose). 2단계: 뒷문장의 완전성 분석! (주어나 목적어가 없으면 which/that, 소유격 명사 결합으로 완전하면 whose, 완전한 문장이면 동격/접속사 that).",
-            "oxCompare": "O: This is the book which I was looking for. / X: This is the book what I was looking for.",
+            "name": "수능 관계사 판별 2단계 필승 알고리즘",
+            "desc": "1단계: 앞에 수식할 명사(선행사)가 있는가? (선행사 X ➔ what / 선행사 O ➔ which, that, whose). 2단계: 뒷문장의 완전성 분석! (주어나 목적어가 없으면 which/that, 소유격 명사 결합으로 완전하면 whose, 완전한 문장이면 동격/접속사 that).",
+            "formula": "수능 관계사 판별 2단계 필승 알고리즘",
+            "rules": [],
+            "examples": [
+              {
+                "en": "She revealed what she discovered during the expedition, which amazed the scholars.",
+                "ko": "그녀는 탐험 동안 발견한 것을 밝혔고, 그것은 학자들을 놀라게 했다.",
+                "point": "1단계: 앞에 수식할 명사(선행사)가 있는가? (선행사 X ➔ what / 선행사 O ➔ which, that, whose). 2단계: 뒷문장의 완전성 분석! (주어나 목적어가 없으면 which/that, 소유격 명사 결합으로 완전하면 whose, 완전한 문장이면 동격/접속사 that)."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "This is the book which I was looking for.",
+                "wrong": "This is the book what I was looking for.",
+                "reason": "콤마(,) 뒤의 계속적 용법이나 전치사 바로 뒤에는 관계대명사 that을 절대 쓸 수 없습니다."
+              }
+            ],
             "trap": "콤마(,) 뒤의 계속적 용법이나 전치사 바로 뒤에는 관계대명사 that을 절대 쓸 수 없습니다.",
             "quizLink": "수능 29번 어법에서 가장 출제 빈도가 높은 핵심 공식입니다."
           },
           {
-            "formulaId": "lv5_u11_f2",
-            "tag": "소유격 관계대명사 whose 완전 구조 판별",
-            "en": "We stayed at a historic hotel whose windows overlooked the serene lake.",
-            "ko": "우리는 창문이 고요한 호수를 내려다보고 있는 유서 깊은 호텔에 묵었다.",
-            "point": "whose 뒤에는 무관사 명사(windows)가 주어나 목적어로 오며, 문장 자체의 필수 성분이 온전히 갖추어진 완전한 문장 구조를 이룹니다.",
-            "oxCompare": "O: I met a painter whose works are world-famous. / X: I met a painter which works are world-famous.",
+            "name": "소유격 관계대명사 whose 완전 구조 판별",
+            "desc": "whose 뒤에는 무관사 명사(windows)가 주어나 목적어로 오며, 문장 자체의 필수 성분이 온전히 갖추어진 완전한 문장 구조를 이룹니다.",
+            "formula": "소유격 관계대명사 whose 완전 구조 판별",
+            "rules": [],
+            "examples": [
+              {
+                "en": "We stayed at a historic hotel whose windows overlooked the serene lake.",
+                "ko": "우리는 창문이 고요한 호수를 내려다보고 있는 유서 깊은 호텔에 묵었다.",
+                "point": "whose 뒤에는 무관사 명사(windows)가 주어나 목적어로 오며, 문장 자체의 필수 성분이 온전히 갖추어진 완전한 문장 구조를 이룹니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "I met a painter whose works are world-famous.",
+                "wrong": "I met a painter which works are world-famous.",
+                "reason": "whose 뒤의 명사에는 the나 a 같은 관사가 붙지 않습니다."
+              }
+            ],
             "trap": "whose 뒤의 명사에는 the나 a 같은 관사가 붙지 않습니다.",
             "quizLink": "which와 whose의 선택은 뒷문장의 완전성(소유격 관계)으로 가릅니다."
           }
@@ -21501,22 +22080,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "전치사+관계대명사 vs 관계부사 vs where/when 뒤 불완전 함정",
         "formulaCards": [
           {
-            "formulaId": "lv5_u12_f1",
-            "tag": "전치사+관계대명사 = 관계부사 (뒤에 완전한 절)",
-            "en": "This is the laboratory in which the groundbreaking vaccine was developed.",
-            "ko": "이곳이 그 획기적인 백신이 개발된 연구실이다.",
-            "point": "'전치사 + 관계대명사(in which, at which, by which)'와 '관계부사(where, when, why, how)' 뒤에는 주어, 목적어, 보어가 모두 갖추어진 '완전한 절'이 옵니다.",
-            "oxCompare": "O: The city where I was born is very peaceful. / X: The city which I was born is very peaceful.",
+            "name": "전치사+관계대명사 = 관계부사 (뒤에 완전한 절)",
+            "desc": "'전치사 + 관계대명사(in which, at which, by which)'와 '관계부사(where, when, why, how)' 뒤에는 주어, 목적어, 보어가 모두 갖추어진 '완전한 절'이 옵니다.",
+            "formula": "전치사+관계대명사 = 관계부사 (뒤에 완전한 절)",
+            "rules": [],
+            "examples": [
+              {
+                "en": "This is the laboratory in which the groundbreaking vaccine was developed.",
+                "ko": "이곳이 그 획기적인 백신이 개발된 연구실이다.",
+                "point": "'전치사 + 관계대명사(in which, at which, by which)'와 '관계부사(where, when, why, how)' 뒤에는 주어, 목적어, 보어가 모두 갖추어진 '완전한 절'이 옵니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "The city where I was born is very peaceful.",
+                "wrong": "The city which I was born is very peaceful.",
+                "reason": "선행사가 장소(the house, the city)라도 뒷문장에 목적어나 주어가 빠져 있으면 where가 아니라 관계대명사 which/that을 써야 합니다."
+              }
+            ],
             "trap": "선행사가 장소(the house, the city)라도 뒷문장에 목적어나 주어가 빠져 있으면 where가 아니라 관계대명사 which/that을 써야 합니다.",
             "quizLink": "장소 선행사 뒤 무조건 where를 고르는 실수를 유발하는 수능의 전형적인 함정입니다."
           },
           {
-            "formulaId": "lv5_u12_f2",
-            "tag": "전치사의 원래 위치 복원 검증법",
-            "en": "The criteria by which the candidates are evaluated must be transparent.",
-            "ko": "지원자들을 평가하는 기준은 투명해야 한다.",
-            "point": "전치사 + which가 맞는지 확인하려면 관계사절 맨 뒤로 전치사를 옮겨서 선행사와 결합해 보세요 (evaluate the candidates by the criteria ➔ by which 성립).",
-            "oxCompare": "O: The pen with which he signed the document was gold. / X: The pen which he signed the document was gold.",
+            "name": "전치사의 원래 위치 복원 검증법",
+            "desc": "전치사 + which가 맞는지 확인하려면 관계사절 맨 뒤로 전치사를 옮겨서 선행사와 결합해 보세요 (evaluate the candidates by the criteria ➔ by which 성립).",
+            "formula": "전치사의 원래 위치 복원 검증법",
+            "rules": [],
+            "examples": [
+              {
+                "en": "The criteria by which the candidates are evaluated must be transparent.",
+                "ko": "지원자들을 평가하는 기준은 투명해야 한다.",
+                "point": "전치사 + which가 맞는지 확인하려면 관계사절 맨 뒤로 전치사를 옮겨서 선행사와 결합해 보세요 (evaluate the candidates by the criteria ➔ by which 성립)."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "The pen with which he signed the document was gold.",
+                "wrong": "The pen which he signed the document was gold.",
+                "reason": "전치사 뒤에는 관계대명사 that이나 who를 쓸 수 없습니다 (in that은 '~라는 점에서'라는 접속사일 때만 예외)."
+              }
+            ],
             "trap": "전치사 뒤에는 관계대명사 that이나 who를 쓸 수 없습니다 (in that은 '~라는 점에서'라는 접속사일 때만 예외).",
             "quizLink": "수능 29번에서 전치사 누락 및 관계대명사 vs 관계부사 변별 문항으로 빈출됩니다."
           }
@@ -21649,22 +22252,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "대명사 수일치 & 재귀대명사 (it/they, self, one/another)",
         "formulaCards": [
           {
-            "formulaId": "lv5_u13_f1",
-            "tag": "대명사의 수일치 (it vs they / that vs those)",
-            "en": "Companies must understand their customers and satisfy their diverse needs.",
-            "ko": "기업들은 그들의 고객들을 이해하고 그들의 다양한 요구를 충족시켜야 한다.",
-            "point": "대명사가 지칭하는 선행 명사를 문맥에서 정확히 찾아 단수(it, its, that)인지 복수(they, their, them, those)인지 일치시켜야 합니다.",
-            "oxCompare": "O: Each student must submit their own report. / X: Every students must submit his report.",
+            "name": "대명사의 수일치 (it vs they / that vs those)",
+            "desc": "대명사가 지칭하는 선행 명사를 문맥에서 정확히 찾아 단수(it, its, that)인지 복수(they, their, them, those)인지 일치시켜야 합니다.",
+            "formula": "대명사의 수일치 (it vs they / that vs those)",
+            "rules": [],
+            "examples": [
+              {
+                "en": "Companies must understand their customers and satisfy their diverse needs.",
+                "ko": "기업들은 그들의 고객들을 이해하고 그들의 다양한 요구를 충족시켜야 한다.",
+                "point": "대명사가 지칭하는 선행 명사를 문맥에서 정확히 찾아 단수(it, its, that)인지 복수(they, their, them, those)인지 일치시켜야 합니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "Each student must submit their own report.",
+                "wrong": "Every students must submit his report.",
+                "reason": "대명사와 선행명사 사이에 여러 수식어가 끼어들어 혼동을 일으키는 것이 수능 29번의 전형적인 출제 방식입니다."
+              }
+            ],
             "trap": "대명사와 선행명사 사이에 여러 수식어가 끼어들어 혼동을 일으키는 것이 수능 29번의 전형적인 출제 방식입니다.",
             "quizLink": "해석을 통해 대명사가 정확히 어떤 명사를 대신하고 있는지 반드시 선행사를 지목하세요."
           },
           {
-            "formulaId": "lv5_u13_f2",
-            "tag": "재귀대명사 (-self)의 재귀적 용법 vs 대명사 목적격",
-            "en": "The philosopher believed that a person who cannot forgive himself cannot forgive others.",
-            "ko": "그 철학자는 자신을 용서할 수 없는 사람은 타인도 용서할 수 없다고 믿었다.",
-            "point": "문장의 주어와 목적어가 동일 인물/사물일 때는 반드시 재귀대명사(-self / -selves)를 써야 합니다. 반면 주어와 목적어가 서로 다를 때는 일반 목적격 대명사(him, her, them)를 씁니다.",
-            "oxCompare": "O: He looked at himself in the mirror. / X: He looked at him in the mirror. (동일인일 때)",
+            "name": "재귀대명사 (-self)의 재귀적 용법 vs 대명사 목적격",
+            "desc": "문장의 주어와 목적어가 동일 인물/사물일 때는 반드시 재귀대명사(-self / -selves)를 써야 합니다. 반면 주어와 목적어가 서로 다를 때는 일반 목적격 대명사(him, her, them)를 씁니다.",
+            "formula": "재귀대명사 (-self)의 재귀적 용법 vs 대명사 목적격",
+            "rules": [],
+            "examples": [
+              {
+                "en": "The philosopher believed that a person who cannot forgive himself cannot forgive others.",
+                "ko": "그 철학자는 자신을 용서할 수 없는 사람은 타인도 용서할 수 없다고 믿었다.",
+                "point": "문장의 주어와 목적어가 동일 인물/사물일 때는 반드시 재귀대명사(-self / -selves)를 써야 합니다. 반면 주어와 목적어가 서로 다를 때는 일반 목적격 대명사(him, her, them)를 씁니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "He looked at himself in the mirror.",
+                "wrong": "He looked at him in the mirror. (동일인일 때)",
+                "reason": "to부정사나 분사의 의미상 주어와 목적어가 일치할 때도 재귀대명사를 써야 함에 유의하세요."
+              }
+            ],
             "trap": "to부정사나 분사의 의미상 주어와 목적어가 일치할 때도 재귀대명사를 써야 함에 유의하세요.",
             "quizLink": "주어와 목적어의 동일성 여부 판정은 수능 단골 함정입니다."
           }
@@ -21797,22 +22424,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "형용사 vs 부사 도치 구문 & 감각/상태동사 보어 심화",
         "formulaCards": [
           {
-            "formulaId": "lv5_u14_f1",
-            "tag": "보어 자리 형용사 도치 (형용사 보어 + be + 주어)",
-            "en": "So intense was the summer heat that the asphalt melted on the highway.",
-            "ko": "여름의 열기가 너무나 강렬해서 고속도로의 아스팔트가 녹아내렸다.",
-            "point": "'So + 형용사/부사'가 문두로 나가거나 형용사 보어가 문두로 도치될 때, '보어(형용사) + be동사 + 주어'의 도치 구조가 형성됩니다. 주어의 상태를 설명하는 보어 자리이므로 부사가 아닌 형용사를 써야 합니다.",
-            "oxCompare": "O: Blessed are those who believe. / X: Blessedly are those who believe.",
+            "name": "보어 자리 형용사 도치 (형용사 보어 + be + 주어)",
+            "desc": "'So + 형용사/부사'가 문두로 나가거나 형용사 보어가 문두로 도치될 때, '보어(형용사) + be동사 + 주어'의 도치 구조가 형성됩니다. 주어의 상태를 설명하는 보어 자리이므로 부사가 아닌 형용사를 써야 합니다.",
+            "formula": "보어 자리 형용사 도치 (형용사 보어 + be + 주어)",
+            "rules": [],
+            "examples": [
+              {
+                "en": "So intense was the summer heat that the asphalt melted on the highway.",
+                "ko": "여름의 열기가 너무나 강렬해서 고속도로의 아스팔트가 녹아내렸다.",
+                "point": "'So + 형용사/부사'가 문두로 나가거나 형용사 보어가 문두로 도치될 때, '보어(형용사) + be동사 + 주어'의 도치 구조가 형성됩니다. 주어의 상태를 설명하는 보어 자리이므로 부사가 아닌 형용사를 써야 합니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "Blessed are those who believe.",
+                "wrong": "Blessedly are those who believe.",
+                "reason": "도치되었을 때 동사 뒤에 있는 '진짜 주어'를 찾아 수일치를 맞춰야 하며, 보어의 원래 품사가 형용사인지 부사인지 판별해야 합니다."
+              }
+            ],
             "trap": "도치되었을 때 동사 뒤에 있는 '진짜 주어'를 찾아 수일치를 맞춰야 하며, 보어의 원래 품사가 형용사인지 부사인지 판별해야 합니다.",
             "quizLink": "수능 29번에서 형용사/부사 선택과 도치 수일치가 융합된 고난도 킬러입니다."
           },
           {
-            "formulaId": "lv5_u14_f2",
-            "tag": "유사보어 및 상태 유지 동사 (remain, stay, turn, prove)",
-            "en": "The true identity of the mysterious benefactor remained completely unknown.",
-            "ko": "그 신비로운 은인의 진짜 정체는 완전히 알려지지 않은 상태로 남아있었다.",
-            "point": "remain, stay, prove, turn, keep 등의 불완전자동사는 뒤에 주어의 상태를 서술하는 주격 보어로 '형용사/분사'를 취합니다. 우리말 해석이 '~하게'로 되더라도 부사를 쓸 수 없습니다.",
-            "oxCompare": "O: The patient remained calm during surgery. / X: The patient remained calmly during surgery.",
+            "name": "유사보어 및 상태 유지 동사 (remain, stay, turn, prove)",
+            "desc": "remain, stay, prove, turn, keep 등의 불완전자동사는 뒤에 주어의 상태를 서술하는 주격 보어로 '형용사/분사'를 취합니다. 우리말 해석이 '~하게'로 되더라도 부사를 쓸 수 없습니다.",
+            "formula": "유사보어 및 상태 유지 동사 (remain, stay, turn, prove)",
+            "rules": [],
+            "examples": [
+              {
+                "en": "The true identity of the mysterious benefactor remained completely unknown.",
+                "ko": "그 신비로운 은인의 진짜 정체는 완전히 알려지지 않은 상태로 남아있었다.",
+                "point": "remain, stay, prove, turn, keep 등의 불완전자동사는 뒤에 주어의 상태를 서술하는 주격 보어로 '형용사/분사'를 취합니다. 우리말 해석이 '~하게'로 되더라도 부사를 쓸 수 없습니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "The patient remained calm during surgery.",
+                "wrong": "The patient remained calmly during surgery.",
+                "reason": "형용사 보어 앞뒤에 부사가 끼어들어 수식하는 경우(completely unknown, surprisingly calm) 부사와 형용사의 위치 관계를 잘 살펴야 합니다."
+              }
+            ],
             "trap": "형용사 보어 앞뒤에 부사가 끼어들어 수식하는 경우(completely unknown, surprisingly calm) 부사와 형용사의 위치 관계를 잘 살펴야 합니다.",
             "quizLink": "고교 내신 및 수능 어법에서 단골로 출제되는 2형식 보어 판정법입니다."
           }
@@ -21945,22 +22596,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "비교구문과 등위접속사 병렬구조 킬러",
         "formulaCards": [
           {
-            "formulaId": "lv5_u15_f1",
-            "tag": "등위접속사(and, but, or)와 상관접속사 병렬 공식",
-            "en": "The coach emphasized the importance of maintaining discipline and practicing regularly.",
-            "ko": "감독은 규율을 유지하는 것과 규칙적으로 훈련하는 것의 중요성을 강조했다.",
-            "point": "and, but, or 및 not only A but also B, either A or B 등은 문법적으로 대등한 형태(to-v와 to-v, -ing와 -ing, 절과 절)를 연결해야 합니다. 긴 수식어구가 끼어있더라도 접속사가 연결하는 진짜 대상을 문맥에서 찾아야 합니다.",
-            "oxCompare": "O: She likes singing, dancing, and playing tennis. / X: She likes singing, dancing, and to play tennis.",
+            "name": "등위접속사(and, but, or)와 상관접속사 병렬 공식",
+            "desc": "and, but, or 및 not only A but also B, either A or B 등은 문법적으로 대등한 형태(to-v와 to-v, -ing와 -ing, 절과 절)를 연결해야 합니다. 긴 수식어구가 끼어있더라도 접속사가 연결하는 진짜 대상을 문맥에서 찾아야 합니다.",
+            "formula": "등위접속사(and, but, or)와 상관접속사 병렬 공식",
+            "rules": [],
+            "examples": [
+              {
+                "en": "The coach emphasized the importance of maintaining discipline and practicing regularly.",
+                "ko": "감독은 규율을 유지하는 것과 규칙적으로 훈련하는 것의 중요성을 강조했다.",
+                "point": "and, but, or 및 not only A but also B, either A or B 등은 문법적으로 대등한 형태(to-v와 to-v, -ing와 -ing, 절과 절)를 연결해야 합니다. 긴 수식어구가 끼어있더라도 접속사가 연결하는 진짜 대상을 문맥에서 찾아야 합니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "She likes singing, dancing, and playing tennis.",
+                "wrong": "She likes singing, dancing, and to play tennis.",
+                "reason": "중간에 끼어든 동사의 시제나 준동사에 휩쓸리지 말고, 의미상 짝을 이루는 기준 동사/준동사를 파악해야 합니다."
+              }
+            ],
             "trap": "중간에 끼어든 동사의 시제나 준동사에 휩쓸리지 말고, 의미상 짝을 이루는 기준 동사/준동사를 파악해야 합니다.",
             "quizLink": "수능 29번에서 매년 최소 1개 선지로 출제되는 불변의 핵심입니다."
           },
           {
-            "formulaId": "lv5_u15_f2",
-            "tag": "비교 대상의 엄격한 문법적 병치 (that/those of)",
-            "en": "The metabolic rate of birds is considerably higher than that of reptiles.",
-            "ko": "조류의 신진대사율은 파충류의 신진대사율보다 훨씬 더 높다.",
-            "point": "비교급(than)이나 원급(as ~ as) 구문에서 비교되는 두 주체는 동일한 범주여야 합니다. 반복되는 명사는 단수 that, 복수 those로 받아야 하며 단순 명사나 생략은 오답입니다.",
-            "oxCompare": "O: The wings of bats are more flexible than those of birds. / X: The wings of bats are more flexible than birds.",
+            "name": "비교 대상의 엄격한 문법적 병치 (that/those of)",
+            "desc": "비교급(than)이나 원급(as ~ as) 구문에서 비교되는 두 주체는 동일한 범주여야 합니다. 반복되는 명사는 단수 that, 복수 those로 받아야 하며 단순 명사나 생략은 오답입니다.",
+            "formula": "비교 대상의 엄격한 문법적 병치 (that/those of)",
+            "rules": [],
+            "examples": [
+              {
+                "en": "The metabolic rate of birds is considerably higher than that of reptiles.",
+                "ko": "조류의 신진대사율은 파충류의 신진대사율보다 훨씬 더 높다.",
+                "point": "비교급(than)이나 원급(as ~ as) 구문에서 비교되는 두 주체는 동일한 범주여야 합니다. 반복되는 명사는 단수 that, 복수 those로 받아야 하며 단순 명사나 생략은 오답입니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "The wings of bats are more flexible than those of birds.",
+                "wrong": "The wings of bats are more flexible than birds.",
+                "reason": "비교 대상이 사람이나 동물 자체인지, 그들의 속성(크기, 비율, 특징)인지를 구별해야 합니다."
+              }
+            ],
             "trap": "비교 대상이 사람이나 동물 자체인지, 그들의 속성(크기, 비율, 특징)인지를 구별해야 합니다.",
             "quizLink": "평가원 기출에서 가장 많이 틀리는 대명사 병렬 함정입니다."
           }
@@ -22093,22 +22768,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "동격 that vs 관계대명사 that vs 강조 it that 판별",
         "formulaCards": [
           {
-            "formulaId": "lv5_u16_f1",
-            "tag": "It is ~ that 강조구문 vs It is ~ that 가주어-진주어",
-            "en": "It was in the darkest hour that true leaders showed their courage.",
-            "ko": "진정한 지도자들이 용기를 보여준 것은 바로 가장 어두운 시간이었다.",
-            "point": "It is 와 that을 문장에서 제거했을 때 남은 요소들만으로 완전한 문장이 성립하면 '강조구문'이고, It is 뒤의 단어가 형용사/명사 보어로 남아 문장이 성립하지 않으면 '가주어-진주어'입니다.",
-            "oxCompare": "O: It was this book that changed my life. / X: It was clearly that changed my life.",
+            "name": "It is ~ that 강조구문 vs It is ~ that 가주어-진주어",
+            "desc": "It is 와 that을 문장에서 제거했을 때 남은 요소들만으로 완전한 문장이 성립하면 '강조구문'이고, It is 뒤의 단어가 형용사/명사 보어로 남아 문장이 성립하지 않으면 '가주어-진주어'입니다.",
+            "formula": "It is ~ that 강조구문 vs It is ~ that 가주어-진주어",
+            "rules": [],
+            "examples": [
+              {
+                "en": "It was in the darkest hour that true leaders showed their courage.",
+                "ko": "진정한 지도자들이 용기를 보여준 것은 바로 가장 어두운 시간이었다.",
+                "point": "It is 와 that을 문장에서 제거했을 때 남은 요소들만으로 완전한 문장이 성립하면 '강조구문'이고, It is 뒤의 단어가 형용사/명사 보어로 남아 문장이 성립하지 않으면 '가주어-진주어'입니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "It was this book that changed my life.",
+                "wrong": "It was clearly that changed my life.",
+                "reason": "강조구문에서는 부사구, 전치사구, 명사(주어/목적어)를 강조할 수 있으며, 사람이면 who, 사물이면 which, 장소면 where로 that을 대체할 수 있습니다."
+              }
+            ],
             "trap": "강조구문에서는 부사구, 전치사구, 명사(주어/목적어)를 강조할 수 있으며, 사람이면 who, 사물이면 which, 장소면 where로 that을 대체할 수 있습니다.",
             "quizLink": "수능 29번 및 독해 지문에서 문장의 핵심 강조점을 가려내는 필수 구문입니다."
           },
           {
-            "formulaId": "lv5_u16_f2",
-            "tag": "동격 that vs 관계대명사 that 완벽 구별법",
-            "en": "The evidence that he submitted proved the hypothesis that the earth was warming.",
-            "ko": "그가 제출한 증거는 지구가 온난화되고 있다는 가설을 증명했다.",
-            "point": "동격 that: 앞의 추상명사(fact, hypothesis, idea 등) + 완전한 문장 (that 생략 불가, which 불가). 관계대명사 that: 앞의 선행사 + 주어나 목적어가 빠진 불완전한 문장.",
-            "oxCompare": "O: I agree with the proposal that we start now. / X: I agree with the proposal which we start now.",
+            "name": "동격 that vs 관계대명사 that 완벽 구별법",
+            "desc": "동격 that: 앞의 추상명사(fact, hypothesis, idea 등) + 완전한 문장 (that 생략 불가, which 불가). 관계대명사 that: 앞의 선행사 + 주어나 목적어가 빠진 불완전한 문장.",
+            "formula": "동격 that vs 관계대명사 that 완벽 구별법",
+            "rules": [],
+            "examples": [
+              {
+                "en": "The evidence that he submitted proved the hypothesis that the earth was warming.",
+                "ko": "그가 제출한 증거는 지구가 온난화되고 있다는 가설을 증명했다.",
+                "point": "동격 that: 앞의 추상명사(fact, hypothesis, idea 등) + 완전한 문장 (that 생략 불가, which 불가). 관계대명사 that: 앞의 선행사 + 주어나 목적어가 빠진 불완전한 문장."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "I agree with the proposal that we start now.",
+                "wrong": "I agree with the proposal which we start now.",
+                "reason": "추상명사 뒤라도 뒷문장이 불완전하면(주어/목적어 누락) 동격이 아니라 관계대명사 which/that입니다."
+              }
+            ],
             "trap": "추상명사 뒤라도 뒷문장이 불완전하면(주어/목적어 누락) 동격이 아니라 관계대명사 which/that입니다.",
             "quizLink": "뒷문장의 완전성 분석으로 3초 만에 답을 가르는 킬러 공식입니다."
           }
@@ -22241,22 +22940,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "조동사 have p.p. 추론 & 당위성 주장/제안 should 생략",
         "formulaCards": [
           {
-            "formulaId": "lv5_u17_f1",
-            "tag": "조동사 + have p.p. 과거 추론 공식",
-            "en": "She must have arrived at the airport by now; her flight landed an hour ago.",
-            "ko": "그녀는 지금쯤 공항에 도착했음에 틀림없다; 그녀의 항공편이 한 시간 전에 착륙했다.",
-            "point": "과거 사실에 대한 추측/후회 표현: must have p.p.(~했음에 틀림없다), cannot have p.p.(~했을 리가 없다), should have p.p.(~했어야 했는데 하지 않았다), may/might have p.p.(~했을지도 모른다).",
-            "oxCompare": "O: He should have listened to the warning. / X: He must have listened to the warning. (후회의 뉘앙스)",
+            "name": "조동사 + have p.p. 과거 추론 공식",
+            "desc": "과거 사실에 대한 추측/후회 표현: must have p.p.(~했음에 틀림없다), cannot have p.p.(~했을 리가 없다), should have p.p.(~했어야 했는데 하지 않았다), may/might have p.p.(~했을지도 모른다).",
+            "formula": "조동사 + have p.p. 과거 추론 공식",
+            "rules": [],
+            "examples": [
+              {
+                "en": "She must have arrived at the airport by now; her flight landed an hour ago.",
+                "ko": "그녀는 지금쯤 공항에 도착했음에 틀림없다; 그녀의 항공편이 한 시간 전에 착륙했다.",
+                "point": "과거 사실에 대한 추측/후회 표현: must have p.p.(~했음에 틀림없다), cannot have p.p.(~했을 리가 없다), should have p.p.(~했어야 했는데 하지 않았다), may/might have p.p.(~했을지도 모른다)."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "He should have listened to the warning.",
+                "wrong": "He must have listened to the warning. (후회의 뉘앙스)",
+                "reason": "should have p.p.는 '과거에 하지 못한 일에 대한 후회/유감'이며, must have p.p.는 '강한 과거 추측'으로 문맥에 따라 명확히 구분해야 합니다."
+              }
+            ],
             "trap": "should have p.p.는 '과거에 하지 못한 일에 대한 후회/유감'이며, must have p.p.는 '강한 과거 추측'으로 문맥에 따라 명확히 구분해야 합니다.",
             "quizLink": "수능 빈칸 추론 및 어법 문항에서 과거 시제 문맥과의 일치 여부를 묻습니다."
           },
           {
-            "formulaId": "lv5_u17_f2",
-            "tag": "당위성 주장/요구/제안 동사 + that + S + (should) + 동사원형",
-            "en": "The doctor strongly recommended that the exhausted patient take a few days off.",
-            "ko": "의사는 극도로 지친 환자가 며칠 동안 휴식을 취해야 한다고 강력히 권고했다.",
-            "point": "주장(insist), 요구(demand, require, request), 제안(suggest, propose), 명령(order) 동사 뒤 that절의 내용이 '~해야 한다'는 당위성을 나타낼 때 '(should) + 동사원형'을 씁니다.",
-            "oxCompare": "O: She insisted that he be punished. / X: She insisted that he was punished. (처벌해야 한다는 당위성)",
+            "name": "당위성 주장/요구/제안 동사 + that + S + (should) + 동사원형",
+            "desc": "주장(insist), 요구(demand, require, request), 제안(suggest, propose), 명령(order) 동사 뒤 that절의 내용이 '~해야 한다'는 당위성을 나타낼 때 '(should) + 동사원형'을 씁니다.",
+            "formula": "당위성 주장/요구/제안 동사 + that + S + (should) + 동사원형",
+            "rules": [],
+            "examples": [
+              {
+                "en": "The doctor strongly recommended that the exhausted patient take a few days off.",
+                "ko": "의사는 극도로 지친 환자가 며칠 동안 휴식을 취해야 한다고 강력히 권고했다.",
+                "point": "주장(insist), 요구(demand, require, request), 제안(suggest, propose), 명령(order) 동사 뒤 that절의 내용이 '~해야 한다'는 당위성을 나타낼 때 '(should) + 동사원형'을 씁니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "She insisted that he be punished.",
+                "wrong": "She insisted that he was punished. (처벌해야 한다는 당위성)",
+                "reason": "insist나 suggest가 단순한 '사실의 기술/진술(~했다는 사실을 주장/암시하다)'일 때는 should가 들어가지 않고 시제 일치를 따릅니다."
+              }
+            ],
             "trap": "insist나 suggest가 단순한 '사실의 기술/진술(~했다는 사실을 주장/암시하다)'일 때는 should가 들어가지 않고 시제 일치를 따릅니다.",
             "quizLink": "수능 및 내신 어법의 최고난도 함정: 당위성 vs 사실 진술 판정 문제입니다."
           }
@@ -22389,22 +23112,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "With 분사구문 & 무인칭 독립분사구문",
         "formulaCards": [
           {
-            "formulaId": "lv5_u18_f1",
-            "tag": "With + 목적어 + 분사 (동시동작 / 부대상황)",
-            "en": "The speaker addressed the crowd with his arms folded across his chest.",
-            "ko": "연사는 팔짱을 낀 채 군중에게 연설했다.",
-            "point": "'with + 명사(목적어) + 분사(-ing / p.p.) / 형용사 / 전치사구'는 '~한 채로, ~하면서'의 부대상황을 나타냅니다. 목적어와 분사의 관계가 능동이면 현재분사(-ing), 수동이면 과거분사(p.p.)를 씁니다.",
-            "oxCompare": "O: He sat with his legs crossed. / X: He sat with his legs crossing.",
+            "name": "With + 목적어 + 분사 (동시동작 / 부대상황)",
+            "desc": "'with + 명사(목적어) + 분사(-ing / p.p.) / 형용사 / 전치사구'는 '~한 채로, ~하면서'의 부대상황을 나타냅니다. 목적어와 분사의 관계가 능동이면 현재분사(-ing), 수동이면 과거분사(p.p.)를 씁니다.",
+            "formula": "With + 목적어 + 분사 (동시동작 / 부대상황)",
+            "rules": [],
+            "examples": [
+              {
+                "en": "The speaker addressed the crowd with his arms folded across his chest.",
+                "ko": "연사는 팔짱을 낀 채 군중에게 연설했다.",
+                "point": "'with + 명사(목적어) + 분사(-ing / p.p.) / 형용사 / 전치사구'는 '~한 채로, ~하면서'의 부대상황을 나타냅니다. 목적어와 분사의 관계가 능동이면 현재분사(-ing), 수동이면 과거분사(p.p.)를 씁니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "He sat with his legs crossed.",
+                "wrong": "He sat with his legs crossing.",
+                "reason": "팔, 다리, 눈 등 신체 부위는 사람의 의지에 의해 '접혀지거나 꼬아지는' 수동의 대상이므로 과거분사(folded, crossed, closed)를 씁니다."
+              }
+            ],
             "trap": "팔, 다리, 눈 등 신체 부위는 사람의 의지에 의해 '접혀지거나 꼬아지는' 수동의 대상이므로 과거분사(folded, crossed, closed)를 씁니다.",
             "quizLink": "수능 29번 및 고교 어법에서 분사의 능동/수동 선택으로 단골 출제됩니다."
           },
           {
-            "formulaId": "lv5_u18_f2",
-            "tag": "무인칭 독립분사구문 관용표현",
-            "en": "Judging from recent economic indicators, inflation is unlikely to subside quickly.",
-            "ko": "최근의 경제 지표로 판단하건대, 인플레이션이 빠르게 가라앉을 것 같지 않다.",
-            "point": "주절의 주어와 일치하지 않더라도 일반인을 의미상 주어로 보아 관용적으로 굳어진 분사구문입니다: judging from(~로 판단하건대), generally speaking(일반적으로 말해서), strictly speaking(엄격히 말해), considering(~을 고려하면).",
-            "oxCompare": "O: Considering her age, she plays piano remarkably well. / X: Considered her age, she plays piano remarkably well.",
+            "name": "무인칭 독립분사구문 관용표현",
+            "desc": "주절의 주어와 일치하지 않더라도 일반인을 의미상 주어로 보아 관용적으로 굳어진 분사구문입니다: judging from(~로 판단하건대), generally speaking(일반적으로 말해서), strictly speaking(엄격히 말해), considering(~을 고려하면).",
+            "formula": "무인칭 독립분사구문 관용표현",
+            "rules": [],
+            "examples": [
+              {
+                "en": "Judging from recent economic indicators, inflation is unlikely to subside quickly.",
+                "ko": "최근의 경제 지표로 판단하건대, 인플레이션이 빠르게 가라앉을 것 같지 않다.",
+                "point": "주절의 주어와 일치하지 않더라도 일반인을 의미상 주어로 보아 관용적으로 굳어진 분사구문입니다: judging from(~로 판단하건대), generally speaking(일반적으로 말해서), strictly speaking(엄격히 말해), considering(~을 고려하면)."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "Considering her age, she plays piano remarkably well.",
+                "wrong": "Considered her age, she plays piano remarkably well.",
+                "reason": "무인칭 독립분사구문은 주절의 주어와 수동 관계를 따지지 않고 관용 형태(능동 -ing)를 그대로 유지합니다."
+              }
+            ],
             "trap": "무인칭 독립분사구문은 주절의 주어와 수동 관계를 따지지 않고 관용 형태(능동 -ing)를 그대로 유지합니다.",
             "quizLink": "문두에 놓인 분사구문의 주어 불일치 예외 규정으로 출제됩니다."
           }
@@ -22537,22 +23284,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "도치 구문 킬러 (부정어/보어/장소부사구 도치와 수일치)",
         "formulaCards": [
           {
-            "formulaId": "lv5_u19_f1",
-            "tag": "부정어 도치 공식 (부정어 + 조동사/be/do + S + V)",
-            "en": "Never before have I encountered such an extraordinary display of artistic genius.",
-            "ko": "이전에는 결코 이처럼 비범한 예술적 천재성의 발현을 마주해 본 적이 없다.",
-            "point": "Never, Seldom, Rarely, Hardly, Scarcely, Little, Not only, Under no circumstances 등의 부정어구가 문두로 이동하면 '의문문 어순'으로 도치됩니다 (부정어 + 조동사/be/do + 주어 + 본동사원형).",
-            "oxCompare": "O: Rarely does she complain about hardships. / X: Rarely she complains about hardships.",
+            "name": "부정어 도치 공식 (부정어 + 조동사/be/do + S + V)",
+            "desc": "Never, Seldom, Rarely, Hardly, Scarcely, Little, Not only, Under no circumstances 등의 부정어구가 문두로 이동하면 '의문문 어순'으로 도치됩니다 (부정어 + 조동사/be/do + 주어 + 본동사원형).",
+            "formula": "부정어 도치 공식 (부정어 + 조동사/be/do + S + V)",
+            "rules": [],
+            "examples": [
+              {
+                "en": "Never before have I encountered such an extraordinary display of artistic genius.",
+                "ko": "이전에는 결코 이처럼 비범한 예술적 천재성의 발현을 마주해 본 적이 없다.",
+                "point": "Never, Seldom, Rarely, Hardly, Scarcely, Little, Not only, Under no circumstances 등의 부정어구가 문두로 이동하면 '의문문 어순'으로 도치됩니다 (부정어 + 조동사/be/do + 주어 + 본동사원형)."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "Rarely does she complain about hardships.",
+                "wrong": "Rarely she complains about hardships.",
+                "reason": "부정어 뒤에 일반동사를 그대로 쓰거나 do/does/did 조동사를 빠뜨리는 실수를 조심하세요."
+              }
+            ],
             "trap": "부정어 뒤에 일반동사를 그대로 쓰거나 do/does/did 조동사를 빠뜨리는 실수를 조심하세요.",
             "quizLink": "수능 29번 및 고교 내신 서술형 1순위 도치 출제 공식입니다."
           },
           {
-            "formulaId": "lv5_u19_f2",
-            "tag": "장소부사구 및 형용사 보어 도치 (장소구/보어 + 동사 + 주어)",
-            "en": "Beneath the towering oak tree lay several wounded soldiers.",
-            "ko": "우뚝 솟은 참나무 아래에 몇몇 부상당한 군인들이 누워 있었다.",
-            "point": "장소 부사구(Beneath the tree)나 형용사 보어가 문두로 나가면 조동사 do를 쓰지 않고 '동사 + 주어' 형태로 직접 도치됩니다. 이때 동사의 수는 뒤에 오는 '진짜 주어'에 맞추어야 합니다.",
-            "oxCompare": "O: On the hilltop stands a medieval castle. / X: On the hilltop does stand a medieval castle.",
+            "name": "장소부사구 및 형용사 보어 도치 (장소구/보어 + 동사 + 주어)",
+            "desc": "장소 부사구(Beneath the tree)나 형용사 보어가 문두로 나가면 조동사 do를 쓰지 않고 '동사 + 주어' 형태로 직접 도치됩니다. 이때 동사의 수는 뒤에 오는 '진짜 주어'에 맞추어야 합니다.",
+            "formula": "장소부사구 및 형용사 보어 도치 (장소구/보어 + 동사 + 주어)",
+            "rules": [],
+            "examples": [
+              {
+                "en": "Beneath the towering oak tree lay several wounded soldiers.",
+                "ko": "우뚝 솟은 참나무 아래에 몇몇 부상당한 군인들이 누워 있었다.",
+                "point": "장소 부사구(Beneath the tree)나 형용사 보어가 문두로 나가면 조동사 do를 쓰지 않고 '동사 + 주어' 형태로 직접 도치됩니다. 이때 동사의 수는 뒤에 오는 '진짜 주어'에 맞추어야 합니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "On the hilltop stands a medieval castle.",
+                "wrong": "On the hilltop does stand a medieval castle.",
+                "reason": "부정어 도치(의문문 어순)와 장소부사구 도치(단순 위치교환)의 도치 방식 차이를 구별해야 합니다. 단, 주어가 대명사이면 도치되지 않습니다 (Here he comes)."
+              }
+            ],
             "trap": "부정어 도치(의문문 어순)와 장소부사구 도치(단순 위치교환)의 도치 방식 차이를 구별해야 합니다. 단, 주어가 대명사이면 도치되지 않습니다 (Here he comes).",
             "quizLink": "동사 뒤에 위치한 주어와의 수일치 판정이 킬러 문항으로 출제됩니다."
           }
@@ -22685,22 +23456,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "평가원 29번 어법 실전 모의고사 10대 공식 마스터",
         "formulaCards": [
           {
-            "formulaId": "lv5_u20_f1",
-            "tag": "수능 29번 5대 킬러 출제코드 총정리",
-            "en": "Scholars analyzing human behavior discovered that what motivates individuals varies considerably.",
-            "ko": "인간 행동을 분석하는 학자들은 개인을 동기부여하는 것이 상당히 다양하다는 점을 발견했다.",
-            "point": "평가원 29번 출제 비중: 1위 동사 vs 준동사(35%), 2위 관계사 vs 접속사(25%), 3위 능동분사 vs 수동분사(18%), 4위 대명사 및 수일치(12%), 5위 형용사 vs 부사 보어(10%). 문맥 해석과 구조 분석을 병행하여 답을 좁혀야 합니다.",
-            "oxCompare": "O: What he discovered changed our view of nature. / X: That he discovered changed our view of nature.",
+            "name": "수능 29번 5대 킬러 출제코드 총정리",
+            "desc": "평가원 29번 출제 비중: 1위 동사 vs 준동사(35%), 2위 관계사 vs 접속사(25%), 3위 능동분사 vs 수동분사(18%), 4위 대명사 및 수일치(12%), 5위 형용사 vs 부사 보어(10%). 문맥 해석과 구조 분석을 병행하여 답을 좁혀야 합니다.",
+            "formula": "수능 29번 5대 킬러 출제코드 총정리",
+            "rules": [],
+            "examples": [
+              {
+                "en": "Scholars analyzing human behavior discovered that what motivates individuals varies considerably.",
+                "ko": "인간 행동을 분석하는 학자들은 개인을 동기부여하는 것이 상당히 다양하다는 점을 발견했다.",
+                "point": "평가원 29번 출제 비중: 1위 동사 vs 준동사(35%), 2위 관계사 vs 접속사(25%), 3위 능동분사 vs 수동분사(18%), 4위 대명사 및 수일치(12%), 5위 형용사 vs 부사 보어(10%). 문맥 해석과 구조 분석을 병행하여 답을 좁혀야 합니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "What he discovered changed our view of nature.",
+                "wrong": "That he discovered changed our view of nature.",
+                "reason": "밑줄 친 단어 하나만 보지 말고 반드시 문장 전체의 주어, 본동사, 접속사의 구조를 도식화하여 풀어야 합니다."
+              }
+            ],
             "trap": "밑줄 친 단어 하나만 보지 말고 반드시 문장 전체의 주어, 본동사, 접속사의 구조를 도식화하여 풀어야 합니다.",
             "quizLink": "수능 1등급을 결정짓는 최종 관문 모의고사입니다."
           },
           {
-            "formulaId": "lv5_u20_f2",
-            "tag": "평가원 킬러 함정 회피 3단계 검증 프로세스",
-            "en": "Equipped with these analytical skills, you are fully prepared to conquer any grammar question.",
-            "ko": "이러한 분석적 기술을 갖추었기에, 당신은 어떠한 어법 문제라도 정복할 준비가 완벽히 되었다.",
-            "point": "1단계: 밑줄 친 단어가 본동사 자리인지 확인한다. 2단계: 관계사/접속사라면 선행사와 뒷문장의 완전성을 검증한다. 3단계: 분사나 대명사라면 의미상 주어와의 능동/수동 및 선행 명사의 단/복수를 확인한다.",
-            "oxCompare": "O: The strategy adopted by the board proved effective. / X: The strategy adopted by the board proving effective.",
+            "name": "평가원 킬러 함정 회피 3단계 검증 프로세스",
+            "desc": "1단계: 밑줄 친 단어가 본동사 자리인지 확인한다. 2단계: 관계사/접속사라면 선행사와 뒷문장의 완전성을 검증한다. 3단계: 분사나 대명사라면 의미상 주어와의 능동/수동 및 선행 명사의 단/복수를 확인한다.",
+            "formula": "평가원 킬러 함정 회피 3단계 검증 프로세스",
+            "rules": [],
+            "examples": [
+              {
+                "en": "Equipped with these analytical skills, you are fully prepared to conquer any grammar question.",
+                "ko": "이러한 분석적 기술을 갖추었기에, 당신은 어떠한 어법 문제라도 정복할 준비가 완벽히 되었다.",
+                "point": "1단계: 밑줄 친 단어가 본동사 자리인지 확인한다. 2단계: 관계사/접속사라면 선행사와 뒷문장의 완전성을 검증한다. 3단계: 분사나 대명사라면 의미상 주어와의 능동/수동 및 선행 명사의 단/복수를 확인한다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "The strategy adopted by the board proved effective.",
+                "wrong": "The strategy adopted by the board proving effective.",
+                "reason": "해석만으로 그럴듯해 보이는 보기를 피하고, 명확한 문법 규칙(문장의 뼈대)에 입각하여 소거법으로 정답을 확정하세요."
+              }
+            ],
             "trap": "해석만으로 그럴듯해 보이는 보기를 피하고, 명확한 문법 규칙(문장의 뼈대)에 입각하여 소거법으로 정답을 확정하세요.",
             "quizLink": "수능 영문법 클리닉 완강을 축하하며 1등급을 보장합니다."
           }
@@ -22850,10 +23645,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "품사(8품사)는 '배우', 문장 성분은 '배역'",
-            "formula": "품사 = 단어 자체의 태생 (명사, 대명사, 동사, 형용사, 부사, 전치사, 접속사, 감탄사)\n문장 성분 = 문장에서 맡은 역할 (주어, 동사, 목적어, 보어, 수식어)",
-            "example": "'Tom Cruise'라는 배우(명사)가 영화에서 '탐정'(주어) 역할을 맡을 수도 있고, '범인'(목적어) 역할을 맡을 수도 있습니다.",
-            "trap": "'형용사가 목적어가 될 수 있나요?' ➔ 절대 불가! 목적어 배역은 오직 '명사/대명사' 배우만 맡을 수 있습니다.",
             "desc": "품사(8품사)는 '배우', 문장 성분은 '배역'은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 단어의 태생적 성질인 8품사(배우)와 문장에서의 역할인 문장 성분(배역)의 결정적 차이의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "품사 = 단어 자체의 태생 (명사, 대명사, 동사, 형용사, 부사, 전치사, 접속사, 감탄사)\n문장 성분 = 문장에서 맡은 역할 (주어, 동사, 목적어, 보어, 수식어)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -22887,14 +23680,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "'형용사가 목적어가 될 수 있나요?' ➔ 절대 불가! 목적어 배역은 오직 '명사/대명사' 배우만 맡을 수 있습니다."
               }
             ],
+            "trap": "'형용사가 목적어가 될 수 있나요?' ➔ 절대 불가! 목적어 배역은 오직 '명사/대명사' 배우만 맡을 수 있습니다.",
             "quizLink": "3단계 실전 퀴즈에서 [품사(8품사)는 '배우', 문장 성분은 '배역'] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "문장 성분의 4대 뼈대 (주/동/목/보)",
-            "formula": "주어(Subject: 은/는/이/가) + 동사(Verb: ~하다/이다) + 목적어(Object: ~을/를/에게) + 보어(Complement: 보충 설명)",
-            "example": "She(주어-대명사) made(동사) him(목적어-대명사) happy(보어-형용사).",
-            "trap": "부사(Adverb)는 문장의 뼈대(주·동·목·보)가 아니라 장식품(수식어)이므로 생략해도 문장이 성립합니다.",
             "desc": "문장 성분의 4대 뼈대 (주/동/목/보)은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 단어의 태생적 성질인 8품사(배우)와 문장에서의 역할인 문장 성분(배역)의 결정적 차이의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "주어(Subject: 은/는/이/가) + 동사(Verb: ~하다/이다) + 목적어(Object: ~을/를/에게) + 보어(Complement: 보충 설명)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -22928,6 +23720,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "부사(Adverb)는 문장의 뼈대(주·동·목·보)가 아니라 장식품(수식어)이므로 생략해도 문장이 성립합니다."
               }
             ],
+            "trap": "부사(Adverb)는 문장의 뼈대(주·동·목·보)가 아니라 장식품(수식어)이므로 생략해도 문장이 성립합니다.",
             "quizLink": "3단계 실전 퀴즈에서 [문장 성분의 4대 뼈대 (주/동/목/보)] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -23063,10 +23856,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "자동사(Vi) vs 타동사(Vt)의 판별법",
-            "formula": "자동사 (Intransitive) : 주어 혼자 행동 완료! 뒤에 목적어(~을/를) 불필요! (sleep, cry, smile, arrive)\n타동사 (Transitive) : 동작을 받는 대상(목적어)이 반드시 필요! (like, make, buy, visit)",
-            "example": "Birds fly. (새가 난다 - 자동사, 목적어 없음)\nI love you. (나는 너를 사랑한다 - 타동사, you가 목적어)",
-            "trap": "자동사가 목적어를 취하고 싶을 때는 반드시 '전치사'라는 징검다리를 놓아야 함! (listen to, look at, arrive at)",
             "desc": "자동사(Vi) vs 타동사(Vt)의 판별법은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 동작의 대상(목적어)이 필요한가(타동사) 아니면 스스로 일어나는가(자동사)의 원리와 1~5형식 뼈대의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "자동사 (Intransitive) : 주어 혼자 행동 완료! 뒤에 목적어(~을/를) 불필요! (sleep, cry, smile, arrive)\n타동사 (Transitive) : 동작을 받는 대상(목적어)이 반드시 필요! (like, make, buy, visit)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -23100,14 +23891,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "자동사가 목적어를 취하고 싶을 때는 반드시 '전치사'라는 징검다리를 놓아야 함! (listen to, look at, arrive at)"
               }
             ],
+            "trap": "자동사가 목적어를 취하고 싶을 때는 반드시 '전치사'라는 징검다리를 놓아야 함! (listen to, look at, arrive at)",
             "quizLink": "3단계 실전 퀴즈에서 [자동사(Vi) vs 타동사(Vt)의 판별법] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "1~5형식의 탄생 비밀",
-            "formula": "1형식: S + V (완전자동사)\n2형식: S + V + C (불완전자동사: 보어 필요)\n3형식: S + V + O (완전타동사: 목적어 1개)\n4형식: S + V + IO + DO (수여동사: 목적어 2개)\n5형식: S + V + O + OC (불완전타동사: 목적어+보어)",
-            "example": "동사가 어떤 친구(목적어, 보어)를 필요로 하느냐에 따라 5가지 형식이 결정됩니다.",
-            "trap": "동사 하나가 무조건 한 가지 형식만 취하는 것이 아니라, 문맥에 따라 자동사/타동사로 모두 쓰일 수 있음!",
             "desc": "1~5형식의 탄생 비밀은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 동작의 대상(목적어)이 필요한가(타동사) 아니면 스스로 일어나는가(자동사)의 원리와 1~5형식 뼈대의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1형식: S + V (완전자동사)\n2형식: S + V + C (불완전자동사: 보어 필요)\n3형식: S + V + O (완전타동사: 목적어 1개)\n4형식: S + V + IO + DO (수여동사: 목적어 2개)\n5형식: S + V + O + OC (불완전타동사: 목적어+보어)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -23141,6 +23931,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "동사 하나가 무조건 한 가지 형식만 취하는 것이 아니라, 문맥에 따라 자동사/타동사로 모두 쓰일 수 있음!"
               }
             ],
+            "trap": "동사 하나가 무조건 한 가지 형식만 취하는 것이 아니라, 문맥에 따라 자동사/타동사로 모두 쓰일 수 있음!",
             "quizLink": "3단계 실전 퀴즈에서 [1~5형식의 탄생 비밀] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -23276,10 +24067,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "보어(Complement) = '보충 설명해 주는 말'",
-            "formula": "주격 보어 (Subject Complement) : 주어의 정체(명사)나 상태(형용사)를 보충 ➔ [주어 = 보어]\n목적격 보어 (Object Complement) : 목적어의 정체나 상태·동작을 보충 ➔ [목적어 = 보어]",
-            "example": "He is a doctor. (He = doctor, 주격보어-명사)\nShe feels tired. (She = tired 상태, 주격보어-형용사)\nWe painted the wall blue. (wall = blue 상태, 목적격보어)",
-            "trap": "보어 자리에는 '명사'와 '형용사'만 올 수 있습니다. '부사(~ly)'는 절대로 보어가 될 수 없습니다!",
             "desc": "보어(Complement) = '보충 설명해 주는 말'은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. '도대체 무엇을 보충해 주길래 보어인가?' 주격 보어(S=C)와 목적격 보어(O➔OC)의 본질의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "주격 보어 (Subject Complement) : 주어의 정체(명사)나 상태(형용사)를 보충 ➔ [주어 = 보어]\n목적격 보어 (Object Complement) : 목적어의 정체나 상태·동작을 보충 ➔ [목적어 = 보어]",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -23313,14 +24102,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "보어 자리에는 '명사'와 '형용사'만 올 수 있습니다. '부사(~ly)'는 절대로 보어가 될 수 없습니다!"
               }
             ],
+            "trap": "보어 자리에는 '명사'와 '형용사'만 올 수 있습니다. '부사(~ly)'는 절대로 보어가 될 수 없습니다!",
             "quizLink": "3단계 실전 퀴즈에서 [보어(Complement) = '보충 설명해 주는 말'] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "감각동사 뒤에는 반드시 형용사 보어!",
-            "formula": "look, smell, taste, sound, feel + 형용사 (O) / + 부사 (X)",
-            "example": "It smells deliciously. (X) ➔ It smells delicious. (O: 맛있게 냄새난다)",
-            "trap": "우리말 해석이 '~하게'로 부사처럼 되더라도 영어에서는 주어를 보충하므로 형용사를 써야 함!",
             "desc": "감각동사 뒤에는 반드시 형용사 보어!은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. '도대체 무엇을 보충해 주길래 보어인가?' 주격 보어(S=C)와 목적격 보어(O➔OC)의 본질의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "look, smell, taste, sound, feel + 형용사 (O) / + 부사 (X)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -23354,6 +24142,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "우리말 해석이 '~하게'로 부사처럼 되더라도 영어에서는 주어를 보충하므로 형용사를 써야 함!"
               }
             ],
+            "trap": "우리말 해석이 '~하게'로 부사처럼 되더라도 영어에서는 주어를 보충하므로 형용사를 써야 함!",
             "quizLink": "3단계 실전 퀴즈에서 [감각동사 뒤에는 반드시 형용사 보어!] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -23489,10 +24278,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "준동사(Verbal) = '동사에 준하지만 다른 품사로 변신한 것'",
-            "formula": "한 문장에 본동사는 오직 1개! 다른 동사를 또 쓰려면 준동사로 변신시켜야 함!\n1. to부정사 (to + V) : 명사, 형용사, 부사 중 역할이 '아직 정해지지 않음(不定)'\n2. 동명사 (V-ing) : 동사를 '명사(~하기, ~하는 것)'로 변신\n3. 분사 (V-ing / p.p.) : 동사를 '형용사(~하는, ~된)'로 변신",
-            "example": "I like play soccer. (X: 본동사 2개 충돌)\nI like to play soccer. (O: to부정사)\nI like playing soccer. (O: 동명사)",
-            "trap": "준동사는 품사가 바뀌었지만, 원래 동사였던 성질(목적어·보어를 가짐, 부사의 수식을 받음, 시제와 태를 가짐)을 그대로 간직합니다.",
             "desc": "준동사(Verbal) = '동사에 준하지만 다른 품사로 변신한 것'은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 동사였던 녀석이 왜 옷을 갈아입었을까? to부정사(미정품사), 동명사(명사화), 분사(형용사화)의 원리의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "한 문장에 본동사는 오직 1개! 다른 동사를 또 쓰려면 준동사로 변신시켜야 함!\n1. to부정사 (to + V) : 명사, 형용사, 부사 중 역할이 '아직 정해지지 않음(不定)'\n2. 동명사 (V-ing) : 동사를 '명사(~하기, ~하는 것)'로 변신\n3. 분사 (V-ing / p.p.) : 동사를 '형용사(~하는, ~된)'로 변신",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -23526,14 +24313,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "준동사는 품사가 바뀌었지만, 원래 동사였던 성질(목적어·보어를 가짐, 부사의 수식을 받음, 시제와 태를 가짐)을 그대로 간직합니다."
               }
             ],
+            "trap": "준동사는 품사가 바뀌었지만, 원래 동사였던 성질(목적어·보어를 가짐, 부사의 수식을 받음, 시제와 태를 가짐)을 그대로 간직합니다.",
             "quizLink": "3단계 실전 퀴즈에서 [준동사(Verbal) = '동사에 준하지만 다른 품사로 변신한 것'] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "준동사 3형제의 품사 요약표",
-            "formula": "• to부정사 ➔ 명사적, 형용사적, 부사적 용법\n• 동명사 ➔ 주어, 목적어, 보어 (명사 역할만)\n• 분사 ➔ 명사 수식, 주격/목적격 보어 (형용사 역할만)",
-            "example": "Smoking is bad. (동명사 주어) / a sleeping dog (분사 수식)",
-            "trap": "같은 V-ing 형태라도 '명사'로 쓰이면 동명사, '형용사'로 쓰이면 현재분사입니다.",
             "desc": "준동사 3형제의 품사 요약표은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 동사였던 녀석이 왜 옷을 갈아입었을까? to부정사(미정품사), 동명사(명사화), 분사(형용사화)의 원리의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• to부정사 ➔ 명사적, 형용사적, 부사적 용법\n• 동명사 ➔ 주어, 목적어, 보어 (명사 역할만)\n• 분사 ➔ 명사 수식, 주격/목적격 보어 (형용사 역할만)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -23567,6 +24353,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "같은 V-ing 형태라도 '명사'로 쓰이면 동명사, '형용사'로 쓰이면 현재분사입니다."
               }
             ],
+            "trap": "같은 V-ing 형태라도 '명사'로 쓰이면 동명사, '형용사'로 쓰이면 현재분사입니다.",
             "quizLink": "3단계 실전 퀴즈에서 [준동사 3형제의 품사 요약표] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -23702,10 +24489,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "'관계대명사' = 접속사(문장 연결) + 대명사(명사 대신)",
-            "formula": "관계대명사 = 문장과 문장을 연결하는 '접속사' + 겹치는 명사를 대신하는 '대명사'\n선행사(先行詞) = '앞에(先) 먼저 걸어간(行) 단어(詞)' ➔ 관계대명사 바로 앞에 있는 꾸밈받는 명사!",
-            "example": "I know a boy. + He speaks four languages.\n➔ I know a boy [who speaks four languages]. (a boy = 선행사, who = 관계대명사)",
-            "trap": "관계대명사 뒤에는 겹치는 명사가 1개 빠져있으므로 반드시 '불완전한 문장(주어나 목적어 결손)'이 옵니다!",
             "desc": "'관계대명사' = 접속사(문장 연결) + 대명사(명사 대신)은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 관계(Relation)는 문장을 이어주는 '접속사'의 뜻! '선행사(先行詞)'의 어원과 원리의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "관계대명사 = 문장과 문장을 연결하는 '접속사' + 겹치는 명사를 대신하는 '대명사'\n선행사(先行詞) = '앞에(先) 먼저 걸어간(行) 단어(詞)' ➔ 관계대명사 바로 앞에 있는 꾸밈받는 명사!",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -23739,14 +24524,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "관계대명사 뒤에는 겹치는 명사가 1개 빠져있으므로 반드시 '불완전한 문장(주어나 목적어 결손)'이 옵니다!"
               }
             ],
+            "trap": "관계대명사 뒤에는 겹치는 명사가 1개 빠져있으므로 반드시 '불완전한 문장(주어나 목적어 결손)'이 옵니다!",
             "quizLink": "3단계 실전 퀴즈에서 ['관계대명사' = 접속사(문장 연결) + 대명사(명사 대신)] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "관계대명사절은 형용사절이다!",
-            "formula": "관계대명사 덩어리 전체는 선행사(명사)를 꾸며주는 '형용사' 역할을 합니다.",
-            "example": "the car [which was made in Korea] ➔ 한국에서 만들어진(형용사처럼 수식) 자동차",
-            "trap": "who, which, that을 '누구, 어느 것, 저것'으로 해석하지 말고, 앞 명사를 꾸며주는 풀칠로 이해할 것!",
             "desc": "관계대명사절은 형용사절이다!은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 관계(Relation)는 문장을 이어주는 '접속사'의 뜻! '선행사(先行詞)'의 어원과 원리의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "관계대명사 덩어리 전체는 선행사(명사)를 꾸며주는 '형용사' 역할을 합니다.",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -23780,6 +24564,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "who, which, that을 '누구, 어느 것, 저것'으로 해석하지 말고, 앞 명사를 꾸며주는 풀칠로 이해할 것!"
               }
             ],
+            "trap": "who, which, that을 '누구, 어느 것, 저것'으로 해석하지 말고, 앞 명사를 꾸며주는 풀칠로 이해할 것!",
             "quizLink": "3단계 실전 퀴즈에서 [관계대명사절은 형용사절이다!] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -23915,10 +24700,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "수동태는 '당하는 녀석'을 주인공으로 세우는 문법",
-            "formula": "능동태 : [주어]가 [목적어]를 ~하다.\n수동태 : [목적어]가 [be + 과거분사(p.p.)] 당하다 + (by 행위자)",
-            "example": "Shakespeare wrote Hamlet. (능동태: 셰익스피어가 햄릿을 썼다)\n➔ Hamlet was written by Shakespeare. (수동태: 햄릿이 쓰여졌다)",
-            "trap": "목적어(~을/를)가 없는 자동사(1, 2형식: happen, appear, disappear)는 수동태로 전환이 절대 불가!",
             "desc": "수동태는 '당하는 녀석'을 주인공으로 세우는 문법은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 행동을 하는가(Active) vs 당하는가(Passive)? 수동태(be+p.p.)의 탄생 배경과 목적어의 이동의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "능동태 : [주어]가 [목적어]를 ~하다.\n수동태 : [목적어]가 [be + 과거분사(p.p.)] 당하다 + (by 행위자)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -23952,14 +24735,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "목적어(~을/를)가 없는 자동사(1, 2형식: happen, appear, disappear)는 수동태로 전환이 절대 불가!"
               }
             ],
+            "trap": "목적어(~을/를)가 없는 자동사(1, 2형식: happen, appear, disappear)는 수동태로 전환이 절대 불가!",
             "quizLink": "3단계 실전 퀴즈에서 [수동태는 '당하는 녀석'을 주인공으로 세우는 문법] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "왜 be동사 + p.p. 형태일까?",
-            "formula": "be동사(~인 상태이다) + p.p.(완료·수동 의미의 형용사) = '~되어진 상태로 존재하다'",
-            "example": "The door is locked. (문이 잠겨진 상태이다)",
-            "trap": "수동태로 바뀔 때 시제(현재/과거)는 반드시 be동사에 반영해야 합니다! (is/are vs was/were)",
             "desc": "왜 be동사 + p.p. 형태일까?은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 행동을 하는가(Active) vs 당하는가(Passive)? 수동태(be+p.p.)의 탄생 배경과 목적어의 이동의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "be동사(~인 상태이다) + p.p.(완료·수동 의미의 형용사) = '~되어진 상태로 존재하다'",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -23993,6 +24775,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "수동태로 바뀔 때 시제(현재/과거)는 반드시 be동사에 반영해야 합니다! (is/are vs was/were)"
               }
             ],
+            "trap": "수동태로 바뀔 때 시제(현재/과거)는 반드시 be동사에 반영해야 합니다! (is/are vs was/were)",
             "quizLink": "3단계 실전 퀴즈에서 [왜 be동사 + p.p. 형태일까?] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -24128,10 +24911,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "구(Phrase) vs 절(Clause)의 결정적 차이",
-            "formula": "구 (Phrase) : 2개 이상의 단어가 모였지만 [주어 + 동사]가 없음! (in the morning, to play soccer, very quickly)\n절 (Clause) : 2개 이상의 단어가 모여 [주어 + 동사] 관계를 이룸! (because he was tired, that she loved me)",
-            "example": "because of the rain (구: 주어+동사 없음) vs because it rained (절: it 주어 + rained 동사)",
-            "trap": "구 앞에는 전치사(because of, despite, during)를 쓰고, 절 앞에는 접속사(because, although, while)를 씁니다!",
             "desc": "구(Phrase) vs 절(Clause)의 결정적 차이은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 단어 뭉치 속에 주어+동사가 있는가 없는가? 긴 영어 문장을 의미 덩어리(청크)로 쪼개는 비법의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "구 (Phrase) : 2개 이상의 단어가 모였지만 [주어 + 동사]가 없음! (in the morning, to play soccer, very quickly)\n절 (Clause) : 2개 이상의 단어가 모여 [주어 + 동사] 관계를 이룸! (because he was tired, that she loved me)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -24165,14 +24946,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "구 앞에는 전치사(because of, despite, during)를 쓰고, 절 앞에는 접속사(because, although, while)를 씁니다!"
               }
             ],
+            "trap": "구 앞에는 전치사(because of, despite, during)를 쓰고, 절 앞에는 접속사(because, although, while)를 씁니다!",
             "quizLink": "3단계 실전 퀴즈에서 [구(Phrase) vs 절(Clause)의 결정적 차이] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "주절(Independent) vs 종속절(Dependent)",
-            "formula": "주절 = 문장의 주인! 혼자서도 문장 성립 (I stayed at home)\n종속절 = 접속사를 달고 주절에 딸려 붙은 보조 절 (because it was raining)",
-            "example": "접속사가 붙어있는 쪽이 종속절(부사절/명사절/형용사절)입니다.",
-            "trap": "종속절만 덩그러니 마침표를 찍고 단독 문장으로 존재할 수 없습니다.",
             "desc": "주절(Independent) vs 종속절(Dependent)은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 단어 뭉치 속에 주어+동사가 있는가 없는가? 긴 영어 문장을 의미 덩어리(청크)로 쪼개는 비법의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "주절 = 문장의 주인! 혼자서도 문장 성립 (I stayed at home)\n종속절 = 접속사를 달고 주절에 딸려 붙은 보조 절 (because it was raining)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -24206,6 +24986,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "종속절만 덩그러니 마침표를 찍고 단독 문장으로 존재할 수 없습니다."
               }
             ],
+            "trap": "종속절만 덩그러니 마침표를 찍고 단독 문장으로 존재할 수 없습니다.",
             "quizLink": "3단계 실전 퀴즈에서 [주절(Independent) vs 종속절(Dependent)] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -24341,10 +25122,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "한정적(Attributive) vs 서술적(Predicative)의 어원",
-            "formula": "한정적 용법 : 명사의 범위를 좁혀서(한정하여) 직접 꾸밈 ➔ [형용사 + 명사]\n서술적 용법 : 주어의 상태를 동사와 함께 서술(설명)함 ➔ [주어 + be동사 + 형용사(보어)]",
-            "example": "a sleeping baby (자고 있는 아기 - 아기의 범위를 한정)\nThe baby is sleeping. (아기가 자고 있다 - 아기의 상태를 서술)",
-            "trap": "afraid, alive, asleep, awake, alone 등 a-로 시작하는 형용사는 '서술적 용법(보어)'으로만 쓰입니다!",
             "desc": "한정적(Attributive) vs 서술적(Predicative)의 어원은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 명사를 직접 수식(한정)하는가 vs 주어를 서술(보어)하는가? 관계대명사 계속적 용법(콤마) 쉬운 해설의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "한정적 용법 : 명사의 범위를 좁혀서(한정하여) 직접 꾸밈 ➔ [형용사 + 명사]\n서술적 용법 : 주어의 상태를 동사와 함께 서술(설명)함 ➔ [주어 + be동사 + 형용사(보어)]",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -24378,14 +25157,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "afraid, alive, asleep, awake, alone 등 a-로 시작하는 형용사는 '서술적 용법(보어)'으로만 쓰입니다!"
               }
             ],
+            "trap": "afraid, alive, asleep, awake, alone 등 a-로 시작하는 형용사는 '서술적 용법(보어)'으로만 쓰입니다!",
             "quizLink": "3단계 실전 퀴즈에서 [한정적(Attributive) vs 서술적(Predicative)의 어원] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "관계대명사의 한정용법 vs 계속적 용법(콤마)",
-            "formula": "한정용법 (콤마 없음) : 뒤에서 명사를 수식 (~하는 선행사)\n계속적 용법 (콤마 있음) : 앞에서부터 순서대로 보충 설명 (그런데 그 사람은/그것은 ~하다)",
-            "example": "He has two sons who became doctors. (의사가 된 아들이 2명 있다 - 아들이 더 있을 수 있음)\nHe has two sons, who became doctors. (아들이 딱 2명 있는데, 둘 다 의사가 되었다)",
-            "trap": "계속적 용법(, 뒤)에는 관계대명사 that과 what을 절대로 쓸 수 없습니다!",
             "desc": "관계대명사의 한정용법 vs 계속적 용법(콤마)은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 명사를 직접 수식(한정)하는가 vs 주어를 서술(보어)하는가? 관계대명사 계속적 용법(콤마) 쉬운 해설의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "한정용법 (콤마 없음) : 뒤에서 명사를 수식 (~하는 선행사)\n계속적 용법 (콤마 있음) : 앞에서부터 순서대로 보충 설명 (그런데 그 사람은/그것은 ~하다)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -24419,6 +25197,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "계속적 용법(, 뒤)에는 관계대명사 that과 what을 절대로 쓸 수 없습니다!"
               }
             ],
+            "trap": "계속적 용법(, 뒤)에는 관계대명사 that과 what을 절대로 쓸 수 없습니다!",
             "quizLink": "3단계 실전 퀴즈에서 [관계대명사의 한정용법 vs 계속적 용법(콤마)] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -24551,22 +25330,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "SP-31. 등위접속사 vs 종속접속사 vs 접속부사의 차이",
         "formulaCards": [
           {
-            "formulaId": "sp_terms_u9_f1",
-            "tag": "접속사(Conjunction) vs 접속부사(Conjunctive Adverb)",
-            "en": "The storm was severe; however, the emergency rescue team proceeded without hesitation.",
-            "ko": "폭풍은 극심했다; 하지만 비상 구조대는 주저 없이 나아갔다.",
-            "point": "however, therefore, moreover 등은 '부사'이므로 두 문장을 콤마(,)만으로 연결할 수 없습니다. 두 문장을 연결하려면 마침표(.)나 세미콜론(;)이 반드시 필요하거나 등위/종속접속사를 써야 합니다.",
-            "oxCompare": "O: It was raining; however, we went out. / X: It was raining, however, we went out.",
+            "name": "접속사(Conjunction) vs 접속부사(Conjunctive Adverb)",
+            "desc": "however, therefore, moreover 등은 '부사'이므로 두 문장을 콤마(,)만으로 연결할 수 없습니다. 두 문장을 연결하려면 마침표(.)나 세미콜론(;)이 반드시 필요하거나 등위/종속접속사를 써야 합니다.",
+            "formula": "접속사(Conjunction) vs 접속부사(Conjunctive Adverb)",
+            "rules": [],
+            "examples": [
+              {
+                "en": "The storm was severe; however, the emergency rescue team proceeded without hesitation.",
+                "ko": "폭풍은 극심했다; 하지만 비상 구조대는 주저 없이 나아갔다.",
+                "point": "however, therefore, moreover 등은 '부사'이므로 두 문장을 콤마(,)만으로 연결할 수 없습니다. 두 문장을 연결하려면 마침표(.)나 세미콜론(;)이 반드시 필요하거나 등위/종속접속사를 써야 합니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "It was raining; however, we went out.",
+                "wrong": "It was raining, however, we went out.",
+                "reason": "수능 및 내신에서 콤마 뒤에 접속사 없이 however나 therefore만 써서 두 절을 연결하는 오류(Comma Splice)를 묻습니다."
+              }
+            ],
             "trap": "수능 및 내신에서 콤마 뒤에 접속사 없이 however나 therefore만 써서 두 절을 연결하는 오류(Comma Splice)를 묻습니다.",
             "quizLink": "접속부사는 품사가 부사일 뿐 절을 이어주는 문법적 접속사 기능이 없습니다."
           },
           {
-            "formulaId": "sp_terms_u9_f2",
-            "tag": "등위접속사 vs 종속접속사의 기능적 본질",
-            "en": "Although the task was grueling, she completed it, and her mentor praised her resilience.",
-            "ko": "그 과업이 몹시 힘들었음에도 불구하고 그녀는 그것을 완수했고, 멘토는 그녀의 회복탄력성을 칭찬했다.",
-            "point": "등위접속사(FANBOYS: for, and, nor, but, or, yet, so)는 문법적으로 동등한 성분을 대등하게 잇고, 종속접속사(although, because, if, when)는 주절에 종속되는 부사절이나 명사절을 만듭니다.",
-            "oxCompare": "O: Although he tried hard, he failed. / X: Although he tried hard, but he failed.",
+            "name": "등위접속사 vs 종속접속사의 기능적 본질",
+            "desc": "등위접속사(FANBOYS: for, and, nor, but, or, yet, so)는 문법적으로 동등한 성분을 대등하게 잇고, 종속접속사(although, because, if, when)는 주절에 종속되는 부사절이나 명사절을 만듭니다.",
+            "formula": "등위접속사 vs 종속접속사의 기능적 본질",
+            "rules": [],
+            "examples": [
+              {
+                "en": "Although the task was grueling, she completed it, and her mentor praised her resilience.",
+                "ko": "그 과업이 몹시 힘들었음에도 불구하고 그녀는 그것을 완수했고, 멘토는 그녀의 회복탄력성을 칭찬했다.",
+                "point": "등위접속사(FANBOYS: for, and, nor, but, or, yet, so)는 문법적으로 동등한 성분을 대등하게 잇고, 종속접속사(although, because, if, when)는 주절에 종속되는 부사절이나 명사절을 만듭니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "Although he tried hard, he failed.",
+                "wrong": "Although he tried hard, but he failed.",
+                "reason": "한 문장에 종속접속사(Although)와 등위접속사(but)를 동시에 쓰면 접속사가 중복되어 비문이 됩니다."
+              }
+            ],
             "trap": "한 문장에 종속접속사(Although)와 등위접속사(but)를 동시에 쓰면 접속사가 중복되어 비문이 됩니다.",
             "quizLink": "접속사 개수와 절의 개수 관계(N개의 접속사 = N+1개의 동사)를 반드시 확인하세요."
           }
@@ -24699,22 +25502,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "SP-32. 서법 조동사(Modal Verbs)의 본질과 시제 일치",
         "formulaCards": [
           {
-            "formulaId": "sp_terms_u10_f1",
-            "tag": "서법 조동사(Modal Auxiliaries)의 의미 층위 (의무 vs 추측)",
-            "en": "You must wear a helmet when cycling, and he must be at home now.",
-            "ko": "자전거를 탈 때는 헬멧을 착용해야 하며(의무), 그는 지금 집에 있음에 틀림없다(강한 추측).",
-            "point": "조동사는 (1) 말하는 이의 의지/의무/허가/능력(Deontic: ~해야 한다, ~할 수 있다)과 (2) 명제의 사실성에 대한 확신/추측(Epistemic: ~임에 틀림없다, ~일지도 모른다)의 두 가지 층위를 가집니다.",
-            "oxCompare": "O: He cannot be hungry; he just ate. / X: He must not be hungry; he just ate. (불가능 추측)",
+            "name": "서법 조동사(Modal Auxiliaries)의 의미 층위 (의무 vs 추측)",
+            "desc": "조동사는 (1) 말하는 이의 의지/의무/허가/능력(Deontic: ~해야 한다, ~할 수 있다)과 (2) 명제의 사실성에 대한 확신/추측(Epistemic: ~임에 틀림없다, ~일지도 모른다)의 두 가지 층위를 가집니다.",
+            "formula": "서법 조동사(Modal Auxiliaries)의 의미 층위 (의무 vs 추측)",
+            "rules": [],
+            "examples": [
+              {
+                "en": "You must wear a helmet when cycling, and he must be at home now.",
+                "ko": "자전거를 탈 때는 헬멧을 착용해야 하며(의무), 그는 지금 집에 있음에 틀림없다(강한 추측).",
+                "point": "조동사는 (1) 말하는 이의 의지/의무/허가/능력(Deontic: ~해야 한다, ~할 수 있다)과 (2) 명제의 사실성에 대한 확신/추측(Epistemic: ~임에 틀림없다, ~일지도 모른다)의 두 가지 층위를 가집니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "He cannot be hungry; he just ate.",
+                "wrong": "He must not be hungry; he just ate. (불가능 추측)",
+                "reason": "'~임에 틀림없다'의 반대 부정 추측은 must not이 아니라 'cannot(~일 리가 없다)'입니다."
+              }
+            ],
             "trap": "'~임에 틀림없다'의 반대 부정 추측은 must not이 아니라 'cannot(~일 리가 없다)'입니다.",
             "quizLink": "문맥상 조동사가 의무인지 추측인지 판별하는 능력이 내신과 수능의 핵심입니다."
           },
           {
-            "formulaId": "sp_terms_u10_f2",
-            "tag": "과거 시제 조동사 형태의 원리와 가정법적 거리감",
-            "en": "Could you assist me with this luggage? I could run faster when I was younger.",
-            "ko": "이 짐을 좀 도와주실 수 있나요?(정중한 부탁) 나는 더 젊었을 때 더 빨리 달릴 수 있었다(과거 능력).",
-            "point": "조동사의 과거형(could, would, might, should)은 단순한 과거 시간뿐만 아니라, 현실과의 심리적 거리감(공손함, 완곡함, 가정법적 가설)을 표현하는 표준적인 도구입니다.",
-            "oxCompare": "O: Would you mind opening the window? / X: Will you mind opening the window?",
+            "name": "과거 시제 조동사 형태의 원리와 가정법적 거리감",
+            "desc": "조동사의 과거형(could, would, might, should)은 단순한 과거 시간뿐만 아니라, 현실과의 심리적 거리감(공손함, 완곡함, 가정법적 가설)을 표현하는 표준적인 도구입니다.",
+            "formula": "과거 시제 조동사 형태의 원리와 가정법적 거리감",
+            "rules": [],
+            "examples": [
+              {
+                "en": "Could you assist me with this luggage? I could run faster when I was younger.",
+                "ko": "이 짐을 좀 도와주실 수 있나요?(정중한 부탁) 나는 더 젊었을 때 더 빨리 달릴 수 있었다(과거 능력).",
+                "point": "조동사의 과거형(could, would, might, should)은 단순한 과거 시간뿐만 아니라, 현실과의 심리적 거리감(공손함, 완곡함, 가정법적 가설)을 표현하는 표준적인 도구입니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "Would you mind opening the window?",
+                "wrong": "Will you mind opening the window?",
+                "reason": "could나 would가 쓰였다고 해서 무조건 과거 시제로만 해석하면 안 되며, 현재의 공손한 표현이나 가정법 표현인지를 문맥으로 판단해야 합니다."
+              }
+            ],
             "trap": "could나 would가 쓰였다고 해서 무조건 과거 시제로만 해석하면 안 되며, 현재의 공손한 표현이나 가정법 표현인지를 문맥으로 판단해야 합니다.",
             "quizLink": "조동사의 다양한 뉘앙스와 정확한 과거 시제 표현법을 마스터하세요."
           }
@@ -24864,10 +25691,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "It (가주어) ~ for/of (의미상 주어) + to V (진주어)",
-            "formula": "It is [형용사] + for + [목적격] + to [동사원형] ...\n(단, 사람의 성품 형용사 kind, rude, polite, foolish 뒤에는 of + 목적격)",
-            "example": "It is difficult for me to solve this puzzle. / It was very kind of you to invite us.",
-            "trap": "for me 자리에 of me를 쓰거나, to 뒤에 동사원형이 아닌 -ing를 쓰는 감점 실수 주의!",
             "desc": "It (가주어) ~ for/of (의미상 주어) + to V (진주어)은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. 가주어/진주어 it ~ for/of ~ to, too ~ to 구문 변환, 조건 영작 감점 방지 팁의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "It is [형용사] + for + [목적격] + to [동사원형] ...\n(단, 사람의 성품 형용사 kind, rude, polite, foolish 뒤에는 of + 목적격)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -24901,14 +25726,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "for me 자리에 of me를 쓰거나, to 뒤에 동사원형이 아닌 -ing를 쓰는 감점 실수 주의!"
               }
             ],
+            "trap": "for me 자리에 of me를 쓰거나, to 뒤에 동사원형이 아닌 -ing를 쓰는 감점 실수 주의!",
             "quizLink": "3단계 실전 퀴즈에서 [It (가주어) ~ for/of (의미상 주어) + to V (진주어)] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "too ~ to V ➔ so ~ that ... can't 변환 공식",
-            "formula": "too [형용사/부사] to V = so [형용사/부사] that + 주어 + cannot/could not + V",
-            "example": "He was too tired to walk. = He was so tired that he could not walk.",
-            "trap": "과거 시제일 때 can't가 아니라 could not(couldn't)을 써야 함! 주절 시제 불일치로 감점 1위!",
             "desc": "too ~ to V ➔ so ~ that ... can't 변환 공식은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. 가주어/진주어 it ~ for/of ~ to, too ~ to 구문 변환, 조건 영작 감점 방지 팁의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "too [형용사/부사] to V = so [형용사/부사] that + 주어 + cannot/could not + V",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -24942,6 +25766,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "과거 시제일 때 can't가 아니라 could not(couldn't)을 써야 함! 주절 시제 불일치로 감점 1위!"
               }
             ],
+            "trap": "과거 시제일 때 can't가 아니라 could not(couldn't)을 써야 함! 주절 시제 불일치로 감점 1위!",
             "quizLink": "3단계 실전 퀴즈에서 [too ~ to V ➔ so ~ that ... can't 변환 공식] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -25077,10 +25902,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "전치사 + 관계대명사 ➔ 관계부사 치환",
-            "formula": "in/at/on + which = where (장소) / in/on/at + which = when (시간)\nfor + which = why (이유) / in which = how (방법)",
-            "example": "This is the house in which I was born. = This is the house where I was born.",
-            "trap": "관계부사 뒤에는 '완전한 문장'이 오며, how와 the way는 절대 나란히 쓰지 못함 (the way만 쓰거나 how만 씀)!",
             "desc": "전치사 + 관계대명사 ➔ 관계부사 치환은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. 두 문장 결합 서술형, 전치사+관계대명사(in which 등), 관계부사(where/when/why) 조건 영작의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "in/at/on + which = where (장소) / in/on/at + which = when (시간)\nfor + which = why (이유) / in which = how (방법)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -25114,14 +25937,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "관계부사 뒤에는 '완전한 문장'이 오며, how와 the way는 절대 나란히 쓰지 못함 (the way만 쓰거나 how만 씀)!"
               }
             ],
+            "trap": "관계부사 뒤에는 '완전한 문장'이 오며, how와 the way는 절대 나란히 쓰지 못함 (the way만 쓰거나 how만 씀)!",
             "quizLink": "3단계 실전 퀴즈에서 [전치사 + 관계대명사 ➔ 관계부사 치환] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "서술형 관계사 영작 3단계 공식",
-            "formula": "1단계: 공통 명사(선행사) 찾기\n2단계: 뒷문장 겹치는 대명사 지우고 알맞은 관계사(who/which/whose) 선택\n3단계: 선행사 바로 뒤에 관계사절 통째로 삽입하기",
-            "example": "The boy is my brother. + You met him yesterday.\n➔ The boy [whom you met yesterday] is my brother.",
-            "trap": "관계사절을 선행사 바로 뒤가 아니라 문장 맨 끝에 붙여버리는 오류 주의!",
             "desc": "서술형 관계사 영작 3단계 공식은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. 두 문장 결합 서술형, 전치사+관계대명사(in which 등), 관계부사(where/when/why) 조건 영작의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1단계: 공통 명사(선행사) 찾기\n2단계: 뒷문장 겹치는 대명사 지우고 알맞은 관계사(who/which/whose) 선택\n3단계: 선행사 바로 뒤에 관계사절 통째로 삽입하기",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -25155,6 +25977,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "관계사절을 선행사 바로 뒤가 아니라 문장 맨 끝에 붙여버리는 오류 주의!"
               }
             ],
+            "trap": "관계사절을 선행사 바로 뒤가 아니라 문장 맨 끝에 붙여버리는 오류 주의!",
             "quizLink": "3단계 실전 퀴즈에서 [서술형 관계사 영작 3단계 공식] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -25290,10 +26113,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "부사절 ➔ 분사구문 3단계 변환 공식",
-            "formula": "1단계: 접속사 생략 (의미 강조 시 남겨둘 수 있음)\n2단계: 주절 주어와 같으면 부사절 주어 생략\n3단계: 동사를 현재분사(V-ing)로 변환 (시제가 앞서면 having p.p.)",
-            "example": "As he felt tired, he went to bed early. ➔ Feeling tired, he went to bed early.",
-            "trap": "부정문일 때 Not/Never는 반드시 분사 맨 앞에 위치! (Not knowing what to do)",
             "desc": "부사절 ➔ 분사구문 3단계 변환 공식은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. 접속사+주어+동사 ➔ V-ing 변환, With + 목적어 + 분사 부대상황 서술형의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1단계: 접속사 생략 (의미 강조 시 남겨둘 수 있음)\n2단계: 주절 주어와 같으면 부사절 주어 생략\n3단계: 동사를 현재분사(V-ing)로 변환 (시제가 앞서면 having p.p.)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -25327,14 +26148,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "부정문일 때 Not/Never는 반드시 분사 맨 앞에 위치! (Not knowing what to do)"
               }
             ],
+            "trap": "부정문일 때 Not/Never는 반드시 분사 맨 앞에 위치! (Not knowing what to do)",
             "quizLink": "3단계 실전 퀴즈에서 [부사절 ➔ 분사구문 3단계 변환 공식] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "with + 목적어 + 분사 (부대상황 서술형)",
-            "formula": "with + [목적어] + [V-ing(능동)] / [p.p.(수동)] : ~한 채로, ~하면서",
-            "example": "with his arms crossed (팔짱을 낀 채로 - 팔은 꼬아진 것이므로 p.p.)\nwith the dog following her (개가 그녀를 따라오면서 - 개가 능동적으로 따르므로 V-ing)",
-            "trap": "신체 부위(눈, 다리, 팔)가 동작을 당하는 관계일 때는 반드시 과거분사(p.p.)를 사용!",
             "desc": "with + 목적어 + 분사 (부대상황 서술형)은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. 접속사+주어+동사 ➔ V-ing 변환, With + 목적어 + 분사 부대상황 서술형의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "with + [목적어] + [V-ing(능동)] / [p.p.(수동)] : ~한 채로, ~하면서",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -25368,6 +26188,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "신체 부위(눈, 다리, 팔)가 동작을 당하는 관계일 때는 반드시 과거분사(p.p.)를 사용!"
               }
             ],
+            "trap": "신체 부위(눈, 다리, 팔)가 동작을 당하는 관계일 때는 반드시 과거분사(p.p.)를 사용!",
             "quizLink": "3단계 실전 퀴즈에서 [with + 목적어 + 분사 (부대상황 서술형)] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -25503,10 +26324,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "'~이 없다면' 4대 동의어 영작 공식",
-            "formula": "1. If it were not for [명사]\n2. Were it not for [명사] (if 생략 도치)\n3. Without [명사]\n4. But for [명사]",
-            "example": "If it were not for water, we could not survive.\n= Were it not for water, we could not survive.\n= Without water, we could not survive.",
-            "trap": "과거 사실 반대(~이 없었더라면)는 'If it had not been for' ➔ 'Had it not been for'로 시제 변화!",
             "desc": "'~이 없다면' 4대 동의어 영작 공식은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. If it were not for ~ ➔ Were it not for / Without / But for 영작 공식 완벽 마스터의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1. If it were not for [명사]\n2. Were it not for [명사] (if 생략 도치)\n3. Without [명사]\n4. But for [명사]",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -25540,14 +26359,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "과거 사실 반대(~이 없었더라면)는 'If it had not been for' ➔ 'Had it not been for'로 시제 변화!"
               }
             ],
+            "trap": "과거 사실 반대(~이 없었더라면)는 'If it had not been for' ➔ 'Had it not been for'로 시제 변화!",
             "quizLink": "3단계 실전 퀴즈에서 ['~이 없다면' 4대 동의어 영작 공식] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "가정법 if 생략 시 도치 규칙",
-            "formula": "if가 생략되면 주어와 조동사/be동사의 위치가 뒤바뀜!\n• If I were you ➔ Were I you\n• If he had studied ➔ Had he studied\n• If you should need help ➔ Should you need help",
-            "example": "Had I known the truth, I would have told you.",
-            "trap": "도치되었을 때 의문문이 아니므로 문장 끝에 물음표(?)를 붙이지 않도록 주의!",
             "desc": "가정법 if 생략 시 도치 규칙은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. If it were not for ~ ➔ Were it not for / Without / But for 영작 공식 완벽 마스터의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "if가 생략되면 주어와 조동사/be동사의 위치가 뒤바뀜!\n• If I were you ➔ Were I you\n• If he had studied ➔ Had he studied\n• If you should need help ➔ Should you need help",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -25581,6 +26399,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "도치되었을 때 의문문이 아니므로 문장 끝에 물음표(?)를 붙이지 않도록 주의!"
               }
             ],
+            "trap": "도치되었을 때 의문문이 아니므로 문장 끝에 물음표(?)를 붙이지 않도록 주의!",
             "quizLink": "3단계 실전 퀴즈에서 [가정법 if 생략 시 도치 규칙] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -25716,10 +26535,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "so + 형용사/부사 + that vs such + a + 형용사 + 명사 + that",
-            "formula": "• so + [형용사/부사] + that + S + V : 너무 ~해서 ...하다\n• such + a/an + [형용사] + [명사] + that + S + V : 대단히 ~한 명사여서 ...하다",
-            "example": "He ran so fast that nobody could catch him.\nIt was such a hot day that we went swimming.",
-            "trap": "so a hot day (X) ➔ so hot a day (O) / such hot a day (X) ➔ such a hot day (O) 어순 낚시 주의!",
             "desc": "so + 형용사/부사 + that vs such + a + 형용사 + 명사 + that은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. 원인과 결과 구문 서술형, such ~ that 명사 어순 변환 및 서술형 영작의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• so + [형용사/부사] + that + S + V : 너무 ~해서 ...하다\n• such + a/an + [형용사] + [명사] + that + S + V : 대단히 ~한 명사여서 ...하다",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -25753,14 +26570,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "so a hot day (X) ➔ so hot a day (O) / such hot a day (X) ➔ such a hot day (O) 어순 낚시 주의!"
               }
             ],
+            "trap": "so a hot day (X) ➔ so hot a day (O) / such hot a day (X) ➔ such a hot day (O) 어순 낚시 주의!",
             "quizLink": "3단계 실전 퀴즈에서 [so + 형용사/부사 + that vs such + a + 형용사 + 명사 + that] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "so that 붙어있을 때 (목적: ~하기 위하여)",
-            "formula": "S + V + so that + S + can/may + V : ~하기 위해서 (= in order that)",
-            "example": "I woke up early so that I could catch the first train.",
-            "trap": "so와 that이 떨어져 있으면 '원인/결과(너무~해서)', 붙어있으면 '목적(~하기 위해')!",
             "desc": "so that 붙어있을 때 (목적: ~하기 위하여)은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. 원인과 결과 구문 서술형, such ~ that 명사 어순 변환 및 서술형 영작의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "S + V + so that + S + can/may + V : ~하기 위해서 (= in order that)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -25794,6 +26610,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "so와 that이 떨어져 있으면 '원인/결과(너무~해서)', 붙어있으면 '목적(~하기 위해')!"
               }
             ],
+            "trap": "so와 that이 떨어져 있으면 '원인/결과(너무~해서)', 붙어있으면 '목적(~하기 위해')!",
             "quizLink": "3단계 실전 퀴즈에서 [so that 붙어있을 때 (목적: ~하기 위하여)] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -25929,10 +26746,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "사역동사(make, have, let)의 목적격 보어",
-            "formula": "• 목적어와 능동 관계 ➔ [동사원형 (Root)]\n• 목적어와 수동 관계 ➔ [과거분사 (p.p.)]",
-            "example": "My mom made me clean my room. (능동: clean)\nI had my bicycle repaired yesterday. (수동: repaired - 자전거는 수리당함)",
-            "trap": "사역동사라고 무조건 동사원형을 쓰면 100% 감점! 목적어가 동작을 당하면 무조건 p.p.!",
             "desc": "사역동사(make, have, let)의 목적격 보어은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. make/have/let + O + 동사원형, see/hear/feel + O + V-ing/p.p. 서술형 조건 영작의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• 목적어와 능동 관계 ➔ [동사원형 (Root)]\n• 목적어와 수동 관계 ➔ [과거분사 (p.p.)]",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -25966,14 +26781,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "사역동사라고 무조건 동사원형을 쓰면 100% 감점! 목적어가 동작을 당하면 무조건 p.p.!"
               }
             ],
+            "trap": "사역동사라고 무조건 동사원형을 쓰면 100% 감점! 목적어가 동작을 당하면 무조건 p.p.!",
             "quizLink": "3단계 실전 퀴즈에서 [사역동사(make, have, let)의 목적격 보어] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "지각동사(see, watch, hear, feel, notice)의 목적격 보어",
-            "formula": "• 능동 동작 진행 중 ➔ [현재분사 (V-ing)] 또는 [동사원형]\n• 수동 동작 ➔ [과거분사 (p.p.)]",
-            "example": "I heard someone calling my name. (calling / call)\nI heard my name called in the crowd. (called - 내 이름은 불려짐)",
-            "trap": "지각동사 목적격 보어 자리에는 절대로 to부정사를 쓸 수 없습니다!",
             "desc": "지각동사(see, watch, hear, feel, notice)의 목적격 보어은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. make/have/let + O + 동사원형, see/hear/feel + O + V-ing/p.p. 서술형 조건 영작의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• 능동 동작 진행 중 ➔ [현재분사 (V-ing)] 또는 [동사원형]\n• 수동 동작 ➔ [과거분사 (p.p.)]",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -26007,6 +26821,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "지각동사 목적격 보어 자리에는 절대로 to부정사를 쓸 수 없습니다!"
               }
             ],
+            "trap": "지각동사 목적격 보어 자리에는 절대로 to부정사를 쓸 수 없습니다!",
             "quizLink": "3단계 실전 퀴즈에서 [지각동사(see, watch, hear, feel, notice)의 목적격 보어] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -26142,10 +26957,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "부정어구 도치 공식 (의문문 어순과 100% 동일)",
-            "formula": "부정어 (Never, Rarely, Seldom, Little, Hardly, Scarcely, Not only) + [조동사/be/do] + [주어] + [동사원형] ...",
-            "example": "I have never seen such a sunset. ➔ Never have I seen such a sunset.\nHe little dreamed that he would win. ➔ Little did he dream that he would win.",
-            "trap": "일반동사일 때 do/does/did를 주어 앞으로 보내야 하는데, 동사 자체를 앞으로 보내는 실수 주의!",
             "desc": "부정어구 도치 공식 (의문문 어순과 100% 동일)은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. Never/Hardly/Little + 조동사/be/do + S + V 도치 영작 서술형 완벽 대비의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "부정어 (Never, Rarely, Seldom, Little, Hardly, Scarcely, Not only) + [조동사/be/do] + [주어] + [동사원형] ...",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -26179,14 +26992,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "일반동사일 때 do/does/did를 주어 앞으로 보내야 하는데, 동사 자체를 앞으로 보내는 실수 주의!"
               }
             ],
+            "trap": "일반동사일 때 do/does/did를 주어 앞으로 보내야 하는데, 동사 자체를 앞으로 보내는 실수 주의!",
             "quizLink": "3단계 실전 퀴즈에서 [부정어구 도치 공식 (의문문 어순과 100% 동일)] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "장소 부사구 도치 공식",
-            "formula": "장소 부사구 + [동사] + [주어] (단, 주어가 대명사이면 도치 안 됨: 부사구 + 대명사주어 + 동사)",
-            "example": "On the hill stands a white castle. (명사 주어 ➔ 도치)\nHere comes the bus. (명사 주어) vs Here it comes. (대명사 주어 it ➔ 도치 안 됨)",
-            "trap": "주어가 대명사일 때 Here comes it(X)이라고 도치하는 실수 주의!",
             "desc": "장소 부사구 도치 공식은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. Never/Hardly/Little + 조동사/be/do + S + V 도치 영작 서술형 완벽 대비의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "장소 부사구 + [동사] + [주어] (단, 주어가 대명사이면 도치 안 됨: 부사구 + 대명사주어 + 동사)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -26220,6 +27032,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "주어가 대명사일 때 Here comes it(X)이라고 도치하는 실수 주의!"
               }
             ],
+            "trap": "주어가 대명사일 때 Here comes it(X)이라고 도치하는 실수 주의!",
             "quizLink": "3단계 실전 퀴즈에서 [장소 부사구 도치 공식] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -26355,10 +27168,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "서술형 0점 방지 3대 셀프 검독 체크리스트",
-            "formula": "1. [수일치]: 주어가 3인칭 단수인데 동사에 -s/-es를 빠뜨리지 않았는가?\n2. [시제일치]: 주절이 과거인데 종속절에 현재를 쓰거나, 불규칙 과거형 스펠링을 틀리지 않았는가?\n3. [관사 및 명사 수]: 셀 수 있는 단수 명사 앞에 a/an을 빠뜨리거나 복수 -s를 누락하지 않았는가?",
-            "example": "He write a letter yesterday. (X: 시제·철자 오류)\n➔ He wrote a letter yesterday. (O)",
-            "trap": "서술형 문제 풀이 후 마지막 10초 동안 반드시 '수·시제·관사' 3가지만 확인해도 5점 이상 방어!",
             "desc": "서술형 0점 방지 3대 셀프 검독 체크리스트은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. 3인칭 단수 -s 누락, 과거시제 불규칙 철자 변형, 관사 a/an 누락 등 단골 감점 요인 완벽 방어의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1. [수일치]: 주어가 3인칭 단수인데 동사에 -s/-es를 빠뜨리지 않았는가?\n2. [시제일치]: 주절이 과거인데 종속절에 현재를 쓰거나, 불규칙 과거형 스펠링을 틀리지 않았는가?\n3. [관사 및 명사 수]: 셀 수 있는 단수 명사 앞에 a/an을 빠뜨리거나 복수 -s를 누락하지 않았는가?",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -26392,14 +27203,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "서술형 문제 풀이 후 마지막 10초 동안 반드시 '수·시제·관사' 3가지만 확인해도 5점 이상 방어!"
               }
             ],
+            "trap": "서술형 문제 풀이 후 마지막 10초 동안 반드시 '수·시제·관사' 3가지만 확인해도 5점 이상 방어!",
             "quizLink": "3단계 실전 퀴즈에서 [서술형 0점 방지 3대 셀프 검독 체크리스트] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "혼동되는 불규칙 동사 3단 변화 주의보",
-            "formula": "• find - found - found (찾다) vs found - founded - founded (설립하다)\n• fall - fell - fallen (떨어지다) vs fell - felled - felled (쓰러뜨리다)\n• choose - chose - chosen / lose - lost - lost",
-            "example": "The company was founded in 1995.",
-            "trap": "과거형 철자 혼동으로 인한 서술형 감점 빈출!",
             "desc": "혼동되는 불규칙 동사 3단 변화 주의보은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. 3인칭 단수 -s 누락, 과거시제 불규칙 철자 변형, 관사 a/an 누락 등 단골 감점 요인 완벽 방어의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• find - found - found (찾다) vs found - founded - founded (설립하다)\n• fall - fell - fallen (떨어지다) vs fell - felled - felled (쓰러뜨리다)\n• choose - chose - chosen / lose - lost - lost",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -26433,6 +27243,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "과거형 철자 혼동으로 인한 서술형 감점 빈출!"
               }
             ],
+            "trap": "과거형 철자 혼동으로 인한 서술형 감점 빈출!",
             "quizLink": "3단계 실전 퀴즈에서 [혼동되는 불규칙 동사 3단 변화 주의보] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -26565,22 +27376,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "SP-33. 서술형 고득점: It is ~ that 강조구문 조건 영작",
         "formulaCards": [
           {
-            "formulaId": "sp_writing_u9_f1",
-            "tag": "It is ~ that 강조구문 조건 영작 공식",
-            "en": "It was precisely through tireless practice that she mastered the piano concerto.",
-            "ko": "그녀가 그 피아노 협주곡을 마스터한 것은 다름 아닌 지칠 줄 모르는 연습을 통해서였다.",
-            "point": "조건 영작에서 '특정 부사구, 전치사구, 주어, 목적어'를 강조하라는 조건이 주어지면 [It is/was + 강조 대상 + that + 나머지 문장] 구조를 정확히 조립해야 합니다. 시제에 따라 is와 was를 선택하세요.",
-            "oxCompare": "O: It was yesterday that I met him. / X: It is yesterday that I met him.",
+            "name": "It is ~ that 강조구문 조건 영작 공식",
+            "desc": "조건 영작에서 '특정 부사구, 전치사구, 주어, 목적어'를 강조하라는 조건이 주어지면 [It is/was + 강조 대상 + that + 나머지 문장] 구조를 정확히 조립해야 합니다. 시제에 따라 is와 was를 선택하세요.",
+            "formula": "It is ~ that 강조구문 조건 영작 공식",
+            "rules": [],
+            "examples": [
+              {
+                "en": "It was precisely through tireless practice that she mastered the piano concerto.",
+                "ko": "그녀가 그 피아노 협주곡을 마스터한 것은 다름 아닌 지칠 줄 모르는 연습을 통해서였다.",
+                "point": "조건 영작에서 '특정 부사구, 전치사구, 주어, 목적어'를 강조하라는 조건이 주어지면 [It is/was + 강조 대상 + that + 나머지 문장] 구조를 정확히 조립해야 합니다. 시제에 따라 is와 was를 선택하세요."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "It was yesterday that I met him.",
+                "wrong": "It is yesterday that I met him.",
+                "reason": "과거 사건을 강조할 때는 반드시 It was를 써야 하며, 강조 대상을 뺀 나머지 문장이 어순 왜곡 없이 이어져야 합니다."
+              }
+            ],
             "trap": "과거 사건을 강조할 때는 반드시 It was를 써야 하며, 강조 대상을 뺀 나머지 문장이 어순 왜곡 없이 이어져야 합니다.",
             "quizLink": "내신 서술형에서 단어 개수 제한 및 어형 변화 조건으로 단골 출제됩니다."
           },
           {
-            "formulaId": "sp_writing_u9_f2",
-            "tag": "not until 구문의 It was ~ that 전환",
-            "en": "It was not until the sun rose that the lost travelers found the path.",
-            "ko": "해가 뜨고 나서야 비로소 길을 잃은 여행자들은 길을 찾았다.",
-            "point": "'not until ...' 구문은 [It was not until 시간부사구/절 that + 주어 + 과거동사] 형태로 전환되어 서술형 킬러로 출제됩니다. that절 안에서는 부정어가 사라지고 긍정 평서문 어순이 됨에 유의하세요.",
-            "oxCompare": "O: It was not until dawn that he arrived. / X: It was not until dawn that he didn't arrive.",
+            "name": "not until 구문의 It was ~ that 전환",
+            "desc": "'not until ...' 구문은 [It was not until 시간부사구/절 that + 주어 + 과거동사] 형태로 전환되어 서술형 킬러로 출제됩니다. that절 안에서는 부정어가 사라지고 긍정 평서문 어순이 됨에 유의하세요.",
+            "formula": "not until 구문의 It was ~ that 전환",
+            "rules": [],
+            "examples": [
+              {
+                "en": "It was not until the sun rose that the lost travelers found the path.",
+                "ko": "해가 뜨고 나서야 비로소 길을 잃은 여행자들은 길을 찾았다.",
+                "point": "'not until ...' 구문은 [It was not until 시간부사구/절 that + 주어 + 과거동사] 형태로 전환되어 서술형 킬러로 출제됩니다. that절 안에서는 부정어가 사라지고 긍정 평서문 어순이 됨에 유의하세요."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "It was not until dawn that he arrived.",
+                "wrong": "It was not until dawn that he didn't arrive.",
+                "reason": "that절 안에 didn't나 not을 중복하여 쓰지 않도록 각별히 주의해야 합니다."
+              }
+            ],
             "trap": "that절 안에 didn't나 not을 중복하여 쓰지 않도록 각별히 주의해야 합니다.",
             "quizLink": "고교 내신 1등급 서술형 변별력 문항 1순위입니다."
           }
@@ -26713,22 +27548,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "SP-34. 서술형 실전: 혼합가정법 & without 대용어구 조건 영작",
         "formulaCards": [
           {
-            "formulaId": "sp_writing_u10_f1",
-            "tag": "Without / But for 가정구문 4단 변신 공식",
-            "en": "Without your timely guidance, I could not have succeeded in this venture.",
-            "ko": "당신의 시의적절한 지도가 없었더라면, 나는 이 벤처 사업에서 성공할 수 없었을 것이다.",
-            "point": "과거 사실의 반대: Without = But for = If it had not been for = Had it not been for + 명사, 주어 + would/could have p.p. / 현재 사실의 반대: Without = But for = If it were not for = Were it not for + 명사, 주어 + would/could + 동사원형.",
-            "oxCompare": "O: Had it not been for the rain, we would have gone. / X: Had it not been the rain, we would have gone.",
+            "name": "Without / But for 가정구문 4단 변신 공식",
+            "desc": "과거 사실의 반대: Without = But for = If it had not been for = Had it not been for + 명사, 주어 + would/could have p.p. / 현재 사실의 반대: Without = But for = If it were not for = Were it not for + 명사, 주어 + would/could + 동사원형.",
+            "formula": "Without / But for 가정구문 4단 변신 공식",
+            "rules": [],
+            "examples": [
+              {
+                "en": "Without your timely guidance, I could not have succeeded in this venture.",
+                "ko": "당신의 시의적절한 지도가 없었더라면, 나는 이 벤처 사업에서 성공할 수 없었을 것이다.",
+                "point": "과거 사실의 반대: Without = But for = If it had not been for = Had it not been for + 명사, 주어 + would/could have p.p. / 현재 사실의 반대: Without = But for = If it were not for = Were it not for + 명사, 주어 + would/could + 동사원형."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "Had it not been for the rain, we would have gone.",
+                "wrong": "Had it not been the rain, we would have gone.",
+                "reason": "if 생략 도치 형태인 'Had it not been for'와 'Were it not for'에서 for를 빠뜨리지 않도록 철저히 검증해야 합니다."
+              }
+            ],
             "trap": "if 생략 도치 형태인 'Had it not been for'와 'Were it not for'에서 for를 빠뜨리지 않도록 철저히 검증해야 합니다.",
             "quizLink": "내신 서술형 조건 영작에서 단어 수 및 if 생략 조건으로 100% 출제됩니다."
           },
           {
-            "formulaId": "sp_writing_u10_f2",
-            "tag": "혼합가정법 (과거 조건 ➔ 현재 결과) 시간단서 매칭",
-            "en": "If she had taken the doctor's advice then, she would be healthy now.",
-            "ko": "그녀가 당시에 의사의 조언을 따랐더라면, 그녀는 지금 건강할 텐데.",
-            "point": "조건절에는 과거 사실의 반대(If + S + had p.p. / then, yesterday 등의 과거 단서), 주절에는 현재 사실의 반대(S + would/could + 동사원형 / now, today 등의 현재 단서)가 짝을 이룹니다.",
-            "oxCompare": "O: If I had studied harder then, I would have a better job now. / X: If I had studied harder then, I would have had a better job now.",
+            "name": "혼합가정법 (과거 조건 ➔ 현재 결과) 시간단서 매칭",
+            "desc": "조건절에는 과거 사실의 반대(If + S + had p.p. / then, yesterday 등의 과거 단서), 주절에는 현재 사실의 반대(S + would/could + 동사원형 / now, today 등의 현재 단서)가 짝을 이룹니다.",
+            "formula": "혼합가정법 (과거 조건 ➔ 현재 결과) 시간단서 매칭",
+            "rules": [],
+            "examples": [
+              {
+                "en": "If she had taken the doctor's advice then, she would be healthy now.",
+                "ko": "그녀가 당시에 의사의 조언을 따랐더라면, 그녀는 지금 건강할 텐데.",
+                "point": "조건절에는 과거 사실의 반대(If + S + had p.p. / then, yesterday 등의 과거 단서), 주절에는 현재 사실의 반대(S + would/could + 동사원형 / now, today 등의 현재 단서)가 짝을 이룹니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "If I had studied harder then, I would have a better job now.",
+                "wrong": "If I had studied harder then, I would have had a better job now.",
+                "reason": "주절 끝에 있는 now를 간과하고 기계적으로 would have p.p.를 쓰면 서술형 전면 감점입니다."
+              }
+            ],
             "trap": "주절 끝에 있는 now를 간과하고 기계적으로 would have p.p.를 쓰면 서술형 전면 감점입니다.",
             "quizLink": "조건문에 시간 부사 'then'과 'now'가 동시에 보이면 무조건 혼합가정법입니다."
           }
@@ -26878,10 +27737,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "수능 29번 1순위: '동사 자리 vs 준동사 자리'",
-            "formula": "문장의 본동사 개수 = [접속사/관계사의 개수 + 1]\n접속사가 없으면 문장에 본동사는 무조건 1개여야 함!",
-            "example": "The scientist, along with his assistants, [discovering / discovered] a new vaccine. (본동사가 없으므로 discovered가 정답)",
-            "trap": "주어와 동사 사이에 긴 수식어구(전치사구, 분사구, 관계사절)를 넣어 본동사를 V-ing로 위장하는 출제 함정 1위!",
             "desc": "수능 29번 1순위: '동사 자리 vs 준동사 자리'은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 역대 수능 29번 출제 1위! 한 문장에 접속사 없이 본동사는 오직 1개! 진짜 동사 자리 찾기의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "문장의 본동사 개수 = [접속사/관계사의 개수 + 1]\n접속사가 없으면 문장에 본동사는 무조건 1개여야 함!",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -26915,14 +27772,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "주어와 동사 사이에 긴 수식어구(전치사구, 분사구, 관계사절)를 넣어 본동사를 V-ing로 위장하는 출제 함정 1위!"
               }
             ],
+            "trap": "주어와 동사 사이에 긴 수식어구(전치사구, 분사구, 관계사절)를 넣어 본동사를 V-ing로 위장하는 출제 함정 1위!",
             "quizLink": "3단계 실전 퀴즈에서 [수능 29번 1순위: '동사 자리 vs 준동사 자리'] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "3초 컷 판별 프로세스",
-            "formula": "1. 밑줄 친 단어가 동사/준동사 형태인지 확인\n2. 문장 맨 앞부터 주어를 찾고 수식어구 괄호 묶기 ( ) \n3. 문장에 진짜 본동사가 이미 존재하는지 확인",
-            "example": "The books (written by the famous author) [was / were] translated into 20 languages.",
-            "trap": "해석으로 풀려고 하지 말고, 문장 구조에서 동사의 존재 여부를 구조적으로 판별할 것!",
             "desc": "3초 컷 판별 프로세스은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 역대 수능 29번 출제 1위! 한 문장에 접속사 없이 본동사는 오직 1개! 진짜 동사 자리 찾기의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1. 밑줄 친 단어가 동사/준동사 형태인지 확인\n2. 문장 맨 앞부터 주어를 찾고 수식어구 괄호 묶기 ( ) \n3. 문장에 진짜 본동사가 이미 존재하는지 확인",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -26956,6 +27812,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "해석으로 풀려고 하지 말고, 문장 구조에서 동사의 존재 여부를 구조적으로 판별할 것!"
               }
             ],
+            "trap": "해석으로 풀려고 하지 말고, 문장 구조에서 동사의 존재 여부를 구조적으로 판별할 것!",
             "quizLink": "3단계 실전 퀴즈에서 [3초 컷 판별 프로세스] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -27091,10 +27948,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "that vs what 3초 판별 알고리즘",
-            "formula": "1단계: 앞을 본다 (선행사 명사가 있는가?)\n  • 선행사 있음 ➔ [that 또는 which]\n  • 선행사 없음 ➔ 2단계로 이동\n2단계: 뒤를 본다 (문장이 완전한가?)\n  • 뒤가 완전 ➔ 접속사 [that]\n  • 뒤가 불완전 ➔ 관계대명사 [what] (~하는 것)",
-            "example": "I know [that] she is honest. (선행사X, 뒤 완전 ➔ 접속사 that)\nI know [what] she likes. (선행사X, likes의 목적어 빠짐 ➔ what)",
-            "trap": "what 앞에는 절대 선행사(명사)가 올 수 없음! (what 자체가 the thing which를 포함하기 때문)",
             "desc": "that vs what 3초 판별 알고리즘은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 뒤 문장의 완전/불완전 여부와 선행사 유무로 3초 만에 답 고르는 수능 29번 단골 킬러의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1단계: 앞을 본다 (선행사 명사가 있는가?)\n  • 선행사 있음 ➔ [that 또는 which]\n  • 선행사 없음 ➔ 2단계로 이동\n2단계: 뒤를 본다 (문장이 완전한가?)\n  • 뒤가 완전 ➔ 접속사 [that]\n  • 뒤가 불완전 ➔ 관계대명사 [what] (~하는 것)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -27128,14 +27983,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "what 앞에는 절대 선행사(명사)가 올 수 없음! (what 자체가 the thing which를 포함하기 때문)"
               }
             ],
+            "trap": "what 앞에는 절대 선행사(명사)가 올 수 없음! (what 자체가 the thing which를 포함하기 때문)",
             "quizLink": "3단계 실전 퀴즈에서 [that vs what 3초 판별 알고리즘] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "동격의 that vs 관계대명사 that",
-            "formula": "• 동격 that : 앞 명사(fact, idea, news, evidence) + 뒤 [완전한 문장]\n• 관대 that : 앞 명사(선행사) + 뒤 [주어나 목적어 빠진 불완전한 문장]",
-            "example": "the news that he died (동격 that: 뒤 완전)\nthe news that he heard (관계대명사 that: heard의 목적어 빠짐)",
-            "trap": "추상명사 뒤의 that이 동격인지 관계사인지 뒤 문장의 완전성으로 판별할 것!",
             "desc": "동격의 that vs 관계대명사 that은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 뒤 문장의 완전/불완전 여부와 선행사 유무로 3초 만에 답 고르는 수능 29번 단골 킬러의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• 동격 that : 앞 명사(fact, idea, news, evidence) + 뒤 [완전한 문장]\n• 관대 that : 앞 명사(선행사) + 뒤 [주어나 목적어 빠진 불완전한 문장]",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -27169,6 +28023,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "추상명사 뒤의 that이 동격인지 관계사인지 뒤 문장의 완전성으로 판별할 것!"
               }
             ],
+            "trap": "추상명사 뒤의 that이 동격인지 관계사인지 뒤 문장의 완전성으로 판별할 것!",
             "quizLink": "3단계 실전 퀴즈에서 [동격의 that vs 관계대명사 that] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -27304,10 +28159,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "분사의 능동 vs 수동 3초 판별 공식",
-            "formula": "1. 수식받는 [명사]를 찾는다.\n2. 그 명사가 직접 행동을 하는 주체인가? ➔ [V-ing (현재분사)]\n3. 그 명사가 행동을 당하는 대상인가? ➔ [p.p. (과거분사)]",
-            "example": "falling leaves (떨어지고 있는 나뭇잎 - 능동·진행)\nfallen leaves (이미 다 떨어진 나뭇잎 - 완료·수동)\nthe boy (inviting / invited) to the party ➔ 초대받은 소년이므로 invited!",
-            "trap": "타동사의 분사 뒤에 목적어가 남아있으면 능동(V-ing), 목적어가 없으면 수동(p.p.)!",
             "desc": "분사의 능동 vs 수동 3초 판별 공식은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 수식받는 명사/주어와의 의미상 관계 및 뒤따르는 목적어 유무로 태를 초고속 판별하는 비법의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1. 수식받는 [명사]를 찾는다.\n2. 그 명사가 직접 행동을 하는 주체인가? ➔ [V-ing (현재분사)]\n3. 그 명사가 행동을 당하는 대상인가? ➔ [p.p. (과거분사)]",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -27341,14 +28194,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "타동사의 분사 뒤에 목적어가 남아있으면 능동(V-ing), 목적어가 없으면 수동(p.p.)!"
               }
             ],
+            "trap": "타동사의 분사 뒤에 목적어가 남아있으면 능동(V-ing), 목적어가 없으면 수동(p.p.)!",
             "quizLink": "3단계 실전 퀴즈에서 [분사의 능동 vs 수동 3초 판별 공식] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "감정 유발 분사 킬러 공식",
-            "formula": "• 사람 주어/명사 ➔ 감정을 느낌 ➔ [-ed (p.p.)] (I am interested, bored, excited)\n• 사물 주어/명사 ➔ 감정을 유발함 ➔ [-ing] (The movie is interesting, boring, exciting)",
-            "example": "He was disappointing with the result. (X) ➔ He was disappointed with the result. (O)",
-            "trap": "사물이 주어일 때 -ed를 쓰거나, 사람이 감정을 느낄 때 -ing를 쓰는 감정 분사 낚시 주의!",
             "desc": "감정 유발 분사 킬러 공식은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 수식받는 명사/주어와의 의미상 관계 및 뒤따르는 목적어 유무로 태를 초고속 판별하는 비법의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• 사람 주어/명사 ➔ 감정을 느낌 ➔ [-ed (p.p.)] (I am interested, bored, excited)\n• 사물 주어/명사 ➔ 감정을 유발함 ➔ [-ing] (The movie is interesting, boring, exciting)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -27382,6 +28234,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "사물이 주어일 때 -ed를 쓰거나, 사람이 감정을 느낄 때 -ing를 쓰는 감정 분사 낚시 주의!"
               }
             ],
+            "trap": "사물이 주어일 때 -ed를 쓰거나, 사람이 감정을 느낄 때 -ing를 쓰는 감정 분사 낚시 주의!",
             "quizLink": "3단계 실전 퀴즈에서 [감정 유발 분사 킬러 공식] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -27517,10 +28370,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "수능 단골 대명사 비교: that vs those",
-            "formula": "비교 대상의 반복을 피하기 위한 대명사:\n• 앞 명사가 단수 명사 ➔ [that of ...]\n• 앞 명사가 복수 명사 ➔ [those of ...]",
-            "example": "The climate of Korea is milder than [that] of Russia. (that = the climate 단수)\nThe ears of rabbits are longer than [those] of cats. (those = the ears 복수)",
-            "trap": "비교 구문에서 that 자리에 this를 쓰거나, those 자리에 these를 쓰면 무조건 오답!",
             "desc": "수능 단골 대명사 비교: that vs those은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 대명사가 대신 가리키는 대상(단수 vs 복수)을 정확히 추적하여 1초 만에 일치시키는 공식의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "비교 대상의 반복을 피하기 위한 대명사:\n• 앞 명사가 단수 명사 ➔ [that of ...]\n• 앞 명사가 복수 명사 ➔ [those of ...]",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -27554,14 +28405,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "비교 구문에서 that 자리에 this를 쓰거나, those 자리에 these를 쓰면 무조건 오답!"
               }
             ],
+            "trap": "비교 구문에서 that 자리에 this를 쓰거나, those 자리에 these를 쓰면 무조건 오답!",
             "quizLink": "3단계 실전 퀴즈에서 [수능 단골 대명사 비교: that vs those] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "대명사 it vs them 추적법",
-            "formula": "대명사에 밑줄이 그어져 있으면 반드시 해석을 통해 '그것이 가리키는 진짜 명사'를 앞 문장에서 찾아 단/복수를 대조할 것!",
-            "example": "Companies must listen to their customers and satisfy [their / its] needs.",
-            "trap": "소유격 대명사 its(단수) vs their(복수) 수일치도 수능 단골 킬러!",
             "desc": "대명사 it vs them 추적법은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 대명사가 대신 가리키는 대상(단수 vs 복수)을 정확히 추적하여 1초 만에 일치시키는 공식의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "대명사에 밑줄이 그어져 있으면 반드시 해석을 통해 '그것이 가리키는 진짜 명사'를 앞 문장에서 찾아 단/복수를 대조할 것!",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -27595,6 +28445,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "소유격 대명사 its(단수) vs their(복수) 수일치도 수능 단골 킬러!"
               }
             ],
+            "trap": "소유격 대명사 its(단수) vs their(복수) 수일치도 수능 단골 킬러!",
             "quizLink": "3단계 실전 퀴즈에서 [대명사 it vs them 추적법] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -27730,10 +28581,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "보어 자리는 형용사, 수식어 자리는 부사!",
-            "formula": "• 주어 + 불완전동사(remain, stay, keep, look, feel) + [형용사 보어]\n• 주어 + 동사 + 목적어 + [형용사 목적격보어] (make, keep, leave, find)",
-            "example": "He kept the room warm. (O: 방을 따뜻하게 유지했다)\nHe kept the room warmly. (X: 우리말 해석이 '~하게'여도 부사 불가!)",
-            "trap": "우리말 해석으로 풀면 '~하게'로 번역되어 부사(-ly)를 고르기 쉬우므로, 문장 성분이 '보어'인지 확인 필수!",
             "desc": "보어 자리는 형용사, 수식어 자리는 부사!은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 2형식/5형식 보어 자리에는 절대 부사가 올 수 없다! 형용사 vs 부사 판별법의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• 주어 + 불완전동사(remain, stay, keep, look, feel) + [형용사 보어]\n• 주어 + 동사 + 목적어 + [형용사 목적격보어] (make, keep, leave, find)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -27767,14 +28616,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "우리말 해석으로 풀면 '~하게'로 번역되어 부사(-ly)를 고르기 쉬우므로, 문장 성분이 '보어'인지 확인 필수!"
               }
             ],
+            "trap": "우리말 해석으로 풀면 '~하게'로 번역되어 부사(-ly)를 고르기 쉬우므로, 문장 성분이 '보어'인지 확인 필수!",
             "quizLink": "3단계 실전 퀴즈에서 [보어 자리는 형용사, 수식어 자리는 부사!] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "형용사와 부사 형태가 같거나 뜻이 달라지는 어휘",
-            "formula": "• hard (열심히, 단단한) vs hardly (거의 ~않다)\n• late (늦게, 늦은) vs lately (최근에)\n• high (높게, 높은) vs highly (매우, 대단히)\n• near (가까이) vs nearly (거의)",
-            "example": "He worked hardly. (X: 그는 거의 일하지 않았다) ➔ He worked hard. (O: 열심히 일했다)",
-            "trap": "형태에 -ly가 붙어 뜻이 완전히 달라지는 특수 부사 4총사 낚시 빈출!",
             "desc": "형용사와 부사 형태가 같거나 뜻이 달라지는 어휘은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 2형식/5형식 보어 자리에는 절대 부사가 올 수 없다! 형용사 vs 부사 판별법의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• hard (열심히, 단단한) vs hardly (거의 ~않다)\n• late (늦게, 늦은) vs lately (최근에)\n• high (높게, 높은) vs highly (매우, 대단히)\n• near (가까이) vs nearly (거의)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -27808,6 +28656,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "형태에 -ly가 붙어 뜻이 완전히 달라지는 특수 부사 4총사 낚시 빈출!"
               }
             ],
+            "trap": "형태에 -ly가 붙어 뜻이 완전히 달라지는 특수 부사 4총사 낚시 빈출!",
             "quizLink": "3단계 실전 퀴즈에서 [형용사와 부사 형태가 같거나 뜻이 달라지는 어휘] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -27943,10 +28792,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "등위접속사(and/but/or)의 저울 원리",
-            "formula": "A and B 구조에서 A와 B는 문법적으로 대등한 형태여야 함!\n• to V and (to) V\n• V-ing and V-ing\n• 형용사 and 형용사 / 명사 and 명사",
-            "example": "He likes swimming, hiking, and to run. (X) ➔ swimming, hiking, and running. (O)",
-            "trap": "and 뒤에 있는 단어의 형태만 보지 말고, 해석을 통해 '누구와 짝을 이루는지' 짝꿍(A)을 반드시 찾을 것!",
             "desc": "등위접속사(and/but/or)의 저울 원리은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. and/but/or 뒤의 형태는 해석상 짝을 이루는 어구와 문법적 형태 일치! 수능 29번 단골의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "A and B 구조에서 A와 B는 문법적으로 대등한 형태여야 함!\n• to V and (to) V\n• V-ing and V-ing\n• 형용사 and 형용사 / 명사 and 명사",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -27980,14 +28827,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "and 뒤에 있는 단어의 형태만 보지 말고, 해석을 통해 '누구와 짝을 이루는지' 짝꿍(A)을 반드시 찾을 것!"
               }
             ],
+            "trap": "and 뒤에 있는 단어의 형태만 보지 말고, 해석을 통해 '누구와 짝을 이루는지' 짝꿍(A)을 반드시 찾을 것!",
             "quizLink": "3단계 실전 퀴즈에서 [등위접속사(and/but/or)의 저울 원리] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "상관접속사의 병렬 구조",
-            "formula": "• not only A but also B\n• either A or B / neither A nor B\n• both A and B\n• not A but B",
-            "example": "She decided not only to study abroad but also to learn a new language.",
-            "trap": "A 자리에 to부정사가 오면 B 자리에도 to부정사(또는 동사원형)가 와야 함!",
             "desc": "상관접속사의 병렬 구조은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. and/but/or 뒤의 형태는 해석상 짝을 이루는 어구와 문법적 형태 일치! 수능 29번 단골의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• not only A but also B\n• either A or B / neither A nor B\n• both A and B\n• not A but B",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -28021,6 +28867,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "A 자리에 to부정사가 오면 B 자리에도 to부정사(또는 동사원형)가 와야 함!"
               }
             ],
+            "trap": "A 자리에 to부정사가 오면 B 자리에도 to부정사(또는 동사원형)가 와야 함!",
             "quizLink": "3단계 실전 퀴즈에서 [상관접속사의 병렬 구조] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -28153,22 +29000,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "SP-35. [공식 7] 대동사 판별 (be vs do vs 조동사)",
         "formulaCards": [
           {
-            "formulaId": "sp_csat_u7_f1",
-            "tag": "대동사(Pro-verb) 선택의 절대 법칙 (앞선 동사의 종류 확인)",
-            "en": "She works much harder than her colleagues do in the competitive firm.",
-            "ko": "그녀는 그 경쟁적인 회사에서 그녀의 동료들이 일하는 것보다 훨씬 더 열심히 일한다.",
-            "point": "앞 문장에 나온 동사의 반복을 피하기 위해 대신 쓰는 대동사는 (1) 일반동사 ➔ do / does / did, (2) be동사 ➔ be / am / are / is / was / were, (3) 조동사 ➔ 조동사 그대로 씁니다.",
-            "oxCompare": "O: Dogs hear sounds that humans do not. / X: Dogs hear sounds that humans are not.",
+            "name": "대동사(Pro-verb) 선택의 절대 법칙 (앞선 동사의 종류 확인)",
+            "desc": "앞 문장에 나온 동사의 반복을 피하기 위해 대신 쓰는 대동사는 (1) 일반동사 ➔ do / does / did, (2) be동사 ➔ be / am / are / is / was / were, (3) 조동사 ➔ 조동사 그대로 씁니다.",
+            "formula": "대동사(Pro-verb) 선택의 절대 법칙 (앞선 동사의 종류 확인)",
+            "rules": [],
+            "examples": [
+              {
+                "en": "She works much harder than her colleagues do in the competitive firm.",
+                "ko": "그녀는 그 경쟁적인 회사에서 그녀의 동료들이 일하는 것보다 훨씬 더 열심히 일한다.",
+                "point": "앞 문장에 나온 동사의 반복을 피하기 위해 대신 쓰는 대동사는 (1) 일반동사 ➔ do / does / did, (2) be동사 ➔ be / am / are / is / was / were, (3) 조동사 ➔ 조동사 그대로 씁니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "Dogs hear sounds that humans do not.",
+                "wrong": "Dogs hear sounds that humans are not.",
+                "reason": "비교구문(as ~ as, than)이나 So/Neither 도치 구문에서 앞에 나온 일반동사를 be동사로 받거나 그 반대로 쓰면 수능 29번 단골 오답입니다."
+              }
+            ],
             "trap": "비교구문(as ~ as, than)이나 So/Neither 도치 구문에서 앞에 나온 일반동사를 be동사로 받거나 그 반대로 쓰면 수능 29번 단골 오답입니다.",
             "quizLink": "앞 절에서 대신하고 있는 진짜 동사가 일반동사인지 be동사인지 반드시 확인하세요."
           },
           {
-            "formulaId": "sp_csat_u7_f2",
-            "tag": "비교 구문과 도치 속 대동사의 수일치",
-            "en": "Digital cameras process images much faster today than did traditional film cameras.",
-            "ko": "오늘날 디지털카메라는 전통적인 필름 카메라가 그랬던 것보다 훨씬 더 빠르게 이미지를 처리한다.",
-            "point": "비교급 than 뒤에서 '대동사 + 주어'로 도치될 때, 대동사의 수(단수/복수)와 시제(현재/과거)는 뒤에 나오는 주어와 앞선 기준 동사의 시제에 정확히 일치시켜야 합니다.",
-            "oxCompare": "O: He runs as fast as they do. / X: He runs as fast as they does.",
+            "name": "비교 구문과 도치 속 대동사의 수일치",
+            "desc": "비교급 than 뒤에서 '대동사 + 주어'로 도치될 때, 대동사의 수(단수/복수)와 시제(현재/과거)는 뒤에 나오는 주어와 앞선 기준 동사의 시제에 정확히 일치시켜야 합니다.",
+            "formula": "비교 구문과 도치 속 대동사의 수일치",
+            "rules": [],
+            "examples": [
+              {
+                "en": "Digital cameras process images much faster today than did traditional film cameras.",
+                "ko": "오늘날 디지털카메라는 전통적인 필름 카메라가 그랬던 것보다 훨씬 더 빠르게 이미지를 처리한다.",
+                "point": "비교급 than 뒤에서 '대동사 + 주어'로 도치될 때, 대동사의 수(단수/복수)와 시제(현재/과거)는 뒤에 나오는 주어와 앞선 기준 동사의 시제에 정확히 일치시켜야 합니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "He runs as fast as they do.",
+                "wrong": "He runs as fast as they does.",
+                "reason": "도치되었을 때 뒤에 오는 주어의 인칭과 수를 파악하지 못해 수일치 실수를 범하지 않도록 주의해야 합니다."
+              }
+            ],
             "trap": "도치되었을 때 뒤에 오는 주어의 인칭과 수를 파악하지 못해 수일치 실수를 범하지 않도록 주의해야 합니다.",
             "quizLink": "수능 29번 어법에서 매 2년마다 출제되는 킬러 공식입니다."
           }
@@ -28301,22 +29172,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "SP-36. [공식 8] 전치사+관계대명사 vs 관계부사 뒷문장 판별",
         "formulaCards": [
           {
-            "formulaId": "sp_csat_u8_f1",
-            "tag": "완전한 절 공식 (전치사+관계대명사 = 관계부사)",
-            "en": "This is the conference room in which the peace treaty was signed.",
-            "ko": "이곳이 평화 조약이 체결된 회의실이다.",
-            "point": "in which, at which, with which, where, when, why 뒤에는 주어, 목적어, 보어가 모두 온전히 존재하는 '완전한 문장'이 옵니다. 반면 which 뒤에는 주어나 목적어가 빠진 '불완전한 문장'이 옵니다.",
-            "oxCompare": "O: The house where he lives is huge. / X: The house which he lives is huge.",
+            "name": "완전한 절 공식 (전치사+관계대명사 = 관계부사)",
+            "desc": "in which, at which, with which, where, when, why 뒤에는 주어, 목적어, 보어가 모두 온전히 존재하는 '완전한 문장'이 옵니다. 반면 which 뒤에는 주어나 목적어가 빠진 '불완전한 문장'이 옵니다.",
+            "formula": "완전한 절 공식 (전치사+관계대명사 = 관계부사)",
+            "rules": [],
+            "examples": [
+              {
+                "en": "This is the conference room in which the peace treaty was signed.",
+                "ko": "이곳이 평화 조약이 체결된 회의실이다.",
+                "point": "in which, at which, with which, where, when, why 뒤에는 주어, 목적어, 보어가 모두 온전히 존재하는 '완전한 문장'이 옵니다. 반면 which 뒤에는 주어나 목적어가 빠진 '불완전한 문장'이 옵니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "The house where he lives is huge.",
+                "wrong": "The house which he lives is huge.",
+                "reason": "live, stay, arrive, happen 등 완전자동사가 쓰인 절은 목적어가 필요 없으므로 그 자체로 완전한 절임을 간과하지 마세요."
+              }
+            ],
             "trap": "live, stay, arrive, happen 등 완전자동사가 쓰인 절은 목적어가 필요 없으므로 그 자체로 완전한 절임을 간과하지 마세요.",
             "quizLink": "수능 29번에서 자동사의 완전성을 파악하는 문제로 빈출됩니다."
           },
           {
-            "formulaId": "sp_csat_u8_f2",
-            "tag": "추상적 공간 선행사 뒤의 where / in which",
-            "en": "We reached a critical point where compromise was no longer possible.",
-            "ko": "우리는 타협이 더 이상 불가능한 중대한 지점에 도달했다.",
-            "point": "물리적 장소뿐만 아니라 point, situation, case, stage, environment, system 등 '추상적 상황/환경'을 나타내는 선행사 뒤에도 관계부사 where나 in which를 씁니다.",
-            "oxCompare": "O: In a situation where everyone disagrees, patience is vital. / X: In a situation which everyone disagrees, patience is vital.",
+            "name": "추상적 공간 선행사 뒤의 where / in which",
+            "desc": "물리적 장소뿐만 아니라 point, situation, case, stage, environment, system 등 '추상적 상황/환경'을 나타내는 선행사 뒤에도 관계부사 where나 in which를 씁니다.",
+            "formula": "추상적 공간 선행사 뒤의 where / in which",
+            "rules": [],
+            "examples": [
+              {
+                "en": "We reached a critical point where compromise was no longer possible.",
+                "ko": "우리는 타협이 더 이상 불가능한 중대한 지점에 도달했다.",
+                "point": "물리적 장소뿐만 아니라 point, situation, case, stage, environment, system 등 '추상적 상황/환경'을 나타내는 선행사 뒤에도 관계부사 where나 in which를 씁니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "In a situation where everyone disagrees, patience is vital.",
+                "wrong": "In a situation which everyone disagrees, patience is vital.",
+                "reason": "선행사가 물리적 장소가 아니라고 해서 무조건 which를 고르면 함정에 빠집니다."
+              }
+            ],
             "trap": "선행사가 물리적 장소가 아니라고 해서 무조건 which를 고르면 함정에 빠집니다.",
             "quizLink": "수능 및 평가원 고난도 지문에서 추상명사 + where 구문이 빈출됩니다."
           }
@@ -28449,22 +29344,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "SP-37. [공식 9] 전치사 vs 접속사 (while vs during, because vs because of)",
         "formulaCards": [
           {
-            "formulaId": "sp_csat_u9_f1",
-            "tag": "접속사(뒤에 주어+동사) vs 전치사(뒤에 명사/명사구)",
-            "en": "While the professor was lecturing, students took thorough notes during the seminar.",
-            "ko": "교수가 강의하는 동안(접속사 While + S + V), 학생들은 세미나 동안(전치사 during + 명사) 철저히 필기했다.",
-            "point": "뜻이 같더라도 문법적 품사는 완전히 다릅니다: 접속사(because, although, while) + [주어 + 동사] vs 전치사(because of, despite, in spite of, during) + [명사 / 대명사 / 동명사구].",
-            "oxCompare": "O: Despite the heavy rain, we enjoyed the trip. / X: Although the heavy rain, we enjoyed the trip.",
+            "name": "접속사(뒤에 주어+동사) vs 전치사(뒤에 명사/명사구)",
+            "desc": "뜻이 같더라도 문법적 품사는 완전히 다릅니다: 접속사(because, although, while) + [주어 + 동사] vs 전치사(because of, despite, in spite of, during) + [명사 / 대명사 / 동명사구].",
+            "formula": "접속사(뒤에 주어+동사) vs 전치사(뒤에 명사/명사구)",
+            "rules": [],
+            "examples": [
+              {
+                "en": "While the professor was lecturing, students took thorough notes during the seminar.",
+                "ko": "교수가 강의하는 동안(접속사 While + S + V), 학생들은 세미나 동안(전치사 during + 명사) 철저히 필기했다.",
+                "point": "뜻이 같더라도 문법적 품사는 완전히 다릅니다: 접속사(because, although, while) + [주어 + 동사] vs 전치사(because of, despite, in spite of, during) + [명사 / 대명사 / 동명사구]."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "Despite the heavy rain, we enjoyed the trip.",
+                "wrong": "Although the heavy rain, we enjoyed the trip.",
+                "reason": "명사 뒤에 긴 수식어구(관계사절, 분사구)가 붙어 있어 겉보기에는 문장처럼 보이지만 실제로는 주어 역할을 하는 명사구에 불과한 전치사 자리 함정에 유의하세요."
+              }
+            ],
             "trap": "명사 뒤에 긴 수식어구(관계사절, 분사구)가 붙어 있어 겉보기에는 문장처럼 보이지만 실제로는 주어 역할을 하는 명사구에 불과한 전치사 자리 함정에 유의하세요.",
             "quizLink": "수능 29번 및 내신 밑줄 어법 1초 컷 필수 판별 문제입니다."
           },
           {
-            "formulaId": "sp_csat_u9_f2",
-            "tag": "during vs for vs while 구별",
-            "en": "She stayed in Paris for three months and visited museums during her stay.",
-            "ko": "그녀는 3개월 동안 파리에 머물렀고, 체류 기간 동안 박물관들을 방문했다.",
-            "point": "for + 숫자를 포함한 기간(for two weeks), during + 특정 사건/행사의 이름(during the vacation, during the concert), while + 주어+동사 / 분사(while studying).",
-            "oxCompare": "O: I slept for eight hours. / X: I slept during eight hours.",
+            "name": "during vs for vs while 구별",
+            "desc": "for + 숫자를 포함한 기간(for two weeks), during + 특정 사건/행사의 이름(during the vacation, during the concert), while + 주어+동사 / 분사(while studying).",
+            "formula": "during vs for vs while 구별",
+            "rules": [],
+            "examples": [
+              {
+                "en": "She stayed in Paris for three months and visited museums during her stay.",
+                "ko": "그녀는 3개월 동안 파리에 머물렀고, 체류 기간 동안 박물관들을 방문했다.",
+                "point": "for + 숫자를 포함한 기간(for two weeks), during + 특정 사건/행사의 이름(during the vacation, during the concert), while + 주어+동사 / 분사(while studying)."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "I slept for eight hours.",
+                "wrong": "I slept during eight hours.",
+                "reason": "숫자 기간 앞에 during을 쓰면 어법상 오답입니다."
+              }
+            ],
             "trap": "숫자 기간 앞에 during을 쓰면 어법상 오답입니다.",
             "quizLink": "기간을 나타내는 전치사와 접속사의 미세한 문법 차이를 정리하세요."
           }
@@ -28597,22 +29516,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "SP-38. [공식 10] 평가원 빈출 29번 종합 실전 문제",
         "formulaCards": [
           {
-            "formulaId": "sp_csat_u10_f1",
-            "tag": "수능 어법 29번 3대 마스터 솔루션",
-            "en": "Mastering the fundamental grammatical principles enables students to solve any CSAT question with confidence.",
-            "ko": "근본적인 문법 원리를 마스터하는 것은 학생들이 자신감을 가지고 어떤 수능 문제라도 해결할 수 있게 해 준다.",
-            "point": "솔루션 1: 밑줄이 동사에 있으면 ➔ '본동사 vs 준동사' 확인 후 수일치/태 검증. 솔루션 2: 밑줄이 that/what/which에 있으면 ➔ '선행사 유무 + 뒷문장 완전성' 확인. 솔루션 3: 밑줄이 분사(-ing/-ed)에 있으면 ➔ 수식받는 명사와의 능동/수동 관계 검증.",
-            "oxCompare": "O: What we learn shapes who we become. / X: That we learn shapes who we become.",
+            "name": "수능 어법 29번 3대 마스터 솔루션",
+            "desc": "솔루션 1: 밑줄이 동사에 있으면 ➔ '본동사 vs 준동사' 확인 후 수일치/태 검증. 솔루션 2: 밑줄이 that/what/which에 있으면 ➔ '선행사 유무 + 뒷문장 완전성' 확인. 솔루션 3: 밑줄이 분사(-ing/-ed)에 있으면 ➔ 수식받는 명사와의 능동/수동 관계 검증.",
+            "formula": "수능 어법 29번 3대 마스터 솔루션",
+            "rules": [],
+            "examples": [
+              {
+                "en": "Mastering the fundamental grammatical principles enables students to solve any CSAT question with confidence.",
+                "ko": "근본적인 문법 원리를 마스터하는 것은 학생들이 자신감을 가지고 어떤 수능 문제라도 해결할 수 있게 해 준다.",
+                "point": "솔루션 1: 밑줄이 동사에 있으면 ➔ '본동사 vs 준동사' 확인 후 수일치/태 검증. 솔루션 2: 밑줄이 that/what/which에 있으면 ➔ '선행사 유무 + 뒷문장 완전성' 확인. 솔루션 3: 밑줄이 분사(-ing/-ed)에 있으면 ➔ 수식받는 명사와의 능동/수동 관계 검증."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "What we learn shapes who we become.",
+                "wrong": "That we learn shapes who we become.",
+                "reason": "단순한 직관이나 감에 의존하지 말고, 3대 솔루션 공식을 바탕으로 문법적 근거를 제시할 수 있어야 100% 정답에 도달합니다."
+              }
+            ],
             "trap": "단순한 직관이나 감에 의존하지 말고, 3대 솔루션 공식을 바탕으로 문법적 근거를 제시할 수 있어야 100% 정답에 도달합니다.",
             "quizLink": "수능 29번을 정복하는 궁극의 치트키입니다."
           },
           {
-            "formulaId": "sp_csat_u10_f2",
-            "tag": "매력적인 오답 함정 소거 기술",
-            "en": "The final obstacle to a perfect score is eliminated through meticulous structural analysis.",
-            "ko": "만점을 향한 마지막 장애물은 꼼꼼한 구조 분석을 통해 제거된다.",
-            "point": "긴 수식어구(삽입절, 관계사절, 전치사구, 분사구문)를 괄호로 묶어내면 복잡해 보이던 평가원 지문도 1~5형식의 단순한 뼈대로 압축됩니다. 문장의 뼈대(S + V + O/C)를 먼저 확정하세요.",
-            "oxCompare": "O: The books on the top shelf belong to him. / X: The books on the top shelf belongs to him.",
+            "name": "매력적인 오답 함정 소거 기술",
+            "desc": "긴 수식어구(삽입절, 관계사절, 전치사구, 분사구문)를 괄호로 묶어내면 복잡해 보이던 평가원 지문도 1~5형식의 단순한 뼈대로 압축됩니다. 문장의 뼈대(S + V + O/C)를 먼저 확정하세요.",
+            "formula": "매력적인 오답 함정 소거 기술",
+            "rules": [],
+            "examples": [
+              {
+                "en": "The final obstacle to a perfect score is eliminated through meticulous structural analysis.",
+                "ko": "만점을 향한 마지막 장애물은 꼼꼼한 구조 분석을 통해 제거된다.",
+                "point": "긴 수식어구(삽입절, 관계사절, 전치사구, 분사구문)를 괄호로 묶어내면 복잡해 보이던 평가원 지문도 1~5형식의 단순한 뼈대로 압축됩니다. 문장의 뼈대(S + V + O/C)를 먼저 확정하세요."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "The books on the top shelf belong to him.",
+                "wrong": "The books on the top shelf belongs to him.",
+                "reason": "주어 바로 앞에 있는 수식어구 명사의 수(단/복수)에 속아 수일치를 틀리지 않도록 주의해야 합니다."
+              }
+            ],
             "trap": "주어 바로 앞에 있는 수식어구 명사의 수(단/복수)에 속아 수일치를 틀리지 않도록 주의해야 합니다.",
             "quizLink": "평가원 29번 실전 모의테스트를 완벽하게 통과하세요."
           }
@@ -28762,10 +29705,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "to부정사 vs 동명사 목적어 암기 공식",
-            "formula": "• to부정사만 취함 (미래/계획/소망) : want, hope, wish, decide, plan, promise, refuse\n• 동명사만 취함 (과거/경험/중단/회피) : enjoy, finish, give up, avoid, mind, postpone, practice",
-            "example": "I decided to study harder. / She finished doing her homework.",
-            "trap": "enjoy to swim (X) ➔ enjoy swimming (O) / refuse helping (X) ➔ refuse to help (O)",
             "desc": "to부정사 vs 동명사 목적어 암기 공식은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. 미래·지향적(want/hope to) vs 과거·경험적(enjoy/finish -ing) & 둘 다 취할 때 뜻이 달라지는 동사의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• to부정사만 취함 (미래/계획/소망) : want, hope, wish, decide, plan, promise, refuse\n• 동명사만 취함 (과거/경험/중단/회피) : enjoy, finish, give up, avoid, mind, postpone, practice",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -28799,14 +29740,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "enjoy to swim (X) ➔ enjoy swimming (O) / refuse helping (X) ➔ refuse to help (O)"
               }
             ],
+            "trap": "enjoy to swim (X) ➔ enjoy swimming (O) / refuse helping (X) ➔ refuse to help (O)",
             "quizLink": "3단계 실전 퀴즈에서 [to부정사 vs 동명사 목적어 암기 공식] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "둘 다 취하지만 의미가 180도 달라지는 동사 4총사",
-            "formula": "• remember/forget + to V (미래: ~할 것을 기억/잊다)\n• remember/forget + V-ing (과거: ~했던 것을 기억/잊다)\n• stop + to V (~하기 위해 멈추다) vs stop + V-ing (~하던 것을 그만두다)\n• try + to V (~하려고 애쓰다/노력하다) vs try + V-ing (시험 삼아 한번 해보다)",
-            "example": "Remember to lock the door. (문 잠글 것을 기억해라)\nI remember locking the door. (문 잠갔던 것을 기억한다)",
-            "trap": "stop to smoke(담배 피우려고 멈추다) vs stop smoking(금연하다) 해석 혼동 주의!",
             "desc": "둘 다 취하지만 의미가 180도 달라지는 동사 4총사은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. 미래·지향적(want/hope to) vs 과거·경험적(enjoy/finish -ing) & 둘 다 취할 때 뜻이 달라지는 동사의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• remember/forget + to V (미래: ~할 것을 기억/잊다)\n• remember/forget + V-ing (과거: ~했던 것을 기억/잊다)\n• stop + to V (~하기 위해 멈추다) vs stop + V-ing (~하던 것을 그만두다)\n• try + to V (~하려고 애쓰다/노력하다) vs try + V-ing (시험 삼아 한번 해보다)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -28845,6 +29785,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "stop to smoke(담배 피우려고 멈추다) vs stop smoking(금연하다) 해석 혼동 주의!"
               }
             ],
+            "trap": "stop to smoke(담배 피우려고 멈추다) vs stop smoking(금연하다) 해석 혼동 주의!",
             "quizLink": "3단계 실전 퀴즈에서 [둘 다 취하지만 의미가 180도 달라지는 동사 4총사] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -28980,10 +29921,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "단순과거 시제와만 어울리는 '명백한 과거 시점 부사'",
-            "formula": "yesterday, ~ ago, in + 과거 연도(in 2015), last ~, when (의문사) 뒤에는\n절대로 현재완료(have p.p.)를 쓸 수 없고, 오직 [단순과거 시제]만 사용 가능!",
-            "example": "I have met him yesterday. (X) ➔ I met him yesterday. (O)\nWhen have you arrived? (X) ➔ When did you arrive? (O)",
-            "trap": "since(~이래로)는 현재완료와 찰떡궁합이지만, ago나 yesterday는 현재완료의 천적!",
             "desc": "단순과거 시제와만 어울리는 '명백한 과거 시점 부사'은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. 과거의 일이 현재까지 영향(have p.p.) vs 명백한 과거 시점 부사(yesterday/ago/in 2020)의 절대 규칙의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "yesterday, ~ ago, in + 과거 연도(in 2015), last ~, when (의문사) 뒤에는\n절대로 현재완료(have p.p.)를 쓸 수 없고, 오직 [단순과거 시제]만 사용 가능!",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -29017,14 +29956,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "since(~이래로)는 현재완료와 찰떡궁합이지만, ago나 yesterday는 현재완료의 천적!"
               }
             ],
+            "trap": "since(~이래로)는 현재완료와 찰떡궁합이지만, ago나 yesterday는 현재완료의 천적!",
             "quizLink": "3단계 실전 퀴즈에서 [단순과거 시제와만 어울리는 '명백한 과거 시점 부사'] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "have been to vs have gone to",
-            "formula": "• have been to [장소] : ~에 가본 적이 있다 (경험) / ~에 다녀왔다\n• have gone to [장소] : ~로 가버렸다 (결과: 지금 여기 없음)",
-            "example": "He has gone to Paris. (그는 파리로 가버려서 지금 여기에 없다)\nI have been to Paris twice. (나는 파리에 두 번 가본 적이 있다)",
-            "trap": "1인칭(I/We)이나 2인칭(You) 주어에는 have gone to를 쓸 수 없음! (내가 가버리고 여기 없다는 모순 발생)",
             "desc": "have been to vs have gone to은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. 과거의 일이 현재까지 영향(have p.p.) vs 명백한 과거 시점 부사(yesterday/ago/in 2020)의 절대 규칙의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• have been to [장소] : ~에 가본 적이 있다 (경험) / ~에 다녀왔다\n• have gone to [장소] : ~로 가버렸다 (결과: 지금 여기 없음)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -29058,6 +29996,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "1인칭(I/We)이나 2인칭(You) 주어에는 have gone to를 쓸 수 없음! (내가 가버리고 여기 없다는 모순 발생)"
               }
             ],
+            "trap": "1인칭(I/We)이나 2인칭(You) 주어에는 have gone to를 쓸 수 없음! (내가 가버리고 여기 없다는 모순 발생)",
             "quizLink": "3단계 실전 퀴즈에서 [have been to vs have gone to] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -29193,10 +30132,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "that의 3대 정체성 판별 공식",
-            "formula": "1. [관계대명사 that] : 앞 선행사 있음 + 뒤 [불완전한 문장] (주어나 목적어 빠짐)\n2. [명사절 접속사 that] : 앞 선행사 없음(동사 뒤) + 뒤 [완전한 문장] (~라는 것을)\n3. [동격의 접속사 that] : 앞 추상명사 있음 + 뒤 [완전한 문장] (~라는 내용의)",
-            "example": "• The book [that I bought] is good. (관대: bought의 목적어 없음)\n• I know [that she is kind]. (명사절 접속사: 뒤 완전)\n• The idea [that we should help others] is noble. (동격: 뒤 완전)",
-            "trap": "앞에 명사가 있다고 무조건 관계대명사라고 생각하지 말고, 뒤 문장의 완전성 확인 필수!",
             "desc": "that의 3대 정체성 판별 공식은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. 불완전 문장(관대) vs 완전 문장(접속사) vs 추상명사 뒤 완전 문장(동격) 완벽 구별의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1. [관계대명사 that] : 앞 선행사 있음 + 뒤 [불완전한 문장] (주어나 목적어 빠짐)\n2. [명사절 접속사 that] : 앞 선행사 없음(동사 뒤) + 뒤 [완전한 문장] (~라는 것을)\n3. [동격의 접속사 that] : 앞 추상명사 있음 + 뒤 [완전한 문장] (~라는 내용의)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -29235,14 +30172,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "앞에 명사가 있다고 무조건 관계대명사라고 생각하지 말고, 뒤 문장의 완전성 확인 필수!"
               }
             ],
+            "trap": "앞에 명사가 있다고 무조건 관계대명사라고 생각하지 말고, 뒤 문장의 완전성 확인 필수!",
             "quizLink": "3단계 실전 퀴즈에서 [that의 3대 정체성 판별 공식] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "동격 that과 자주 결합하는 대표 추상명사",
-            "formula": "fact(사실), news(소식), idea(생각), belief(믿음), rumor(소문), evidence(증거), hope(희망)",
-            "example": "There is no evidence that he committed the crime.",
-            "trap": "동격의 that은 which로 대체할 수 없습니다!",
             "desc": "동격 that과 자주 결합하는 대표 추상명사은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. 불완전 문장(관대) vs 완전 문장(접속사) vs 추상명사 뒤 완전 문장(동격) 완벽 구별의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "fact(사실), news(소식), idea(생각), belief(믿음), rumor(소문), evidence(증거), hope(희망)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -29276,6 +30212,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "동격의 that은 which로 대체할 수 없습니다!"
               }
             ],
+            "trap": "동격의 that은 which로 대체할 수 없습니다!",
             "quizLink": "3단계 실전 퀴즈에서 [동격 that과 자주 결합하는 대표 추상명사] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -29411,10 +30348,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "used to 3총사 완전 정복 공식",
-            "formula": "1. used to + [동사원형] : (과거에) ~하곤 했다 / ~이었다 (지금은 아님)\n2. be used to + [동사원형] : ~하는 데 '사용되다' (use의 수동태! 주어는 보통 사물)\n3. be used to + [V-ing / 명사] : ~에 '익숙하다' (= be accustomed to, 주어는 보통 사람)",
-            "example": "• I used to play soccer. (축구하곤 했다)\n• Wood is used to make paper. (종이를 만드는 데 사용된다)\n• I am used to waking up early. (일찍 일어나는 데 익숙하다)",
-            "trap": "be used to 뒤에 V-ing가 오는지 동사원형이 오는지 주어의 성격(사람 vs 사물)과 의미로 판별할 것!",
             "desc": "used to 3총사 완전 정복 공식은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. ~하곤 했다(used to) vs ~하는 데 사용되다(be used to V) vs ~에 익숙하다(be used to -ing)의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1. used to + [동사원형] : (과거에) ~하곤 했다 / ~이었다 (지금은 아님)\n2. be used to + [동사원형] : ~하는 데 '사용되다' (use의 수동태! 주어는 보통 사물)\n3. be used to + [V-ing / 명사] : ~에 '익숙하다' (= be accustomed to, 주어는 보통 사람)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -29453,14 +30388,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "be used to 뒤에 V-ing가 오는지 동사원형이 오는지 주어의 성격(사람 vs 사물)과 의미로 판별할 것!"
               }
             ],
+            "trap": "be used to 뒤에 V-ing가 오는지 동사원형이 오는지 주어의 성격(사람 vs 사물)과 의미로 판별할 것!",
             "quizLink": "3단계 실전 퀴즈에서 [used to 3총사 완전 정복 공식] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "3초 컷 판별 요령",
-            "formula": "• 앞에 be동사가 없는가? ➔ 무조건 [used to + V] (~하곤 했다)\n• 앞에 be동사가 있고 주어가 사물인가? ➔ [be used to + V] (사용되다)\n• 앞에 be동사가 있고 주어가 사람인가? ➔ [be used to + -ing] (익숙하다)",
-            "example": "He is used to spicy food.",
-            "trap": "get used to + V-ing는 '~에 익숙해지다'라는 변화의 의미!",
             "desc": "3초 컷 판별 요령은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. ~하곤 했다(used to) vs ~하는 데 사용되다(be used to V) vs ~에 익숙하다(be used to -ing)의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• 앞에 be동사가 없는가? ➔ 무조건 [used to + V] (~하곤 했다)\n• 앞에 be동사가 있고 주어가 사물인가? ➔ [be used to + V] (사용되다)\n• 앞에 be동사가 있고 주어가 사람인가? ➔ [be used to + -ing] (익숙하다)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -29494,6 +30428,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "get used to + V-ing는 '~에 익숙해지다'라는 변화의 의미!"
               }
             ],
+            "trap": "get used to + V-ing는 '~에 익숙해지다'라는 변화의 의미!",
             "quizLink": "3단계 실전 퀴즈에서 [3초 컷 판별 요령] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -29629,10 +30564,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "lie vs lay 3단 변화 끝장 비교표",
-            "formula": "1. lie - lay - lain - lying (자동사: 눕다, 놓여있다) ➔ 뒤에 목적어 없음!\n2. lay - laid - laid - laying (타동사: 놓다, 두다, 알을 낳다) ➔ 뒤에 목적어(~을/를) 필수!\n3. lie - lied - lied - lying (자동사: 거짓말하다)",
-            "example": "• He lay on the grass yesterday. (눕다 lie의 과거형 lay)\n• She laid the baby on the bed. (눕히다 lay의 과거형 laid)\n• Don't lie to me. (거짓말하다)",
-            "trap": "자동사 lie의 '과거형'이 타동사의 '원형(lay)'과 똑같이 생겨서 시험에 단골 1위로 출제됨!",
             "desc": "lie vs lay 3단 변화 끝장 비교표은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. lie-lay-lain (눕다/놓여있다) vs lay-laid-laid (놓다/낳다) vs lie-lied-lied (거짓말하다)의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1. lie - lay - lain - lying (자동사: 눕다, 놓여있다) ➔ 뒤에 목적어 없음!\n2. lay - laid - laid - laying (타동사: 놓다, 두다, 알을 낳다) ➔ 뒤에 목적어(~을/를) 필수!\n3. lie - lied - lied - lying (자동사: 거짓말하다)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -29671,14 +30604,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "자동사 lie의 '과거형'이 타동사의 '원형(lay)'과 똑같이 생겨서 시험에 단골 1위로 출제됨!"
               }
             ],
+            "trap": "자동사 lie의 '과거형'이 타동사의 '원형(lay)'과 똑같이 생겨서 시험에 단골 1위로 출제됨!",
             "quizLink": "3단계 실전 퀴즈에서 [lie vs lay 3단 변화 끝장 비교표] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "3초 컷 판별 공식",
-            "formula": "빈칸 바로 뒤를 본다!\n• 뒤에 목적어(~을/를)가 있는가? ➔ [lay 계열 (lay/laid)]\n• 뒤에 전치사구(on, in, down)나 부사가 오는가? ➔ [lie 계열 (lie/lay/lain)]",
-            "example": "He [laid] his hand on my shoulder. (목적어 hand가 있으므로 laid)",
-            "trap": "rise(자동사: 오르다) vs raise(타동사: 올리다)도 동일한 자/타동사 원리!",
             "desc": "3초 컷 판별 공식은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. lie-lay-lain (눕다/놓여있다) vs lay-laid-laid (놓다/낳다) vs lie-lied-lied (거짓말하다)의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "빈칸 바로 뒤를 본다!\n• 뒤에 목적어(~을/를)가 있는가? ➔ [lay 계열 (lay/laid)]\n• 뒤에 전치사구(on, in, down)나 부사가 오는가? ➔ [lie 계열 (lie/lay/lain)]",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -29712,6 +30644,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "rise(자동사: 오르다) vs raise(타동사: 올리다)도 동일한 자/타동사 원리!"
               }
             ],
+            "trap": "rise(자동사: 오르다) vs raise(타동사: 올리다)도 동일한 자/타동사 원리!",
             "quizLink": "3단계 실전 퀴즈에서 [3초 컷 판별 공식] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -29847,10 +30780,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "It ~ that 강조구문 vs 가주어/진주어 3초 판별 공식",
-            "formula": "문장에서 [It is/was]와 [that]을 손으로 가려본다!\n• 가렸을 때 남은 단어들로 문장이 완벽하게 성립하면? ➔ [강조 구문]\n• 가렸을 때 문장이 말이 안 되고 불완전하면? ➔ [가주어 / 진주어]",
-            "example": "It was [Tom] that broke the window. ➔ Tom broke the window. (완전 성립 ➔ 강조구문)\nIt is [true] that he broke the window. ➔ True he broke the window. (불성립 ➔ 가주어/진주어)",
-            "trap": "It is 뒤에 형용사(true, natural, certain, important)가 오면 100% 가주어/진주어!",
             "desc": "It ~ that 강조구문 vs 가주어/진주어 3초 판별 공식은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. it과 that을 지웠을 때 문장이 완전하면 '강조구문', 불완전하면 '가주어/진주어' 판별법의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "문장에서 [It is/was]와 [that]을 손으로 가려본다!\n• 가렸을 때 남은 단어들로 문장이 완벽하게 성립하면? ➔ [강조 구문]\n• 가렸을 때 문장이 말이 안 되고 불완전하면? ➔ [가주어 / 진주어]",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -29884,14 +30815,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "It is 뒤에 형용사(true, natural, certain, important)가 오면 100% 가주어/진주어!"
               }
             ],
+            "trap": "It is 뒤에 형용사(true, natural, certain, important)가 오면 100% 가주어/진주어!",
             "quizLink": "3단계 실전 퀴즈에서 [It ~ that 강조구문 vs 가주어/진주어 3초 판별 공식] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "가목적어 it 구문 (MBCDF 공식)",
-            "formula": "make, believe, consider, deem, find + it(가목적어) + [형용사 목적격보어] + to V / that절(진목적어)",
-            "example": "I found it difficult to solve the problem.",
-            "trap": "가목적어 자리에 this나 that을 쓰거나, to부정사를 목적어 자리에 그대로 길게 두는 오류 주의!",
             "desc": "가목적어 it 구문 (MBCDF 공식)은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. it과 that을 지웠을 때 문장이 완전하면 '강조구문', 불완전하면 '가주어/진주어' 판별법의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "make, believe, consider, deem, find + it(가목적어) + [형용사 목적격보어] + to V / that절(진목적어)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -29925,6 +30855,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "가목적어 자리에 this나 that을 쓰거나, to부정사를 목적어 자리에 그대로 길게 두는 오류 주의!"
               }
             ],
+            "trap": "가목적어 자리에 this나 that을 쓰거나, to부정사를 목적어 자리에 그대로 길게 두는 오류 주의!",
             "quizLink": "3단계 실전 퀴즈에서 [가목적어 it 구문 (MBCDF 공식)] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -30060,10 +30991,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "접속사 vs 전치사 대표 맞수 3대장",
-            "formula": "1. [비록 ~일지라도] : 접속사 [although / even though] + S + V vs 전치사 [despite / in spite of] + 명사(구)\n2. [~때문에] : 접속사 [because / as / since] + S + V vs 전치사 [because of / due to / owing to] + 명사(구)\n3. [~동안에] : 접속사 [while] + S + V vs 전치사 [during] + 특정 기간 명사 vs 전치사 [for] + 숫자 기간",
-            "example": "• Although it was raining (접속사)\n• Despite the rain (전치사)\n• while I was sleeping vs during the summer vacation vs for two hours",
-            "trap": "despite 뒤에 of를 붙여 despite of라고 쓰면 100% 오답!",
             "desc": "접속사 vs 전치사 대표 맞수 3대장은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. although vs despite / because vs because of / while vs during 완벽 구별의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1. [비록 ~일지라도] : 접속사 [although / even though] + S + V vs 전치사 [despite / in spite of] + 명사(구)\n2. [~때문에] : 접속사 [because / as / since] + S + V vs 전치사 [because of / due to / owing to] + 명사(구)\n3. [~동안에] : 접속사 [while] + S + V vs 전치사 [during] + 특정 기간 명사 vs 전치사 [for] + 숫자 기간",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -30097,14 +31026,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "despite 뒤에 of를 붙여 despite of라고 쓰면 100% 오답!"
               }
             ],
+            "trap": "despite 뒤에 of를 붙여 despite of라고 쓰면 100% 오답!",
             "quizLink": "3단계 실전 퀴즈에서 [접속사 vs 전치사 대표 맞수 3대장] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "3초 컷 판별법",
-            "formula": "빈칸 뒤에 '동사'가 있는지만 확인하라!\n• 주어 + 동사가 있으면 ➔ 무조건 [접속사]\n• 동사 없이 명사 덩어리만 있으면 ➔ 무조건 [전치사]",
-            "example": "Because of he was ill (X) ➔ Because he was ill (O)",
-            "trap": "명사 뒤에 관계사절이 붙어있더라도 빈칸의 주어+동사가 아니라면 전치사를 써야 함에 주의!",
             "desc": "3초 컷 판별법은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. although vs despite / because vs because of / while vs during 완벽 구별의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "빈칸 뒤에 '동사'가 있는지만 확인하라!\n• 주어 + 동사가 있으면 ➔ 무조건 [접속사]\n• 동사 없이 명사 덩어리만 있으면 ➔ 무조건 [전치사]",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -30138,6 +31066,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "명사 뒤에 관계사절이 붙어있더라도 빈칸의 주어+동사가 아니라면 전치사를 써야 함에 주의!"
               }
             ],
+            "trap": "명사 뒤에 관계사절이 붙어있더라도 빈칸의 주어+동사가 아니라면 전치사를 써야 함에 주의!",
             "quizLink": "3단계 실전 퀴즈에서 [3초 컷 판별법] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -30273,10 +31202,8 @@ window.GRAMMAR_CLINIC_BANK = [
         "formulaCards": [
           {
             "name": "부분부정 vs 완전부정 공식 비교",
-            "formula": "1. [부분부정] : not + 전체를 나타내는 말 (all, every, both, always, completely)\n  ➔ '모두가 ~인 것은 아니다 (일부는 그렇고 일부는 아니다)'\n2. [완전부정] : none, neither, no one, never\n  ➔ '아무도/전혀 ~가 아니다 (100% 전면 부정)'",
-            "example": "• Not all birds can fly. (모든 새가 날 수 있는 것은 아니다 - 펭귄은 못 낢: 부분부정)\n• No birds can fly. (어떤 새도 날 수 없다: 완전부정)\n• I don't like both of them. (둘 다 좋아하는 건 아냐 - 한 명만 좋아함: 부분부정)\n• I like neither of them. (둘 다 안 좋아함: 완전부정)",
-            "trap": "not both(둘 다 ~인 것은 아니다)를 neither(둘 다 아니다)로 오역하지 않도록 주의!",
             "desc": "부분부정 vs 완전부정 공식 비교은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. not all / not every (모두가 그런 것은 아니다) vs none / neither (아무도 아니다) 해석과 수일치의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1. [부분부정] : not + 전체를 나타내는 말 (all, every, both, always, completely)\n  ➔ '모두가 ~인 것은 아니다 (일부는 그렇고 일부는 아니다)'\n2. [완전부정] : none, neither, no one, never\n  ➔ '아무도/전혀 ~가 아니다 (100% 전면 부정)'",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -30310,14 +31237,13 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "not both(둘 다 ~인 것은 아니다)를 neither(둘 다 아니다)로 오역하지 않도록 주의!"
               }
             ],
+            "trap": "not both(둘 다 ~인 것은 아니다)를 neither(둘 다 아니다)로 오역하지 않도록 주의!",
             "quizLink": "3단계 실전 퀴즈에서 [부분부정 vs 완전부정 공식 비교] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "부분부정 주요 관용 표현",
-            "formula": "• not always : 항상 ~인 것은 아니다\n• not necessarily : 반드시 ~인 것은 아니다\n• not entirely : 전적으로 ~인 것은 아니다",
-            "example": "Rich people are not always happy. (부자라고 항상 행복한 것은 아니다)",
-            "trap": "독해 지문에서 필자의 양면적 견해나 반전을 나타낼 때 빈출되는 핵심 표현!",
             "desc": "부분부정 주요 관용 표현은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. not all / not every (모두가 그런 것은 아니다) vs none / neither (아무도 아니다) 해석과 수일치의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• not always : 항상 ~인 것은 아니다\n• not necessarily : 반드시 ~인 것은 아니다\n• not entirely : 전적으로 ~인 것은 아니다",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -30351,6 +31277,7 @@ window.GRAMMAR_CLINIC_BANK = [
                 "reason": "독해 지문에서 필자의 양면적 견해나 반전을 나타낼 때 빈출되는 핵심 표현!"
               }
             ],
+            "trap": "독해 지문에서 필자의 양면적 견해나 반전을 나타낼 때 빈출되는 핵심 표현!",
             "quizLink": "3단계 실전 퀴즈에서 [부분부정 주요 관용 표현] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -30483,22 +31410,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "SP-39. few/a few VS little/a little (수량 형용사 판별)",
         "formulaCards": [
           {
-            "formulaId": "sp_vs_u9_f1",
-            "tag": "셀 수 있는 명사(few) vs 셀 수 없는 명사(little)",
-            "en": "A few students asked thoughtful questions, but there was little time left for discussion.",
-            "ko": "몇몇 학생들은 사려 깊은 질문을 했지만(a few + 복수명사), 토론을 위해 남은 시간은 거의 없었다(little + 셀 수 없는 명사).",
-            "point": "셀 수 있는 가산 복수명사 앞에는 few / a few, 셀 수 없는 불가산 명사(water, money, time, information 등) 앞에는 little / a little을 씁니다.",
-            "oxCompare": "O: I have a few friends in Seoul. / X: I have a little friends in Seoul.",
+            "name": "셀 수 있는 명사(few) vs 셀 수 없는 명사(little)",
+            "desc": "셀 수 있는 가산 복수명사 앞에는 few / a few, 셀 수 없는 불가산 명사(water, money, time, information 등) 앞에는 little / a little을 씁니다.",
+            "formula": "셀 수 있는 명사(few) vs 셀 수 없는 명사(little)",
+            "rules": [],
+            "examples": [
+              {
+                "en": "A few students asked thoughtful questions, but there was little time left for discussion.",
+                "ko": "몇몇 학생들은 사려 깊은 질문을 했지만(a few + 복수명사), 토론을 위해 남은 시간은 거의 없었다(little + 셀 수 없는 명사).",
+                "point": "셀 수 있는 가산 복수명사 앞에는 few / a few, 셀 수 없는 불가산 명사(water, money, time, information 등) 앞에는 little / a little을 씁니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "I have a few friends in Seoul.",
+                "wrong": "I have a little friends in Seoul.",
+                "reason": "수식받는 명사에 -s가 붙어 있는지(가산 복수) 여부와 명사의 가산/불가산 성격을 즉시 확인해야 합니다."
+              }
+            ],
             "trap": "수식받는 명사에 -s가 붙어 있는지(가산 복수) 여부와 명사의 가산/불가산 성격을 즉시 확인해야 합니다.",
             "quizLink": "품사 및 수일치와 연계된 초등부터 고교까지의 필수 기본기입니다."
           },
           {
-            "formulaId": "sp_vs_u9_f2",
-            "tag": "긍정(a가 있음: 약간 있는) vs 부정(a가 없음: 거의 없는)",
-            "en": "He has few friends and feels lonely, but she has a few friends and enjoys life.",
-            "ko": "그는 친구가 거의 없어 외로움을 느끼지만, 그녀는 친구가 몇몇 있어 삶을 즐긴다.",
-            "point": "'a few / a little'은 '조금 있는, 몇몇의'라는 긍정의 의미이고, 'few / little'은 '거의 없는'이라는 부정의 의미(부정문처럼 해석)입니다.",
-            "oxCompare": "O: There is little hope of recovery. / X: There is not little hope of recovery. (little 자체가 부정)",
+            "name": "긍정(a가 있음: 약간 있는) vs 부정(a가 없음: 거의 없는)",
+            "desc": "'a few / a little'은 '조금 있는, 몇몇의'라는 긍정의 의미이고, 'few / little'은 '거의 없는'이라는 부정의 의미(부정문처럼 해석)입니다.",
+            "formula": "긍정(a가 있음: 약간 있는) vs 부정(a가 없음: 거의 없는)",
+            "rules": [],
+            "examples": [
+              {
+                "en": "He has few friends and feels lonely, but she has a few friends and enjoys life.",
+                "ko": "그는 친구가 거의 없어 외로움을 느끼지만, 그녀는 친구가 몇몇 있어 삶을 즐긴다.",
+                "point": "'a few / a little'은 '조금 있는, 몇몇의'라는 긍정의 의미이고, 'few / little'은 '거의 없는'이라는 부정의 의미(부정문처럼 해석)입니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "There is little hope of recovery.",
+                "wrong": "There is not little hope of recovery. (little 자체가 부정)",
+                "reason": "few나 little 앞뒤에 not을 붙이지 않아도 문장 자체가 부정문이 됨을 유의하세요."
+              }
+            ],
             "trap": "few나 little 앞뒤에 not을 붙이지 않아도 문장 자체가 부정문이 됨을 유의하세요.",
             "quizLink": "독해의 뉘앙스 파악 및 내신 문맥 적절성 평가에 빈출됩니다."
           }
@@ -30631,22 +31582,46 @@ window.GRAMMAR_CLINIC_BANK = [
         "title": "SP-40. other VS another VS the other VS others (부정대명사 완벽 정리)",
         "formulaCards": [
           {
-            "formulaId": "sp_vs_u10_f1",
-            "tag": "another vs other vs the other 구별 공식",
-            "en": "One twin wanted to stay home, but the other wanted to go to the park.",
-            "ko": "쌍둥이 중 한 명은 집에 있기를 원했지만, 나머지 다른 한 명은 공원에 가기를 원했다.",
-            "point": "1. another: 막연한 또 다른 하나 (an + other, 단수명사와 결합). 2. other: 다른 (단독 대명사 불가, other + 복수명사). 3. others: 막연한 다른 사람들/것들 (복수 대명사). 4. the other: 정해진 범위 내에서 '나머지 하나'. 5. the others: 정해진 범위 내에서 '나머지 전부'.",
-            "oxCompare": "O: I have two pens; one is red and the other is blue. / X: I have two pens; one is red and another is blue.",
+            "name": "another vs other vs the other 구별 공식",
+            "desc": "1. another: 막연한 또 다른 하나 (an + other, 단수명사와 결합). 2. other: 다른 (단독 대명사 불가, other + 복수명사). 3. others: 막연한 다른 사람들/것들 (복수 대명사). 4. the other: 정해진 범위 내에서 '나머지 하나'. 5. the others: 정해진 범위 내에서 '나머지 전부'.",
+            "formula": "another vs other vs the other 구별 공식",
+            "rules": [],
+            "examples": [
+              {
+                "en": "One twin wanted to stay home, but the other wanted to go to the park.",
+                "ko": "쌍둥이 중 한 명은 집에 있기를 원했지만, 나머지 다른 한 명은 공원에 가기를 원했다.",
+                "point": "1. another: 막연한 또 다른 하나 (an + other, 단수명사와 결합). 2. other: 다른 (단독 대명사 불가, other + 복수명사). 3. others: 막연한 다른 사람들/것들 (복수 대명사). 4. the other: 정해진 범위 내에서 '나머지 하나'. 5. the others: 정해진 범위 내에서 '나머지 전부'."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "I have two pens; one is red and the other is blue.",
+                "wrong": "I have two pens; one is red and another is blue.",
+                "reason": "둘(2개) 중 하나는 one, 나머지 하나는 무조건 'the other'입니다. another를 쓰면 3개 이상일 때의 또 다른 하나가 되므로 오답입니다."
+              }
+            ],
             "trap": "둘(2개) 중 하나는 one, 나머지 하나는 무조건 'the other'입니다. another를 쓰면 3개 이상일 때의 또 다른 하나가 되므로 오답입니다.",
             "quizLink": "수능 및 내신 어법에서 대명사의 지칭 범위(특정 vs 막연)를 묻는 1순위 문항입니다."
           },
           {
-            "formulaId": "sp_vs_u10_f2",
-            "tag": "Some ~ others ... 대조 표현 및 another + 단수명사",
-            "en": "Some people prefer living in bustling cities, while others thrive in quiet countryside.",
-            "ko": "어떤 사람들은 번화한 도시에 사는 것을 선호하는 반면, 다른 사람들은 조용한 시골에서 잘 살아간다.",
-            "point": "'Some ~ others ...'는 막연한 다수 사이의 대조를 나타내는 표준 구문입니다. 반면 전체 집단이 정해져 있을 때는 'Some ~ the others ...'를 씁니다. 또한 another 뒤에는 반드시 단수 가산명사(another chance)가 옵니다.",
-            "oxCompare": "O: Would you like another cup of tea? / X: Would you like other cup of tea?",
+            "name": "Some ~ others ... 대조 표현 및 another + 단수명사",
+            "desc": "'Some ~ others ...'는 막연한 다수 사이의 대조를 나타내는 표준 구문입니다. 반면 전체 집단이 정해져 있을 때는 'Some ~ the others ...'를 씁니다. 또한 another 뒤에는 반드시 단수 가산명사(another chance)가 옵니다.",
+            "formula": "Some ~ others ... 대조 표현 및 another + 단수명사",
+            "rules": [],
+            "examples": [
+              {
+                "en": "Some people prefer living in bustling cities, while others thrive in quiet countryside.",
+                "ko": "어떤 사람들은 번화한 도시에 사는 것을 선호하는 반면, 다른 사람들은 조용한 시골에서 잘 살아간다.",
+                "point": "'Some ~ others ...'는 막연한 다수 사이의 대조를 나타내는 표준 구문입니다. 반면 전체 집단이 정해져 있을 때는 'Some ~ the others ...'를 씁니다. 또한 another 뒤에는 반드시 단수 가산명사(another chance)가 옵니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "Would you like another cup of tea?",
+                "wrong": "Would you like other cup of tea?",
+                "reason": "other 뒤에는 단수 가산명사를 단독으로 쓸 수 없습니다 (other cups O, other cup X)."
+              }
+            ],
             "trap": "other 뒤에는 단수 가산명사를 단독으로 쓸 수 없습니다 (other cups O, other cup X).",
             "quizLink": "대명사와 형용사 용법의 단/복수 매칭을 점검하세요."
           }
@@ -30777,7 +31752,6 @@ window.GRAMMAR_CLINIC_BANK = [
   }
 ];
 
-// Grammar Special Lectures (문법 특강 별도 단원 데이터)
 window.GRAMMAR_SPECIAL_LECTURES = [
   {
     "level": 101,
@@ -30800,10 +31774,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "품사(8품사)는 '배우', 문장 성분은 '배역'",
-            "formula": "품사 = 단어 자체의 태생 (명사, 대명사, 동사, 형용사, 부사, 전치사, 접속사, 감탄사)\n문장 성분 = 문장에서 맡은 역할 (주어, 동사, 목적어, 보어, 수식어)",
-            "example": "'Tom Cruise'라는 배우(명사)가 영화에서 '탐정'(주어) 역할을 맡을 수도 있고, '범인'(목적어) 역할을 맡을 수도 있습니다.",
-            "trap": "'형용사가 목적어가 될 수 있나요?' ➔ 절대 불가! 목적어 배역은 오직 '명사/대명사' 배우만 맡을 수 있습니다.",
             "desc": "품사(8품사)는 '배우', 문장 성분은 '배역'은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 단어의 태생적 성질인 8품사(배우)와 문장에서의 역할인 문장 성분(배역)의 결정적 차이의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "품사 = 단어 자체의 태생 (명사, 대명사, 동사, 형용사, 부사, 전치사, 접속사, 감탄사)\n문장 성분 = 문장에서 맡은 역할 (주어, 동사, 목적어, 보어, 수식어)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -30837,14 +31809,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "'형용사가 목적어가 될 수 있나요?' ➔ 절대 불가! 목적어 배역은 오직 '명사/대명사' 배우만 맡을 수 있습니다."
               }
             ],
+            "trap": "'형용사가 목적어가 될 수 있나요?' ➔ 절대 불가! 목적어 배역은 오직 '명사/대명사' 배우만 맡을 수 있습니다.",
             "quizLink": "3단계 실전 퀴즈에서 [품사(8품사)는 '배우', 문장 성분은 '배역'] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "문장 성분의 4대 뼈대 (주/동/목/보)",
-            "formula": "주어(Subject: 은/는/이/가) + 동사(Verb: ~하다/이다) + 목적어(Object: ~을/를/에게) + 보어(Complement: 보충 설명)",
-            "example": "She(주어-대명사) made(동사) him(목적어-대명사) happy(보어-형용사).",
-            "trap": "부사(Adverb)는 문장의 뼈대(주·동·목·보)가 아니라 장식품(수식어)이므로 생략해도 문장이 성립합니다.",
             "desc": "문장 성분의 4대 뼈대 (주/동/목/보)은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 단어의 태생적 성질인 8품사(배우)와 문장에서의 역할인 문장 성분(배역)의 결정적 차이의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "주어(Subject: 은/는/이/가) + 동사(Verb: ~하다/이다) + 목적어(Object: ~을/를/에게) + 보어(Complement: 보충 설명)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -30878,6 +31849,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "부사(Adverb)는 문장의 뼈대(주·동·목·보)가 아니라 장식품(수식어)이므로 생략해도 문장이 성립합니다."
               }
             ],
+            "trap": "부사(Adverb)는 문장의 뼈대(주·동·목·보)가 아니라 장식품(수식어)이므로 생략해도 문장이 성립합니다.",
             "quizLink": "3단계 실전 퀴즈에서 [문장 성분의 4대 뼈대 (주/동/목/보)] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -31013,10 +31985,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "자동사(Vi) vs 타동사(Vt)의 판별법",
-            "formula": "자동사 (Intransitive) : 주어 혼자 행동 완료! 뒤에 목적어(~을/를) 불필요! (sleep, cry, smile, arrive)\n타동사 (Transitive) : 동작을 받는 대상(목적어)이 반드시 필요! (like, make, buy, visit)",
-            "example": "Birds fly. (새가 난다 - 자동사, 목적어 없음)\nI love you. (나는 너를 사랑한다 - 타동사, you가 목적어)",
-            "trap": "자동사가 목적어를 취하고 싶을 때는 반드시 '전치사'라는 징검다리를 놓아야 함! (listen to, look at, arrive at)",
             "desc": "자동사(Vi) vs 타동사(Vt)의 판별법은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 동작의 대상(목적어)이 필요한가(타동사) 아니면 스스로 일어나는가(자동사)의 원리와 1~5형식 뼈대의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "자동사 (Intransitive) : 주어 혼자 행동 완료! 뒤에 목적어(~을/를) 불필요! (sleep, cry, smile, arrive)\n타동사 (Transitive) : 동작을 받는 대상(목적어)이 반드시 필요! (like, make, buy, visit)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -31050,14 +32020,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "자동사가 목적어를 취하고 싶을 때는 반드시 '전치사'라는 징검다리를 놓아야 함! (listen to, look at, arrive at)"
               }
             ],
+            "trap": "자동사가 목적어를 취하고 싶을 때는 반드시 '전치사'라는 징검다리를 놓아야 함! (listen to, look at, arrive at)",
             "quizLink": "3단계 실전 퀴즈에서 [자동사(Vi) vs 타동사(Vt)의 판별법] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "1~5형식의 탄생 비밀",
-            "formula": "1형식: S + V (완전자동사)\n2형식: S + V + C (불완전자동사: 보어 필요)\n3형식: S + V + O (완전타동사: 목적어 1개)\n4형식: S + V + IO + DO (수여동사: 목적어 2개)\n5형식: S + V + O + OC (불완전타동사: 목적어+보어)",
-            "example": "동사가 어떤 친구(목적어, 보어)를 필요로 하느냐에 따라 5가지 형식이 결정됩니다.",
-            "trap": "동사 하나가 무조건 한 가지 형식만 취하는 것이 아니라, 문맥에 따라 자동사/타동사로 모두 쓰일 수 있음!",
             "desc": "1~5형식의 탄생 비밀은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 동작의 대상(목적어)이 필요한가(타동사) 아니면 스스로 일어나는가(자동사)의 원리와 1~5형식 뼈대의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1형식: S + V (완전자동사)\n2형식: S + V + C (불완전자동사: 보어 필요)\n3형식: S + V + O (완전타동사: 목적어 1개)\n4형식: S + V + IO + DO (수여동사: 목적어 2개)\n5형식: S + V + O + OC (불완전타동사: 목적어+보어)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -31091,6 +32060,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "동사 하나가 무조건 한 가지 형식만 취하는 것이 아니라, 문맥에 따라 자동사/타동사로 모두 쓰일 수 있음!"
               }
             ],
+            "trap": "동사 하나가 무조건 한 가지 형식만 취하는 것이 아니라, 문맥에 따라 자동사/타동사로 모두 쓰일 수 있음!",
             "quizLink": "3단계 실전 퀴즈에서 [1~5형식의 탄생 비밀] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -31226,10 +32196,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "보어(Complement) = '보충 설명해 주는 말'",
-            "formula": "주격 보어 (Subject Complement) : 주어의 정체(명사)나 상태(형용사)를 보충 ➔ [주어 = 보어]\n목적격 보어 (Object Complement) : 목적어의 정체나 상태·동작을 보충 ➔ [목적어 = 보어]",
-            "example": "He is a doctor. (He = doctor, 주격보어-명사)\nShe feels tired. (She = tired 상태, 주격보어-형용사)\nWe painted the wall blue. (wall = blue 상태, 목적격보어)",
-            "trap": "보어 자리에는 '명사'와 '형용사'만 올 수 있습니다. '부사(~ly)'는 절대로 보어가 될 수 없습니다!",
             "desc": "보어(Complement) = '보충 설명해 주는 말'은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. '도대체 무엇을 보충해 주길래 보어인가?' 주격 보어(S=C)와 목적격 보어(O➔OC)의 본질의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "주격 보어 (Subject Complement) : 주어의 정체(명사)나 상태(형용사)를 보충 ➔ [주어 = 보어]\n목적격 보어 (Object Complement) : 목적어의 정체나 상태·동작을 보충 ➔ [목적어 = 보어]",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -31263,14 +32231,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "보어 자리에는 '명사'와 '형용사'만 올 수 있습니다. '부사(~ly)'는 절대로 보어가 될 수 없습니다!"
               }
             ],
+            "trap": "보어 자리에는 '명사'와 '형용사'만 올 수 있습니다. '부사(~ly)'는 절대로 보어가 될 수 없습니다!",
             "quizLink": "3단계 실전 퀴즈에서 [보어(Complement) = '보충 설명해 주는 말'] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "감각동사 뒤에는 반드시 형용사 보어!",
-            "formula": "look, smell, taste, sound, feel + 형용사 (O) / + 부사 (X)",
-            "example": "It smells deliciously. (X) ➔ It smells delicious. (O: 맛있게 냄새난다)",
-            "trap": "우리말 해석이 '~하게'로 부사처럼 되더라도 영어에서는 주어를 보충하므로 형용사를 써야 함!",
             "desc": "감각동사 뒤에는 반드시 형용사 보어!은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. '도대체 무엇을 보충해 주길래 보어인가?' 주격 보어(S=C)와 목적격 보어(O➔OC)의 본질의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "look, smell, taste, sound, feel + 형용사 (O) / + 부사 (X)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -31304,6 +32271,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "우리말 해석이 '~하게'로 부사처럼 되더라도 영어에서는 주어를 보충하므로 형용사를 써야 함!"
               }
             ],
+            "trap": "우리말 해석이 '~하게'로 부사처럼 되더라도 영어에서는 주어를 보충하므로 형용사를 써야 함!",
             "quizLink": "3단계 실전 퀴즈에서 [감각동사 뒤에는 반드시 형용사 보어!] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -31439,10 +32407,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "준동사(Verbal) = '동사에 준하지만 다른 품사로 변신한 것'",
-            "formula": "한 문장에 본동사는 오직 1개! 다른 동사를 또 쓰려면 준동사로 변신시켜야 함!\n1. to부정사 (to + V) : 명사, 형용사, 부사 중 역할이 '아직 정해지지 않음(不定)'\n2. 동명사 (V-ing) : 동사를 '명사(~하기, ~하는 것)'로 변신\n3. 분사 (V-ing / p.p.) : 동사를 '형용사(~하는, ~된)'로 변신",
-            "example": "I like play soccer. (X: 본동사 2개 충돌)\nI like to play soccer. (O: to부정사)\nI like playing soccer. (O: 동명사)",
-            "trap": "준동사는 품사가 바뀌었지만, 원래 동사였던 성질(목적어·보어를 가짐, 부사의 수식을 받음, 시제와 태를 가짐)을 그대로 간직합니다.",
             "desc": "준동사(Verbal) = '동사에 준하지만 다른 품사로 변신한 것'은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 동사였던 녀석이 왜 옷을 갈아입었을까? to부정사(미정품사), 동명사(명사화), 분사(형용사화)의 원리의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "한 문장에 본동사는 오직 1개! 다른 동사를 또 쓰려면 준동사로 변신시켜야 함!\n1. to부정사 (to + V) : 명사, 형용사, 부사 중 역할이 '아직 정해지지 않음(不定)'\n2. 동명사 (V-ing) : 동사를 '명사(~하기, ~하는 것)'로 변신\n3. 분사 (V-ing / p.p.) : 동사를 '형용사(~하는, ~된)'로 변신",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -31476,14 +32442,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "준동사는 품사가 바뀌었지만, 원래 동사였던 성질(목적어·보어를 가짐, 부사의 수식을 받음, 시제와 태를 가짐)을 그대로 간직합니다."
               }
             ],
+            "trap": "준동사는 품사가 바뀌었지만, 원래 동사였던 성질(목적어·보어를 가짐, 부사의 수식을 받음, 시제와 태를 가짐)을 그대로 간직합니다.",
             "quizLink": "3단계 실전 퀴즈에서 [준동사(Verbal) = '동사에 준하지만 다른 품사로 변신한 것'] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "준동사 3형제의 품사 요약표",
-            "formula": "• to부정사 ➔ 명사적, 형용사적, 부사적 용법\n• 동명사 ➔ 주어, 목적어, 보어 (명사 역할만)\n• 분사 ➔ 명사 수식, 주격/목적격 보어 (형용사 역할만)",
-            "example": "Smoking is bad. (동명사 주어) / a sleeping dog (분사 수식)",
-            "trap": "같은 V-ing 형태라도 '명사'로 쓰이면 동명사, '형용사'로 쓰이면 현재분사입니다.",
             "desc": "준동사 3형제의 품사 요약표은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 동사였던 녀석이 왜 옷을 갈아입었을까? to부정사(미정품사), 동명사(명사화), 분사(형용사화)의 원리의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• to부정사 ➔ 명사적, 형용사적, 부사적 용법\n• 동명사 ➔ 주어, 목적어, 보어 (명사 역할만)\n• 분사 ➔ 명사 수식, 주격/목적격 보어 (형용사 역할만)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -31517,6 +32482,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "같은 V-ing 형태라도 '명사'로 쓰이면 동명사, '형용사'로 쓰이면 현재분사입니다."
               }
             ],
+            "trap": "같은 V-ing 형태라도 '명사'로 쓰이면 동명사, '형용사'로 쓰이면 현재분사입니다.",
             "quizLink": "3단계 실전 퀴즈에서 [준동사 3형제의 품사 요약표] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -31652,10 +32618,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "'관계대명사' = 접속사(문장 연결) + 대명사(명사 대신)",
-            "formula": "관계대명사 = 문장과 문장을 연결하는 '접속사' + 겹치는 명사를 대신하는 '대명사'\n선행사(先行詞) = '앞에(先) 먼저 걸어간(行) 단어(詞)' ➔ 관계대명사 바로 앞에 있는 꾸밈받는 명사!",
-            "example": "I know a boy. + He speaks four languages.\n➔ I know a boy [who speaks four languages]. (a boy = 선행사, who = 관계대명사)",
-            "trap": "관계대명사 뒤에는 겹치는 명사가 1개 빠져있으므로 반드시 '불완전한 문장(주어나 목적어 결손)'이 옵니다!",
             "desc": "'관계대명사' = 접속사(문장 연결) + 대명사(명사 대신)은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 관계(Relation)는 문장을 이어주는 '접속사'의 뜻! '선행사(先行詞)'의 어원과 원리의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "관계대명사 = 문장과 문장을 연결하는 '접속사' + 겹치는 명사를 대신하는 '대명사'\n선행사(先行詞) = '앞에(先) 먼저 걸어간(行) 단어(詞)' ➔ 관계대명사 바로 앞에 있는 꾸밈받는 명사!",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -31689,14 +32653,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "관계대명사 뒤에는 겹치는 명사가 1개 빠져있으므로 반드시 '불완전한 문장(주어나 목적어 결손)'이 옵니다!"
               }
             ],
+            "trap": "관계대명사 뒤에는 겹치는 명사가 1개 빠져있으므로 반드시 '불완전한 문장(주어나 목적어 결손)'이 옵니다!",
             "quizLink": "3단계 실전 퀴즈에서 ['관계대명사' = 접속사(문장 연결) + 대명사(명사 대신)] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "관계대명사절은 형용사절이다!",
-            "formula": "관계대명사 덩어리 전체는 선행사(명사)를 꾸며주는 '형용사' 역할을 합니다.",
-            "example": "the car [which was made in Korea] ➔ 한국에서 만들어진(형용사처럼 수식) 자동차",
-            "trap": "who, which, that을 '누구, 어느 것, 저것'으로 해석하지 말고, 앞 명사를 꾸며주는 풀칠로 이해할 것!",
             "desc": "관계대명사절은 형용사절이다!은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 관계(Relation)는 문장을 이어주는 '접속사'의 뜻! '선행사(先行詞)'의 어원과 원리의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "관계대명사 덩어리 전체는 선행사(명사)를 꾸며주는 '형용사' 역할을 합니다.",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -31730,6 +32693,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "who, which, that을 '누구, 어느 것, 저것'으로 해석하지 말고, 앞 명사를 꾸며주는 풀칠로 이해할 것!"
               }
             ],
+            "trap": "who, which, that을 '누구, 어느 것, 저것'으로 해석하지 말고, 앞 명사를 꾸며주는 풀칠로 이해할 것!",
             "quizLink": "3단계 실전 퀴즈에서 [관계대명사절은 형용사절이다!] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -31865,10 +32829,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "수동태는 '당하는 녀석'을 주인공으로 세우는 문법",
-            "formula": "능동태 : [주어]가 [목적어]를 ~하다.\n수동태 : [목적어]가 [be + 과거분사(p.p.)] 당하다 + (by 행위자)",
-            "example": "Shakespeare wrote Hamlet. (능동태: 셰익스피어가 햄릿을 썼다)\n➔ Hamlet was written by Shakespeare. (수동태: 햄릿이 쓰여졌다)",
-            "trap": "목적어(~을/를)가 없는 자동사(1, 2형식: happen, appear, disappear)는 수동태로 전환이 절대 불가!",
             "desc": "수동태는 '당하는 녀석'을 주인공으로 세우는 문법은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 행동을 하는가(Active) vs 당하는가(Passive)? 수동태(be+p.p.)의 탄생 배경과 목적어의 이동의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "능동태 : [주어]가 [목적어]를 ~하다.\n수동태 : [목적어]가 [be + 과거분사(p.p.)] 당하다 + (by 행위자)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -31902,14 +32864,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "목적어(~을/를)가 없는 자동사(1, 2형식: happen, appear, disappear)는 수동태로 전환이 절대 불가!"
               }
             ],
+            "trap": "목적어(~을/를)가 없는 자동사(1, 2형식: happen, appear, disappear)는 수동태로 전환이 절대 불가!",
             "quizLink": "3단계 실전 퀴즈에서 [수동태는 '당하는 녀석'을 주인공으로 세우는 문법] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "왜 be동사 + p.p. 형태일까?",
-            "formula": "be동사(~인 상태이다) + p.p.(완료·수동 의미의 형용사) = '~되어진 상태로 존재하다'",
-            "example": "The door is locked. (문이 잠겨진 상태이다)",
-            "trap": "수동태로 바뀔 때 시제(현재/과거)는 반드시 be동사에 반영해야 합니다! (is/are vs was/were)",
             "desc": "왜 be동사 + p.p. 형태일까?은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 행동을 하는가(Active) vs 당하는가(Passive)? 수동태(be+p.p.)의 탄생 배경과 목적어의 이동의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "be동사(~인 상태이다) + p.p.(완료·수동 의미의 형용사) = '~되어진 상태로 존재하다'",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -31943,6 +32904,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "수동태로 바뀔 때 시제(현재/과거)는 반드시 be동사에 반영해야 합니다! (is/are vs was/were)"
               }
             ],
+            "trap": "수동태로 바뀔 때 시제(현재/과거)는 반드시 be동사에 반영해야 합니다! (is/are vs was/were)",
             "quizLink": "3단계 실전 퀴즈에서 [왜 be동사 + p.p. 형태일까?] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -32078,10 +33040,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "구(Phrase) vs 절(Clause)의 결정적 차이",
-            "formula": "구 (Phrase) : 2개 이상의 단어가 모였지만 [주어 + 동사]가 없음! (in the morning, to play soccer, very quickly)\n절 (Clause) : 2개 이상의 단어가 모여 [주어 + 동사] 관계를 이룸! (because he was tired, that she loved me)",
-            "example": "because of the rain (구: 주어+동사 없음) vs because it rained (절: it 주어 + rained 동사)",
-            "trap": "구 앞에는 전치사(because of, despite, during)를 쓰고, 절 앞에는 접속사(because, although, while)를 씁니다!",
             "desc": "구(Phrase) vs 절(Clause)의 결정적 차이은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 단어 뭉치 속에 주어+동사가 있는가 없는가? 긴 영어 문장을 의미 덩어리(청크)로 쪼개는 비법의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "구 (Phrase) : 2개 이상의 단어가 모였지만 [주어 + 동사]가 없음! (in the morning, to play soccer, very quickly)\n절 (Clause) : 2개 이상의 단어가 모여 [주어 + 동사] 관계를 이룸! (because he was tired, that she loved me)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -32115,14 +33075,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "구 앞에는 전치사(because of, despite, during)를 쓰고, 절 앞에는 접속사(because, although, while)를 씁니다!"
               }
             ],
+            "trap": "구 앞에는 전치사(because of, despite, during)를 쓰고, 절 앞에는 접속사(because, although, while)를 씁니다!",
             "quizLink": "3단계 실전 퀴즈에서 [구(Phrase) vs 절(Clause)의 결정적 차이] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "주절(Independent) vs 종속절(Dependent)",
-            "formula": "주절 = 문장의 주인! 혼자서도 문장 성립 (I stayed at home)\n종속절 = 접속사를 달고 주절에 딸려 붙은 보조 절 (because it was raining)",
-            "example": "접속사가 붙어있는 쪽이 종속절(부사절/명사절/형용사절)입니다.",
-            "trap": "종속절만 덩그러니 마침표를 찍고 단독 문장으로 존재할 수 없습니다.",
             "desc": "주절(Independent) vs 종속절(Dependent)은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 단어 뭉치 속에 주어+동사가 있는가 없는가? 긴 영어 문장을 의미 덩어리(청크)로 쪼개는 비법의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "주절 = 문장의 주인! 혼자서도 문장 성립 (I stayed at home)\n종속절 = 접속사를 달고 주절에 딸려 붙은 보조 절 (because it was raining)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -32156,6 +33115,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "종속절만 덩그러니 마침표를 찍고 단독 문장으로 존재할 수 없습니다."
               }
             ],
+            "trap": "종속절만 덩그러니 마침표를 찍고 단독 문장으로 존재할 수 없습니다.",
             "quizLink": "3단계 실전 퀴즈에서 [주절(Independent) vs 종속절(Dependent)] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -32291,10 +33251,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "한정적(Attributive) vs 서술적(Predicative)의 어원",
-            "formula": "한정적 용법 : 명사의 범위를 좁혀서(한정하여) 직접 꾸밈 ➔ [형용사 + 명사]\n서술적 용법 : 주어의 상태를 동사와 함께 서술(설명)함 ➔ [주어 + be동사 + 형용사(보어)]",
-            "example": "a sleeping baby (자고 있는 아기 - 아기의 범위를 한정)\nThe baby is sleeping. (아기가 자고 있다 - 아기의 상태를 서술)",
-            "trap": "afraid, alive, asleep, awake, alone 등 a-로 시작하는 형용사는 '서술적 용법(보어)'으로만 쓰입니다!",
             "desc": "한정적(Attributive) vs 서술적(Predicative)의 어원은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 명사를 직접 수식(한정)하는가 vs 주어를 서술(보어)하는가? 관계대명사 계속적 용법(콤마) 쉬운 해설의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "한정적 용법 : 명사의 범위를 좁혀서(한정하여) 직접 꾸밈 ➔ [형용사 + 명사]\n서술적 용법 : 주어의 상태를 동사와 함께 서술(설명)함 ➔ [주어 + be동사 + 형용사(보어)]",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -32328,14 +33286,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "afraid, alive, asleep, awake, alone 등 a-로 시작하는 형용사는 '서술적 용법(보어)'으로만 쓰입니다!"
               }
             ],
+            "trap": "afraid, alive, asleep, awake, alone 등 a-로 시작하는 형용사는 '서술적 용법(보어)'으로만 쓰입니다!",
             "quizLink": "3단계 실전 퀴즈에서 [한정적(Attributive) vs 서술적(Predicative)의 어원] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "관계대명사의 한정용법 vs 계속적 용법(콤마)",
-            "formula": "한정용법 (콤마 없음) : 뒤에서 명사를 수식 (~하는 선행사)\n계속적 용법 (콤마 있음) : 앞에서부터 순서대로 보충 설명 (그런데 그 사람은/그것은 ~하다)",
-            "example": "He has two sons who became doctors. (의사가 된 아들이 2명 있다 - 아들이 더 있을 수 있음)\nHe has two sons, who became doctors. (아들이 딱 2명 있는데, 둘 다 의사가 되었다)",
-            "trap": "계속적 용법(, 뒤)에는 관계대명사 that과 what을 절대로 쓸 수 없습니다!",
             "desc": "관계대명사의 한정용법 vs 계속적 용법(콤마)은(는) 문법 용어 영역에서 가장 빈출되는 핵심 문법입니다. 명사를 직접 수식(한정)하는가 vs 주어를 서술(보어)하는가? 관계대명사 계속적 용법(콤마) 쉬운 해설의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "한정용법 (콤마 없음) : 뒤에서 명사를 수식 (~하는 선행사)\n계속적 용법 (콤마 있음) : 앞에서부터 순서대로 보충 설명 (그런데 그 사람은/그것은 ~하다)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -32369,6 +33326,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "계속적 용법(, 뒤)에는 관계대명사 that과 what을 절대로 쓸 수 없습니다!"
               }
             ],
+            "trap": "계속적 용법(, 뒤)에는 관계대명사 that과 what을 절대로 쓸 수 없습니다!",
             "quizLink": "3단계 실전 퀴즈에서 [관계대명사의 한정용법 vs 계속적 용법(콤마)] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -32501,22 +33459,46 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "title": "SP-31. 등위접속사 vs 종속접속사 vs 접속부사의 차이",
         "formulaCards": [
           {
-            "formulaId": "sp_terms_u9_f1",
-            "tag": "접속사(Conjunction) vs 접속부사(Conjunctive Adverb)",
-            "en": "The storm was severe; however, the emergency rescue team proceeded without hesitation.",
-            "ko": "폭풍은 극심했다; 하지만 비상 구조대는 주저 없이 나아갔다.",
-            "point": "however, therefore, moreover 등은 '부사'이므로 두 문장을 콤마(,)만으로 연결할 수 없습니다. 두 문장을 연결하려면 마침표(.)나 세미콜론(;)이 반드시 필요하거나 등위/종속접속사를 써야 합니다.",
-            "oxCompare": "O: It was raining; however, we went out. / X: It was raining, however, we went out.",
+            "name": "접속사(Conjunction) vs 접속부사(Conjunctive Adverb)",
+            "desc": "however, therefore, moreover 등은 '부사'이므로 두 문장을 콤마(,)만으로 연결할 수 없습니다. 두 문장을 연결하려면 마침표(.)나 세미콜론(;)이 반드시 필요하거나 등위/종속접속사를 써야 합니다.",
+            "formula": "접속사(Conjunction) vs 접속부사(Conjunctive Adverb)",
+            "rules": [],
+            "examples": [
+              {
+                "en": "The storm was severe; however, the emergency rescue team proceeded without hesitation.",
+                "ko": "폭풍은 극심했다; 하지만 비상 구조대는 주저 없이 나아갔다.",
+                "point": "however, therefore, moreover 등은 '부사'이므로 두 문장을 콤마(,)만으로 연결할 수 없습니다. 두 문장을 연결하려면 마침표(.)나 세미콜론(;)이 반드시 필요하거나 등위/종속접속사를 써야 합니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "It was raining; however, we went out.",
+                "wrong": "It was raining, however, we went out.",
+                "reason": "수능 및 내신에서 콤마 뒤에 접속사 없이 however나 therefore만 써서 두 절을 연결하는 오류(Comma Splice)를 묻습니다."
+              }
+            ],
             "trap": "수능 및 내신에서 콤마 뒤에 접속사 없이 however나 therefore만 써서 두 절을 연결하는 오류(Comma Splice)를 묻습니다.",
             "quizLink": "접속부사는 품사가 부사일 뿐 절을 이어주는 문법적 접속사 기능이 없습니다."
           },
           {
-            "formulaId": "sp_terms_u9_f2",
-            "tag": "등위접속사 vs 종속접속사의 기능적 본질",
-            "en": "Although the task was grueling, she completed it, and her mentor praised her resilience.",
-            "ko": "그 과업이 몹시 힘들었음에도 불구하고 그녀는 그것을 완수했고, 멘토는 그녀의 회복탄력성을 칭찬했다.",
-            "point": "등위접속사(FANBOYS: for, and, nor, but, or, yet, so)는 문법적으로 동등한 성분을 대등하게 잇고, 종속접속사(although, because, if, when)는 주절에 종속되는 부사절이나 명사절을 만듭니다.",
-            "oxCompare": "O: Although he tried hard, he failed. / X: Although he tried hard, but he failed.",
+            "name": "등위접속사 vs 종속접속사의 기능적 본질",
+            "desc": "등위접속사(FANBOYS: for, and, nor, but, or, yet, so)는 문법적으로 동등한 성분을 대등하게 잇고, 종속접속사(although, because, if, when)는 주절에 종속되는 부사절이나 명사절을 만듭니다.",
+            "formula": "등위접속사 vs 종속접속사의 기능적 본질",
+            "rules": [],
+            "examples": [
+              {
+                "en": "Although the task was grueling, she completed it, and her mentor praised her resilience.",
+                "ko": "그 과업이 몹시 힘들었음에도 불구하고 그녀는 그것을 완수했고, 멘토는 그녀의 회복탄력성을 칭찬했다.",
+                "point": "등위접속사(FANBOYS: for, and, nor, but, or, yet, so)는 문법적으로 동등한 성분을 대등하게 잇고, 종속접속사(although, because, if, when)는 주절에 종속되는 부사절이나 명사절을 만듭니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "Although he tried hard, he failed.",
+                "wrong": "Although he tried hard, but he failed.",
+                "reason": "한 문장에 종속접속사(Although)와 등위접속사(but)를 동시에 쓰면 접속사가 중복되어 비문이 됩니다."
+              }
+            ],
             "trap": "한 문장에 종속접속사(Although)와 등위접속사(but)를 동시에 쓰면 접속사가 중복되어 비문이 됩니다.",
             "quizLink": "접속사 개수와 절의 개수 관계(N개의 접속사 = N+1개의 동사)를 반드시 확인하세요."
           }
@@ -32649,22 +33631,46 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "title": "SP-32. 서법 조동사(Modal Verbs)의 본질과 시제 일치",
         "formulaCards": [
           {
-            "formulaId": "sp_terms_u10_f1",
-            "tag": "서법 조동사(Modal Auxiliaries)의 의미 층위 (의무 vs 추측)",
-            "en": "You must wear a helmet when cycling, and he must be at home now.",
-            "ko": "자전거를 탈 때는 헬멧을 착용해야 하며(의무), 그는 지금 집에 있음에 틀림없다(강한 추측).",
-            "point": "조동사는 (1) 말하는 이의 의지/의무/허가/능력(Deontic: ~해야 한다, ~할 수 있다)과 (2) 명제의 사실성에 대한 확신/추측(Epistemic: ~임에 틀림없다, ~일지도 모른다)의 두 가지 층위를 가집니다.",
-            "oxCompare": "O: He cannot be hungry; he just ate. / X: He must not be hungry; he just ate. (불가능 추측)",
+            "name": "서법 조동사(Modal Auxiliaries)의 의미 층위 (의무 vs 추측)",
+            "desc": "조동사는 (1) 말하는 이의 의지/의무/허가/능력(Deontic: ~해야 한다, ~할 수 있다)과 (2) 명제의 사실성에 대한 확신/추측(Epistemic: ~임에 틀림없다, ~일지도 모른다)의 두 가지 층위를 가집니다.",
+            "formula": "서법 조동사(Modal Auxiliaries)의 의미 층위 (의무 vs 추측)",
+            "rules": [],
+            "examples": [
+              {
+                "en": "You must wear a helmet when cycling, and he must be at home now.",
+                "ko": "자전거를 탈 때는 헬멧을 착용해야 하며(의무), 그는 지금 집에 있음에 틀림없다(강한 추측).",
+                "point": "조동사는 (1) 말하는 이의 의지/의무/허가/능력(Deontic: ~해야 한다, ~할 수 있다)과 (2) 명제의 사실성에 대한 확신/추측(Epistemic: ~임에 틀림없다, ~일지도 모른다)의 두 가지 층위를 가집니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "He cannot be hungry; he just ate.",
+                "wrong": "He must not be hungry; he just ate. (불가능 추측)",
+                "reason": "'~임에 틀림없다'의 반대 부정 추측은 must not이 아니라 'cannot(~일 리가 없다)'입니다."
+              }
+            ],
             "trap": "'~임에 틀림없다'의 반대 부정 추측은 must not이 아니라 'cannot(~일 리가 없다)'입니다.",
             "quizLink": "문맥상 조동사가 의무인지 추측인지 판별하는 능력이 내신과 수능의 핵심입니다."
           },
           {
-            "formulaId": "sp_terms_u10_f2",
-            "tag": "과거 시제 조동사 형태의 원리와 가정법적 거리감",
-            "en": "Could you assist me with this luggage? I could run faster when I was younger.",
-            "ko": "이 짐을 좀 도와주실 수 있나요?(정중한 부탁) 나는 더 젊었을 때 더 빨리 달릴 수 있었다(과거 능력).",
-            "point": "조동사의 과거형(could, would, might, should)은 단순한 과거 시간뿐만 아니라, 현실과의 심리적 거리감(공손함, 완곡함, 가정법적 가설)을 표현하는 표준적인 도구입니다.",
-            "oxCompare": "O: Would you mind opening the window? / X: Will you mind opening the window?",
+            "name": "과거 시제 조동사 형태의 원리와 가정법적 거리감",
+            "desc": "조동사의 과거형(could, would, might, should)은 단순한 과거 시간뿐만 아니라, 현실과의 심리적 거리감(공손함, 완곡함, 가정법적 가설)을 표현하는 표준적인 도구입니다.",
+            "formula": "과거 시제 조동사 형태의 원리와 가정법적 거리감",
+            "rules": [],
+            "examples": [
+              {
+                "en": "Could you assist me with this luggage? I could run faster when I was younger.",
+                "ko": "이 짐을 좀 도와주실 수 있나요?(정중한 부탁) 나는 더 젊었을 때 더 빨리 달릴 수 있었다(과거 능력).",
+                "point": "조동사의 과거형(could, would, might, should)은 단순한 과거 시간뿐만 아니라, 현실과의 심리적 거리감(공손함, 완곡함, 가정법적 가설)을 표현하는 표준적인 도구입니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "Would you mind opening the window?",
+                "wrong": "Will you mind opening the window?",
+                "reason": "could나 would가 쓰였다고 해서 무조건 과거 시제로만 해석하면 안 되며, 현재의 공손한 표현이나 가정법 표현인지를 문맥으로 판단해야 합니다."
+              }
+            ],
             "trap": "could나 would가 쓰였다고 해서 무조건 과거 시제로만 해석하면 안 되며, 현재의 공손한 표현이나 가정법 표현인지를 문맥으로 판단해야 합니다.",
             "quizLink": "조동사의 다양한 뉘앙스와 정확한 과거 시제 표현법을 마스터하세요."
           }
@@ -32814,10 +33820,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "It (가주어) ~ for/of (의미상 주어) + to V (진주어)",
-            "formula": "It is [형용사] + for + [목적격] + to [동사원형] ...\n(단, 사람의 성품 형용사 kind, rude, polite, foolish 뒤에는 of + 목적격)",
-            "example": "It is difficult for me to solve this puzzle. / It was very kind of you to invite us.",
-            "trap": "for me 자리에 of me를 쓰거나, to 뒤에 동사원형이 아닌 -ing를 쓰는 감점 실수 주의!",
             "desc": "It (가주어) ~ for/of (의미상 주어) + to V (진주어)은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. 가주어/진주어 it ~ for/of ~ to, too ~ to 구문 변환, 조건 영작 감점 방지 팁의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "It is [형용사] + for + [목적격] + to [동사원형] ...\n(단, 사람의 성품 형용사 kind, rude, polite, foolish 뒤에는 of + 목적격)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -32851,14 +33855,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "for me 자리에 of me를 쓰거나, to 뒤에 동사원형이 아닌 -ing를 쓰는 감점 실수 주의!"
               }
             ],
+            "trap": "for me 자리에 of me를 쓰거나, to 뒤에 동사원형이 아닌 -ing를 쓰는 감점 실수 주의!",
             "quizLink": "3단계 실전 퀴즈에서 [It (가주어) ~ for/of (의미상 주어) + to V (진주어)] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "too ~ to V ➔ so ~ that ... can't 변환 공식",
-            "formula": "too [형용사/부사] to V = so [형용사/부사] that + 주어 + cannot/could not + V",
-            "example": "He was too tired to walk. = He was so tired that he could not walk.",
-            "trap": "과거 시제일 때 can't가 아니라 could not(couldn't)을 써야 함! 주절 시제 불일치로 감점 1위!",
             "desc": "too ~ to V ➔ so ~ that ... can't 변환 공식은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. 가주어/진주어 it ~ for/of ~ to, too ~ to 구문 변환, 조건 영작 감점 방지 팁의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "too [형용사/부사] to V = so [형용사/부사] that + 주어 + cannot/could not + V",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -32892,6 +33895,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "과거 시제일 때 can't가 아니라 could not(couldn't)을 써야 함! 주절 시제 불일치로 감점 1위!"
               }
             ],
+            "trap": "과거 시제일 때 can't가 아니라 could not(couldn't)을 써야 함! 주절 시제 불일치로 감점 1위!",
             "quizLink": "3단계 실전 퀴즈에서 [too ~ to V ➔ so ~ that ... can't 변환 공식] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -33027,10 +34031,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "전치사 + 관계대명사 ➔ 관계부사 치환",
-            "formula": "in/at/on + which = where (장소) / in/on/at + which = when (시간)\nfor + which = why (이유) / in which = how (방법)",
-            "example": "This is the house in which I was born. = This is the house where I was born.",
-            "trap": "관계부사 뒤에는 '완전한 문장'이 오며, how와 the way는 절대 나란히 쓰지 못함 (the way만 쓰거나 how만 씀)!",
             "desc": "전치사 + 관계대명사 ➔ 관계부사 치환은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. 두 문장 결합 서술형, 전치사+관계대명사(in which 등), 관계부사(where/when/why) 조건 영작의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "in/at/on + which = where (장소) / in/on/at + which = when (시간)\nfor + which = why (이유) / in which = how (방법)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -33064,14 +34066,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "관계부사 뒤에는 '완전한 문장'이 오며, how와 the way는 절대 나란히 쓰지 못함 (the way만 쓰거나 how만 씀)!"
               }
             ],
+            "trap": "관계부사 뒤에는 '완전한 문장'이 오며, how와 the way는 절대 나란히 쓰지 못함 (the way만 쓰거나 how만 씀)!",
             "quizLink": "3단계 실전 퀴즈에서 [전치사 + 관계대명사 ➔ 관계부사 치환] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "서술형 관계사 영작 3단계 공식",
-            "formula": "1단계: 공통 명사(선행사) 찾기\n2단계: 뒷문장 겹치는 대명사 지우고 알맞은 관계사(who/which/whose) 선택\n3단계: 선행사 바로 뒤에 관계사절 통째로 삽입하기",
-            "example": "The boy is my brother. + You met him yesterday.\n➔ The boy [whom you met yesterday] is my brother.",
-            "trap": "관계사절을 선행사 바로 뒤가 아니라 문장 맨 끝에 붙여버리는 오류 주의!",
             "desc": "서술형 관계사 영작 3단계 공식은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. 두 문장 결합 서술형, 전치사+관계대명사(in which 등), 관계부사(where/when/why) 조건 영작의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1단계: 공통 명사(선행사) 찾기\n2단계: 뒷문장 겹치는 대명사 지우고 알맞은 관계사(who/which/whose) 선택\n3단계: 선행사 바로 뒤에 관계사절 통째로 삽입하기",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -33105,6 +34106,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "관계사절을 선행사 바로 뒤가 아니라 문장 맨 끝에 붙여버리는 오류 주의!"
               }
             ],
+            "trap": "관계사절을 선행사 바로 뒤가 아니라 문장 맨 끝에 붙여버리는 오류 주의!",
             "quizLink": "3단계 실전 퀴즈에서 [서술형 관계사 영작 3단계 공식] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -33240,10 +34242,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "부사절 ➔ 분사구문 3단계 변환 공식",
-            "formula": "1단계: 접속사 생략 (의미 강조 시 남겨둘 수 있음)\n2단계: 주절 주어와 같으면 부사절 주어 생략\n3단계: 동사를 현재분사(V-ing)로 변환 (시제가 앞서면 having p.p.)",
-            "example": "As he felt tired, he went to bed early. ➔ Feeling tired, he went to bed early.",
-            "trap": "부정문일 때 Not/Never는 반드시 분사 맨 앞에 위치! (Not knowing what to do)",
             "desc": "부사절 ➔ 분사구문 3단계 변환 공식은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. 접속사+주어+동사 ➔ V-ing 변환, With + 목적어 + 분사 부대상황 서술형의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1단계: 접속사 생략 (의미 강조 시 남겨둘 수 있음)\n2단계: 주절 주어와 같으면 부사절 주어 생략\n3단계: 동사를 현재분사(V-ing)로 변환 (시제가 앞서면 having p.p.)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -33277,14 +34277,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "부정문일 때 Not/Never는 반드시 분사 맨 앞에 위치! (Not knowing what to do)"
               }
             ],
+            "trap": "부정문일 때 Not/Never는 반드시 분사 맨 앞에 위치! (Not knowing what to do)",
             "quizLink": "3단계 실전 퀴즈에서 [부사절 ➔ 분사구문 3단계 변환 공식] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "with + 목적어 + 분사 (부대상황 서술형)",
-            "formula": "with + [목적어] + [V-ing(능동)] / [p.p.(수동)] : ~한 채로, ~하면서",
-            "example": "with his arms crossed (팔짱을 낀 채로 - 팔은 꼬아진 것이므로 p.p.)\nwith the dog following her (개가 그녀를 따라오면서 - 개가 능동적으로 따르므로 V-ing)",
-            "trap": "신체 부위(눈, 다리, 팔)가 동작을 당하는 관계일 때는 반드시 과거분사(p.p.)를 사용!",
             "desc": "with + 목적어 + 분사 (부대상황 서술형)은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. 접속사+주어+동사 ➔ V-ing 변환, With + 목적어 + 분사 부대상황 서술형의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "with + [목적어] + [V-ing(능동)] / [p.p.(수동)] : ~한 채로, ~하면서",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -33318,6 +34317,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "신체 부위(눈, 다리, 팔)가 동작을 당하는 관계일 때는 반드시 과거분사(p.p.)를 사용!"
               }
             ],
+            "trap": "신체 부위(눈, 다리, 팔)가 동작을 당하는 관계일 때는 반드시 과거분사(p.p.)를 사용!",
             "quizLink": "3단계 실전 퀴즈에서 [with + 목적어 + 분사 (부대상황 서술형)] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -33453,10 +34453,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "'~이 없다면' 4대 동의어 영작 공식",
-            "formula": "1. If it were not for [명사]\n2. Were it not for [명사] (if 생략 도치)\n3. Without [명사]\n4. But for [명사]",
-            "example": "If it were not for water, we could not survive.\n= Were it not for water, we could not survive.\n= Without water, we could not survive.",
-            "trap": "과거 사실 반대(~이 없었더라면)는 'If it had not been for' ➔ 'Had it not been for'로 시제 변화!",
             "desc": "'~이 없다면' 4대 동의어 영작 공식은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. If it were not for ~ ➔ Were it not for / Without / But for 영작 공식 완벽 마스터의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1. If it were not for [명사]\n2. Were it not for [명사] (if 생략 도치)\n3. Without [명사]\n4. But for [명사]",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -33490,14 +34488,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "과거 사실 반대(~이 없었더라면)는 'If it had not been for' ➔ 'Had it not been for'로 시제 변화!"
               }
             ],
+            "trap": "과거 사실 반대(~이 없었더라면)는 'If it had not been for' ➔ 'Had it not been for'로 시제 변화!",
             "quizLink": "3단계 실전 퀴즈에서 ['~이 없다면' 4대 동의어 영작 공식] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "가정법 if 생략 시 도치 규칙",
-            "formula": "if가 생략되면 주어와 조동사/be동사의 위치가 뒤바뀜!\n• If I were you ➔ Were I you\n• If he had studied ➔ Had he studied\n• If you should need help ➔ Should you need help",
-            "example": "Had I known the truth, I would have told you.",
-            "trap": "도치되었을 때 의문문이 아니므로 문장 끝에 물음표(?)를 붙이지 않도록 주의!",
             "desc": "가정법 if 생략 시 도치 규칙은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. If it were not for ~ ➔ Were it not for / Without / But for 영작 공식 완벽 마스터의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "if가 생략되면 주어와 조동사/be동사의 위치가 뒤바뀜!\n• If I were you ➔ Were I you\n• If he had studied ➔ Had he studied\n• If you should need help ➔ Should you need help",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -33531,6 +34528,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "도치되었을 때 의문문이 아니므로 문장 끝에 물음표(?)를 붙이지 않도록 주의!"
               }
             ],
+            "trap": "도치되었을 때 의문문이 아니므로 문장 끝에 물음표(?)를 붙이지 않도록 주의!",
             "quizLink": "3단계 실전 퀴즈에서 [가정법 if 생략 시 도치 규칙] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -33666,10 +34664,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "so + 형용사/부사 + that vs such + a + 형용사 + 명사 + that",
-            "formula": "• so + [형용사/부사] + that + S + V : 너무 ~해서 ...하다\n• such + a/an + [형용사] + [명사] + that + S + V : 대단히 ~한 명사여서 ...하다",
-            "example": "He ran so fast that nobody could catch him.\nIt was such a hot day that we went swimming.",
-            "trap": "so a hot day (X) ➔ so hot a day (O) / such hot a day (X) ➔ such a hot day (O) 어순 낚시 주의!",
             "desc": "so + 형용사/부사 + that vs such + a + 형용사 + 명사 + that은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. 원인과 결과 구문 서술형, such ~ that 명사 어순 변환 및 서술형 영작의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• so + [형용사/부사] + that + S + V : 너무 ~해서 ...하다\n• such + a/an + [형용사] + [명사] + that + S + V : 대단히 ~한 명사여서 ...하다",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -33703,14 +34699,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "so a hot day (X) ➔ so hot a day (O) / such hot a day (X) ➔ such a hot day (O) 어순 낚시 주의!"
               }
             ],
+            "trap": "so a hot day (X) ➔ so hot a day (O) / such hot a day (X) ➔ such a hot day (O) 어순 낚시 주의!",
             "quizLink": "3단계 실전 퀴즈에서 [so + 형용사/부사 + that vs such + a + 형용사 + 명사 + that] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "so that 붙어있을 때 (목적: ~하기 위하여)",
-            "formula": "S + V + so that + S + can/may + V : ~하기 위해서 (= in order that)",
-            "example": "I woke up early so that I could catch the first train.",
-            "trap": "so와 that이 떨어져 있으면 '원인/결과(너무~해서)', 붙어있으면 '목적(~하기 위해')!",
             "desc": "so that 붙어있을 때 (목적: ~하기 위하여)은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. 원인과 결과 구문 서술형, such ~ that 명사 어순 변환 및 서술형 영작의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "S + V + so that + S + can/may + V : ~하기 위해서 (= in order that)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -33744,6 +34739,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "so와 that이 떨어져 있으면 '원인/결과(너무~해서)', 붙어있으면 '목적(~하기 위해')!"
               }
             ],
+            "trap": "so와 that이 떨어져 있으면 '원인/결과(너무~해서)', 붙어있으면 '목적(~하기 위해')!",
             "quizLink": "3단계 실전 퀴즈에서 [so that 붙어있을 때 (목적: ~하기 위하여)] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -33879,10 +34875,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "사역동사(make, have, let)의 목적격 보어",
-            "formula": "• 목적어와 능동 관계 ➔ [동사원형 (Root)]\n• 목적어와 수동 관계 ➔ [과거분사 (p.p.)]",
-            "example": "My mom made me clean my room. (능동: clean)\nI had my bicycle repaired yesterday. (수동: repaired - 자전거는 수리당함)",
-            "trap": "사역동사라고 무조건 동사원형을 쓰면 100% 감점! 목적어가 동작을 당하면 무조건 p.p.!",
             "desc": "사역동사(make, have, let)의 목적격 보어은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. make/have/let + O + 동사원형, see/hear/feel + O + V-ing/p.p. 서술형 조건 영작의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• 목적어와 능동 관계 ➔ [동사원형 (Root)]\n• 목적어와 수동 관계 ➔ [과거분사 (p.p.)]",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -33916,14 +34910,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "사역동사라고 무조건 동사원형을 쓰면 100% 감점! 목적어가 동작을 당하면 무조건 p.p.!"
               }
             ],
+            "trap": "사역동사라고 무조건 동사원형을 쓰면 100% 감점! 목적어가 동작을 당하면 무조건 p.p.!",
             "quizLink": "3단계 실전 퀴즈에서 [사역동사(make, have, let)의 목적격 보어] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "지각동사(see, watch, hear, feel, notice)의 목적격 보어",
-            "formula": "• 능동 동작 진행 중 ➔ [현재분사 (V-ing)] 또는 [동사원형]\n• 수동 동작 ➔ [과거분사 (p.p.)]",
-            "example": "I heard someone calling my name. (calling / call)\nI heard my name called in the crowd. (called - 내 이름은 불려짐)",
-            "trap": "지각동사 목적격 보어 자리에는 절대로 to부정사를 쓸 수 없습니다!",
             "desc": "지각동사(see, watch, hear, feel, notice)의 목적격 보어은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. make/have/let + O + 동사원형, see/hear/feel + O + V-ing/p.p. 서술형 조건 영작의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• 능동 동작 진행 중 ➔ [현재분사 (V-ing)] 또는 [동사원형]\n• 수동 동작 ➔ [과거분사 (p.p.)]",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -33957,6 +34950,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "지각동사 목적격 보어 자리에는 절대로 to부정사를 쓸 수 없습니다!"
               }
             ],
+            "trap": "지각동사 목적격 보어 자리에는 절대로 to부정사를 쓸 수 없습니다!",
             "quizLink": "3단계 실전 퀴즈에서 [지각동사(see, watch, hear, feel, notice)의 목적격 보어] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -34092,10 +35086,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "부정어구 도치 공식 (의문문 어순과 100% 동일)",
-            "formula": "부정어 (Never, Rarely, Seldom, Little, Hardly, Scarcely, Not only) + [조동사/be/do] + [주어] + [동사원형] ...",
-            "example": "I have never seen such a sunset. ➔ Never have I seen such a sunset.\nHe little dreamed that he would win. ➔ Little did he dream that he would win.",
-            "trap": "일반동사일 때 do/does/did를 주어 앞으로 보내야 하는데, 동사 자체를 앞으로 보내는 실수 주의!",
             "desc": "부정어구 도치 공식 (의문문 어순과 100% 동일)은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. Never/Hardly/Little + 조동사/be/do + S + V 도치 영작 서술형 완벽 대비의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "부정어 (Never, Rarely, Seldom, Little, Hardly, Scarcely, Not only) + [조동사/be/do] + [주어] + [동사원형] ...",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -34129,14 +35121,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "일반동사일 때 do/does/did를 주어 앞으로 보내야 하는데, 동사 자체를 앞으로 보내는 실수 주의!"
               }
             ],
+            "trap": "일반동사일 때 do/does/did를 주어 앞으로 보내야 하는데, 동사 자체를 앞으로 보내는 실수 주의!",
             "quizLink": "3단계 실전 퀴즈에서 [부정어구 도치 공식 (의문문 어순과 100% 동일)] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "장소 부사구 도치 공식",
-            "formula": "장소 부사구 + [동사] + [주어] (단, 주어가 대명사이면 도치 안 됨: 부사구 + 대명사주어 + 동사)",
-            "example": "On the hill stands a white castle. (명사 주어 ➔ 도치)\nHere comes the bus. (명사 주어) vs Here it comes. (대명사 주어 it ➔ 도치 안 됨)",
-            "trap": "주어가 대명사일 때 Here comes it(X)이라고 도치하는 실수 주의!",
             "desc": "장소 부사구 도치 공식은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. Never/Hardly/Little + 조동사/be/do + S + V 도치 영작 서술형 완벽 대비의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "장소 부사구 + [동사] + [주어] (단, 주어가 대명사이면 도치 안 됨: 부사구 + 대명사주어 + 동사)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -34170,6 +35161,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "주어가 대명사일 때 Here comes it(X)이라고 도치하는 실수 주의!"
               }
             ],
+            "trap": "주어가 대명사일 때 Here comes it(X)이라고 도치하는 실수 주의!",
             "quizLink": "3단계 실전 퀴즈에서 [장소 부사구 도치 공식] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -34305,10 +35297,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "서술형 0점 방지 3대 셀프 검독 체크리스트",
-            "formula": "1. [수일치]: 주어가 3인칭 단수인데 동사에 -s/-es를 빠뜨리지 않았는가?\n2. [시제일치]: 주절이 과거인데 종속절에 현재를 쓰거나, 불규칙 과거형 스펠링을 틀리지 않았는가?\n3. [관사 및 명사 수]: 셀 수 있는 단수 명사 앞에 a/an을 빠뜨리거나 복수 -s를 누락하지 않았는가?",
-            "example": "He write a letter yesterday. (X: 시제·철자 오류)\n➔ He wrote a letter yesterday. (O)",
-            "trap": "서술형 문제 풀이 후 마지막 10초 동안 반드시 '수·시제·관사' 3가지만 확인해도 5점 이상 방어!",
             "desc": "서술형 0점 방지 3대 셀프 검독 체크리스트은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. 3인칭 단수 -s 누락, 과거시제 불규칙 철자 변형, 관사 a/an 누락 등 단골 감점 요인 완벽 방어의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1. [수일치]: 주어가 3인칭 단수인데 동사에 -s/-es를 빠뜨리지 않았는가?\n2. [시제일치]: 주절이 과거인데 종속절에 현재를 쓰거나, 불규칙 과거형 스펠링을 틀리지 않았는가?\n3. [관사 및 명사 수]: 셀 수 있는 단수 명사 앞에 a/an을 빠뜨리거나 복수 -s를 누락하지 않았는가?",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -34342,14 +35332,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "서술형 문제 풀이 후 마지막 10초 동안 반드시 '수·시제·관사' 3가지만 확인해도 5점 이상 방어!"
               }
             ],
+            "trap": "서술형 문제 풀이 후 마지막 10초 동안 반드시 '수·시제·관사' 3가지만 확인해도 5점 이상 방어!",
             "quizLink": "3단계 실전 퀴즈에서 [서술형 0점 방지 3대 셀프 검독 체크리스트] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "혼동되는 불규칙 동사 3단 변화 주의보",
-            "formula": "• find - found - found (찾다) vs found - founded - founded (설립하다)\n• fall - fell - fallen (떨어지다) vs fell - felled - felled (쓰러뜨리다)\n• choose - chose - chosen / lose - lost - lost",
-            "example": "The company was founded in 1995.",
-            "trap": "과거형 철자 혼동으로 인한 서술형 감점 빈출!",
             "desc": "혼동되는 불규칙 동사 3단 변화 주의보은(는) 서술형 영작 영역에서 가장 빈출되는 핵심 문법입니다. 3인칭 단수 -s 누락, 과거시제 불규칙 철자 변형, 관사 a/an 누락 등 단골 감점 요인 완벽 방어의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• find - found - found (찾다) vs found - founded - founded (설립하다)\n• fall - fell - fallen (떨어지다) vs fell - felled - felled (쓰러뜨리다)\n• choose - chose - chosen / lose - lost - lost",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -34383,6 +35372,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "과거형 철자 혼동으로 인한 서술형 감점 빈출!"
               }
             ],
+            "trap": "과거형 철자 혼동으로 인한 서술형 감점 빈출!",
             "quizLink": "3단계 실전 퀴즈에서 [혼동되는 불규칙 동사 3단 변화 주의보] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -34515,22 +35505,46 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "title": "SP-33. 서술형 고득점: It is ~ that 강조구문 조건 영작",
         "formulaCards": [
           {
-            "formulaId": "sp_writing_u9_f1",
-            "tag": "It is ~ that 강조구문 조건 영작 공식",
-            "en": "It was precisely through tireless practice that she mastered the piano concerto.",
-            "ko": "그녀가 그 피아노 협주곡을 마스터한 것은 다름 아닌 지칠 줄 모르는 연습을 통해서였다.",
-            "point": "조건 영작에서 '특정 부사구, 전치사구, 주어, 목적어'를 강조하라는 조건이 주어지면 [It is/was + 강조 대상 + that + 나머지 문장] 구조를 정확히 조립해야 합니다. 시제에 따라 is와 was를 선택하세요.",
-            "oxCompare": "O: It was yesterday that I met him. / X: It is yesterday that I met him.",
+            "name": "It is ~ that 강조구문 조건 영작 공식",
+            "desc": "조건 영작에서 '특정 부사구, 전치사구, 주어, 목적어'를 강조하라는 조건이 주어지면 [It is/was + 강조 대상 + that + 나머지 문장] 구조를 정확히 조립해야 합니다. 시제에 따라 is와 was를 선택하세요.",
+            "formula": "It is ~ that 강조구문 조건 영작 공식",
+            "rules": [],
+            "examples": [
+              {
+                "en": "It was precisely through tireless practice that she mastered the piano concerto.",
+                "ko": "그녀가 그 피아노 협주곡을 마스터한 것은 다름 아닌 지칠 줄 모르는 연습을 통해서였다.",
+                "point": "조건 영작에서 '특정 부사구, 전치사구, 주어, 목적어'를 강조하라는 조건이 주어지면 [It is/was + 강조 대상 + that + 나머지 문장] 구조를 정확히 조립해야 합니다. 시제에 따라 is와 was를 선택하세요."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "It was yesterday that I met him.",
+                "wrong": "It is yesterday that I met him.",
+                "reason": "과거 사건을 강조할 때는 반드시 It was를 써야 하며, 강조 대상을 뺀 나머지 문장이 어순 왜곡 없이 이어져야 합니다."
+              }
+            ],
             "trap": "과거 사건을 강조할 때는 반드시 It was를 써야 하며, 강조 대상을 뺀 나머지 문장이 어순 왜곡 없이 이어져야 합니다.",
             "quizLink": "내신 서술형에서 단어 개수 제한 및 어형 변화 조건으로 단골 출제됩니다."
           },
           {
-            "formulaId": "sp_writing_u9_f2",
-            "tag": "not until 구문의 It was ~ that 전환",
-            "en": "It was not until the sun rose that the lost travelers found the path.",
-            "ko": "해가 뜨고 나서야 비로소 길을 잃은 여행자들은 길을 찾았다.",
-            "point": "'not until ...' 구문은 [It was not until 시간부사구/절 that + 주어 + 과거동사] 형태로 전환되어 서술형 킬러로 출제됩니다. that절 안에서는 부정어가 사라지고 긍정 평서문 어순이 됨에 유의하세요.",
-            "oxCompare": "O: It was not until dawn that he arrived. / X: It was not until dawn that he didn't arrive.",
+            "name": "not until 구문의 It was ~ that 전환",
+            "desc": "'not until ...' 구문은 [It was not until 시간부사구/절 that + 주어 + 과거동사] 형태로 전환되어 서술형 킬러로 출제됩니다. that절 안에서는 부정어가 사라지고 긍정 평서문 어순이 됨에 유의하세요.",
+            "formula": "not until 구문의 It was ~ that 전환",
+            "rules": [],
+            "examples": [
+              {
+                "en": "It was not until the sun rose that the lost travelers found the path.",
+                "ko": "해가 뜨고 나서야 비로소 길을 잃은 여행자들은 길을 찾았다.",
+                "point": "'not until ...' 구문은 [It was not until 시간부사구/절 that + 주어 + 과거동사] 형태로 전환되어 서술형 킬러로 출제됩니다. that절 안에서는 부정어가 사라지고 긍정 평서문 어순이 됨에 유의하세요."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "It was not until dawn that he arrived.",
+                "wrong": "It was not until dawn that he didn't arrive.",
+                "reason": "that절 안에 didn't나 not을 중복하여 쓰지 않도록 각별히 주의해야 합니다."
+              }
+            ],
             "trap": "that절 안에 didn't나 not을 중복하여 쓰지 않도록 각별히 주의해야 합니다.",
             "quizLink": "고교 내신 1등급 서술형 변별력 문항 1순위입니다."
           }
@@ -34663,22 +35677,46 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "title": "SP-34. 서술형 실전: 혼합가정법 & without 대용어구 조건 영작",
         "formulaCards": [
           {
-            "formulaId": "sp_writing_u10_f1",
-            "tag": "Without / But for 가정구문 4단 변신 공식",
-            "en": "Without your timely guidance, I could not have succeeded in this venture.",
-            "ko": "당신의 시의적절한 지도가 없었더라면, 나는 이 벤처 사업에서 성공할 수 없었을 것이다.",
-            "point": "과거 사실의 반대: Without = But for = If it had not been for = Had it not been for + 명사, 주어 + would/could have p.p. / 현재 사실의 반대: Without = But for = If it were not for = Were it not for + 명사, 주어 + would/could + 동사원형.",
-            "oxCompare": "O: Had it not been for the rain, we would have gone. / X: Had it not been the rain, we would have gone.",
+            "name": "Without / But for 가정구문 4단 변신 공식",
+            "desc": "과거 사실의 반대: Without = But for = If it had not been for = Had it not been for + 명사, 주어 + would/could have p.p. / 현재 사실의 반대: Without = But for = If it were not for = Were it not for + 명사, 주어 + would/could + 동사원형.",
+            "formula": "Without / But for 가정구문 4단 변신 공식",
+            "rules": [],
+            "examples": [
+              {
+                "en": "Without your timely guidance, I could not have succeeded in this venture.",
+                "ko": "당신의 시의적절한 지도가 없었더라면, 나는 이 벤처 사업에서 성공할 수 없었을 것이다.",
+                "point": "과거 사실의 반대: Without = But for = If it had not been for = Had it not been for + 명사, 주어 + would/could have p.p. / 현재 사실의 반대: Without = But for = If it were not for = Were it not for + 명사, 주어 + would/could + 동사원형."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "Had it not been for the rain, we would have gone.",
+                "wrong": "Had it not been the rain, we would have gone.",
+                "reason": "if 생략 도치 형태인 'Had it not been for'와 'Were it not for'에서 for를 빠뜨리지 않도록 철저히 검증해야 합니다."
+              }
+            ],
             "trap": "if 생략 도치 형태인 'Had it not been for'와 'Were it not for'에서 for를 빠뜨리지 않도록 철저히 검증해야 합니다.",
             "quizLink": "내신 서술형 조건 영작에서 단어 수 및 if 생략 조건으로 100% 출제됩니다."
           },
           {
-            "formulaId": "sp_writing_u10_f2",
-            "tag": "혼합가정법 (과거 조건 ➔ 현재 결과) 시간단서 매칭",
-            "en": "If she had taken the doctor's advice then, she would be healthy now.",
-            "ko": "그녀가 당시에 의사의 조언을 따랐더라면, 그녀는 지금 건강할 텐데.",
-            "point": "조건절에는 과거 사실의 반대(If + S + had p.p. / then, yesterday 등의 과거 단서), 주절에는 현재 사실의 반대(S + would/could + 동사원형 / now, today 등의 현재 단서)가 짝을 이룹니다.",
-            "oxCompare": "O: If I had studied harder then, I would have a better job now. / X: If I had studied harder then, I would have had a better job now.",
+            "name": "혼합가정법 (과거 조건 ➔ 현재 결과) 시간단서 매칭",
+            "desc": "조건절에는 과거 사실의 반대(If + S + had p.p. / then, yesterday 등의 과거 단서), 주절에는 현재 사실의 반대(S + would/could + 동사원형 / now, today 등의 현재 단서)가 짝을 이룹니다.",
+            "formula": "혼합가정법 (과거 조건 ➔ 현재 결과) 시간단서 매칭",
+            "rules": [],
+            "examples": [
+              {
+                "en": "If she had taken the doctor's advice then, she would be healthy now.",
+                "ko": "그녀가 당시에 의사의 조언을 따랐더라면, 그녀는 지금 건강할 텐데.",
+                "point": "조건절에는 과거 사실의 반대(If + S + had p.p. / then, yesterday 등의 과거 단서), 주절에는 현재 사실의 반대(S + would/could + 동사원형 / now, today 등의 현재 단서)가 짝을 이룹니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "If I had studied harder then, I would have a better job now.",
+                "wrong": "If I had studied harder then, I would have had a better job now.",
+                "reason": "주절 끝에 있는 now를 간과하고 기계적으로 would have p.p.를 쓰면 서술형 전면 감점입니다."
+              }
+            ],
             "trap": "주절 끝에 있는 now를 간과하고 기계적으로 would have p.p.를 쓰면 서술형 전면 감점입니다.",
             "quizLink": "조건문에 시간 부사 'then'과 'now'가 동시에 보이면 무조건 혼합가정법입니다."
           }
@@ -34828,10 +35866,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "수능 29번 1순위: '동사 자리 vs 준동사 자리'",
-            "formula": "문장의 본동사 개수 = [접속사/관계사의 개수 + 1]\n접속사가 없으면 문장에 본동사는 무조건 1개여야 함!",
-            "example": "The scientist, along with his assistants, [discovering / discovered] a new vaccine. (본동사가 없으므로 discovered가 정답)",
-            "trap": "주어와 동사 사이에 긴 수식어구(전치사구, 분사구, 관계사절)를 넣어 본동사를 V-ing로 위장하는 출제 함정 1위!",
             "desc": "수능 29번 1순위: '동사 자리 vs 준동사 자리'은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 역대 수능 29번 출제 1위! 한 문장에 접속사 없이 본동사는 오직 1개! 진짜 동사 자리 찾기의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "문장의 본동사 개수 = [접속사/관계사의 개수 + 1]\n접속사가 없으면 문장에 본동사는 무조건 1개여야 함!",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -34865,14 +35901,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "주어와 동사 사이에 긴 수식어구(전치사구, 분사구, 관계사절)를 넣어 본동사를 V-ing로 위장하는 출제 함정 1위!"
               }
             ],
+            "trap": "주어와 동사 사이에 긴 수식어구(전치사구, 분사구, 관계사절)를 넣어 본동사를 V-ing로 위장하는 출제 함정 1위!",
             "quizLink": "3단계 실전 퀴즈에서 [수능 29번 1순위: '동사 자리 vs 준동사 자리'] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "3초 컷 판별 프로세스",
-            "formula": "1. 밑줄 친 단어가 동사/준동사 형태인지 확인\n2. 문장 맨 앞부터 주어를 찾고 수식어구 괄호 묶기 ( ) \n3. 문장에 진짜 본동사가 이미 존재하는지 확인",
-            "example": "The books (written by the famous author) [was / were] translated into 20 languages.",
-            "trap": "해석으로 풀려고 하지 말고, 문장 구조에서 동사의 존재 여부를 구조적으로 판별할 것!",
             "desc": "3초 컷 판별 프로세스은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 역대 수능 29번 출제 1위! 한 문장에 접속사 없이 본동사는 오직 1개! 진짜 동사 자리 찾기의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1. 밑줄 친 단어가 동사/준동사 형태인지 확인\n2. 문장 맨 앞부터 주어를 찾고 수식어구 괄호 묶기 ( ) \n3. 문장에 진짜 본동사가 이미 존재하는지 확인",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -34906,6 +35941,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "해석으로 풀려고 하지 말고, 문장 구조에서 동사의 존재 여부를 구조적으로 판별할 것!"
               }
             ],
+            "trap": "해석으로 풀려고 하지 말고, 문장 구조에서 동사의 존재 여부를 구조적으로 판별할 것!",
             "quizLink": "3단계 실전 퀴즈에서 [3초 컷 판별 프로세스] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -35041,10 +36077,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "that vs what 3초 판별 알고리즘",
-            "formula": "1단계: 앞을 본다 (선행사 명사가 있는가?)\n  • 선행사 있음 ➔ [that 또는 which]\n  • 선행사 없음 ➔ 2단계로 이동\n2단계: 뒤를 본다 (문장이 완전한가?)\n  • 뒤가 완전 ➔ 접속사 [that]\n  • 뒤가 불완전 ➔ 관계대명사 [what] (~하는 것)",
-            "example": "I know [that] she is honest. (선행사X, 뒤 완전 ➔ 접속사 that)\nI know [what] she likes. (선행사X, likes의 목적어 빠짐 ➔ what)",
-            "trap": "what 앞에는 절대 선행사(명사)가 올 수 없음! (what 자체가 the thing which를 포함하기 때문)",
             "desc": "that vs what 3초 판별 알고리즘은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 뒤 문장의 완전/불완전 여부와 선행사 유무로 3초 만에 답 고르는 수능 29번 단골 킬러의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1단계: 앞을 본다 (선행사 명사가 있는가?)\n  • 선행사 있음 ➔ [that 또는 which]\n  • 선행사 없음 ➔ 2단계로 이동\n2단계: 뒤를 본다 (문장이 완전한가?)\n  • 뒤가 완전 ➔ 접속사 [that]\n  • 뒤가 불완전 ➔ 관계대명사 [what] (~하는 것)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -35078,14 +36112,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "what 앞에는 절대 선행사(명사)가 올 수 없음! (what 자체가 the thing which를 포함하기 때문)"
               }
             ],
+            "trap": "what 앞에는 절대 선행사(명사)가 올 수 없음! (what 자체가 the thing which를 포함하기 때문)",
             "quizLink": "3단계 실전 퀴즈에서 [that vs what 3초 판별 알고리즘] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "동격의 that vs 관계대명사 that",
-            "formula": "• 동격 that : 앞 명사(fact, idea, news, evidence) + 뒤 [완전한 문장]\n• 관대 that : 앞 명사(선행사) + 뒤 [주어나 목적어 빠진 불완전한 문장]",
-            "example": "the news that he died (동격 that: 뒤 완전)\nthe news that he heard (관계대명사 that: heard의 목적어 빠짐)",
-            "trap": "추상명사 뒤의 that이 동격인지 관계사인지 뒤 문장의 완전성으로 판별할 것!",
             "desc": "동격의 that vs 관계대명사 that은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 뒤 문장의 완전/불완전 여부와 선행사 유무로 3초 만에 답 고르는 수능 29번 단골 킬러의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• 동격 that : 앞 명사(fact, idea, news, evidence) + 뒤 [완전한 문장]\n• 관대 that : 앞 명사(선행사) + 뒤 [주어나 목적어 빠진 불완전한 문장]",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -35119,6 +36152,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "추상명사 뒤의 that이 동격인지 관계사인지 뒤 문장의 완전성으로 판별할 것!"
               }
             ],
+            "trap": "추상명사 뒤의 that이 동격인지 관계사인지 뒤 문장의 완전성으로 판별할 것!",
             "quizLink": "3단계 실전 퀴즈에서 [동격의 that vs 관계대명사 that] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -35254,10 +36288,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "분사의 능동 vs 수동 3초 판별 공식",
-            "formula": "1. 수식받는 [명사]를 찾는다.\n2. 그 명사가 직접 행동을 하는 주체인가? ➔ [V-ing (현재분사)]\n3. 그 명사가 행동을 당하는 대상인가? ➔ [p.p. (과거분사)]",
-            "example": "falling leaves (떨어지고 있는 나뭇잎 - 능동·진행)\nfallen leaves (이미 다 떨어진 나뭇잎 - 완료·수동)\nthe boy (inviting / invited) to the party ➔ 초대받은 소년이므로 invited!",
-            "trap": "타동사의 분사 뒤에 목적어가 남아있으면 능동(V-ing), 목적어가 없으면 수동(p.p.)!",
             "desc": "분사의 능동 vs 수동 3초 판별 공식은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 수식받는 명사/주어와의 의미상 관계 및 뒤따르는 목적어 유무로 태를 초고속 판별하는 비법의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1. 수식받는 [명사]를 찾는다.\n2. 그 명사가 직접 행동을 하는 주체인가? ➔ [V-ing (현재분사)]\n3. 그 명사가 행동을 당하는 대상인가? ➔ [p.p. (과거분사)]",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -35291,14 +36323,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "타동사의 분사 뒤에 목적어가 남아있으면 능동(V-ing), 목적어가 없으면 수동(p.p.)!"
               }
             ],
+            "trap": "타동사의 분사 뒤에 목적어가 남아있으면 능동(V-ing), 목적어가 없으면 수동(p.p.)!",
             "quizLink": "3단계 실전 퀴즈에서 [분사의 능동 vs 수동 3초 판별 공식] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "감정 유발 분사 킬러 공식",
-            "formula": "• 사람 주어/명사 ➔ 감정을 느낌 ➔ [-ed (p.p.)] (I am interested, bored, excited)\n• 사물 주어/명사 ➔ 감정을 유발함 ➔ [-ing] (The movie is interesting, boring, exciting)",
-            "example": "He was disappointing with the result. (X) ➔ He was disappointed with the result. (O)",
-            "trap": "사물이 주어일 때 -ed를 쓰거나, 사람이 감정을 느낄 때 -ing를 쓰는 감정 분사 낚시 주의!",
             "desc": "감정 유발 분사 킬러 공식은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 수식받는 명사/주어와의 의미상 관계 및 뒤따르는 목적어 유무로 태를 초고속 판별하는 비법의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• 사람 주어/명사 ➔ 감정을 느낌 ➔ [-ed (p.p.)] (I am interested, bored, excited)\n• 사물 주어/명사 ➔ 감정을 유발함 ➔ [-ing] (The movie is interesting, boring, exciting)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -35332,6 +36363,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "사물이 주어일 때 -ed를 쓰거나, 사람이 감정을 느낄 때 -ing를 쓰는 감정 분사 낚시 주의!"
               }
             ],
+            "trap": "사물이 주어일 때 -ed를 쓰거나, 사람이 감정을 느낄 때 -ing를 쓰는 감정 분사 낚시 주의!",
             "quizLink": "3단계 실전 퀴즈에서 [감정 유발 분사 킬러 공식] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -35467,10 +36499,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "수능 단골 대명사 비교: that vs those",
-            "formula": "비교 대상의 반복을 피하기 위한 대명사:\n• 앞 명사가 단수 명사 ➔ [that of ...]\n• 앞 명사가 복수 명사 ➔ [those of ...]",
-            "example": "The climate of Korea is milder than [that] of Russia. (that = the climate 단수)\nThe ears of rabbits are longer than [those] of cats. (those = the ears 복수)",
-            "trap": "비교 구문에서 that 자리에 this를 쓰거나, those 자리에 these를 쓰면 무조건 오답!",
             "desc": "수능 단골 대명사 비교: that vs those은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 대명사가 대신 가리키는 대상(단수 vs 복수)을 정확히 추적하여 1초 만에 일치시키는 공식의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "비교 대상의 반복을 피하기 위한 대명사:\n• 앞 명사가 단수 명사 ➔ [that of ...]\n• 앞 명사가 복수 명사 ➔ [those of ...]",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -35504,14 +36534,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "비교 구문에서 that 자리에 this를 쓰거나, those 자리에 these를 쓰면 무조건 오답!"
               }
             ],
+            "trap": "비교 구문에서 that 자리에 this를 쓰거나, those 자리에 these를 쓰면 무조건 오답!",
             "quizLink": "3단계 실전 퀴즈에서 [수능 단골 대명사 비교: that vs those] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "대명사 it vs them 추적법",
-            "formula": "대명사에 밑줄이 그어져 있으면 반드시 해석을 통해 '그것이 가리키는 진짜 명사'를 앞 문장에서 찾아 단/복수를 대조할 것!",
-            "example": "Companies must listen to their customers and satisfy [their / its] needs.",
-            "trap": "소유격 대명사 its(단수) vs their(복수) 수일치도 수능 단골 킬러!",
             "desc": "대명사 it vs them 추적법은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 대명사가 대신 가리키는 대상(단수 vs 복수)을 정확히 추적하여 1초 만에 일치시키는 공식의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "대명사에 밑줄이 그어져 있으면 반드시 해석을 통해 '그것이 가리키는 진짜 명사'를 앞 문장에서 찾아 단/복수를 대조할 것!",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -35545,6 +36574,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "소유격 대명사 its(단수) vs their(복수) 수일치도 수능 단골 킬러!"
               }
             ],
+            "trap": "소유격 대명사 its(단수) vs their(복수) 수일치도 수능 단골 킬러!",
             "quizLink": "3단계 실전 퀴즈에서 [대명사 it vs them 추적법] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -35680,10 +36710,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "보어 자리는 형용사, 수식어 자리는 부사!",
-            "formula": "• 주어 + 불완전동사(remain, stay, keep, look, feel) + [형용사 보어]\n• 주어 + 동사 + 목적어 + [형용사 목적격보어] (make, keep, leave, find)",
-            "example": "He kept the room warm. (O: 방을 따뜻하게 유지했다)\nHe kept the room warmly. (X: 우리말 해석이 '~하게'여도 부사 불가!)",
-            "trap": "우리말 해석으로 풀면 '~하게'로 번역되어 부사(-ly)를 고르기 쉬우므로, 문장 성분이 '보어'인지 확인 필수!",
             "desc": "보어 자리는 형용사, 수식어 자리는 부사!은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 2형식/5형식 보어 자리에는 절대 부사가 올 수 없다! 형용사 vs 부사 판별법의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• 주어 + 불완전동사(remain, stay, keep, look, feel) + [형용사 보어]\n• 주어 + 동사 + 목적어 + [형용사 목적격보어] (make, keep, leave, find)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -35717,14 +36745,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "우리말 해석으로 풀면 '~하게'로 번역되어 부사(-ly)를 고르기 쉬우므로, 문장 성분이 '보어'인지 확인 필수!"
               }
             ],
+            "trap": "우리말 해석으로 풀면 '~하게'로 번역되어 부사(-ly)를 고르기 쉬우므로, 문장 성분이 '보어'인지 확인 필수!",
             "quizLink": "3단계 실전 퀴즈에서 [보어 자리는 형용사, 수식어 자리는 부사!] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "형용사와 부사 형태가 같거나 뜻이 달라지는 어휘",
-            "formula": "• hard (열심히, 단단한) vs hardly (거의 ~않다)\n• late (늦게, 늦은) vs lately (최근에)\n• high (높게, 높은) vs highly (매우, 대단히)\n• near (가까이) vs nearly (거의)",
-            "example": "He worked hardly. (X: 그는 거의 일하지 않았다) ➔ He worked hard. (O: 열심히 일했다)",
-            "trap": "형태에 -ly가 붙어 뜻이 완전히 달라지는 특수 부사 4총사 낚시 빈출!",
             "desc": "형용사와 부사 형태가 같거나 뜻이 달라지는 어휘은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. 2형식/5형식 보어 자리에는 절대 부사가 올 수 없다! 형용사 vs 부사 판별법의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• hard (열심히, 단단한) vs hardly (거의 ~않다)\n• late (늦게, 늦은) vs lately (최근에)\n• high (높게, 높은) vs highly (매우, 대단히)\n• near (가까이) vs nearly (거의)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -35758,6 +36785,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "형태에 -ly가 붙어 뜻이 완전히 달라지는 특수 부사 4총사 낚시 빈출!"
               }
             ],
+            "trap": "형태에 -ly가 붙어 뜻이 완전히 달라지는 특수 부사 4총사 낚시 빈출!",
             "quizLink": "3단계 실전 퀴즈에서 [형용사와 부사 형태가 같거나 뜻이 달라지는 어휘] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -35893,10 +36921,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "등위접속사(and/but/or)의 저울 원리",
-            "formula": "A and B 구조에서 A와 B는 문법적으로 대등한 형태여야 함!\n• to V and (to) V\n• V-ing and V-ing\n• 형용사 and 형용사 / 명사 and 명사",
-            "example": "He likes swimming, hiking, and to run. (X) ➔ swimming, hiking, and running. (O)",
-            "trap": "and 뒤에 있는 단어의 형태만 보지 말고, 해석을 통해 '누구와 짝을 이루는지' 짝꿍(A)을 반드시 찾을 것!",
             "desc": "등위접속사(and/but/or)의 저울 원리은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. and/but/or 뒤의 형태는 해석상 짝을 이루는 어구와 문법적 형태 일치! 수능 29번 단골의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "A and B 구조에서 A와 B는 문법적으로 대등한 형태여야 함!\n• to V and (to) V\n• V-ing and V-ing\n• 형용사 and 형용사 / 명사 and 명사",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -35930,14 +36956,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "and 뒤에 있는 단어의 형태만 보지 말고, 해석을 통해 '누구와 짝을 이루는지' 짝꿍(A)을 반드시 찾을 것!"
               }
             ],
+            "trap": "and 뒤에 있는 단어의 형태만 보지 말고, 해석을 통해 '누구와 짝을 이루는지' 짝꿍(A)을 반드시 찾을 것!",
             "quizLink": "3단계 실전 퀴즈에서 [등위접속사(and/but/or)의 저울 원리] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "상관접속사의 병렬 구조",
-            "formula": "• not only A but also B\n• either A or B / neither A nor B\n• both A and B\n• not A but B",
-            "example": "She decided not only to study abroad but also to learn a new language.",
-            "trap": "A 자리에 to부정사가 오면 B 자리에도 to부정사(또는 동사원형)가 와야 함!",
             "desc": "상관접속사의 병렬 구조은(는) 수능 킬러 영역에서 가장 빈출되는 핵심 문법입니다. and/but/or 뒤의 형태는 해석상 짝을 이루는 어구와 문법적 형태 일치! 수능 29번 단골의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• not only A but also B\n• either A or B / neither A nor B\n• both A and B\n• not A but B",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -35971,6 +36996,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "A 자리에 to부정사가 오면 B 자리에도 to부정사(또는 동사원형)가 와야 함!"
               }
             ],
+            "trap": "A 자리에 to부정사가 오면 B 자리에도 to부정사(또는 동사원형)가 와야 함!",
             "quizLink": "3단계 실전 퀴즈에서 [상관접속사의 병렬 구조] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -36103,22 +37129,46 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "title": "SP-35. [공식 7] 대동사 판별 (be vs do vs 조동사)",
         "formulaCards": [
           {
-            "formulaId": "sp_csat_u7_f1",
-            "tag": "대동사(Pro-verb) 선택의 절대 법칙 (앞선 동사의 종류 확인)",
-            "en": "She works much harder than her colleagues do in the competitive firm.",
-            "ko": "그녀는 그 경쟁적인 회사에서 그녀의 동료들이 일하는 것보다 훨씬 더 열심히 일한다.",
-            "point": "앞 문장에 나온 동사의 반복을 피하기 위해 대신 쓰는 대동사는 (1) 일반동사 ➔ do / does / did, (2) be동사 ➔ be / am / are / is / was / were, (3) 조동사 ➔ 조동사 그대로 씁니다.",
-            "oxCompare": "O: Dogs hear sounds that humans do not. / X: Dogs hear sounds that humans are not.",
+            "name": "대동사(Pro-verb) 선택의 절대 법칙 (앞선 동사의 종류 확인)",
+            "desc": "앞 문장에 나온 동사의 반복을 피하기 위해 대신 쓰는 대동사는 (1) 일반동사 ➔ do / does / did, (2) be동사 ➔ be / am / are / is / was / were, (3) 조동사 ➔ 조동사 그대로 씁니다.",
+            "formula": "대동사(Pro-verb) 선택의 절대 법칙 (앞선 동사의 종류 확인)",
+            "rules": [],
+            "examples": [
+              {
+                "en": "She works much harder than her colleagues do in the competitive firm.",
+                "ko": "그녀는 그 경쟁적인 회사에서 그녀의 동료들이 일하는 것보다 훨씬 더 열심히 일한다.",
+                "point": "앞 문장에 나온 동사의 반복을 피하기 위해 대신 쓰는 대동사는 (1) 일반동사 ➔ do / does / did, (2) be동사 ➔ be / am / are / is / was / were, (3) 조동사 ➔ 조동사 그대로 씁니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "Dogs hear sounds that humans do not.",
+                "wrong": "Dogs hear sounds that humans are not.",
+                "reason": "비교구문(as ~ as, than)이나 So/Neither 도치 구문에서 앞에 나온 일반동사를 be동사로 받거나 그 반대로 쓰면 수능 29번 단골 오답입니다."
+              }
+            ],
             "trap": "비교구문(as ~ as, than)이나 So/Neither 도치 구문에서 앞에 나온 일반동사를 be동사로 받거나 그 반대로 쓰면 수능 29번 단골 오답입니다.",
             "quizLink": "앞 절에서 대신하고 있는 진짜 동사가 일반동사인지 be동사인지 반드시 확인하세요."
           },
           {
-            "formulaId": "sp_csat_u7_f2",
-            "tag": "비교 구문과 도치 속 대동사의 수일치",
-            "en": "Digital cameras process images much faster today than did traditional film cameras.",
-            "ko": "오늘날 디지털카메라는 전통적인 필름 카메라가 그랬던 것보다 훨씬 더 빠르게 이미지를 처리한다.",
-            "point": "비교급 than 뒤에서 '대동사 + 주어'로 도치될 때, 대동사의 수(단수/복수)와 시제(현재/과거)는 뒤에 나오는 주어와 앞선 기준 동사의 시제에 정확히 일치시켜야 합니다.",
-            "oxCompare": "O: He runs as fast as they do. / X: He runs as fast as they does.",
+            "name": "비교 구문과 도치 속 대동사의 수일치",
+            "desc": "비교급 than 뒤에서 '대동사 + 주어'로 도치될 때, 대동사의 수(단수/복수)와 시제(현재/과거)는 뒤에 나오는 주어와 앞선 기준 동사의 시제에 정확히 일치시켜야 합니다.",
+            "formula": "비교 구문과 도치 속 대동사의 수일치",
+            "rules": [],
+            "examples": [
+              {
+                "en": "Digital cameras process images much faster today than did traditional film cameras.",
+                "ko": "오늘날 디지털카메라는 전통적인 필름 카메라가 그랬던 것보다 훨씬 더 빠르게 이미지를 처리한다.",
+                "point": "비교급 than 뒤에서 '대동사 + 주어'로 도치될 때, 대동사의 수(단수/복수)와 시제(현재/과거)는 뒤에 나오는 주어와 앞선 기준 동사의 시제에 정확히 일치시켜야 합니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "He runs as fast as they do.",
+                "wrong": "He runs as fast as they does.",
+                "reason": "도치되었을 때 뒤에 오는 주어의 인칭과 수를 파악하지 못해 수일치 실수를 범하지 않도록 주의해야 합니다."
+              }
+            ],
             "trap": "도치되었을 때 뒤에 오는 주어의 인칭과 수를 파악하지 못해 수일치 실수를 범하지 않도록 주의해야 합니다.",
             "quizLink": "수능 29번 어법에서 매 2년마다 출제되는 킬러 공식입니다."
           }
@@ -36251,22 +37301,46 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "title": "SP-36. [공식 8] 전치사+관계대명사 vs 관계부사 뒷문장 판별",
         "formulaCards": [
           {
-            "formulaId": "sp_csat_u8_f1",
-            "tag": "완전한 절 공식 (전치사+관계대명사 = 관계부사)",
-            "en": "This is the conference room in which the peace treaty was signed.",
-            "ko": "이곳이 평화 조약이 체결된 회의실이다.",
-            "point": "in which, at which, with which, where, when, why 뒤에는 주어, 목적어, 보어가 모두 온전히 존재하는 '완전한 문장'이 옵니다. 반면 which 뒤에는 주어나 목적어가 빠진 '불완전한 문장'이 옵니다.",
-            "oxCompare": "O: The house where he lives is huge. / X: The house which he lives is huge.",
+            "name": "완전한 절 공식 (전치사+관계대명사 = 관계부사)",
+            "desc": "in which, at which, with which, where, when, why 뒤에는 주어, 목적어, 보어가 모두 온전히 존재하는 '완전한 문장'이 옵니다. 반면 which 뒤에는 주어나 목적어가 빠진 '불완전한 문장'이 옵니다.",
+            "formula": "완전한 절 공식 (전치사+관계대명사 = 관계부사)",
+            "rules": [],
+            "examples": [
+              {
+                "en": "This is the conference room in which the peace treaty was signed.",
+                "ko": "이곳이 평화 조약이 체결된 회의실이다.",
+                "point": "in which, at which, with which, where, when, why 뒤에는 주어, 목적어, 보어가 모두 온전히 존재하는 '완전한 문장'이 옵니다. 반면 which 뒤에는 주어나 목적어가 빠진 '불완전한 문장'이 옵니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "The house where he lives is huge.",
+                "wrong": "The house which he lives is huge.",
+                "reason": "live, stay, arrive, happen 등 완전자동사가 쓰인 절은 목적어가 필요 없으므로 그 자체로 완전한 절임을 간과하지 마세요."
+              }
+            ],
             "trap": "live, stay, arrive, happen 등 완전자동사가 쓰인 절은 목적어가 필요 없으므로 그 자체로 완전한 절임을 간과하지 마세요.",
             "quizLink": "수능 29번에서 자동사의 완전성을 파악하는 문제로 빈출됩니다."
           },
           {
-            "formulaId": "sp_csat_u8_f2",
-            "tag": "추상적 공간 선행사 뒤의 where / in which",
-            "en": "We reached a critical point where compromise was no longer possible.",
-            "ko": "우리는 타협이 더 이상 불가능한 중대한 지점에 도달했다.",
-            "point": "물리적 장소뿐만 아니라 point, situation, case, stage, environment, system 등 '추상적 상황/환경'을 나타내는 선행사 뒤에도 관계부사 where나 in which를 씁니다.",
-            "oxCompare": "O: In a situation where everyone disagrees, patience is vital. / X: In a situation which everyone disagrees, patience is vital.",
+            "name": "추상적 공간 선행사 뒤의 where / in which",
+            "desc": "물리적 장소뿐만 아니라 point, situation, case, stage, environment, system 등 '추상적 상황/환경'을 나타내는 선행사 뒤에도 관계부사 where나 in which를 씁니다.",
+            "formula": "추상적 공간 선행사 뒤의 where / in which",
+            "rules": [],
+            "examples": [
+              {
+                "en": "We reached a critical point where compromise was no longer possible.",
+                "ko": "우리는 타협이 더 이상 불가능한 중대한 지점에 도달했다.",
+                "point": "물리적 장소뿐만 아니라 point, situation, case, stage, environment, system 등 '추상적 상황/환경'을 나타내는 선행사 뒤에도 관계부사 where나 in which를 씁니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "In a situation where everyone disagrees, patience is vital.",
+                "wrong": "In a situation which everyone disagrees, patience is vital.",
+                "reason": "선행사가 물리적 장소가 아니라고 해서 무조건 which를 고르면 함정에 빠집니다."
+              }
+            ],
             "trap": "선행사가 물리적 장소가 아니라고 해서 무조건 which를 고르면 함정에 빠집니다.",
             "quizLink": "수능 및 평가원 고난도 지문에서 추상명사 + where 구문이 빈출됩니다."
           }
@@ -36399,22 +37473,46 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "title": "SP-37. [공식 9] 전치사 vs 접속사 (while vs during, because vs because of)",
         "formulaCards": [
           {
-            "formulaId": "sp_csat_u9_f1",
-            "tag": "접속사(뒤에 주어+동사) vs 전치사(뒤에 명사/명사구)",
-            "en": "While the professor was lecturing, students took thorough notes during the seminar.",
-            "ko": "교수가 강의하는 동안(접속사 While + S + V), 학생들은 세미나 동안(전치사 during + 명사) 철저히 필기했다.",
-            "point": "뜻이 같더라도 문법적 품사는 완전히 다릅니다: 접속사(because, although, while) + [주어 + 동사] vs 전치사(because of, despite, in spite of, during) + [명사 / 대명사 / 동명사구].",
-            "oxCompare": "O: Despite the heavy rain, we enjoyed the trip. / X: Although the heavy rain, we enjoyed the trip.",
+            "name": "접속사(뒤에 주어+동사) vs 전치사(뒤에 명사/명사구)",
+            "desc": "뜻이 같더라도 문법적 품사는 완전히 다릅니다: 접속사(because, although, while) + [주어 + 동사] vs 전치사(because of, despite, in spite of, during) + [명사 / 대명사 / 동명사구].",
+            "formula": "접속사(뒤에 주어+동사) vs 전치사(뒤에 명사/명사구)",
+            "rules": [],
+            "examples": [
+              {
+                "en": "While the professor was lecturing, students took thorough notes during the seminar.",
+                "ko": "교수가 강의하는 동안(접속사 While + S + V), 학생들은 세미나 동안(전치사 during + 명사) 철저히 필기했다.",
+                "point": "뜻이 같더라도 문법적 품사는 완전히 다릅니다: 접속사(because, although, while) + [주어 + 동사] vs 전치사(because of, despite, in spite of, during) + [명사 / 대명사 / 동명사구]."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "Despite the heavy rain, we enjoyed the trip.",
+                "wrong": "Although the heavy rain, we enjoyed the trip.",
+                "reason": "명사 뒤에 긴 수식어구(관계사절, 분사구)가 붙어 있어 겉보기에는 문장처럼 보이지만 실제로는 주어 역할을 하는 명사구에 불과한 전치사 자리 함정에 유의하세요."
+              }
+            ],
             "trap": "명사 뒤에 긴 수식어구(관계사절, 분사구)가 붙어 있어 겉보기에는 문장처럼 보이지만 실제로는 주어 역할을 하는 명사구에 불과한 전치사 자리 함정에 유의하세요.",
             "quizLink": "수능 29번 및 내신 밑줄 어법 1초 컷 필수 판별 문제입니다."
           },
           {
-            "formulaId": "sp_csat_u9_f2",
-            "tag": "during vs for vs while 구별",
-            "en": "She stayed in Paris for three months and visited museums during her stay.",
-            "ko": "그녀는 3개월 동안 파리에 머물렀고, 체류 기간 동안 박물관들을 방문했다.",
-            "point": "for + 숫자를 포함한 기간(for two weeks), during + 특정 사건/행사의 이름(during the vacation, during the concert), while + 주어+동사 / 분사(while studying).",
-            "oxCompare": "O: I slept for eight hours. / X: I slept during eight hours.",
+            "name": "during vs for vs while 구별",
+            "desc": "for + 숫자를 포함한 기간(for two weeks), during + 특정 사건/행사의 이름(during the vacation, during the concert), while + 주어+동사 / 분사(while studying).",
+            "formula": "during vs for vs while 구별",
+            "rules": [],
+            "examples": [
+              {
+                "en": "She stayed in Paris for three months and visited museums during her stay.",
+                "ko": "그녀는 3개월 동안 파리에 머물렀고, 체류 기간 동안 박물관들을 방문했다.",
+                "point": "for + 숫자를 포함한 기간(for two weeks), during + 특정 사건/행사의 이름(during the vacation, during the concert), while + 주어+동사 / 분사(while studying)."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "I slept for eight hours.",
+                "wrong": "I slept during eight hours.",
+                "reason": "숫자 기간 앞에 during을 쓰면 어법상 오답입니다."
+              }
+            ],
             "trap": "숫자 기간 앞에 during을 쓰면 어법상 오답입니다.",
             "quizLink": "기간을 나타내는 전치사와 접속사의 미세한 문법 차이를 정리하세요."
           }
@@ -36547,22 +37645,46 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "title": "SP-38. [공식 10] 평가원 빈출 29번 종합 실전 문제",
         "formulaCards": [
           {
-            "formulaId": "sp_csat_u10_f1",
-            "tag": "수능 어법 29번 3대 마스터 솔루션",
-            "en": "Mastering the fundamental grammatical principles enables students to solve any CSAT question with confidence.",
-            "ko": "근본적인 문법 원리를 마스터하는 것은 학생들이 자신감을 가지고 어떤 수능 문제라도 해결할 수 있게 해 준다.",
-            "point": "솔루션 1: 밑줄이 동사에 있으면 ➔ '본동사 vs 준동사' 확인 후 수일치/태 검증. 솔루션 2: 밑줄이 that/what/which에 있으면 ➔ '선행사 유무 + 뒷문장 완전성' 확인. 솔루션 3: 밑줄이 분사(-ing/-ed)에 있으면 ➔ 수식받는 명사와의 능동/수동 관계 검증.",
-            "oxCompare": "O: What we learn shapes who we become. / X: That we learn shapes who we become.",
+            "name": "수능 어법 29번 3대 마스터 솔루션",
+            "desc": "솔루션 1: 밑줄이 동사에 있으면 ➔ '본동사 vs 준동사' 확인 후 수일치/태 검증. 솔루션 2: 밑줄이 that/what/which에 있으면 ➔ '선행사 유무 + 뒷문장 완전성' 확인. 솔루션 3: 밑줄이 분사(-ing/-ed)에 있으면 ➔ 수식받는 명사와의 능동/수동 관계 검증.",
+            "formula": "수능 어법 29번 3대 마스터 솔루션",
+            "rules": [],
+            "examples": [
+              {
+                "en": "Mastering the fundamental grammatical principles enables students to solve any CSAT question with confidence.",
+                "ko": "근본적인 문법 원리를 마스터하는 것은 학생들이 자신감을 가지고 어떤 수능 문제라도 해결할 수 있게 해 준다.",
+                "point": "솔루션 1: 밑줄이 동사에 있으면 ➔ '본동사 vs 준동사' 확인 후 수일치/태 검증. 솔루션 2: 밑줄이 that/what/which에 있으면 ➔ '선행사 유무 + 뒷문장 완전성' 확인. 솔루션 3: 밑줄이 분사(-ing/-ed)에 있으면 ➔ 수식받는 명사와의 능동/수동 관계 검증."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "What we learn shapes who we become.",
+                "wrong": "That we learn shapes who we become.",
+                "reason": "단순한 직관이나 감에 의존하지 말고, 3대 솔루션 공식을 바탕으로 문법적 근거를 제시할 수 있어야 100% 정답에 도달합니다."
+              }
+            ],
             "trap": "단순한 직관이나 감에 의존하지 말고, 3대 솔루션 공식을 바탕으로 문법적 근거를 제시할 수 있어야 100% 정답에 도달합니다.",
             "quizLink": "수능 29번을 정복하는 궁극의 치트키입니다."
           },
           {
-            "formulaId": "sp_csat_u10_f2",
-            "tag": "매력적인 오답 함정 소거 기술",
-            "en": "The final obstacle to a perfect score is eliminated through meticulous structural analysis.",
-            "ko": "만점을 향한 마지막 장애물은 꼼꼼한 구조 분석을 통해 제거된다.",
-            "point": "긴 수식어구(삽입절, 관계사절, 전치사구, 분사구문)를 괄호로 묶어내면 복잡해 보이던 평가원 지문도 1~5형식의 단순한 뼈대로 압축됩니다. 문장의 뼈대(S + V + O/C)를 먼저 확정하세요.",
-            "oxCompare": "O: The books on the top shelf belong to him. / X: The books on the top shelf belongs to him.",
+            "name": "매력적인 오답 함정 소거 기술",
+            "desc": "긴 수식어구(삽입절, 관계사절, 전치사구, 분사구문)를 괄호로 묶어내면 복잡해 보이던 평가원 지문도 1~5형식의 단순한 뼈대로 압축됩니다. 문장의 뼈대(S + V + O/C)를 먼저 확정하세요.",
+            "formula": "매력적인 오답 함정 소거 기술",
+            "rules": [],
+            "examples": [
+              {
+                "en": "The final obstacle to a perfect score is eliminated through meticulous structural analysis.",
+                "ko": "만점을 향한 마지막 장애물은 꼼꼼한 구조 분석을 통해 제거된다.",
+                "point": "긴 수식어구(삽입절, 관계사절, 전치사구, 분사구문)를 괄호로 묶어내면 복잡해 보이던 평가원 지문도 1~5형식의 단순한 뼈대로 압축됩니다. 문장의 뼈대(S + V + O/C)를 먼저 확정하세요."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "The books on the top shelf belong to him.",
+                "wrong": "The books on the top shelf belongs to him.",
+                "reason": "주어 바로 앞에 있는 수식어구 명사의 수(단/복수)에 속아 수일치를 틀리지 않도록 주의해야 합니다."
+              }
+            ],
             "trap": "주어 바로 앞에 있는 수식어구 명사의 수(단/복수)에 속아 수일치를 틀리지 않도록 주의해야 합니다.",
             "quizLink": "평가원 29번 실전 모의테스트를 완벽하게 통과하세요."
           }
@@ -36712,10 +37834,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "to부정사 vs 동명사 목적어 암기 공식",
-            "formula": "• to부정사만 취함 (미래/계획/소망) : want, hope, wish, decide, plan, promise, refuse\n• 동명사만 취함 (과거/경험/중단/회피) : enjoy, finish, give up, avoid, mind, postpone, practice",
-            "example": "I decided to study harder. / She finished doing her homework.",
-            "trap": "enjoy to swim (X) ➔ enjoy swimming (O) / refuse helping (X) ➔ refuse to help (O)",
             "desc": "to부정사 vs 동명사 목적어 암기 공식은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. 미래·지향적(want/hope to) vs 과거·경험적(enjoy/finish -ing) & 둘 다 취할 때 뜻이 달라지는 동사의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• to부정사만 취함 (미래/계획/소망) : want, hope, wish, decide, plan, promise, refuse\n• 동명사만 취함 (과거/경험/중단/회피) : enjoy, finish, give up, avoid, mind, postpone, practice",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -36749,14 +37869,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "enjoy to swim (X) ➔ enjoy swimming (O) / refuse helping (X) ➔ refuse to help (O)"
               }
             ],
+            "trap": "enjoy to swim (X) ➔ enjoy swimming (O) / refuse helping (X) ➔ refuse to help (O)",
             "quizLink": "3단계 실전 퀴즈에서 [to부정사 vs 동명사 목적어 암기 공식] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "둘 다 취하지만 의미가 180도 달라지는 동사 4총사",
-            "formula": "• remember/forget + to V (미래: ~할 것을 기억/잊다)\n• remember/forget + V-ing (과거: ~했던 것을 기억/잊다)\n• stop + to V (~하기 위해 멈추다) vs stop + V-ing (~하던 것을 그만두다)\n• try + to V (~하려고 애쓰다/노력하다) vs try + V-ing (시험 삼아 한번 해보다)",
-            "example": "Remember to lock the door. (문 잠글 것을 기억해라)\nI remember locking the door. (문 잠갔던 것을 기억한다)",
-            "trap": "stop to smoke(담배 피우려고 멈추다) vs stop smoking(금연하다) 해석 혼동 주의!",
             "desc": "둘 다 취하지만 의미가 180도 달라지는 동사 4총사은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. 미래·지향적(want/hope to) vs 과거·경험적(enjoy/finish -ing) & 둘 다 취할 때 뜻이 달라지는 동사의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• remember/forget + to V (미래: ~할 것을 기억/잊다)\n• remember/forget + V-ing (과거: ~했던 것을 기억/잊다)\n• stop + to V (~하기 위해 멈추다) vs stop + V-ing (~하던 것을 그만두다)\n• try + to V (~하려고 애쓰다/노력하다) vs try + V-ing (시험 삼아 한번 해보다)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -36795,6 +37914,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "stop to smoke(담배 피우려고 멈추다) vs stop smoking(금연하다) 해석 혼동 주의!"
               }
             ],
+            "trap": "stop to smoke(담배 피우려고 멈추다) vs stop smoking(금연하다) 해석 혼동 주의!",
             "quizLink": "3단계 실전 퀴즈에서 [둘 다 취하지만 의미가 180도 달라지는 동사 4총사] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -36930,10 +38050,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "단순과거 시제와만 어울리는 '명백한 과거 시점 부사'",
-            "formula": "yesterday, ~ ago, in + 과거 연도(in 2015), last ~, when (의문사) 뒤에는\n절대로 현재완료(have p.p.)를 쓸 수 없고, 오직 [단순과거 시제]만 사용 가능!",
-            "example": "I have met him yesterday. (X) ➔ I met him yesterday. (O)\nWhen have you arrived? (X) ➔ When did you arrive? (O)",
-            "trap": "since(~이래로)는 현재완료와 찰떡궁합이지만, ago나 yesterday는 현재완료의 천적!",
             "desc": "단순과거 시제와만 어울리는 '명백한 과거 시점 부사'은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. 과거의 일이 현재까지 영향(have p.p.) vs 명백한 과거 시점 부사(yesterday/ago/in 2020)의 절대 규칙의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "yesterday, ~ ago, in + 과거 연도(in 2015), last ~, when (의문사) 뒤에는\n절대로 현재완료(have p.p.)를 쓸 수 없고, 오직 [단순과거 시제]만 사용 가능!",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -36967,14 +38085,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "since(~이래로)는 현재완료와 찰떡궁합이지만, ago나 yesterday는 현재완료의 천적!"
               }
             ],
+            "trap": "since(~이래로)는 현재완료와 찰떡궁합이지만, ago나 yesterday는 현재완료의 천적!",
             "quizLink": "3단계 실전 퀴즈에서 [단순과거 시제와만 어울리는 '명백한 과거 시점 부사'] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "have been to vs have gone to",
-            "formula": "• have been to [장소] : ~에 가본 적이 있다 (경험) / ~에 다녀왔다\n• have gone to [장소] : ~로 가버렸다 (결과: 지금 여기 없음)",
-            "example": "He has gone to Paris. (그는 파리로 가버려서 지금 여기에 없다)\nI have been to Paris twice. (나는 파리에 두 번 가본 적이 있다)",
-            "trap": "1인칭(I/We)이나 2인칭(You) 주어에는 have gone to를 쓸 수 없음! (내가 가버리고 여기 없다는 모순 발생)",
             "desc": "have been to vs have gone to은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. 과거의 일이 현재까지 영향(have p.p.) vs 명백한 과거 시점 부사(yesterday/ago/in 2020)의 절대 규칙의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• have been to [장소] : ~에 가본 적이 있다 (경험) / ~에 다녀왔다\n• have gone to [장소] : ~로 가버렸다 (결과: 지금 여기 없음)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -37008,6 +38125,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "1인칭(I/We)이나 2인칭(You) 주어에는 have gone to를 쓸 수 없음! (내가 가버리고 여기 없다는 모순 발생)"
               }
             ],
+            "trap": "1인칭(I/We)이나 2인칭(You) 주어에는 have gone to를 쓸 수 없음! (내가 가버리고 여기 없다는 모순 발생)",
             "quizLink": "3단계 실전 퀴즈에서 [have been to vs have gone to] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -37143,10 +38261,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "that의 3대 정체성 판별 공식",
-            "formula": "1. [관계대명사 that] : 앞 선행사 있음 + 뒤 [불완전한 문장] (주어나 목적어 빠짐)\n2. [명사절 접속사 that] : 앞 선행사 없음(동사 뒤) + 뒤 [완전한 문장] (~라는 것을)\n3. [동격의 접속사 that] : 앞 추상명사 있음 + 뒤 [완전한 문장] (~라는 내용의)",
-            "example": "• The book [that I bought] is good. (관대: bought의 목적어 없음)\n• I know [that she is kind]. (명사절 접속사: 뒤 완전)\n• The idea [that we should help others] is noble. (동격: 뒤 완전)",
-            "trap": "앞에 명사가 있다고 무조건 관계대명사라고 생각하지 말고, 뒤 문장의 완전성 확인 필수!",
             "desc": "that의 3대 정체성 판별 공식은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. 불완전 문장(관대) vs 완전 문장(접속사) vs 추상명사 뒤 완전 문장(동격) 완벽 구별의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1. [관계대명사 that] : 앞 선행사 있음 + 뒤 [불완전한 문장] (주어나 목적어 빠짐)\n2. [명사절 접속사 that] : 앞 선행사 없음(동사 뒤) + 뒤 [완전한 문장] (~라는 것을)\n3. [동격의 접속사 that] : 앞 추상명사 있음 + 뒤 [완전한 문장] (~라는 내용의)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -37185,14 +38301,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "앞에 명사가 있다고 무조건 관계대명사라고 생각하지 말고, 뒤 문장의 완전성 확인 필수!"
               }
             ],
+            "trap": "앞에 명사가 있다고 무조건 관계대명사라고 생각하지 말고, 뒤 문장의 완전성 확인 필수!",
             "quizLink": "3단계 실전 퀴즈에서 [that의 3대 정체성 판별 공식] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "동격 that과 자주 결합하는 대표 추상명사",
-            "formula": "fact(사실), news(소식), idea(생각), belief(믿음), rumor(소문), evidence(증거), hope(희망)",
-            "example": "There is no evidence that he committed the crime.",
-            "trap": "동격의 that은 which로 대체할 수 없습니다!",
             "desc": "동격 that과 자주 결합하는 대표 추상명사은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. 불완전 문장(관대) vs 완전 문장(접속사) vs 추상명사 뒤 완전 문장(동격) 완벽 구별의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "fact(사실), news(소식), idea(생각), belief(믿음), rumor(소문), evidence(증거), hope(희망)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -37226,6 +38341,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "동격의 that은 which로 대체할 수 없습니다!"
               }
             ],
+            "trap": "동격의 that은 which로 대체할 수 없습니다!",
             "quizLink": "3단계 실전 퀴즈에서 [동격 that과 자주 결합하는 대표 추상명사] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -37361,10 +38477,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "used to 3총사 완전 정복 공식",
-            "formula": "1. used to + [동사원형] : (과거에) ~하곤 했다 / ~이었다 (지금은 아님)\n2. be used to + [동사원형] : ~하는 데 '사용되다' (use의 수동태! 주어는 보통 사물)\n3. be used to + [V-ing / 명사] : ~에 '익숙하다' (= be accustomed to, 주어는 보통 사람)",
-            "example": "• I used to play soccer. (축구하곤 했다)\n• Wood is used to make paper. (종이를 만드는 데 사용된다)\n• I am used to waking up early. (일찍 일어나는 데 익숙하다)",
-            "trap": "be used to 뒤에 V-ing가 오는지 동사원형이 오는지 주어의 성격(사람 vs 사물)과 의미로 판별할 것!",
             "desc": "used to 3총사 완전 정복 공식은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. ~하곤 했다(used to) vs ~하는 데 사용되다(be used to V) vs ~에 익숙하다(be used to -ing)의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1. used to + [동사원형] : (과거에) ~하곤 했다 / ~이었다 (지금은 아님)\n2. be used to + [동사원형] : ~하는 데 '사용되다' (use의 수동태! 주어는 보통 사물)\n3. be used to + [V-ing / 명사] : ~에 '익숙하다' (= be accustomed to, 주어는 보통 사람)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -37403,14 +38517,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "be used to 뒤에 V-ing가 오는지 동사원형이 오는지 주어의 성격(사람 vs 사물)과 의미로 판별할 것!"
               }
             ],
+            "trap": "be used to 뒤에 V-ing가 오는지 동사원형이 오는지 주어의 성격(사람 vs 사물)과 의미로 판별할 것!",
             "quizLink": "3단계 실전 퀴즈에서 [used to 3총사 완전 정복 공식] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "3초 컷 판별 요령",
-            "formula": "• 앞에 be동사가 없는가? ➔ 무조건 [used to + V] (~하곤 했다)\n• 앞에 be동사가 있고 주어가 사물인가? ➔ [be used to + V] (사용되다)\n• 앞에 be동사가 있고 주어가 사람인가? ➔ [be used to + -ing] (익숙하다)",
-            "example": "He is used to spicy food.",
-            "trap": "get used to + V-ing는 '~에 익숙해지다'라는 변화의 의미!",
             "desc": "3초 컷 판별 요령은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. ~하곤 했다(used to) vs ~하는 데 사용되다(be used to V) vs ~에 익숙하다(be used to -ing)의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• 앞에 be동사가 없는가? ➔ 무조건 [used to + V] (~하곤 했다)\n• 앞에 be동사가 있고 주어가 사물인가? ➔ [be used to + V] (사용되다)\n• 앞에 be동사가 있고 주어가 사람인가? ➔ [be used to + -ing] (익숙하다)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -37444,6 +38557,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "get used to + V-ing는 '~에 익숙해지다'라는 변화의 의미!"
               }
             ],
+            "trap": "get used to + V-ing는 '~에 익숙해지다'라는 변화의 의미!",
             "quizLink": "3단계 실전 퀴즈에서 [3초 컷 판별 요령] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -37579,10 +38693,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "lie vs lay 3단 변화 끝장 비교표",
-            "formula": "1. lie - lay - lain - lying (자동사: 눕다, 놓여있다) ➔ 뒤에 목적어 없음!\n2. lay - laid - laid - laying (타동사: 놓다, 두다, 알을 낳다) ➔ 뒤에 목적어(~을/를) 필수!\n3. lie - lied - lied - lying (자동사: 거짓말하다)",
-            "example": "• He lay on the grass yesterday. (눕다 lie의 과거형 lay)\n• She laid the baby on the bed. (눕히다 lay의 과거형 laid)\n• Don't lie to me. (거짓말하다)",
-            "trap": "자동사 lie의 '과거형'이 타동사의 '원형(lay)'과 똑같이 생겨서 시험에 단골 1위로 출제됨!",
             "desc": "lie vs lay 3단 변화 끝장 비교표은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. lie-lay-lain (눕다/놓여있다) vs lay-laid-laid (놓다/낳다) vs lie-lied-lied (거짓말하다)의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1. lie - lay - lain - lying (자동사: 눕다, 놓여있다) ➔ 뒤에 목적어 없음!\n2. lay - laid - laid - laying (타동사: 놓다, 두다, 알을 낳다) ➔ 뒤에 목적어(~을/를) 필수!\n3. lie - lied - lied - lying (자동사: 거짓말하다)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -37621,14 +38733,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "자동사 lie의 '과거형'이 타동사의 '원형(lay)'과 똑같이 생겨서 시험에 단골 1위로 출제됨!"
               }
             ],
+            "trap": "자동사 lie의 '과거형'이 타동사의 '원형(lay)'과 똑같이 생겨서 시험에 단골 1위로 출제됨!",
             "quizLink": "3단계 실전 퀴즈에서 [lie vs lay 3단 변화 끝장 비교표] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "3초 컷 판별 공식",
-            "formula": "빈칸 바로 뒤를 본다!\n• 뒤에 목적어(~을/를)가 있는가? ➔ [lay 계열 (lay/laid)]\n• 뒤에 전치사구(on, in, down)나 부사가 오는가? ➔ [lie 계열 (lie/lay/lain)]",
-            "example": "He [laid] his hand on my shoulder. (목적어 hand가 있으므로 laid)",
-            "trap": "rise(자동사: 오르다) vs raise(타동사: 올리다)도 동일한 자/타동사 원리!",
             "desc": "3초 컷 판별 공식은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. lie-lay-lain (눕다/놓여있다) vs lay-laid-laid (놓다/낳다) vs lie-lied-lied (거짓말하다)의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "빈칸 바로 뒤를 본다!\n• 뒤에 목적어(~을/를)가 있는가? ➔ [lay 계열 (lay/laid)]\n• 뒤에 전치사구(on, in, down)나 부사가 오는가? ➔ [lie 계열 (lie/lay/lain)]",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -37662,6 +38773,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "rise(자동사: 오르다) vs raise(타동사: 올리다)도 동일한 자/타동사 원리!"
               }
             ],
+            "trap": "rise(자동사: 오르다) vs raise(타동사: 올리다)도 동일한 자/타동사 원리!",
             "quizLink": "3단계 실전 퀴즈에서 [3초 컷 판별 공식] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -37797,10 +38909,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "It ~ that 강조구문 vs 가주어/진주어 3초 판별 공식",
-            "formula": "문장에서 [It is/was]와 [that]을 손으로 가려본다!\n• 가렸을 때 남은 단어들로 문장이 완벽하게 성립하면? ➔ [강조 구문]\n• 가렸을 때 문장이 말이 안 되고 불완전하면? ➔ [가주어 / 진주어]",
-            "example": "It was [Tom] that broke the window. ➔ Tom broke the window. (완전 성립 ➔ 강조구문)\nIt is [true] that he broke the window. ➔ True he broke the window. (불성립 ➔ 가주어/진주어)",
-            "trap": "It is 뒤에 형용사(true, natural, certain, important)가 오면 100% 가주어/진주어!",
             "desc": "It ~ that 강조구문 vs 가주어/진주어 3초 판별 공식은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. it과 that을 지웠을 때 문장이 완전하면 '강조구문', 불완전하면 '가주어/진주어' 판별법의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "문장에서 [It is/was]와 [that]을 손으로 가려본다!\n• 가렸을 때 남은 단어들로 문장이 완벽하게 성립하면? ➔ [강조 구문]\n• 가렸을 때 문장이 말이 안 되고 불완전하면? ➔ [가주어 / 진주어]",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -37834,14 +38944,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "It is 뒤에 형용사(true, natural, certain, important)가 오면 100% 가주어/진주어!"
               }
             ],
+            "trap": "It is 뒤에 형용사(true, natural, certain, important)가 오면 100% 가주어/진주어!",
             "quizLink": "3단계 실전 퀴즈에서 [It ~ that 강조구문 vs 가주어/진주어 3초 판별 공식] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "가목적어 it 구문 (MBCDF 공식)",
-            "formula": "make, believe, consider, deem, find + it(가목적어) + [형용사 목적격보어] + to V / that절(진목적어)",
-            "example": "I found it difficult to solve the problem.",
-            "trap": "가목적어 자리에 this나 that을 쓰거나, to부정사를 목적어 자리에 그대로 길게 두는 오류 주의!",
             "desc": "가목적어 it 구문 (MBCDF 공식)은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. it과 that을 지웠을 때 문장이 완전하면 '강조구문', 불완전하면 '가주어/진주어' 판별법의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "make, believe, consider, deem, find + it(가목적어) + [형용사 목적격보어] + to V / that절(진목적어)",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -37875,6 +38984,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "가목적어 자리에 this나 that을 쓰거나, to부정사를 목적어 자리에 그대로 길게 두는 오류 주의!"
               }
             ],
+            "trap": "가목적어 자리에 this나 that을 쓰거나, to부정사를 목적어 자리에 그대로 길게 두는 오류 주의!",
             "quizLink": "3단계 실전 퀴즈에서 [가목적어 it 구문 (MBCDF 공식)] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -38010,10 +39120,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "접속사 vs 전치사 대표 맞수 3대장",
-            "formula": "1. [비록 ~일지라도] : 접속사 [although / even though] + S + V vs 전치사 [despite / in spite of] + 명사(구)\n2. [~때문에] : 접속사 [because / as / since] + S + V vs 전치사 [because of / due to / owing to] + 명사(구)\n3. [~동안에] : 접속사 [while] + S + V vs 전치사 [during] + 특정 기간 명사 vs 전치사 [for] + 숫자 기간",
-            "example": "• Although it was raining (접속사)\n• Despite the rain (전치사)\n• while I was sleeping vs during the summer vacation vs for two hours",
-            "trap": "despite 뒤에 of를 붙여 despite of라고 쓰면 100% 오답!",
             "desc": "접속사 vs 전치사 대표 맞수 3대장은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. although vs despite / because vs because of / while vs during 완벽 구별의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1. [비록 ~일지라도] : 접속사 [although / even though] + S + V vs 전치사 [despite / in spite of] + 명사(구)\n2. [~때문에] : 접속사 [because / as / since] + S + V vs 전치사 [because of / due to / owing to] + 명사(구)\n3. [~동안에] : 접속사 [while] + S + V vs 전치사 [during] + 특정 기간 명사 vs 전치사 [for] + 숫자 기간",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -38047,14 +39155,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "despite 뒤에 of를 붙여 despite of라고 쓰면 100% 오답!"
               }
             ],
+            "trap": "despite 뒤에 of를 붙여 despite of라고 쓰면 100% 오답!",
             "quizLink": "3단계 실전 퀴즈에서 [접속사 vs 전치사 대표 맞수 3대장] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "3초 컷 판별법",
-            "formula": "빈칸 뒤에 '동사'가 있는지만 확인하라!\n• 주어 + 동사가 있으면 ➔ 무조건 [접속사]\n• 동사 없이 명사 덩어리만 있으면 ➔ 무조건 [전치사]",
-            "example": "Because of he was ill (X) ➔ Because he was ill (O)",
-            "trap": "명사 뒤에 관계사절이 붙어있더라도 빈칸의 주어+동사가 아니라면 전치사를 써야 함에 주의!",
             "desc": "3초 컷 판별법은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. although vs despite / because vs because of / while vs during 완벽 구별의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "빈칸 뒤에 '동사'가 있는지만 확인하라!\n• 주어 + 동사가 있으면 ➔ 무조건 [접속사]\n• 동사 없이 명사 덩어리만 있으면 ➔ 무조건 [전치사]",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -38088,6 +39195,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "명사 뒤에 관계사절이 붙어있더라도 빈칸의 주어+동사가 아니라면 전치사를 써야 함에 주의!"
               }
             ],
+            "trap": "명사 뒤에 관계사절이 붙어있더라도 빈칸의 주어+동사가 아니라면 전치사를 써야 함에 주의!",
             "quizLink": "3단계 실전 퀴즈에서 [3초 컷 판별법] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -38223,10 +39331,8 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "formulaCards": [
           {
             "name": "부분부정 vs 완전부정 공식 비교",
-            "formula": "1. [부분부정] : not + 전체를 나타내는 말 (all, every, both, always, completely)\n  ➔ '모두가 ~인 것은 아니다 (일부는 그렇고 일부는 아니다)'\n2. [완전부정] : none, neither, no one, never\n  ➔ '아무도/전혀 ~가 아니다 (100% 전면 부정)'",
-            "example": "• Not all birds can fly. (모든 새가 날 수 있는 것은 아니다 - 펭귄은 못 낢: 부분부정)\n• No birds can fly. (어떤 새도 날 수 없다: 완전부정)\n• I don't like both of them. (둘 다 좋아하는 건 아냐 - 한 명만 좋아함: 부분부정)\n• I like neither of them. (둘 다 안 좋아함: 완전부정)",
-            "trap": "not both(둘 다 ~인 것은 아니다)를 neither(둘 다 아니다)로 오역하지 않도록 주의!",
             "desc": "부분부정 vs 완전부정 공식 비교은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. not all / not every (모두가 그런 것은 아니다) vs none / neither (아무도 아니다) 해석과 수일치의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "1. [부분부정] : not + 전체를 나타내는 말 (all, every, both, always, completely)\n  ➔ '모두가 ~인 것은 아니다 (일부는 그렇고 일부는 아니다)'\n2. [완전부정] : none, neither, no one, never\n  ➔ '아무도/전혀 ~가 아니다 (100% 전면 부정)'",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -38260,14 +39366,13 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "not both(둘 다 ~인 것은 아니다)를 neither(둘 다 아니다)로 오역하지 않도록 주의!"
               }
             ],
+            "trap": "not both(둘 다 ~인 것은 아니다)를 neither(둘 다 아니다)로 오역하지 않도록 주의!",
             "quizLink": "3단계 실전 퀴즈에서 [부분부정 vs 완전부정 공식 비교] 공식과 관련된 문항이 직접 출제됩니다."
           },
           {
             "name": "부분부정 주요 관용 표현",
-            "formula": "• not always : 항상 ~인 것은 아니다\n• not necessarily : 반드시 ~인 것은 아니다\n• not entirely : 전적으로 ~인 것은 아니다",
-            "example": "Rich people are not always happy. (부자라고 항상 행복한 것은 아니다)",
-            "trap": "독해 지문에서 필자의 양면적 견해나 반전을 나타낼 때 빈출되는 핵심 표현!",
             "desc": "부분부정 주요 관용 표현은(는) 혼동 문법 VS 영역에서 가장 빈출되는 핵심 문법입니다. not all / not every (모두가 그런 것은 아니다) vs none / neither (아무도 아니다) 해석과 수일치의 핵심 원리를 담고 있으며, 문장의 어순과 형태 변화를 주도합니다.",
+            "formula": "• not always : 항상 ~인 것은 아니다\n• not necessarily : 반드시 ~인 것은 아니다\n• not entirely : 전적으로 ~인 것은 아니다",
             "rules": [
               {
                 "title": "기본 규칙",
@@ -38301,6 +39406,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
                 "reason": "독해 지문에서 필자의 양면적 견해나 반전을 나타낼 때 빈출되는 핵심 표현!"
               }
             ],
+            "trap": "독해 지문에서 필자의 양면적 견해나 반전을 나타낼 때 빈출되는 핵심 표현!",
             "quizLink": "3단계 실전 퀴즈에서 [부분부정 주요 관용 표현] 공식과 관련된 문항이 직접 출제됩니다."
           }
         ],
@@ -38433,22 +39539,46 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "title": "SP-39. few/a few VS little/a little (수량 형용사 판별)",
         "formulaCards": [
           {
-            "formulaId": "sp_vs_u9_f1",
-            "tag": "셀 수 있는 명사(few) vs 셀 수 없는 명사(little)",
-            "en": "A few students asked thoughtful questions, but there was little time left for discussion.",
-            "ko": "몇몇 학생들은 사려 깊은 질문을 했지만(a few + 복수명사), 토론을 위해 남은 시간은 거의 없었다(little + 셀 수 없는 명사).",
-            "point": "셀 수 있는 가산 복수명사 앞에는 few / a few, 셀 수 없는 불가산 명사(water, money, time, information 등) 앞에는 little / a little을 씁니다.",
-            "oxCompare": "O: I have a few friends in Seoul. / X: I have a little friends in Seoul.",
+            "name": "셀 수 있는 명사(few) vs 셀 수 없는 명사(little)",
+            "desc": "셀 수 있는 가산 복수명사 앞에는 few / a few, 셀 수 없는 불가산 명사(water, money, time, information 등) 앞에는 little / a little을 씁니다.",
+            "formula": "셀 수 있는 명사(few) vs 셀 수 없는 명사(little)",
+            "rules": [],
+            "examples": [
+              {
+                "en": "A few students asked thoughtful questions, but there was little time left for discussion.",
+                "ko": "몇몇 학생들은 사려 깊은 질문을 했지만(a few + 복수명사), 토론을 위해 남은 시간은 거의 없었다(little + 셀 수 없는 명사).",
+                "point": "셀 수 있는 가산 복수명사 앞에는 few / a few, 셀 수 없는 불가산 명사(water, money, time, information 등) 앞에는 little / a little을 씁니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "I have a few friends in Seoul.",
+                "wrong": "I have a little friends in Seoul.",
+                "reason": "수식받는 명사에 -s가 붙어 있는지(가산 복수) 여부와 명사의 가산/불가산 성격을 즉시 확인해야 합니다."
+              }
+            ],
             "trap": "수식받는 명사에 -s가 붙어 있는지(가산 복수) 여부와 명사의 가산/불가산 성격을 즉시 확인해야 합니다.",
             "quizLink": "품사 및 수일치와 연계된 초등부터 고교까지의 필수 기본기입니다."
           },
           {
-            "formulaId": "sp_vs_u9_f2",
-            "tag": "긍정(a가 있음: 약간 있는) vs 부정(a가 없음: 거의 없는)",
-            "en": "He has few friends and feels lonely, but she has a few friends and enjoys life.",
-            "ko": "그는 친구가 거의 없어 외로움을 느끼지만, 그녀는 친구가 몇몇 있어 삶을 즐긴다.",
-            "point": "'a few / a little'은 '조금 있는, 몇몇의'라는 긍정의 의미이고, 'few / little'은 '거의 없는'이라는 부정의 의미(부정문처럼 해석)입니다.",
-            "oxCompare": "O: There is little hope of recovery. / X: There is not little hope of recovery. (little 자체가 부정)",
+            "name": "긍정(a가 있음: 약간 있는) vs 부정(a가 없음: 거의 없는)",
+            "desc": "'a few / a little'은 '조금 있는, 몇몇의'라는 긍정의 의미이고, 'few / little'은 '거의 없는'이라는 부정의 의미(부정문처럼 해석)입니다.",
+            "formula": "긍정(a가 있음: 약간 있는) vs 부정(a가 없음: 거의 없는)",
+            "rules": [],
+            "examples": [
+              {
+                "en": "He has few friends and feels lonely, but she has a few friends and enjoys life.",
+                "ko": "그는 친구가 거의 없어 외로움을 느끼지만, 그녀는 친구가 몇몇 있어 삶을 즐긴다.",
+                "point": "'a few / a little'은 '조금 있는, 몇몇의'라는 긍정의 의미이고, 'few / little'은 '거의 없는'이라는 부정의 의미(부정문처럼 해석)입니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "There is little hope of recovery.",
+                "wrong": "There is not little hope of recovery. (little 자체가 부정)",
+                "reason": "few나 little 앞뒤에 not을 붙이지 않아도 문장 자체가 부정문이 됨을 유의하세요."
+              }
+            ],
             "trap": "few나 little 앞뒤에 not을 붙이지 않아도 문장 자체가 부정문이 됨을 유의하세요.",
             "quizLink": "독해의 뉘앙스 파악 및 내신 문맥 적절성 평가에 빈출됩니다."
           }
@@ -38581,22 +39711,46 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         "title": "SP-40. other VS another VS the other VS others (부정대명사 완벽 정리)",
         "formulaCards": [
           {
-            "formulaId": "sp_vs_u10_f1",
-            "tag": "another vs other vs the other 구별 공식",
-            "en": "One twin wanted to stay home, but the other wanted to go to the park.",
-            "ko": "쌍둥이 중 한 명은 집에 있기를 원했지만, 나머지 다른 한 명은 공원에 가기를 원했다.",
-            "point": "1. another: 막연한 또 다른 하나 (an + other, 단수명사와 결합). 2. other: 다른 (단독 대명사 불가, other + 복수명사). 3. others: 막연한 다른 사람들/것들 (복수 대명사). 4. the other: 정해진 범위 내에서 '나머지 하나'. 5. the others: 정해진 범위 내에서 '나머지 전부'.",
-            "oxCompare": "O: I have two pens; one is red and the other is blue. / X: I have two pens; one is red and another is blue.",
+            "name": "another vs other vs the other 구별 공식",
+            "desc": "1. another: 막연한 또 다른 하나 (an + other, 단수명사와 결합). 2. other: 다른 (단독 대명사 불가, other + 복수명사). 3. others: 막연한 다른 사람들/것들 (복수 대명사). 4. the other: 정해진 범위 내에서 '나머지 하나'. 5. the others: 정해진 범위 내에서 '나머지 전부'.",
+            "formula": "another vs other vs the other 구별 공식",
+            "rules": [],
+            "examples": [
+              {
+                "en": "One twin wanted to stay home, but the other wanted to go to the park.",
+                "ko": "쌍둥이 중 한 명은 집에 있기를 원했지만, 나머지 다른 한 명은 공원에 가기를 원했다.",
+                "point": "1. another: 막연한 또 다른 하나 (an + other, 단수명사와 결합). 2. other: 다른 (단독 대명사 불가, other + 복수명사). 3. others: 막연한 다른 사람들/것들 (복수 대명사). 4. the other: 정해진 범위 내에서 '나머지 하나'. 5. the others: 정해진 범위 내에서 '나머지 전부'."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "I have two pens; one is red and the other is blue.",
+                "wrong": "I have two pens; one is red and another is blue.",
+                "reason": "둘(2개) 중 하나는 one, 나머지 하나는 무조건 'the other'입니다. another를 쓰면 3개 이상일 때의 또 다른 하나가 되므로 오답입니다."
+              }
+            ],
             "trap": "둘(2개) 중 하나는 one, 나머지 하나는 무조건 'the other'입니다. another를 쓰면 3개 이상일 때의 또 다른 하나가 되므로 오답입니다.",
             "quizLink": "수능 및 내신 어법에서 대명사의 지칭 범위(특정 vs 막연)를 묻는 1순위 문항입니다."
           },
           {
-            "formulaId": "sp_vs_u10_f2",
-            "tag": "Some ~ others ... 대조 표현 및 another + 단수명사",
-            "en": "Some people prefer living in bustling cities, while others thrive in quiet countryside.",
-            "ko": "어떤 사람들은 번화한 도시에 사는 것을 선호하는 반면, 다른 사람들은 조용한 시골에서 잘 살아간다.",
-            "point": "'Some ~ others ...'는 막연한 다수 사이의 대조를 나타내는 표준 구문입니다. 반면 전체 집단이 정해져 있을 때는 'Some ~ the others ...'를 씁니다. 또한 another 뒤에는 반드시 단수 가산명사(another chance)가 옵니다.",
-            "oxCompare": "O: Would you like another cup of tea? / X: Would you like other cup of tea?",
+            "name": "Some ~ others ... 대조 표현 및 another + 단수명사",
+            "desc": "'Some ~ others ...'는 막연한 다수 사이의 대조를 나타내는 표준 구문입니다. 반면 전체 집단이 정해져 있을 때는 'Some ~ the others ...'를 씁니다. 또한 another 뒤에는 반드시 단수 가산명사(another chance)가 옵니다.",
+            "formula": "Some ~ others ... 대조 표현 및 another + 단수명사",
+            "rules": [],
+            "examples": [
+              {
+                "en": "Some people prefer living in bustling cities, while others thrive in quiet countryside.",
+                "ko": "어떤 사람들은 번화한 도시에 사는 것을 선호하는 반면, 다른 사람들은 조용한 시골에서 잘 살아간다.",
+                "point": "'Some ~ others ...'는 막연한 다수 사이의 대조를 나타내는 표준 구문입니다. 반면 전체 집단이 정해져 있을 때는 'Some ~ the others ...'를 씁니다. 또한 another 뒤에는 반드시 단수 가산명사(another chance)가 옵니다."
+              }
+            ],
+            "oxCompare": [
+              {
+                "correct": "Would you like another cup of tea?",
+                "wrong": "Would you like other cup of tea?",
+                "reason": "other 뒤에는 단수 가산명사를 단독으로 쓸 수 없습니다 (other cups O, other cup X)."
+              }
+            ],
             "trap": "other 뒤에는 단수 가산명사를 단독으로 쓸 수 없습니다 (other cups O, other cup X).",
             "quizLink": "대명사와 형용사 용법의 단/복수 매칭을 점검하세요."
           }
@@ -38726,3 +39880,10 @@ window.GRAMMAR_SPECIAL_LECTURES = [
     ]
   }
 ];
+
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        GRAMMAR_CLINIC_BANK: window.GRAMMAR_CLINIC_BANK,
+        GRAMMAR_SPECIAL_LECTURES: window.GRAMMAR_SPECIAL_LECTURES
+    };
+}

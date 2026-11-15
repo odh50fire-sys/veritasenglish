@@ -727,9 +727,55 @@ class GrammarClinicEngine {
                 <!-- 공식 카드 목록 -->
                 <div class="space-y-6">
                     ${formulaCards.map((fc, idx) => {
+                        const name = fc.name || fc.tag || '핵심 문법 공식';
+                        const desc = fc.desc || fc.point || '';
+                        const formula = fc.formula || fc.tag || '';
                         const rules = fc.rules || [];
-                        const examples = fc.examples || [];
-                        const oxList = fc.oxCompare || [];
+
+                        // 4. 예문 정상화 (examples 배열 vs flat en/ko vs example)
+                        let examples = fc.examples || [];
+                        if (!examples.length) {
+                            if (fc.en) {
+                                examples = [{ en: fc.en, ko: fc.ko || '', point: fc.point || '' }];
+                            } else if (fc.example) {
+                                examples = [{ en: fc.example, ko: '핵심 적용 예문', point: '' }];
+                            }
+                        }
+
+                        // 5. OX 비교 정상화 (배열, 객체, 문자열 "O: ... / X: ..." 완벽 호환)
+                        let rawOx = fc.oxCompare || [];
+                        let oxList = [];
+                        if (Array.isArray(rawOx)) {
+                            oxList = rawOx.map(ox => {
+                                if (typeof ox === 'string') {
+                                    const parts = ox.split(' / ');
+                                    const c = (parts[0] || '').replace(/^O:\s*/i, '').trim();
+                                    const w = (parts[1] || '').replace(/^X:\s*/i, '').trim();
+                                    return { correct: c, wrong: w, reason: fc.trap || '올바른 문법 규칙을 적용해야 합니다.' };
+                                }
+                                if (ox && (ox.o || ox.correct)) {
+                                    return {
+                                        correct: ox.correct || ox.o || '',
+                                        wrong: ox.wrong || ox.x || '',
+                                        reason: ox.reason || ox.comment || fc.trap || ''
+                                    };
+                                }
+                                return ox;
+                            });
+                        } else if (rawOx && typeof rawOx === 'object') {
+                            if (rawOx.o || rawOx.correct) {
+                                oxList = [{
+                                    correct: rawOx.correct || rawOx.o || '',
+                                    wrong: rawOx.wrong || rawOx.x || '',
+                                    reason: rawOx.reason || rawOx.comment || fc.trap || ''
+                                }];
+                            }
+                        } else if (typeof rawOx === 'string') {
+                            const parts = rawOx.split(' / ');
+                            const c = (parts[0] || '').replace(/^O:\s*/i, '').trim();
+                            const w = (parts[1] || '').replace(/^X:\s*/i, '').trim();
+                            oxList = [{ correct: c, wrong: w, reason: fc.trap || '올바른 문법 규칙을 적용해야 합니다.' }];
+                        }
 
                         return `
                             <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-xs space-y-4 hover:border-emerald-300 transition-all">
@@ -739,7 +785,7 @@ class GrammarClinicEngine {
                                         <span class="w-7 h-7 rounded-xl bg-slate-900 text-emerald-300 flex items-center justify-center text-xs font-mono font-bold shadow-2xs">
                                             0${idx + 1}
                                         </span>
-                                        <h5 class="font-serif font-black text-base sm:text-lg text-slate-900">${fc.name}</h5>
+                                        <h5 class="font-serif font-black text-base sm:text-lg text-slate-900">${name}</h5>
                                     </div>
                                     ${fc.quizLink ? `
                                         <span class="px-2.5 py-1 rounded-lg bg-teal-50 border border-teal-200 text-teal-800 text-[11px] font-mono font-bold flex items-center gap-1">
@@ -750,13 +796,13 @@ class GrammarClinicEngine {
                                 </div>
 
                                 <!-- 1. 개념 상세 설명 -->
-                                ${fc.desc ? `
+                                ${desc ? `
                                     <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs sm:text-sm text-slate-700 leading-relaxed font-sans">
                                         <div class="text-[11px] font-bold text-slate-500 mb-1 flex items-center gap-1">
                                             <i data-lucide="help-circle" class="w-3.5 h-3.5 text-indigo-600"></i>
                                             <span>개념 원리 이해하기</span>
                                         </div>
-                                        ${fc.desc}
+                                        ${desc}
                                     </div>
                                 ` : ''}
 
@@ -764,7 +810,7 @@ class GrammarClinicEngine {
                                 <div class="p-4 rounded-xl bg-slate-900 text-emerald-300 font-mono text-xs sm:text-sm font-bold tracking-wide border border-emerald-500/30 flex items-center justify-between shadow-xs">
                                     <div class="flex items-center gap-2">
                                         <span class="text-base">📐</span>
-                                        <span class="whitespace-pre-line">${fc.formula}</span>
+                                        <span class="whitespace-pre-line">${formula}</span>
                                     </div>
                                 </div>
 
@@ -792,10 +838,10 @@ class GrammarClinicEngine {
                                         <i data-lucide="message-square" class="w-3.5 h-3.5 text-blue-600"></i>
                                         <span>대표 실전 예문 & 해석</span>
                                     </div>
-                                    ${(examples.length > 0 ? examples : [{ en: fc.example, ko: '핵심 적용 예문', point: '' }]).map(exItem => `
+                                    ${examples.map(exItem => `
                                         <div class="p-3 rounded-xl bg-indigo-50/40 border border-indigo-100 flex items-start justify-between gap-3">
                                             <div class="text-xs sm:text-sm text-slate-800 space-y-1 min-w-0">
-                                                <div class="font-serif font-bold text-indigo-950">${exItem.en}</div>
+                                                <div class="font-serif font-bold text-indigo-950">${exItem.en || ''}</div>
                                                 ${exItem.ko ? `<div class="text-xs text-slate-500 font-sans">${exItem.ko}</div>` : ''}
                                                 ${exItem.point ? `<div class="text-[11px] font-mono text-emerald-700 font-semibold">💡 ${exItem.point}</div>` : ''}
                                             </div>
@@ -821,15 +867,17 @@ class GrammarClinicEngine {
                                                 <div class="p-3 rounded-xl bg-amber-50/40 border border-amber-200/80 text-xs space-y-1">
                                                     <div class="flex items-center gap-2 text-emerald-800 font-bold">
                                                         <span class="w-4 h-4 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[10px]">O</span>
-                                                        <span class="font-serif">${ox.correct}</span>
+                                                        <span class="font-serif">${ox.correct || ''}</span>
                                                     </div>
                                                     <div class="flex items-center gap-2 text-rose-700 font-semibold">
                                                         <span class="w-4 h-4 rounded-full bg-rose-600 text-white flex items-center justify-center text-[10px]">X</span>
-                                                        <span class="font-serif line-through">${ox.wrong}</span>
+                                                        <span class="font-serif line-through">${ox.wrong || ''}</span>
                                                     </div>
-                                                    <div class="text-[11px] text-slate-600 font-sans pt-0.5 pl-6">
-                                                        👉 ${ox.reason}
-                                                    </div>
+                                                    ${ox.reason ? `
+                                                        <div class="text-[11px] text-slate-600 font-sans pt-0.5 pl-6">
+                                                            👉 ${ox.reason}
+                                                        </div>
+                                                    ` : ''}
                                                 </div>
                                             `).join('')}
                                         </div>
