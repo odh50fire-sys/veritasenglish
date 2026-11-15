@@ -68,7 +68,12 @@
     'oxford-vol1': 'oxford',
     'oxford-vol2': 'oxford',
     'oxford-vol3': 'oxford',
-    'oxford-vol4': 'oxford'
+    'oxford-vol4': 'oxford',
+    'neungryul_etym_2025': 'middle',
+    'neungryul2025': 'middle',
+    'neungryul-high-basic': 'killer',
+    'neungryul-csat-essential': 'killer',
+    'neungryul-csat-advanced': 'killer'
   };
 
   const SERIES_INFO = {
@@ -336,7 +341,49 @@
         });
       });
 
-      // 2. AI 맞춤 생성 교재
+      // 2. 능률 VOCA 및 고등 라인업
+      if (window.VERITAS_NEUNGRYUL_HIGH_COLLECTIONS && Array.isArray(window.VERITAS_NEUNGRYUL_HIGH_COLLECTIONS)) {
+        window.VERITAS_NEUNGRYUL_HIGH_COLLECTIONS.forEach(c => {
+          if (!list.some(b => b.id === c.id)) {
+            list.push({
+              id: c.id,
+              title: c.title,
+              badge: c.badge || '능률 고등',
+              totalDays: c.totalDays || 40,
+              level: c.level || 8,
+              category: 'neungryul_high',
+              series: 'killer',
+              isCustom: false
+            });
+          }
+        });
+      }
+      if (!list.some(b => b.id === 'neungryul_etym_2025')) {
+        list.push({
+          id: 'neungryul_etym_2025',
+          title: '[Lv.8] 능률 VOCA 어원편 중등 (DAY 01~30, 765단어)',
+          badge: '능률 어원편',
+          totalDays: 30,
+          level: 8,
+          category: 'neungryul',
+          series: 'middle',
+          isCustom: false
+        });
+      }
+      if (!list.some(b => b.id === 'neungryul2025')) {
+        list.push({
+          id: 'neungryul2025',
+          title: '[Lv.7] 능률 VOCA 중등 고난도 (DAY 01~40, 1,200단어)',
+          badge: '능률 중등',
+          totalDays: 40,
+          level: 7,
+          category: 'neungryul',
+          series: 'middle',
+          isCustom: false
+        });
+      }
+
+      // 3. AI 맞춤 생성 교재
       if (window.storage && typeof window.storage.getCustomCollections === 'function') {
         const customColls = window.storage.getCustomCollections() || [];
         customColls.forEach(c => {
@@ -373,14 +420,37 @@
           const allCustom = window.storage.getCustomWords() || [];
           rawWords = allCustom.filter(w => w.collectionId === bookId);
         }
-      } else if (this.currentBookMeta.isOriginalCurriculum || bookId.startsWith('veritas-original-')) {
+      } else if (this.currentBookMeta.isOriginalCurriculum || (bookId && bookId.startsWith('veritas-original-'))) {
         // 베리타스 오리지널 6,000 필수 영단어
         const allOrig = window.VERITAS_ORIGINAL_WORDS_DATA || [];
         rawWords = allOrig.filter(w => w.collectionId === bookId);
+      } else if (bookId === 'neungryul_etym_2025') {
+        rawWords = window.NEUNGRYUL_VOCA_ETYM_2025_DATA || (window.SAMPLE_WORDS ? window.SAMPLE_WORDS.filter(w => w.collectionId === 'neungryul_etym_2025') : []);
+      } else if (bookId === 'neungryul2025') {
+        rawWords = window.NEUNGRYUL_VOCA_2025_DATA || (window.SAMPLE_WORDS ? window.SAMPLE_WORDS.filter(w => w.collectionId === 'neungryul2025') : []);
+      } else if (bookId && bookId.startsWith('neungryul-')) {
+        const allNeungryulHigh = window.VERITAS_NEUNGRYUL_HIGH_WORDS_DATA || [];
+        rawWords = allNeungryulHigh.filter(w => w.collectionId === bookId);
+        if (rawWords.length === 0) {
+          if (bookId === 'neungryul-high-basic') rawWords = window.NEUNGRYUL_VOCA_HIGH_BASIC_2025_DATA || [];
+          else if (bookId === 'neungryul-csat-essential') rawWords = window.NEUNGRYUL_VOCA_SAT_ESSENTIAL_2025_DATA || [];
+          else if (bookId === 'neungryul-csat-advanced') rawWords = window.NEUNGRYUL_VOCA_SAT_ADV_2025_DATA || [];
+        }
       } else {
-        // 21개 큐레이션 단어장
+        // 21개 큐레이션 단어장 & Oxford & Pathways & 기타
         const allCurated = window.CURATED_WORDS_DATA || [];
         rawWords = allCurated.filter(w => w.collectionId === bookId);
+        if (rawWords.length === 0) {
+          if (window.VERITAS_OXFORD_WORDS_DATA) {
+            rawWords = window.VERITAS_OXFORD_WORDS_DATA.filter(w => w.collectionId === bookId);
+          }
+        }
+        if (rawWords.length === 0 && window.VERITAS_PATHWAYS_WORDS_DATA) {
+          rawWords = window.VERITAS_PATHWAYS_WORDS_DATA.filter(w => w.collectionId === bookId);
+        }
+        if (rawWords.length === 0 && window.VERITAS_SEASONS_WORDS_DATA) {
+          rawWords = window.VERITAS_SEASONS_WORDS_DATA.filter(w => w.collectionId === bookId);
+        }
       }
 
       // Day별 정렬 및 그룹화 (모든 키 완벽 대응)
@@ -451,7 +521,7 @@
         return;
       }
 
-      const targetId = bookId || (books.some(b => b.id === this.currentBookId) ? this.currentBookId : books[0].id);
+      const targetId = (bookId && String(bookId).trim()) ? String(bookId).trim() : (books.some(b => b.id === this.currentBookId) ? this.currentBookId : books[0].id);
       this.currentMode = defaultMode;
       this.selectedDay = filterDay;
       this.blindMode = 'none';
@@ -1197,7 +1267,7 @@
       return pagesHtml;
     }
 
-        getPosBadgeClass(pos) {
+    getPosBadgeClass(pos) {
       if (!pos) return 'studio-word-pos';
       const p = String(pos).toLowerCase().trim();
       if (p.startsWith('v')) return 'pos-badge-v';
@@ -1206,7 +1276,7 @@
       if (p.startsWith('ad')) return 'pos-badge-ad';
       if (p.startsWith('prep') || p.startsWith('conj')) return 'pos-badge-prep';
       return 'pos-badge-n';
-    },
+    }
 
     renderWordCard(w, seriesKey) {
       const displayWord = w.word || 'VOCA';
