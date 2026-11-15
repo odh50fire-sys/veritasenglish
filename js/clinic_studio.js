@@ -2,10 +2,10 @@
  * VERITAS ENGLISH - 3대 부교재 완권 출판 스튜디오 엔진 (ClinicStudioEngine)
  * - 📗 [문법 Clinic] • 📘 [독해 Clinic] • 📙 [쓰기 Clinic]
  * - [본교재] vs [정답 및 해설 (문제 답안지 & 풀이)] 완벽 분리
- * - [교재 전체 (완권)] 메인 보기 & 인쇄 + [개별 단원] 선택 지원
- * - 초안의 풍부하고 완성도 높은 원문 콘텐츠 100% 완전 복원 (개념, 20제 6대 유형, 킬러 서술형, 오답노트 전 문항)
- * - 독립된 [교재 목차 (Table of Contents)] 및 [3회독 스터디 플래너] 전용 페이지 탑재
- * - 엄격한 A4 시트(210mm x 297mm) 페이지 구별(Pagination) 조판으로 내용 잘림 100% 방지
+ * - [교재 전체 (완권)] 메인 기본 보기 & 인쇄 + [개별 단원] 선택 지원
+ * - [교재 목차 (Table of Contents)] 파트별 상세 안내 및 학습 목표 탑재
+ * - [A4 4페이지 완결 조판]: 개념 전용면(Sheet 1) / 기초 드릴 & 실전 Part 1(Sheet 2) / 실전 Part 2(Sheet 3) / 킬러 서술형 & 오답노트(Sheet 4)
+ * - 밋밋함을 완전히 탈피한 출판 교재급 프리미엄 비주얼 디자인 (시그니처 컬러, 리본 배지, 듀얼톤 카드, 모눈 오답노트)
  */
 
 (function (window) {
@@ -21,88 +21,168 @@
             .replace(/'/g, '&#039;');
     }
 
-    // 권별 테마 메타정보
+    // 권별 시그니처 비주얼 & 컬러 테마
     const THEME_META = {
         lv0: {
             titleKo: '초등 기초 영문법',
             subKo: '품사 & 기초 어순 완성편',
             themeName: 'Sky & Mint',
             primaryHex: '#0284c7',
+            secondaryHex: '#0369a1',
             accentHex: '#0ea5e9',
-            badgeClass: 'bg-sky-100 text-sky-800 border-sky-300'
+            lightBg: '#f0f9ff',
+            badgeBg: 'bg-sky-100 text-sky-900 border-sky-300',
+            headerBg: 'from-sky-900 via-slate-900 to-sky-950',
+            accentBorder: 'border-sky-500'
         },
         lv1: {
             titleKo: '중등 내신 입문 [중1]',
             subKo: '문장의 5형식 & 기초 시제 완성편',
-            themeName: 'Emerald & Pine',
+            themeName: 'Emerald & Forest',
             primaryHex: '#059669',
+            secondaryHex: '#047857',
             accentHex: '#10b981',
-            badgeClass: 'bg-emerald-100 text-emerald-800 border-emerald-300'
+            lightBg: '#ecfdf5',
+            badgeBg: 'bg-emerald-100 text-emerald-900 border-emerald-300',
+            headerBg: 'from-emerald-950 via-slate-900 to-emerald-900',
+            accentBorder: 'border-emerald-500'
         },
         lv2: {
             titleKo: '중등 내신 완성 [중2]',
             subKo: 'to부정사·현재완료·수동태 완성편',
             themeName: 'Indigo & Royal',
             primaryHex: '#4f46e5',
+            secondaryHex: '#4338ca',
             accentHex: '#6366f1',
-            badgeClass: 'bg-indigo-100 text-indigo-800 border-indigo-300'
+            lightBg: '#eef2ff',
+            badgeBg: 'bg-indigo-100 text-indigo-900 border-indigo-300',
+            headerBg: 'from-indigo-950 via-slate-900 to-indigo-900',
+            accentBorder: 'border-indigo-500'
         },
         lv3: {
             titleKo: '중등 내신 심화 [중3]',
             subKo: '분사구문·가정법·관계부사 심화편',
-            themeName: 'Deep Blue & Navy',
+            themeName: 'Classic Blue & Navy',
             primaryHex: '#2563eb',
-            accentHex: '#1d4ed8',
-            badgeClass: 'bg-blue-100 text-blue-800 border-blue-300'
+            secondaryHex: '#1d4ed8',
+            accentHex: '#3b82f6',
+            lightBg: '#eff6ff',
+            badgeBg: 'bg-blue-100 text-blue-900 border-blue-300',
+            headerBg: 'from-blue-950 via-slate-900 to-slate-950',
+            accentBorder: 'border-blue-500'
         },
         lv4: {
             titleKo: '고교 내신 마스터 [고1·2]',
             subKo: '어법 수일치·준동사·도치 마스터편',
-            themeName: 'Crimson & Rose',
+            themeName: 'Crimson & Bordeaux',
             primaryHex: '#e11d48',
-            accentHex: '#be123c',
-            badgeClass: 'bg-rose-100 text-rose-800 border-rose-300'
+            secondaryHex: '#be123c',
+            accentHex: '#f43f5e',
+            lightBg: '#fff1f2',
+            badgeBg: 'bg-rose-100 text-rose-900 border-rose-300',
+            headerBg: 'from-rose-950 via-slate-900 to-rose-900',
+            accentBorder: 'border-rose-500'
         },
         lv5: {
             titleKo: '수능 1등급 킬러 [고3·수능]',
             subKo: '평가원 29번 어법 & 고난도 구문편',
-            themeName: 'Imperial Gold',
+            themeName: 'Imperial Amber & Obsidian',
             primaryHex: '#d97706',
-            accentHex: '#b45309',
-            badgeClass: 'bg-amber-100 text-amber-900 border-amber-300'
+            secondaryHex: '#b45309',
+            accentHex: '#f59e0b',
+            lightBg: '#fffbeb',
+            badgeBg: 'bg-amber-100 text-amber-900 border-amber-300',
+            headerBg: 'from-amber-950 via-slate-900 to-stone-950',
+            accentBorder: 'border-amber-500'
         },
         sp_terms: {
             titleKo: '문법 용어 개념 특강',
             subKo: '품사와 문장성분 1:1 직결 독해편',
             themeName: 'Royal Purple',
             primaryHex: '#7c3aed',
+            secondaryHex: '#6d28d9',
             accentHex: '#8b5cf6',
-            badgeClass: 'bg-purple-100 text-purple-900 border-purple-300'
+            lightBg: '#f5f3ff',
+            badgeBg: 'bg-purple-100 text-purple-900 border-purple-300',
+            headerBg: 'from-purple-950 via-slate-900 to-purple-900',
+            accentBorder: 'border-purple-500'
         },
         sp_writing: {
             titleKo: '서술형 핵심 구문 특강',
             subKo: '내신 서술형 단골 구문 정복편',
             themeName: 'Royal Purple',
             primaryHex: '#7c3aed',
+            secondaryHex: '#6d28d9',
             accentHex: '#8b5cf6',
-            badgeClass: 'bg-purple-100 text-purple-900 border-purple-300'
+            lightBg: '#f5f3ff',
+            badgeBg: 'bg-purple-100 text-purple-900 border-purple-300',
+            headerBg: 'from-purple-950 via-slate-900 to-purple-900',
+            accentBorder: 'border-purple-500'
         },
         sp_csat: {
             titleKo: '수능 29번 킬러 특강',
             subKo: '평가원 10개년 출제 공식 TOP 10',
             themeName: 'Royal Purple',
             primaryHex: '#7c3aed',
+            secondaryHex: '#6d28d9',
             accentHex: '#8b5cf6',
-            badgeClass: 'bg-purple-100 text-purple-900 border-purple-300'
+            lightBg: '#f5f3ff',
+            badgeBg: 'bg-purple-100 text-purple-900 border-purple-300',
+            headerBg: 'from-purple-950 via-slate-900 to-purple-900',
+            accentBorder: 'border-purple-500'
         },
         sp_vs: {
             titleKo: '혼동 문법 VS 특강',
             subKo: '헷갈리는 문법 대조 클리닉편',
             themeName: 'Royal Purple',
             primaryHex: '#7c3aed',
+            secondaryHex: '#6d28d9',
             accentHex: '#8b5cf6',
-            badgeClass: 'bg-purple-100 text-purple-900 border-purple-300'
+            lightBg: '#f5f3ff',
+            badgeBg: 'bg-purple-100 text-purple-900 border-purple-300',
+            headerBg: 'from-purple-950 via-slate-900 to-purple-900',
+            accentBorder: 'border-purple-500'
         }
+    };
+
+    // 파트별 명확한 단원 구성 및 학습 목표
+    const LEVEL_PARTS_INFO = {
+        lv0: [
+            { no: 'PART 1', title: '명사와 관사 & 인칭대명사의 기초', goal: 'a/an/the 관사와 명사의 단·복수, 인칭대명사 주격·소유격 및 be동사 현재형 완성', range: [1, 5] },
+            { no: 'PART 2', title: '일반동사의 현재형과 형용사·부사', goal: '3인칭 단수 -s/-es 규칙, don\'t/doesn\'t 부정문 및 형용사·부사의 꾸밈 원리', range: [6, 10] },
+            { no: 'PART 3', title: '의문사 의문문과 조동사 & 과거시제', goal: '6하원칙 의문사(Who/What/Where/When/Why/How), can/may 및 be동사 과거형', range: [11, 15] },
+            { no: 'PART 4', title: '진행형과 특수구문 & 문장 연결', goal: '현재진행형(be+ing), There is/are 유도부사, 명령문/감탄문 및 기초 접속사', range: [16, 20] }
+        ],
+        lv1: [
+            { no: 'PART 1', title: '문장의 기초 골격과 시제의 시작', goal: 'be동사/일반동사 과거형, 명사/대명사 격변화 및 의문사 의문문 구조 판별', range: [1, 5] },
+            { no: 'PART 2', title: '조동사와 문장의 기본 형식 (1~3형식)', goal: 'can/may/must/should의 뉘앙스, 문장 성분(S, V, O) 및 미래시제 will/be going to', range: [6, 10] },
+            { no: 'PART 3', title: '2형식 감각동사와 4형식 & 비교 구문', goal: '감각동사+형용사 보어, 수여동사(to/for/of 전환), must/have to 및 원급·비교급', range: [11, 15] },
+            { no: 'PART 4', title: '준동사의 기초와 연결사 마스터', goal: '시간 접속사(when/after), to부정사 명사적/형용사적 용법, 동명사 및 재귀대명사', range: [16, 20] }
+        ],
+        lv2: [
+            { no: 'PART 1', title: '준동사 3대 용법과 현재완료 시제', goal: 'to부정사의 명사·형용사·부사적 용법, 동명사 목적어, 현재완료 4대 용법', range: [1, 5] },
+            { no: 'PART 2', title: '조동사 심화와 수동태의 기초', goal: 'used to/would like to, 수동태 기본(be+p.p. by), 부사절 접속사 및 완료시제', range: [6, 10] },
+            { no: 'PART 3', title: '5형식 목적격보어와 수동태의 확장', goal: 'to부정사 취하는 5형식 동사, 사역·지각동사, 조동사 수동태 및 관용 수동태', range: [11, 15] },
+            { no: 'PART 4', title: '관계대명사와 부사절 접속사 총정리', goal: '주격/목적격/소유격 관계사, that 특별용법, 생략 규칙 및 부사절 접속사 완성', range: [16, 20] }
+        ],
+        lv3: [
+            { no: 'PART 1', title: '5형식 심화와 관계사의 본질', goal: '사역/지각동사 원형보어, 관계대명사 격변화, that vs what 및 관계부사 완성', range: [1, 5] },
+            { no: 'PART 2', title: '분사와 분사구문 & 가정법 기초', goal: '감정 유발/느낌 분사, 분사구문 능동 전환, 가정법 과거 및 대과거/과거완료', range: [6, 10] },
+            { no: 'PART 3', title: '관계사 심화와 복합관계사 구문', goal: '관계대명사 계속적 용법, what vs that 심층 판별, 복합관계사 및 가정법 과거완료', range: [11, 15] },
+            { no: 'PART 4', title: '특수 분사구문과 시제일치·화법', goal: 'I wish/as if 가정법, 완료/수동 분사구문, 간접의문문 어순 및 시제일치 화법', range: [16, 20] }
+        ],
+        lv4: [
+            { no: 'PART 1', title: '고교 내신 어법 1순위: 수일치와 태', goal: '주어-동사 수일치, 능동태 vs 수동태 심화, 준동사 시제/태, that vs what, 가목적어', range: [1, 5] },
+            { no: 'PART 2', title: '준동사·관계사 고난도와 병렬 구조', goal: '상관접속사 병렬, 분사구문 심화, 관계대명사 vs 관계부사, 조동사+have p.p.', range: [6, 10] },
+            { no: 'PART 3', title: '특수구문과 비교 구문 심화 마스터', goal: '도치 구문, 강조 it is ~ that, 형용사 vs 부사, the비교급 the비교급, 명사절 접속사', range: [11, 15] },
+            { no: 'PART 4', title: '수능·내신 복합 킬러 서술형 어법', goal: '5형식 목적격보어 형용사, 가목적어 it, 복합관계부사, 비교대상 일치, 부정어 도치', range: [16, 20] }
+        ],
+        lv5: [
+            { no: 'PART 1', title: '평가원 29번 핵심 코드: 동사 vs 준동사', goal: '본동사 자리 판별, that vs what vs which 끝장 구별, 능동 vs 수동 태 판별', range: [1, 5] },
+            { no: 'PART 2', title: '구조적 함정 탈출과 관계사 구문', goal: '대명사 수일치, 형용사 vs 부사, 병렬 구조 낚시 탈출, 대동사, 전치사+관계사', range: [6, 10] },
+            { no: 'PART 3', title: '고난도 분사구문과 특수 도치 공식', goal: '독립분사구문 with+O+OC, 부정어/장소부사구 도치, It is~that 강조, 가정법 도치', range: [11, 15] },
+            { no: 'PART 4', title: '수능 1등급 변별력 킬러 실전 모의', goal: '복합관계사, 부분부정, 무생물주어 구문, 평가원 빈출 29번 어법 실전 마스터', range: [16, 20] }
+        ]
     };
 
     class ClinicStudioEngine {
@@ -229,6 +309,21 @@
                 codePrefix: 'WC',
                 desc: '조건 영작 6제 & 직결 영작 6제 & 기출 킬러 3제 & 루브릭 전문 워크북'
             };
+        }
+
+        getPartForUnit(levelCode, unitNo) {
+            const parts = LEVEL_PARTS_INFO[levelCode] || [
+                { no: 'PART 1', title: '기본 핵심 문법', goal: '단원 핵심 공식 습득', range: [1, 5] },
+                { no: 'PART 2', title: '발전 문법 구문', goal: '문장 적용 및 확장', range: [6, 10] },
+                { no: 'PART 3', title: '심화 문법 완성', goal: '어법 오류 판별', range: [11, 15] },
+                { no: 'PART 4', title: '실전 기출 마스터', goal: '실전 서술형 정복', range: [16, 20] }
+            ];
+            for (const p of parts) {
+                if (unitNo >= p.range[0] && unitNo <= p.range[1]) {
+                    return p;
+                }
+            }
+            return parts[0];
         }
 
         render() {
@@ -360,7 +455,7 @@
             // Sheet 2: 교재 특징 및 100% 활용 가이드 (How to Study)
             sheetsHtml += this.renderHowToUseSheet(level, isAnswers);
 
-            // Sheet 3: [교재 목차 (Table of Contents)] 전용 페이지
+            // Sheet 3: [교재 목차 (Table of Contents)] 파트별 상세 안내 전용 페이지
             sheetsHtml += this.renderDedicatedTocSheet(level, isAnswers);
 
             // Sheet 4: 본교재는 [3회독 스터디 플래너], 답안지는 [20단원 빠른 정답표]
@@ -370,7 +465,7 @@
                 sheetsHtml += this.renderQuickAnswerSheet(level);
             }
 
-            // Sheet 5 ~: 20개 단원 순차 조판 (단원별 A4 시트 완결)
+            // Sheet 5 ~: 20개 단원 순차 조판 (단원별 A4 시트 완결 조판)
             units.forEach((u, uIdx) => {
                 sheetsHtml += this.renderUnitSheets(level, u, isAnswers, uIdx + 1);
             });
@@ -400,86 +495,96 @@
         }
 
         // ======================================================================
-        // 1. 앞표지 시트 (Front Cover Sheet)
+        // 1. 앞표지 시트 (Front Cover Sheet) - 프리미엄 아카데믹 스타일
         // ======================================================================
         renderCoverSheet(level, isAnswers) {
             const meta = THEME_META[level.levelCode] || THEME_META['lv1'];
             const modeMeta = this.getModeMeta();
 
             return `
-                <div class="clinic-a4-sheet justify-between border-4 border-slate-900 bg-white p-12 text-slate-900 shadow-2xl relative overflow-hidden">
-                    <div class="absolute inset-3 border border-slate-400 pointer-events-none"></div>
-                    <div class="absolute inset-4 border border-dashed border-slate-300 pointer-events-none"></div>
+                <div class="clinic-a4-sheet justify-between border-8 border-slate-900 bg-white p-14 text-slate-900 shadow-2xl relative overflow-hidden">
+                    <!-- 정교한 골드 & 슬레이트 아카데믹 듀얼 프레임 -->
+                    <div class="absolute inset-3 border-2 border-amber-600/60 pointer-events-none"></div>
+                    <div class="absolute inset-5 border border-dashed border-slate-400 pointer-events-none"></div>
 
-                    <!-- 표지 상단 헤더부 -->
-                    <div class="relative z-10 space-y-4 pt-4">
+                    <!-- 코너 아카데믹 장식 -->
+                    <div class="absolute top-6 left-6 w-8 h-8 border-t-2 border-l-2 border-slate-900"></div>
+                    <div class="absolute top-6 right-6 w-8 h-8 border-t-2 border-r-2 border-slate-900"></div>
+                    <div class="absolute bottom-6 left-6 w-8 h-8 border-b-2 border-l-2 border-slate-900"></div>
+                    <div class="absolute bottom-6 right-6 w-8 h-8 border-b-2 border-r-2 border-slate-900"></div>
+
+                    <!-- 표지 상단 헤더 -->
+                    <div class="relative z-10 space-y-4 pt-2">
                         <div class="flex items-center justify-between border-b-2 border-slate-900 pb-3">
-                            <div class="flex items-center gap-2">
-                                <span class="w-8 h-8 rounded-lg bg-slate-900 text-amber-400 flex items-center justify-center text-base font-black">V</span>
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-10 h-10 rounded-xl bg-slate-900 text-amber-400 flex items-center justify-center text-xl font-black shadow-md border border-slate-800">
+                                    <i data-lucide="shield" class="w-5 h-5"></i>
+                                </div>
                                 <div>
                                     <div class="font-serif font-black tracking-widest text-xs text-slate-900 uppercase">VERITAS SCHOLARS' ACADEMY</div>
-                                    <div class="text-[10px] font-mono text-slate-500">Academic English Excellence Series</div>
+                                    <div class="text-[10px] font-mono text-slate-500">Premium Standard Curriculum Series</div>
                                 </div>
                             </div>
-                            <span class="px-3 py-1 rounded-full border border-slate-900 font-mono text-[11px] font-bold tracking-wider">2026 EDITION</span>
+                            <span class="px-3.5 py-1 rounded-full border-2 border-slate-900 font-mono text-[11px] font-bold tracking-widest bg-slate-50">2026 EDITION</span>
                         </div>
 
-                        <!-- 답안지일 경우 눈에 띄는 굵직한 배지 표시 -->
+                        <!-- 답안지 vs 본교재 표지 배지 -->
                         ${isAnswers ? `
-                            <div class="py-2.5 px-4 rounded-2xl bg-rose-600 text-white font-serif font-black text-center text-sm sm:text-base tracking-widest shadow-md">
+                            <div class="py-3 px-6 rounded-2xl bg-gradient-to-r from-rose-700 via-rose-600 to-rose-700 text-white font-serif font-black text-center text-base sm:text-lg tracking-widest shadow-lg border border-rose-800">
                                 ★ [정답 및 해설 (문제 답안지 &amp; 풀이)] ★
                             </div>
                         ` : `
-                            <div class="py-1 px-3 rounded-full bg-slate-100 text-slate-700 font-mono text-xs font-semibold inline-block">
-                                2022 개정 교육과정 반영 • 전국 중·고교 내신 및 수능 1등급 대비
+                            <div class="flex items-center gap-2">
+                                <span class="px-3 py-1 rounded-lg bg-slate-900 text-emerald-300 font-mono text-xs font-bold tracking-wider">OFFICIAL WORKBOOK</span>
+                                <span class="text-xs text-slate-500 font-sans font-medium">전국 중·고교 내신 및 수능 1등급 대비 교재</span>
                             </div>
                         `}
                     </div>
 
-                    <!-- 표지 중앙 타이틀부 -->
-                    <div class="relative z-10 my-auto text-center space-y-6 py-10">
-                        <div class="space-y-2">
-                            <div class="font-mono text-xs sm:text-sm font-bold tracking-[0.25em] text-emerald-800 uppercase">
+                    <!-- 표지 중앙 타이틀부 (강력한 시각적 위계) -->
+                    <div class="relative z-10 my-auto text-center space-y-7 py-8">
+                        <div class="space-y-3">
+                            <div class="font-mono text-xs sm:text-sm font-black tracking-[0.3em] uppercase" style="color: ${meta.primaryHex};">
                                 ${modeMeta.enTitle}
                             </div>
-                            <h1 class="font-serif font-black text-4xl sm:text-5xl text-slate-950 tracking-tight leading-none">
+                            <h1 class="font-serif font-black text-5xl sm:text-6xl text-slate-950 tracking-tight leading-none drop-shadow-xs">
                                 ${modeMeta.nameKo}
                             </h1>
-                            <div class="text-xl sm:text-2xl font-serif font-bold text-slate-700 pt-2">
-                                ${level.isSpecial ? level.levelName : '제' + (level.levelCode.replace('lv', '')) + '권. ' + meta.titleKo}
+                            <div class="text-2xl sm:text-3xl font-serif font-bold text-slate-800 pt-2 flex items-center justify-center gap-2">
+                                <span class="w-8 h-0.5 bg-slate-400"></span>
+                                <span>${level.isSpecial ? level.levelName : '제' + (level.levelCode.replace('lv', '')) + '권. ' + meta.titleKo}</span>
+                                <span class="w-8 h-0.5 bg-slate-400"></span>
                             </div>
-                            <p class="text-xs sm:text-sm text-slate-500 font-sans max-w-md mx-auto pt-1">
-                                ${meta.subKo} • 총 ${(level.units || []).length}단원 완결 마스터편
+                            <p class="text-xs sm:text-sm text-slate-600 font-sans max-w-lg mx-auto pt-1 leading-relaxed">
+                                ${meta.subKo} • 총 ${(level.units || []).length}개 소단원 완전 정복 마스터북
                             </p>
                         </div>
 
-                        <div class="w-16 h-1 bg-slate-900 mx-auto rounded-full"></div>
-
-                        <!-- 3대 클리닉 트릴로지 심볼 -->
-                        <div class="inline-flex items-center gap-4 px-6 py-2 rounded-2xl bg-slate-50 border border-slate-200 text-xs font-mono font-bold text-slate-600">
-                            <span>문법 (Grammar)</span>
-                            <span>•</span>
-                            <span>독해 (Reading)</span>
-                            <span>•</span>
-                            <span>쓰기 (Writing)</span>
+                        <!-- 3대 클리닉 트릴로지 심볼 박스 -->
+                        <div class="inline-flex items-center gap-6 px-8 py-3 rounded-2xl bg-slate-50 border-2 border-slate-200 text-xs font-mono font-bold text-slate-700 shadow-2xs">
+                            <span class="${this.currentMode === 'grammar' ? 'text-emerald-700 font-black' : ''}">📗 문법 (Grammar)</span>
+                            <span class="text-slate-300">|</span>
+                            <span class="${this.currentMode === 'reading' ? 'text-blue-700 font-black' : ''}">📘 독해 (Reading)</span>
+                            <span class="text-slate-300">|</span>
+                            <span class="${this.currentMode === 'writing' ? 'text-amber-700 font-black' : ''}">📙 쓰기 (Writing)</span>
                         </div>
                     </div>
 
                     <!-- 표지 하단 사용자 기재란 및 발행처 -->
                     <div class="relative z-10 space-y-6 pb-2">
-                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 grid grid-cols-2 gap-4 text-xs font-serif">
+                        <div class="p-5 rounded-2xl bg-slate-50 border-2 border-slate-200 grid grid-cols-2 gap-6 text-xs font-serif">
                             <div>
-                                <span class="text-slate-400 text-[11px] block font-mono">School / Grade</span>
-                                <span class="text-slate-800 font-bold">학교: _________________ 학년: ____</span>
+                                <span class="text-slate-400 text-[10px] block font-mono font-bold tracking-wider">AFFILIATION &amp; GRADE</span>
+                                <span class="text-slate-900 font-bold text-sm">학교: _________________ 학년: ____</span>
                             </div>
                             <div>
-                                <span class="text-slate-400 text-[11px] block font-mono">Student Name</span>
-                                <span class="text-slate-800 font-bold">이름: _________________</span>
+                                <span class="text-slate-400 text-[10px] block font-mono font-bold tracking-wider">STUDENT'S NAME</span>
+                                <span class="text-slate-900 font-bold text-sm">이름: _________________</span>
                             </div>
                         </div>
 
-                        <div class="flex items-center justify-between text-[11px] font-mono text-slate-400 pt-2 border-t border-slate-200">
-                            <span>VERITAS SCHOLARS' PRESS</span>
+                        <div class="flex items-center justify-between text-[11px] font-mono text-slate-500 pt-2 border-t-2 border-slate-900">
+                            <span class="font-bold tracking-wider">VERITAS SCHOLARS' PRESS</span>
                             <span>All Rights Reserved &copy; 2026</span>
                         </div>
                     </div>
@@ -492,20 +597,23 @@
         // ======================================================================
         renderHowToUseSheet(level, isAnswers) {
             const modeMeta = this.getModeMeta();
+            const meta = THEME_META[level.levelCode] || THEME_META['lv1'];
 
             return `
                 <div class="clinic-a4-sheet justify-between border border-slate-300 bg-white p-10 text-slate-900 shadow-md">
+                    <!-- 상단 헤더 -->
                     <div class="border-b-2 border-slate-900 pb-3 flex items-end justify-between">
                         <div>
-                            <div class="text-[10px] font-mono text-emerald-800 font-bold">STRUCTURE &amp; METHODOLOGY</div>
+                            <div class="text-[10px] font-mono text-emerald-800 font-bold tracking-widest uppercase">STRUCTURE &amp; METHODOLOGY</div>
                             <h2 class="text-xl font-serif font-black text-slate-900">교재 구성 및 100% 마스터 가이드</h2>
                         </div>
-                        <span class="text-xs font-mono text-slate-400">Page 02</span>
+                        <span class="text-xs font-mono text-slate-400 font-bold">Page 02</span>
                     </div>
 
+                    <!-- 본문: 학습 구성도 -->
                     <div class="space-y-6 my-auto text-xs leading-relaxed font-sans">
-                        <div class="p-4 rounded-2xl bg-emerald-50/60 border border-emerald-200 space-y-2">
-                            <h3 class="font-serif font-bold text-sm text-emerald-950 flex items-center gap-2">
+                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                            <h3 class="font-serif font-bold text-sm text-slate-950 flex items-center gap-2">
                                 <i data-lucide="award" class="w-4 h-4 text-emerald-600"></i>
                                 <span>『${modeMeta.nameKo}』의 핵심 교육 설계 원칙</span>
                             </h3>
@@ -519,23 +627,23 @@
                                 <h4 class="font-serif font-bold text-slate-900 text-xs border-b border-slate-200 pb-1">유닛별 5대 입체 섹션 구성</h4>
                                 <div class="grid grid-cols-1 gap-2.5">
                                     <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                                        <strong class="text-emerald-800 font-serif">Section 1. 자연스러운 4대 실전 개념 체계</strong>
+                                        <strong class="text-emerald-800 font-serif">[Section 1] 자연스러운 4대 실전 개념 체계</strong>
                                         <p class="text-slate-600 text-[11px] mt-0.5">핵심 문법 맵(Core Map) ➔ 공식 & 1:1 대조 예문 ➔ 실전 뉘앙스/짝꿍 ➔ 내신·수능 빈출 함정 탈출 노트</p>
                                     </div>
                                     <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                                        <strong class="text-slate-800 font-serif">Section 2. 기초 체력 빌드업 드릴 (10문항)</strong>
+                                        <strong class="text-slate-800 font-serif">[Section 2] 기초 체력 빌드업 드릴 (10문항)</strong>
                                         <p class="text-slate-600 text-[11px] mt-0.5">개념 즉시 점검 OX 5문항 + 문맥 동사/단어 형태 변화 5문항</p>
                                     </div>
                                     <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                                        <strong class="text-blue-800 font-serif">Section 3. 실전 문법 적용 파이널 (20문항 6대 유형)</strong>
+                                        <strong class="text-blue-800 font-serif">[Section 3] 실전 문법 적용 파이널 (20문항 6대 유형)</strong>
                                         <p class="text-slate-600 text-[11px] mt-0.5">양자택일(4) + 5밑줄 어법(3) + 조건 어형변화(4) + 5지선다(5) + 문장전환(2) + 어순배열(2)</p>
                                     </div>
                                     <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                                        <strong class="text-rose-800 font-serif">Section 4. 고난도 킬러 서술형 (3문항)</strong>
+                                        <strong class="text-rose-800 font-serif">[Section 4] 고난도 킬러 서술형 (3문항)</strong>
                                         <p class="text-slate-600 text-[11px] mt-0.5">학교별 기출 빈출 조건 영작 및 부분 점수 감점 방지 루브릭 적용</p>
                                     </div>
                                     <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                                        <strong class="text-slate-800 font-serif">Section 5. 복습 & 오답 클리닉 리플렉션 노트</strong>
+                                        <strong class="text-slate-800 font-serif">[Section 5] 복습 & 오답 클리닉 리플렉션 노트</strong>
                                         <p class="text-slate-600 text-[11px] mt-0.5">핵심 키워드 자가 체크리스트 및 오답 원인 기록</p>
                                     </div>
                                 </div>
@@ -547,19 +655,19 @@
                                 <h4 class="font-serif font-bold text-slate-900 text-xs border-b border-slate-200 pb-1">유닛별 4단계 독해 워크아웃 구성</h4>
                                 <div class="grid grid-cols-1 gap-2.5">
                                     <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                                        <strong class="text-blue-800 font-serif">Stage 1. 지문 속 핵심 문법 스포트라이트</strong>
+                                        <strong class="text-blue-800 font-serif">[Stage 1] 지문 속 핵심 문법 스포트라이트</strong>
                                         <p class="text-slate-600 text-[11px] mt-0.5">지문에 등장하는 문법 대표 문장 2개와 [S, V, O, C] 문장 성분 도식화</p>
                                     </div>
                                     <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                                        <strong class="text-slate-800 font-serif">Stage 2. 실전 독해 지문 & 어휘 각주</strong>
+                                        <strong class="text-slate-800 font-serif">[Stage 2] 실전 독해 지문 & 어휘 각주</strong>
                                         <p class="text-slate-600 text-[11px] mt-0.5">권장 읽기 타이머(WPM)와 지문 하단 Footnote 핵심 어휘 풀이</p>
                                     </div>
                                     <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                                        <strong class="text-emerald-800 font-serif">Stage 3. 실전 독해 평가 3문항</strong>
+                                        <strong class="text-emerald-800 font-serif">[Stage 3] 실전 독해 평가 3문항</strong>
                                         <p class="text-slate-600 text-[11px] mt-0.5">Q1. 대의 파악(주제/제목) + Q2. 세부 내용 일치 + Q3. 문맥 논리 추론</p>
                                     </div>
                                     <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                                        <strong class="text-rose-800 font-serif">Stage 4. 지문 기반 실전 어법 2문항</strong>
+                                        <strong class="text-rose-800 font-serif">[Stage 4] 지문 기반 실전 어법 2문항</strong>
                                         <p class="text-slate-600 text-[11px] mt-0.5">지문 밑줄 어법 판단 1문항 + 지문 내용 바탕 문장 변형 서술형 1문항</p>
                                     </div>
                                 </div>
@@ -571,15 +679,15 @@
                                 <h4 class="font-serif font-bold text-slate-900 text-xs border-b border-slate-200 pb-1">유닛별 3단계 집중 영작 훈련 구성</h4>
                                 <div class="grid grid-cols-1 gap-2.5">
                                     <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                                        <strong class="text-amber-800 font-serif">Step 1. 힌트 어휘 제공 조건 영작 (6문항)</strong>
+                                        <strong class="text-amber-800 font-serif">[Step 1] 힌트 어휘 제공 조건 영작 (6문항)</strong>
                                         <p class="text-slate-600 text-[11px] mt-0.5">필수 단어를 반드시 포함하여 정확한 문법 구조로 완성하는 영작 훈련</p>
                                     </div>
                                     <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                                        <strong class="text-slate-800 font-serif">Step 2. 우리말 해석 직결 완성 영작 (6문항)</strong>
+                                        <strong class="text-slate-800 font-serif">[Step 2] 우리말 해석 직결 완성 영작 (6문항)</strong>
                                         <p class="text-slate-600 text-[11px] mt-0.5">단어 힌트 없이 우리말 의미를 완전한 영어 문장으로 자율 영작하는 훈련</p>
                                     </div>
                                     <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                                        <strong class="text-rose-800 font-serif">Step 3. 학교 기출 변형 킬러 서술형 (3문항) & 감점 방지 루브릭</strong>
+                                        <strong class="text-rose-800 font-serif">[Step 3] 학교 기출 변형 킬러 서술형 (3문항) & 감점 방지 루브릭</strong>
                                         <p class="text-slate-600 text-[11px] mt-0.5">복합 상황 조건 영작 및 수일치/시제 감점 방지 채점 기준표</p>
                                     </div>
                                 </div>
@@ -596,54 +704,65 @@
         }
 
         // ======================================================================
-        // 3. [교재 목차 (Table of Contents)] 전용 독립 시트
+        // 3. [교재 목차 (Table of Contents)] 파트별 상세 안내 전용 독립 시트
         // ======================================================================
         renderDedicatedTocSheet(level, isAnswers) {
             const units = level.units || [];
             const modeMeta = this.getModeMeta();
-
-            // 4개 파트로 그룹화 (각 5단원씩)
-            const parts = [
-                { title: 'PART 1. 기본 품사 & 문장의 기초 골격', slice: units.slice(0, 5) },
-                { title: 'PART 2. 동사의 시제와 서법 & 조동사', slice: units.slice(5, 10) },
-                { title: 'PART 3. 준동사와 문장의 구조 심화', slice: units.slice(10, 15) },
-                { title: 'PART 4. 연결사와 구문 마스터 & 고난도 특수구문', slice: units.slice(15, 20) }
+            const meta = THEME_META[level.levelCode] || THEME_META['lv1'];
+            const parts = LEVEL_PARTS_INFO[level.levelCode] || [
+                { no: 'PART 1', title: '기본 핵심 문법', goal: '기본 공식 습득', range: [1, 5] },
+                { no: 'PART 2', title: '발전 문법 구문', goal: '문장 적용 및 확장', range: [6, 10] },
+                { no: 'PART 3', title: '심화 문법 완성', goal: '어법 오류 판별', range: [11, 15] },
+                { no: 'PART 4', title: '실전 기출 마스터', goal: '실전 서술형 정복', range: [16, 20] }
             ];
 
             return `
                 <div class="clinic-a4-sheet justify-between border border-slate-300 bg-white p-10 text-slate-900 shadow-md">
+                    <!-- 상단 헤더 -->
                     <div class="border-b-2 border-slate-900 pb-3 flex items-end justify-between">
                         <div>
-                            <div class="text-[10px] font-mono text-emerald-800 font-bold uppercase">${modeMeta.enTitle}</div>
+                            <div class="text-[10px] font-mono text-emerald-800 font-bold uppercase tracking-wider">${modeMeta.enTitle}</div>
                             <h2 class="text-xl font-serif font-black text-slate-900">교재 목차 (Table of Contents)</h2>
                         </div>
-                        <span class="text-xs font-mono text-slate-400">Page 03</span>
+                        <span class="text-xs font-mono text-slate-400 font-bold">Page 03</span>
                     </div>
 
-                    <!-- 목차 본문 (4대 파트 분류) -->
+                    <!-- 목차 본문: 파트별 상세 학습 목표 & 단원 리스트 -->
                     <div class="my-auto space-y-4 font-sans text-xs">
-                        ${parts.map((p, pIdx) => `
-                            <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1.5">
-                                <div class="font-serif font-bold text-slate-900 text-xs border-b border-slate-200 pb-1 flex items-center justify-between">
-                                    <span class="flex items-center gap-1.5 text-emerald-900">
-                                        <span class="w-4 h-4 rounded bg-emerald-600 text-white flex items-center justify-center text-[10px] font-mono font-bold">${pIdx + 1}</span>
-                                        <span>${p.title}</span>
-                                    </span>
-                                    <span class="text-[10px] font-mono text-slate-400">Units ${pIdx * 5 + 1} ~ ${pIdx * 5 + p.slice.length}</span>
-                                </div>
-                                <div class="space-y-1 pt-0.5">
-                                    ${p.slice.map(u => `
-                                        <div class="flex items-center justify-between text-[11px] hover:text-emerald-800 py-0.5">
-                                            <span class="font-medium text-slate-800 flex items-center gap-2">
-                                                <span class="font-mono text-slate-400 w-6">${u.unitNo < 10 ? '0' + u.unitNo : u.unitNo}</span>
-                                                <span class="truncate max-w-[320px]">${escapeHtml(u.title)}</span>
-                                            </span>
-                                            <span class="font-mono text-slate-400 text-[10px]">p. ${(u.unitNo - 1) * 3 + 5}</span>
+                        ${parts.map((p, pIdx) => {
+                            const partUnits = units.filter(u => u.unitNo >= p.range[0] && u.unitNo <= p.range[1]);
+                            return `
+                                <div class="p-3.5 rounded-2xl bg-slate-50/90 border border-slate-200 shadow-2xs space-y-2">
+                                    <div class="border-b border-slate-200 pb-1.5 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                                        <div class="flex items-center gap-2">
+                                            <span class="px-2 py-0.5 rounded-md bg-slate-900 text-white font-mono text-[10px] font-bold tracking-wider">${p.no}</span>
+                                            <h3 class="font-serif font-bold text-slate-950 text-xs sm:text-sm">${p.title}</h3>
                                         </div>
-                                    `).join('')}
+                                        <span class="text-[10px] font-mono text-slate-500 font-medium">Units ${p.range[0]} ~ ${p.range[1]}</span>
+                                    </div>
+                                    
+                                    <!-- 파트별 학습 완성 목표 배너 -->
+                                    <div class="p-2 rounded-xl bg-white border border-slate-200/80 text-[10px] text-slate-600 flex items-center gap-1.5">
+                                        <i data-lucide="target" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i>
+                                        <span><strong>학습 목표:</strong> ${p.goal}</span>
+                                    </div>
+
+                                    <!-- 단원 리스트 -->
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 pt-0.5 text-[11px]">
+                                        ${partUnits.map(u => `
+                                            <div class="flex items-center justify-between hover:text-emerald-800 py-0.5 border-b border-dashed border-slate-100">
+                                                <span class="font-medium text-slate-800 truncate max-w-[200px] flex items-center gap-1.5">
+                                                    <span class="font-mono text-slate-400 text-[10px]">U${u.unitNo < 10 ? '0' + u.unitNo : u.unitNo}</span>
+                                                    <span class="truncate">${escapeHtml(u.title)}</span>
+                                                </span>
+                                                <span class="font-mono text-slate-400 text-[10px] shrink-0">p. ${(u.unitNo - 1) * 4 + 5}</span>
+                                            </div>
+                                        `).join('')}
+                                    </div>
                                 </div>
-                            </div>
-                        `).join('')}
+                            `;
+                        }).join('')}
                     </div>
 
                     <div class="border-t border-slate-200 pt-2 flex items-center justify-between text-[10px] font-mono text-slate-400">
@@ -664,10 +783,10 @@
                 <div class="clinic-a4-sheet justify-between border border-slate-300 bg-white p-10 text-slate-900 shadow-md">
                     <div class="border-b-2 border-slate-900 pb-3 flex items-end justify-between">
                         <div>
-                            <div class="text-[10px] font-mono text-emerald-800 font-bold">STUDY TRACKER &amp; PLANNER</div>
+                            <div class="text-[10px] font-mono text-emerald-800 font-bold tracking-widest uppercase">STUDY TRACKER &amp; PLANNER</div>
                             <h2 class="text-xl font-serif font-black text-slate-900">3회독 진도 체크리스트 &amp; 성취도 기록표</h2>
                         </div>
-                        <span class="text-xs font-mono text-slate-400">Page 04</span>
+                        <span class="text-xs font-mono text-slate-400 font-bold">Page 04</span>
                     </div>
 
                     <div class="my-auto overflow-hidden">
@@ -713,10 +832,10 @@
                 <div class="clinic-a4-sheet justify-between border border-slate-300 bg-white p-10 text-slate-900 shadow-md">
                     <div class="border-b-2 border-rose-600 pb-3 flex items-end justify-between">
                         <div>
-                            <div class="text-[10px] font-mono text-rose-600 font-bold">QUICK ANSWER MATRIX</div>
+                            <div class="text-[10px] font-mono text-rose-600 font-bold uppercase tracking-wider">QUICK ANSWER MATRIX</div>
                             <h2 class="text-xl font-serif font-black text-slate-900">전체 단원 빠른 정답표 (Quick Key)</h2>
                         </div>
-                        <span class="text-xs font-mono text-rose-600 font-bold">[정답편] Page 03</span>
+                        <span class="text-xs font-mono text-rose-600 font-bold">[정답편] Page 04</span>
                     </div>
 
                     <div class="my-auto overflow-hidden">
@@ -738,7 +857,7 @@
                                         summaryAns = comp.map(q => `Q${q.qNo}:${q.ans + 1}번`).join(' | ');
                                     } else {
                                         const s1 = u.step1_conditioned || [];
-                                        summaryAns = s1.slice(0, 3).map((q, i) => `[${i+1}] 조건영작 완료`).join(' | ');
+                                        summaryAns = s1.slice(0, 3).map((q, i) => `[${i+1}] 영작완료`).join(' | ');
                                     }
                                     return `
                                         <tr class="hover:bg-rose-50/50">
@@ -753,7 +872,7 @@
 
                     <div class="border-t border-slate-200 pt-2 flex items-center justify-between text-[10px] font-mono text-slate-400">
                         <span>VERITAS ENGLISH ANSWER KEY</span>
-                        <span>03</span>
+                        <span>04</span>
                     </div>
                 </div>
             `;
@@ -773,9 +892,11 @@
         }
 
         // ----------------------------------------------------------------------
-        // [문법 Clinic] 단원별 완벽한 3시트 A4 조판 (초안 100% 복원)
+        // [문법 Clinic] 단원별 완벽한 4페이지 A4 조판 (개념 여유 공간 + 20문항 + 킬러 + 오답노트)
         // ----------------------------------------------------------------------
         renderGrammarUnitSheets(level, unit, isAnswers, pageSeq) {
+            const meta = THEME_META[level.levelCode] || THEME_META['lv1'];
+            const partInfo = this.getPartForUnit(level.levelCode, unit.unitNo);
             const sec1 = unit.section1 || {};
             const coreMap = sec1.coreMap || {};
             const dualExs = sec1.dualExamples || [];
@@ -784,62 +905,78 @@
             const sec3 = unit.section3 || [];
             const sec4 = unit.section4 || [];
             const sec5 = unit.section5 || {};
+            const basePage = (unit.unitNo - 1) * 4 + 5;
 
-            // Sheet 1: Unit Header + Section 1 (4대 실전 개념 체계 완제품) + Section 2 (기초 체력 드릴 10문항 전체)
+            // Sheet 1: 개념 전용 페이지 (여유로운 여백, 큼직한 공식, OX 비교 클리닉, 함정 노트)
             const sheet1 = `
                 <div class="clinic-a4-sheet border border-slate-300 bg-white p-8 text-slate-900 shadow-md">
                     <!-- 유닛 헤더 -->
                     <div class="border-b-2 border-slate-900 pb-2.5 flex items-end justify-between shrink-0">
                         <div>
-                            <div class="text-[10px] font-mono text-emerald-800 font-bold uppercase">UNIT ${unit.unitNo < 10 ? '0' + unit.unitNo : unit.unitNo} • ${escapeHtml(level.levelName)}</div>
-                            <h3 class="text-base sm:text-lg font-serif font-black text-slate-950">${escapeHtml(unit.title)}</h3>
+                            <div class="flex items-center gap-2">
+                                <span class="px-2 py-0.5 rounded bg-slate-900 text-white font-mono text-[9px] font-bold">${partInfo.no}</span>
+                                <span class="text-[10px] font-mono font-bold uppercase" style="color: ${meta.primaryHex};">${partInfo.title}</span>
+                            </div>
+                            <h3 class="text-base sm:text-lg font-serif font-black text-slate-950 mt-0.5">
+                                Unit ${unit.unitNo < 10 ? '0' + unit.unitNo : unit.unitNo}. ${escapeHtml(unit.title)}
+                            </h3>
                         </div>
                         <div class="text-right text-[10px] font-mono text-slate-500">
-                            ${isAnswers ? `<span class="px-2 py-0.5 rounded bg-rose-100 text-rose-800 font-bold font-mono">정답 및 풀이</span>` : `<span>Score: _____ / 100</span>`}
+                            ${isAnswers ? `<span class="px-2 py-0.5 rounded bg-rose-100 text-rose-800 font-bold font-mono">정답 및 풀이</span>` : `<span>[개념 마스터] Sheet 1</span>`}
                         </div>
                     </div>
 
-                    <!-- [Section 1] 자연스러운 4대 실전 개념 체계 (초안 완전 복원) -->
-                    <div class="space-y-3 bg-emerald-50/50 p-4 rounded-2xl border border-emerald-200 my-2 text-xs">
-                        <div class="flex items-center gap-2 border-b border-emerald-200 pb-1.5">
-                            <span class="w-5 h-5 rounded bg-emerald-600 text-white flex items-center justify-center text-[10px] font-bold font-mono">1</span>
-                            <h4 class="font-serif font-bold text-xs sm:text-sm text-emerald-950">심화 개념 마스터 &amp; 공식 시크릿 노트</h4>
-                        </div>
-
+                    <!-- [Section 1] 심화 개념 마스터 & 공식 시크릿 노트 (전면 여유 배치) -->
+                    <div class="my-auto space-y-4">
                         <!-- 1. Core Grammar Map -->
-                        <div class="bg-white p-3 rounded-xl border border-emerald-100 shadow-2xs space-y-1.5">
-                            <div class="text-[11px] font-bold text-emerald-900 flex items-center gap-1">
-                                <i data-lucide="compass" class="w-3.5 h-3.5 text-emerald-600"></i>
-                                <span>1. Core Grammar Map (핵심 문법 맵)</span>
+                        <div class="p-4 rounded-2xl border-2 shadow-2xs space-y-2" style="background-color: ${meta.lightBg}; border-color: ${meta.primaryHex}40;">
+                            <div class="flex items-center justify-between border-b pb-1.5" style="border-color: ${meta.primaryHex}30;">
+                                <div class="text-xs font-bold flex items-center gap-1.5" style="color: ${meta.secondaryHex};">
+                                    <i data-lucide="compass" class="w-4 h-4"></i>
+                                    <span>1. Core Grammar Map (핵심 문법 맵 &amp; 작동 원리)</span>
+                                </div>
+                                <span class="px-2 py-0.5 rounded-full bg-white font-mono text-[9px] font-bold text-slate-600 border border-slate-200">POINT 01</span>
                             </div>
-                            <p class="text-[11px] text-slate-700 leading-snug font-sans">${escapeHtml(coreMap.overview || '')}</p>
+                            <p class="text-xs text-slate-800 leading-relaxed font-sans">${escapeHtml(coreMap.overview || '')}</p>
+                            
+                            <!-- 공식 박스 -->
                             ${(coreMap.formulaBoxes || []).map(fb => `
-                                <div class="p-2 bg-slate-900 text-emerald-300 font-mono text-[11px] rounded-lg border border-emerald-500/20 my-1">
-                                    <div class="font-bold text-white">${escapeHtml(fb.name)}</div>
-                                    <div class="text-emerald-400">📐 ${escapeHtml(fb.formula)}</div>
-                                    ${fb.desc ? `<div class="text-slate-300 text-[10px] font-sans mt-0.5">💡 ${escapeHtml(fb.desc)}</div>` : ''}
+                                <div class="p-3 bg-slate-900 text-emerald-300 font-mono text-xs rounded-xl border border-emerald-500/30 my-2 shadow-inner">
+                                    <div class="font-bold text-white mb-0.5 flex items-center gap-1.5">
+                                        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                                        <span>${escapeHtml(fb.name)}</span>
+                                    </div>
+                                    <div class="text-emerald-400 text-sm font-bold pl-3">📐 ${escapeHtml(fb.formula)}</div>
+                                    ${fb.desc ? `<div class="text-slate-300 text-[11px] font-sans mt-1 pl-3">💡 ${escapeHtml(fb.desc)}</div>` : ''}
                                 </div>
                             `).join('')}
                         </div>
 
-                        <!-- 2. Formula & Dual Examples with OX Comparison -->
-                        <div class="bg-white p-3 rounded-xl border border-emerald-100 shadow-2xs space-y-1.5">
-                            <div class="text-[11px] font-bold text-emerald-900 flex items-center gap-1">
-                                <i data-lucide="split" class="w-3.5 h-3.5 text-indigo-600"></i>
+                        <!-- 2. Dual Examples & OX Comparison Clinic -->
+                        <div class="p-4 rounded-2xl bg-white border-2 border-slate-200 shadow-2xs space-y-2.5">
+                            <div class="text-xs font-bold text-slate-900 flex items-center gap-1.5 border-b border-slate-100 pb-1.5">
+                                <i data-lucide="split" class="w-4 h-4 text-indigo-600"></i>
                                 <span>2. Formula &amp; Dual Examples (공식 &amp; 1:1 대조 예문)</span>
                             </div>
-                            <div class="grid grid-cols-2 gap-2 text-[10px]">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                                 ${dualExs.map(de => `
-                                    <div class="p-2 rounded-lg bg-slate-50 border border-slate-200 space-y-1">
-                                        <div class="font-bold text-slate-800">${escapeHtml(de.title)}</div>
+                                    <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+                                        <div class="font-bold text-slate-900 border-b border-slate-200 pb-1">${escapeHtml(de.title)}</div>
                                         ${(de.examples || []).map(ex => `
-                                            <div class="text-slate-900 font-serif">▸ ${escapeHtml(ex.en)}</div>
-                                            <div class="text-[9px] text-slate-500">${escapeHtml(ex.ko)}</div>
+                                            <div class="text-slate-900 font-serif font-bold">▸ ${escapeHtml(ex.en)}</div>
+                                            <div class="text-[11px] text-slate-600 font-sans">${escapeHtml(ex.ko)}</div>
                                         `).join('')}
                                         ${(de.oxCompare || []).map(ox => `
-                                            <div class="pt-0.5 text-[9px] border-t border-slate-200">
-                                                <span class="text-emerald-700 font-bold">⭕ ${escapeHtml(ox.correct)}</span><br/>
-                                                <span class="text-rose-600 line-through">❌ ${escapeHtml(ox.wrong)}</span>
+                                            <div class="pt-1.5 mt-1 border-t border-slate-200 text-[11px] space-y-0.5">
+                                                <div class="text-emerald-800 font-bold flex items-center gap-1">
+                                                    <span class="w-3.5 h-3.5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[9px]">O</span>
+                                                    <span>${escapeHtml(ox.correct)}</span>
+                                                </div>
+                                                <div class="text-rose-700 font-semibold line-through flex items-center gap-1">
+                                                    <span class="w-3.5 h-3.5 rounded-full bg-rose-600 text-white flex items-center justify-center text-[9px]">X</span>
+                                                    <span>${escapeHtml(ox.wrong)}</span>
+                                                </div>
+                                                ${ox.reason ? `<div class="text-[10px] text-slate-500 pl-4">👉 ${escapeHtml(ox.reason)}</div>` : ''}
                                             </div>
                                         `).join('')}
                                     </div>
@@ -848,146 +985,156 @@
                         </div>
 
                         <!-- 3. Real Nuance & 4. Trap Alert -->
-                        <div class="grid grid-cols-2 gap-2 text-[10px]">
-                            <div class="bg-white p-2.5 rounded-xl border border-emerald-100 shadow-2xs">
-                                <strong class="text-emerald-900 font-bold block mb-1">3. Real Nuance &amp; Collocations</strong>
-                                ${nuance.map(n => `<p class="text-slate-700 text-[10px] leading-tight">• ${escapeHtml(n.point)}</p>`).join('')}
-                            </div>
-                            <div class="bg-white p-2.5 rounded-xl border border-emerald-100 shadow-2xs">
-                                <strong class="text-rose-900 font-bold block mb-1">4. Exam Core &amp; Trap Alert</strong>
-                                ${nuance.map(n => `<p class="text-rose-900 text-[10px] leading-tight">⚠️ ${escapeHtml(n.collocation)}</p>`).join('')}
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- [Section 2] 기초 체력 빌드업 드릴 (10문항 전체 수록!) -->
-                    <div class="space-y-2 my-auto text-xs">
-                        <div class="flex items-center justify-between border-b border-slate-800 pb-1">
-                            <span class="font-serif font-bold text-slate-900">[Section 2] 기초 체력 빌드업 드릴 (10문항)</span>
-                            <span class="text-[10px] font-mono text-slate-500">각 2점 • 총 20점</span>
-                        </div>
-                        <div class="grid grid-cols-2 gap-2 text-[10px]">
-                            ${sec2.map((d, idx) => `
-                                <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
-                                    <div class="font-bold text-slate-700 flex justify-between">
-                                        <span>[0${idx+1}] ${escapeHtml(d.q)}</span>
-                                        ${isAnswers ? `<span class="text-emerald-700 font-mono font-bold">${escapeHtml(d.answer)}</span>` : ''}
-                                    </div>
-                                    <div class="font-serif text-slate-900 truncate bg-white p-1 rounded border border-slate-100">${escapeHtml(d.sentence)}</div>
+                        <div class="grid grid-cols-2 gap-3 text-xs">
+                            <div class="p-3.5 rounded-2xl bg-amber-50/70 border border-amber-200 shadow-2xs space-y-1">
+                                <div class="font-bold text-amber-950 flex items-center gap-1.5 text-xs">
+                                    <i data-lucide="zap" class="w-4 h-4 text-amber-600"></i>
+                                    <span>3. Real Nuance &amp; Collocations (실전 쓰임)</span>
                                 </div>
-                            `).join('')}
+                                ${nuance.map(n => `<p class="text-slate-700 text-xs leading-relaxed">• ${escapeHtml(n.point)}</p>`).join('')}
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-rose-50/70 border border-rose-200 shadow-2xs space-y-1">
+                                <div class="font-bold text-rose-950 flex items-center gap-1.5 text-xs">
+                                    <i data-lucide="alert-octagon" class="w-4 h-4 text-rose-600"></i>
+                                    <span>4. Exam Core &amp; Trap Alert (출제 함정)</span>
+                                </div>
+                                ${nuance.map(n => `<p class="text-rose-900 text-xs leading-relaxed">⚠️ ${escapeHtml(n.collocation)}</p>`).join('')}
+                            </div>
                         </div>
                     </div>
 
-                    <div class="border-t border-slate-200 pt-1 flex items-center justify-between text-[10px] font-mono text-slate-400 shrink-0">
-                        <span>Unit ${unit.unitNo} Sheet 1</span>
-                        <span>Page ${(unit.unitNo - 1) * 3 + 5}</span>
+                    <div class="border-t border-slate-200 pt-1.5 flex items-center justify-between text-[10px] font-mono text-slate-400 shrink-0">
+                        <span>Unit ${unit.unitNo} Sheet 1 (개념 마스터)</span>
+                        <span>Page ${basePage}</span>
                     </div>
                 </div>
             `;
 
-            // Sheet 2: Section 3 실전 문법 적용 파이널 Part 1 (Type 1 양자택일 4문항 + Type 2 5밑줄 3문항 + Type 3 어형변화 4문항)
+            // Sheet 2: Section 2 기초 체력 드릴 (10문항) + Section 3 실전 파이널 Part 1 (Type 1 양자택일 4제 + Type 2 5밑줄 3제)
             const sheet2 = `
                 <div class="clinic-a4-sheet border border-slate-300 bg-white p-8 text-slate-900 shadow-md">
-                    <div class="border-b-2 border-slate-900 pb-2 flex items-end justify-between shrink-0">
+                    <div class="border-b-2 border-slate-900 pb-2.5 flex items-end justify-between shrink-0">
                         <div>
-                            <div class="text-[10px] font-mono text-emerald-800 font-bold uppercase">SECTION 3 • ACTUAL PRACTICE (PART 1)</div>
-                            <h3 class="text-sm font-serif font-bold text-slate-950">실전 문법 적용 파이널 (Part 1. Q01 ~ Q11)</h3>
+                            <div class="text-[10px] font-mono font-bold uppercase" style="color: ${meta.primaryHex};">SECTION 2 &amp; SECTION 3 (PART 1)</div>
+                            <h3 class="text-base font-serif font-black text-slate-950">기초 체력 드릴 &amp; 실전 문법 적용 (Q01 ~ Q07)</h3>
                         </div>
                         <div class="text-right text-[10px] font-mono text-slate-500">
-                            ${isAnswers ? `<span class="text-rose-600 font-bold">[정답 및 풀이]</span>` : `<span>2단 정밀 조판</span>`}
+                            ${isAnswers ? `<span class="text-rose-600 font-bold">[정답 및 풀이]</span>` : `<span>Sheet 2</span>`}
                         </div>
                     </div>
 
-                    <!-- 2단 컬럼 배치: Q1 ~ Q11 전 문항 완전 수록 -->
-                    <div class="grid grid-cols-2 gap-3.5 my-auto text-xs">
-                        <!-- 좌측: Type 1 (Q1~Q4) + Type 2 (Q5~Q6) -->
-                        <div class="space-y-2.5">
-                            <div class="font-serif font-bold text-slate-900 text-[11px] border-b border-slate-200 pb-0.5">Type 1. 1:1 맞짱 양자택일 (Q01~Q04)</div>
-                            ${sec3.slice(0, 4).map(q => `
-                                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-[10px] space-y-1">
-                                    <div class="flex justify-between font-bold text-slate-800">
-                                        <span>[0${q.qNo}] ${escapeHtml(q.type)}</span>
-                                        ${isAnswers ? `<span class="text-emerald-700 font-mono font-bold">정답: ${escapeHtml(q.options[q.ans])}</span>` : ''}
-                                    </div>
-                                    <p class="text-slate-800">${escapeHtml(q.stem)}</p>
-                                    <div class="font-serif text-slate-900 bg-white p-1.5 rounded border border-slate-100">${escapeHtml(q.sentence)}</div>
+                    <div class="my-auto space-y-4">
+                        <!-- [Section 2] 기초 체력 빌드업 드릴 (10문항 전체 수록!) -->
+                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 shadow-2xs space-y-2">
+                            <div class="flex items-center justify-between border-b border-slate-200 pb-1.5">
+                                <div class="font-serif font-bold text-slate-900 text-xs flex items-center gap-1.5">
+                                    <span class="w-5 h-5 rounded bg-slate-900 text-white flex items-center justify-center text-[10px] font-mono">2</span>
+                                    <span>기초 체력 빌드업 드릴 (10문항)</span>
                                 </div>
-                            `).join('')}
-
-                            <div class="font-serif font-bold text-slate-900 text-[11px] border-b border-slate-200 pb-0.5 pt-1">Type 2. 5밑줄 어법 진단 및 수정</div>
-                            ${sec3.slice(4, 6).map(q => `
-                                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-[10px] space-y-1">
-                                    <div class="flex justify-between font-bold text-slate-800">
-                                        <span>[0${q.qNo}] ${escapeHtml(q.type)}</span>
-                                        ${isAnswers ? `<span class="text-emerald-700 font-mono font-bold">${q.ansIdx}번 (${q.correctWord})</span>` : ''}
+                                <span class="text-[10px] font-mono text-slate-500 font-bold">각 2점 • 총 20점</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2 text-xs">
+                                ${sec2.map((d, idx) => `
+                                    <div class="p-2 rounded-xl bg-white border border-slate-200 text-[11px] space-y-1">
+                                        <div class="font-bold text-slate-700 flex justify-between">
+                                            <span>[0${idx+1}] ${escapeHtml(d.q)}</span>
+                                            ${isAnswers ? `<span class="text-emerald-700 font-mono font-bold">정답: ${escapeHtml(d.answer)}</span>` : ''}
+                                        </div>
+                                        <div class="font-serif text-slate-900 truncate bg-slate-50 p-1.5 rounded border border-slate-100">${escapeHtml(d.sentence)}</div>
                                     </div>
-                                    <p class="text-slate-800 leading-tight">${escapeHtml(q.stem)}</p>
-                                    <div class="font-serif text-slate-900 bg-white p-1 rounded border border-slate-100">${escapeHtml(q.sentence)}</div>
-                                </div>
-                            `).join('')}
+                                `).join('')}
+                            </div>
                         </div>
 
-                        <!-- 우측: Type 2 (Q7) + Type 3 조건부 어형변화 (Q8~Q11) -->
-                        <div class="space-y-2.5">
-                            ${sec3.slice(6, 7).map(q => `
-                                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-[10px] space-y-1">
-                                    <div class="flex justify-between font-bold text-slate-800">
-                                        <span>[0${q.qNo}] ${escapeHtml(q.type)}</span>
-                                        ${isAnswers ? `<span class="text-emerald-700 font-mono font-bold">${q.ansIdx}번 (${q.correctWord})</span>` : ''}
-                                    </div>
-                                    <p class="text-slate-800 leading-tight">${escapeHtml(q.stem)}</p>
-                                    <div class="font-serif text-slate-900 bg-white p-1 rounded border border-slate-100">${escapeHtml(q.sentence)}</div>
+                        <!-- [Section 3] 실전 문법 적용 파이널 Part 1: Type 1 & Type 2 -->
+                        <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs space-y-3">
+                            <div class="flex items-center justify-between border-b border-slate-200 pb-1.5">
+                                <div class="font-serif font-bold text-slate-900 text-xs flex items-center gap-1.5">
+                                    <span class="w-5 h-5 rounded bg-emerald-600 text-white flex items-center justify-center text-[10px] font-mono">3</span>
+                                    <span>실전 문법 적용 파이널 (Part 1. Q01 ~ Q07)</span>
                                 </div>
-                            `).join('')}
+                                <span class="text-[10px] font-mono text-slate-500 font-bold">각 3점</span>
+                            </div>
 
-                            <div class="font-serif font-bold text-slate-900 text-[11px] border-b border-slate-200 pb-0.5 pt-1">Type 3. 조건부 빈칸 어형 변화 (Q08~Q11)</div>
+                            <div class="grid grid-cols-2 gap-3 text-xs">
+                                <!-- Type 1. 양자택일 4문항 -->
+                                <div class="space-y-2">
+                                    <div class="font-serif font-bold text-slate-800 text-[11px] border-b border-slate-100 pb-0.5">Type 1. 1:1 맞짱 양자택일 (Q01~Q04)</div>
+                                    ${sec3.slice(0, 4).map(q => `
+                                        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-[11px] space-y-1">
+                                            <div class="flex justify-between font-bold text-slate-800">
+                                                <span>[0${q.qNo}] 양자택일</span>
+                                                ${isAnswers ? `<span class="text-emerald-700 font-mono font-bold">${escapeHtml(q.options[q.ans])}</span>` : ''}
+                                            </div>
+                                            <p class="text-slate-800 text-[10px]">${escapeHtml(q.stem)}</p>
+                                            <div class="font-serif text-slate-900 bg-white p-1.5 rounded border border-slate-100 text-[10px]">${escapeHtml(q.sentence)}</div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+
+                                <!-- Type 2. 5밑줄 어법 진단 및 수정 3문항 -->
+                                <div class="space-y-2">
+                                    <div class="font-serif font-bold text-slate-800 text-[11px] border-b border-slate-100 pb-0.5">Type 2. 5밑줄 어법 진단 및 수정 (Q05~Q07)</div>
+                                    ${sec3.slice(4, 7).map(q => `
+                                        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-[11px] space-y-1">
+                                            <div class="flex justify-between font-bold text-slate-800">
+                                                <span>[0${q.qNo}] 5밑줄 어법</span>
+                                                ${isAnswers ? `<span class="text-emerald-700 font-mono font-bold">${q.ansIdx}번 (${q.correctWord})</span>` : ''}
+                                            </div>
+                                            <p class="text-slate-800 text-[10px] leading-tight">${escapeHtml(q.stem)}</p>
+                                            <div class="font-serif text-slate-900 bg-white p-1.5 rounded border border-slate-100 text-[10px]">${escapeHtml(q.sentence)}</div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-slate-200 pt-1.5 flex items-center justify-between text-[10px] font-mono text-slate-400 shrink-0">
+                        <span>Unit ${unit.unitNo} Sheet 2 (기초 드릴 &amp; 실전 1)</span>
+                        <span>Page ${basePage + 1}</span>
+                    </div>
+                </div>
+            `;
+
+            // Sheet 3: Section 3 실전 문법 적용 파이널 Part 2 (Type 3 어형변화 4제 + Type 4 5지선다 5제 + Type 5 문장전환 2제 + Type 6 어순배열 2제)
+            const sheet3 = `
+                <div class="clinic-a4-sheet border border-slate-300 bg-white p-8 text-slate-900 shadow-md">
+                    <div class="border-b-2 border-slate-900 pb-2.5 flex items-end justify-between shrink-0">
+                        <div>
+                            <div class="text-[10px] font-mono font-bold uppercase" style="color: ${meta.primaryHex};">SECTION 3 (PART 2) • FINAL PRACTICE</div>
+                            <h3 class="text-base font-serif font-black text-slate-950">실전 문법 적용 파이널 (Part 2. Q08 ~ Q20)</h3>
+                        </div>
+                        <div class="text-right text-[10px] font-mono text-slate-500">
+                            ${isAnswers ? `<span class="text-rose-600 font-bold">[정답 및 풀이]</span>` : `<span>Sheet 3</span>`}
+                        </div>
+                    </div>
+
+                    <div class="my-auto grid grid-cols-2 gap-3.5 text-xs">
+                        <!-- 좌측: Type 3 어형변화 (Q08~Q11) + Type 4 5지선다 (Q12~Q14) -->
+                        <div class="space-y-2.5">
+                            <div class="font-serif font-bold text-slate-900 text-xs border-b border-slate-200 pb-0.5">Type 3. 조건부 빈칸 어형 변화 (Q08~Q11)</div>
                             ${sec3.slice(7, 11).map(q => `
-                                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-[10px] space-y-1">
+                                <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 text-[10px] space-y-1">
                                     <div class="flex justify-between font-bold text-slate-800">
-                                        <span>[${q.qNo < 10 ? '0' + q.qNo : q.qNo}] ${escapeHtml(q.type)}</span>
+                                        <span>[${q.qNo < 10 ? '0' + q.qNo : q.qNo}] 빈칸 어형변화</span>
                                         ${isAnswers ? `<span class="text-emerald-700 font-mono font-bold">정답: ${escapeHtml(q.ans)}</span>` : ''}
                                     </div>
                                     <p class="text-slate-800 leading-tight">${escapeHtml(q.stem)}</p>
-                                    <div class="font-serif text-slate-900 bg-white p-1.5 rounded border border-slate-100">${escapeHtml(q.sentence)}</div>
+                                    <div class="font-serif text-slate-900 bg-white p-1 rounded border border-slate-100">${escapeHtml(q.sentence)}</div>
                                 </div>
                             `).join('')}
-                        </div>
-                    </div>
 
-                    <div class="border-t border-slate-200 pt-1 flex items-center justify-between text-[10px] font-mono text-slate-400 shrink-0">
-                        <span>Unit ${unit.unitNo} Sheet 2</span>
-                        <span>Page ${(unit.unitNo - 1) * 3 + 6}</span>
-                    </div>
-                </div>
-            `;
-
-            // Sheet 3: Section 3 Part 2 (Type 4~6) + Section 4 (킬러 3제) + Section 5 (오답노트)
-            const sheet3 = `
-                <div class="clinic-a4-sheet border border-slate-300 bg-white p-8 text-slate-900 shadow-md">
-                    <div class="border-b-2 border-slate-900 pb-2 flex items-end justify-between shrink-0">
-                        <div>
-                            <div class="text-[10px] font-mono text-emerald-800 font-bold uppercase">SECTION 3 (PART 2) &amp; SECTION 4 &amp; 5</div>
-                            <h3 class="text-sm font-serif font-bold text-slate-950">5지선다 &amp; 서술형 전환 &amp; 킬러 서술형 &amp; 오답노트</h3>
-                        </div>
-                        <div class="text-right text-[10px] font-mono text-slate-500">
-                            ${isAnswers ? `<span class="text-rose-600 font-bold">[상세 해설 &amp; 루브릭]</span>` : `<span>완결편</span>`}
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-3.5 my-auto text-xs">
-                        <!-- 좌측: Type 4 (5지선다 Q12~Q16) -->
-                        <div class="space-y-2.5">
-                            <div class="font-serif font-bold text-slate-900 text-[11px] border-b border-slate-200 pb-0.5">Type 4. 실전 수능·내신 5지선다 (Q12~Q16)</div>
-                            ${sec3.slice(11, 16).map(q => `
-                                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-[10px] space-y-1">
+                            <div class="font-serif font-bold text-slate-900 text-xs border-b border-slate-200 pb-0.5 pt-1">Type 4. 실전 수능·내신 5지선다 (Part A)</div>
+                            ${sec3.slice(11, 14).map(q => `
+                                <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 text-[10px] space-y-1">
                                     <div class="flex justify-between font-bold text-slate-800">
-                                        <span>[${q.qNo}] 5지선다 객관식</span>
+                                        <span>[${q.qNo}] 5지선다</span>
                                         ${isAnswers ? `<span class="text-emerald-700 font-mono font-bold">${q.ans + 1}번</span>` : ''}
                                     </div>
                                     <p class="text-slate-800 leading-tight">${escapeHtml(q.stem)}</p>
                                     <div class="space-y-0.5 font-serif pt-0.5">
-                                        ${(q.options || []).map((opt, oIdx) => `
+                                        ${(q.options || []).slice(0, 3).map((opt, oIdx) => `
                                             <div class="truncate ${isAnswers && q.ans === oIdx ? 'text-emerald-800 font-bold' : 'text-slate-600'}">
                                                 ${oIdx + 1}) ${escapeHtml(opt)}
                                             </div>
@@ -997,119 +1144,217 @@
                             `).join('')}
                         </div>
 
-                        <!-- 우측: Type 5 & 6 + Section 4 (킬러 3제) + Section 5 -->
+                        <!-- 우측: Type 4 (Q15~Q16) + Type 5 문장전환 (Q17~Q18) + Type 6 어순배열 (Q19~Q20) -->
                         <div class="space-y-2.5">
-                            <div class="font-serif font-bold text-slate-900 text-[11px] border-b border-slate-200 pb-0.5">Type 5 &amp; 6. 문장 전환 &amp; 조건 영작</div>
-                            ${sec3.slice(16, 20).map(q => `
+                            <div class="font-serif font-bold text-slate-900 text-xs border-b border-slate-200 pb-0.5">Type 4 (Part B) &amp; Type 5 &amp; Type 6</div>
+                            ${sec3.slice(14, 16).map(q => `
+                                <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 text-[10px] space-y-1">
+                                    <div class="flex justify-between font-bold text-slate-800">
+                                        <span>[${q.qNo}] 5지선다</span>
+                                        ${isAnswers ? `<span class="text-emerald-700 font-mono font-bold">${q.ans + 1}번</span>` : ''}
+                                    </div>
+                                    <p class="text-slate-800 leading-tight">${escapeHtml(q.stem)}</p>
+                                </div>
+                            `).join('')}
+
+                            <div class="font-serif font-bold text-slate-900 text-xs border-b border-slate-200 pb-0.5 pt-1">Type 5. 문장 전환 서술형 (Q17~Q18)</div>
+                            ${sec3.slice(16, 18).map(q => `
                                 <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 text-[10px] space-y-0.5">
                                     <div class="flex justify-between font-bold text-slate-800">
-                                        <span>[${q.qNo}] ${escapeHtml(q.type)}</span>
+                                        <span>[${q.qNo}] 문장 전환</span>
+                                        ${isAnswers ? `<span class="text-emerald-700 font-mono font-bold">${escapeHtml(q.ans)}</span>` : ''}
+                                    </div>
+                                    <p class="text-slate-800 leading-tight">${escapeHtml(q.stem)}</p>
+                                    ${!isAnswers ? `<div class="h-5 border border-dashed border-slate-300 rounded bg-white p-0.5 text-slate-300">정답: ____________________</div>` : ''}
+                                </div>
+                            `).join('')}
+
+                            <div class="font-serif font-bold text-slate-900 text-xs border-b border-slate-200 pb-0.5 pt-1">Type 6. 조건 영작 및 어순 배열 (Q19~Q20)</div>
+                            ${sec3.slice(18, 20).map(q => `
+                                <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 text-[10px] space-y-0.5">
+                                    <div class="flex justify-between font-bold text-slate-800">
+                                        <span>[${q.qNo}] 어순 배열</span>
                                         ${isAnswers ? `<span class="text-emerald-700 font-mono font-bold">${escapeHtml(q.ans)}</span>` : ''}
                                     </div>
                                     <p class="text-slate-800 leading-tight">${escapeHtml(q.stem)}</p>
                                     ${q.korean ? `<div class="text-indigo-950 font-sans text-[9px]">[우리말]: ${escapeHtml(q.korean)}</div>` : ''}
                                 </div>
                             `).join('')}
-
-                            <!-- Section 4. 고난도 킬러 서술형 (3문항 전체) -->
-                            <div class="p-2.5 rounded-xl bg-rose-50/70 border border-rose-200 text-[10px] space-y-1.5">
-                                <div class="font-bold text-rose-950 font-serif flex justify-between">
-                                    <span>[Section 4] 고난도 킬러 서술형 (3제)</span>
-                                    <span class="font-mono text-rose-700">각 5점</span>
-                                </div>
-                                ${sec4.map((k, i) => `
-                                    <div class="border-t border-rose-100 pt-1 space-y-0.5">
-                                        <div class="font-bold text-slate-800">[킬러 0${i+1}] ${escapeHtml(k.korean)}</div>
-                                        ${isAnswers ? `
-                                            <div class="text-emerald-800 font-serif font-bold">👉 ${escapeHtml(k.modelAnswer)}</div>
-                                        ` : `
-                                            <div class="h-5 border border-dashed border-rose-300 rounded bg-white text-slate-300 p-0.5">답안: ________________________________</div>
-                                        `}
-                                    </div>
-                                `).join('')}
-                            </div>
-
-                            <!-- Section 5. 복습 & 오답노트 -->
-                            <div class="p-2.5 rounded-xl bg-slate-900 text-white text-[10px] space-y-1">
-                                <div class="font-serif font-bold text-amber-300">Section 5. My Error Note</div>
-                                <div class="text-slate-300 text-[9px] leading-tight">${escapeHtml(sec5.reflectionPrompt || '오답 원인과 핵심 공식을 기록하세요.')}</div>
-                            </div>
                         </div>
                     </div>
 
-                    <div class="border-t border-slate-200 pt-1 flex items-center justify-between text-[10px] font-mono text-slate-400 shrink-0">
-                        <span>Unit ${unit.unitNo} Sheet 3</span>
-                        <span>Page ${(unit.unitNo - 1) * 3 + 7}</span>
+                    <div class="border-t border-slate-200 pt-1.5 flex items-center justify-between text-[10px] font-mono text-slate-400 shrink-0">
+                        <span>Unit ${unit.unitNo} Sheet 3 (실전 문법 2)</span>
+                        <span>Page ${basePage + 2}</span>
                     </div>
                 </div>
             `;
 
-            return sheet1 + sheet2 + sheet3;
+            // Sheet 4: Section 4 고난도 킬러 서술형 (3문항 널찍한 서술형 작성란) + Section 5 복습 오답노트 (모눈 그리드)
+            const sheet4 = `
+                <div class="clinic-a4-sheet border border-slate-300 bg-white p-8 text-slate-900 shadow-md">
+                    <div class="border-b-2 border-slate-900 pb-2.5 flex items-end justify-between shrink-0">
+                        <div>
+                            <div class="text-[10px] font-mono text-rose-800 font-bold uppercase tracking-wider">SECTION 4 &amp; 5 • ESSAY &amp; REFLECTION</div>
+                            <h3 class="text-base font-serif font-black text-slate-950">고난도 킬러 서술형 &amp; 오답 리플렉션 노트</h3>
+                        </div>
+                        <div class="text-right text-[10px] font-mono text-slate-500">
+                            ${isAnswers ? `<span class="text-rose-600 font-bold">[채점 루브릭 수록]</span>` : `<span>Unit ${unit.unitNo} 완결</span>`}
+                        </div>
+                    </div>
+
+                    <div class="my-auto space-y-4 text-xs">
+                        <!-- [Section 4] 고난도 킬러 서술형 (3문항 전체 수록) -->
+                        <div class="p-4 rounded-2xl bg-rose-50/60 border-2 border-rose-200 shadow-2xs space-y-3">
+                            <div class="flex items-center justify-between border-b border-rose-200 pb-1.5">
+                                <div class="font-serif font-bold text-rose-950 text-xs flex items-center gap-1.5">
+                                    <span class="w-5 h-5 rounded bg-rose-600 text-white flex items-center justify-center text-[10px] font-mono font-bold">4</span>
+                                    <span>[Section 4] 고난도 킬러 서술형 (3문항)</span>
+                                </div>
+                                <span class="text-[10px] font-mono text-rose-700 font-bold">각 5점 • 총 15점</span>
+                            </div>
+
+                            <div class="space-y-3">
+                                ${sec4.map((k, i) => `
+                                    <div class="p-3 rounded-xl bg-white border border-rose-100 shadow-2xs space-y-1.5 text-xs">
+                                        <div class="font-bold text-slate-900 flex justify-between text-xs">
+                                            <span>[킬러 서술형 0${i+1}] ${escapeHtml(k.stem)}</span>
+                                            ${isAnswers ? `<span class="px-2 py-0.5 rounded bg-rose-100 text-rose-800 font-mono font-bold text-[10px]">모범답안</span>` : ''}
+                                        </div>
+                                        <div class="p-2 rounded-lg bg-slate-50 text-slate-800 font-sans text-xs">
+                                            [우리말 상황]: <strong>${escapeHtml(k.korean)}</strong>
+                                        </div>
+                                        <div class="text-[10px] text-rose-900 bg-rose-50/60 p-1.5 rounded border border-rose-100">
+                                            <strong>필수 작성 조건:</strong> ${(k.conditions || []).join(' | ')}
+                                        </div>
+                                        ${isAnswers ? `
+                                            <div class="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-950 space-y-1">
+                                                <div class="font-serif font-bold text-xs">👉 모범 답안: ${escapeHtml(k.modelAnswer)}</div>
+                                                <div class="text-[10px] text-slate-500">채점 루브릭: ${Object.entries(k.rubric || {}).map(([k, v]) => `${k} (${v}점)`).join(' | ')}</div>
+                                            </div>
+                                        ` : `
+                                            <div class="h-12 border-2 border-dashed border-slate-300 rounded-xl bg-slate-50/50 p-2 text-slate-400 font-mono text-[10px]">
+                                                서술형 답안 작성란: __________________________________________________________________
+                                            </div>
+                                        `}
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+
+                        <!-- [Section 5] 복습 & 오답 클리닉 리플렉션 노트 (모눈 그리드) -->
+                        <div class="p-4 rounded-2xl bg-slate-900 text-white shadow-2xs space-y-3">
+                            <div class="flex items-center justify-between border-b border-slate-800 pb-1.5">
+                                <div class="font-serif font-bold text-white text-xs flex items-center gap-1.5">
+                                    <span class="w-5 h-5 rounded bg-emerald-500 text-slate-900 flex items-center justify-center text-[10px] font-mono font-bold">5</span>
+                                    <span>[Section 5] 복습 &amp; 오답 클리닉 리플렉션 노트</span>
+                                </div>
+                                <span class="text-[10px] font-mono text-emerald-400">자가진단</span>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-3 text-xs">
+                                <div class="p-3 rounded-xl bg-white/10 border border-white/10 space-y-1.5">
+                                    <div class="font-bold text-emerald-400 text-xs">🔑 오늘 학습 핵심 키워드 자가 체크</div>
+                                    ${(sec5.coreKeywords || []).map(kw => `<div class="text-slate-300 text-[11px] flex items-center gap-1.5"><span>[  ]</span> <span>${escapeHtml(kw)}</span></div>`).join('')}
+                                </div>
+                                <div class="p-3 rounded-xl bg-white/10 border border-white/10 space-y-1.5">
+                                    <div class="font-bold text-amber-300 text-xs">📝 My Error Note (오답 원인 분석)</div>
+                                    <div class="h-16 border border-dashed border-white/20 rounded-lg p-2 text-slate-400 text-[10px] leading-relaxed">
+                                        틀린 문제 번호와 이유(공식 미숙지, 함정 걸림 등)를 기록하세요.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-slate-200 pt-1.5 flex items-center justify-between text-[10px] font-mono text-slate-400 shrink-0">
+                        <span>Unit ${unit.unitNo} Sheet 4 (서술형 &amp; 오답노트)</span>
+                        <span>Page ${basePage + 3}</span>
+                    </div>
+                </div>
+            `;
+
+            return sheet1 + sheet2 + sheet3 + sheet4;
         }
 
         // ----------------------------------------------------------------------
-        // [독해 Clinic] 단원별 완벽한 2시트 A4 조판 (초안 100% 복원)
+        // [독해 Clinic] 단원별 2시트 A4 조판 (초안 100% 복원)
         // ----------------------------------------------------------------------
         renderReadingUnitSheets(level, unit, isAnswers, pageSeq) {
+            const meta = THEME_META[level.levelCode] || THEME_META['lv1'];
+            const partInfo = this.getPartForUnit(level.levelCode, unit.unitNo);
             const spList = unit.stage1_spotlight || [];
             const passage = unit.stage2_passage || {};
             const compList = unit.stage3_comprehension || [];
             const gramList = unit.stage4_grammar || [];
             const tg = unit.teacherGuide || {};
+            const basePage = (unit.unitNo - 1) * 2 + 5;
 
-            // Sheet 1: 문법 스포트라이트 + 실전 지문 본문 + Footnote 어휘 각주
+            // Sheet 1: 문법 스포트라이트 + 실전 독해 지문 본문 + Footnote 어휘 각주
             const sheet1 = `
                 <div class="clinic-a4-sheet border border-slate-300 bg-white p-8 text-slate-900 shadow-md">
                     <div class="border-b-2 border-slate-900 pb-2.5 flex items-end justify-between shrink-0">
                         <div>
-                            <div class="text-[10px] font-mono text-blue-800 font-bold uppercase">READING CLINIC • UNIT ${unit.unitNo < 10 ? '0' + unit.unitNo : unit.unitNo}</div>
-                            <h3 class="text-base font-serif font-black text-slate-950">${escapeHtml(unit.passageTitle || unit.title)}</h3>
+                            <div class="flex items-center gap-2">
+                                <span class="px-2 py-0.5 rounded bg-blue-900 text-white font-mono text-[9px] font-bold">${partInfo.no}</span>
+                                <span class="text-[10px] font-mono font-bold uppercase text-blue-700">${partInfo.title}</span>
+                            </div>
+                            <h3 class="text-base sm:text-lg font-serif font-black text-slate-950 mt-0.5">
+                                Unit ${unit.unitNo < 10 ? '0' + unit.unitNo : unit.unitNo}. ${escapeHtml(unit.passageTitle || unit.title)}
+                            </h3>
                         </div>
                         <div class="text-right text-[10px] font-mono text-slate-500">
-                            Target: ${passage.targetTimeSec || 60}s (${passage.wordCount || 100}w)
+                            Target: ${passage.targetTimeSec || 60}s (${passage.wordCount || 100} words)
                         </div>
                     </div>
 
-                    <!-- Stage 1. 지문 속 문법 스포트라이트 -->
-                    <div class="p-3 rounded-2xl bg-blue-50/60 border border-blue-200 my-2 text-xs space-y-1.5">
-                        <div class="font-serif font-bold text-blue-950 flex items-center gap-1.5 text-xs">
-                            <span class="w-4 h-4 rounded bg-blue-600 text-white flex items-center justify-center text-[10px]">1</span>
-                            <span>Stage 1. 지문 속 핵심 문법 스포트라이트 (Grammar Spotlight)</span>
-                        </div>
-                        ${spList.map(sp => `
-                            <div class="p-2.5 rounded-xl bg-white border border-blue-100 text-[11px] space-y-0.5">
-                                <div class="font-serif font-bold text-blue-950">${escapeHtml(sp.en)}</div>
-                                <div class="text-slate-500 text-[10px]">${escapeHtml(sp.ko)}</div>
-                                <div class="text-[9px] font-mono text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded inline-block mt-0.5">
-                                    구조: ${escapeHtml(sp.syntax)} • ${escapeHtml(sp.point)}
-                                </div>
+                    <div class="my-auto space-y-4">
+                        <!-- Stage 1. 지문 속 문법 스포트라이트 -->
+                        <div class="p-4 rounded-2xl bg-blue-50/70 border border-blue-200 text-xs space-y-2">
+                            <div class="font-serif font-bold text-blue-950 flex items-center gap-1.5 text-xs">
+                                <span class="w-5 h-5 rounded bg-blue-600 text-white flex items-center justify-center text-[10px] font-mono font-bold">1</span>
+                                <span>Stage 1. 지문 속 핵심 문법 스포트라이트 (Grammar Spotlight)</span>
                             </div>
-                        `).join('')}
-                    </div>
-
-                    <!-- Stage 2. 실전 독해 지문 (Authentic Passage) -->
-                    <div class="my-auto space-y-3">
-                        <div class="font-serif font-bold text-slate-900 text-xs border-b border-slate-200 pb-1 flex justify-between">
-                            <span>Stage 2. Authentic Reading Passage</span>
-                            <span class="text-[10px] font-mono text-slate-400">Timer: ${passage.targetTimeSec || 60} sec</span>
-                        </div>
-                        <div class="font-serif text-xs text-slate-800 leading-relaxed text-justify space-y-2.5 p-3.5 bg-slate-50 rounded-2xl border border-slate-200">
-                            ${(passage.text || '').split('\n\n').map(p => `<p>${escapeHtml(p)}</p>`).join('')}
-                        </div>
-
-                        <!-- Footnote 어휘 각주 -->
-                        ${(passage.footnoteVocab || []).length > 0 ? `
-                            <div class="p-2.5 rounded-xl bg-white border border-slate-200 text-[10px] grid grid-cols-3 gap-1">
-                                ${(passage.footnoteVocab || []).map(v => `
-                                    <div><strong class="text-blue-900 font-serif">${escapeHtml(v.word)}</strong>: ${escapeHtml(v.meaning)}</div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                                ${spList.map(sp => `
+                                    <div class="p-3 rounded-xl bg-white border border-blue-100 text-xs space-y-1 shadow-2xs">
+                                        <div class="font-serif font-bold text-blue-950">${escapeHtml(sp.en)}</div>
+                                        <div class="text-slate-600 text-[11px] font-sans">${escapeHtml(sp.ko)}</div>
+                                        <div class="text-[10px] font-mono text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded inline-block mt-0.5 border border-emerald-200">
+                                            구조: ${escapeHtml(sp.syntax)} • ${escapeHtml(sp.point)}
+                                        </div>
+                                    </div>
                                 `).join('')}
                             </div>
-                        ` : ''}
+                        </div>
+
+                        <!-- Stage 2. 실전 독해 지문 (Authentic Passage) -->
+                        <div class="p-4 rounded-2xl bg-white border-2 border-slate-200 shadow-2xs space-y-3">
+                            <div class="font-serif font-bold text-slate-900 text-xs border-b border-slate-200 pb-1.5 flex justify-between items-center">
+                                <span class="flex items-center gap-1.5">
+                                    <span class="w-5 h-5 rounded bg-slate-900 text-white flex items-center justify-center text-[10px] font-mono font-bold">2</span>
+                                    <span>Stage 2. Authentic Reading Passage</span>
+                                </span>
+                                <span class="text-[10px] font-mono text-blue-600 font-bold">권장 리딩 타이머: ${passage.targetTimeSec || 60}초</span>
+                            </div>
+                            <div class="font-serif text-xs sm:text-sm text-slate-800 leading-relaxed text-justify space-y-3 p-4 bg-slate-50 rounded-xl border border-slate-200">
+                                ${(passage.text || '').split('\n\n').map(p => `<p>${escapeHtml(p)}</p>`).join('')}
+                            </div>
+
+                            <!-- Footnote 어휘 각주 -->
+                            ${(passage.footnoteVocab || []).length > 0 ? `
+                                <div class="p-3 rounded-xl bg-white border border-slate-200 text-xs grid grid-cols-3 gap-2">
+                                    ${(passage.footnoteVocab || []).map(v => `
+                                        <div><strong class="text-blue-900 font-serif">${escapeHtml(v.word)}</strong>: <span class="text-slate-600">${escapeHtml(v.meaning)}</span></div>
+                                    `).join('')}
+                                </div>
+                            ` : ''}
+                        </div>
                     </div>
 
-                    <div class="border-t border-slate-200 pt-1 flex items-center justify-between text-[10px] font-mono text-slate-400 shrink-0">
-                        <span>Reading Unit ${unit.unitNo} Sheet 1</span>
-                        <span>Page ${(unit.unitNo - 1) * 2 + 5}</span>
+                    <div class="border-t border-slate-200 pt-1.5 flex items-center justify-between text-[10px] font-mono text-slate-400 shrink-0">
+                        <span>Reading Unit ${unit.unitNo} Sheet 1 (지문 &amp; 어휘)</span>
+                        <span>Page ${basePage}</span>
                     </div>
                 </div>
             `;
@@ -1117,36 +1362,36 @@
             // Sheet 2: Stage 3 독해 3문항 + Stage 4 어법 2문항 + 답안지일 때 지문 전문 해석
             const sheet2 = `
                 <div class="clinic-a4-sheet border border-slate-300 bg-white p-8 text-slate-900 shadow-md">
-                    <div class="border-b-2 border-slate-900 pb-2 flex items-end justify-between shrink-0">
+                    <div class="border-b-2 border-slate-900 pb-2.5 flex items-end justify-between shrink-0">
                         <div>
                             <div class="text-[10px] font-mono text-blue-800 font-bold uppercase">COMPREHENSION &amp; APPLIED GRAMMAR</div>
-                            <h3 class="text-sm font-serif font-bold text-slate-950">실전 독해 평가 3문항 &amp; 지문 어법 2문항</h3>
+                            <h3 class="text-base font-serif font-black text-slate-950">실전 독해 평가 3문항 &amp; 지문 속 어법 2문항</h3>
                         </div>
                         <div class="text-right text-[10px] font-mono text-slate-500">
                             ${isAnswers ? `<span class="text-rose-600 font-bold">[정답 및 상세 해석]</span>` : `<span>Score: _____ / 100</span>`}
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-3.5 my-auto text-xs">
-                        <!-- 좌측: 독해 3문항 -->
-                        <div class="space-y-2.5">
-                            <div class="font-serif font-bold text-slate-900 text-[11px] border-b border-slate-200 pb-0.5">Stage 3. 실전 독해 평가 (3문항)</div>
+                    <div class="grid grid-cols-2 gap-4 my-auto text-xs">
+                        <!-- 좌측: 독해 3문항 (Q1 대의파악 + Q2 일치 + Q3 추론) -->
+                        <div class="space-y-3">
+                            <div class="font-serif font-bold text-slate-900 text-xs border-b border-slate-200 pb-1">Stage 3. 실전 독해 평가 (3문항)</div>
                             ${compList.map(q => `
-                                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-[10px] space-y-1">
-                                    <div class="flex justify-between font-bold text-slate-800">
+                                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-1.5 shadow-2xs">
+                                    <div class="flex justify-between font-bold text-slate-900">
                                         <span>[Q${q.qNo}] ${escapeHtml(q.type)}</span>
                                         ${isAnswers ? `<span class="text-blue-800 font-mono font-bold">${q.ans + 1}번</span>` : ''}
                                     </div>
-                                    <p class="text-slate-900 leading-snug">${escapeHtml(q.q)}</p>
-                                    <div class="space-y-0.5 font-serif pt-1">
+                                    <p class="text-slate-900 leading-snug font-medium">${escapeHtml(q.q)}</p>
+                                    <div class="space-y-1 font-serif pt-1">
                                         ${(q.options || []).map((opt, oIdx) => `
-                                            <div class="truncate ${isAnswers && q.ans === oIdx ? 'text-blue-700 font-bold' : 'text-slate-600'}">
+                                            <div class="truncate text-[11px] ${isAnswers && q.ans === oIdx ? 'text-blue-700 font-bold bg-blue-50/70 p-1 rounded' : 'text-slate-600'}">
                                                 ${oIdx + 1}) ${escapeHtml(opt)}
                                             </div>
                                         `).join('')}
                                     </div>
                                     ${isAnswers && q.explanation ? `
-                                        <div class="p-1.5 rounded bg-blue-50/50 text-[9px] text-blue-950 font-sans mt-0.5">
+                                        <div class="p-2 rounded bg-blue-50/60 text-[10px] text-blue-950 font-sans mt-1">
                                             💡 ${escapeHtml(q.explanation)}
                                         </div>
                                     ` : ''}
@@ -1155,33 +1400,33 @@
                         </div>
 
                         <!-- 우측: 어법 2문항 + 지문 전문 해석 -->
-                        <div class="space-y-2.5">
-                            <div class="font-serif font-bold text-slate-900 text-[11px] border-b border-slate-200 pb-0.5">Stage 4. 지문 기반 실전 어법 (2문항)</div>
+                        <div class="space-y-3">
+                            <div class="font-serif font-bold text-slate-900 text-xs border-b border-slate-200 pb-1">Stage 4. 지문 기반 실전 어법 (2문항)</div>
                             ${gramList.map(q => `
-                                <div class="p-3 rounded-xl bg-emerald-50/50 border border-emerald-200 text-[10px] space-y-1">
-                                    <div class="flex justify-between font-bold text-slate-800">
+                                <div class="p-3 rounded-xl bg-emerald-50/50 border border-emerald-200 text-xs space-y-1.5 shadow-2xs">
+                                    <div class="flex justify-between font-bold text-slate-900">
                                         <span>[Q${q.qNo}] ${escapeHtml(q.type)}</span>
                                         ${isAnswers ? `<span class="text-emerald-800 font-mono font-bold">${escapeHtml(q.ans)}</span>` : ''}
                                     </div>
-                                    <p class="text-slate-900 leading-snug">${escapeHtml(q.q)}</p>
-                                    ${q.targetSentence ? `<div class="p-1.5 rounded bg-white font-serif text-[10px] border border-slate-100">${escapeHtml(q.targetSentence)}</div>` : ''}
-                                    ${q.targetTemplate ? `<div class="p-1.5 rounded bg-white font-serif text-[10px] border border-slate-100">${escapeHtml(q.targetTemplate)}</div>` : ''}
-                                    ${!isAnswers ? `<div class="h-6 border border-dashed border-emerald-300 rounded bg-white text-slate-300 p-0.5 text-[9px]">서술형 정답란: ____________________</div>` : ''}
+                                    <p class="text-slate-900 leading-snug font-medium">${escapeHtml(q.q)}</p>
+                                    ${q.targetSentence ? `<div class="p-2 rounded bg-white font-serif text-[11px] border border-slate-200">${escapeHtml(q.targetSentence)}</div>` : ''}
+                                    ${q.targetTemplate ? `<div class="p-2 rounded bg-white font-serif text-[11px] border border-slate-200">${escapeHtml(q.targetTemplate)}</div>` : ''}
+                                    ${!isAnswers ? `<div class="h-8 border border-dashed border-emerald-300 rounded bg-white text-slate-300 p-1 text-[10px]">정답 작성란: ____________________</div>` : ''}
                                 </div>
                             `).join('')}
 
                             ${isAnswers && tg.translation ? `
-                                <div class="p-3 rounded-xl bg-indigo-50/70 border border-indigo-200 text-[10px] text-indigo-950 space-y-1">
-                                    <div class="font-bold font-serif">📖 지문 전문 해석 (Teacher's Guide)</div>
-                                    <div class="text-slate-700 leading-relaxed max-h-44 overflow-hidden text-[9px]">${escapeHtml(tg.translation)}</div>
+                                <div class="p-3.5 rounded-xl bg-indigo-50/70 border border-indigo-200 text-xs text-indigo-950 space-y-1.5 shadow-2xs">
+                                    <div class="font-bold font-serif text-xs">📖 지문 전문 해석 (Teacher's Guide)</div>
+                                    <div class="text-slate-700 leading-relaxed max-h-52 overflow-hidden text-[10px]">${escapeHtml(tg.translation)}</div>
                                 </div>
                             ` : ''}
                         </div>
                     </div>
 
-                    <div class="border-t border-slate-200 pt-1 flex items-center justify-between text-[10px] font-mono text-slate-400 shrink-0">
-                        <span>Reading Unit ${unit.unitNo} Sheet 2</span>
-                        <span>Page ${(unit.unitNo - 1) * 2 + 6}</span>
+                    <div class="border-t border-slate-200 pt-1.5 flex items-center justify-between text-[10px] font-mono text-slate-400 shrink-0">
+                        <span>Reading Unit ${unit.unitNo} Sheet 2 (독해 &amp; 어법 평가)</span>
+                        <span>Page ${basePage + 1}</span>
                     </div>
                 </div>
             `;
@@ -1190,65 +1435,79 @@
         }
 
         // ----------------------------------------------------------------------
-        // [쓰기 Clinic] 단원별 완벽한 2시트 A4 조판 (초안 100% 복원)
+        // [쓰기 Clinic] 단원별 2시트 A4 조판 (초안 100% 복원)
         // ----------------------------------------------------------------------
         renderWritingUnitSheets(level, unit, isAnswers, pageSeq) {
+            const meta = THEME_META[level.levelCode] || THEME_META['lv1'];
+            const partInfo = this.getPartForUnit(level.levelCode, unit.unitNo);
             const step1 = unit.step1_conditioned || [];
             const step2 = unit.step2_direct || [];
             const step3 = unit.step3_killer || [];
             const rubric = unit.rubricSummary || {};
+            const basePage = (unit.unitNo - 1) * 2 + 5;
 
             // Sheet 1: Step 1 조건 영작 (6문항 전체) + Step 2 직결 영작 (6문항 전체)
             const sheet1 = `
                 <div class="clinic-a4-sheet border border-slate-300 bg-white p-8 text-slate-900 shadow-md">
                     <div class="border-b-2 border-slate-900 pb-2.5 flex items-end justify-between shrink-0">
                         <div>
-                            <div class="text-[10px] font-mono text-amber-800 font-bold uppercase">WRITING CLINIC • UNIT ${unit.unitNo < 10 ? '0' + unit.unitNo : unit.unitNo}</div>
-                            <h3 class="text-base font-serif font-black text-slate-950">${escapeHtml(unit.title)} 서술형 집중 영작</h3>
+                            <div class="flex items-center gap-2">
+                                <span class="px-2 py-0.5 rounded bg-amber-900 text-white font-mono text-[9px] font-bold">${partInfo.no}</span>
+                                <span class="text-[10px] font-mono font-bold uppercase text-amber-700">${partInfo.title}</span>
+                            </div>
+                            <h3 class="text-base sm:text-lg font-serif font-black text-slate-950 mt-0.5">
+                                Unit ${unit.unitNo < 10 ? '0' + unit.unitNo : unit.unitNo}. ${escapeHtml(unit.title)} 서술형 영작
+                            </h3>
                         </div>
                         <div class="text-right text-[10px] font-mono text-slate-500">
                             ${isAnswers ? `<span class="text-rose-600 font-bold">[영작 모범 답안]</span>` : `<span>Step 1 &amp; Step 2 (총 12제)</span>`}
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-3.5 my-auto text-xs">
+                    <div class="grid grid-cols-2 gap-4 my-auto text-xs">
                         <!-- Step 1. 힌트 어휘 조건 영작 (6문항 전체!) -->
-                        <div class="space-y-2">
-                            <div class="font-serif font-bold text-amber-900 text-[11px] border-b border-amber-200 pb-0.5">Step 1. 힌트 어휘 조건 영작 (6문항)</div>
+                        <div class="space-y-2.5">
+                            <div class="font-serif font-bold text-amber-950 text-xs border-b border-amber-200 pb-1 flex justify-between">
+                                <span>Step 1. 힌트 어휘 조건 영작 (6문항)</span>
+                                <span class="text-[10px] font-mono text-amber-700">각 5점</span>
+                            </div>
                             ${step1.map(q => `
-                                <div class="p-2.5 rounded-xl bg-amber-50/40 border border-amber-200 text-[10px] space-y-1">
-                                    <div class="font-bold text-slate-800">${escapeHtml(q.stem)}</div>
-                                    <div class="text-slate-900 font-sans">${escapeHtml(q.korean)}</div>
-                                    <div class="text-amber-900 font-mono text-[9px]">[제시어]: ${(q.mandatoryWords || []).join(', ')}</div>
+                                <div class="p-2.5 rounded-xl bg-amber-50/50 border border-amber-200 text-xs space-y-1 shadow-2xs">
+                                    <div class="font-bold text-slate-800 text-[11px]">${escapeHtml(q.stem)}</div>
+                                    <div class="text-slate-900 font-sans text-xs">[우리말]: ${escapeHtml(q.korean)}</div>
+                                    <div class="text-amber-950 font-mono text-[10px]">[제시어]: ${(q.mandatoryWords || []).join(', ')}</div>
                                     ${isAnswers ? `
-                                        <div class="text-emerald-800 font-serif font-bold">👉 ${escapeHtml(q.modelAnswer)}</div>
+                                        <div class="text-emerald-800 font-serif font-bold text-[11px]">👉 ${escapeHtml(q.modelAnswer)}</div>
                                     ` : `
-                                        <div class="h-5 border border-dashed border-amber-300 rounded bg-white text-slate-300 p-0.5">영작: ________________________</div>
+                                        <div class="h-6 border border-dashed border-amber-300 rounded bg-white text-slate-300 p-1 text-[10px]">영작: ________________________</div>
                                     `}
                                 </div>
                             `).join('')}
                         </div>
 
                         <!-- Step 2. 우리말 해석 직결 완성 영작 (6문항 전체!) -->
-                        <div class="space-y-2">
-                            <div class="font-serif font-bold text-slate-900 text-[11px] border-b border-slate-200 pb-0.5">Step 2. 우리말 해석 직결 완성 영작 (6문항)</div>
+                        <div class="space-y-2.5">
+                            <div class="font-serif font-bold text-slate-900 text-xs border-b border-slate-200 pb-1 flex justify-between">
+                                <span>Step 2. 우리말 직결 영작 (6문항)</span>
+                                <span class="text-[10px] font-mono text-slate-500">각 6점</span>
+                            </div>
                             ${step2.map(q => `
-                                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-[10px] space-y-1">
-                                    <div class="font-bold text-slate-800">${escapeHtml(q.stem)}</div>
-                                    <div class="text-slate-900 font-sans">${escapeHtml(q.koreanPrompt)}</div>
+                                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-1 shadow-2xs">
+                                    <div class="font-bold text-slate-800 text-[11px]">${escapeHtml(q.stem)}</div>
+                                    <div class="text-slate-900 font-sans text-xs">${escapeHtml(q.koreanPrompt)}</div>
                                     ${isAnswers ? `
-                                        <div class="text-emerald-800 font-serif font-bold">👉 ${escapeHtml(q.modelAnswer)}</div>
+                                        <div class="text-emerald-800 font-serif font-bold text-[11px]">👉 ${escapeHtml(q.modelAnswer)}</div>
                                     ` : `
-                                        <div class="h-5 border border-dashed border-slate-300 rounded bg-white text-slate-300 p-0.5">영작: ________________________</div>
+                                        <div class="h-6 border border-dashed border-slate-300 rounded bg-white text-slate-300 p-1 text-[10px]">영작: ________________________</div>
                                     `}
                                 </div>
                             `).join('')}
                         </div>
                     </div>
 
-                    <div class="border-t border-slate-200 pt-1 flex items-center justify-between text-[10px] font-mono text-slate-400 shrink-0">
-                        <span>Writing Unit ${unit.unitNo} Sheet 1</span>
-                        <span>Page ${(unit.unitNo - 1) * 2 + 5}</span>
+                    <div class="border-t border-slate-200 pt-1.5 flex items-center justify-between text-[10px] font-mono text-slate-400 shrink-0">
+                        <span>Writing Unit ${unit.unitNo} Sheet 1 (조건 &amp; 직결 영작)</span>
+                        <span>Page ${basePage}</span>
                     </div>
                 </div>
             `;
@@ -1258,33 +1517,36 @@
                 <div class="clinic-a4-sheet border border-slate-300 bg-white p-8 text-slate-900 shadow-md">
                     <div class="border-b-2 border-slate-900 pb-2.5 flex items-end justify-between shrink-0">
                         <div>
-                            <div class="text-[10px] font-mono text-rose-800 font-bold uppercase">KILLER ESSAY TEST &amp; RUBRIC</div>
-                            <h3 class="text-sm font-serif font-bold text-slate-950">학교 기출 변형 킬러 서술형 &amp; 감점 방지 루브릭</h3>
+                            <div class="text-[10px] font-mono text-rose-800 font-bold uppercase tracking-wider">KILLER ESSAY &amp; SCORING RUBRIC</div>
+                            <h3 class="text-base font-serif font-black text-slate-950">학교 기출 변형 킬러 서술형 &amp; 감점 방지 루브릭</h3>
                         </div>
                         <div class="text-right text-[10px] font-mono text-slate-500">
                             ${isAnswers ? `<span class="text-rose-600 font-bold">[채점 기준표 수록]</span>` : `<span>Step 3 Killer</span>`}
                         </div>
                     </div>
 
-                    <div class="space-y-3.5 my-auto text-xs">
+                    <div class="space-y-4 my-auto text-xs">
                         <!-- Step 3 기출 킬러 3문항 전체 수록! -->
-                        <div class="space-y-2.5">
+                        <div class="space-y-3">
                             ${step3.map((q, idx) => `
-                                <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-2xs space-y-1.5 text-[11px]">
-                                    <div class="font-bold text-slate-900 font-serif">[킬러 문항 ${idx + 1}] ${escapeHtml(q.stem)}</div>
-                                    <div class="p-2 rounded-lg bg-slate-50 text-slate-800 font-sans">
+                                <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-2xs space-y-2 text-xs">
+                                    <div class="font-bold text-slate-950 font-serif flex justify-between text-xs sm:text-sm">
+                                        <span>[킬러 문항 ${idx + 1}] ${escapeHtml(q.stem)}</span>
+                                        <span class="font-mono text-rose-700 text-xs">8점</span>
+                                    </div>
+                                    <div class="p-2.5 rounded-xl bg-slate-50 text-slate-800 font-sans text-xs">
                                         <strong>[상황 제시]:</strong> ${escapeHtml(q.situation)}
                                     </div>
-                                    <div class="text-[10px] text-rose-900 bg-rose-50/50 p-2 rounded border border-rose-100">
+                                    <div class="text-[11px] text-rose-950 bg-rose-50/70 p-2 rounded-xl border border-rose-100">
                                         <strong>[필수 작성 조건]:</strong> ${(q.conditions || []).join(' | ')}
                                     </div>
                                     ${isAnswers ? `
-                                        <div class="p-2.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-950">
-                                            <div class="font-serif font-bold text-xs">👉 모범 답안: ${escapeHtml(q.modelAnswer)}</div>
-                                            <div class="text-[10px] text-slate-500 mt-0.5">채점: ${Object.entries(q.rubric || {}).map(([k, v]) => `${k}(${v}점)`).join(', ')}</div>
+                                        <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-950 space-y-1">
+                                            <div class="font-serif font-bold text-xs sm:text-sm">👉 모범 답안: ${escapeHtml(q.modelAnswer)}</div>
+                                            <div class="text-[10px] text-slate-600">채점 루브릭: ${Object.entries(q.rubric || {}).map(([k, v]) => `${k} (${v}점)`).join(' | ')}</div>
                                         </div>
                                     ` : `
-                                        <div class="h-12 border border-dashed border-slate-300 rounded-lg bg-slate-50 p-2 text-slate-300 text-[10px]">
+                                        <div class="h-14 border-2 border-dashed border-slate-300 rounded-xl bg-slate-50 p-2 text-slate-300 text-xs">
                                             서술형 답안 작성란: __________________________________________________
                                         </div>
                                     `}
@@ -1293,11 +1555,14 @@
                         </div>
 
                         <!-- 감점 방지 루브릭 요약표 -->
-                        <div class="p-4 rounded-2xl bg-slate-900 text-white space-y-2">
-                            <div class="text-[11px] font-bold text-rose-400 font-mono">⚠️ 내신 서술형 감점 방지 절대 루브릭 (Scoring Rubric)</div>
-                            <div class="grid grid-cols-3 gap-2 text-[10px]">
+                        <div class="p-4 rounded-2xl bg-slate-900 text-white space-y-2.5 shadow-2xs">
+                            <div class="text-xs font-bold text-rose-400 font-mono flex items-center gap-1.5">
+                                <i data-lucide="shield-alert" class="w-4 h-4"></i>
+                                <span>내신 서술형 감점 방지 절대 루브릭 (Scoring Rubric)</span>
+                            </div>
+                            <div class="grid grid-cols-3 gap-2.5 text-xs">
                                 ${(rubric.deductionPoints || []).slice(0, 3).map(dp => `
-                                    <div class="p-2 rounded-xl bg-white/10 text-slate-300 flex justify-between">
+                                    <div class="p-2 rounded-xl bg-white/10 text-slate-300 flex justify-between items-center text-[11px]">
                                         <span>${escapeHtml(dp.item)}</span>
                                         <strong class="text-rose-400 font-mono">${escapeHtml(dp.deduction)}</strong>
                                     </div>
@@ -1306,9 +1571,9 @@
                         </div>
                     </div>
 
-                    <div class="border-t border-slate-200 pt-1 flex items-center justify-between text-[10px] font-mono text-slate-400 shrink-0">
-                        <span>Writing Unit ${unit.unitNo} Sheet 2</span>
-                        <span>Page ${(unit.unitNo - 1) * 2 + 6}</span>
+                    <div class="border-t border-slate-200 pt-1.5 flex items-center justify-between text-[10px] font-mono text-slate-400 shrink-0">
+                        <span>Writing Unit ${unit.unitNo} Sheet 2 (킬러 서술형 &amp; 루브릭)</span>
+                        <span>Page ${basePage + 1}</span>
                     </div>
                 </div>
             `;
@@ -1321,34 +1586,35 @@
         // ======================================================================
         renderBackCoverSheet(level, isAnswers) {
             return `
-                <div class="clinic-a4-sheet justify-between border-4 border-slate-900 bg-slate-900 p-12 text-white shadow-2xl relative overflow-hidden">
-                    <div class="absolute inset-3 border border-slate-700 pointer-events-none"></div>
+                <div class="clinic-a4-sheet justify-between border-8 border-slate-900 bg-slate-900 p-14 text-white shadow-2xl relative overflow-hidden">
+                    <div class="absolute inset-3 border-2 border-slate-700 pointer-events-none"></div>
 
-                    <div class="relative z-10 text-center space-y-2 pt-6">
-                        <div class="font-mono text-xs text-amber-400 tracking-widest uppercase">VERITAS ENGLISH ACADEMY</div>
-                        <h2 class="font-serif font-black text-2xl text-white">클리닉 3종 부교재 트릴로지 로드맵</h2>
+                    <div class="relative z-10 text-center space-y-3 pt-6">
+                        <div class="font-mono text-xs text-amber-400 tracking-[0.3em] uppercase">VERITAS ENGLISH ACADEMY</div>
+                        <h2 class="font-serif font-black text-3xl text-white">클리닉 3종 부교재 트릴로지 로드맵</h2>
+                        <p class="text-xs text-slate-400 max-w-sm mx-auto">개념에서 실전 독해, 내신 서술형 영작까지 빈틈없이 연결되는 3단 완성 시스템</p>
                     </div>
 
                     <div class="relative z-10 space-y-4 my-auto max-w-md mx-auto text-xs font-sans">
                         <div class="p-4 rounded-2xl bg-white/10 border border-white/10 space-y-1">
-                            <strong class="text-emerald-400 font-serif">1. 문법 Clinic (Grammar Studio)</strong>
-                            <p class="text-slate-300 text-[11px]">개념 ➔ 기초 ➔ 실전 20제 ➔ 킬러 서술형의 완전한 문법 완성</p>
+                            <strong class="text-emerald-400 font-serif text-sm">1. 문법 Clinic (Grammar Studio)</strong>
+                            <p class="text-slate-300 text-xs">개념 ➔ 기초 ➔ 실전 20제 ➔ 킬러 서술형의 완전한 문법 완성</p>
                         </div>
                         <div class="p-4 rounded-2xl bg-white/10 border border-white/10 space-y-1">
-                            <strong class="text-blue-400 font-serif">2. 독해 Clinic (Reading Studio)</strong>
-                            <p class="text-slate-300 text-[11px]">문법을 지문에서 확인하는 실전 독해 3제 + 어법 2제 연계</p>
+                            <strong class="text-blue-400 font-serif text-sm">2. 독해 Clinic (Reading Studio)</strong>
+                            <p class="text-slate-300 text-xs">문법을 지문에서 확인하는 실전 독해 3제 + 어법 2제 연계</p>
                         </div>
                         <div class="p-4 rounded-2xl bg-white/10 border border-white/10 space-y-1">
-                            <strong class="text-amber-400 font-serif">3. 쓰기 Clinic (Writing Studio)</strong>
-                            <p class="text-slate-300 text-[11px]">조건 영작 + 직결 영작 + 기출 킬러 서술형으로 내신 1등급 정복</p>
+                            <strong class="text-amber-400 font-serif text-sm">3. 쓰기 Clinic (Writing Studio)</strong>
+                            <p class="text-slate-300 text-xs">조건 영작 + 직결 영작 + 기출 킬러 서술형으로 내신 1등급 정복</p>
                         </div>
                     </div>
 
                     <div class="relative z-10 text-center space-y-3 pb-4">
-                        <div class="inline-block p-2 bg-white rounded-xl text-slate-900 font-mono text-[10px] tracking-widest">
+                        <div class="inline-block p-2.5 bg-white rounded-xl text-slate-900 font-mono text-xs tracking-widest font-bold">
                             ISBN 979-11-92384-${level.levelCode === 'lv1' ? '101' : '202'}-0 (Set)
                         </div>
-                        <div class="text-[10px] font-mono text-slate-400">
+                        <div class="text-[11px] font-mono text-slate-400">
                             Printed in Korea &bull; Veritas Scholars' Academy Press
                         </div>
                     </div>
