@@ -1432,7 +1432,7 @@ class StorageManager {
             return (r && typeof r.score === 'number') || p.studyCompleted;
         });
         const grammarCompleted = dayGrammar.length === 0 || dayGrammar.every(g => {
-            const r = this.getGrammarUnitProgress(g.grammarUnitNo);
+            const r = this.getGrammarUnitProgress(g.grammarUnitId || g.grammarUnitNo, g.grammarLevelCode);
             return (r && r.completed) || g.studyCompleted;
         });
 
@@ -2646,40 +2646,61 @@ class StorageManager {
     // ------------------------------------------------------------------------
     // 영문법 클리닉 단원 플래너 연동 (Grammar Clinic Planner Integration)
     // ------------------------------------------------------------------------
-    registerGrammarUnit(unitNo, dateStr = null) {
+    registerGrammarUnit(unitRef, dateStr = null, levelCode = null) {
         const bank = window.GRAMMAR_CLINIC_BANK || [];
         let targetUnit = null;
         let targetLevel = null;
-        for (const lvl of bank) {
-            const u = (lvl.units || []).find(x => x.unitNo === Number(unitNo));
-            if (u) {
-                targetUnit = u;
-                targetLevel = lvl;
-                break;
+
+        if (window.grammarClinicEngine && typeof window.grammarClinicEngine.findUnit === 'function') {
+            const found = window.grammarClinicEngine.findUnit(unitRef, levelCode);
+            if (found) {
+                targetUnit = found.unit;
+                targetLevel = found.level;
+            }
+        }
+
+        if (!targetUnit) {
+            const refStr = String(unitRef).trim();
+            const refNum = Number(unitRef);
+            for (const lvl of bank) {
+                if (levelCode && lvl.levelCode !== levelCode) continue;
+                const u = (lvl.units || []).find(x => x.unitId === refStr || x.legacyUnitNo === refNum || (levelCode && x.unitNo === refNum));
+                if (u) {
+                    targetUnit = u;
+                    targetLevel = lvl;
+                    break;
+                }
             }
         }
         if (!targetUnit) return null;
 
         const targetDate = dateStr || this.getTodayDateString();
 
-        // 기존 동일 단원 등록 삭제 (중복 방지)
-        this.words = this.words.filter(w => !(w.isGrammarUnit && w.grammarUnitNo === targetUnit.unitNo));
+        // 기존 동일 단원 등록 삭제 (중복 방지 - unitId 또는 unitNo+levelCode 기준)
+        this.words = this.words.filter(w => {
+            if (!w.isGrammarUnit) return true;
+            if (targetUnit.unitId && w.grammarUnitId === targetUnit.unitId) return false;
+            if (w.grammarLevelCode === targetLevel.levelCode && w.grammarUnitNo === targetUnit.unitNo) return false;
+            if (targetUnit.legacyUnitNo && w.grammarUnitNo === targetUnit.legacyUnitNo) return false;
+            return true;
+        });
 
-        const itemWord = (targetUnit.title.startsWith('SP-') || targetUnit.title.startsWith('Unit '))
-            ? targetUnit.title
-            : `Unit ${targetUnit.unitNo}. ${targetUnit.title}`;
+        const unitPrefix = targetLevel.isSpecial ? `특강 ${targetUnit.unitNo}강` : `Unit ${targetUnit.unitNo}`;
+        const itemWord = `[${targetLevel.badge}] ${unitPrefix}. ${targetUnit.title}`;
 
         const item = {
-            id: `grammar-task-unit-${targetUnit.unitNo}`,
+            id: `grammar-task-unit-${targetUnit.unitId || (targetLevel.levelCode + '_' + targetUnit.unitNo)}`,
             word: itemWord,
             meaning: `[문법클리닉] ${targetUnit.summary}`,
             partOfSpeech: '문법',
             example: targetUnit.formulaCards && targetUnit.formulaCards[0] ? targetUnit.formulaCards[0].formula : '',
-            exampleMeaning: targetUnit.formulaCards && targetUnit.formulaCards[0] ? targetUnit.formulaCards[0].example : '',
+            exampleMeaning: targetUnit.formulaCards && targetUnit.formulaCards[0] ? (targetUnit.formulaCards[0].examples && targetUnit.formulaCards[0].examples[0] ? targetUnit.formulaCards[0].examples[0].ko : '') : '',
             level: targetLevel.level <= 2 ? 'middle' : 'high',
             tag: `${targetLevel.badge} (${targetUnit.part})`,
             isGrammarUnit: true,
+            grammarUnitId: targetUnit.unitId,
             grammarUnitNo: targetUnit.unitNo,
+            grammarLegacyUnitNo: targetUnit.legacyUnitNo,
             grammarLevelCode: targetLevel.levelCode,
             grammarLevelNum: targetLevel.level,
             grammarTitle: targetUnit.title,
@@ -2698,10 +2719,12 @@ class StorageManager {
         this.saveWords();
 
         return {
+            unitId: targetUnit.unitId,
             unitNo: targetUnit.unitNo,
             unitTitle: targetUnit.title,
             planDate: targetDate,
-            levelBadge: targetLevel.badge
+            levelBadge: targetLevel.badge,
+            isSpecial: targetLevel.isSpecial
         };
     }
 
@@ -2718,25 +2741,25 @@ class StorageManager {
         const scheduledDates = this.calculateScheduledDates(start, targetUnits.length, selectedDaysOfWeek);
 
         // 해당 레벨의 기존 문법 계획 정리
-        const targetUnitNos = allUnits.map(u => u.unitNo);
-        this.words = this.words.filter(w => !(w.isGrammarUnit && targetUnitNos.includes(w.grammarUnitNo)));
+        this.words = this.words.filter(w => !(w.isGrammarUnit && w.grammarLevelCode === levelCode));
 
         const newItems = targetUnits.map((u, idx) => {
             const planDate = scheduledDates[idx] || start;
-            const itemWord = (u.title.startsWith('SP-') || u.title.startsWith('Unit '))
-                ? u.title
-                : `Unit ${u.unitNo}. ${u.title}`;
+            const unitPrefix = lvl.isSpecial ? `특강 ${u.unitNo}강` : `Unit ${u.unitNo}`;
+            const itemWord = `[${lvl.badge}] ${unitPrefix}. ${u.title}`;
             return {
-                id: `grammar-task-unit-${u.unitNo}`,
+                id: `grammar-task-unit-${u.unitId || (lvl.levelCode + '_' + u.unitNo)}`,
                 word: itemWord,
                 meaning: `[문법클리닉] ${u.summary}`,
                 partOfSpeech: '문법',
                 example: u.formulaCards && u.formulaCards[0] ? u.formulaCards[0].formula : '',
-                exampleMeaning: u.formulaCards && u.formulaCards[0] ? u.formulaCards[0].example : '',
+                exampleMeaning: u.formulaCards && u.formulaCards[0] ? (u.formulaCards[0].examples && u.formulaCards[0].examples[0] ? u.formulaCards[0].examples[0].ko : '') : '',
                 level: lvl.level <= 2 ? 'middle' : 'high',
                 tag: `${lvl.badge} (${u.part})`,
                 isGrammarUnit: true,
+                grammarUnitId: u.unitId,
                 grammarUnitNo: u.unitNo,
+                grammarLegacyUnitNo: u.legacyUnitNo,
                 grammarLevelCode: lvl.levelCode,
                 grammarLevelNum: lvl.level,
                 grammarTitle: u.title,
@@ -2764,17 +2787,42 @@ class StorageManager {
         };
     }
 
-    deleteGrammarUnit(unitNo) {
+    deleteGrammarUnit(unitRef, levelCode = null) {
         const beforeCount = this.words.length;
-        this.words = this.words.filter(w => !(w.isGrammarUnit && w.grammarUnitNo === Number(unitNo)));
+        const refStr = String(unitRef).trim();
+        const refNum = Number(unitRef);
+        this.words = this.words.filter(w => {
+            if (!w.isGrammarUnit) return true;
+            if (w.grammarUnitId && w.grammarUnitId === refStr) return false;
+            if (levelCode && w.grammarLevelCode === levelCode && w.grammarUnitNo === refNum) return false;
+            if (!levelCode && w.grammarLegacyUnitNo && w.grammarLegacyUnitNo === refNum) return false;
+            if (!levelCode && w.grammarUnitNo === refNum && (!w.grammarLevelCode || w.grammarLevelCode === 'lv1')) return false;
+            return true;
+        });
         const deleted = beforeCount - this.words.length;
         if (deleted > 0) this.saveWords();
         return deleted;
     }
 
-    getScheduledGrammarUnit(unitNo) {
+    getScheduledGrammarUnit(unitRef, levelCode = null) {
         if (!Array.isArray(this.words)) return null;
-        return this.words.find(w => w.isGrammarUnit && Number(w.grammarUnitNo) === Number(unitNo)) || null;
+        const refStr = String(unitRef).trim();
+        const refNum = Number(unitRef);
+        return this.words.find(w => {
+            if (!w.isGrammarUnit) return false;
+            if (w.grammarUnitId && w.grammarUnitId === refStr) return true;
+            if (levelCode && w.grammarLevelCode === levelCode && w.grammarUnitNo === refNum) return true;
+            if (!levelCode && w.grammarLegacyUnitNo && w.grammarLegacyUnitNo === refNum) return true;
+            if (!levelCode && w.grammarUnitNo === refNum && (!w.grammarLevelCode || w.grammarLevelCode === 'lv1')) return true;
+            return false;
+        }) || null;
+    }
+
+    getGrammarUnitProgress(unitRef, levelCode = null) {
+        if (window.grammarClinicEngine && typeof window.grammarClinicEngine.getUnitProgress === 'function') {
+            return window.grammarClinicEngine.getUnitProgress(unitRef, levelCode);
+        }
+        return null;
     }
 
     deleteGrammarLevel(levelCode) {

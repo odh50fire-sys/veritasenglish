@@ -78,11 +78,13 @@ def run_test():
 
                 await send_eval("window.alert = function(m) { console.log('ALERT:', m); };")
 
-                for _ in range(30):
+                ready = False
+                for _ in range(50):
                     ready = await send_eval("document.readyState === 'complete' && !!window.storage && !!window.app && !!window.grammarClinicEngine")
                     if ready:
                         break
                     await asyncio.sleep(0.3)
+                print("DEBUG ready:", ready)
 
                 # 1. Open Unit 1 and go to Step 2
                 await send_eval("window.grammarClinicEngine.openClinicModal(1);")

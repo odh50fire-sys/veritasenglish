@@ -74,19 +74,92 @@ class GrammarClinicEngine {
         }
     }
 
-    getUnitProgress(unitNo) {
-        const map = this.getProgressMap();
-        return map[unitNo] || null;
+    findUnit(unitRef, levelCode = null) {
+        if (unitRef === null || unitRef === undefined || unitRef === '') return null;
+        const refStr = String(unitRef).trim();
+        const refNum = Number(unitRef);
+
+        // 1. Direct match by unitId with levelCode filter (if provided)
+        for (const lvl of this.data) {
+            if (levelCode && lvl.levelCode !== levelCode) continue;
+            const u = (lvl.units || []).find(x => x.unitId === refStr);
+            if (u) return { unit: u, level: lvl };
+        }
+
+        // 2. If levelCode is provided, match by unitNo or unitId or legacyUnitNo
+        if (levelCode) {
+            const lvl = this.data.find(l => l.levelCode === levelCode);
+            if (lvl) {
+                const u = (lvl.units || []).find(x => x.unitNo === refNum || x.unitId === refStr || (!isNaN(refNum) && x.legacyUnitNo === refNum));
+                if (u) return { unit: u, level: lvl };
+            }
+        }
+
+        // 3. Match by unitId across all levels
+        for (const lvl of this.data) {
+            const u = (lvl.units || []).find(x => x.unitId === refStr);
+            if (u) return { unit: u, level: lvl };
+        }
+
+        // 4. Match by legacyUnitNo (e.g. 9 -> lv2 Unit 1, 101 -> sp_terms Unit 1)
+        if (!isNaN(refNum)) {
+            for (const lvl of this.data) {
+                const u = (lvl.units || []).find(x => x.legacyUnitNo === refNum);
+                if (u) return { unit: u, level: lvl };
+            }
+        }
+
+        // 5. Match by unitNo in currentLevelCode
+        if (this.currentLevelCode && !isNaN(refNum)) {
+            const lvl = this.data.find(l => l.levelCode === this.currentLevelCode);
+            if (lvl) {
+                const u = (lvl.units || []).find(x => x.unitNo === refNum);
+                if (u) return { unit: u, level: lvl };
+            }
+        }
+
+        // 6. Fallback: first match by unitNo
+        if (!isNaN(refNum)) {
+            for (const lvl of this.data) {
+                const u = (lvl.units || []).find(x => x.unitNo === refNum);
+                if (u) return { unit: u, level: lvl };
+            }
+        }
+
+        return null;
     }
 
-    saveUnitProgress(unitNo, resultData) {
+    getUnitProgress(unitRef, levelCode = null) {
+        const map = this.getProgressMap();
+        if (!map) return null;
+        if (map[unitRef]) return map[unitRef];
+
+        const found = this.findUnit(unitRef, levelCode);
+        if (found) {
+            const u = found.unit;
+            if (u.unitId && map[u.unitId]) return map[u.unitId];
+            if (u.legacyUnitNo && map[u.legacyUnitNo]) return map[u.legacyUnitNo];
+            const compKey = `${found.level.levelCode}_${u.unitNo}`;
+            if (map[compKey]) return map[compKey];
+        }
+        return null;
+    }
+
+    saveUnitProgress(unitRef, resultData, levelCode = null) {
         try {
             const map = this.getProgressMap();
-            map[unitNo] = {
-                ...(map[unitNo] || {}),
+            const found = this.findUnit(unitRef, levelCode);
+            const primaryKey = found && found.unit.unitId ? found.unit.unitId : String(unitRef);
+            
+            map[primaryKey] = {
+                ...(map[primaryKey] || {}),
                 ...resultData,
+                unitId: primaryKey,
                 updatedAt: new Date().toISOString()
             };
+            if (found && found.unit.legacyUnitNo) {
+                map[found.unit.legacyUnitNo] = map[primaryKey];
+            }
             localStorage.setItem(this.getStorageKey(), JSON.stringify(map));
             this.renderStatsOnly();
         } catch (e) {
@@ -104,7 +177,7 @@ class GrammarClinicEngine {
         let totalScore = 0;
 
         units.forEach(u => {
-            const prog = progressMap[u.unitNo];
+            const prog = this.getUnitProgress(u.unitId || u.unitNo, levelCode);
             if (prog && prog.completed) {
                 completed++;
                 totalScore += (prog.score || 0);
@@ -372,12 +445,12 @@ class GrammarClinicEngine {
     }
 
     buildUnitCardHtml(unit, levelObj) {
-        const prog = this.getUnitProgress(unit.unitNo);
+        const prog = this.getUnitProgress(unit.unitId || unit.unitNo, levelObj.levelCode);
         const isCompleted = prog && prog.completed;
         const score = prog ? prog.score : 0;
         const stars = prog ? prog.stars : 0;
 
-        const scheduled = window.storage ? window.storage.getScheduledGrammarUnit(unit.unitNo) : null;
+        const scheduled = window.storage ? window.storage.getScheduledGrammarUnit(unit.unitId || unit.unitNo, levelObj.levelCode) : null;
         let scheduledBadge = '';
         if (scheduled && scheduled.planDate) {
             scheduledBadge = `
@@ -397,12 +470,14 @@ class GrammarClinicEngine {
             `;
         }
 
+        const unitBadgeLabel = levelObj.isSpecial ? `특강 ${unit.unitNo}강` : `Unit ${unit.unitNo}`;
+
         return `
             <div class="bg-white rounded-2xl border ${isCompleted ? 'border-emerald-300 ring-1 ring-emerald-200/50' : 'border-slate-200'} p-5 flex flex-col justify-between hover:shadow-lg transition-all duration-200 group">
                 <div class="space-y-3">
                     <div class="flex items-center justify-between gap-2">
-                        <span class="px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 font-mono text-[10px] font-bold">
-                            Unit ${unit.unitNo}
+                        <span class="px-2 py-0.5 rounded-md bg-slate-100 text-slate-700 font-mono text-[10px] font-bold">
+                            ${unitBadgeLabel}
                         </span>
                         <div class="flex items-center gap-1.5">
                             ${scheduledBadge}
@@ -444,14 +519,14 @@ class GrammarClinicEngine {
                     </div>
                     <div class="flex items-center gap-1.5">
                         <button type="button" 
-                            onclick="window.grammarClinicEngine.openScheduleModal(${unit.unitNo})"
+                            onclick="window.grammarClinicEngine.openScheduleModal('${unit.unitId || unit.unitNo}', '${levelObj.levelCode}')"
                             class="px-2.5 py-1.5 rounded-xl border border-emerald-300 hover:border-emerald-600 bg-emerald-50/70 hover:bg-emerald-100 text-emerald-950 font-serif font-bold text-xs shadow-2xs transition-all flex items-center gap-1 cursor-pointer"
                             title="학습 플래너에 일정 등록">
                             <i data-lucide="calendar-plus" class="w-3.5 h-3.5 text-emerald-700"></i>
                             <span>계획 등록</span>
                         </button>
                         <button type="button" 
-                            onclick="window.grammarClinicEngine.openClinicModal(${unit.unitNo})"
+                            onclick="window.grammarClinicEngine.openClinicModal('${unit.unitId || unit.unitNo}', '${levelObj.levelCode}')"
                             class="px-3 py-1.5 rounded-xl ${
                                 isCompleted 
                                     ? 'bg-slate-100 hover:bg-emerald-50 text-slate-700 hover:text-emerald-800' 
@@ -511,22 +586,14 @@ class GrammarClinicEngine {
     // ------------------------------------------------------------------------
     // 단원 클리닉 모달 열기 & 3단계 제어
     // ------------------------------------------------------------------------
-    openClinicModal(unitNo) {
-        unitNo = Number(unitNo);
-        // Find unit across all levels
-        let foundUnit = null;
-        let foundLevel = null;
-        for (const lvl of this.data) {
-            const u = lvl.units.find(x => x.unitNo === unitNo);
-            if (u) {
-                foundUnit = u;
-                foundLevel = lvl;
-                break;
-            }
-        }
-        if (!foundUnit) return;
+    openClinicModal(unitRef, levelCode = null) {
+        const found = this.findUnit(unitRef, levelCode);
+        if (!found) return;
 
+        const { unit: foundUnit, level: foundLevel } = found;
         this.activeUnit = { ...foundUnit, levelInfo: foundLevel };
+        this.currentLevelCode = foundLevel.levelCode;
+        this.currentTrack = foundLevel.isSpecial ? 'special' : 'regular';
         this.activeStep = 1;
         this.spottingSolved = false;
         this.quizAnswers = [null, null, null, null, null];
@@ -566,12 +633,14 @@ class GrammarClinicEngine {
         const schedBadge = document.getElementById('grammar-modal-scheduled-badge');
         const bodyContainer = document.getElementById('grammar-modal-body');
 
-        if (headerTitle) headerTitle.textContent = `Unit ${unit.unitNo}. ${unit.title}`;
+        const unitLabel = unit.levelInfo && unit.levelInfo.isSpecial ? `특강 ${unit.unitNo}강` : `Unit ${unit.unitNo}`;
+        const levelBadge = unit.levelInfo ? `[${unit.levelInfo.badge}] ` : '';
+        if (headerTitle) headerTitle.textContent = `${levelBadge}${unitLabel}. ${unit.title}`;
         if (headerBadge) {
             headerBadge.textContent = `${unit.levelInfo ? unit.levelInfo.badge : ''} • ${unit.part}`;
         }
         if (schedBadge) {
-            const scheduled = window.storage ? window.storage.getScheduledGrammarUnit(unit.unitNo) : null;
+            const scheduled = window.storage ? window.storage.getScheduledGrammarUnit(unit.unitId || unit.unitNo, unit.levelInfo ? unit.levelInfo.levelCode : null) : null;
             if (scheduled && scheduled.planDate) {
                 schedBadge.textContent = `📅 ${scheduled.planDate} 플래너 배정됨`;
                 schedBadge.classList.remove('hidden');
@@ -625,7 +694,7 @@ class GrammarClinicEngine {
                         </div>
                         <div>
                             <div class="flex items-center gap-2">
-                                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 font-mono text-[10px] font-bold">1단계 개념 마스터</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 font-mono text-[10px] font-bold">1단계 개념 마스터 • ${unit.levelInfo && unit.levelInfo.isSpecial ? '특강 ' + unit.unitNo + '강' : 'Unit ' + unit.unitNo}</span>
                                 <h4 class="font-serif font-bold text-base text-emerald-950">${unit.title}</h4>
                             </div>
                             <p class="text-xs sm:text-sm text-emerald-900/90 mt-1 leading-relaxed font-sans">${overview}</p>
@@ -1189,10 +1258,11 @@ class GrammarClinicEngine {
             } else {
                 // 오답노트에 자동 등록
                 if (window.storage && typeof window.storage.recordWrongAnswer === 'function') {
+                    const unitLabel = unit.levelInfo && unit.levelInfo.isSpecial ? `특강 ${unit.unitNo}강` : `Unit ${unit.unitNo}`;
                     window.storage.recordWrongAnswer({
                         sourceType: 'grammar',
-                        passageId: `grammar_unit_${unit.unitNo}`,
-                        passageTitle: `Lv.${unit.levelInfo ? unit.levelInfo.level : ''} Unit ${unit.unitNo}. ${unit.title}`,
+                        passageId: `grammar_unit_${unit.unitId || unit.unitNo}`,
+                        passageTitle: `${unit.levelInfo ? `[${unit.levelInfo.badge}] ` : ''}${unitLabel}. ${unit.title}`,
                         questionText: qItem.q,
                         userChoice: qItem.options[userAns] || '',
                         correctChoice: qItem.options[qItem.ans] || '',
@@ -1215,16 +1285,17 @@ class GrammarClinicEngine {
         // 경험치(EXP) 보너스 지급
         const expAwarded = score === 5 ? 50 : (score >= 3 ? 30 : 15);
         if (window.storage && typeof window.storage.addExp === 'function') {
-            window.storage.addExp(expAwarded, `문법 클리닉 Unit ${unit.unitNo} 완료`);
+            const unitLabel = unit.levelInfo && unit.levelInfo.isSpecial ? `특강 ${unit.unitNo}강` : `Unit ${unit.unitNo}`;
+            window.storage.addExp(expAwarded, `문법 클리닉 ${unit.levelInfo ? `[${unit.levelInfo.badge}] ` : ''}${unitLabel} 완료`);
         }
 
         // 진척도 저장
-        this.saveUnitProgress(unit.unitNo, {
+        this.saveUnitProgress(unit.unitId || unit.unitNo, {
             completed: true,
             score: score,
             stars: stars,
             completedAt: new Date().toISOString()
-        });
+        }, unit.levelInfo ? unit.levelInfo.levelCode : null);
 
         // 축하 폭죽 효과 (4점 이상)
         if (score >= 4 && window.confetti) {
@@ -1251,9 +1322,12 @@ class GrammarClinicEngine {
     // ------------------------------------------------------------------------
     // 문법 클리닉 단원 플래너 배정 기능 (Planner Scheduling)
     // ------------------------------------------------------------------------
-    openScheduleModal(unitNo = null) {
+    openScheduleModal(unitRef = null, levelCode = null) {
         this.scheduleMode = 'single';
-        this.scheduleTargetUnitNo = unitNo ? Number(unitNo) : (this.activeUnit ? this.activeUnit.unitNo : 1);
+        const found = unitRef ? this.findUnit(unitRef, levelCode) : (this.activeUnit ? { unit: this.activeUnit, level: this.activeUnit.levelInfo } : null);
+        this.scheduleTargetUnitId = found ? found.unit.unitId : (this.data[0]?.units[0]?.unitId || 'lv1_u1');
+        this.scheduleTargetUnitNo = found ? found.unit.unitNo : 1;
+        this.scheduleTargetLevelCode = found ? found.level.levelCode : (this.currentLevelCode || 'lv1');
         this.populateScheduleModal();
         this.setScheduleMode('single');
         const modal = document.getElementById('modal-grammar-schedule');
@@ -1273,7 +1347,7 @@ class GrammarClinicEngine {
 
     openScheduleModalFromClinic() {
         if (!this.activeUnit) return;
-        this.openScheduleModal(this.activeUnit.unitNo);
+        this.openScheduleModal(this.activeUnit.unitId || this.activeUnit.unitNo, this.activeUnit.levelInfo ? this.activeUnit.levelInfo.levelCode : null);
     }
 
     openScheduleModalForDate(dateStr) {
@@ -1331,8 +1405,9 @@ class GrammarClinicEngine {
                 const groupTitle = lvl.isSpecial ? `🎓 [특강] ${lvl.badge} - ${lvl.levelName}` : `📚 [정규] ${lvl.badge} (${lvl.levelName})`;
                 options.push(`<optgroup label="${groupTitle}">`);
                 (lvl.units || []).forEach(u => {
-                    const unitLabel = (u.title.startsWith('SP-') || u.title.startsWith('Unit ')) ? u.title : `Unit ${u.unitNo}. ${u.title}`;
-                    options.push(`<option value="${u.unitNo}" ${Number(u.unitNo) === Number(this.scheduleTargetUnitNo) ? 'selected' : ''}>${unitLabel} [${u.part}]</option>`);
+                    const unitLabel = lvl.isSpecial ? `특강 ${u.unitNo}강. ${u.title}` : `Unit ${u.unitNo}. ${u.title}`;
+                    const isSelected = (u.unitId && u.unitId === this.scheduleTargetUnitId) || (Number(u.legacyUnitNo) === Number(this.scheduleTargetUnitNo));
+                    options.push(`<option value="${u.unitId || u.unitNo}" ${isSelected ? 'selected' : ''}>[${lvl.badge}] ${unitLabel} (${u.part})</option>`);
                 });
                 options.push(`</optgroup>`);
             });
@@ -1382,7 +1457,7 @@ class GrammarClinicEngine {
         if (startSelect && lvl) {
             const totalUnits = (lvl.units || []).length;
             startSelect.innerHTML = (lvl.units || []).map((u, idx) => {
-                const label = (u.title.startsWith('SP-') || u.title.startsWith('Unit ')) ? u.title : `Unit ${u.unitNo}. ${u.title}`;
+                const label = lvl.isSpecial ? `특강 ${u.unitNo}강. ${u.title}` : `Unit ${u.unitNo}. ${u.title}`;
                 return `
                     <option value="${idx}">
                         ${label} (${idx + 1}회차부터 총 ${totalUnits - idx}단원 배정)
@@ -1455,10 +1530,10 @@ class GrammarClinicEngine {
         if (this.scheduleMode === 'single') {
             const unitSelect = document.getElementById('grammar-sched-unit-select');
             const dateInput = document.getElementById('grammar-sched-single-date');
-            const unitNo = unitSelect ? Number(unitSelect.value) : this.scheduleTargetUnitNo;
+            const unitRef = unitSelect ? unitSelect.value : (this.scheduleTargetUnitId || this.scheduleTargetUnitNo);
             const targetDate = (dateInput && dateInput.value) ? dateInput.value : window.storage.getTodayDateString();
 
-            const res = window.storage.registerGrammarUnit(unitNo, targetDate);
+            const res = window.storage.registerGrammarUnit(unitRef, targetDate);
             if (!res) {
                 alert('단원 등록에 실패했습니다. 단원 정보를 확인해 주세요.');
                 return;
@@ -1468,7 +1543,8 @@ class GrammarClinicEngine {
                 window.confetti({ particleCount: 40, spread: 60, origin: { y: 0.6 } });
             }
 
-            alert(`🎉 [Unit ${res.unitNo}. ${res.unitTitle}] 일정이\n${res.planDate} 학습 플래너에 성공적으로 등록되었습니다!`);
+            const unitPrefix = res.isSpecial ? `특강 ${res.unitNo}강` : `Unit ${res.unitNo}`;
+            alert(`🎉 [${res.levelBadge}] ${unitPrefix}. ${res.unitTitle} 일정이\n${res.planDate} 학습 플래너에 성공적으로 등록되었습니다!`);
             this.closeScheduleModal();
 
             if (window.plannerEngine) {

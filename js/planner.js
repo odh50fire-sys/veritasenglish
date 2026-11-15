@@ -204,7 +204,7 @@ class PlannerEngine {
                 return (r && typeof r.score === 'number') || p.studyCompleted;
             });
             const isGrammarCompleted = grammarUnits.length === 0 || grammarUnits.every(g => {
-                const prog = window.grammarClinicEngine && window.grammarClinicEngine.getUnitProgress(g.grammarUnitNo);
+                const prog = window.grammarClinicEngine && window.grammarClinicEngine.getUnitProgress(g.grammarUnitId || g.grammarUnitNo, g.grammarLevelCode);
                 return (prog && prog.completed) || g.studyCompleted;
             });
             const isExtCompleted = extTasks.length === 0 || extTasks.every(t => t.isDone);
@@ -219,7 +219,7 @@ class PlannerEngine {
             } else {
                 if (grammarUnits.length > 0) {
                     const allGrammarDone = grammarUnits.every(g => {
-                        const prog = window.grammarClinicEngine && window.grammarClinicEngine.getUnitProgress(g.grammarUnitNo);
+                        const prog = window.grammarClinicEngine && window.grammarClinicEngine.getUnitProgress(g.grammarUnitId || g.grammarUnitNo, g.grammarLevelCode);
                         return (prog && prog.completed) || g.studyCompleted;
                     });
                     badgesHtml += `
@@ -601,11 +601,11 @@ class PlannerEngine {
         if (grammarQuickActionEl) {
             if (grammarOnDate.length > 0) {
                 const firstGrammar = grammarOnDate[0];
-                const prog = window.grammarClinicEngine ? window.grammarClinicEngine.getUnitProgress(firstGrammar.grammarUnitNo) : null;
+                const prog = window.grammarClinicEngine ? window.grammarClinicEngine.getUnitProgress(firstGrammar.grammarUnitId || firstGrammar.grammarUnitNo, firstGrammar.grammarLevelCode) : null;
                 const isPassed = prog && prog.completed;
                 grammarQuickActionEl.classList.remove('hidden');
                 grammarQuickActionEl.innerHTML = `
-                    <button type="button" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-emerald-800 via-teal-800 to-slate-900 hover:from-emerald-700 hover:to-teal-700 text-white font-serif font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95" onclick="window.grammarClinicEngine.openClinicModal(${firstGrammar.grammarUnitNo}); window.app.switchTab('grammar');">
+                    <button type="button" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-emerald-800 via-teal-800 to-slate-900 hover:from-emerald-700 hover:to-teal-700 text-white font-serif font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95" onclick="window.grammarClinicEngine.openClinicModal('${firstGrammar.grammarUnitId || firstGrammar.grammarUnitNo}', '${firstGrammar.grammarLevelCode || ''}'); window.app.switchTab('grammar');">
                         <i data-lucide="sparkle" class="w-4 h-4 text-emerald-300"></i>
                         <span>오늘의 문법 클리닉 도전 [${firstGrammar.word.slice(0, 24)}...] ${isPassed ? '✓ 재도전' : '시작 →'}</span>
                     </button>
@@ -651,7 +651,7 @@ class PlannerEngine {
             
             // 0. 영문법 클리닉 단원 과제인 경우
             if (w.isGrammarUnit) {
-                const prog = window.grammarClinicEngine ? window.grammarClinicEngine.getUnitProgress(w.grammarUnitNo) : null;
+                const prog = window.grammarClinicEngine ? window.grammarClinicEngine.getUnitProgress(w.grammarUnitId || w.grammarUnitNo, w.grammarLevelCode) : null;
                 const isDone = (prog && prog.completed) || w.studyCompleted;
                 row.className = `p-3.5 ${isDone ? 'bg-emerald-50/70 border-emerald-300' : 'bg-emerald-50/30 border-emerald-200'} border rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 hover:border-emerald-400 transition-all`;
                 row.innerHTML = `
@@ -673,7 +673,7 @@ class PlannerEngine {
                         </div>
                     </div>
                     <div class="flex items-center gap-2 self-end sm:self-auto shrink-0">
-                        <button type="button" class="px-3 py-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-serif font-bold text-xs flex items-center gap-1 shadow-2xs transition-all cursor-pointer" onclick="window.grammarClinicEngine.openClinicModal(${w.grammarUnitNo}); window.app.switchTab('grammar');">
+                        <button type="button" class="px-3 py-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-serif font-bold text-xs flex items-center gap-1 shadow-2xs transition-all cursor-pointer" onclick="window.grammarClinicEngine.openClinicModal('${w.grammarUnitId || w.grammarUnitNo}', '${w.grammarLevelCode || ''}'); window.app.switchTab('grammar');">
                             <span>클리닉 학습하기</span>
                             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                         </button>
@@ -990,16 +990,16 @@ class PlannerEngine {
         alert(`🗑️ [${unitTitle}] 관련 학습 과제 총 ${deleted}건이 계획표에서 삭제되었습니다.`);
     }
 
-    deleteGrammarUnitFromPlanner(unitNo, title) {
-        if (!confirm(`[Unit ${unitNo}. ${title || '문법 단원'}]의 플래너 배정 일정을 삭제하시겠습니까?`)) {
+    deleteGrammarUnitFromPlanner(unitRef, title = '', levelCode = null) {
+        if (!confirm(`[${title || '문법 단원'}]의 플래너 배정 일정을 삭제하시겠습니까?`)) {
             return;
         }
-        const deleted = window.storage ? window.storage.deleteGrammarUnit(unitNo) : 0;
+        const deleted = window.storage ? window.storage.deleteGrammarUnit(unitRef, levelCode) : 0;
         this.render();
         if (window.app && window.app.renderDashboard) {
             window.app.renderDashboard();
         }
-        alert(`🗑️ [Unit ${unitNo}] 문법 계획이 플래너에서 삭제되었습니다.`);
+        alert(`🗑️ [${title || '문법 단원'}] 문법 계획이 플래너에서 삭제되었습니다.`);
     }
 
     deleteAllGrammarUnitsFromPlanner() {

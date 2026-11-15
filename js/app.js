@@ -911,12 +911,12 @@ class AppController {
     /**
      * 오늘 문법 클리닉 단원 바로 학습하기 (문법 클리닉 탭 & 유닛 모달 직접 연동)
      */
-    startGrammarUnitStudy(unitNo) {
+    startGrammarUnitStudy(unitRef, levelCode = null) {
         this.switchTab('grammar');
         setTimeout(() => {
             const clinic = window.grammarClinicEngine || window.grammarClinic;
             if (clinic && typeof clinic.openClinicModal === 'function') {
-                clinic.openClinicModal(Number(unitNo));
+                clinic.openClinicModal(unitRef, levelCode);
             }
         }, 50);
     }
@@ -1289,12 +1289,12 @@ class AppController {
         const grammarCardsArr = [];
         grammarUnits.forEach(w => {
             const prog = (window.grammarClinicEngine && typeof window.grammarClinicEngine.getUnitProgress === 'function')
-                ? window.grammarClinicEngine.getUnitProgress(w.grammarUnitNo)
+                ? window.grammarClinicEngine.getUnitProgress(w.grammarUnitId || w.grammarUnitNo, w.grammarLevelCode)
                 : (window.storage && typeof window.storage.getGrammarUnitProgress === 'function'
-                    ? window.storage.getGrammarUnitProgress(w.grammarUnitNo)
+                    ? window.storage.getGrammarUnitProgress(w.grammarUnitId || w.grammarUnitNo, w.grammarLevelCode)
                     : null);
             const isDone = (prog && prog.completed) || w.studyCompleted;
-            const cleanTitle = w.grammarTitle || w.word || `Unit ${w.grammarUnitNo}`;
+            const cleanTitle = w.word || w.grammarTitle || `Unit ${w.grammarUnitNo}`;
             const summary = (w.meaning || '').replace(/^\[문법클리닉\]\s*/, '').trim();
 
             grammarCardsArr.push(`
@@ -1341,7 +1341,7 @@ class AppController {
                     </div>
 
                     <!-- 문법 클리닉 유닛 입장 버튼 -->
-                    <button type="button" onclick="window.app && window.app.startGrammarUnitStudy(${w.grammarUnitNo})" class="w-full mt-5 py-2.5 px-4 rounded-xl ${isDone ? 'bg-emerald-700 hover:bg-emerald-800' : 'bg-gradient-to-r from-indigo-600 to-violet-700 hover:from-indigo-500 hover:to-violet-600'} text-white font-serif font-bold text-xs flex items-center justify-center gap-1.5 shadow-xs transition-all cursor-pointer active:scale-95">
+                    <button type="button" onclick="window.app && window.app.startGrammarUnitStudy('${w.grammarUnitId || w.grammarUnitNo}', '${w.grammarLevelCode || ''}')" class="w-full mt-5 py-2.5 px-4 rounded-xl ${isDone ? 'bg-emerald-700 hover:bg-emerald-800' : 'bg-gradient-to-r from-indigo-600 to-violet-700 hover:from-indigo-500 hover:to-violet-600'} text-white font-serif font-bold text-xs flex items-center justify-center gap-1.5 shadow-xs transition-all cursor-pointer active:scale-95">
                         <span>${isDone ? '문법 클리닉 유닛 재도전하기' : '문법 유닛 입장 & 클리닉 풀기'}</span>
                         <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-300"></i>
                     </button>
