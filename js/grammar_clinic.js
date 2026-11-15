@@ -14,6 +14,7 @@ class GrammarClinicEngine {
         this.activeUnit = null;
         this.activeStep = 1; // 1: 개념 마스터, 2: 밑줄 어법, 3: 실전 퀴즈
         this.spottingSolved = false;
+        this.spottingSolvedMap = { 0: false, 1: false, 2: false };
         
         // 퀴즈 진행 상태
         this.quizAnswers = [null, null, null, null, null];
@@ -596,6 +597,7 @@ class GrammarClinicEngine {
         this.currentTrack = foundLevel.isSpecial ? 'special' : 'regular';
         this.activeStep = 1;
         this.spottingSolved = false;
+        this.spottingSolvedMap = { 0: false, 1: false, 2: false };
         this.quizAnswers = [null, null, null, null, null];
         this.quizSubmitted = false;
         this.quizScore = 0;
@@ -868,14 +870,13 @@ class GrammarClinicEngine {
     }
 
     // ------------------------------------------------------------------------
-    // STEP 2: 밑줄 어법 클리닉 (Error Spotting Clinic)
+    // STEP 2: 밑줄 어법 클리닉 (Error Spotting Clinic - 3대 실전 미션)
     // ------------------------------------------------------------------------
     renderStep2Spotting() {
         const unit = this.activeUnit;
         const drills = unit.spottingDrills || [];
-        const drill = drills[0];
 
-        if (!drill) {
+        if (!drills || drills.length === 0) {
             return `
                 <div class="py-12 text-center">
                     <p class="text-sm text-slate-500">등록된 밑줄 어법 문제가 없습니다.</p>
@@ -884,42 +885,81 @@ class GrammarClinicEngine {
             `;
         }
 
-        const isSolved = this.spottingSolved;
+        if (!this.spottingSolvedMap) {
+            this.spottingSolvedMap = { 0: false, 1: false, 2: false };
+        }
+
+        const solvedCount = Object.values(this.spottingSolvedMap).filter(Boolean).length;
+        const canProceed = solvedCount >= 1;
 
         return `
             <div class="space-y-6 animate-in fade-in duration-200">
-                <div class="p-4 rounded-2xl bg-indigo-50 border border-indigo-200 flex items-start gap-3">
-                    <div class="w-8 h-8 rounded-xl bg-indigo-600 text-white flex items-center justify-center shrink-0 text-sm">
-                        <i data-lucide="search" class="w-4 h-4"></i>
+                <div class="p-4 rounded-2xl bg-indigo-50 border border-indigo-200 flex items-start justify-between gap-3">
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-xl bg-indigo-600 text-white flex items-center justify-center shrink-0 text-sm">
+                            <i data-lucide="search" class="w-4 h-4"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-sm text-indigo-950">2단계 밑줄 어법 클리닉 (3대 실전 미션)</h4>
+                            <p class="text-xs text-indigo-800 mt-0.5">다음 3개의 내신·수능 실전 문장에서 어법상 <strong class="underline decoration-indigo-500 decoration-2">틀린 부분 하나</strong>를 클릭하여 즉시 진단하고 수정 처방을 확인하세요.</p>
+                        </div>
                     </div>
-                    <div>
-                        <h4 class="font-serif font-bold text-sm text-indigo-950">밑줄 어법 클리닉 미션</h4>
-                        <p class="text-xs text-indigo-800 mt-0.5">다음 문장에서 어법상 <strong class="underline decoration-indigo-500 decoration-2">틀린 부분 하나</strong>를 클릭하여 즉시 진단하고 수정하세요.</p>
+                    <div class="shrink-0 px-3 py-1 rounded-xl bg-indigo-600 text-white font-mono font-bold text-xs flex items-center gap-1.5 shadow-xs">
+                        <span>해결:</span>
+                        <span id="spotting-progress-count" class="text-amber-300 text-sm">${solvedCount} / ${drills.length}</span>
                     </div>
                 </div>
 
-                <!-- 문제 카드 -->
-                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs space-y-6">
-                    <div class="text-xs font-serif font-bold text-slate-500">
-                        [수능·내신 킬러 어법 처방전]
-                    </div>
+                <!-- 3대 미션 카드 리스트 -->
+                <div class="space-y-6">
+                    ${drills.map((drill, dIdx) => {
+                        const isSolved = Boolean(this.spottingSolvedMap[dIdx]);
+                        const feedbackContainerId = (dIdx === 0) ? 'spotting-feedback-container' : `spotting-feedback-container-${dIdx}`;
+                        return `
+                            <div class="bg-white rounded-2xl border ${isSolved ? 'border-emerald-300 bg-emerald-50/20' : 'border-slate-200'} p-5 sm:p-6 shadow-xs space-y-4 transition-all" id="drill-card-${dIdx}">
+                                <div class="flex items-center justify-between flex-wrap gap-2">
+                                    <div class="flex items-center gap-2">
+                                        <span class="px-2.5 py-1 rounded-lg ${isSolved ? 'bg-emerald-600 text-white' : 'bg-indigo-100 text-indigo-700'} font-serif font-bold text-xs">
+                                            미션 ${dIdx + 1}
+                                        </span>
+                                        <span class="text-xs font-serif font-bold text-slate-700">
+                                            ${dIdx === 0 ? '[어법 클리닉 기본]' : (dIdx === 1 ? '[내신·수능 실전 1]' : '[내신·수능 심화 2]')}
+                                        </span>
+                                    </div>
+                                    ${drill.conceptRef ? `
+                                        <span class="px-2.5 py-0.5 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-[11px] font-medium flex items-center gap-1">
+                                            <i data-lucide="sparkles" class="w-3 h-3 text-amber-500"></i>
+                                            ${drill.conceptRef}
+                                        </span>
+                                    ` : ''}
+                                </div>
 
-                    <!-- 밑줄 선택 문장 영역 (실제 완전한 문장 내 밑줄 인라인 렌더링) -->
-                    <div class="p-6 sm:p-7 rounded-2xl bg-slate-900 text-white font-serif text-base sm:text-lg leading-loose tracking-wide border border-slate-800 shadow-inner">
-                        <div class="leading-loose sm:leading-loose">
-                            ${this.renderSpottingSentenceInline(drill, isSolved)}
-                        </div>
-                    </div>
+                                <!-- 밑줄 선택 문장 영역 (인라인 렌더링) -->
+                                <div class="p-5 sm:p-6 rounded-2xl bg-slate-900 text-white font-serif text-base sm:text-lg leading-loose tracking-wide border border-slate-800 shadow-inner">
+                                    <div class="leading-loose sm:leading-loose">
+                                        ${this.renderSpottingSentenceInline(drill, isSolved, dIdx)}
+                                    </div>
+                                </div>
 
-                    <!-- 피드백 메시지 컨테이너 -->
-                    <div id="spotting-feedback-container">
-                        ${isSolved ? this.renderSpottingSolvedFeedback(drill) : `
-                            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-500 flex items-center gap-2">
-                                <i data-lucide="info" class="w-4 h-4 text-slate-400 shrink-0"></i>
-                                <span>틀렸다고 생각되는 밑줄 번호를 클릭하세요. 정답 여부와 수정 공식이 즉시 공개됩니다.</span>
+                                ${drill.korean ? `
+                                    <div class="px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs text-slate-500 flex items-center gap-2">
+                                        <span class="font-bold text-slate-600 shrink-0">[해석]</span>
+                                        <span>${drill.korean}</span>
+                                    </div>
+                                ` : ''}
+
+                                <!-- 피드백 메시지 컨테이너 -->
+                                <div id="${feedbackContainerId}" ${dIdx === 0 ? 'data-drill-idx="0"' : ''}>
+                                    ${isSolved ? this.renderSpottingSolvedFeedback(drill) : `
+                                        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-500 flex items-center gap-2">
+                                            <i data-lucide="info" class="w-4 h-4 text-slate-400 shrink-0"></i>
+                                            <span>틀렸다고 생각되는 밑줄 번호를 클릭하세요. 정답 여부와 수정 공식이 즉시 공개됩니다.</span>
+                                        </div>
+                                    `}
+                                </div>
                             </div>
-                        `}
-                    </div>
+                        `;
+                    }).join('')}
                 </div>
 
                 <!-- 하단 네비게이션 -->
@@ -935,7 +975,7 @@ class GrammarClinicEngine {
                         id="spotting-next-step-btn"
                         onclick="window.grammarClinicEngine.setStep(3)"
                         class="px-5 py-2.5 rounded-xl ${
-                            isSolved ? 'bg-emerald-600 hover:bg-emerald-700 text-white shadow-md' : 'bg-slate-200 text-slate-400 cursor-not-allowed'
+                            canProceed ? 'bg-emerald-600 hover:bg-emerald-700 text-white shadow-md cursor-pointer' : 'bg-slate-200 text-slate-400 cursor-not-allowed'
                         } font-serif font-bold text-sm transition-all flex items-center gap-2">
                         <span>3단계 [실전 5제 퀴즈] 도전</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
@@ -950,7 +990,7 @@ class GrammarClinicEngine {
      * - 완전한 원문 문장(sentence)의 어순과 맥락을 100% 보존
      * - 밑줄 대상 어구 4개를 문장 내 정확한 위치에 번호 배지(①, ②, ③, ④)와 밑줄 버튼으로 인라인 삽입
      */
-    renderSpottingSentenceInline(drill, isSolved) {
+    renderSpottingSentenceInline(drill, isSolved, dIdx = 0) {
         const sentence = drill.sentence || '';
         const underlined = drill.underlined || [];
         const wrongIdx = drill.wrongIndex;
@@ -974,11 +1014,12 @@ class GrammarClinicEngine {
             // 인라인 번호 밑줄 버튼
             const isTargetWrong = (i === wrongIdx);
             const isHighlight = isSolved && isTargetWrong;
+            const btnId = (dIdx === 0) ? `spot-btn-${i}` : `spot-btn-${dIdx}-${i}`;
 
             html += `
                 <button type="button"
-                    id="spot-btn-${i}"
-                    onclick="window.grammarClinicEngine.checkSpotting(${i}, ${wrongIdx})"
+                    id="${btnId}"
+                    onclick="window.grammarClinicEngine.checkSpotting(${dIdx}, ${i}, ${wrongIdx})"
                     class="inline-flex items-center gap-1 mx-1 my-0.5 px-2.5 py-0.5 rounded-lg border-2 font-mono font-semibold transition-all cursor-pointer select-none align-middle ${
                         isHighlight
                             ? 'border-emerald-400 bg-emerald-500/25 text-emerald-300 ring-2 ring-emerald-400/50 shadow-sm'
@@ -1003,26 +1044,74 @@ class GrammarClinicEngine {
         return html || sentence;
     }
 
-    checkSpotting(clickedIdx, wrongIdx) {
-        const feedbackContainer = document.getElementById('spotting-feedback-container');
+    checkSpotting(a, b, c) {
+        let drillIdx = 0;
+        let clickedIdx = 0;
+        let wrongIdx = 0;
+        if (c !== undefined) {
+            drillIdx = a;
+            clickedIdx = b;
+            wrongIdx = c;
+        } else {
+            drillIdx = 0;
+            clickedIdx = a;
+            wrongIdx = b;
+        }
+
+        if (!this.spottingSolvedMap) {
+            this.spottingSolvedMap = { 0: false, 1: false, 2: false };
+        }
+
+        const unit = this.activeUnit;
+        const drills = unit.spottingDrills || [];
+        const drill = drills[drillIdx] || drills[0];
+
+        const feedbackContainer = (drillIdx === 0)
+            ? (document.getElementById('spotting-feedback-container') || document.getElementById('spotting-feedback-container-0'))
+            : document.getElementById(`spotting-feedback-container-${drillIdx}`);
         const nextBtn = document.getElementById('spotting-next-step-btn');
-        const drill = this.activeUnit.spottingDrills[0];
 
         if (clickedIdx === wrongIdx) {
             // 정답!
-            this.spottingSolved = true;
-            if (window.confetti) {
-                window.confetti({ particleCount: 30, spread: 60, origin: { y: 0.6 } });
+            this.spottingSolvedMap[drillIdx] = true;
+            const solvedCount = Object.values(this.spottingSolvedMap).filter(Boolean).length;
+            if (solvedCount === drills.length) {
+                this.spottingSolved = true;
             }
+
+            if (window.confetti) {
+                window.confetti({ 
+                    particleCount: (solvedCount === drills.length) ? 60 : 30, 
+                    spread: 60, 
+                    origin: { y: 0.6 } 
+                });
+            }
+
             if (feedbackContainer) {
                 feedbackContainer.innerHTML = this.renderSpottingSolvedFeedback(drill);
             }
+
             // 버튼 스타일 업데이트
-            const correctBtn = document.getElementById(`spot-btn-${clickedIdx}`);
+            const btnId = (drillIdx === 0) ? `spot-btn-${clickedIdx}` : `spot-btn-${drillIdx}-${clickedIdx}`;
+            const correctBtn = document.getElementById(btnId);
             if (correctBtn) {
                 correctBtn.className = 'inline-flex items-center gap-1 mx-1 my-0.5 px-2.5 py-0.5 rounded-lg border-2 border-emerald-400 bg-emerald-500/25 text-emerald-300 ring-2 ring-emerald-400/50 font-mono font-semibold cursor-pointer align-middle shadow-sm';
             }
-            if (nextBtn) {
+
+            // 미션 카드 테두리 업데이트
+            const card = document.getElementById(`drill-card-${drillIdx}`);
+            if (card) {
+                card.className = 'bg-white rounded-2xl border border-emerald-300 bg-emerald-50/20 p-5 sm:p-6 shadow-xs space-y-4 transition-all';
+            }
+
+            // 진행률 배지 업데이트
+            const progressBadge = document.getElementById('spotting-progress-count');
+            if (progressBadge) {
+                progressBadge.textContent = `${solvedCount} / ${drills.length}`;
+            }
+
+            // 다음 단계 버튼 활성화
+            if (nextBtn && solvedCount >= 1) {
                 nextBtn.className = 'px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white shadow-md font-serif font-bold text-sm transition-all flex items-center gap-2 cursor-pointer';
                 nextBtn.removeAttribute('disabled');
             }
@@ -1034,7 +1123,7 @@ class GrammarClinicEngine {
                     <div class="p-4 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-900 flex items-start gap-2.5 animate-in fade-in duration-150">
                         <i data-lucide="alert-circle" class="w-4 h-4 text-rose-600 shrink-0 mt-0.5"></i>
                         <div>
-                            <strong class="font-bold text-rose-950">오답입니다:</strong> [${clickedIdx + 1}번] '${drill.underlined[clickedIdx]}'은(는) 올바른 어법입니다. 주어-동사의 수일치, 시제 또는 품사 연결을 다시 확인하세요!
+                            <strong class="font-bold text-rose-950">오답입니다:</strong> [${clickedIdx + 1}번] '${drill.underlined[clickedIdx]}'은(는) 올바른 어법입니다. 문장의 주어-동사 수일치, 시제, 또는 구문 공식을 다시 확인하세요!
                         </div>
                     </div>
                 `;
@@ -1046,9 +1135,16 @@ class GrammarClinicEngine {
     renderSpottingSolvedFeedback(drill) {
         return `
             <div class="p-5 rounded-2xl bg-emerald-50 border border-emerald-300 space-y-3 animate-in fade-in duration-200">
-                <div class="flex items-center gap-2 text-emerald-800 font-serif font-bold text-sm">
-                    <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600"></i>
-                    <span>정답입니다! 밑줄 오류를 완벽하게 진단했습니다.</span>
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                    <div class="flex items-center gap-2 text-emerald-800 font-serif font-bold text-sm">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600"></i>
+                        <span>정답입니다! 밑줄 오류를 완벽하게 진단했습니다.</span>
+                    </div>
+                    ${drill.conceptRef ? `
+                        <span class="text-xs px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-medium">
+                            ${drill.conceptRef}
+                        </span>
+                    ` : ''}
                 </div>
 
                 <div class="p-3 rounded-xl bg-white border border-emerald-200 flex flex-wrap items-center gap-3 text-xs sm:text-sm">

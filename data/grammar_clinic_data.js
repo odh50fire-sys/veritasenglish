@@ -1,7 +1,4 @@
-/**
- * Veritas English - 영문법 클리닉 정규 5대 레벨 40단원 + 테마별 4대 특강 30단원 (총 70단원)
- * 각 레벨별 독자 Unit 번호 체계(Unit 1~8) 및 고유 unitId(lv1_u1..lv5_u8, sp_terms_u1.. 등) 적용
- */
+// Veritas English - Grammar Clinic Data Bank
 window.GRAMMAR_CLINIC_BANK = [
   {
     "level": 1,
@@ -127,7 +124,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_01",
+            "id": "drill_1",
             "sentence": "My uncle lives in London and he teach English at school.",
             "underlined": [
               "lives",
@@ -137,7 +134,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 3,
             "correction": "teaches",
-            "explanation": "주어 he가 3인칭 단수 현재이므로 일반동사 teach 뒤에 -es를 붙여 teaches로 고쳐야 합니다."
+            "explanation": "주어 he가 3인칭 단수 현재이므로 일반동사 teach 뒤에 -es를 붙여 teaches로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 1: be동사의 현재형·과거형과 부정문·의문문] 출제 연계",
+            "korean": "나의 삼촌은 런던에 살고 계시며 학교에서 영어를 가르치신다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Yesterday afternoon, several students was studying quietly in the school library.",
+            "underlined": [
+              "Yesterday",
+              "several students",
+              "was",
+              "quietly"
+            ],
+            "wrongIndex": 2,
+            "correction": "were",
+            "explanation": "주어가 복수명사(several students)이고 시제가 과거이므로 was를 were로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 1: be동사의 현재형·과거형] 출제 연계",
+            "korean": "어제 오후, 몇몇 학생들이 학교 도서관에서 조용히 공부하고 있었다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Does the famous novelist writes fascinating stories about ancient civilizations every year?",
+            "underlined": [
+              "Does",
+              "famous novelist",
+              "writes",
+              "every year"
+            ],
+            "wrongIndex": 2,
+            "correction": "write",
+            "explanation": "의문문 조동사 Does 뒤에는 주어 다음 반드시 일반동사의 원형(write)을 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 일반동사 의문문 동사원형 규칙] 출제 연계",
+            "korean": "그 유명한 소설가는 매년 고대 문명에 관한 매혹적인 이야기를 쓰는가?"
           }
         ],
         "questions": [
@@ -326,7 +355,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_02",
+            "id": "drill_1",
             "sentence": "The teacher gave him and I some books, but they were hers.",
             "underlined": [
               "gave",
@@ -336,7 +365,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "him and me",
-            "explanation": "동사 gave의 간접목적어 자리이므로 주격 I가 아니라 목적격 me를 써서 'him and me'가 되어야 합니다."
+            "explanation": "동사 gave의 간접목적어 자리이므로 주격 I가 아니라 목적격 me를 써서 'him and me'가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 규칙 및 불규칙 명사의 복수형 완전 정복] 출제 연계",
+            "korean": "선생님께서는 그와 나에게 책 몇 권을 주셨지만, 그것들은 그녀의 것이었다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "During the winter vacation, many childs visited the science museum with their parents.",
+            "underlined": [
+              "During",
+              "many",
+              "childs",
+              "with their"
+            ],
+            "wrongIndex": 2,
+            "correction": "children",
+            "explanation": "child의 복수형은 불규칙 변화하여 children이 되어야 하며 childs는 잘못된 형태입니다.",
+            "conceptRef": "1단계 [공식 1: 명사의 불규칙 복수형] 출제 연계",
+            "korean": "겨울방학 동안 많은 아이들이 부모님과 함께 과학 박물관을 방문했다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "This silver smartphone is mine, but that blue tablet on the desk is her.",
+            "underlined": [
+              "smartphone",
+              "is mine",
+              "on the desk",
+              "her"
+            ],
+            "wrongIndex": 3,
+            "correction": "hers",
+            "explanation": "'그녀의 것'이라는 소유대명사가 필요한 자리이므로 her(소유격/목적격)를 hers로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 2: 인칭대명사의 격변화와 소유대명사] 출제 연계",
+            "korean": "이 은색 스마트폰은 내 것이지만 책상 위의 파란색 태블릿은 그녀의 것이다."
           }
         ],
         "questions": [
@@ -529,7 +590,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_03",
+            "id": "drill_1",
             "sentence": "The train arrived very lately, so I could hardly catch the bus.",
             "underlined": [
               "train",
@@ -539,7 +600,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "late",
-            "explanation": "'늦게'라는 뜻의 부사는 late입니다. lately는 '최근에'라는 뜻이므로 문맥에 맞지 않습니다."
+            "explanation": "'늦게'라는 뜻의 부사는 late입니다. lately는 '최근에'라는 뜻이므로 문맥에 맞지 않습니다.",
+            "conceptRef": "1단계 [공식 1: 형용사의 한정적 용법과 서술적 용법(보어)] 출제 연계",
+            "korean": "기차가 매우 늦게 도착해서 나는 버스를 거의 탈 수 없었다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The nervous actor looked calmly before the curtains opened on the stage.",
+            "underlined": [
+              "nervous actor",
+              "looked",
+              "calmly",
+              "on the stage"
+            ],
+            "wrongIndex": 2,
+            "correction": "calm",
+            "explanation": "감각동사 look 뒤에는 주어의 상태를 설명하는 주격보어로 형용사 calm을 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 형용사의 쓰임과 감각동사 보어] 출제 연계",
+            "korean": "긴장한 배우는 무대의 커튼이 열리기 전 침착해 보였다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "She solved the difficult math problem very quick without any help from others.",
+            "underlined": [
+              "solved",
+              "difficult",
+              "very quick",
+              "without any help"
+            ],
+            "wrongIndex": 2,
+            "correction": "very quickly",
+            "explanation": "동사 solved를 수식하는 자리이므로 형용사 quick이 아닌 부사 quickly를 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 부사의 역할과 형성 규칙] 출제 연계",
+            "korean": "그녀는 다른 사람의 도움 없이 그 어려운 수학 문제를 매우 빠르게 풀었다."
           }
         ],
         "questions": [
@@ -700,7 +793,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_04",
+            "id": "drill_1",
             "sentence": "What did you go to the museum yesterday? I took the subway.",
             "underlined": [
               "What",
@@ -710,7 +803,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 0,
             "correction": "How",
-            "explanation": "지하철을 타고 갔다는 이동 수단/방법을 묻고 있으므로 의문사 How를 써야 합니다."
+            "explanation": "지하철을 타고 갔다는 이동 수단/방법을 묻고 있으므로 의문사 How를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 일반 의문사 의문문 어순] 출제 연계",
+            "korean": "너는 어제 어떻게 박물관에 갔니? 나는 지하철을 탔어."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Why did the young student left the classroom before the lecture ended?",
+            "underlined": [
+              "Why",
+              "did",
+              "the young student",
+              "left"
+            ],
+            "wrongIndex": 3,
+            "correction": "leave",
+            "explanation": "과거시제 의문문 조동사 did 뒤에서는 본동사 과거형(left)이 아닌 원형(leave)을 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 과거 의문사 의문문 동사원형 규칙] 출제 연계",
+            "korean": "그 어린 학생은 강의가 끝나기 전에 왜 교실을 떠났는가?"
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Where does your grandparents lives during the cold winter months?",
+            "underlined": [
+              "Where",
+              "does",
+              "your grandparents",
+              "lives"
+            ],
+            "wrongIndex": 1,
+            "correction": "do",
+            "explanation": "주어가 복수명사(your grandparents)이므로 3인칭 단수 조동사 does 대신 do를 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 복수 주어 일반동사 의문문] 출제 연계",
+            "korean": "너의 조부모님께서는 추운 겨울 동안 어디에 사시니?"
           }
         ],
         "questions": [
@@ -871,7 +996,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_05",
+            "id": "drill_1",
             "sentence": "Listen! The baby cries in the next room right now.",
             "underlined": [
               "Listen",
@@ -881,7 +1006,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "is crying",
-            "explanation": "Listen!과 right now로 보아 지금 실시간으로 일어나는 동작이므로 현재진행형 is crying을 써야 합니다."
+            "explanation": "Listen!과 right now로 보아 지금 실시간으로 일어나는 동작이므로 현재진행형 is crying을 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 진행형의 기본 형태] 출제 연계",
+            "korean": "들어봐! 아기가 지금 바로 옆방에서 울고 있어."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "At eight o'clock yesterday evening, we was having dinner together at home.",
+            "underlined": [
+              "yesterday evening",
+              "we",
+              "was having",
+              "together"
+            ],
+            "wrongIndex": 2,
+            "correction": "were having",
+            "explanation": "주어가 복수대명사 we이므로 과거진행형 be동사는 was가 아니라 were가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 2: 과거진행형 공식] 출제 연계",
+            "korean": "어제 저녁 8시에 우리는 집에서 함께 저녁을 먹고 있었다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "She is liking classical music very much because it relaxes her mind.",
+            "underlined": [
+              "is liking",
+              "classical music",
+              "because",
+              "relaxes"
+            ],
+            "wrongIndex": 0,
+            "correction": "likes",
+            "explanation": "취향이나 선호를 나타내는 상태동사 like는 원칙적으로 진행형을 쓰지 않고 단순 현재시제(likes)로 씁니다.",
+            "conceptRef": "1단계 [공식 1: 상태동사 진행형 불가 규칙] 출제 연계",
+            "korean": "그녀는 마음을 편안하게 해주기 때문에 클래식 음악을 매우 좋아한다."
           }
         ],
         "questions": [
@@ -1042,7 +1199,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_06",
+            "id": "drill_1",
             "sentence": "You must not bring an umbrella. It is not going to rain today.",
             "underlined": [
               "must not",
@@ -1052,7 +1209,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 0,
             "correction": "don't have to (또는 don't need to)",
-            "explanation": "비가 오지 않을 것이므로 우산을 가져올 '필요가 없다'는 의미의 don't have to가 적절합니다. (must not은 '가져오면 안 된다'는 금지)"
+            "explanation": "비가 오지 않을 것이므로 우산을 가져올 '필요가 없다'는 의미의 don't have to가 적절합니다. (must not은 '가져오면 안 된다'는 금지)",
+            "conceptRef": "1단계 [공식 1: 조동사의 기본 원칙] 출제 연계",
+            "korean": "너는 우산을 가져올 필요가 없다. 오늘은 비가 오지 않을 것이다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "He was sick yesterday, so he cannot attend the team meeting this morning.",
+            "underlined": [
+              "was sick",
+              "so",
+              "cannot",
+              "attend"
+            ],
+            "wrongIndex": 2,
+            "correction": "could not",
+            "explanation": "어제(yesterday) 아팠다는 과거 상황과 연계된 과거의 불가능을 나타내므로 could not을 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 조동사 can의 과거형 could] 출제 연계",
+            "korean": "그는 어제 아팠기 때문에 오늘 아침 팀 회의에 참석할 수 없었다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "All drivers must follows traffic regulations to prevent severe accidents on the highway.",
+            "underlined": [
+              "All drivers",
+              "must",
+              "follows",
+              "to prevent"
+            ],
+            "wrongIndex": 2,
+            "correction": "follow",
+            "explanation": "조동사 must 뒤에는 주어의 수에 관계없이 반드시 동사원형(follow)을 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 조동사 must 뒤 동사원형 원칙] 출제 연계",
+            "korean": "모든 운전자는 고속도로에서 심각한 사고를 예방하기 위해 교통 법규를 따라야 한다."
           }
         ],
         "questions": [
@@ -1213,7 +1402,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_07",
+            "id": "drill_1",
             "sentence": "The pizza smells deliciously and the music sounds good.",
             "underlined": [
               "smells",
@@ -1223,7 +1412,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "delicious",
-            "explanation": "감각동사 smell 뒤에는 부사가 아닌 형용사 보어(delicious)가 와야 합니다."
+            "explanation": "감각동사 smell 뒤에는 부사가 아닌 형용사 보어(delicious)가 와야 합니다.",
+            "conceptRef": "1단계 [공식 1: 1·2·3형식의 구조] 출제 연계",
+            "korean": "피자에서 맛있는 냄새가 나고 음악은 좋게 들린다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The warm soup tastes delightfully on this cold winter afternoon.",
+            "underlined": [
+              "warm soup",
+              "tastes",
+              "delightfully",
+              "cold winter"
+            ],
+            "wrongIndex": 2,
+            "correction": "delightful",
+            "explanation": "감각동사 taste는 2형식 동사로 주격보어 자리에 부사가 아닌 형용사(delightful)를 취합니다.",
+            "conceptRef": "1단계 [공식 2: 2형식 감각동사와 형용사 보어] 출제 연계",
+            "korean": "따뜻한 수프는 이 추운 겨울 오후에 정말 맛있다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The exhausted hikers finally reached to the top of the mountain at sunset.",
+            "underlined": [
+              "exhausted hikers",
+              "finally",
+              "reached to",
+              "at sunset"
+            ],
+            "wrongIndex": 2,
+            "correction": "reached",
+            "explanation": "reach는 3형식 완전타동사이므로 목적어 앞에 불필요한 전치사 to를 쓰지 않습니다.",
+            "conceptRef": "1단계 [공식 3: 3형식 타동사 전치사 불가 규칙] 출제 연계",
+            "korean": "지친 등산객들은 일몰 무렵 마침내 산 정상에 도달했다."
           }
         ],
         "questions": [
@@ -1384,7 +1605,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_08",
+            "id": "drill_1",
             "sentence": "How an amazing view this is! How beautiful the mountains are!",
             "underlined": [
               "How an",
@@ -1394,7 +1615,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 0,
             "correction": "What an",
-            "explanation": "감탄 대상이 명사구(an amazing view)이므로 'What a(n) + 형용사 + 명사 + 주어 + 동사!' 공식을 적용하여 What an으로 고쳐야 합니다."
+            "explanation": "감탄 대상이 명사구(an amazing view)이므로 'What a(n) + 형용사 + 명사 + 주어 + 동사!' 공식을 적용하여 What an으로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 1: 명령문, and / or] 출제 연계",
+            "korean": "이것은 정말 놀라운 경치로구나! 산들이 정말 아름답다!"
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Please to be quiet in the hospital hallway because patients are resting.",
+            "underlined": [
+              "Please",
+              "to be",
+              "quiet",
+              "are resting"
+            ],
+            "wrongIndex": 1,
+            "correction": "be",
+            "explanation": "명령문은 동사원형으로 시작하므로 to be가 아니라 동사원형 be를 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 명령문의 동사원형 시작 원칙] 출제 연계",
+            "korean": "환자들이 쉬고 있으므로 병원 복도에서는 조용히 해주세요."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "How a beautiful garden you have created in your backyard this spring!",
+            "underlined": [
+              "How",
+              "beautiful garden",
+              "you have created",
+              "in your backyard"
+            ],
+            "wrongIndex": 0,
+            "correction": "What",
+            "explanation": "[형용사+명사(beautiful garden)]를 강조하는 감탄문은 How가 아닌 What a(n) 형용사 명사 형태를 씁니다.",
+            "conceptRef": "1단계 [공식 3: What vs How 감탄문 구별] 출제 연계",
+            "korean": "이번 봄에 당신의 뒤뜰에 얼마나 아름다운 정원을 만들어 놓았는가!"
           }
         ],
         "questions": [
@@ -1567,7 +1820,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_09",
+            "id": "drill_1",
             "sentence": "He gave me a piece of paper to write on, but I had no pen to write on.",
             "underlined": [
               "gave me",
@@ -1577,7 +1830,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 3,
             "correction": "pen to write with",
-            "explanation": "펜은 그것을 가지고 쓰는 도구이므로 전치사 with를 동반한 to write with가 되어야 올바릅니다."
+            "explanation": "펜은 그것을 가지고 쓰는 도구이므로 전치사 with를 동반한 to write with가 되어야 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: to부정사의 3대 용법 판별] 출제 연계",
+            "korean": "그는 나에게 쓸 종이 한 장을 주었지만, 나는 가지고 쓸 펜이 없었다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "To master a foreign language require patience, discipline, and daily practice.",
+            "underlined": [
+              "To master",
+              "foreign language",
+              "require",
+              "daily practice"
+            ],
+            "wrongIndex": 2,
+            "correction": "requires",
+            "explanation": "to부정사구가 문장의 주어일 때는 단수 취급하므로 require에 -s를 붙여 requires로 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: to부정사의 명사적 용법과 단수 취급] 출제 연계",
+            "korean": "외국어를 마스터하는 것은 인내심, 규율, 그리고 매일의 연습을 필요로 한다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "In order to achieving academic excellence, the ambitious student studied diligently every night.",
+            "underlined": [
+              "In order to",
+              "achieving",
+              "academic excellence",
+              "studied diligently"
+            ],
+            "wrongIndex": 1,
+            "correction": "achieve",
+            "explanation": "목적을 나타내는 in order to 뒤에는 반드시 동사원형(achieve)을 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: to부정사의 부사적 용법(목적)] 출제 연계",
+            "korean": "학업적 우수성을 성취하기 위해 그 야망 있는 학생은 매일 밤 성실히 공부했다."
           }
         ],
         "questions": [
@@ -1738,7 +2023,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_10",
+            "id": "drill_1",
             "sentence": "Don't forget locking the front door when you leave the house.",
             "underlined": [
               "Don't forget",
@@ -1748,7 +2033,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "to lock",
-            "explanation": "forget 뒤에 미래에 할 일을 잊지 말라고 당부할 때는 to부정사(to lock)를 써야 합니다. (-ing는 과거에 했던 일)"
+            "explanation": "forget 뒤에 미래에 할 일을 잊지 말라고 당부할 때는 to부정사(to lock)를 써야 합니다. (-ing는 과거에 했던 일)",
+            "conceptRef": "1단계 [공식 1: 목적어 취급 동사 공식] 출제 연계",
+            "korean": "집을 나설 때 현관문 잠그는 것을 잊지 마라."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "After a stressful week of exams, she enjoyed to watch classic movies with her family.",
+            "underlined": [
+              "After",
+              "enjoyed",
+              "to watch",
+              "with her family"
+            ],
+            "wrongIndex": 2,
+            "correction": "watching",
+            "explanation": "동사 enjoy는 to부정사를 목적어로 취할 수 없고 동명사(watching)만을 목적어로 취합니다.",
+            "conceptRef": "1단계 [공식 1: 동명사만을 목적어로 취하는 동사] 출제 연계",
+            "korean": "스트레스 많은 시험 주간이 끝난 후, 그녀는 가족과 함께 고전 영화를 보는 것을 즐겼다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "On his long way back home, the tired driver stopped buying some hot coffee.",
+            "underlined": [
+              "On his long way",
+              "the tired driver",
+              "stopped",
+              "buying"
+            ],
+            "wrongIndex": 3,
+            "correction": "to buy",
+            "explanation": "'커피를 사기 위해 멈추다'라는 목적을 나타내야 하므로 stopped buying이 아니라 stopped to buy를 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: stop to-V vs stop V-ing 의미 판별] 출제 연계",
+            "korean": "집으로 돌아오는 먼 길에 지친 운전자는 따뜻한 커피를 사기 위해 차를 멈추었다."
           }
         ],
         "questions": [
@@ -1909,7 +2226,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_11",
+            "id": "drill_1",
             "sentence": "My uncle has moved to Canada two years ago and he still lives there.",
             "underlined": [
               "has moved",
@@ -1919,7 +2236,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 0,
             "correction": "moved",
-            "explanation": "two years ago처럼 명백한 과거 시점을 나타내는 부사구는 현재완료(has moved)와 함께 쓸 수 없으며 단순과거형 moved를 써야 합니다."
+            "explanation": "two years ago처럼 명백한 과거 시점을 나타내는 부사구는 현재완료(has moved)와 함께 쓸 수 없으며 단순과거형 moved를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 현재완료 4대 용법 구별 짝꿍 부사] 출제 연계",
+            "korean": "나의 삼촌은 2년 전에 캐나다로 이사하셨고 여전히 그곳에 살고 계신다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Dr. Kim has lived in this historic city since ten years and knows everyone.",
+            "underlined": [
+              "has lived",
+              "historic city",
+              "since",
+              "ten years"
+            ],
+            "wrongIndex": 2,
+            "correction": "for",
+            "explanation": "ten years는 구체적인 기간(숫자 단위)이므로 since가 아니라 전치사 for를 써야 합니다. (since는 특정 시작 시점)",
+            "conceptRef": "1단계 [공식 1: 현재완료 계속 용법 for vs since] 출제 연계",
+            "korean": "김 박사님은 10년 동안 이 유서 깊은 도시에 살아왔으며 모든 사람을 알고 있다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The international research team has published the paper two months ago in a science journal.",
+            "underlined": [
+              "research team",
+              "has published",
+              "two months ago",
+              "in a science journal"
+            ],
+            "wrongIndex": 1,
+            "correction": "published",
+            "explanation": "명백한 과거 시점을 나타내는 부사구 two months ago는 현재완료와 함께 쓸 수 없으므로 과거동사 published로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 2: 현재완료와 특정 과거 부사 불가 원칙] 출제 연계",
+            "korean": "그 국제 연구팀은 2달 전에 한 과학 학술지에 그 논문을 발표했다."
           }
         ],
         "questions": [
@@ -2080,7 +2429,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_12",
+            "id": "drill_1",
             "sentence": "My mom made a delicious birthday cake to me yesterday.",
             "underlined": [
               "made",
@@ -2090,7 +2439,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 2,
             "correction": "for me",
-            "explanation": "수여동사 make는 4형식을 3형식으로 전환할 때 간접목적어 앞에 전치사 for를 씁니다. (make/buy/cook/get -> for)"
+            "explanation": "수여동사 make는 4형식을 3형식으로 전환할 때 간접목적어 앞에 전치사 for를 씁니다. (make/buy/cook/get -> for)",
+            "conceptRef": "1단계 [공식 1: 수여동사 4형식 ➔ 3형식 전치사 분류] 출제 연계",
+            "korean": "어머니께서는 어제 나를 위해 맛있는 생일 케이크를 만들어 주셨다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The fresh roses in the glass vase smelled sweetly throughout the sunny room.",
+            "underlined": [
+              "fresh roses",
+              "in the glass vase",
+              "smelled",
+              "sweetly"
+            ],
+            "wrongIndex": 3,
+            "correction": "sweet",
+            "explanation": "감각동사 smell 뒤에는 주격보어로 부사 sweetly가 아닌 형용사 sweet를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 2형식 감각동사와 형용사 보어] 출제 연계",
+            "korean": "유리 화병에 꽂힌 싱싱한 장미들은 햇살 가득한 방 전체에 향기로운 냄새를 풍겼다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "My grandmother kindly made a warm woolen sweater to me for this winter.",
+            "underlined": [
+              "grandmother",
+              "made",
+              "woolen sweater",
+              "to me"
+            ],
+            "wrongIndex": 3,
+            "correction": "for me",
+            "explanation": "make, buy, cook, build 등의 수여동사를 3형식으로 전환할 때 전치사는 to가 아니라 for를 씁니다.",
+            "conceptRef": "1단계 [공식 2: 4형식 3형식 전환 전치사 for] 출제 연계",
+            "korean": "할머니께서는 이번 겨울을 위해 친절하게도 나에게 따뜻한 털 스웨터를 만들어 주셨다."
           }
         ],
         "questions": [
@@ -2251,7 +2632,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_13",
+            "id": "drill_1",
             "sentence": "This puzzle is very more difficult than the one we solved yesterday.",
             "underlined": [
               "puzzle",
@@ -2261,7 +2642,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "much (또는 even, still, far, a lot)",
-            "explanation": "비교급(more difficult)을 수식·강조할 때는 very를 쓸 수 없고 much, even, still, far, a lot을 씁니다."
+            "explanation": "비교급(more difficult)을 수식·강조할 때는 very를 쓸 수 없고 much, even, still, far, a lot을 씁니다.",
+            "conceptRef": "1단계 [공식 1: 원급 비교와 부정] 출제 연계",
+            "korean": "이 퍼즐은 우리가 어제 풀었던 퍼즐보다 훨씬 더 어렵다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "This modern smartphone is much more cheaper than the imported model in that store.",
+            "underlined": [
+              "modern smartphone",
+              "much more",
+              "cheaper",
+              "than"
+            ],
+            "wrongIndex": 1,
+            "correction": "much",
+            "explanation": "cheap의 비교급은 cheaper이므로 more cheaper라는 이중 비교급 표현은 틀리며 much cheaper로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 1: 비교급 강조 부사와 이중 비교 금지] 출제 연계",
+            "korean": "이 최신 스마트폰은 저 가게에 있는 수입 모델보다 훨씬 더 저렴하다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Mount Everest is higher than any other mountains in the entire world.",
+            "underlined": [
+              "is higher",
+              "than",
+              "any other",
+              "mountains"
+            ],
+            "wrongIndex": 3,
+            "correction": "mountain",
+            "explanation": "'비교급 than any other' 뒤에는 단수명사가 와야 하므로 mountains를 mountain으로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 2: 비교급을 이용한 최상급 표현 단수명사] 출제 연계",
+            "korean": "에베레스트산은 전 세계의 그 어떤 다른 산보다 더 높다."
           }
         ],
         "questions": [
@@ -2422,7 +2835,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_14",
+            "id": "drill_1",
             "sentence": "There used to being a big bookstore on the corner of the street.",
             "underlined": [
               "There",
@@ -2432,7 +2845,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "used to be",
-            "explanation": "'과거에 ~이 있었다(과거의 상태)'를 나타낼 때는 'used to + 동사원형(be)'을 써야 합니다."
+            "explanation": "'과거에 ~이 있었다(과거의 상태)'를 나타낼 때는 'used to + 동사원형(be)'을 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: used to vs be used to] 출제 연계",
+            "korean": "거리 모퉁이에 큰 서점이 하나 있곤 했다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "When I was a primary school student, I used to playing soccer every weekend.",
+            "underlined": [
+              "When I was",
+              "used to",
+              "playing",
+              "every weekend"
+            ],
+            "wrongIndex": 2,
+            "correction": "play",
+            "explanation": "'과거에 ~하곤 했다'는 의미의 used to 뒤에는 동사원형 play를 써야 합니다. (be used to -ing와 혼동 주의)",
+            "conceptRef": "1단계 [공식 1: used to + 동사원형의 과거 습관] 출제 연계",
+            "korean": "내가 초등학생이었을 때, 나는 주말마다 축구를 하곤 했다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "We would like to reserving a quiet table near the window for four guests.",
+            "underlined": [
+              "would like",
+              "to reserving",
+              "quiet table",
+              "for four guests"
+            ],
+            "wrongIndex": 1,
+            "correction": "to reserve",
+            "explanation": "would like to 뒤에는 동사원형이 와야 하므로 to reserving을 to reserve로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 2: would like to + 동사원형] 출제 연계",
+            "korean": "손님 네 명을 위해 창가 쪽 조용한 테이블을 예약하고 싶습니다."
           }
         ],
         "questions": [
@@ -2593,7 +3038,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_15",
+            "id": "drill_1",
             "sentence": "The tragic car accident was happened on the highway last night.",
             "underlined": [
               "accident",
@@ -2603,7 +3048,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "happened",
-            "explanation": "happen, occur, appear, disappear 등 자동사는 목적어를 갖지 않으므로 수동태(be happened)로 쓸 수 없습니다."
+            "explanation": "happen, occur, appear, disappear 등 자동사는 목적어를 갖지 않으므로 수동태(be happened)로 쓸 수 없습니다.",
+            "conceptRef": "1단계 [공식 1: 수동태 기본 공식] 출제 연계",
+            "korean": "그 비극적인 자동차 사고는 어젯밤 고속도로에서 일어났다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The classic mystery novel was wrote by the famous English author in 1890.",
+            "underlined": [
+              "classic mystery novel",
+              "was",
+              "wrote",
+              "by the famous"
+            ],
+            "wrongIndex": 2,
+            "correction": "written",
+            "explanation": "수동태는 [be동사 + 과거분사(p.p.)] 형태이므로 과거형 wrote를 과거분사 written으로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 1: 수동태의 기본형 be + p.p.] 출제 연계",
+            "korean": "그 고전 추리 소설은 1890년에 유명한 영국 작가에 의해 쓰였다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "All the computers in this laboratory are inspect thoroughly every single month.",
+            "underlined": [
+              "computers",
+              "in this laboratory",
+              "are inspect",
+              "thoroughly"
+            ],
+            "wrongIndex": 2,
+            "correction": "are inspected",
+            "explanation": "컴퓨터가 철저히 '점검받는' 수동의 의미이므로 are inspect를 are inspected로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 2: 수동태 규칙 변화 p.p.] 출제 연계",
+            "korean": "이 실험실의 모든 컴퓨터는 매달 철저하게 점검을 받는다."
           }
         ],
         "questions": [
@@ -2764,7 +3241,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_16",
+            "id": "drill_1",
             "sentence": "If it will rain tomorrow, the baseball game will be canceled.",
             "underlined": [
               "If it",
@@ -2774,7 +3251,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "rains",
-            "explanation": "조건이나 시간을 나타내는 부사절(If절)에서는 미래의 일이라도 will을 쓰지 않고 현재시제(rains)가 미래를 대신합니다."
+            "explanation": "조건이나 시간을 나타내는 부사절(If절)에서는 미래의 일이라도 will을 쓰지 않고 현재시제(rains)가 미래를 대신합니다.",
+            "conceptRef": "1단계 [공식 1: 시간·조건 부사절의 대원칙] 출제 연계",
+            "korean": "만약 내일 비가 온다면 야구 경기는 취소될 것이다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Although the heavy thunderstorm outside, the outdoor concert continued with immense energy.",
+            "underlined": [
+              "Although",
+              "heavy thunderstorm",
+              "outdoor concert",
+              "continued"
+            ],
+            "wrongIndex": 0,
+            "correction": "Despite",
+            "explanation": "뒤에 주어+동사의 절이 아닌 명사구(the heavy thunderstorm outside)가 오므로 접속사 Although 대신 전치사 Despite를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 양보 접속사 Although vs 전치사 Despite] 출제 연계",
+            "korean": "바깥의 거센 뇌우에도 불구하고 야외 콘서트는 엄청난 열기 속에 계속되었다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "If it will rain heavily tomorrow, the baseball match will be cancelled.",
+            "underlined": [
+              "If it",
+              "will rain",
+              "heavily tomorrow",
+              "will be cancelled"
+            ],
+            "wrongIndex": 1,
+            "correction": "rains",
+            "explanation": "시간과 조건의 부사절에서는 미래의 일이라도 현재시제(rains)가 미래를 대신합니다.",
+            "conceptRef": "1단계 [공식 2: 조건 부사절의 시제 원칙] 출제 연계",
+            "korean": "만약 내일 비가 많이 오면, 야구 경기는 취소될 것이다."
           }
         ],
         "questions": [
@@ -2947,7 +3456,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_17",
+            "id": "drill_1",
             "sentence": "The teacher made all students to write an essay, but she allowed us to take a break.",
             "underlined": [
               "made",
@@ -2957,7 +3466,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "write",
-            "explanation": "사역동사 make는 목적격 보어로 to부정사가 아닌 동사원형(write)을 취합니다."
+            "explanation": "사역동사 make는 목적격 보어로 to부정사가 아닌 동사원형(write)을 취합니다.",
+            "conceptRef": "1단계 [공식 1: 사역동사와 지각동사의 목적격보어] 출제 연계",
+            "korean": "선생님께서는 모든 학생들에게 에세이를 쓰게 하셨지만, 우리에게 휴식을 취하는 것은 허락하셨다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The biology teacher made the curious students to wash their hands before touching the specimens.",
+            "underlined": [
+              "biology teacher",
+              "made",
+              "to wash",
+              "before touching"
+            ],
+            "wrongIndex": 2,
+            "correction": "wash",
+            "explanation": "사역동사 make는 5형식에서 목적격보어로 to부정사가 아닌 동사원형(wash)을 취합니다.",
+            "conceptRef": "1단계 [공식 1: 사역동사 목적격보어 동사원형] 출제 연계",
+            "korean": "생물 선생님은 호기심 많은 학생들에게 표본을 만지기 전 손을 씻게 하셨다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Walking along the silent corridor at dusk, I heard someone to play the piano beautifully.",
+            "underlined": [
+              "Walking",
+              "heard",
+              "someone",
+              "to play"
+            ],
+            "wrongIndex": 3,
+            "correction": "play",
+            "explanation": "지각동사 hear는 목적격보어로 to부정사를 취하지 못하며 동사원형(play)이나 현재분사(playing)를 취합니다.",
+            "conceptRef": "1단계 [공식 2: 지각동사 목적격보어 원형/분사] 출제 연계",
+            "korean": "어스름할 무렵 조용한 복도를 걷다가, 나는 누군가가 피아노를 아름답게 연주하는 소리를 들었다."
           }
         ],
         "questions": [
@@ -3118,7 +3659,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_18",
+            "id": "drill_1",
             "sentence": "I met a boy who father is a famous astronaut in NASA.",
             "underlined": [
               "met",
@@ -3128,7 +3669,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "whose",
-            "explanation": "선행사 a boy와 뒤 명사 father 사이에 소유 관계(~의 아버지)가 성립하므로 소유격 관계대명사 whose를 써야 합니다."
+            "explanation": "선행사 a boy와 뒤 명사 father 사이에 소유 관계(~의 아버지)가 성립하므로 소유격 관계대명사 whose를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 관계대명사의 격 판별] 출제 연계",
+            "korean": "나는 아버지가 NASA의 유명한 우주비행사인 한 소년을 만났다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The experienced detective interviewed the witness which had seen the suspicious stranger near the bank.",
+            "underlined": [
+              "experienced detective",
+              "witness",
+              "which had seen",
+              "near the bank"
+            ],
+            "wrongIndex": 2,
+            "correction": "who had seen",
+            "explanation": "선행사가 사람(the witness)이므로 사물에 쓰이는 관계대명사 which가 아닌 주격 관계대명사 who를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 주격 관계대명사 who vs which] 출제 연계",
+            "korean": "경험 많은 형사는 은행 근처에서 수상한 낯선 사람을 목격했던 목격자를 면담했다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "I sincerely admire the dedicated teacher who students won first prize in the speech contest.",
+            "underlined": [
+              "sincerely admire",
+              "dedicated teacher",
+              "who",
+              "won first prize"
+            ],
+            "wrongIndex": 2,
+            "correction": "whose",
+            "explanation": "'선생님의 학생들'이라는 소유의 의미가 성립하고 뒤에 무관사 명사(students)가 이어지므로 소유격 whose를 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 소유격 관계대명사 whose] 출제 연계",
+            "korean": "나는 제자들이 말하기 대회에서 1등 상을 받은 그 헌신적인 선생님을 진심으로 존경한다."
           }
         ],
         "questions": [
@@ -3289,7 +3862,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_19",
+            "id": "drill_1",
             "sentence": "This is that I have been looking for all day long.",
             "underlined": [
               "This is",
@@ -3299,7 +3872,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "what",
-            "explanation": "선행사가 없고 for 뒤의 목적어가 비어 있는 불완전한 절을 이끌어 '~하는 것'의 의미를 나타내므로 관계대명사 what이 알맞습니다."
+            "explanation": "선행사가 없고 for 뒤의 목적어가 비어 있는 불완전한 절을 이끌어 '~하는 것'의 의미를 나타내므로 관계대명사 what이 알맞습니다.",
+            "conceptRef": "1단계 [공식 1: what vs that 구별 공식 (수능·내신 1위 빈출)] 출제 연계",
+            "korean": "이것이 바로 내가 하루 종일 찾고 있었던 것이다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The honest confession that what he made during the interview deeply moved the audience.",
+            "underlined": [
+              "honest confession",
+              "that what",
+              "made",
+              "deeply moved"
+            ],
+            "wrongIndex": 1,
+            "correction": "that",
+            "explanation": "명사 선행사(The honest confession)가 이미 앞에 존재하므로 선행사를 포함하는 what을 쓸 수 없고 관계대명사 that을 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 관계대명사 that vs what 선행사 유무] 출제 연계",
+            "korean": "그가 인터뷰 중에 했던 솔직한 고백은 청중들을 깊이 감동시켰다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "She gave me that I had always wanted for my birthday celebration.",
+            "underlined": [
+              "gave me",
+              "that",
+              "had always wanted",
+              "for my birthday"
+            ],
+            "wrongIndex": 1,
+            "correction": "what",
+            "explanation": "동사 gave의 직접목적어 자리이면서 선행사가 없고 wanted의 목적어가 비어 있는 불완전한 절이므로 what을 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 관계대명사 what의 역할] 출제 연계",
+            "korean": "그녀는 내 생일 축하 선물로 내가 항상 원해왔던 것을 나에게 주었다."
           }
         ],
         "questions": [
@@ -3460,7 +4065,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_20",
+            "id": "drill_1",
             "sentence": "Tell me the way how you managed to pass the difficult exam.",
             "underlined": [
               "Tell me",
@@ -3470,7 +4075,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "the way 또는 how (둘 중 하나만)",
-            "explanation": "관계부사 how는 선행사 the way와 절대로 함께 쓸 수 없으며 반드시 the way 또는 how 둘 중 하나만 써야 합니다."
+            "explanation": "관계부사 how는 선행사 the way와 절대로 함께 쓸 수 없으며 반드시 the way 또는 how 둘 중 하나만 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 관계부사 = 전치사 + 관계대명사] 출제 연계",
+            "korean": "네가 그 어려운 시험에 어떻게 합격했는지 그 방법을 내게 말해줘."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Do you remember the exact day which we first met at the international airport?",
+            "underlined": [
+              "Do you remember",
+              "exact day",
+              "which",
+              "first met"
+            ],
+            "wrongIndex": 2,
+            "correction": "when",
+            "explanation": "선행사가 시간(the exact day)이고 뒷문장(we first met at the international airport)이 완전하므로 관계부사 when을 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 시간 관계부사 when vs 관계대명사 which] 출제 연계",
+            "korean": "우리가 국제공항에서 처음 만났던 바로 그 날을 너는 기억하니?"
+          },
+          {
+            "id": "drill_3",
+            "sentence": "This quiet library is the peaceful place which students can concentrate on their studies without interruption.",
+            "underlined": [
+              "quiet library",
+              "peaceful place",
+              "which",
+              "can concentrate"
+            ],
+            "wrongIndex": 2,
+            "correction": "where",
+            "explanation": "선행사가 장소(the peaceful place)이고 뒤에 학생들이 집중할 수 있다는 완전한 문장이 오므로 관계부사 where(또는 in which)를 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 장소 관계부사 where] 출제 연계",
+            "korean": "이 조용한 도서관은 학생들이 방해받지 않고 공부에 집중할 수 있는 평화로운 장소이다."
           }
         ],
         "questions": [
@@ -3631,7 +4268,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_21",
+            "id": "drill_1",
             "sentence": "The news about the accident was deeply shocked to everyone.",
             "underlined": [
               "news",
@@ -3641,7 +4278,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 3,
             "correction": "shocking",
-            "explanation": "사고 소식(The news)이 사람들에게 충격을 '주는' 능동의 주체이므로 현재분사 shocking을 써야 합니다."
+            "explanation": "사고 소식(The news)이 사람들에게 충격을 '주는' 능동의 주체이므로 현재분사 shocking을 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 분사의 형용사적 수식] 출제 연계",
+            "korean": "그 사고에 관한 소식은 모든 사람들에게 깊은 충격을 주었다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The documentary film about deep ocean creatures was extremely bored to the audience.",
+            "underlined": [
+              "documentary film",
+              "deep ocean creatures",
+              "extremely bored",
+              "to the audience"
+            ],
+            "wrongIndex": 2,
+            "correction": "extremely boring",
+            "explanation": "영화(documentary film)가 지루함을 유발하는 능동적 주체이므로 수동 감정분사 bored가 아닌 현재분사 boring을 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 감정유발 동사의 분사 능동 boring vs 수동 bored] 출제 연계",
+            "korean": "심해 생물에 관한 그 다큐멘터리 영화는 관객들에게 극도로 지루했다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The ancient vase breaking into small pieces during the earthquake was successfully restored.",
+            "underlined": [
+              "ancient vase",
+              "breaking into",
+              "during the earthquake",
+              "successfully restored"
+            ],
+            "wrongIndex": 1,
+            "correction": "broken into",
+            "explanation": "화병은 깨짐을 당하는 수동 관계이므로 현재분사 breaking 대신 과거분사 broken을 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 명사를 수식하는 과거분사의 수동 의미] 출제 연계",
+            "korean": "지진 중에 산산조각으로 깨졌던 그 고대 화병은 성공적으로 복원되었다."
           }
         ],
         "questions": [
@@ -3802,7 +4471,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_22",
+            "id": "drill_1",
             "sentence": "Knowing not what to say, she just remained silent.",
             "underlined": [
               "Knowing not",
@@ -3812,7 +4481,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 0,
             "correction": "Not knowing",
-            "explanation": "분사구문의 부정은 부정어 not을 반드시 분사 바로 앞에 두어야 하므로 Not knowing이 올바릅니다."
+            "explanation": "분사구문의 부정은 부정어 not을 반드시 분사 바로 앞에 두어야 하므로 Not knowing이 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: 분사구문 만들기 3단계] 출제 연계",
+            "korean": "무슨 말을 해야 할지 몰라서 그녀는 그저 침묵을 지켰다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Arrived at the hotel late at night, the exhausted travelers immediately went to sleep.",
+            "underlined": [
+              "Arrived",
+              "late at night",
+              "exhausted travelers",
+              "went to sleep"
+            ],
+            "wrongIndex": 0,
+            "correction": "Arriving",
+            "explanation": "여행객들이 능동적으로 호텔에 도착한 것이므로 수동 과거분사 Arrived 대신 능동 현재분사 Arriving(또는 Having arrived)을 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 능동 분사구문 V-ing 원칙] 출제 연계",
+            "korean": "밤늦게 호텔에 도착했을 때, 지친 여행객들은 즉시 잠자리에 들었다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Writing in simple English, the instruction manual was easy for beginners to understand.",
+            "underlined": [
+              "Writing",
+              "simple English",
+              "instruction manual",
+              "to understand"
+            ],
+            "wrongIndex": 0,
+            "correction": "Written",
+            "explanation": "안내서(instruction manual)는 영어로 '쓰여진' 수동의 관계이므로 Writing 대신 과거분사 Written을 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 수동 분사구문 (Being) p.p.] 출제 연계",
+            "korean": "쉬운 영어로 작성되어 있어서, 그 설명서는 초보자들이 이해하기 쉬웠다."
           }
         ],
         "questions": [
@@ -3973,7 +4674,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_23",
+            "id": "drill_1",
             "sentence": "If I had known his phone number, I could call him yesterday.",
             "underlined": [
               "If I",
@@ -3983,7 +4684,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 2,
             "correction": "could have called",
-            "explanation": "과거 사실에 대한 반대 가정이므로 가정법 과거완료 공식(If S had p.p. ~ S 조동사과거 have p.p.)에 따라 could have called가 되어야 합니다."
+            "explanation": "과거 사실에 대한 반대 가정이므로 가정법 과거완료 공식(If S had p.p. ~ S 조동사과거 have p.p.)에 따라 could have called가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 가정법 과거 공식] 출제 연계",
+            "korean": "내가 그의 전화번호를 알았더라면 어제 그에게 전화를 걸 수 있었을 텐데."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "If I have enough money right now, I would purchase that beautiful seaside villa.",
+            "underlined": [
+              "If I",
+              "have",
+              "would purchase",
+              "seaside villa"
+            ],
+            "wrongIndex": 1,
+            "correction": "had",
+            "explanation": "현재 사실에 반대되는 가정을 나타내는 가정법 과거의 If절 동사는 과거형(had)을 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 가정법 과거 If + S + 과거동사] 출제 연계",
+            "korean": "만약 내가 지금 충분한 돈이 있다면, 나는 저 아름다운 해변 별장을 구입할 텐데."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The arrogant young speaker talked as if he knows everything about global economics.",
+            "underlined": [
+              "arrogant young speaker",
+              "talked",
+              "as if",
+              "knows"
+            ],
+            "wrongIndex": 3,
+            "correction": "knew",
+            "explanation": "마치 사실이 아닌 것을 아는 것처럼 말한다는 as if 가정법에서는 현재 시제 대신 과거형 knew(가정법 과거)를 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: as if 가정법 과거] 출제 연계",
+            "korean": "그 거만한 젊은 연사는 마치 자신이 세계 경제에 관한 모든 것을 알고 있는 것처럼 말했다."
           }
         ],
         "questions": [
@@ -4144,7 +4877,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_24",
+            "id": "drill_1",
             "sentence": "Seldom she leaves the house without wearing her favorite sunglasses.",
             "underlined": [
               "Seldom",
@@ -4154,7 +4887,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "does she leave",
-            "explanation": "부정어 Seldom이 문두에 오면 '조동사/do + 주어 + 동사원형'의 도치가 일어나므로 does she leave로 고쳐야 합니다."
+            "explanation": "부정어 Seldom이 문두에 오면 '조동사/do + 주어 + 동사원형'의 도치가 일어나므로 does she leave로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 1: 간접의문문의 기본 어순] 출제 연계",
+            "korean": "그녀는 자신이 가장 좋아하는 선글라스를 쓰지 않고 집을 나서는 법이 거의 없다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Could you please tell me where does the principal live in this town?",
+            "underlined": [
+              "Could you",
+              "tell me",
+              "where does",
+              "the principal live"
+            ],
+            "wrongIndex": 2,
+            "correction": "where",
+            "explanation": "간접의문문은 [의문사 + 주어 + 동사]의 평서문 어순을 따르므로 where does를 where the principal lives로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 1: 간접의문문의 의문사+주어+동사 어순] 출제 연계",
+            "korean": "교장선생님께서 이 마을 어디에 사시는지 말씀해 주실 수 있나요?"
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The tourists asked the guide whether would the bus arrive on schedule.",
+            "underlined": [
+              "tourists asked",
+              "the guide",
+              "whether would",
+              "the bus arrive"
+            ],
+            "wrongIndex": 2,
+            "correction": "whether the bus would",
+            "explanation": "whether 명사절 간접의문문 역시 [whether + 주어 + 동사] 어순이므로 whether would the bus arrive를 whether the bus would arrive로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 2: if/whether 간접의문문 어순] 출제 연계",
+            "korean": "관광객들은 가이드에게 버스가 정각에 도착할 것인지 물었다."
           }
         ],
         "questions": [
@@ -4327,7 +5092,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_25",
+            "id": "drill_1",
             "sentence": "The discovery of new treatments for these rare diseases have saved many lives.",
             "underlined": [
               "discovery",
@@ -4337,7 +5102,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 3,
             "correction": "has saved",
-            "explanation": "문장의 핵심 주어는 단수명사 The discovery이므로 복수 동사 have saved가 아닌 단수 동사 has saved를 써야 합니다."
+            "explanation": "문장의 핵심 주어는 단수명사 The discovery이므로 복수 동사 have saved가 아닌 단수 동사 has saved를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 수식어구 거품 빼기 공식] 출제 연계",
+            "korean": "이 희귀 질환들에 대한 새로운 치료법의 발견은 많은 생명을 구했다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The primary cause of the severe economic crises in recent decades were excessive debt.",
+            "underlined": [
+              "primary cause",
+              "economic crises",
+              "recent decades",
+              "were"
+            ],
+            "wrongIndex": 3,
+            "correction": "was",
+            "explanation": "문장의 핵주어는 단수명사 The primary cause이므로 전치사구 수식어를 건너뛰어 단수동사 was로 수일치해야 합니다.",
+            "conceptRef": "1단계 [공식 1: 전치사구 수식어 속 주어-동사 수일치] 출제 연계",
+            "korean": "최근 수십 년간 발생한 심각한 경제 위기들의 주된 원인은 과도한 부채였다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "One of the most remarkable archaeological discoveries in Egypt have revealed ancient secrets.",
+            "underlined": [
+              "One of",
+              "archaeological discoveries",
+              "have revealed",
+              "ancient secrets"
+            ],
+            "wrongIndex": 2,
+            "correction": "has revealed",
+            "explanation": "[One of the 복수명사] 구문에서 문장의 진짜 주어는 One이므로 단수동사 has revealed를 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: One of the 복수명사 단수 취급] 출제 연계",
+            "korean": "이집트에서 발견된 가장 놀라운 고고학적 발견 중 하나가 고대의 비밀들을 밝혀냈다."
           }
         ],
         "questions": [
@@ -4498,7 +5295,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_26",
+            "id": "drill_1",
             "sentence": "The committee recommended that the proposal is rejected immediately.",
             "underlined": [
               "committee",
@@ -4508,7 +5305,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 3,
             "correction": "(should) be rejected",
-            "explanation": "제안/권고 동사 recommend 뒤의 that절에서 당위성(~해야 한다)을 나타낼 때는 '(should) + 동사원형'을 쓰므로 be rejected가 되어야 합니다."
+            "explanation": "제안/권고 동사 recommend 뒤의 that절에서 당위성(~해야 한다)을 나타낼 때는 '(should) + 동사원형'을 쓰므로 be rejected가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 사역·지각동사 수동태 시 to부정사 부활 공식] 출제 연계",
+            "korean": "위원회는 그 제안이 즉시 거부되어야 한다고 권고했다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The brave firefighter was awarded with a golden medal for his extraordinary rescue efforts.",
+            "underlined": [
+              "brave firefighter",
+              "was awarded",
+              "with a golden medal",
+              "rescue efforts"
+            ],
+            "wrongIndex": 2,
+            "correction": "a golden medal",
+            "explanation": "award는 4형식 수여동사로 간접목적어가 주어로 나간 수동태 뒤에 직접목적어(a golden medal)가 전치사 없이 바로 옵니다.",
+            "conceptRef": "1단계 [공식 1: 4형식 수여동사 수동태 직목 잔류] 출제 연계",
+            "korean": "그 용감한 소방관은 탁월한 구조 노력에 대해 금메달을 수여받았다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The criminal was made sign a formal written confession by the strict prosecutors.",
+            "underlined": [
+              "criminal",
+              "was made",
+              "sign",
+              "by the strict"
+            ],
+            "wrongIndex": 2,
+            "correction": "to sign",
+            "explanation": "사역동사 make가 수동태(be made)로 전환될 때는 능동태의 동사원형 목적격보어가 to부정사(to sign)로 부활해야 합니다.",
+            "conceptRef": "1단계 [공식 2: 사역동사 수동태 to부정사 전환] 출제 연계",
+            "korean": "그 범죄자는 엄격한 검사들에 의해 공식 자필 자백서에 서명하도록 강요받았다."
           }
         ],
         "questions": [
@@ -4669,7 +5498,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_27",
+            "id": "drill_1",
             "sentence": "The manager was looking for a candidate which had extensive experience in software development.",
             "underlined": [
               "looking for",
@@ -4679,7 +5508,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 2,
             "correction": "who had (또는 that had)",
-            "explanation": "선행사 a candidate는 사람이므로 관계대명사 which가 아닌 who 또는 that을 써야 합니다."
+            "explanation": "선행사 a candidate는 사람이므로 관계대명사 which가 아닌 who 또는 that을 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 완료부정사와 완료동명사 공식] 출제 연계",
+            "korean": "관리자는 소프트웨어 개발 분야에서 폭넓은 경험을 가진 후보자를 찾고 있었다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The suspect admitted to have forged the financial documents during the police interrogation.",
+            "underlined": [
+              "suspect",
+              "admitted",
+              "to have forged",
+              "police interrogation"
+            ],
+            "wrongIndex": 2,
+            "correction": "having forged",
+            "explanation": "동사 admit은 동명사를 목적어로 취하므로 완료부정사가 아닌 완료동명사 having forged를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 완료동명사 having p.p. 시제 앞섬] 출제 연계",
+            "korean": "그 용의자는 경찰 신문 중에 금융 서류를 위조했었음을 시인했다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The ancient medieval fortress seems to construct centuries before modern warfare began.",
+            "underlined": [
+              "medieval fortress",
+              "seems",
+              "to construct",
+              "before modern"
+            ],
+            "wrongIndex": 2,
+            "correction": "to have been constructed",
+            "explanation": "성채는 과거에 건축된 것이며 수동 관계이므로 완료수동부정사 to have been constructed로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 2: 완료수동부정사 to have been p.p.] 출제 연계",
+            "korean": "그 중세 고대 요새는 현대전이 시작되기 수 세기 전에 건축된 것으로 보인다."
           }
         ],
         "questions": [
@@ -4840,7 +5701,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_28",
+            "id": "drill_1",
             "sentence": "She was listening to the teacher with her legs crossing and arms folded.",
             "underlined": [
               "was listening",
@@ -4850,7 +5711,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 2,
             "correction": "crossed",
-            "explanation": "다리는 사람에 의해 꼬여지는 수동의 관계이므로 'with + 목적어 + p.p.(crossed)' 구문이 되어야 합니다."
+            "explanation": "다리는 사람에 의해 꼬여지는 수동의 관계이므로 'with + 목적어 + p.p.(crossed)' 구문이 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: with + 명사 + 분사(-ing / p.p.)] 출제 연계",
+            "korean": "그녀는 다리를 꼬고 팔짱을 낀 채 선생님의 말씀을 듣고 있었다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "She sat quietly under the oak tree with her legs crossed and her arms fold.",
+            "underlined": [
+              "sat quietly",
+              "with her legs crossed",
+              "her arms",
+              "fold"
+            ],
+            "wrongIndex": 3,
+            "correction": "folded",
+            "explanation": "with 분사구문에서 팔(her arms)은 포개어지는 수동의 관계이므로 과거분사 folded를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: with + 명사 + 분사(능동/수동) 구문] 출제 연계",
+            "korean": "그녀는 다리를 꼬고 팔짱을 낀 채 참나무 아래 조용히 앉아 있었다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "It being a holiday, the central banks in the financial district was completely closed.",
+            "underlined": [
+              "It being",
+              "holiday",
+              "central banks",
+              "was"
+            ],
+            "wrongIndex": 3,
+            "correction": "were",
+            "explanation": "독립분사구문 It being a holiday 뒤 주절의 주어는 복수명사 the central banks이므로 were로 수일치해야 합니다.",
+            "conceptRef": "1단계 [공식 2: 독립분사구문과 주절 수일치] 출제 연계",
+            "korean": "공휴일이었기 때문에 금융 지구의 중앙은행들은 완전히 문을 닫았다."
           }
         ],
         "questions": [
@@ -5011,7 +5904,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_29",
+            "id": "drill_1",
             "sentence": "Had you arrived five minutes earlier, you would see the famous singer.",
             "underlined": [
               "Had you arrived",
@@ -5021,7 +5914,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 2,
             "correction": "would have seen",
-            "explanation": "조건절이 If you had arrived의 도치형(Had you arrived)으로 과거 사실 가정이므로 주절도 would have seen이 되어야 합니다."
+            "explanation": "조건절이 If you had arrived의 도치형(Had you arrived)으로 과거 사실 가정이므로 주절도 would have seen이 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: that vs what vs whether 명사절 3대 공식] 출제 연계",
+            "korean": "네가 5분만 더 일찍 도착했더라면 그 유명한 가수를 볼 수 있었을 텐데."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Scientists are actively investigating that alien microbial life could survive on Mars.",
+            "underlined": [
+              "actively investigating",
+              "that",
+              "microbial life",
+              "could survive"
+            ],
+            "wrongIndex": 1,
+            "correction": "whether",
+            "explanation": "외계 미생물이 생존할 수 있는지 없는지에 대한 불확실한 탐구이므로 확정적 접속사 that 대신 whether를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 명사절 접속사 that vs whether 의미 판별] 출제 연계",
+            "korean": "과학자들은 화성에서 외계 미생물 생명체가 생존할 수 있는지를 활발히 조사하고 있다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "That the ancient philosopher argued in his controversial treatise was misunderstood by critics.",
+            "underlined": [
+              "That",
+              "ancient philosopher",
+              "argued",
+              "was misunderstood"
+            ],
+            "wrongIndex": 0,
+            "correction": "What",
+            "explanation": "argued의 목적어가 빠져 있는 불완전한 절을 이끌며 주어 역할을 해야 하므로 접속사 That 대신 관계대명사 What을 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 주어절 that vs what 불완전성] 출제 연계",
+            "korean": "그 고대 철학자가 논란의 여지가 있는 논문에서 주장했던 것은 비평가들에 의해 오해받았다."
           }
         ],
         "questions": [
@@ -5182,7 +6107,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_30",
+            "id": "drill_1",
             "sentence": "Not only the students but also the teacher were excited about the upcoming field trip.",
             "underlined": [
               "Not only",
@@ -5192,7 +6117,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 2,
             "correction": "teacher was",
-            "explanation": "'Not only A but also B' 구문은 B(the teacher)에 수일치하므로 단수 동사 was가 되어야 합니다."
+            "explanation": "'Not only A but also B' 구문은 B(the teacher)에 수일치하므로 단수 동사 was가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: however + 형용사/부사 + 주어 + 동사] 출제 연계",
+            "korean": "학생들뿐만 아니라 선생님께서도 다가오는 현장학습에 매우 신이 나셨다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Whatever difficult the coding challenge is, she never gives up until solving it.",
+            "underlined": [
+              "Whatever",
+              "difficult",
+              "gives up",
+              "until solving"
+            ],
+            "wrongIndex": 0,
+            "correction": "However",
+            "explanation": "형용사 difficult를 수식하여 '아무리 ~할지라도'라는 양보 부사절을 이끌 때는 whatever가 아니라 복합관계부사 However를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 복합관계부사 however + 형용사/부사] 출제 연계",
+            "korean": "그 코딩 도전과제가 아무리 어려울지라도, 그녀는 그것을 해결할 때까지 결코 포기하지 않는다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "You may invite whomever wants to participate in our charity fundraiser this weekend.",
+            "underlined": [
+              "may invite",
+              "whomever",
+              "wants to participate",
+              "this weekend"
+            ],
+            "wrongIndex": 1,
+            "correction": "whoever",
+            "explanation": "뒤따르는 절(wants to participate...)에서 주어 역할을 해야 하므로 목적격 whomever 대신 주격 whoever를 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 복합관계대명사 whoever vs whomever 격 판정] 출제 연계",
+            "korean": "이번 주말 자선 모금 행사에 참여하기를 원하는 사람은 누구든지 초대해도 좋습니다."
           }
         ],
         "questions": [
@@ -5353,7 +6310,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_31",
+            "id": "drill_1",
             "sentence": "The heavy rain prevented us to go hiking in the mountains.",
             "underlined": [
               "heavy rain",
@@ -5363,7 +6320,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 2,
             "correction": "from going",
-            "explanation": "'prevent + 목적어 + from -ing' 구문은 목적어가 ~하는 것을 막다라는 뜻이므로 to go가 아닌 from going을 써야 합니다."
+            "explanation": "'prevent + 목적어 + from -ing' 구문은 목적어가 ~하는 것을 막다라는 뜻이므로 to go가 아닌 from going을 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 가정법 과거완료 공식] 출제 연계",
+            "korean": "폭우로 인해 우리는 산으로 하이킹을 가지 못했다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "If the fire brigade had arrived five minutes earlier, the historic building would be saved.",
+            "underlined": [
+              "had arrived",
+              "five minutes earlier",
+              "historic building",
+              "would be saved"
+            ],
+            "wrongIndex": 3,
+            "correction": "would have been saved",
+            "explanation": "과거 사실에 반대되는 가정법 과거완료이므로 주절 동사는 [would have p.p.]인 would have been saved가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 가정법 과거완료 공식] 출제 연계",
+            "korean": "소방대가 5분만 더 일찍 도착했더라면 그 역사적인 건물은 보존되었을 텐데."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "If she had invested in renewable energy stocks years ago, she would have been wealthy now.",
+            "underlined": [
+              "had invested",
+              "years ago",
+              "would have been",
+              "wealthy now"
+            ],
+            "wrongIndex": 2,
+            "correction": "would be",
+            "explanation": "과거의 조건(years ago)이 현재의 결과(now)에 영향을 미치는 혼합가정법이므로 주절은 would be로 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 혼합가정법 과거완료 + 현재결과] 출제 연계",
+            "korean": "만약 그녀가 몇 년 전에 재생 에너지 주식에 투자했더라면, 지금 부유할 텐데."
           }
         ],
         "questions": [
@@ -5524,7 +6513,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_32",
+            "id": "drill_1",
             "sentence": "He suggested that we took a short rest before climbing the steep hill.",
             "underlined": [
               "suggested",
@@ -5534,7 +6523,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 2,
             "correction": "(should) take",
-            "explanation": "제안 동사 suggest 뒤의 that절에서는 '(should) + 동사원형'을 쓰므로 took이 아닌 take가 올바릅니다."
+            "explanation": "제안 동사 suggest 뒤의 that절에서는 '(should) + 동사원형'을 쓰므로 took이 아닌 take가 올바릅니다.",
+            "conceptRef": "1단계 [공식 1: 부정어 도치 공식 (수능 1순위)] 출제 연계",
+            "korean": "그는 가파른 언덕을 오르기 전에 우리가 잠깐 휴식을 취할 것을 제안했다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Hardly the exhausted runner had crossed the finish line when he collapsed onto the grass.",
+            "underlined": [
+              "Hardly",
+              "runner had crossed",
+              "finish line",
+              "collapsed"
+            ],
+            "wrongIndex": 1,
+            "correction": "had the exhausted runner crossed",
+            "explanation": "부정어 Hardly가 문두에 위치하면 [조동사(had) + 주어 + 본동사]로 주어-동사 도치가 일어나야 합니다.",
+            "conceptRef": "1단계 [공식 1: 부정어 도치 Hardly had S p.p.] 출제 연계",
+            "korean": "지친 주자는 결승선을 통과하자마자 잔디밭 위로 쓰러졌다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Behind the ancient castle walls were hidden a secret passage leading to the river.",
+            "underlined": [
+              "Behind the ancient",
+              "were hidden",
+              "secret passage",
+              "leading to"
+            ],
+            "wrongIndex": 1,
+            "correction": "was hidden",
+            "explanation": "장소부사구(Behind the ancient castle walls)가 문두에 위치하여 도치된 구문으로, 진짜 주어는 단수명사 'a secret passage'이므로 were hidden을 was hidden으로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 2: 장소부사구 도치 수일치 (부사구 + V + S)] 출제 연계",
+            "korean": "고대 성벽 뒤편에는 강으로 이어지는 비밀 통로 하나가 숨겨져 있었다."
           }
         ],
         "questions": [
@@ -5707,7 +6728,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_33",
+            "id": "drill_1",
             "sentence": "The museum which we visited it yesterday was truly magnificent.",
             "underlined": [
               "museum",
@@ -5717,7 +6738,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 2,
             "correction": "visited",
-            "explanation": "목적격 관계대명사 which가 이미 목적어 역할을 하므로 visited 뒤에 대명사 it을 중복해서 쓰면 안 됩니다."
+            "explanation": "목적격 관계대명사 which가 이미 목적어 역할을 하므로 visited 뒤에 대명사 it을 중복해서 쓰면 안 됩니다.",
+            "conceptRef": "1단계 [공식 1: 본동사 찾기 3단계 검증법] 출제 연계",
+            "korean": "우리가 어제 방문했던 그 박물관은 참으로 웅장했다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The profound impact of digital algorithms on cognitive development remaining a contentious topic among psychologists.",
+            "underlined": [
+              "profound impact",
+              "cognitive development",
+              "remaining",
+              "contentious topic"
+            ],
+            "wrongIndex": 2,
+            "correction": "remains",
+            "explanation": "문장의 주어는 'The profound impact'이며 문장 전체에 접속사나 본동사가 없으므로, 현재분사 remaining을 단수 본동사 remains로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 1: 문장의 1주어 1본동사 필수 법칙] 출제 연계",
+            "korean": "디지털 알고리즘이 인지 발달에 미치는 심오한 영향은 심리학자들 사이에서 여전히 논쟁적인 주제로 남아 있다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Ancient manuscripts preserved in subterranean vaults displaying remarkable endurance against chemical degradation.",
+            "underlined": [
+              "preserved in",
+              "subterranean vaults",
+              "displaying",
+              "chemical degradation"
+            ],
+            "wrongIndex": 2,
+            "correction": "display",
+            "explanation": "preserved in subterranean vaults는 주어 Ancient manuscripts를 후치수식하는 분사구이므로, 문장의 본동사 자리인 displaying을 복수 동사 display로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 2: 수식어구 거품 제거 후 본동사 판별] 출제 연계",
+            "korean": "지하 금고에 보존된 고대 필사본들은 화학적 분해에 대해 놀라운 내구성을 보여준다."
           }
         ],
         "questions": [
@@ -5878,7 +6931,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_34",
+            "id": "drill_1",
             "sentence": "Standing on top of the hill, the entire city could be seen clearly.",
             "underlined": [
               "Standing on",
@@ -5888,7 +6941,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 0,
             "correction": "When we stood on (또는 주어를 사람으로 전환)",
-            "explanation": "도시(the entire city)가 언덕 위에 서 있을 수 없으므로 현수분사구문 오류입니다. 주절의 주어와 분사의 의미상 주어가 일치해야 합니다."
+            "explanation": "도시(the entire city)가 언덕 위에 서 있을 수 없으므로 현수분사구문 오류입니다. 주절의 주어와 분사의 의미상 주어가 일치해야 합니다.",
+            "conceptRef": "1단계 [공식 1: 대동사 판별 2단계 원칙] 출제 연계",
+            "korean": "언덕 꼭대기에 서니 도시 전체가 한눈에 또렷하게 내려다보였다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Modern neural networks do not process sensory information in the exact same manner as the human brain is.",
+            "underlined": [
+              "process",
+              "sensory information",
+              "exact same",
+              "is"
+            ],
+            "wrongIndex": 3,
+            "correction": "does",
+            "explanation": "앞의 일반동사구(process sensory information...)를 대신하는 대동사 자리이므로 be동사 is가 아니라 3인칭 단수 일반동사 대동사인 does를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 일반동사 대동사 do/does/did vs be동사 대동사] 출제 연계",
+            "korean": "현대 신경망은 인간의 뇌가 처리하는 것과 정확히 동일한 방식으로 감각 정보를 처리하지는 않는다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The economic indicators were far more volatile last quarter than they currently do under stable monetary policies.",
+            "underlined": [
+              "economic indicators",
+              "far more volatile",
+              "than",
+              "do"
+            ],
+            "wrongIndex": 3,
+            "correction": "are",
+            "explanation": "비교 구문에서 앞 절의 서술어가 be동사(were volatile)이므로, 뒤 절의 대동사 역시 일반동사 do가 아니라 현재시제 복수 be동사인 are를 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 비교급/as 구문 대동사 일치 법칙] 출제 연계",
+            "korean": "지난 분기의 경제 지표들은 안정적인 통화 정책 하에 현재 그러한 것보다 훨씬 더 불안정했다."
           }
         ],
         "questions": [
@@ -6049,7 +7134,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_35",
+            "id": "drill_1",
             "sentence": "I would rather staying at home than go out in this freezing weather.",
             "underlined": [
               "would rather",
@@ -6059,7 +7144,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "stay",
-            "explanation": "'would rather + 동사원형 A than 동사원형 B' 구문이므로 staying이 아니라 동사원형 stay를 써야 합니다."
+            "explanation": "'would rather + 동사원형 A than 동사원형 B' 구문이므로 staying이 아니라 동사원형 stay를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 수능 어법 만점 완전도 매트릭스] 출제 연계",
+            "korean": "이 매서운 추위 속에 밖으로 나가느니 차라리 집에 머물겠다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The scientific committee deliberated carefully on what the newly discovered planet could sustain organic life.",
+            "underlined": [
+              "deliberated carefully",
+              "what",
+              "newly discovered",
+              "sustain organic life"
+            ],
+            "wrongIndex": 1,
+            "correction": "whether",
+            "explanation": "전치사 on의 목적어절이 주어(the newly discovered planet), 동사(could sustain), 목적어(organic life)를 모두 갖춘 완전한 문장이므로, 불완전절을 이끄는 관계대명사/의문대명사 what 대신 접속사 whether(혹은 if)를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 뒷문장 완전도(완전문 vs 불완전문) 판별 공식] 출제 연계",
+            "korean": "과학 위원회는 새로 발견된 행성이 유기적 생명체를 유지할 수 있는지 여부에 대해 신중하게 논의했다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Renewable energy technologies have evolved rapidly to a stage which solar efficiency exceeds traditional fossil fuels.",
+            "underlined": [
+              "evolved rapidly",
+              "stage",
+              "which",
+              "exceeds"
+            ],
+            "wrongIndex": 2,
+            "correction": "where",
+            "explanation": "선행사 stage 뒤의 절이 주어(solar efficiency), 타동사(exceeds), 목적어(traditional fossil fuels)를 모두 갖춘 완전한 절이므로 관계대명사 which가 아닌 관계부사 where(또는 at which)를 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 관계대명사 vs 관계부사(전치사+관계대명사) 판정] 출제 연계",
+            "korean": "신재생 에너지 기술은 태양광 효율이 전통 화석 연료를 능가하는 단계까지 빠르게 발전했다."
           }
         ],
         "questions": [
@@ -6220,7 +7337,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_36",
+            "id": "drill_1",
             "sentence": "Little she realized that her life was about to change completely.",
             "underlined": [
               "Little",
@@ -6230,7 +7347,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "did she realize",
-            "explanation": "부정어 Little이 문두에 오면 'did + 주어 + 동사원형'으로 도치되므로 did she realize로 고쳐야 합니다."
+            "explanation": "부정어 Little이 문두에 오면 'did + 주어 + 동사원형'으로 도치되므로 did she realize로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 1: 등위접속사의 병렬 구조 공식] 출제 연계",
+            "korean": "그녀는 자신의 인생이 완전히 바뀌려 하고 있다는 사실을 거의 깨닫지 못했다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Effective leadership requires not only inspiring team members with clear visions but also to allocate strategic resources efficiently.",
+            "underlined": [
+              "inspiring",
+              "team members",
+              "to allocate",
+              "efficiently"
+            ],
+            "wrongIndex": 2,
+            "correction": "allocating",
+            "explanation": "상관접속사 not only A but also B 구문에서 A(inspiring...)가 동명사구이므로 병렬 구조를 이루기 위해 to allocate 역시 동명사 allocating으로 맞춰야 합니다.",
+            "conceptRef": "1단계 [공식 1: 상관접속사(not only A but also B) 구조적 병치] 출제 연계",
+            "korean": "효과적인 리더십은 명확한 비전으로 팀원들에게 영감을 주는 것뿐만 아니라 전략적 자원을 효율적으로 배분하는 것을 요구한다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The committee decided to postpone the scheduled symposium and reevaluating the entire budget proposal.",
+            "underlined": [
+              "decided",
+              "to postpone",
+              "symposium",
+              "reevaluating"
+            ],
+            "wrongIndex": 3,
+            "correction": "reevaluate",
+            "explanation": "등위접속사 and가 to부정사의 목적어 병렬(to postpone ... and [to] reevaluate)을 연결하고 있으므로 reevaluating을 원형 reevaluate(혹은 to reevaluate)로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 2: 등위접속사 준동사 병렬 일치 원칙] 출제 연계",
+            "korean": "위원회는 예정된 심포지엄을 연기하고 전체 예산안을 재평가하기로 결정했다."
           }
         ],
         "questions": [
@@ -6391,7 +7540,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_37",
+            "id": "drill_1",
             "sentence": "The price of organic vegetables are much higher than that of regular vegetables.",
             "underlined": [
               "price of",
@@ -6401,7 +7550,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 2,
             "correction": "is much higher",
-            "explanation": "주어는 복수명사 vegetables가 아니라 단수명사 The price이므로 단수 동사 is가 되어야 합니다."
+            "explanation": "주어는 복수명사 vegetables가 아니라 단수명사 The price이므로 단수 동사 is가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 5형식 목적격보어 형용사 킬러 (수능 단골)] 출제 연계",
+            "korean": "유기농 채소의 가격은 일반 채소의 가격보다 훨씬 더 비싸다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The revolutionary acoustic dampening material makes the cabin of the electric vehicle extreme quiet at high speeds.",
+            "underlined": [
+              "makes",
+              "electric vehicle",
+              "extreme",
+              "at high speeds"
+            ],
+            "wrongIndex": 2,
+            "correction": "extremely",
+            "explanation": "5형식 문장에서 목적격 보어로 형용사 quiet가 쓰였으며, extreme은 이 형용사 quiet를 수식해야 하므로 부사 extremely로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 1: 5형식 목적격 보어 vs 부사의 형용사 수식] 출제 연계",
+            "korean": "그 혁신적인 방음재는 고속 주행 시 전기차의 실내를 극도로 조용하게 만들어 준다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Although the patient seemed comfortably during the physical examination, the physician ordered comprehensive scans.",
+            "underlined": [
+              "seemed",
+              "comfortably",
+              "physical examination",
+              "comprehensive"
+            ],
+            "wrongIndex": 1,
+            "correction": "comfortable",
+            "explanation": "seem은 주격 보어를 필요로 하는 2형식 불완전자동사이므로 보어 자리에 부사 comfortably 대신 형용사 comfortable을 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 2형식 감각/상태동사의 형용사 보어 필수 원칙] 출제 연계",
+            "korean": "비록 환자가 신체 검사 동안 편안해 보였지만, 의사는 종합 정밀 검사를 지시했다."
           }
         ],
         "questions": [
@@ -6562,7 +7743,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_38",
+            "id": "drill_1",
             "sentence": "It is essential that every student understands the safety guidelines thoroughly.",
             "underlined": [
               "essential",
@@ -6572,7 +7753,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 2,
             "correction": "(should) understand",
-            "explanation": "이성적 판단/필수 형용사 essential 뒤의 that절에서는 '(should) + 동사원형'을 쓰므로 understand가 되어야 합니다."
+            "explanation": "이성적 판단/필수 형용사 essential 뒤의 that절에서는 '(should) + 동사원형'을 쓰므로 understand가 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 비교 구문에서의 that of / those of] 출제 연계",
+            "korean": "모든 학생이 안전 수칙을 철저하게 이해하는 것이 필수적이다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The linguistic structures of indigenous American languages are as structurally intricate as that of Indo-European languages.",
+            "underlined": [
+              "linguistic structures",
+              "indigenous",
+              "as structurally",
+              "that"
+            ],
+            "wrongIndex": 3,
+            "correction": "those",
+            "explanation": "비교 대상이 복수명사구인 'The linguistic structures'이므로 단수 대명사 that 대신 복수 대명사 those를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 비교 대상의 명사 대명사 일치 (that vs those)] 출제 연계",
+            "korean": "아메리카 원주민 언어들의 언어학적 구조는 인도유럽어족 언어들의 언어 구조만큼이나 구조적으로 복잡하다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Sociologists argue that individuals who isolate them from communal activities suffer higher stress levels.",
+            "underlined": [
+              "argue",
+              "who isolate",
+              "them",
+              "suffer higher"
+            ],
+            "wrongIndex": 2,
+            "correction": "themselves",
+            "explanation": "관계사절 내부에서 주어인 who(선행사 individuals)와 동사 isolate의 목적어가 동일 인물이므로 목적어 자리에 them 대신 재귀대명사 themselves를 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: 주어와 목적어 일치 시 재귀대명사 필수 법칙] 출제 연계",
+            "korean": "사회학자들은 자기 자신을 공동체 활동으로부터 고립시키는 개인들이 더 높은 스트레스 수준을 겪는다고 주장한다."
           }
         ],
         "questions": [
@@ -6733,7 +7946,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_39",
+            "id": "drill_1",
             "sentence": "She bought a delicate antique vase, that was made in the eighteenth century.",
             "underlined": [
               "bought",
@@ -6743,7 +7956,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 2,
             "correction": "which was made",
-            "explanation": "관계대명사 that은 콤마(,) 뒤의 계속적 용법으로 쓸 수 없으므로 which로 고쳐야 합니다."
+            "explanation": "관계대명사 that은 콤마(,) 뒤의 계속적 용법으로 쓸 수 없으므로 which로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 1: 수능 빈출 전치사 vs 접속사 쌍] 출제 연계",
+            "korean": "그녀는 18세기에 만들어진 우아한 골동품 도자기 화병을 샀다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "During the innovative quantum experiment was underway, unexpected magnetic anomalies were detected by sensors.",
+            "underlined": [
+              "During",
+              "was underway",
+              "magnetic anomalies",
+              "were detected"
+            ],
+            "wrongIndex": 0,
+            "correction": "While",
+            "explanation": "뒤에 주어(the innovative quantum experiment)와 동사(was)를 갖춘 완전한 절이 이어지므로 전치사 During 대신 접속사 While을 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 전치사 vs 접속사 구별 공식 (명사구 vs 주어+동사)] 출제 연계",
+            "korean": "혁신적인 양자 실험이 진행되는 동안 센서에 의해 예기치 못한 자기 이상 현상이 감지되었다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The interstellar exploration project was suspended indefinitely because of budgetary constraints were severely tightened.",
+            "underlined": [
+              "exploration project",
+              "suspended indefinitely",
+              "because of",
+              "were severely tightened"
+            ],
+            "wrongIndex": 2,
+            "correction": "because",
+            "explanation": "뒤에 주어(budgetary constraints)와 수동태 동사(were severely tightened)가 이끄는 절이 오므로 전치사구 because of 대신 접속사 because를 써야 합니다.",
+            "conceptRef": "1단계 [공식 2: because vs because of 구별 출제 공식] 출제 연계",
+            "korean": "예산 제약이 심각하게 강화되었기 때문에 항성 간 탐사 프로젝트는 무기한 중단되었다."
           }
         ],
         "questions": [
@@ -6904,7 +8149,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "sp_40",
+            "id": "drill_1",
             "sentence": "Seeing from a distance, the ancient rock resembles a giant sleeping turtle.",
             "underlined": [
               "Seeing from",
@@ -6914,7 +8159,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 0,
             "correction": "Seen from",
-            "explanation": "바위(the ancient rock)는 멀리서 바라보아 '지는' 수동의 대상이므로 과거분사 Seen from이 되어야 합니다."
+            "explanation": "바위(the ancient rock)는 멀리서 바라보아 '지는' 수동의 대상이므로 과거분사 Seen from이 되어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 수능 29번 3대 킬러 유형] 출제 연계",
+            "korean": "멀리서 바라보면 그 고대 바위는 거대한 잠자는 거북이를 닮았다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The behavioral mechanism through which migratory birds navigate across continents remaining largely a mystery.",
+            "underlined": [
+              "migratory birds",
+              "navigate across",
+              "remaining",
+              "largely a mystery"
+            ],
+            "wrongIndex": 2,
+            "correction": "remains",
+            "explanation": "전치사+관계대명사절(through which...)은 수식어구이므로, 전체 문장의 주어 'The behavioral mechanism'에 호응하는 본동사로 remaining을 단수동사 remains로 고쳐야 합니다.",
+            "conceptRef": "1단계 [수능 29번 어법 공식 1: 수식어 거품 속 본동사 자리] 출제 연계",
+            "korean": "철새들이 대륙을 건너 길을 찾는 행동학적 메커니즘은 여전히 대체로 수수께끼로 남아 있다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "In modern cognitive psychology, memory is viewed not as a static recording but as an active process reconstructive.",
+            "underlined": [
+              "is viewed",
+              "not as",
+              "recording",
+              "reconstructive"
+            ],
+            "wrongIndex": 3,
+            "correction": "reconstructive process",
+            "explanation": "단일 형용사 reconstructive는 명사 process 앞에서 한정 수식해야 하거나, 'a reconstructive process' 어순으로 배치해야 자연스럽습니다.",
+            "conceptRef": "1단계 [수능 29번 어법 공식 5: 형용사/명사 어순과 보어 판정] 출제 연계",
+            "korean": "현대 인지심리학에서 기억은 정적인 기록이 아니라 능동적인 재구성 과정으로 간주된다."
           }
         ],
         "questions": [
@@ -7089,7 +8366,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_01",
+            "id": "drill_1",
             "sentence": "The chef prepared careful a delicious meal for the hungry guests.",
             "underlined": [
               "The chef",
@@ -7099,7 +8376,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "prepared carefully",
-            "explanation": "동사 prepared를 수식하는 자리이므로 형용사 careful이 아니라 부사 carefully가 와야 합니다."
+            "explanation": "동사 prepared를 수식하는 자리이므로 형용사 careful이 아니라 부사 carefully가 와야 합니다.",
+            "conceptRef": "1단계 [공식 1: 품사(8품사)는 '배우', 문장 성분은 '배역'] 출제 연계",
+            "korean": "요리사는 배고픈 손님들을 위해 신중하게 맛있는 식사를 준비했다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Her remarkably performance on the cello mesmerized the audience gathered at the grand theater.",
+            "underlined": [
+              "remarkably",
+              "on the cello",
+              "mesmerized",
+              "gathered at"
+            ],
+            "wrongIndex": 0,
+            "correction": "remarkable",
+            "explanation": "명사 performance를 수식하는 자리이므로 부사 remarkably가 아닌 형용사 remarkable을 써야 합니다.",
+            "conceptRef": "1단계 [SP-01 핵심: 품사(단어의 본질)와 문장 성분(문장 내 역할)] 출제 연계",
+            "korean": "첼로로 선보인 그녀의 놀라운 연주는 대극장에 모인 청중들을 매료시켰다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The ambitious architect designed the community center thoughtful to accommodate elderly residents.",
+            "underlined": [
+              "ambitious architect",
+              "community center",
+              "thoughtful",
+              "to accommodate"
+            ],
+            "wrongIndex": 2,
+            "correction": "thoughtfully",
+            "explanation": "타동사 designed를 수식하는 문장 성분(부사어) 자리이므로 형용사 thoughtful 대신 부사 thoughtfully를 써야 합니다.",
+            "conceptRef": "1단계 [SP-01 핵심: 수식어 품사 판정 (동사/형용사 수식 부사)] 출제 연계",
+            "korean": "야심 찬 건축가는 노인 주민들을 수용할 수 있도록 배려 깊게 커뮤니티 센터를 설계했다."
           }
         ],
         "questions": [
@@ -7260,7 +8569,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_02",
+            "id": "drill_1",
             "sentence": "When she entered to the classroom, all students looked at her silently.",
             "underlined": [
               "entered to",
@@ -7270,7 +8579,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 0,
             "correction": "entered",
-            "explanation": "enter는 '~에 들어가다'라는 뜻의 완전타동사이므로 전치사 to 없이 바로 목적어 the classroom을 취해야 합니다."
+            "explanation": "enter는 '~에 들어가다'라는 뜻의 완전타동사이므로 전치사 to 없이 바로 목적어 the classroom을 취해야 합니다.",
+            "conceptRef": "1단계 [공식 1: 자동사(Vi) vs 타동사(Vt)의 판별법] 출제 연계",
+            "korean": "그녀가 교실로 들어섰을 때 모든 학생들이 조용히 그녀를 쳐다보았다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The sudden announcement of the tax hike resulted many unexpected street protests throughout the capital.",
+            "underlined": [
+              "sudden announcement",
+              "resulted",
+              "unexpected",
+              "throughout the capital"
+            ],
+            "wrongIndex": 1,
+            "correction": "resulted in",
+            "explanation": "result는 목적어를 바로 취할 수 없는 자동사이므로, 결과를 이끌 때는 전치사 in을 함께 써서 'resulted in'으로 고쳐야 합니다.",
+            "conceptRef": "1단계 [SP-02 핵심: 자동사 vs 타동사의 본질과 전치사 필수 여부] 출제 연계",
+            "korean": "갑작스러운 증세 발표는 수도 전역에서 수많은 예기치 못한 거리 시위를 초래했다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The delegate will discuss about the international trade treaty during tomorrow's plenary session.",
+            "underlined": [
+              "delegate",
+              "discuss about",
+              "international trade",
+              "plenary session"
+            ],
+            "wrongIndex": 1,
+            "correction": "discuss",
+            "explanation": "discuss는 완전타동사이므로 전치사 about 없이 목적어(the international trade treaty)를 직접 취해야 합니다.",
+            "conceptRef": "1단계 [SP-02 핵심: 전치사를 취하지 않는 완전타동사 혼동 방지] 출제 연계",
+            "korean": "그 대표는 내일 총회 세션 동안 국제 무역 조약에 관해 논의할 것이다."
           }
         ],
         "questions": [
@@ -7431,7 +8772,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_03",
+            "id": "drill_1",
             "sentence": "The fresh bread smelled deliciously and tasted sweet to all of us.",
             "underlined": [
               "fresh bread",
@@ -7441,7 +8782,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "smelled delicious",
-            "explanation": "감각동사 smell 뒤에는 주어를 보충하는 주격 보어 자리가 오므로 부사 deliciously가 아니라 형용사 delicious를 써야 합니다."
+            "explanation": "감각동사 smell 뒤에는 주어를 보충하는 주격 보어 자리가 오므로 부사 deliciously가 아니라 형용사 delicious를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 보어(Complement) = '보충 설명해 주는 말'] 출제 연계",
+            "korean": "갓 구운 빵은 맛있는 냄새가 났고 우리 모두에게 달콤한 맛이 났다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The intense heat during midsummer made the fresh milk sourly within a few hours.",
+            "underlined": [
+              "intense heat",
+              "made",
+              "fresh milk",
+              "sourly"
+            ],
+            "wrongIndex": 3,
+            "correction": "sour",
+            "explanation": "5형식 문장에서 목적어 the fresh milk의 상태를 보충 설명하는 목적격 보어 자리이므로 부사 sourly가 아닌 형용사 sour를 써야 합니다.",
+            "conceptRef": "1단계 [SP-03 핵심: 보어(Complement) 자리 형용사 필수 원칙] 출제 연계",
+            "korean": "한여름의 강렬한 열기는 신선한 우유를 몇 시간 만에 시어지게 만들었다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Despite numerous hardships, the determined traveler remained cheerfully throughout the arduous expedition.",
+            "underlined": [
+              "numerous hardships",
+              "remained",
+              "cheerfully",
+              "arduous expedition"
+            ],
+            "wrongIndex": 2,
+            "correction": "cheerful",
+            "explanation": "remain은 2형식 연결동사로 주어의 상태를 설명하는 주격 보어를 취하므로 부사 cheerfully가 아니라 형용사 cheerful을 써야 합니다.",
+            "conceptRef": "1단계 [SP-03 핵심: 2형식 주격 보어와 5형식 목적격 보어의 공통점] 출제 연계",
+            "korean": "수많은 역경에도 불구하고 단호한 여행자는 고된 원정 내내 쾌활함을 유지했다."
           }
         ],
         "questions": [
@@ -7602,7 +8975,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_04",
+            "id": "drill_1",
             "sentence": "My dream is become an astrophysicist and explore deep space.",
             "underlined": [
               "My dream",
@@ -7612,7 +8985,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "is to become (또는 is becoming)",
-            "explanation": "문장의 본동사 is가 있으므로 뒤에 동사원형 become을 바로 쓸 수 없으며, 명사적 보어 역할을 하는 to become 또는 becoming으로 고쳐야 합니다."
+            "explanation": "문장의 본동사 is가 있으므로 뒤에 동사원형 become을 바로 쓸 수 없으며, 명사적 보어 역할을 하는 to become 또는 becoming으로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 1: 준동사(Verbal) = '동사에 준하지만 다른 품사로 변신한 것'] 출제 연계",
+            "korean": "나의 꿈은 천체물리학자가 되어 깊은 우주를 탐험하는 것이다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Understand the genetic code allows biochemists to synthesize targeted medicines for rare diseases.",
+            "underlined": [
+              "Understand",
+              "allows",
+              "synthesize",
+              "targeted medicines"
+            ],
+            "wrongIndex": 0,
+            "correction": "Understanding",
+            "explanation": "문장의 주어 자리에 동사원형 Understand를 그대로 쓸 수 없으므로, 동사를 명사 역할로 바꾼 준동사(동명사 Understanding 또는 to부정사 To understand)로 고쳐야 합니다.",
+            "conceptRef": "1단계 [SP-04 핵심: 동사를 명사/형용사/부사로 탈바꿈하는 준동사의 원리] 출제 연계",
+            "korean": "유전 부호를 이해하는 것은 생화학자들로 하여금 희귀 질환을 위한 표적 치료제를 합성할 수 있게 해준다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The wildlife sanctuary operates several specialized stations to monitoring endangered migratory bird populations.",
+            "underlined": [
+              "wildlife sanctuary",
+              "specialized stations",
+              "to monitoring",
+              "migratory bird"
+            ],
+            "wrongIndex": 2,
+            "correction": "to monitor",
+            "explanation": "목적(~하기 위하여)을 나타내는 부사적 용법의 준동사이므로 to 부정사 뒤에는 동명사(-ing)가 아닌 동사원형 monitor를 써야 합니다.",
+            "conceptRef": "1단계 [SP-04 핵심: 준동사 형태와 기능 구별] 출제 연계",
+            "korean": "야생동물 보호구역은 멸종 위기에 처한 철새 개체군을 모니터링하기 위해 몇 군데의 특화된 관측소를 운영한다."
           }
         ],
         "questions": [
@@ -7773,7 +9178,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_05",
+            "id": "drill_1",
             "sentence": "The girl who she won the science contest is my younger sister.",
             "underlined": [
               "The girl",
@@ -7783,7 +9188,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "who",
-            "explanation": "주격 관계대명사 who가 이미 주어 역할을 하므로 인칭대명사 she를 중복해서 쓰면 안 됩니다."
+            "explanation": "주격 관계대명사 who가 이미 주어 역할을 하므로 인칭대명사 she를 중복해서 쓰면 안 됩니다.",
+            "conceptRef": "1단계 [공식 1: '관계대명사' = 접속사(문장 연결) + 대명사(명사 대신)] 출제 연계",
+            "korean": "과학 경시대회에서 우승한 그 소녀는 나의 여동생이다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The ancient philosopher wrote manuscripts who philosophical inquiries continue to shape modern Western thought.",
+            "underlined": [
+              "ancient philosopher",
+              "manuscripts",
+              "who",
+              "continue to shape"
+            ],
+            "wrongIndex": 2,
+            "correction": "whose",
+            "explanation": "선행사 manuscripts와 뒤따르는 명사 philosophical inquiries 사이의 소유 관계('필사본의 철학적 탐구')를 나타내야 하므로 주격 who 대신 소유격 관계대명사 whose를 써야 합니다.",
+            "conceptRef": "1단계 [SP-05 핵심: 관계대명사의 본질 = 접속사 + 대명사] 출제 연계",
+            "korean": "그 고대 철학자는 자신의 철학적 질문들이 현대 서양 사상을 계속해서 형성하고 있는 원고들을 저술했다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The museum exhibits rare artifacts which the lead archaeologist discovered them in deep Egyptian tombs.",
+            "underlined": [
+              "rare artifacts",
+              "which",
+              "lead archaeologist",
+              "discovered them"
+            ],
+            "wrongIndex": 3,
+            "correction": "discovered",
+            "explanation": "목적격 관계대명사 which가 이미 선행사 rare artifacts를 대신하고 있으므로, 관계사절 내에서 목적어 대명사 them을 중복해서 쓰면 안 됩니다.",
+            "conceptRef": "1단계 [SP-05 핵심: 관계대명사절 내의 대명사 중복 삭제 원칙] 출제 연계",
+            "korean": "그 박물관은 수석 고고학자가 깊은 이집트 무덤에서 발견했던 희귀한 유물들을 전시하고 있다."
           }
         ],
         "questions": [
@@ -7944,7 +9381,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_06",
+            "id": "drill_1",
             "sentence": "A mysterious accident was happened on highway 65 yesterday evening.",
             "underlined": [
               "mysterious accident",
@@ -7954,7 +9391,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "happened",
-            "explanation": "happen(일어나다, 발생하다)은 목적어가 없는 자동사이므로 수동태(was happened)로 쓸 수 없으며 능동형 happened로 써야 합니다."
+            "explanation": "happen(일어나다, 발생하다)은 목적어가 없는 자동사이므로 수동태(was happened)로 쓸 수 없으며 능동형 happened로 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 수동태는 '당하는 녀석'을 주인공으로 세우는 문법] 출제 연계",
+            "korean": "어제 저녁 65번 고속도로에서 의문의 사고가 일어났다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The legendary medieval castle was destroyed completely during the siege and never restored by anyone.",
+            "underlined": [
+              "medieval castle",
+              "was destroyed",
+              "during the siege",
+              "restored"
+            ],
+            "wrongIndex": 3,
+            "correction": "was restored",
+            "explanation": "성과 성을 복원하는 행위의 관계는 수동이므로, was destroyed와 병렬을 이루어 수동태 'was never restored'(또는 be restored) 형태로 표현해야 합니다.",
+            "conceptRef": "1단계 [SP-06 핵심: 능동태 vs 수동태의 행위자-대상 시점 차이] 출제 연계",
+            "korean": "그 전설적인 중세 성은 공성전 동안 완전히 파괴되었으며 어느 누구에 의해서도 결코 복구되지 않았다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Severe geological faults were occurred beneath the mountain range after the monumental tectonic earthquake.",
+            "underlined": [
+              "Severe geological",
+              "were occurred",
+              "beneath the mountain",
+              "tectonic earthquake"
+            ],
+            "wrongIndex": 1,
+            "correction": "occurred",
+            "explanation": "occur는 목적어를 갖지 않는 완전자동사이므로 수동태(be occurred)로 쓸 수 없으며 능동형 occurred로 써야 합니다.",
+            "conceptRef": "1단계 [SP-06 핵심: 자동사의 수동태 불가 원칙] 출제 연계",
+            "korean": "기념비적인 판구조 지진이 일어난 후 산맥 아래에서 심각한 지질 단층들이 발생했다."
           }
         ],
         "questions": [
@@ -8115,7 +9584,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_07",
+            "id": "drill_1",
             "sentence": "Despite it rained heavily all afternoon, they continued the baseball match.",
             "underlined": [
               "Despite",
@@ -8125,7 +9594,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 0,
             "correction": "Although (또는 Even though)",
-            "explanation": "뒤에 'it rained heavily'라는 주어+동사의 절이 이어지므로 전치사 Despite가 아니라 접속사 Although를 써야 합니다."
+            "explanation": "뒤에 'it rained heavily'라는 주어+동사의 절이 이어지므로 전치사 Despite가 아니라 접속사 Although를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 구(Phrase) vs 절(Clause)의 결정적 차이] 출제 연계",
+            "korean": "오후 내내 비가 많이 내렸음에도 불구하고 그들은 야구 경기를 계속했다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Despite the team conducted comprehensive trials, unexpected battery drainage issues persisted in the prototype.",
+            "underlined": [
+              "Despite",
+              "conducted",
+              "comprehensive trials",
+              "persisted in"
+            ],
+            "wrongIndex": 0,
+            "correction": "Although",
+            "explanation": "뒤에 주어(the team)와 동사(conducted)를 갖춘 절(Clause)이 이어지므로 전치사 Despite 대신 접속사 Although(또는 Even though)를 써야 합니다.",
+            "conceptRef": "1단계 [SP-07 핵심: 구(Phrase)와 절(Clause)의 결정적 차이] 출제 연계",
+            "korean": "팀이 종합적인 시험을 수행했음에도 불구하고, 시제품에서 예기치 못한 배터리 소모 문제가 지속되었다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Because of they lacked sufficient experimental funding, the university lab had to cancel the field expedition.",
+            "underlined": [
+              "Because of",
+              "lacked",
+              "experimental funding",
+              "cancel the field"
+            ],
+            "wrongIndex": 0,
+            "correction": "Because",
+            "explanation": "they lacked...는 주어와 동사를 갖춘 절이므로, 구를 이끄는 전치사구 Because of 대신 절을 이끄는 접속사 Because를 써야 합니다.",
+            "conceptRef": "1단계 [SP-07 핵심: 전치사구 뒤 명사구 vs 접속사 뒤 주어+동사 절] 출제 연계",
+            "korean": "그들은 충분한 실험 자금이 부족했기 때문에, 대학 연구소는 현장 탐사를 취소해야만 했다."
           }
         ],
         "questions": [
@@ -8286,7 +9787,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_08",
+            "id": "drill_1",
             "sentence": "The mother looked at the asleep child with a warm smile on her face.",
             "underlined": [
               "The mother",
@@ -8296,7 +9797,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 2,
             "correction": "sleeping child",
-            "explanation": "asleep은 서술적 용법(보어 자리)으로만 쓰이는 형용사이므로 명사 child를 앞에서 직접 수식할 수 없습니다. sleeping child로 고쳐야 합니다."
+            "explanation": "asleep은 서술적 용법(보어 자리)으로만 쓰이는 형용사이므로 명사 child를 앞에서 직접 수식할 수 없습니다. sleeping child로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 1: 한정적(Attributive) vs 서술적(Predicative)의 어원] 출제 연계",
+            "korean": "어머니는 얼굴에 따뜻한 미소를 띤 채 잠든 아이를 바라보았다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The child felt very asleep during the gentle bedtime lullaby sung by his loving mother.",
+            "underlined": [
+              "child felt",
+              "asleep",
+              "during the gentle",
+              "sung by"
+            ],
+            "wrongIndex": 1,
+            "correction": "sleepy",
+            "explanation": "very는 서술형 형용사 asleep(잠든 상태의)을 직접 수식할 수 없으며, '졸린' 느낌을 나타내는 한정/서술 가능한 형용사 sleepy를 쓰는 것이 올바릅니다.",
+            "conceptRef": "1단계 [SP-08 핵심: 한정적 용법 vs 서술적 용법 (a- 접두사 형용사 규칙)] 출제 연계",
+            "korean": "아이는 자애로운 어머니가 불러주는 부드러운 자장가를 듣는 동안 매우 졸림을 느꼈다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "An alike situation occurred in a neighboring province just two months after the volcanic eruption.",
+            "underlined": [
+              "An alike",
+              "occurred",
+              "neighboring province",
+              "volcanic eruption"
+            ],
+            "wrongIndex": 0,
+            "correction": "A similar",
+            "explanation": "alike는 명사를 앞에서 직접 수식(한정적 용법)할 수 없는 서술적 형용사이므로, 명사 situation을 수식할 때는 한정 형용사 similar를 써야 합니다.",
+            "conceptRef": "1단계 [SP-08 핵심: 서술적 용법 전용 형용사의 명사 앞 한정 수식 불가] 출제 연계",
+            "korean": "화산 폭발이 있은 지 불과 두 달 만에 인접한 주에서 유사한 상황이 발생했다."
           }
         ],
         "questions": [
@@ -8471,7 +10004,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_09",
+            "id": "drill_1",
             "sentence": "It was very generous for him to donate all his fortune to the charity.",
             "underlined": [
               "It was",
@@ -8481,7 +10014,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "generous of him",
-            "explanation": "generous(관대한)는 사람의 인품·성격을 나타내는 형용사이므로 to부정사의 의미상 주어 앞에 for가 아닌 of를 써야 합니다."
+            "explanation": "generous(관대한)는 사람의 인품·성격을 나타내는 형용사이므로 to부정사의 의미상 주어 앞에 for가 아닌 of를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: It (가주어) ~ for/of (의미상 주어) + to V (진주어)] 출제 연계",
+            "korean": "자신의 전 재산을 자선단체에 기부하다니 그는 참으로 관대했다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The ambitious team decided pursuing the renewable energy initiative despite harsh economic headwinds.",
+            "underlined": [
+              "ambitious team",
+              "decided",
+              "pursuing",
+              "harsh economic"
+            ],
+            "wrongIndex": 2,
+            "correction": "to pursue",
+            "explanation": "동사 decide는 미래지향적 결정을 나타내므로 목적어로 동명사가 아닌 to부정사(to pursue)만을 취합니다.",
+            "conceptRef": "1단계 [SP-09 핵심: to부정사 목적어 필수 동사군 영작 공식] 출제 연계",
+            "korean": "그 야심 찬 팀은 가혹한 경제적 역풍에도 불구하고 신재생 에너지 계획을 추진하기로 결정했다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The senior engineer recommended to calibrate the pressure sensors before commencing thermal testing.",
+            "underlined": [
+              "senior engineer",
+              "recommended",
+              "to calibrate",
+              "commencing"
+            ],
+            "wrongIndex": 2,
+            "correction": "calibrating",
+            "explanation": "recommend는 목적어로 to부정사가 아닌 동명사를 취하거나 'recommend that S (should) V' 구문을 취해야 하므로 to calibrate를 calibrating으로 고쳐야 합니다.",
+            "conceptRef": "1단계 [SP-09 핵심: 동명사 목적어 필수 동사군 서술형 체크] 출제 연계",
+            "korean": "수석 엔지니어는 열 시험을 시작하기 전에 압력 센서를 교정할 것을 권고했다."
           }
         ],
         "questions": [
@@ -8642,7 +10207,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_10",
+            "id": "drill_1",
             "sentence": "I will never forget the restaurant where we had dinner in on our first anniversary.",
             "underlined": [
               "never forget",
@@ -8652,7 +10217,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 2,
             "correction": "where we had dinner (또는 which we had dinner in)",
-            "explanation": "관계부사 where 뒤에는 완전한 절이 와야 하므로 불필요한 전치사 in을 삭제하거나, in which로 바꾸어야 합니다."
+            "explanation": "관계부사 where 뒤에는 완전한 절이 와야 하므로 불필요한 전치사 in을 삭제하거나, in which로 바꾸어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 전치사 + 관계대명사 ➔ 관계부사 치환] 출제 연계",
+            "korean": "나는 우리의 첫 번째 기념일에 저녁 식사를 했던 그 레스토랑을 결코 잊지 못할 것이다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The international convention center that the delegate delivered the keynote speech was magnificently renovated.",
+            "underlined": [
+              "convention center",
+              "that",
+              "delivered the keynote",
+              "magnificently"
+            ],
+            "wrongIndex": 1,
+            "correction": "where",
+            "explanation": "뒤따르는 절이 주어(the delegate), 동사(delivered), 목적어(the keynote speech)를 모두 갖춘 완전한 문장이므로 선행사(장소)를 수식할 때 관계대명사 that이 아닌 관계부사 where(또는 in which)를 써야 합니다.",
+            "conceptRef": "1단계 [SP-10 핵심: 관계대명사 vs 관계부사 서술형 영작 구별법] 출제 연계",
+            "korean": "그 대표가 기조 연설을 했던 국제 컨벤션 센터는 웅장하게 개조되었다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "This is the rare historical document which authentic origin historians have argued about it for centuries.",
+            "underlined": [
+              "historical document",
+              "which",
+              "historians have argued",
+              "about it"
+            ],
+            "wrongIndex": 3,
+            "correction": "about",
+            "explanation": "관계대명사 which가 전치사 about의 목적어 역할을 이미 수행하고 있으므로, 절 끝에 목적어 대명사 it을 중복 표기하면 서술형 감점이 되므로 it을 삭제해야 합니다.",
+            "conceptRef": "1단계 [SP-10 핵심: 관계사절 내 중복 대명사 서술형 감점 방어] 출제 연계",
+            "korean": "이것은 역사가들이 수세기 동안 그 진짜 기원에 대해 논쟁해 온 희귀한 역사 문서이다."
           }
         ],
         "questions": [
@@ -8813,7 +10410,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_11",
+            "id": "drill_1",
             "sentence": "He sat on the sofa listening to music with his legs crossing comfortably.",
             "underlined": [
               "sat on the sofa",
@@ -8823,7 +10420,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 3,
             "correction": "crossed comfortably",
-            "explanation": "다리(legs)는 꼬아지는 수동의 대상이므로 crossing이 아닌 과거분사 crossed를 써야 합니다."
+            "explanation": "다리(legs)는 꼬아지는 수동의 대상이므로 crossing이 아닌 과거분사 crossed를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 부사절 ➔ 분사구문 3단계 변환 공식] 출제 연계",
+            "korean": "그는 편안하게 다리를 꼰 채 소파에 앉아 음악을 듣고 있었다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Finished his exhaustive laboratory experiments, the graduate student prepared his thesis draft for publication.",
+            "underlined": [
+              "Finished",
+              "laboratory experiments",
+              "prepared",
+              "for publication"
+            ],
+            "wrongIndex": 0,
+            "correction": "Having finished",
+            "explanation": "실험을 마친 시점이 논문 초안을 준비한 시점보다 앞선 완료 시제이므로, 단순 과거분사 Finished가 아니라 완료분사구문 Having finished를 써야 합니다.",
+            "conceptRef": "1단계 [SP-11 핵심: 주절보다 앞선 시제의 완료분사구문(Having p.p.) 영작] 출제 연계",
+            "korean": "철저한 실험실 연구를 마친 후, 대학원생은 출판을 위해 학위 논문 초안을 작성했다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Walking along the misty coastal cliffs, a sudden flash of lightning startled the cautious hikers.",
+            "underlined": [
+              "Walking along",
+              "misty coastal",
+              "sudden flash",
+              "startled"
+            ],
+            "wrongIndex": 0,
+            "correction": "While the cautious hikers were walking along",
+            "explanation": "분사구문의 의미상 주어는 주절의 주어(a sudden flash of lightning)와 일치해야 하는데, 번개가 절벽을 걸을 수 없으므로(현수분사 오류), 행위자를 밝혀주는 부사절로 고치거나 주절 주어를 등산객으로 변경해야 합니다.",
+            "conceptRef": "1단계 [SP-11 핵심: 서술형 단골 현수분사(Dangling Participle) 방어] 출제 연계",
+            "korean": "안개 낀 해안 절벽을 따라 걷고 있을 때, 갑작스러운 번개가 조심스러운 등산객들을 놀라게 했다."
           }
         ],
         "questions": [
@@ -8984,7 +10613,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_12",
+            "id": "drill_1",
             "sentence": "Had he listen to my advice, he would not have failed the driving test.",
             "underlined": [
               "Had he listen",
@@ -8994,7 +10623,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 0,
             "correction": "Had he listened",
-            "explanation": "가정법 과거완료 If he had listened에서 If가 생략된 도치 구문이므로 had 뒤에 과거분사 listened가 와야 합니다."
+            "explanation": "가정법 과거완료 If he had listened에서 If가 생략된 도치 구문이므로 had 뒤에 과거분사 listened가 와야 합니다.",
+            "conceptRef": "1단계 [공식 1: '~이 없다면' 4대 동의어 영작 공식] 출제 연계",
+            "korean": "그가 나의 조언을 들었더라면 운전면허 시험에서 떨어지지 않았을 텐데."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Had the meteorologists forecasted the storm accurately, the seaside villagers would evacuated earlier.",
+            "underlined": [
+              "Had the meteorologists",
+              "forecasted",
+              "seaside villagers",
+              "would evacuated"
+            ],
+            "wrongIndex": 3,
+            "correction": "would have evacuated",
+            "explanation": "조건절이 Had S p.p.(가정법 과거완료)이므로 주절의 동사 형태 역시 [조동사 과거형 + have p.p.]인 would have evacuated가 되어야 합니다.",
+            "conceptRef": "1단계 [SP-12 핵심: if 생략 도치 가정법 과거완료 주절 일치 공식] 출제 연계",
+            "korean": "기상학자들이 폭풍을 정확하게 예보했더라면, 해변 마을 주민들은 더 일찍 대피했을 것이다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Were the government to invest heavily in public transport, traffic congestion will decrease noticeably.",
+            "underlined": [
+              "Were the government",
+              "to invest heavily",
+              "traffic congestion",
+              "will decrease"
+            ],
+            "wrongIndex": 3,
+            "correction": "would decrease",
+            "explanation": "조건절에 [Were + 주어 + to부정사] 도치가 쓰인 미래 가정법이므로 주절에는 조동사 현재형 will이 아닌 과거형 would(또는 could)를 써야 합니다.",
+            "conceptRef": "1단계 [SP-12 핵심: Were to 도치 가정법 주절 조동사 시제 일치] 출제 연계",
+            "korean": "정부가 대중교통에 대대적으로 투자한다면, 교통 체증은 눈에 띄게 감소할 것이다."
           }
         ],
         "questions": [
@@ -9155,7 +10816,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_13",
+            "id": "drill_1",
             "sentence": "The movie was such boring that half of the audience left before the end.",
             "underlined": [
               "The movie",
@@ -9165,7 +10826,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "was so boring",
-            "explanation": "뒤에 단독 형용사 boring만 있으므로 such가 아닌 so를 써야 합니다. (such는 뒤에 명사가 필요)"
+            "explanation": "뒤에 단독 형용사 boring만 있으므로 such가 아닌 so를 써야 합니다. (such는 뒤에 명사가 필요)",
+            "conceptRef": "1단계 [공식 1: so + 형용사/부사 + that vs such + a + 형용사 + 명사 + that] 출제 연계",
+            "korean": "그 영화는 너무 지루해서 관객의 절반이 끝나기도 전에 자리를 떴다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The mathematical proof was too intricate that undergraduate students could not grasp its underlying logic.",
+            "underlined": [
+              "mathematical proof",
+              "too intricate",
+              "that",
+              "underlying logic"
+            ],
+            "wrongIndex": 1,
+            "correction": "so intricate",
+            "explanation": "뒤에 결과를 나타내는 'that + 완전한 절'이 이어지므로 too가 아니라 so와 호응하는 'so ~ that 구문'으로 써야 합니다.",
+            "conceptRef": "1단계 [SP-13 핵심: so ~ that ... can't 구문과 too ~ to 부정사 변환 공식] 출제 연계",
+            "korean": "그 수학적 증명은 너무 복잡해서 학부생들이 그 근본 논리를 파악할 수 없었다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The heavy suitcase was so heavy that the fragile child could not lift it up without assistance.",
+            "underlined": [
+              "heavy suitcase",
+              "so heavy",
+              "fragile child",
+              "lift it up"
+            ],
+            "wrongIndex": 1,
+            "correction": "too heavy for the fragile child to lift",
+            "explanation": "too ~ to 구문으로 변환할 때 목적어 it의 생략 여부와 의미상 주어(for + 목적격) 표기를 철저히 확인해야 합니다.",
+            "conceptRef": "1단계 [SP-13 핵심: so that can't vs too to 변환 시 대명사 목적어 생략 법칙] 출제 연계",
+            "korean": "그 무거운 여행가방은 너무 무거워서 연약한 아이가 도움 없이 들어 올릴 수 없었다."
           }
         ],
         "questions": [
@@ -9326,7 +11019,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_14",
+            "id": "drill_1",
             "sentence": "The teacher made the students to write an essay about environmental protection.",
             "underlined": [
               "The teacher",
@@ -9336,7 +11029,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 2,
             "correction": "write",
-            "explanation": "사역동사 make의 목적격 보어로 능동 관계일 때는 to부정사가 아니라 동사원형 write를 써야 합니다."
+            "explanation": "사역동사 make의 목적격 보어로 능동 관계일 때는 to부정사가 아니라 동사원형 write를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 사역동사(make, have, let)의 목적격 보어] 출제 연계",
+            "korean": "선생님께서는 학생들에게 환경 보호에 관한 에세이를 작성하도록 시키셨다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The strict drill instructor made all recruits to run ten miles across the rugged mountain terrain.",
+            "underlined": [
+              "strict drill",
+              "made",
+              "recruits",
+              "to run"
+            ],
+            "wrongIndex": 3,
+            "correction": "run",
+            "explanation": "사역동사 make는 능동 관계의 목적격 보어로 to부정사가 아닌 동사원형(run)을 취합니다.",
+            "conceptRef": "1단계 [SP-14 핵심: 5형식 사역동사(make/have/let) 목적격 보어 원형부정사] 출제 연계",
+            "korean": "엄격한 훈련 교관은 모든 신병들에게 험준한 산악 지형 10마일을 달리도록 만들었다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The biology teacher observed the tiny amoeba moving under the microscope and had her students to sketch its cellular structure.",
+            "underlined": [
+              "observed",
+              "moving under",
+              "had her students",
+              "to sketch"
+            ],
+            "wrongIndex": 3,
+            "correction": "sketch",
+            "explanation": "사역동사 had의 목적격 보어 자리이므로 to부정사 to sketch가 아니라 동사원형 sketch를 써야 합니다.",
+            "conceptRef": "1단계 [SP-14 핵심: 5형식 사역동사 목적격 보어 동사원형 서술형 체크] 출제 연계",
+            "korean": "생물 선생님은 작은 아메바가 현미경 아래에서 움직이는 것을 관찰하고 학생들에게 그 세포 구조를 그리게 했다."
           }
         ],
         "questions": [
@@ -9497,7 +11222,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_15",
+            "id": "drill_1",
             "sentence": "Rarely she eats fast food because she cares about her health.",
             "underlined": [
               "Rarely",
@@ -9507,7 +11232,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "does she eat",
-            "explanation": "부정어 Rarely가 문두로 나갔으므로 의문문 어순으로 도치되어 does she eat으로 써야 합니다."
+            "explanation": "부정어 Rarely가 문두로 나갔으므로 의문문 어순으로 도치되어 does she eat으로 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 부정어구 도치 공식 (의문문 어순과 100% 동일)] 출제 연계",
+            "korean": "그녀는 건강을 신경 쓰기 때문에 패스트푸드를 먹는 일이 거의 없다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Not until the late eighteenth century humanity realized the fundamental laws governing planetary motion.",
+            "underlined": [
+              "Not until",
+              "eighteenth century",
+              "humanity realized",
+              "governing planetary"
+            ],
+            "wrongIndex": 2,
+            "correction": "did humanity realize",
+            "explanation": "'Not until ~' 부정어구가 문두에 강조되어 나왔으므로 주어-동사가 도치되어 [조동사 did + 주어 + 동사원형] 어순인 'did humanity realize'가 되어야 합니다.",
+            "conceptRef": "1단계 [SP-15 핵심: Not until 도치 서술형 영작 공식] 출제 연계",
+            "korean": "18세기 후반이 되어서야 인류는 행성 운동을 지배하는 근본 법칙을 깨달았다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Seldom the dedicated researchers left the laboratory before midnight while conducting crucial vaccine trials.",
+            "underlined": [
+              "Seldom",
+              "researchers left",
+              "before midnight",
+              "conducting crucial"
+            ],
+            "wrongIndex": 1,
+            "correction": "did the dedicated researchers leave",
+            "explanation": "부정어 Seldom이 문두에 강조되어 나왔으므로 주어-동사가 도치되어 [조동사 did + 주어 + 동사원형] 어순인 'did the dedicated researchers leave'가 되어야 합니다.",
+            "conceptRef": "1단계 [SP-15 핵심: Seldom/Rarely 부정어 도치 서술형 영작] 출제 연계",
+            "korean": "헌신적인 연구원들은 중요한 백신 임상 시험을 진행하는 동안 자정 전에 연구실을 떠나는 법이 거의 없었다."
           }
         ],
         "questions": [
@@ -9668,7 +11425,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_16",
+            "id": "drill_1",
             "sentence": "Each of the participants were asked to submit their feedback by tomorrow.",
             "underlined": [
               "Each of",
@@ -9678,7 +11435,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 2,
             "correction": "was asked",
-            "explanation": "문장의 주어는 Each(단수 취급)이므로 복수 동사 were가 아니라 단수 동사 was를 써야 합니다."
+            "explanation": "문장의 주어는 Each(단수 취급)이므로 복수 동사 were가 아니라 단수 동사 was를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 서술형 0점 방지 3대 셀프 검독 체크리스트] 출제 연계",
+            "korean": "참가자들 각각은 내일까지 피드백을 제출하도록 요청받았다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Each of the dedicated research assistants have submitted their monthly laboratory report on time.",
+            "underlined": [
+              "Each of the",
+              "research assistants",
+              "have submitted",
+              "on time"
+            ],
+            "wrongIndex": 2,
+            "correction": "has submitted",
+            "explanation": "'Each of + 복수명사' 구문의 핵심 주어는 단수 대명사 Each이므로 동사를 복수 have가 아닌 단수 has submitted로 써야 합니다.",
+            "conceptRef": "1단계 [SP-16 핵심: 서술형 감점 1위 단수/복수 수일치 실수 클리닉] 출제 연계",
+            "korean": "헌신적인 연구 보조원들 각각은 월간 실험 보고서를 제시간에 제출했다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The museum curator preserves priceless artifacts despite they are severely vulnerable to humidity fluctuations.",
+            "underlined": [
+              "preserves priceless",
+              "artifacts",
+              "despite",
+              "severely vulnerable"
+            ],
+            "wrongIndex": 2,
+            "correction": "although",
+            "explanation": "뒤에 주어(they)와 동사(are)를 갖춘 완전한 절이 오므로 전치사 despite 대신 양보 접속사 although나 even though를 써야 합니다.",
+            "conceptRef": "1단계 [SP-16 핵심: 서술형 품사 혼동(접속사 vs 전치사) 감점 방어] 출제 연계",
+            "korean": "박물관 큐레이터는 매우 귀중한 유물들이 습도 변동에 심각하게 취약함에도 불구하고 그것들을 보존한다."
           }
         ],
         "questions": [
@@ -9853,7 +11642,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_17",
+            "id": "drill_1",
             "sentence": "The ability of humans to communicate complex abstract ideas through language distinguishing them from all other species.",
             "underlined": [
               "ability of humans",
@@ -9863,7 +11652,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 2,
             "correction": "distinguishes",
-            "explanation": "문장의 본동사 자리입니다. 주어 The ability에 호응하는 단수 본동사 distinguishes가 와야 합니다."
+            "explanation": "문장의 본동사 자리입니다. 주어 The ability에 호응하는 단수 본동사 distinguishes가 와야 합니다.",
+            "conceptRef": "1단계 [공식 1: 수능 29번 1순위: '동사 자리 vs 준동사 자리'] 출제 연계",
+            "korean": "언어를 통해 복잡하고 추상적인 개념을 소통하는 인간의 능력은 인간을 다른 모든 종들과 구별 짓는다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The rapid advancement of artificial intelligence technologies creating unprecedented challenges for modern legal frameworks.",
+            "underlined": [
+              "rapid advancement",
+              "artificial intelligence",
+              "creating",
+              "legal frameworks"
+            ],
+            "wrongIndex": 2,
+            "correction": "creates",
+            "explanation": "문장의 주어는 'The rapid advancement'이며 절 안에 본동사가 존재하지 않으므로 준동사 creating을 단수 본동사 creates(또는 is creating)로 고쳐야 합니다.",
+            "conceptRef": "1단계 [수능 어법 킬러 1순위: 동사 vs 준동사 판별] 출제 연계",
+            "korean": "인공지능 기술의 급격한 발전은 현대 법적 체계에 전례 없는 도전과제들을 만들어내고 있다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Architects specializing in eco-friendly urban development incorporating solar panels to reduce communal electricity costs.",
+            "underlined": [
+              "Architects",
+              "urban development",
+              "incorporating",
+              "to reduce"
+            ],
+            "wrongIndex": 2,
+            "correction": "incorporated",
+            "explanation": "specializing in...는 주어 Architects를 수식하는 분사구이므로 문장 전체의 본동사가 필요합니다. 따라서 준동사인 incorporating을 과거시제 본동사인 incorporated(또는 incorporate)로 고쳐야 합니다.",
+            "conceptRef": "1단계 [수능 어법 킬러 1순위: 주어 수식 거품 속 본동사 자리 판별] 출제 연계",
+            "korean": "친환경 도시 개발을 전공하는 건축가들은 공동 전기 요금을 절감하기 위해 태양광 패널을 도입했다."
           }
         ],
         "questions": [
@@ -10024,7 +11845,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_18",
+            "id": "drill_1",
             "sentence": "Psychologists have discovered what people who exercise regularly experience less anxiety than those who are inactive.",
             "underlined": [
               "have discovered",
@@ -10034,7 +11855,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "that people",
-            "explanation": "discovered 뒤에 이어지는 절(people who exercise regularly experience less anxiety...)이 완전한 문장이므로 what이 아닌 접속사 that을 써야 합니다."
+            "explanation": "discovered 뒤에 이어지는 절(people who exercise regularly experience less anxiety...)이 완전한 문장이므로 what이 아닌 접속사 that을 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: that vs what 3초 판별 알고리즘] 출제 연계",
+            "korean": "심리학자들은 규칙적으로 운동하는 사람들이 활동적이지 않은 사람들보다 불안을 덜 겪는다는 것을 발견했다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The committee reached a unanimous consensus what the proposed infrastructure project should be postponed.",
+            "underlined": [
+              "reached a unanimous",
+              "consensus",
+              "what",
+              "should be postponed"
+            ],
+            "wrongIndex": 2,
+            "correction": "that",
+            "explanation": "뒤따르는 절이 완전한 수동태 문장이며 앞의 추상명사 consensus와 의미상 동격을 이루므로 불완전문사를 이끄는 what이 아니라 동격 접속사 that을 써야 합니다.",
+            "conceptRef": "1단계 [수능 어법 킬러 2순위: that vs what vs which 끝장 판별법] 출제 연계",
+            "korean": "위원회는 제안된 사회기반시설 프로젝트를 연기해야 한다는 만장일치의 합의에 도달했다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Marine biologists investigated the unique coral species what thrives in extreme hydrothermal ocean vents.",
+            "underlined": [
+              "Marine biologists",
+              "coral species",
+              "what",
+              "extreme hydrothermal"
+            ],
+            "wrongIndex": 2,
+            "correction": "that",
+            "explanation": "선행사(coral species)가 명확히 존재하므로 선행사를 포함하는 관계대명사 what 대신 관계대명사 that 또는 which를 써야 합니다.",
+            "conceptRef": "1단계 [수능 어법 킬러 2순위: 선행사 유무에 따른 what vs that 판별] 출제 연계",
+            "korean": "해양 생물학자들은 극한의 심해 열수구에서 번성하는 독특한 산호 종들을 조사했다."
           }
         ],
         "questions": [
@@ -10195,7 +12048,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_19",
+            "id": "drill_1",
             "sentence": "The audience remained completely captivating throughout the astonishing magic performance.",
             "underlined": [
               "The audience",
@@ -10205,7 +12058,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "captivated",
-            "explanation": "관객(The audience)은 마술 공연에 의해 매료된 감정을 느끼는 주체이므로 현재분사 captivating이 아니라 과거분사 captivated를 써야 합니다."
+            "explanation": "관객(The audience)은 마술 공연에 의해 매료된 감정을 느끼는 주체이므로 현재분사 captivating이 아니라 과거분사 captivated를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 분사의 능동 vs 수동 3초 판별 공식] 출제 연계",
+            "korean": "청중들은 그 놀라운 마술 공연 내내 완전히 매료된 채로 머물렀다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The ancient stone monuments discovering by archaeologists last winter provided invaluable historical insights.",
+            "underlined": [
+              "stone monuments",
+              "discovering by",
+              "archaeologists",
+              "provided invaluable"
+            ],
+            "wrongIndex": 1,
+            "correction": "discovered by",
+            "explanation": "고대 석조 기념물이 고고학자들에 의해 '발견된' 수동의 관계이므로 현재분사 discovering 대신 과거분사 discovered를 써야 합니다.",
+            "conceptRef": "1단계 [수능 어법 킬러 3순위: 능동(V-ing) vs 수동(p.p.) 태 판별] 출제 연계",
+            "korean": "지난겨울 고고학자들에 의해 발견된 고대 석조 기념물들은 매우 귀중한 역사적 통찰을 제공했다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Fascinating by the intricate patterns on the butterfly wings, the little boy observed them intently.",
+            "underlined": [
+              "Fascinating by",
+              "intricate patterns",
+              "butterfly wings",
+              "observed them"
+            ],
+            "wrongIndex": 0,
+            "correction": "Fascinated by",
+            "explanation": "주어 the little boy가 나비 날개의 복잡한 무늬에 의해 '매료된' 감정을 느끼는 수동 관계이므로 Fascinating을 Fascinated로 고쳐야 합니다.",
+            "conceptRef": "1단계 [수능 어법 킬러 3순위: 분사구문 감정동사의 능수동 판별] 출제 연계",
+            "korean": "나비 날개의 복잡한 무늬에 매료되어, 그 어린 소년은 그것들을 열심히 관찰했다."
           }
         ],
         "questions": [
@@ -10366,7 +12251,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_20",
+            "id": "drill_1",
             "sentence": "The eyes of nocturnal animals are significantly larger than that of diurnal animals.",
             "underlined": [
               "nocturnal animals",
@@ -10376,7 +12261,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 2,
             "correction": "than those of",
-            "explanation": "비교 대상이 복수 명사인 The eyes이므로 단수 대명사 that이 아니라 복수 대명사 those를 써야 합니다."
+            "explanation": "비교 대상이 복수 명사인 The eyes이므로 단수 대명사 that이 아니라 복수 대명사 those를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 수능 단골 대명사 비교: that vs those] 출제 연계",
+            "korean": "야행성 동물의 눈은 주행성 동물의 눈보다 훨씬 더 크다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Global manufacturing corporations frequently relocate their production facilities to countries where labor costs are lower than that of domestic markets.",
+            "underlined": [
+              "manufacturing corporations",
+              "relocate their",
+              "labor costs",
+              "that"
+            ],
+            "wrongIndex": 3,
+            "correction": "those",
+            "explanation": "비교 대상이 복수명사인 labor costs(인건비들)이므로 단수 대명사 that 대신 복수 대명사 those를 써야 합니다.",
+            "conceptRef": "1단계 [수능 어법 킬러 4순위: 대명사 수일치 that vs those 비교 공식] 출제 연계",
+            "korean": "글로벌 제조 기업들은 인건비가 국내 시장의 인건비보다 더 저렴한 국가들로 생산 시설을 자주 이전한다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "When predators approach their nesting sites, mother birds deliberately fake injury to distract it from their chicks.",
+            "underlined": [
+              "nesting sites",
+              "deliberately",
+              "fake injury",
+              "it"
+            ],
+            "wrongIndex": 3,
+            "correction": "them",
+            "explanation": "지칭하는 대상이 복수명사인 predators(포식자들)이므로 단수 목적격 it 대신 복수 목적격 them을 써야 합니다.",
+            "conceptRef": "1단계 [수능 어법 킬러 4순위: 지칭 대명사 it vs them 수일치] 출제 연계",
+            "korean": "포식자들이 둥지 터에 접근할 때, 어미 새들은 새끼들로부터 포식자들의 주의를 딴 데로 돌리기 위해 의도적으로 부상을 가장한다."
           }
         ],
         "questions": [
@@ -10537,7 +12454,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_21",
+            "id": "drill_1",
             "sentence": "Regular meditation helps individuals keep their minds calmly even during severe crises.",
             "underlined": [
               "Regular meditation",
@@ -10547,7 +12464,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 2,
             "correction": "calm",
-            "explanation": "keep + 목적어(their minds) + 목적격 보어 자리이므로 부사 calmly가 아닌 형용사 calm이 와야 합니다."
+            "explanation": "keep + 목적어(their minds) + 목적격 보어 자리이므로 부사 calmly가 아닌 형용사 calm이 와야 합니다.",
+            "conceptRef": "1단계 [공식 1: 보어 자리는 형용사, 수식어 자리는 부사!] 출제 연계",
+            "korean": "규칙적인 명상은 사람들이 심각한 위기 상황에서도 마음을 차분하게 유지할 수 있도록 도와준다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The delicate chemical solution tasted bitterly, indicating severe contamination from the faulty glass container.",
+            "underlined": [
+              "delicate chemical",
+              "tasted",
+              "bitterly",
+              "severe contamination"
+            ],
+            "wrongIndex": 2,
+            "correction": "bitter",
+            "explanation": "taste는 주격 보어를 취하는 2형식 감각동사이므로 부사 bitterly 대신 형용사 bitter를 써야 합니다.",
+            "conceptRef": "1단계 [수능 어법 킬러 5순위: 2형식 감각동사 형용사 보어 공식] 출제 연계",
+            "korean": "그 섬세한 화학 용액은 쓴맛이 났는데, 이는 결함이 있는 유리 용기로부터의 심각한 오염을 나타냈다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Advanced optical microscopes allow laboratory scientists to observe living cellular structures extreme clearly.",
+            "underlined": [
+              "allow",
+              "laboratory scientists",
+              "living cellular",
+              "extreme"
+            ],
+            "wrongIndex": 3,
+            "correction": "extremely",
+            "explanation": "부사 clearly를 수식하는 자리이므로 형용사 extreme 대신 부사 extremely를 써야 합니다.",
+            "conceptRef": "1단계 [수능 어법 킬러 5순위: 부사의 형용사/부사 수식 원칙] 출제 연계",
+            "korean": "첨단 광학 현미경은 실험실 과학자들이 살아있는 세포 구조를 극도로 명확하게 관찰할 수 있도록 해준다."
           }
         ],
         "questions": [
@@ -10708,7 +12657,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_22",
+            "id": "drill_1",
             "sentence": "The research involved collecting data, analyzing trends, and to publish the final report.",
             "underlined": [
               "The research",
@@ -10718,7 +12667,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 3,
             "correction": "publishing",
-            "explanation": "동명사 목적어 collecting, analyzing과 병렬 구조를 이루어야 하므로 to publish를 publishing으로 고쳐야 합니다."
+            "explanation": "동명사 목적어 collecting, analyzing과 병렬 구조를 이루어야 하므로 to publish를 publishing으로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 1: 등위접속사(and/but/or)의 저울 원리] 출제 연계",
+            "korean": "그 연구는 데이터 수집, 동향 분석, 그리고 최종 보고서 출판을 포함했다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Effective corporate mentors guide inexperienced interns, offer constructive feedback, and demonstrating professional ethics daily.",
+            "underlined": [
+              "guide inexperienced",
+              "offer constructive",
+              "and",
+              "demonstrating"
+            ],
+            "wrongIndex": 3,
+            "correction": "demonstrate",
+            "explanation": "등위접속사 and가 3인칭 복수 현재시제 동사들(guide, offer)을 병렬 연결하고 있으므로 demonstrating을 동사원형 형태인 demonstrate로 맞춰야 합니다.",
+            "conceptRef": "1단계 [수능 어법 킬러 6순위: 등위접속사 술어 동사 병렬 일치] 출제 연계",
+            "korean": "유능한 기업 멘토들은 미숙한 인턴들을 지도하고, 건설적인 피드백을 제공하며, 매일 전문적인 직업윤리를 보여준다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The investigative journalist preferred publishing her expos in an independent magazine rather than to submit it to state media.",
+            "underlined": [
+              "investigative journalist",
+              "publishing",
+              "independent magazine",
+              "to submit"
+            ],
+            "wrongIndex": 3,
+            "correction": "submitting",
+            "explanation": "rather than 앞의 목적어가 동명사구 publishing...이므로 병렬 구조를 이루기 위해 to submit 역시 동명사인 submitting으로 통일해야 합니다.",
+            "conceptRef": "1단계 [수능 어법 킬러 6순위: 비교 접속사(rather than) 준동사 병치] 출제 연계",
+            "korean": "그 탐사보도 기자는 자신의 폭로 기사를 국영 언론에 제출하기보다 독립 잡지에 게재하는 것을 선호했다."
           }
         ],
         "questions": [
@@ -10893,7 +12874,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_23",
+            "id": "drill_1",
             "sentence": "Don't forget bringing your passport when you travel abroad next week.",
             "underlined": [
               "Don't forget",
@@ -10903,7 +12884,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "to bring",
-            "explanation": "다음 주에 '앞으로 챙겨야 할 일'을 의미하므로 과거를 뜻하는 bringing이 아닌 미래의 to bring을 써야 합니다."
+            "explanation": "다음 주에 '앞으로 챙겨야 할 일'을 의미하므로 과거를 뜻하는 bringing이 아닌 미래의 to bring을 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: to부정사 vs 동명사 목적어 암기 공식] 출제 연계",
+            "korean": "다음 주에 해외여행을 갈 때 여권을 챙기는 것을 잊지 마라."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The physician advised the patient to stop to smoke immediately to prevent further respiratory complications.",
+            "underlined": [
+              "advised the patient",
+              "to stop",
+              "to smoke",
+              "further respiratory"
+            ],
+            "wrongIndex": 2,
+            "correction": "smoking",
+            "explanation": "stop to smoke는 '담배를 피우기 위해 멈추다'라는 뜻이 되며, 문맥상 '흡연을 중단하다'라는 뜻이어야 하므로 동명사 smoking을 목적어로 써야 합니다.",
+            "conceptRef": "1단계 [SP-23 핵심: stop to V(~하기 위해 멈추다) vs stop V-ing(~하는 것을 멈추다)] 출제 연계",
+            "korean": "의사는 추가적인 호흡기 합병증을 예방하기 위해 환자에게 즉시 금연할 것을 조언했다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Please remember bringing your official passport and visa documents when you arrive at the embassy tomorrow.",
+            "underlined": [
+              "remember",
+              "bringing",
+              "official passport",
+              "arrive at"
+            ],
+            "wrongIndex": 1,
+            "correction": "to bring",
+            "explanation": "내일 대사관에 도착할 때 서류를 가져와야 할 미래의 할 일을 의미하므로 remember의 목적어로 동명사가 아닌 to부정사 to bring을 써야 합니다.",
+            "conceptRef": "1단계 [SP-23 핵심: remember/forget + to V(미래) vs -ing(과거) 판별] 출제 연계",
+            "korean": "내일 대사관에 도착하실 때 공식 여권과 비자 서류를 가져오는 것을 잊지 말고 기억하세요."
           }
         ],
         "questions": [
@@ -11064,7 +13077,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_24",
+            "id": "drill_1",
             "sentence": "My uncle has bought this sports car three years ago and still drives it.",
             "underlined": [
               "has bought",
@@ -11074,7 +13087,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 0,
             "correction": "bought",
-            "explanation": "three years ago라는 명백한 과거 시점 부사구가 있으므로 현재완료 has bought를 쓸 수 없으며 단순과거 bought로 고쳐야 합니다."
+            "explanation": "three years ago라는 명백한 과거 시점 부사구가 있으므로 현재완료 has bought를 쓸 수 없으며 단순과거 bought로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 1: 단순과거 시제와만 어울리는 '명백한 과거 시점 부사'] 출제 연계",
+            "korean": "나의 삼촌은 3년 전에 이 스포츠카를 구입하셨고 지금도 운전하고 계신다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The prominent astrophysicist has discovered the unprecedented cosmic anomaly two years ago during a lunar survey.",
+            "underlined": [
+              "astrophysicist",
+              "has discovered",
+              "cosmic anomaly",
+              "two years ago"
+            ],
+            "wrongIndex": 1,
+            "correction": "discovered",
+            "explanation": "명백한 과거 시점을 나타내는 부사구 'two years ago'가 있으므로 현재완료 has discovered 대신 단순과거 discovered를 써야 합니다.",
+            "conceptRef": "1단계 [SP-24 핵심: 명백한 과거 시점 부사구와 현재완료 동석 불가 공식] 출제 연계",
+            "korean": "그 저명한 천체물리학자는 2년 전 달 탐사 중에 전례 없는 우주 이상 현상을 발견했다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Environmental researchers investigated atmospheric carbon dioxide concentrations since the Industrial Revolution began.",
+            "underlined": [
+              "investigated",
+              "carbon dioxide",
+              "concentrations",
+              "since the Industrial"
+            ],
+            "wrongIndex": 0,
+            "correction": "have investigated",
+            "explanation": "과거 특정 시점부터 현재까지 이어짐을 나타내는 'since + 과거 시점' 부사절이 있으므로 단순과거 대신 현재완료 have investigated를 써야 합니다.",
+            "conceptRef": "1단계 [SP-24 핵심: since 부사절과 현재완료의 결합 원칙] 출제 연계",
+            "korean": "환경 연구원들은 산업혁명이 시작된 이래로 대기 중 이산화탄소 농도를 조사해 왔다."
           }
         ],
         "questions": [
@@ -11235,7 +13280,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_25",
+            "id": "drill_1",
             "sentence": "The police found conclusive evidence which the suspect had entered the building.",
             "underlined": [
               "found",
@@ -11245,7 +13290,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 2,
             "correction": "that the suspect",
-            "explanation": "evidence 뒤의 절이 완전한 문장(the suspect had entered the building)이므로 동격의 접속사 that을 써야 하며, which로 대체할 수 없습니다."
+            "explanation": "evidence 뒤의 절이 완전한 문장(the suspect had entered the building)이므로 동격의 접속사 that을 써야 하며, which로 대체할 수 없습니다.",
+            "conceptRef": "1단계 [공식 1: that의 3대 정체성 판별 공식] 출제 연계",
+            "korean": "경찰은 그 용의자가 건물 안으로 침입했다는 결정적인 증거를 발견했다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The widespread belief what excessive social media usage harms adolescent mental health is supported by clinical studies.",
+            "underlined": [
+              "widespread belief",
+              "what",
+              "social media",
+              "is supported"
+            ],
+            "wrongIndex": 1,
+            "correction": "that",
+            "explanation": "belief 뒤의 절이 완전한 문장이며 belief의 구체적 내용을 설명하는 동격절이므로 what 대신 동격 접속사 that을 써야 합니다.",
+            "conceptRef": "1단계 [SP-25 핵심: 동격 that vs 관계대명사 that vs 접속사 that 판별] 출제 연계",
+            "korean": "과도한 소셜 미디어 사용이 청소년의 정신 건강을 해친다는 널리 퍼진 믿음은 임상 연구들에 의해 뒷받침된다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The ancient artifact that museum visitors admired yesterday it was discovered in a secluded desert valley.",
+            "underlined": [
+              "artifact that",
+              "museum visitors",
+              "yesterday it",
+              "was discovered"
+            ],
+            "wrongIndex": 2,
+            "correction": "yesterday",
+            "explanation": "관계대명사 that이 이끄는 절이 artifact를 수식하고 있으므로 문장의 주어는 The ancient artifact입니다. 주어 뒤에 대명사 it을 중복해서 쓰면 안 되므로 it을 삭제해야 합니다.",
+            "conceptRef": "1단계 [SP-25 핵심: 관계사 수식 주어 뒤 대명사 중복 방지] 출제 연계",
+            "korean": "어제 박물관 관람객들이 감탄했던 그 고대 유물은 외딴 사막 계곡에서 발견되었다."
           }
         ],
         "questions": [
@@ -11406,7 +13483,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_26",
+            "id": "drill_1",
             "sentence": "This special tool is used to measuring the precise depth of the ocean floor.",
             "underlined": [
               "special tool",
@@ -11416,7 +13493,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 2,
             "correction": "measure",
-            "explanation": "도구(tool)가 깊이를 측정하는 데 '사용되다'라는 수동의 뜻이므로 to 뒤에 동사원형 measure를 써야 합니다."
+            "explanation": "도구(tool)가 깊이를 측정하는 데 '사용되다'라는 수동의 뜻이므로 to 뒤에 동사원형 measure를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: used to 3총사 완전 정복 공식] 출제 연계",
+            "korean": "이 특수 도구는 해저의 정밀한 수심을 측정하는 데 사용된다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Solar energy systems are used to generating electricity for remote polar research stations.",
+            "underlined": [
+              "energy systems",
+              "are used to",
+              "generating",
+              "electricity for"
+            ],
+            "wrongIndex": 2,
+            "correction": "generate",
+            "explanation": "태양광 발전 시스템이 전기를 생산하는 데 '사용된다'는 수동/목적의 의미이므로 be used to 뒤에 동명사가 아닌 동사원형 generate를 써야 합니다.",
+            "conceptRef": "1단계 [SP-26 핵심: used to V vs be used to V vs be used to V-ing 삼총사] 출제 연계",
+            "korean": "태양광 에너지 시스템은 외딴 극지 연구소를 위해 전기를 생산하는 데 사용된다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The experienced deep sea diver is used to endure extreme underwater pressure during salvage operations.",
+            "underlined": [
+              "sea diver",
+              "is used to",
+              "endure",
+              "underwater pressure"
+            ],
+            "wrongIndex": 2,
+            "correction": "enduring",
+            "explanation": "심해 잠수부가 극심한 수압을 견디는 것에 '익숙하다'는 의미이므로 [be used to + -ing(명사)] 구문으로 enduring을 써야 합니다.",
+            "conceptRef": "1단계 [SP-26 핵심: ~에 익숙하다(be used to -ing) 실전 영작] 출제 연계",
+            "korean": "숙련된 심해 잠수부는 인양 작업 동안 극심한 수중 압력을 견디는 것에 익숙하다."
           }
         ],
         "questions": [
@@ -11577,7 +13686,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_27",
+            "id": "drill_1",
             "sentence": "The exhausted hiker laid down on the soft grass and fell fast asleep.",
             "underlined": [
               "exhausted hiker",
@@ -11587,7 +13696,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "lay down",
-            "explanation": "등산객이 스스로 누운 것이며 뒤에 목적어가 없는 자동사의 과거형이 필요하므로 laid(타동사 과거)가 아닌 lay(lie의 과거형)를 써야 합니다."
+            "explanation": "등산객이 스스로 누운 것이며 뒤에 목적어가 없는 자동사의 과거형이 필요하므로 laid(타동사 과거)가 아닌 lay(lie의 과거형)를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: lie vs lay 3단 변화 끝장 비교표] 출제 연계",
+            "korean": "지친 등산객은 푹신한 잔디밭 위에 누워 깊은 잠에 빠져들었다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "After working tirelessly in the garden all afternoon, the weary farmer laid down on the grass to rest.",
+            "underlined": [
+              "tirelessly",
+              "all afternoon",
+              "laid",
+              "on the grass"
+            ],
+            "wrongIndex": 2,
+            "correction": "lay",
+            "explanation": "주어가 스스로 '누웠다'는 의미이므로 자동사 lie의 과거형 lay를 써야 합니다. laid는 타동사 lay(~을 놓다/눕히다)의 과거형이므로 어법상 틀립니다.",
+            "conceptRef": "1단계 [SP-27 핵심: 자동사 lie(눕다) vs 타동사 lay(놓다) 3단 변화 끝장] 출제 연계",
+            "korean": "오후 내내 정원에서 쉼 없이 일한 후 지친 농부는 휴식을 취하기 위해 잔디밭에 누웠다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The careful librarian lied the rare illuminated manuscript gently upon the velvet reading cushion.",
+            "underlined": [
+              "careful librarian",
+              "lied",
+              "illuminated manuscript",
+              "upon the velvet"
+            ],
+            "wrongIndex": 1,
+            "correction": "laid",
+            "explanation": "귀중한 필사본을 벨벳 쿠션 위에 '놓았다'라는 타동사 의미이므로 타동사 lay의 과거형인 laid를 써야 합니다. lied는 '거짓말했다'는 뜻입니다.",
+            "conceptRef": "1단계 [SP-27 핵심: 타동사 lay의 과거/과거분사 laid vs lied 구별] 출제 연계",
+            "korean": "조심스러운 사서는 벨벳 독서용 쿠션 위에 희귀한 채색 필사본을 부드럽게 올려놓았다."
           }
         ],
         "questions": [
@@ -11748,7 +13889,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_28",
+            "id": "drill_1",
             "sentence": "Modern smartphones make that possible for people to work from anywhere in the world.",
             "underlined": [
               "smartphones",
@@ -11758,7 +13899,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 1,
             "correction": "make it possible",
-            "explanation": "5형식 가목적어 자리에는 오직 대명사 it만 올 수 있으므로 that possible을 it possible로 고쳐야 합니다."
+            "explanation": "5형식 가목적어 자리에는 오직 대명사 it만 올 수 있으므로 that possible을 it possible로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 1: It ~ that 강조구문 vs 가주어/진주어 3초 판별 공식] 출제 연계",
+            "korean": "현대 스마트폰은 사람들이 세상 어디에서나 일하는 것을 가능하게 만들어 준다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "It was precisely the dedicated researchers whom discovered the novel vaccine during the pandemic.",
+            "underlined": [
+              "precisely",
+              "dedicated researchers",
+              "whom",
+              "discovered the novel"
+            ],
+            "wrongIndex": 2,
+            "correction": "who",
+            "explanation": "It ~ that 강조구문에서 주어 the dedicated researchers가 강조되었으므로 강조절 내에서 주어 역할을 할 수 있도록 목적격 whom 대신 주격 who(또는 that)를 써야 합니다.",
+            "conceptRef": "1단계 [SP-28 핵심: It ~ that 강조구문 vs 가주어/진주어 구문 판별] 출제 연계",
+            "korean": "팬데믹 동안 새로운 백신을 발견한 것은 바로 그 헌신적인 연구원들이었다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The ambitious company found that imperative to modernize their digital security protocols immediately.",
+            "underlined": [
+              "ambitious company",
+              "found",
+              "that imperative",
+              "to modernize"
+            ],
+            "wrongIndex": 2,
+            "correction": "it imperative",
+            "explanation": "5형식 문장에서 진목적어가 뒤따르는 to부정사구(to modernize...)이므로, 가목적어 자리에는 that이 아니라 반드시 it을 써야 합니다.",
+            "conceptRef": "1단계 [SP-28 핵심: 5형식 가목적어 it vs 진목적어 to부정사/that절] 출제 연계",
+            "korean": "그 야심 찬 기업은 디지털 보안 프로토콜을 즉시 현대화하는 것이 필수적임을 알게 되었다."
           }
         ],
         "questions": [
@@ -11919,7 +14092,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_29",
+            "id": "drill_1",
             "sentence": "In spite of she practiced day and night, she couldn't win the gold medal.",
             "underlined": [
               "In spite of",
@@ -11929,7 +14102,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 0,
             "correction": "Although (또는 Even though)",
-            "explanation": "뒤에 'she(주어) + practiced(동사)'의 절이 이어지므로 전치사 In spite of가 아니라 접속사 Although를 써야 합니다."
+            "explanation": "뒤에 'she(주어) + practiced(동사)'의 절이 이어지므로 전치사 In spite of가 아니라 접속사 Although를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 접속사 vs 전치사 대표 맞수 3대장] 출제 연계",
+            "korean": "그녀가 밤낮으로 연습했음에도 불구하고 금메달을 따지는 못했다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Although the severe financial crisis, the international conglomerate managed to maintain its manufacturing operations.",
+            "underlined": [
+              "Although",
+              "financial crisis",
+              "managed to",
+              "manufacturing operations"
+            ],
+            "wrongIndex": 0,
+            "correction": "Despite",
+            "explanation": "뒤에 주어와 동사를 갖춘 절이 아니라 명사구(the severe financial crisis)가 오므로 접속사 Although 대신 전치사 Despite(또는 In spite of)를 써야 합니다.",
+            "conceptRef": "1단계 [SP-29 핵심: 접속사 vs 전치사 뒤따르는 문장 구조 판별 공식] 출제 연계",
+            "korean": "심각한 금융 위기에도 불구하고 그 다국적 대기업은 제조 사업을 간신히 유지했다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The outdoor music festival was abruptly postponed due to severe thunderstorms were approaching the coast.",
+            "underlined": [
+              "music festival",
+              "abruptly postponed",
+              "due to",
+              "were approaching"
+            ],
+            "wrongIndex": 2,
+            "correction": "because",
+            "explanation": "뒤에 주어(severe thunderstorms)와 동사(were approaching)를 갖춘 절이 이어지므로 전치사구 due to 대신 접속사 because(또는 as/since)를 써야 합니다.",
+            "conceptRef": "1단계 [SP-29 핵심: because vs because of / due to 서술형 구별] 출제 연계",
+            "korean": "심각한 뇌우가 해안으로 접근하고 있었기 때문에 야외 음악 축제는 갑작스럽게 연기되었다."
           }
         ],
         "questions": [
@@ -12090,7 +14295,7 @@ window.GRAMMAR_CLINIC_BANK = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_30",
+            "id": "drill_1",
             "sentence": "Neither of the two candidates were qualified for the executive position.",
             "underlined": [
               "Neither of",
@@ -12100,7 +14305,39 @@ window.GRAMMAR_CLINIC_BANK = [
             ],
             "wrongIndex": 2,
             "correction": "was qualified",
-            "explanation": "Neither of + 복수명사는 문법적으로 단수 취급하므로 복수 동사 were가 아니라 단수 동사 was를 써야 합니다."
+            "explanation": "Neither of + 복수명사는 문법적으로 단수 취급하므로 복수 동사 were가 아니라 단수 동사 was를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 부분부정 vs 완전부정 공식 비교] 출제 연계",
+            "korean": "두 명의 지원자 중 어느 누구도 그 임원직에 적합한 자격을 갖추지 못했다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "None of the brilliant innovations in the tech industry is necessarily harmful to human society.",
+            "underlined": [
+              "None of",
+              "innovations",
+              "is necessarily",
+              "harmful to"
+            ],
+            "wrongIndex": 0,
+            "correction": "Not all",
+            "explanation": "문맥상 '모든 혁신이 반드시 인간 사회에 해로운 것은 아니다'라는 부분부정의 의미이므로 완전부정 None 대신 'Not all of the brilliant innovations'로 표현해야 자연스럽습니다.",
+            "conceptRef": "1단계 [SP-30 핵심: 부분부정(not all, not every) vs 완전부정(none, neither) 구별] 출제 연계",
+            "korean": "기술 산업의 훌륭한 혁신들이 모두 반드시 인간 사회에 해로운 것은 아니다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The experimental vaccine was neither safe nor effectively during the initial phases of clinical trials.",
+            "underlined": [
+              "experimental vaccine",
+              "neither",
+              "safe nor",
+              "effectively"
+            ],
+            "wrongIndex": 3,
+            "correction": "effective",
+            "explanation": "상관접속사 neither A nor B 구문에서 be동사 was의 주격 보어로 형용사 safe가 쓰였으므로 병렬 구조를 이루기 위해 effectively 역시 형용사인 effective로 써야 합니다.",
+            "conceptRef": "1단계 [SP-30 핵심: neither A nor B 상관접속사 품사 병치] 출제 연계",
+            "korean": "그 실험 백신은 초기 임상 시험 단계 동안 안전하지도 효과적이지도 않았다."
           }
         ],
         "questions": [
@@ -12182,6 +14419,8 @@ window.GRAMMAR_CLINIC_BANK = [
     ]
   }
 ];
+
+// Grammar Special Lectures (문법 특강 별도 단원 데이터)
 window.GRAMMAR_SPECIAL_LECTURES = [
   {
     "level": 101,
@@ -12277,7 +14516,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_01",
+            "id": "drill_1",
             "sentence": "The chef prepared careful a delicious meal for the hungry guests.",
             "underlined": [
               "The chef",
@@ -12287,7 +14526,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 1,
             "correction": "prepared carefully",
-            "explanation": "동사 prepared를 수식하는 자리이므로 형용사 careful이 아니라 부사 carefully가 와야 합니다."
+            "explanation": "동사 prepared를 수식하는 자리이므로 형용사 careful이 아니라 부사 carefully가 와야 합니다.",
+            "conceptRef": "1단계 [공식 1: 품사(8품사)는 '배우', 문장 성분은 '배역'] 출제 연계",
+            "korean": "요리사는 배고픈 손님들을 위해 신중하게 맛있는 식사를 준비했다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Her remarkably performance on the cello mesmerized the audience gathered at the grand theater.",
+            "underlined": [
+              "remarkably",
+              "on the cello",
+              "mesmerized",
+              "gathered at"
+            ],
+            "wrongIndex": 0,
+            "correction": "remarkable",
+            "explanation": "명사 performance를 수식하는 자리이므로 부사 remarkably가 아닌 형용사 remarkable을 써야 합니다.",
+            "conceptRef": "1단계 [SP-01 핵심: 품사(단어의 본질)와 문장 성분(문장 내 역할)] 출제 연계",
+            "korean": "첼로로 선보인 그녀의 놀라운 연주는 대극장에 모인 청중들을 매료시켰다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The ambitious architect designed the community center thoughtful to accommodate elderly residents.",
+            "underlined": [
+              "ambitious architect",
+              "community center",
+              "thoughtful",
+              "to accommodate"
+            ],
+            "wrongIndex": 2,
+            "correction": "thoughtfully",
+            "explanation": "타동사 designed를 수식하는 문장 성분(부사어) 자리이므로 형용사 thoughtful 대신 부사 thoughtfully를 써야 합니다.",
+            "conceptRef": "1단계 [SP-01 핵심: 수식어 품사 판정 (동사/형용사 수식 부사)] 출제 연계",
+            "korean": "야심 찬 건축가는 노인 주민들을 수용할 수 있도록 배려 깊게 커뮤니티 센터를 설계했다."
           }
         ],
         "questions": [
@@ -12448,7 +14719,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_02",
+            "id": "drill_1",
             "sentence": "When she entered to the classroom, all students looked at her silently.",
             "underlined": [
               "entered to",
@@ -12458,7 +14729,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 0,
             "correction": "entered",
-            "explanation": "enter는 '~에 들어가다'라는 뜻의 완전타동사이므로 전치사 to 없이 바로 목적어 the classroom을 취해야 합니다."
+            "explanation": "enter는 '~에 들어가다'라는 뜻의 완전타동사이므로 전치사 to 없이 바로 목적어 the classroom을 취해야 합니다.",
+            "conceptRef": "1단계 [공식 1: 자동사(Vi) vs 타동사(Vt)의 판별법] 출제 연계",
+            "korean": "그녀가 교실로 들어섰을 때 모든 학생들이 조용히 그녀를 쳐다보았다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The sudden announcement of the tax hike resulted many unexpected street protests throughout the capital.",
+            "underlined": [
+              "sudden announcement",
+              "resulted",
+              "unexpected",
+              "throughout the capital"
+            ],
+            "wrongIndex": 1,
+            "correction": "resulted in",
+            "explanation": "result는 목적어를 바로 취할 수 없는 자동사이므로, 결과를 이끌 때는 전치사 in을 함께 써서 'resulted in'으로 고쳐야 합니다.",
+            "conceptRef": "1단계 [SP-02 핵심: 자동사 vs 타동사의 본질과 전치사 필수 여부] 출제 연계",
+            "korean": "갑작스러운 증세 발표는 수도 전역에서 수많은 예기치 못한 거리 시위를 초래했다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The delegate will discuss about the international trade treaty during tomorrow's plenary session.",
+            "underlined": [
+              "delegate",
+              "discuss about",
+              "international trade",
+              "plenary session"
+            ],
+            "wrongIndex": 1,
+            "correction": "discuss",
+            "explanation": "discuss는 완전타동사이므로 전치사 about 없이 목적어(the international trade treaty)를 직접 취해야 합니다.",
+            "conceptRef": "1단계 [SP-02 핵심: 전치사를 취하지 않는 완전타동사 혼동 방지] 출제 연계",
+            "korean": "그 대표는 내일 총회 세션 동안 국제 무역 조약에 관해 논의할 것이다."
           }
         ],
         "questions": [
@@ -12619,7 +14922,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_03",
+            "id": "drill_1",
             "sentence": "The fresh bread smelled deliciously and tasted sweet to all of us.",
             "underlined": [
               "fresh bread",
@@ -12629,7 +14932,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 1,
             "correction": "smelled delicious",
-            "explanation": "감각동사 smell 뒤에는 주어를 보충하는 주격 보어 자리가 오므로 부사 deliciously가 아니라 형용사 delicious를 써야 합니다."
+            "explanation": "감각동사 smell 뒤에는 주어를 보충하는 주격 보어 자리가 오므로 부사 deliciously가 아니라 형용사 delicious를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 보어(Complement) = '보충 설명해 주는 말'] 출제 연계",
+            "korean": "갓 구운 빵은 맛있는 냄새가 났고 우리 모두에게 달콤한 맛이 났다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The intense heat during midsummer made the fresh milk sourly within a few hours.",
+            "underlined": [
+              "intense heat",
+              "made",
+              "fresh milk",
+              "sourly"
+            ],
+            "wrongIndex": 3,
+            "correction": "sour",
+            "explanation": "5형식 문장에서 목적어 the fresh milk의 상태를 보충 설명하는 목적격 보어 자리이므로 부사 sourly가 아닌 형용사 sour를 써야 합니다.",
+            "conceptRef": "1단계 [SP-03 핵심: 보어(Complement) 자리 형용사 필수 원칙] 출제 연계",
+            "korean": "한여름의 강렬한 열기는 신선한 우유를 몇 시간 만에 시어지게 만들었다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Despite numerous hardships, the determined traveler remained cheerfully throughout the arduous expedition.",
+            "underlined": [
+              "numerous hardships",
+              "remained",
+              "cheerfully",
+              "arduous expedition"
+            ],
+            "wrongIndex": 2,
+            "correction": "cheerful",
+            "explanation": "remain은 2형식 연결동사로 주어의 상태를 설명하는 주격 보어를 취하므로 부사 cheerfully가 아니라 형용사 cheerful을 써야 합니다.",
+            "conceptRef": "1단계 [SP-03 핵심: 2형식 주격 보어와 5형식 목적격 보어의 공통점] 출제 연계",
+            "korean": "수많은 역경에도 불구하고 단호한 여행자는 고된 원정 내내 쾌활함을 유지했다."
           }
         ],
         "questions": [
@@ -12790,7 +15125,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_04",
+            "id": "drill_1",
             "sentence": "My dream is become an astrophysicist and explore deep space.",
             "underlined": [
               "My dream",
@@ -12800,7 +15135,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 1,
             "correction": "is to become (또는 is becoming)",
-            "explanation": "문장의 본동사 is가 있으므로 뒤에 동사원형 become을 바로 쓸 수 없으며, 명사적 보어 역할을 하는 to become 또는 becoming으로 고쳐야 합니다."
+            "explanation": "문장의 본동사 is가 있으므로 뒤에 동사원형 become을 바로 쓸 수 없으며, 명사적 보어 역할을 하는 to become 또는 becoming으로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 1: 준동사(Verbal) = '동사에 준하지만 다른 품사로 변신한 것'] 출제 연계",
+            "korean": "나의 꿈은 천체물리학자가 되어 깊은 우주를 탐험하는 것이다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Understand the genetic code allows biochemists to synthesize targeted medicines for rare diseases.",
+            "underlined": [
+              "Understand",
+              "allows",
+              "synthesize",
+              "targeted medicines"
+            ],
+            "wrongIndex": 0,
+            "correction": "Understanding",
+            "explanation": "문장의 주어 자리에 동사원형 Understand를 그대로 쓸 수 없으므로, 동사를 명사 역할로 바꾼 준동사(동명사 Understanding 또는 to부정사 To understand)로 고쳐야 합니다.",
+            "conceptRef": "1단계 [SP-04 핵심: 동사를 명사/형용사/부사로 탈바꿈하는 준동사의 원리] 출제 연계",
+            "korean": "유전 부호를 이해하는 것은 생화학자들로 하여금 희귀 질환을 위한 표적 치료제를 합성할 수 있게 해준다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The wildlife sanctuary operates several specialized stations to monitoring endangered migratory bird populations.",
+            "underlined": [
+              "wildlife sanctuary",
+              "specialized stations",
+              "to monitoring",
+              "migratory bird"
+            ],
+            "wrongIndex": 2,
+            "correction": "to monitor",
+            "explanation": "목적(~하기 위하여)을 나타내는 부사적 용법의 준동사이므로 to 부정사 뒤에는 동명사(-ing)가 아닌 동사원형 monitor를 써야 합니다.",
+            "conceptRef": "1단계 [SP-04 핵심: 준동사 형태와 기능 구별] 출제 연계",
+            "korean": "야생동물 보호구역은 멸종 위기에 처한 철새 개체군을 모니터링하기 위해 몇 군데의 특화된 관측소를 운영한다."
           }
         ],
         "questions": [
@@ -12961,7 +15328,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_05",
+            "id": "drill_1",
             "sentence": "The girl who she won the science contest is my younger sister.",
             "underlined": [
               "The girl",
@@ -12971,7 +15338,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 1,
             "correction": "who",
-            "explanation": "주격 관계대명사 who가 이미 주어 역할을 하므로 인칭대명사 she를 중복해서 쓰면 안 됩니다."
+            "explanation": "주격 관계대명사 who가 이미 주어 역할을 하므로 인칭대명사 she를 중복해서 쓰면 안 됩니다.",
+            "conceptRef": "1단계 [공식 1: '관계대명사' = 접속사(문장 연결) + 대명사(명사 대신)] 출제 연계",
+            "korean": "과학 경시대회에서 우승한 그 소녀는 나의 여동생이다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The ancient philosopher wrote manuscripts who philosophical inquiries continue to shape modern Western thought.",
+            "underlined": [
+              "ancient philosopher",
+              "manuscripts",
+              "who",
+              "continue to shape"
+            ],
+            "wrongIndex": 2,
+            "correction": "whose",
+            "explanation": "선행사 manuscripts와 뒤따르는 명사 philosophical inquiries 사이의 소유 관계('필사본의 철학적 탐구')를 나타내야 하므로 주격 who 대신 소유격 관계대명사 whose를 써야 합니다.",
+            "conceptRef": "1단계 [SP-05 핵심: 관계대명사의 본질 = 접속사 + 대명사] 출제 연계",
+            "korean": "그 고대 철학자는 자신의 철학적 질문들이 현대 서양 사상을 계속해서 형성하고 있는 원고들을 저술했다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The museum exhibits rare artifacts which the lead archaeologist discovered them in deep Egyptian tombs.",
+            "underlined": [
+              "rare artifacts",
+              "which",
+              "lead archaeologist",
+              "discovered them"
+            ],
+            "wrongIndex": 3,
+            "correction": "discovered",
+            "explanation": "목적격 관계대명사 which가 이미 선행사 rare artifacts를 대신하고 있으므로, 관계사절 내에서 목적어 대명사 them을 중복해서 쓰면 안 됩니다.",
+            "conceptRef": "1단계 [SP-05 핵심: 관계대명사절 내의 대명사 중복 삭제 원칙] 출제 연계",
+            "korean": "그 박물관은 수석 고고학자가 깊은 이집트 무덤에서 발견했던 희귀한 유물들을 전시하고 있다."
           }
         ],
         "questions": [
@@ -13132,7 +15531,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_06",
+            "id": "drill_1",
             "sentence": "A mysterious accident was happened on highway 65 yesterday evening.",
             "underlined": [
               "mysterious accident",
@@ -13142,7 +15541,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 1,
             "correction": "happened",
-            "explanation": "happen(일어나다, 발생하다)은 목적어가 없는 자동사이므로 수동태(was happened)로 쓸 수 없으며 능동형 happened로 써야 합니다."
+            "explanation": "happen(일어나다, 발생하다)은 목적어가 없는 자동사이므로 수동태(was happened)로 쓸 수 없으며 능동형 happened로 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 수동태는 '당하는 녀석'을 주인공으로 세우는 문법] 출제 연계",
+            "korean": "어제 저녁 65번 고속도로에서 의문의 사고가 일어났다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The legendary medieval castle was destroyed completely during the siege and never restored by anyone.",
+            "underlined": [
+              "medieval castle",
+              "was destroyed",
+              "during the siege",
+              "restored"
+            ],
+            "wrongIndex": 3,
+            "correction": "was restored",
+            "explanation": "성과 성을 복원하는 행위의 관계는 수동이므로, was destroyed와 병렬을 이루어 수동태 'was never restored'(또는 be restored) 형태로 표현해야 합니다.",
+            "conceptRef": "1단계 [SP-06 핵심: 능동태 vs 수동태의 행위자-대상 시점 차이] 출제 연계",
+            "korean": "그 전설적인 중세 성은 공성전 동안 완전히 파괴되었으며 어느 누구에 의해서도 결코 복구되지 않았다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Severe geological faults were occurred beneath the mountain range after the monumental tectonic earthquake.",
+            "underlined": [
+              "Severe geological",
+              "were occurred",
+              "beneath the mountain",
+              "tectonic earthquake"
+            ],
+            "wrongIndex": 1,
+            "correction": "occurred",
+            "explanation": "occur는 목적어를 갖지 않는 완전자동사이므로 수동태(be occurred)로 쓸 수 없으며 능동형 occurred로 써야 합니다.",
+            "conceptRef": "1단계 [SP-06 핵심: 자동사의 수동태 불가 원칙] 출제 연계",
+            "korean": "기념비적인 판구조 지진이 일어난 후 산맥 아래에서 심각한 지질 단층들이 발생했다."
           }
         ],
         "questions": [
@@ -13303,7 +15734,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_07",
+            "id": "drill_1",
             "sentence": "Despite it rained heavily all afternoon, they continued the baseball match.",
             "underlined": [
               "Despite",
@@ -13313,7 +15744,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 0,
             "correction": "Although (또는 Even though)",
-            "explanation": "뒤에 'it rained heavily'라는 주어+동사의 절이 이어지므로 전치사 Despite가 아니라 접속사 Although를 써야 합니다."
+            "explanation": "뒤에 'it rained heavily'라는 주어+동사의 절이 이어지므로 전치사 Despite가 아니라 접속사 Although를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 구(Phrase) vs 절(Clause)의 결정적 차이] 출제 연계",
+            "korean": "오후 내내 비가 많이 내렸음에도 불구하고 그들은 야구 경기를 계속했다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Despite the team conducted comprehensive trials, unexpected battery drainage issues persisted in the prototype.",
+            "underlined": [
+              "Despite",
+              "conducted",
+              "comprehensive trials",
+              "persisted in"
+            ],
+            "wrongIndex": 0,
+            "correction": "Although",
+            "explanation": "뒤에 주어(the team)와 동사(conducted)를 갖춘 절(Clause)이 이어지므로 전치사 Despite 대신 접속사 Although(또는 Even though)를 써야 합니다.",
+            "conceptRef": "1단계 [SP-07 핵심: 구(Phrase)와 절(Clause)의 결정적 차이] 출제 연계",
+            "korean": "팀이 종합적인 시험을 수행했음에도 불구하고, 시제품에서 예기치 못한 배터리 소모 문제가 지속되었다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Because of they lacked sufficient experimental funding, the university lab had to cancel the field expedition.",
+            "underlined": [
+              "Because of",
+              "lacked",
+              "experimental funding",
+              "cancel the field"
+            ],
+            "wrongIndex": 0,
+            "correction": "Because",
+            "explanation": "they lacked...는 주어와 동사를 갖춘 절이므로, 구를 이끄는 전치사구 Because of 대신 절을 이끄는 접속사 Because를 써야 합니다.",
+            "conceptRef": "1단계 [SP-07 핵심: 전치사구 뒤 명사구 vs 접속사 뒤 주어+동사 절] 출제 연계",
+            "korean": "그들은 충분한 실험 자금이 부족했기 때문에, 대학 연구소는 현장 탐사를 취소해야만 했다."
           }
         ],
         "questions": [
@@ -13474,7 +15937,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_08",
+            "id": "drill_1",
             "sentence": "The mother looked at the asleep child with a warm smile on her face.",
             "underlined": [
               "The mother",
@@ -13484,7 +15947,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 2,
             "correction": "sleeping child",
-            "explanation": "asleep은 서술적 용법(보어 자리)으로만 쓰이는 형용사이므로 명사 child를 앞에서 직접 수식할 수 없습니다. sleeping child로 고쳐야 합니다."
+            "explanation": "asleep은 서술적 용법(보어 자리)으로만 쓰이는 형용사이므로 명사 child를 앞에서 직접 수식할 수 없습니다. sleeping child로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 1: 한정적(Attributive) vs 서술적(Predicative)의 어원] 출제 연계",
+            "korean": "어머니는 얼굴에 따뜻한 미소를 띤 채 잠든 아이를 바라보았다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The child felt very asleep during the gentle bedtime lullaby sung by his loving mother.",
+            "underlined": [
+              "child felt",
+              "asleep",
+              "during the gentle",
+              "sung by"
+            ],
+            "wrongIndex": 1,
+            "correction": "sleepy",
+            "explanation": "very는 서술형 형용사 asleep(잠든 상태의)을 직접 수식할 수 없으며, '졸린' 느낌을 나타내는 한정/서술 가능한 형용사 sleepy를 쓰는 것이 올바릅니다.",
+            "conceptRef": "1단계 [SP-08 핵심: 한정적 용법 vs 서술적 용법 (a- 접두사 형용사 규칙)] 출제 연계",
+            "korean": "아이는 자애로운 어머니가 불러주는 부드러운 자장가를 듣는 동안 매우 졸림을 느꼈다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "An alike situation occurred in a neighboring province just two months after the volcanic eruption.",
+            "underlined": [
+              "An alike",
+              "occurred",
+              "neighboring province",
+              "volcanic eruption"
+            ],
+            "wrongIndex": 0,
+            "correction": "A similar",
+            "explanation": "alike는 명사를 앞에서 직접 수식(한정적 용법)할 수 없는 서술적 형용사이므로, 명사 situation을 수식할 때는 한정 형용사 similar를 써야 합니다.",
+            "conceptRef": "1단계 [SP-08 핵심: 서술적 용법 전용 형용사의 명사 앞 한정 수식 불가] 출제 연계",
+            "korean": "화산 폭발이 있은 지 불과 두 달 만에 인접한 주에서 유사한 상황이 발생했다."
           }
         ],
         "questions": [
@@ -13659,7 +16154,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_09",
+            "id": "drill_1",
             "sentence": "It was very generous for him to donate all his fortune to the charity.",
             "underlined": [
               "It was",
@@ -13669,7 +16164,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 1,
             "correction": "generous of him",
-            "explanation": "generous(관대한)는 사람의 인품·성격을 나타내는 형용사이므로 to부정사의 의미상 주어 앞에 for가 아닌 of를 써야 합니다."
+            "explanation": "generous(관대한)는 사람의 인품·성격을 나타내는 형용사이므로 to부정사의 의미상 주어 앞에 for가 아닌 of를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: It (가주어) ~ for/of (의미상 주어) + to V (진주어)] 출제 연계",
+            "korean": "자신의 전 재산을 자선단체에 기부하다니 그는 참으로 관대했다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The ambitious team decided pursuing the renewable energy initiative despite harsh economic headwinds.",
+            "underlined": [
+              "ambitious team",
+              "decided",
+              "pursuing",
+              "harsh economic"
+            ],
+            "wrongIndex": 2,
+            "correction": "to pursue",
+            "explanation": "동사 decide는 미래지향적 결정을 나타내므로 목적어로 동명사가 아닌 to부정사(to pursue)만을 취합니다.",
+            "conceptRef": "1단계 [SP-09 핵심: to부정사 목적어 필수 동사군 영작 공식] 출제 연계",
+            "korean": "그 야심 찬 팀은 가혹한 경제적 역풍에도 불구하고 신재생 에너지 계획을 추진하기로 결정했다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The senior engineer recommended to calibrate the pressure sensors before commencing thermal testing.",
+            "underlined": [
+              "senior engineer",
+              "recommended",
+              "to calibrate",
+              "commencing"
+            ],
+            "wrongIndex": 2,
+            "correction": "calibrating",
+            "explanation": "recommend는 목적어로 to부정사가 아닌 동명사를 취하거나 'recommend that S (should) V' 구문을 취해야 하므로 to calibrate를 calibrating으로 고쳐야 합니다.",
+            "conceptRef": "1단계 [SP-09 핵심: 동명사 목적어 필수 동사군 서술형 체크] 출제 연계",
+            "korean": "수석 엔지니어는 열 시험을 시작하기 전에 압력 센서를 교정할 것을 권고했다."
           }
         ],
         "questions": [
@@ -13830,7 +16357,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_10",
+            "id": "drill_1",
             "sentence": "I will never forget the restaurant where we had dinner in on our first anniversary.",
             "underlined": [
               "never forget",
@@ -13840,7 +16367,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 2,
             "correction": "where we had dinner (또는 which we had dinner in)",
-            "explanation": "관계부사 where 뒤에는 완전한 절이 와야 하므로 불필요한 전치사 in을 삭제하거나, in which로 바꾸어야 합니다."
+            "explanation": "관계부사 where 뒤에는 완전한 절이 와야 하므로 불필요한 전치사 in을 삭제하거나, in which로 바꾸어야 합니다.",
+            "conceptRef": "1단계 [공식 1: 전치사 + 관계대명사 ➔ 관계부사 치환] 출제 연계",
+            "korean": "나는 우리의 첫 번째 기념일에 저녁 식사를 했던 그 레스토랑을 결코 잊지 못할 것이다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The international convention center that the delegate delivered the keynote speech was magnificently renovated.",
+            "underlined": [
+              "convention center",
+              "that",
+              "delivered the keynote",
+              "magnificently"
+            ],
+            "wrongIndex": 1,
+            "correction": "where",
+            "explanation": "뒤따르는 절이 주어(the delegate), 동사(delivered), 목적어(the keynote speech)를 모두 갖춘 완전한 문장이므로 선행사(장소)를 수식할 때 관계대명사 that이 아닌 관계부사 where(또는 in which)를 써야 합니다.",
+            "conceptRef": "1단계 [SP-10 핵심: 관계대명사 vs 관계부사 서술형 영작 구별법] 출제 연계",
+            "korean": "그 대표가 기조 연설을 했던 국제 컨벤션 센터는 웅장하게 개조되었다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "This is the rare historical document which authentic origin historians have argued about it for centuries.",
+            "underlined": [
+              "historical document",
+              "which",
+              "historians have argued",
+              "about it"
+            ],
+            "wrongIndex": 3,
+            "correction": "about",
+            "explanation": "관계대명사 which가 전치사 about의 목적어 역할을 이미 수행하고 있으므로, 절 끝에 목적어 대명사 it을 중복 표기하면 서술형 감점이 되므로 it을 삭제해야 합니다.",
+            "conceptRef": "1단계 [SP-10 핵심: 관계사절 내 중복 대명사 서술형 감점 방어] 출제 연계",
+            "korean": "이것은 역사가들이 수세기 동안 그 진짜 기원에 대해 논쟁해 온 희귀한 역사 문서이다."
           }
         ],
         "questions": [
@@ -14001,7 +16560,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_11",
+            "id": "drill_1",
             "sentence": "He sat on the sofa listening to music with his legs crossing comfortably.",
             "underlined": [
               "sat on the sofa",
@@ -14011,7 +16570,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 3,
             "correction": "crossed comfortably",
-            "explanation": "다리(legs)는 꼬아지는 수동의 대상이므로 crossing이 아닌 과거분사 crossed를 써야 합니다."
+            "explanation": "다리(legs)는 꼬아지는 수동의 대상이므로 crossing이 아닌 과거분사 crossed를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 부사절 ➔ 분사구문 3단계 변환 공식] 출제 연계",
+            "korean": "그는 편안하게 다리를 꼰 채 소파에 앉아 음악을 듣고 있었다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Finished his exhaustive laboratory experiments, the graduate student prepared his thesis draft for publication.",
+            "underlined": [
+              "Finished",
+              "laboratory experiments",
+              "prepared",
+              "for publication"
+            ],
+            "wrongIndex": 0,
+            "correction": "Having finished",
+            "explanation": "실험을 마친 시점이 논문 초안을 준비한 시점보다 앞선 완료 시제이므로, 단순 과거분사 Finished가 아니라 완료분사구문 Having finished를 써야 합니다.",
+            "conceptRef": "1단계 [SP-11 핵심: 주절보다 앞선 시제의 완료분사구문(Having p.p.) 영작] 출제 연계",
+            "korean": "철저한 실험실 연구를 마친 후, 대학원생은 출판을 위해 학위 논문 초안을 작성했다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Walking along the misty coastal cliffs, a sudden flash of lightning startled the cautious hikers.",
+            "underlined": [
+              "Walking along",
+              "misty coastal",
+              "sudden flash",
+              "startled"
+            ],
+            "wrongIndex": 0,
+            "correction": "While the cautious hikers were walking along",
+            "explanation": "분사구문의 의미상 주어는 주절의 주어(a sudden flash of lightning)와 일치해야 하는데, 번개가 절벽을 걸을 수 없으므로(현수분사 오류), 행위자를 밝혀주는 부사절로 고치거나 주절 주어를 등산객으로 변경해야 합니다.",
+            "conceptRef": "1단계 [SP-11 핵심: 서술형 단골 현수분사(Dangling Participle) 방어] 출제 연계",
+            "korean": "안개 낀 해안 절벽을 따라 걷고 있을 때, 갑작스러운 번개가 조심스러운 등산객들을 놀라게 했다."
           }
         ],
         "questions": [
@@ -14172,7 +16763,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_12",
+            "id": "drill_1",
             "sentence": "Had he listen to my advice, he would not have failed the driving test.",
             "underlined": [
               "Had he listen",
@@ -14182,7 +16773,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 0,
             "correction": "Had he listened",
-            "explanation": "가정법 과거완료 If he had listened에서 If가 생략된 도치 구문이므로 had 뒤에 과거분사 listened가 와야 합니다."
+            "explanation": "가정법 과거완료 If he had listened에서 If가 생략된 도치 구문이므로 had 뒤에 과거분사 listened가 와야 합니다.",
+            "conceptRef": "1단계 [공식 1: '~이 없다면' 4대 동의어 영작 공식] 출제 연계",
+            "korean": "그가 나의 조언을 들었더라면 운전면허 시험에서 떨어지지 않았을 텐데."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Had the meteorologists forecasted the storm accurately, the seaside villagers would evacuated earlier.",
+            "underlined": [
+              "Had the meteorologists",
+              "forecasted",
+              "seaside villagers",
+              "would evacuated"
+            ],
+            "wrongIndex": 3,
+            "correction": "would have evacuated",
+            "explanation": "조건절이 Had S p.p.(가정법 과거완료)이므로 주절의 동사 형태 역시 [조동사 과거형 + have p.p.]인 would have evacuated가 되어야 합니다.",
+            "conceptRef": "1단계 [SP-12 핵심: if 생략 도치 가정법 과거완료 주절 일치 공식] 출제 연계",
+            "korean": "기상학자들이 폭풍을 정확하게 예보했더라면, 해변 마을 주민들은 더 일찍 대피했을 것이다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Were the government to invest heavily in public transport, traffic congestion will decrease noticeably.",
+            "underlined": [
+              "Were the government",
+              "to invest heavily",
+              "traffic congestion",
+              "will decrease"
+            ],
+            "wrongIndex": 3,
+            "correction": "would decrease",
+            "explanation": "조건절에 [Were + 주어 + to부정사] 도치가 쓰인 미래 가정법이므로 주절에는 조동사 현재형 will이 아닌 과거형 would(또는 could)를 써야 합니다.",
+            "conceptRef": "1단계 [SP-12 핵심: Were to 도치 가정법 주절 조동사 시제 일치] 출제 연계",
+            "korean": "정부가 대중교통에 대대적으로 투자한다면, 교통 체증은 눈에 띄게 감소할 것이다."
           }
         ],
         "questions": [
@@ -14343,7 +16966,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_13",
+            "id": "drill_1",
             "sentence": "The movie was such boring that half of the audience left before the end.",
             "underlined": [
               "The movie",
@@ -14353,7 +16976,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 1,
             "correction": "was so boring",
-            "explanation": "뒤에 단독 형용사 boring만 있으므로 such가 아닌 so를 써야 합니다. (such는 뒤에 명사가 필요)"
+            "explanation": "뒤에 단독 형용사 boring만 있으므로 such가 아닌 so를 써야 합니다. (such는 뒤에 명사가 필요)",
+            "conceptRef": "1단계 [공식 1: so + 형용사/부사 + that vs such + a + 형용사 + 명사 + that] 출제 연계",
+            "korean": "그 영화는 너무 지루해서 관객의 절반이 끝나기도 전에 자리를 떴다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The mathematical proof was too intricate that undergraduate students could not grasp its underlying logic.",
+            "underlined": [
+              "mathematical proof",
+              "too intricate",
+              "that",
+              "underlying logic"
+            ],
+            "wrongIndex": 1,
+            "correction": "so intricate",
+            "explanation": "뒤에 결과를 나타내는 'that + 완전한 절'이 이어지므로 too가 아니라 so와 호응하는 'so ~ that 구문'으로 써야 합니다.",
+            "conceptRef": "1단계 [SP-13 핵심: so ~ that ... can't 구문과 too ~ to 부정사 변환 공식] 출제 연계",
+            "korean": "그 수학적 증명은 너무 복잡해서 학부생들이 그 근본 논리를 파악할 수 없었다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The heavy suitcase was so heavy that the fragile child could not lift it up without assistance.",
+            "underlined": [
+              "heavy suitcase",
+              "so heavy",
+              "fragile child",
+              "lift it up"
+            ],
+            "wrongIndex": 1,
+            "correction": "too heavy for the fragile child to lift",
+            "explanation": "too ~ to 구문으로 변환할 때 목적어 it의 생략 여부와 의미상 주어(for + 목적격) 표기를 철저히 확인해야 합니다.",
+            "conceptRef": "1단계 [SP-13 핵심: so that can't vs too to 변환 시 대명사 목적어 생략 법칙] 출제 연계",
+            "korean": "그 무거운 여행가방은 너무 무거워서 연약한 아이가 도움 없이 들어 올릴 수 없었다."
           }
         ],
         "questions": [
@@ -14514,7 +17169,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_14",
+            "id": "drill_1",
             "sentence": "The teacher made the students to write an essay about environmental protection.",
             "underlined": [
               "The teacher",
@@ -14524,7 +17179,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 2,
             "correction": "write",
-            "explanation": "사역동사 make의 목적격 보어로 능동 관계일 때는 to부정사가 아니라 동사원형 write를 써야 합니다."
+            "explanation": "사역동사 make의 목적격 보어로 능동 관계일 때는 to부정사가 아니라 동사원형 write를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 사역동사(make, have, let)의 목적격 보어] 출제 연계",
+            "korean": "선생님께서는 학생들에게 환경 보호에 관한 에세이를 작성하도록 시키셨다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The strict drill instructor made all recruits to run ten miles across the rugged mountain terrain.",
+            "underlined": [
+              "strict drill",
+              "made",
+              "recruits",
+              "to run"
+            ],
+            "wrongIndex": 3,
+            "correction": "run",
+            "explanation": "사역동사 make는 능동 관계의 목적격 보어로 to부정사가 아닌 동사원형(run)을 취합니다.",
+            "conceptRef": "1단계 [SP-14 핵심: 5형식 사역동사(make/have/let) 목적격 보어 원형부정사] 출제 연계",
+            "korean": "엄격한 훈련 교관은 모든 신병들에게 험준한 산악 지형 10마일을 달리도록 만들었다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The biology teacher observed the tiny amoeba moving under the microscope and had her students to sketch its cellular structure.",
+            "underlined": [
+              "observed",
+              "moving under",
+              "had her students",
+              "to sketch"
+            ],
+            "wrongIndex": 3,
+            "correction": "sketch",
+            "explanation": "사역동사 had의 목적격 보어 자리이므로 to부정사 to sketch가 아니라 동사원형 sketch를 써야 합니다.",
+            "conceptRef": "1단계 [SP-14 핵심: 5형식 사역동사 목적격 보어 동사원형 서술형 체크] 출제 연계",
+            "korean": "생물 선생님은 작은 아메바가 현미경 아래에서 움직이는 것을 관찰하고 학생들에게 그 세포 구조를 그리게 했다."
           }
         ],
         "questions": [
@@ -14685,7 +17372,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_15",
+            "id": "drill_1",
             "sentence": "Rarely she eats fast food because she cares about her health.",
             "underlined": [
               "Rarely",
@@ -14695,7 +17382,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 1,
             "correction": "does she eat",
-            "explanation": "부정어 Rarely가 문두로 나갔으므로 의문문 어순으로 도치되어 does she eat으로 써야 합니다."
+            "explanation": "부정어 Rarely가 문두로 나갔으므로 의문문 어순으로 도치되어 does she eat으로 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 부정어구 도치 공식 (의문문 어순과 100% 동일)] 출제 연계",
+            "korean": "그녀는 건강을 신경 쓰기 때문에 패스트푸드를 먹는 일이 거의 없다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Not until the late eighteenth century humanity realized the fundamental laws governing planetary motion.",
+            "underlined": [
+              "Not until",
+              "eighteenth century",
+              "humanity realized",
+              "governing planetary"
+            ],
+            "wrongIndex": 2,
+            "correction": "did humanity realize",
+            "explanation": "'Not until ~' 부정어구가 문두에 강조되어 나왔으므로 주어-동사가 도치되어 [조동사 did + 주어 + 동사원형] 어순인 'did humanity realize'가 되어야 합니다.",
+            "conceptRef": "1단계 [SP-15 핵심: Not until 도치 서술형 영작 공식] 출제 연계",
+            "korean": "18세기 후반이 되어서야 인류는 행성 운동을 지배하는 근본 법칙을 깨달았다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Seldom the dedicated researchers left the laboratory before midnight while conducting crucial vaccine trials.",
+            "underlined": [
+              "Seldom",
+              "researchers left",
+              "before midnight",
+              "conducting crucial"
+            ],
+            "wrongIndex": 1,
+            "correction": "did the dedicated researchers leave",
+            "explanation": "부정어 Seldom이 문두에 강조되어 나왔으므로 주어-동사가 도치되어 [조동사 did + 주어 + 동사원형] 어순인 'did the dedicated researchers leave'가 되어야 합니다.",
+            "conceptRef": "1단계 [SP-15 핵심: Seldom/Rarely 부정어 도치 서술형 영작] 출제 연계",
+            "korean": "헌신적인 연구원들은 중요한 백신 임상 시험을 진행하는 동안 자정 전에 연구실을 떠나는 법이 거의 없었다."
           }
         ],
         "questions": [
@@ -14856,7 +17575,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_16",
+            "id": "drill_1",
             "sentence": "Each of the participants were asked to submit their feedback by tomorrow.",
             "underlined": [
               "Each of",
@@ -14866,7 +17585,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 2,
             "correction": "was asked",
-            "explanation": "문장의 주어는 Each(단수 취급)이므로 복수 동사 were가 아니라 단수 동사 was를 써야 합니다."
+            "explanation": "문장의 주어는 Each(단수 취급)이므로 복수 동사 were가 아니라 단수 동사 was를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 서술형 0점 방지 3대 셀프 검독 체크리스트] 출제 연계",
+            "korean": "참가자들 각각은 내일까지 피드백을 제출하도록 요청받았다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Each of the dedicated research assistants have submitted their monthly laboratory report on time.",
+            "underlined": [
+              "Each of the",
+              "research assistants",
+              "have submitted",
+              "on time"
+            ],
+            "wrongIndex": 2,
+            "correction": "has submitted",
+            "explanation": "'Each of + 복수명사' 구문의 핵심 주어는 단수 대명사 Each이므로 동사를 복수 have가 아닌 단수 has submitted로 써야 합니다.",
+            "conceptRef": "1단계 [SP-16 핵심: 서술형 감점 1위 단수/복수 수일치 실수 클리닉] 출제 연계",
+            "korean": "헌신적인 연구 보조원들 각각은 월간 실험 보고서를 제시간에 제출했다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The museum curator preserves priceless artifacts despite they are severely vulnerable to humidity fluctuations.",
+            "underlined": [
+              "preserves priceless",
+              "artifacts",
+              "despite",
+              "severely vulnerable"
+            ],
+            "wrongIndex": 2,
+            "correction": "although",
+            "explanation": "뒤에 주어(they)와 동사(are)를 갖춘 완전한 절이 오므로 전치사 despite 대신 양보 접속사 although나 even though를 써야 합니다.",
+            "conceptRef": "1단계 [SP-16 핵심: 서술형 품사 혼동(접속사 vs 전치사) 감점 방어] 출제 연계",
+            "korean": "박물관 큐레이터는 매우 귀중한 유물들이 습도 변동에 심각하게 취약함에도 불구하고 그것들을 보존한다."
           }
         ],
         "questions": [
@@ -15041,7 +17792,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_17",
+            "id": "drill_1",
             "sentence": "The ability of humans to communicate complex abstract ideas through language distinguishing them from all other species.",
             "underlined": [
               "ability of humans",
@@ -15051,7 +17802,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 2,
             "correction": "distinguishes",
-            "explanation": "문장의 본동사 자리입니다. 주어 The ability에 호응하는 단수 본동사 distinguishes가 와야 합니다."
+            "explanation": "문장의 본동사 자리입니다. 주어 The ability에 호응하는 단수 본동사 distinguishes가 와야 합니다.",
+            "conceptRef": "1단계 [공식 1: 수능 29번 1순위: '동사 자리 vs 준동사 자리'] 출제 연계",
+            "korean": "언어를 통해 복잡하고 추상적인 개념을 소통하는 인간의 능력은 인간을 다른 모든 종들과 구별 짓는다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The rapid advancement of artificial intelligence technologies creating unprecedented challenges for modern legal frameworks.",
+            "underlined": [
+              "rapid advancement",
+              "artificial intelligence",
+              "creating",
+              "legal frameworks"
+            ],
+            "wrongIndex": 2,
+            "correction": "creates",
+            "explanation": "문장의 주어는 'The rapid advancement'이며 절 안에 본동사가 존재하지 않으므로 준동사 creating을 단수 본동사 creates(또는 is creating)로 고쳐야 합니다.",
+            "conceptRef": "1단계 [수능 어법 킬러 1순위: 동사 vs 준동사 판별] 출제 연계",
+            "korean": "인공지능 기술의 급격한 발전은 현대 법적 체계에 전례 없는 도전과제들을 만들어내고 있다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Architects specializing in eco-friendly urban development incorporating solar panels to reduce communal electricity costs.",
+            "underlined": [
+              "Architects",
+              "urban development",
+              "incorporating",
+              "to reduce"
+            ],
+            "wrongIndex": 2,
+            "correction": "incorporated",
+            "explanation": "specializing in...는 주어 Architects를 수식하는 분사구이므로 문장 전체의 본동사가 필요합니다. 따라서 준동사인 incorporating을 과거시제 본동사인 incorporated(또는 incorporate)로 고쳐야 합니다.",
+            "conceptRef": "1단계 [수능 어법 킬러 1순위: 주어 수식 거품 속 본동사 자리 판별] 출제 연계",
+            "korean": "친환경 도시 개발을 전공하는 건축가들은 공동 전기 요금을 절감하기 위해 태양광 패널을 도입했다."
           }
         ],
         "questions": [
@@ -15212,7 +17995,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_18",
+            "id": "drill_1",
             "sentence": "Psychologists have discovered what people who exercise regularly experience less anxiety than those who are inactive.",
             "underlined": [
               "have discovered",
@@ -15222,7 +18005,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 1,
             "correction": "that people",
-            "explanation": "discovered 뒤에 이어지는 절(people who exercise regularly experience less anxiety...)이 완전한 문장이므로 what이 아닌 접속사 that을 써야 합니다."
+            "explanation": "discovered 뒤에 이어지는 절(people who exercise regularly experience less anxiety...)이 완전한 문장이므로 what이 아닌 접속사 that을 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: that vs what 3초 판별 알고리즘] 출제 연계",
+            "korean": "심리학자들은 규칙적으로 운동하는 사람들이 활동적이지 않은 사람들보다 불안을 덜 겪는다는 것을 발견했다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The committee reached a unanimous consensus what the proposed infrastructure project should be postponed.",
+            "underlined": [
+              "reached a unanimous",
+              "consensus",
+              "what",
+              "should be postponed"
+            ],
+            "wrongIndex": 2,
+            "correction": "that",
+            "explanation": "뒤따르는 절이 완전한 수동태 문장이며 앞의 추상명사 consensus와 의미상 동격을 이루므로 불완전문사를 이끄는 what이 아니라 동격 접속사 that을 써야 합니다.",
+            "conceptRef": "1단계 [수능 어법 킬러 2순위: that vs what vs which 끝장 판별법] 출제 연계",
+            "korean": "위원회는 제안된 사회기반시설 프로젝트를 연기해야 한다는 만장일치의 합의에 도달했다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Marine biologists investigated the unique coral species what thrives in extreme hydrothermal ocean vents.",
+            "underlined": [
+              "Marine biologists",
+              "coral species",
+              "what",
+              "extreme hydrothermal"
+            ],
+            "wrongIndex": 2,
+            "correction": "that",
+            "explanation": "선행사(coral species)가 명확히 존재하므로 선행사를 포함하는 관계대명사 what 대신 관계대명사 that 또는 which를 써야 합니다.",
+            "conceptRef": "1단계 [수능 어법 킬러 2순위: 선행사 유무에 따른 what vs that 판별] 출제 연계",
+            "korean": "해양 생물학자들은 극한의 심해 열수구에서 번성하는 독특한 산호 종들을 조사했다."
           }
         ],
         "questions": [
@@ -15383,7 +18198,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_19",
+            "id": "drill_1",
             "sentence": "The audience remained completely captivating throughout the astonishing magic performance.",
             "underlined": [
               "The audience",
@@ -15393,7 +18208,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 1,
             "correction": "captivated",
-            "explanation": "관객(The audience)은 마술 공연에 의해 매료된 감정을 느끼는 주체이므로 현재분사 captivating이 아니라 과거분사 captivated를 써야 합니다."
+            "explanation": "관객(The audience)은 마술 공연에 의해 매료된 감정을 느끼는 주체이므로 현재분사 captivating이 아니라 과거분사 captivated를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 분사의 능동 vs 수동 3초 판별 공식] 출제 연계",
+            "korean": "청중들은 그 놀라운 마술 공연 내내 완전히 매료된 채로 머물렀다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The ancient stone monuments discovering by archaeologists last winter provided invaluable historical insights.",
+            "underlined": [
+              "stone monuments",
+              "discovering by",
+              "archaeologists",
+              "provided invaluable"
+            ],
+            "wrongIndex": 1,
+            "correction": "discovered by",
+            "explanation": "고대 석조 기념물이 고고학자들에 의해 '발견된' 수동의 관계이므로 현재분사 discovering 대신 과거분사 discovered를 써야 합니다.",
+            "conceptRef": "1단계 [수능 어법 킬러 3순위: 능동(V-ing) vs 수동(p.p.) 태 판별] 출제 연계",
+            "korean": "지난겨울 고고학자들에 의해 발견된 고대 석조 기념물들은 매우 귀중한 역사적 통찰을 제공했다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Fascinating by the intricate patterns on the butterfly wings, the little boy observed them intently.",
+            "underlined": [
+              "Fascinating by",
+              "intricate patterns",
+              "butterfly wings",
+              "observed them"
+            ],
+            "wrongIndex": 0,
+            "correction": "Fascinated by",
+            "explanation": "주어 the little boy가 나비 날개의 복잡한 무늬에 의해 '매료된' 감정을 느끼는 수동 관계이므로 Fascinating을 Fascinated로 고쳐야 합니다.",
+            "conceptRef": "1단계 [수능 어법 킬러 3순위: 분사구문 감정동사의 능수동 판별] 출제 연계",
+            "korean": "나비 날개의 복잡한 무늬에 매료되어, 그 어린 소년은 그것들을 열심히 관찰했다."
           }
         ],
         "questions": [
@@ -15554,7 +18401,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_20",
+            "id": "drill_1",
             "sentence": "The eyes of nocturnal animals are significantly larger than that of diurnal animals.",
             "underlined": [
               "nocturnal animals",
@@ -15564,7 +18411,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 2,
             "correction": "than those of",
-            "explanation": "비교 대상이 복수 명사인 The eyes이므로 단수 대명사 that이 아니라 복수 대명사 those를 써야 합니다."
+            "explanation": "비교 대상이 복수 명사인 The eyes이므로 단수 대명사 that이 아니라 복수 대명사 those를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 수능 단골 대명사 비교: that vs those] 출제 연계",
+            "korean": "야행성 동물의 눈은 주행성 동물의 눈보다 훨씬 더 크다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Global manufacturing corporations frequently relocate their production facilities to countries where labor costs are lower than that of domestic markets.",
+            "underlined": [
+              "manufacturing corporations",
+              "relocate their",
+              "labor costs",
+              "that"
+            ],
+            "wrongIndex": 3,
+            "correction": "those",
+            "explanation": "비교 대상이 복수명사인 labor costs(인건비들)이므로 단수 대명사 that 대신 복수 대명사 those를 써야 합니다.",
+            "conceptRef": "1단계 [수능 어법 킬러 4순위: 대명사 수일치 that vs those 비교 공식] 출제 연계",
+            "korean": "글로벌 제조 기업들은 인건비가 국내 시장의 인건비보다 더 저렴한 국가들로 생산 시설을 자주 이전한다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "When predators approach their nesting sites, mother birds deliberately fake injury to distract it from their chicks.",
+            "underlined": [
+              "nesting sites",
+              "deliberately",
+              "fake injury",
+              "it"
+            ],
+            "wrongIndex": 3,
+            "correction": "them",
+            "explanation": "지칭하는 대상이 복수명사인 predators(포식자들)이므로 단수 목적격 it 대신 복수 목적격 them을 써야 합니다.",
+            "conceptRef": "1단계 [수능 어법 킬러 4순위: 지칭 대명사 it vs them 수일치] 출제 연계",
+            "korean": "포식자들이 둥지 터에 접근할 때, 어미 새들은 새끼들로부터 포식자들의 주의를 딴 데로 돌리기 위해 의도적으로 부상을 가장한다."
           }
         ],
         "questions": [
@@ -15725,7 +18604,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_21",
+            "id": "drill_1",
             "sentence": "Regular meditation helps individuals keep their minds calmly even during severe crises.",
             "underlined": [
               "Regular meditation",
@@ -15735,7 +18614,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 2,
             "correction": "calm",
-            "explanation": "keep + 목적어(their minds) + 목적격 보어 자리이므로 부사 calmly가 아닌 형용사 calm이 와야 합니다."
+            "explanation": "keep + 목적어(their minds) + 목적격 보어 자리이므로 부사 calmly가 아닌 형용사 calm이 와야 합니다.",
+            "conceptRef": "1단계 [공식 1: 보어 자리는 형용사, 수식어 자리는 부사!] 출제 연계",
+            "korean": "규칙적인 명상은 사람들이 심각한 위기 상황에서도 마음을 차분하게 유지할 수 있도록 도와준다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The delicate chemical solution tasted bitterly, indicating severe contamination from the faulty glass container.",
+            "underlined": [
+              "delicate chemical",
+              "tasted",
+              "bitterly",
+              "severe contamination"
+            ],
+            "wrongIndex": 2,
+            "correction": "bitter",
+            "explanation": "taste는 주격 보어를 취하는 2형식 감각동사이므로 부사 bitterly 대신 형용사 bitter를 써야 합니다.",
+            "conceptRef": "1단계 [수능 어법 킬러 5순위: 2형식 감각동사 형용사 보어 공식] 출제 연계",
+            "korean": "그 섬세한 화학 용액은 쓴맛이 났는데, 이는 결함이 있는 유리 용기로부터의 심각한 오염을 나타냈다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Advanced optical microscopes allow laboratory scientists to observe living cellular structures extreme clearly.",
+            "underlined": [
+              "allow",
+              "laboratory scientists",
+              "living cellular",
+              "extreme"
+            ],
+            "wrongIndex": 3,
+            "correction": "extremely",
+            "explanation": "부사 clearly를 수식하는 자리이므로 형용사 extreme 대신 부사 extremely를 써야 합니다.",
+            "conceptRef": "1단계 [수능 어법 킬러 5순위: 부사의 형용사/부사 수식 원칙] 출제 연계",
+            "korean": "첨단 광학 현미경은 실험실 과학자들이 살아있는 세포 구조를 극도로 명확하게 관찰할 수 있도록 해준다."
           }
         ],
         "questions": [
@@ -15896,7 +18807,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_22",
+            "id": "drill_1",
             "sentence": "The research involved collecting data, analyzing trends, and to publish the final report.",
             "underlined": [
               "The research",
@@ -15906,7 +18817,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 3,
             "correction": "publishing",
-            "explanation": "동명사 목적어 collecting, analyzing과 병렬 구조를 이루어야 하므로 to publish를 publishing으로 고쳐야 합니다."
+            "explanation": "동명사 목적어 collecting, analyzing과 병렬 구조를 이루어야 하므로 to publish를 publishing으로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 1: 등위접속사(and/but/or)의 저울 원리] 출제 연계",
+            "korean": "그 연구는 데이터 수집, 동향 분석, 그리고 최종 보고서 출판을 포함했다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Effective corporate mentors guide inexperienced interns, offer constructive feedback, and demonstrating professional ethics daily.",
+            "underlined": [
+              "guide inexperienced",
+              "offer constructive",
+              "and",
+              "demonstrating"
+            ],
+            "wrongIndex": 3,
+            "correction": "demonstrate",
+            "explanation": "등위접속사 and가 3인칭 복수 현재시제 동사들(guide, offer)을 병렬 연결하고 있으므로 demonstrating을 동사원형 형태인 demonstrate로 맞춰야 합니다.",
+            "conceptRef": "1단계 [수능 어법 킬러 6순위: 등위접속사 술어 동사 병렬 일치] 출제 연계",
+            "korean": "유능한 기업 멘토들은 미숙한 인턴들을 지도하고, 건설적인 피드백을 제공하며, 매일 전문적인 직업윤리를 보여준다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The investigative journalist preferred publishing her expos in an independent magazine rather than to submit it to state media.",
+            "underlined": [
+              "investigative journalist",
+              "publishing",
+              "independent magazine",
+              "to submit"
+            ],
+            "wrongIndex": 3,
+            "correction": "submitting",
+            "explanation": "rather than 앞의 목적어가 동명사구 publishing...이므로 병렬 구조를 이루기 위해 to submit 역시 동명사인 submitting으로 통일해야 합니다.",
+            "conceptRef": "1단계 [수능 어법 킬러 6순위: 비교 접속사(rather than) 준동사 병치] 출제 연계",
+            "korean": "그 탐사보도 기자는 자신의 폭로 기사를 국영 언론에 제출하기보다 독립 잡지에 게재하는 것을 선호했다."
           }
         ],
         "questions": [
@@ -16081,7 +19024,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_23",
+            "id": "drill_1",
             "sentence": "Don't forget bringing your passport when you travel abroad next week.",
             "underlined": [
               "Don't forget",
@@ -16091,7 +19034,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 1,
             "correction": "to bring",
-            "explanation": "다음 주에 '앞으로 챙겨야 할 일'을 의미하므로 과거를 뜻하는 bringing이 아닌 미래의 to bring을 써야 합니다."
+            "explanation": "다음 주에 '앞으로 챙겨야 할 일'을 의미하므로 과거를 뜻하는 bringing이 아닌 미래의 to bring을 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: to부정사 vs 동명사 목적어 암기 공식] 출제 연계",
+            "korean": "다음 주에 해외여행을 갈 때 여권을 챙기는 것을 잊지 마라."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The physician advised the patient to stop to smoke immediately to prevent further respiratory complications.",
+            "underlined": [
+              "advised the patient",
+              "to stop",
+              "to smoke",
+              "further respiratory"
+            ],
+            "wrongIndex": 2,
+            "correction": "smoking",
+            "explanation": "stop to smoke는 '담배를 피우기 위해 멈추다'라는 뜻이 되며, 문맥상 '흡연을 중단하다'라는 뜻이어야 하므로 동명사 smoking을 목적어로 써야 합니다.",
+            "conceptRef": "1단계 [SP-23 핵심: stop to V(~하기 위해 멈추다) vs stop V-ing(~하는 것을 멈추다)] 출제 연계",
+            "korean": "의사는 추가적인 호흡기 합병증을 예방하기 위해 환자에게 즉시 금연할 것을 조언했다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Please remember bringing your official passport and visa documents when you arrive at the embassy tomorrow.",
+            "underlined": [
+              "remember",
+              "bringing",
+              "official passport",
+              "arrive at"
+            ],
+            "wrongIndex": 1,
+            "correction": "to bring",
+            "explanation": "내일 대사관에 도착할 때 서류를 가져와야 할 미래의 할 일을 의미하므로 remember의 목적어로 동명사가 아닌 to부정사 to bring을 써야 합니다.",
+            "conceptRef": "1단계 [SP-23 핵심: remember/forget + to V(미래) vs -ing(과거) 판별] 출제 연계",
+            "korean": "내일 대사관에 도착하실 때 공식 여권과 비자 서류를 가져오는 것을 잊지 말고 기억하세요."
           }
         ],
         "questions": [
@@ -16252,7 +19227,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_24",
+            "id": "drill_1",
             "sentence": "My uncle has bought this sports car three years ago and still drives it.",
             "underlined": [
               "has bought",
@@ -16262,7 +19237,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 0,
             "correction": "bought",
-            "explanation": "three years ago라는 명백한 과거 시점 부사구가 있으므로 현재완료 has bought를 쓸 수 없으며 단순과거 bought로 고쳐야 합니다."
+            "explanation": "three years ago라는 명백한 과거 시점 부사구가 있으므로 현재완료 has bought를 쓸 수 없으며 단순과거 bought로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 1: 단순과거 시제와만 어울리는 '명백한 과거 시점 부사'] 출제 연계",
+            "korean": "나의 삼촌은 3년 전에 이 스포츠카를 구입하셨고 지금도 운전하고 계신다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The prominent astrophysicist has discovered the unprecedented cosmic anomaly two years ago during a lunar survey.",
+            "underlined": [
+              "astrophysicist",
+              "has discovered",
+              "cosmic anomaly",
+              "two years ago"
+            ],
+            "wrongIndex": 1,
+            "correction": "discovered",
+            "explanation": "명백한 과거 시점을 나타내는 부사구 'two years ago'가 있으므로 현재완료 has discovered 대신 단순과거 discovered를 써야 합니다.",
+            "conceptRef": "1단계 [SP-24 핵심: 명백한 과거 시점 부사구와 현재완료 동석 불가 공식] 출제 연계",
+            "korean": "그 저명한 천체물리학자는 2년 전 달 탐사 중에 전례 없는 우주 이상 현상을 발견했다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "Environmental researchers investigated atmospheric carbon dioxide concentrations since the Industrial Revolution began.",
+            "underlined": [
+              "investigated",
+              "carbon dioxide",
+              "concentrations",
+              "since the Industrial"
+            ],
+            "wrongIndex": 0,
+            "correction": "have investigated",
+            "explanation": "과거 특정 시점부터 현재까지 이어짐을 나타내는 'since + 과거 시점' 부사절이 있으므로 단순과거 대신 현재완료 have investigated를 써야 합니다.",
+            "conceptRef": "1단계 [SP-24 핵심: since 부사절과 현재완료의 결합 원칙] 출제 연계",
+            "korean": "환경 연구원들은 산업혁명이 시작된 이래로 대기 중 이산화탄소 농도를 조사해 왔다."
           }
         ],
         "questions": [
@@ -16423,7 +19430,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_25",
+            "id": "drill_1",
             "sentence": "The police found conclusive evidence which the suspect had entered the building.",
             "underlined": [
               "found",
@@ -16433,7 +19440,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 2,
             "correction": "that the suspect",
-            "explanation": "evidence 뒤의 절이 완전한 문장(the suspect had entered the building)이므로 동격의 접속사 that을 써야 하며, which로 대체할 수 없습니다."
+            "explanation": "evidence 뒤의 절이 완전한 문장(the suspect had entered the building)이므로 동격의 접속사 that을 써야 하며, which로 대체할 수 없습니다.",
+            "conceptRef": "1단계 [공식 1: that의 3대 정체성 판별 공식] 출제 연계",
+            "korean": "경찰은 그 용의자가 건물 안으로 침입했다는 결정적인 증거를 발견했다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "The widespread belief what excessive social media usage harms adolescent mental health is supported by clinical studies.",
+            "underlined": [
+              "widespread belief",
+              "what",
+              "social media",
+              "is supported"
+            ],
+            "wrongIndex": 1,
+            "correction": "that",
+            "explanation": "belief 뒤의 절이 완전한 문장이며 belief의 구체적 내용을 설명하는 동격절이므로 what 대신 동격 접속사 that을 써야 합니다.",
+            "conceptRef": "1단계 [SP-25 핵심: 동격 that vs 관계대명사 that vs 접속사 that 판별] 출제 연계",
+            "korean": "과도한 소셜 미디어 사용이 청소년의 정신 건강을 해친다는 널리 퍼진 믿음은 임상 연구들에 의해 뒷받침된다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The ancient artifact that museum visitors admired yesterday it was discovered in a secluded desert valley.",
+            "underlined": [
+              "artifact that",
+              "museum visitors",
+              "yesterday it",
+              "was discovered"
+            ],
+            "wrongIndex": 2,
+            "correction": "yesterday",
+            "explanation": "관계대명사 that이 이끄는 절이 artifact를 수식하고 있으므로 문장의 주어는 The ancient artifact입니다. 주어 뒤에 대명사 it을 중복해서 쓰면 안 되므로 it을 삭제해야 합니다.",
+            "conceptRef": "1단계 [SP-25 핵심: 관계사 수식 주어 뒤 대명사 중복 방지] 출제 연계",
+            "korean": "어제 박물관 관람객들이 감탄했던 그 고대 유물은 외딴 사막 계곡에서 발견되었다."
           }
         ],
         "questions": [
@@ -16594,7 +19633,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_26",
+            "id": "drill_1",
             "sentence": "This special tool is used to measuring the precise depth of the ocean floor.",
             "underlined": [
               "special tool",
@@ -16604,7 +19643,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 2,
             "correction": "measure",
-            "explanation": "도구(tool)가 깊이를 측정하는 데 '사용되다'라는 수동의 뜻이므로 to 뒤에 동사원형 measure를 써야 합니다."
+            "explanation": "도구(tool)가 깊이를 측정하는 데 '사용되다'라는 수동의 뜻이므로 to 뒤에 동사원형 measure를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: used to 3총사 완전 정복 공식] 출제 연계",
+            "korean": "이 특수 도구는 해저의 정밀한 수심을 측정하는 데 사용된다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Solar energy systems are used to generating electricity for remote polar research stations.",
+            "underlined": [
+              "energy systems",
+              "are used to",
+              "generating",
+              "electricity for"
+            ],
+            "wrongIndex": 2,
+            "correction": "generate",
+            "explanation": "태양광 발전 시스템이 전기를 생산하는 데 '사용된다'는 수동/목적의 의미이므로 be used to 뒤에 동명사가 아닌 동사원형 generate를 써야 합니다.",
+            "conceptRef": "1단계 [SP-26 핵심: used to V vs be used to V vs be used to V-ing 삼총사] 출제 연계",
+            "korean": "태양광 에너지 시스템은 외딴 극지 연구소를 위해 전기를 생산하는 데 사용된다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The experienced deep sea diver is used to endure extreme underwater pressure during salvage operations.",
+            "underlined": [
+              "sea diver",
+              "is used to",
+              "endure",
+              "underwater pressure"
+            ],
+            "wrongIndex": 2,
+            "correction": "enduring",
+            "explanation": "심해 잠수부가 극심한 수압을 견디는 것에 '익숙하다'는 의미이므로 [be used to + -ing(명사)] 구문으로 enduring을 써야 합니다.",
+            "conceptRef": "1단계 [SP-26 핵심: ~에 익숙하다(be used to -ing) 실전 영작] 출제 연계",
+            "korean": "숙련된 심해 잠수부는 인양 작업 동안 극심한 수중 압력을 견디는 것에 익숙하다."
           }
         ],
         "questions": [
@@ -16765,7 +19836,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_27",
+            "id": "drill_1",
             "sentence": "The exhausted hiker laid down on the soft grass and fell fast asleep.",
             "underlined": [
               "exhausted hiker",
@@ -16775,7 +19846,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 1,
             "correction": "lay down",
-            "explanation": "등산객이 스스로 누운 것이며 뒤에 목적어가 없는 자동사의 과거형이 필요하므로 laid(타동사 과거)가 아닌 lay(lie의 과거형)를 써야 합니다."
+            "explanation": "등산객이 스스로 누운 것이며 뒤에 목적어가 없는 자동사의 과거형이 필요하므로 laid(타동사 과거)가 아닌 lay(lie의 과거형)를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: lie vs lay 3단 변화 끝장 비교표] 출제 연계",
+            "korean": "지친 등산객은 푹신한 잔디밭 위에 누워 깊은 잠에 빠져들었다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "After working tirelessly in the garden all afternoon, the weary farmer laid down on the grass to rest.",
+            "underlined": [
+              "tirelessly",
+              "all afternoon",
+              "laid",
+              "on the grass"
+            ],
+            "wrongIndex": 2,
+            "correction": "lay",
+            "explanation": "주어가 스스로 '누웠다'는 의미이므로 자동사 lie의 과거형 lay를 써야 합니다. laid는 타동사 lay(~을 놓다/눕히다)의 과거형이므로 어법상 틀립니다.",
+            "conceptRef": "1단계 [SP-27 핵심: 자동사 lie(눕다) vs 타동사 lay(놓다) 3단 변화 끝장] 출제 연계",
+            "korean": "오후 내내 정원에서 쉼 없이 일한 후 지친 농부는 휴식을 취하기 위해 잔디밭에 누웠다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The careful librarian lied the rare illuminated manuscript gently upon the velvet reading cushion.",
+            "underlined": [
+              "careful librarian",
+              "lied",
+              "illuminated manuscript",
+              "upon the velvet"
+            ],
+            "wrongIndex": 1,
+            "correction": "laid",
+            "explanation": "귀중한 필사본을 벨벳 쿠션 위에 '놓았다'라는 타동사 의미이므로 타동사 lay의 과거형인 laid를 써야 합니다. lied는 '거짓말했다'는 뜻입니다.",
+            "conceptRef": "1단계 [SP-27 핵심: 타동사 lay의 과거/과거분사 laid vs lied 구별] 출제 연계",
+            "korean": "조심스러운 사서는 벨벳 독서용 쿠션 위에 희귀한 채색 필사본을 부드럽게 올려놓았다."
           }
         ],
         "questions": [
@@ -16936,7 +20039,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_28",
+            "id": "drill_1",
             "sentence": "Modern smartphones make that possible for people to work from anywhere in the world.",
             "underlined": [
               "smartphones",
@@ -16946,7 +20049,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 1,
             "correction": "make it possible",
-            "explanation": "5형식 가목적어 자리에는 오직 대명사 it만 올 수 있으므로 that possible을 it possible로 고쳐야 합니다."
+            "explanation": "5형식 가목적어 자리에는 오직 대명사 it만 올 수 있으므로 that possible을 it possible로 고쳐야 합니다.",
+            "conceptRef": "1단계 [공식 1: It ~ that 강조구문 vs 가주어/진주어 3초 판별 공식] 출제 연계",
+            "korean": "현대 스마트폰은 사람들이 세상 어디에서나 일하는 것을 가능하게 만들어 준다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "It was precisely the dedicated researchers whom discovered the novel vaccine during the pandemic.",
+            "underlined": [
+              "precisely",
+              "dedicated researchers",
+              "whom",
+              "discovered the novel"
+            ],
+            "wrongIndex": 2,
+            "correction": "who",
+            "explanation": "It ~ that 강조구문에서 주어 the dedicated researchers가 강조되었으므로 강조절 내에서 주어 역할을 할 수 있도록 목적격 whom 대신 주격 who(또는 that)를 써야 합니다.",
+            "conceptRef": "1단계 [SP-28 핵심: It ~ that 강조구문 vs 가주어/진주어 구문 판별] 출제 연계",
+            "korean": "팬데믹 동안 새로운 백신을 발견한 것은 바로 그 헌신적인 연구원들이었다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The ambitious company found that imperative to modernize their digital security protocols immediately.",
+            "underlined": [
+              "ambitious company",
+              "found",
+              "that imperative",
+              "to modernize"
+            ],
+            "wrongIndex": 2,
+            "correction": "it imperative",
+            "explanation": "5형식 문장에서 진목적어가 뒤따르는 to부정사구(to modernize...)이므로, 가목적어 자리에는 that이 아니라 반드시 it을 써야 합니다.",
+            "conceptRef": "1단계 [SP-28 핵심: 5형식 가목적어 it vs 진목적어 to부정사/that절] 출제 연계",
+            "korean": "그 야심 찬 기업은 디지털 보안 프로토콜을 즉시 현대화하는 것이 필수적임을 알게 되었다."
           }
         ],
         "questions": [
@@ -17107,7 +20242,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_29",
+            "id": "drill_1",
             "sentence": "In spite of she practiced day and night, she couldn't win the gold medal.",
             "underlined": [
               "In spite of",
@@ -17117,7 +20252,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 0,
             "correction": "Although (또는 Even though)",
-            "explanation": "뒤에 'she(주어) + practiced(동사)'의 절이 이어지므로 전치사 In spite of가 아니라 접속사 Although를 써야 합니다."
+            "explanation": "뒤에 'she(주어) + practiced(동사)'의 절이 이어지므로 전치사 In spite of가 아니라 접속사 Although를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 접속사 vs 전치사 대표 맞수 3대장] 출제 연계",
+            "korean": "그녀가 밤낮으로 연습했음에도 불구하고 금메달을 따지는 못했다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "Although the severe financial crisis, the international conglomerate managed to maintain its manufacturing operations.",
+            "underlined": [
+              "Although",
+              "financial crisis",
+              "managed to",
+              "manufacturing operations"
+            ],
+            "wrongIndex": 0,
+            "correction": "Despite",
+            "explanation": "뒤에 주어와 동사를 갖춘 절이 아니라 명사구(the severe financial crisis)가 오므로 접속사 Although 대신 전치사 Despite(또는 In spite of)를 써야 합니다.",
+            "conceptRef": "1단계 [SP-29 핵심: 접속사 vs 전치사 뒤따르는 문장 구조 판별 공식] 출제 연계",
+            "korean": "심각한 금융 위기에도 불구하고 그 다국적 대기업은 제조 사업을 간신히 유지했다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The outdoor music festival was abruptly postponed due to severe thunderstorms were approaching the coast.",
+            "underlined": [
+              "music festival",
+              "abruptly postponed",
+              "due to",
+              "were approaching"
+            ],
+            "wrongIndex": 2,
+            "correction": "because",
+            "explanation": "뒤에 주어(severe thunderstorms)와 동사(were approaching)를 갖춘 절이 이어지므로 전치사구 due to 대신 접속사 because(또는 as/since)를 써야 합니다.",
+            "conceptRef": "1단계 [SP-29 핵심: because vs because of / due to 서술형 구별] 출제 연계",
+            "korean": "심각한 뇌우가 해안으로 접근하고 있었기 때문에 야외 음악 축제는 갑작스럽게 연기되었다."
           }
         ],
         "questions": [
@@ -17278,7 +20445,7 @@ window.GRAMMAR_SPECIAL_LECTURES = [
         ],
         "spottingDrills": [
           {
-            "id": "drill_sp_30",
+            "id": "drill_1",
             "sentence": "Neither of the two candidates were qualified for the executive position.",
             "underlined": [
               "Neither of",
@@ -17288,7 +20455,39 @@ window.GRAMMAR_SPECIAL_LECTURES = [
             ],
             "wrongIndex": 2,
             "correction": "was qualified",
-            "explanation": "Neither of + 복수명사는 문법적으로 단수 취급하므로 복수 동사 were가 아니라 단수 동사 was를 써야 합니다."
+            "explanation": "Neither of + 복수명사는 문법적으로 단수 취급하므로 복수 동사 were가 아니라 단수 동사 was를 써야 합니다.",
+            "conceptRef": "1단계 [공식 1: 부분부정 vs 완전부정 공식 비교] 출제 연계",
+            "korean": "두 명의 지원자 중 어느 누구도 그 임원직에 적합한 자격을 갖추지 못했다."
+          },
+          {
+            "id": "drill_2",
+            "sentence": "None of the brilliant innovations in the tech industry is necessarily harmful to human society.",
+            "underlined": [
+              "None of",
+              "innovations",
+              "is necessarily",
+              "harmful to"
+            ],
+            "wrongIndex": 0,
+            "correction": "Not all",
+            "explanation": "문맥상 '모든 혁신이 반드시 인간 사회에 해로운 것은 아니다'라는 부분부정의 의미이므로 완전부정 None 대신 'Not all of the brilliant innovations'로 표현해야 자연스럽습니다.",
+            "conceptRef": "1단계 [SP-30 핵심: 부분부정(not all, not every) vs 완전부정(none, neither) 구별] 출제 연계",
+            "korean": "기술 산업의 훌륭한 혁신들이 모두 반드시 인간 사회에 해로운 것은 아니다."
+          },
+          {
+            "id": "drill_3",
+            "sentence": "The experimental vaccine was neither safe nor effectively during the initial phases of clinical trials.",
+            "underlined": [
+              "experimental vaccine",
+              "neither",
+              "safe nor",
+              "effectively"
+            ],
+            "wrongIndex": 3,
+            "correction": "effective",
+            "explanation": "상관접속사 neither A nor B 구문에서 be동사 was의 주격 보어로 형용사 safe가 쓰였으므로 병렬 구조를 이루기 위해 effectively 역시 형용사인 effective로 써야 합니다.",
+            "conceptRef": "1단계 [SP-30 핵심: neither A nor B 상관접속사 품사 병치] 출제 연계",
+            "korean": "그 실험 백신은 초기 임상 시험 단계 동안 안전하지도 효과적이지도 않았다."
           }
         ],
         "questions": [
