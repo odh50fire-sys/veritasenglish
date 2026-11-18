@@ -812,6 +812,44 @@ class OCREngine {
             };
         }
 
+        // 리딩튜터 주니어 4종 확인
+        if (this.currentBookId && this.currentBookId.startsWith('junior-')) {
+            const jrList = window.VERITAS_JUNIOR_COLLECTIONS || [];
+            const jrCol = jrList.find(c => c.id === this.currentBookId) || jrList[0];
+            const allJrWords = window.VERITAS_JUNIOR_WORDS_DATA || [];
+            const pool = jrCol ? allJrWords.filter(r => r.collectionId === jrCol.id) : [];
+            return {
+                id: jrCol ? jrCol.id : this.currentBookId,
+                title: jrCol ? jrCol.title : 'NE능률 리딩튜터 주니어',
+                badge: jrCol ? `${jrCol.badge} • DAY 01 ~ DAY ${String(jrCol.totalDays || 40).padStart(2, '0')} (총 ${pool.length}단어)` : '리딩튜터 주니어',
+                description: jrCol ? jrCol.description : '',
+                totalDays: jrCol ? jrCol.totalDays : 40,
+                isNeungryul: false,
+                isNeungryulEtym: false,
+                isJunior: true,
+                dataPool: pool
+            };
+        }
+
+        // 리딩튜터 챌린저 3종 확인
+        if (this.currentBookId && this.currentBookId.startsWith('challenger-')) {
+            const chList = window.VERITAS_CHALLENGER_COLLECTIONS || [];
+            const chCol = chList.find(c => c.id === this.currentBookId) || chList[0];
+            const allChWords = window.VERITAS_CHALLENGER_WORDS_DATA || [];
+            const pool = chCol ? allChWords.filter(r => r.collectionId === chCol.id) : [];
+            return {
+                id: chCol ? chCol.id : this.currentBookId,
+                title: chCol ? chCol.title : 'NE능률 리딩튜터 챌린저',
+                badge: chCol ? `${chCol.badge} • DAY 01 ~ DAY ${String(chCol.totalDays || 40).padStart(2, '0')} (총 ${pool.length}단어)` : '리딩튜터 챌린저',
+                description: chCol ? chCol.description : '',
+                totalDays: chCol ? chCol.totalDays : 40,
+                isNeungryul: false,
+                isNeungryulEtym: false,
+                isChallenger: true,
+                dataPool: pool
+            };
+        }
+
         // AI 맞춤 생성 단어장 확인
         const customCols = window.storage ? window.storage.getCustomCollections() : [];
         const customCol = customCols.find(c => c.id === this.currentBookId);

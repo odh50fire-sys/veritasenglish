@@ -187,6 +187,13 @@ class AudiobookPlayer {
       const col = (window.VERITAS_NEUNGRYUL_MIDDLE_COLLECTIONS || []).find(c => c.id === bookId);
       title = col ? col.title : '능률 VOCA 중등';
     }
+    // 3-2. 리딩튜터 주니어 확인
+    else if (bookId && bookId.startsWith('junior-')) {
+      const jrWords = window.VERITAS_JUNIOR_WORDS_DATA || [];
+      pool = jrWords.filter(w => w.collectionId === bookId);
+      const col = (window.VERITAS_JUNIOR_COLLECTIONS || []).find(c => c.id === bookId);
+      title = col ? col.title : '리딩튜터 주니어';
+    }
     // 4. 스토리지 단어 검색
     else {
       const allWords = (window.storage && window.storage.words) ? window.storage.words : [];

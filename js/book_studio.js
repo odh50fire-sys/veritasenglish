@@ -74,6 +74,13 @@
     'neungryul-middle-basic': 'middle',
     'neungryul-middle-essential': 'middle',
     'neungryul-middle-idiom': 'middle',
+    'junior-1': 'middle',
+    'junior-2': 'middle',
+    'junior-3': 'middle',
+    'junior-4': 'middle',
+    'challenger-1': 'killer',
+    'challenger-2': 'killer',
+    'challenger-3': 'killer',
     'neungryul-high-basic': 'killer',
     'neungryul-csat-essential': 'killer',
     'neungryul-csat-advanced': 'killer'
@@ -404,6 +411,42 @@
         });
       }
 
+      // 2-2. 리딩튜터 주니어 4종 (주니어 1~4)
+      if (window.VERITAS_JUNIOR_COLLECTIONS && Array.isArray(window.VERITAS_JUNIOR_COLLECTIONS)) {
+        window.VERITAS_JUNIOR_COLLECTIONS.forEach(c => {
+          if (!list.some(b => b.id === c.id)) {
+            list.push({
+              id: c.id,
+              title: c.title,
+              badge: c.badge || '리딩튜터 주니어',
+              totalDays: c.totalDays || 40,
+              level: c.level || 4,
+              category: 'reading_tutor_junior',
+              series: 'middle',
+              isCustom: false
+            });
+          }
+        });
+      }
+
+      // 2-3. 리딩튜터 챌린저 3종 (챌린저 1~3)
+      if (window.VERITAS_CHALLENGER_COLLECTIONS && Array.isArray(window.VERITAS_CHALLENGER_COLLECTIONS)) {
+        window.VERITAS_CHALLENGER_COLLECTIONS.forEach(c => {
+          if (!list.some(b => b.id === c.id)) {
+            list.push({
+              id: c.id,
+              title: c.title,
+              badge: c.badge || '리딩튜터 챌린저',
+              totalDays: c.totalDays || 40,
+              level: c.level || 8,
+              category: 'reading_tutor',
+              series: 'killer',
+              isCustom: false
+            });
+          }
+        });
+      }
+
       // 3. AI 맞춤 생성 교재
       if (window.storage && typeof window.storage.getCustomCollections === 'function') {
         const customColls = window.storage.getCustomCollections() || [];
@@ -464,6 +507,21 @@
           if (bookId === 'neungryul-high-basic') rawWords = window.NEUNGRYUL_VOCA_HIGH_BASIC_2025_DATA || [];
           else if (bookId === 'neungryul-csat-essential') rawWords = window.NEUNGRYUL_VOCA_SAT_ESSENTIAL_2025_DATA || [];
           else if (bookId === 'neungryul-csat-advanced') rawWords = window.NEUNGRYUL_VOCA_SAT_ADV_2025_DATA || [];
+        }
+      } else if (bookId && bookId.startsWith('junior-')) {
+        const allJr = window.VERITAS_JUNIOR_WORDS_DATA || [];
+        rawWords = allJr.filter(w => w.collectionId === bookId);
+        if (rawWords.length === 0) {
+          if (bookId === 'junior-1') rawWords = window.READING_TUTOR_JUNIOR_1_DATA || [];
+          else if (bookId === 'junior-2') rawWords = window.READING_TUTOR_JUNIOR_2_DATA || [];
+          else if (bookId === 'junior-3') rawWords = window.READING_TUTOR_JUNIOR_3_DATA || [];
+          else if (bookId === 'junior-4') rawWords = window.READING_TUTOR_JUNIOR_4_DATA || [];
+        }
+      } else if (bookId && bookId.startsWith('challenger-')) {
+        const allCh = window.VERITAS_CHALLENGER_WORDS_DATA || [];
+        rawWords = allCh.filter(w => w.collectionId === bookId);
+        if (rawWords.length === 0 && window.READING_TUTOR_CHALLENGER_WORDS_DATA) {
+          rawWords = window.READING_TUTOR_CHALLENGER_WORDS_DATA.filter(w => w.collectionId === bookId);
         }
       } else {
         // 21개 큐레이션 단어장 & Oxford & Pathways & 기타
