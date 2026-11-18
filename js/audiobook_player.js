@@ -180,6 +180,13 @@ class AudiobookPlayer {
       pool = rtWords.filter(w => w.collectionId === bookId);
       title = '리딩튜터 챌린저';
     }
+    // 3-1. 능률 VOCA 중등 확인
+    else if (bookId && bookId.startsWith('neungryul-middle-')) {
+      const midWords = window.VERITAS_NEUNGRYUL_MIDDLE_ALL_WORDS_DATA || [];
+      pool = midWords.filter(w => w.collectionId === bookId);
+      const col = (window.VERITAS_NEUNGRYUL_MIDDLE_COLLECTIONS || []).find(c => c.id === bookId);
+      title = col ? col.title : '능률 VOCA 중등';
+    }
     // 4. 스토리지 단어 검색
     else {
       const allWords = (window.storage && window.storage.words) ? window.storage.words : [];

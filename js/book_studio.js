@@ -71,6 +71,9 @@
     'oxford-vol4': 'oxford',
     'neungryul_etym_2025': 'middle',
     'neungryul2025': 'middle',
+    'neungryul-middle-basic': 'middle',
+    'neungryul-middle-essential': 'middle',
+    'neungryul-middle-idiom': 'middle',
     'neungryul-high-basic': 'killer',
     'neungryul-csat-essential': 'killer',
     'neungryul-csat-advanced': 'killer'
@@ -383,6 +386,24 @@
         });
       }
 
+      // 2-1. 능률 VOCA 중등 완성 라인업 3종 (기본, 필수, 숙어)
+      if (window.VERITAS_NEUNGRYUL_MIDDLE_COLLECTIONS && Array.isArray(window.VERITAS_NEUNGRYUL_MIDDLE_COLLECTIONS)) {
+        window.VERITAS_NEUNGRYUL_MIDDLE_COLLECTIONS.forEach(c => {
+          if (!list.some(b => b.id === c.id)) {
+            list.push({
+              id: c.id,
+              title: c.title,
+              badge: c.badge || '능률 중등',
+              totalDays: c.totalDays || 50,
+              level: c.level || 5,
+              category: 'neungryul_middle',
+              series: 'middle',
+              isCustom: false
+            });
+          }
+        });
+      }
+
       // 3. AI 맞춤 생성 교재
       if (window.storage && typeof window.storage.getCustomCollections === 'function') {
         const customColls = window.storage.getCustomCollections() || [];
@@ -428,6 +449,14 @@
         rawWords = window.NEUNGRYUL_VOCA_ETYM_2025_DATA || (window.SAMPLE_WORDS ? window.SAMPLE_WORDS.filter(w => w.collectionId === 'neungryul_etym_2025') : []);
       } else if (bookId === 'neungryul2025') {
         rawWords = window.NEUNGRYUL_VOCA_2025_DATA || (window.SAMPLE_WORDS ? window.SAMPLE_WORDS.filter(w => w.collectionId === 'neungryul2025') : []);
+      } else if (bookId && bookId.startsWith('neungryul-middle-')) {
+        const allNeungryulMid = window.VERITAS_NEUNGRYUL_MIDDLE_ALL_WORDS_DATA || [];
+        rawWords = allNeungryulMid.filter(w => w.collectionId === bookId);
+        if (rawWords.length === 0) {
+          if (bookId === 'neungryul-middle-basic') rawWords = window.NEUNGRYUL_VOCA_MIDDLE_BASIC_DATA || [];
+          else if (bookId === 'neungryul-middle-essential') rawWords = window.NEUNGRYUL_VOCA_MIDDLE_ESSENTIAL_DATA || [];
+          else if (bookId === 'neungryul-middle-idiom') rawWords = window.NEUNGRYUL_VOCA_MIDDLE_IDIOM_DATA || [];
+        }
       } else if (bookId && bookId.startsWith('neungryul-')) {
         const allNeungryulHigh = window.VERITAS_NEUNGRYUL_HIGH_WORDS_DATA || [];
         rawWords = allNeungryulHigh.filter(w => w.collectionId === bookId);

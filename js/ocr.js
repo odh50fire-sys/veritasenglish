@@ -717,6 +717,25 @@ class OCREngine {
             };
         }
 
+        // 능률 VOCA 중등 완성 라인업 3종 확인 (기본, 필수, 숙어)
+        if (this.currentBookId && this.currentBookId.startsWith('neungryul-middle-')) {
+            const nmList = window.VERITAS_NEUNGRYUL_MIDDLE_COLLECTIONS || [];
+            const nmCol = nmList.find(c => c.id === this.currentBookId) || nmList[0];
+            const allNmWords = window.VERITAS_NEUNGRYUL_MIDDLE_ALL_WORDS_DATA || [];
+            const pool = nmCol ? allNmWords.filter(r => r.collectionId === nmCol.id) : [];
+            return {
+                id: nmCol ? nmCol.id : this.currentBookId,
+                title: nmCol ? nmCol.title : '능률 VOCA 중등 완성 라인업',
+                badge: nmCol ? `${nmCol.badge} • DAY 01 ~ DAY ${String(nmCol.totalDays || 50).padStart(2, '0')} (총 ${pool.length}어휘)` : '능률 중등',
+                description: nmCol ? nmCol.description : '',
+                totalDays: nmCol ? nmCol.totalDays : 50,
+                isNeungryul: false,
+                isNeungryulEtym: false,
+                isNeungryulMiddle: true,
+                dataPool: pool
+            };
+        }
+
         // 능률 VOCA 고등 마스터 3종 확인
         if (this.currentBookId && (this.currentBookId.startsWith('neungryul-high-') || this.currentBookId.startsWith('neungryul-csat-'))) {
             const nhList = window.VERITAS_NEUNGRYUL_HIGH_COLLECTIONS || [];
