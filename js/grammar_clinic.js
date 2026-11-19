@@ -26,9 +26,15 @@ class GrammarClinicEngine {
     }
 
     init() {
-        if (!this.data || this.data.length === 0) {
-            this.data = window.GRAMMAR_CLINIC_BANK || [];
+        let baseBank = window.GRAMMAR_CLINIC_BANK || [];
+        if (window.GRAMMAR_SYNTAX_THEME_BANK && Array.isArray(window.GRAMMAR_SYNTAX_THEME_BANK)) {
+            window.GRAMMAR_SYNTAX_THEME_BANK.forEach(item => {
+                if (!baseBank.some(b => b.levelCode === item.levelCode)) {
+                    baseBank.push(item);
+                }
+            });
         }
+        this.data = baseBank;
 
         // 사용자의 진단 레벨 자동 감지 및 초등~수능 단계별 추천 매핑
         if (!this.isInitialized) {
@@ -202,9 +208,16 @@ class GrammarClinicEngine {
         const container = document.getElementById('grammar-clinic-app-container');
         if (!container) return;
 
-        const regularLevels = this.data.filter(lvl => !lvl.isSpecial);
-        const specialCourses = this.data.filter(lvl => lvl.isSpecial);
-        const activeList = this.currentTrack === 'special' ? specialCourses : regularLevels;
+        const regularLevels = this.data.filter(lvl => !lvl.isSpecial && lvl.track !== 'syntax_theme');
+        const specialCourses = this.data.filter(lvl => lvl.isSpecial && lvl.track !== 'syntax_theme');
+        const syntaxThemeCourses = this.data.filter(lvl => lvl.track === 'syntax_theme');
+
+        let activeList = regularLevels;
+        if (this.currentTrack === 'syntax_theme') {
+            activeList = syntaxThemeCourses;
+        } else if (this.currentTrack === 'special') {
+            activeList = specialCourses;
+        }
 
         let currentLvlObj = this.data.find(lvl => lvl.levelCode === this.currentLevelCode);
         if (!currentLvlObj) {
@@ -233,7 +246,7 @@ class GrammarClinicEngine {
                         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-serif font-bold">
                             <span>📗 VERITAS GRAMMAR CLINIC</span>
                             <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                            <span>정규 6단계(120단원) + 테마 4대 특강(40단원) 총 160단원</span>
+                            <span>정규 6단계(120단원) + 4대 특강(40단원) + 구문/핀포인트(60단원) 총 220단원</span>
                         </div>
                         <h2 class="text-2xl sm:text-3xl font-serif font-black tracking-tight text-white flex items-center gap-2">
                             <span>영문법 3단계 처방 클리닉 &amp; 테마 특강</span>
@@ -260,9 +273,9 @@ class GrammarClinicEngine {
                 </div>
             </div>
 
-            <!-- 정규 과정 vs 테마 특강 트랙 전환 탭 & 부교재 스튜디오 바로가기 -->
+            <!-- 정규 과정 vs 테마 특강 vs 구문/핀포인트 3대 트랙 전환 탭 & 부교재 스튜디오 바로가기 -->
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-slate-200 pb-2">
-                <div class="inline-flex p-1 rounded-2xl bg-slate-100 border border-slate-200 text-xs font-serif font-bold">
+                <div class="inline-flex flex-wrap p-1 rounded-2xl bg-slate-100 border border-slate-200 text-xs font-serif font-bold gap-1">
                     <button type="button" 
                         onclick="window.grammarClinicEngine.switchTrack('regular')"
                         class="px-4 py-2 rounded-xl transition-all cursor-pointer flex items-center gap-2 ${
@@ -282,6 +295,16 @@ class GrammarClinicEngine {
                         }">
                         <i data-lucide="sparkles" class="w-4 h-4 text-amber-200"></i>
                         <span>🎓 테마별 문법 특강 (4대 코스 • 40단원)</span>
+                    </button>
+                    <button type="button" 
+                        onclick="window.grammarClinicEngine.switchTrack('syntax_theme')"
+                        class="px-4 py-2 rounded-xl transition-all cursor-pointer flex items-center gap-2 ${
+                            this.currentTrack === 'syntax_theme' 
+                                ? 'bg-gradient-to-r from-teal-700 via-indigo-700 to-purple-700 text-white shadow-xs' 
+                                : 'text-slate-600 hover:text-slate-900'
+                        }">
+                        <i data-lucide="zap" class="w-4 h-4 text-cyan-300"></i>
+                        <span>🌟 구문 &amp; 핀포인트 클리닉 (6대 신규 교재 • 60단원)</span>
                     </button>
                 </div>
 
@@ -563,7 +586,9 @@ class GrammarClinicEngine {
     switchLevel(levelCode) {
         this.currentLevelCode = levelCode;
         const lvl = this.data.find(l => l.levelCode === levelCode);
-        if (lvl && lvl.isSpecial) {
+        if (lvl && lvl.track === 'syntax_theme') {
+            this.currentTrack = 'syntax_theme';
+        } else if (lvl && lvl.isSpecial) {
             this.currentTrack = 'special';
         } else if (lvl) {
             this.currentTrack = 'regular';
@@ -574,13 +599,18 @@ class GrammarClinicEngine {
 
     switchTrack(track) {
         this.currentTrack = track;
-        if (track === 'special') {
-            const specialLevels = this.data.filter(lvl => lvl.isSpecial);
+        if (track === 'syntax_theme') {
+            const syntaxLevels = this.data.filter(lvl => lvl.track === 'syntax_theme');
+            if (!syntaxLevels.some(lvl => lvl.levelCode === this.currentLevelCode)) {
+                this.currentLevelCode = syntaxLevels[0] ? syntaxLevels[0].levelCode : 'syntax_p1';
+            }
+        } else if (track === 'special') {
+            const specialLevels = this.data.filter(lvl => lvl.isSpecial && lvl.track !== 'syntax_theme');
             if (!specialLevels.some(lvl => lvl.levelCode === this.currentLevelCode)) {
                 this.currentLevelCode = specialLevels[0] ? specialLevels[0].levelCode : 'sp_terms';
             }
         } else {
-            const regularLevels = this.data.filter(lvl => !lvl.isSpecial);
+            const regularLevels = this.data.filter(lvl => !lvl.isSpecial && lvl.track !== 'syntax_theme');
             if (!regularLevels.some(lvl => lvl.levelCode === this.currentLevelCode)) {
                 this.currentLevelCode = regularLevels[0] ? regularLevels[0].levelCode : 'lv1';
             }
@@ -609,7 +639,7 @@ class GrammarClinicEngine {
         const { unit: foundUnit, level: foundLevel } = found;
         this.activeUnit = { ...foundUnit, levelInfo: foundLevel };
         this.currentLevelCode = foundLevel.levelCode;
-        this.currentTrack = foundLevel.isSpecial ? 'special' : 'regular';
+        this.currentTrack = foundLevel.track === 'syntax_theme' ? 'syntax_theme' : (foundLevel.isSpecial ? 'special' : 'regular');
         this.activeStep = 1;
         this.spottingSolved = false;
         this.spottingSolvedMap = { 0: false, 1: false, 2: false };

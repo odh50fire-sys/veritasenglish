@@ -142,11 +142,107 @@
             badgeBg: 'bg-purple-100 text-purple-900 border-purple-300',
             headerBg: 'from-purple-950 via-slate-900 to-purple-900',
             accentBorder: 'border-purple-500'
+        },
+        syntax_p1: {
+            titleKo: '상관접속사 & 전치사적 관용구문',
+            subKo: 'B as well as A & When it comes to 완벽 정복편',
+            themeName: 'Teal & Emerald',
+            primaryHex: '#0d9488',
+            secondaryHex: '#0f766e',
+            accentHex: '#14b8a6',
+            lightBg: '#f0fdfa',
+            badgeBg: 'bg-teal-100 text-teal-900 border-teal-300',
+            headerBg: 'from-teal-950 via-slate-900 to-teal-900',
+            accentBorder: 'border-teal-500'
+        },
+        syntax_p2: {
+            titleKo: '인과·결과·비교·정도 구문',
+            subKo: 'so~that, too~to, the 비교급 the 비교급 마스터편',
+            themeName: 'Indigo & Royal Blue',
+            primaryHex: '#4f46e5',
+            secondaryHex: '#4338ca',
+            accentHex: '#6366f1',
+            lightBg: '#eef2ff',
+            badgeBg: 'bg-indigo-100 text-indigo-900 border-indigo-300',
+            headerBg: 'from-indigo-950 via-slate-900 to-indigo-900',
+            accentBorder: 'border-indigo-500'
+        },
+        syntax_p3: {
+            titleKo: '가주어·가목적어 & 강조·도치 구문',
+            subKo: 'It is ~ that 강조, 5형식 it, 부정어 도치 완성편',
+            themeName: 'Rose & Crimson',
+            primaryHex: '#e11d48',
+            secondaryHex: '#be123c',
+            accentHex: '#f43f5e',
+            lightBg: '#fff1f2',
+            badgeBg: 'bg-rose-100 text-rose-900 border-rose-300',
+            headerBg: 'from-rose-950 via-slate-900 to-rose-900',
+            accentBorder: 'border-rose-500'
+        },
+        theme_t1: {
+            titleKo: '시제·조동사·가정법 뉘앙스 정복',
+            subKo: '현재완료 vs 과거, 조동사+have p.p., 가정법 특강편',
+            themeName: 'Amber & Bronze',
+            primaryHex: '#d97706',
+            secondaryHex: '#b45309',
+            accentHex: '#f59e0b',
+            lightBg: '#fffbeb',
+            badgeBg: 'bg-amber-100 text-amber-900 border-amber-300',
+            headerBg: 'from-amber-950 via-slate-900 to-amber-900',
+            accentBorder: 'border-amber-500'
+        },
+        theme_t2: {
+            titleKo: '준동사 삼국지 & 능동·수동 판별',
+            subKo: 'to-v vs -ing 목적어, 분사구문 태 판별 마스터편',
+            themeName: 'Sky & Cyan',
+            primaryHex: '#0284c7',
+            secondaryHex: '#0369a1',
+            accentHex: '#0ea5e9',
+            lightBg: '#f0fdfa',
+            badgeBg: 'bg-sky-100 text-sky-900 border-sky-300',
+            headerBg: 'from-sky-950 via-slate-900 to-sky-900',
+            accentBorder: 'border-sky-500'
+        },
+        theme_t3: {
+            titleKo: '관계사·접속사 & 수능 어법 킬러',
+            subKo: 'that vs what 3초 판별, 관계사 vs 관계부사, 수일치편',
+            themeName: 'Purple & Violet',
+            primaryHex: '#7c3aed',
+            secondaryHex: '#6d28d9',
+            accentHex: '#8b5cf6',
+            lightBg: '#f5f3ff',
+            badgeBg: 'bg-purple-100 text-purple-900 border-purple-300',
+            headerBg: 'from-purple-950 via-slate-900 to-purple-900',
+            accentBorder: 'border-purple-500'
         }
     };
 
     // 파트별 명확한 단원 구성 및 학습 목표
     const LEVEL_PARTS_INFO = {
+        syntax_p1: [
+            { no: 'PART 1', title: '상관접속사의 수일치와 전치사적 관용표현', goal: 'B as well as A, either/neither, both/not A but B, When it comes to', range: [1, 5] },
+            { no: 'PART 2', title: '학술 전치사구와 양보·대안·원인 표현', goal: 'Despite vs Although, On behalf of, Instead of, Apart from, Due to', range: [6, 10] }
+        ],
+        syntax_p2: [
+            { no: 'PART 1', title: '인과와 목적 & 정도 구문 핵심 공식', goal: 'so~that vs such~that, so that can, too~to, enough to, the비교급 the비교급', range: [1, 5] },
+            { no: 'PART 2', title: '고난도 비교 관용 표현과 시간 도치', goal: 'as as possible, cannot too, no sooner than, all the more, no more than', range: [6, 10] }
+        ],
+        syntax_p3: [
+            { no: 'PART 1', title: '가주어·가목적어와 시간·비용 특수구문', goal: 'for/of to-v, It is 형 that, 5형식 make it 형 to-v, It takes 시간 to-v', range: [1, 5] },
+            { no: 'PART 2', title: '강조구문과 부정어/장소부사 도치 마스터', goal: 'It is that 강조 vs 가주어, 부정어 도치, 장소 도치, 독립분사구문', range: [6, 10] }
+        ],
+        theme_t1: [
+            { no: 'PART 1', title: '시제의 타임라인과 조동사 뉘앙스 정복', goal: '과거 vs 현재완료, 현재완료 4대 용법, had p.p., 조동사+have p.p.', range: [1, 5] },
+            { no: 'PART 2', title: '당위성 동사와 가정법 킬러 공식', goal: 'should 동원, 가정법 과거/과거완료, 혼합가정법, I wish/as if, Without/But for', range: [6, 10] }
+        ],
+        theme_t2: [
+            { no: 'PART 1', title: 'to부정사 vs 동명사 목적어 삼국지', goal: 'to-v vs -ing 취하는 동사, 둘 다 취하는 동사, 부사적 용법, 동명사 관용구', range: [1, 5] },
+            { no: 'PART 2', title: '분사의 명사수식과 분사구문 능동/수동', goal: '전치사 to, -ing vs p.p. 수식, 감정분사, 분사구문 태, with+O+OC, 수동태 to부활', range: [6, 10] }
+        ],
+        theme_t3: [
+            { no: 'PART 1', title: '관계사와 접속사 판별 3초 킬러 공식', goal: 'that vs what, 계속적 용법, 관계사 vs 관계부사, 전치사+관계대명사', range: [1, 5] },
+            { no: 'PART 2', title: '복합관계사와 수능 빈출 1순위 수일치', goal: '복합관계사, 주어-동사 수일치, 부분표현 수일치, 병렬구조, that/those 대명사', range: [6, 10] }
+        ],
         lv0: [
             { no: 'PART 1', title: '명사와 관사 & 인칭대명사의 기초', goal: 'a/an/the 관사와 명사의 단·복수, 인칭대명사 주격·소유격 및 be동사 현재형 완성', range: [1, 5] },
             { no: 'PART 2', title: '일반동사의 현재형과 형용사·부사', goal: '3인칭 단수 -s/-es 규칙, don\'t/doesn\'t 부정문 및 형용사·부사의 꾸밈 원리', range: [6, 10] },
@@ -213,7 +309,15 @@
         }
 
         getGrammarData() {
-            return window.GRAMMAR_STUDIO_EXT_DATA || [];
+            let base = window.GRAMMAR_STUDIO_EXT_DATA || [];
+            if (window.GRAMMAR_SYNTAX_THEME_EXT_DATA && Array.isArray(window.GRAMMAR_SYNTAX_THEME_EXT_DATA)) {
+                window.GRAMMAR_SYNTAX_THEME_EXT_DATA.forEach(extItem => {
+                    if (!base.some(b => b.levelCode === extItem.levelCode)) {
+                        base.push(extItem);
+                    }
+                });
+            }
+            return base;
         }
 
         getReadingData() {
@@ -381,11 +485,19 @@
 
                         <!-- 교재 권차 셀렉터 -->
                         <select onchange="window.clinicStudioEngine.setLevel(this.value)" class="text-xs font-serif font-bold py-1.5 px-3 rounded-xl border border-slate-300 bg-white text-slate-800 shadow-2xs focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                            ${allLevels.map(l => `
+                            ${allLevels.map(l => {
+                                let prefix = '📚 ';
+                                if (l.levelCode && (l.levelCode.startsWith('syntax_') || l.levelCode.startsWith('theme_'))) {
+                                    prefix = '🌟 ';
+                                } else if (l.isSpecial) {
+                                    prefix = '🎓 ';
+                                }
+                                return `
                                 <option value="${l.levelCode}" ${l.levelCode === this.currentLevelCode ? 'selected' : ''}>
-                                    ${l.isSpecial ? '🎓 ' + l.levelName : '📚 ' + l.levelName} (${(l.units || []).length}단원)
+                                    ${prefix + l.levelName} (${(l.units || []).length}단원)
                                 </option>
-                            `).join('')}
+                                `;
+                            }).join('')}
                         </select>
                     </div>
 
