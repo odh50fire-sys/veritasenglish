@@ -38,10 +38,10 @@
     'curated-m2-2': 'middle',
     'curated-m3-1': 'middle',
     'curated-m3-2': 'middle',
-    'curated-h1-1': 'middle',
-    'curated-h1-2': 'middle',
-    'curated-h2-1': 'middle',
-    'curated-h2-2': 'middle',
+    'curated-h1-1': 'high',
+    'curated-h1-2': 'high',
+    'curated-h2-1': 'high',
+    'curated-h2-2': 'high',
     'curated-killer': 'killer',
     'curated-m-idioms': 'idioms',
     'curated-csat-idioms': 'idioms',
@@ -523,6 +523,13 @@
       name: '중등 내신 어휘 마스터',
       sub: '교과서 단원별 빈출 어휘 & 서술형 완벽 대비',
       icon: '🎓',
+      accentColor: '#1e3a8a',
+      badgeClass: 'series-theme-middle'
+    },
+    high: {
+      name: '고등 내신 1등급 킬러 보카',
+      sub: '2022 개정 교과서 및 기출 혼동 어휘 & 다의어 완성',
+      icon: '🏛️',
       accentColor: '#1e3a8a',
       badgeClass: 'series-theme-middle'
     },
