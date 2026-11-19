@@ -17,31 +17,9 @@
       .replace(/'/g, '&#039;');
   }
 
-  // 8대 시리즈 테마 맵핑
+  // 9대 대분류에 대응하는 비주얼/학습 특화 테마 맵핑
   const SERIES_MAP = {
-    'curated-m1-1': 'middle',
-    'curated-m1-2': 'middle',
-    'curated-m2-1': 'middle',
-    'curated-m2-2': 'middle',
-    'curated-m3-1': 'middle',
-    'curated-m3-2': 'middle',
-    'curated-killer': 'killer',
-    'curated-tech': 'trend',
-    'curated-phrasal': 'trend',
-    'curated-slang': 'trend',
-    'curated-us-elem': 'academic',
-    'curated-us-mid1': 'academic',
-    'curated-us-mid2': 'academic',
-    'curated-m-idioms': 'idioms',
-    'curated-csat-idioms': 'idioms',
-    'curated-native-proverbs': 'idioms',
-    'curated-travel-air': 'travel',
-    'curated-travel-hotel': 'travel',
-    'curated-travel-dining': 'travel',
-    'curated-travel-transit': 'travel',
-    'curated-travel-emerge': 'travel',
-    'curated-emotions': 'literature',
-    'curated-literature': 'literature',
+    // 1. 오리지널 마스터 보카
     'veritas-original-l1': 'original',
     'veritas-original-l2': 'original',
     'veritas-original-l3': 'original',
@@ -52,39 +30,486 @@
     'veritas-original-l8': 'original',
     'veritas-original-l9': 'original',
     'veritas-original-l10': 'original',
-    // 베리타스 프리미엄 5대 시즌 단어장
+
+    // 2. 내신 대비 (중등 & 고등 & 킬러 & 숙어특강)
+    'curated-m1-1': 'middle',
+    'curated-m1-2': 'middle',
+    'curated-m2-1': 'middle',
+    'curated-m2-2': 'middle',
+    'curated-m3-1': 'middle',
+    'curated-m3-2': 'middle',
+    'curated-h1-1': 'middle',
+    'curated-h1-2': 'middle',
+    'curated-h2-1': 'middle',
+    'curated-h2-2': 'middle',
+    'curated-killer': 'killer',
+    'curated-m-idioms': 'idioms',
+    'curated-csat-idioms': 'idioms',
+    'curated-native-proverbs': 'idioms',
+
+    // 3. 능률 VOCA 시리즈 (중등~수능)
+    'neungryul-middle-basic': 'middle',
+    'neungryul-middle-essential': 'middle',
+    'neungryul2025': 'middle',
+    'neungryul_etym_2025': 'middle',
+    'neungryul-middle-idiom': 'middle',
+    'neungryul-high-basic': 'killer',
+    'neungryul-csat-essential': 'killer',
+    'neungryul-csat-advanced': 'killer',
+
+    // 4. 능률 리딩튜터 시리즈
+    'junior-1': 'reading_tutor_challenger',
+    'junior-2': 'reading_tutor_challenger',
+    'junior-3': 'reading_tutor_challenger',
+    'junior-4': 'reading_tutor_challenger',
+    'challenger-1': 'reading_tutor_challenger',
+    'challenger-2': 'reading_tutor_challenger',
+    'challenger-3': 'reading_tutor_challenger',
+
+    // 5. 옥스퍼드 Oxford 핵심 어휘 시리즈
+    'oxford-vol1': 'oxford',
+    'oxford-vol2': 'oxford',
+    'oxford-vol3': 'oxford',
+    'oxford-vol4': 'oxford',
+
+    // 6. 지문 필수 학술 어휘 시리즈 (Pathways & Q:Skills)
+    'pathways-1': 'pathways',
+    'pathways-2': 'pathways',
+    'pathways-3': 'pathways',
+    'pathways-4': 'pathways',
+    'qskills-intro': 'academic',
+    'qskills-1': 'academic',
+    'qskills-2': 'academic',
+    'qskills-3': 'academic',
+    'qskills-4': 'academic',
+    'qskills-5': 'academic',
+
+    // 7. 실전 여행 영어 시리즈
+    'curated-travel-air': 'travel',
+    'curated-travel-hotel': 'travel',
+    'curated-travel-dining': 'travel',
+    'curated-travel-transit': 'travel',
+    'curated-travel-emerge': 'travel',
+
+    // 8. 미국 교과서 학술 어휘 시리즈
+    'curated-us-elem': 'academic',
+    'curated-us-mid1': 'academic',
+    'curated-us-mid2': 'academic',
+
+    // 9. 프리미엄 어휘 특강 & 실전 미디어 마스터
     'season-netflix-slang': 'season_netflix_slang',
     'season-ted-news': 'season_ted_news',
     'season-academic-essay': 'season_academic_essay',
     'season-middle-starter': 'season_middle_starter',
     'season-toeic-rc1500': 'season_toeic_rc',
-    'challenger-1': 'reading_tutor_challenger',
-    'challenger-2': 'reading_tutor_challenger',
-    'challenger-3': 'reading_tutor_challenger',
-    'pathways-1': 'pathways',
-    'pathways-2': 'pathways',
-    'pathways-3': 'pathways',
-    'pathways-4': 'pathways',
-    'oxford-vol1': 'oxford',
-    'oxford-vol2': 'oxford',
-    'oxford-vol3': 'oxford',
-    'oxford-vol4': 'oxford',
-    'neungryul_etym_2025': 'middle',
-    'neungryul2025': 'middle',
-    'neungryul-middle-basic': 'middle',
-    'neungryul-middle-essential': 'middle',
-    'neungryul-middle-idiom': 'middle',
-    'junior-1': 'middle',
-    'junior-2': 'middle',
-    'junior-3': 'middle',
-    'junior-4': 'middle',
-    'challenger-1': 'killer',
-    'challenger-2': 'killer',
-    'challenger-3': 'killer',
-    'neungryul-high-basic': 'killer',
-    'neungryul-csat-essential': 'killer',
-    'neungryul-csat-advanced': 'killer'
+    'curated-phrasal': 'trend',
+    'curated-tech': 'trend',
+    'curated-emotions': 'literature',
+    'curated-literature': 'literature'
   };
+
+  // 교재 등록 화면(voca-book-select)과 100% 일치하는 9대 대분류 카탈로그 정의
+  const MASTER_CATALOG_GROUPS = [
+    {
+        "id": "voca-veritas-original-optgroup",
+        "label": "👑 [핵심 보카] 베리타스 오리지널 보카 시리즈 (베리타스 대표 단어장, 10종 교재)",
+        "books": [
+            {
+                "id": "veritas-original-l1",
+                "title": "[Lv.1] 베리타스 오리지널 스타터 (Starter) - 초등 기본 (30일, 600단어)",
+                "disabled": false
+            },
+            {
+                "id": "veritas-original-l2",
+                "title": "[Lv.2] 베리타스 오리지널 익스플로러 (Explorer) - 초등 심화 (30일, 600단어)",
+                "disabled": false
+            },
+            {
+                "id": "veritas-original-l3",
+                "title": "[Lv.3] 베리타스 오리지널 파이오니어 (Pioneer) - 중학교 1학년 (30일, 600단어)",
+                "disabled": false
+            },
+            {
+                "id": "veritas-original-l4",
+                "title": "[Lv.4] 베리타스 오리지널 네비게이터 (Navigator) - 중학교 2학년 1학기 (30일, 600단어)",
+                "disabled": false
+            },
+            {
+                "id": "veritas-original-l5",
+                "title": "[Lv.5] 베리타스 오리지널 챌린저 (Challenger) - 중학교 2학년 2학기 (30일, 600단어)",
+                "disabled": false
+            },
+            {
+                "id": "veritas-original-l6",
+                "title": "[Lv.6] 베리타스 오리지널 스트래티지스트 (Strategist) - 중학교 3학년 1학기 (30일, 600단어)",
+                "disabled": false
+            },
+            {
+                "id": "veritas-original-l7",
+                "title": "[Lv.7] 베리타스 오리지널 마스터 (Master) - 중학교 3학년 2학기 (30일, 600단어)",
+                "disabled": false
+            },
+            {
+                "id": "veritas-original-l8",
+                "title": "[Lv.8] 베리타스 오리지널 이노베이터 (Innovator) - 예비고 & 공통영어 (30일, 600단어)",
+                "disabled": false
+            },
+            {
+                "id": "veritas-original-l9",
+                "title": "[Lv.9] 베리타스 오리지널 리더 (Leader) - 수능 기본 & 고난도 빈출 (30일, 600단어)",
+                "disabled": false
+            },
+            {
+                "id": "veritas-original-l10",
+                "title": "[Lv.10] 베리타스 오리지널 엘리트 (Elite) - 아카데믹 & SAT (30일, 600단어)",
+                "disabled": false
+            }
+        ]
+    },
+    {
+        "id": "voca-school-exam-optgroup",
+        "label": "🎓 [내신 대비] 중등&고등 내신 필수 어휘 & 서술형 특강 시리즈 (14종 교재)",
+        "books": [
+            {
+                "id": "curated-m1-1",
+                "title": "[Lv.3] 중 1-1 내신 필수 어휘 마스터 (5 DAYS, 100단어)",
+                "disabled": false
+            },
+            {
+                "id": "curated-m1-2",
+                "title": "[Lv.4] 중 1-2 내신 필수 어휘 마스터 (5 DAYS, 100단어)",
+                "disabled": false
+            },
+            {
+                "id": "curated-m2-1",
+                "title": "[Lv.5] 중 2-1 내신 심화 어휘 마스터 (5 DAYS, 100단어)",
+                "disabled": false
+            },
+            {
+                "id": "curated-m2-2",
+                "title": "[Lv.6] 중 2-2 내신 심화 어휘 마스터 (5 DAYS, 100단어)",
+                "disabled": false
+            },
+            {
+                "id": "curated-m3-1",
+                "title": "[Lv.7] 중 3-1 내신 고난도 어휘 마스터 (5 DAYS, 100단어)",
+                "disabled": false
+            },
+            {
+                "id": "curated-m3-2",
+                "title": "[Lv.8] 중 3-2 내신 킬러 & 고등 연계 어휘 (5 DAYS, 100단어)",
+                "disabled": false
+            },
+            {
+                "id": "curated-h1-1",
+                "title": "[Lv.8] 고 1-1 공통영어 내신 1등급 보카 (5 DAYS, 100단어)",
+                "disabled": false
+            },
+            {
+                "id": "curated-h1-2",
+                "title": "[Lv.8] 고 1-2 공통영어 내신 1등급 보카 (5 DAYS, 100단어)",
+                "disabled": false
+            },
+            {
+                "id": "curated-h2-1",
+                "title": "[Lv.9] 고 2-1 영어Ⅰ 내신·학평 실전 보카 (5 DAYS, 100단어)",
+                "disabled": false
+            },
+            {
+                "id": "curated-h2-2",
+                "title": "[Lv.9] 고 2-2 영어Ⅱ 심화·서술형 보카 (5 DAYS, 100단어)",
+                "disabled": false
+            },
+            {
+                "id": "curated-killer",
+                "title": "[Lv.9] 수능 1등급 킬러 다의어 & 혼동 어휘 (5 DAYS, 100단어)",
+                "disabled": false
+            },
+            {
+                "id": "curated-m-idioms",
+                "title": "[Lv.5] [내신특강] 중학 교과서 빈출 필수 숙어 50 (5 DAYS, 50숙어)",
+                "disabled": false
+            },
+            {
+                "id": "curated-csat-idioms",
+                "title": "[Lv.8] [수능특강] 고등 교과서 & 수능 빈출 킬러 숙어 50 (5 DAYS, 50숙어)",
+                "disabled": false
+            },
+            {
+                "id": "curated-native-proverbs",
+                "title": "[Lv.9] [심화특강] 찐 원어민 관용구 & 클래식 영미 속담 50 (5 DAYS, 50표현)",
+                "disabled": false
+            }
+        ]
+    },
+    {
+        "id": "voca-neungryul-series-optgroup",
+        "label": "🔥 [중등&고등 보카] 능률VOCA 시리즈 (중등~수능 필수 어휘, 8종 교재)",
+        "books": [
+            {
+                "id": "neungryul-middle-basic",
+                "title": "[Lv.3] 능률 VOCA 중학 기본 [2025] (DAY 01~50, 1,000단어 • 예비중~중1)",
+                "disabled": false
+            },
+            {
+                "id": "neungryul-middle-essential",
+                "title": "[Lv.5] 능률 VOCA 중학 필수 [2025] (DAY 01~50, 1,200단어 • 중2~3 내신)",
+                "disabled": false
+            },
+            {
+                "id": "neungryul2025",
+                "title": "[Lv.7] 능률 VOCA 중등 고난도 (DAY 01~40, 1,200단어 • 중3 심화)",
+                "disabled": false
+            },
+            {
+                "id": "neungryul_etym_2025",
+                "title": "[Lv.8] 능률 VOCA 어원편 중등 (DAY 01~30, 765단어 • 어원 중심)",
+                "disabled": false
+            },
+            {
+                "id": "neungryul-middle-idiom",
+                "title": "[Lv.5] 능률 VOCA 중학 숙어 [2025] (DAY 01~35, 640숙어 • 고교 대비)",
+                "disabled": false
+            },
+            {
+                "id": "neungryul-high-basic",
+                "title": "[Lv.8] 능률 VOCA 고등 기본 [2025] (DAY 01~40, 1,200단어 • 고교 내신)",
+                "disabled": false
+            },
+            {
+                "id": "neungryul-csat-essential",
+                "title": "[Lv.9] 능률 VOCA 수능 필수 [2025] (DAY 01~60, 2,000단어 • 수능 1~2등급)",
+                "disabled": false
+            },
+            {
+                "id": "neungryul-csat-advanced",
+                "title": "[Lv.9] 능률 VOCA 수능 고난도 [2025] (DAY 01~50, 2,000단어 • 킬러 빈칸추론)",
+                "disabled": false
+            }
+        ]
+    },
+    {
+        "id": "voca-reading-tutor-optgroup",
+        "label": "📚 [중등&고등 독해] 능률 리딩튜터 시리즈 (중등~수능 독해 어휘, 7종 교재)",
+        "books": [
+            {
+                "id": "junior-1",
+                "title": "[Lv.3] 리딩튜터 주니어 1 (예비중~중1 기초 독해 • 40일, 733단어)",
+                "disabled": false
+            },
+            {
+                "id": "junior-2",
+                "title": "[Lv.4] 리딩튜터 주니어 2 (중1~중2 내신 독해 • 40일, 749단어)",
+                "disabled": false
+            },
+            {
+                "id": "junior-3",
+                "title": "[Lv.5] 리딩튜터 주니어 3 (중2~중3 실전 독해 • 40일, 677단어)",
+                "disabled": false
+            },
+            {
+                "id": "junior-4",
+                "title": "[Lv.6] 리딩튜터 주니어 4 (중3~예비고 발전 독해 • 40일, 659단어)",
+                "disabled": false
+            },
+            {
+                "id": "challenger-1",
+                "title": "[Lv.7] 리딩튜터 챌린저 1 (고교 입문·내신 1등급 완성 • 40일, 750단어)",
+                "disabled": false
+            },
+            {
+                "id": "challenger-2",
+                "title": "[Lv.8] 리딩튜터 챌린저 2 (고교 실전·학평 1등급 정복 • 40일, 900단어)",
+                "disabled": false
+            },
+            {
+                "id": "challenger-3",
+                "title": "[Lv.9] 리딩튜터 챌린저 3 (수능 1등급 킬러·심화 독해 • 40일, 800단어)",
+                "disabled": false
+            }
+        ]
+    },
+    {
+        "id": "voca-oxford-core-optgroup",
+        "label": "🏛️ [옥스퍼드] Oxford 핵심 어휘 시리즈 (기초~학술 어휘, 4종 교재)",
+        "books": [
+            {
+                "id": "oxford-vol1",
+                "title": "[Lv.3] Oxford 3000™: 기초·입문 (Elementary A1~A2 / 50일, 1,500어휘)",
+                "disabled": false
+            },
+            {
+                "id": "oxford-vol2",
+                "title": "[Lv.5] Oxford 3000™: 중급·도약 (Intermediate B1~B2 / 50일, 1,500어휘)",
+                "disabled": false
+            },
+            {
+                "id": "oxford-vol3",
+                "title": "[Lv.7] Oxford 5000™: 상급 어휘 (Upper-Int. B2 Plus / 40일, 1,000어휘)",
+                "disabled": false
+            },
+            {
+                "id": "oxford-vol4",
+                "title": "[Lv.9] Oxford 5000™: 최고급 학술 (Advanced C1 / 40일, 1,000어휘)",
+                "disabled": false
+            }
+        ]
+    },
+    {
+        "id": "voca-academic-reading-optgroup",
+        "label": "🌍 [독해&작문] 지문 필수 학술 어휘 시리즈 (내셔널 지오그래픽&옥스퍼드, 10종 교재)",
+        "books": [
+            {
+                "id": "pathways-1",
+                "title": "[Lv.6] Pathways: Reading, Writing, and Critical Thinking 1 (20일, 400어휘)",
+                "disabled": false
+            },
+            {
+                "id": "pathways-2",
+                "title": "[Lv.7] Pathways: Reading, Writing, and Critical Thinking 2 (20일, 400어휘)",
+                "disabled": false
+            },
+            {
+                "id": "pathways-3",
+                "title": "[Lv.8] Pathways: Reading, Writing, and Critical Thinking 3 (20일, 400어휘)",
+                "disabled": false
+            },
+            {
+                "id": "pathways-4",
+                "title": "[Lv.9] Pathways: Reading, Writing, and Critical Thinking 4 (20일, 400어휘)",
+                "disabled": false
+            },
+            {
+                "id": "qskills-intro",
+                "title": "[Lv.5] Q: Skills for Success Intro (Reading & Writing / 추후 구현 예정)",
+                "disabled": true
+            },
+            {
+                "id": "qskills-1",
+                "title": "[Lv.6] Q: Skills for Success 1 (Reading & Writing / 추후 구현 예정)",
+                "disabled": true
+            },
+            {
+                "id": "qskills-2",
+                "title": "[Lv.7] Q: Skills for Success 2 (Reading & Writing / 추후 구현 예정)",
+                "disabled": true
+            },
+            {
+                "id": "qskills-3",
+                "title": "[Lv.8] Q: Skills for Success 3 (Reading & Writing / 추후 구현 예정)",
+                "disabled": true
+            },
+            {
+                "id": "qskills-4",
+                "title": "[Lv.9] Q: Skills for Success 4 (Reading & Writing / 추후 구현 예정)",
+                "disabled": true
+            },
+            {
+                "id": "qskills-5",
+                "title": "[Lv.10] Q: Skills for Success 5 (Reading & Writing / 추후 구현 예정)",
+                "disabled": true
+            }
+        ]
+    },
+    {
+        "id": "voca-travel-situation-optgroup",
+        "label": "✈️ [여행 영어] 실전 시추에이션 영어 표현 (글로벌 여행 & 현지 생존 영어, 5종 교재)",
+        "books": [
+            {
+                "id": "curated-travel-air",
+                "title": "[Lv.1] 생존 여행 1: 공항 & 기내 & 입국심사 (3 DAYS, 30표현)",
+                "disabled": false
+            },
+            {
+                "id": "curated-travel-hotel",
+                "title": "[Lv.2] 생존 여행 2: 호텔 & 숙소 & 체크인 (3 DAYS, 30표현)",
+                "disabled": false
+            },
+            {
+                "id": "curated-travel-dining",
+                "title": "[Lv.2] 생존 여행 3: 식당 & 카페 & 주문 (3 DAYS, 30표현)",
+                "disabled": false
+            },
+            {
+                "id": "curated-travel-transit",
+                "title": "[Lv.3] 생존 여행 4: 대중교통 & 길찾기 & 쇼핑 (3 DAYS, 30표현)",
+                "disabled": false
+            },
+            {
+                "id": "curated-travel-emerge",
+                "title": "[Lv.4] 생존 여행 5: 병원 & 약국 & 긴급상황 (3 DAYS, 30표현)",
+                "disabled": false
+            }
+        ]
+    },
+    {
+        "id": "voca-us-textbook-optgroup",
+        "label": "🏫 [미국 교과서] 학술 어휘 시리즈 (Tier 2 Academic Voca, 3종 교재)",
+        "books": [
+            {
+                "id": "curated-us-elem",
+                "title": "[Lv.6] 미국 교과서 학술 어휘 Step 1 (Grade 4-5, 200단어 / 20일 완성)",
+                "disabled": false
+            },
+            {
+                "id": "curated-us-mid1",
+                "title": "[Lv.8] 미국 교과서 학술 어휘 Step 2 (Grade 6-7, 200단어 / 20일 완성)",
+                "disabled": false
+            },
+            {
+                "id": "curated-us-mid2",
+                "title": "[Lv.10] 미국 교과서 학술 어휘 Step 3 (Grade 8-9, 200단어 / 20일 완성)",
+                "disabled": false
+            }
+        ]
+    },
+    {
+        "id": "voca-special-theme-optgroup",
+        "label": "📖 [어휘 특강] 프리미엄 테마 & 실전 미디어 마스터 (분야별 어휘 특강, 8종 교재)",
+        "books": [
+            {
+                "id": "season-netflix-slang",
+                "title": "[Lv.9] 넷플릭스·미드 생존 구어체 & SNS 슬랭 500 (25일, 500어휘)",
+                "disabled": false
+            },
+            {
+                "id": "season-ted-news",
+                "title": "[Lv.8] TED & 글로벌 뉴스 시사 영단어 600 (30일, 600어휘)",
+                "disabled": false
+            },
+            {
+                "id": "season-academic-essay",
+                "title": "[Lv.9] 영미권 대학 강의 & 에세이 필수 학술 어휘 600 (30일, 600어휘)",
+                "disabled": false
+            },
+            {
+                "id": "season-toeic-rc1500",
+                "title": "[Lv.7] 토익(TOEIC) 기출 RC 파트 5·6·7 핵심 보카 1,500 (50일, 1,500어휘)",
+                "disabled": false
+            },
+            {
+                "id": "curated-phrasal",
+                "title": "[Lv.7] 원어민 실전 핵심 구동사 & 콜로케이션 (5 DAYS, 100단어)",
+                "disabled": false
+            },
+            {
+                "id": "curated-tech",
+                "title": "[Lv.10] 최신 시사 뉴스 & 테크·AI 트렌드 보카 (5 DAYS, 100단어)",
+                "disabled": false
+            },
+            {
+                "id": "curated-emotions",
+                "title": "[Lv.9] 원어민 감정 · 심경 & 성격 묘사 마스터 (5 DAYS, 50단어)",
+                "disabled": false
+            },
+            {
+                "id": "curated-literature",
+                "title": "[Lv.9] 영미 명작 문학 & 스토리텔링 클래식 어휘 (5 DAYS, 50단어)",
+                "disabled": false
+            }
+        ]
+    }
+];
 
   const SERIES_INFO = {
     original: {
@@ -317,150 +742,58 @@
      */
     getAvailableBooks() {
       const list = [];
+      const addedIds = new Set();
 
-      // 0. 베리타스 오리지널 마스터 교재 10종
-      const origList = (window.VERITAS_ORIGINAL_COLLECTIONS || []);
-      origList.forEach(c => {
-        list.push({
-          id: c.id,
-          title: c.title,
-          badge: c.badge || '오리지널',
-          totalDays: c.totalDays || 30,
-          level: c.level || 1,
-          category: c.category || 'original',
-          series: 'original',
-          isOriginalCurriculum: true,
-          isCustom: false
+      // 1. 교재 등록(voca-book-select)의 9대 대분류 카탈로그 순서대로 모든 교재 등록
+      MASTER_CATALOG_GROUPS.forEach((group, gIdx) => {
+        group.books.forEach(b => {
+          if (!addedIds.has(b.id)) {
+            // 기본 메타 추출 (레벨, 총 Days 등)
+            let level = 1;
+            let totalDays = 5;
+            let badge = '교재';
+            const lvlMatch = b.title.match(/\[Lv\.(\d+)\]/);
+            if (lvlMatch) level = parseInt(lvlMatch[1], 10);
+
+            const dayMatch = b.title.match(/(\d+)\s*(?:일|DAYS|DAY)/i);
+            if (dayMatch) totalDays = parseInt(dayMatch[1], 10);
+
+            list.push({
+              id: b.id,
+              title: b.title,
+              badge: badge,
+              totalDays: totalDays,
+              level: level,
+              groupId: group.id,
+              groupLabel: group.label,
+              category: group.id.replace('voca-', '').replace('-optgroup', ''),
+              series: SERIES_MAP[b.id] || 'middle',
+              disabled: !!b.disabled,
+              isOriginalCurriculum: b.id.startsWith('veritas-original-'),
+              isCustom: false
+            });
+            addedIds.add(b.id);
+          }
         });
       });
 
-      // 1. 21개 큐레이션 부교재
-      const curList = (window.CURATED_COLLECTIONS || []).filter(c => 
-        !c.id.includes('neungryul') && !c.id.startsWith('veritas-original-')
-      );
-      curList.forEach(c => {
-        list.push({
-          id: c.id,
-          title: c.title,
-          badge: c.badge || '부교재',
-          totalDays: c.totalDays || 5,
-          level: c.level || 3,
-          category: c.category,
-          series: SERIES_MAP[c.id] || 'middle',
-          isCustom: false
-        });
-      });
-
-      // 2. 능률 VOCA 및 고등 라인업
-      if (window.VERITAS_NEUNGRYUL_HIGH_COLLECTIONS && Array.isArray(window.VERITAS_NEUNGRYUL_HIGH_COLLECTIONS)) {
-        window.VERITAS_NEUNGRYUL_HIGH_COLLECTIONS.forEach(c => {
-          if (!list.some(b => b.id === c.id)) {
-            list.push({
-              id: c.id,
-              title: c.title,
-              badge: c.badge || '능률 고등',
-              totalDays: c.totalDays || 40,
-              level: c.level || 8,
-              category: 'neungryul_high',
-              series: 'killer',
-              isCustom: false
-            });
-          }
-        });
-      }
-      if (!list.some(b => b.id === 'neungryul_etym_2025')) {
-        list.push({
-          id: 'neungryul_etym_2025',
-          title: '[Lv.8] 능률 VOCA 어원편 중등 (DAY 01~30, 765단어)',
-          badge: '능률 어원편',
-          totalDays: 30,
-          level: 8,
-          category: 'neungryul',
-          series: 'middle',
-          isCustom: false
-        });
-      }
-      if (!list.some(b => b.id === 'neungryul2025')) {
-        list.push({
-          id: 'neungryul2025',
-          title: '[Lv.7] 능률 VOCA 중등 고난도 (DAY 01~40, 1,200단어)',
-          badge: '능률 중등',
-          totalDays: 40,
-          level: 7,
-          category: 'neungryul',
-          series: 'middle',
-          isCustom: false
-        });
-      }
-
-      // 2-1. 능률 VOCA 중등 완성 라인업 3종 (기본, 필수, 숙어)
-      if (window.VERITAS_NEUNGRYUL_MIDDLE_COLLECTIONS && Array.isArray(window.VERITAS_NEUNGRYUL_MIDDLE_COLLECTIONS)) {
-        window.VERITAS_NEUNGRYUL_MIDDLE_COLLECTIONS.forEach(c => {
-          if (!list.some(b => b.id === c.id)) {
-            list.push({
-              id: c.id,
-              title: c.title,
-              badge: c.badge || '능률 중등',
-              totalDays: c.totalDays || 50,
-              level: c.level || 5,
-              category: 'neungryul_middle',
-              series: 'middle',
-              isCustom: false
-            });
-          }
-        });
-      }
-
-      // 2-2. 리딩튜터 주니어 4종 (주니어 1~4)
-      if (window.VERITAS_JUNIOR_COLLECTIONS && Array.isArray(window.VERITAS_JUNIOR_COLLECTIONS)) {
-        window.VERITAS_JUNIOR_COLLECTIONS.forEach(c => {
-          if (!list.some(b => b.id === c.id)) {
-            list.push({
-              id: c.id,
-              title: c.title,
-              badge: c.badge || '리딩튜터 주니어',
-              totalDays: c.totalDays || 40,
-              level: c.level || 4,
-              category: 'reading_tutor_junior',
-              series: 'middle',
-              isCustom: false
-            });
-          }
-        });
-      }
-
-      // 2-3. 리딩튜터 챌린저 3종 (챌린저 1~3)
-      if (window.VERITAS_CHALLENGER_COLLECTIONS && Array.isArray(window.VERITAS_CHALLENGER_COLLECTIONS)) {
-        window.VERITAS_CHALLENGER_COLLECTIONS.forEach(c => {
-          if (!list.some(b => b.id === c.id)) {
-            list.push({
-              id: c.id,
-              title: c.title,
-              badge: c.badge || '리딩튜터 챌린저',
-              totalDays: c.totalDays || 40,
-              level: c.level || 8,
-              category: 'reading_tutor',
-              series: 'killer',
-              isCustom: false
-            });
-          }
-        });
-      }
-
-      // 3. AI 맞춤 생성 교재
+      // 2. AI 맞춤 생성 교재 동적 추가
       if (window.storage && typeof window.storage.getCustomCollections === 'function') {
         const customColls = window.storage.getCustomCollections() || [];
         customColls.forEach(c => {
-          list.push({
-            id: c.id,
-            title: c.title || 'AI 맞춤 생성 교재',
-            badge: c.badge || 'AI 맞춤',
-            totalDays: c.totalDays || c.days || 5,
-            level: c.level || 5,
-            category: 'custom',
-            series: 'custom_ai',
-            isCustom: true
-          });
+          if (!addedIds.has(c.id)) {
+            list.push({
+              id: c.id,
+              title: c.title || 'AI 맞춤 생성 교재',
+              badge: c.badge || 'AI 맞춤',
+              totalDays: c.totalDays || c.days || 5,
+              level: c.level || 5,
+              category: 'custom',
+              series: 'custom_ai',
+              isCustom: true
+            });
+            addedIds.add(c.id);
+          }
         });
       }
 
@@ -523,14 +856,24 @@
         if (rawWords.length === 0 && window.READING_TUTOR_CHALLENGER_WORDS_DATA) {
           rawWords = window.READING_TUTOR_CHALLENGER_WORDS_DATA.filter(w => w.collectionId === bookId);
         }
+      } else if (bookId && bookId.startsWith('oxford-')) {
+        if (window.VERITAS_OXFORD_WORDS_DATA) {
+          rawWords = window.VERITAS_OXFORD_WORDS_DATA.filter(w => w.collectionId === bookId);
+        }
+      } else if (bookId && bookId.startsWith('pathways-')) {
+        if (window.VERITAS_PATHWAYS_WORDS_DATA) {
+          rawWords = window.VERITAS_PATHWAYS_WORDS_DATA.filter(w => w.collectionId === bookId);
+        }
+      } else if (bookId && bookId.startsWith('season-')) {
+        if (window.VERITAS_SEASONS_WORDS_DATA) {
+          rawWords = window.VERITAS_SEASONS_WORDS_DATA.filter(w => w.collectionId === bookId);
+        }
       } else {
-        // 21개 큐레이션 단어장 & Oxford & Pathways & 기타
+        // 내신 대비(중등 1~3, 고등 1~2, 킬러, 숙어) & 여행 & 미국 교과서 & 테크 등
         const allCurated = window.CURATED_WORDS_DATA || [];
         rawWords = allCurated.filter(w => w.collectionId === bookId);
-        if (rawWords.length === 0) {
-          if (window.VERITAS_OXFORD_WORDS_DATA) {
-            rawWords = window.VERITAS_OXFORD_WORDS_DATA.filter(w => w.collectionId === bookId);
-          }
+        if (rawWords.length === 0 && window.VERITAS_OXFORD_WORDS_DATA) {
+          rawWords = window.VERITAS_OXFORD_WORDS_DATA.filter(w => w.collectionId === bookId);
         }
         if (rawWords.length === 0 && window.VERITAS_PATHWAYS_WORDS_DATA) {
           rawWords = window.VERITAS_PATHWAYS_WORDS_DATA.filter(w => w.collectionId === bookId);
@@ -540,7 +883,7 @@
         }
       }
 
-      // Day별 정렬 및 그룹화 (모든 키 완벽 대응)
+            // Day별 정렬 및 그룹화 (모든 키 완벽 대응)
       this.groupedDays = {};
       rawWords.forEach((w, idx) => {
         const dayKey = w.DAY || (w.day ? `DAY ${String(w.day).padStart(2, '0')}` : 'DAY 01');
@@ -771,40 +1114,24 @@
       const books = this.getAvailableBooks();
       let html = '';
 
+      // 1. AI 맞춤 생성 교재 (있을 경우 최상단)
       const customBooks = books.filter(b => b.isCustom);
       if (customBooks.length > 0) {
-        html += `<optgroup label="✨ AI 맞춤 생성 교재">`;
+        html += `<optgroup label="🎨 나만의 AI 맞춤 생성 단어장">`;
         customBooks.forEach(b => {
-          html += `<option value="${b.id}" ${b.id === this.currentBookId ? 'selected' : ''}>${b.title}</option>`;
+          html += `<option value="${b.id}" ${b.id === this.currentBookId ? 'selected' : ''}>${escapeHtml(b.title)}</option>`;
         });
         html += `</optgroup>`;
       }
 
-      const seriesOrder = [
-        'oxford',
-        'pathways',
-        'reading_tutor_challenger',
-        'season_netflix_slang',
-        'season_ted_news',
-        'season_academic_essay',
-        'season_middle_starter',
-        'season_toeic_rc',
-        'original',
-        'middle',
-        'killer',
-        'trend',
-        'academic',
-        'idioms',
-        'travel',
-        'literature'
-      ];
-      seriesOrder.forEach(sk => {
-        const sInfo = SERIES_INFO[sk];
-        const sBooks = books.filter(b => !b.isCustom && b.series === sk);
-        if (sBooks.length > 0) {
-          html += `<optgroup label="${sInfo.icon} ${sInfo.name}">`;
-          sBooks.forEach(b => {
-            html += `<option value="${b.id}" ${b.id === this.currentBookId ? 'selected' : ''}>${b.title}</option>`;
+      // 2. 9대 대분류 카탈로그 순서 그대로 출력
+      MASTER_CATALOG_GROUPS.forEach(group => {
+        const groupBooks = books.filter(b => !b.isCustom && b.groupId === group.id);
+        if (groupBooks.length > 0) {
+          html += `<optgroup label="${escapeHtml(group.label)}">`;
+          groupBooks.forEach(b => {
+            const disAttr = b.disabled ? ' disabled' : '';
+            html += `<option value="${b.id}" ${b.id === this.currentBookId ? 'selected' : ''}${disAttr}>${escapeHtml(b.title)}</option>`;
           });
           html += `</optgroup>`;
         }
@@ -813,7 +1140,7 @@
       return html;
     }
 
-    onBookChange(bookId) {
+        onBookChange(bookId) {
       this.selectedDay = 'ALL';
       this.loadBookData(bookId);
       const bookLvl = (this.currentBookMeta && this.currentBookMeta.level) || 1;
