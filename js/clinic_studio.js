@@ -309,23 +309,66 @@
         }
 
         getGrammarData() {
-            let base = window.GRAMMAR_STUDIO_EXT_DATA || [];
+            const raw = window.GRAMMAR_STUDIO_EXT_DATA || [];
+            const deduped = [];
+            const seen = new Set();
+            raw.forEach(item => {
+                if (!seen.has(item.levelCode)) {
+                    seen.add(item.levelCode);
+                    deduped.push(item);
+                }
+            });
             if (window.GRAMMAR_SYNTAX_THEME_EXT_DATA && Array.isArray(window.GRAMMAR_SYNTAX_THEME_EXT_DATA)) {
                 window.GRAMMAR_SYNTAX_THEME_EXT_DATA.forEach(extItem => {
-                    if (!base.some(b => b.levelCode === extItem.levelCode)) {
-                        base.push(extItem);
+                    if (!seen.has(extItem.levelCode)) {
+                        seen.add(extItem.levelCode);
+                        deduped.push(extItem);
                     }
                 });
             }
-            return base;
+            return deduped;
         }
 
         getReadingData() {
-            return window.READING_CLINIC_DATA || [];
+            const raw = window.READING_CLINIC_DATA || [];
+            const deduped = [];
+            const seen = new Set();
+            raw.forEach(item => {
+                if (!seen.has(item.levelCode)) {
+                    seen.add(item.levelCode);
+                    deduped.push(item);
+                }
+            });
+            if (window.GRAMMAR_SYNTAX_THEME_READING_DATA && Array.isArray(window.GRAMMAR_SYNTAX_THEME_READING_DATA)) {
+                window.GRAMMAR_SYNTAX_THEME_READING_DATA.forEach(extItem => {
+                    if (!seen.has(extItem.levelCode)) {
+                        seen.add(extItem.levelCode);
+                        deduped.push(extItem);
+                    }
+                });
+            }
+            return deduped;
         }
 
         getWritingData() {
-            return window.WRITING_CLINIC_DATA || [];
+            const raw = window.WRITING_CLINIC_DATA || [];
+            const deduped = [];
+            const seen = new Set();
+            raw.forEach(item => {
+                if (!seen.has(item.levelCode)) {
+                    seen.add(item.levelCode);
+                    deduped.push(item);
+                }
+            });
+            if (window.GRAMMAR_SYNTAX_THEME_WRITING_DATA && Array.isArray(window.GRAMMAR_SYNTAX_THEME_WRITING_DATA)) {
+                window.GRAMMAR_SYNTAX_THEME_WRITING_DATA.forEach(extItem => {
+                    if (!seen.has(extItem.levelCode)) {
+                        seen.add(extItem.levelCode);
+                        deduped.push(extItem);
+                    }
+                });
+            }
+            return deduped;
         }
 
         open(mode = 'grammar', levelCode = 'lv1', unitNo = 1, scope = 'all', role = 'main') {
@@ -355,6 +398,10 @@
 
         setMode(mode) {
             this.currentMode = mode;
+            const bank = this.getCurrentDataBank();
+            if (!bank.some(l => l.levelCode === this.currentLevelCode)) {
+                this.currentLevelCode = bank[0] ? bank[0].levelCode : 'lv1';
+            }
             this.render();
         }
 
@@ -1008,10 +1055,91 @@
             const sec1 = unit.section1 || {};
             const coreMap = sec1.coreMap || {};
             const dualExs = sec1.dualExamples || [];
-            const nuance = sec1.nuanceCollocations || [];
-            const sec2 = unit.section2 || [];
-            const sec3 = unit.section3 || [];
-            const sec4 = unit.section4 || [];
+
+            // 실전 뉘앙스 & 빈출 함정 데이터 안전 정규화
+            let nuance = sec1.nuanceCollocations || [];
+            if (!nuance.length && coreMap.formulaBoxes && coreMap.formulaBoxes[0]) {
+                const fb = coreMap.formulaBoxes[0];
+                const rules = fb.rules || [];
+                nuance = [
+                    {
+                        point: rules[0] ? `${rules[0].title}: ${rules[0].detail}` : (coreMap.takeaways ? coreMap.takeaways[0] : fb.desc || '핵심 구문 공식 활용법'),
+                        collocation: rules[1] ? `${rules[1].title} 주의!` : (coreMap.takeaways ? coreMap.takeaways[1] : '수일치 및 어순 주의')
+                    },
+                    {
+                        point: rules[2] ? `${rules[2].title}: ${rules[2].detail}` : (coreMap.takeaways ? coreMap.takeaways[2] : '실전 기출 빈출 포인트'),
+                        collocation: fb.formula ? `공식 암기: ${fb.formula}` : '오답 함정 감별'
+                    }
+                ];
+            }
+
+            // Section 2 (기초 체력 빌드업 드릴 10제) 안전 정규화 (배열 및 객체 포맷 완벽 호환)
+            let sec2 = [];
+            const rawSec2 = unit.section2 || [];
+            if (Array.isArray(rawSec2)) {
+                sec2 = rawSec2;
+            } else if (rawSec2 && typeof rawSec2 === 'object') {
+                const oxDrills = rawSec2.oxDrills || [];
+                oxDrills.forEach(d => {
+                    sec2.push({
+                        q: '다음 문장이 어법상 올바르면 O, 틀리면 X를 표시하시오.',
+                        sentence: d.sent || '',
+                        answer: d.ans || 'O',
+                        explanation: d.exp || ''
+                    });
+                });
+                const transformDrills = rawSec2.transformDrills || [];
+                transformDrills.forEach(d => {
+                    sec2.push({
+                        q: '다음 문장의 괄호 안 단어를 문맥에 맞게 변형하여 완성하시오.',
+                        sentence: d.sent || '',
+                        answer: d.ans || '',
+                        explanation: d.exp || ''
+                    });
+                });
+            }
+
+            // Section 3 (실전 20제) 안전 정규화
+            let sec3 = [];
+            const rawSec3 = unit.section3 || [];
+            if (Array.isArray(rawSec3)) {
+                sec3 = rawSec3;
+            } else if (rawSec3 && typeof rawSec3 === 'object') {
+                const qList = rawSec3.questions || [];
+                qList.forEach((q, idx) => {
+                    sec3.push({
+                        qNo: q.no || (idx + 1),
+                        type: q.type || '실전 문법',
+                        stem: q.question || q.title || '다음 문맥에서 올바른 형태를 고르시오.',
+                        sentence: q.text || '',
+                        options: Array.isArray(q.options) ? q.options : [],
+                        ans: q.ans !== undefined ? q.ans : 0,
+                        exp: q.exp || ''
+                    });
+                });
+            }
+
+            // Section 4 (킬러 서술형 3제) 안전 정규화
+            let sec4 = [];
+            const rawSec4 = unit.section4 || [];
+            if (Array.isArray(rawSec4)) {
+                sec4 = rawSec4;
+            } else if (rawSec4 && typeof rawSec4 === 'object') {
+                const dqList = rawSec4.descriptiveQuestions || [];
+                dqList.forEach((dq, idx) => {
+                    const condStr = dq.cond || '';
+                    const conditions = condStr.split('\n').map(c => c.trim()).filter(Boolean);
+                    sec4.push({
+                        type: dq.title || `조건 영작 0${idx+1}`,
+                        stem: dq.question || '',
+                        situation: dq.title || '',
+                        conditions: conditions.length ? conditions : ['조건을 준수하여 영작할 것'],
+                        modelAnswer: dq.modelAns || '',
+                        rubric: dq.point || '핵심 구문 활용 및 어법 수일치 확인'
+                    });
+                });
+            }
+
             const sec5 = unit.section5 || {};
             const basePage = (unit.unitNo - 1) * 5 + 5;
 
