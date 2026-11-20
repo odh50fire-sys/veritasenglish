@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영문법 클리닉 220단원 3단계 정복 & 실물 시험지 제작 가이드 | 베리타스 잉글리시</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        academy: {
+                            navy: '#0F172A',
+                            oxford: '#1E3A8A',
+                            paper: '#F8FAFC',
+                            crimson: '#991B1B',
+                            laurel: '#065F46',
+                            gold: '#B45309',
+                            amber: '#F59E0B'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                        serif: ['Plus Jakarta Sans', 'Pretendard', '-apple-system', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+        * {
+            word-break: keep-all;
+            overflow-wrap: break-word;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, sans-serif;
+            background-color: #F8FAFC;
+            color: #1E293B;
+            word-break: keep-all;
+        }
+
+        .academic-serif, .font-serif {
+            font-family: 'Plus Jakarta Sans', 'Pretendard', -apple-system, sans-serif !important;
+            letter-spacing: -0.025em;
+        }
+    </style>
+</head>
+<body class="selection:bg-rose-100 selection:text-rose-950 break-keep">
+
+    <!-- 상단 Sticky 헤더 -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <a href="../intro.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center text-amber-400 shadow-md border border-slate-800 group-hover:scale-105 transition-transform">
+                        <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <div class="academic-serif font-black text-xl text-slate-900 tracking-tight leading-none">
+                            VERITAS <span class="text-blue-900">ENGLISH</span>
+                        </div>
+                        <div class="text-[10px] font-mono tracking-widest text-slate-500 uppercase mt-0.5 font-bold">
+                            Learning Guide Center
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 가이드 스위처 칩스 (데스크톱) -->
+                <nav class="hidden xl:flex items-center space-x-1 font-medium text-xs text-slate-600">
+                    <a href="starter.html" class="px-2 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">0. 기본 사용법</a>
+                    <a href="curriculum.html" class="px-2 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">1. 어휘 교재</a>
+                    <a href="reading.html" class="px-2 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">2. 내신 독해</a>
+                    <a href="grammar.html" class="px-2.5 py-1.5 rounded-lg bg-rose-900 text-amber-300 font-bold shadow-2xs">3. 영문법 클리닉</a>
+                    <a href="native.html" class="px-2 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">4. 원어민 Lab</a>
+                    <a href="quiz.html" class="px-2 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">5. 플래시 &amp; 퀴즈</a>
+                    <a href="srs.html" class="px-2 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">6. 망각곡선 SRS</a>
+                    <a href="planner.html" class="px-2 py-1.5 rounded-lg hover:text-blue-900 hover:bg-slate-100 transition-colors">7. 스마트 플래너</a>
+                </nav>
+
+                <div class="flex items-center gap-2">
+                    <a href="../intro.html#guide-center" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition-all">
+                        <i data-lucide="layout-grid" class="w-4 h-4"></i>
+                        <span>가이드 목록</span>
+                    </a>
+                    <a href="../index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 hover:bg-blue-950 text-amber-300 font-semibold text-xs sm:text-sm shadow-md transition-all">
+                        <span>학습실 바로가기</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-amber-400"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 메인 컨테이너 -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        
+        <!-- 브레드크럼 & 뱃지 -->
+        <div class="flex items-center gap-2 text-xs font-semibold text-slate-500 mb-4">
+            <a href="../intro.html" class="hover:text-blue-900">홈</a>
+            <span>/</span>
+            <a href="../intro.html#guide-center" class="hover:text-blue-900">가이드 센터</a>
+            <span>/</span>
+            <span class="text-rose-900 font-bold">GUIDE 03: 영문법 클리닉</span>
+        </div>
+
+        <!-- 히어로 헤더 -->
+        <div class="bg-gradient-to-br from-rose-950 via-slate-900 to-indigo-950 text-white rounded-3xl p-8 sm:p-12 mb-12 shadow-xl border border-rose-900/40 relative overflow-hidden">
+            <div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-rose-500/10 blur-3xl pointer-events-none"></div>
+            <div class="relative z-10 max-w-3xl">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-500/20 text-rose-300 border border-rose-400/30 text-xs font-bold font-mono uppercase tracking-wider mb-4">
+                    <span>🩺</span> Clinical Grammar System
+                </span>
+                <h1 class="academic-serif font-black text-3xl sm:text-5xl tracking-tight leading-tight mb-4">
+                    개념 암기를 넘어 문제 해결로, <br>
+                    <span class="text-amber-300">영문법 클리닉 220단원</span> 완벽 정복
+                </h1>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                    문법 규칙만 줄줄 외우고 정작 시험 문제에서는 어법 오류를 찾아내지 못하나요? <br class="hidden sm:inline">
+                    베리타스 영문법 클리닉은 <strong>공식 이해 → 밑줄 오류 판별 → 실전 5제 퀴즈</strong>로 이어지는 과학적인 3단계 처방을 통해, 
+                    학교 내신 어법과 수능 어법 1등급을 무조건 달성하도록 설계되었습니다.
+                </p>
+                <div class="mt-6 flex flex-wrap items-center gap-3 text-xs font-semibold">
+                    <span class="px-3 py-1.5 rounded-xl bg-white/10 text-white border border-white/15">
+                        📚 총 220개 단원 전 범위
+                    </span>
+                    <span class="px-3 py-1.5 rounded-xl bg-white/10 text-white border border-white/15">
+                        🎯 밑줄 어법 240제 정밀 첨삭
+                    </span>
+                    <span class="px-3 py-1.5 rounded-xl bg-white/10 text-white border border-white/15">
+                        📝 실전 5제 300문항 &amp; 오답노트
+                    </span>
+                    <span class="px-3 py-1.5 rounded-xl bg-amber-400 text-slate-950 font-bold">
+                        🖨️ A4 실물 시험지 인쇄 지원
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 섹션 1: 3대 교재 라인업 (전체 220단원 구조) -->
+        <section class="mb-16">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-8 rounded-xl bg-rose-900 text-amber-300 flex items-center justify-center font-bold text-sm">1</div>
+                <h2 class="academic-serif font-bold text-2xl text-slate-900">영문법 3대 교재 라인업 (총 220개 단원)</h2>
+            </div>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                중학 필수 기초부터 고교 내신 심화, 수능 1등급 킬러 어법까지 학생의 학년과 수준에 맞추어 체계적으로 선택 학습할 수 있습니다.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- 1. 기본 영문법 마스터 1~4권 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:border-rose-300 transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-amber-300 text-xs font-bold">기본 파운데이션</span>
+                            <span class="text-xs font-mono font-bold text-slate-500">160단원</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 mb-2">중·고등 기본 영문법 1~4권</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            문장의 5형식, 시제, 조동사, 수동태, to부정사, 동명사, 분사, 관계사 등 중·고교 내신에 필수적인 전 영역 문법 규칙을 160개 소단원으로 촘촘하게 마스터합니다.
+                        </p>
+                    </div>
+                    <div class="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-rose-900 font-semibold">
+                        <span>중등 전 과정 ~ 고교 입문</span>
+                        <span>160 Units</span>
+                    </div>
+                </div>
+
+                <!-- 2. 독해 핵심 구문 1~3권 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:border-blue-300 transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-1 rounded-lg bg-blue-900 text-blue-100 text-xs font-bold">실전 독해 연계</span>
+                            <span class="text-xs font-mono font-bold text-blue-800">30단원</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 mb-2">수능·내신 독해 핵심 구문 1~3권</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            독해 지문에서 마주쳤을 때 해석이 꼬이기 쉬운 긴 주어, 가주어/진주어, 복합 관계사, 상관접속사 등의 핵심 구문을 직독직해 비법과 함께 집중 훈련합니다.
+                        </p>
+                    </div>
+                    <div class="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-blue-900 font-semibold">
+                        <span>수능·모의고사 직결 구문</span>
+                        <span>30 Units</span>
+                    </div>
+                </div>
+
+                <!-- 3. 킬러 핀포인트 테마 1~3권 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:border-rose-300 transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-1 rounded-lg bg-rose-900 text-rose-100 text-xs font-bold">상위 1% 킬러</span>
+                            <span class="text-xs font-mono font-bold text-rose-800">30단원</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 mb-2">1등급 결정 킬러 테마 1~3권</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            부정어 도치, 분사구문 주어 일치, 가정법 혼합 시제, 특수 비교구문 등 상위권 학생들의 변별력을 가르는 고난도 킬러 어법을 핀포인트로 공략합니다.
+                        </p>
+                    </div>
+                    <div class="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-rose-900 font-semibold">
+                        <span>내신 서술형 &amp; 수능 1등급</span>
+                        <span>30 Units</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 2: 3단계 과학적 클리닉 사이클 상세 분석 -->
+        <section class="mb-16">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-8 rounded-xl bg-rose-900 text-amber-300 flex items-center justify-center font-bold text-sm">2</div>
+                <h2 class="academic-serif font-bold text-2xl text-slate-900">3단계 과학적 클리닉 사이클</h2>
+            </div>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                눈으로만 읽는 수동적인 공부는 시험장에서 통하지 않습니다. 1단계에서 공식과 해석 원리를 파악하고, 2단계에서 실전 오류를 교정하며, 3단계에서 실전 시험으로 완성합니다.
+            </p>
+
+            <div class="space-y-6">
+                
+                <!-- 1단계 상세 -->
+                <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-100">
+                        <div class="flex items-center gap-3">
+                            <span class="px-2.5 py-1 rounded-lg bg-rose-900 text-amber-300 font-bold text-xs shrink-0">Step 1</span>
+                            <h3 class="font-bold text-lg text-slate-900">공식 카드 &amp; 실전 직독직해 비법 (우리말 뜻 포함)</h3>
+                        </div>
+                        <span class="text-xs font-semibold text-rose-800 bg-rose-50 px-2.5 py-1 rounded-md">개념 &amp; 원리 각인</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-600 mt-4 leading-relaxed">
+                        문법 구조를 직관적인 카드 형태로 도식화하여 보여줍니다. 특히 <strong>구문의 정확한 우리말 뜻</strong>과 실전 독해에서 문장을 어떻게 끊어 읽어야 하는지 알려주는 <strong>[실전 직독직해 &amp; 해석 비법] 나침반 팁</strong>을 모든 단원에 기본 탑재했습니다.
+                    </p>
+                    
+                    <!-- 예시 UI 박스 -->
+                    <div class="mt-4 p-4 rounded-xl bg-[#FAF9F6] border border-slate-200 font-sans text-xs">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="font-bold text-blue-900">구문 뜻:</span>
+                            <span class="text-slate-700">"S가 ~하자마자 곧이어 S'가 …했다"</span>
+                        </div>
+                        <div class="p-3 bg-white rounded-lg border border-slate-200 text-slate-700 font-mono text-[11px] leading-relaxed">
+                            <div class="font-bold text-rose-900 mb-1">🧭 실전 직독직해 &amp; 해석 비법</div>
+                            <div>No sooner 뒤에 조동사 도치(had+S+p.p.)가 오며, than 뒤 절과 시간 순서대로 순차 해석할 것.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2단계 상세 -->
+                <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-100">
+                        <div class="flex items-center gap-3">
+                            <span class="px-2.5 py-1 rounded-lg bg-rose-900 text-amber-300 font-bold text-xs shrink-0">Step 2</span>
+                            <h3 class="font-bold text-lg text-slate-900">밑줄 어법 4문제 정밀 클리닉 (실시간 오류 판별 &amp; 첨삭)</h3>
+                        </div>
+                        <span class="text-xs font-semibold text-rose-800 bg-rose-50 px-2.5 py-1 rounded-md">총 240문항 O/X 훈련</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-600 mt-4 leading-relaxed">
+                        실제 학교 시험과 수능 모의고사에서 가장 오답률이 높은 <strong>밑줄 어법 유형</strong>입니다. 문장 내 밑줄 친 부분이 어법상 올바른지(O), 틀렸는지(X) 판단하고, 틀린 경우 <strong>올바른 수정형과 출제 포인트 해설</strong>을 즉시 확인합니다.
+                    </p>
+
+                    <!-- 예시 UI 박스 -->
+                    <div class="mt-4 p-4 rounded-xl bg-[#FAF9F6] border border-slate-200 text-xs">
+                        <div class="font-mono text-slate-800 mb-2">
+                            Hardly <span class="underline decoration-rose-500 font-bold">he had entered</span> the room when the phone rang.
+                        </div>
+                        <div class="flex items-center gap-2 font-bold text-rose-700">
+                            <span>❌ 판별: 틀림</span>
+                            <span>➔ 올바른 수정: had he entered (부정어구 도치 규칙)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3단계 상세 -->
+                <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-100">
+                        <div class="flex items-center gap-3">
+                            <span class="px-2.5 py-1 rounded-lg bg-rose-900 text-amber-300 font-bold text-xs shrink-0">Step 3</span>
+                            <h3 class="font-bold text-lg text-slate-900">실전 5제 퀴즈 &amp; 오답노트 자동 졸업 시스템</h3>
+                        </div>
+                        <span class="text-xs font-semibold text-rose-800 bg-rose-50 px-2.5 py-1 rounded-md">총 300문항 실전 테스트</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-600 mt-4 leading-relaxed">
+                        단원별로 엄선된 5개 객관식 5지선다 문제를 실전 타이머와 함께 풀이합니다. 
+                        틀린 문제는 <strong>개인별 오답노트에 자동 등록</strong>되며, 3회 연속 정답을 맞혀야 오답노트에서 졸업되는 완전 학습 사이클을 제공합니다.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 3: 인쇄 및 실물 시험지 워크시트 활용 -->
+        <section class="mb-16">
+            <div class="bg-gradient-to-r from-slate-900 via-rose-950 to-slate-900 text-white rounded-3xl p-8 border border-rose-900/40 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-md">
+                <div>
+                    <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">A4 CLINIC PRINT &amp; PDF</span>
+                    <h3 class="text-2xl font-black mt-1 mb-2">화면을 넘어 종이로 완성하는 실물 시험지!</h3>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-xl">
+                        영문법 220단원의 공식 요약 핸드북, 밑줄 어법 실물 워크북, 단원별 5제 모의고사 시험지, 교사용 정답 및 정밀 해설지를 원클릭으로 A4 규격 출력할 수 있습니다. 학원 수업용 교재나 자습 과제물로 완벽하게 활용하세요.
+                    </p>
+                    <div class="mt-4 flex flex-wrap gap-2 text-xs text-amber-200">
+                        <span>✓ 문법 공식 요약집</span>
+                        <span>•</span>
+                        <span>✓ 밑줄 어법 연습장</span>
+                        <span>•</span>
+                        <span>✓ 실전 모의고사</span>
+                        <span>•</span>
+                        <span>✓ 교사용 해설지</span>
+                    </div>
+                </div>
+                <div class="shrink-0">
+                    <a href="../index.html" class="px-5 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-sm shadow-md transition-all inline-flex items-center gap-2">
+                        <i data-lucide="printer" class="w-4 h-4"></i>
+                        <span>클리닉 시험지 인쇄하기</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 하단 네비게이션 액션 바 -->
+        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+            <a href="reading.html" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                <span>이전: 2. 중등 내신 독해 70선</span>
+            </a>
+            <div class="flex items-center gap-3">
+                <a href="../intro.html#guide-center" class="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs sm:text-sm transition-all">
+                    전체 목록 보기
+                </a>
+                <a href="native.html" class="px-5 py-2.5 rounded-xl bg-rose-900 hover:bg-rose-950 text-amber-300 font-bold text-xs sm:text-sm shadow-md transition-all inline-flex items-center gap-2">
+                    <span>다음: 4. 원어민 Lab 가이드</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-amber-400"></i>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-center text-xs">
+        <div class="max-w-6xl mx-auto px-4">
+            <p class="font-serif font-bold text-slate-200 text-sm mb-2">VERITAS ENGLISH ACADEMY</p>
+            <p class="text-slate-500 mb-4">영문법 220단원 클리닉 &amp; 3단계 처방 학습 시스템</p>
+            <p class="text-slate-600">&copy; 2026 Veritas English. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
