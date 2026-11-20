@@ -993,8 +993,8 @@ class GrammarClinicEngine {
                             <i data-lucide="search" class="w-4 h-4"></i>
                         </div>
                         <div>
-                            <h4 class="font-serif font-bold text-sm text-indigo-950">2단계 밑줄 어법 클리닉 (3대 실전 미션)</h4>
-                            <p class="text-xs text-indigo-800 mt-0.5">다음 3개의 내신·수능 실전 문장에서 어법상 <strong class="underline decoration-indigo-500 decoration-2">틀린 부분 하나</strong>를 클릭하여 즉시 진단하고 수정 처방을 확인하세요.</p>
+                            <h4 class="font-serif font-bold text-sm text-indigo-950">2단계 밑줄 어법 클리닉 (${drills.length}대 실전 미션)</h4>
+                            <p class="text-xs text-indigo-800 mt-0.5">다음 ${drills.length}개의 내신·수능 실전 문장에서 어법상 <strong class="underline decoration-indigo-500 decoration-2">틀린 부분 하나</strong>를 클릭하여 즉시 진단하고 수정 처방을 확인하세요.</p>
                         </div>
                     </div>
                     <div class="shrink-0 px-3 py-1 rounded-xl bg-indigo-600 text-white font-mono font-bold text-xs flex items-center gap-1.5 shadow-xs">
@@ -1374,7 +1374,7 @@ class GrammarClinicEngine {
                                 ` : ''}
                             </div>
                         `;
-                    })}
+                    }).join('')}
                 </div>
 
                 <!-- 제출 버튼 또는 완료 요약 배너 -->
