@@ -65,7 +65,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "The students as well as the teacher was excited about the field trip.",
                 "reason": "B as well as A에서는 앞의 진짜 주어 B(The students, 복수)에 동사를 맞추어야 하므로 were가 옳습니다."
               }
-            ]
+            ],
+            "meaning": "A뿐만 아니라 B도 (무게중심 및 수일치: B)",
+            "translationGuide": "뒤에 있는 A부터 묶어서 'A뿐만 아니라'로 가볍게 넘긴 후, 앞의 B에 힘을 주어 'B도'라고 해석합니다. 특히 주어 자리에 올 때는 B가 진짜 주어이므로 'B가'라고 주격 조사를 붙여 해석하세요!"
           }
         ],
         "spottingDrills": [
@@ -243,7 +245,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "Neither the teacher nor the students wants to delay the test.",
                 "reason": "동사에 가까운 the students가 복수이므로 want를 써야 합니다."
               }
-            ]
+            ],
+            "meaning": "either A or B: 'A 또는 B 둘 중 하나' / neither A nor B: 'A도 B도 둘 다 아닌 (완전 부정)'",
+            "translationGuide": "either A or B는 'A든가 아니면 B'로 선택 해석합니다. neither A nor B는 문장 전체가 강한 부정문이 되므로, 동사에 '결코 ~않다'를 붙여 'A도 B도 결코 ~하지 않다'로 확실하게 부정 해석해야 오역이 없습니다."
           }
         ],
         "spottingDrills": [
@@ -421,7 +425,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "Both my brother and my sister is studying abroad.",
                 "reason": "both A and B는 둘 다를 의미하므로 단수 동사 is가 아니라 복수 동사 are를 써야 합니다."
               }
-            ]
+            ],
+            "meaning": "both A and B: 'A와 B 둘 다 (항상 복수)' / not A but B: 'A가 아니라 B (강조: B)'",
+            "translationGuide": "both A and B는 둘을 하나로 묶어 'A와 B 둘 다'로 복수 해석합니다. not A but B는 'A는 제쳐두고 바로 B다!'로 읽으며, 필자의 핵심 주장과 지문의 요지는 오직 B에 담겨 있습니다."
           }
         ],
         "spottingDrills": [
@@ -599,7 +605,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "When it comes to make critical financial decisions, caution is essential.",
                 "reason": "When it comes to의 to는 전치사이므로 동사원형 make가 아니라 동명사 making을 써야 합니다."
               }
-            ]
+            ],
+            "meaning": "~에 관해서라면, ~에 관한 한 (= regarding, as for)",
+            "translationGuide": "문두나 절 앞에서 'When it comes to + 명사구'를 괄호로 묶어 '~라는 주제에 대해서라면 말이지'라고 화제를 한정하며 끊어 읽으세요. to 뒤의 명사/동명사를 목적어로 삼아 '~하는 것에 관해서는'으로 매끄럽게 연결합니다."
           }
         ],
         "spottingDrills": [
@@ -777,7 +785,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "With regard to the new policy was announced, several employees voiced strong concerns.",
                 "reason": "With regard to는 전치사이므로 뒤에 절(was announced)이 올 수 없습니다."
               }
-            ]
+            ],
+            "meaning": "In terms of: '~의 관점(측면)에서' / With regard to: '~에 관하여, ~에 대해서는'",
+            "translationGuide": "학술 지문에서 논점의 평가 기준이나 논의 대상을 한정할 때 씁니다. In terms of X는 'X라는 잣대로 따져보자면'으로 기준을 잡고, With regard to X는 'X라는 사안에 대해서는'으로 화제를 전환하며 직독직해합니다."
           }
         ],
         "spottingDrills": [
@@ -955,7 +965,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "Despite of his busy schedule, he volunteers at the animal shelter every weekend.",
                 "reason": "despite은 자체로 전치사이므로 of를 덧붙이지 않습니다. in spite of와 혼동 주의!"
               }
-            ]
+            ],
+            "meaning": "비록 ~임에도 불구하고, ~에도 불구하고 (양보·역접 대조)",
+            "translationGuide": "Despite/In spite of 뒤의 명사구를 '~라는 심각한 장애물/어려움에도 불구하고'로 먼저 정리하고, 주절에서 '그럼에도 불구하고 주어가 기어이 해낸 핵심 사실'에 시선을 집중하여 읽습니다. 주절이 필자의 진짜 메시지입니다!"
           }
         ],
         "spottingDrills": [
@@ -1133,7 +1145,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "She delivered an inspiring speech in behalf to the environmental organization.",
                 "reason": "대표를 나타내는 전치사는 on behalf of이며, in behalf to는 잘못된 형태입니다."
               }
-            ]
+            ],
+            "meaning": "On behalf of: '~을 대표하여, ~을 대신하여' / In favor of: '~에 찬성(지지)하여, ~을 선호하여'",
+            "translationGuide": "On behalf of + 집단은 '이 집단을 대변하여 / 대신하여'로 읽고, in favor of + 안건은 '그 안건의 편을 들어 / 그 안건을 전폭 지지하여'로 문맥의 찬반 태도를 정확히 짚으며 직독직해합니다."
           }
         ],
         "spottingDrills": [
@@ -1311,7 +1325,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "Instead of waste your precious time on social media, read a book.",
                 "reason": "Instead of의 of는 전치사이므로 동사원형 waste는 비문이며 동명사 wasting이 옳습니다."
               }
-            ]
+            ],
+            "meaning": "Instead of: '~하는 대신에' / Rather than: '~하기보다는 오히려 (대안과 대조)'",
+            "translationGuide": "필자가 버리는 카드와 취하는 카드를 가르는 구문입니다. Instead of 뒤의 행동은 '그것은 딱 버려두고!'로 가볍게 넘긴 뒤, 주절의 대안 행동에 초점을 맞추어 '오히려 이것을 한다'로 직독직해합니다."
           }
         ],
         "spottingDrills": [
@@ -1489,7 +1505,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "Apart of saving money, investing wisely builds long-term wealth.",
                 "reason": "Apart 뒤에는 전치사 from이 와야 하며 of는 비문입니다."
               }
-            ]
+            ],
+            "meaning": "1. ~을 제외하고는 (= except for) / 2. ~외에도, ~뿐만 아니라 (= in addition to)",
+            "translationGuide": "문맥에 따른 양방향 해석법: 뒤에 결점이나 특이 사항이 오면 '이 몇 가지 사소한 예외를 빼고는 다 그렇다(제외)'로 읽고, 추가 장점이 나열되면 '이것에 더하여 게다가 저것도 있다(추가)'로 덧붙여 해석합니다."
           }
         ],
         "spottingDrills": [
@@ -1667,7 +1685,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "The game was canceled due to it snowed heavily.",
                 "reason": "due to는 전치사이므로 뒤에 절(it snowed)이 올 수 없으며 because를 쓰거나 명사구(heavy snowfall)로 바꿔야 합니다."
               }
-            ]
+            ],
+            "meaning": "Due to / Owing to / Because of: '~ 때문에 (원인)' / Thanks to: '~ 덕분에 (긍정적 원인)'",
+            "translationGuide": "원인과 결과를 연결하는 핵심 연결고리입니다. 전치사구 뒤의 명사를 '~라는 원인 때문에 / ~의 도움 덕분에'로 먼저 인과 출발점을 잡고, 주절에서 나타난 최종 결과로 자연스럽게 흘러가며 읽습니다."
           }
         ],
         "spottingDrills": [
@@ -1860,7 +1880,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "He had such many questions that the speaker could not answer them all.",
                 "reason": "many 앞에는 such가 아니라 so를 써야 하므로 so many가 옳습니다."
               }
-            ]
+            ],
+            "meaning": "너무나 [원인: 형용사/부사/명사]해서, 그 결과 [결과: that절]하다",
+            "translationGuide": "so나 such를 보는 순간 '너무 ~하군'이라고 원인을 체크하고, that 앞에서 살짝 끊은 뒤 '그래서 그 결과!'라고 뒤따르는 that절을 순차적으로 원인->결과 인과 흐름으로 직독직해합니다."
           }
         ],
         "spottingDrills": [
@@ -2038,7 +2060,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "He whispered so that he will not disturb the sleeping baby.",
                 "reason": "주절의 시제가 whispered(과거)이므로 so that 절의 조동사도 would(과거)로 일치시켜야 합니다."
               }
-            ]
+            ],
+            "meaning": "so that S can: '~가 ...할 수 있도록 (목적)' / , so that: '그래서 그 결과 ...했다 (결과)'",
+            "translationGuide": "콤마가 없는 so that은 뒤에서 묶어 '~하기 위하여/할 수 있도록' 목적 부사로 해석하고, 앞에 콤마가 찍힌 [, so that]은 '원인이 이러했고, 그 결과 뒤의 일이 벌어졌다'로 시간 순서대로 끊어 읽습니다."
           }
         ],
         "spottingDrills": [
@@ -2216,7 +2240,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "This luggage is too heavy to carry it upstairs.",
                 "reason": "주어 This luggage가 carry의 의미상 목적어이므로 to부정사 구문에서는 it을 중복 표기하면 비문입니다."
               }
-            ]
+            ],
+            "meaning": "너무 ~해서 ...할 수 없다 / ...하기에는 너무나 ~하다 (강력한 부정)",
+            "translationGuide": "문장 안에 not이나 never가 없어도 100% 부정문입니다! '너무 [형/부]해서 결국 to 뒤의 행동을 도저히 할 수가 없다!'라고 단호하게 부정문으로 직독직해해야 문맥 오역을 막을 수 있습니다."
           }
         ],
         "spottingDrills": [
@@ -2394,7 +2420,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "She is enough old to get a driver's license.",
                 "reason": "형용사 old를 수식하므로 enough old가 아니라 old enough로 후치 수식해야 합니다."
               }
-            ]
+            ],
+            "meaning": "...할 수 있을 만큼 충분히 ~한 / 충분히 ~해서 ...할 수 있다",
+            "translationGuide": "형용사나 부사 뒤에 붙은 enough to는 '충분히 [형/부]하므로 능히 to-v를 해낼 수 있다'라는 긍정적 역량과 가능성으로 시원하게 읽어나갑니다."
           }
         ],
         "spottingDrills": [
@@ -2572,7 +2600,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "The more careful you examine the data, the fewer errors you will find.",
                 "reason": "동사 examine을 수식하므로 형용사 careful이 아니라 부사 carefully가 앞으로 나와야 합니다."
               }
-            ]
+            ],
+            "meaning": "~하면 할수록 더욱더 ...하다 (수능 1순위 비례 상관 구문)",
+            "translationGuide": "수능과 모의고사에서 필자의 최종 결론과 주제를 담는 핵심 시그널입니다! 앞 절을 '앞 조건이 변화함에 따라'로 인과 조건을 잡고, 뒤 절을 '그에 비례하여 더욱더 뒤의 결과가 나타난다'로 요지를 잡으며 해석합니다."
           }
         ],
         "spottingDrills": [
@@ -2750,7 +2780,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "She ran as faster as she could to catch the bus.",
                 "reason": "as와 as 사이에는 비교급 faster가 아니라 원급 fast가 와야 합니다."
               }
-            ]
+            ],
+            "meaning": "가능한 한 ~하게, 될 수 있는 대로 ~하게 (= as ~ as one can)",
+            "translationGuide": "as와 as 사이의 형용사나 부사를 '할 수 있는 한 최대한 [형/부]하게!'라고 능력과 조건의 극대치로 의미를 살려 해석합니다."
           }
         ],
         "spottingDrills": [
@@ -2928,7 +2960,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "Parents can be too cautious about their children's online safety.",
                 "reason": "cannot이 빠지면 '지나치게 조심할 수 있다(과잉보호)'는 부정적 의미가 되므로 cannot이 필수적입니다."
               }
-            ]
+            ],
+            "meaning": "아무리 ~해도 지나치지 않다 (극도로 중요함을 나타내는 역발상 강조)",
+            "translationGuide": "형태는 부정문이지만 뜻은 '최고 수준의 절대적 긍정 권고'입니다! '아무리 백 번 강조하고 조심해도 결코 지나치지 않다 = 무조건 최우선으로 지켜야 한다!'로 필자의 결연한 주장을 읽어냅니다."
           }
         ],
         "spottingDrills": [
@@ -3106,7 +3140,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "No sooner she had hung up the phone than it rang again.",
                 "reason": "부정어 No sooner가 문두에 왔으므로 주어-동사를 도치하여 'had she hung up'으로 써야 합니다."
               }
-            ]
+            ],
+            "meaning": "~하자마자 1초도 안 되어 곧바로 ...했다 (시간 도치 구문)",
+            "translationGuide": "No sooner나 Hardly가 문두에 나오면 앞 사건을 '이 일이 일어나자마자 찰나의 순간에', than/when 뒤를 '곧바로 뒤의 사건이 터졌다'로 긴박한 연속 동작으로 직독직해합니다."
           }
         ],
         "spottingDrills": [
@@ -3284,7 +3320,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "Artificial intelligence is becoming more and more more influential in our lives.",
                 "reason": "more and more 뒤에는 원급 influential이 와야 하며 more를 중복하지 않습니다."
               }
-            ]
+            ],
+            "meaning": "비교급 and 비교급: '점점 더 ~한' / all the more for/because: '~ 때문에 더욱더 ~한'",
+            "translationGuide": "상태가 가속화되는 모습을 그리며 '시간이 갈수록 점점 더 [형/부]해진다', '그 이유가 있기에 오히려 한층 더 그렇다'로 누적과 심화의 뉘앙스를 살려 해석합니다."
           }
         ],
         "spottingDrills": [
@@ -3463,7 +3501,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "She completed the marathon in no more then three hours, which was an astonishing feat.",
                 "reason": "비교 구문에서는 접속사 than을 써야 하며 then은 비문입니다."
               }
-            ]
+            ],
+            "meaning": "no more than: '단지, 겨우 (= only)' / no less than: '무려 ~나 (= as much as)' / not more than: '기껏해야' / not less than: '적어도'",
+            "translationGuide": "no more than은 '에게 겨우 이거밖에 안 돼?'라는 실망의 뉘앙스(only), no less than은 '와 무려 이렇게나 많이!'라는 감탄의 뉘앙스(as much as)로 즉각 감정을 실어 읽습니다."
           }
         ],
         "spottingDrills": [
@@ -3656,7 +3696,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "It was careless for her to leave the door unlocked.",
                 "reason": "careless는 사람의 성격 및 부주의한 태도를 나타내므로 전치사 of를 써야 합니다."
               }
-            ]
+            ],
+            "meaning": "[의미상 주어]가 ...하는 것은 ~하다 (가주어-진주어 구문)",
+            "translationGuide": "가주어 It은 뜻이 없으므로 해석하지 않고 통과! for/of 뒤의 대상을 우리말의 진짜 주어로 삼아 '[누가] to 뒤의 행동을 하는 것은 [어떠하다]'로 주어-서술어 뼈대를 세워 직독직해합니다."
           }
         ],
         "spottingDrills": [
@@ -3839,7 +3881,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "She seems to lose her keys yesterday.",
                 "reason": "yesterday가 나타내는 과거 동작이므로 현재(seems)보다 앞선 완료부정사 to have lost를 써야 합니다."
               }
-            ]
+            ],
+            "meaning": "that절이라는 사실은 [형용사]하다 / that절인 것처럼 보인다",
+            "translationGuide": "It seems that S V는 '보아하니 주어가 ~하는 모양이군'으로, S seems to-v는 주어를 먼저 잡고 '~하는 것으로 보인다'로 상황의 추측과 판단을 자연스럽게 풉니다."
           }
         ],
         "spottingDrills": [
@@ -4017,7 +4061,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "The internet makes possible for anyone to publish their ideas.",
                 "reason": "가목적어 it을 생략하면 5형식 문장 구조가 붕괴되므로 it이 반드시 있어야 합니다."
               }
-            ]
+            ],
+            "meaning": "...하는 것을 [형용사]하게 만들다 / ...하는 것이 [형용사]하다고 생각하다(알게 되다)",
+            "translationGuide": "가목적어 it은 번역하지 않습니다! 동사 뒤의 형용사를 보고 바로 to 뒤로 건너뛰어 'to 뒤의 행동을 [형용사]하게 만들다/생각하다'로 목적어와 보어를 결합하여 한 호흡에 읽습니다."
           }
         ],
         "spottingDrills": [
@@ -4195,7 +4241,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "He spent two hours to fix his broken bicycle.",
                 "reason": "spend + 시간 뒤에는 to부정사가 아니라 동명사 fixing이 와야 합니다."
               }
-            ]
+            ],
+            "meaning": "It takes: '~가 ...하는 데 [시간/노력]이 걸린다' / spend: '~하는 데 [시간/돈]을 쓰다'",
+            "translationGuide": "It takes를 보면 '어떤 대가나 자원이 필요한가'에 집중하여 'to-v를 달성하는 데 얼마의 시간/노력이 소요된다'로 읽고, spend는 주어가 시간이나 돈을 어디에 투자했는지 파악합니다."
           }
         ],
         "spottingDrills": [
@@ -4373,7 +4421,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "It is the diligent student that the professor praised yesterday.",
                 "reason": "종속절 동사가 praised(과거)이므로 It is가 아니라 It was로 시제를 일치시켜야 합니다."
               }
-            ]
+            ],
+            "meaning": "...한 것은 다름 아닌 바로 [강조 대상]이다 (It is ~ that 강조구문)",
+            "translationGuide": "It is와 that 사이의 어구를 '다름 아닌 바로 이것이다!'라고 힘주어 먼저 짚고, that 뒤를 '뒤이어 일어난 사건의 내용은!'으로 연결하여 필자가 힘을 준 주인공을 정확히 낚아챕니다."
           }
         ],
         "spottingDrills": [
@@ -4551,7 +4601,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "It is truly that regular exercise enhances mental clarity.",
                 "reason": "가주어-진주어 구문에서 is의 주격보어 역할을 해야 하므로 부사 truly가 아니라 형용사 true여야 합니다."
               }
-            ]
+            ],
+            "meaning": "강조: '...한 것은 바로 X이다' vs 가주어: 'that절이라는 사실은 [형용사]하다'",
+            "translationGuide": "It is 뒤에 형용사가 오면 'that 이하는 [어떠]하다'는 객관적 사실 서술로 읽고, 명사나 전치사구가 오면 '바로 그것이 ~했다'는 강력한 강조로 구별하여 직독직해합니다."
           }
         ],
         "spottingDrills": [
@@ -4729,7 +4781,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "Seldom she complains about the grueling training schedule.",
                 "reason": "부정어 Seldom이 문두에 왔으므로 의문문 어순 'does she complain'으로 도치해야 합니다."
               }
-            ]
+            ],
+            "meaning": "결코/좀처럼/거의 ~하지 않다 (부정어 문두 도치 강조)",
+            "translationGuide": "Never, Seldom, Little이 문두에 나오면 '절대로 아니다!'라고 마음속으로 경고를 띄우고, 뒤따르는 [조동사+S+V]를 '주어는 결코 ~하지 못했다'로 강력하게 부정 해석합니다."
           }
         ],
         "spottingDrills": [
@@ -4907,7 +4961,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "Here comes she with a warm smile on her face.",
                 "reason": "주어가 대명사(she)일 때는 도치하지 않고 주어+동사 어순(Here she comes)을 유지해야 합니다."
               }
-            ]
+            ],
+            "meaning": "~에 ...가 서 있다 / ~에서 ...가 걸어 나왔다 (생생한 배경 및 등장인물 묘사)",
+            "translationGuide": "영화 카메라가 장소를 먼저 비추고 인물이 등장하는 기법입니다. 장소 부사구를 먼저 읽고, '그곳에 서 있었던 것은 바로 [주어]였다!'라는 시각적 입체감으로 주어를 강조하며 읽습니다."
           }
         ],
         "spottingDrills": [
@@ -5085,7 +5141,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "Judged from her expression, she was satisfied with the test results.",
                 "reason": "'~로 판단하건대'는 관용적으로 능동형인 Judging from을 써야 하며 Judged from은 비문입니다."
               }
-            ]
+            ],
+            "meaning": "Strictly speaking: '엄격히 말하자면' / Judging from: '~로 미루어 판단하건대' / Considering: '~을 고려하면'",
+            "translationGuide": "문장 전체의 전제 조건이나 관점을 제시하는 독립 어구입니다. 쉼표 앞에서 '이런 관점으로 엄밀히 따져보자면', '~의 증거로 미루어 볼 때'라고 배경 전제를 깔고 본문으로 직독직해합니다."
           }
         ],
         "spottingDrills": [
@@ -5263,7 +5321,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "There is no to tell what may happen in the unpredictable future.",
                 "reason": "There is no 뒤에는 to부정사(to tell)가 아니라 동명사 telling을 써야 합니다."
               }
-            ]
+            ],
+            "meaning": "There is no -ing: '~하는 것은 불가능하다' / It goes without saying: '~은 말할 필요도 없이 당연하다'",
+            "translationGuide": "There is no -ing는 '도저히 ~할 방법이 없다(= It is impossible)'로 단호하게 불가능을 선언하고, It goes without saying that은 '이건 두말할 필요도 없는 확실한 사실이다'로 직독직해합니다."
           }
         ],
         "spottingDrills": [
@@ -5456,7 +5516,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "I have met my middle school mentor two days ago.",
                 "reason": "two days ago는 과거의 한 시점이므로 현재완료 have met을 쓸 수 없고 단순과거 met을 써야 합니다."
               }
-            ]
+            ],
+            "meaning": "단순과거: '과거 특정 시점에 끝난 일' vs 현재완료: '과거의 일이 현재까지 영향을 미침'",
+            "translationGuide": "yesterday, ago, in 연도 등 명백한 과거 시점이 보이면 '그 과거의 한때에 끝난 사건'으로 딱 잘라 해석하고, since나 for가 오면 '그때부터 지금까지 쭉 그래왔다'로 현재와의 연결고리를 살려 해석합니다."
           }
         ],
         "spottingDrills": [
@@ -5634,7 +5696,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "I have gone to Canada and won't be back until next year.",
                 "reason": "have gone to는 '가고 여기에 없다'는 결과이므로 말하는 화자인 1인칭 주어 I와 결합할 수 없습니다."
               }
-            ]
+            ],
+            "meaning": "현재완료 4대 뉘앙스: 완료(막 ~했다) / 경험(~해본 적 있다) / 계속(쭉 ~해왔다) / 결과(~해서 지금 없다)",
+            "translationGuide": "함께 쓰인 짝꿍 부사를 보고 문맥을 잡습니다. just/already는 '막 해치웠다', ever/never는 '살면서 경험해 봤다', for/since는 '지금까지 지속된다', have gone은 '가버려서 지금 여기 없다'로 즉각 해석합니다."
           }
         ],
         "spottingDrills": [
@@ -5812,7 +5876,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "He couldn't buy the ticket because he has lost his wallet.",
                 "reason": "티켓을 살 수 없었던 과거(couldn't buy) 시점 이전의 원인이므로 현재완료 has lost가 아니라 과거완료 had lost여야 합니다."
               }
-            ]
+            ],
+            "meaning": "과거완료 (had p.p.): '과거의 기준 시점보다 더 앞선 대과거에 일어난 일'",
+            "translationGuide": "과거 시점 두 개가 나올 때 시간의 타임라인을 머릿속에 그립니다. had p.p.가 쓰인 부분을 '그 과거 사건보다 훨씬 더 이전에 이미 벌어졌던 일'로 선후관계를 명확히 짚으며 직독직해합니다."
           }
         ],
         "spottingDrills": [
@@ -5990,7 +6056,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "As soon as he will arrive at the station, we will pick him up.",
                 "reason": "As soon as는 시간 부사절을 이끌므로 will arrive가 아니라 현재시제 arrives를 써야 합니다."
               }
-            ]
+            ],
+            "meaning": "시간·조건 부사절: '앞으로 ~할 때 / 만약 ~한다면' (형태는 현재시제, 의미는 미래)",
+            "translationGuide": "If나 When 부사절 안에 현재시제 동사가 쓰여 있어도 미래의 일이면 '앞으로 만약 ~한다면 / 앞으로 ~할 때'로 미래의 뜻을 담아 자연스럽게 해석합니다."
           }
         ],
         "spottingDrills": [
@@ -6168,7 +6236,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "He must not have committed the crime because he was in Tokyo at that time.",
                 "reason": "명백한 알리바이가 있어 '~했을 리가 없다'는 강한 부정적 확신이므로 cannot have committed가 올바릅니다."
               }
-            ]
+            ],
+            "meaning": "must have p.p. (~했음에 틀림없다) / cannot have p.p. (~했을 리 없다) / should have p.p. (~했어야 했는데 안 했다)",
+            "translationGuide": "과거 사실에 대한 화자의 확신과 감정을 짚어냅니다. must have는 99% 확신('분명 그랬을 거야!'), cannot have는 0% 확신('그랬을 리가 없어!'), should have는 뼈아픈 후회('그렇게 했어야 했는데 왜 안 했을까!')로 감정을 실어 읽습니다."
           }
         ],
         "spottingDrills": [
@@ -6346,7 +6416,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "The committee demanded that the president resigned from his position.",
                 "reason": "사임해야 한다는 당위성 요구이므로 과거동사 resigned가 아니라 동사원형 resign을 써야 합니다."
               }
-            ]
+            ],
+            "meaning": "당위성: '마땅히 ~해야 한다고 주장/제안하다' vs 사실전달: '~했다는 사실을 주장/암시하다'",
+            "translationGuide": "that절 뒤에 동사원형이 오면 '(should가 생략된 채) 마땅히 그렇게 실행해야 한다고'라는 의무·당위로 해석하고, 일반 과거동사가 오면 '이런 사실이 있었다고 주장/보고하다'로 단순 사실로 구분하여 해석합니다."
           }
         ],
         "spottingDrills": [
@@ -6524,7 +6596,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "If I had enough money then, I would buy that house.",
                 "reason": "then(그 당시)은 과거 사실이므로 가정법 과거완료(had had, would have bought)를 써야 합니다."
               }
-            ]
+            ],
+            "meaning": "가정법 과거: '만약 지금 ~라면 ...할 텐데 (현재 반대)' / 가정법 과거완료: '만약 그때 ~했더라면 ...했을 텐데 (과거 반대)'",
+            "translationGuide": "형태보다 한 시제 앞당겨 현재/과거로 해석합니다! If S were는 '지금 만약 ~라면', If S had p.p.는 '그때 만약 ~했더라면'으로 실제 사실과 정반대의 아쉬운 상상으로 직독직해합니다."
           }
         ],
         "spottingDrills": [
@@ -6702,7 +6776,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "If he had taken the medicine last night, he would have felt better now.",
                 "reason": "주절 끝에 now가 있으므로 현재의 상태를 나타내는 would feel이 맞고 would have felt는 틀립니다."
               }
-            ]
+            ],
+            "meaning": "혼합가정법: '그때 만약 ~했더라면, 지금 ...할 텐데 (과거의 원인 -> 현재의 결과)'",
+            "translationGuide": "조건절은 과거의 일(had p.p.), 주절은 현재의 일(would 동원 + now/today)입니다. '그 당시 과거에 그 선택을 했더라면, 지금 오늘날 내 모습이 이럴 텐데!'라는 시간 격차를 느끼며 해석합니다."
           }
         ],
         "spottingDrills": [
@@ -6880,7 +6956,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "I wish I accepted your advice at that time.",
                 "reason": "at that time(그 당시에)이라는 과거 사실에 대한 후회이므로 과거완료 had accepted를 써야 합니다."
               }
-            ]
+            ],
+            "meaning": "I wish S 과거: '지금 ~라면 좋을 텐데' / I wish S had p.p.: '그때 ~했더라면 좋았을 텐데' / as if: '마치 ~인 것처럼'",
+            "translationGuide": "현재 이룰 수 없는 안타까운 소망과 과거에 대한 진한 후회입니다. I wish 뒤를 '아, 지금/그때 정말 그랬으면 얼마나 좋았을까!'라는 아쉬움의 감탄으로 읽고, as if는 '실제로는 전혀 아니면서 마치 그런 것처럼'으로 뉘앙스를 살립니다."
           }
         ],
         "spottingDrills": [
@@ -7058,7 +7136,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "Was it not for the sun, there would be no life on Earth.",
                 "reason": "If it were not for에서 If가 생략된 도치이므로 Were it not for를 써야 하며 Was it은 비문입니다."
               }
-            ]
+            ],
+            "meaning": "Without / But for: '1. ~이 없다면 (현재 반대) / 2. ~이 없었더라면 (과거 반대)'",
+            "translationGuide": "주절의 조동사를 보고 시제를 결정합니다. 주절이 would 동원이면 '지금 당장 그것이 없다면 망할 텐데', would have p.p.면 '그 당시 그것이 없었더라면 큰일 났을 텐데'로 결정적 조력자의 고마움을 떠올리며 해석합니다."
           }
         ],
         "spottingDrills": [
@@ -7251,7 +7331,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "He postponed to take the certification exam until next semester.",
                 "reason": "postpone은 동명사만을 목적어로 취하므로 to take가 아니라 taking을 써야 합니다."
               }
-            ]
+            ],
+            "meaning": "to부정사 목적어: '앞으로 ~할 것을 (미래 계획/의지)' vs 동명사 목적어: '지금껏 ~해오던 것을 (기정/회피/중단)'",
+            "translationGuide": "동사의 목적어를 해석할 때 to부정사는 '앞으로 능히 실천할 미래의 일'로 읽고, 동명사는 '이미 하던 동작이나 골치 아픈 일을 피하고 끝내는 것'으로 뉘앙스를 감지하며 직독직해합니다."
           }
         ],
         "spottingDrills": [
@@ -7430,7 +7512,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "He stopped to smoke to improve his lung health.",
                 "reason": "폐 건강을 위해 담배를 '끊었다'는 의미이므로 동명사 목적어 smoking을 써야 합니다 (stopped to smoke는 담배를 피우기 위해 가던 길을 멈췄다는 뜻)."
               }
-            ]
+            ],
+            "meaning": "remember/forget to-v: '앞으로 할 일을 기억/망각' vs -ing: '과거에 했던 일을 기억/망각' / stop -ing: '하던 것을 중단'",
+            "translationGuide": "to-v는 미래의 할 일('잊지 말고 꼭 해라!'), -ing는 과거의 추억과 경험('그때 그거 했던 기억나니?')입니다. stop to-v는 '~하기 위해 가던 길을 멈추다', stop -ing는 '하던 행동을 뚝 끊다'로 명확히 구분하여 읽습니다."
           }
         ],
         "spottingDrills": [
@@ -7609,7 +7693,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "He hurried to the airport only to missing the final boarding call.",
                 "reason": "only to 뒤에는 to부정사 동사원형 miss가 와야 합니다."
               }
-            ]
+            ],
+            "meaning": "목적(~하기 위해) / 결과(~했으나 결국 ...하다) / 감정원인(~해서 기쁜) / 판단근거(~하는 걸 보니 틀림없다)",
+            "translationGuide": "to부정사의 부사적 위치를 파악합니다. 문두/문미에서 목적(~하기 위하여), only to에서 역접의 결과(결국 허탈하게 실패하다), 감정 형용사 뒤에서 감정의 원인(~해서 기쁘다), must be 뒤에서 판단의 근거로 매끄럽게 문맥을 탑니다."
           }
         ],
         "spottingDrills": [
@@ -7788,7 +7874,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "He had a hard time to adjust to the severe winter climate.",
                 "reason": "have a hard time 뒤에는 to부정사가 아니라 동명사 adjusting을 써야 합니다."
               }
-            ]
+            ],
+            "meaning": "cannot help -ing: '~하지 않을 수 없다' / have difficulty -ing: '~하는 데 어려움을 겪다' / be busy -ing: '~하느라 바쁘다'",
+            "translationGuide": "자주 쓰이는 필수 관용 표현입니다. cannot help -ing는 '도저히 참지 못하고 기어이 ~하고 말았다', have trouble -ing는 '~하느라 진땀을 뻘뻘 흘렸다'로 생생하게 직독직해합니다."
           }
         ],
         "spottingDrills": [
@@ -7967,7 +8055,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "He is used to wake up early in the morning.",
                 "reason": "'일찍 일어나는 것에 익숙하다'는 뜻이므로 전치사 to 뒤에 동명사 waking up을 써야 합니다."
               }
-            ]
+            ],
+            "meaning": "be used to -ing: '~에 익숙하다' vs used to 동원: '예전에 ~하곤 했다' vs be used to 동원: '~하는 데 사용되다'",
+            "translationGuide": "주어와 to 뒤 형태를 1초 만에 확인합니다! 사람이 주어이고 -ing면 '베테랑처럼 능숙하고 익숙하다', used to 뒤 동사원형이면 '지금은 아니지만 예전에 그랬었다', 사물 주어면 '어떤 용도로 쓰인다'로 3초 만에 분별합니다."
           }
         ],
         "spottingDrills": [
@@ -8145,7 +8235,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "She bought a used car importing from Germany.",
                 "reason": "자동차가 독일로부터 '수입된' 것이므로 수동의 과거분사 imported를 써야 합니다."
               }
-            ]
+            ],
+            "meaning": "현재분사(-ing): '~하고 있는 (능동·진행)' vs 과거분사(p.p.): '~된, ~받은, ~당한 (수동·완료)'",
+            "translationGuide": "수식받는 명사 입장에서 생각합니다. 명사가 직접 행동을 취하고 있으면 '펄펄 살아있는 능동(-ing)'으로, 다른 힘에 의해 처리되었으면 '수동의 과거분사(p.p.)'로 형용사처럼 명사를 감싸 안으며 수식합니다."
           }
         ],
         "spottingDrills": [
@@ -8323,7 +8415,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "I was disappointing with the sequel to my favorite movie.",
                 "reason": "내가 실망감을 직접 느낀 사람이므로 과거분사 disappointed를 써야 합니다."
               }
-            ]
+            ],
+            "meaning": "감정유발 사물 주어: -ing (흥미진진한/지루한) vs 감정을 느끼는 사람: p.p. (신이 난/지루해진)",
+            "translationGuide": "감정을 주는 원인인지 느끼는 당사자인지 구별합니다. 영화나 책이 주어면 '보는 사람에게 그런 감정을 팍팍 안겨주는 것(-ing)', 사람이 주어면 '그런 감정에 사로잡혀 버린 상태(p.p.)'로 명쾌하게 직독직해합니다."
           }
         ],
         "spottingDrills": [
@@ -8501,7 +8595,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "Leaving alone in the dark room, the little boy began to cry.",
                 "reason": "소년이 혼자 '남겨진' 수동태이므로 Leaving이 아니라 과거분사 Left(= Being left)가 옳습니다."
               }
-            ]
+            ],
+            "meaning": "능동 분사구문(V-ing): '주어가 직접 ~하면서' vs 수동 분사구문(p.p.): '주어가 ~당한 채로'",
+            "translationGuide": "주절의 주어를 분사 맨 앞으로 번개처럼 끌고 옵니다! 주어가 직접 그 행동을 능동적으로 행하면 V-ing로 '그 행동을 하면서', 주어가 외부로부터 처해진 수동의 처지면 p.p.로 '그런 일을 겪은 채로'로 직독직해합니다."
           }
         ],
         "spottingDrills": [
@@ -8679,7 +8775,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "The detective stood in the doorway with his arms crossing.",
                 "reason": "팔은 교차되는 수동의 대상이므로 crossing이 아니라 과거분사 crossed를 써야 합니다."
               }
-            ]
+            ],
+            "meaning": "with + 목적어 + 분사: '~한 채로, ~하면서 (생생한 동시동작 및 부대상황)'",
+            "translationGuide": "with 뒤의 목적어가 취하는 상태를 한눈에 스캔합니다. 눈을 감거나 팔짱을 끼는 등 신체 부위는 수동(with eyes closed, arms folded), 나뭇잎이나 눈물이 흐르는 동작은 능동(falling, streaming)으로 동시 장면을 머릿속에 그리며 해석합니다."
           }
         ],
         "spottingDrills": [
@@ -8857,7 +8955,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "He was made rewrite the entire essay from scratch.",
                 "reason": "사역동사 make의 수동태에서는 to부정사가 부활해야 하므로 rewrite 앞에 to를 반드시 써야 합니다."
               }
-            ]
+            ],
+            "meaning": "be made to-v: '~하도록 강요받다, 억지로 ~하게 되다' / be seen to-v: '~하는 것이 목격되다'",
+            "translationGuide": "수동태가 되면서 to가 부활한 지각·사역동사입니다. '내 의지와 상관없이 외압에 의해 어쩔 수 없이 to 이하의 행동을 하게 되었다', '주어가 to 이하의 동작을 하는 현장이 목격되었다'로 주어의 피동적 상황을 정확히 읽습니다."
           }
         ],
         "spottingDrills": [
@@ -9050,7 +9150,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "She accepted the proposal what was submitted yesterday.",
                 "reason": "앞에 선행사 the proposal이 있으므로 선행사를 포함하는 what을 쓸 수 없고 that(또는 which)을 써야 합니다."
               }
-            ]
+            ],
+            "meaning": "관계대명사 that: '...하는 [선행사]' vs 접속사 that: '...라는 사실, ...라고'",
+            "translationGuide": "that 앞뒤를 3초 스캔합니다. 앞에 선행사 명사가 있고 뒤가 불완전하면 '뒤에서부터 수식하여 ~하는 명사'로 읽고, 동사 뒤에 선행사 없이 완전한 문장이 오면 'S가 V한다는 사실을'이라고 목적어절로 직독직해합니다."
           }
         ],
         "spottingDrills": [
@@ -9228,7 +9330,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "She told me what she had passed the entrance exam.",
                 "reason": "told me 뒤의 절이 완전한 문장이므로 what을 쓸 수 없고 접속사 that을 써야 합니다."
               }
-            ]
+            ],
+            "meaning": "What: '~하는 것 (the thing which)' vs That: '~라는 사실 / ...하는 명사'",
+            "translationGuide": "선행사가 없고 뒷문장에 주어나 목적어가 비어 있는 구멍을 보면 1초 만에 'what'을 감지하고, '주어가 동사하는 바로 그것!'이라고 명사 덩어리로 묶어서 주어/목적어로 힘차게 직독직해합니다."
           }
         ],
         "spottingDrills": [
@@ -9406,7 +9510,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "He showed me his new car, that he had bought last week.",
                 "reason": "콤마(,) 뒤의 계속적 용법에는 관계대명사 that을 절대 쓸 수 없습니다."
               }
-            ]
+            ],
+            "meaning": ", which: '그리고 그것은 / 그런데 그것은' (앞 단어 또는 앞 문장 전체 부가 설명)",
+            "translationGuide": "콤마(,)에서 잠시 숨을 고르고, which를 'and it(그리고 그 앞선 사실은 말이지)'으로 풀어서 순차적으로 읽어 나갑니다. 앞의 사건 전체가 뒤의 결과로 이어지는 스토리텔링 흐름을 탑니다."
           }
         ],
         "spottingDrills": [
@@ -9584,7 +9690,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "This is the picturesque town which I spent my summer vacation.",
                 "reason": "spent my summer vacation in the town에서 in the town(장소 부사구)이 빠진 것이므로 관계부사 where(또는 in which)를 써야 합니다."
               }
-            ]
+            ],
+            "meaning": "관계대명사 which: '...하는 (불완전)' vs 관계부사 where/when: '그곳에서/그때 ...하는 (완전)'",
+            "translationGuide": "선행사가 장소라도 뒤에 목적어가 빠져 있으면 '방문했던 그 장소(which)', 뒤가 완전하면 '그 장소 안에서 평화롭게 살았던(where)'으로 뒷문장의 문장성분 완결성을 확인하며 정확하게 해석합니다."
           }
         ],
         "spottingDrills": [
@@ -9762,7 +9870,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "The musical instrument with that he performed is very rare.",
                 "reason": "전치사 with 뒤에는 관계대명사 that을 쓸 수 없으므로 with which를 써야 합니다."
               }
-            ]
+            ],
+            "meaning": "전치사 + 관계대명사 (in which, to whom): '그 안에서, 그 사람에게 ...하는'",
+            "translationGuide": "전치사의 의미를 살려 선행사에 붙여 해석합니다. in which는 '그 장소/조직 안에서', with whom은 '그 사람과 함께'로 전치사 의미를 즉시 환원하여 뒤따르는 완전한 절과 매끄럽게 연결합니다."
           }
         ],
         "spottingDrills": [
@@ -9940,7 +10050,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "However she was tired, she completed the assignment on time.",
                 "reason": "양보의 however 뒤에는 형용사 tired가 바로 뒤따라야 하므로 However tired she was가 옳습니다."
               }
-            ]
+            ],
+            "meaning": "whoever: '~하는 사람은 누구든지' / whatever: '~하는 것은 무엇이든' / however + 형/부: '아무리 ~할지라도'",
+            "translationGuide": "whoever/whatever는 '조건에 맞는 것은 그 누구라도/무엇이라도 다 포함한다'로 넓게 해석하고, however + 형/부는 '상황이 아무리 그 정도로 극단적일지라도 상관없이!'라는 강력한 양보로 직독직해합니다."
           }
         ],
         "spottingDrills": [
@@ -10118,7 +10230,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "The main reason for these severe economic problems are high inflation.",
                 "reason": "진짜 주어의 핵은 단수 명사인 The main reason이므로 are가 아니라 is를 써야 합니다."
               }
-            ]
+            ],
+            "meaning": "주어와 동사의 수일치 (수식어 거품을 걷어내고 진짜 주어 핵과 동사를 일치시킴)",
+            "translationGuide": "주어와 동사 사이에 끼어든 [전치사구, 관계사절, 분사구]를 재빠르게 괄호로 묶어 거품을 걷어내고, 문두의 '진짜 주인공 단어 하나'를 본동사에 곧바로 연결하여 문장의 핵심 뼈대를 장악합니다."
           }
         ],
         "spottingDrills": [
@@ -10297,7 +10411,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "The number of endangered species are growing every decade.",
                 "reason": "The number of 구문의 진짜 주어는 단수명사인 The number이므로 단수동사 is를 써야 합니다."
               }
-            ]
+            ],
+            "meaning": "most/half/rest of [명사]: '[명사]의 대부분/절반/나머지' / a number of (많은) vs the number of (~의 수)",
+            "translationGuide": "부분 표현은 of 뒤의 명사에 시선을 고정하여 단수/복수를 읽고, a number of는 many('많은 사람들/물건들이')로 활기차게 복수 해석하고, the number of는 숫자에 집중하여 '그것들의 총합 수치가'로 단수 해석합니다."
           }
         ],
         "spottingDrills": [
@@ -10475,7 +10591,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "He likes to read historical novels and writing poetry.",
                 "reason": "to read와 병렬을 이루어야 하므로 writing이 아니라 write(또는 to write)가 와야 합니다."
               }
-            ]
+            ],
+            "meaning": "등위접속사 and/but/or 앞뒤 요소의 문법적·형태적 완벽한 대칭 (병렬 구조)",
+            "translationGuide": "and나 but을 만났을 때 뒤에 나온 단어의 짝꿍이 앞에 어디 있는지 시선을 거슬러 올라가 대등한 짝을 맞춥니다. '이것을 하고, 저것을 하고, 그리고 마지막으로 그것을 한다'로 리듬감 있게 대칭 구조를 타며 해석합니다."
           }
         ],
         "spottingDrills": [
@@ -10653,7 +10771,9 @@ window.GRAMMAR_SYNTAX_THEME_BANK = [
                 "wrong": "The eyes of nocturnal animals are more sensitive to light than that of diurnal animals.",
                 "reason": "앞선 비교 대상이 복수 명사 'The eyes'이므로 that이 아니라 those of를 써야 합니다."
               }
-            ]
+            ],
+            "meaning": "that of ~ (단수 명사 비교 대치) / those of ~ (복수 명사 비교 대치): '~의 그것 / ~의 그것들'",
+            "translationGuide": "비교 구문에서 반복을 피하기 위해 쓴 that of와 those of는 앞서 비교된 진짜 대상을 찾아내어 'A의 [비교 대상]은 B의 [비교 대상]보다 훨씬 더 ~하다'로 본래 명사로 환원하여 명확하게 비교 해석합니다."
           }
         ],
         "spottingDrills": [

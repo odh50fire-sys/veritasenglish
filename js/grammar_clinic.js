@@ -856,6 +856,30 @@ class GrammarClinicEngine {
                                     </div>
                                 </div>
 
+                                <!-- 2.5 핵심 구문 뜻 & 직독직해 해석 가이드 박스 -->
+                                ${(fc.meaning || fc.translationGuide) ? `
+                                    <div class="p-4 rounded-xl bg-amber-50/90 border border-amber-200/90 text-slate-800 space-y-2.5 shadow-2xs">
+                                        ${fc.meaning ? `
+                                            <div class="flex items-center gap-2 flex-wrap">
+                                                <span class="px-2.5 py-1 rounded-lg bg-amber-500 text-white text-[11px] sm:text-xs font-bold font-sans flex items-center gap-1 shadow-2xs">
+                                                    <i data-lucide="bookmark" class="w-3.5 h-3.5"></i>
+                                                    <span>구문 뜻 (우리말 의미)</span>
+                                                </span>
+                                                <span class="font-serif font-black text-sm sm:text-base text-amber-950">${fc.meaning}</span>
+                                            </div>
+                                        ` : ''}
+                                        ${fc.translationGuide ? `
+                                            <div class="text-xs sm:text-sm text-amber-900/90 leading-relaxed font-sans bg-white/80 p-3 rounded-lg border border-amber-200/70 flex items-start gap-2 shadow-2xs">
+                                                <i data-lucide="compass" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
+                                                <div>
+                                                    <strong class="font-bold text-amber-950 block mb-0.5">[실전 직독직해 & 해석 비법]</strong>
+                                                    <span>${fc.translationGuide}</span>
+                                                </div>
+                                            </div>
+                                        ` : ''}
+                                    </div>
+                                ` : ''}
+
                                 <!-- 3. 세부 규칙 및 형태 변화표 -->
                                 ${rules.length > 0 ? `
                                     <div class="space-y-1.5 pt-1">
