@@ -788,9 +788,9 @@ class ReadingEngine {
     }
 
     /**
-     * 전체 어휘 데이터베이스에서 단어 뜻 및 품사 검색 (품사 구분 오류 제거 & 어근/복수형 탐색)
+     * 사전 데이터베이스 전수 직통 단어 검색 (원형이나 어근 변형 없이 단어 그대로 검색)
      */
-    findWordMeaning(word) {
+    rawLookupWord(word) {
         if (!word) return null;
         const clean = String(word).trim();
         const lower = clean.toLowerCase();
@@ -805,7 +805,7 @@ class ReadingEngine {
             }
         }
 
-        // 1.5. 전체 지문(140개) Key Vocabulary 교차 검색
+        // 1.5. 전체 지문 Key Vocabulary 교차 검색
         if (Array.isArray(this.passages)) {
             for (const p of this.passages) {
                 if (p.keyVocabulary && Array.isArray(p.keyVocabulary)) {
@@ -894,43 +894,182 @@ class ReadingEngine {
             }
         }
 
-        // 8. 굴절형(Inflection) 기본형 추정 검색: -s, -es, -ed, -ing, -ly 제거 후 재검색
-        const stemCandidates = [];
-        if (lower.endsWith('ies') && lower.length > 4) stemCandidates.push(lower.slice(0, -3) + 'y');
-        if (lower.endsWith('ves') && lower.length > 4) stemCandidates.push(lower.slice(0, -3) + 'f', lower.slice(0, -3) + 'fe');
-        if (lower.endsWith('es') && lower.length > 3) stemCandidates.push(lower.slice(0, -2));
-        if (lower.endsWith('s') && lower.length > 3) stemCandidates.push(lower.slice(0, -1));
-        if (lower.endsWith('ied') && lower.length > 4) stemCandidates.push(lower.slice(0, -3) + 'y');
-        if (lower.endsWith('ed') && lower.length > 3) {
-            stemCandidates.push(lower.slice(0, -2));
-            stemCandidates.push(lower.slice(0, -1));
+        return null;
+    }
+
+    /**
+     * 동사+ing 또는 과거/과거분사형(-ed, 불규칙) 단어를 동사 원형으로 정밀 매핑 (Lemmatization)
+     */
+    resolveVerbRoot(word) {
+        if (!word) return null;
+        const lower = String(word).trim().toLowerCase();
+
+        // 1. 주요 불규칙 동사 과거형 및 과거분사 매핑 테이블 (170여 개)
+        const IRREGULAR_VERBS = {
+            'won': 'win', 'made': 'make', 'went': 'go', 'gone': 'go', 'took': 'take', 'taken': 'take',
+            'saw': 'see', 'seen': 'see', 'came': 'come', 'gave': 'give', 'given': 'give',
+            'felt': 'feel', 'found': 'find', 'held': 'hold', 'stood': 'stand', 'kept': 'keep',
+            'left': 'leave', 'lost': 'lose', 'paid': 'pay', 'ran': 'run', 'thought': 'think',
+            'told': 'tell', 'wrote': 'write', 'written': 'write', 'broke': 'break', 'broken': 'break',
+            'built': 'build', 'caught': 'catch', 'taught': 'teach', 'bought': 'buy', 'brought': 'bring',
+            'chosen': 'choose', 'chose': 'choose', 'driven': 'drive', 'drove': 'drive',
+            'eaten': 'eat', 'ate': 'eat', 'fallen': 'fall', 'fell': 'fall', 'frozen': 'freeze', 'froze': 'freeze',
+            'grown': 'grow', 'grew': 'grow', 'hidden': 'hide', 'hid': 'hide', 'known': 'know', 'knew': 'know',
+            'risen': 'rise', 'rose': 'rise', 'shaken': 'shake', 'shook': 'shake', 'spoken': 'speak', 'spoke': 'speak',
+            'stolen': 'steal', 'stole': 'steal', 'thrown': 'throw', 'threw': 'throw', 'worn': 'wear', 'wore': 'wear',
+            'understood': 'understand', 'slept': 'sleep', 'swum': 'swim', 'swam': 'swim', 'flown': 'fly', 'flew': 'fly',
+            'drawn': 'draw', 'drew': 'draw', 'borne': 'bear', 'born': 'bear', 'bore': 'bear',
+            'arisen': 'arise', 'arose': 'arise', 'begun': 'begin', 'began': 'begin', 'blown': 'blow', 'blew': 'blow',
+            'hung': 'hang', 'led': 'lead', 'lent': 'lend', 'meant': 'mean', 'met': 'meet',
+            'ridden': 'ride', 'rode': 'ride', 'rung': 'ring', 'rang': 'ring', 'shone': 'shine',
+            'shot': 'shoot', 'shown': 'show', 'sung': 'sing', 'sang': 'sing', 'sunk': 'sink', 'sank': 'sink',
+            'sat': 'sit', 'spent': 'spend', 'spun': 'spin', 'stuck': 'stick', 'stung': 'sting',
+            'sworn': 'swear', 'swore': 'swear', 'swept': 'sweep', 'torn': 'tear', 'tore': 'tear',
+            'woken': 'wake', 'woke': 'wake', 'wound': 'wind', 'bent': 'bend', 'bound': 'bind',
+            'bled': 'bleed', 'bred': 'breed', 'crept': 'creep', 'dealt': 'deal', 'dug': 'dig',
+            'fed': 'feed', 'fled': 'flee', 'forgiven': 'forgive', 'forgave': 'forgive',
+            'forgotten': 'forget', 'forgot': 'forget', 'ground': 'grind', 'laid': 'lay',
+            'proven': 'prove', 'shrunk': 'shrink', 'shrank': 'shrink', 'slid': 'slide',
+            'struck': 'strike', 'swung': 'swing', 'wept': 'weep', 'withdrawn': 'withdraw', 'withdrew': 'withdraw',
+            'bitten': 'bite', 'bit': 'bite', 'gotten': 'get', 'got': 'get', 'been': 'be', 'was': 'be', 'were': 'be',
+            'overcame': 'overcome', 'undergone': 'undergo', 'underwent': 'undergo', 'undertaken': 'undertake', 'undertook': 'undertake',
+            'upheld': 'uphold', 'overheard': 'overhear', 'became': 'become'
+        };
+
+        if (IRREGULAR_VERBS[lower]) {
+            return IRREGULAR_VERBS[lower];
         }
+
+        const candidates = [];
+
+        // 2. 동사 + ing 형태 규칙
         if (lower.endsWith('ing') && lower.length > 4) {
-            stemCandidates.push(lower.slice(0, -3));
-            stemCandidates.push(lower.slice(0, -3) + 'e');
-        }
-
-        for (const candidate of stemCandidates) {
-            if (lexicon && lexicon[candidate]) {
-                const entry = lexicon[candidate];
-                const stdPos = window.posHelper ? window.posHelper.standardizePos(entry.pos, candidate, entry.meaning) : (entry.pos || '[동]');
-                return { word: clean, pos: stdPos, meaning: `${entry.meaning} (원형: ${candidate})` };
-            }
-            const stemMatch = (curatedList.find(w => w['영단어'] && w['영단어'].toLowerCase() === candidate)) ||
-                              (neungryulList.find(w => w['영단어'] && w['영단어'].toLowerCase() === candidate)) ||
-                              (etymList.find(w => w['영단어'] && w['영단어'].toLowerCase() === candidate));
-            if (stemMatch) {
-                const wordText = stemMatch['영단어'];
-                const meaningText = stemMatch['뜻'] || '';
-                const posText = stemMatch['품사'] || '';
-                const stdPos = window.posHelper ? window.posHelper.standardizePos(posText, wordText, meaningText) : '[동]';
-                return { word: clean, pos: stdPos, meaning: `${meaningText} (원형: ${wordText})` };
+            if (lower === 'lying') candidates.push('lie');
+            else if (lower === 'dying') candidates.push('die');
+            else if (lower === 'tying') candidates.push('tie');
+            else {
+                const base = lower.slice(0, -3);
+                // 자음 중복 (running -> run, stopping -> stop, swimming -> swim 등)
+                if (base.length >= 2 && base[base.length - 1] === base[base.length - 2] && 'bcdfghjklmnpqrstvwxyz'.includes(base[base.length - 1])) {
+                    candidates.push(base.slice(0, -1));
+                }
+                // -e 탈락형 (agonizing -> agonize, making -> make, persevering -> persevere 등)
+                candidates.push(base + 'e');
+                // 단순 -ing 탈락형 (working -> work, disrupting -> disrupt 등)
+                candidates.push(base);
             }
         }
+        // 3. 동사 과거형 및 과거분사 (-ed, -d, -ied) 규칙
+        else if (lower.endsWith('ed') && lower.length > 3) {
+            if (lower.endsWith('ied') && lower.length > 4) {
+                candidates.push(lower.slice(0, -3) + 'y');
+            }
+            const base = lower.slice(0, -2);
+            // 자음 중복 (stopped -> stop, occurred -> occur 등)
+            if (base.length >= 2 && base[base.length - 1] === base[base.length - 2] && 'bcdfghjklmnpqrstvwxyz'.includes(base[base.length - 1])) {
+                candidates.push(base.slice(0, -1));
+            }
+            // -e로 끝나는 동사의 -d 탈락 (persevered -> persevere, agonized -> agonize, collapsed -> collapse 등)
+            if (lower.endsWith('d')) {
+                candidates.push(lower.slice(0, -1));
+            }
+            // 단순 -ed 탈락형 (amassed -> amass, deciphered -> decipher, worked -> work 등)
+            candidates.push(base);
+        }
+        // 4. -en 분사형 규칙
+        else if (lower.endsWith('en') && lower.length > 4) {
+            if (IRREGULAR_VERBS[lower]) candidates.push(IRREGULAR_VERBS[lower]);
+        }
 
-        // 9. 형태소 및 숙어 규칙 기반 품사 추정
+        for (const cand of candidates) {
+            if (cand && cand !== lower) {
+                const match = this.rawLookupWord(cand);
+                if (match) {
+                    return cand;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * 전체 어휘 데이터베이스에서 단어 뜻 및 품사 검색
+     * 동사+ing 형태나 과거분사는 사용자의 요청에 따라 반드시 '동사 원형'으로 표기하여 반환
+     */
+    findWordMeaning(word) {
+        if (!word) return null;
+        const clean = String(word).trim();
+        const lower = clean.toLowerCase();
+
+        // 1. [사용자 요청 1순위] 동사+ing 또는 과거/과거분사형인 경우 동사 원형(Root Verb) 탐색
+        const rootVerb = this.resolveVerbRoot(clean);
+        if (rootVerb && rootVerb !== lower) {
+            const rootEntry = this.rawLookupWord(rootVerb);
+            const originalEntry = this.rawLookupWord(lower);
+
+            let combinedMeaning = rootEntry ? rootEntry.meaning : '';
+            if (originalEntry && originalEntry.meaning && !combinedMeaning.includes(originalEntry.meaning)) {
+                const cleanOriginalMeaning = originalEntry.meaning.replace(/\s*\(원형:.*?\)/, '').trim();
+                if (cleanOriginalMeaning && cleanOriginalMeaning !== combinedMeaning) {
+                    combinedMeaning = `${combinedMeaning} (형/분사: ${clean} ${cleanOriginalMeaning})`;
+                }
+            } else if (!combinedMeaning.includes(`(${clean}`)) {
+                combinedMeaning = `${combinedMeaning} (본문: ${clean})`;
+            }
+
+            return {
+                word: rootVerb, // ★ 동사 원형 표기 (persevere, agonize, win 등)
+                originalWord: clean, // 본문 표기 원문 (persevered, agonizing, won 등)
+                isInflected: true,
+                inflectionType: lower.endsWith('ing') ? '동사+ing' : '과거/과거분사',
+                pos: rootEntry ? rootEntry.pos : '[동]',
+                meaning: combinedMeaning
+            };
+        }
+
+        // 2. 단어 자체 직접 직통 검색
+        const directMatch = this.rawLookupWord(lower);
+        if (directMatch) {
+            return {
+                word: directMatch.word || clean,
+                originalWord: clean,
+                isInflected: false,
+                pos: directMatch.pos || '[명]',
+                meaning: directMatch.meaning || ''
+            };
+        }
+
+        // 3. 복수형(Plural) 등 명사 굴절형 단수 환원 검색
+        const nounStemCandidates = [];
+        if (lower.endsWith('ies') && lower.length > 4) nounStemCandidates.push(lower.slice(0, -3) + 'y');
+        if (lower.endsWith('ves') && lower.length > 4) nounStemCandidates.push(lower.slice(0, -3) + 'f', lower.slice(0, -3) + 'fe');
+        if (lower.endsWith('es') && lower.length > 3) nounStemCandidates.push(lower.slice(0, -2));
+        if (lower.endsWith('s') && lower.length > 3) nounStemCandidates.push(lower.slice(0, -1));
+
+        for (const candidate of nounStemCandidates) {
+            const match = this.rawLookupWord(candidate);
+            if (match) {
+                return {
+                    word: match.word || candidate,
+                    originalWord: clean,
+                    isInflected: true,
+                    inflectionType: '복수형',
+                    pos: match.pos || '[명]',
+                    meaning: `${match.meaning} (${clean}의 단수형)`
+                };
+            }
+        }
+
+        // 4. 형태소 및 품사 도우미 기반 기본 추정
         const fallbackPos = window.posHelper ? window.posHelper.standardizePos('', clean, '') : '[명]';
-        return { word: clean, pos: fallbackPos, meaning: '' };
+        return {
+            word: clean,
+            originalWord: clean,
+            isInflected: false,
+            pos: fallbackPos,
+            meaning: ''
+        };
     }
 
     /**
@@ -938,7 +1077,10 @@ class ReadingEngine {
      */
     openWordInspector(cleanWord, sentenceNumOrEn, customSentenceKo = '') {
         if (!cleanWord) return;
-        this.inspectingWord = cleanWord;
+        const foundInfo = this.findWordMeaning(cleanWord);
+        const displayWord = (foundInfo && foundInfo.word) ? foundInfo.word : cleanWord;
+        this.inspectingWord = displayWord;
+        this.inspectingOriginalWord = cleanWord;
 
         let sentenceEn = '';
         let sentenceKo = '';
@@ -958,31 +1100,38 @@ class ReadingEngine {
         this.inspectingSentenceEn = sentenceEn;
         this.inspectingSentenceKo = sentenceKo;
 
-        const foundInfo = this.findWordMeaning(cleanWord);
         const meaning = foundInfo ? foundInfo.meaning : '';
-        const pos = foundInfo ? foundInfo.pos : (window.posHelper ? window.posHelper.standardizePos('', cleanWord, '') : '[명]');
+        const pos = foundInfo ? foundInfo.pos : (window.posHelper ? window.posHelper.standardizePos('', displayWord, '') : '[명]');
 
         const modal = document.getElementById('modal-reading-word-inspector');
         const wordEl = document.getElementById('inspector-word');
+        const contextHint = document.getElementById('inspector-context-hint');
         const meaningInput = document.getElementById('inspector-meaning-input');
         const sentenceEnEl = document.getElementById('inspector-sentence-en');
         const sentenceKoEl = document.getElementById('inspector-sentence-ko');
         const saveText = document.getElementById('btn-inspector-save-text');
 
-        if (wordEl) wordEl.textContent = cleanWord;
+        if (wordEl) wordEl.textContent = displayWord;
+        if (contextHint) {
+            if (foundInfo && foundInfo.isInflected && foundInfo.word !== cleanWord) {
+                contextHint.innerHTML = `<span class="inline-flex items-center gap-1 text-[11px] font-sans font-bold text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-md">💡 동사 원형 표기 (본문 형태: ${cleanWord})</span>`;
+            } else {
+                contextHint.textContent = '지문/예문 문맥 단어 클릭 • 원클릭 영단어 사전 연동';
+            }
+        }
         this.setInspectorPos(pos);
 
         if (meaningInput) {
             meaningInput.value = meaning;
             if (!meaning) {
-                meaningInput.placeholder = `'${cleanWord}'의 한글 뜻을 직접 입력하세요...`;
+                meaningInput.placeholder = `'${displayWord}'의 한글 뜻을 직접 입력하세요...`;
             }
         }
         if (sentenceEnEl) sentenceEnEl.textContent = sentenceEn ? `"${sentenceEn}"` : '';
         if (sentenceKoEl) sentenceKoEl.textContent = sentenceKo ? `해석: ${sentenceKo}` : '';
 
         // 이미 단어장에 보관 중인지 확인
-        const isAlreadySaved = window.storage && window.storage.words && window.storage.words.some(w => w.word && w.word.toLowerCase() === cleanWord.toLowerCase());
+        const isAlreadySaved = window.storage && window.storage.words && window.storage.words.some(w => w.word && w.word.toLowerCase() === displayWord.toLowerCase());
         if (saveText) {
             if (isAlreadySaved) {
                 saveText.textContent = '✓ 이미 단어 사전에 보관 중 (다시 저장 가능)';
@@ -995,7 +1144,7 @@ class ReadingEngine {
 
         // 여성 원어민 미국식 발음 자동 청취
         if (window.tts) {
-            window.tts.speak(cleanWord, 'en-US');
+            window.tts.speak(displayWord, 'en-US');
         }
 
         if (window.lucide) window.lucide.createIcons();
@@ -1094,6 +1243,7 @@ class ReadingEngine {
         if (!tooltip) return;
 
         const foundInfo = this.findWordMeaning(cleanWord);
+        const displayWord = (foundInfo && foundInfo.word) ? foundInfo.word : cleanWord;
         const wordEl = document.getElementById('rf-tooltip-word');
         const posEl = document.getElementById('rf-tooltip-pos');
         const meaningEl = document.getElementById('rf-tooltip-meaning');
@@ -1101,14 +1251,20 @@ class ReadingEngine {
         const addBtn = document.getElementById('rf-tooltip-add-btn');
         const detailBtn = document.getElementById('rf-tooltip-detail-btn');
 
-        if (wordEl) wordEl.textContent = cleanWord;
+        if (wordEl) {
+            if (foundInfo && foundInfo.isInflected && foundInfo.word !== cleanWord) {
+                wordEl.innerHTML = `<span>${foundInfo.word}</span> <span class="text-[10px] text-amber-200/90 font-sans font-normal ml-1">(${cleanWord}의 원형)</span>`;
+            } else {
+                wordEl.textContent = displayWord;
+            }
+        }
         if (posEl) posEl.textContent = foundInfo ? foundInfo.pos : '[단어]';
         if (meaningEl) meaningEl.textContent = foundInfo ? foundInfo.meaning : '사전 정의 탐색 중...';
 
         if (ttsBtn) {
             ttsBtn.onclick = (ev) => {
                 ev.stopPropagation();
-                if (window.tts) window.tts.speak(cleanWord);
+                if (window.tts) window.tts.speak(displayWord);
             };
         }
 
@@ -1162,7 +1318,7 @@ class ReadingEngine {
     }
 
     quickAddWordToVoca(cleanWord, foundInfo, customSentenceEn = '', customSentenceKo = '') {
-        const word = cleanWord;
+        const word = (foundInfo && foundInfo.word) ? foundInfo.word : cleanWord;
         const pos = foundInfo ? foundInfo.pos : '[명]';
         const meaning = foundInfo ? foundInfo.meaning : '';
         const currentPassage = this.getCurrentPassage();

@@ -1571,21 +1571,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "pollinator",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: pollinator"
-      },
-      {
-        "word": "waggle",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: waggle"
-      },
-      {
-        "word": "ecosystem",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: ecosystem"
-      }
+      {"word": "pollinator", "partOfSpeech": "[명]", "meaning": "꽃가루 매개자, 수분 매개 곤충"},
+      {"word": "waggle", "partOfSpeech": "[동]", "meaning": "(상하·좌우로) 흔들다 / [명] 흔들기 (꿀벌의 8자춤)"},
+      {"word": "ecosystem", "partOfSpeech": "[명]", "meaning": "생태계"}
     ],
     "questions": [
       {
@@ -1709,21 +1697,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "tame",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: tame"
-      },
-      {
-        "word": "essential",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: essential"
-      },
-      {
-        "word": "invisible",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: invisible"
-      }
+      {"word": "tame", "partOfSpeech": "[형]", "meaning": "길들여진, 유순한 / [동] 길들이다"},
+      {"word": "essential", "partOfSpeech": "[형]", "meaning": "필수적인, 극히 중요한 / [명] 필수 요소"},
+      {"word": "invisible", "partOfSpeech": "[형]", "meaning": "보이지 않는, 눈에 보이지 않는"}
     ],
     "questions": [
       {
@@ -1847,21 +1823,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "consolidate",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: consolidate"
-      },
-      {
-        "word": "crucial",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: crucial"
-      },
-      {
-        "word": "memory",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: memory"
-      }
+      {"word": "consolidate", "partOfSpeech": "[동]", "meaning": "굳히다, 강화하다, 통합하다"},
+      {"word": "crucial", "partOfSpeech": "[형]", "meaning": "중대한, 결정적인"},
+      {"word": "memory", "partOfSpeech": "[명]", "meaning": "기억, 기억력, 추억"}
     ],
     "questions": [
       {
@@ -1985,21 +1949,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "privilege",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: privilege"
-      },
-      {
-        "word": "whitewash",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: whitewash"
-      },
-      {
-        "word": "treasure",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: treasure"
-      }
+      {"word": "privilege", "partOfSpeech": "[명]", "meaning": "특권, 특혜 / [동] 특권을 주다"},
+      {"word": "whitewash", "partOfSpeech": "[동]", "meaning": "은폐하다, 눈속임하다, 백색 도료를 칠하다 / [명] 은폐"},
+      {"word": "treasure", "partOfSpeech": "[명]", "meaning": "보물, 귀중품 / [동] 소중히 여기다"}
     ],
     "questions": [
       {
@@ -2123,21 +2075,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "bioluminescent",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: bioluminescent"
-      },
-      {
-        "word": "trench",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: trench"
-      },
-      {
-        "word": "navigate",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: navigate"
-      }
+      {"word": "bioluminescent", "partOfSpeech": "[형]", "meaning": "생체 발광의, 생물 발광을 하는"},
+      {"word": "trench", "partOfSpeech": "[명]", "meaning": "참호, 도랑, 해구"},
+      {"word": "navigate", "partOfSpeech": "[동]", "meaning": "길을 찾다, 항해하다, 조종하다"}
     ],
     "questions": [
       {
@@ -2261,21 +2201,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "waistcoat",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: waistcoat"
-      },
-      {
-        "word": "anxiously",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: anxiously"
-      },
-      {
-        "word": "defying",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: defying"
-      }
+      {"word": "waistcoat", "partOfSpeech": "[명]", "meaning": "조끼 (vest)"},
+      {"word": "anxiously", "partOfSpeech": "[부]", "meaning": "불안하게, 초조하게, 애타게"},
+      {"word": "defying", "partOfSpeech": "[동]", "meaning": "반항하는, 거역하는 (원형: defy)"}
     ],
     "questions": [
       {
@@ -2399,21 +2327,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "nutrient",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: nutrient"
-      },
-      {
-        "word": "fungal",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: fungal"
-      },
-      {
-        "word": "pest",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: pest"
-      }
+      {"word": "nutrient", "partOfSpeech": "[명]", "meaning": "영양소, 영양분 / [형] 영양이 되는"},
+      {"word": "fungal", "partOfSpeech": "[형]", "meaning": "균류의, 곰팡이의"},
+      {"word": "pest", "partOfSpeech": "[명]", "meaning": "해충, 유해 동식물, 골칫거리"}
     ],
     "questions": [
       {
@@ -2537,21 +2453,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "stranded",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: stranded"
-      },
-      {
-        "word": "inhabitant",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: inhabitant"
-      },
-      {
-        "word": "colossal",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: colossal"
-      }
+      {"word": "stranded", "partOfSpeech": "[형]", "meaning": "오도 가도 못하게 된, 발이 묶인, 좌초된"},
+      {"word": "inhabitant", "partOfSpeech": "[명]", "meaning": "주민, 서식 동식물"},
+      {"word": "colossal", "partOfSpeech": "[형]", "meaning": "거대한, 엄청난"}
     ],
     "questions": [
       {
@@ -2675,21 +2579,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "convert",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: convert"
-      },
-      {
-        "word": "emission",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: emission"
-      },
-      {
-        "word": "combat",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: combat"
-      }
+      {"word": "convert", "partOfSpeech": "[동]", "meaning": "전환하다, 개조하다, 개종하다"},
+      {"word": "emission", "partOfSpeech": "[명]", "meaning": "배출, 방출, 배출물"},
+      {"word": "combat", "partOfSpeech": "[동]", "meaning": "싸우다, 방지하다 / [명] 전투, 투쟁"}
     ],
     "questions": [
       {
@@ -2813,21 +2705,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "predator",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: predator"
-      },
-      {
-        "word": "shepherd",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: shepherd"
-      },
-      {
-        "word": "desperate",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: desperate"
-      }
+      {"word": "predator", "partOfSpeech": "[명]", "meaning": "포식자, 포식 동물"},
+      {"word": "shepherd", "partOfSpeech": "[명]", "meaning": "양치기, 목자 / [동] 이끌다, 인도하다"},
+      {"word": "desperate", "partOfSpeech": "[형]", "meaning": "필사적인, 절망적인, 자포자기의"}
     ],
     "questions": [
       {
@@ -2951,21 +2831,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "vessel",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: vessel"
-      },
-      {
-        "word": "pump",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: pump"
-      },
-      {
-        "word": "approximately",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: approximately"
-      }
+      {"word": "vessel", "partOfSpeech": "[명]", "meaning": "혈관, 선박, 그릇"},
+      {"word": "pump", "partOfSpeech": "[명]", "meaning": "펌프 / [동] 퍼올리다, 주입하다"},
+      {"word": "approximately", "partOfSpeech": "[부]", "meaning": "대략, 거의, 대충"}
     ],
     "questions": [
       {
@@ -3089,21 +2957,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "miser",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: miser"
-      },
-      {
-        "word": "accumulate",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: accumulate"
-      },
-      {
-        "word": "spirit",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: spirit"
-      }
+      {"word": "miser", "partOfSpeech": "[명]", "meaning": "구두쇠, 자린고비"},
+      {"word": "accumulate", "partOfSpeech": "[동]", "meaning": "모으다, 축적하다, 쌓이다"},
+      {"word": "spirit", "partOfSpeech": "[명]", "meaning": "정신, 영혼, 기백"}
     ],
     "questions": [
       {
@@ -3227,21 +3083,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "magnetic",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: magnetic"
-      },
-      {
-        "word": "constellation",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: constellation"
-      },
-      {
-        "word": "migratory",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: migratory"
-      }
+      {"word": "magnetic", "partOfSpeech": "[형]", "meaning": "자석의, 자기의, 매력적인"},
+      {"word": "constellation", "partOfSpeech": "[명]", "meaning": "별자리, 성좌"},
+      {"word": "migratory", "partOfSpeech": "[형]", "meaning": "이주하는, 철따라 이동하는"}
     ],
     "questions": [
       {
@@ -3365,21 +3209,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "statue",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: statue"
-      },
-      {
-        "word": "devoted",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: devoted"
-      },
-      {
-        "word": "comfort",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: comfort"
-      }
+      {"word": "statue", "partOfSpeech": "[명]", "meaning": "조각상, 동상"},
+      {"word": "devoted", "partOfSpeech": "[형]", "meaning": "헌신적인, 열성적인, 몰두하는"},
+      {"word": "comfort", "partOfSpeech": "[명]", "meaning": "편안함, 위로 / [동] 위로하다, 편하게 하다"}
     ],
     "questions": [
       {
@@ -3503,21 +3335,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "wavelength",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: wavelength"
-      },
-      {
-        "word": "photoreceptor",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: photoreceptor"
-      },
-      {
-        "word": "translate",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: translate"
-      }
+      {"word": "wavelength", "partOfSpeech": "[명]", "meaning": "파장, 주파수"},
+      {"word": "photoreceptor", "partOfSpeech": "[명]", "meaning": "광수용체, 빛수용기"},
+      {"word": "translate", "partOfSpeech": "[동]", "meaning": "번역하다, (결과로) 이어지다, 전환하다"}
     ],
     "questions": [
       {
@@ -3641,21 +3461,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "parchment",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: parchment"
-      },
-      {
-        "word": "mutineer",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: mutineer"
-      },
-      {
-        "word": "schooner",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: schooner"
-      }
+      {"word": "parchment", "partOfSpeech": "[명]", "meaning": "양피지"},
+      {"word": "mutineer", "partOfSpeech": "[명]", "meaning": "폭도, 반란자"},
+      {"word": "schooner", "partOfSpeech": "[명]", "meaning": "스쿠너 (돛대가 둘 이상인 범선)"}
     ],
     "questions": [
       {
@@ -3779,21 +3587,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "biodegradable",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: biodegradable"
-      },
-      {
-        "word": "ingest",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: ingest"
-      },
-      {
-        "word": "disrupt",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: disrupt"
-      }
+      {"word": "biodegradable", "partOfSpeech": "[형]", "meaning": "생분해성의, 자연 분해되는"},
+      {"word": "ingest", "partOfSpeech": "[동]", "meaning": "(음식·약 등을) 삼키다, 섭취하다"},
+      {"word": "disrupt", "partOfSpeech": "[동]", "meaning": "방해하다, 지장을 주다, 분열시키다"}
     ],
     "questions": [
       {
@@ -3917,21 +3713,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "puppet",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: puppet"
-      },
-      {
-        "word": "deliberate",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: deliberate"
-      },
-      {
-        "word": "selflessness",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: selflessness"
-      }
+      {"word": "puppet", "partOfSpeech": "[명]", "meaning": "꼭두각시, 인형"},
+      {"word": "deliberate", "partOfSpeech": "[형]", "meaning": "고의적인, 신중한 / [동] 숙고하다"},
+      {"word": "selflessness", "partOfSpeech": "[명]", "meaning": "사심 없음, 이타심"}
     ],
     "questions": [
       {
@@ -4055,21 +3839,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "aviation",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: aviation"
-      },
-      {
-        "word": "insatiable",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: insatiable"
-      },
-      {
-        "word": "inquiry",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: inquiry"
-      }
+      {"word": "aviation", "partOfSpeech": "[명]", "meaning": "항공, 비행, 항공학"},
+      {"word": "insatiable", "partOfSpeech": "[형]", "meaning": "만족할 줄 모르는, 탐욕스러운"},
+      {"word": "inquiry", "partOfSpeech": "[명]", "meaning": "조사, 탐구, 문의"}
     ],
     "questions": [
       {
@@ -4193,21 +3965,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "nobility",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: nobility"
-      },
-      {
-        "word": "integrity",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: integrity"
-      },
-      {
-        "word": "curse",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: curse"
-      }
+      {"word": "nobility", "partOfSpeech": "[명]", "meaning": "귀족, 고결함, 숭고함"},
+      {"word": "integrity", "partOfSpeech": "[명]", "meaning": "진실성, 도덕성, 온전함"},
+      {"word": "curse", "partOfSpeech": "[명]", "meaning": "저주, 악담 / [동] 저주하다"}
     ],
     "questions": [
       {
@@ -4331,21 +4091,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "decentralize",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: decentralize"
-      },
-      {
-        "word": "polarize",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: polarize"
-      },
-      {
-        "word": "objective",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: objective"
-      }
+      {"word": "decentralize", "partOfSpeech": "[동]", "meaning": "분산시키다, 지방 분권화하다"},
+      {"word": "polarize", "partOfSpeech": "[동]", "meaning": "양극화하다, 대립시키다"},
+      {"word": "objective", "partOfSpeech": "[명]", "meaning": "목표, 목적 / [형] 객관적인"}
     ],
     "questions": [
       {
@@ -4469,21 +4217,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "sacrificial",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: sacrificial"
-      },
-      {
-        "word": "mutual",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: mutual"
-      },
-      {
-        "word": "platinum",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: platinum"
-      }
+      {"word": "sacrificial", "partOfSpeech": "[형]", "meaning": "희생적인, 제물의"},
+      {"word": "mutual", "partOfSpeech": "[형]", "meaning": "상호 간의, 서로의, 공통의"},
+      {"word": "platinum", "partOfSpeech": "[명]", "meaning": "백금"}
     ],
     "questions": [
       {
@@ -4607,21 +4343,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "pathogen",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: pathogen"
-      },
-      {
-        "word": "antibody",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: antibody"
-      },
-      {
-        "word": "neutralize",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: neutralize"
-      }
+      {"word": "pathogen", "partOfSpeech": "[명]", "meaning": "병원체, 병원균"},
+      {"word": "antibody", "partOfSpeech": "[명]", "meaning": "항체 (면역 물질)"},
+      {"word": "neutralize", "partOfSpeech": "[동]", "meaning": "무력화하다, 중화하다, 상쇄하다"}
     ],
     "questions": [
       {
@@ -4745,21 +4469,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "deduce",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: deduce"
-      },
-      {
-        "word": "distraction",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: distraction"
-      },
-      {
-        "word": "thwart",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: thwart"
-      }
+      {"word": "deduce", "partOfSpeech": "[동]", "meaning": "연역하다, 추론하다"},
+      {"word": "distraction", "partOfSpeech": "[명]", "meaning": "주의 산만, 정신을 흩뜨리는 것, 기분 전환"},
+      {"word": "thwart", "partOfSpeech": "[동]", "meaning": "좌절시키다, 방해하다"}
     ],
     "questions": [
       {
@@ -4883,21 +4595,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "porous",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: porous"
-      },
-      {
-        "word": "aquatic",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: aquatic"
-      },
-      {
-        "word": "conservation",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: conservation"
-      }
+      {"word": "porous", "partOfSpeech": "[형]", "meaning": "다공성의, 구멍이 많은"},
+      {"word": "aquatic", "partOfSpeech": "[형]", "meaning": "물의, 수생의, 수중의"},
+      {"word": "conservation", "partOfSpeech": "[명]", "meaning": "(자연·환경) 보호, 보존"}
     ],
     "questions": [
       {
@@ -5021,21 +4721,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "animate",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: animate"
-      },
-      {
-        "word": "yearn",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: yearn"
-      },
-      {
-        "word": "isolation",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: isolation"
-      }
+      {"word": "animate", "partOfSpeech": "[동]", "meaning": "생기를 불어넣다, 활기를 띠게 하다 / [형] 살아 있는"},
+      {"word": "yearn", "partOfSpeech": "[동]", "meaning": "갈망하다, 동경하다"},
+      {"word": "isolation", "partOfSpeech": "[명]", "meaning": "고립, 격리"}
     ],
     "questions": [
       {
@@ -5159,21 +4847,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "procrastination",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: procrastination"
-      },
-      {
-        "word": "aversion",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: aversion"
-      },
-      {
-        "word": "daunting",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: daunting"
-      }
+      {"word": "procrastination", "partOfSpeech": "[명]", "meaning": "미루는 버릇, 꾸물거림"},
+      {"word": "aversion", "partOfSpeech": "[명]", "meaning": "혐오, 반감, 몹시 싫어함"},
+      {"word": "daunting", "partOfSpeech": "[형]", "meaning": "벅찬, 주눅 들게 하는, 위압적인"}
     ],
     "questions": [
       {
@@ -5297,21 +4973,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "dormant",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: dormant"
-      },
-      {
-        "word": "cultivate",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: cultivate"
-      },
-      {
-        "word": "neglected",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: neglected"
-      }
+      {"word": "dormant", "partOfSpeech": "[형]", "meaning": "휴면기의, 활동을 중단한, 잠복 중인"},
+      {"word": "cultivate", "partOfSpeech": "[동]", "meaning": "경작하다, 재배하다, (자질을) 함양하다"},
+      {"word": "neglected", "partOfSpeech": "[형]", "meaning": "방치된, 무시된, 소홀히 다뤄진"}
     ],
     "questions": [
       {
@@ -5435,21 +5099,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "transformative",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: transformative"
-      },
-      {
-        "word": "comprehend",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: comprehend"
-      },
-      {
-        "word": "spin-off",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: spin-off"
-      }
+      {"word": "transformative", "partOfSpeech": "[형]", "meaning": "변화시키는, 변혁적인"},
+      {"word": "comprehend", "partOfSpeech": "[동]", "meaning": "이해하다, 파악하다, 포함하다"},
+      {"word": "spin-off", "partOfSpeech": "[명]", "meaning": "파생 상품, 부산물, 속편"}
     ],
     "questions": [
       {
@@ -5573,21 +5225,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "corrupt",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: corrupt"
-      },
-      {
-        "word": "redistribute",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: redistribute"
-      },
-      {
-        "word": "tyranny",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: tyranny"
-      }
+      {"word": "corrupt", "partOfSpeech": "[형]", "meaning": "부패한, 타락한 / [동] 부패시키다"},
+      {"word": "redistribute", "partOfSpeech": "[동]", "meaning": "재분배하다, 다시 배분하다"},
+      {"word": "tyranny", "partOfSpeech": "[명]", "meaning": "폭정, 독재, 압제"}
     ],
     "questions": [
       {
@@ -5711,21 +5351,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "neurological",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: neurological"
-      },
-      {
-        "word": "substitute",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: substitute"
-      },
-      {
-        "word": "destructive",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: destructive"
-      }
+      {"word": "neurological", "partOfSpeech": "[형]", "meaning": "신경학의, 신경의"},
+      {"word": "substitute", "partOfSpeech": "[동]", "meaning": "대체하다, 대신하다 / [명] 대체물, 대용품"},
+      {"word": "destructive", "partOfSpeech": "[형]", "meaning": "파괴적인, 해로운"}
     ],
     "questions": [
       {
@@ -5849,21 +5477,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "unblemished",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: unblemished"
-      },
-      {
-        "word": "corruption",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: corruption"
-      },
-      {
-        "word": "virtue",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: virtue"
-      }
+      {"word": "unblemished", "partOfSpeech": "[형]", "meaning": "흠 없는, 티 없는, 완벽한"},
+      {"word": "corruption", "partOfSpeech": "[명]", "meaning": "부패, 타락, 오염"},
+      {"word": "virtue", "partOfSpeech": "[명]", "meaning": "미덕, 덕목, 장점"}
     ],
     "questions": [
       {
@@ -5987,21 +5603,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "tectonic",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: tectonic"
-      },
-      {
-        "word": "seismic",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: seismic"
-      },
-      {
-        "word": "semi-molten",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: semi-molten"
-      }
+      {"word": "tectonic", "partOfSpeech": "[형]", "meaning": "구조상의, 지질 구조의"},
+      {"word": "seismic", "partOfSpeech": "[형]", "meaning": "지진의, 지진에 의한, 엄청난"},
+      {"word": "semi-molten", "partOfSpeech": "[형]", "meaning": "반쯤 녹은"}
     ],
     "questions": [
       {
@@ -6125,21 +5729,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "wager",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: wager"
-      },
-      {
-        "word": "circumnavigate",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: circumnavigate"
-      },
-      {
-        "word": "precision",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: precision"
-      }
+      {"word": "wager", "partOfSpeech": "[동]", "meaning": "내기를 걸다, 확신하다 / [명] 내기"},
+      {"word": "circumnavigate", "partOfSpeech": "[동]", "meaning": "세계를 일주하다, 주위를 돌다"},
+      {"word": "precision", "partOfSpeech": "[명]", "meaning": "정밀성, 정확성"}
     ],
     "questions": [
       {
@@ -6263,21 +5855,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "luminescence",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: luminescence"
-      },
-      {
-        "word": "progression",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: progression"
-      },
-      {
-        "word": "marker",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: marker"
-      }
+      {"word": "luminescence", "partOfSpeech": "[명]", "meaning": "냉광, 발광"},
+      {"word": "progression", "partOfSpeech": "[명]", "meaning": "진행, 발전, 연속"},
+      {"word": "marker", "partOfSpeech": "[명]", "meaning": "표지, 지표, 표식"}
     ],
     "questions": [
       {
@@ -6401,21 +5981,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "monstrous",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: monstrous"
-      },
-      {
-        "word": "mundane",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: mundane"
-      },
-      {
-        "word": "pursuit",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: pursuit"
-      }
+      {"word": "monstrous", "partOfSpeech": "[형]", "meaning": "괴물 같은, 거대한, 극악무도한"},
+      {"word": "mundane", "partOfSpeech": "[형]", "meaning": "일상적인, 평범한, 세속적인"},
+      {"word": "pursuit", "partOfSpeech": "[명]", "meaning": "추구, 쫓음, 직업"}
     ],
     "questions": [
       {
@@ -6539,21 +6107,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "suspension",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: suspension"
-      },
-      {
-        "word": "compression",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: compression"
-      },
-      {
-        "word": "horizontal",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: horizontal"
-      }
+      {"word": "suspension", "partOfSpeech": "[명]", "meaning": "정직, 정학, 부유, 현수"},
+      {"word": "compression", "partOfSpeech": "[명]", "meaning": "압축, 요약, 압착"},
+      {"word": "horizontal", "partOfSpeech": "[형]", "meaning": "수평의, 가로의"}
     ],
     "questions": [
       {
@@ -6677,21 +6233,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "formidable",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: formidable"
-      },
-      {
-        "word": "instinct",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: instinct"
-      },
-      {
-        "word": "pampered",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: pampered"
-      }
+      {"word": "formidable", "partOfSpeech": "[형]", "meaning": "가공할, 어마어마한, 만만찮은"},
+      {"word": "instinct", "partOfSpeech": "[명]", "meaning": "본능, 직관"},
+      {"word": "pampered", "partOfSpeech": "[형]", "meaning": "애지중지 길러진, 방자하게 자란"}
     ],
     "questions": [
       {
@@ -6815,21 +6359,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "cryptography",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: cryptography"
-      },
-      {
-        "word": "decipher",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: decipher"
-      },
-      {
-        "word": "encrypted",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: encrypted"
-      }
+      {"word": "cryptography", "partOfSpeech": "[명]", "meaning": "암호 작성술, 암호학"},
+      {"word": "decipher", "partOfSpeech": "[동]", "meaning": "판독하다, 해독하다"},
+      {"word": "encrypted", "partOfSpeech": "[형]", "meaning": "암호화된 (원형: encrypt)"}
     ],
     "questions": [
       {
@@ -6953,21 +6485,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "immense",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: immense"
-      },
-      {
-        "word": "agonizing",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: agonizing"
-      },
-      {
-        "word": "indomitable",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: indomitable"
-      }
+      {"word": "immense", "partOfSpeech": "[형]", "meaning": "거대한, 엄청난"},
+      {"word": "agonizing", "partOfSpeech": "[형]", "meaning": "극심한 고통을 주는, 몹시 괴로운, 고통스러운 (원형: agonize)"},
+      {"word": "indomitable", "partOfSpeech": "[형]", "meaning": "불굴의, 굴복하지 않는"}
     ],
     "questions": [
       {
@@ -7091,21 +6611,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "superposition",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: superposition"
-      },
-      {
-        "word": "collapse",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: collapse"
-      },
-      {
-        "word": "simultaneously",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: simultaneously"
-      }
+      {"word": "superposition", "partOfSpeech": "[명]", "meaning": "중첩, 포개놓기 (양자역학)"},
+      {"word": "collapse", "partOfSpeech": "[동]", "meaning": "무너지다, 붕괴하다 / [명] 붕괴, 폭락"},
+      {"word": "simultaneously", "partOfSpeech": "[부]", "meaning": "동시에, 일제히"}
     ],
     "questions": [
       {
@@ -7229,21 +6737,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "rebellious",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: rebellious"
-      },
-      {
-        "word": "articulate",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: articulate"
-      },
-      {
-        "word": "dissent",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: dissent"
-      }
+      {"word": "rebellious", "partOfSpeech": "[형]", "meaning": "반항적인, 반란의"},
+      {"word": "articulate", "partOfSpeech": "[동]", "meaning": "또렷하게 말하다, 분명히 표현하다 / [형] 또렷한"},
+      {"word": "dissent", "partOfSpeech": "[명]", "meaning": "반대 의견, 이의 / [동] 반대하다"}
     ],
     "questions": [
       {
@@ -7367,21 +6863,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "eradicate",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: eradicate"
-      },
-      {
-        "word": "quandary",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: quandary"
-      },
-      {
-        "word": "hereditary",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: hereditary"
-      }
+      {"word": "eradicate", "partOfSpeech": "[동]", "meaning": "근절하다, 뿌리뽑다"},
+      {"word": "quandary", "partOfSpeech": "[명]", "meaning": "진퇴양난, 곤경, 궁지"},
+      {"word": "hereditary", "partOfSpeech": "[형]", "meaning": "유전적인, 세습되는"}
     ],
     "questions": [
       {
@@ -7505,21 +6989,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "lavish",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: lavish"
-      },
-      {
-        "word": "staggering",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: staggering"
-      },
-      {
-        "word": "amass",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: amass"
-      }
+      {"word": "lavish", "partOfSpeech": "[형]", "meaning": "호화로운, 아낌없는 / [동] 아낌없이 주다"},
+      {"word": "staggering", "partOfSpeech": "[형]", "meaning": "충격적인, 믿기 어려운, 비틀거리는"},
+      {"word": "amass", "partOfSpeech": "[동]", "meaning": "(재산·정보 등을) 모으다, 축적하다"}
     ],
     "questions": [
       {
@@ -7643,21 +7115,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "epigenetics",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: epigenetics"
-      },
-      {
-        "word": "mutate",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: mutate"
-      },
-      {
-        "word": "chronic",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: chronic"
-      }
+      {"word": "epigenetics", "partOfSpeech": "[명]", "meaning": "후성유전학"},
+      {"word": "mutate", "partOfSpeech": "[동]", "meaning": "돌연변이가 되다, 변화하다"},
+      {"word": "chronic", "partOfSpeech": "[형]", "meaning": "만성적인, 만성 질환을 앓는, 상습적인"}
     ],
     "questions": [
       {
@@ -7781,21 +7241,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "prejudice",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: prejudice"
-      },
-      {
-        "word": "innocent",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: innocent"
-      },
-      {
-        "word": "courage",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: courage"
-      }
+      {"word": "prejudice", "partOfSpeech": "[명]", "meaning": "편견, 선입관 / [동] 편견을 갖게 하다"},
+      {"word": "innocent", "partOfSpeech": "[형]", "meaning": "무죄인, 순결한, 악의 없는"},
+      {"word": "courage", "partOfSpeech": "[명]", "meaning": "용기, 담력"}
     ],
     "questions": [
       {
@@ -7919,21 +7367,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "precipitate",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: precipitate"
-      },
-      {
-        "word": "indispensable",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: indispensable"
-      },
-      {
-        "word": "ruin",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: ruin"
-      }
+      {"word": "precipitate", "partOfSpeech": "[동]", "meaning": "촉발시키다, 침전되다 / [형] 다급한"},
+      {"word": "indispensable", "partOfSpeech": "[형]", "meaning": "없어서는 안 될, 필수적인"},
+      {"word": "ruin", "partOfSpeech": "[동]", "meaning": "망치다, 파멸시키다 / [명] 파멸, 폐허"}
     ],
     "questions": [
       {
@@ -8057,21 +7493,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "preconception",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: preconception"
-      },
-      {
-        "word": "insufferable",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: insufferable"
-      },
-      {
-        "word": "demeanor",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: demeanor"
-      }
+      {"word": "preconception", "partOfSpeech": "[명]", "meaning": "선입견, 편견"},
+      {"word": "insufferable", "partOfSpeech": "[형]", "meaning": "참을 수 없는, 견딜 수 없는"},
+      {"word": "demeanor", "partOfSpeech": "[명]", "meaning": "처신, 태도, 품행"}
     ],
     "questions": [
       {
@@ -8195,21 +7619,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "reciprocal",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: reciprocal"
-      },
-      {
-        "word": "altruism",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: altruism"
-      },
-      {
-        "word": "dilemma",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: dilemma"
-      }
+      {"word": "reciprocal", "partOfSpeech": "[형]", "meaning": "상호 간의, 호혜적인"},
+      {"word": "altruism", "partOfSpeech": "[명]", "meaning": "이타주의, 이타심"},
+      {"word": "dilemma", "partOfSpeech": "[명]", "meaning": "진퇴양난, 딜레마"}
     ],
     "questions": [
       {
@@ -8333,21 +7745,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "brutality",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: brutality"
-      },
-      {
-        "word": "civilized",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: civilized"
-      },
-      {
-        "word": "reside",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: reside"
-      }
+      {"word": "brutality", "partOfSpeech": "[명]", "meaning": "잔혹성, 야만성"},
+      {"word": "civilized", "partOfSpeech": "[형]", "meaning": "문명화된, 교양 있는, 세련된"},
+      {"word": "reside", "partOfSpeech": "[동]", "meaning": "거주하다, 살다, 속하다"}
     ],
     "questions": [
       {
@@ -8471,21 +7871,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "stimuli",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: stimuli"
-      },
-      {
-        "word": "senescence",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: senescence"
-      },
-      {
-        "word": "neurogenesis",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: neurogenesis"
-      }
+      {"word": "stimuli", "partOfSpeech": "[명]", "meaning": "자극들 (stimulus의 복수형)"},
+      {"word": "senescence", "partOfSpeech": "[명]", "meaning": "노화, 노쇠"},
+      {"word": "neurogenesis", "partOfSpeech": "[명]", "meaning": "신경 발생, 신경세포 생성"}
     ],
     "questions": [
       {
@@ -8609,21 +7997,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "conditioned",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: conditioned"
-      },
-      {
-        "word": "contentment",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: contentment"
-      },
-      {
-        "word": "pacify",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: pacify"
-      }
+      {"word": "conditioned", "partOfSpeech": "[형]", "meaning": "조건화된, 길들여진, 조절된"},
+      {"word": "contentment", "partOfSpeech": "[명]", "meaning": "만족감, 안도감"},
+      {"word": "pacify", "partOfSpeech": "[동]", "meaning": "달래다, 진정시키다, 평정하다"}
     ],
     "questions": [
       {
@@ -8747,21 +8123,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "scaffolding",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: scaffolding"
-      },
-      {
-        "word": "filament",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: filament"
-      },
-      {
-        "word": "luminous",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: luminous"
-      }
+      {"word": "scaffolding", "partOfSpeech": "[명]", "meaning": "비계, 건축 발판, 학습 지원 체계"},
+      {"word": "filament", "partOfSpeech": "[명]", "meaning": "가는 실, 필라멘트"},
+      {"word": "luminous", "partOfSpeech": "[형]", "meaning": "빛을 발하는, 야광의, 아주 밝은"}
     ],
     "questions": [
       {
@@ -8885,21 +8249,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "compassion",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: compassion"
-      },
-      {
-        "word": "destitute",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: destitute"
-      },
-      {
-        "word": "embittered",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: embittered"
-      }
+      {"word": "compassion", "partOfSpeech": "[명]", "meaning": "연민, 동정심, 자비"},
+      {"word": "destitute", "partOfSpeech": "[형]", "meaning": "극빈한, 궁핍한, ~이 없는"},
+      {"word": "embittered", "partOfSpeech": "[형]", "meaning": "원한을 품은, 쓰라린, 격분한"}
     ],
     "questions": [
       {
@@ -9023,21 +8375,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "inevitable",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: inevitable"
-      },
-      {
-        "word": "formidable",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: formidable"
-      },
-      {
-        "word": "extraterrestrial",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: extraterrestrial"
-      }
+      {"word": "inevitable", "partOfSpeech": "[형]", "meaning": "피할 수 없는, 불가피한"},
+      {"word": "formidable", "partOfSpeech": "[형]", "meaning": "가공할, 어마어마한, 만만찮은"},
+      {"word": "extraterrestrial", "partOfSpeech": "[형]", "meaning": "지구 밖의, 외계의 / [명] 외계인"}
     ],
     "questions": [
       {
@@ -9161,21 +8501,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "paralysis",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: paralysis"
-      },
-      {
-        "word": "outrageous",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: outrageous"
-      },
-      {
-        "word": "contemplate",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: contemplate"
-      }
+      {"word": "paralysis", "partOfSpeech": "[명]", "meaning": "마비, 불능 상태"},
+      {"word": "outrageous", "partOfSpeech": "[형]", "meaning": "너무나 충격적인, 터무니없는"},
+      {"word": "contemplate", "partOfSpeech": "[동]", "meaning": "심사숙고하다, 깊이 고려하다"}
     ],
     "questions": [
       {
@@ -9299,21 +8627,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "expenditure",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: expenditure"
-      },
-      {
-        "word": "prospective",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: prospective"
-      },
-      {
-        "word": "irrecoverable",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: irrecoverable"
-      }
+      {"word": "expenditure", "partOfSpeech": "[명]", "meaning": "지출, 비용, 소비"},
+      {"word": "prospective", "partOfSpeech": "[형]", "meaning": "장래의, 유망한, 곧 있을"},
+      {"word": "irrecoverable", "partOfSpeech": "[형]", "meaning": "회복할 수 없는, 돌이킬 수 없는"}
     ],
     "questions": [
       {
@@ -9437,21 +8753,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "estrangement",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: estrangement"
-      },
-      {
-        "word": "transactional",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: transactional"
-      },
-      {
-        "word": "monstrous",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: monstrous"
-      }
+      {"word": "estrangement", "partOfSpeech": "[명]", "meaning": "소외, 별거, 사이가 멀어짐"},
+      {"word": "transactional", "partOfSpeech": "[형]", "meaning": "거래의, 업무적인, 거래상의"},
+      {"word": "monstrous", "partOfSpeech": "[형]", "meaning": "괴물 같은, 거대한, 극악무도한"}
     ],
     "questions": [
       {
@@ -9575,21 +8879,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "sequestration",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: sequestration"
-      },
-      {
-        "word": "ambient",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: ambient"
-      },
-      {
-        "word": "constitute",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: constitute"
-      }
+      {"word": "sequestration", "partOfSpeech": "[명]", "meaning": "격리, 격리 보관, 탄소 포집"},
+      {"word": "ambient", "partOfSpeech": "[형]", "meaning": "주위의, 잔잔한, 대기의"},
+      {"word": "constitute", "partOfSpeech": "[동]", "meaning": "구성하다, ~이 되다, 설립하다"}
     ],
     "questions": [
       {
@@ -9713,21 +9005,9 @@ const READING_PASSAGES = [
       }
     ],
     "keyVocabulary": [
-      {
-        "word": "transcendence",
-        "partOfSpeech": "n.",
-        "meaning": "핵심 개념 어휘: transcendence"
-      },
-      {
-        "word": "salvation",
-        "partOfSpeech": "adj.",
-        "meaning": "문맥 필수 어휘: salvation"
-      },
-      {
-        "word": "striving",
-        "partOfSpeech": "v.",
-        "meaning": "심화 독해 어휘: striving"
-      }
+      {"word": "transcendence", "partOfSpeech": "[명]", "meaning": "초월, 탁월"},
+      {"word": "salvation", "partOfSpeech": "[명]", "meaning": "구원, 구조, 구제"},
+      {"word": "striving", "partOfSpeech": "[명]", "meaning": "분투, 노력 / [형] 노력하는"}
     ],
     "questions": [
       {

@@ -3,6 +3,130 @@
  * 70개 독해 지문 및 원어민 표현, 신규 교재 예문에 등장하는 모든 단어에 대한 표준 품사 및 한국어 뜻 완비
  */
 const READING_LEXICON_DATA = {
+  "bleed": {
+    "pos": "[동]",
+    "meaning": "피를 흘리다, 출혈하다"
+  },
+  "blow": {
+    "pos": "[동]",
+    "meaning": "(바람이) 불다, 날리다"
+  },
+  "buy": {
+    "pos": "[동]",
+    "meaning": "사다, 구입하다"
+  },
+  "choose": {
+    "pos": "[동]",
+    "meaning": "고르다, 선택하다"
+  },
+  "creep": {
+    "pos": "[동]",
+    "meaning": "살금살금 기다, 살며시 다가가다"
+  },
+  "grind": {
+    "pos": "[동]",
+    "meaning": "갈다, 빻다"
+  },
+  "hang": {
+    "pos": "[동]",
+    "meaning": "걸다, 매달리다"
+  },
+  "hide": {
+    "pos": "[동]",
+    "meaning": "숨다, 숨기다, 감추다"
+  },
+  "leave": {
+    "pos": "[동]",
+    "meaning": "떠나다, 남겨두다"
+  },
+  "mean": {
+    "pos": "[동]",
+    "meaning": "의미하다, 뜻하다, 의도하다 / [형] 못된"
+  },
+  "ride": {
+    "pos": "[동]",
+    "meaning": "타다, 승마하다"
+  },
+  "rise": {
+    "pos": "[동]",
+    "meaning": "오르다, 올라가다, 일어나다"
+  },
+  "shake": {
+    "pos": "[동]",
+    "meaning": "흔들다, 떨다"
+  },
+  "shine": {
+    "pos": "[동]",
+    "meaning": "빛나다, 비추다"
+  },
+  "shoot": {
+    "pos": "[동]",
+    "meaning": "쏘다, 발사하다, 촬영하다"
+  },
+  "shrink": {
+    "pos": "[동]",
+    "meaning": "줄어들다, 움츠러들다"
+  },
+  "sing": {
+    "pos": "[동]",
+    "meaning": "노래하다"
+  },
+  "slide": {
+    "pos": "[동]",
+    "meaning": "미끄러지다"
+  },
+  "spend": {
+    "pos": "[동]",
+    "meaning": "(돈·시간을) 쓰다, 보내다"
+  },
+  "steal": {
+    "pos": "[동]",
+    "meaning": "훔치다, 가로채다"
+  },
+  "stick": {
+    "pos": "[동]",
+    "meaning": "붙이다, 고수하다, 찌르다 / [명] 막대기"
+  },
+  "swim": {
+    "pos": "[동]",
+    "meaning": "수영하다, 헤엄치다"
+  },
+  "swing": {
+    "pos": "[동]",
+    "meaning": "흔들리다, 휘두르다"
+  },
+  "teach": {
+    "pos": "[동]",
+    "meaning": "가르치다"
+  },
+  "tear": {
+    "pos": "[동]",
+    "meaning": "찢다, 뜯다 / [명] 눈물"
+  },
+  "throw": {
+    "pos": "[동]",
+    "meaning": "던지다"
+  },
+  "wake": {
+    "pos": "[동]",
+    "meaning": "깨어나다, 깨우다"
+  },
+  "wear": {
+    "pos": "[동]",
+    "meaning": "입다, 착용하다"
+  },
+  "win": {
+    "pos": "[동]",
+    "meaning": "이기다, (상·장학금 등을) 타다, 얻다"
+  },
+  "withdraw": {
+    "pos": "[동]",
+    "meaning": "철회하다, 인출하다, 물러나다"
+  },
+  "agonize": {
+    "pos": "[동]",
+    "meaning": "몹시 괴로워하다, 고민하다, 고통을 주다"
+  },
   "chlorophyll": {
     "pos": "[명]",
     "meaning": "엽록소"
@@ -28,8 +152,8 @@ const READING_LEXICON_DATA = {
     "meaning": "살아남다, 생존하다"
   },
   "shepherd": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: shepherd"
+    "pos": "[명]",
+    "meaning": "양치기, 목자 / [동] 이끌다, 인도하다"
   },
   "attack": {
     "pos": "[동]",
@@ -125,139 +249,139 @@ const READING_LEXICON_DATA = {
   },
   "pollinator": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: pollinator"
+    "meaning": "꽃가루 매개자, 수분 매개 곤충"
   },
   "waggle": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: waggle"
+    "pos": "[동]",
+    "meaning": "(상하·좌우로) 흔들다 / [명] 흔들기 (꿀벌의 8자춤)"
   },
   "ecosystem": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: ecosystem"
+    "pos": "[명]",
+    "meaning": "생태계"
   },
   "tame": {
-    "pos": "[명]",
-    "meaning": "핵심 개념 어휘: tame"
+    "pos": "[형]",
+    "meaning": "길들여진, 유순한 / [동] 길들이다"
   },
   "essential": {
     "pos": "[형]",
-    "meaning": "문맥 필수 어휘: essential"
+    "meaning": "필수적인, 극히 중요한 / [명] 필수 요소"
   },
   "invisible": {
     "pos": "[형]",
-    "meaning": "눈에 보이지 않는"
+    "meaning": "보이지 않는, 눈에 보이지 않는"
   },
   "consolidate": {
-    "pos": "[명]",
-    "meaning": "핵심 개념 어휘: consolidate"
+    "pos": "[동]",
+    "meaning": "굳히다, 강화하다, 통합하다"
   },
   "crucial": {
     "pos": "[형]",
-    "meaning": "문맥 필수 어휘: crucial"
+    "meaning": "중대한, 결정적인"
   },
   "memory": {
     "pos": "[명]",
-    "meaning": "기억, 추억, 기억력"
+    "meaning": "기억, 기억력, 추억"
   },
   "privilege": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: privilege"
+    "meaning": "특권, 특혜 / [동] 특권을 주다"
   },
   "whitewash": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: whitewash"
+    "pos": "[동]",
+    "meaning": "은폐하다, 눈속임하다, 백색 도료를 칠하다 / [명] 은폐"
   },
   "treasure": {
-    "pos": "[명/동]",
-    "meaning": "보물; 소중히 여기다"
+    "pos": "[명]",
+    "meaning": "보물, 귀중품 / [동] 소중히 여기다"
   },
   "bioluminescent": {
-    "pos": "[명]",
-    "meaning": "핵심 개념 어휘: bioluminescent"
+    "pos": "[형]",
+    "meaning": "생체 발광의, 생물 발광을 하는"
   },
   "trench": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: trench"
+    "pos": "[명]",
+    "meaning": "참호, 도랑, 해구"
   },
   "navigate": {
     "pos": "[동]",
-    "meaning": "심화 독해 어휘: navigate"
+    "meaning": "길을 찾다, 항해하다, 조종하다"
   },
   "waistcoat": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: waistcoat"
+    "meaning": "조끼 (vest)"
   },
   "anxiously": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: anxiously"
+    "pos": "[부]",
+    "meaning": "불안하게, 초조하게, 애타게"
   },
   "defying": {
     "pos": "[동]",
-    "meaning": "심화 독해 어휘: defying"
+    "meaning": "반항하는, 거역하는 (원형: defy)"
   },
   "nutrient": {
     "pos": "[명]",
-    "meaning": "영양소, 영양분"
+    "meaning": "영양소, 영양분 / [형] 영양이 되는"
   },
   "fungal": {
     "pos": "[형]",
-    "meaning": "문맥 필수 어휘: fungal"
+    "meaning": "균류의, 곰팡이의"
   },
   "pest": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: pest"
+    "pos": "[명]",
+    "meaning": "해충, 유해 동식물, 골칫거리"
   },
   "stranded": {
-    "pos": "[명]",
-    "meaning": "핵심 개념 어휘: stranded"
+    "pos": "[형]",
+    "meaning": "오도 가도 못하게 된, 발이 묶인, 좌초된"
   },
   "inhabitant": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: inhabitant"
+    "pos": "[명]",
+    "meaning": "주민, 서식 동식물"
   },
   "colossal": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: colossal"
+    "pos": "[형]",
+    "meaning": "거대한, 엄청난"
   },
   "convert": {
-    "pos": "[명]",
-    "meaning": "핵심 개념 어휘: convert"
+    "pos": "[동]",
+    "meaning": "전환하다, 개조하다, 개종하다"
   },
   "emission": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: emission"
+    "pos": "[명]",
+    "meaning": "배출, 방출, 배출물"
   },
   "combat": {
     "pos": "[동]",
-    "meaning": "심화 독해 어휘: combat"
+    "meaning": "싸우다, 방지하다 / [명] 전투, 투쟁"
   },
   "predator": {
     "pos": "[명]",
-    "meaning": "포식자, 육식동물"
+    "meaning": "포식자, 포식 동물"
   },
   "desperate": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: desperate"
+    "pos": "[형]",
+    "meaning": "필사적인, 절망적인, 자포자기의"
   },
   "vessel": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: vessel"
+    "meaning": "혈관, 선박, 그릇"
   },
   "pump": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: pump"
+    "pos": "[명]",
+    "meaning": "펌프 / [동] 퍼올리다, 주입하다"
   },
   "approximately": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: approximately"
+    "pos": "[부]",
+    "meaning": "대략, 거의, 대충"
   },
   "miser": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: miser"
+    "meaning": "구두쇠, 자린고비"
   },
   "accumulate": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: accumulate"
+    "pos": "[동]",
+    "meaning": "모으다, 축적하다, 쌓이다"
   },
   "spirit": {
     "pos": "[명]",
@@ -265,167 +389,167 @@ const READING_LEXICON_DATA = {
   },
   "magnetic": {
     "pos": "[형]",
-    "meaning": "자기의, 자석의"
+    "meaning": "자석의, 자기의, 매력적인"
   },
   "constellation": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: constellation"
+    "pos": "[명]",
+    "meaning": "별자리, 성좌"
   },
   "migratory": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: migratory"
+    "pos": "[형]",
+    "meaning": "이주하는, 철따라 이동하는"
   },
   "statue": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: statue"
+    "meaning": "조각상, 동상"
   },
   "devoted": {
     "pos": "[형]",
-    "meaning": "문맥 필수 어휘: devoted"
+    "meaning": "헌신적인, 열성적인, 몰두하는"
   },
   "comfort": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: comfort"
+    "pos": "[명]",
+    "meaning": "편안함, 위로 / [동] 위로하다, 편하게 하다"
   },
   "wavelength": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: wavelength"
+    "meaning": "파장, 주파수"
   },
   "photoreceptor": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: photoreceptor"
+    "pos": "[명]",
+    "meaning": "광수용체, 빛수용기"
   },
   "translate": {
     "pos": "[동]",
-    "meaning": "심화 독해 어휘: translate"
+    "meaning": "번역하다, (결과로) 이어지다, 전환하다"
   },
   "parchment": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: parchment"
+    "meaning": "양피지"
   },
   "mutineer": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: mutineer"
+    "pos": "[명]",
+    "meaning": "폭도, 반란자"
   },
   "schooner": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: schooner"
+    "pos": "[명]",
+    "meaning": "스쿠너 (돛대가 둘 이상인 범선)"
   },
   "biodegradable": {
-    "pos": "[명]",
-    "meaning": "핵심 개념 어휘: biodegradable"
+    "pos": "[형]",
+    "meaning": "생분해성의, 자연 분해되는"
   },
   "ingest": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: ingest"
+    "pos": "[동]",
+    "meaning": "(음식·약 등을) 삼키다, 섭취하다"
   },
   "disrupt": {
     "pos": "[동]",
-    "meaning": "심화 독해 어휘: disrupt"
+    "meaning": "방해하다, 지장을 주다, 분열시키다"
   },
   "puppet": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: puppet"
+    "meaning": "꼭두각시, 인형"
   },
   "deliberate": {
     "pos": "[형]",
-    "meaning": "문맥 필수 어휘: deliberate"
+    "meaning": "고의적인, 신중한 / [동] 숙고하다"
   },
   "selflessness": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: selflessness"
+    "pos": "[명]",
+    "meaning": "사심 없음, 이타심"
   },
   "aviation": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: aviation"
+    "meaning": "항공, 비행, 항공학"
   },
   "insatiable": {
     "pos": "[형]",
-    "meaning": "문맥 필수 어휘: insatiable"
+    "meaning": "만족할 줄 모르는, 탐욕스러운"
   },
   "inquiry": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: inquiry"
+    "pos": "[명]",
+    "meaning": "조사, 탐구, 문의"
   },
   "nobility": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: nobility"
+    "meaning": "귀족, 고결함, 숭고함"
   },
   "integrity": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: integrity"
+    "pos": "[명]",
+    "meaning": "진실성, 도덕성, 온전함"
   },
   "curse": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: curse"
+    "pos": "[명]",
+    "meaning": "저주, 악담 / [동] 저주하다"
   },
   "decentralize": {
-    "pos": "[명]",
-    "meaning": "핵심 개념 어휘: decentralize"
+    "pos": "[동]",
+    "meaning": "분산시키다, 지방 분권화하다"
   },
   "polarize": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: polarize"
+    "pos": "[동]",
+    "meaning": "양극화하다, 대립시키다"
   },
   "objective": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: objective"
+    "pos": "[명]",
+    "meaning": "목표, 목적 / [형] 객관적인"
   },
   "sacrificial": {
-    "pos": "[명]",
-    "meaning": "핵심 개념 어휘: sacrificial"
+    "pos": "[형]",
+    "meaning": "희생적인, 제물의"
   },
   "mutual": {
     "pos": "[형]",
-    "meaning": "문맥 필수 어휘: mutual"
+    "meaning": "상호 간의, 서로의, 공통의"
   },
   "platinum": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: platinum"
+    "pos": "[명]",
+    "meaning": "백금"
   },
   "pathogen": {
     "pos": "[명]",
-    "meaning": "병원균, 병원체"
+    "meaning": "병원체, 병원균"
   },
   "antibody": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: antibody"
+    "pos": "[명]",
+    "meaning": "항체 (면역 물질)"
   },
   "neutralize": {
     "pos": "[동]",
-    "meaning": "심화 독해 어휘: neutralize"
+    "meaning": "무력화하다, 중화하다, 상쇄하다"
   },
   "deduce": {
-    "pos": "[명]",
-    "meaning": "핵심 개념 어휘: deduce"
+    "pos": "[동]",
+    "meaning": "연역하다, 추론하다"
   },
   "distraction": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: distraction"
+    "pos": "[명]",
+    "meaning": "주의 산만, 정신을 흩뜨리는 것, 기분 전환"
   },
   "thwart": {
     "pos": "[동]",
-    "meaning": "심화 독해 어휘: thwart"
+    "meaning": "좌절시키다, 방해하다"
   },
   "porous": {
-    "pos": "[명]",
-    "meaning": "핵심 개념 어휘: porous"
+    "pos": "[형]",
+    "meaning": "다공성의, 구멍이 많은"
   },
   "aquatic": {
     "pos": "[형]",
-    "meaning": "문맥 필수 어휘: aquatic"
+    "meaning": "물의, 수생의, 수중의"
   },
   "conservation": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: conservation"
+    "pos": "[명]",
+    "meaning": "(자연·환경) 보호, 보존"
   },
   "animate": {
-    "pos": "[명]",
-    "meaning": "핵심 개념 어휘: animate"
+    "pos": "[동]",
+    "meaning": "생기를 불어넣다, 활기를 띠게 하다 / [형] 살아 있는"
   },
   "yearn": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: yearn"
+    "pos": "[동]",
+    "meaning": "갈망하다, 동경하다"
   },
   "isolation": {
     "pos": "[명]",
@@ -433,403 +557,403 @@ const READING_LEXICON_DATA = {
   },
   "procrastination": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: procrastination"
+    "meaning": "미루는 버릇, 꾸물거림"
   },
   "aversion": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: aversion"
+    "pos": "[명]",
+    "meaning": "혐오, 반감, 몹시 싫어함"
   },
   "daunting": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: daunting"
+    "pos": "[형]",
+    "meaning": "벅찬, 주눅 들게 하는, 위압적인"
   },
   "dormant": {
-    "pos": "[명]",
-    "meaning": "핵심 개념 어휘: dormant"
+    "pos": "[형]",
+    "meaning": "휴면기의, 활동을 중단한, 잠복 중인"
   },
   "cultivate": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: cultivate"
+    "pos": "[동]",
+    "meaning": "경작하다, 재배하다, (자질을) 함양하다"
   },
   "neglected": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: neglected"
+    "pos": "[형]",
+    "meaning": "방치된, 무시된, 소홀히 다뤄진"
   },
   "transformative": {
-    "pos": "[명]",
-    "meaning": "핵심 개념 어휘: transformative"
+    "pos": "[형]",
+    "meaning": "변화시키는, 변혁적인"
   },
   "comprehend": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: comprehend"
+    "pos": "[동]",
+    "meaning": "이해하다, 파악하다, 포함하다"
   },
   "spin-off": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: spin-off"
+    "pos": "[명]",
+    "meaning": "파생 상품, 부산물, 속편"
   },
   "corrupt": {
-    "pos": "[명]",
-    "meaning": "핵심 개념 어휘: corrupt"
+    "pos": "[형]",
+    "meaning": "부패한, 타락한 / [동] 부패시키다"
   },
   "redistribute": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: redistribute"
+    "pos": "[동]",
+    "meaning": "재분배하다, 다시 배분하다"
   },
   "tyranny": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: tyranny"
+    "pos": "[명]",
+    "meaning": "폭정, 독재, 압제"
   },
   "neurological": {
-    "pos": "[명]",
-    "meaning": "핵심 개념 어휘: neurological"
+    "pos": "[형]",
+    "meaning": "신경학의, 신경의"
   },
   "substitute": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: substitute"
+    "pos": "[동]",
+    "meaning": "대체하다, 대신하다 / [명] 대체물, 대용품"
   },
   "destructive": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: destructive"
+    "pos": "[형]",
+    "meaning": "파괴적인, 해로운"
   },
   "unblemished": {
-    "pos": "[명]",
-    "meaning": "핵심 개념 어휘: unblemished"
+    "pos": "[형]",
+    "meaning": "흠 없는, 티 없는, 완벽한"
   },
   "corruption": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: corruption"
+    "pos": "[명]",
+    "meaning": "부패, 타락, 오염"
   },
   "virtue": {
     "pos": "[명]",
-    "meaning": "미덕, 덕목, 선"
+    "meaning": "미덕, 덕목, 장점"
   },
   "tectonic": {
-    "pos": "[명]",
-    "meaning": "핵심 개념 어휘: tectonic"
+    "pos": "[형]",
+    "meaning": "구조상의, 지질 구조의"
   },
   "seismic": {
     "pos": "[형]",
-    "meaning": "문맥 필수 어휘: seismic"
+    "meaning": "지진의, 지진에 의한, 엄청난"
   },
   "semi-molten": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: semi-molten"
+    "pos": "[형]",
+    "meaning": "반쯤 녹은"
   },
   "wager": {
-    "pos": "[명]",
-    "meaning": "핵심 개념 어휘: wager"
+    "pos": "[동]",
+    "meaning": "내기를 걸다, 확신하다 / [명] 내기"
   },
   "circumnavigate": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: circumnavigate"
+    "pos": "[동]",
+    "meaning": "세계를 일주하다, 주위를 돌다"
   },
   "precision": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: precision"
+    "pos": "[명]",
+    "meaning": "정밀성, 정확성"
   },
   "luminescence": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: luminescence"
+    "meaning": "냉광, 발광"
   },
   "progression": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: progression"
+    "pos": "[명]",
+    "meaning": "진행, 발전, 연속"
   },
   "marker": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: marker"
+    "pos": "[명]",
+    "meaning": "표지, 지표, 표식"
   },
   "monstrous": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: monstrous"
+    "pos": "[형]",
+    "meaning": "괴물 같은, 거대한, 극악무도한"
   },
   "mundane": {
     "pos": "[형]",
-    "meaning": "문맥 필수 어휘: mundane"
+    "meaning": "일상적인, 평범한, 세속적인"
   },
   "pursuit": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: pursuit"
+    "pos": "[명]",
+    "meaning": "추구, 쫓음, 직업"
   },
   "suspension": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: suspension"
+    "meaning": "정직, 정학, 부유, 현수"
   },
   "compression": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: compression"
+    "pos": "[명]",
+    "meaning": "압축, 요약, 압착"
   },
   "horizontal": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: horizontal"
+    "pos": "[형]",
+    "meaning": "수평의, 가로의"
   },
   "formidable": {
     "pos": "[형]",
-    "meaning": "문맥 필수 어휘: formidable"
+    "meaning": "가공할, 어마어마한, 만만찮은"
   },
   "instinct": {
     "pos": "[명]",
     "meaning": "본능, 직관"
   },
   "pampered": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: pampered"
+    "pos": "[형]",
+    "meaning": "애지중지 길러진, 방자하게 자란"
   },
   "cryptography": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: cryptography"
+    "meaning": "암호 작성술, 암호학"
   },
   "decipher": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: decipher"
+    "pos": "[동]",
+    "meaning": "판독하다, 해독하다"
   },
   "encrypted": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: encrypted"
+    "pos": "[형]",
+    "meaning": "암호화된 (원형: encrypt)"
   },
   "immense": {
-    "pos": "[명]",
-    "meaning": "핵심 개념 어휘: immense"
+    "pos": "[형]",
+    "meaning": "거대한, 엄청난"
   },
   "agonizing": {
     "pos": "[형]",
-    "meaning": "문맥 필수 어휘: agonizing"
+    "meaning": "극심한 고통을 주는, 몹시 괴로운, 고통스러운 (원형: agonize)"
   },
   "indomitable": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: indomitable"
+    "pos": "[형]",
+    "meaning": "불굴의, 굴복하지 않는"
   },
   "superposition": {
     "pos": "[명]",
-    "meaning": "중첩, 겹침 (양자역학)"
+    "meaning": "중첩, 포개놓기 (양자역학)"
   },
   "collapse": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: collapse"
+    "pos": "[동]",
+    "meaning": "무너지다, 붕괴하다 / [명] 붕괴, 폭락"
   },
   "simultaneously": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: simultaneously"
+    "pos": "[부]",
+    "meaning": "동시에, 일제히"
   },
   "rebellious": {
-    "pos": "[명]",
-    "meaning": "핵심 개념 어휘: rebellious"
+    "pos": "[형]",
+    "meaning": "반항적인, 반란의"
   },
   "articulate": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: articulate"
+    "pos": "[동]",
+    "meaning": "또렷하게 말하다, 분명히 표현하다 / [형] 또렷한"
   },
   "dissent": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: dissent"
+    "pos": "[명]",
+    "meaning": "반대 의견, 이의 / [동] 반대하다"
   },
   "eradicate": {
-    "pos": "[명]",
-    "meaning": "핵심 개념 어휘: eradicate"
+    "pos": "[동]",
+    "meaning": "근절하다, 뿌리뽑다"
   },
   "quandary": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: quandary"
+    "pos": "[명]",
+    "meaning": "진퇴양난, 곤경, 궁지"
   },
   "hereditary": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: hereditary"
+    "pos": "[형]",
+    "meaning": "유전적인, 세습되는"
   },
   "lavish": {
-    "pos": "[명]",
-    "meaning": "핵심 개념 어휘: lavish"
+    "pos": "[형]",
+    "meaning": "호화로운, 아낌없는 / [동] 아낌없이 주다"
   },
   "staggering": {
     "pos": "[형]",
-    "meaning": "문맥 필수 어휘: staggering"
+    "meaning": "충격적인, 믿기 어려운, 비틀거리는"
   },
   "amass": {
     "pos": "[동]",
-    "meaning": "심화 독해 어휘: amass"
+    "meaning": "(재산·정보 등을) 모으다, 축적하다"
   },
   "epigenetics": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: epigenetics"
+    "meaning": "후성유전학"
   },
   "mutate": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: mutate"
+    "pos": "[동]",
+    "meaning": "돌연변이가 되다, 변화하다"
   },
   "chronic": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: chronic"
+    "pos": "[형]",
+    "meaning": "만성적인, 만성 질환을 앓는, 상습적인"
   },
   "prejudice": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: prejudice"
+    "meaning": "편견, 선입관 / [동] 편견을 갖게 하다"
   },
   "innocent": {
     "pos": "[형]",
-    "meaning": "문맥 필수 어휘: innocent"
+    "meaning": "무죄인, 순결한, 악의 없는"
   },
   "courage": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: courage"
+    "pos": "[명]",
+    "meaning": "용기, 담력"
   },
   "precipitate": {
-    "pos": "[명]",
-    "meaning": "핵심 개념 어휘: precipitate"
+    "pos": "[동]",
+    "meaning": "촉발시키다, 침전되다 / [형] 다급한"
   },
   "indispensable": {
     "pos": "[형]",
-    "meaning": "문맥 필수 어휘: indispensable"
+    "meaning": "없어서는 안 될, 필수적인"
   },
   "ruin": {
     "pos": "[동]",
-    "meaning": "심화 독해 어휘: ruin"
+    "meaning": "망치다, 파멸시키다 / [명] 파멸, 폐허"
   },
   "preconception": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: preconception"
+    "meaning": "선입견, 편견"
   },
   "insufferable": {
     "pos": "[형]",
-    "meaning": "문맥 필수 어휘: insufferable"
+    "meaning": "참을 수 없는, 견딜 수 없는"
   },
   "demeanor": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: demeanor"
+    "pos": "[명]",
+    "meaning": "처신, 태도, 품행"
   },
   "reciprocal": {
-    "pos": "[명]",
-    "meaning": "핵심 개념 어휘: reciprocal"
+    "pos": "[형]",
+    "meaning": "상호 간의, 호혜적인"
   },
   "altruism": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: altruism"
+    "pos": "[명]",
+    "meaning": "이타주의, 이타심"
   },
   "dilemma": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: dilemma"
+    "pos": "[명]",
+    "meaning": "진퇴양난, 딜레마"
   },
   "brutality": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: brutality"
+    "meaning": "잔혹성, 야만성"
   },
   "civilized": {
     "pos": "[형]",
-    "meaning": "문맥 필수 어휘: civilized"
+    "meaning": "문명화된, 교양 있는, 세련된"
   },
   "reside": {
     "pos": "[동]",
-    "meaning": "심화 독해 어휘: reside"
+    "meaning": "거주하다, 살다, 속하다"
   },
   "stimuli": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: stimuli"
+    "meaning": "자극들 (stimulus의 복수형)"
   },
   "senescence": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: senescence"
+    "pos": "[명]",
+    "meaning": "노화, 노쇠"
   },
   "neurogenesis": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: neurogenesis"
+    "pos": "[명]",
+    "meaning": "신경 발생, 신경세포 생성"
   },
   "conditioned": {
-    "pos": "[명]",
-    "meaning": "핵심 개념 어휘: conditioned"
+    "pos": "[형]",
+    "meaning": "조건화된, 길들여진, 조절된"
   },
   "contentment": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: contentment"
+    "pos": "[명]",
+    "meaning": "만족감, 안도감"
   },
   "pacify": {
     "pos": "[동]",
-    "meaning": "심화 독해 어휘: pacify"
+    "meaning": "달래다, 진정시키다, 평정하다"
   },
   "scaffolding": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: scaffolding"
+    "meaning": "비계, 건축 발판, 학습 지원 체계"
   },
   "filament": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: filament"
+    "pos": "[명]",
+    "meaning": "가는 실, 필라멘트"
   },
   "luminous": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: luminous"
+    "pos": "[형]",
+    "meaning": "빛을 발하는, 야광의, 아주 밝은"
   },
   "compassion": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: compassion"
+    "meaning": "연민, 동정심, 자비"
   },
   "destitute": {
     "pos": "[형]",
-    "meaning": "문맥 필수 어휘: destitute"
+    "meaning": "극빈한, 궁핍한, ~이 없는"
   },
   "embittered": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: embittered"
+    "pos": "[형]",
+    "meaning": "원한을 품은, 쓰라린, 격분한"
   },
   "inevitable": {
-    "pos": "[명]",
-    "meaning": "핵심 개념 어휘: inevitable"
+    "pos": "[형]",
+    "meaning": "피할 수 없는, 불가피한"
   },
   "extraterrestrial": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: extraterrestrial"
+    "pos": "[형]",
+    "meaning": "지구 밖의, 외계의 / [명] 외계인"
   },
   "paralysis": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: paralysis"
+    "meaning": "마비, 불능 상태"
   },
   "outrageous": {
     "pos": "[형]",
-    "meaning": "문맥 필수 어휘: outrageous"
+    "meaning": "너무나 충격적인, 터무니없는"
   },
   "contemplate": {
     "pos": "[동]",
-    "meaning": "심화 독해 어휘: contemplate"
+    "meaning": "심사숙고하다, 깊이 고려하다"
   },
   "expenditure": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: expenditure"
+    "meaning": "지출, 비용, 소비"
   },
   "prospective": {
     "pos": "[형]",
-    "meaning": "문맥 필수 어휘: prospective"
+    "meaning": "장래의, 유망한, 곧 있을"
   },
   "irrecoverable": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: irrecoverable"
+    "pos": "[형]",
+    "meaning": "회복할 수 없는, 돌이킬 수 없는"
   },
   "estrangement": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: estrangement"
+    "meaning": "소외, 별거, 사이가 멀어짐"
   },
   "transactional": {
     "pos": "[형]",
-    "meaning": "문맥 필수 어휘: transactional"
+    "meaning": "거래의, 업무적인, 거래상의"
   },
   "sequestration": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: sequestration"
+    "meaning": "격리, 격리 보관, 탄소 포집"
   },
   "ambient": {
     "pos": "[형]",
-    "meaning": "문맥 필수 어휘: ambient"
+    "meaning": "주위의, 잔잔한, 대기의"
   },
   "constitute": {
     "pos": "[동]",
-    "meaning": "심화 독해 어휘: constitute"
+    "meaning": "구성하다, ~이 되다, 설립하다"
   },
   "transcendence": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: transcendence"
+    "meaning": "초월, 탁월"
   },
   "salvation": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: salvation"
+    "pos": "[명]",
+    "meaning": "구원, 구조, 구제"
   },
   "striving": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: striving"
+    "pos": "[명]",
+    "meaning": "분투, 노력 / [형] 노력하는"
   },
   "curious": {
     "pos": "[형]",
@@ -14993,7 +15117,7 @@ const READING_LEXICON_DATA = {
   },
   "accumulating": {
     "pos": "[동]",
-    "meaning": "문맥 필수 어휘: accumulate (accumulate하는 것/하는 중인)"
+    "meaning": "모으는, 축적하는 (원형: accumulate)"
   },
   "aced": {
     "pos": "[동]",
@@ -15013,19 +15137,19 @@ const READING_LEXICON_DATA = {
   },
   "amassed": {
     "pos": "[동]",
-    "meaning": "심화 독해 어휘: amass (amass의 과거/과거분사)"
+    "meaning": "축적된, 모인 (원형: amass)"
   },
   "amazed": {
     "pos": "[동]",
     "meaning": "놀라게 하다 (amaze의 과거/과거분사)"
   },
   "animated": {
-    "pos": "[동]",
-    "meaning": "핵심 개념 어휘: animate (animate의 과거/과거분사)"
+    "pos": "[형]",
+    "meaning": "활기찬, 만화 영화로 제작된 (원형: animate)"
   },
   "antibodies": {
     "pos": "[명]",
-    "meaning": "문맥 필수 어휘: antibody (antibody의 복수형)"
+    "meaning": "항체들 (antibody의 복수형)"
   },
   "appeared": {
     "pos": "[동]",
@@ -15116,8 +15240,8 @@ const READING_LEXICON_DATA = {
     "meaning": "1. 주장하다 2. 요구[청구]하다 /  1. 주장 2. 요구, 청구 (claim하는 것/하는 중인)"
   },
   "collapses": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: collapse (collapse의 복수/3인칭단수)"
+    "pos": "[동]",
+    "meaning": "무너지다, 붕괴하다 (3인칭 단수)"
   },
   "coming": {
     "pos": "[동]",
@@ -15137,15 +15261,15 @@ const READING_LEXICON_DATA = {
   },
   "consolidating": {
     "pos": "[동]",
-    "meaning": "핵심 개념 어휘: consolidate (consolidate하는 것/하는 중인)"
+    "meaning": "공고히 하는, 통합하는 (원형: consolidate)"
   },
   "constellations": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: constellation (constellation의 복수/3인칭단수)"
+    "pos": "[명]",
+    "meaning": "별자리들 (constellation의 복수형)"
   },
   "constitutes": {
     "pos": "[동]",
-    "meaning": "심화 독해 어휘: constitute (constitute의 복수/3인칭단수)"
+    "meaning": "구성하다, 이루다 (3인칭 단수)"
   },
   "contains": {
     "pos": "[동]",
@@ -15153,7 +15277,7 @@ const READING_LEXICON_DATA = {
   },
   "contemplated": {
     "pos": "[동]",
-    "meaning": "심화 독해 어휘: contemplate (contemplate의 과거/과거분사)"
+    "meaning": "심사숙고된, 고려된 (원형: contemplate)"
   },
   "continents": {
     "pos": "[명]",
@@ -15169,7 +15293,7 @@ const READING_LEXICON_DATA = {
   },
   "cultivating": {
     "pos": "[동]",
-    "meaning": "문맥 필수 어휘: cultivate (cultivate하는 것/하는 중인)"
+    "meaning": "함양하는, 재배하는 (원형: cultivate)"
   },
   "curved": {
     "pos": "[동]",
@@ -15180,16 +15304,16 @@ const READING_LEXICON_DATA = {
     "meaning": "토론[논쟁]하다 /  토론, 논쟁 (debate의 복수/3인칭단수)"
   },
   "decentralized": {
-    "pos": "[동]",
-    "meaning": "핵심 개념 어휘: decentralize (decentralize의 과거/과거분사)"
+    "pos": "[형]",
+    "meaning": "탈중앙화된, 분산된 (원형: decentralize)"
   },
   "deciphered": {
     "pos": "[동]",
-    "meaning": "문맥 필수 어휘: decipher (decipher의 과거/과거분사)"
+    "meaning": "해독된, 판독된 (원형: decipher)"
   },
   "deduced": {
     "pos": "[동]",
-    "meaning": "핵심 개념 어휘: deduce (deduce의 과거/과거분사)"
+    "meaning": "추론된, 연역된 (원형: deduce)"
   },
   "deeper": {
     "pos": "[형]",
@@ -15241,7 +15365,7 @@ const READING_LEXICON_DATA = {
   },
   "disrupting": {
     "pos": "[동]",
-    "meaning": "심화 독해 어휘: disrupt (disrupt하는 것/하는 중인)"
+    "meaning": "지장을 주는, 방해하는 (원형: disrupt)"
   },
   "drawing": {
     "pos": "[동]",
@@ -15252,8 +15376,8 @@ const READING_LEXICON_DATA = {
     "meaning": "1. 역동적인 2. 활동적인, 활발한 (dynamic의 복수/3인칭단수)"
   },
   "emissions": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: emission (emission의 복수/3인칭단수)"
+    "pos": "[명]",
+    "meaning": "배출물들 (emission의 복수형)"
   },
   "emitting": {
     "pos": "[동]",
@@ -15277,7 +15401,7 @@ const READING_LEXICON_DATA = {
   },
   "eradicating": {
     "pos": "[동]",
-    "meaning": "핵심 개념 어휘: eradicate (eradicate하는 것/하는 중인)"
+    "meaning": "근절하는, 뿌리뽑는 (원형: eradicate)"
   },
   "everest": {
     "pos": "[형]",
@@ -15285,7 +15409,7 @@ const READING_LEXICON_DATA = {
   },
   "expenditures": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: expenditure (expenditure의 복수/3인칭단수)"
+    "meaning": "지출 내역들 (expenditure의 복수형)"
   },
   "exposes": {
     "pos": "[동]",
@@ -15312,8 +15436,8 @@ const READING_LEXICON_DATA = {
     "meaning": "싸우다; 싸움, 전투 (fight하는 것/하는 중인)"
   },
   "filaments": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: filament (filament의 복수/3인칭단수)"
+    "pos": "[명]",
+    "meaning": "필라멘트들, 가는 섬유들"
   },
   "flying": {
     "pos": "[동]",
@@ -15389,11 +15513,11 @@ const READING_LEXICON_DATA = {
   },
   "ingested": {
     "pos": "[동]",
-    "meaning": "문맥 필수 어휘: ingest (ingest의 과거/과거분사)"
+    "meaning": "섭취된, 삼켜진 (원형: ingest)"
   },
   "inhabitants": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: inhabitant (inhabitant의 복수/3인칭단수)"
+    "pos": "[명]",
+    "meaning": "주민들, 서식자들 (inhabitant의 복수형)"
   },
   "insects": {
     "pos": "[명]",
@@ -15456,8 +15580,8 @@ const READING_LEXICON_DATA = {
     "meaning": "제조하다, 생산하다 (manufacture의 과거/과거분사)"
   },
   "markers": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: marker (marker의 복수/3인칭단수)"
+    "pos": "[명]",
+    "meaning": "표지들, 유전자 지표들 (marker의 복수형)"
   },
   "memories": {
     "pos": "[명]",
@@ -15489,11 +15613,11 @@ const READING_LEXICON_DATA = {
   },
   "mutating": {
     "pos": "[동]",
-    "meaning": "문맥 필수 어휘: mutate (mutate하는 것/하는 중인)"
+    "meaning": "돌연변이를 일으키는 (원형: mutate)"
   },
   "mutineers": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: mutineer (mutineer의 복수/3인칭단수)"
+    "pos": "[명]",
+    "meaning": "반란자들 (mutineer의 복수형)"
   },
   "neighbors": {
     "pos": "[명]",
@@ -15513,7 +15637,7 @@ const READING_LEXICON_DATA = {
   },
   "pacified": {
     "pos": "[동]",
-    "meaning": "심화 독해 어휘: pacify (pacify의 과거형)"
+    "meaning": "진정된, 달래진 (원형: pacify)"
   },
   "pathogens": {
     "pos": "[명]",
@@ -15528,8 +15652,8 @@ const READING_LEXICON_DATA = {
     "meaning": "평화로운, 평온한 (peaceful하게/히)"
   },
   "pests": {
-    "pos": "[동]",
-    "meaning": "심화 독해 어휘: pest (pest의 복수/3인칭단수)"
+    "pos": "[명]",
+    "meaning": "해충들 (pest의 복수형)"
   },
   "plastics": {
     "pos": "[명/형]",
@@ -15537,11 +15661,11 @@ const READING_LEXICON_DATA = {
   },
   "pollinators": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: pollinator (pollinator의 복수/3인칭단수)"
+    "meaning": "수분 매개자들 (pollinator의 복수형)"
   },
   "precipitates": {
-    "pos": "[명]",
-    "meaning": "핵심 개념 어휘: precipitate (precipitate의 복수/3인칭단수)"
+    "pos": "[동]",
+    "meaning": "촉발하다 / [명] 침전물들"
   },
   "precisely": {
     "pos": "[부]",
@@ -15549,7 +15673,7 @@ const READING_LEXICON_DATA = {
   },
   "preconceptions": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: preconception (preconception의 복수/3인칭단수)"
+    "meaning": "선입견들 (preconception의 복수형)"
   },
   "pretended": {
     "pos": "[동]",
@@ -15564,12 +15688,12 @@ const READING_LEXICON_DATA = {
     "meaning": "보호하다, 지키다 (protect하는 것/하는 중인)"
   },
   "pumps": {
-    "pos": "[형]",
-    "meaning": "문맥 필수 어휘: pump (pump의 복수/3인칭단수)"
+    "pos": "[동]",
+    "meaning": "퍼올리다 / [명] 펌프들"
   },
   "quandaries": {
     "pos": "[명]",
-    "meaning": "문맥 필수 어휘: quandary (quandary의 복수형)"
+    "meaning": "진퇴양난들, 곤경들 (quandary의 복수형)"
   },
   "reading": {
     "pos": "[동]",
@@ -15585,7 +15709,7 @@ const READING_LEXICON_DATA = {
   },
   "redistributing": {
     "pos": "[동]",
-    "meaning": "문맥 필수 어휘: redistribute (redistribute하는 것/하는 중인)"
+    "meaning": "재분배하는 (원형: redistribute)"
   },
   "reduces": {
     "pos": "[동]",
@@ -15633,7 +15757,7 @@ const READING_LEXICON_DATA = {
   },
   "resides": {
     "pos": "[동]",
-    "meaning": "심화 독해 어휘: reside (reside의 복수/3인칭단수)"
+    "meaning": "거주하다, 살다 (3인칭 단수)"
   },
   "resisted": {
     "pos": "[동]",
@@ -15753,7 +15877,7 @@ const READING_LEXICON_DATA = {
   },
   "thwarted": {
     "pos": "[동]",
-    "meaning": "심화 독해 어휘: thwart (thwart의 과거/과거분사)"
+    "meaning": "좌절된, 방해받은 (원형: thwart)"
   },
   "transformed": {
     "pos": "[동]",
@@ -15761,7 +15885,7 @@ const READING_LEXICON_DATA = {
   },
   "translates": {
     "pos": "[동]",
-    "meaning": "심화 독해 어휘: translate (translate의 복수/3인칭단수)"
+    "meaning": "번역되다, 전환되다 (3인칭 단수)"
   },
   "trapped": {
     "pos": "[동]",
@@ -15801,11 +15925,11 @@ const READING_LEXICON_DATA = {
   },
   "vessels": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: vessel (vessel의 복수/3인칭단수)"
+    "meaning": "혈관들, 선박들 (vessel의 복수형)"
   },
   "wagered": {
     "pos": "[동]",
-    "meaning": "핵심 개념 어휘: wager (wager의 과거/과거분사)"
+    "meaning": "내기를 걸었다 (원형: wager)"
   },
   "walking": {
     "pos": "[동]",
@@ -15821,11 +15945,11 @@ const READING_LEXICON_DATA = {
   },
   "wavelengths": {
     "pos": "[명]",
-    "meaning": "핵심 개념 어휘: wavelength (wavelength의 복수/3인칭단수)"
+    "meaning": "파장들 (wavelength의 복수형)"
   },
   "whitewashing": {
     "pos": "[동]",
-    "meaning": "문맥 필수 어휘: whitewash (whitewash하는 것/하는 중인)"
+    "meaning": "은폐하는 (원형: whitewash)"
   },
   "wondered": {
     "pos": "[동]",
@@ -15844,8 +15968,8 @@ const READING_LEXICON_DATA = {
     "meaning": "일하다, 작동하다; 일, 작품 (work의 복수/3인칭단수)"
   },
   "yearning": {
-    "pos": "[동]",
-    "meaning": "문맥 필수 어휘: yearn (yearn하는 것/하는 중인)"
+    "pos": "[명]",
+    "meaning": "갈망, 동경 / [형] 갈망하는"
   },
   "yellowed": {
     "pos": "[동]",
