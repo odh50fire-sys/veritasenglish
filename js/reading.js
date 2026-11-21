@@ -1086,7 +1086,7 @@ class ReadingEngine {
     /**
      * 본문 단어 실시간 플로팅 툴팁 (Floating Popover) 노출
      */
-    showFloatingWordTooltip(e, cleanWord, sentenceNum) {
+    showFloatingWordTooltip(e, cleanWord, sentenceNumOrEn, customSentenceKo = '') {
         if (!cleanWord) return;
         if (e && e.stopPropagation) e.stopPropagation();
 
@@ -1112,12 +1112,15 @@ class ReadingEngine {
             };
         }
 
+        const sentenceEn = typeof sentenceNumOrEn === 'string' ? sentenceNumOrEn : (typeof sentenceNumOrEn === 'number' ? (this.getCurrentPassage()?.sentences?.find(s => s.num === sentenceNumOrEn)?.en || '') : '');
+        const sentenceKo = customSentenceKo || (typeof sentenceNumOrEn === 'number' ? (this.getCurrentPassage()?.sentences?.find(s => s.num === sentenceNumOrEn)?.ko || '') : '');
+
         if (addBtn) {
             addBtn.innerHTML = '<i data-lucide="bookmark-plus" class="w-3.5 h-3.5"></i> <span>내 단어장에 담기</span>';
             addBtn.className = 'flex-1 py-1.5 px-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all cursor-pointer';
             addBtn.onclick = (ev) => {
                 ev.stopPropagation();
-                this.quickAddWordToVoca(cleanWord, foundInfo);
+                this.quickAddWordToVoca(cleanWord, foundInfo, sentenceEn, sentenceKo);
             };
         }
 
@@ -1125,7 +1128,7 @@ class ReadingEngine {
             detailBtn.onclick = (ev) => {
                 ev.stopPropagation();
                 this.hideFloatingTooltip();
-                this.openWordInspector(cleanWord, sentenceNum);
+                this.openWordInspector(cleanWord, sentenceNumOrEn, customSentenceKo);
             };
         }
 
@@ -1158,14 +1161,14 @@ class ReadingEngine {
         if (tooltip) tooltip.classList.add('hidden');
     }
 
-    quickAddWordToVoca(cleanWord, foundInfo) {
+    quickAddWordToVoca(cleanWord, foundInfo, customSentenceEn = '', customSentenceKo = '') {
         const word = cleanWord;
         const pos = foundInfo ? foundInfo.pos : '[명]';
         const meaning = foundInfo ? foundInfo.meaning : '';
         const currentPassage = this.getCurrentPassage();
         const sentenceObj = currentPassage?.sentences?.[0];
-        const exEn = foundInfo?.example_en || sentenceObj?.en || '';
-        const exKo = foundInfo?.example_ko || sentenceObj?.ko || '';
+        const exEn = customSentenceEn || foundInfo?.example_en || sentenceObj?.en || '';
+        const exKo = customSentenceKo || foundInfo?.example_ko || sentenceObj?.ko || '';
 
         if (window.storage && window.storage.addWord) {
             window.storage.addWord({
@@ -1174,7 +1177,7 @@ class ReadingEngine {
                 meaning: meaning,
                 example: exEn,
                 exampleMeaning: exKo,
-                tag: '독해 본문 어휘'
+                tag: customSentenceEn ? '플래시카드 예문 어휘' : '독해 본문 어휘'
             });
         }
 

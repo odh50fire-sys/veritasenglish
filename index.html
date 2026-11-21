@@ -961,8 +961,11 @@
 
                                     <div id="fc-example-wrap" class="p-4 rounded-xl bg-white/90 border border-slate-200 text-left shadow-2xs">
                                         <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-1">
-                                            <span>ACADEMIC EXAMPLE</span>
-                                            <button class="hover:text-blue-900" onclick="event.stopPropagation(); window.flashcardEngine.playExampleAudio();">
+                                            <div class="flex items-center gap-1.5">
+                                                <span>ACADEMIC EXAMPLE</span>
+                                                <span class="text-[10px] text-amber-700 bg-amber-50 border border-amber-200 px-1.5 py-0.5 rounded font-sans font-medium">💡 단어 클릭 시 뜻·예문 조회</span>
+                                            </div>
+                                            <button class="hover:text-blue-900 cursor-pointer" onclick="event.stopPropagation(); window.flashcardEngine.playExampleAudio();" title="예문 발음 청취">
                                                 <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
                                             </button>
                                         </div>
@@ -3794,13 +3797,13 @@
     <script src="js/storage.js"></script>
     <script src="js/custom_voca_ai.js"></script>
     <script src="js/ocr.js"></script>
-    <script src="js/flashcards.js"></script>
+    <script src="js/flashcards.js?v=20261121_wordclick"></script>
     <script src="js/quiz.js"></script>
     <script src="js/review.js"></script>
     <script src="js/planner.js"></script>
     <script src="js/expressions.js"></script>
     <script src="js/dictionary.js"></script>
-    <script src="js/reading.js"></script>
+    <script src="js/reading.js?v=20261121_wordclick"></script>
     <script src="js/level_test.js"></script>
     <script src="js/onboarding.js"></script>
     

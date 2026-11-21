@@ -169,6 +169,10 @@ class FlashcardEngine {
         const cardElement = document.getElementById('flashcard-flipper');
         if (!cardElement) return;
 
+        if (window.readingEngine && window.readingEngine.hideFloatingTooltip) {
+            window.readingEngine.hideFloatingTooltip();
+        }
+
         this.isFlipped = !this.isFlipped;
         if (this.isFlipped) {
             cardElement.classList.add('is-flipped');
@@ -346,10 +350,10 @@ class FlashcardEngine {
             }
         }
 
-        // 예문 공통 렌더링
+        // 예문 공통 렌더링 (독해와 동일한 클릭 가능한 인터랙티브 단어 토큰)
         if (word.example && word.example.trim()) {
             if (exampleWrap) exampleWrap.classList.remove('hidden');
-            if (exampleEl) exampleEl.textContent = word.example;
+            if (exampleEl) exampleEl.innerHTML = this.renderInteractiveExampleText(word.example, word.exampleMeaning || '');
             if (exampleMeaningEl) exampleMeaningEl.textContent = word.exampleMeaning || '';
         } else {
             if (exampleWrap) exampleWrap.classList.add('hidden');
@@ -472,6 +476,46 @@ class FlashcardEngine {
             return;
         }
         this.loadDeck('weak', this.sessionHardWords);
+    }
+
+    /**
+     * 플래시카드 예문의 영단어들을 독해 시스템과 동일하게 클릭 가능한 인터랙티브 토큰으로 분할 렌더링
+     */
+    renderInteractiveExampleText(exampleText, exampleMeaning = '') {
+        if (!exampleText) return '';
+        const tokens = exampleText.split(/(\s+|[.,!?;:"'()\[\]]+)/);
+        const encodedKo = encodeURIComponent(exampleMeaning || '');
+        const encodedEn = encodeURIComponent(exampleText || '');
+        return tokens.map(token => {
+            const clean = token.replace(/[^a-zA-Z\-]/g, '').trim();
+            if (clean.length > 0 && /^[a-zA-Z]/.test(clean)) {
+                return `<span class="reading-word-token hover:bg-amber-200 hover:text-blue-950 rounded px-0.5 cursor-pointer transition-colors underline decoration-dotted decoration-slate-400 hover:decoration-blue-900" onclick="window.flashcardEngine.handleExampleWordClick(event, '${clean.replace(/'/g, "\\'")}', '${encodedEn}', '${encodedKo}')" title="클릭하여 단어 뜻 & 예문 확인">${token}</span>`;
+            }
+            return token;
+        }).join('');
+    }
+
+    /**
+     * 예문 속 단어 클릭 시 독해의 실시간 플로팅 툴팁 & 단어 인스펙터 시스템을 호출
+     */
+    handleExampleWordClick(event, cleanWord, encodedEn, encodedKo) {
+        if (event && event.stopPropagation) {
+            event.stopPropagation();
+        }
+        if (event && event.preventDefault) {
+            event.preventDefault();
+        }
+
+        const sentenceEn = decodeURIComponent(encodedEn || '');
+        const sentenceKo = decodeURIComponent(encodedKo || '');
+
+        // 1. 독해 실시간 플로팅 툴팁(Reading Floating Tooltip) 우선 노출
+        if (window.readingEngine && window.readingEngine.showFloatingWordTooltip) {
+            window.readingEngine.showFloatingWordTooltip(event, cleanWord, sentenceEn, sentenceKo);
+        } else if (window.readingEngine && window.readingEngine.openWordInspector) {
+            // 플로팅 툴팁이 없는 환경에서는 바로 모달 인스펙터 오픈
+            window.readingEngine.openWordInspector(cleanWord, sentenceEn, sentenceKo);
+        }
     }
 }
 
