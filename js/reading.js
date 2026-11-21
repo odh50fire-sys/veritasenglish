@@ -10,6 +10,78 @@
  * 6. 자동 채점, 서술형 키워드 판별 및 내신 출제 포인트 해설 리포트
  */
 
+const POLYSEMY_MASTER_DICT = {
+    'account': { pos: '[명·동]', meaning: '① [명] 계좌, 계정 ② [명] 설명, 이야기 ③ [명] 이유, 근거 ④ [동] (~의 비율을) 차지하다 ⑤ [동] (~의 이유를) 설명하다' },
+    'address': { pos: '[명·동]', meaning: '① [명] 주소 ② [명] 연설 ③ [동] (문제·현안을) 다루다, 고심하다 ④ [동] 연설하다, 말을 걸다' },
+    'arms': { pos: '[명]', meaning: '① [명] 무기, 병기 ② [명] 문장(紋章) ③ [명] (arm의 복수형) 팔들' },
+    'article': { pos: '[명]', meaning: '① [명] 기사, 논설 ② [명] (계약·법률의) 조항 ③ [명] 물품, 품목 ④ [명] 관사' },
+    'balance': { pos: '[명·동]', meaning: '① [명] 균형, 평형 ② [명] 잔액, 잔고 ③ [명] 저울 ④ [동] 균형을 잡다' },
+    'bear': { pos: '[동·명]', meaning: '① [동] 참다, 견디다 ② [동] (책임·비용을) 떠맡다 ③ [동] (아이를) 낳다, (열매를) 맺다 ④ [명] 곰' },
+    'bill': { pos: '[명·동]', meaning: '① [명] 청구서, 계산서 ② [명] 지폐 ③ [명] 법안 ④ [명] (새의) 부리 ⑤ [동] 청구하다' },
+    'board': { pos: '[명·동]', meaning: '① [명] 판자, 칠판 ② [명] 이사회, 위원회 ③ [동] 탑승하다, 승선하다 ④ [동] 하숙하다' },
+    'charge': { pos: '[명·동]', meaning: '① [명] 요금 ② [명] 책임, 담당 ③ [명] 기소, 혐의 ④ [동] 청구하다 ⑤ [동] 충전하다 ⑥ [동] 고발하다' },
+    'close': { pos: '[형·동·부]', meaning: '① [형] 가까운, 친밀한 ② [동] 닫다, 폐쇄하다 ③ [형] 철저한, 면밀한 ④ [부] 가까이' },
+    'company': { pos: '[명]', meaning: '① [명] 회사 ② [명] 동료, 함께 있음 ③ [명] 손님, 방문객' },
+    'content': { pos: '[명·형·동]', meaning: '① [명] 내용물, 목차 ② [명] 함유량 ③ [형] 만족하는 ④ [동] 만족시키다' },
+    'contract': { pos: '[명·동]', meaning: '① [명] 계약, 계약서 ② [동] 계약하다 ③ [동] 수축하다, 줄어들다 ④ [동] (병에) 걸리다' },
+    'court': { pos: '[명·동]', meaning: '① [명] 법원, 법정 ② [명] 코트(경기장) ③ [명] 궁궐, 왕실 ④ [동] 구애하다, 환심을 사려 하다' },
+    'current': { pos: '[형·명]', meaning: '① [형] 현재의, 지금의 ② [형] 통용되는 ③ [명] (물·공기의) 흐름, 조류 ④ [명] 전류 ⑤ [명] 경향, 추세' },
+    'custom': { pos: '[명·형]', meaning: '① [명] 관습, 풍습 ② [명] (복수형 customs) 세관, 관세 ③ [형] 맞춤의, 주문 제작의' },
+    'deal': { pos: '[동·명]', meaning: '① [동] 다루다, 처리하다 (deal with) ② [동] 거래하다 ③ [명] 거래, 합의 ④ [명] 대우, 취급' },
+    'degree': { pos: '[명]', meaning: '① [명] 정도, 수준 ② [명] (온도·각도) 도(°) ③ [명] 학위' },
+    'draw': { pos: '[동·명]', meaning: '① [동] 그리다 ② [동] 끌어당기다, (관심·결론을) 이끌어내다 ③ [동] (경기에서) 비기다 ④ [명] 무승부, 추첨' },
+    'drop': { pos: '[동·명]', meaning: '① [동] 떨어뜨리다, 떨어지다 ② [동] (주제·활동을) 그만두다 ③ [명] 방울 ④ [명] 하락, 감소' },
+    'even': { pos: '[부·형]', meaning: '① [부] 심지어, ~조차 ② [부] 훨씬 (비교급 강조) ③ [형] 평평한 ④ [형] 균등한 ⑤ [형] 짝수의' },
+    'fair': { pos: '[형·명]', meaning: '① [형] 공정한, 타당한 ② [형] (날씨가) 맑은 ③ [형] 꽤 많은, 상당한 ④ [형] 금발의, 흰 피부의 ⑤ [명] 박람회, 축제' },
+    'fast': { pos: '[형·부·동]', meaning: '① [형] 빠른 ② [부] 빨리 ③ [동] 금식하다, 단식하다 ④ [명] 단식' },
+    'figure': { pos: '[명·동]', meaning: '① [명] 숫자, 수치 ② [명] 인물, 명사 ③ [명] 체구, 모습 ④ [명] 도표, 그림 ⑤ [동] 생각하다, 판단하다' },
+    'fine': { pos: '[형·명·동]', meaning: '① [형] 좋은, 훌륭한, (날씨가) 맑은 ② [형] 미세한, 가는 ③ [명] 벌금 ④ [동] 벌금을 부과하다' },
+    'hard': { pos: '[형·부]', meaning: '① [형] 단단한, 딱딱한 ② [형] 어려운, 힘든 ③ [부] 열심히 ④ [부] 세게, 심하게' },
+    'interest': { pos: '[명·동]', meaning: '① [명] 관심, 흥미 ② [명] 이자(利子) ③ [명] 이익, 권익 ④ [동] 관심을 갖게 하다' },
+    'issue': { pos: '[명·동]', meaning: '① [명] 쟁점, 사안 ② [명] (잡지·간행물의) 호, 발행물 ③ [동] 발행하다, 발급하다 ④ [동] 발표하다' },
+    'last': { pos: '[형·동·명]', meaning: '① [형] 마지막의, 지난 ② [동] 지속되다, 오래가다 ③ [명] 마지막 사람·것' },
+    'leave': { pos: '[동·명]', meaning: '① [동] 떠나다, 출발하다 ② [동] 남겨두다 ③ [명] 휴가, 허가' },
+    'light': { pos: '[명·형·동]', meaning: '① [명] 빛, 전등 ② [형] 가벼운 ③ [형] (색이) 밝은, 옅은 ④ [동] 불을 붙이다, 밝히다' },
+    'match': { pos: '[명·동]', meaning: '① [명] 경기, 시합 ② [명] 성냥 ③ [명] 어울리는 것, 호적수 ④ [동] 어울리다, 일치하다' },
+    'matter': { pos: '[명·동]', meaning: '① [명] 문제, 사안 ② [명] 물질 ③ [동] 중요하다, 문제가 되다' },
+    'mean': { pos: '[동·형·명]', meaning: '① [동] 의미하다, 뜻하다 ② [동] 의도하다 ③ [형] 못된, 심술궂은, 비열한 ④ [형] 인색한 ⑤ [명] 평균, 중용' },
+    'mine': { pos: '[대·명·동]', meaning: '① [대명사] 나의 것 ② [명] 광산, 보고(寶庫) ③ [명] 지뢰 ④ [동] 채굴하다, 채광하다' },
+    'novel': { pos: '[명·형]', meaning: '① [명] 소설 ② [형] 참신한, 새로운, 신기한' },
+    'object': { pos: '[명·동]', meaning: '① [명] 물체, 사물 ② [명] 대상 ③ [명] 목표, 목적 ④ [동] 반대하다' },
+    'order': { pos: '[명·동]', meaning: '① [명] 주문, 주문품 ② [명] 명령 ③ [명] 순서, 차례 ④ [명] 질서 ⑤ [동] 주문하다, 명령하다' },
+    'patient': { pos: '[형·명]', meaning: '① [형] 참을성 있는, 끈기 있는 ② [명] 환자' },
+    'plant': { pos: '[명·동]', meaning: '① [명] 식물, 초목 ② [명] 공장, 발전소 ③ [동] 심다 ④ [동] (시설·생각을) 설치하다, 심어주다' },
+    'point': { pos: '[명·동]', meaning: '① [명] 요점, 핵심 ② [명] 점, 점수 ③ [명] 시점, 단계 ④ [동] 가리키다, 향하다' },
+    'practice': { pos: '[명·동]', meaning: '① [명] 연습, 훈련 ② [명] 관행, 관습 ③ [명] 실행, 실천 ④ [동] 연습하다 ⑤ [동] (전문직을) 개업하다' },
+    'present': { pos: '[형·명·동]', meaning: '① [형] 현재의 ② [형] 참석한, 존재하는 ③ [명] 현재 ④ [명] 선물 ⑤ [동] 제시하다, 발표하다, 주다' },
+    'race': { pos: '[명·동]', meaning: '① [명] 경주, 레이스 ② [명] 인종, 종족 ③ [동] 경주하다, 질주하다' },
+    'reserve': { pos: '[동·명]', meaning: '① [동] 예약하다 ② [동] (따로) 남겨두다, 보유하다 ③ [명] (동식물·자연) 보호구역, 보존구역 ④ [명] 비축(물), 매장량 ⑤ [명] 신중함, 내성적 태도' },
+    'rest': { pos: '[명·동]', meaning: '① [명] 휴식, 안식 ② [명] (the rest) 나머지 ③ [동] 쉬다, 휴식을 취하다' },
+    'right': { pos: '[형·명·부]', meaning: '① [형] 옳은, 맞는 ② [형] 오른쪽의 ③ [명] 권리 ④ [명] 오른쪽 ⑤ [부] 바로, 옳게' },
+    'room': { pos: '[명]', meaning: '① [명] 방, 침실 ② [명] (불가산) 여지, 공간, 기회' },
+    'row': { pos: '[명·동]', meaning: '① [명] 열, 줄 ② [명] 노 젓기 ③ [동] 노를 젓다 ④ [명] 말다툼, 소란' },
+    'safe': { pos: '[형·명]', meaning: '① [형] 안전한, 무사한 ② [명] 금고' },
+    'scale': { pos: '[명·동]', meaning: '① [명] 규모, 범위 ② [명] 저울 ③ [명] (물고기 등의) 비늘 ④ [명] 음계 ⑤ [동] 오르다, 올라가다' },
+    'second': { pos: '[형·명·동]', meaning: '① [형] 두 번째의 ② [명] 초(시간), 아주 짧은 순간 ③ [명] 보조자, 2등 ④ [동] 지지하다' },
+    'sentence': { pos: '[명·동]', meaning: '① [명] 문장 ② [명] 형벌, 판결, 선고 ③ [동] 선고하다, 형을 내리다' },
+    'share': { pos: '[동·명]', meaning: '① [동] 공유하다, 함께 쓰다 ② [동] 나누다 ③ [명] 몫, 지분 ④ [명] 주식' },
+    'sound': { pos: '[명·동·형]', meaning: '① [명] 소리, 음향 ② [동] ~처럼 들리다 ③ [형] 건전한, 건강한, 타당한 ④ [형] (잠이) 깊은 ⑤ [명] 해협' },
+    'spot': { pos: '[명·동]', meaning: '① [명] 장소, 지점 ② [명] 얼룩, 반점 ③ [동] 발견하다, 알아채다 ④ [동] 얼룩지게 하다' },
+    'spring': { pos: '[명·동]', meaning: '① [명] 봄 ② [명] 용수철, 탄력 ③ [명] 샘, 온천 ④ [동] 튀어 오르다, 솟아나다' },
+    'state': { pos: '[명·동·형]', meaning: '① [명] 상태, 형편 ② [명] 국가, 주(州) ③ [동] 진술하다, 말하다 ④ [형] 국가의, 주(州)립의' },
+    'subject': { pos: '[명·형·동]', meaning: '① [명] 주제, 과목 ② [명] 피실험자, 대상자 ③ [명] 국민, 신하 ④ [형] ~에 종속된, ~받기 쉬운 ⑤ [동] 굴복시키다' },
+    'tap': { pos: '[동·명]', meaning: '① [동] 톡톡 두드리다 ② [동] (자원·인재를) 활용하다 ③ [명] 수도꼭지 ④ [명] 가벼운 두드림' },
+    'term': { pos: '[명·동]', meaning: '① [명] 용어, 말 ② [명] 기간, 학기, 임기 ③ [명] 조건, 조항 ④ [명] 관계, 사이 ⑤ [동] 칭하다, 부르다' },
+    'toll': { pos: '[명]', meaning: '① [명] 통행료, 요금 ② [명] (사고·재난 등의) 사상자 수, 피해, 대가' },
+    'train': { pos: '[명·동]', meaning: '① [명] 기차, 열차 ② [명] 연속, 줄 ③ [동] 훈련하다, 교육받다 ④ [동] 길들이다' },
+    'treat': { pos: '[동·명]', meaning: '① [동] 대하다, 다루다, 대우하다 ② [동] 치료하다 ③ [동] 대접하다, 한턱내다 ④ [명] 특별한 대접, 선물, 별미' },
+    'trip': { pos: '[명·동]', meaning: '① [명] 여행, 출장 ② [동] 발을 헛디디다, 넘어지다 ③ [동] 작동시키다' },
+    'watch': { pos: '[동·명]', meaning: '① [동] 지켜보다, 주시하다 ② [동] 조심하다 ③ [명] 손목시계 ④ [명] 감시, 당번' },
+    'well': { pos: '[부·명·형]', meaning: '① [부] 잘, 좋게 ② [명] 우물, 샘 ③ [형] 건강한, 좋은' },
+    'will': { pos: '[조·명·동]', meaning: '① [조동사] ~할 것이다 ② [명] 의지, 뜻 ③ [명] 유언장 ④ [동] 유증하다' },
+    'yield': { pos: '[동·명]', meaning: '① [동] 산출하다, 생산하다 ② [동] 양보하다, 양도하다 ③ [동] 굴복하다 ④ [명] 산출량, 수확량' }
+};
+
 class ReadingEngine {
     constructor() {
         this.units = typeof READING_UNITS !== 'undefined' ? READING_UNITS : [];
@@ -795,6 +867,12 @@ class ReadingEngine {
         const clean = String(word).trim();
         const lower = clean.toLowerCase();
 
+        // 0. 수능·내신 핵심 70대 다의어(Polysemy) 마스터 사전 우선 조회 (예약하다 vs 보호구역 등 다의어 뜻 전수 포괄)
+        if (typeof POLYSEMY_MASTER_DICT !== 'undefined' && POLYSEMY_MASTER_DICT[lower]) {
+            const poly = POLYSEMY_MASTER_DICT[lower];
+            return { word: clean, pos: poly.pos, meaning: poly.meaning, isPolysemy: true };
+        }
+
         // 1. 현재 지문 Key Vocabulary 검색
         const passage = this.getCurrentPassage();
         if (passage && passage.keyVocabulary && Array.isArray(passage.keyVocabulary)) {
@@ -818,10 +896,15 @@ class ReadingEngine {
             }
         }
 
-        // 2. window.storage.words 검색
+        // 2. window.storage.words 검색 (단, storage 단어 뜻이 단일 뜻에 불과하고 렉시콘에 ① 번호 매겨진 다의어 뜻이 있으면 풍부한 뜻 우선 채택)
         if (window.storage && window.storage.words && Array.isArray(window.storage.words)) {
             const found = window.storage.words.find(w => w.word && w.word.toLowerCase() === lower);
             if (found) {
+                const lex = window.READING_LEXICON_DATA || (typeof READING_LEXICON_DATA !== 'undefined' ? READING_LEXICON_DATA : null);
+                if (lex && lex[lower] && lex[lower].meaning && lex[lower].meaning.includes('①') && !found.meaning.includes('①')) {
+                    const stdPos = window.posHelper ? window.posHelper.standardizePos(lex[lower].pos, clean, lex[lower].meaning) : (lex[lower].pos || '[명]');
+                    return { word: found.word, pos: stdPos, meaning: lex[lower].meaning, isPolysemy: true };
+                }
                 const stdPos = window.posHelper ? window.posHelper.standardizePos(found.partOfSpeech, found.word, found.meaning) : (found.partOfSpeech || '[명]');
                 return { word: found.word, pos: stdPos, meaning: found.meaning };
             }
@@ -832,7 +915,7 @@ class ReadingEngine {
         if (lexicon && lexicon[lower]) {
             const entry = lexicon[lower];
             const stdPos = window.posHelper ? window.posHelper.standardizePos(entry.pos, clean, entry.meaning) : (entry.pos || '[명]');
-            return { word: clean, pos: stdPos, meaning: entry.meaning };
+            return { word: clean, pos: stdPos, meaning: entry.meaning, isPolysemy: entry.meaning && entry.meaning.includes('①') };
         }
 
         // 3. CURATED_WORDS_DATA 검색
@@ -1115,6 +1198,8 @@ class ReadingEngine {
         if (contextHint) {
             if (foundInfo && foundInfo.isInflected && foundInfo.word !== cleanWord) {
                 contextHint.innerHTML = `<span class="inline-flex items-center gap-1 text-[11px] font-sans font-bold text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-md">💡 동사 원형 표기 (본문 형태: ${cleanWord})</span>`;
+            } else if (foundInfo && (foundInfo.isPolysemy || foundInfo.meaning?.includes('①'))) {
+                contextHint.innerHTML = `<span class="inline-flex items-center gap-1 text-[11px] font-sans font-bold text-purple-700 bg-purple-50 border border-purple-200 px-2 py-0.5 rounded-md">🌟 다의어 (Polysemy) 상세 정의 완비</span>`;
             } else {
                 contextHint.textContent = '지문/예문 문맥 단어 클릭 • 원클릭 영단어 사전 연동';
             }
@@ -1258,8 +1343,22 @@ class ReadingEngine {
                 wordEl.textContent = displayWord;
             }
         }
-        if (posEl) posEl.textContent = foundInfo ? foundInfo.pos : '[단어]';
-        if (meaningEl) meaningEl.textContent = foundInfo ? foundInfo.meaning : '사전 정의 탐색 중...';
+        if (posEl) {
+            posEl.textContent = foundInfo ? foundInfo.pos : '[단어]';
+            if (foundInfo && (foundInfo.isPolysemy || foundInfo.meaning?.includes('①'))) {
+                posEl.className = 'px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-purple-900/90 text-purple-200 border border-purple-500/60';
+            } else {
+                posEl.className = 'px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-blue-900/80 text-blue-200 border border-blue-700/60';
+            }
+        }
+        if (meaningEl) {
+            if (foundInfo && foundInfo.meaning && foundInfo.meaning.includes('①')) {
+                const items = foundInfo.meaning.split(/(?=[①②③④⑤⑥])/g).map(s => s.trim()).filter(Boolean);
+                meaningEl.innerHTML = `<div class="space-y-1">${items.map(it => `<div class="leading-snug text-slate-100">${it}</div>`).join('')}</div>`;
+            } else {
+                meaningEl.textContent = foundInfo ? foundInfo.meaning : '사전 정의 탐색 중...';
+            }
+        }
 
         if (ttsBtn) {
             ttsBtn.onclick = (ev) => {
