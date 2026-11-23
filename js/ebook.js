@@ -489,7 +489,7 @@ class EBookEngine {
         if (!book) return;
 
         this.currentBook = book;
-        this.currentStep = 3; // 기본은 실감형 e-Book 본문 독해로 오픈
+        this.currentStep = 1; // 1단계 30초 배경지식 & 탐구 화두부터 자연스럽게 시작
         this.currentSpreadIndex = 0;
         this.paginatedPages = this.paginateBook(book);
         this.currentAudioParagraphIndex = 0;
@@ -718,14 +718,15 @@ class EBookEngine {
         });
 
         // 챕터별 콘텐츠를 논리적 종이 책 페이지 크기로 분할
-        chapters.forEach(chap => {
+        chapters.forEach((chap, chapIdx) => {
             let currentBlocks = [];
             let currentWords = 0;
+            const cNum = chap.chapterNum || chap.num || (chapIdx + 1);
 
             // 챕터 헤더 블록
             currentBlocks.push({
                 type: 'chapter_header',
-                chapterNum: chap.chapterNum,
+                chapterNum: cNum,
                 title: chap.title
             });
 
@@ -938,7 +939,7 @@ class EBookEngine {
                     blocksHtml += `
                         <div class="border-b border-stone-300/70 pb-2 mb-3">
                             <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-stone-500">
-                                Chapter ${b.chapterNum}
+                                ${b.chapterNum ? `Chapter ${b.chapterNum}` : 'Chapter'}
                             </span>
                             <h4 class="font-serif font-black text-lg ${titleColor}">
                                 ${b.title}
@@ -1252,7 +1253,7 @@ class EBookEngine {
                             🧠 원서형 심층 독해력 퀴즈
                         </h3>
                         <p class="text-xs text-slate-500 mt-0.5">
-                            수능 킬러 & SAT/TOEFL 유형의 5문항 다각도 퀴즈로 이해도를 정밀 검증합니다.
+                            수능 킬러 & SAT/TOEFL 유형의 엄선된 핵심 독해력 퀴즈로 이해도를 정밀 검증합니다.
                         </p>
                     </div>
                     <span class="px-2.5 py-1 rounded-full bg-indigo-50 text-indigo-900 text-xs font-mono font-bold border border-indigo-200">
