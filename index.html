@@ -1556,6 +1556,11 @@
                         <!-- JS 동적 주입 -->
                     </div>
 
+                    <!-- 등록된 비문학 원서 e-Book 시리즈 활성 배너 -->
+                    <div id="planner-active-ebook-bar" class="hidden flex flex-wrap items-center gap-2 pt-2 border-t border-slate-100">
+                        <!-- JS 동적 주입 -->
+                    </div>
+
                     <!-- 등록된 외부 시중 교재 & 과제 활성 배너 (원클릭 삭제 지원) -->
                     <div id="planner-active-ext-books-bar" class="hidden flex flex-wrap items-center gap-2 pt-2 border-t border-slate-100">
                         <!-- JS 동적 주입 -->
@@ -2390,12 +2395,18 @@
                         </select>
                         <!-- 난이도 레벨 드롭다운 -->
                         <select id="ebook-filter-level-select" onchange="window.ebookEngine.setLevelFilter(this.value)" class="px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 text-slate-700 text-xs font-medium outline-none focus:border-blue-900 cursor-pointer">
-                            <option value="all">전체 난이도</option>
-                            <option value="1">Level 1 (Foundation - 중2~중3)</option>
-                            <option value="2">Level 2 (Intermediate - 고1)</option>
-                            <option value="3">Level 3 (Advanced - 고2~수능1등급)</option>
-                            <option value="4">Level 4 (Mastery - 원서완독)</option>
+                            <option value="all">전체 난이도 (Level 1~5)</option>
+                            <option value="1">Level 1 (예비중~중1 / AR 3.0~4.2)</option>
+                            <option value="2">Level 2 (중2~중3 / AR 4.3~5.5)</option>
+                            <option value="3">Level 3 (고1 수준 / AR 5.5~7.0)</option>
+                            <option value="4">Level 4 (고2 수준 / AR 7.0~8.5)</option>
+                            <option value="5">Level 5 (수능 수준 / AR 8.5~11.0+)</option>
                         </select>
+                        <!-- 플래너 일괄 배정 버튼 -->
+                        <button type="button" onclick="window.ebookEngine.openSeriesPlannerModal()" class="px-3 py-1.5 rounded-lg bg-amber-50 text-amber-800 hover:bg-amber-100 border border-amber-200 text-xs font-bold flex items-center gap-1 cursor-pointer transition-colors shadow-2xs">
+                            <i data-lucide="calendar-plus" class="w-3.5 h-3.5 text-amber-600"></i>
+                            <span>시리즈 플래너 배정</span>
+                        </button>
                     </div>
 
                     <div id="ebook-shelf-stats">
@@ -3441,6 +3452,115 @@
                 <div id="ebook-step-view-4" class="hidden"></div>
                 <div id="ebook-step-view-5" class="hidden"></div>
                 <div id="ebook-step-view-6" class="hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================================
+         비문학 원서 e-Book 시리즈 학습 계획표 배정 모달 (Series Planner Modal)
+         ====================================================================== -->
+    <div id="modal-ebook-series-planner" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-xs hidden flex items-center justify-center p-3 sm:p-4">
+        <div class="bg-white w-full max-w-lg rounded-3xl border border-slate-200 shadow-2xl p-6 space-y-5 animate-in fade-in zoom-in-95 duration-150 max-h-[92vh] overflow-y-auto">
+            <!-- 모달 헤더 -->
+            <div class="flex items-start justify-between border-b border-slate-100 pb-3">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 border border-amber-200 flex items-center justify-center text-lg shrink-0">
+                        📅
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-black text-xl text-slate-900">
+                            시리즈 학습 계획표 배정
+                        </h3>
+                        <p id="ebook-planner-series-subtitle" class="text-xs text-slate-500 mt-0.5">
+                            시리즈 전권을 캘린더 플래너에 날짜별로 일괄 배정합니다.
+                        </p>
+                    </div>
+                </div>
+                <button type="button" class="p-1.5 rounded-xl text-slate-400 hover:text-slate-600 hover:bg-slate-100 cursor-pointer" onclick="window.ebookEngine.closeSeriesPlannerModal()">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- 대상 시리즈 정보 카드 -->
+            <div class="p-4 rounded-2xl bg-amber-50/80 border border-amber-200/90 space-y-2.5">
+                <div class="space-y-1">
+                    <label class="block text-[11px] font-bold text-amber-900 flex items-center gap-1">
+                        <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+                        <span>배정 대상 시리즈 선택</span>
+                    </label>
+                    <select id="ebook-planner-series-select" onchange="window.ebookEngine.onPlannerSeriesSelectChange(this.value)" class="w-full px-3 py-2 rounded-xl border border-amber-300 bg-white text-xs font-bold text-slate-900 outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer">
+                    </select>
+                </div>
+
+                <div class="flex items-center justify-between pt-1">
+                    <span id="ebook-planner-series-badge" class="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-amber-200/80 text-amber-900">
+                        시리즈
+                    </span>
+                    <span id="ebook-planner-series-count" class="text-xs font-mono font-bold text-amber-950">
+                        총 10권 배정
+                    </span>
+                </div>
+                <h4 id="ebook-planner-series-title" class="font-serif font-black text-base text-slate-900">
+                    Series Name
+                </h4>
+                <p id="ebook-planner-series-desc" class="text-xs text-slate-600 leading-relaxed font-sans">
+                    시리즈 설명
+                </p>
+            </div>
+
+            <!-- 배정 설정 폼 -->
+            <div class="space-y-4">
+                <!-- 1. 시작 날짜 선택 -->
+                <div class="space-y-1.5">
+                    <label class="block text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                        <i data-lucide="calendar" class="w-3.5 h-3.5 text-blue-900"></i>
+                        <span>학습 시작일</span>
+                    </label>
+                    <input type="date" id="ebook-planner-start-date" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs font-mono focus:border-blue-900 focus:ring-1 focus:ring-blue-900 outline-hidden">
+                </div>
+
+                <!-- 2. 학습 페이스 선택 -->
+                <div class="space-y-1.5">
+                    <label class="block text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                        <i data-lucide="clock" class="w-3.5 h-3.5 text-blue-900"></i>
+                        <span>학습 페이스 (권장 주기)</span>
+                    </label>
+                    <div class="grid grid-cols-2 gap-2">
+                        <label class="flex items-center gap-2 p-3 rounded-xl border border-slate-200 hover:border-blue-300 cursor-pointer text-xs font-bold text-slate-700">
+                            <input type="radio" name="ebook-planner-pace" value="daily" checked class="text-blue-900" onchange="window.ebookEngine.updateSeriesPlannerPreview()">
+                            <span>매일 1권씩 완독</span>
+                        </label>
+                        <label class="flex items-center gap-2 p-3 rounded-xl border border-slate-200 hover:border-blue-300 cursor-pointer text-xs font-bold text-slate-700">
+                            <input type="radio" name="ebook-planner-pace" value="alternate" class="text-blue-900" onchange="window.ebookEngine.updateSeriesPlannerPreview()">
+                            <span>2일에 1권씩 (격일)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 3. 권별 배정 일정 미리보기 -->
+                <div class="space-y-1.5">
+                    <div class="flex items-center justify-between">
+                        <label class="block text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                            <i data-lucide="list-ordered" class="w-3.5 h-3.5 text-blue-900"></i>
+                            <span>날짜별 배정 도서 미리보기</span>
+                        </label>
+                        <span id="ebook-planner-date-range" class="text-[11px] font-mono text-blue-900 font-bold"></span>
+                    </div>
+                    <div id="ebook-planner-schedule-preview" class="p-3 rounded-xl bg-slate-50 border border-slate-200 max-h-44 overflow-y-auto space-y-1.5 text-xs text-slate-700">
+                        <!-- 동적 주입 -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 하단 확인 버튼 바 -->
+            <div class="flex items-center justify-end gap-2 pt-2 border-t border-slate-100">
+                <button type="button" onclick="window.ebookEngine.closeSeriesPlannerModal()" class="px-4 py-2.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer">
+                    취소
+                </button>
+                <button type="button" onclick="window.ebookEngine.submitSeriesPlanner()" class="px-5 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-xs flex items-center gap-1.5 shadow-sm transition-all cursor-pointer">
+                    <i data-lucide="calendar-check-2" class="w-4 h-4"></i>
+                    <span>📅 플래너에 배정 등록</span>
+                </button>
             </div>
         </div>
     </div>

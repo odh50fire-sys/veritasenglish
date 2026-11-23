@@ -89,6 +89,37 @@ class PlannerEngine {
             }
         }
 
+        // 현재 등록된 비문학 원서 e-Book 시리즈 활성 배너 렌더링
+        const activeEBookBannerEl = document.getElementById('planner-active-ebook-bar');
+        const ebookStatusMap = window.storage && typeof window.storage.getEBookSeriesStatusMap === 'function' ? window.storage.getEBookSeriesStatusMap() : {};
+        const activeEBookSeries = Object.entries(ebookStatusMap).filter(([_, s]) => s.isRegistered);
+        if (activeEBookBannerEl) {
+            if (activeEBookSeries.length > 0) {
+                activeEBookBannerEl.classList.remove('hidden');
+                activeEBookBannerEl.innerHTML = `
+                    <span class="text-[11px] font-serif font-bold text-slate-500 flex items-center gap-1 shrink-0">
+                        <i data-lucide="book-open" class="w-3.5 h-3.5 text-amber-600"></i> 배정된 e-Book 시리즈:
+                    </span>
+                    ${activeEBookSeries.map(([sId, s]) => {
+                        const seriesObj = (window.EBOOK_SERIES_DATA || []).find(ser => ser.id === sId);
+                        const title = seriesObj ? seriesObj.name : sId;
+                        return `
+                            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 hover:bg-amber-100/80 border border-amber-200 text-amber-900 text-xs font-serif font-bold transition-all shadow-2xs">
+                                <i data-lucide="book" class="w-3.5 h-3.5 text-amber-700"></i>
+                                <span class="max-w-[200px] truncate">${title}</span>
+                                <span class="font-mono text-[11px] text-amber-700 font-normal">(${s.startDate} ~ ${s.endDate} • ${s.bookCount}권)</span>
+                                <button class="ml-1 text-slate-400 hover:text-red-700 cursor-pointer" onclick="window.plannerEngine.deleteEBookSeriesFromPlanner('${sId}', '${title.replace(/'/g, "\\'")}')" title="시리즈 계획 삭제">
+                                    <i data-lucide="x" class="w-3 h-3"></i>
+                                </button>
+                            </div>
+                        `;
+                    }).join('')}
+                `;
+            } else {
+                activeEBookBannerEl.classList.add('hidden');
+            }
+        }
+
         // 현재 등록된 문법 클리닉 단원 배너 렌더링
         const activeGrammarBannerEl = document.getElementById('planner-active-grammar-bar');
         if (activeGrammarBannerEl) {
@@ -191,9 +222,10 @@ class PlannerEngine {
                 this.render();
             };
 
-            const vocabWords = wordsOnDate.filter(w => !w.isReadingPassage && !w.isGrammarUnit);
+            const vocabWords = wordsOnDate.filter(w => !w.isReadingPassage && !w.isGrammarUnit && !w.isEBookTask);
             const readingPassages = wordsOnDate.filter(w => w.isReadingPassage);
             const grammarUnits = wordsOnDate.filter(w => w.isGrammarUnit);
+            const ebookTasks = wordsOnDate.filter(w => w.isEBookTask);
             const extTasks = (window.storage && typeof window.storage.getTodayExternalTasks === 'function')
                 ? window.storage.getTodayExternalTasks(dateStr)
                 : [];
@@ -207,8 +239,12 @@ class PlannerEngine {
                 const prog = window.grammarClinicEngine && window.grammarClinicEngine.getUnitProgress(g.grammarUnitId || g.grammarUnitNo, g.grammarLevelCode);
                 return (prog && prog.completed) || g.studyCompleted;
             });
+            const isEBookCompleted = ebookTasks.length === 0 || ebookTasks.every(eb => {
+                const prog = window.ebookEngine && window.ebookEngine.readingProgress ? window.ebookEngine.readingProgress[eb.ebookBookId] : null;
+                return (prog && prog.completed) || eb.studyCompleted;
+            });
             const isExtCompleted = extTasks.length === 0 || extTasks.every(t => t.isDone);
-            const isDayCompleted = planInfo.isDone === true || ((vocabWords.length > 0 || readingPassages.length > 0 || grammarUnits.length > 0 || extTasks.length > 0) && isWordsCompleted && isPassagesCompleted && isGrammarCompleted && isExtCompleted);
+            const isDayCompleted = planInfo.isDone === true || ((vocabWords.length > 0 || readingPassages.length > 0 || grammarUnits.length > 0 || ebookTasks.length > 0 || extTasks.length > 0) && isWordsCompleted && isPassagesCompleted && isGrammarCompleted && isEBookCompleted && isExtCompleted);
 
             let badgesHtml = '';
             if (isDayCompleted) {
@@ -227,6 +263,19 @@ class PlannerEngine {
                             allGrammarDone ? 'bg-emerald-100 text-emerald-900 border border-emerald-300' : 'bg-emerald-50 text-emerald-800 border border-emerald-200'
                         } text-[10px] font-bold">
                             <i data-lucide="sparkle" class="w-3 h-3 text-emerald-600"></i> 문법 ${grammarUnits.length}단원
+                        </span>
+                    `;
+                }
+                if (ebookTasks.length > 0) {
+                    const allEBookDone = ebookTasks.every(eb => {
+                        const prog = window.ebookEngine && window.ebookEngine.readingProgress ? window.ebookEngine.readingProgress[eb.ebookBookId] : null;
+                        return (prog && prog.completed) || eb.studyCompleted;
+                    });
+                    badgesHtml += `
+                        <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full ${
+                            allEBookDone ? 'bg-amber-100 text-amber-900 border border-amber-300' : 'bg-amber-50 text-amber-800 border border-amber-200'
+                        } text-[10px] font-bold truncate max-w-full">
+                            <i data-lucide="book" class="w-3 h-3 text-amber-700 shrink-0"></i> 원서 ${ebookTasks.length}권
                         </span>
                     `;
                 }
@@ -419,6 +468,10 @@ class PlannerEngine {
             } else if (w.isReadingPassage || w.isReadingVocab) {
                 key = `reading:${w.readingUnitId || 'r'}`;
                 label = w.tag ? w.tag.replace(' [어휘]', '').replace(' [독해]', '') : '내신 독해';
+            } else if (w.isEBookTask || w.isEBookVocab) {
+                key = `ebook:${w.ebookSeriesId || 'e'}`;
+                const ser = (window.EBOOK_SERIES_DATA || []).find(s => s.id === w.ebookSeriesId);
+                label = ser ? `e-Book: ${ser.shortName}` : '비문학 원서 e-Book';
             } else if (w.isNeungryul2025) {
                 key = 'neungryul2025';
                 label = '능률 VOCA 중등 고난도';
@@ -471,6 +524,7 @@ class PlannerEngine {
             ? allWordsOnDate.filter(w => {
                 if (w.isGrammarUnit && `grammar:${w.grammarLevelCode || 'all'}` === this.currentDayBookFilter) return true;
                 if ((w.isReadingPassage || w.isReadingVocab) && `reading:${w.readingUnitId || 'r'}` === this.currentDayBookFilter) return true;
+                if ((w.isEBookTask || w.isEBookVocab) && `ebook:${w.ebookSeriesId || 'e'}` === this.currentDayBookFilter) return true;
                 if (w.isNeungryul2025 && this.currentDayBookFilter === 'neungryul2025') return true;
                 if (w.isNeungryulEtym && this.currentDayBookFilter === 'neungryul_etym') return true;
                 if (w.curatedCollectionId && `curated:${w.curatedCollectionId}` === this.currentDayBookFilter) return true;
@@ -478,10 +532,12 @@ class PlannerEngine {
             })
             : allWordsOnDate;
 
-        // 문법 단원 및 독해 지문 과제를 상단에 최우선 배치
+        // 문법 단원, e-Book 원서 및 독해 지문 과제를 상단에 최우선 배치
         words.sort((a, b) => {
             if (a.isGrammarUnit && !b.isGrammarUnit) return -1;
             if (!a.isGrammarUnit && b.isGrammarUnit) return 1;
+            if (a.isEBookTask && !b.isEBookTask) return -1;
+            if (!a.isEBookTask && b.isEBookTask) return 1;
             if (a.isReadingPassage && !b.isReadingPassage) return -1;
             if (!a.isReadingPassage && b.isReadingPassage) return 1;
             return 0;
@@ -709,6 +765,41 @@ class PlannerEngine {
                             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                         </button>
                         <button class="btn-reschedule-single text-xs text-slate-500 hover:text-blue-900 hover:bg-white px-2 py-1 rounded transition-colors cursor-pointer" data-id="${w.id}">
+                            날짜 변경
+                        </button>
+                        <button class="btn-delete-single text-slate-400 hover:text-red-700 p-1 rounded cursor-pointer" data-id="${w.id}">
+                            <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                `;
+            }
+            // 1.5. 비문학 원서 e-Book 도서 과제인 경우
+            else if (w.isEBookTask) {
+                const bookProg = window.ebookEngine && window.ebookEngine.readingProgress ? window.ebookEngine.readingProgress[w.ebookBookId] : null;
+                const isCompleted = (bookProg && bookProg.completed) || w.studyCompleted;
+                row.className = 'p-3 bg-amber-50/60 border border-amber-200 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 hover:border-amber-400 transition-all';
+                row.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-amber-600 text-white flex items-center justify-center shrink-0 shadow-xs">
+                            <i data-lucide="book-open" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap items-center gap-1.5">
+                                <span class="font-serif font-bold text-slate-900 text-sm">${w.word}</span>
+                                <span class="text-[10px] font-mono bg-amber-100 text-amber-900 px-2 py-0.5 rounded font-bold">${w.tag || 'e-Book'}</span>
+                                <span class="text-[10px] font-mono bg-blue-100 text-blue-900 px-1.5 py-0.5 rounded font-bold">Level ${w.ebookLevel || 1}</span>
+                                ${isCompleted ? `<span class="text-[10px] font-mono bg-emerald-100 text-emerald-900 border border-emerald-300 px-2 py-0.5 rounded font-bold flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-emerald-700"></i> ✓ 완독 완료</span>` : ''}
+                            </div>
+                            <div class="text-xs text-slate-600 mt-0.5">${w.meaning}</div>
+                            <div class="text-[11px] text-amber-800 mt-0.5 font-mono">${w.exampleMeaning || ''}</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 self-end sm:self-auto shrink-0">
+                        <button type="button" class="px-3.5 py-2 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-xs flex items-center gap-1.5 shadow-sm transition-all cursor-pointer" onclick="if(window.app && window.app.switchTab) window.app.switchTab('ebook'); if(window.ebookEngine) window.ebookEngine.openReader('${w.ebookBookId}');">
+                            <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+                            <span>📖 지금 e-Book 읽기</span>
+                        </button>
+                        <button class="btn-reschedule-single text-xs text-slate-500 hover:text-amber-900 hover:bg-white px-2 py-1 rounded transition-colors cursor-pointer whitespace-nowrap" data-id="${w.id}">
                             날짜 변경
                         </button>
                         <button class="btn-delete-single text-slate-400 hover:text-red-700 p-1 rounded cursor-pointer" data-id="${w.id}">
@@ -988,6 +1079,30 @@ class PlannerEngine {
         }
 
         alert(`🗑️ [${unitTitle}] 관련 학습 과제 총 ${deleted}건이 계획표에서 삭제되었습니다.`);
+    }
+
+    /**
+     * 비문학 원서 e-Book 시리즈 플래너 배정 일정 일괄 삭제
+     */
+    deleteEBookSeriesFromPlanner(seriesId, seriesTitle) {
+        if (!confirm(`[${seriesTitle}] 비문학 원서 e-Book 시리즈의 모든 배정 일정을 계획표에서 삭제하시겠습니까?`)) {
+            return;
+        }
+
+        const deleted = window.storage && typeof window.storage.deleteEBookSeries === 'function'
+            ? window.storage.deleteEBookSeries(seriesId)
+            : 0;
+
+        this.render();
+
+        if (window.ebookEngine && typeof window.ebookEngine.renderLibrary === 'function') {
+            window.ebookEngine.renderLibrary();
+        }
+        if (window.app && typeof window.app.renderDashboard === 'function') {
+            window.app.renderDashboard();
+        }
+
+        alert(`🗑️ [${seriesTitle}] 시리즈 과제 총 ${deleted}건이 계획표에서 삭제되었습니다.`);
     }
 
     deleteGrammarUnitFromPlanner(unitRef, title = '', levelCode = null) {

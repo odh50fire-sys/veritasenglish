@@ -2656,6 +2656,173 @@ class StorageManager {
     }
 
     // ------------------------------------------------------------------------
+    // 비문학 원서 e-Book 시리즈 플래너 연동 (e-Book Series Planner Integration)
+    // ------------------------------------------------------------------------
+    /**
+     * 특정 e-Book 시리즈 전권을 학습 계획표에 일괄 배정
+     * @param {string} seriesId
+     * @param {string} startDateStr
+     * @param {string|Array<number>} paceOrDays 'daily' | 'alternate' | Array<number> (0~6)
+     * @param {number} startBookIndex
+     */
+    registerEBookSeries(seriesId, startDateStr = null, paceOrDays = 'daily', startBookIndex = 0) {
+        const seriesList = window.EBOOK_SERIES_DATA || [];
+        const allBooks = window.EBOOK_LIBRARY_DATA || [];
+        const targetSeries = seriesList.find(s => s.id === seriesId);
+        const seriesBooks = allBooks.filter(b => b.seriesId === seriesId).sort((a, b) => a.vol - b.vol);
+
+        if (!targetSeries || seriesBooks.length === 0) {
+            return { addedBooks: 0, addedTotalItems: 0, seriesName: '', startDate: '', endDate: '' };
+        }
+
+        const start = startDateStr || this.getTodayDateString();
+        const targetBooks = seriesBooks.slice(Math.max(0, startBookIndex));
+
+        // 기존 해당 시리즈 계획 삭제 후 재등록
+        this.words = this.words.filter(w => !(w.ebookSeriesId === seriesId));
+
+        let scheduledDates = [];
+        if (paceOrDays === 'alternate') {
+            const [y, m, d] = start.split('-').map(Number);
+            let cursor = new Date(y, m - 1, d);
+            let safetyCounter = 0;
+            while (scheduledDates.length < targetBooks.length && safetyCounter < 1000) {
+                safetyCounter++;
+                const curYear = cursor.getFullYear();
+                const curMonth = String(cursor.getMonth() + 1).padStart(2, '0');
+                const curDate = String(cursor.getDate()).padStart(2, '0');
+                const curStr = `${curYear}-${curMonth}-${curDate}`;
+                if (!this.isRestDay(curStr)) {
+                    scheduledDates.push(curStr);
+                    cursor.setDate(cursor.getDate() + 2); // 2일에 1권
+                } else {
+                    cursor.setDate(cursor.getDate() + 1);
+                }
+            }
+        } else if (Array.isArray(paceOrDays)) {
+            scheduledDates = this.calculateScheduledDates(start, targetBooks.length, paceOrDays);
+        } else {
+            scheduledDates = this.calculateScheduledDates(start, targetBooks.length, null);
+        }
+
+        const newItems = [];
+
+        targetBooks.forEach((b, idx) => {
+            const planDate = scheduledDates[idx] || start;
+
+            // 1. 도서 자체를 e-Book 원서 독해 과제로 등록
+            newItems.push({
+                id: `ebook-task-${b.id}`,
+                word: b.title,
+                meaning: `[e-Book 원서] ${b.subTitle} (${targetSeries.shortName})`,
+                partOfSpeech: '원서독해',
+                example: b.summary,
+                exampleMeaning: `권장시간: ${b.readTimeMin}분 | Level ${b.level} (${b.ar || ''}, ${b.lexile || ''})`,
+                level: b.level <= 2 ? 'middle' : 'high',
+                tag: `${targetSeries.shortName} Vol.${b.vol}`,
+                isEBookTask: true,
+                ebookSeriesId: seriesId,
+                ebookBookId: b.id,
+                ebookVol: b.vol,
+                ebookLevel: b.level,
+                planDate: planDate,
+                createdAt: Date.now(),
+                stage: 1,
+                nextReviewDate: planDate,
+                lastReviewed: null,
+                reviewCount: 0,
+                correctCount: 0,
+                wrongCount: 0,
+                isWeak: false
+            });
+
+            // 2. 도서의 필수 어휘들도 단어 학습에 포함
+            if (b.vocabulary && Array.isArray(b.vocabulary)) {
+                b.vocabulary.slice(0, 3).forEach(v => {
+                    newItems.push({
+                        id: `ebook-vocab-${b.id}-${(v.word || '').replace(/\s+/g, '')}`,
+                        word: v.word,
+                        meaning: v.meaning,
+                        partOfSpeech: v.pos || 'n.',
+                        example: v.contextEn || '',
+                        exampleMeaning: v.contextKo || '',
+                        level: b.level <= 2 ? 'middle' : 'high',
+                        tag: `${targetSeries.shortName} Vol.${b.vol} [어휘]`,
+                        isEBookVocab: true,
+                        ebookSeriesId: seriesId,
+                        ebookBookId: b.id,
+                        planDate: planDate,
+                        createdAt: Date.now(),
+                        stage: 1,
+                        nextReviewDate: planDate,
+                        lastReviewed: null,
+                        reviewCount: 0,
+                        correctCount: 0,
+                        wrongCount: 0,
+                        isWeak: false
+                    });
+                });
+            }
+        });
+
+        this.words = [...newItems, ...this.words];
+        this.saveWords();
+
+        return {
+            addedBooks: targetBooks.length,
+            addedTotalItems: newItems.length,
+            seriesName: targetSeries.name,
+            startDate: scheduledDates[0] || start,
+            endDate: scheduledDates[scheduledDates.length - 1] || start
+        };
+    }
+
+    /**
+     * 특정 e-Book 시리즈 계획표에서 일괄 삭제
+     * @param {string} seriesId
+     */
+    deleteEBookSeries(seriesId) {
+        const beforeCount = this.words.length;
+        this.words = this.words.filter(w => w.ebookSeriesId !== seriesId);
+        const deletedCount = beforeCount - this.words.length;
+        if (deletedCount > 0) {
+            this.saveWords();
+        }
+        return deletedCount;
+    }
+
+    /**
+     * 모든 e-Book 시리즈의 계획표 등록 현황 조회
+     */
+    getEBookSeriesStatusMap() {
+        const seriesList = window.EBOOK_SERIES_DATA || [];
+        const map = {};
+        seriesList.forEach(s => {
+            const items = this.words.filter(w => w.ebookSeriesId === s.id);
+            const books = items.filter(w => w.isEBookTask);
+            if (books.length > 0) {
+                const dates = Array.from(new Set(books.map(w => w.planDate))).sort();
+                map[s.id] = {
+                    isRegistered: true,
+                    bookCount: books.length,
+                    totalItemsCount: items.length,
+                    startDate: dates[0] || '',
+                    endDate: dates[dates.length - 1] || ''
+                };
+            } else {
+                map[s.id] = {
+                    isRegistered: false,
+                    bookCount: 0,
+                    totalItemsCount: 0,
+                    startDate: '',
+                    endDate: ''
+                };
+            }
+        });
+        return map;
+    }
+
+    // ------------------------------------------------------------------------
     // 영문법 클리닉 단원 플래너 연동 (Grammar Clinic Planner Integration)
     // ------------------------------------------------------------------------
     registerGrammarUnit(unitRef, dateStr = null, levelCode = null) {
