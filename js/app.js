@@ -663,6 +663,10 @@ class AppController {
             if (window.grammarClinicEngine) {
                 window.grammarClinicEngine.init();
             }
+        } else if (tabName === 'ebook') {
+            if (window.ebookEngine) {
+                window.ebookEngine.init();
+            }
         } else if (tabName === 'planner') {
             if (window.plannerEngine) {
                 window.plannerEngine.currentDayBookFilter = 'all';
@@ -1092,6 +1096,10 @@ class AppController {
                         <button type="button" onclick="window.app && window.app.switchTab('reading')" class="px-4 py-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-800 font-serif font-bold text-xs flex items-center gap-1.5 shadow-xs transition-all cursor-pointer">
                             <i data-lucide="graduation-cap" class="w-4 h-4 text-emerald-600"></i>
                             <span>중·고등 내신 독해 단원 보기</span>
+                        </button>
+                        <button type="button" onclick="window.app && window.app.switchTab('ebook')" class="px-4 py-2.5 rounded-xl border border-amber-200 bg-amber-50/70 hover:bg-amber-100 text-amber-950 font-serif font-bold text-xs flex items-center gap-1.5 shadow-xs transition-all cursor-pointer">
+                            <i data-lucide="book-marked" class="w-4 h-4 text-amber-700"></i>
+                            <span>e-Book 도서관 (비문학 12대 시리즈)</span>
                         </button>
                     </div>
                 </div>

@@ -87,6 +87,9 @@
                     <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1.5 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="reading">
                         <span class="flex items-center gap-1.5"><i data-lucide="graduation-cap" class="w-4 h-4 text-indigo-700 shrink-0"></i> 내신 대비</span>
                     </button>
+                    <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1.5 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="ebook">
+                        <span class="flex items-center gap-1.5"><i data-lucide="book-marked" class="w-4 h-4 text-amber-600 shrink-0"></i> e-Book 도서관</span>
+                    </button>
                     <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1.5 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors border-b-2 border-transparent" data-tab="expressions">
                         <span class="flex items-center gap-1.5"><i data-lucide="sparkles" class="w-4 h-4 text-amber-600 shrink-0"></i> 원어민 표현</span>
                     </button>
@@ -141,6 +144,7 @@
             <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="review">🔄 망각곡선복습</button>
             <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="grammar">📗 문법클리닉</button>
             <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="reading">🎓 내신대비</button>
+            <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="ebook">📚 e-Book도서관</button>
             <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="expressions">💡 원어민표현</button>
             <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="dictionary">📖 단어사전</button>
             <button class="nav-tab-btn whitespace-nowrap px-2.5 py-1 rounded bg-slate-100" data-tab="planner">📅 학습플래너</button>
@@ -2321,6 +2325,91 @@
             </div>
         </section>
 
+        <!-- ======================================================================
+             TAB: 비문학 원서 e-Book 도서관 (Veritas Non-Fiction e-Library)
+             ====================================================================== -->
+        <section id="tab-ebook" class="tab-content hidden space-y-8">
+            <!-- 1. 도서관 상단 히어로 배너 -->
+            <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-white p-6 sm:p-8 border border-slate-800 shadow-xl">
+                <div class="relative z-10 max-w-3xl space-y-3">
+                    <div class="flex items-center gap-2 flex-wrap">
+                        <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-400/40 text-xs font-mono font-bold tracking-tight">
+                            <i data-lucide="book-marked" class="w-3.5 h-3.5"></i>
+                            <span>VERITAS NON-FICTION e-LIBRARY</span>
+                        </span>
+                        <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white/10 text-white border border-white/20 text-xs font-mono font-bold">
+                            12대 시리즈 • 실감형 디지털 리더기
+                        </span>
+                    </div>
+                    <h2 class="font-serif font-black text-2xl sm:text-3xl lg:text-4xl leading-tight tracking-tight text-white">
+                        베리타스 비문학 원서 e-Book 도서관
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+                        역사(시대·사건·인물 6개), 사회(경제·정치·지리·문화 4개), 과학(우주·생명 2개) 등 영미권 지성의 보고를 실제 책을 넘기듯 생생한 삽화와 함께 읽고 6단계로 마스터하세요.
+                    </p>
+                </div>
+                <!-- 우측 배경 장식 아이콘 -->
+                <div class="absolute -right-8 -bottom-10 opacity-10 pointer-events-none select-none text-white">
+                    <i data-lucide="book-open" class="w-64 h-64"></i>
+                </div>
+            </div>
+
+            <!-- 2. 서재 검색 및 다차원 필터 툴바 -->
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-4">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+                    <!-- 대주제 카테고리 탭 -->
+                    <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar">
+                        <button type="button" data-cat="all" onclick="window.ebookEngine.setCategoryFilter('all')" class="ebook-cat-btn px-3.5 py-1.5 rounded-xl font-serif font-bold text-xs bg-blue-900 text-white transition-all cursor-pointer shrink-0">
+                            전체 (12대 시리즈)
+                        </button>
+                        <button type="button" data-cat="history" onclick="window.ebookEngine.setCategoryFilter('history')" class="ebook-cat-btn px-3.5 py-1.5 rounded-xl font-serif font-bold text-xs bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all cursor-pointer shrink-0">
+                            🏛️ 역사 (6개)
+                        </button>
+                        <button type="button" data-cat="society" onclick="window.ebookEngine.setCategoryFilter('society')" class="ebook-cat-btn px-3.5 py-1.5 rounded-xl font-serif font-bold text-xs bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all cursor-pointer shrink-0">
+                            🌐 사회 (4개)
+                        </button>
+                        <button type="button" data-cat="science" onclick="window.ebookEngine.setCategoryFilter('science')" class="ebook-cat-btn px-3.5 py-1.5 rounded-xl font-serif font-bold text-xs bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all cursor-pointer shrink-0">
+                            🔬 과학 (2개)
+                        </button>
+                    </div>
+
+                    <!-- 실시간 검색창 -->
+                    <div class="relative w-full md:w-64">
+                        <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+                        <input id="ebook-shelf-search" type="text" placeholder="도서명 또는 시리즈 검색..." oninput="window.ebookEngine.setSearchQuery(this.value)" class="w-full pl-9 pr-3.5 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-800 placeholder-slate-400 outline-none focus:border-blue-900 focus:bg-white transition-all">
+                    </div>
+                </div>
+
+                <!-- 하위 필터 드롭다운 및 통계 -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+                    <div class="flex items-center gap-2 flex-wrap">
+                        <label class="text-slate-500 font-bold shrink-0">상세 필터:</label>
+                        <!-- 세부 시리즈 드롭다운 -->
+                        <select id="ebook-filter-series-select" onchange="window.ebookEngine.setSeriesFilter(this.value)" class="px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 text-slate-700 text-xs font-medium outline-none focus:border-blue-900 cursor-pointer">
+                            <option value="all">전체 시리즈 (12대 시리즈)</option>
+                        </select>
+                        <!-- 난이도 레벨 드롭다운 -->
+                        <select id="ebook-filter-level-select" onchange="window.ebookEngine.setLevelFilter(this.value)" class="px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 text-slate-700 text-xs font-medium outline-none focus:border-blue-900 cursor-pointer">
+                            <option value="all">전체 난이도</option>
+                            <option value="1">Level 1 (Foundation - 중2~중3)</option>
+                            <option value="2">Level 2 (Intermediate - 고1)</option>
+                            <option value="3">Level 3 (Advanced - 고2~수능1등급)</option>
+                            <option value="4">Level 4 (Mastery - 원서완독)</option>
+                        </select>
+                    </div>
+
+                    <div id="ebook-shelf-stats">
+                        <!-- JS 렌더링 -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. 도서관 책장 카드 그리드 -->
+            <div id="ebook-library-shelf-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- JS 렌더링 -->
+            </div>
+        </section>
+
     </main>
 
     <!-- ======================================================================
@@ -3278,6 +3367,85 @@
     </div>
 
     <!-- ======================================================================
+         MODAL: 실감형 비문학 원서 e-Book 리더기 (e-Book Reader Modal)
+         ====================================================================== -->
+    <div id="modal-ebook-reader" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-2 sm:p-4">
+        <div class="relative w-full max-w-5xl h-[94vh] bg-white rounded-3xl shadow-2xl border border-slate-700/60 overflow-hidden flex flex-col animate-in fade-in zoom-in-95 duration-200">
+            <!-- 리더기 최상단 헤더 바 -->
+            <div class="p-3.5 sm:p-4 bg-slate-900 text-white flex items-center justify-between border-b border-slate-800 shrink-0 gap-3">
+                <!-- 좌측 도서 정보 -->
+                <div class="flex items-center gap-2.5 min-w-0">
+                    <div class="w-8 h-8 rounded-lg bg-amber-400/20 text-amber-300 border border-amber-400/30 flex items-center justify-center text-sm shrink-0">
+                        📖
+                    </div>
+                    <div class="min-w-0">
+                        <div class="flex items-center gap-1.5 flex-wrap">
+                            <span id="ebook-reader-series-badge" class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-white/10 text-white border border-white/20 truncate max-w-[150px]">
+                                시리즈
+                            </span>
+                            <span id="ebook-reader-level-badge" class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30">
+                                Level
+                            </span>
+                        </div>
+                        <h3 id="ebook-reader-title" class="font-serif font-black text-sm sm:text-base text-white truncate max-w-[240px] sm:max-w-md lg:max-w-lg">
+                            Book Title
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- 중앙 6단계 스텝퍼 버튼 바 -->
+                <div class="hidden lg:flex items-center gap-1 bg-slate-800/80 p-1 rounded-xl border border-slate-700/80 text-[11px] font-serif font-bold">
+                    <button type="button" data-step="1" onclick="window.ebookEngine.goToStep(1)" class="ebook-step-btn px-2.5 py-1 rounded-lg border transition-all cursor-pointer">
+                        1. 배경지식
+                    </button>
+                    <button type="button" data-step="2" onclick="window.ebookEngine.goToStep(2)" class="ebook-step-btn px-2.5 py-1 rounded-lg border transition-all cursor-pointer">
+                        2. 필수어휘
+                    </button>
+                    <button type="button" data-step="3" onclick="window.ebookEngine.goToStep(3)" class="ebook-step-btn px-2.5 py-1 rounded-lg border transition-all cursor-pointer">
+                        3. 본문독해
+                    </button>
+                    <button type="button" data-step="4" onclick="window.ebookEngine.goToStep(4)" class="ebook-step-btn px-2.5 py-1 rounded-lg border transition-all cursor-pointer">
+                        4. 구조요약
+                    </button>
+                    <button type="button" data-step="5" onclick="window.ebookEngine.goToStep(5)" class="ebook-step-btn px-2.5 py-1 rounded-lg border transition-all cursor-pointer">
+                        5. 심층퀴즈
+                    </button>
+                    <button type="button" data-step="6" onclick="window.ebookEngine.goToStep(6)" class="ebook-step-btn px-2.5 py-1 rounded-lg border transition-all cursor-pointer">
+                        6. 명문장/출처
+                    </button>
+                </div>
+
+                <!-- 우측 모달 닫기 버튼 -->
+                <div class="flex items-center gap-2 shrink-0">
+                    <button type="button" onclick="window.ebookEngine.closeReader()" class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer" title="리더기 닫기">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 모바일용 상단 스텝퍼 바 -->
+            <div class="lg:hidden flex items-center justify-between overflow-x-auto p-2 bg-slate-800 text-white text-[11px] font-bold border-b border-slate-700 gap-1 shrink-0 no-scrollbar">
+                <button type="button" data-step="1" onclick="window.ebookEngine.goToStep(1)" class="ebook-step-btn whitespace-nowrap px-2 py-1 rounded border">1.배경</button>
+                <button type="button" data-step="2" onclick="window.ebookEngine.goToStep(2)" class="ebook-step-btn whitespace-nowrap px-2 py-1 rounded border">2.어휘</button>
+                <button type="button" data-step="3" onclick="window.ebookEngine.goToStep(3)" class="ebook-step-btn whitespace-nowrap px-2 py-1 rounded border">3.독해</button>
+                <button type="button" data-step="4" onclick="window.ebookEngine.goToStep(4)" class="ebook-step-btn whitespace-nowrap px-2 py-1 rounded border">4.요약</button>
+                <button type="button" data-step="5" onclick="window.ebookEngine.goToStep(5)" class="ebook-step-btn whitespace-nowrap px-2 py-1 rounded border">5.퀴즈</button>
+                <button type="button" data-step="6" onclick="window.ebookEngine.goToStep(6)" class="ebook-step-btn whitespace-nowrap px-2 py-1 rounded border">6.출처</button>
+            </div>
+
+            <!-- 리더기 본문 스크롤 영역 (테마 배경 적용) -->
+            <div id="ebook-reader-content-scroll" class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 transition-colors duration-200">
+                <div id="ebook-step-view-1" class="hidden"></div>
+                <div id="ebook-step-view-2" class="hidden"></div>
+                <div id="ebook-step-view-3" class="hidden"></div>
+                <div id="ebook-step-view-4" class="hidden"></div>
+                <div id="ebook-step-view-5" class="hidden"></div>
+                <div id="ebook-step-view-6" class="hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================================
          내신 독해 지문 단어 인스펙터 & 단어 사전 추가 모달 (Word Inspector Modal)
          ====================================================================== -->
     <div id="modal-reading-word-inspector" class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs hidden flex items-center justify-center p-4">
@@ -3844,6 +4012,9 @@
     <script src="data/writing_clinic_data.js"></script>
     <script src="js/grammar_clinic.js?v=20261120_v3"></script>
     <script src="js/clinic_studio.js?v=1795127808"></script>
+    <!-- 베리타스 비문학 원서 e-Book 도서관 (Veritas e-Library) 데이터 및 엔진 -->
+    <script src="data/ebook_library_data.js?v=20261123"></script>
+    <script src="js/ebook.js?v=20261123"></script>
     <script src="js/app.js"></script>
 
     <!-- ======================================================================
