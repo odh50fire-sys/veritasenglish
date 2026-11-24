@@ -617,7 +617,7 @@ class EBookEngine {
                             ${book.title}
                         </h3>
                         <p class="text-xs text-slate-300">
-                            ${book.subtitle}
+                            ${book.subtitle || book.subTitle || (book.primer && book.primer.keyConcept) || ''}
                         </p>
                     </div>
                 </div>
@@ -698,7 +698,7 @@ class EBookEngine {
                                     ${v.meaning}
                                 </p>
                                 <p class="text-[11px] font-serif italic text-slate-600 bg-slate-50 p-2 rounded-lg border border-slate-100">
-                                    "${v.contextSentence}"
+                                    "${v.contextSentence || v.example || ''}"
                                 </p>
                             </div>
                         `;
@@ -891,7 +891,7 @@ class EBookEngine {
                             ${b.title}
                         </h2>
                         <p class="text-xs ${subColor} font-sans leading-relaxed">
-                            ${b.subTitle}
+                            ${b.subTitle || b.subtitle || ''}
                         </p>
                     </div>
 
@@ -901,7 +901,7 @@ class EBookEngine {
 
                     <div class="p-3.5 rounded-xl bg-stone-500/10 border border-stone-300/40 text-xs ${bodyColor} leading-relaxed font-sans">
                         <span class="font-bold text-amber-900 block mb-1">📖 Volume Overview:</span>
-                        ${b.summary}
+                        ${b.summary || (b.primer && b.primer.context) || ''}
                     </div>
 
                     <div class="text-center pt-2">
@@ -976,9 +976,12 @@ class EBookEngine {
                     `;
                 } else if (b.type === 'paragraph') {
                     const interactiveEn = this.makeWordsClickable(b.en, b.en, b.ko);
-                    const chunksHtml = this.showSlash && b.chunks ? `
+                    const formattedChunks = Array.isArray(b.chunks)
+                        ? b.chunks.map(c => typeof c === 'string' ? c : (c.en ? `${c.en} (${c.ko || ''})` : '')).filter(Boolean).join(' / ')
+                        : '';
+                    const chunksHtml = this.showSlash && formattedChunks ? `
                         <div class="text-[11px] font-mono text-stone-500 bg-stone-500/10 px-2 py-0.5 rounded border border-stone-300/40 my-1 leading-relaxed">
-                            <span class="font-bold text-stone-700">구문 끊기:</span> ${b.chunks.join(' ')}
+                            <span class="font-bold text-stone-700">구문 끊기:</span> ${formattedChunks}
                         </div>
                     ` : '';
                     const koHtml = this.showKorean ? `
@@ -1225,7 +1228,7 @@ class EBookEngine {
                             </span>
                             <div>
                                 <h4 class="font-bold text-slate-900 text-sm">${node.label}</h4>
-                                <p class="text-xs text-slate-600 leading-relaxed font-sans">${node.desc}</p>
+                                <p class="text-xs text-slate-600 leading-relaxed font-sans">${node.desc || node.description || ''}</p>
                             </div>
                         </div>
                     `).join('')}
@@ -1262,7 +1265,7 @@ class EBookEngine {
     renderStep5Quizzes() {
         const container = document.getElementById('ebook-step-view-5');
         if (!container || !this.currentBook) return;
-        const quizzes = this.currentBook.quizzes || [];
+        const quizzes = this.currentBook.quizzes || this.currentBook.quiz || [];
 
         container.innerHTML = `
             <div class="max-w-2xl mx-auto space-y-6 animate-in fade-in duration-200">
@@ -1283,15 +1286,17 @@ class EBookEngine {
                 <!-- 퀴즈 리스트 -->
                 <div class="space-y-6">
                     ${quizzes.map((q, idx) => {
-                        const userAns = this.userQuizAnswers[q.id];
+                        const quizId = q.id !== undefined ? q.id : idx;
+                        const userAns = this.userQuizAnswers[quizId];
                         const isSubmitted = userAns !== undefined;
                         const isCorrect = userAns === q.answer;
+                        const qTypeLabel = (q.type || 'COMPREHENSION').replace('_', ' ').toUpperCase();
 
                         return `
                             <div class="p-5 rounded-2xl bg-white border ${isSubmitted ? (isCorrect ? 'border-emerald-300 bg-emerald-50/20' : 'border-red-300 bg-red-50/20') : 'border-slate-200'} shadow-xs space-y-3">
                                 <div class="flex items-center justify-between">
                                     <span class="px-2 py-0.5 rounded text-[10px] font-bold font-mono ${isSubmitted ? (isCorrect ? 'bg-emerald-100 text-emerald-900' : 'bg-red-100 text-red-900') : 'bg-slate-100 text-slate-600'}">
-                                        Q${idx + 1} • ${q.type.replace('_', ' ').toUpperCase()}
+                                        Q${idx + 1} • ${qTypeLabel}
                                     </span>
                                     ${isSubmitted ? `
                                         <span class="text-xs font-bold ${isCorrect ? 'text-emerald-700' : 'text-red-700'}">
@@ -1319,7 +1324,7 @@ class EBookEngine {
                                         }
 
                                         return `
-                                            <button type="button" onclick="window.ebookEngine.answerQuiz('${q.id}', ${optIdx})" class="w-full p-3 rounded-xl border text-left text-xs transition-all flex items-start gap-2.5 cursor-pointer ${btnClass}" ${isSubmitted ? 'disabled' : ''}>
+                                            <button type="button" onclick="window.ebookEngine.answerQuiz('${quizId}', ${optIdx})" class="w-full p-3 rounded-xl border text-left text-xs transition-all flex items-start gap-2.5 cursor-pointer ${btnClass}" ${isSubmitted ? 'disabled' : ''}>
                                                 <span class="w-5 h-5 rounded-full border border-current font-mono font-bold flex items-center justify-center shrink-0 text-[10px]">
                                                     ${['A', 'B', 'C', 'D'][optIdx]}
                                                 </span>
@@ -1367,8 +1372,29 @@ class EBookEngine {
         const container = document.getElementById('ebook-step-view-6');
         if (!container || !this.currentBook) return;
         const book = this.currentBook;
-        const quotes = book.keyQuotes || [];
-        const credits = book.content?.photoCredits || [];
+        
+        let quotes = [];
+        if (Array.isArray(book.keyQuotes) && book.keyQuotes.length > 0) {
+            quotes = book.keyQuotes;
+        } else if (Array.isArray(book.highlightQuote)) {
+            quotes = book.highlightQuote;
+        } else if (book.highlightQuote) {
+            quotes = [book.highlightQuote];
+        }
+        quotes = quotes.map(q => ({
+            en: q.en || q.quote || '',
+            ko: q.ko || q.translation || '',
+            author: q.author || ''
+        }));
+
+        let credits = [];
+        if (Array.isArray(book.content?.photoCredits)) {
+            credits = book.content.photoCredits;
+        } else if (Array.isArray(book.photoCredits)) {
+            credits = book.photoCredits;
+        } else if (typeof book.photoCredits === 'string') {
+            credits = [{ figureNum: 'Primary Plate', title: 'Archival & Curatorial Sources', license: 'Verified Source', source: book.photoCredits, description: 'Historical artifacts, architectural photographs and cultural illustrations.' }];
+        }
         const isCompleted = this.readingProgress[book.id]?.completed;
 
         container.innerHTML = `
@@ -1392,6 +1418,7 @@ class EBookEngine {
                             <p class="font-serif font-black text-lg text-amber-950 leading-relaxed italic">
                                 "${q.en}"
                             </p>
+                            ${q.author ? `<p class="text-[11px] font-mono text-amber-800 font-bold">— ${q.author}</p>` : ''}
                             <p class="text-xs text-amber-900 font-sans leading-relaxed">
                                 해석: ${q.ko}
                             </p>
@@ -1438,6 +1465,18 @@ class EBookEngine {
                     <div class="space-y-2.5 text-xs">
                         ${credits.map(c => `
                             <div class="p-2.5 rounded-lg bg-white/80 border border-stone-200/80 space-y-1">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-bold font-mono text-stone-800">${c.figureNum || 'Figure'}: ${c.title || 'Source'}</span>
+                                    <span class="text-[10px] text-stone-500 font-mono">${c.license || 'License'}</span>
+                                </div>
+                                ${c.description ? `<p class="text-[11px] text-stone-600 font-sans leading-relaxed">${c.description}</p>` : ''}
+                                <div class="text-[10px] text-blue-700 font-mono truncate">
+                                    출처: ${c.source || ''}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
                                 <div class="flex items-center justify-between">
                                     <span class="font-bold font-mono text-stone-800">${c.figureNum}: ${c.title}</span>
                                     <span class="text-[10px] text-stone-500 font-mono">${c.license}</span>
