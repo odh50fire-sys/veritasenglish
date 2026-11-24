@@ -35921,3 +35921,5 @@ window.EBOOK_BOOKS_DATA = [
     "photoCredits": "Wikimedia Commons (Fuxing Hao High-Speed Train China, CC BY-SA 4.0)"
   }
 ];
+
+window.EBOOK_LIBRARY_DATA = window.EBOOK_BOOKS_DATA;

@@ -34,7 +34,7 @@ class EBookEngine {
 
     init() {
         this.seriesList = window.EBOOK_SERIES_DATA || [];
-        this.books = window.EBOOK_LIBRARY_DATA || [];
+        this.books = window.EBOOK_LIBRARY_DATA || window.EBOOK_BOOKS_DATA || [];
         this.loadProgress();
         this.renderLibrary();
 
@@ -116,7 +116,7 @@ class EBookEngine {
                 <div class="flex items-center gap-2 flex-wrap">
                     <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-900 border border-blue-200 text-xs font-bold font-mono">
                         <i data-lucide="book-marked" class="w-3.5 h-3.5 text-blue-700"></i>
-                        <span>보유 장서: 총 ${this.books.length}권 (12대 시리즈)</span>
+                        <span>보유 장서: 총 ${this.books.length}권 (${this.seriesList.length}대 시리즈)</span>
                     </span>
                     <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-900 border border-emerald-200 text-xs font-bold font-mono">
                         <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-700"></i>
