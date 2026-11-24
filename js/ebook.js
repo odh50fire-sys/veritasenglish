@@ -132,9 +132,25 @@ class EBookEngine {
 
         // 시리즈 셀렉트 드롭다운 동기화
         const seriesSelect = document.getElementById('ebook-filter-series-select');
-        if (seriesSelect && seriesSelect.options.length <= 1) {
-            seriesSelect.innerHTML = `<option value="all">전체 시리즈 (12대 시리즈)</option>` +
-                this.seriesList.map(s => `<option value="${s.id}">[${s.shortName}] ${s.name}</option>`).join('');
+        if (seriesSelect) {
+            const availableSeries = this.currentCategoryFilter === 'all'
+                ? this.seriesList
+                : this.seriesList.filter(s => s.category === this.currentCategoryFilter);
+            
+            const currentSelected = this.currentSeriesFilter;
+            let optionsHtml = `<option value="all">전체 시리즈 (${availableSeries.length}개 시리즈)</option>`;
+            optionsHtml += availableSeries.map(s => `<option value="${s.id}">[${s.shortName}] ${s.name}</option>`).join('');
+            
+            if (seriesSelect.getAttribute('data-last-cat') !== this.currentCategoryFilter) {
+                seriesSelect.innerHTML = optionsHtml;
+                seriesSelect.setAttribute('data-last-cat', this.currentCategoryFilter);
+                if (availableSeries.some(s => s.id === currentSelected)) {
+                    seriesSelect.value = currentSelected;
+                } else {
+                    seriesSelect.value = 'all';
+                    this.currentSeriesFilter = 'all';
+                }
+            }
         }
 
         // 도서 카드 그리드 렌더링
@@ -315,7 +331,10 @@ class EBookEngine {
         const searchInput = document.getElementById('ebook-shelf-search');
         if (searchInput) searchInput.value = '';
         const seriesSelect = document.getElementById('ebook-filter-series-select');
-        if (seriesSelect) seriesSelect.value = 'all';
+        if (seriesSelect) {
+            seriesSelect.removeAttribute('data-last-cat');
+            seriesSelect.value = 'all';
+        }
         const levelSelect = document.getElementById('ebook-filter-level-select');
         if (levelSelect) levelSelect.value = 'all';
 

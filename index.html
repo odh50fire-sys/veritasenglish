@@ -2343,14 +2343,14 @@
                             <span>VERITAS NON-FICTION e-LIBRARY</span>
                         </span>
                         <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white/10 text-white border border-white/20 text-xs font-mono font-bold">
-                            12대 시리즈 • 실감형 디지털 리더기
+                            22대 시리즈 (222권) • 실감형 디지털 리더기
                         </span>
                     </div>
                     <h2 class="font-serif font-black text-2xl sm:text-3xl lg:text-4xl leading-tight tracking-tight text-white">
                         베리타스 비문학 원서 e-Book 도서관
                     </h2>
                     <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
-                        역사(시대·사건·인물 6개), 사회(경제·정치·지리·문화 4개), 과학(우주·생명 2개) 등 영미권 지성의 보고를 실제 책을 넘기듯 생생한 삽화와 함께 읽고 6단계로 마스터하세요.
+                        역사(6개), 사회(4개), 과학(2개), 문화·예술·생태(2개) 및 8대 지정 국가(한국·일본·이탈리아·미국·프랑스·영국·중국)의 역사·지리·명소·문화 심층 탐구까지 총 22대 시리즈 222권을 실제 책을 넘기듯 생생한 삽화와 함께 읽고 6단계로 마스터하세요.
                     </p>
                 </div>
                 <!-- 우측 배경 장식 아이콘 -->
@@ -2365,7 +2365,7 @@
                     <!-- 대주제 카테고리 탭 -->
                     <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar">
                         <button type="button" data-cat="all" onclick="window.ebookEngine.setCategoryFilter('all')" class="ebook-cat-btn px-3.5 py-1.5 rounded-xl font-serif font-bold text-xs bg-blue-900 text-white transition-all cursor-pointer shrink-0">
-                            전체 (12대 시리즈)
+                            전체 (22대 시리즈 / 222권)
                         </button>
                         <button type="button" data-cat="history" onclick="window.ebookEngine.setCategoryFilter('history')" class="ebook-cat-btn px-3.5 py-1.5 rounded-xl font-serif font-bold text-xs bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all cursor-pointer shrink-0">
                             🏛️ 역사 (6개)
@@ -2375,6 +2375,12 @@
                         </button>
                         <button type="button" data-cat="science" onclick="window.ebookEngine.setCategoryFilter('science')" class="ebook-cat-btn px-3.5 py-1.5 rounded-xl font-serif font-bold text-xs bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all cursor-pointer shrink-0">
                             🔬 과학 (2개)
+                        </button>
+                        <button type="button" data-cat="culture" onclick="window.ebookEngine.setCategoryFilter('culture')" class="ebook-cat-btn px-3.5 py-1.5 rounded-xl font-serif font-bold text-xs bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all cursor-pointer shrink-0">
+                            🎨 예술·생태 (2개)
+                        </button>
+                        <button type="button" data-cat="country" onclick="window.ebookEngine.setCategoryFilter('country')" class="ebook-cat-btn px-3.5 py-1.5 rounded-xl font-serif font-bold text-xs bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all cursor-pointer shrink-0">
+                            🌍 8대 국가 탐구 (8개)
                         </button>
                     </div>
 
@@ -2391,7 +2397,7 @@
                         <label class="text-slate-500 font-bold shrink-0">상세 필터:</label>
                         <!-- 세부 시리즈 드롭다운 -->
                         <select id="ebook-filter-series-select" onchange="window.ebookEngine.setSeriesFilter(this.value)" class="px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 text-slate-700 text-xs font-medium outline-none focus:border-blue-900 cursor-pointer">
-                            <option value="all">전체 시리즈 (12대 시리즈)</option>
+                            <option value="all">전체 시리즈 (22대 시리즈 / 222권)</option>
                         </select>
                         <!-- 난이도 레벨 드롭다운 -->
                         <select id="ebook-filter-level-select" onchange="window.ebookEngine.setLevelFilter(this.value)" class="px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 text-slate-700 text-xs font-medium outline-none focus:border-blue-900 cursor-pointer">
@@ -4133,8 +4139,8 @@
     <script src="js/grammar_clinic.js?v=20261120_v3"></script>
     <script src="js/clinic_studio.js?v=1795127808"></script>
     <!-- 베리타스 비문학 원서 e-Book 도서관 (Veritas e-Library) 데이터 및 엔진 -->
-    <script src="data/ebook_library_data.js?v=20261124_v2"></script>
-    <script src="js/ebook.js?v=20261124_v2"></script>
+    <script src="data/ebook_library_data.js?v=20261124_v4_222books"></script>
+    <script src="js/ebook.js?v=20261124_v4_222books"></script>
     <script src="js/app.js"></script>
 
     <!-- ======================================================================
