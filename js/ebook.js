@@ -14,7 +14,7 @@ class EBookEngine {
         this.searchQuery = '';
 
         this.currentBook = null;
-        this.currentStep = 3; // 1: 배경, 2: 어휘, 3: e-Book독해, 4: 요약맵, 5: 퀴즈, 6: 명문장&출처
+        this.currentStep = 1; // 1: 어휘15, 2: e-Book독해, 3: FlowChart, 4: 수능10제, 5: 서술형영작
         this.readerTheme = 'sepia'; // 'paper', 'sepia', 'dark'
         this.readerSpreadMode = 'spread'; // 'spread' (양면 2-Page 펼침) | 'single' (단면 집중 모드)
         this.fontSize = 16; // px
@@ -42,7 +42,7 @@ class EBookEngine {
         if (!this._hasBoundKeyboard) {
             document.addEventListener('keydown', (e) => {
                 const modal = document.getElementById('modal-ebook-reader');
-                if (modal && !modal.classList.contains('hidden') && this.currentStep === 3) {
+                if (modal && !modal.classList.contains('hidden') && this.currentStep === 2) {
                     if (e.key === 'ArrowLeft') {
                         e.preventDefault();
                         this.flipPage(-1);
@@ -508,11 +508,15 @@ class EBookEngine {
         if (!book) return;
 
         this.currentBook = book;
-        this.currentStep = 1; // 1단계 30초 배경지식 & 탐구 화두부터 자연스럽게 시작
+        this.currentStep = 1;
         this.currentSpreadIndex = 0;
         this.paginatedPages = this.paginateBook(book);
         this.currentAudioParagraphIndex = 0;
         this.isPlayingAudio = false;
+        this.userQuizAnswers = {};
+        this.flowChartAnswers = {};
+        this.flowChartChecked = false;
+        this.writingAnswers = {};
 
         const modal = document.getElementById('modal-ebook-reader');
         if (!modal) return;
@@ -554,6 +558,10 @@ class EBookEngine {
     // ------------------------------------------------------------------------
     // 6단계 학습 플로우 네비게이션
     // ------------------------------------------------------------------------
+    
+    // ------------------------------------------------------------------------
+    // 5단계 학습 플로우 네비게이션
+    // ------------------------------------------------------------------------
     goToStep(stepNum) {
         this.currentStep = stepNum;
         this.stopAudio();
@@ -570,8 +578,8 @@ class EBookEngine {
             btn.classList.toggle('border-slate-200', !isActive);
         });
 
-        // 각 스텝 뷰 컨테이너 토글
-        for (let i = 1; i <= 6; i++) {
+        // 각 스텝 뷰 컨테이너 토글 (1~5)
+        for (let i = 1; i <= 5; i++) {
             const stepEl = document.getElementById(`ebook-step-view-${i}`);
             if (stepEl) {
                 stepEl.classList.toggle('hidden', i !== stepNum);
@@ -580,12 +588,11 @@ class EBookEngine {
 
         // 스텝별 콘텐츠 렌더링
         switch (stepNum) {
-            case 1: this.renderStep1Primer(); break;
-            case 2: this.renderStep2Vocabulary(); break;
-            case 3: this.renderStep3Reading(); break;
-            case 4: this.renderStep4ConceptMap(); break;
-            case 5: this.renderStep5Quizzes(); break;
-            case 6: this.renderStep6QuotesAndCredits(); break;
+            case 1: this.renderStep1Vocabulary(); break;
+            case 2: this.renderStep2Reading(); break;
+            case 3: this.renderStep3FlowChart(); break;
+            case 4: this.renderStep4Quizzes(); break;
+            case 5: this.renderStep5Writing(); break;
         }
 
         // 스크롤 상단으로
@@ -596,122 +603,86 @@ class EBookEngine {
     }
 
     // ------------------------------------------------------------------------
-    // STEP 1: 30초 배경지식 & 탐구 화두 (Primer)
+    // STEP 1: 본문 실존 필수 어휘 15선 (Target Vocabulary 15)
     // ------------------------------------------------------------------------
-    renderStep1Primer() {
+    renderStep1Vocabulary() {
         const container = document.getElementById('ebook-step-view-1');
-        if (!container || !this.currentBook) return;
-        const book = this.currentBook;
-        const primer = book.primer || { keyConcept: '핵심 배경지식', context: '배경 설명', bigQuestion: '탐구 화두' };
-
-        container.innerHTML = `
-            <div class="max-w-2xl mx-auto space-y-6 animate-in fade-in duration-200">
-                <!-- 상단 비주얼 히어로 카드 -->
-                <div class="relative rounded-2xl overflow-hidden shadow-lg border border-slate-200">
-                    <img src="${book.coverImage}" alt="${book.title}" class="w-full h-56 object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent flex flex-col justify-end p-6 text-white space-y-2">
-                        <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold bg-amber-500/30 text-amber-300 border border-amber-400/40 w-fit">
-                            STEP 1 • PRE-READING ACTIVATION
-                        </span>
-                        <h3 class="font-serif font-black text-2xl leading-tight">
-                            ${book.title}
-                        </h3>
-                        <p class="text-xs text-slate-300">
-                            ${book.subtitle || book.subTitle || (book.primer && book.primer.keyConcept) || ''}
-                        </p>
-                    </div>
-                </div>
-
-                <!-- 핵심 탐구 화두 (Big Question) -->
-                <div class="p-5 rounded-2xl bg-amber-500/10 border-2 border-amber-500/30 space-y-2">
-                    <div class="flex items-center gap-2 text-amber-900 font-bold text-xs uppercase tracking-wider">
-                        <i data-lucide="help-circle" class="w-4 h-4 text-amber-700"></i>
-                        <span>오늘의 핵심 탐구 화두 (The Big Question)</span>
-                    </div>
-                    <p class="font-serif font-black text-base text-amber-950 leading-relaxed italic">
-                        "${primer.bigQuestion}"
-                    </p>
-                </div>
-
-                <!-- 시대적/학술적 맥락 3줄 브리핑 -->
-                <div class="p-5 rounded-2xl bg-white/95 border border-slate-200 shadow-xs space-y-3">
-                    <div class="flex items-center gap-2 text-blue-900 font-bold text-xs">
-                        <i data-lucide="compass" class="w-4 h-4 text-blue-700"></i>
-                        <span>배경지식 핵심 개념: ${primer.keyConcept}</span>
-                    </div>
-                    <p class="text-sm text-slate-700 leading-relaxed font-sans">
-                        ${primer.context}
-                    </p>
-                </div>
-
-                <!-- 다음 단계 유도 버튼 -->
-                <div class="pt-2 flex justify-end">
-                    <button type="button" onclick="window.ebookEngine.goToStep(2)" class="px-5 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-xs flex items-center gap-2 shadow-sm transition-all cursor-pointer">
-                        <span>2단계: 필수 원서 어휘 미리보기</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </button>
-                </div>
-            </div>
-        `;
-    }
-
-    // ------------------------------------------------------------------------
-    // STEP 2: 원서 필수 어휘 & 콜로케이션 (Vocabulary)
-    // ------------------------------------------------------------------------
-    renderStep2Vocabulary() {
-        const container = document.getElementById('ebook-step-view-2');
         if (!container || !this.currentBook) return;
         const vocaList = this.currentBook.vocabulary || [];
 
         container.innerHTML = `
-            <div class="max-w-2xl mx-auto space-y-6 animate-in fade-in duration-200">
-                <div class="flex items-center justify-between pb-3 border-b border-slate-200">
-                    <div>
-                        <h3 class="font-serif font-black text-xl text-slate-900">
-                            🔑 원서 필수 어휘 & 콜로케이션
+            <div class="max-w-4xl mx-auto space-y-6 animate-in fade-in duration-200">
+                <!-- 상단 헤더 배너 -->
+                <div class="p-5 rounded-2xl bg-gradient-to-r from-blue-950 via-slate-900 to-indigo-950 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-slate-800 shadow-md">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-400/20 text-amber-300 border border-amber-400/40">
+                                STEP 1 • TARGET VOCABULARY
+                            </span>
+                            <span class="text-xs text-slate-300 font-mono">본문 실존 100% 매칭</span>
+                        </div>
+                        <h3 class="font-serif font-black text-xl text-white">
+                            🔑 본문 실존 핵심 어휘 15선
                         </h3>
-                        <p class="text-xs text-slate-500 mt-0.5">
-                            본문에 등장할 핵심 학술·주제 어휘 ${vocaList.length}개를 먼저 익혀 원서 독해 속도를 2배 높입니다.
+                        <p class="text-xs text-slate-300 leading-relaxed font-sans">
+                            본문에 실제로 등장하는 핵심 개념어와 내신·수능 빈출 고난도 어휘 15개를 먼저 익혀 원서 독해 속도를 2배 높입니다.
                         </p>
                     </div>
-                    <span class="px-2.5 py-1 rounded-full bg-blue-100 text-blue-900 text-xs font-mono font-bold">
-                        총 ${vocaList.length}개 어휘
-                    </span>
+                    <div class="shrink-0 flex sm:flex-col items-center sm:items-end justify-between gap-2 border-t sm:border-t-0 border-white/10 pt-2 sm:pt-0">
+                        <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-200 text-xs font-mono font-bold border border-blue-400/30">
+                            총 ${vocaList.length}개 어휘 완비
+                        </span>
+                        <button type="button" onclick="window.ebookEngine.goToStep(2)" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-serif font-bold text-xs flex items-center gap-1.5 shadow-sm transition-all cursor-pointer">
+                            <span>2단계 본문 독해 →</span>
+                        </button>
+                    </div>
                 </div>
 
-                <!-- 어휘 카드 그리드 -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-                    ${vocaList.map(v => {
-                        const safeWord = (v.word || '').replace(/'/g, "\\'");
+                <!-- 15개 어휘 카드 그리드 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
+                    ${vocaList.map((v, idx) => {
+                        const safeWord = (v.word || '').replace(/'/g, "\'");
                         return `
-                            <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-2 hover:border-blue-400 transition-all">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center gap-1.5">
-                                        <span class="font-serif font-black text-base text-slate-900">${v.word}</span>
-                                        <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-800 border border-blue-200 font-mono">${v.pos}</span>
+                            <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-2.5 hover:border-blue-400 hover:shadow-xs transition-all flex flex-col justify-between">
+                                <div class="space-y-1.5">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-1.5 min-w-0">
+                                            <span class="w-5 h-5 rounded-md bg-slate-100 text-slate-600 font-mono text-[11px] font-bold flex items-center justify-center shrink-0">
+                                                ${idx + 1}
+                                            </span>
+                                            <span class="font-serif font-black text-base text-slate-900 truncate">${v.word}</span>
+                                            <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-800 border border-blue-200 font-mono shrink-0">${v.pos || 'n.'}</span>
+                                        </div>
+                                        <button type="button" onclick="if(window.tts) window.tts.speak('${safeWord}', 'en-US')" class="p-1 rounded-md text-blue-700 hover:bg-blue-50 transition-colors cursor-pointer shrink-0" title="원어민 발음 듣기">
+                                            <i data-lucide="volume-2" class="w-4 h-4"></i>
+                                        </button>
                                     </div>
-                                    <button type="button" onclick="if(window.tts) window.tts.speak('${safeWord}', 'en-US')" class="p-1 rounded-md text-blue-700 hover:bg-blue-50 transition-colors cursor-pointer" title="발음 듣기">
-                                        <i data-lucide="volume-2" class="w-4 h-4"></i>
-                                    </button>
+
+                                    <div class="flex items-center gap-1.5 flex-wrap">
+                                        <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                                            ${v.meaning}
+                                        </span>
+                                        ${v.tag ? `
+                                            <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-purple-50 text-purple-700 border border-purple-200">
+                                                ${v.tag}
+                                            </span>
+                                        ` : ''}
+                                    </div>
                                 </div>
-                                <p class="text-xs font-bold text-emerald-800">
-                                    ${v.meaning}
-                                </p>
-                                <p class="text-[11px] font-serif italic text-slate-600 bg-slate-50 p-2 rounded-lg border border-slate-100">
-                                    "${v.contextSentence || v.example || ''}"
-                                </p>
+
+                                <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-100 text-[11px] text-slate-600 font-serif italic leading-relaxed">
+                                    <span class="font-bold text-slate-800 font-sans not-italic block mb-0.5">📖 본문 실제 문맥:</span>
+                                    "${v.example || v.contextSentence || ''}"
+                                </div>
                             </div>
                         `;
                     }).join('')}
                 </div>
 
-                <!-- 다음 단계 유도 버튼 -->
-                <div class="pt-2 flex items-center justify-between">
-                    <button type="button" onclick="window.ebookEngine.goToStep(1)" class="px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer">
-                        ← 이전: 배경지식
-                    </button>
-                    <button type="button" onclick="window.ebookEngine.goToStep(3)" class="px-5 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-xs flex items-center gap-2 shadow-sm transition-all cursor-pointer">
-                        <span>3단계: 실감형 e-Book 본문 읽기</span>
+                <!-- 하단 네비게이션 -->
+                <div class="pt-2 flex items-center justify-end">
+                    <button type="button" onclick="window.ebookEngine.goToStep(2)" class="px-6 py-3 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-xs flex items-center gap-2 shadow-md transition-all cursor-pointer">
+                        <span>2단계: 실감형 e-Book 본문 독해 시작하기</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
                 </div>
@@ -720,315 +691,11 @@ class EBookEngine {
     }
 
     // ------------------------------------------------------------------------
-    // STEP 3: 실감형 2-Page 책장 넘김 리더기 (Realistic Two-Page Book Flip Spread)
+    // STEP 2: 실감형 본문 심층 독해 (Dual-Page Deep Reading)
     // ------------------------------------------------------------------------
-    paginateBook(book) {
-        if (!book) return [];
-        const chapters = book.chapters || book.content?.chapters || [];
-        const pages = [];
+    renderStep2Reading() {
 
-        // 1페이지: 표지 및 인트로 페이지 (Title & Cover Page)
-        pages.push({
-            type: 'cover',
-            pageNumber: 1,
-            chapterNum: '',
-            chapterTitle: 'Veritas Book Volume',
-            book: book
-        });
-
-        // 챕터별 콘텐츠를 논리적 종이 책 페이지 크기로 분할
-        chapters.forEach((chap, chapIdx) => {
-            let currentBlocks = [];
-            let currentWords = 0;
-            const cNum = chap.chapterNum || chap.num || (chapIdx + 1);
-
-            // 챕터 헤더 블록
-            currentBlocks.push({
-                type: 'chapter_header',
-                chapterNum: cNum,
-                title: chap.title
-            });
-
-            (chap.paragraphs || []).forEach(p => {
-                if (p.isMedia) {
-                    if (currentBlocks.length > 1) {
-                        pages.push({
-                            type: 'content',
-                            chapterNum: chap.chapterNum,
-                            chapterTitle: chap.title,
-                            blocks: currentBlocks
-                        });
-                        currentBlocks = [];
-                        currentWords = 0;
-                    }
-                    currentBlocks.push({
-                        type: 'media',
-                        ...p
-                    });
-                } else {
-                    const wordCount = (p.en || '').split(/\s+/).length;
-                    if (currentWords + wordCount > 130 && currentBlocks.length > 0) {
-                        pages.push({
-                            type: 'content',
-                            chapterNum: chap.chapterNum,
-                            chapterTitle: chap.title,
-                            blocks: currentBlocks
-                        });
-                        currentBlocks = [];
-                        currentWords = 0;
-                    }
-                    currentBlocks.push({
-                        type: 'paragraph',
-                        ...p
-                    });
-                    currentWords += wordCount;
-                }
-            });
-
-            if (currentBlocks.length > 0) {
-                pages.push({
-                    type: 'content',
-                    chapterNum: chap.chapterNum,
-                    chapterTitle: chap.title,
-                    blocks: currentBlocks
-                });
-            }
-        });
-
-        // 양면 펼침 시 짝수 페이지로 마감
-        if (pages.length % 2 !== 0) {
-            pages.push({
-                type: 'colophon',
-                chapterNum: '',
-                chapterTitle: 'Synthesis & Reflection',
-                book: book
-            });
-        }
-
-        // 1-indexed 페이지 번호 부여
-        pages.forEach((p, idx) => {
-            p.pageNumber = idx + 1;
-        });
-
-        return pages;
-    }
-
-    flipPage(delta) {
-        if (!this.paginatedPages || this.paginatedPages.length === 0) return;
-        const totalSpreads = this.readerSpreadMode === 'spread' 
-            ? Math.ceil(this.paginatedPages.length / 2) 
-            : this.paginatedPages.length;
-
-        const nextIndex = this.currentSpreadIndex + delta;
-
-        if (nextIndex < 0) {
-            this.goToStep(2);
-            return;
-        }
-
-        if (nextIndex >= totalSpreads) {
-            this.goToStep(4);
-            return;
-        }
-
-        const stageEl = document.getElementById('ebook-spread-stage');
-        if (stageEl) {
-            stageEl.classList.remove('animate-page-turn-right', 'animate-page-turn-left');
-            void stageEl.offsetWidth;
-            stageEl.classList.add(delta > 0 ? 'animate-page-turn-right' : 'animate-page-turn-left');
-        }
-
-        this.currentSpreadIndex = nextIndex;
-        this.renderStep3Reading();
-    }
-
-    jumpToSpread(idx) {
-        if (idx < 0 || !this.paginatedPages) return;
-        const totalSpreads = this.readerSpreadMode === 'spread' 
-            ? Math.ceil(this.paginatedPages.length / 2) 
-            : this.paginatedPages.length;
-        if (idx >= totalSpreads) return;
-
-        this.currentSpreadIndex = idx;
-        this.renderStep3Reading();
-    }
-
-    toggleSpreadMode() {
-        this.readerSpreadMode = this.readerSpreadMode === 'spread' ? 'single' : 'spread';
-        this.currentSpreadIndex = 0;
-        this.renderStep3Reading();
-    }
-
-    renderSinglePageHtml(page, isLeft) {
-        if (!page) {
-            return `
-                <div class="p-6 md:p-8 flex flex-col justify-center items-center text-center opacity-40">
-                    <i data-lucide="book" class="w-12 h-12 text-stone-400 mb-2"></i>
-                    <p class="text-xs font-serif italic text-stone-500">End of Volume Spread</p>
-                </div>
-            `;
-        }
-
-        const isDark = this.readerTheme === 'dark';
-        const titleColor = isDark ? 'text-amber-100' : 'text-stone-900';
-        const bodyColor = isDark ? 'text-stone-200' : 'text-stone-800';
-        const subColor = isDark ? 'text-stone-400' : 'text-stone-500';
-        const footerBorder = isDark ? 'border-stone-800 text-stone-500' : 'border-stone-200/80 text-stone-400';
-
-        let innerContent = '';
-
-        if (page.type === 'cover') {
-            const b = page.book;
-            const lvlCfg = window.EBOOK_LEVEL_CONFIG ? window.EBOOK_LEVEL_CONFIG[b.level] : null;
-            innerContent = `
-                <div class="space-y-4 my-auto">
-                    <div class="text-center space-y-2">
-                        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono font-bold ${lvlCfg ? lvlCfg.badgeClass : 'bg-blue-100 text-blue-900'}">
-                            <i data-lucide="award" class="w-3.5 h-3.5"></i>
-                            <span>${lvlCfg ? lvlCfg.name : ('Level ' + b.level)} • ${b.ar || ''} • ${b.lexile || ''}</span>
-                        </div>
-                        <h2 class="font-serif font-black text-xl md:text-2xl ${titleColor} leading-tight">
-                            ${b.title}
-                        </h2>
-                        <p class="text-xs ${subColor} font-sans leading-relaxed">
-                            ${b.subTitle || b.subtitle || ''}
-                        </p>
-                    </div>
-
-                    <div class="my-4 rounded-xl overflow-hidden shadow-md border border-stone-300/60 max-h-56">
-                        <img src="${b.coverImage}" alt="${b.title}" class="w-full h-full object-cover">
-                    </div>
-
-                    <div class="p-3.5 rounded-xl bg-stone-500/10 border border-stone-300/40 text-xs ${bodyColor} leading-relaxed font-sans">
-                        <span class="font-bold text-amber-900 block mb-1">📖 Volume Overview:</span>
-                        ${b.summary || (b.primer && b.primer.context) || ''}
-                    </div>
-
-                    <div class="text-center pt-2">
-                        <span class="text-[11px] font-mono text-stone-500 flex items-center justify-center gap-1">
-                            <span>Chapter 1 시작하기</span>
-                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                        </span>
-                    </div>
-                </div>
-            `;
-        } else if (page.type === 'colophon') {
-            const b = page.book;
-            innerContent = `
-                <div class="space-y-5 my-auto">
-                    <div class="text-center pb-2 border-b border-stone-200/80">
-                        <span class="text-[10px] font-mono uppercase tracking-widest text-amber-700 font-bold">Veritas Non-Fiction Reader</span>
-                        <h3 class="font-serif font-black text-lg ${titleColor}">Reading Synthesis</h3>
-                    </div>
-
-                    ${b.highlightQuote ? `
-                        <div class="p-4 rounded-xl bg-amber-500/10 border border-amber-300/50 space-y-2">
-                            <span class="text-[10px] font-bold text-amber-800 uppercase flex items-center gap-1">
-                                <i data-lucide="quote" class="w-3 h-3"></i> Core Takeaway Quote
-                            </span>
-                            <p class="font-serif italic font-bold text-sm ${titleColor} leading-relaxed">
-                                "${b.highlightQuote.quote}"
-                            </p>
-                            <p class="text-xs ${subColor} font-sans">
-                                ${b.highlightQuote.translation}
-                            </p>
-                        </div>
-                    ` : ''}
-
-                    <div class="p-4 rounded-xl bg-blue-500/10 border border-blue-300/50 space-y-2">
-                        <h4 class="font-bold text-xs text-blue-900 flex items-center gap-1.5">
-                            <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
-                            <span>본문 독해 완료 (Next Step)</span>
-                        </h4>
-                        <p class="text-xs ${bodyColor} leading-relaxed font-sans">
-                            본문 챕터 전체를 모두 완독하였습니다. 우측 화살표(→)를 누르시거나 아래 버튼을 클릭하여 4단계 콘셉트 맵 요약으로 이동하세요!
-                        </p>
-                    </div>
-
-                    <button type="button" onclick="window.ebookEngine.goToStep(4)" class="w-full py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition-all cursor-pointer">
-                        <span>4단계: 콘셉트 맵 확인하기</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </button>
-                </div>
-            `;
-        } else {
-            let blocksHtml = '';
-            (page.blocks || []).forEach(b => {
-                if (b.type === 'chapter_header') {
-                    blocksHtml += `
-                        <div class="border-b border-stone-300/70 pb-2 mb-3">
-                            <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-stone-500">
-                                ${b.chapterNum ? `Chapter ${b.chapterNum}` : 'Chapter'}
-                            </span>
-                            <h4 class="font-serif font-black text-lg ${titleColor}">
-                                ${b.title}
-                            </h4>
-                        </div>
-                    `;
-                } else if (b.type === 'media') {
-                    blocksHtml += `
-                        <div class="my-3 rounded-xl overflow-hidden border border-stone-300/80 shadow-xs bg-stone-900/5">
-                            <img src="${b.url}" alt="${b.alt || 'Illustration'}" class="w-full max-h-52 object-cover hover:scale-101 transition-transform duration-300">
-                            <div class="p-2 bg-stone-100/90 text-stone-600 text-[10px] font-serif italic text-center border-t border-stone-200">
-                                ${b.caption}
-                            </div>
-                        </div>
-                    `;
-                } else if (b.type === 'paragraph') {
-                    const interactiveEn = this.makeWordsClickable(b.en, b.en, b.ko);
-                    const formattedChunks = Array.isArray(b.chunks)
-                        ? b.chunks.map(c => typeof c === 'string' ? c : (c.en ? `${c.en} (${c.ko || ''})` : '')).filter(Boolean).join(' / ')
-                        : '';
-                    const chunksHtml = this.showSlash && formattedChunks ? `
-                        <div class="text-[11px] font-mono text-stone-500 bg-stone-500/10 px-2 py-0.5 rounded border border-stone-300/40 my-1 leading-relaxed">
-                            <span class="font-bold text-stone-700">구문 끊기:</span> ${formattedChunks}
-                        </div>
-                    ` : '';
-                    const koHtml = this.showKorean ? `
-                        <p class="text-xs ${subColor} leading-relaxed font-sans pt-0.5">
-                            ${b.ko}
-                        </p>
-                    ` : '';
-
-                    blocksHtml += `
-                        <div class="space-y-1 p-1.5 rounded-lg transition-colors hover:bg-stone-500/5" data-paragraph-num="${b.num || 0}">
-                            <p class="font-serif leading-relaxed ${bodyColor} selection:bg-amber-200" style="font-size: ${this.fontSize}px;">
-                                ${interactiveEn}
-                            </p>
-                            ${chunksHtml}
-                            ${koHtml}
-                        </div>
-                    `;
-                }
-            });
-            innerContent = `<div class="space-y-3">${blocksHtml}</div>`;
-        }
-
-        return `
-            <div class="flex flex-col justify-between h-full">
-                <!-- 상단 러닝 헤더 -->
-                <div class="flex items-center justify-between pb-2 border-b ${footerBorder} text-[10px] font-mono ${subColor} shrink-0 mb-3">
-                    <span class="truncate max-w-[200px]">${page.chapterTitle || 'Veritas English'}</span>
-                    <span class="tracking-widest uppercase">${isLeft ? 'Left Page' : 'Right Page'}</span>
-                </div>
-
-                <!-- 페이지 본문 -->
-                <div class="grow flex flex-col justify-center overflow-y-auto pr-1">
-                    ${innerContent}
-                </div>
-
-                <!-- 하단 러닝 푸터 (페이지 번호) -->
-                <div class="pt-2 border-t ${footerBorder} text-center text-[11px] font-mono ${subColor} shrink-0 mt-3 flex items-center justify-between">
-                    <span class="text-[10px] text-stone-400">Veritas e-Library</span>
-                    <span class="font-bold text-stone-600">— ${page.pageNumber} —</span>
-                    <span class="text-[10px] text-stone-400">${page.book?.title ? page.book.title.slice(0, 16) + '...' : ''}</span>
-                </div>
-            </div>
-        `;
-    }
-
-    renderStep3Reading() {
-        const container = document.getElementById('ebook-step-view-3');
+        const container = document.getElementById('ebook-step-view-2');
         if (!container || !this.currentBook) return;
         const book = this.currentBook;
 
@@ -1201,57 +868,138 @@ class EBookEngine {
     }
 
     // ------------------------------------------------------------------------
-    // STEP 4: 챕터 구조화 & 콘셉트 맵 (Concept Map)
+    
     // ------------------------------------------------------------------------
-    renderStep4ConceptMap() {
-        const container = document.getElementById('ebook-step-view-4');
+    // STEP 3: 인터랙티브 논리 Flow Chart 빈칸 완성 (Flow Chart Organizer)
+    // ------------------------------------------------------------------------
+    renderStep3FlowChart() {
+        const container = document.getElementById('ebook-step-view-3');
         if (!container || !this.currentBook) return;
-        const conceptMap = this.currentBook.conceptMap || { title: '챕터 핵심 요약', nodes: [], summary: '요약 내용' };
+        const book = this.currentBook;
+        const fc = book.flowChart || {
+            title: book.title + " 논리 Flow Chart",
+            executiveSummary: "본문의 핵심 논리 전개를 구조화한 다이어그램입니다.",
+            nodes: [],
+            wordPool: []
+        };
+
+        if (!this.flowChartAnswers) this.flowChartAnswers = {};
 
         container.innerHTML = `
-            <div class="max-w-2xl mx-auto space-y-6 animate-in fade-in duration-200">
-                <div class="border-b border-slate-200 pb-3">
-                    <span class="text-[10px] font-mono font-bold text-purple-700 bg-purple-50 px-2 py-0.5 rounded border border-purple-200 uppercase">
-                        STEP 4 • CONCEPT SYNTHESIS
-                    </span>
-                    <h3 class="font-serif font-black text-xl text-slate-900 mt-1">
-                        🗺️ ${conceptMap.title}
-                    </h3>
+            <div class="max-w-4xl mx-auto space-y-6 animate-in fade-in duration-200">
+                <!-- 상단 헤더 -->
+                <div class="p-5 rounded-2xl bg-gradient-to-r from-purple-950 via-slate-900 to-indigo-950 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-purple-800/60 shadow-md">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-purple-400/20 text-purple-300 border border-purple-400/40">
+                                STEP 3 • LOGICAL FLOW CHART
+                            </span>
+                            <span class="text-xs text-purple-200 font-mono">인터랙티브 구조화 정리</span>
+                        </div>
+                        <h3 class="font-serif font-black text-xl text-white">
+                            🗺️ ${fc.title}
+                        </h3>
+                        <p class="text-xs text-slate-300 leading-relaxed font-sans">
+                            글의 논리적 전개(배경 ➔ 메커니즘 ➔ 갈등 ➔ 결과) 흐름을 따라 하단 단어 풀에서 알맞은 키워드를 빈칸에 배치하세요.
+                        </p>
+                    </div>
+                    <div class="shrink-0 flex items-center gap-2">
+                        <button type="button" onclick="window.ebookEngine.checkFlowChart()" class="px-4 py-2.5 rounded-xl bg-purple-500 hover:bg-purple-400 text-slate-950 font-serif font-bold text-xs flex items-center gap-1.5 shadow-sm transition-all cursor-pointer">
+                            <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+                            <span>구조 완성 검사</span>
+                        </button>
+                    </div>
                 </div>
 
-                <!-- 구조화된 노드 카드 리스트 -->
-                <div class="space-y-3">
-                    ${conceptMap.nodes.map((node, idx) => `
-                        <div class="p-4 rounded-xl bg-white border border-purple-200/90 shadow-2xs space-y-1 hover:border-purple-400 transition-all flex items-start gap-3">
-                            <span class="w-6 h-6 rounded-full bg-purple-100 text-purple-900 font-mono font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
-                                ${idx + 1}
+                <!-- 4단계 플로우차트 노드 그리드/플로우 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    ${(fc.nodes || []).map((node, idx) => {
+                        const userWord = this.flowChartAnswers[node.step];
+                        const isCorrect = userWord && userWord.toLowerCase() === node.blankWord.toLowerCase();
+                        const isChecked = this.flowChartChecked;
+
+                        let borderClass = 'border-slate-200 bg-white';
+                        if (isChecked) {
+                            borderClass = isCorrect ? 'border-emerald-400 bg-emerald-50/20 shadow-xs' : 'border-rose-400 bg-rose-50/20';
+                        }
+
+                        // Replace [ ? ] with interactive slot
+                        const slotHtml = `
+                            <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg border-2 font-mono font-bold text-xs transition-all cursor-pointer ${userWord ? (isChecked ? (isCorrect ? 'bg-emerald-100 border-emerald-500 text-emerald-950' : 'bg-rose-100 border-rose-500 text-rose-950') : 'bg-purple-100 border-purple-400 text-purple-950') : 'bg-slate-100 border-dashed border-slate-300 text-slate-400'}" onclick="window.ebookEngine.clearFlowSlot(${node.step})">
+                                ${userWord || '[ 빈칸 입력 ]'}
+                                ${userWord ? '<i data-lucide="x" class="w-3 h-3 ml-0.5 text-slate-400 hover:text-slate-700"></i>' : ''}
                             </span>
-                            <div>
-                                <h4 class="font-bold text-slate-900 text-sm">${node.label}</h4>
-                                <p class="text-xs text-slate-600 leading-relaxed font-sans">${node.desc || node.description || ''}</p>
+                        `;
+                        const renderedText = node.maskedText.replace('[   ?   ]', slotHtml);
+
+                        return `
+                            <div class="p-4 rounded-2xl border ${borderClass} shadow-2xs space-y-2.5 hover:border-purple-300 transition-all flex flex-col justify-between">
+                                <div class="space-y-2">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-2">
+                                            <span class="w-6 h-6 rounded-full bg-purple-100 text-purple-900 font-mono font-bold text-xs flex items-center justify-center">
+                                                ${node.step}
+                                            </span>
+                                            <span class="text-xs font-mono font-bold text-purple-700">${node.phase}</span>
+                                        </div>
+                                        <span class="text-[10px] font-mono text-slate-400">힌트: ${node.hint}</span>
+                                    </div>
+                                    <h4 class="font-serif font-black text-slate-900 text-sm leading-snug">
+                                        ${node.title}
+                                    </h4>
+                                    <div class="text-xs text-slate-700 leading-relaxed font-sans pt-1">
+                                        ${renderedText}
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                                    <span class="text-slate-400">단어 풀에서 클릭하여 배치</span>
+                                    ${isChecked ? (isCorrect ? '<span class="text-emerald-700 font-bold flex items-center gap-1"><i data-lucide="check" class="w-3.5 h-3.5"></i> 정답 일치</span>' : '<span class="text-rose-600 font-bold flex items-center gap-1"><i data-lucide="alert-circle" class="w-3.5 h-3.5"></i> 다시 시도</span>') : ''}
+                                </div>
                             </div>
-                        </div>
-                    `).join('')}
+                        `;
+                    }).join('')}
+                </div>
+
+                <!-- 하단 단어 풀 (Word Bank Pool) -->
+                <div class="p-4 rounded-2xl bg-slate-100 border border-slate-200/80 space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="font-mono font-bold text-xs text-slate-700 flex items-center gap-1.5">
+                            <i data-lucide="layers" class="w-4 h-4 text-purple-700"></i>
+                            <span>단어 풀 (Word Bank Pool)</span>
+                        </span>
+                        <span class="text-[11px] text-slate-500">클릭하면 빈 슬롯에 자동 채워집니다</span>
+                    </div>
+                    <div class="flex items-center gap-2 flex-wrap pt-1">
+                        ${(fc.wordPool || []).map(word => {
+                            const isUsed = Object.values(this.flowChartAnswers).includes(word);
+                            return `
+                                <button type="button" onclick="window.ebookEngine.placeWordIntoNextSlot('${word}')" class="px-3.5 py-1.5 rounded-xl border text-xs font-mono font-bold transition-all cursor-pointer ${isUsed ? 'bg-slate-200 text-slate-400 border-slate-300 opacity-60' : 'bg-white hover:bg-purple-50 text-purple-900 border-purple-200 shadow-2xs hover:scale-102'}">
+                                    ${word}
+                                </button>
+                            `;
+                        }).join('')}
+                    </div>
                 </div>
 
                 <!-- 3문장 총평 요약 박스 -->
-                <div class="p-5 rounded-2xl bg-purple-50/70 border border-purple-200 space-y-2">
+                <div class="p-4 rounded-2xl bg-purple-50/70 border border-purple-200 space-y-1.5">
                     <div class="flex items-center gap-2 text-purple-900 font-bold text-xs">
                         <i data-lucide="check-check" class="w-4 h-4 text-purple-700"></i>
-                        <span>Executive Summary (원서 핵심 메시지)</span>
+                        <span>Executive Summary (논리적 핵심 결론)</span>
                     </div>
-                    <p class="text-sm font-serif italic text-purple-950 leading-relaxed">
-                        "${conceptMap.summary}"
+                    <p class="text-xs font-serif italic text-purple-950 leading-relaxed">
+                        "${fc.executiveSummary}"
                     </p>
                 </div>
 
                 <!-- 하단 네비게이션 -->
                 <div class="pt-2 flex items-center justify-between">
-                    <button type="button" onclick="window.ebookEngine.goToStep(3)" class="px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer">
-                        ← 이전: e-Book 독해
+                    <button type="button" onclick="window.ebookEngine.goToStep(2)" class="px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer">
+                        ← 이전: 실감형 본문 독해
                     </button>
-                    <button type="button" onclick="window.ebookEngine.goToStep(5)" class="px-5 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-xs flex items-center gap-2 shadow-sm transition-all cursor-pointer">
-                        <span>5단계: 원서 심층 퀴즈 풀기</span>
+                    <button type="button" onclick="window.ebookEngine.goToStep(4)" class="px-6 py-3 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-xs flex items-center gap-2 shadow-md transition-all cursor-pointer">
+                        <span>4단계: 수능·내신 실전 10제 풀기</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
                 </div>
@@ -1259,47 +1007,99 @@ class EBookEngine {
         `;
     }
 
+    placeWordIntoNextSlot(word) {
+        if (!this.flowChartAnswers) this.flowChartAnswers = {};
+        const fc = this.currentBook?.flowChart;
+        if (!fc || !fc.nodes) return;
+
+        // Find first empty slot
+        for (let node of fc.nodes) {
+            if (!this.flowChartAnswers[node.step]) {
+                this.flowChartAnswers[node.step] = word;
+                this.renderStep3FlowChart();
+                return;
+            }
+        }
+    }
+
+    clearFlowSlot(step) {
+        if (this.flowChartAnswers && this.flowChartAnswers[step]) {
+            delete this.flowChartAnswers[step];
+            this.renderStep3FlowChart();
+        }
+    }
+
+    checkFlowChart() {
+        this.flowChartChecked = true;
+        this.renderStep3FlowChart();
+    }
+
     // ------------------------------------------------------------------------
-    // STEP 5: 원서형 심층 독해력 퀴즈 (Quizzes)
+    // STEP 4: 수능·내신형 객관식 실전 10제 (Quizzes 10)
     // ------------------------------------------------------------------------
-    renderStep5Quizzes() {
-        const container = document.getElementById('ebook-step-view-5');
+    renderStep4Quizzes() {
+        const container = document.getElementById('ebook-step-view-4');
         if (!container || !this.currentBook) return;
-        const quizzes = this.currentBook.quizzes || this.currentBook.quiz || [];
+        const quizzes = this.currentBook.quizzes || [];
+
+        if (!this.userQuizAnswers) this.userQuizAnswers = {};
 
         container.innerHTML = `
-            <div class="max-w-2xl mx-auto space-y-6 animate-in fade-in duration-200">
-                <div class="flex items-center justify-between pb-3 border-b border-slate-200">
-                    <div>
-                        <h3 class="font-serif font-black text-xl text-slate-900">
-                            🧠 원서형 심층 독해력 퀴즈
+            <div class="max-w-3xl mx-auto space-y-6 animate-in fade-in duration-200">
+                <!-- 상단 헤더 & OMR 네비게이터 -->
+                <div class="p-5 rounded-2xl bg-gradient-to-r from-indigo-950 via-slate-900 to-blue-950 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-indigo-800/60 shadow-md">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-indigo-400/20 text-indigo-300 border border-indigo-400/40">
+                                STEP 4 • COMPREHENSIVE EXAM
+                            </span>
+                            <span class="text-xs text-indigo-200 font-mono">수능 10대 핵심 평가 유형</span>
+                        </div>
+                        <h3 class="font-serif font-black text-xl text-white">
+                            🧠 수능·내신형 실전 10제
                         </h3>
-                        <p class="text-xs text-slate-500 mt-0.5">
-                            수능 킬러 & SAT/TOEFL 유형의 엄선된 핵심 독해력 퀴즈로 이해도를 정밀 검증합니다.
+                        <p class="text-xs text-slate-300 leading-relaxed font-sans">
+                            대의 파악, 세부 일치, 빈칸 추론, 어법, 문맥 어휘 등 실전 평가 유형을 정밀 검증합니다.
                         </p>
                     </div>
-                    <span class="px-2.5 py-1 rounded-full bg-indigo-50 text-indigo-900 text-xs font-mono font-bold border border-indigo-200">
-                        총 ${quizzes.length}문항
+                    <span class="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-200 text-xs font-mono font-bold border border-indigo-400/30 shrink-0">
+                        총 ${quizzes.length}문항 완비
                     </span>
                 </div>
 
-                <!-- 퀴즈 리스트 -->
-                <div class="space-y-6">
+                <!-- OMR 네비게이터 번호 바 -->
+                <div class="flex items-center gap-1.5 p-2 bg-slate-100 rounded-xl overflow-x-auto no-scrollbar border border-slate-200/80">
+                    <span class="text-[11px] font-bold text-slate-500 font-mono mr-1 shrink-0">문항:</span>
                     ${quizzes.map((q, idx) => {
-                        const quizId = q.id !== undefined ? q.id : idx;
-                        const userAns = this.userQuizAnswers[quizId];
+                        const isAnswered = this.userQuizAnswers[q.id] !== undefined;
+                        const isCorrect = isAnswered && (this.userQuizAnswers[q.id] === q.answer);
+                        let numClass = 'bg-white text-slate-700 border-slate-200';
+                        if (isAnswered) {
+                            numClass = isCorrect ? 'bg-emerald-500 text-white border-emerald-600' : 'bg-rose-500 text-white border-rose-600';
+                        }
+                        return `
+                            <a href="#quiz-card-${q.id}" class="w-7 h-7 rounded-lg border font-mono font-bold text-xs flex items-center justify-center shrink-0 transition-all ${numClass}">
+                                ${idx + 1}
+                            </a>
+                        `;
+                    }).join('')}
+                </div>
+
+                <!-- 10개 문항 카드 리스트 -->
+                <div class="space-y-5">
+                    ${quizzes.map((q, idx) => {
+                        const userAns = this.userQuizAnswers[q.id];
                         const isSubmitted = userAns !== undefined;
                         const isCorrect = userAns === q.answer;
-                        const qTypeLabel = (q.type || 'COMPREHENSION').replace('_', ' ').toUpperCase();
 
                         return `
-                            <div class="p-5 rounded-2xl bg-white border ${isSubmitted ? (isCorrect ? 'border-emerald-300 bg-emerald-50/20' : 'border-red-300 bg-red-50/20') : 'border-slate-200'} shadow-xs space-y-3">
+                            <div id="quiz-card-${q.id}" class="p-5 rounded-2xl bg-white border ${isSubmitted ? (isCorrect ? 'border-emerald-300 bg-emerald-50/20' : 'border-rose-300 bg-rose-50/20') : 'border-slate-200'} shadow-2xs space-y-3 transition-all">
                                 <div class="flex items-center justify-between">
-                                    <span class="px-2 py-0.5 rounded text-[10px] font-bold font-mono ${isSubmitted ? (isCorrect ? 'bg-emerald-100 text-emerald-900' : 'bg-red-100 text-red-900') : 'bg-slate-100 text-slate-600'}">
-                                        Q${idx + 1} • ${qTypeLabel}
+                                    <span class="px-2.5 py-0.5 rounded text-[10px] font-bold font-mono ${isSubmitted ? (isCorrect ? 'bg-emerald-100 text-emerald-900' : 'bg-rose-100 text-rose-900') : 'bg-slate-100 text-slate-700'}">
+                                        ${q.label || (`Q${idx + 1} • ` + q.type.replace('_', ' '))}
                                     </span>
                                     ${isSubmitted ? `
-                                        <span class="text-xs font-bold ${isCorrect ? 'text-emerald-700' : 'text-red-700'}">
+                                        <span class="text-xs font-bold ${isCorrect ? 'text-emerald-700' : 'text-rose-600'}">
                                             ${isCorrect ? '✓ 정답입니다!' : '✕ 오답 (해설 확인)'}
                                         </span>
                                     ` : ''}
@@ -1309,7 +1109,7 @@ class EBookEngine {
                                     ${q.question}
                                 </p>
 
-                                <!-- 보기 4지선다 -->
+                                <!-- 4지선다 보기 -->
                                 <div class="space-y-2 pt-1">
                                     ${q.options.map((opt, optIdx) => {
                                         let btnClass = 'bg-slate-50 border-slate-200 text-slate-700 hover:border-blue-400 hover:bg-blue-50/50';
@@ -1317,14 +1117,14 @@ class EBookEngine {
                                             if (optIdx === q.answer) {
                                                 btnClass = 'bg-emerald-100 border-emerald-400 text-emerald-950 font-bold';
                                             } else if (optIdx === userAns) {
-                                                btnClass = 'bg-red-100 border-red-400 text-red-950 font-bold';
+                                                btnClass = 'bg-rose-100 border-rose-400 text-rose-950 font-bold';
                                             } else {
                                                 btnClass = 'bg-slate-50 border-slate-200 text-slate-400 opacity-60';
                                             }
                                         }
 
                                         return `
-                                            <button type="button" onclick="window.ebookEngine.answerQuiz('${quizId}', ${optIdx})" class="w-full p-3 rounded-xl border text-left text-xs transition-all flex items-start gap-2.5 cursor-pointer ${btnClass}" ${isSubmitted ? 'disabled' : ''}>
+                                            <button type="button" onclick="window.ebookEngine.answerQuiz(${q.id}, ${optIdx})" class="w-full p-3 rounded-xl border text-left text-xs transition-all flex items-start gap-2.5 cursor-pointer ${btnClass}" ${isSubmitted ? 'disabled' : ''}>
                                                 <span class="w-5 h-5 rounded-full border border-current font-mono font-bold flex items-center justify-center shrink-0 text-[10px]">
                                                     ${['A', 'B', 'C', 'D'][optIdx]}
                                                 </span>
@@ -1334,9 +1134,9 @@ class EBookEngine {
                                     }).join('')}
                                 </div>
 
-                                <!-- 해설 박스 (제출 후 노출) -->
+                                <!-- 상세 해설 박스 -->
                                 ${isSubmitted ? `
-                                    <div class="mt-3 p-3.5 rounded-xl bg-slate-100/80 border border-slate-200 text-xs text-slate-700 space-y-1 animate-in fade-in duration-150">
+                                    <div class="mt-3 p-3.5 rounded-xl bg-slate-100/90 border border-slate-200 text-xs text-slate-700 space-y-1 animate-in fade-in duration-150">
                                         <span class="font-bold text-blue-900 block">💡 상세 해설:</span>
                                         <p class="leading-relaxed font-sans">${q.explanation}</p>
                                     </div>
@@ -1348,11 +1148,11 @@ class EBookEngine {
 
                 <!-- 하단 네비게이션 -->
                 <div class="pt-2 flex items-center justify-between">
-                    <button type="button" onclick="window.ebookEngine.goToStep(4)" class="px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer">
-                        ← 이전: 구조 요약맵
+                    <button type="button" onclick="window.ebookEngine.goToStep(3)" class="px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer">
+                        ← 이전: Flow Chart
                     </button>
-                    <button type="button" onclick="window.ebookEngine.goToStep(6)" class="px-5 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-xs flex items-center gap-2 shadow-sm transition-all cursor-pointer">
-                        <span>6단계: 명문장 영작 & 사진 출처</span>
+                    <button type="button" onclick="window.ebookEngine.goToStep(5)" class="px-6 py-3 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-xs flex items-center gap-2 shadow-md transition-all cursor-pointer">
+                        <span>5단계: 주관식·서술형 클리닉 풀기</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
                 </div>
@@ -1360,132 +1160,171 @@ class EBookEngine {
         `;
     }
 
-    answerQuiz(questionId, selectedIdx) {
-        this.userQuizAnswers[questionId] = selectedIdx;
-        this.renderStep5Quizzes();
+    answerQuiz(qId, optIdx) {
+        if (!this.userQuizAnswers) this.userQuizAnswers = {};
+        this.userQuizAnswers[qId] = optIdx;
+        this.renderStep4Quizzes();
     }
 
     // ------------------------------------------------------------------------
-    // STEP 6: 명문장 스튜디오 & 사진 출처 & 완독 인증
+    // STEP 5: 심층 주관식 & 서술형 영작 & 요약문 작성 클리닉 (Writing Studio)
     // ------------------------------------------------------------------------
-    renderStep6QuotesAndCredits() {
-        const container = document.getElementById('ebook-step-view-6');
+    renderStep5Writing() {
+        const container = document.getElementById('ebook-step-view-5');
         if (!container || !this.currentBook) return;
         const book = this.currentBook;
-        
-        let quotes = [];
-        if (Array.isArray(book.keyQuotes) && book.keyQuotes.length > 0) {
-            quotes = book.keyQuotes;
-        } else if (Array.isArray(book.highlightQuote)) {
-            quotes = book.highlightQuote;
-        } else if (book.highlightQuote) {
-            quotes = [book.highlightQuote];
-        }
-        quotes = quotes.map(q => ({
-            en: q.en || q.quote || '',
-            ko: q.ko || q.translation || '',
-            author: q.author || ''
-        }));
+        const studio = book.writingStudio || { questions: [] };
 
-        let credits = [];
-        if (Array.isArray(book.content?.photoCredits)) {
-            credits = book.content.photoCredits;
-        } else if (Array.isArray(book.photoCredits)) {
-            credits = book.photoCredits;
-        } else if (typeof book.photoCredits === 'string') {
-            credits = [{ figureNum: 'Primary Plate', title: 'Archival & Curatorial Sources', license: 'Verified Source', source: book.photoCredits, description: 'Historical artifacts, architectural photographs and cultural illustrations.' }];
-        }
-        const isCompleted = this.readingProgress[book.id]?.completed;
+        if (!this.writingAnswers) this.writingAnswers = {};
 
         container.innerHTML = `
-            <div class="max-w-2xl mx-auto space-y-8 animate-in fade-in duration-200">
-                <!-- 1. 원서 명문장 스튜디오 -->
-                <div class="space-y-4">
-                    <div class="border-b border-slate-200 pb-2">
-                        <span class="text-[10px] font-mono font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200 uppercase">
-                            KEY QUOTE STUDIO
-                        </span>
-                        <h3 class="font-serif font-black text-xl text-slate-900 mt-1">
-                            ✍️ 원서 명문장 기억 스튜디오
+            <div class="max-w-3xl mx-auto space-y-6 animate-in fade-in duration-200">
+                <!-- 상단 헤더 -->
+                <div class="p-5 rounded-2xl bg-gradient-to-r from-teal-950 via-slate-900 to-emerald-950 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-emerald-800/60 shadow-md">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-400/20 text-emerald-300 border border-emerald-400/40">
+                                STEP 5 • SUBJECTIVE & WRITING CLINIC
+                            </span>
+                            <span class="text-xs text-emerald-200 font-mono">주관식 2 + 서술형 2 + 요약문 1</span>
+                        </div>
+                        <h3 class="font-serif font-black text-xl text-white">
+                            ✍️ 심층 주관식 & 서술형 영작 클리닉
                         </h3>
-                        <p class="text-xs text-slate-500 mt-0.5">
-                            도서의 가장 통찰력 있는 핵심 문장을 직접 낭독하고 마음에 새겨봅니다.
+                        <p class="text-xs text-slate-300 leading-relaxed font-sans">
+                            본문의 핵심 내용을 토대로 고난도 주관식 단답 퀴즈와 내신 서술형 조건부 영작을 완성하세요.
                         </p>
                     </div>
-
-                    ${quotes.map(q => `
-                        <div class="p-5 rounded-2xl bg-amber-500/10 border-2 border-amber-500/30 space-y-3">
-                            <p class="font-serif font-black text-lg text-amber-950 leading-relaxed italic">
-                                "${q.en}"
-                            </p>
-                            ${q.author ? `<p class="text-[11px] font-mono text-amber-800 font-bold">— ${q.author}</p>` : ''}
-                            <p class="text-xs text-amber-900 font-sans leading-relaxed">
-                                해석: ${q.ko}
-                            </p>
-                            <div class="pt-2 flex items-center gap-2">
-                                <button type="button" onclick="if(window.tts) window.tts.speak('${q.en.replace(/'/g, "\\'")}', 'en-US')" class="px-3 py-1.5 rounded-lg bg-amber-900 text-white font-serif font-bold text-xs flex items-center gap-1.5 shadow-xs cursor-pointer hover:bg-amber-800 transition-colors">
-                                    <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
-                                    <span>명문장 원어민 낭독 듣기</span>
-                                </button>
-                            </div>
-                        </div>
-                    `).join('')}
                 </div>
 
-                <!-- 2. 완독 인증 & 뱃지 축하 카드 -->
-                <div class="p-6 rounded-2xl bg-gradient-to-br from-emerald-900 to-teal-950 text-white shadow-xl space-y-4 text-center">
+                <!-- 5문항 렌더링 -->
+                <div class="space-y-6">
+                    ${(studio.questions || []).map((q, idx) => {
+                        const ansData = this.writingAnswers[q.id] || {};
+                        const isSubmitted = ansData.submitted;
+
+                        return `
+                            <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-2xs space-y-4">
+                                <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+                                    <span class="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold bg-teal-50 text-teal-900 border border-teal-200">
+                                        ${q.part}
+                                    </span>
+                                    ${isSubmitted ? `
+                                        <span class="text-xs font-bold text-emerald-700 flex items-center gap-1">
+                                            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> 채점 완료
+                                        </span>
+                                    ` : ''}
+                                </div>
+
+                                <div class="space-y-1.5">
+                                    <p class="font-serif font-bold text-sm text-slate-900 leading-snug whitespace-pre-line">
+                                        ${q.prompt}
+                                    </p>
+                                    ${q.koreanGuide ? `
+                                        <p class="text-xs text-slate-600 bg-slate-50 p-2.5 rounded-xl border border-slate-100 font-sans leading-relaxed">
+                                            💡 ${q.koreanGuide}
+                                        </p>
+                                    ` : ''}
+                                </div>
+
+                                <!-- 조건 목록 (서술형/요약문인 경우) -->
+                                ${q.conditions ? `
+                                    <div class="p-3 rounded-xl bg-amber-50/70 border border-amber-200/80 text-xs text-amber-900 space-y-1">
+                                        <span class="font-bold flex items-center gap-1"><i data-lucide="alert-circle" class="w-3.5 h-3.5 text-amber-600"></i> 필수 충족 조건:</span>
+                                        <ul class="list-disc list-inside space-y-0.5 text-[11px] text-amber-800 font-sans">
+                                            ${q.conditions.map(c => `<li>${c}</li>`).join('')}
+                                        </ul>
+                                    </div>
+                                ` : ''}
+
+                                <!-- 입력 필드 -->
+                                <div class="space-y-2">
+                                    ${q.type === 'CONDITION_WRITING' ? `
+                                        <textarea id="writing-input-${q.id}" rows="3" placeholder="조건에 맞추어 영문장을 작성하세요..." class="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 text-xs font-serif leading-relaxed outline-none focus:border-teal-700 focus:bg-white transition-all" ${isSubmitted ? 'readonly' : ''}>${ansData.text || ''}</textarea>
+                                    ` : `
+                                        <input type="text" id="writing-input-${q.id}" placeholder="정답 영문 단어/어구를 입력하세요..." value="${ansData.text || ''}" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs font-mono outline-none focus:border-teal-700 focus:bg-white transition-all" ${isSubmitted ? 'readonly' : ''}>
+                                    `}
+
+                                    ${!isSubmitted ? `
+                                        <div class="flex justify-end">
+                                            <button type="button" onclick="window.ebookEngine.submitWritingAnswer('${q.id}', '${q.type}')" class="px-4 py-2 rounded-xl bg-teal-800 hover:bg-teal-700 text-white font-serif font-bold text-xs flex items-center gap-1.5 shadow-2xs transition-all cursor-pointer">
+                                                <span>답안 제출 & 모범 답안 비교</span>
+                                                <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                                            </button>
+                                        </div>
+                                    ` : ''}
+                                </div>
+
+                                <!-- 모범 답안 & 문법 해설 (제출 후 노출) -->
+                                ${isSubmitted ? `
+                                    <div class="p-4 rounded-xl bg-emerald-50/80 border border-emerald-200 text-xs text-emerald-950 space-y-2 animate-in fade-in duration-200">
+                                        <div class="flex items-center gap-1.5 font-bold text-emerald-900">
+                                            <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+                                            <span>모범 답안 (Model Answer):</span>
+                                        </div>
+                                        <p class="font-serif font-bold text-sm text-emerald-950 bg-white p-2.5 rounded-lg border border-emerald-100">
+                                            "${q.modelAnswer || (q.acceptedAnswers ? q.acceptedAnswers.join(' / ') : '')}"
+                                        </p>
+                                        ${q.grammarPoints ? `
+                                            <div class="text-[11px] text-emerald-800 leading-relaxed font-sans pt-1">
+                                                <span class="font-bold">🔍 핵심 문법 체크포인트:</span> ${q.grammarPoints}
+                                            </div>
+                                        ` : ''}
+                                        ${q.explanation ? `
+                                            <div class="text-[11px] text-emerald-800 leading-relaxed font-sans pt-1">
+                                                <span class="font-bold">💡 정답 해설:</span> ${q.explanation}
+                                            </div>
+                                        ` : ''}
+                                    </div>
+                                ` : ''}
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+
+                <!-- 최종 완독 인증 카드 -->
+                <div class="p-6 rounded-2xl bg-gradient-to-br from-emerald-900 via-teal-950 to-slate-900 text-white shadow-xl space-y-4 text-center">
                     <div class="w-12 h-12 rounded-full bg-emerald-500/30 border border-emerald-400 text-emerald-300 mx-auto flex items-center justify-center">
                         <i data-lucide="award" class="w-6 h-6"></i>
                     </div>
                     <div class="space-y-1">
                         <h4 class="font-serif font-black text-xl">
-                            ${isCompleted ? '🎉 이미 완독 인증된 도서입니다!' : '축하합니다! 이 도서를 완독하셨나요?'}
+                            축하합니다! 5단계 독해·작문 과정을 완수하셨습니다.
                         </h4>
                         <p class="text-xs text-emerald-200/90 max-w-md mx-auto">
-                            ${isCompleted ? '독서 기록이 안전하게 저장되어 있습니다.' : '완독 인증 버튼을 누르면 독서 통계에 기록되고 완독 뱃지가 수여됩니다.'}
+                            완독 인증 버튼을 누르면 나의 독서 통계에 완독 기록이 안전하게 저장되고 학습 배지가 부여됩니다.
                         </p>
                     </div>
                     <div>
-                        <button type="button" onclick="window.ebookEngine.completeBook('${book.id}')" class="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-serif font-black text-sm shadow-lg transition-transform active:scale-95 cursor-pointer">
-                            ${isCompleted ? '✓ 완독 상태 유지 (다시 축하하기)' : '🏆 이 책 완독 인증하기'}
+                        <button type="button" onclick="window.ebookEngine.completeBook('${book.id}')" class="px-6 py-3 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-serif font-black text-sm shadow-lg transition-transform active:scale-95 cursor-pointer">
+                            🏆 이 도서 완독 인증하고 기록 저장하기
                         </button>
                     </div>
                 </div>
 
-                <!-- 3. 맨 뒤 페이지: 사진 및 사료 출처 (Photo Credits & Citations) -->
-                <div class="p-5 rounded-2xl bg-stone-100 border border-stone-300/80 space-y-3 text-stone-700">
-                    <div class="flex items-center justify-between pb-2 border-b border-stone-300">
-                        <div class="flex items-center gap-2 font-bold text-xs">
-                            <i data-lucide="camera" class="w-4 h-4 text-stone-600"></i>
-                            <span>Photo Credits & Citations (사진 및 사료 출처)</span>
-                        </div>
-                        <span class="text-[10px] font-mono text-stone-500">End Matter</span>
-                    </div>
-
-                    <div class="space-y-2.5 text-xs">
-                        ${credits.map(c => `
-                            <div class="p-2.5 rounded-lg bg-white/80 border border-stone-200/80 space-y-1">
-                                <div class="flex items-center justify-between">
-                                    <span class="font-bold font-mono text-stone-800">${c.figureNum || 'Figure'}: ${c.title || 'Source'}</span>
-                                    <span class="text-[10px] text-stone-500 font-mono">${c.license || 'License'}</span>
-                                </div>
-                                ${c.description ? `<p class="text-[11px] text-stone-600 font-sans leading-relaxed">${c.description}</p>` : ''}
-                                <div class="text-[10px] text-blue-700 font-mono truncate">
-                                    출처: ${c.source || ''}
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-
-                <!-- 닫기 버튼 -->
-                <div class="pt-2 flex justify-center">
-                    <button type="button" onclick="window.ebookEngine.closeReader()" class="px-6 py-2.5 rounded-xl border border-slate-300 text-xs font-bold text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer">
-                        e-Book 뷰어 닫고 서재로 돌아가기
+                <!-- 하단 네비게이션 -->
+                <div class="pt-2 flex items-center justify-between">
+                    <button type="button" onclick="window.ebookEngine.goToStep(4)" class="px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer">
+                        ← 이전: 수능 객관식 10제
+                    </button>
+                    <button type="button" onclick="window.ebookEngine.closeReader()" class="px-5 py-2.5 rounded-xl border border-slate-300 text-xs font-bold text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer">
+                        리더기 닫고 서재로
                     </button>
                 </div>
             </div>
         `;
+    }
+
+    submitWritingAnswer(qId, type) {
+        const inputEl = document.getElementById(`writing-input-${qId}`);
+        if (!inputEl) return;
+        const text = inputEl.value.trim();
+        if (!this.writingAnswers) this.writingAnswers = {};
+        this.writingAnswers[qId] = {
+            text: text,
+            submitted: true
+        };
+        this.renderStep5Writing();
     }
 
     completeBook(bookId) {
@@ -1543,29 +1382,29 @@ class EBookEngine {
 
     toggleSpreadMode() {
         this.readerSpreadMode = (this.readerSpreadMode === 'spread') ? 'single' : 'spread';
-        if (this.currentStep === 3) {
-            this.renderStep3Reading();
+        if (this.currentStep === 2) {
+            this.renderStep2Reading();
         }
     }
 
     changeFontSize(delta) {
         this.fontSize = Math.max(14, Math.min(26, this.fontSize + delta));
-        if (this.currentStep === 3) {
-            this.renderStep3Reading();
+        if (this.currentStep === 2) {
+            this.renderStep2Reading();
         }
     }
 
     toggleSlash() {
         this.showSlash = !this.showSlash;
-        if (this.currentStep === 3) {
-            this.renderStep3Reading();
+        if (this.currentStep === 2) {
+            this.renderStep2Reading();
         }
     }
 
     toggleKorean() {
         this.showKorean = !this.showKorean;
-        if (this.currentStep === 3) {
-            this.renderStep3Reading();
+        if (this.currentStep === 2) {
+            this.renderStep2Reading();
         }
     }
 
@@ -1596,7 +1435,7 @@ class EBookEngine {
 
         this.isPlayingAudio = true;
         this.playParagraphAudioRecursive(allTextParagraphs, this.currentAudioParagraphIndex);
-        if (this.currentStep === 3) this.renderStep3Reading();
+        if (this.currentStep === 2) this.renderStep2Reading();
     }
 
     playParagraphAudioRecursive(paragraphs, index) {
@@ -1642,7 +1481,7 @@ class EBookEngine {
         document.querySelectorAll('[data-paragraph-num]').forEach(el => {
             el.classList.remove('ring-2', 'ring-blue-500', 'bg-blue-50/40');
         });
-        if (this.currentStep === 3) this.renderStep3Reading();
+        if (this.currentStep === 2) this.renderStep2Reading();
     }
 }
 

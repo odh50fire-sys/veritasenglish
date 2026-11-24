@@ -3410,25 +3410,22 @@
                     </div>
                 </div>
 
-                <!-- 중앙 6단계 스텝퍼 버튼 바 -->
+                <!-- 중앙 5단계 스텝퍼 버튼 바 -->
                 <div class="hidden lg:flex items-center gap-1 bg-slate-800/80 p-1 rounded-xl border border-slate-700/80 text-[11px] font-serif font-bold">
                     <button type="button" data-step="1" onclick="window.ebookEngine.goToStep(1)" class="ebook-step-btn px-2.5 py-1 rounded-lg border transition-all cursor-pointer">
-                        1. 배경지식
+                        1. 핵심어휘 (15선)
                     </button>
                     <button type="button" data-step="2" onclick="window.ebookEngine.goToStep(2)" class="ebook-step-btn px-2.5 py-1 rounded-lg border transition-all cursor-pointer">
-                        2. 필수어휘
+                        2. 실감형 본문독해
                     </button>
                     <button type="button" data-step="3" onclick="window.ebookEngine.goToStep(3)" class="ebook-step-btn px-2.5 py-1 rounded-lg border transition-all cursor-pointer">
-                        3. 본문독해
+                        3. 논리 Flow Chart
                     </button>
                     <button type="button" data-step="4" onclick="window.ebookEngine.goToStep(4)" class="ebook-step-btn px-2.5 py-1 rounded-lg border transition-all cursor-pointer">
-                        4. 구조요약
+                        4. 실전 수능 10제
                     </button>
                     <button type="button" data-step="5" onclick="window.ebookEngine.goToStep(5)" class="ebook-step-btn px-2.5 py-1 rounded-lg border transition-all cursor-pointer">
-                        5. 심층퀴즈
-                    </button>
-                    <button type="button" data-step="6" onclick="window.ebookEngine.goToStep(6)" class="ebook-step-btn px-2.5 py-1 rounded-lg border transition-all cursor-pointer">
-                        6. 명문장/출처
+                        5. 주관식·서술형 클리닉
                     </button>
                 </div>
 
@@ -3442,12 +3439,11 @@
 
             <!-- 모바일용 상단 스텝퍼 바 -->
             <div class="lg:hidden flex items-center justify-between overflow-x-auto p-2 bg-slate-800 text-white text-[11px] font-bold border-b border-slate-700 gap-1 shrink-0 no-scrollbar">
-                <button type="button" data-step="1" onclick="window.ebookEngine.goToStep(1)" class="ebook-step-btn whitespace-nowrap px-2 py-1 rounded border">1.배경</button>
-                <button type="button" data-step="2" onclick="window.ebookEngine.goToStep(2)" class="ebook-step-btn whitespace-nowrap px-2 py-1 rounded border">2.어휘</button>
-                <button type="button" data-step="3" onclick="window.ebookEngine.goToStep(3)" class="ebook-step-btn whitespace-nowrap px-2 py-1 rounded border">3.독해</button>
-                <button type="button" data-step="4" onclick="window.ebookEngine.goToStep(4)" class="ebook-step-btn whitespace-nowrap px-2 py-1 rounded border">4.요약</button>
-                <button type="button" data-step="5" onclick="window.ebookEngine.goToStep(5)" class="ebook-step-btn whitespace-nowrap px-2 py-1 rounded border">5.퀴즈</button>
-                <button type="button" data-step="6" onclick="window.ebookEngine.goToStep(6)" class="ebook-step-btn whitespace-nowrap px-2 py-1 rounded border">6.출처</button>
+                <button type="button" data-step="1" onclick="window.ebookEngine.goToStep(1)" class="ebook-step-btn whitespace-nowrap px-2 py-1 rounded border">1.어휘(15)</button>
+                <button type="button" data-step="2" onclick="window.ebookEngine.goToStep(2)" class="ebook-step-btn whitespace-nowrap px-2 py-1 rounded border">2.본문독해</button>
+                <button type="button" data-step="3" onclick="window.ebookEngine.goToStep(3)" class="ebook-step-btn whitespace-nowrap px-2 py-1 rounded border">3.플로우차트</button>
+                <button type="button" data-step="4" onclick="window.ebookEngine.goToStep(4)" class="ebook-step-btn whitespace-nowrap px-2 py-1 rounded border">4.수능10제</button>
+                <button type="button" data-step="5" onclick="window.ebookEngine.goToStep(5)" class="ebook-step-btn whitespace-nowrap px-2 py-1 rounded border">5.서술형영작</button>
             </div>
 
             <!-- 리더기 본문 스크롤 영역 (테마 배경 적용) -->
@@ -3457,7 +3453,6 @@
                 <div id="ebook-step-view-3" class="hidden"></div>
                 <div id="ebook-step-view-4" class="hidden"></div>
                 <div id="ebook-step-view-5" class="hidden"></div>
-                <div id="ebook-step-view-6" class="hidden"></div>
             </div>
         </div>
     </div>
@@ -4139,8 +4134,8 @@
     <script src="js/grammar_clinic.js?v=20261120_v3"></script>
     <script src="js/clinic_studio.js?v=1795127808"></script>
     <!-- 베리타스 비문학 원서 e-Book 도서관 (Veritas e-Library) 데이터 및 엔진 -->
-    <script src="data/ebook_library_data.js?v=20261124_v7_clean"></script>
-    <script src="js/ebook.js?v=20261124_v7_clean"></script>
+    <script src="data/ebook_library_data.js?v=20261124_v8_pipeline5"></script>
+    <script src="js/ebook.js?v=20261124_v8_pipeline5"></script>
     <script src="js/app.js"></script>
 
     <!-- ======================================================================
