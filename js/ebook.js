@@ -1477,18 +1477,6 @@ class EBookEngine {
                         `).join('')}
                     </div>
                 </div>
-                                <div class="flex items-center justify-between">
-                                    <span class="font-bold font-mono text-stone-800">${c.figureNum}: ${c.title}</span>
-                                    <span class="text-[10px] text-stone-500 font-mono">${c.license}</span>
-                                </div>
-                                <p class="text-[11px] text-stone-600 font-sans leading-relaxed">${c.description || ''}</p>
-                                <div class="text-[10px] text-blue-700 font-mono truncate">
-                                    출처: ${c.source} (${c.originalUrl || 'Public Archive'})
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
 
                 <!-- 닫기 버튼 -->
                 <div class="pt-2 flex justify-center">
