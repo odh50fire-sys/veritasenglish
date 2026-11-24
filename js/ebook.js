@@ -690,6 +690,309 @@ class EBookEngine {
         `;
     }
 
+    
+    // ------------------------------------------------------------------------
+    // 실감형 2-Page 책장 넘김 리더기 핵심 메서드 (Pagination & Single Page Render)
+    // ------------------------------------------------------------------------
+    paginateBook(book) {
+        if (!book) return [];
+        const chapters = book.chapters || book.content?.chapters || [];
+        const pages = [];
+
+        // 1페이지: 표지 및 인트로 페이지 (Title & Cover Page)
+        pages.push({
+            type: 'cover',
+            pageNumber: 1,
+            chapterNum: '',
+            chapterTitle: 'Veritas Book Volume',
+            book: book
+        });
+
+        // 챕터별 콘텐츠를 논리적 종이 책 페이지 크기로 분할
+        chapters.forEach((chap, chapIdx) => {
+            let currentBlocks = [];
+            let currentWords = 0;
+            const cNum = chap.chapterNum || chap.num || (chapIdx + 1);
+
+            // 챕터 헤더 블록
+            currentBlocks.push({
+                type: 'chapter_header',
+                chapterNum: cNum,
+                title: chap.title
+            });
+
+            (chap.paragraphs || []).forEach(p => {
+                if (p.isMedia) {
+                    if (currentBlocks.length > 1) {
+                        pages.push({
+                            type: 'content',
+                            chapterNum: chap.chapterNum,
+                            chapterTitle: chap.title,
+                            blocks: currentBlocks
+                        });
+                        currentBlocks = [];
+                        currentWords = 0;
+                    }
+                    currentBlocks.push({
+                        type: 'media',
+                        ...p
+                    });
+                } else {
+                    const wordCount = (p.en || '').split(/\s+/).length;
+                    if (currentWords + wordCount > 130 && currentBlocks.length > 0) {
+                        pages.push({
+                            type: 'content',
+                            chapterNum: chap.chapterNum,
+                            chapterTitle: chap.title,
+                            blocks: currentBlocks
+                        });
+                        currentBlocks = [];
+                        currentWords = 0;
+                    }
+                    currentBlocks.push({
+                        type: 'paragraph',
+                        ...p
+                    });
+                    currentWords += wordCount;
+                }
+            });
+
+            if (currentBlocks.length > 0) {
+                pages.push({
+                    type: 'content',
+                    chapterNum: chap.chapterNum,
+                    chapterTitle: chap.title,
+                    blocks: currentBlocks
+                });
+            }
+        });
+
+        // 양면 펼침 시 짝수 페이지로 마감
+        if (pages.length % 2 !== 0) {
+            pages.push({
+                type: 'colophon',
+                chapterNum: '',
+                chapterTitle: 'Synthesis & Reflection',
+                book: book
+            });
+        }
+
+        // 1-indexed 페이지 번호 부여
+        pages.forEach((p, idx) => {
+            p.pageNumber = idx + 1;
+        });
+
+        return pages;
+    }
+
+    flipPage(delta) {
+        if (!this.paginatedPages || this.paginatedPages.length === 0) return;
+        const totalSpreads = this.readerSpreadMode === 'spread' 
+            ? Math.ceil(this.paginatedPages.length / 2) 
+            : this.paginatedPages.length;
+
+        const nextIndex = this.currentSpreadIndex + delta;
+
+        if (nextIndex < 0) {
+            this.goToStep(1); // 1단계 필수 어휘로 이동
+            return;
+        }
+
+        if (nextIndex >= totalSpreads) {
+            this.goToStep(3); // 3단계 논리 Flow Chart로 이동
+            return;
+        }
+
+        const stageEl = document.getElementById('ebook-spread-stage');
+        if (stageEl) {
+            stageEl.classList.remove('animate-page-turn-right', 'animate-page-turn-left');
+            void stageEl.offsetWidth;
+            stageEl.classList.add(delta > 0 ? 'animate-page-turn-right' : 'animate-page-turn-left');
+        }
+
+        this.currentSpreadIndex = nextIndex;
+        this.renderStep2Reading();
+    }
+
+    jumpToSpread(idx) {
+        if (idx < 0 || !this.paginatedPages) return;
+        const totalSpreads = this.readerSpreadMode === 'spread' 
+            ? Math.ceil(this.paginatedPages.length / 2) 
+            : this.paginatedPages.length;
+        if (idx >= totalSpreads) return;
+
+        this.currentSpreadIndex = idx;
+        this.renderStep2Reading();
+    }
+
+    renderSinglePageHtml(page, isLeft) {
+        if (!page) {
+            return `
+                <div class="p-6 md:p-8 flex flex-col justify-center items-center text-center opacity-40">
+                    <i data-lucide="book" class="w-12 h-12 text-stone-400 mb-2"></i>
+                    <p class="text-xs font-serif italic text-stone-500">End of Volume Spread</p>
+                </div>
+            `;
+        }
+
+        const isDark = this.readerTheme === 'dark';
+        const titleColor = isDark ? 'text-amber-100' : 'text-stone-900';
+        const bodyColor = isDark ? 'text-stone-200' : 'text-stone-800';
+        const subColor = isDark ? 'text-stone-400' : 'text-stone-500';
+        const footerBorder = isDark ? 'border-stone-800 text-stone-500' : 'border-stone-200/80 text-stone-400';
+
+        let innerContent = '';
+
+        if (page.type === 'cover') {
+            const b = page.book;
+            const lvlCfg = window.EBOOK_LEVEL_CONFIG ? window.EBOOK_LEVEL_CONFIG[b.level] : null;
+            innerContent = `
+                <div class="space-y-4 my-auto">
+                    <div class="text-center space-y-2">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono font-bold ${lvlCfg ? lvlCfg.badgeClass : 'bg-blue-100 text-blue-900'}">
+                            <i data-lucide="award" class="w-3.5 h-3.5"></i>
+                            <span>${lvlCfg ? lvlCfg.name : ('Level ' + b.level)} • ${b.ar || ''} • ${b.lexile || ''}</span>
+                        </div>
+                        <h2 class="font-serif font-black text-xl md:text-2xl ${titleColor} leading-tight">
+                            ${b.title}
+                        </h2>
+                        <p class="text-xs ${subColor} font-sans leading-relaxed">
+                            ${b.subTitle || b.subtitle || ''}
+                        </p>
+                    </div>
+
+                    <div class="my-4 rounded-xl overflow-hidden shadow-md border border-stone-300/60 max-h-56">
+                        <img src="${b.coverImage}" alt="${b.title}" class="w-full h-full object-cover">
+                    </div>
+
+                    <div class="p-3.5 rounded-xl bg-stone-500/10 border border-stone-300/40 text-xs ${bodyColor} leading-relaxed font-sans">
+                        <span class="font-bold text-amber-900 block mb-1">📖 Volume Overview:</span>
+                        ${b.summary || (b.primer && b.primer.context) || ''}
+                    </div>
+
+                    <div class="text-center pt-2">
+                        <span class="text-[11px] font-mono text-stone-500 flex items-center justify-center gap-1">
+                            <span>Chapter 1 시작하기</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </span>
+                    </div>
+                </div>
+            `;
+        } else if (page.type === 'colophon') {
+            const b = page.book;
+            innerContent = `
+                <div class="space-y-5 my-auto">
+                    <div class="text-center pb-2 border-b border-stone-200/80">
+                        <span class="text-[10px] font-mono uppercase tracking-widest text-amber-700 font-bold">Veritas Non-Fiction Reader</span>
+                        <h3 class="font-serif font-black text-lg ${titleColor}">Reading Synthesis</h3>
+                    </div>
+
+                    ${b.highlightQuote ? `
+                        <div class="p-4 rounded-xl bg-amber-500/10 border border-amber-300/50 space-y-2">
+                            <span class="text-[10px] font-bold text-amber-800 uppercase flex items-center gap-1">
+                                <i data-lucide="quote" class="w-3 h-3"></i> Core Takeaway Quote
+                            </span>
+                            <p class="font-serif italic font-bold text-sm ${titleColor} leading-relaxed">
+                                "${b.highlightQuote.quote}"
+                            </p>
+                            <p class="text-xs ${subColor} font-sans">
+                                ${b.highlightQuote.translation}
+                            </p>
+                        </div>
+                    ` : ''}
+
+                    <div class="p-4 rounded-xl bg-blue-500/10 border border-blue-300/50 space-y-2">
+                        <h4 class="font-bold text-xs text-blue-900 flex items-center gap-1.5">
+                            <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
+                            <span>본문 독해 완료 (Next Step)</span>
+                        </h4>
+                        <p class="text-xs ${bodyColor} leading-relaxed font-sans">
+                            본문 챕터 전체를 모두 완독하였습니다. 우측 화살표(→)를 누르시거나 아래 버튼을 클릭하여 4단계 콘셉트 맵 요약으로 이동하세요!
+                        </p>
+                    </div>
+
+                    <button type="button" onclick="window.ebookEngine.goToStep(3)" class="w-full py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition-all cursor-pointer">
+                        <span>3단계: 논리 Flow Chart 완성하기</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            `;
+        } else {
+            let blocksHtml = '';
+            (page.blocks || []).forEach(b => {
+                if (b.type === 'chapter_header') {
+                    blocksHtml += `
+                        <div class="border-b border-stone-300/70 pb-2 mb-3">
+                            <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-stone-500">
+                                ${b.chapterNum ? `Chapter ${b.chapterNum}` : 'Chapter'}
+                            </span>
+                            <h4 class="font-serif font-black text-lg ${titleColor}">
+                                ${b.title}
+                            </h4>
+                        </div>
+                    `;
+                } else if (b.type === 'media') {
+                    blocksHtml += `
+                        <div class="my-3 rounded-xl overflow-hidden border border-stone-300/80 shadow-xs bg-stone-900/5">
+                            <img src="${b.url}" alt="${b.alt || 'Illustration'}" class="w-full max-h-52 object-cover hover:scale-101 transition-transform duration-300">
+                            <div class="p-2 bg-stone-100/90 text-stone-600 text-[10px] font-serif italic text-center border-t border-stone-200">
+                                ${b.caption}
+                            </div>
+                        </div>
+                    `;
+                } else if (b.type === 'paragraph') {
+                    const interactiveEn = this.makeWordsClickable(b.en, b.en, b.ko);
+                    const formattedChunks = Array.isArray(b.chunks)
+                        ? b.chunks.map(c => typeof c === 'string' ? c : (c.en ? `${c.en} (${c.ko || ''})` : '')).filter(Boolean).join(' / ')
+                        : '';
+                    const chunksHtml = this.showSlash && formattedChunks ? `
+                        <div class="text-[11px] font-mono text-stone-500 bg-stone-500/10 px-2 py-0.5 rounded border border-stone-300/40 my-1 leading-relaxed">
+                            <span class="font-bold text-stone-700">구문 끊기:</span> ${formattedChunks}
+                        </div>
+                    ` : '';
+                    const koHtml = this.showKorean ? `
+                        <p class="text-xs ${subColor} leading-relaxed font-sans pt-0.5">
+                            ${b.ko}
+                        </p>
+                    ` : '';
+
+                    blocksHtml += `
+                        <div class="space-y-1 p-1.5 rounded-lg transition-colors hover:bg-stone-500/5" data-paragraph-num="${b.num || 0}">
+                            <p class="font-serif leading-relaxed ${bodyColor} selection:bg-amber-200" style="font-size: ${this.fontSize}px;">
+                                ${interactiveEn}
+                            </p>
+                            ${chunksHtml}
+                            ${koHtml}
+                        </div>
+                    `;
+                }
+            });
+            innerContent = `<div class="space-y-3">${blocksHtml}</div>`;
+        }
+
+        return `
+            <div class="flex flex-col justify-between h-full">
+                <!-- 상단 러닝 헤더 -->
+                <div class="flex items-center justify-between pb-2 border-b ${footerBorder} text-[10px] font-mono ${subColor} shrink-0 mb-3">
+                    <span class="truncate max-w-[200px]">${page.chapterTitle || 'Veritas English'}</span>
+                    <span class="tracking-widest uppercase">${isLeft ? 'Left Page' : 'Right Page'}</span>
+                </div>
+
+                <!-- 페이지 본문 -->
+                <div class="grow flex flex-col justify-center overflow-y-auto pr-1">
+                    ${innerContent}
+                </div>
+
+                <!-- 하단 러닝 푸터 (페이지 번호) -->
+                <div class="pt-2 border-t ${footerBorder} text-center text-[11px] font-mono ${subColor} shrink-0 mt-3 flex items-center justify-between">
+                    <span class="text-[10px] text-stone-400">Veritas e-Library</span>
+                    <span class="font-bold text-stone-600">— ${page.pageNumber} —</span>
+                    <span class="text-[10px] text-stone-400">${page.book?.title ? page.book.title.slice(0, 16) + '...' : ''}</span>
+                </div>
+            </div>
+        `;
+    }
+
     // ------------------------------------------------------------------------
     // STEP 2: 실감형 본문 심층 독해 (Dual-Page Deep Reading)
     // ------------------------------------------------------------------------
@@ -838,8 +1141,8 @@ class EBookEngine {
 
                 <!-- 하단 스프레드 점프 네비게이터 & 단계 이동 -->
                 <div class="flex items-center justify-between pt-2 flex-wrap gap-2">
-                    <button type="button" onclick="window.ebookEngine.goToStep(2)" class="px-4 py-2 rounded-xl border border-stone-300 text-xs font-bold text-stone-600 hover:bg-stone-100 transition-colors cursor-pointer">
-                        ← 이전: 필수 어휘
+                    <button type="button" onclick="window.ebookEngine.goToStep(1)" class="px-4 py-2 rounded-xl border border-stone-300 text-xs font-bold text-stone-600 hover:bg-stone-100 transition-colors cursor-pointer">
+                        ← 이전: 필수 어휘 15선
                     </button>
 
                     <!-- 페이지 스프레드 점프 바 -->
@@ -856,8 +1159,8 @@ class EBookEngine {
                         }).join('')}
                     </div>
 
-                    <button type="button" onclick="window.ebookEngine.goToStep(4)" class="px-5 py-2 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-xs flex items-center gap-2 shadow-sm transition-all cursor-pointer">
-                        <span>4단계: 콘셉트 맵</span>
+                    <button type="button" onclick="window.ebookEngine.goToStep(3)" class="px-5 py-2 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-xs flex items-center gap-2 shadow-sm transition-all cursor-pointer">
+                        <span>3단계: 논리 Flow Chart</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
                 </div>
