@@ -516,6 +516,7 @@ class EBookEngine {
         this.userQuizAnswers = {};
         this.flowChartAnswers = {};
         this.flowChartChecked = false;
+        this.activeBlankId = null;
         this.writingAnswers = {};
 
         const modal = document.getElementById('modal-ebook-reader');
@@ -611,7 +612,7 @@ class EBookEngine {
         const vocaList = this.currentBook.vocabulary || [];
 
         container.innerHTML = `
-            <div class="max-w-4xl mx-auto space-y-6 animate-in fade-in duration-200">
+            <div class="max-w-6xl mx-auto space-y-6 animate-in fade-in duration-200">
                 <!-- 상단 헤더 배너 -->
                 <div class="p-5 rounded-2xl bg-gradient-to-r from-blue-950 via-slate-900 to-indigo-950 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-slate-800 shadow-md">
                     <div class="space-y-1">
@@ -1048,7 +1049,7 @@ class EBookEngine {
         const progressPct = this.paginatedPages.length > 0 ? Math.round((endPageNum / this.paginatedPages.length) * 100) : 0;
 
         container.innerHTML = `
-            <div class="space-y-4 max-w-5xl mx-auto">
+            <div class="space-y-4 max-w-6xl mx-auto">
                 <!-- 리더기 전용 조작 툴바 및 독서 진행률 인디케이터 -->
                 <div class="p-3 rounded-2xl bg-stone-100 border border-stone-300/80 text-xs text-stone-700 space-y-2">
                     <div class="flex items-center justify-between flex-wrap gap-2">
@@ -1173,7 +1174,7 @@ class EBookEngine {
     // ------------------------------------------------------------------------
     
     // ------------------------------------------------------------------------
-    // STEP 3: 인터랙티브 논리 Flow Chart 빈칸 완성 (Flow Chart Organizer)
+    // STEP 3: 인터랙티브 논리 Flow Chart 계층형 다이어그램 (Hierarchical Tree)
     // ------------------------------------------------------------------------
     renderStep3FlowChart() {
         const container = document.getElementById('ebook-step-view-3');
@@ -1185,99 +1186,289 @@ class EBookEngine {
             nodes: [],
             wordPool: []
         };
+        const tl = fc.treeLayout;
 
         if (!this.flowChartAnswers) this.flowChartAnswers = {};
 
+        // All 8 blank definitions
+        const allBlanks = tl ? [
+            ...(tl.branchLeft?.blanks || []),
+            ...(tl.branchRight?.blanks || []),
+            ...(tl.subTier?.blanks || []),
+            ...(tl.parallelPair?.left?.blanks || []),
+            ...(tl.parallelPair?.right?.blanks || []),
+            ...(tl.conclusion?.blanks || [])
+        ] : (fc.nodes || []).map(n => ({ id: 'b' + n.step, word: n.blankWord, hint: n.hint }));
+
+        const totalBlanks = allBlanks.length || 8;
+        let correctCount = 0;
+        let placedCount = 0;
+        allBlanks.forEach(b => {
+            const userW = this.flowChartAnswers[b.id];
+            if (userW) {
+                placedCount++;
+                if (userW.toLowerCase() === b.word.toLowerCase()) correctCount++;
+            }
+        });
+
+        const isChecked = this.flowChartChecked;
+        const isAllCorrect = isChecked && correctCount === totalBlanks;
+
         container.innerHTML = `
-            <div class="max-w-4xl mx-auto space-y-6 animate-in fade-in duration-200">
-                <!-- 상단 헤더 -->
+            <div class="max-w-6xl mx-auto space-y-6 animate-in fade-in duration-200">
+                <!-- 상단 헤더 배너 -->
                 <div class="p-5 rounded-2xl bg-gradient-to-r from-purple-950 via-slate-900 to-indigo-950 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-purple-800/60 shadow-md">
                     <div class="space-y-1">
                         <div class="flex items-center gap-2">
                             <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-purple-400/20 text-purple-300 border border-purple-400/40">
-                                STEP 3 • LOGICAL FLOW CHART
+                                STEP 3 • LOGIC TREE FLOWCHART
                             </span>
-                            <span class="text-xs text-purple-200 font-mono">인터랙티브 구조화 정리</span>
+                            <span class="text-xs text-purple-200 font-mono">100% 영문 계층형 논리 구조도</span>
                         </div>
                         <h3 class="font-serif font-black text-xl text-white">
-                            🗺️ ${fc.title}
+                            🗺️ ${fc.title || (book.title + ' - Logic Flow Chart')}
                         </h3>
                         <p class="text-xs text-slate-300 leading-relaxed font-sans">
-                            글의 논리적 전개(배경 ➔ 메커니즘 ➔ 갈등 ➔ 결과) 흐름을 따라 하단 단어 풀에서 알맞은 키워드를 빈칸에 배치하세요.
+                            글의 5단계 논리 전개도(주제 ➔ 배경/원인 ➔ 핵심 메커니즘 ➔ 상호 조건-실행 ➔ 최종 결론)를 따라 하단 단어 풀에서 알맞은 키워드를 채워 넣으세요.
                         </p>
                     </div>
-                    <div class="shrink-0 flex items-center gap-2">
-                        <button type="button" onclick="window.ebookEngine.checkFlowChart()" class="px-4 py-2.5 rounded-xl bg-purple-500 hover:bg-purple-400 text-slate-950 font-serif font-bold text-xs flex items-center gap-1.5 shadow-sm transition-all cursor-pointer">
+                    <div class="shrink-0 flex items-center gap-2.5">
+                        <button type="button" onclick="window.ebookEngine.resetFlowChart()" class="px-3.5 py-2.5 rounded-xl border border-purple-400/40 hover:bg-white/10 text-purple-200 font-serif font-bold text-xs flex items-center gap-1.5 transition-all cursor-pointer" title="모든 슬롯 초기화">
+                            <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+                            <span>다시 풀기</span>
+                        </button>
+                        <button type="button" onclick="window.ebookEngine.checkFlowChart()" class="px-5 py-2.5 rounded-xl bg-purple-500 hover:bg-purple-400 text-slate-950 font-serif font-bold text-xs flex items-center gap-1.5 shadow-sm transition-all cursor-pointer">
                             <i data-lucide="check-circle-2" class="w-4 h-4"></i>
                             <span>구조 완성 검사</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- 4단계 플로우차트 노드 그리드/플로우 -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    ${(fc.nodes || []).map((node, idx) => {
-                        const userWord = this.flowChartAnswers[node.step];
-                        const isCorrect = userWord && userWord.toLowerCase() === node.blankWord.toLowerCase();
-                        const isChecked = this.flowChartChecked;
-
-                        let borderClass = 'border-slate-200 bg-white';
-                        if (isChecked) {
-                            borderClass = isCorrect ? 'border-emerald-400 bg-emerald-50/20 shadow-xs' : 'border-rose-400 bg-rose-50/20';
-                        }
-
-                        // Replace [ ? ] with interactive slot
-                        const slotHtml = `
-                            <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg border-2 font-mono font-bold text-xs transition-all cursor-pointer ${userWord ? (isChecked ? (isCorrect ? 'bg-emerald-100 border-emerald-500 text-emerald-950' : 'bg-rose-100 border-rose-500 text-rose-950') : 'bg-purple-100 border-purple-400 text-purple-950') : 'bg-slate-100 border-dashed border-slate-300 text-slate-400'}" onclick="window.ebookEngine.clearFlowSlot(${node.step})">
-                                ${userWord || '[ 빈칸 입력 ]'}
-                                ${userWord ? '<i data-lucide="x" class="w-3 h-3 ml-0.5 text-slate-400 hover:text-slate-700"></i>' : ''}
+                <!-- 검사 결과 피드백 배너 (검사 시 표시) -->
+                ${isChecked ? `
+                    <div class="p-4 rounded-2xl border-2 flex items-center justify-between gap-3 animate-in fade-in duration-200 ${isAllCorrect ? 'bg-emerald-500/10 border-emerald-500/80 text-emerald-950' : 'bg-amber-500/10 border-amber-500/80 text-amber-950'}">
+                        <div class="flex items-center gap-3">
+                            <span class="w-9 h-9 rounded-xl flex items-center justify-center font-bold shrink-0 ${isAllCorrect ? 'bg-emerald-500 text-white' : 'bg-amber-500 text-white'}">
+                                <i data-lucide="${isAllCorrect ? 'check' : 'alert-circle'}" class="w-5 h-5"></i>
                             </span>
-                        `;
-                        const renderedText = node.maskedText.replace('[   ?   ]', slotHtml);
+                            <div>
+                                <h4 class="font-bold text-sm">
+                                    ${isAllCorrect ? '🎉 완벽합니다! 논리 구조 8개 빈칸 전체 정답!' : `📝 8개 중 ${correctCount}개 정답 (오답 ${totalBlanks - correctCount}개)`}
+                                </h4>
+                                <p class="text-xs text-slate-600">
+                                    ${isAllCorrect ? '본문의 논리적 인과관계를 완벽하게 파악하셨습니다. 4단계 실전 문제로 이동하세요.' : '붉은색으로 표시된 빈칸을 클릭하여 비운 뒤, 알맞은 단어를 단어 풀에서 다시 선택하세요.'}
+                                </p>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs font-mono font-bold shrink-0 ${isAllCorrect ? 'bg-emerald-200 text-emerald-900' : 'bg-amber-200 text-amber-900'}">
+                            ${correctCount} / ${totalBlanks} 정답
+                        </span>
+                    </div>
+                ` : ''}
 
-                        return `
-                            <div class="p-4 rounded-2xl border ${borderClass} shadow-2xs space-y-2.5 hover:border-purple-300 transition-all flex flex-col justify-between">
-                                <div class="space-y-2">
-                                    <div class="flex items-center justify-between">
-                                        <div class="flex items-center gap-2">
-                                            <span class="w-6 h-6 rounded-full bg-purple-100 text-purple-900 font-mono font-bold text-xs flex items-center justify-center">
-                                                ${node.step}
+                <!-- 계층형 칠판 다이어그램 캔버스 (Blackboard Canvas) -->
+                <div class="p-6 md:p-8 rounded-3xl bg-slate-900 border-2 border-slate-700 shadow-xl text-slate-100 space-y-6 relative overflow-hidden">
+                    <!-- 배경 그리드 라인 효과 -->
+                    <div class="absolute inset-0 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:16px_16px] opacity-40 pointer-events-none"></div>
+
+                    ${tl ? `
+                        <!-- TIER 1: 루트 핵심 주제 (Root Topic Box) -->
+                        <div class="relative z-10 flex flex-col items-center">
+                            <div class="px-6 py-3.5 rounded-xl border-2 border-rose-500 bg-rose-950/80 text-rose-200 shadow-lg text-center max-w-xl hover:border-rose-400 transition-all">
+                                <div class="text-[10px] font-mono font-bold tracking-widest text-rose-400 uppercase mb-0.5">
+                                    ${fc.root?.badge || 'MAIN TOPIC & CORE THESIS'}
+                                </div>
+                                <h3 class="font-serif font-black text-base md:text-lg text-white">
+                                    ${fc.root?.text || book.title}
+                                </h3>
+                            </div>
+                            <!-- 루트 하단 연결 수직선 -->
+                            <div class="w-0.5 h-6 bg-slate-600"></div>
+                        </div>
+
+                        <!-- TIER 2: 좌/우 분기 (Branch Left: Context & Branch Right: Principles) -->
+                        <div class="relative z-10">
+                            <!-- 좌우 연결선 (md+ 화면에서 분기 바 표시) -->
+                            <div class="hidden md:block absolute top-0 left-1/4 right-1/4 h-0.5 bg-slate-600 -translate-y-px"></div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+                                <!-- 좌측 분기 (Branch Left: Context & Catalyst) -->
+                                <div class="p-5 rounded-2xl border-2 border-slate-700 bg-slate-800/90 shadow-md space-y-3 relative hover:border-blue-500/70 transition-all flex flex-col justify-between">
+                                    <div class="space-y-2">
+                                        <div class="flex items-center justify-between">
+                                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-blue-500/20 text-blue-300 border border-blue-400/40">
+                                                ${tl.branchLeft?.phase || '1. CONTEXT & CATALYST'}
                                             </span>
-                                            <span class="text-xs font-mono font-bold text-purple-700">${node.phase}</span>
+                                            <span class="text-[10px] font-mono text-slate-400">Context / Origin</span>
                                         </div>
-                                        <span class="text-[10px] font-mono text-slate-400">힌트: ${node.hint}</span>
+                                        <h4 class="font-serif font-bold text-sm md:text-base text-white">
+                                            ${tl.branchLeft?.titleEn || 'Contextual Catalyst'}
+                                        </h4>
+                                        <div class="text-xs md:text-sm text-slate-200 leading-relaxed font-sans pt-1">
+                                            ${this.renderMaskedTextWithSlots(tl.branchLeft?.maskedText, tl.branchLeft?.blanks)}
+                                        </div>
                                     </div>
-                                    <h4 class="font-serif font-black text-slate-900 text-sm leading-snug">
-                                        ${node.title}
-                                    </h4>
-                                    <div class="text-xs text-slate-700 leading-relaxed font-sans pt-1">
-                                        ${renderedText}
+                                    <div class="pt-2 border-t border-slate-700/60 flex flex-wrap gap-2 text-[10px] text-slate-400 font-mono">
+                                        ${(tl.branchLeft?.blanks || []).map(b => `<span title="${b.hint}">💡 ${b.id.toUpperCase()}: ${b.hint}</span>`).join('')}
                                     </div>
                                 </div>
 
-                                <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
-                                    <span class="text-slate-400">단어 풀에서 클릭하여 배치</span>
-                                    ${isChecked ? (isCorrect ? '<span class="text-emerald-700 font-bold flex items-center gap-1"><i data-lucide="check" class="w-3.5 h-3.5"></i> 정답 일치</span>' : '<span class="text-rose-600 font-bold flex items-center gap-1"><i data-lucide="alert-circle" class="w-3.5 h-3.5"></i> 다시 시도</span>') : ''}
+                                <!-- 우측 분기 (Branch Right: Core Principles & Mechanisms) -->
+                                <div class="p-5 rounded-2xl border-2 border-slate-700 bg-slate-800/90 shadow-md space-y-3 relative hover:border-purple-500/70 transition-all flex flex-col justify-between">
+                                    <div class="space-y-2">
+                                        <div class="flex items-center justify-between">
+                                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-purple-500/20 text-purple-300 border border-purple-400/40">
+                                                ${tl.branchRight?.phase || '2. STRUCTURAL MECHANISMS'}
+                                            </span>
+                                            <span class="text-[10px] font-mono text-slate-400">Principles & Logic</span>
+                                        </div>
+                                        <h4 class="font-serif font-bold text-sm md:text-base text-white">
+                                            ${tl.branchRight?.titleEn || 'Structural Mechanisms'}
+                                        </h4>
+                                        <div class="text-xs md:text-sm text-slate-200 leading-relaxed font-sans pt-1">
+                                            ${this.renderMaskedTextWithSlots(tl.branchRight?.maskedText, tl.branchRight?.blanks)}
+                                        </div>
+                                    </div>
+                                    <div class="pt-2 border-t border-slate-700/60 flex flex-wrap gap-2 text-[10px] text-slate-400 font-mono">
+                                        ${(tl.branchRight?.blanks || []).map(b => `<span title="${b.hint}">💡 ${b.id.toUpperCase()}: ${b.hint}</span>`).join('')}
+                                    </div>
                                 </div>
                             </div>
-                        `;
-                    }).join('')}
+                        </div>
+
+                        <!-- 우측 분기에서 하부 메커니즘으로 하강 수직선 -->
+                        <div class="relative z-10 flex justify-center md:justify-end md:pr-1/4">
+                            <div class="w-0.5 h-6 bg-slate-600"></div>
+                        </div>
+
+                        <!-- TIER 3: 세부 메커니즘 및 동역학 (Sub-Tier Dynamics) -->
+                        <div class="relative z-10 max-w-2xl mx-auto md:ml-auto md:mr-4 p-5 rounded-2xl border-2 border-slate-700 bg-slate-800/90 shadow-md space-y-3 hover:border-indigo-500/70 transition-all">
+                            <div class="flex items-center justify-between">
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-400/40">
+                                    ${tl.subTier?.phase || '3. INFRASTRUCTURE & DYNAMICS'}
+                                </span>
+                                <span class="text-[10px] font-mono text-slate-400">Sub-Mechanics</span>
+                            </div>
+                            <h4 class="font-serif font-bold text-sm md:text-base text-white">
+                                ${tl.subTier?.titleEn || 'Infrastructure Dynamics'}
+                            </h4>
+                            <div class="text-xs md:text-sm text-slate-200 leading-relaxed font-sans">
+                                ${this.renderMaskedTextWithSlots(tl.subTier?.maskedText, tl.subTier?.blanks)}
+                            </div>
+                            <div class="pt-1.5 border-t border-slate-700/60 text-[10px] text-slate-400 font-mono">
+                                ${(tl.subTier?.blanks || []).map(b => `<span>💡 ${b.id.toUpperCase()}: ${b.hint}</span>`).join('')}
+                            </div>
+                        </div>
+
+                        <!-- 중앙 하강 연결 수직선 -->
+                        <div class="relative z-10 flex justify-center">
+                            <div class="w-0.5 h-6 bg-slate-600"></div>
+                        </div>
+
+                        <!-- TIER 4: 조건-실행 수평 연결 병렬 쌍 (Parallel Condition-Action Pair) -->
+                        <div class="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+                            <!-- 조건 박스 (Left Parameter Box) -->
+                            <div class="w-full sm:w-1/2 p-4 md:p-5 rounded-xl border-2 border-slate-700 bg-slate-800/90 shadow-md space-y-2 hover:border-amber-400/70 transition-all">
+                                <div class="flex items-center justify-between">
+                                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-400/30">
+                                        ${tl.parallelPair?.left?.phase || 'KEY CONDITION / CONTEXT'}
+                                    </span>
+                                    <span class="text-[10px] font-mono text-slate-400">Condition</span>
+                                </div>
+                                <div class="text-xs md:text-sm text-slate-200 leading-relaxed font-sans">
+                                    ${this.renderMaskedTextWithSlots(tl.parallelPair?.left?.maskedText, tl.parallelPair?.left?.blanks)}
+                                </div>
+                                <div class="pt-1 text-[10px] text-slate-400 font-mono">
+                                    💡 ${tl.parallelPair?.left?.blanks?.[0]?.hint || ''}
+                                </div>
+                            </div>
+
+                            <!-- 수평 실선 연결자 [Node A] ─── [Node B] -->
+                            <div class="hidden sm:flex items-center justify-center px-1">
+                                <div class="w-8 md:w-12 h-0.5 bg-amber-400/80"></div>
+                            </div>
+
+                            <!-- 실행/작동 박스 (Right Execution Box) -->
+                            <div class="w-full sm:w-1/2 p-4 md:p-5 rounded-xl border-2 border-slate-700 bg-slate-800/90 shadow-md space-y-2 hover:border-emerald-400/70 transition-all">
+                                <div class="flex items-center justify-between">
+                                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
+                                        ${tl.parallelPair?.right?.phase || 'DIRECT ACTION / OPERATION'}
+                                    </span>
+                                    <span class="text-[10px] font-mono text-slate-400">Operation</span>
+                                </div>
+                                <div class="text-xs md:text-sm text-slate-200 leading-relaxed font-sans">
+                                    ${this.renderMaskedTextWithSlots(tl.parallelPair?.right?.maskedText, tl.parallelPair?.right?.blanks)}
+                                </div>
+                                <div class="pt-1 text-[10px] text-slate-400 font-mono">
+                                    💡 ${tl.parallelPair?.right?.blanks?.[0]?.hint || ''}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 중앙 하강 연결 수직선 -->
+                        <div class="relative z-10 flex justify-center">
+                            <div class="w-0.5 h-6 bg-slate-600"></div>
+                        </div>
+
+                        <!-- TIER 5: 최종 종합 결론 및 의의 박스 (Synthesis & Enduring Takeaway) -->
+                        <div class="relative z-10 w-full p-5 md:p-6 rounded-2xl border-2 border-emerald-500/70 bg-gradient-to-r from-emerald-950/70 via-slate-850 to-teal-950/70 shadow-lg space-y-2.5 hover:border-emerald-400 transition-all">
+                            <div class="flex items-center justify-between flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-400/20 text-emerald-300 border border-emerald-400/40">
+                                        ${tl.conclusion?.phase || '4. SYNTHESIS & ENDURING TAKEAWAY'}
+                                    </span>
+                                    <span class="text-xs font-serif font-black text-white">
+                                        ${tl.conclusion?.titleEn || 'Ultimate Significance & Legacy'}
+                                    </span>
+                                </div>
+                                <span class="text-[10px] font-mono text-emerald-300">Phase 4 • Final Takeaway</span>
+                            </div>
+                            <div class="text-xs md:text-sm text-emerald-100 leading-relaxed font-sans">
+                                ${this.renderMaskedTextWithSlots(tl.conclusion?.maskedText, tl.conclusion?.blanks)}
+                            </div>
+                            <div class="pt-1.5 border-t border-emerald-800/50 text-[10px] text-emerald-400/80 font-mono">
+                                💡 ${tl.conclusion?.blanks?.[0]?.hint || ''}
+                            </div>
+                        </div>
+                    ` : `
+                        <!-- 레거시 노드 폴백 -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            ${(fc.nodes || []).map(node => `
+                                <div class="p-4 rounded-xl border border-slate-700 bg-slate-800 space-y-2">
+                                    <div class="text-xs font-bold text-purple-400">${node.step}. ${node.phase}</div>
+                                    <h4 class="font-bold text-white text-sm">${node.title}</h4>
+                                    <div class="text-xs text-slate-200">${node.maskedText}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `}
                 </div>
 
-                <!-- 하단 단어 풀 (Word Bank Pool) -->
-                <div class="p-4 rounded-2xl bg-slate-100 border border-slate-200/80 space-y-2">
-                    <div class="flex items-center justify-between">
-                        <span class="font-mono font-bold text-xs text-slate-700 flex items-center gap-1.5">
-                            <i data-lucide="layers" class="w-4 h-4 text-purple-700"></i>
-                            <span>단어 풀 (Word Bank Pool)</span>
+                <!-- 하단 단어 풀 트레이 (Word Bank Pool) -->
+                <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+                    <div class="flex items-center justify-between flex-wrap gap-2">
+                        <div class="flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-lg bg-purple-100 text-purple-700 font-bold flex items-center justify-center">
+                                <i data-lucide="layers" class="w-4 h-4"></i>
+                            </span>
+                            <span class="font-serif font-bold text-sm text-slate-900">
+                                Word Bank Pool (단어 풀 12선)
+                            </span>
+                            <span class="px-2 py-0.5 rounded-full bg-purple-50 text-purple-700 font-mono text-[11px] font-bold border border-purple-200">
+                                ${placedCount} / ${totalBlanks} 슬롯 채움
+                            </span>
+                        </div>
+                        <span class="text-xs text-purple-800 font-medium">
+                            ${this.activeBlankId ? `👉 선택된 슬롯 [${this.activeBlankId.toUpperCase()}]에 단어를 배치합니다` : '💡 단어를 클릭하면 첫 번째 빈 슬롯에 자동 채워집니다 (슬롯 클릭 시 선택/삭제)'}
                         </span>
-                        <span class="text-[11px] text-slate-500">클릭하면 빈 슬롯에 자동 채워집니다</span>
                     </div>
-                    <div class="flex items-center gap-2 flex-wrap pt-1">
+
+                    <!-- 12개 단어 칩 -->
+                    <div class="flex items-center gap-2.5 flex-wrap pt-1">
                         ${(fc.wordPool || []).map(word => {
-                            const isUsed = Object.values(this.flowChartAnswers).includes(word);
+                            const isUsed = Object.values(this.flowChartAnswers).some(w => w && w.toLowerCase() === word.toLowerCase());
                             return `
-                                <button type="button" onclick="window.ebookEngine.placeWordIntoNextSlot('${word}')" class="px-3.5 py-1.5 rounded-xl border text-xs font-mono font-bold transition-all cursor-pointer ${isUsed ? 'bg-slate-200 text-slate-400 border-slate-300 opacity-60' : 'bg-white hover:bg-purple-50 text-purple-900 border-purple-200 shadow-2xs hover:scale-102'}">
+                                <button type="button" onclick="window.ebookEngine.placeWordIntoNextSlot('${word}')" class="px-4 py-2 rounded-xl border font-mono font-bold text-xs transition-all cursor-pointer ${isUsed ? 'bg-slate-100 text-slate-400 border-slate-200 line-through opacity-50 cursor-not-allowed' : 'bg-white hover:bg-purple-50 text-purple-900 border-purple-200 shadow-2xs hover:scale-105 active:scale-95 hover:border-purple-400'}">
                                     ${word}
                                 </button>
                             `;
@@ -1285,13 +1476,13 @@ class EBookEngine {
                     </div>
                 </div>
 
-                <!-- 3문장 총평 요약 박스 -->
-                <div class="p-4 rounded-2xl bg-purple-50/70 border border-purple-200 space-y-1.5">
+                <!-- Executive Summary 박스 -->
+                <div class="p-4 rounded-2xl bg-purple-50/80 border border-purple-200 space-y-1.5">
                     <div class="flex items-center gap-2 text-purple-900 font-bold text-xs">
-                        <i data-lucide="check-check" class="w-4 h-4 text-purple-700"></i>
-                        <span>Executive Summary (논리적 핵심 결론)</span>
+                        <i data-lucide="sparkles" class="w-4 h-4 text-purple-700"></i>
+                        <span>Executive Summary (논리적 핵심 결론 요약)</span>
                     </div>
-                    <p class="text-xs font-serif italic text-purple-950 leading-relaxed">
+                    <p class="text-xs md:text-sm font-serif italic text-purple-950 leading-relaxed">
                         "${fc.executiveSummary}"
                     </p>
                 </div>
@@ -1308,32 +1499,104 @@ class EBookEngine {
                 </div>
             </div>
         `;
+
+        if (window.lucide) window.lucide.createIcons();
+    }
+
+    renderMaskedTextWithSlots(maskedText, blanks) {
+        if (!maskedText) return '';
+        let rendered = maskedText;
+        (blanks || []).forEach(blank => {
+            const userWord = this.flowChartAnswers ? this.flowChartAnswers[blank.id] : null;
+            const isChecked = this.flowChartChecked;
+            const isCorrect = userWord && userWord.toLowerCase() === blank.word.toLowerCase();
+            const isActive = this.activeBlankId === blank.id;
+
+            let slotClass = 'bg-slate-800 border-dashed border-slate-500 text-slate-400 hover:border-purple-400';
+            if (isActive) {
+                slotClass = 'bg-amber-400/20 border-amber-400 text-amber-300 ring-2 ring-amber-400/60';
+            }
+            if (userWord) {
+                if (isChecked) {
+                    slotClass = isCorrect
+                        ? 'bg-emerald-500/20 border-emerald-400 text-emerald-300 font-bold'
+                        : 'bg-rose-500/20 border-rose-400 text-rose-300 font-bold';
+                } else {
+                    slotClass = 'bg-purple-500/20 border-purple-400 text-purple-200 font-bold';
+                }
+            }
+
+            const slotHtml = `
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg border-2 font-mono font-bold text-xs transition-all cursor-pointer ${slotClass}" onclick="window.ebookEngine.handleBlankSlotClick('${blank.id}', event)" title="${blank.hint || '클릭하여 선택/삭제'}">
+                    <span>${userWord || `[ ${blank.id.toUpperCase()} ]`}</span>
+                    ${userWord ? '<i data-lucide="x" class="w-3 h-3 text-slate-400 hover:text-white transition-colors"></i>' : ''}
+                </span>
+            `;
+
+            rendered = rendered.replace('[ ? ]', slotHtml);
+        });
+        return rendered;
+    }
+
+    handleBlankSlotClick(blankId, event) {
+        if (event) event.stopPropagation();
+        if (!this.flowChartAnswers) this.flowChartAnswers = {};
+        if (this.flowChartAnswers[blankId]) {
+            delete this.flowChartAnswers[blankId];
+            this.activeBlankId = blankId;
+        } else {
+            this.activeBlankId = blankId;
+        }
+        this.renderStep3FlowChart();
     }
 
     placeWordIntoNextSlot(word) {
         if (!this.flowChartAnswers) this.flowChartAnswers = {};
         const fc = this.currentBook?.flowChart;
-        if (!fc || !fc.nodes) return;
+        if (!fc) return;
 
-        // Find first empty slot
-        for (let node of fc.nodes) {
-            if (!this.flowChartAnswers[node.step]) {
-                this.flowChartAnswers[node.step] = word;
-                this.renderStep3FlowChart();
-                return;
+        const allBlankIds = ['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8'];
+
+        // If activeBlankId is selected and empty, fill it
+        let targetId = null;
+        if (this.activeBlankId && !this.flowChartAnswers[this.activeBlankId]) {
+            targetId = this.activeBlankId;
+        } else {
+            // Find first empty slot
+            for (let id of allBlankIds) {
+                if (!this.flowChartAnswers[id]) {
+                    targetId = id;
+                    break;
+                }
             }
+        }
+
+        if (targetId) {
+            this.flowChartAnswers[targetId] = word;
+            // Set next unfilled blank as active
+            const nextEmpty = allBlankIds.find(id => !this.flowChartAnswers[id]);
+            this.activeBlankId = nextEmpty || null;
+            this.renderStep3FlowChart();
         }
     }
 
-    clearFlowSlot(step) {
-        if (this.flowChartAnswers && this.flowChartAnswers[step]) {
-            delete this.flowChartAnswers[step];
+    clearFlowSlot(blankId) {
+        if (this.flowChartAnswers && this.flowChartAnswers[blankId]) {
+            delete this.flowChartAnswers[blankId];
+            this.activeBlankId = blankId;
             this.renderStep3FlowChart();
         }
     }
 
     checkFlowChart() {
         this.flowChartChecked = true;
+        this.renderStep3FlowChart();
+    }
+
+    resetFlowChart() {
+        this.flowChartAnswers = {};
+        this.flowChartChecked = false;
+        this.activeBlankId = null;
         this.renderStep3FlowChart();
     }
 
@@ -1348,7 +1611,7 @@ class EBookEngine {
         if (!this.userQuizAnswers) this.userQuizAnswers = {};
 
         container.innerHTML = `
-            <div class="max-w-3xl mx-auto space-y-6 animate-in fade-in duration-200">
+            <div class="max-w-6xl mx-auto space-y-6 animate-in fade-in duration-200">
                 <!-- 상단 헤더 & OMR 네비게이터 -->
                 <div class="p-5 rounded-2xl bg-gradient-to-r from-indigo-950 via-slate-900 to-blue-950 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-indigo-800/60 shadow-md">
                     <div class="space-y-1">
@@ -1388,8 +1651,8 @@ class EBookEngine {
                     }).join('')}
                 </div>
 
-                <!-- 10개 문항 카드 리스트 -->
-                <div class="space-y-5">
+                <!-- 10개 문항 카드 리스트 (와이드 2열 그리드) -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
                     ${quizzes.map((q, idx) => {
                         const userAns = this.userQuizAnswers[q.id];
                         const isSubmitted = userAns !== undefined;
@@ -1481,7 +1744,7 @@ class EBookEngine {
         if (!this.writingAnswers) this.writingAnswers = {};
 
         container.innerHTML = `
-            <div class="max-w-3xl mx-auto space-y-6 animate-in fade-in duration-200">
+            <div class="max-w-6xl mx-auto space-y-6 animate-in fade-in duration-200">
                 <!-- 상단 헤더 -->
                 <div class="p-5 rounded-2xl bg-gradient-to-r from-teal-950 via-slate-900 to-emerald-950 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-emerald-800/60 shadow-md">
                     <div class="space-y-1">
