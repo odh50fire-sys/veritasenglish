@@ -779,6 +779,14 @@ const DAILY_EXCLUSIVE_POOL = [
  * ID로 원어민 표현 찾기 (하단 기본 목록 + 데일리 전용 풀 통합 검색)
  */
 function findNativeExpressionById(id) {
+    if (!id) return null;
+    if (typeof window !== 'undefined' && window.NATIVE_EXPRESSIONS_MAP && window.NATIVE_EXPRESSIONS_MAP[id]) {
+        return window.NATIVE_EXPRESSIONS_MAP[id];
+    }
+    if (typeof window !== 'undefined' && window.NATIVE_EXPRESSIONS_MASTER_BANK) {
+        const found = window.NATIVE_EXPRESSIONS_MASTER_BANK.find(e => e.id === id);
+        if (found) return found;
+    }
     return DAILY_EXCLUSIVE_POOL.find(e => e.id === id) || NATIVE_EXPRESSIONS.find(e => e.id === id) || null;
 }
 
@@ -797,11 +805,24 @@ function getDailyExpressions(dateStr, extraOffset = 0, completedIds = [], userLe
     const utcDays = Math.floor(Date.UTC(parts[0], (parts[1] || 1) - 1, parts[2] || 1) / 86400000);
     const stepIndex = Math.abs(utcDays + extraOffset);
 
-    let collocations = DAILY_EXCLUSIVE_POOL.filter(e => e.category === 'collocation');
-    let idioms = DAILY_EXCLUSIVE_POOL.filter(e => e.category === 'idiom');
+    // 320개 마스터 뱅크가 로드되어 있으면 마스터 뱅크 활용
+    const masterBank = (typeof window !== 'undefined' && window.NATIVE_EXPRESSIONS_MASTER_BANK) ? window.NATIVE_EXPRESSIONS_MASTER_BANK : null;
+
+    let collocations = [];
+    let idioms = [];
+
+    if (masterBank && masterBank.length >= 320) {
+        collocations = masterBank.filter(e => e.category === 'collocation' || e.category === 'vocabulary' || (e.level && e.level >= 5));
+        idioms = masterBank.filter(e => e.category === 'idiom' || e.category === 'phrasal' || e.category === 'slang');
+        if (collocations.length === 0) collocations = masterBank.slice(0, 160);
+        if (idioms.length === 0) idioms = masterBank.slice(160);
+    } else {
+        collocations = DAILY_EXCLUSIVE_POOL.filter(e => e.category === 'collocation');
+        idioms = DAILY_EXCLUSIVE_POOL.filter(e => e.category === 'idiom');
+    }
 
     // 사용자의 진단 레벨(userLevel)이 주어지면 레벨 맞춤(오차 +-2 이내) 엄격 필터링
-    const targetLvl = Number(userLevel) || (window.storage && window.storage.getAcademicLevel ? window.storage.getAcademicLevel() : null);
+    const targetLvl = Number(userLevel) || (typeof window !== 'undefined' && window.storage && window.storage.getAcademicLevel ? window.storage.getAcademicLevel() : null);
     if (targetLvl && targetLvl >= 1 && targetLvl <= 10) {
         const collocFiltered = collocations.filter(e => Math.abs((e.level || 5) - targetLvl) <= 2);
         const idiomFiltered = idioms.filter(e => Math.abs((e.level || 5) - targetLvl) <= 2);
@@ -829,9 +850,28 @@ function getDailyExpressions(dateStr, extraOffset = 0, completedIds = [], userLe
         }
     }
 
+    const c = collocations[collocIdx];
+    const idm = idioms[idiomIdx];
+
+    // 호환성 보장: summary, exampleEn, audioText 보정
+    const normalize = (item) => {
+        if (!item) return item;
+        return {
+            ...item,
+            summary: item.summary || item.koreanMeaning || '',
+            exampleEn: item.exampleEn || item.audioSentence || (item.dialogue && item.dialogue[0]?.textEn) || '',
+            audioText: item.audioSentence || item.title
+        };
+    };
+
+    const normColloc = normalize(c);
+    const normIdiom = normalize(idm);
+
     return {
-        collocation: collocations[collocIdx],
-        idiom: idioms[idiomIdx]
+        collocation: normColloc,
+        idiom: normIdiom,
+        expr1: normColloc,
+        expr2: normIdiom
     };
 }
 

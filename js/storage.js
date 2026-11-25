@@ -1681,6 +1681,52 @@ class StorageManager {
     }
 
     // ------------------------------------------------------------------------
+    // 원어민 시리즈 및 80개 단원 (Series & Units) 완독 관리
+    // ------------------------------------------------------------------------
+
+    getNativeCompletedUnits() {
+        try {
+            const raw = localStorage.getItem('veritas_native_completed_units');
+            return raw ? JSON.parse(raw) : [];
+        } catch (e) {
+            return [];
+        }
+    }
+
+    isNativeUnitCompleted(unitId) {
+        if (!unitId) return false;
+        const list = this.getNativeCompletedUnits();
+        return list.includes(unitId);
+    }
+
+    markNativeUnitCompleted(unitId, unitData = null) {
+        if (!unitId) return;
+        let list = this.getNativeCompletedUnits();
+        if (!list.includes(unitId)) {
+            list.push(unitId);
+            try {
+                localStorage.setItem('veritas_native_completed_units', JSON.stringify(list));
+            } catch (e) {
+                console.error('Failed to save native completed unit:', e);
+            }
+        }
+
+        // 단원 내 4개 표현을 단어장 및 에빙하우스 SRS 복습에 자동 등록
+        if (unitData && Array.isArray(unitData.expressions)) {
+            unitData.expressions.forEach(expr => {
+                this.registerDailyNativeExpression(expr);
+            });
+        }
+    }
+
+    getSeriesCompletedUnitsCount(seriesId) {
+        if (!seriesId || !window.NATIVE_UNITS_DATA) return 0;
+        const completed = this.getNativeCompletedUnits();
+        const seriesUnits = window.NATIVE_UNITS_DATA.filter(u => u.seriesId === seriesId);
+        return seriesUnits.filter(u => completed.includes(u.unitId)).length;
+    }
+
+    // ------------------------------------------------------------------------
     // 단어 관리 (CRUD)
     // ------------------------------------------------------------------------
 

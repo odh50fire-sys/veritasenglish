@@ -1469,6 +1469,62 @@
                     <!-- JS 주입 -->
                 </div>
 
+                <!-- 8대 전문 시리즈 셀렉터 덱 (Series Deck) -->
+                <div class="space-y-3 mb-6">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="text-base font-serif font-black text-slate-900 flex items-center gap-1.5">
+                                <span>📚</span> 8대 전문 시리즈 체계 (총 80개 단원 • 320개 표현)
+                            </span>
+                            <span class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 text-[10px] font-mono font-bold">
+                                4단계 스튜디오 파이프라인
+                            </span>
+                        </div>
+                        <span id="series-deck-overall-progress" class="text-xs font-mono font-bold text-slate-500">
+                            진도율 계산 중...
+                        </span>
+                    </div>
+
+                    <!-- 8개 시리즈 카드 그리드 -->
+                    <div id="native-series-deck" class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-3 sm:gap-4">
+                        <!-- JS 주입 -->
+                    </div>
+                </div>
+
+                <!-- 선택된 시리즈의 10개 단원 학습 그리드 (Units Grid) -->
+                <div id="native-series-units-section" class="p-5 sm:p-6 bg-slate-50/80 rounded-2xl border border-slate-200 space-y-4 mb-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-slate-200">
+                        <div class="min-w-0">
+                            <div class="flex items-center gap-2 flex-wrap">
+                                <span id="active-series-badge" class="px-2.5 py-0.5 rounded-full bg-blue-900 text-white text-[11px] font-mono font-bold">
+                                    Series 1
+                                </span>
+                                <h3 id="active-series-title" class="font-serif font-black text-lg text-slate-900 truncate">
+                                    시리즈 제목
+                                </h3>
+                            </div>
+                            <p id="active-series-desc" class="text-xs text-slate-500 mt-0.5">
+                                시리즈 세부 설명
+                            </p>
+                        </div>
+                        <div id="active-series-progress-badge" class="text-xs font-mono font-bold text-blue-900 bg-white px-3 py-1.5 rounded-xl border border-slate-200 shrink-0">
+                            0 / 10 단원 완독
+                        </div>
+                    </div>
+
+                    <!-- 10개 단원 카드 그리드 -->
+                    <div id="native-series-units-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+                        <!-- JS 주입 -->
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between pt-2">
+                    <h3 class="font-serif font-black text-base text-slate-900 flex items-center gap-1.5">
+                        <span>🔍</span> 표현별 빠른 아카이브 검색 & 개별 카드
+                    </h3>
+                    <span class="text-xs text-slate-400">카드를 클릭하여 상세 뉘앙스 탐구</span>
+                </div>
+
                 <!-- 카테고리 필터 버튼군 -->
                 <div class="flex flex-wrap gap-2 text-xs font-semibold">
                     <button class="expr-cat-btn px-3 py-1.5 rounded-lg border border-slate-200 active-cat transition-all" data-category="all" onclick="window.nativeExpressionsEngine.setCategory('all')">
@@ -3384,6 +3440,83 @@
     </div>
 
     <!-- ======================================================================
+         MODAL: 원어민 실전 표현 & 뉘앙스 4단계 몰입형 스튜디오 (Studio Modal)
+         ====================================================================== -->
+    <div id="modal-expression-studio" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-2 sm:p-4">
+        <div class="relative w-full max-w-5xl h-[94vh] bg-white rounded-3xl shadow-2xl border border-slate-700/60 overflow-hidden flex flex-col animate-in fade-in zoom-in-95 duration-200">
+            <!-- 스튜디오 최상단 헤더 바 -->
+            <div class="p-3.5 sm:p-4 bg-slate-900 text-white flex items-center justify-between border-b border-slate-800 shrink-0 gap-3">
+                <!-- 좌측 단원 정보 -->
+                <div class="flex items-center gap-2.5 min-w-0">
+                    <div id="studio-header-icon" class="w-8 h-8 rounded-lg bg-amber-400/20 text-amber-300 border border-amber-400/30 flex items-center justify-center text-sm shrink-0">
+                        ✨
+                    </div>
+                    <div class="min-w-0">
+                        <div class="flex items-center gap-1.5 flex-wrap">
+                            <span id="studio-series-badge" class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-white/10 text-white border border-white/20 truncate max-w-[150px]">
+                                시리즈
+                            </span>
+                            <span id="studio-unit-badge" class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30">
+                                Unit 1
+                            </span>
+                        </div>
+                        <h3 id="studio-unit-title" class="font-serif font-black text-sm sm:text-base text-white truncate max-w-[240px] sm:max-w-md lg:max-w-lg">
+                            Unit Title
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- 중앙 4단계 스텝퍼 버튼 바 (데스크톱) -->
+                <div class="hidden sm:flex items-center gap-1 bg-slate-800/80 p-1 rounded-xl border border-slate-700/80 text-[11px] font-serif font-bold">
+                    <button type="button" data-step="1" onclick="window.nativeExpressionsEngine.goToStudioStep(1)" class="expr-studio-step-btn px-2.5 py-1 rounded-lg border transition-all cursor-pointer">
+                        1. 뉘앙스 탐구 & 쉐도잉
+                    </button>
+                    <button type="button" data-step="2" onclick="window.nativeExpressionsEngine.goToStudioStep(2)" class="expr-studio-step-btn px-2.5 py-1 rounded-lg border transition-all cursor-pointer">
+                        2. 리얼 다이얼로그
+                    </button>
+                    <button type="button" data-step="3" onclick="window.nativeExpressionsEngine.goToStudioStep(3)" class="expr-studio-step-btn px-2.5 py-1 rounded-lg border transition-all cursor-pointer">
+                        3. 1초 반응 스피킹
+                    </button>
+                    <button type="button" data-step="4" onclick="window.nativeExpressionsEngine.goToStudioStep(4)" class="expr-studio-step-btn px-2.5 py-1 rounded-lg border transition-all cursor-pointer">
+                        4. 뉘앙스 배틀 & 영작
+                    </button>
+                </div>
+
+                <!-- 우측 닫기 버튼 -->
+                <button type="button" onclick="window.nativeExpressionsEngine.closeUnitStudio()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-colors text-sm font-bold shrink-0 cursor-pointer" title="스튜디오 닫기">
+                    ✕
+                </button>
+            </div>
+
+            <!-- 모바일용 4단계 서브 인디케이터 바 -->
+            <div class="flex sm:hidden items-center justify-around bg-slate-800 text-[10px] font-semibold text-slate-300 py-1.5 px-2 border-b border-slate-700">
+                <button type="button" onclick="window.nativeExpressionsEngine.goToStudioStep(1)" class="expr-studio-mob-step px-2 py-0.5 rounded cursor-pointer" data-step="1">1. 뉘앙스</button>
+                <button type="button" onclick="window.nativeExpressionsEngine.goToStudioStep(2)" class="expr-studio-mob-step px-2 py-0.5 rounded cursor-pointer" data-step="2">2. 대화문</button>
+                <button type="button" onclick="window.nativeExpressionsEngine.goToStudioStep(3)" class="expr-studio-mob-step px-2 py-0.5 rounded cursor-pointer" data-step="3">3. 1초반응</button>
+                <button type="button" onclick="window.nativeExpressionsEngine.goToStudioStep(4)" class="expr-studio-mob-step px-2 py-0.5 rounded cursor-pointer" data-step="4">4. 퀴즈/영작</button>
+            </div>
+
+            <!-- 메인 스튜디오 콘텐츠 영역 -->
+            <div id="expression-studio-body" class="flex-1 overflow-y-auto p-4 sm:p-6 bg-slate-50/70">
+                <!-- JS 동적 주입 -->
+            </div>
+
+            <!-- 하단 푸터 바 -->
+            <div class="p-3.5 sm:p-4 bg-white border-t border-slate-200 flex items-center justify-between shrink-0 gap-3">
+                <button id="studio-prev-step-btn" type="button" onclick="window.nativeExpressionsEngine.prevStudioStep()" class="px-4 py-2 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-100 text-xs font-serif font-bold transition-all disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer">
+                    ← 이전 단계
+                </button>
+                <div id="studio-step-indicator" class="text-xs font-mono font-bold text-slate-500">
+                    Step 1 / 4
+                </div>
+                <button id="studio-next-step-btn" type="button" onclick="window.nativeExpressionsEngine.nextStudioStep()" class="px-5 py-2 rounded-xl bg-blue-900 hover:bg-blue-800 text-white text-xs font-serif font-bold transition-all shadow-sm cursor-pointer">
+                    다음 단계 →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================================
          MODAL: 실감형 비문학 원서 e-Book 리더기 (e-Book Reader Modal)
          ====================================================================== -->
     <div id="modal-ebook-reader" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-2 sm:p-4">
@@ -4072,6 +4205,7 @@
     <script src="data/neungryul_voca_middle_all.js"></script>
     <script src="data/neungryul_high_voca.js?v=20261121_polysemy"></script>
     <script src="data/native_expressions.js"></script>
+    <script src="data/native_expressions_series_data.js?v=20261125_series80_v3"></script>
     <script src="data/reading_passages.js?v=20261121_lemmatize"></script>
     <script src="data/curated_vocabulary.js?v=20261120_h400"></script>
     <script src="data/veritas_original_collections.js"></script>
@@ -4102,7 +4236,7 @@
     <script src="js/quiz.js"></script>
     <script src="js/review.js"></script>
     <script src="js/planner.js"></script>
-    <script src="js/expressions.js"></script>
+    <script src="js/expressions.js?v=20261125_series80_v3"></script>
     <script src="js/dictionary.js"></script>
     <script src="js/reading.js?v=20261121_polyexamples"></script>
     <script src="js/level_test.js"></script>
