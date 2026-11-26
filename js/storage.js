@@ -2731,28 +2731,119 @@ class StorageManager {
         // 기존 해당 시리즈 계획 삭제 후 재등록
         this.words = this.words.filter(w => !(w.ebookSeriesId === seriesId));
 
+        // [방안 3 핵심] 학습 페이스 설정 파싱 (객체, 배열, 문자열 하위호환)
+        let mode = 'pace';
+        let booksPerDay = 1;
+        let daysPerBook = 1;
+        let daysOfWeek = null; // [0..6] (0: 일요일, 1: 월요일, ...)
+        let booksPerSession = 1;
+
+        if (typeof paceOrDays === 'object' && paceOrDays !== null && !Array.isArray(paceOrDays)) {
+            mode = paceOrDays.mode || 'pace';
+            booksPerDay = Math.max(1, parseInt(paceOrDays.booksPerDay) || 1);
+            daysPerBook = Math.max(1, parseInt(paceOrDays.daysPerBook) || 1);
+            daysOfWeek = Array.isArray(paceOrDays.daysOfWeek) ? paceOrDays.daysOfWeek : null;
+            booksPerSession = Math.max(1, parseInt(paceOrDays.booksPerSession) || 1);
+        } else if (Array.isArray(paceOrDays)) {
+            mode = 'days';
+            daysOfWeek = paceOrDays;
+            booksPerSession = 1;
+        } else if (typeof paceOrDays === 'string') {
+            if (paceOrDays === 'twice_daily') {
+                mode = 'pace';
+                booksPerDay = 2;
+                daysPerBook = 1;
+            } else if (paceOrDays === 'alternate') {
+                mode = 'pace';
+                booksPerDay = 1;
+                daysPerBook = 2;
+            } else if (paceOrDays === 'every_3_days') {
+                mode = 'pace';
+                booksPerDay = 1;
+                daysPerBook = 3;
+            } else if (paceOrDays === 'every_7_days') {
+                mode = 'pace';
+                booksPerDay = 1;
+                daysPerBook = 7;
+            } else {
+                mode = 'pace';
+                booksPerDay = 1;
+                daysPerBook = 1;
+            }
+        }
+
         let scheduledDates = [];
-        if (paceOrDays === 'alternate') {
-            const [y, m, d] = start.split('-').map(Number);
-            let cursor = new Date(y, m - 1, d);
-            let safetyCounter = 0;
-            while (scheduledDates.length < targetBooks.length && safetyCounter < 1000) {
+        const [y, m, d] = start.split('-').map(Number);
+        let cursor = new Date(y, m - 1, d);
+        let safetyCounter = 0;
+
+        if (mode === 'days') {
+            // 요일 맞춤 모드: 선택된 요일에만 booksPerSession 권씩 배정
+            while (scheduledDates.length < targetBooks.length && safetyCounter < 1500) {
                 safetyCounter++;
                 const curYear = cursor.getFullYear();
                 const curMonth = String(cursor.getMonth() + 1).padStart(2, '0');
                 const curDate = String(cursor.getDate()).padStart(2, '0');
                 const curStr = `${curYear}-${curMonth}-${curDate}`;
-                if (!this.isRestDay(curStr)) {
-                    scheduledDates.push(curStr);
-                    cursor.setDate(cursor.getDate() + 2); // 2일에 1권
-                } else {
+                const curDayOfWeek = cursor.getDay();
+
+                const isDayAllowed = (!daysOfWeek || daysOfWeek.length === 0 || daysOfWeek.includes(curDayOfWeek));
+                if (!this.isRestDay(curStr) && isDayAllowed) {
+                    for (let i = 0; i < booksPerSession && scheduledDates.length < targetBooks.length; i++) {
+                        scheduledDates.push(curStr);
+                    }
+                }
+                cursor.setDate(cursor.getDate() + 1);
+            }
+        } else {
+            // 주기 설정 (Pace) 모드
+            if (booksPerDay > 1) {
+                // 하루 N권씩 배정
+                while (scheduledDates.length < targetBooks.length && safetyCounter < 1500) {
+                    safetyCounter++;
+                    const curYear = cursor.getFullYear();
+                    const curMonth = String(cursor.getMonth() + 1).padStart(2, '0');
+                    const curDate = String(cursor.getDate()).padStart(2, '0');
+                    const curStr = `${curYear}-${curMonth}-${curDate}`;
+
+                    if (!this.isRestDay(curStr)) {
+                        for (let i = 0; i < booksPerDay && scheduledDates.length < targetBooks.length; i++) {
+                            scheduledDates.push(curStr);
+                        }
+                    }
+                    cursor.setDate(cursor.getDate() + 1);
+                }
+            } else if (daysPerBook > 1) {
+                // N일에 1권씩 배정 (격일, 3일, 7일 등)
+                while (scheduledDates.length < targetBooks.length && safetyCounter < 1500) {
+                    safetyCounter++;
+                    const curYear = cursor.getFullYear();
+                    const curMonth = String(cursor.getMonth() + 1).padStart(2, '0');
+                    const curDate = String(cursor.getDate()).padStart(2, '0');
+                    const curStr = `${curYear}-${curMonth}-${curDate}`;
+
+                    if (!this.isRestDay(curStr)) {
+                        scheduledDates.push(curStr);
+                        cursor.setDate(cursor.getDate() + daysPerBook);
+                    } else {
+                        cursor.setDate(cursor.getDate() + 1);
+                    }
+                }
+            } else {
+                // 매일 1권 배정
+                while (scheduledDates.length < targetBooks.length && safetyCounter < 1500) {
+                    safetyCounter++;
+                    const curYear = cursor.getFullYear();
+                    const curMonth = String(cursor.getMonth() + 1).padStart(2, '0');
+                    const curDate = String(cursor.getDate()).padStart(2, '0');
+                    const curStr = `${curYear}-${curMonth}-${curDate}`;
+
+                    if (!this.isRestDay(curStr)) {
+                        scheduledDates.push(curStr);
+                    }
                     cursor.setDate(cursor.getDate() + 1);
                 }
             }
-        } else if (Array.isArray(paceOrDays)) {
-            scheduledDates = this.calculateScheduledDates(start, targetBooks.length, paceOrDays);
-        } else {
-            scheduledDates = this.calculateScheduledDates(start, targetBooks.length, null);
         }
 
         const newItems = [];
@@ -2775,6 +2866,7 @@ class StorageManager {
                 ebookBookId: b.id,
                 ebookVol: b.vol,
                 ebookLevel: b.level,
+                ebookPlanDate: planDate,
                 planDate: planDate,
                 createdAt: Date.now(),
                 stage: 1,
@@ -2790,7 +2882,7 @@ class StorageManager {
             if (b.vocabulary && Array.isArray(b.vocabulary)) {
                 b.vocabulary.slice(0, 3).forEach(v => {
                     newItems.push({
-                        id: `ebook-vocab-${b.id}-${(v.word || '').replace(/\s+/g, '')}`,
+                        id: `ebook-vocab-${b.id}-${(v.word || '').replace(/\\s+/g, '')}`,
                         word: v.word,
                         meaning: v.meaning,
                         partOfSpeech: v.pos || 'n.',
@@ -2801,6 +2893,7 @@ class StorageManager {
                         isEBookVocab: true,
                         ebookSeriesId: seriesId,
                         ebookBookId: b.id,
+                        ebookPlanDate: planDate,
                         planDate: planDate,
                         createdAt: Date.now(),
                         stage: 1,
@@ -2823,7 +2916,8 @@ class StorageManager {
             addedTotalItems: newItems.length,
             seriesName: targetSeries.name,
             startDate: scheduledDates[0] || start,
-            endDate: scheduledDates[scheduledDates.length - 1] || start
+            endDate: scheduledDates[scheduledDates.length - 1] || start,
+            distinctDays: Array.from(new Set(scheduledDates)).length
         };
     }
 
@@ -3862,24 +3956,51 @@ class StorageManager {
             };
         }
 
-        // 4. e-Book 도서관 미션
+        // 4. e-Book 도서관 미션 (다권 완독형 하루 2~3권 배정 완벽 지원)
         let ebookMission = { assigned: false };
-        const ebookWord = wordsOnDate.find(w => w.isEBookTask || w.ebookBookId || (w.ebookPlanDate === dateStr && w.isEBookVolume));
-        if (ebookWord) {
-            const bookId = ebookWord.ebookBookId || ebookWord.ebookId;
+        const ebookWords = wordsOnDate.filter(w => w.isEBookTask || (w.ebookPlanDate === dateStr && w.isEBookVolume));
+        if (ebookWords.length > 0) {
             const allBooks = window.EBOOK_BOOKS_DATA || window.EBOOK_LIBRARY_DATA || (window.ebookEngine ? window.ebookEngine.books : []) || [];
-            const bookObj = allBooks.find(b => b.id === bookId);
-            const isDone = this.isBookCompleted(bookId);
+            const bookTasks = ebookWords.map(ew => {
+                const bId = ew.ebookBookId || ew.ebookId;
+                const bObj = allBooks.find(b => b.id === bId);
+                const done = this.isBookCompleted(bId);
+                return {
+                    bookId: bId,
+                    title: bObj ? bObj.title : (ew.word || ew.ebookTitle || '원서 e-Book'),
+                    subTitle: bObj ? bObj.subTitle : '',
+                    vol: ew.ebookVol || (bObj ? bObj.vol : null),
+                    isDone: done
+                };
+            });
+
+            const completedCount = bookTasks.filter(b => b.isDone).length;
+            const isAllDone = completedCount >= bookTasks.length;
+            const firstUnread = bookTasks.find(b => !b.isDone) || bookTasks[0];
+
+            let titleStr = '';
+            let subtitleStr = '';
+            if (bookTasks.length === 1) {
+                titleStr = bookTasks[0].title;
+                subtitleStr = bookTasks[0].subTitle || `Vol.${bookTasks[0].vol || 1} 원서`;
+            } else {
+                titleStr = `오늘의 원서 ${bookTasks.length}권 완독 퀘스트`;
+                subtitleStr = bookTasks.map(b => b.vol ? `Vol.${b.vol}` : b.title).join(' · ');
+            }
 
             ebookMission = {
                 assigned: true,
                 type: 'ebook',
-                title: bookObj ? bookObj.title : (ebookWord.word || ebookWord.ebookTitle || '원서 e-Book'),
-                subtitle: bookObj ? bookObj.subTitle : (ebookWord.meaning || `Level ${ebookWord.ebookLevel || 1} 원서`),
-                bookId: bookId,
-                isCompleted: isDone,
-                statusText: isDone ? '5단계 완독 ✅' : '원서 완독 미완료 ⏳',
-                actionText: isDone ? '다시 읽기' : '바로 읽기 ➔',
+                title: titleStr,
+                subtitle: subtitleStr,
+                bookId: firstUnread.bookId,
+                totalCount: bookTasks.length,
+                completedCount: completedCount,
+                isCompleted: isAllDone,
+                statusText: isAllDone 
+                    ? `완독 완료 (${completedCount}/${bookTasks.length}권) ✅` 
+                    : `진행 중 (${completedCount}/${bookTasks.length}권) ⏳`,
+                actionText: isAllDone ? '원서 다시 읽기' : (bookTasks.length > 1 ? `다음 권 읽기 (Vol.${firstUnread.vol || ''})` : '바로 읽기 ➔'),
                 actionTab: 'ebook'
             };
         }

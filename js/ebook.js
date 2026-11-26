@@ -30,6 +30,11 @@ class EBookEngine {
 
         this.readingProgress = {}; // bookId -> { completed: boolean, lastStep: number, completedAt: number }
         this._hasBoundKeyboard = false;
+
+        // [방안 3 핵심] 시리즈 플래너 Pro 옵션 상태
+        this._plannerMode = 'pace'; // 'pace' | 'days'
+        this._plannerPreset = 'daily'; // 'daily' | 'twice_daily' | 'alternate' | 'every_3_days' | 'custom_books' | 'custom_days'
+        this._plannerSelectedDays = [1, 2, 3, 4, 5]; // 기본 주중(월~금)
     }
 
     init() {
@@ -361,6 +366,9 @@ class EBookEngine {
             }
         }
         this._plannerSeriesId = seriesId;
+        this._plannerMode = 'pace';
+        this._plannerPreset = 'daily';
+        this._plannerSelectedDays = [1, 2, 3, 4, 5];
 
         const modal = document.getElementById('modal-ebook-series-planner');
         if (!modal) return;
@@ -384,6 +392,11 @@ class EBookEngine {
             dateInput.min = today;
             dateInput.onchange = () => this.updateSeriesPlannerPreview();
         }
+
+        // 모드 및 프리셋 UI 초기화
+        this.switchPlannerMode('pace', false);
+        this.selectPlannerPreset('daily', false);
+        this.syncDaysButtonsDom();
 
         modal.classList.remove('hidden');
         document.body.classList.add('overflow-hidden');
@@ -421,6 +434,280 @@ class EBookEngine {
         document.body.classList.remove('overflow-hidden');
     }
 
+    // [방안 3] 모드 전환: 주기 설정 vs 요일 맞춤
+    switchPlannerMode(mode, refresh = true) {
+        this._plannerMode = mode;
+        const tabPace = document.getElementById('btn-ebook-planner-tab-pace');
+        const tabDays = document.getElementById('btn-ebook-planner-tab-days');
+        const panelPace = document.getElementById('ebook-planner-panel-pace');
+        const panelDays = document.getElementById('ebook-planner-panel-days');
+
+        if (mode === 'pace') {
+            if (tabPace) {
+                tabPace.className = 'px-3 py-1 rounded-lg bg-white text-blue-900 shadow-2xs font-bold transition-all cursor-pointer';
+            }
+            if (tabDays) {
+                tabDays.className = 'px-3 py-1 rounded-lg text-slate-500 hover:text-slate-800 font-bold transition-all cursor-pointer';
+            }
+            if (panelPace) panelPace.classList.remove('hidden');
+            if (panelDays) panelDays.classList.add('hidden');
+        } else {
+            if (tabDays) {
+                tabDays.className = 'px-3 py-1 rounded-lg bg-white text-blue-900 shadow-2xs font-bold transition-all cursor-pointer';
+            }
+            if (tabPace) {
+                tabPace.className = 'px-3 py-1 rounded-lg text-slate-500 hover:text-slate-800 font-bold transition-all cursor-pointer';
+            }
+            if (panelDays) panelDays.classList.remove('hidden');
+            if (panelPace) panelPace.classList.add('hidden');
+            this.syncDaysButtonsDom();
+        }
+
+        if (refresh) this.updateSeriesPlannerPreview();
+    }
+
+    // [방안 3] 4대 빠른 프리셋 선택
+    selectPlannerPreset(presetKey, refresh = true) {
+        this._plannerPreset = presetKey;
+
+        // 프리셋 버튼 active 스타일 업데이트
+        const presetIds = ['daily', 'twice_daily', 'alternate', 'every_3_days'];
+        presetIds.forEach(key => {
+            const btn = document.getElementById(`ebook-preset-${key}`);
+            if (btn) {
+                if (key === presetKey) {
+                    btn.className = 'ebook-pace-preset-btn p-2.5 rounded-xl border-2 border-blue-900 bg-blue-50/80 text-blue-950 font-serif font-bold text-xs text-center transition-all cursor-pointer shadow-2xs';
+                } else {
+                    btn.className = 'ebook-pace-preset-btn p-2.5 rounded-xl border border-slate-200 hover:border-slate-300 bg-white text-slate-700 font-serif font-bold text-xs text-center transition-all cursor-pointer';
+                }
+            }
+        });
+
+        // 커스텀 라디오 체크 해제
+        document.querySelectorAll('input[name="ebook-planner-pace-type"]').forEach(r => r.checked = false);
+
+        if (refresh) this.updateSeriesPlannerPreview();
+    }
+
+    onPaceTypeChange(type) {
+        this._plannerPreset = type;
+        // 프리셋 버튼들 비활성화 스타일
+        const presetIds = ['daily', 'twice_daily', 'alternate', 'every_3_days'];
+        presetIds.forEach(key => {
+            const btn = document.getElementById(`ebook-preset-${key}`);
+            if (btn) {
+                btn.className = 'ebook-pace-preset-btn p-2.5 rounded-xl border border-slate-200 hover:border-slate-300 bg-white text-slate-700 font-serif font-bold text-xs text-center transition-all cursor-pointer';
+            }
+        });
+        this.updateSeriesPlannerPreview();
+    }
+
+    onCustomPaceChange() {
+        const customBooksRadio = document.querySelector('input[name="ebook-planner-pace-type"][value="custom_books"]');
+        const customDaysRadio = document.querySelector('input[name="ebook-planner-pace-type"][value="custom_days"]');
+        if (this._plannerPreset !== 'custom_books' && this._plannerPreset !== 'custom_days') {
+            if (customBooksRadio) customBooksRadio.checked = true;
+            this._plannerPreset = 'custom_books';
+        }
+        this.updateSeriesPlannerPreview();
+    }
+
+    // [방안 3] 요일 맞춤: 개별 요일 토글
+    togglePlannerDay(dayNum) {
+        dayNum = Number(dayNum);
+        const idx = this._plannerSelectedDays.indexOf(dayNum);
+        if (idx !== -1) {
+            if (this._plannerSelectedDays.length > 1) {
+                this._plannerSelectedDays.splice(idx, 1);
+            } else {
+                alert('최소 1개 이상의 요일을 선택해야 합니다.');
+                return;
+            }
+        } else {
+            this._plannerSelectedDays.push(dayNum);
+            this._plannerSelectedDays.sort((a, b) => a - b);
+        }
+        this.syncDaysButtonsDom();
+        this.updateSeriesPlannerPreview();
+    }
+
+    // [방안 3] 요일 맞춤: 빠른 요일 프리셋 (매일, 주중, 주말, 월수금)
+    selectPlannerDayPreset(preset) {
+        if (preset === 'all') {
+            this._plannerSelectedDays = [0, 1, 2, 3, 4, 5, 6];
+        } else if (preset === 'weekdays') {
+            this._plannerSelectedDays = [1, 2, 3, 4, 5];
+        } else if (preset === 'weekends') {
+            this._plannerSelectedDays = [0, 6];
+        } else if (preset === 'mwf') {
+            this._plannerSelectedDays = [1, 3, 5];
+        }
+        this.syncDaysButtonsDom();
+        this.updateSeriesPlannerPreview();
+    }
+
+    syncDaysButtonsDom() {
+        document.querySelectorAll('.ebook-day-btn').forEach(btn => {
+            const day = Number(btn.getAttribute('data-day'));
+            const isSelected = this._plannerSelectedDays.includes(day);
+            if (isSelected) {
+                btn.className = 'ebook-day-btn py-2 rounded-xl border border-blue-900 bg-blue-900 text-white font-bold text-xs transition-all cursor-pointer shadow-2xs';
+            } else {
+                if (day === 0) {
+                    btn.className = 'ebook-day-btn py-2 rounded-xl border border-slate-200 font-bold text-xs text-red-600 hover:bg-red-50 transition-all cursor-pointer';
+                } else if (day === 6) {
+                    btn.className = 'ebook-day-btn py-2 rounded-xl border border-slate-200 font-bold text-xs text-blue-600 hover:bg-blue-50 transition-all cursor-pointer';
+                } else {
+                    btn.className = 'ebook-day-btn py-2 rounded-xl border border-slate-200 font-bold text-xs text-slate-700 hover:bg-slate-100 transition-all cursor-pointer';
+                }
+            }
+        });
+    }
+
+    // 날짜 및 페이스 계산기 (프리뷰와 스토리지 일치)
+    calculatePlannerDates(startDate, bookCount) {
+        const [y, m, d] = startDate.split('-').map(Number);
+        let cursor = new Date(y, m - 1, d);
+        let dates = [];
+        let safety = 0;
+        let paceLabel = '';
+
+        if (this._plannerMode === 'days') {
+            const sessionSelect = document.getElementById('ebook-planner-books-per-session');
+            const booksPerSession = Math.max(1, parseInt(sessionSelect ? sessionSelect.value : 1) || 1);
+            const daysMap = ['일', '월', '화', '수', '목', '금', '토'];
+            const dayNames = this._plannerSelectedDays.map(d => daysMap[d]).join('·');
+            paceLabel = `매주 [${dayNames}] ${booksPerSession}권씩`;
+
+            while (dates.length < bookCount && safety < 1500) {
+                safety++;
+                const cY = cursor.getFullYear();
+                const cM = String(cursor.getMonth() + 1).padStart(2, '0');
+                const cD = String(cursor.getDate()).padStart(2, '0');
+                const curStr = `${cY}-${cM}-${cD}`;
+                const curDay = cursor.getDay();
+
+                const isAllowed = this._plannerSelectedDays.includes(curDay);
+                const isRest = window.storage?.isRestDay ? window.storage.isRestDay(curStr) : false;
+                if (!isRest && isAllowed) {
+                    for (let i = 0; i < booksPerSession && dates.length < bookCount; i++) {
+                        dates.push(curStr);
+                    }
+                }
+                cursor.setDate(cursor.getDate() + 1);
+            }
+        } else {
+            // 주기 모드 (Pace)
+            if (this._plannerPreset === 'twice_daily') {
+                paceLabel = '하루 2권씩 완독 (집중 속독)';
+                while (dates.length < bookCount && safety < 1500) {
+                    safety++;
+                    const cY = cursor.getFullYear();
+                    const cM = String(cursor.getMonth() + 1).padStart(2, '0');
+                    const cD = String(cursor.getDate()).padStart(2, '0');
+                    const curStr = `${cY}-${cM}-${cD}`;
+                    const isRest = window.storage?.isRestDay ? window.storage.isRestDay(curStr) : false;
+                    if (!isRest) {
+                        dates.push(curStr);
+                        if (dates.length < bookCount) dates.push(curStr);
+                    }
+                    cursor.setDate(cursor.getDate() + 1);
+                }
+            } else if (this._plannerPreset === 'custom_books') {
+                const booksInput = document.getElementById('ebook-custom-books-per-day');
+                const bCount = Math.max(1, parseInt(booksInput ? booksInput.value : 2) || 2);
+                paceLabel = `하루에 ${bCount}권씩 완독`;
+                while (dates.length < bookCount && safety < 1500) {
+                    safety++;
+                    const cY = cursor.getFullYear();
+                    const cM = String(cursor.getMonth() + 1).padStart(2, '0');
+                    const cD = String(cursor.getDate()).padStart(2, '0');
+                    const curStr = `${cY}-${cM}-${cD}`;
+                    const isRest = window.storage?.isRestDay ? window.storage.isRestDay(curStr) : false;
+                    if (!isRest) {
+                        for (let i = 0; i < bCount && dates.length < bookCount; i++) {
+                            dates.push(curStr);
+                        }
+                    }
+                    cursor.setDate(cursor.getDate() + 1);
+                }
+            } else if (this._plannerPreset === 'alternate') {
+                paceLabel = '2일에 1권씩 정독 (격일)';
+                while (dates.length < bookCount && safety < 1500) {
+                    safety++;
+                    const cY = cursor.getFullYear();
+                    const cM = String(cursor.getMonth() + 1).padStart(2, '0');
+                    const cD = String(cursor.getDate()).padStart(2, '0');
+                    const curStr = `${cY}-${cM}-${cD}`;
+                    const isRest = window.storage?.isRestDay ? window.storage.isRestDay(curStr) : false;
+                    if (!isRest) {
+                        dates.push(curStr);
+                        cursor.setDate(cursor.getDate() + 2);
+                    } else {
+                        cursor.setDate(cursor.getDate() + 1);
+                    }
+                }
+            } else if (this._plannerPreset === 'every_3_days') {
+                paceLabel = '3일에 1권씩 정독 (심층 분할)';
+                while (dates.length < bookCount && safety < 1500) {
+                    safety++;
+                    const cY = cursor.getFullYear();
+                    const cM = String(cursor.getMonth() + 1).padStart(2, '0');
+                    const cD = String(cursor.getDate()).padStart(2, '0');
+                    const curStr = `${cY}-${cM}-${cD}`;
+                    const isRest = window.storage?.isRestDay ? window.storage.isRestDay(curStr) : false;
+                    if (!isRest) {
+                        dates.push(curStr);
+                        cursor.setDate(cursor.getDate() + 3);
+                    } else {
+                        cursor.setDate(cursor.getDate() + 1);
+                    }
+                }
+            } else if (this._plannerPreset === 'custom_days') {
+                const daysInput = document.getElementById('ebook-custom-days-per-book');
+                const dCount = Math.max(1, parseInt(daysInput ? daysInput.value : 4) || 4);
+                paceLabel = `${dCount}일에 1권씩 정독`;
+                while (dates.length < bookCount && safety < 1500) {
+                    safety++;
+                    const cY = cursor.getFullYear();
+                    const cM = String(cursor.getMonth() + 1).padStart(2, '0');
+                    const cD = String(cursor.getDate()).padStart(2, '0');
+                    const curStr = `${cY}-${cM}-${cD}`;
+                    const isRest = window.storage?.isRestDay ? window.storage.isRestDay(curStr) : false;
+                    if (!isRest) {
+                        dates.push(curStr);
+                        cursor.setDate(cursor.getDate() + dCount);
+                    } else {
+                        cursor.setDate(cursor.getDate() + 1);
+                    }
+                }
+            } else {
+                paceLabel = '매일 1권씩 완독 (기본 데일리)';
+                while (dates.length < bookCount && safety < 1500) {
+                    safety++;
+                    const cY = cursor.getFullYear();
+                    const cM = String(cursor.getMonth() + 1).padStart(2, '0');
+                    const cD = String(cursor.getDate()).padStart(2, '0');
+                    const curStr = `${cY}-${cM}-${cD}`;
+                    const isRest = window.storage?.isRestDay ? window.storage.isRestDay(curStr) : false;
+                    if (!isRest) {
+                        dates.push(curStr);
+                    }
+                    cursor.setDate(cursor.getDate() + 1);
+                }
+            }
+        }
+
+        const distinctDays = Array.from(new Set(dates)).length;
+        return {
+            dates: dates,
+            startDate: dates[0] || startDate,
+            endDate: dates[dates.length - 1] || startDate,
+            distinctDays: distinctDays,
+            paceLabel: paceLabel
+        };
+    }
+
     updateSeriesPlannerPreview() {
         if (!this._plannerSeriesId) return;
         const seriesId = this._plannerSeriesId;
@@ -428,38 +715,22 @@ class EBookEngine {
         const dateInput = document.getElementById('ebook-planner-start-date');
         const startDate = (dateInput && dateInput.value) ? dateInput.value : (window.storage?.getTodayDateString() || new Date().toISOString().slice(0, 10));
 
-        const paceRadio = document.querySelector('input[name="ebook-planner-pace"]:checked');
-        const pace = paceRadio ? paceRadio.value : 'daily';
-
-        const dates = [];
-        const [y, m, d] = startDate.split('-').map(Number);
-        let cursor = new Date(y, m - 1, d);
-        let safetyCounter = 0;
-        while (dates.length < seriesBooks.length && safetyCounter < 1000) {
-            safetyCounter++;
-            const curYear = cursor.getFullYear();
-            const curMonth = String(cursor.getMonth() + 1).padStart(2, '0');
-            const curDate = String(cursor.getDate()).padStart(2, '0');
-            const curStr = `${curYear}-${curMonth}-${curDate}`;
-            const isRest = window.storage?.isRestDay ? window.storage.isRestDay(curStr) : false;
-
-            if (!isRest) {
-                dates.push(curStr);
-                cursor.setDate(cursor.getDate() + (pace === 'alternate' ? 2 : 1));
-            } else {
-                cursor.setDate(cursor.getDate() + 1);
-            }
-        }
+        const res = this.calculatePlannerDates(startDate, seriesBooks.length);
+        const dates = res.dates;
 
         const rangeEl = document.getElementById('ebook-planner-date-range');
         if (rangeEl && dates.length > 0) {
-            rangeEl.textContent = `${dates[0]} ~ ${dates[dates.length - 1]} (${dates.length}회차)`;
+            rangeEl.innerHTML = `<span class="text-slate-600 font-normal">[${res.paceLabel}]</span> <span class="text-blue-900 font-bold">${res.startDate} ~ ${res.endDate} (총 ${res.distinctDays}일)</span>`;
         }
+
+        const daysMap = ['일', '월', '화', '수', '목', '금', '토'];
 
         const previewContainer = document.getElementById('ebook-planner-schedule-preview');
         if (previewContainer) {
             previewContainer.innerHTML = seriesBooks.map((book, idx) => {
                 const planDate = dates[idx] || startDate;
+                const [y, m, d] = planDate.split('-').map(Number);
+                const dayOfWeekStr = daysMap[new Date(y, m - 1, d).getDay()] || '';
                 return `
                     <div class="flex items-center justify-between p-2 rounded-lg bg-white border border-slate-200">
                         <div class="flex items-center gap-2 min-w-0">
@@ -470,8 +741,8 @@ class EBookEngine {
                                 ${book.title}
                             </span>
                         </div>
-                        <span class="text-[11px] font-mono text-slate-500 shrink-0 ml-2">
-                            📅 ${planDate}
+                        <span class="text-[11px] font-mono text-slate-600 font-semibold shrink-0 ml-2">
+                            📅 ${planDate} (${dayOfWeekStr})
                         </span>
                     </div>
                 `;
@@ -486,15 +757,41 @@ class EBookEngine {
         const dateInput = document.getElementById('ebook-planner-start-date');
         const startDate = (dateInput && dateInput.value) ? dateInput.value : null;
 
-        const paceRadio = document.querySelector('input[name="ebook-planner-pace"]:checked');
-        const pace = paceRadio ? paceRadio.value : 'daily';
+        // 배정 설정 객체 구성
+        let scheduleConfig = null;
+        if (this._plannerMode === 'days') {
+            const sessionSelect = document.getElementById('ebook-planner-books-per-session');
+            scheduleConfig = {
+                mode: 'days',
+                daysOfWeek: this._plannerSelectedDays,
+                booksPerSession: Math.max(1, parseInt(sessionSelect ? sessionSelect.value : 1) || 1)
+            };
+        } else {
+            if (this._plannerPreset === 'custom_books') {
+                const booksInput = document.getElementById('ebook-custom-books-per-day');
+                scheduleConfig = {
+                    mode: 'pace',
+                    booksPerDay: Math.max(1, parseInt(booksInput ? booksInput.value : 2) || 2),
+                    daysPerBook: 1
+                };
+            } else if (this._plannerPreset === 'custom_days') {
+                const daysInput = document.getElementById('ebook-custom-days-per-book');
+                scheduleConfig = {
+                    mode: 'pace',
+                    booksPerDay: 1,
+                    daysPerBook: Math.max(1, parseInt(daysInput ? daysInput.value : 4) || 4)
+                };
+            } else {
+                scheduleConfig = this._plannerPreset; // 'daily' | 'twice_daily' | 'alternate' | 'every_3_days'
+            }
+        }
 
         if (!window.storage || !window.storage.registerEBookSeries) {
             alert('플래너 저장소 모듈을 찾을 수 없습니다.');
             return;
         }
 
-        const res = window.storage.registerEBookSeries(seriesId, startDate, pace);
+        const res = window.storage.registerEBookSeries(seriesId, startDate, scheduleConfig);
         this.closeSeriesPlannerModal();
 
         // 플래너 렌더링 갱신
@@ -502,10 +799,11 @@ class EBookEngine {
             if (window.planner.renderActivePlans) window.planner.renderActivePlans();
             if (window.planner.renderCalendar) window.planner.renderCalendar();
             if (window.planner.renderMonthlyHeatmap) window.planner.renderMonthlyHeatmap();
+            if (window.planner.renderSelectedDateDetail) window.planner.renderSelectedDateDetail();
         }
 
-        // 축하 메시지
-        alert(`🎉 [${series ? series.name : '시리즈'}] 전권(${res.addedBooks}권)이 플래너에 배정되었습니다!\n기간: ${res.startDate} ~ ${res.endDate}\n학습 캘린더에서 매일의 원서 학습 일정을 확인하세요.`);
+        // 축하 알림 메시지
+        alert(`🎉 [${series ? series.name : '시리즈'}] 전권(${res.addedBooks}권)이 플래너에 성공적으로 배정되었습니다!\n기간: ${res.startDate} ~ ${res.endDate} (총 ${res.distinctDays || 1}일간 배정)\n학습 캘린더에서 매일의 원서 학습 일정을 확인하세요.`);
     }
 
     // ------------------------------------------------------------------------

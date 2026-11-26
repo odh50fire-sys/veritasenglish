@@ -3662,21 +3662,110 @@
                     <input type="date" id="ebook-planner-start-date" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs font-mono focus:border-blue-900 focus:ring-1 focus:ring-blue-900 outline-hidden">
                 </div>
 
-                <!-- 2. 학습 페이스 선택 -->
-                <div class="space-y-1.5">
-                    <label class="block text-xs font-bold text-slate-700 flex items-center gap-1.5">
-                        <i data-lucide="clock" class="w-3.5 h-3.5 text-blue-900"></i>
-                        <span>학습 페이스 (권장 주기)</span>
-                    </label>
-                    <div class="grid grid-cols-2 gap-2">
-                        <label class="flex items-center gap-2 p-3 rounded-xl border border-slate-200 hover:border-blue-300 cursor-pointer text-xs font-bold text-slate-700">
-                            <input type="radio" name="ebook-planner-pace" value="daily" checked class="text-blue-900" onchange="window.ebookEngine.updateSeriesPlannerPreview()">
-                            <span>매일 1권씩 완독</span>
+                <!-- 2. 학습 페이스 및 스케줄 배정 방식 (Option 3: 통합 프로 플래너 모드) -->
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <label class="block text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                            <i data-lucide="clock" class="w-3.5 h-3.5 text-blue-900"></i>
+                            <span>학습 페이스 및 배정 모드</span>
                         </label>
-                        <label class="flex items-center gap-2 p-3 rounded-xl border border-slate-200 hover:border-blue-300 cursor-pointer text-xs font-bold text-slate-700">
-                            <input type="radio" name="ebook-planner-pace" value="alternate" class="text-blue-900" onchange="window.ebookEngine.updateSeriesPlannerPreview()">
-                            <span>2일에 1권씩 (격일)</span>
-                        </label>
+                        <!-- 탭 스위처: [주기 설정] vs [요일 맞춤] -->
+                        <div class="inline-flex p-1 rounded-xl bg-slate-100 border border-slate-200 text-xs font-bold">
+                            <button type="button" id="btn-ebook-planner-tab-pace" onclick="window.ebookEngine.switchPlannerMode('pace')" class="px-3 py-1 rounded-lg bg-white text-blue-900 shadow-2xs transition-all cursor-pointer">
+                                ⏱️ 주기 설정
+                            </button>
+                            <button type="button" id="btn-ebook-planner-tab-days" onclick="window.ebookEngine.switchPlannerMode('days')" class="px-3 py-1 rounded-lg text-slate-500 hover:text-slate-800 transition-all cursor-pointer">
+                                📅 요일 맞춤
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 패널 A: 주기 설정 (Pace Mode) -->
+                    <div id="ebook-planner-panel-pace" class="space-y-3">
+                        <!-- 빠른 프리셋 버튼 덱 (4대 대표 주기) -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                            <button type="button" onclick="window.ebookEngine.selectPlannerPreset('daily')" id="ebook-preset-daily" class="ebook-pace-preset-btn p-2.5 rounded-xl border-2 border-blue-900 bg-blue-50/80 text-blue-950 font-serif font-bold text-xs text-center transition-all cursor-pointer shadow-2xs">
+                                <span class="block text-base mb-0.5">📖</span>
+                                <span>매일 1권씩</span>
+                                <span class="block text-[10px] font-mono text-blue-700 font-normal mt-0.5">데일리 정석</span>
+                            </button>
+                            <button type="button" onclick="window.ebookEngine.selectPlannerPreset('twice_daily')" id="ebook-preset-twice_daily" class="ebook-pace-preset-btn p-2.5 rounded-xl border border-slate-200 hover:border-slate-300 bg-white text-slate-700 font-serif font-bold text-xs text-center transition-all cursor-pointer">
+                                <span class="block text-base mb-0.5">⚡</span>
+                                <span>하루 2권씩</span>
+                                <span class="block text-[10px] font-mono text-slate-400 font-normal mt-0.5">집중 다독</span>
+                            </button>
+                            <button type="button" onclick="window.ebookEngine.selectPlannerPreset('alternate')" id="ebook-preset-alternate" class="ebook-pace-preset-btn p-2.5 rounded-xl border border-slate-200 hover:border-slate-300 bg-white text-slate-700 font-serif font-bold text-xs text-center transition-all cursor-pointer">
+                                <span class="block text-base mb-0.5">🌿</span>
+                                <span>2일에 1권씩</span>
+                                <span class="block text-[10px] font-mono text-slate-400 font-normal mt-0.5">격일 정독</span>
+                            </button>
+                            <button type="button" onclick="window.ebookEngine.selectPlannerPreset('every_3_days')" id="ebook-preset-every_3_days" class="ebook-pace-preset-btn p-2.5 rounded-xl border border-slate-200 hover:border-slate-300 bg-white text-slate-700 font-serif font-bold text-xs text-center transition-all cursor-pointer">
+                                <span class="block text-base mb-0.5">🐢</span>
+                                <span>3일에 1권씩</span>
+                                <span class="block text-[10px] font-mono text-slate-400 font-normal mt-0.5">심층 분할</span>
+                            </button>
+                        </div>
+
+                        <!-- 커스텀 직접 입력 아코디언/토글 바 -->
+                        <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                            <div class="text-[11px] font-bold text-slate-600 flex items-center justify-between">
+                                <span>⚙️ 사용자 직접 입력 (권수 또는 일수 커스텀)</span>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                                <!-- 옵션 1: 하루 N권 -->
+                                <label class="flex items-center gap-2 p-2 rounded-xl bg-white border border-slate-200 hover:border-blue-300 cursor-pointer">
+                                    <input type="radio" name="ebook-planner-pace-type" value="custom_books" onchange="window.ebookEngine.onPaceTypeChange(this.value)" class="text-blue-900">
+                                    <span class="font-bold text-slate-700 whitespace-nowrap">하루에</span>
+                                    <input type="number" id="ebook-custom-books-per-day" min="1" max="5" value="2" onchange="window.ebookEngine.onCustomPaceChange()" class="w-12 px-1.5 py-0.5 text-center font-mono font-bold border border-slate-300 rounded-lg outline-none focus:border-blue-900">
+                                    <span class="font-bold text-slate-700 whitespace-nowrap">권씩 완독</span>
+                                </label>
+                                <!-- 옵션 2: N일마다 1권 -->
+                                <label class="flex items-center gap-2 p-2 rounded-xl bg-white border border-slate-200 hover:border-blue-300 cursor-pointer">
+                                    <input type="radio" name="ebook-planner-pace-type" value="custom_days" onchange="window.ebookEngine.onPaceTypeChange(this.value)" class="text-blue-900">
+                                    <input type="number" id="ebook-custom-days-per-book" min="1" max="14" value="4" onchange="window.ebookEngine.onCustomPaceChange()" class="w-12 px-1.5 py-0.5 text-center font-mono font-bold border border-slate-300 rounded-lg outline-none focus:border-blue-900">
+                                    <span class="font-bold text-slate-700 whitespace-nowrap">일에 1권씩 정독</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 패널 B: 요일 맞춤 (Days Mode) -->
+                    <div id="ebook-planner-panel-days" class="hidden space-y-3">
+                        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                            <div class="flex items-center justify-between text-xs flex-wrap gap-1">
+                                <span class="font-bold text-slate-700">학습 요일 선택</span>
+                                <!-- 빠른 요일 프리셋 -->
+                                <div class="flex items-center gap-1">
+                                    <button type="button" onclick="window.ebookEngine.selectPlannerDayPreset('all')" class="px-2 py-0.5 rounded text-[10px] font-bold bg-white border border-slate-200 hover:bg-slate-100 text-slate-600 cursor-pointer">매일</button>
+                                    <button type="button" onclick="window.ebookEngine.selectPlannerDayPreset('weekdays')" class="px-2 py-0.5 rounded text-[10px] font-bold bg-white border border-slate-200 hover:bg-slate-100 text-slate-600 cursor-pointer">주중(월~금)</button>
+                                    <button type="button" onclick="window.ebookEngine.selectPlannerDayPreset('weekends')" class="px-2 py-0.5 rounded text-[10px] font-bold bg-white border border-slate-200 hover:bg-slate-100 text-slate-600 cursor-pointer">주말(토·일)</button>
+                                    <button type="button" onclick="window.ebookEngine.selectPlannerDayPreset('mwf')" class="px-2 py-0.5 rounded text-[10px] font-bold bg-white border border-slate-200 hover:bg-slate-100 text-slate-600 cursor-pointer">월·수·금</button>
+                                </div>
+                            </div>
+
+                            <!-- 요일 체크 칩스 (일 월 화 수 목 금 토) -->
+                            <div class="grid grid-cols-7 gap-1.5 text-center">
+                                <button type="button" data-day="0" onclick="window.ebookEngine.togglePlannerDay(0)" class="ebook-day-btn py-2 rounded-xl border border-slate-200 font-bold text-xs text-red-600 hover:bg-red-50 transition-all cursor-pointer">일</button>
+                                <button type="button" data-day="1" onclick="window.ebookEngine.togglePlannerDay(1)" class="ebook-day-btn py-2 rounded-xl border border-blue-900 bg-blue-900 text-white font-bold text-xs transition-all cursor-pointer">월</button>
+                                <button type="button" data-day="2" onclick="window.ebookEngine.togglePlannerDay(2)" class="ebook-day-btn py-2 rounded-xl border border-blue-900 bg-blue-900 text-white font-bold text-xs transition-all cursor-pointer">화</button>
+                                <button type="button" data-day="3" onclick="window.ebookEngine.togglePlannerDay(3)" class="ebook-day-btn py-2 rounded-xl border border-blue-900 bg-blue-900 text-white font-bold text-xs transition-all cursor-pointer">수</button>
+                                <button type="button" data-day="4" onclick="window.ebookEngine.togglePlannerDay(4)" class="ebook-day-btn py-2 rounded-xl border border-blue-900 bg-blue-900 text-white font-bold text-xs transition-all cursor-pointer">목</button>
+                                <button type="button" data-day="5" onclick="window.ebookEngine.togglePlannerDay(5)" class="ebook-day-btn py-2 rounded-xl border border-blue-900 bg-blue-900 text-white font-bold text-xs transition-all cursor-pointer">금</button>
+                                <button type="button" data-day="6" onclick="window.ebookEngine.togglePlannerDay(6)" class="ebook-day-btn py-2 rounded-xl border border-slate-200 font-bold text-xs text-blue-600 hover:bg-blue-50 transition-all cursor-pointer">토</button>
+                            </div>
+
+                            <!-- 요일당 배정 권수 -->
+                            <div class="pt-2 border-t border-slate-200 flex items-center justify-between text-xs">
+                                <span class="font-bold text-slate-700">해당 요일마다 배정할 권수:</span>
+                                <div class="flex items-center gap-2">
+                                    <select id="ebook-planner-books-per-session" onchange="window.ebookEngine.updateSeriesPlannerPreview()" class="px-3 py-1 rounded-lg border border-slate-300 bg-white font-bold text-slate-800 outline-none focus:border-blue-900 cursor-pointer">
+                                        <option value="1" selected>1권씩 완독</option>
+                                        <option value="2">하루 2권씩 완독</option>
+                                        <option value="3">하루 3권씩 완독</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -4347,14 +4436,14 @@
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
     <script src="js/cloud_sync.js"></script>
 
-    <script src="js/storage.js?v=20261126_missions_v3"></script>
+    <script src="js/storage.js?v=20261127_ebook_pro_v1"></script>
     <script src="js/custom_voca_ai.js"></script>
     <script src="js/ocr.js"></script>
     <script src="js/flashcards.js?v=20261121_polysemy"></script>
     <script src="js/quiz.js"></script>
     <script src="js/review.js"></script>
-    <script src="js/planner.js?v=20261126_missions_v3"></script>
-    <script src="js/expressions.js?v=20261126_missions_v3"></script>
+    <script src="js/planner.js?v=20261127_ebook_pro_v1"></script>
+    <script src="js/expressions.js?v=20261127_ebook_pro_v1"></script>
     <script src="js/dictionary.js"></script>
     <script src="js/reading.js?v=20261121_polyexamples"></script>
     <script src="js/level_test.js?v=20261126_v401"></script>
@@ -4386,9 +4475,9 @@
     <script src="js/grammar_clinic.js?v=20261120_v3"></script>
     <script src="js/clinic_studio.js?v=1795127808"></script>
     <!-- 베리타스 비문학 원서 e-Book 도서관 (Veritas e-Library) 데이터 및 엔진 -->
-    <script src="data/ebook_library_data.js?v=20261126_missions_v3"></script>
-    <script src="js/ebook.js?v=20261126_missions_v3"></script>
-    <script src="js/app.js?v=20261126_missions_v3"></script>
+    <script src="data/ebook_library_data.js?v=20261127_ebook_pro_v1"></script>
+    <script src="js/ebook.js?v=20261127_ebook_pro_v1"></script>
+    <script src="js/app.js?v=20261127_ebook_pro_v1"></script>
 
     <!-- ======================================================================
          MODAL: 학습자 아이디(프로필) 관리 및 전환 모달
