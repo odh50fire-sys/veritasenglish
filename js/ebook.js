@@ -98,9 +98,9 @@ class EBookEngine {
             }
             if (this.searchQuery) {
                 const q = this.searchQuery.toLowerCase();
-                const titleMatch = book.title.toLowerCase().includes(q);
-                const subtitleMatch = book.subtitle.toLowerCase().includes(q);
-                const seriesMatch = series && series.name.toLowerCase().includes(q);
+                const titleMatch = (book.title || '').toLowerCase().includes(q);
+                const subtitleMatch = (book.subTitle || book.subtitle || '').toLowerCase().includes(q);
+                const seriesMatch = series && series.name ? series.name.toLowerCase().includes(q) : false;
                 if (!titleMatch && !subtitleMatch && !seriesMatch) return false;
             }
             return true;
