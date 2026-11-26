@@ -768,15 +768,13 @@ class EBookEngine {
             }
         });
 
-        // 양면 펼침 시 짝수 페이지로 마감
-        if (pages.length % 2 !== 0) {
-            pages.push({
-                type: 'colophon',
-                chapterNum: '',
-                chapterTitle: 'Synthesis & Reflection',
-                book: book
-            });
-        }
+        // 항상 Reading Synthesis(colophon) 페이지 추가
+        pages.push({
+            type: 'colophon',
+            chapterNum: '',
+            chapterTitle: 'Synthesis & Reflection',
+            book: book
+        });
 
         // 1-indexed 페이지 번호 부여
         pages.forEach((p, idx) => {
@@ -894,11 +892,16 @@ class EBookEngine {
                                 <i data-lucide="quote" class="w-3 h-3"></i> Core Takeaway Quote
                             </span>
                             <p class="font-serif italic font-bold text-sm ${titleColor} leading-relaxed">
-                                "${b.highlightQuote.quote}"
+                                "${b.highlightQuote.en || b.highlightQuote.quote || ''}"
                             </p>
                             <p class="text-xs ${subColor} font-sans">
-                                ${b.highlightQuote.translation}
+                                ${b.highlightQuote.ko || b.highlightQuote.translation || ''}
                             </p>
+                            ${b.highlightQuote.author ? `
+                                <p class="text-[11px] font-mono text-stone-500 pt-0.5">
+                                    — ${b.highlightQuote.author}
+                                </p>
+                            ` : ''}
                         </div>
                     ` : ''}
 
@@ -908,7 +911,7 @@ class EBookEngine {
                             <span>본문 독해 완료 (Next Step)</span>
                         </h4>
                         <p class="text-xs ${bodyColor} leading-relaxed font-sans">
-                            본문 챕터 전체를 모두 완독하였습니다. 우측 화살표(→)를 누르시거나 아래 버튼을 클릭하여 4단계 콘셉트 맵 요약으로 이동하세요!
+                            본문 챕터 전체를 모두 완독하였습니다. 우측 화살표(→)를 누르시거나 아래 버튼을 클릭하여 3단계 논리 Flow Chart 완성으로 이동하세요!
                         </p>
                     </div>
 
@@ -1266,178 +1269,173 @@ class EBookEngine {
                     </div>
                 ` : ''}
 
-                <!-- 계층형 칠판 다이어그램 캔버스 (Blackboard Canvas) -->
-                <div class="p-6 md:p-8 rounded-3xl bg-slate-900 border-2 border-slate-700 shadow-xl text-slate-100 space-y-6 relative overflow-hidden">
-                    <!-- 배경 그리드 라인 효과 -->
-                    <div class="absolute inset-0 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:16px_16px] opacity-40 pointer-events-none"></div>
+                <!-- 계층형 화이트보드 다이어그램 캔버스 (Whiteboard Lecture Tree Canvas - 첨부 이미지 판서 스타일 1:1 완벽 구현) -->
+                <div class="p-6 md:p-10 rounded-3xl bg-slate-50 border-2 border-slate-300 shadow-xl text-slate-900 space-y-6 relative overflow-hidden">
+                    <!-- 미세 모눈종이 그리드 배경 효과 -->
+                    <div class="absolute inset-0 bg-[linear-gradient(to_right,#cbd5e1_1px,transparent_1px),linear-gradient(to_bottom,#cbd5e1_1px,transparent_1px)] bg-[size:24px_24px] opacity-40 pointer-events-none"></div>
 
                     ${tl ? `
-                        <!-- TIER 1: 루트 핵심 주제 (Root Topic Box) -->
+                        <!-- TIER 1: 최상단 메인 토픽 (Red Outline Box - 이미지 상단 [콴자] 1:1 재현) -->
                         <div class="relative z-10 flex flex-col items-center">
-                            <div class="px-6 py-3.5 rounded-xl border-2 border-rose-500 bg-rose-950/80 text-rose-200 shadow-lg text-center max-w-xl hover:border-rose-400 transition-all">
-                                <div class="text-[10px] font-mono font-bold tracking-widest text-rose-400 uppercase mb-0.5">
-                                    ${fc.root?.badge || 'MAIN TOPIC & CORE THESIS'}
+                            <div class="px-8 py-3 rounded-lg border-2 border-rose-600 bg-white text-rose-700 shadow-md text-center max-w-md hover:shadow-lg transition-all">
+                                <div class="text-[11px] font-mono font-bold tracking-wider text-rose-500 uppercase">
+                                    ${fc.root?.badge || 'CORE TOPIC'}
                                 </div>
-                                <h3 class="font-serif font-black text-base md:text-lg text-white">
+                                <h3 class="font-serif font-black text-lg md:text-xl text-slate-900 tracking-tight">
                                     ${fc.root?.text || book.title}
                                 </h3>
                             </div>
-                            <!-- 루트 하단 연결 수직선 -->
-                            <div class="w-0.5 h-6 bg-slate-600"></div>
+                            <!-- 상단에서 아래로 내려오는 메인 연결 수직선 -->
+                            <div class="w-1 h-8 bg-slate-800"></div>
                         </div>
 
-                        <!-- TIER 2: 좌/우 분기 (Branch Left: Context & Branch Right: Principles) -->
+                        <!-- TIER 2: 1단계 분기 - [핵심 정의/배경] ─── [핵심 원칙/메커니즘] (이미지 1단 1:1 재현) -->
                         <div class="relative z-10">
-                            <!-- 좌우 연결선 (md+ 화면에서 분기 바 표시) -->
-                            <div class="hidden md:block absolute top-0 left-1/4 right-1/4 h-0.5 bg-slate-600 -translate-y-px"></div>
-                            
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
-                                <!-- 좌측 분기 (Branch Left: Context & Catalyst) -->
-                                <div class="p-5 rounded-2xl border-2 border-slate-700 bg-slate-800/90 shadow-md space-y-3 relative hover:border-blue-500/70 transition-all flex flex-col justify-between">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch relative">
+                                <!-- 좌우 박스를 이어주는 수평 연결선 (PC 화면) -->
+                                <div class="hidden md:block absolute top-1/2 left-[48%] right-[48%] h-1 bg-slate-800 -translate-y-1/2 z-0"></div>
+
+                                <!-- 좌측 박스: Context & Catalyst (이미지 왼쪽 정의 박스 대응) -->
+                                <div class="relative z-10 p-5 rounded-xl border-2 border-slate-800 bg-white shadow-md space-y-2.5 flex flex-col justify-between hover:border-blue-600 transition-all">
                                     <div class="space-y-2">
-                                        <div class="flex items-center justify-between">
-                                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-blue-500/20 text-blue-300 border border-blue-400/40">
+                                        <div class="flex items-center justify-between border-b border-slate-200 pb-1.5">
+                                            <span class="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-blue-50 text-blue-700 border border-blue-200">
                                                 ${tl.branchLeft?.phase || '1. CONTEXT & CATALYST'}
                                             </span>
-                                            <span class="text-[10px] font-mono text-slate-400">Context / Origin</span>
+                                            <span class="text-[11px] font-mono text-slate-500 font-semibold">${tl.branchLeft?.titleEn || 'Context / Origin'}</span>
                                         </div>
-                                        <h4 class="font-serif font-bold text-sm md:text-base text-white">
-                                            ${tl.branchLeft?.titleEn || 'Contextual Catalyst'}
-                                        </h4>
-                                        <div class="text-xs md:text-sm text-slate-200 leading-relaxed font-sans pt-1">
+                                        <div class="text-sm md:text-base text-slate-850 leading-relaxed font-sans pt-1 font-medium">
                                             ${this.renderMaskedTextWithSlots(tl.branchLeft?.maskedText, tl.branchLeft?.blanks)}
                                         </div>
                                     </div>
-                                    <div class="pt-2 border-t border-slate-700/60 flex flex-wrap gap-2 text-[10px] text-slate-400 font-mono">
-                                        ${(tl.branchLeft?.blanks || []).map(b => `<span title="${b.hint}">💡 ${b.id.toUpperCase()}: ${b.hint}</span>`).join('')}
+                                    <div class="pt-2 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] text-slate-500 font-mono">
+                                        ${(tl.branchLeft?.blanks || []).map(b => `<span title="${b.hint}" class="bg-slate-100 px-2 py-0.5 rounded border border-slate-200">💡 ${b.id.toUpperCase()}: ${b.hint}</span>`).join('')}
                                     </div>
                                 </div>
 
-                                <!-- 우측 분기 (Branch Right: Core Principles & Mechanisms) -->
-                                <div class="p-5 rounded-2xl border-2 border-slate-700 bg-slate-800/90 shadow-md space-y-3 relative hover:border-purple-500/70 transition-all flex flex-col justify-between">
+                                <!-- 우측 박스: Principles & Logic (이미지 오른쪽 원칙 박스 대응) -->
+                                <div id="flowchart-right-box" class="relative z-10 p-5 rounded-xl border-2 border-slate-800 bg-white shadow-md space-y-2.5 flex flex-col justify-between hover:border-purple-600 transition-all">
                                     <div class="space-y-2">
-                                        <div class="flex items-center justify-between">
-                                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-purple-500/20 text-purple-300 border border-purple-400/40">
-                                                ${tl.branchRight?.phase || '2. STRUCTURAL MECHANISMS'}
+                                        <div class="flex items-center justify-between border-b border-slate-200 pb-1.5">
+                                            <span class="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-purple-50 text-purple-700 border border-purple-200">
+                                                ${tl.branchRight?.phase || '2. CORE MECHANISMS'}
                                             </span>
-                                            <span class="text-[10px] font-mono text-slate-400">Principles & Logic</span>
+                                            <span class="text-[11px] font-mono text-slate-500 font-semibold">${tl.branchRight?.titleEn || 'Core Principles'}</span>
                                         </div>
-                                        <h4 class="font-serif font-bold text-sm md:text-base text-white">
-                                            ${tl.branchRight?.titleEn || 'Structural Mechanisms'}
-                                        </h4>
-                                        <div class="text-xs md:text-sm text-slate-200 leading-relaxed font-sans pt-1">
+                                        <div class="text-sm md:text-base text-slate-850 leading-relaxed font-sans pt-1 font-medium">
                                             ${this.renderMaskedTextWithSlots(tl.branchRight?.maskedText, tl.branchRight?.blanks)}
                                         </div>
                                     </div>
-                                    <div class="pt-2 border-t border-slate-700/60 flex flex-wrap gap-2 text-[10px] text-slate-400 font-mono">
-                                        ${(tl.branchRight?.blanks || []).map(b => `<span title="${b.hint}">💡 ${b.id.toUpperCase()}: ${b.hint}</span>`).join('')}
+                                    <div class="pt-2 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] text-slate-500 font-mono">
+                                        ${(tl.branchRight?.blanks || []).map(b => `<span title="${b.hint}" class="bg-slate-100 px-2 py-0.5 rounded border border-slate-200">💡 ${b.id.toUpperCase()}: ${b.hint}</span>`).join('')}
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 우측 분기에서 하부 메커니즘으로 하강 수직선 -->
+                        <!-- 우측 박스 아래에서 하부로 연결되는 수직선 (이미지 속 직각 꺾임 선) -->
                         <div class="relative z-10 flex justify-center md:justify-end md:pr-1/4">
-                            <div class="w-0.5 h-6 bg-slate-600"></div>
+                            <div class="w-1 h-7 bg-slate-800"></div>
                         </div>
 
-                        <!-- TIER 3: 세부 메커니즘 및 동역학 (Sub-Tier Dynamics) -->
-                        <div class="relative z-10 max-w-2xl mx-auto md:ml-auto md:mr-4 p-5 rounded-2xl border-2 border-slate-700 bg-slate-800/90 shadow-md space-y-3 hover:border-indigo-500/70 transition-all">
-                            <div class="flex items-center justify-between">
-                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-400/40">
-                                    ${tl.subTier?.phase || '3. INFRASTRUCTURE & DYNAMICS'}
+                        <!-- TIER 3: 세부 항목 목록 와이드 박스 (이미지 [통합, 선택, 책임, 협동...] 넓은 박스 1:1 재현) -->
+                        <div class="relative z-10 p-5 md:p-6 rounded-xl border-2 border-slate-800 bg-white shadow-md space-y-2.5 hover:border-indigo-600 transition-all">
+                            <div class="flex items-center justify-between border-b border-slate-200 pb-1.5">
+                                <span class="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-indigo-50 text-indigo-700 border border-indigo-200">
+                                    ${tl.subTier?.phase || '3. SYSTEM DYNAMICS & MANIFESTATION'}
                                 </span>
-                                <span class="text-[10px] font-mono text-slate-400">Sub-Mechanics</span>
+                                <span class="text-[11px] font-mono text-slate-500 font-semibold">${tl.subTier?.titleEn || 'Operational Dynamics'}</span>
                             </div>
-                            <h4 class="font-serif font-bold text-sm md:text-base text-white">
-                                ${tl.subTier?.titleEn || 'Infrastructure Dynamics'}
-                            </h4>
-                            <div class="text-xs md:text-sm text-slate-200 leading-relaxed font-sans">
+                            <div class="text-sm md:text-base text-slate-850 leading-relaxed font-sans font-medium">
                                 ${this.renderMaskedTextWithSlots(tl.subTier?.maskedText, tl.subTier?.blanks)}
                             </div>
-                            <div class="pt-1.5 border-t border-slate-700/60 text-[10px] text-slate-400 font-mono">
-                                ${(tl.subTier?.blanks || []).map(b => `<span>💡 ${b.id.toUpperCase()}: ${b.hint}</span>`).join('')}
+                            <div class="pt-1.5 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] text-slate-500 font-mono">
+                                ${(tl.subTier?.blanks || []).map(b => `<span class="bg-slate-100 px-2 py-0.5 rounded border border-slate-200">💡 ${b.id.toUpperCase()}: ${b.hint}</span>`).join('')}
                             </div>
                         </div>
 
-                        <!-- 중앙 하강 연결 수직선 -->
+                        <!-- 중앙 수직 연결선 -->
                         <div class="relative z-10 flex justify-center">
-                            <div class="w-0.5 h-6 bg-slate-600"></div>
+                            <div class="w-1 h-7 bg-slate-800"></div>
                         </div>
 
-                        <!-- TIER 4: 조건-실행 수평 연결 병렬 쌍 (Parallel Condition-Action Pair) -->
-                        <div class="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-                            <!-- 조건 박스 (Left Parameter Box) -->
-                            <div class="w-full sm:w-1/2 p-4 md:p-5 rounded-xl border-2 border-slate-700 bg-slate-800/90 shadow-md space-y-2 hover:border-amber-400/70 transition-all">
-                                <div class="flex items-center justify-between">
-                                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-400/30">
-                                        ${tl.parallelPair?.left?.phase || 'KEY CONDITION / CONTEXT'}
-                                    </span>
-                                    <span class="text-[10px] font-mono text-slate-400">Condition</span>
+                        <!-- TIER 4: [조건] ─── [준비/실행] 병렬 박스 쌍 (이미지 [콴자 기간] ── [촛불 7개 준비] 1:1 재현) -->
+                        <div class="relative z-10 flex flex-col sm:flex-row items-stretch justify-center gap-4 sm:gap-6 relative">
+                            <!-- 좌측 조건 박스 -->
+                            <div class="w-full sm:w-1/2 p-5 rounded-xl border-2 border-slate-800 bg-white shadow-md space-y-2 hover:border-amber-600 transition-all flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between border-b border-slate-200 pb-1.5 mb-2">
+                                        <span class="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-amber-50 text-amber-800 border border-amber-200">
+                                            ${tl.parallelPair?.left?.phase || 'KEY PREMISE & SETTING'}
+                                        </span>
+                                        <span class="text-[11px] font-mono text-slate-500 font-semibold">Premise / Frame</span>
+                                    </div>
+                                    <div class="text-sm md:text-base text-slate-850 leading-relaxed font-sans font-medium">
+                                        ${this.renderMaskedTextWithSlots(tl.parallelPair?.left?.maskedText, tl.parallelPair?.left?.blanks)}
+                                    </div>
                                 </div>
-                                <div class="text-xs md:text-sm text-slate-200 leading-relaxed font-sans">
-                                    ${this.renderMaskedTextWithSlots(tl.parallelPair?.left?.maskedText, tl.parallelPair?.left?.blanks)}
-                                </div>
-                                <div class="pt-1 text-[10px] text-slate-400 font-mono">
-                                    💡 ${tl.parallelPair?.left?.blanks?.[0]?.hint || ''}
+                                <div class="pt-1.5 border-t border-slate-100 text-[11px] text-slate-500 font-mono">
+                                    <span class="bg-slate-100 px-2 py-0.5 rounded border border-slate-200">💡 ${tl.parallelPair?.left?.blanks?.[0]?.id.toUpperCase()}: ${tl.parallelPair?.left?.blanks?.[0]?.hint || ''}</span>
                                 </div>
                             </div>
 
-                            <!-- 수평 실선 연결자 [Node A] ─── [Node B] -->
-                            <div class="hidden sm:flex items-center justify-center px-1">
-                                <div class="w-8 md:w-12 h-0.5 bg-amber-400/80"></div>
+                            <!-- 수평 연결 브릿지 (가로선) -->
+                            <div class="hidden sm:flex items-center justify-center -mx-3 z-20">
+                                <div class="w-6 h-1 bg-slate-800"></div>
                             </div>
 
-                            <!-- 실행/작동 박스 (Right Execution Box) -->
-                            <div class="w-full sm:w-1/2 p-4 md:p-5 rounded-xl border-2 border-slate-700 bg-slate-800/90 shadow-md space-y-2 hover:border-emerald-400/70 transition-all">
-                                <div class="flex items-center justify-between">
-                                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
-                                        ${tl.parallelPair?.right?.phase || 'DIRECT ACTION / OPERATION'}
-                                    </span>
-                                    <span class="text-[10px] font-mono text-slate-400">Operation</span>
+                            <!-- 우측 실행/작용 박스 -->
+                            <div class="w-full sm:w-1/2 p-5 rounded-xl border-2 border-slate-800 bg-white shadow-md space-y-2 hover:border-emerald-600 transition-all flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between border-b border-slate-200 pb-1.5 mb-2">
+                                        <span class="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                                            ${tl.parallelPair?.right?.phase || 'OPERATIONAL ACTION'}
+                                        </span>
+                                        <span class="text-[11px] font-mono text-slate-500 font-semibold">Action / Protocol</span>
+                                    </div>
+                                    <div class="text-sm md:text-base text-slate-850 leading-relaxed font-sans font-medium">
+                                        ${this.renderMaskedTextWithSlots(tl.parallelPair?.right?.maskedText, tl.parallelPair?.right?.blanks)}
+                                    </div>
                                 </div>
-                                <div class="text-xs md:text-sm text-slate-200 leading-relaxed font-sans">
-                                    ${this.renderMaskedTextWithSlots(tl.parallelPair?.right?.maskedText, tl.parallelPair?.right?.blanks)}
-                                </div>
-                                <div class="pt-1 text-[10px] text-slate-400 font-mono">
-                                    💡 ${tl.parallelPair?.right?.blanks?.[0]?.hint || ''}
+                                <div class="pt-1.5 border-t border-slate-100 text-[11px] text-slate-500 font-mono">
+                                    <span class="bg-slate-100 px-2 py-0.5 rounded border border-slate-200">💡 ${tl.parallelPair?.right?.blanks?.[0]?.id.toUpperCase()}: ${tl.parallelPair?.right?.blanks?.[0]?.hint || ''}</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 중앙 하강 연결 수직선 -->
+                        <!-- 중앙 수직 연결선 -->
                         <div class="relative z-10 flex justify-center">
-                            <div class="w-0.5 h-6 bg-slate-600"></div>
+                            <div class="w-1 h-7 bg-slate-800"></div>
                         </div>
 
-                        <!-- TIER 5: 최종 종합 결론 및 의의 박스 (Synthesis & Enduring Takeaway) -->
-                        <div class="relative z-10 w-full p-5 md:p-6 rounded-2xl border-2 border-emerald-500/70 bg-gradient-to-r from-emerald-950/70 via-slate-850 to-teal-950/70 shadow-lg space-y-2.5 hover:border-emerald-400 transition-all">
-                            <div class="flex items-center justify-between flex-wrap gap-2">
+                        <!-- TIER 5: 최종 실천 행동 / 종합 결론 와이드 박스 (이미지 맨 하단 와이드 박스 1:1 재현) -->
+                        <div class="relative z-10 w-full p-5 md:p-6 rounded-xl border-2 border-slate-800 bg-white shadow-md space-y-2.5 hover:border-teal-600 transition-all">
+                            <div class="flex items-center justify-between flex-wrap gap-2 border-b border-slate-200 pb-1.5">
                                 <div class="flex items-center gap-2">
-                                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-400/20 text-emerald-300 border border-emerald-400/40">
-                                        ${tl.conclusion?.phase || '4. SYNTHESIS & ENDURING TAKEAWAY'}
+                                    <span class="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-teal-50 text-teal-800 border border-teal-200">
+                                        ${tl.conclusion?.phase || '4. ULTIMATE SYNTHESIS & OUTCOME'}
                                     </span>
-                                    <span class="text-xs font-serif font-black text-white">
-                                        ${tl.conclusion?.titleEn || 'Ultimate Significance & Legacy'}
+                                    <span class="text-xs font-serif font-black text-slate-900">
+                                        ${tl.conclusion?.titleEn || 'Enduring Significance'}
                                     </span>
                                 </div>
-                                <span class="text-[10px] font-mono text-emerald-300">Phase 4 • Final Takeaway</span>
+                                <span class="text-[11px] font-mono text-slate-500 font-semibold">Final Conclusion</span>
                             </div>
-                            <div class="text-xs md:text-sm text-emerald-100 leading-relaxed font-sans">
+                            <div class="text-sm md:text-base text-slate-850 leading-relaxed font-sans font-medium">
                                 ${this.renderMaskedTextWithSlots(tl.conclusion?.maskedText, tl.conclusion?.blanks)}
                             </div>
-                            <div class="pt-1.5 border-t border-emerald-800/50 text-[10px] text-emerald-400/80 font-mono">
-                                💡 ${tl.conclusion?.blanks?.[0]?.hint || ''}
+                            <div class="pt-1.5 border-t border-slate-100 text-[11px] text-slate-500 font-mono">
+                                <span class="bg-slate-100 px-2 py-0.5 rounded border border-slate-200">💡 ${tl.conclusion?.blanks?.[0]?.id.toUpperCase()}: ${tl.conclusion?.blanks?.[0]?.hint || ''}</span>
                             </div>
                         </div>
                     ` : `
                         <!-- 레거시 노드 폴백 -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             ${(fc.nodes || []).map(node => `
-                                <div class="p-4 rounded-xl border border-slate-700 bg-slate-800 space-y-2">
-                                    <div class="text-xs font-bold text-purple-400">${node.step}. ${node.phase}</div>
-                                    <h4 class="font-bold text-white text-sm">${node.title}</h4>
-                                    <div class="text-xs text-slate-200">${node.maskedText}</div>
+                                <div class="p-4 rounded-xl border-2 border-slate-800 bg-white text-slate-900 space-y-2 shadow-sm">
+                                    <div class="text-xs font-bold text-purple-700">${node.step}. ${node.phase}</div>
+                                    <h4 class="font-bold text-slate-900 text-sm">${node.title}</h4>
+                                    <div class="text-xs text-slate-700">${node.maskedText}</div>
                                 </div>
                             `).join('')}
                         </div>
@@ -1512,17 +1510,17 @@ class EBookEngine {
             const isCorrect = userWord && userWord.toLowerCase() === blank.word.toLowerCase();
             const isActive = this.activeBlankId === blank.id;
 
-            let slotClass = 'bg-slate-800 border-dashed border-slate-500 text-slate-400 hover:border-purple-400';
+            let slotClass = 'bg-slate-100 border-dashed border-2 border-slate-400 text-slate-600 hover:border-purple-600 hover:bg-purple-50';
             if (isActive) {
-                slotClass = 'bg-amber-400/20 border-amber-400 text-amber-300 ring-2 ring-amber-400/60';
+                slotClass = 'bg-amber-100 border-2 border-amber-500 text-amber-900 ring-2 ring-amber-400/50 shadow-sm';
             }
             if (userWord) {
                 if (isChecked) {
                     slotClass = isCorrect
-                        ? 'bg-emerald-500/20 border-emerald-400 text-emerald-300 font-bold'
-                        : 'bg-rose-500/20 border-rose-400 text-rose-300 font-bold';
+                        ? 'bg-emerald-100 border-2 border-emerald-600 text-emerald-900 font-bold shadow-sm'
+                        : 'bg-rose-100 border-2 border-rose-600 text-rose-900 font-bold shadow-sm';
                 } else {
-                    slotClass = 'bg-purple-500/20 border-purple-400 text-purple-200 font-bold';
+                    slotClass = 'bg-purple-100 border-2 border-purple-600 text-purple-900 font-bold shadow-sm';
                 }
             }
 
