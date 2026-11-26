@@ -172,7 +172,7 @@ class NativeExpressionsEngine {
                         </p>
                     </div>
 
-                    <div class="mt-3 pt-2 border-t border-slate-100 flex flex-col gap-1">
+                    <div class="mt-3 pt-2 border-t border-slate-100 flex flex-col gap-1.5">
                         <div class="flex items-center justify-between text-[10px] font-mono">
                             <span class="text-slate-400">${series.levelRange}</span>
                             <span class="font-bold ${pct === 100 ? 'text-emerald-700 font-black' : 'text-slate-600'}">
@@ -181,6 +181,12 @@ class NativeExpressionsEngine {
                         </div>
                         <div class="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
                             <div class="h-full ${pct === 100 ? 'bg-emerald-500' : 'bg-blue-900'} transition-all duration-300" style="width: ${pct}%"></div>
+                        </div>
+                        <div class="pt-1.5 flex items-center justify-between">
+                            <span class="text-[10px] font-mono text-slate-400">총 ${totalUnits}개 단원</span>
+                            <button type="button" onclick="event.stopPropagation(); window.nativeExpressionsEngine && window.nativeExpressionsEngine.openSeriesPlannerModal('${series.id}')" class="px-2.5 py-1 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 text-amber-700 text-[11px] font-bold font-serif flex items-center gap-1 transition-colors cursor-pointer">
+                                <span>📅 플래너 배정</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -1296,6 +1302,170 @@ class NativeExpressionsEngine {
         if (window.readingEngine && window.readingEngine.openWordInspector) {
             window.readingEngine.openWordInspector(cleanWord, sentenceEn, sentenceKo);
         }
+    }
+
+    // ========================================================================
+    // 원어민 시리즈 플래너 모달 (Native Series Planner Modal)
+    // ========================================================================
+    openSeriesPlannerModal(seriesId = null) {
+        const catalog = window.NATIVE_SERIES_CATALOG || [];
+        if (!seriesId) {
+            seriesId = this.activeSeriesId || catalog[0]?.id || 'series-daily';
+        }
+        this._plannerSeriesId = seriesId;
+
+        const modal = document.getElementById('modal-native-series-planner');
+        if (!modal) return;
+
+        // 시리즈 셀렉트 드롭다운 채우기
+        const select = document.getElementById('native-planner-series-select');
+        const allUnits = window.NATIVE_UNITS_DATA || [];
+        if (select) {
+            select.innerHTML = catalog.map(s => {
+                const sUnits = allUnits.filter(u => u.seriesId === s.id);
+                return `<option value="${s.id}" ${s.id === seriesId ? 'selected' : ''}>[Series ${s.seriesNumber}] ${s.titleKo} (${sUnits.length || 10}단원)</option>`;
+            }).join('');
+        }
+
+        this.syncPlannerSeriesInfo(seriesId);
+
+        // 시작일 기본값 오늘
+        const dateInput = document.getElementById('native-planner-start-date');
+        const today = window.storage?.getTodayDateString ? window.storage.getTodayDateString() : new Date().toISOString().slice(0, 10);
+        if (dateInput) {
+            dateInput.value = today;
+            dateInput.min = today;
+            dateInput.onchange = () => this.updateSeriesPlannerPreview();
+        }
+
+        modal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+        this.updateSeriesPlannerPreview();
+        if (window.lucide) window.lucide.createIcons();
+    }
+
+    onPlannerSeriesSelectChange(seriesId) {
+        this._plannerSeriesId = seriesId;
+        this.syncPlannerSeriesInfo(seriesId);
+        this.updateSeriesPlannerPreview();
+    }
+
+    syncPlannerSeriesInfo(seriesId) {
+        const catalog = window.NATIVE_SERIES_CATALOG || [];
+        const series = catalog.find(s => s.id === seriesId);
+        if (!series) return;
+        const allUnits = window.NATIVE_UNITS_DATA || [];
+        const seriesUnits = allUnits.filter(u => u.seriesId === seriesId).sort((a, b) => a.unitNumber - b.unitNumber);
+
+        const subtitleEl = document.getElementById('native-planner-series-subtitle');
+        const badgeEl = document.getElementById('native-planner-series-badge');
+        const countEl = document.getElementById('native-planner-series-count');
+        const titleEl = document.getElementById('native-planner-series-title');
+        const descEl = document.getElementById('native-planner-series-desc');
+
+        if (subtitleEl) subtitleEl.textContent = `시리즈 전 단원(${seriesUnits.length}단원)을 캘린더 플래너에 날짜별로 일괄 배정합니다.`;
+        if (badgeEl) badgeEl.textContent = `Series ${series.seriesNumber} • ${series.badge || '전문 시리즈'}`;
+        if (countEl) countEl.textContent = `총 ${seriesUnits.length}개 단원 (${seriesUnits.length * 4}개 표현)`;
+        if (titleEl) titleEl.textContent = `${series.icon || '💬'} ${series.titleKo} (${series.titleEn})`;
+        if (descEl) descEl.textContent = series.desc || '';
+    }
+
+    closeSeriesPlannerModal() {
+        const modal = document.getElementById('modal-native-series-planner');
+        if (modal) modal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+    }
+
+    updateSeriesPlannerPreview() {
+        if (!this._plannerSeriesId) return;
+        const seriesId = this._plannerSeriesId;
+        const allUnits = window.NATIVE_UNITS_DATA || [];
+        const seriesUnits = allUnits.filter(u => u.seriesId === seriesId).sort((a, b) => a.unitNumber - b.unitNumber);
+        const dateInput = document.getElementById('native-planner-start-date');
+        const startDate = (dateInput && dateInput.value) ? dateInput.value : (window.storage?.getTodayDateString() || new Date().toISOString().slice(0, 10));
+
+        const paceRadio = document.querySelector('input[name="native-planner-pace"]:checked');
+        const pace = paceRadio ? paceRadio.value : 'daily';
+
+        const dates = [];
+        const [y, m, d] = startDate.split('-').map(Number);
+        let cursor = new Date(y, m - 1, d);
+        let safetyCounter = 0;
+        while (dates.length < seriesUnits.length && safetyCounter < 1000) {
+            safetyCounter++;
+            const curYear = cursor.getFullYear();
+            const curMonth = String(cursor.getMonth() + 1).padStart(2, '0');
+            const curDate = String(cursor.getDate()).padStart(2, '0');
+            const curStr = `${curYear}-${curMonth}-${curDate}`;
+            const isRest = window.storage?.isRestDay ? window.storage.isRestDay(curStr) : false;
+
+            if (!isRest) {
+                dates.push(curStr);
+                cursor.setDate(cursor.getDate() + (pace === 'alternate' ? 2 : 1));
+            } else {
+                cursor.setDate(cursor.getDate() + 1);
+            }
+        }
+
+        const rangeEl = document.getElementById('native-planner-date-range');
+        if (rangeEl && dates.length > 0) {
+            rangeEl.textContent = `${dates[0]} ~ ${dates[dates.length - 1]} (${dates.length}회차)`;
+        }
+
+        const previewContainer = document.getElementById('native-planner-schedule-preview');
+        if (previewContainer) {
+            previewContainer.innerHTML = seriesUnits.map((unit, idx) => {
+                const planDate = dates[idx] || startDate;
+                return `
+                    <div class="flex items-center justify-between p-2 rounded-lg bg-white border border-slate-200">
+                        <div class="flex items-center gap-2 min-w-0">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-100 text-amber-900 shrink-0">
+                                Unit ${unit.unitNumber}
+                            </span>
+                            <span class="font-bold text-slate-800 truncate text-xs">
+                                ${unit.titleKo}
+                            </span>
+                        </div>
+                        <span class="text-[11px] font-mono text-slate-500 shrink-0 ml-2">
+                            📅 ${planDate}
+                        </span>
+                    </div>
+                `;
+            }).join('');
+        }
+    }
+
+    submitSeriesPlanner() {
+        if (!this._plannerSeriesId) return;
+        const seriesId = this._plannerSeriesId;
+        const catalog = window.NATIVE_SERIES_CATALOG || [];
+        const series = catalog.find(s => s.id === seriesId);
+        const dateInput = document.getElementById('native-planner-start-date');
+        const startDate = (dateInput && dateInput.value) ? dateInput.value : null;
+
+        const paceRadio = document.querySelector('input[name="native-planner-pace"]:checked');
+        const pace = paceRadio ? paceRadio.value : 'daily';
+
+        if (!window.storage || !window.storage.registerNativeSeries) {
+            alert('플래너 저장소 모듈을 찾을 수 없습니다.');
+            return;
+        }
+
+        const res = window.storage.registerNativeSeries(seriesId, startDate, pace);
+        this.closeSeriesPlannerModal();
+
+        // 플래너 렌더링 갱신
+        if (window.planner) {
+            if (window.planner.renderActivePlans) window.planner.renderActivePlans();
+            if (window.planner.renderCalendar) window.planner.renderCalendar();
+            if (window.planner.renderMonthlyHeatmap) window.planner.renderMonthlyHeatmap();
+            if (window.planner.renderSelectedDateDetail) window.planner.renderSelectedDateDetail();
+        }
+
+        // 축하 메시지
+        alert(`🎉 [${series ? series.titleKo : '원어민 시리즈'}] 전 단원(${res.addedUnits}개 단원)이 플래너에 성공적으로 배정되었습니다!
+기간: ${res.startDate} ~ ${res.endDate}
+학습 플래너 캘린더에서 매일의 원어민 실전 표현 퀘스트를 확인하세요.`);
     }
 }
 

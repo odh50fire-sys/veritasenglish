@@ -333,6 +333,234 @@ class PlannerEngine {
         if (window.lucide) window.lucide.createIcons();
     }
 
+    /**
+     * [방안 1 핵심] 4대 핵심 분야 와이드 일일 미션 퀘스트 보드 렌더러
+     * 플래너 상단 풀 와이드(Full-Width) 영역에 4열 그리드로 선명하게 표시
+     */
+    renderDailyMissionBoard(dateStr = null) {
+        dateStr = dateStr || this.selectedDateStr || (window.storage ? window.storage.getTodayDateString() : new Date().toISOString().slice(0, 10));
+        const boardContainer = document.getElementById('planner-daily-mission-board');
+        if (!boardContainer) return;
+
+        const dailyReport = (window.storage && typeof window.storage.getDailyMissions === 'function')
+            ? window.storage.getDailyMissions(dateStr)
+            : { totalAssigned: 0, completedCount: 0, completionPercentage: 0, isAllClear: false, missions: { voca: {}, grammar: {}, native: {}, ebook: {} } };
+
+        const isToday = (window.storage && typeof window.storage.getTodayDateString === 'function')
+            ? (dateStr === window.storage.getTodayDateString())
+            : false;
+
+        const html = `
+            <div class="p-5 sm:p-6 rounded-3xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white shadow-xl border border-indigo-800/40 space-y-4 animate-in fade-in duration-200">
+                <!-- 상단 헤더 & 일일 종합 완수율 게이지 바 -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-indigo-800/40">
+                    <div class="flex items-center gap-3">
+                        <div class="w-11 h-11 rounded-2xl bg-indigo-500/20 text-indigo-300 border border-indigo-400/40 flex items-center justify-center text-xl shadow-inner shrink-0">
+                            🎯
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 flex-wrap">
+                                <h4 class="font-serif font-black text-base sm:text-lg text-white tracking-tight">
+                                    [${dateStr}] 4대 핵심 일일 학습 퀘스트
+                                </h4>
+                                ${isToday ? `
+                                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-400 text-slate-950">
+                                        TODAY
+                                    </span>
+                                ` : ''}
+                                ${dailyReport.isAllClear ? `
+                                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-400/20 text-emerald-300 border border-emerald-400/40 animate-pulse flex items-center gap-1">
+                                        <span>👑</span> ALL CLEAR
+                                    </span>
+                                ` : ''}
+                            </div>
+                            <p class="text-xs text-indigo-200 mt-0.5">
+                                단어장 · 문법 클리닉 · 원어민 표현 · e-Book 도서관의 일일 배정 및 완수 상태를 한눈에 관리하고 즉시 학습하세요.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 종합 완수율 배지 -->
+                    <div class="shrink-0 flex items-center gap-4 bg-white/10 px-4 py-2.5 rounded-2xl border border-white/10 self-start sm:self-auto">
+                        <div class="text-right">
+                            <span class="text-[10px] font-mono text-slate-300 uppercase tracking-wider block">일일 종합 완수율</span>
+                            <span class="font-serif font-black text-lg text-amber-300 font-mono">
+                                ${dailyReport.completionPercentage}% <span class="text-xs text-slate-300 font-normal">(${dailyReport.completedCount}/${dailyReport.totalAssigned})</span>
+                            </span>
+                        </div>
+                        <div class="w-24 sm:w-28 h-3.5 rounded-full bg-slate-800 overflow-hidden border border-white/10 shrink-0">
+                            <div class="h-full bg-gradient-to-r from-amber-400 via-emerald-400 to-teal-400 rounded-full transition-all duration-500" style="width: ${dailyReport.completionPercentage}%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4대 분야 데일리 퀘스트 카드 그리드 (1열/2열/4열 반응형) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 pt-1">
+                    
+                    <!-- 1. 🟦 단어장 퀘스트 (Vocabulary) -->
+                    ${dailyReport.missions.voca && dailyReport.missions.voca.assigned ? `
+                        <div class="p-4 rounded-2xl border-2 ${dailyReport.missions.voca.isCompleted ? 'border-emerald-500/70 bg-emerald-950/40' : 'border-blue-500/60 bg-blue-950/40'} shadow-md flex flex-col justify-between transition-all hover:scale-[1.01]">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-blue-400/20 text-blue-300 border border-blue-400/30 flex items-center gap-1">
+                                        <span>📚</span> 단어장 VOCA
+                                    </span>
+                                    <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold ${dailyReport.missions.voca.isCompleted ? 'bg-emerald-400 text-slate-950' : 'bg-amber-400/20 text-amber-300 border border-amber-400/40'}">
+                                        ${dailyReport.missions.voca.isCompleted ? '✅ 완수' : '⏳ 진행 중'}
+                                    </span>
+                                </div>
+                                <h5 class="font-serif font-bold text-sm text-white line-clamp-1">${dailyReport.missions.voca.title}</h5>
+                                <p class="text-xs text-slate-300 mt-0.5">${dailyReport.missions.voca.subtitle}</p>
+                            </div>
+                            <div class="pt-3 mt-3 border-t border-white/10 flex items-center justify-between">
+                                <span class="text-[11px] font-mono text-blue-200">${dailyReport.missions.voca.statusText}</span>
+                                <button type="button" onclick="window.app && window.app.switchTab('flashcards')" class="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-serif font-bold text-xs flex items-center gap-1 cursor-pointer shadow-2xs transition-colors">
+                                    <span>${dailyReport.missions.voca.actionText}</span>
+                                    <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                                </button>
+                            </div>
+                        </div>
+                    ` : `
+                        <div class="p-4 rounded-2xl border border-slate-700/60 bg-slate-800/40 shadow-sm flex flex-col justify-between opacity-75">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-slate-700 text-slate-400">📚 단어장 VOCA</span>
+                                    <span class="text-[10px] font-mono text-slate-400">배정 없음</span>
+                                </div>
+                                <h5 class="font-serif font-bold text-sm text-slate-400">오늘 배정된 단어가 없습니다</h5>
+                                <p class="text-xs text-slate-400 mt-0.5">능률보카, 수능/내신 단어장을 플래너에 등록하세요.</p>
+                            </div>
+                            <div class="pt-3 mt-3 border-t border-slate-700/40 flex justify-end">
+                                <button type="button" onclick="window.app && window.app.switchTab('flashcards')" class="px-2.5 py-1 rounded-lg border border-slate-600 text-[11px] text-slate-300 hover:bg-white/10 transition-colors cursor-pointer">단어장 가기</button>
+                            </div>
+                        </div>
+                    `}
+
+                    <!-- 2. 🟪 문법 클리닉 퀘스트 (Grammar Clinic) -->
+                    ${dailyReport.missions.grammar && dailyReport.missions.grammar.assigned ? `
+                        <div class="p-4 rounded-2xl border-2 ${dailyReport.missions.grammar.isCompleted ? 'border-emerald-500/70 bg-emerald-950/40' : 'border-purple-500/60 bg-purple-950/40'} shadow-md flex flex-col justify-between transition-all hover:scale-[1.01]">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-purple-400/20 text-purple-300 border border-purple-400/30 flex items-center gap-1">
+                                        <span>✍️</span> 문법 클리닉
+                                    </span>
+                                    <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold ${dailyReport.missions.grammar.isCompleted ? 'bg-emerald-400 text-slate-950' : 'bg-amber-400/20 text-amber-300 border border-amber-400/40'}">
+                                        ${dailyReport.missions.grammar.isCompleted ? '✅ 통과' : '⏳ 미완료'}
+                                    </span>
+                                </div>
+                                <h5 class="font-serif font-bold text-sm text-white line-clamp-1">${dailyReport.missions.grammar.title}</h5>
+                                <p class="text-xs text-slate-300 mt-0.5">${dailyReport.missions.grammar.subtitle}</p>
+                            </div>
+                            <div class="pt-3 mt-3 border-t border-white/10 flex items-center justify-between">
+                                <span class="text-[11px] font-mono text-purple-200">${dailyReport.missions.grammar.statusText}</span>
+                                <button type="button" onclick="window.app && window.app.switchTab('grammar')" class="px-3 py-1.5 rounded-lg bg-purple-600 hover:bg-purple-500 text-white font-serif font-bold text-xs flex items-center gap-1 cursor-pointer shadow-2xs transition-colors">
+                                    <span>${dailyReport.missions.grammar.actionText}</span>
+                                    <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                                </button>
+                            </div>
+                        </div>
+                    ` : `
+                        <div class="p-4 rounded-2xl border border-slate-700/60 bg-slate-800/40 shadow-sm flex flex-col justify-between opacity-75">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-slate-700 text-slate-400">✍️ 문법 클리닉</span>
+                                    <span class="text-[10px] font-mono text-slate-400">배정 없음</span>
+                                </div>
+                                <h5 class="font-serif font-bold text-sm text-slate-400">오늘 배정된 문법 단원이 없습니다</h5>
+                                <p class="text-xs text-slate-400 mt-0.5">3800제 문법 클리닉 단원을 플래너에 배정해보세요.</p>
+                            </div>
+                            <div class="pt-3 mt-3 border-t border-slate-700/40 flex justify-end">
+                                <button type="button" onclick="window.app && window.app.switchTab('grammar')" class="px-2.5 py-1 rounded-lg border border-slate-600 text-[11px] text-slate-300 hover:bg-white/10 transition-colors cursor-pointer">문법 코너 가기</button>
+                            </div>
+                        </div>
+                    `}
+
+                    <!-- 3. 🟧 원어민 표현 퀘스트 (Native Expressions Lab) -->
+                    ${dailyReport.missions.native && dailyReport.missions.native.assigned ? `
+                        <div class="p-4 rounded-2xl border-2 ${dailyReport.missions.native.isCompleted ? 'border-emerald-500/70 bg-emerald-950/40' : 'border-amber-500/60 bg-amber-950/40'} shadow-md flex flex-col justify-between transition-all hover:scale-[1.01]">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30 flex items-center gap-1">
+                                        <span>💬</span> 원어민 표현 LAB
+                                    </span>
+                                    <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold ${dailyReport.missions.native.isCompleted ? 'bg-emerald-400 text-slate-950' : 'bg-amber-400/20 text-amber-300 border border-amber-400/40'}">
+                                        ${dailyReport.missions.native.isCompleted ? '✅ 마스터' : '⏳ 미완료'}
+                                    </span>
+                                </div>
+                                <h5 class="font-serif font-bold text-sm text-white line-clamp-1">${dailyReport.missions.native.title}</h5>
+                                <p class="text-xs text-slate-300 mt-0.5 line-clamp-1">${dailyReport.missions.native.subtitle}</p>
+                            </div>
+                            <div class="pt-3 mt-3 border-t border-white/10 flex items-center justify-between">
+                                <span class="text-[11px] font-mono text-amber-200">${dailyReport.missions.native.statusText}</span>
+                                <button type="button" onclick="window.app && window.app.switchTab('expressions'); if(window.nativeExpressionsEngine && '${dailyReport.missions.native.unitId}') { window.nativeExpressionsEngine.openUnitStudio('${dailyReport.missions.native.unitId}'); }" class="px-3 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white font-serif font-bold text-xs flex items-center gap-1 cursor-pointer shadow-2xs transition-colors">
+                                    <span>${dailyReport.missions.native.actionText}</span>
+                                    <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                                </button>
+                            </div>
+                        </div>
+                    ` : `
+                        <div class="p-4 rounded-2xl border border-slate-700/60 bg-slate-800/40 shadow-sm flex flex-col justify-between opacity-75">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-slate-700 text-slate-400">💬 원어민 표현 LAB</span>
+                                    <span class="text-[10px] font-mono text-slate-400">배정 없음</span>
+                                </div>
+                                <h5 class="font-serif font-bold text-sm text-slate-400">오늘 배정된 원어민 단원이 없습니다</h5>
+                                <p class="text-xs text-slate-400 mt-0.5">8대 전문 시리즈(80개 단원) 중 관심 시리즈를 플래너에 배정하세요.</p>
+                            </div>
+                            <div class="pt-3 mt-3 border-t border-slate-700/40 flex justify-end">
+                                <button type="button" onclick="window.app && window.app.switchTab('expressions')" class="px-2.5 py-1 rounded-lg border border-slate-600 text-[11px] text-slate-300 hover:bg-white/10 transition-colors cursor-pointer">원어민 LAB 가기</button>
+                            </div>
+                        </div>
+                    `}
+
+                    <!-- 4. 🟩 e-Book 도서관 퀘스트 (e-Book Library) -->
+                    ${dailyReport.missions.ebook && dailyReport.missions.ebook.assigned ? `
+                        <div class="p-4 rounded-2xl border-2 ${dailyReport.missions.ebook.isCompleted ? 'border-emerald-500/70 bg-emerald-950/40' : 'border-emerald-500/60 bg-emerald-950/40'} shadow-md flex flex-col justify-between transition-all hover:scale-[1.01]">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-400/20 text-emerald-300 border border-emerald-400/30 flex items-center gap-1">
+                                        <span>📖</span> e-Book 도서관
+                                    </span>
+                                    <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold ${dailyReport.missions.ebook.isCompleted ? 'bg-emerald-400 text-slate-950' : 'bg-amber-400/20 text-amber-300 border border-amber-400/40'}">
+                                        ${dailyReport.missions.ebook.isCompleted ? '✅ 완독' : '⏳ 미완독'}
+                                    </span>
+                                </div>
+                                <h5 class="font-serif font-bold text-sm text-white line-clamp-1">${dailyReport.missions.ebook.title}</h5>
+                                <p class="text-xs text-slate-300 mt-0.5 line-clamp-1">${dailyReport.missions.ebook.subtitle}</p>
+                            </div>
+                            <div class="pt-3 mt-3 border-t border-white/10 flex items-center justify-between">
+                                <span class="text-[11px] font-mono text-emerald-200">${dailyReport.missions.ebook.statusText}</span>
+                                <button type="button" onclick="window.app && window.app.switchTab('ebook'); if(window.ebookEngine && '${dailyReport.missions.ebook.bookId}') { window.ebookEngine.openReader('${dailyReport.missions.ebook.bookId}'); }" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-serif font-bold text-xs flex items-center gap-1 cursor-pointer shadow-2xs transition-colors">
+                                    <span>${dailyReport.missions.ebook.actionText}</span>
+                                    <i data-lucide="book-open" class="w-3 h-3"></i>
+                                </button>
+                            </div>
+                        </div>
+                    ` : `
+                        <div class="p-4 rounded-2xl border border-slate-700/60 bg-slate-800/40 shadow-sm flex flex-col justify-between opacity-75">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-slate-700 text-slate-400">📖 e-Book 도서관</span>
+                                    <span class="text-[10px] font-mono text-slate-400">배정 없음</span>
+                                </div>
+                                <h5 class="font-serif font-bold text-sm text-slate-400">오늘 배정된 e-Book 원서가 없습니다</h5>
+                                <p class="text-xs text-slate-400 mt-0.5">22대 시리즈 중 관심 있는 원서를 플래너에 등록하세요.</p>
+                            </div>
+                            <div class="pt-3 mt-3 border-t border-slate-700/40 flex justify-end">
+                                <button type="button" onclick="window.app && window.app.switchTab('ebook')" class="px-2.5 py-1 rounded-lg border border-slate-600 text-[11px] text-slate-300 hover:bg-white/10 transition-colors cursor-pointer">e-Book 서재 가기</button>
+                            </div>
+                        </div>
+                    `}
+
+                </div>
+            </div>
+        `;
+
+        boardContainer.innerHTML = html;
+        if (window.lucide) window.lucide.createIcons();
+    }
+
     renderSelectedDateDetail() {
         const titleEl = document.getElementById('planner-detail-date');
         const container = document.getElementById('planner-date-words-list');
@@ -362,6 +590,8 @@ class PlannerEngine {
         }
 
         const allWordsOnDate = window.storage.getWordsByDate(this.selectedDateStr);
+        // [방안 1 핵심] 상단 와이드 데일리 미션 퀘스트 보드 동기화
+        this.renderDailyMissionBoard(this.selectedDateStr);
         container.innerHTML = '';
 
         const extTasksOnDate = (window.storage && typeof window.storage.getTodayExternalTasks === 'function')

@@ -625,6 +625,10 @@ class AppController {
             this.switchReadingSubTab('exam');
             return;
         }
+        // [방안 1 탭 별칭 지원]
+        if (tabName === 'native') tabName = 'expressions';
+        if (tabName === 'wordbook') tabName = 'flashcards';
+
         this.currentTab = tabName;
 
         // 탭 버튼 active 클래스 토글
@@ -2598,3 +2602,10 @@ if (document.readyState === 'loading') {
 } else {
     window.app = new AppController();
 }
+
+// 전역 탭 전환 헬퍼 함수
+window.switchTab = function(tabName) {
+    if (window.app && typeof window.app.switchTab === 'function') {
+        window.app.switchTab(tabName);
+    }
+};

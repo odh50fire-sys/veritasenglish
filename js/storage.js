@@ -795,6 +795,10 @@ class StorageManager {
         }
     }
 
+    saveProfile() {
+        this.saveUserProfile();
+    }
+
     saveWrongAnswers() {
         try {
             localStorage.setItem(STORAGE_KEYS.WRONG_ANSWERS, JSON.stringify(this.wrongAnswers));
@@ -2712,8 +2716,8 @@ class StorageManager {
      * @param {number} startBookIndex
      */
     registerEBookSeries(seriesId, startDateStr = null, paceOrDays = 'daily', startBookIndex = 0) {
-        const seriesList = window.EBOOK_SERIES_DATA || [];
-        const allBooks = window.EBOOK_LIBRARY_DATA || [];
+        const seriesList = window.EBOOK_SERIES_DATA || (window.ebookEngine ? window.ebookEngine.seriesList : []) || [];
+        const allBooks = window.EBOOK_BOOKS_DATA || window.EBOOK_LIBRARY_DATA || (window.ebookEngine ? window.ebookEngine.books : []) || [];
         const targetSeries = seriesList.find(s => s.id === seriesId);
         const seriesBooks = allBooks.filter(b => b.seriesId === seriesId).sort((a, b) => a.vol - b.vol);
 
@@ -2763,7 +2767,7 @@ class StorageManager {
                 meaning: `[e-Book 원서] ${b.subTitle} (${targetSeries.shortName})`,
                 partOfSpeech: '원서독해',
                 example: b.summary,
-                exampleMeaning: `권장시간: ${b.readTimeMin}분 | Level ${b.level} (${b.ar || ''}, ${b.lexile || ''})`,
+                exampleMeaning: `권장시간: ${b.readTimeMin || (b.pages && b.pages.length ? b.pages.length * 2 : 15)}분 | Level ${b.level} (${b.ar || ''}, ${b.lexile || ''})`,
                 level: b.level <= 2 ? 'middle' : 'high',
                 tag: `${targetSeries.shortName} Vol.${b.vol}`,
                 isEBookTask: true,
@@ -3687,6 +3691,230 @@ class StorageManager {
         });
         return tasks;
     }
+
+    /**
+     * 원어민 표현 8대 시리즈 플래너 배정
+     */
+    registerNativeSeries(seriesId, startDateStr = null, pace = 'daily', startUnitIndex = 0) {
+        const catalog = window.NATIVE_SERIES_CATALOG || [];
+        const series = catalog.find(s => s.id === seriesId);
+        if (!series) return { success: false, addedUnits: 0, seriesName: '', startDate: '', endDate: '' };
+
+        const allUnits = (window.NATIVE_UNITS_DATA || window.NATIVE_ALL_UNITS || []).filter(u => u.seriesId === seriesId);
+        const targetUnits = allUnits.slice(Math.max(0, startUnitIndex));
+        if (targetUnits.length === 0) return { success: false, addedUnits: 0, seriesName: '', startDate: '', endDate: '' };
+
+        const start = startDateStr || this.getTodayDateString();
+        if (!this.userProfile.nativePlans) {
+            this.userProfile.nativePlans = {};
+        }
+
+        // 기존 해당 시리즈 일정 삭제 후 재배정
+        Object.keys(this.userProfile.nativePlans).forEach(dt => {
+            if (this.userProfile.nativePlans[dt].seriesId === seriesId) {
+                delete this.userProfile.nativePlans[dt];
+            }
+        });
+
+        let scheduledDates = [];
+        const [y, m, d] = start.split('-').map(Number);
+        let cursor = new Date(y, m - 1, d);
+        let safety = 0;
+
+        while (scheduledDates.length < targetUnits.length && safety < 1000) {
+            safety++;
+            const cY = cursor.getFullYear();
+            const cM = String(cursor.getMonth() + 1).padStart(2, '0');
+            const cD = String(cursor.getDate()).padStart(2, '0');
+            const dateStr = `${cY}-${cM}-${cD}`;
+
+            if (!this.isRestDay(dateStr)) {
+                scheduledDates.push(dateStr);
+                if (pace === 'alternate') {
+                    cursor.setDate(cursor.getDate() + 2);
+                } else {
+                    cursor.setDate(cursor.getDate() + 1);
+                }
+            } else {
+                cursor.setDate(cursor.getDate() + 1);
+            }
+        }
+
+        targetUnits.forEach((unit, idx) => {
+            const dt = scheduledDates[idx];
+            if (dt) {
+                this.userProfile.nativePlans[dt] = {
+                    seriesId: series.id,
+                    seriesName: series.titleKo,
+                    seriesNumber: series.seriesNumber,
+                    unitId: unit.unitId,
+                    unitNumber: unit.unitNumber,
+                    unitTitle: unit.titleKo || unit.unitTitleKo || '',
+                    unitTitleEn: unit.titleEn || unit.unitTitleEn || '',
+                    expressionCount: (unit.expressions || []).length || 4,
+                    registeredAt: new Date().toISOString()
+                };
+            }
+        });
+
+        this.saveUserProfile();
+        return {
+            success: true,
+            seriesName: series.titleKo,
+            addedUnits: targetUnits.length,
+            startDate: scheduledDates[0] || start,
+            endDate: scheduledDates[scheduledDates.length - 1] || start
+        };
+    }
+
+    isBookCompleted(bookId) {
+        if (!bookId) return false;
+        try {
+            const raw = localStorage.getItem('veritas_ebook_progress');
+            if (raw) {
+                const prog = JSON.parse(raw);
+                if (prog[bookId] && prog[bookId].completed) return true;
+            }
+        } catch (e) {}
+        if (window.ebookEngine && window.ebookEngine.readingProgress) {
+            return !!(window.ebookEngine.readingProgress[bookId]?.completed);
+        }
+        return false;
+    }
+
+    /**
+     * [방안 1 핵심] 특정 날짜의 4대 핵심 분야 학습 미션 및 종합 완수율 집계
+     * 1) 🟦 단어장 (Vocabulary)
+     * 2) 🟪 문법 클리닉 (Grammar Clinic)
+     * 3) 🟧 원어민 실전 표현 (Native Expressions Lab)
+     * 4) 🟩 e-Book 도서관 (e-Book Library)
+     */
+    getDailyMissions(dateStr = null) {
+        dateStr = dateStr || this.getTodayDateString();
+
+        const wordsOnDate = this.getWordsByDate(dateStr);
+
+        // 1. 단어장 미션 (순수 단어장 어휘 기준, 독해/문법/도서과제 제외)
+        const vocaWords = wordsOnDate.filter(w => !w.isReadingPassage && !w.isGrammarUnit && !w.isEBookTask);
+        let vocaMission = { assigned: false };
+        if (vocaWords.length > 0) {
+            const completedCount = vocaWords.filter(w => w.completed || (w.history && w.history.length > 0) || w.memorized).length;
+            const isCompleted = (completedCount >= vocaWords.length && vocaWords.length > 0);
+            
+            // 배정된 Day 명칭 추출
+            const dayLabels = Array.from(new Set(vocaWords.map(w => {
+                if (w.isNeungryul2025) return `능률고난도 ${w.neungryulDay || 'Day'}`;
+                if (w.isNeungryulEtym) return `능률어원 ${w.neungryulDay || 'Day'}`;
+                if (w.collectionId) return w.collectionId;
+                return '기본 단어장';
+            }))).join(', ');
+
+            vocaMission = {
+                assigned: true,
+                type: 'voca',
+                title: dayLabels || '일일 배정 단어',
+                subtitle: `배정 단어 ${vocaWords.length}개`,
+                totalCount: vocaWords.length,
+                completedCount: completedCount,
+                isCompleted: isCompleted,
+                statusText: isCompleted ? `완료 (${completedCount}/${vocaWords.length}단어)` : `진행 중 (${completedCount}/${vocaWords.length}단어)`,
+                actionText: isCompleted ? '단어장 복습' : '단어 학습하기',
+                actionTab: 'flashcards'
+            };
+        }
+
+        // 2. 문법 클리닉 미션
+        const extTasks = this.getTodayExternalTasks(dateStr);
+        const grammarTasks = extTasks.filter(t => t.category === 'grammar' || t.publisher === '문법');
+        const grammarWords = wordsOnDate.filter(w => w.isGrammarUnit);
+        let grammarMission = { assigned: false };
+        if (grammarTasks.length > 0 || grammarWords.length > 0) {
+            const task = grammarTasks[0] || {};
+            const gw = grammarWords[0] || {};
+            const allDone = grammarTasks.length > 0 ? grammarTasks.every(t => t.isDone) : grammarWords.every(w => w.completed);
+            grammarMission = {
+                assigned: true,
+                type: 'grammar',
+                title: task.title || gw.word || '문법 클리닉',
+                subtitle: task.tocTitle || task.range || gw.meaning || '문법 클리닉',
+                isCompleted: allDone,
+                statusText: allDone ? '클리닉 통과 ✅' : '클리닉 미완료 ⏳',
+                actionText: allDone ? '결과 다시보기' : '클리닉 시작',
+                actionTab: 'grammar'
+            };
+        }
+
+        // 3. 원어민 실전 표현 미션
+        let nativeMission = { assigned: false };
+        const nativePlan = (this.userProfile && this.userProfile.nativePlans) ? this.userProfile.nativePlans[dateStr] : null;
+        if (nativePlan) {
+            const isDone = this.isNativeUnitCompleted(nativePlan.unitId);
+            nativeMission = {
+                assigned: true,
+                type: 'native',
+                title: `[${nativePlan.seriesName}] Unit ${nativePlan.unitNumber}`,
+                subtitle: `${nativePlan.unitTitle} (${nativePlan.unitTitleEn})`,
+                isCompleted: isDone,
+                unitId: nativePlan.unitId,
+                statusText: isDone ? '4단계 마스터 ✅' : '표현 학습 미완료 ⏳',
+                actionText: isDone ? '표현 복습하기' : 'Lab 시작하기',
+                actionTab: 'expressions'
+            };
+        }
+
+        // 4. e-Book 도서관 미션
+        let ebookMission = { assigned: false };
+        const ebookWord = wordsOnDate.find(w => w.isEBookTask || w.ebookBookId || (w.ebookPlanDate === dateStr && w.isEBookVolume));
+        if (ebookWord) {
+            const bookId = ebookWord.ebookBookId || ebookWord.ebookId;
+            const allBooks = window.EBOOK_BOOKS_DATA || window.EBOOK_LIBRARY_DATA || (window.ebookEngine ? window.ebookEngine.books : []) || [];
+            const bookObj = allBooks.find(b => b.id === bookId);
+            const isDone = this.isBookCompleted(bookId);
+
+            ebookMission = {
+                assigned: true,
+                type: 'ebook',
+                title: bookObj ? bookObj.title : (ebookWord.word || ebookWord.ebookTitle || '원서 e-Book'),
+                subtitle: bookObj ? bookObj.subTitle : (ebookWord.meaning || `Level ${ebookWord.ebookLevel || 1} 원서`),
+                bookId: bookId,
+                isCompleted: isDone,
+                statusText: isDone ? '5단계 완독 ✅' : '원서 완독 미완료 ⏳',
+                actionText: isDone ? '다시 읽기' : '바로 읽기 ➔',
+                actionTab: 'ebook'
+            };
+        }
+
+        const missionsList = [vocaMission, grammarMission, nativeMission, ebookMission];
+        const assignedList = missionsList.filter(m => m.assigned);
+        const totalAssigned = assignedList.length;
+        const completedCount = assignedList.filter(m => m.isCompleted).length;
+        const completionPct = totalAssigned > 0 ? Math.round((completedCount / totalAssigned) * 100) : 0;
+
+        return {
+            date: dateStr,
+            isRestDay: this.isRestDay(dateStr),
+            totalAssigned: totalAssigned,
+            completedCount: completedCount,
+            completionPercentage: completionPct,
+            isAllClear: totalAssigned > 0 && completedCount === totalAssigned,
+            missions: {
+                voca: vocaMission,
+                grammar: grammarMission,
+                native: nativeMission,
+                ebook: ebookMission
+            }
+        };
+    }
+
+    /**
+     * 원어민 표현 유닛 완료 여부 확인 헬퍼
+     */
+    isNativeUnitCompleted(unitId) {
+        if (!unitId || !this.userProfile) return false;
+        const progress = this.userProfile.nativeUnitProgress || {};
+        return !!(progress[unitId] && progress[unitId].completed);
+    }
+
 }
 
 // 전역 인스턴스
