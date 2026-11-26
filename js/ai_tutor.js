@@ -22,8 +22,60 @@
   class AITutorEngine {
     constructor() {
       this.isOpen = false;
-      this.historyStorageKey = 'veritas_ai_tutor_chat_history_v3';
+      this.historyStorageKey = 'veritas_ai_tutor_chat_history_v4';
       this.messages = this.loadHistory();
+      this.currentPersona = 'academic'; // academic | native | writing | reading | voca
+      this.isSidebarMode = false;
+      this.geminiApiKey = localStorage.getItem('veritas_gemini_api_key') || '';
+
+      // 5대 전문 페르소나 정의
+      this.personas = {
+        academic: {
+          id: 'academic',
+          name: '수능/내신 1등급 닥터',
+          icon: '🎓',
+          badge: '내신/수능 닥터',
+          desc: '어법 함정, 킬러 구문, 논리적 인과관계 정밀 분석',
+          color: 'from-blue-600 to-indigo-700',
+          greeting: '반갑습니다! 수능 및 내신 1등급을 위한 구문 닥터입니다. 분석이 필요한 문장이나 어법 질문을 입력하세요.'
+        },
+        native: {
+          id: 'native',
+          name: '원어민 뉘앙스 코치',
+          icon: '🗽',
+          badge: '원어민 회화',
+          desc: '미국 현지 뉘앙스, 콩글리시 교정, 패러프레이징',
+          color: 'from-purple-600 to-pink-600',
+          greeting: 'Hey there! 미국 현지에서 실제로 쓰는 자연스러운 일상 표현과 미묘한 뉘앙스 차이를 알려드릴게요.'
+        },
+        writing: {
+          id: 'writing',
+          name: '서술형 영작 첨삭 코치',
+          icon: '✍️',
+          badge: '영작 첨삭',
+          desc: '조건부 영작 채점, 어순/시제 오류 1:1 교정 피드백',
+          color: 'from-amber-600 to-rose-600',
+          greeting: '영작하신 문장을 보내주시면 문법과 어순, 전치사 오류를 꼼꼼하게 1:1 첨삭해 드립니다.'
+        },
+        reading: {
+          id: 'reading',
+          name: 'e-Book 독서 토론 가이드',
+          icon: '📖',
+          badge: 'e-Book 가이드',
+          desc: '지문 요약, 역사/과학 배경지식, 심층 생각 확장 Q&A',
+          color: 'from-emerald-600 to-teal-700',
+          greeting: 'e-Book 도서관 222권 및 지문의 역사적·과학적 배경지식과 핵심 주제를 깊이 있게 탐구해 드립니다.'
+        },
+        voca: {
+          id: 'voca',
+          name: '보카 어원 마스터',
+          icon: '⚡',
+          badge: '보카 어원',
+          desc: '어원(Etymology), 접두사/접미사 분해, 연상 암기 비법',
+          color: 'from-orange-500 to-amber-600',
+          greeting: '단어의 어원과 파생어를 꿰뚫어 한 번 보면 평생 기억에 남는 단어 암기 비법을 알려드립니다!'
+        }
+      };
 
       // 사이트 기능 종합 지식 베이스 (오발화 방지 복합 키워드)
       this.siteKnowledgeBase = [
@@ -172,8 +224,12 @@
     init() {
       if (document.body) {
         this.mount();
+        this.initTextSelectionPopup();
       } else {
-        document.addEventListener('DOMContentLoaded', () => this.mount());
+        document.addEventListener('DOMContentLoaded', () => {
+          this.mount();
+          this.initTextSelectionPopup();
+        });
       }
     }
 
@@ -207,30 +263,50 @@
           class="bg-white rounded-3xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden transition-all duration-300 transform translate-y-4 opacity-0 pointer-events-none">
           
           <!-- 헤더 -->
-          <div class="p-4 bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white flex items-center justify-between border-b border-slate-800 shrink-0">
+          <div id="ai-tutor-header" class="p-3.5 bg-gradient-to-r from-slate-950 via-indigo-950 to-slate-950 text-white flex items-center justify-between border-b border-slate-800 shrink-0">
             <div class="flex items-center gap-2.5">
-              <div class="w-9 h-9 rounded-2xl bg-indigo-500/20 border border-indigo-400/30 flex items-center justify-center text-lg shadow-inner">
-                🤖
+              <div id="ai-tutor-persona-icon" class="w-8 h-8 rounded-xl bg-indigo-500/20 border border-indigo-400/30 flex items-center justify-center text-base shadow-inner">
+                🎓
               </div>
               <div>
                 <div class="flex items-center gap-1.5">
-                  <h3 class="font-serif font-black text-sm text-white tracking-wide">베리타스 AI 튜터</h3>
-                  <span class="inline-flex items-center px-1.5 py-0.2 rounded-full text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1 animate-pulse"></span>All-in-One
+                  <h3 id="ai-tutor-persona-name" class="font-serif font-black text-xs sm:text-sm text-white tracking-wide">수능/내신 1등급 닥터</h3>
+                  <span id="ai-tutor-engine-badge" class="inline-flex items-center px-1.5 py-0.2 rounded-full text-[9px] font-mono font-bold ${this.geminiApiKey ? 'bg-amber-400/20 text-amber-300 border border-amber-400/30' : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'}">
+                    <span class="w-1.5 h-1.5 rounded-full ${this.geminiApiKey ? 'bg-amber-400 animate-pulse' : 'bg-emerald-400'} mr-1"></span>
+                    ${this.geminiApiKey ? 'Gemini Live' : 'Smart Offline'}
                   </span>
                 </div>
-                <p class="text-[10px] text-slate-400">구문 독해·문법 검사·영작 코칭·단어·교재 추천</p>
+                <p id="ai-tutor-persona-desc" class="text-[10px] text-slate-400 line-clamp-1">어법 함정, 킬러 구문, 논리적 인과관계 정밀 분석</p>
               </div>
             </div>
             
             <div class="flex items-center gap-1">
-              <button onclick="window.aiTutorEngine.clearChat()" class="p-1.5 rounded-lg text-slate-400 hover:text-red-300 hover:bg-slate-800 transition-colors cursor-pointer" title="대화 내용 지우기">
+              <!-- Gemini API 설정 버튼 -->
+              <button onclick="window.aiTutorEngine.openSettingsModal()" class="p-1.5 rounded-lg text-slate-400 hover:text-amber-300 hover:bg-slate-800 transition-colors cursor-pointer" title="AI 엔진 설정 (Gemini API)">
+                <i data-lucide="settings" class="w-3.5 h-3.5"></i>
+              </button>
+              <!-- 사이드바 확장 모드 전환 버튼 -->
+              <button onclick="window.aiTutorEngine.toggleSidebarMode()" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer hidden sm:flex" title="와이드 사이드바 모드 전환">
+                <i id="ai-tutor-expand-icon" data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+              </button>
+              <!-- 대화 지우기 -->
+              <button onclick="window.aiTutorEngine.clearChat()" class="p-1.5 rounded-lg text-slate-400 hover:text-rose-300 hover:bg-slate-800 transition-colors cursor-pointer" title="대화 내용 지우기">
                 <i data-lucide="trash-2" class="w-4 h-4"></i>
               </button>
+              <!-- 닫기 -->
               <button onclick="window.aiTutorEngine.toggle()" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer" title="닫기">
-                <i data-lucide="x" class="w-5 h-5"></i>
+                <i data-lucide="x" class="w-4 h-4"></i>
               </button>
             </div>
+          </div>
+
+          <!-- 5대 전문 페르소나 탭 바 -->
+          <div class="flex items-center gap-1 px-3 py-1.5 bg-slate-900 border-b border-slate-800 overflow-x-auto text-[11px] font-mono scrollbar-none shrink-0">
+            <button onclick="window.aiTutorEngine.setPersona('academic')" class="persona-tab px-2.5 py-1 rounded-lg text-white font-bold bg-indigo-600 transition-all cursor-pointer whitespace-nowrap text-[10px]" data-p="academic">🎓 수능/내신</button>
+            <button onclick="window.aiTutorEngine.setPersona('native')" class="persona-tab px-2.5 py-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all cursor-pointer whitespace-nowrap text-[10px]" data-p="native">🗽 원어민회화</button>
+            <button onclick="window.aiTutorEngine.setPersona('writing')" class="persona-tab px-2.5 py-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all cursor-pointer whitespace-nowrap text-[10px]" data-p="writing">✍️ 영작첨삭</button>
+            <button onclick="window.aiTutorEngine.setPersona('reading')" class="persona-tab px-2.5 py-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all cursor-pointer whitespace-nowrap text-[10px]" data-p="reading">📖 e-Book</button>
+            <button onclick="window.aiTutorEngine.setPersona('voca')" class="persona-tab px-2.5 py-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all cursor-pointer whitespace-nowrap text-[10px]" data-p="voca">⚡ 어원보카</button>
           </div>
 
           <!-- 메시지 스크롤 영역 -->
@@ -248,9 +324,12 @@
             `).join('')}
           </div>
 
-          <!-- 하단 메시지 입력 바 -->
+          <!-- 하단 메시지 입력 바 (마이크 음성 입력 포함) -->
           <form id="ai-tutor-form" onsubmit="window.aiTutorEngine.onSubmit(event)" class="p-3 bg-white border-t border-slate-200 flex items-center gap-2 shrink-0">
-            <input type="text" id="ai-tutor-input" placeholder="해석, 문법 검사, 영작, 단어 뜻, 교재 추천을 물어보세요..."
+            <button type="button" id="ai-tutor-mic-btn" onclick="window.aiTutorEngine.startVoiceInput()" class="w-9 h-9 rounded-2xl border border-slate-200 hover:bg-indigo-50 text-slate-500 hover:text-indigo-600 flex items-center justify-center transition-all cursor-pointer shrink-0" title="음성으로 질문하기 (영어/한국어 마이크)">
+              <i data-lucide="mic" class="w-4 h-4"></i>
+            </button>
+            <input type="text" id="ai-tutor-input" placeholder="질문, 영어 문장, 단어를 입력하거나 마이크로 말씀하세요..."
               class="flex-1 bg-slate-100/90 border border-slate-200 rounded-2xl px-3.5 py-2.5 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:bg-white transition-all font-sans"
               autocomplete="off" />
             <button type="submit" class="w-10 h-10 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white flex items-center justify-center transition-all cursor-pointer shadow-md hover:shadow-indigo-500/25 active:scale-95 shrink-0">
@@ -357,6 +436,14 @@
               <div class="p-3 rounded-2xl ${isUser ? 'bg-indigo-600 text-white rounded-br-xs' : 'bg-white text-slate-800 border border-slate-200/90 shadow-2xs rounded-bl-xs'} text-xs leading-relaxed w-full">
                 <div class="markdown-body space-y-1.5 whitespace-pre-wrap">${this.formatText(m.text)}</div>
                 ${m.card ? this.renderCardHtml(m.card) : ''}
+                ${!isUser ? `
+                  <div class="pt-1.5 flex items-center justify-end gap-1.5 border-t border-slate-100 mt-2">
+                    <button type="button" onclick="window.aiTutorEngine.speakResponse(window.aiTutorEngine.messages[${idx}].text)" class="text-[10px] text-slate-400 hover:text-indigo-600 flex items-center gap-1 transition-colors cursor-pointer" title="음성으로 듣기">
+                      <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                      <span>음성 듣기</span>
+                    </button>
+                  </div>
+                ` : ''}
               </div>
             </div>
             <span class="text-[9px] font-mono text-slate-400 px-1">${m.time || ''}</span>
@@ -705,6 +792,23 @@
     async processQuery(query) {
       const nowStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
+      // 만약 Gemini Live API Key가 설정되어 있다면 최신 LLM 실시간 우선 호출
+      if (this.geminiApiKey) {
+        const geminiReply = await this.queryGeminiApi(query);
+        if (geminiReply) {
+          this.messages.push({
+            sender: 'bot',
+            time: nowStr,
+            text: geminiReply,
+            card: null
+          });
+          this.saveHistory();
+          this.renderMessages();
+          this.scrollToBottom();
+          return;
+        }
+      }
+
       // 인용부호 속 영어 문장 및 일반 영문 추출
       const quoteMatch = query.match(/["“'‘]([^"”'’]{6,})["”'’]/);
       let targetEnglish = quoteMatch ? quoteMatch[1].trim() : null;
@@ -715,11 +819,19 @@
         }
       }
 
+      // 순수 영어 문장(2단어 이상의 영문 절) 감지: 바로 직독직해/구문분석으로 직행
+      const trimmedQuery = query.trim();
+      const rawWords = trimmedQuery.split(/\s+/);
+      const isPureEnglishSentence = rawWords.length >= 2 && rawWords.every(w => /^[A-Za-z0-9,.'"-?!;:]+$/.test(w));
+      if (isPureEnglishSentence) {
+        targetEnglish = trimmedQuery;
+      }
+
       // -----------------------------------------------------------------------
       // [1] 독해 & 구문 해석 의도 (Reading & Translation Intent)
-      // "이 문장 어떻게 해석해...", "무슨 뜻이야", "해석해줘", "구문 분석해줘"
+      // "이 문장 어떻게 해석해...", "무슨 뜻이야", "해석해줘", "구문 분석해줘" 또는 순수 영문 문장
       // -----------------------------------------------------------------------
-      const isTranslationIntent = /(어떻게\s*해석|해석해|해석|무슨\s*뜻|어떻게\s*읽|구문\s*분석|직독직해|끊어읽기|translate|번역)/i.test(query);
+      const isTranslationIntent = isPureEnglishSentence || /(어떻게\s*해석|해석해|해석|무슨\s*뜻|어떻게\s*읽|구문\s*분석|직독직해|끊어읽기|translate|번역)/i.test(query);
       if (isTranslationIntent && (targetEnglish || quoteMatch)) {
         const readingResult = await this.diagnoseReadingAndTranslation(query, targetEnglish || (quoteMatch && quoteMatch[1]));
         if (readingResult) {
@@ -1558,6 +1670,12 @@
     }
 
     extractWordCandidate(query) {
+      // 2단어 이상의 영문 문장인 경우 단일 어휘 검색으로 취급하지 않음 (구문 분석 대상)
+      const tokens = query.trim().split(/\s+/);
+      if (tokens.length >= 2 && tokens.every(t => /^[a-zA-Z,.'"-?!;:]+$/.test(t))) {
+        return null;
+      }
+
       const quoteMatch = query.match(/["“'‘]([a-zA-Z]{2,})["”'’]/);
       if (quoteMatch) return quoteMatch[1].toLowerCase();
 
@@ -1692,6 +1810,243 @@
 
       return null;
     }
+
+    setPersona(personaId) {
+      if (!this.personas[personaId]) return;
+      this.currentPersona = personaId;
+      const p = this.personas[personaId];
+      
+      const iconEl = document.getElementById('ai-tutor-persona-icon');
+      const nameEl = document.getElementById('ai-tutor-persona-name');
+      const descEl = document.getElementById('ai-tutor-persona-desc');
+      if (iconEl) iconEl.innerText = p.icon;
+      if (nameEl) nameEl.innerText = p.name;
+      if (descEl) descEl.innerText = p.desc;
+
+      // Update persona tab styles
+      document.querySelectorAll('.persona-tab').forEach(btn => {
+        if (btn.getAttribute('data-p') === personaId) {
+          btn.className = 'persona-tab px-2.5 py-1 rounded-lg text-white font-bold bg-indigo-600 transition-all cursor-pointer whitespace-nowrap text-[10px]';
+        } else {
+          btn.className = 'persona-tab px-2.5 py-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all cursor-pointer whitespace-nowrap text-[10px]';
+        }
+      });
+
+      // Greeting message
+      this.messages.push({
+        sender: 'bot',
+        text: `**${p.icon} [${p.name}] 모드로 전환되었습니다.**\n${p.greeting}`
+      });
+      this.saveHistory();
+      this.renderMessages();
+      this.scrollToBottom();
+    }
+
+    toggleSidebarMode() {
+      this.isSidebarMode = !this.isSidebarMode;
+      const panel = document.getElementById('ai-tutor-panel');
+      if (!panel) return;
+
+      if (this.isSidebarMode) {
+        panel.style.width = '460px';
+        panel.style.height = '100vh';
+        panel.style.bottom = '0px';
+        panel.style.right = '0px';
+        panel.style.maxHeight = '100vh';
+        panel.classList.remove('rounded-3xl');
+        panel.classList.add('rounded-l-3xl', 'border-l-2', 'border-indigo-400');
+      } else {
+        panel.style.width = 'min(430px, calc(100vw - 32px))';
+        panel.style.height = '600px';
+        panel.style.bottom = '86px';
+        panel.style.right = '20px';
+        panel.style.maxHeight = 'calc(100vh - 120px)';
+        panel.classList.add('rounded-3xl');
+        panel.classList.remove('rounded-l-3xl', 'border-l-2', 'border-indigo-400');
+      }
+
+      const icon = document.getElementById('ai-tutor-expand-icon');
+      if (icon) {
+        icon.setAttribute('data-lucide', this.isSidebarMode ? 'minimize-2' : 'maximize-2');
+        if (window.lucide) window.lucide.createIcons();
+      }
+    }
+
+    initTextSelectionPopup() {
+      let tooltip = document.getElementById('ai-tutor-selection-tooltip');
+      if (!tooltip) {
+        tooltip = document.createElement('div');
+        tooltip.id = 'ai-tutor-selection-tooltip';
+        tooltip.style.position = 'fixed';
+        tooltip.style.zIndex = '99999';
+        tooltip.className = 'hidden bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white text-xs font-serif font-bold px-3 py-1.5 rounded-xl shadow-2xl border border-indigo-400/50 flex items-center gap-1.5 cursor-pointer hover:scale-105 active:scale-95 transition-all';
+        tooltip.innerHTML = `
+          <span class="text-sm">✨</span>
+          <span>AI 튜터 구문 분석</span>
+        `;
+        document.body.appendChild(tooltip);
+      }
+
+      document.addEventListener('mouseup', (e) => {
+        if (e.target.closest('#ai-tutor-panel') || e.target.closest('#ai-tutor-fab')) return;
+        setTimeout(() => {
+          const selection = window.getSelection();
+          const text = selection ? selection.toString().trim() : '';
+          if (text.length >= 4 && /[a-zA-Z]/.test(text)) {
+            const range = selection.getRangeAt(0);
+            const rect = range.getBoundingClientRect();
+            if (rect.width > 0 && rect.height > 0) {
+              tooltip.style.left = `${Math.min(window.innerWidth - 160, Math.max(10, rect.left + (rect.width / 2) - 60))}px`;
+              tooltip.style.top = `${Math.max(10, rect.top - 42)}px`;
+              tooltip.classList.remove('hidden');
+              tooltip.onclick = () => {
+                tooltip.classList.add('hidden');
+                this.open();
+                this.sendQuery(`다음 문장을 직독직해하고 구문 분석해줘: "${text}"`);
+              };
+              return;
+            }
+          }
+          tooltip.classList.add('hidden');
+        }, 20);
+      });
+
+      document.addEventListener('mousedown', (e) => {
+        if (!e.target.closest('#ai-tutor-selection-tooltip')) {
+          tooltip.classList.add('hidden');
+        }
+      });
+    }
+
+    startVoiceInput() {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) {
+        alert('현재 브라우저 환경에서 음성 인식을 지원하지 않습니다. Chrome/Edge 브라우저를 권장합니다.');
+        return;
+      }
+      const recognition = new SpeechRecognition();
+      recognition.lang = 'en-US';
+      recognition.interimResults = false;
+
+      const micBtn = document.getElementById('ai-tutor-mic-btn');
+      if (micBtn) micBtn.classList.add('text-rose-500', 'animate-pulse');
+
+      recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        const input = document.getElementById('ai-tutor-input');
+        if (input) {
+          input.value = transcript;
+          this.onSubmit();
+        }
+      };
+      recognition.onerror = () => {
+        if (micBtn) micBtn.classList.remove('text-rose-500', 'animate-pulse');
+      };
+      recognition.onend = () => {
+        if (micBtn) micBtn.classList.remove('text-rose-500', 'animate-pulse');
+      };
+      recognition.start();
+    }
+
+    speakResponse(text) {
+      if (!window.speechSynthesis) return;
+      window.speechSynthesis.cancel();
+      const cleanText = text.replace(/[\*\_#`]/g, '').trim();
+      const utterance = new SpeechSynthesisUtterance(cleanText);
+      utterance.lang = /[가-힣]/.test(cleanText) ? 'ko-KR' : 'en-US';
+      utterance.rate = 0.95;
+      window.speechSynthesis.speak(utterance);
+    }
+
+    openSettingsModal() {
+      const existing = document.getElementById('ai-tutor-settings-modal');
+      if (existing) existing.remove();
+
+      const modal = document.createElement('div');
+      modal.id = 'ai-tutor-settings-modal';
+      modal.className = 'fixed inset-0 z-[100000] bg-slate-950/70 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in duration-200';
+      modal.innerHTML = `
+        <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 p-6 max-w-md w-full space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+            <div class="flex items-center gap-2">
+              <span class="text-xl">⚙️</span>
+              <h3 class="font-serif font-black text-base text-slate-900">AI 튜터 엔진 설정</h3>
+            </div>
+            <button onclick="document.getElementById('ai-tutor-settings-modal').remove()" class="p-1 rounded-lg text-slate-400 hover:text-slate-700">
+              <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+          <div class="space-y-3 text-xs text-slate-600">
+            <p>
+              Veritas English는 <strong>기본 내장 스마트 오프라인 엔진</strong>(무료/무제한)으로 완벽하게 동작합니다.
+            </p>
+            <p>
+              Google의 최신 <strong>Gemini 1.5 Flash</strong> 모델과 실시간 스트리밍 대화를 원하시면 본인의 무료 Gemini API Key를 등록하세요.
+            </p>
+
+            <div class="space-y-1.5 pt-2">
+              <label class="font-bold text-slate-800 block">Google Gemini API Key (선택 사항)</label>
+              <input type="password" id="gemini-api-key-input" value="${this.geminiApiKey || ''}" placeholder="AIzaSy..." class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-mono outline-none focus:border-indigo-600">
+              <span class="text-[10px] text-slate-400 block">* API Key는 브라우저 내부(localStorage)에만 안전하게 보관됩니다.</span>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-end gap-2 pt-2 border-t border-slate-100">
+            <button onclick="localStorage.removeItem('veritas_gemini_api_key'); window.aiTutorEngine.geminiApiKey = ''; document.getElementById('ai-tutor-settings-modal').remove(); window.aiTutorEngine.updateEngineBadge();" class="px-3.5 py-2 rounded-xl border border-slate-200 hover:bg-slate-100 text-xs font-bold text-slate-600 cursor-pointer">
+              키 삭제 (오프라인 모드)
+            </button>
+            <button onclick="const val = document.getElementById('gemini-api-key-input').value.trim(); if(val) { localStorage.setItem('veritas_gemini_api_key', val); window.aiTutorEngine.geminiApiKey = val; } document.getElementById('ai-tutor-settings-modal').remove(); window.aiTutorEngine.updateEngineBadge();" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold cursor-pointer shadow-sm">
+              저장 및 적용
+            </button>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+      if (window.lucide) window.lucide.createIcons();
+    }
+
+    updateEngineBadge() {
+      const badge = document.getElementById('ai-tutor-engine-badge');
+      if (!badge) return;
+      if (this.geminiApiKey) {
+        badge.className = 'inline-flex items-center px-1.5 py-0.2 rounded-full text-[9px] font-mono font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30';
+        badge.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-amber-400 mr-1 animate-pulse"></span>Gemini Live';
+      } else {
+        badge.className = 'inline-flex items-center px-1.5 py-0.2 rounded-full text-[9px] font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30';
+        badge.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1"></span>Smart Offline';
+      }
+    }
+
+
+    async queryGeminiApi(userPrompt) {
+      if (!this.geminiApiKey) return null;
+      const persona = this.personas[this.currentPersona] || this.personas.academic;
+      const systemInstruction = `당신은 대한민국 최고의 영어 교육 전문 시스템 'Veritas English'의 1:1 전담 AI 튜터입니다.
+현재 활성화된 페르소나는 [${persona.name}] (${persona.desc})입니다.
+학생의 질문에 대해 친절하고 전문적이며 교육적으로 명쾌하게 한국어로 설명해 주세요.
+영어 예문, 직독직해, 어법 팁을 곁들여 마크다운(굵은 글씨, 리스트 등)으로 보기 쉽게 답변하세요.`;
+
+      try {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${this.geminiApiKey}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            system_instruction: { parts: [{ text: systemInstruction }] },
+            contents: [
+              { role: 'user', parts: [{ text: userPrompt }] }
+            ]
+          })
+        });
+        const data = await response.json();
+        if (data.candidates && data.candidates[0]?.content?.parts?.[0]?.text) {
+          return data.candidates[0].content.parts[0].text;
+        }
+      } catch (err) {
+        console.warn('Gemini API call failed, falling back to smart local engine:', err);
+      }
+      return null;
+    }
   }
 
   function escapeHtml(str) {
@@ -1711,7 +2066,7 @@
       .replace(/'/g, "\\'");
   }
 
-  // 글로벌 싱글톤 인스턴스 등록
+  // 전역 인스턴스 초기화
   window.aiTutorEngine = new AITutorEngine();
 
 })(window);

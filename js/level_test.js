@@ -210,17 +210,46 @@ class LevelTestEngine {
 
                 <!-- 모드 선택 헤더 -->
                 <div class="mb-4">
-                    <h3 class="font-serif font-bold text-sm text-slate-800 mb-1 flex items-center gap-2">
-                        <i data-lucide="sparkles" class="w-4 h-4 text-blue-900"></i>
-                        진단 방식을 선택해 주세요
-                    </h3>
-                    <p class="text-xs text-slate-500">
-                        200문항 규모의 정밀 문제은행 풀에서 어휘, 문법, 독해, 실전 회화, 청해 5대 핵심 영역을 정밀 진단합니다.
+                    <div class="flex items-center justify-between flex-wrap gap-2">
+                        <h3 class="font-serif font-bold text-sm sm:text-base text-slate-800 flex items-center gap-2">
+                            <i data-lucide="sparkles" class="w-4 h-4 text-blue-900"></i>
+                            진단 방식을 선택해 주세요
+                        </h3>
+                        <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-[11px] font-mono font-bold border border-emerald-200">
+                            ✨ 총 400문항 대규모 문제은행 완전 탑재
+                        </span>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-1">
+                        초등 기초부터 수능 1등급·CEFR C2까지 어휘, 문법(밑줄 어법), 독해, 어순배열, 청해 5대 핵심 영역을 정밀 진단합니다.
                     </p>
                 </div>
 
-                <!-- 진단 모드 카드 그리드 (4종) -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <!-- 진단 모드 카드 그리드 (3대 핵심 모드) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <!-- [0] ⚡ 3분 쾌속 진단 (8문항) -->
+                    <div class="p-5 rounded-2xl border-2 border-slate-200 bg-white hover:border-amber-500 hover:bg-amber-50/20 relative shadow-sm hover:shadow-md transition-all cursor-pointer group flex flex-col justify-between" onclick="window.levelTestEngine.startTest('quick')">
+                        <div class="absolute -top-3 right-4 px-2 py-0.5 rounded-full bg-amber-500 text-slate-950 font-mono text-[10px] font-bold tracking-wider shadow flex items-center gap-1">
+                            <i data-lucide="zap" class="w-3 h-3"></i>
+                            3-MIN QUICK
+                        </div>
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-lg">⚡</span>
+                                <span class="px-2.5 py-1 rounded-full bg-slate-100 font-mono text-xs font-bold text-slate-700">8문항</span>
+                            </div>
+                            <h4 class="font-serif font-black text-base text-slate-900 group-hover:text-amber-700 transition-colors mb-1">
+                                3분 쾌속 진단
+                            </h4>
+                            <p class="text-xs text-slate-500 leading-relaxed">
+                                바쁜 학생을 위해 8문항으로 주요 어휘와 핵심 구문 실력을 빠르게 스캔하여 최적의 교재를 찾아줍니다.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-amber-700 font-bold mt-4">
+                            <span>약 3~4분 소요</span>
+                            <span class="group-hover:translate-x-1 transition-transform">시작 ➔</span>
+                        </div>
+                    </div>
+
                     <!-- [1] AI 스마트 적응형 진단 (15문항) - RECOMMENDED -->
                     <div class="p-5 rounded-2xl border-2 border-blue-600 bg-gradient-to-br from-blue-50/80 via-white to-blue-50/40 relative shadow-md hover:shadow-lg transition-all cursor-pointer group flex flex-col justify-between" onclick="window.levelTestEngine.startTest('adaptive')">
                         <div class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-blue-900 text-amber-300 font-mono text-[10px] font-bold tracking-wider shadow flex items-center gap-1">
@@ -351,29 +380,36 @@ class LevelTestEngine {
         this.listeningPlayCounts = {};
         this.usedQuestionIds.clear();
 
-        if (mode === 'adaptive') {
+        if (mode === 'quick') {
+            this.isAdaptive = true;
+            this.questionCount = 8;
+            const userLvl = window.storage ? window.storage.getAcademicLevel() : 3;
+            this.adaptiveCurrentLevel = Math.max(1, Math.min(10, userLvl));
+            this.questions = [this.pickNextAdaptiveQuestion(this.adaptiveCurrentLevel)];
+            this.userAnswers = [null];
+            this.questionTimes = [0];
+        } else if (mode === 'full') {
+            this.isAdaptive = false;
+            this.questionCount = 25;
+            this.questions = this.pickStandardQuestions(25);
+            this.userAnswers = new Array(this.questionCount).fill(null);
+            this.questionTimes = new Array(this.questionCount).fill(0);
+        } else if (mode === 'adaptive') {
             this.isAdaptive = true;
             this.questionCount = 15;
             const userLvl = window.storage ? window.storage.getAcademicLevel() : 3;
-            this.adaptiveCurrentLevel = Math.max(1, Math.min(10, userLvl || 3));
-            this.consecutiveCorrect = 0;
-            this.consecutiveWrong = 0;
-            this.questions = [];
-            this.userAnswers = [];
-            // 첫 적응형 문제 추출
-            const firstQ = this.pickNextAdaptiveQuestion(0);
-            if (firstQ) {
-                this.questions.push(firstQ);
-                this.userAnswers.push(null);
-            }
+            this.adaptiveCurrentLevel = Math.max(1, Math.min(10, userLvl));
+            this.questions = [this.pickNextAdaptiveQuestion(this.adaptiveCurrentLevel)];
+            this.userAnswers = [null];
+            this.questionTimes = [0];
         } else {
             this.isAdaptive = false;
-            this.questionCount = Number(mode);
+            this.questionCount = Number(mode) || 20;
             this.questions = this.pickStandardQuestions(this.questionCount);
-            this.userAnswers = new Array(this.questions.length).fill(null);
+            this.userAnswers = new Array(this.questionCount).fill(null);
+            this.questionTimes = new Array(this.questionCount).fill(0);
         }
 
-        this.startTimer();
         this.renderQuestion();
     }
 
@@ -851,7 +887,9 @@ class LevelTestEngine {
      * 시험 완료 및 정밀 레벨 판정 알고리즘 (CAT & Weighted Scoring)
      */
     finishTest() {
-        const unansweredCount = this.userAnswers.filter(a => a === null).length;
+        const totalActiveQuestions = this.questions.length;
+        const answeredCount = this.userAnswers.slice(0, totalActiveQuestions).filter(a => a !== null && a !== undefined).length;
+        const unansweredCount = Math.max(0, totalActiveQuestions - answeredCount);
         if (unansweredCount > 0) {
             if (!confirm(`아직 풀지 않은 문제가 ${unansweredCount}문항 있습니다. 그대로 진단을 완료하시겠습니까?`)) {
                 return;
@@ -988,11 +1026,11 @@ class LevelTestEngine {
      */
     generateDiagnosticPrescription(result) {
         const catMap = {
-            voca: { name: '어휘력 (Vocabulary)', advice: '문맥 속 어휘 활용과 파생어 학습에 집중할 것을 권장합니다.' },
-            grammar: { name: '문법·구문 (Grammar)', advice: '핵심 문장 구조(관계사, 수동태, 시제 수일치) 기초를 재정비하세요.' },
-            reading: { name: '독해력 (Reading)', advice: '긴 문장의 주어-동사 끊어 읽기와 핵심 대의 파악 훈련이 필요합니다.' },
-            conversation: { name: '실전 회화 (Dialogue)', advice: '원어민 구어 관용구와 상황별 리액션 표현을 반복 섀도잉하세요.' },
-            listening: { name: '리스닝 청해 (Listening)', advice: '원어민 연음 법칙 및 핵심 키워드 청취 딕테이션 훈련을 권장합니다.' }
+            voca: { name: '어휘력 (Vocabulary)', advice: '문맥 속 어휘 활용과 파생어 학습에 집중할 것을 권장합니다.', targetTab: 'wordbook', linkText: '중등/수능 필수 단어장 학습하기' },
+            grammar: { name: '문법·구문 (Grammar)', advice: '핵심 문장 구조(관계사, 수동태, 시제 수일치) 기초를 재정비하세요.', targetTab: 'grammar', linkText: '영문법 트레이너 클리닉 단원 열기' },
+            reading: { name: '독해력 (Reading)', advice: '긴 문장의 주어-동사 끊어 읽기와 핵심 대의 파악 훈련이 필요합니다.', targetTab: 'ebook', linkText: '레벨 맞춤 e-Book 서재로 이동' },
+            conversation: { name: '실전 회화 (Dialogue)', advice: '원어민 구어 관용구와 상황별 리액션 표현을 반복 섀도잉하세요.', targetTab: 'native', linkText: '원어민 실전 표현 & 뉘앙스 Lab 가기' },
+            listening: { name: '리스닝 청해 (Listening)', advice: '원어민 연음 법칙 및 핵심 키워드 청취 딕테이션 훈련을 권장합니다.', targetTab: 'ebook', linkText: 'e-Book 오디오 청해 훈련하기' }
         };
 
         // 최저 점수 영역 찾기
@@ -1006,10 +1044,87 @@ class LevelTestEngine {
         });
 
         const target = catMap[lowestCat] || catMap.voca;
+
+        // 레벨별 100% 매칭 맞춤 e-Book 3선
+        const ebookMapping = {
+            1: [
+                { id: 'anc_01_nile', title: 'The River of Life: The Nile and the Pharaohs', tag: '입문 필독' },
+                { id: 'anc_02_pyramids', title: 'Monuments of Stone: Building the Great Pyramids', tag: '어휘 강화' },
+                { id: 'mod_01_steamboat', title: 'Steam on the Mississippi', tag: '기초 배경지식' }
+            ],
+            2: [
+                { id: 'anc_03_hieroglyphs', title: 'Words of the Gods: Deciphering Hieroglyphs', tag: '추천 도서' },
+                { id: 'mod_02_telegraph', title: 'Wires Across the Continent', tag: '스토리 리딩' },
+                { id: 'cls_08_maya_civilization', title: 'Maya: Stargazers of the Jungle', tag: '문맥 확장' }
+            ],
+            3: [
+                { id: 'cls_01_rome_republic', title: 'The Roman Republic: Senate, People, and Law', tag: '중학 필독' },
+                { id: 'sci_01_heliocentrism', title: 'The Earth Moves: Copernicus and Galileo', tag: '과학 추론' },
+                { id: 'bio_01_alexander', title: 'Alexander the Great: Conquering the Known World', tag: '역사 인문' }
+            ],
+            4: [
+                { id: 'cls_02_silk_road', title: 'The Silk Road: Caravan Trails and Merchant Cities', tag: '중등 심화' },
+                { id: 'sci_02_gravitation', title: 'The Falling Apple: Newton and Universal Gravitation', tag: '자연 과학' },
+                { id: 'bio_02_cleopatra', title: 'Cleopatra: The Last Pharaoh of Egypt', tag: '독해력 도약' }
+            ],
+            5: [
+                { id: 'rev_01_scientific', title: 'The Scientific Revolution: From Wonder to Method', tag: '중3/고1 입문' },
+                { id: 'lit_04_pride_prejudice', title: 'Pride and Prejudice: Society and Irony', tag: '문학 독해' },
+                { id: 'bio_11_albert_einstein', title: 'Albert Einstein: Bending Space and Time', tag: '고난도 사고력' }
+            ],
+            6: [
+                { id: 'rev_02_industrial', title: 'The Industrial Revolution: Iron, Steam, and Capital', tag: '수능 기초' },
+                { id: 'eco_01_adam_smith', title: 'The Wealth of Nations: The Invisible Hand', tag: '경제 인문' },
+                { id: 'phi_01_socratic_dialogue', title: 'The Examined Life: Socratic Dialogue', tag: '철학 지문' }
+            ],
+            7: [
+                { id: 'gov_01_magna_carta', title: 'Magna Carta: The Rule of Law Begins', tag: '수능 2~3등급' },
+                { id: 'lit_09_1984', title: '1984: Language, Power, and Totalitarianism', tag: '비판적 독해' },
+                { id: 'sci_05_general_relativity', title: 'General Relativity: The Curvature of Space', tag: '고난도 추론' }
+            ],
+            8: [
+                { id: 'phi_05_descartes_cogito', title: 'Meditations: Radical Doubt and the Cogito', tag: '수능 1~2등급' },
+                { id: 'eco_03_great_depression', title: 'The Great Crash: Markets and Interventions', tag: '경제 킬러' },
+                { id: 'lit_02_hamlet', title: 'Hamlet: Action, Hesitation, and Mortality', tag: '고전 심화' }
+            ],
+            9: [
+                { id: 'phi_06_kant_categorical', title: 'The Categorical Imperative: Duty and Morality', tag: '수능 1등급' },
+                { id: 'sci_06_quantum_mechanics', title: 'Quantum Uncertainty: God Playing Dice', tag: '최상위 과학' },
+                { id: 'gov_03_separation_of_powers', title: 'The Spirit of Laws: Separation of Powers', tag: '사회철학' }
+            ],
+            10: [
+                { id: 'phi_08_existentialism_sartre', title: 'Existentialism: Freedom, Anxiety, and Choice', tag: '최상위 C2' },
+                { id: 'sci_11_artificial_intelligence', title: 'Can Machines Think? Turing and the Future', tag: '첨단 미래학' },
+                { id: 'lit_12_the_stranger', title: 'The Stranger: The Absurd and Modern Alienation', tag: '학술 마스터' }
+            ]
+        };
+
+        // 공인 지표 환산 데이터
+        const conversionTable = {
+            1: { csat: '수능 8~9등급 수준 (기초 파닉스·필수 어휘 단계)', cefr: 'A1 (Beginner)', lexile: '200L ~ 350L' },
+            2: { csat: '수능 7~8등급 수준 (초등 중급 문장 구조 단계)', cefr: 'A1+ (Elementary)', lexile: '350L ~ 500L' },
+            3: { csat: '수능 6등급 수준 (중1 기본 교과서 마스터)', cefr: 'A2 (Waystage)', lexile: '500L ~ 650L' },
+            4: { csat: '수능 4~5등급 수준 (중2 필수 문법·독해 안정)', cefr: 'B1- (Threshold)', lexile: '650L ~ 800L' },
+            5: { csat: '수능 3~4등급 수준 (중3 졸업 심화·고교 진학)', cefr: 'B1 (Intermediate)', lexile: '800L ~ 950L' },
+            6: { csat: '수능 2~3등급 수준 (고1 모의고사 상위권)', cefr: 'B1+ (Strong Intermediate)', lexile: '950L ~ 1100L' },
+            7: { csat: '수능 2등급 안정권 (고2 전국연합 상위 11%)', cefr: 'B2 (Vantage)', lexile: '1100L ~ 1200L' },
+            8: { csat: '수능 1~2등급 경계선 (수능 빈칸/순서 킬러 대비)', cefr: 'B2+ (High Vantage)', lexile: '1200L ~ 1300L' },
+            9: { csat: '수능 안정 1등급 (전국 상위 4% 고난도 독해)', cefr: 'C1 (Effective Operational)', lexile: '1300L ~ 1400L' },
+            10: { csat: '수능 만점·텝스/토플 최상위 (학술 논문 및 원서)', cefr: 'C2 (Mastery)', lexile: '1400L+' }
+        };
+
+        const lvl = result.assignedLevel || 3;
+        const recommendedBooks = ebookMapping[lvl] || ebookMapping[3];
+        const conversion = conversionTable[lvl] || conversionTable[3];
+
         return {
             categoryName: target.name,
             score: lowestScore,
-            advice: target.advice
+            advice: target.advice,
+            targetTab: target.targetTab,
+            linkText: target.linkText,
+            recommendedBooks: recommendedBooks,
+            conversion: conversion
         };
     }
 
@@ -1230,6 +1345,107 @@ class LevelTestEngine {
                     <div id="level-test-review-items" class="p-4 sm:p-5 space-y-4 max-h-[450px] overflow-y-auto">
                         ${this.renderReviewItems()}
                     </div>
+                </div>
+
+                <!-- [공인 지표 환산 매트릭스] 수능 예상 등급, CEFR, Lexile 지수 -->
+                <div class="rounded-2xl p-5 sm:p-6 bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white space-y-4 shadow-lg border border-indigo-900/40">
+                    <div class="flex items-center justify-between flex-wrap gap-2">
+                        <div class="flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-xl bg-amber-400 text-slate-950 font-bold flex items-center justify-center text-base shadow">
+                                📊
+                            </span>
+                            <div>
+                                <h4 class="font-serif font-black text-base text-white">
+                                    국가 공인 및 글로벌 영어 평가 지표 환산
+                                </h4>
+                                <p class="text-xs text-indigo-200">Veritas Standard Diagnostic Matrix v3.0</p>
+                            </div>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-full bg-white/10 text-amber-300 text-[11px] font-mono font-bold border border-white/10">
+                            공인 표준 환산
+                        </span>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+                        <!-- 수능 예상 등급 -->
+                        <div class="p-4 rounded-xl bg-white/10 border border-white/10 space-y-1">
+                            <span class="text-[10px] font-mono text-amber-300 font-bold uppercase tracking-wider block">수능 영어 환산 등급</span>
+                            <div class="font-serif font-black text-lg text-white">${prescription.conversion?.csat || '수능 3등급'}</div>
+                            <p class="text-[11px] text-slate-300">내신 및 전국 연합 모의평가 추정 구간</p>
+                        </div>
+                        <!-- CEFR 글로벌 지표 -->
+                        <div class="p-4 rounded-xl bg-white/10 border border-white/10 space-y-1">
+                            <span class="text-[10px] font-mono text-emerald-300 font-bold uppercase tracking-wider block">CEFR 글로벌 언어 기준</span>
+                            <div class="font-serif font-black text-lg text-emerald-200">${prescription.conversion?.cefr || 'B1 (Intermediate)'}</div>
+                            <p class="text-[11px] text-slate-300">유럽 공통 6단계 언어 숙련도</p>
+                        </div>
+                        <!-- Lexile 독서 지수 -->
+                        <div class="p-4 rounded-xl bg-white/10 border border-white/10 space-y-1">
+                            <span class="text-[10px] font-mono text-sky-300 font-bold uppercase tracking-wider block">Lexile 독서 지수</span>
+                            <div class="font-serif font-black text-lg text-sky-200">${prescription.conversion?.lexile || '800L ~ 950L'}</div>
+                            <p class="text-[11px] text-slate-300">영미권 원서 및 e-Book 권장 독서 레벨</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- [올인원 생태계 연계] 판정 레벨 맞춤 e-Book 3권 직결 추천 -->
+                <div class="rounded-2xl p-5 sm:p-6 bg-gradient-to-br from-amber-50/80 via-white to-amber-50/40 border-2 border-amber-300 shadow-md space-y-4">
+                    <div class="flex items-center justify-between flex-wrap gap-2">
+                        <div class="flex items-center gap-2.5">
+                            <span class="w-8 h-8 rounded-xl bg-amber-500 text-slate-950 font-bold flex items-center justify-center text-base shadow">
+                                📚
+                            </span>
+                            <div>
+                                <h4 class="font-serif font-black text-base text-slate-900">
+                                    [Lv.${result.assignedLevel}] 맞춤 e-Book 도서관 필독서 3선
+                                </h4>
+                                <p class="text-xs text-slate-600">지금 바로 리더기를 열어 5단계(어휘-독해-플로우차트-수능10제-영작) 학습을 시작하세요.</p>
+                            </div>
+                        </div>
+                        <button type="button" onclick="window.switchTab && window.switchTab('ebook'); window.levelTestEngine.closeModal(true);" class="px-3.5 py-1.5 rounded-xl border border-amber-300 bg-white hover:bg-amber-100 text-xs font-bold text-amber-900 transition-colors shadow-2xs cursor-pointer">
+                            전체 e-Book 도서관 가기 ➔
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+                        ${(prescription.recommendedBooks || []).map(b => `
+                            <div class="p-4 rounded-xl border border-amber-200 bg-white shadow-2xs hover:shadow-md hover:border-amber-400 transition-all flex flex-col justify-between">
+                                <div class="space-y-1.5">
+                                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-100 text-amber-800 border border-amber-200">
+                                        ${b.tag}
+                                    </span>
+                                    <h5 class="font-serif font-bold text-sm text-slate-900 line-clamp-2">
+                                        ${b.title}
+                                    </h5>
+                                </div>
+                                <button type="button" onclick="window.levelTestEngine.closeModal(true); if (window.ebookEngine) { window.switchTab('ebook'); window.ebookEngine.openReader('${b.id}'); }" class="mt-3 w-full py-2 rounded-lg bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-xs flex items-center justify-center gap-1.5 cursor-pointer shadow-2xs transition-colors">
+                                    <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+                                    <span>바로 읽기</span>
+                                </button>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <!-- [취약점 클리닉 단원 바로가기] -->
+                <div class="rounded-2xl p-5 sm:p-6 bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-blue-200 text-blue-900">
+                                1클릭 맞춤 처방
+                            </span>
+                            <h5 class="font-serif font-bold text-sm sm:text-base text-slate-900">
+                                ${prescription.categoryName} 약점 집중 보완 코스
+                            </h5>
+                        </div>
+                        <p class="text-xs text-slate-600">
+                            ${prescription.advice}
+                        </p>
+                    </div>
+                    <button type="button" onclick="window.levelTestEngine.closeModal(true); window.switchTab && window.switchTab('${prescription.targetTab || 'wordbook'}');" class="px-5 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-serif font-bold text-xs flex items-center gap-1.5 shadow-sm transition-all cursor-pointer shrink-0">
+                        <span>${prescription.linkText || '추천 학습 코너로 바로가기'}</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </button>
                 </div>
 
                 <!-- 하단 액션 버튼 -->

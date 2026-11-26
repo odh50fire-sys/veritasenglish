@@ -1,8 +1,12 @@
 /**
- * Veritas English - 10단계 실력 진단 레벨테스트 문제 은행 데이터베이스 (Item Bank)
- * 레벨 1(Starter) ~ 레벨 10(Veritas Elite) 전 레벨별 5대 핵심 영역(어휘, 문법, 독해, 회화, 리스닝 청해)
- * 각 레벨당 20문항 엄선 (총 200문항 대규모 확충 풀)
+ * Veritas English - 10단계 실력 진단 레벨테스트 통합 문제 은행 데이터베이스 (Item Bank v3.0 - 400문항 완전체)
+ * 
+ * 구성:
+ * - Level 1 ~ Level 10 (각 레벨당 40문항, 총 400문항)
+ * - 신유형: standard(4지선다), underline(어법밑줄), scramble(어순배열), cloze(문맥빈칸)
+ * - IRT 문항 반응 분석을 위한 세부 스킬(subSkill) 및 표준 풀이 시간(speedStandardSeconds) 완비
  */
+
 const LEVEL_TEST_BANK = [
   {
     "id": "lt-1-1",
@@ -17,7 +21,10 @@ const LEVEL_TEST_BANK = [
       "pencil"
     ],
     "answer": 0,
-    "explanation": "'잠들기 전에 책(book)을 읽는다'가 가장 자연스럽습니다."
+    "explanation": "'잠들기 전에 책(book)을 읽는다'가 가장 자연스럽습니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-1-2",
@@ -32,7 +39,10 @@ const LEVEL_TEST_BANK = [
       "Sports"
     ],
     "answer": 1,
-    "explanation": "사과, 바나나, 포도는 모두 과일(Fruits)에 속합니다."
+    "explanation": "사과, 바나나, 포도는 모두 과일(Fruits)에 속합니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-1-3",
@@ -47,7 +57,10 @@ const LEVEL_TEST_BANK = [
       "be"
     ],
     "answer": 2,
-    "explanation": "주어가 3인칭 단수 대명사 'She'이므로 현재형 be동사는 'is'가 올바릅니다."
+    "explanation": "주어가 3인칭 단수 대명사 'She'이므로 현재형 be동사는 'is'가 올바릅니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-1-4",
@@ -62,7 +75,10 @@ const LEVEL_TEST_BANK = [
       "She do not like milk."
     ],
     "answer": 2,
-    "explanation": "'I like fresh apples.'가 주어-동사 수 일치가 맞는 유일한 문장입니다. (He has / They play / She does not)"
+    "explanation": "'I like fresh apples.'가 주어-동사 수 일치가 맞는 유일한 문장입니다. (He has / They play / She does not)",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-1-5",
@@ -78,7 +94,10 @@ const LEVEL_TEST_BANK = [
       "On the table"
     ],
     "answer": 1,
-    "explanation": "본문의 마지막 문장 'Snow likes sleeping by the warm window'에서 창가 옆에서 자는 것을 좋아함을 알 수 있습니다."
+    "explanation": "본문의 마지막 문장 'Snow likes sleeping by the warm window'에서 창가 옆에서 자는 것을 좋아함을 알 수 있습니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-1-6",
@@ -94,7 +113,10 @@ const LEVEL_TEST_BANK = [
       "Nice to see you yesterday."
     ],
     "answer": 0,
-    "explanation": "'How are you doing today?(오늘 어떻게 지내?)'라는 안부 인사에 'I'm pretty good, thanks!(잘 지내, 고마워!)'가 알맞습니다."
+    "explanation": "'How are you doing today?(오늘 어떻게 지내?)'라는 안부 인사에 'I'm pretty good, thanks!(잘 지내, 고마워!)'가 알맞습니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-1-7",
@@ -109,7 +131,10 @@ const LEVEL_TEST_BANK = [
       "Winter"
     ],
     "answer": 0,
-    "explanation": "Yellow는 '노란색'을 뜻하는 색깔 단어입니다. (Chair: 의자, Tiger: 호랑이, Winter: 겨울)"
+    "explanation": "Yellow는 '노란색'을 뜻하는 색깔 단어입니다. (Chair: 의자, Tiger: 호랑이, Winter: 겨울)",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-1-8",
@@ -124,7 +149,10 @@ const LEVEL_TEST_BANK = [
       "배고픈"
     ],
     "answer": 1,
-    "explanation": "'happy'는 '행복한, 기쁜'이라는 뜻입니다."
+    "explanation": "'happy'는 '행복한, 기쁜'이라는 뜻입니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-1-9",
@@ -139,7 +167,10 @@ const LEVEL_TEST_BANK = [
       "read"
     ],
     "answer": 1,
-    "explanation": "'새들은 하늘을 날(fly) 수 있다'가 가장 자연스럽습니다."
+    "explanation": "'새들은 하늘을 날(fly) 수 있다'가 가장 자연스럽습니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-1-10",
@@ -154,7 +185,10 @@ const LEVEL_TEST_BANK = [
       "be"
     ],
     "answer": 2,
-    "explanation": "주어 'They'는 복수 인칭대명사이므로 be동사 'are'가 올바릅니다."
+    "explanation": "주어 'They'는 복수 인칭대명사이므로 be동사 'are'가 올바릅니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-1-11",
@@ -169,7 +203,10 @@ const LEVEL_TEST_BANK = [
       "two apple"
     ],
     "answer": 1,
-    "explanation": "모음 발음([æ])으로 시작하는 단어 앞에는 부정관사 'an'을 씁니다."
+    "explanation": "모음 발음([æ])으로 시작하는 단어 앞에는 부정관사 'an'을 씁니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-1-12",
@@ -184,7 +221,10 @@ const LEVEL_TEST_BANK = [
       "I does not like cats."
     ],
     "answer": 1,
-    "explanation": "일반동사 'like'의 1인칭 현재 부정문은 'do not + 동사원형' 형태인 'I do not like cats.'가 맞습니다."
+    "explanation": "일반동사 'like'의 1인칭 현재 부정문은 'do not + 동사원형' 형태인 'I do not like cats.'가 맞습니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-1-13",
@@ -200,7 +240,10 @@ const LEVEL_TEST_BANK = [
       "He does not like Minho."
     ],
     "answer": 2,
-    "explanation": "지문에서 'Max has brown ears and runs very fast'라고 언급되어 있습니다."
+    "explanation": "지문에서 'Max has brown ears and runs very fast'라고 언급되어 있습니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-1-14",
@@ -216,7 +259,10 @@ const LEVEL_TEST_BANK = [
       "To the hospital"
     ],
     "answer": 2,
-    "explanation": "'Jane goes to the park with her mom'에서 공원에 갔음을 알 수 있습니다."
+    "explanation": "'Jane goes to the park with her mom'에서 공원에 갔음을 알 수 있습니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-1-15",
@@ -232,7 +278,10 @@ const LEVEL_TEST_BANK = [
       "Five"
     ],
     "answer": 1,
-    "explanation": "'There are three red birds in the tree'라고 분명하게 나와 있습니다."
+    "explanation": "'There are three red birds in the tree'라고 분명하게 나와 있습니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-1-16",
@@ -248,7 +297,10 @@ const LEVEL_TEST_BANK = [
       "A paper plane"
     ],
     "answer": 0,
-    "explanation": "'He wants to make a big snowman'에서 눈사람을 만들고 싶어함을 알 수 있습니다."
+    "explanation": "'He wants to make a big snowman'에서 눈사람을 만들고 싶어함을 알 수 있습니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-1-17",
@@ -264,7 +316,10 @@ const LEVEL_TEST_BANK = [
       "No, I don't."
     ],
     "answer": 0,
-    "explanation": "가장 좋아하는 색을 묻는 질문이므로 'I like blue.(파란색을 좋아해)'가 정답입니다."
+    "explanation": "가장 좋아하는 색을 묻는 질문이므로 'I like blue.(파란색을 좋아해)'가 정답입니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-1-18",
@@ -280,7 +335,10 @@ const LEVEL_TEST_BANK = [
       "See you yesterday."
     ],
     "answer": 0,
-    "explanation": "'Thank you'에 대한 자연스러운 응답은 'You're welcome!(천만에요!)'입니다."
+    "explanation": "'Thank you'에 대한 자연스러운 응답은 'You're welcome!(천만에요!)'입니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-1-19",
@@ -297,7 +355,10 @@ const LEVEL_TEST_BANK = [
       "20페이지"
     ],
     "answer": 1,
-    "explanation": "음원에서 'open your English books to page ten(10페이지를 펴세요)'이라고 하였습니다."
+    "explanation": "음원에서 'open your English books to page ten(10페이지를 펴세요)'이라고 하였습니다.",
+    "type": "standard",
+    "subSkill": "리스닝 청해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-1-20",
@@ -314,7 +375,10 @@ const LEVEL_TEST_BANK = [
       "선생님 교탁 서랍"
     ],
     "answer": 0,
-    "explanation": "여학생이 'It is on the desk, right next to your notebook(책상 위, 공책 바로 옆에 있어)'이라고 말했습니다."
+    "explanation": "여학생이 'It is on the desk, right next to your notebook(책상 위, 공책 바로 옆에 있어)'이라고 말했습니다.",
+    "type": "standard",
+    "subSkill": "리스닝 청해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-2-1",
@@ -329,7 +393,10 @@ const LEVEL_TEST_BANK = [
       "hospital"
     ],
     "answer": 1,
-    "explanation": "해변 근처 여행 중 머문 안락한 숙소는 호텔(hotel)입니다."
+    "explanation": "해변 근처 여행 중 머문 안락한 숙소는 호텔(hotel)입니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-2-2",
@@ -344,7 +411,10 @@ const LEVEL_TEST_BANK = [
       "comfortable - 편안한"
     ],
     "answer": 1,
-    "explanation": "'dangerous'의 뜻은 '위험한'입니다. '안전한'은 safe입니다."
+    "explanation": "'dangerous'의 뜻은 '위험한'입니다. '안전한'은 safe입니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-2-3",
@@ -359,7 +429,10 @@ const LEVEL_TEST_BANK = [
       "finishing"
     ],
     "answer": 2,
-    "explanation": "명백한 과거 시점 부사 'Yesterday'가 있으므로 과거형 'finished'를 써야 합니다."
+    "explanation": "명백한 과거 시점 부사 'Yesterday'가 있으므로 과거형 'finished'를 써야 합니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-2-4",
@@ -374,7 +447,10 @@ const LEVEL_TEST_BANK = [
       "are"
     ],
     "answer": 0,
-    "explanation": "비가 많이 오므로 우산을 챙겨야 한다는 권고/충고의 조동사 'should(~해야 한다)'가 알맞습니다."
+    "explanation": "비가 많이 오므로 우산을 챙겨야 한다는 권고/충고의 조동사 'should(~해야 한다)'가 알맞습니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-2-5",
@@ -390,7 +466,10 @@ const LEVEL_TEST_BANK = [
       "Riding the safari bus"
     ],
     "answer": 2,
-    "explanation": "본문에서 'She was excited to see the baby elephants playing in the mud pool'이라고 명시되어 있습니다."
+    "explanation": "본문에서 'She was excited to see the baby elephants playing in the mud pool'이라고 명시되어 있습니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-2-6",
@@ -406,7 +485,10 @@ const LEVEL_TEST_BANK = [
       "Yes, I like taking the bus."
     ],
     "answer": 1,
-    "explanation": "길을 묻는 질문에 대한 적절한 안내는 '두 블록 직진 후 좌회전하세요(Go straight two blocks and turn left)'입니다."
+    "explanation": "길을 묻는 질문에 대한 적절한 안내는 '두 블록 직진 후 좌회전하세요(Go straight two blocks and turn left)'입니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-2-7",
@@ -421,7 +503,10 @@ const LEVEL_TEST_BANK = [
       "slow"
     ],
     "answer": 1,
-    "explanation": "'heavy(무거운)'의 반대말은 'light(가벼운)'입니다."
+    "explanation": "'heavy(무거운)'의 반대말은 'light(가벼운)'입니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-2-8",
@@ -436,7 +521,10 @@ const LEVEL_TEST_BANK = [
       "Farmer"
     ],
     "answer": 1,
-    "explanation": "의사는 'Doctor'입니다. (Pilot: 조종사, Chef: 요리사, Farmer: 농부)"
+    "explanation": "의사는 'Doctor'입니다. (Pilot: 조종사, Chef: 요리사, Farmer: 농부)",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-2-9",
@@ -451,7 +539,10 @@ const LEVEL_TEST_BANK = [
       "sing"
     ],
     "answer": 0,
-    "explanation": "'방을 나갈 때 문을 닫아주세요(close the door)'가 자연스럽습니다."
+    "explanation": "'방을 나갈 때 문을 닫아주세요(close the door)'가 자연스럽습니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-2-10",
@@ -466,7 +557,10 @@ const LEVEL_TEST_BANK = [
       "plays"
     ],
     "answer": 1,
-    "explanation": "'Yesterday'라는 명백한 과거 시제 부사가 있으므로 규칙 과거형인 'played'가 올바릅니다."
+    "explanation": "'Yesterday'라는 명백한 과거 시제 부사가 있으므로 규칙 과거형인 'played'가 올바릅니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-2-11",
@@ -481,7 +575,10 @@ const LEVEL_TEST_BANK = [
       "baby - babys"
     ],
     "answer": 1,
-    "explanation": "child의 불규칙 복수형은 'children'입니다. (boxes, feet, babies가 올바름)"
+    "explanation": "child의 불규칙 복수형은 'children'입니다. (boxes, feet, babies가 올바름)",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-2-12",
@@ -496,7 +593,10 @@ const LEVEL_TEST_BANK = [
       "Who"
     ],
     "answer": 1,
-    "explanation": "날짜(시간)를 묻는 의문사는 'When(언제)'입니다."
+    "explanation": "날짜(시간)를 묻는 의문사는 'When(언제)'입니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-2-13",
@@ -512,7 +612,10 @@ const LEVEL_TEST_BANK = [
       "With loud barking"
     ],
     "answer": 1,
-    "explanation": "지문에서 'communicate with squeaks and clicks'라고 명시되어 있습니다."
+    "explanation": "지문에서 'communicate with squeaks and clicks'라고 명시되어 있습니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-2-14",
@@ -528,7 +631,10 @@ const LEVEL_TEST_BANK = [
       "To wash off the soil"
     ],
     "answer": 2,
-    "explanation": "'so they grow tall and healthy(크고 건강하게 자라도록)' 물을 준다고 나와 있습니다."
+    "explanation": "'so they grow tall and healthy(크고 건강하게 자라도록)' 물을 준다고 나와 있습니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-2-15",
@@ -544,7 +650,10 @@ const LEVEL_TEST_BANK = [
       "Run fast around tables"
     ],
     "answer": 2,
-    "explanation": "'You must turn off your phone(휴대전화를 꺼야 한다)'이 규칙으로 제시되어 있습니다."
+    "explanation": "'You must turn off your phone(휴대전화를 꺼야 한다)'이 규칙으로 제시되어 있습니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-2-16",
@@ -560,7 +669,10 @@ const LEVEL_TEST_BANK = [
       "Every night only"
     ],
     "answer": 2,
-    "explanation": "'During the cold winter, they sleep in deep caves'라고 되어 있습니다."
+    "explanation": "'During the cold winter, they sleep in deep caves'라고 되어 있습니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-2-17",
@@ -576,7 +688,10 @@ const LEVEL_TEST_BANK = [
       "You are right."
     ],
     "answer": 0,
-    "explanation": "빌려달라는 요청에 흔쾌히 건넬 때 'Sure, here you are.(물론이지, 여기 있어)'가 알맞습니다."
+    "explanation": "빌려달라는 요청에 흔쾌히 건넬 때 'Sure, here you are.(물론이지, 여기 있어)'가 알맞습니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-2-18",
@@ -592,7 +707,10 @@ const LEVEL_TEST_BANK = [
       "I lost my bicycle yesterday, so let's ride it."
     ],
     "answer": 0,
-    "explanation": "제안에 호응할 때 'Sounds great!(좋아, 멋지다!)'가 가장 자연스럽습니다."
+    "explanation": "제안에 호응할 때 'Sounds great!(좋아, 멋지다!)'가 가장 자연스럽습니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-2-19",
@@ -609,7 +727,10 @@ const LEVEL_TEST_BANK = [
       "3시 45분"
     ],
     "answer": 1,
-    "explanation": "'quarter past three'는 3시 15분을 의미합니다."
+    "explanation": "'quarter past three'는 3시 15분을 의미합니다.",
+    "type": "standard",
+    "subSkill": "리스닝 청해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-2-20",
@@ -626,7 +747,10 @@ const LEVEL_TEST_BANK = [
       "수영복"
     ],
     "answer": 1,
-    "explanation": "기상 캐스터가 'take a sturdy umbrella with you(튼튼한 우산을 챙기세요)'라고 안내했습니다."
+    "explanation": "기상 캐스터가 'take a sturdy umbrella with you(튼튼한 우산을 챙기세요)'라고 안내했습니다.",
+    "type": "standard",
+    "subSkill": "리스닝 청해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-3-1",
@@ -641,7 +765,10 @@ const LEVEL_TEST_BANK = [
       "traffic"
     ],
     "answer": 1,
-    "explanation": "고대 금화들의 방대한 수집품/소장품을 의미하므로 collection이 가장 적절합니다."
+    "explanation": "고대 금화들의 방대한 수집품/소장품을 의미하므로 collection이 가장 적절합니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-3-2",
@@ -656,7 +783,10 @@ const LEVEL_TEST_BANK = [
       "비밀을 지키다"
     ],
     "answer": 1,
-    "explanation": "'keep in touch'는 '연락하고 지내다, 연락을 유지하다'라는 대표적인 중학 필수 관용구입니다."
+    "explanation": "'keep in touch'는 '연락하고 지내다, 연락을 유지하다'라는 대표적인 중학 필수 관용구입니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-3-3",
@@ -671,7 +801,10 @@ const LEVEL_TEST_BANK = [
       "if"
     ],
     "answer": 2,
-    "explanation": "피곤했지만(원인/상태) 프로젝트를 끝마쳤다는 역접의 관계이므로 'but'이 적절합니다."
+    "explanation": "피곤했지만(원인/상태) 프로젝트를 끝마쳤다는 역접의 관계이므로 'but'이 적절합니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-3-4",
@@ -686,7 +819,10 @@ const LEVEL_TEST_BANK = [
       "reads"
     ],
     "answer": 2,
-    "explanation": "동사 enjoy는 동명사(-ing)만을 목적어로 취하므로 'reading'이 올바릅니다."
+    "explanation": "동사 enjoy는 동명사(-ing)만을 목적어로 취하므로 'reading'이 올바릅니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-3-5",
@@ -702,7 +838,10 @@ const LEVEL_TEST_BANK = [
       "The dangerous predators of honeybees"
     ],
     "answer": 1,
-    "explanation": "꿀벌이 꽃가루를 옮기는 수분(pollination) 활동을 통해 식물과 열매가 자라도록 돕는 생태계적 중요성을 설명하는 글입니다."
+    "explanation": "꿀벌이 꽃가루를 옮기는 수분(pollination) 활동을 통해 식물과 열매가 자라도록 돕는 생태계적 중요성을 설명하는 글입니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-3-6",
@@ -718,7 +857,10 @@ const LEVEL_TEST_BANK = [
       "Thank you for the delicious meal."
     ],
     "answer": 0,
-    "explanation": "'give me a hand(나 좀 도와줄래?)'라는 요청에 'Sure, where do you want to put it?(물론이지, 어디에 두고 싶니?)'가 적절합니다."
+    "explanation": "'give me a hand(나 좀 도와줄래?)'라는 요청에 'Sure, where do you want to put it?(물론이지, 어디에 두고 싶니?)'가 적절합니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-3-7",
@@ -733,7 +875,10 @@ const LEVEL_TEST_BANK = [
       "tired"
     ],
     "answer": 1,
-    "explanation": "모두가 일어나 환호했으므로 'exciting(흥미진진한, 신나는)'이 알맞습니다."
+    "explanation": "모두가 일어나 환호했으므로 'exciting(흥미진진한, 신나는)'이 알맞습니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-3-8",
@@ -748,7 +893,10 @@ const LEVEL_TEST_BANK = [
       "Engineer"
     ],
     "answer": 1,
-    "explanation": "불을 끄고 사람을 구조하는 직업은 'Firefighter(소방관)'입니다."
+    "explanation": "불을 끄고 사람을 구조하는 직업은 'Firefighter(소방관)'입니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-3-9",
@@ -763,7 +911,10 @@ const LEVEL_TEST_BANK = [
       "by"
     ],
     "answer": 2,
-    "explanation": "구체적인 특정한 날짜(Day/Date) 앞에는 전치사 'on'을 씁니다."
+    "explanation": "구체적인 특정한 날짜(Day/Date) 앞에는 전치사 'on'을 씁니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-3-10",
@@ -778,7 +929,10 @@ const LEVEL_TEST_BANK = [
       "won't"
     ],
     "answer": 0,
-    "explanation": "상대방에게 조언이나 권유를 나타낼 때는 'should(~하는 것이 좋겠다)'가 적절합니다."
+    "explanation": "상대방에게 조언이나 권유를 나타낼 때는 'should(~하는 것이 좋겠다)'가 적절합니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-3-11",
@@ -793,7 +947,10 @@ const LEVEL_TEST_BANK = [
       "An elephant is more bigger than a horse."
     ],
     "answer": 1,
-    "explanation": "big은 단모음+단자음 형용사이므로 g를 겹치고 er을 붙인 'bigger'가 올바른 비교급입니다."
+    "explanation": "big은 단모음+단자음 형용사이므로 g를 겹치고 er을 붙인 'bigger'가 올바른 비교급입니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-3-12",
@@ -808,7 +965,10 @@ const LEVEL_TEST_BANK = [
       "but"
     ],
     "answer": 1,
-    "explanation": "비가 심하게 내렸기 때문에 집에 머물렀으므로 원인/이유를 나타내는 'because'가 올바릅니다."
+    "explanation": "비가 심하게 내렸기 때문에 집에 머물렀으므로 원인/이유를 나타내는 'because'가 올바릅니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-3-13",
@@ -824,7 +984,10 @@ const LEVEL_TEST_BANK = [
       "To buy new clothes cheaply"
     ],
     "answer": 1,
-    "explanation": "지문에서 'we save natural energy and reduce harmful waste'라고 명시되어 있습니다."
+    "explanation": "지문에서 'we save natural energy and reduce harmful waste'라고 명시되어 있습니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-3-14",
@@ -840,7 +1003,10 @@ const LEVEL_TEST_BANK = [
       "By scaring away birds"
     ],
     "answer": 1,
-    "explanation": "'they carry pollen from flower to flower, which helps plants produce fruits'에서 확인할 수 있습니다."
+    "explanation": "'they carry pollen from flower to flower, which helps plants produce fruits'에서 확인할 수 있습니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-3-15",
@@ -856,7 +1022,10 @@ const LEVEL_TEST_BANK = [
       "Crowded modern shopping malls"
     ],
     "answer": 1,
-    "explanation": "등반가들이 겪는 난관으로 'freezing temperatures and thin air(살을 에는 추위와 희박한 공기)'가 언급됩니다."
+    "explanation": "등반가들이 겪는 난관으로 'freezing temperatures and thin air(살을 에는 추위와 희박한 공기)'가 언급됩니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-3-16",
@@ -872,7 +1041,10 @@ const LEVEL_TEST_BANK = [
       "Go swimming in the ocean"
     ],
     "answer": 1,
-    "explanation": "'make delicious songpyeon, and give thanks to ancestors'라고 언급되어 있습니다."
+    "explanation": "'make delicious songpyeon, and give thanks to ancestors'라고 언급되어 있습니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-3-17",
@@ -888,7 +1060,10 @@ const LEVEL_TEST_BANK = [
       "In the music room."
     ],
     "answer": 0,
-    "explanation": "'How often(~얼마나 자주)'에 대한 응답으로 'twice a week(일주일에 두 번)'이 알맞습니다."
+    "explanation": "'How often(~얼마나 자주)'에 대한 응답으로 'twice a week(일주일에 두 번)'이 알맞습니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-3-18",
@@ -904,7 +1079,10 @@ const LEVEL_TEST_BANK = [
       "That sounds like fun!"
     ],
     "answer": 1,
-    "explanation": "복통을 앓는 상대에게 'You should see a doctor right away.(당장 병원에 가보는 게 좋겠어)'가 올바릅니다."
+    "explanation": "복통을 앓는 상대에게 'You should see a doctor right away.(당장 병원에 가보는 게 좋겠어)'가 올바릅니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-3-19",
@@ -921,7 +1099,10 @@ const LEVEL_TEST_BANK = [
       "흰색 바지 / M(Medium)"
     ],
     "answer": 0,
-    "explanation": "손님이 'a blue shirt in medium size'를 찾는다고 말했습니다."
+    "explanation": "손님이 'a blue shirt in medium size'를 찾는다고 말했습니다.",
+    "type": "standard",
+    "subSkill": "리스닝 청해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-3-20",
@@ -938,7 +1119,10 @@ const LEVEL_TEST_BANK = [
       "24번 게이트"
     ],
     "answer": 2,
-    "explanation": "게이트가 'changed from Gate 12 to Gate 18'로 변경되었다고 공지했습니다."
+    "explanation": "게이트가 'changed from Gate 12 to Gate 18'로 변경되었다고 공지했습니다.",
+    "type": "standard",
+    "subSkill": "리스닝 청해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-4-1",
@@ -953,7 +1137,10 @@ const LEVEL_TEST_BANK = [
       "careless"
     ],
     "answer": 0,
-    "explanation": "'curious(호기심이 많은, 알고 싶어 하는)'와 의미가 가장 가까운 유의어는 'inquisitive(탐구적인, 호기심 많은)'입니다."
+    "explanation": "'curious(호기심이 많은, 알고 싶어 하는)'와 의미가 가장 가까운 유의어는 'inquisitive(탐구적인, 호기심 많은)'입니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-4-2",
@@ -968,7 +1155,10 @@ const LEVEL_TEST_BANK = [
       "decorate"
     ],
     "answer": 0,
-    "explanation": "'determine'은 '결정하다, 알아내다, 좌우하다'라는 뜻으로 두 문맥에 모두 알맞습니다."
+    "explanation": "'determine'은 '결정하다, 알아내다, 좌우하다'라는 뜻으로 두 문맥에 모두 알맞습니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-4-3",
@@ -983,7 +1173,10 @@ const LEVEL_TEST_BANK = [
       "studied"
     ],
     "answer": 1,
-    "explanation": "'시험공부를 하기 위해 도서관에 갔다'라는 목적을 나타내는 to부정사의 부사적 용법(to study)입니다."
+    "explanation": "'시험공부를 하기 위해 도서관에 갔다'라는 목적을 나타내는 to부정사의 부사적 용법(to study)입니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-4-4",
@@ -998,7 +1191,10 @@ const LEVEL_TEST_BANK = [
       "He wanted me <u>go</u> to the supermarket."
     ],
     "answer": 3,
-    "explanation": "동사 want는 목적격 보어로 to부정사를 취하므로 'wanted me to go'가 되어야 합니다."
+    "explanation": "동사 want는 목적격 보어로 to부정사를 취하므로 'wanted me to go'가 되어야 합니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-4-5",
@@ -1014,7 +1210,10 @@ const LEVEL_TEST_BANK = [
       "Reusables take away their habitats."
     ],
     "answer": 1,
-    "explanation": "'endangering marine creatures that mistake plastic debris for food'에서 해양 생물들이 플라스틱 쓰레기를 먹이로 착각하기 때문임을 알 수 있습니다."
+    "explanation": "'endangering marine creatures that mistake plastic debris for food'에서 해양 생물들이 플라스틱 쓰레기를 먹이로 착각하기 때문임을 알 수 있습니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-4-6",
@@ -1030,7 +1229,10 @@ const LEVEL_TEST_BANK = [
       "The weather is very warm today."
     ],
     "answer": 0,
-    "explanation": "주문할 준비가 되었는지 묻는 직원의 질문에 '네, 준비되었습니다. 구운 연어로 할게요(We are ready; I'll have the grilled salmon)'가 자연스럽습니다."
+    "explanation": "주문할 준비가 되었는지 묻는 직원의 질문에 '네, 준비되었습니다. 구운 연어로 할게요(We are ready; I'll have the grilled salmon)'가 자연스럽습니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-4-7",
@@ -1045,7 +1247,10 @@ const LEVEL_TEST_BANK = [
       "climates"
     ],
     "answer": 0,
-    "explanation": "'beneficial effects on mental health(정신 건강에 미치는 유익한 효과/영향)'가 가장 자연스럽습니다."
+    "explanation": "'beneficial effects on mental health(정신 건강에 미치는 유익한 효과/영향)'가 가장 자연스럽습니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-4-8",
@@ -1060,7 +1265,10 @@ const LEVEL_TEST_BANK = [
       "dangerous"
     ],
     "answer": 1,
-    "explanation": "'ancient'는 '고대의, 아주 오래된(very old)'이라는 의미입니다."
+    "explanation": "'ancient'는 '고대의, 아주 오래된(very old)'이라는 의미입니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-4-9",
@@ -1075,7 +1283,10 @@ const LEVEL_TEST_BANK = [
       "spill"
     ],
     "answer": 0,
-    "explanation": "'자신의 의견을 정중하게 표현하다(express)'가 문맥상 알맞습니다."
+    "explanation": "'자신의 의견을 정중하게 표현하다(express)'가 문맥상 알맞습니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-4-10",
@@ -1090,7 +1301,10 @@ const LEVEL_TEST_BANK = [
       "He grew up <u>to be</u> a famous scientist."
     ],
     "answer": 1,
-    "explanation": "'want'의 목적어로 쓰인 'to travel'은 명사적 용법입니다. (1번 목적 부사적, 3번 형용사적, 4번 결과 부사적)"
+    "explanation": "'want'의 목적어로 쓰인 'to travel'은 명사적 용법입니다. (1번 목적 부사적, 3번 형용사적, 4번 결과 부사적)",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-4-11",
@@ -1105,7 +1319,10 @@ const LEVEL_TEST_BANK = [
       "have met"
     ],
     "answer": 1,
-    "explanation": "'look forward to -ing'에서 to는 전치사이므로 뒤에 동명사 'meeting'이 와야 합니다."
+    "explanation": "'look forward to -ing'에서 to는 전치사이므로 뒤에 동명사 'meeting'이 와야 합니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-4-12",
@@ -1120,7 +1337,10 @@ const LEVEL_TEST_BANK = [
       "whose"
     ],
     "answer": 1,
-    "explanation": "선행사가 사람('the talented girl')이고 주어 역할을 하므로 주격 관계대명사 'who'가 알맞습니다."
+    "explanation": "선행사가 사람('the talented girl')이고 주어 역할을 하므로 주격 관계대명사 'who'가 알맞습니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-4-13",
@@ -1136,7 +1356,10 @@ const LEVEL_TEST_BANK = [
       "They replace all supermarkets."
     ],
     "answer": 1,
-    "explanation": "지문에서 햇빛을 흡수하여 여름철 건물 온도를 낮춰준다고 명시되어 있습니다."
+    "explanation": "지문에서 햇빛을 흡수하여 여름철 건물 온도를 낮춰준다고 명시되어 있습니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-4-14",
@@ -1152,7 +1375,10 @@ const LEVEL_TEST_BANK = [
       "Due to extreme lack of physical exercise"
     ],
     "answer": 1,
-    "explanation": "청소년기에는 일주기 생체 리듬이 자연스럽게 늦춰지기 때문(circadian rhythms shift forward)이라고 설명합니다."
+    "explanation": "청소년기에는 일주기 생체 리듬이 자연스럽게 늦춰지기 때문(circadian rhythms shift forward)이라고 설명합니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-4-15",
@@ -1168,7 +1394,10 @@ const LEVEL_TEST_BANK = [
       "Libraries were completely replaced by universities."
     ],
     "answer": 0,
-    "explanation": "인쇄술 발명으로 일반 시민들도 책을 저렴하고 폭넓게 접할 수 있게 되었습니다."
+    "explanation": "인쇄술 발명으로 일반 시민들도 책을 저렴하고 폭넓게 접할 수 있게 되었습니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-4-16",
@@ -1184,7 +1413,10 @@ const LEVEL_TEST_BANK = [
       "It produces a toxic smell."
     ],
     "answer": 1,
-    "explanation": "주변 환경과 색을 섞어(blend in) 포식자가 알아보기 어렵게 만듭니다."
+    "explanation": "주변 환경과 색을 섞어(blend in) 포식자가 알아보기 어렵게 만듭니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-4-17",
@@ -1200,7 +1432,10 @@ const LEVEL_TEST_BANK = [
       "I don't have any money."
     ],
     "answer": 0,
-    "explanation": "'Would you mind -ing?(~해 주시겠습니까?)'에 수락할 때는 'Not at all.(전혀 꺼리지 않아요, 그럴게요)'로 답합니다."
+    "explanation": "'Would you mind -ing?(~해 주시겠습니까?)'에 수락할 때는 'Not at all.(전혀 꺼리지 않아요, 그럴게요)'로 답합니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-4-18",
@@ -1216,7 +1451,10 @@ const LEVEL_TEST_BANK = [
       "I bought three pencils."
     ],
     "answer": 0,
-    "explanation": "'fascinating and full of hands-on experiments(매우 흥미롭고 직접 해보는 실험이 가득했다)'가 가장 적절한 소감입니다."
+    "explanation": "'fascinating and full of hands-on experiments(매우 흥미롭고 직접 해보는 실험이 가득했다)'가 가장 적절한 소감입니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-4-19",
@@ -1233,7 +1471,10 @@ const LEVEL_TEST_BANK = [
       "2층 갑판 입구"
     ],
     "answer": 0,
-    "explanation": "'Life jackets are located directly beneath each seat(구명조끼는 각 좌석 바로 아래에 있습니다)'라고 안내했습니다."
+    "explanation": "'Life jackets are located directly beneath each seat(구명조끼는 각 좌석 바로 아래에 있습니다)'라고 안내했습니다.",
+    "type": "standard",
+    "subSkill": "리스닝 청해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-4-20",
@@ -1250,7 +1491,10 @@ const LEVEL_TEST_BANK = [
       "요금을 두 배로 추가 지불하기"
     ],
     "answer": 1,
-    "explanation": "'get off at the next stop and transfer to green bus number 12'라고 명확히 지시했습니다."
+    "explanation": "'get off at the next stop and transfer to green bus number 12'라고 명확히 지시했습니다.",
+    "type": "standard",
+    "subSkill": "리스닝 청해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-5-1",
@@ -1265,7 +1509,10 @@ const LEVEL_TEST_BANK = [
       "illusion"
     ],
     "answer": 0,
-    "explanation": "강도 사건의 확실한 '증거/근거'를 찾기 위해 방을 수색했다는 문맥이므로 evidence가 적절합니다."
+    "explanation": "강도 사건의 확실한 '증거/근거'를 찾기 위해 방을 수색했다는 문맥이므로 evidence가 적절합니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-5-2",
@@ -1280,7 +1527,10 @@ const LEVEL_TEST_BANK = [
       "칭찬하다"
     ],
     "answer": 1,
-    "explanation": "'put off'는 postpone, delay와 동의어로 '미루다, 연기하다'를 뜻합니다."
+    "explanation": "'put off'는 postpone, delay와 동의어로 '미루다, 연기하다'를 뜻합니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-5-3",
@@ -1295,7 +1545,10 @@ const LEVEL_TEST_BANK = [
       "whose"
     ],
     "answer": 1,
-    "explanation": "선행사가 사람(The scientist)이고 뒤에 주어가 없는 주격 자리이므로 'who'가 올바릅니다."
+    "explanation": "선행사가 사람(The scientist)이고 뒤에 주어가 없는 주격 자리이므로 'who'가 올바릅니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-5-4",
@@ -1310,7 +1563,10 @@ const LEVEL_TEST_BANK = [
       "This library has been designed by the famous architect."
     ],
     "answer": 0,
-    "explanation": "원문이 과거 시제(designed)이므로 수동태는 'was designed by ~'가 올바릅니다."
+    "explanation": "원문이 과거 시제(designed)이므로 수동태는 'was designed by ~'가 올바릅니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-5-5",
@@ -1326,7 +1582,10 @@ const LEVEL_TEST_BANK = [
       "Adults need less sleep than school students."
     ],
     "answer": 1,
-    "explanation": "수면이 기억 통합과 신체적 건강(면역력, 감정 조절)에 필수적인 생물학적 활동임을 강조하고 있습니다."
+    "explanation": "수면이 기억 통합과 신체적 건강(면역력, 감정 조절)에 필수적인 생물학적 활동임을 강조하고 있습니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-5-6",
@@ -1342,7 +1601,10 @@ const LEVEL_TEST_BANK = [
       "Turn off the microphone right now."
     ],
     "answer": 0,
-    "explanation": "내일 발표 대회를 앞두고 긴장하는 상대에게 '마음 편히 가져! 열심히 연습했으니 잘 해낼 거야'라고 격려하는 표현이 가장 적절합니다."
+    "explanation": "내일 발표 대회를 앞두고 긴장하는 상대에게 '마음 편히 가져! 열심히 연습했으니 잘 해낼 거야'라고 격려하는 표현이 가장 적절합니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-5-7",
@@ -1357,7 +1619,10 @@ const LEVEL_TEST_BANK = [
       "ignore"
     ],
     "answer": 0,
-    "explanation": "'격차를 좁히다'라는 표현은 'narrow the gap'입니다."
+    "explanation": "'격차를 좁히다'라는 표현은 'narrow the gap'입니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-5-8",
@@ -1372,7 +1637,10 @@ const LEVEL_TEST_BANK = [
       "urgent"
     ],
     "answer": 1,
-    "explanation": "'compulsory(의무적인, 강제적인)'의 반의어는 'optional(선택적인)'입니다."
+    "explanation": "'compulsory(의무적인, 강제적인)'의 반의어는 'optional(선택적인)'입니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-5-9",
@@ -1387,7 +1655,10 @@ const LEVEL_TEST_BANK = [
       "shadow"
     ],
     "answer": 0,
-    "explanation": "'질병을 극복하는 데 큰 용기(courage)를 보였다'가 알맞습니다."
+    "explanation": "'질병을 극복하는 데 큰 용기(courage)를 보였다'가 알맞습니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-5-10",
@@ -1402,7 +1673,10 @@ const LEVEL_TEST_BANK = [
       "The bridge is builded in 1985."
     ],
     "answer": 0,
-    "explanation": "과거 수동태는 'was/were + 과거분사(p.p.)' 형태인 'was built'가 올바릅니다."
+    "explanation": "과거 수동태는 'was/were + 과거분사(p.p.)' 형태인 'was built'가 올바릅니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-5-11",
@@ -1417,7 +1691,10 @@ const LEVEL_TEST_BANK = [
       "very"
     ],
     "answer": 3,
-    "explanation": "비교급 앞에는 'very'를 쓸 수 없으며, much, even, far, still, a lot 등으로 강조합니다."
+    "explanation": "비교급 앞에는 'very'를 쓸 수 없으며, much, even, far, still, a lot 등으로 강조합니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-5-12",
@@ -1432,7 +1709,10 @@ const LEVEL_TEST_BANK = [
       "will live"
     ],
     "answer": 1,
-    "explanation": "과거 시점부터 지금까지 계속됨을 나타내는 'since ~' 절이 있으므로 현재완료 계속 용법 'has lived'가 올바릅니다."
+    "explanation": "과거 시점부터 지금까지 계속됨을 나타내는 'since ~' 절이 있으므로 현재완료 계속 용법 'has lived'가 올바릅니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-5-13",
@@ -1448,7 +1728,10 @@ const LEVEL_TEST_BANK = [
       "Through volcanic eruptions"
     ],
     "answer": 2,
-    "explanation": "해양 생물이 미세플라스틱을 섭취하고 먹이사슬을 통해 인간에게 도달한다고 설명합니다."
+    "explanation": "해양 생물이 미세플라스틱을 섭취하고 먹이사슬을 통해 인간에게 도달한다고 설명합니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-5-14",
@@ -1464,7 +1747,10 @@ const LEVEL_TEST_BANK = [
       "Genetic mutations in white blood cells"
     ],
     "answer": 1,
-    "explanation": "환자가 효과적인 치료를 받고 있다는 심리적 믿음(psychological belief)이 유발 원인입니다."
+    "explanation": "환자가 효과적인 치료를 받고 있다는 심리적 믿음(psychological belief)이 유발 원인입니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-5-15",
@@ -1480,7 +1766,10 @@ const LEVEL_TEST_BANK = [
       "It eliminates the need for dreaming."
     ],
     "answer": 1,
-    "explanation": "기억을 공고화하고 시냅스 연결을 강화하기 때문입니다."
+    "explanation": "기억을 공고화하고 시냅스 연결을 강화하기 때문입니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-5-16",
@@ -1496,7 +1785,10 @@ const LEVEL_TEST_BANK = [
       "They consume more fossil fuels than coal plants."
     ],
     "answer": 1,
-    "explanation": "날씨에 따른 간헐성(intermittency)과 에너지 저장의 한계가 주요 난제로 언급됩니다."
+    "explanation": "날씨에 따른 간헐성(intermittency)과 에너지 저장의 한계가 주요 난제로 언급됩니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-5-17",
@@ -1512,7 +1804,10 @@ const LEVEL_TEST_BANK = [
       "Why did you choose that topic?"
     ],
     "answer": 0,
-    "explanation": "'철저히 준비했으니 잘해낼 거야!(You've prepared thoroughly...)'가 격려의 말로 가장 적합합니다."
+    "explanation": "'철저히 준비했으니 잘해낼 거야!(You've prepared thoroughly...)'가 격려의 말로 가장 적합합니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-5-18",
@@ -1528,7 +1823,10 @@ const LEVEL_TEST_BANK = [
       "Where is your office?"
     ],
     "answer": 0,
-    "explanation": "'Friday afternoon works perfectly for me.(금요일 오후 아주 좋아)'가 일정 수락으로 가장 자연스럽습니다."
+    "explanation": "'Friday afternoon works perfectly for me.(금요일 오후 아주 좋아)'가 일정 수락으로 가장 자연스럽습니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-5-19",
@@ -1545,7 +1843,10 @@ const LEVEL_TEST_BANK = [
       "최대 3개월까지 수수료 없이 연장할 수 있다."
     ],
     "answer": 0,
-    "explanation": "'incur a penalty fee of fifty cents per day(하루당 50센트 연체료 부과)'라고 명시했습니다."
+    "explanation": "'incur a penalty fee of fifty cents per day(하루당 50센트 연체료 부과)'라고 명시했습니다.",
+    "type": "standard",
+    "subSkill": "리스닝 청해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-5-20",
@@ -1562,7 +1863,10 @@ const LEVEL_TEST_BANK = [
       "시력 저하 / 정밀 안과 검진 권장"
     ],
     "answer": 1,
-    "explanation": "'iron levels are somewhat low(철분 부족)'와 'taking this dietary supplement and adding leafy spinach'를 처방했습니다."
+    "explanation": "'iron levels are somewhat low(철분 부족)'와 'taking this dietary supplement and adding leafy spinach'를 처방했습니다.",
+    "type": "standard",
+    "subSkill": "리스닝 청해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-6-1",
@@ -1577,7 +1881,10 @@ const LEVEL_TEST_BANK = [
       "temporary"
     ],
     "answer": 0,
-    "explanation": "'be consistent with(~와 일치하다, 부합하다)'는 가설과 결과가 일치함을 나타낼 때 쓰는 핵심 학술 표현입니다."
+    "explanation": "'be consistent with(~와 일치하다, 부합하다)'는 가설과 결과가 일치함을 나타낼 때 쓰는 핵심 학술 표현입니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-6-2",
@@ -1592,7 +1899,10 @@ const LEVEL_TEST_BANK = [
       "for instance"
     ],
     "answer": 0,
-    "explanation": "앞 문장은 장점(친환경), 뒷 문장은 단점(초기 설치비 부담)을 언급하므로 역접의 연결사 'however'가 적절합니다."
+    "explanation": "앞 문장은 장점(친환경), 뒷 문장은 단점(초기 설치비 부담)을 언급하므로 역접의 연결사 'however'가 적절합니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-6-3",
@@ -1607,7 +1917,10 @@ const LEVEL_TEST_BANK = [
       "To frighten"
     ],
     "answer": 2,
-    "explanation": "주어인 작은 개(the small dog)가 천둥소리에 '겁을 먹은(수동)' 상태이므로 과거분사 'Frightened'로 시작하는 분사구문입니다."
+    "explanation": "주어인 작은 개(the small dog)가 천둥소리에 '겁을 먹은(수동)' 상태이므로 과거분사 'Frightened'로 시작하는 분사구문입니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-6-4",
@@ -1622,7 +1935,10 @@ const LEVEL_TEST_BANK = [
       "They have finished the project yesterday."
     ],
     "answer": 1,
-    "explanation": "현재완료는 특정 과거 시점 부사(two years ago, yesterday, when)와 함께 쓸 수 없으며, 'since + 과거시점'과 결합한 'She has lived in Seoul since she was born.'이 정확합니다."
+    "explanation": "현재완료는 특정 과거 시점 부사(two years ago, yesterday, when)와 함께 쓸 수 없으며, 'since + 과거시점'과 결합한 'She has lived in Seoul since she was born.'이 정확합니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-6-5",
@@ -1638,7 +1954,10 @@ const LEVEL_TEST_BANK = [
       "Constructing taller glass skyscrapers"
     ],
     "answer": 1,
-    "explanation": "본문 마지막 문장에서 'Planting urban trees and creating green rooftops are proven mitigations'라고 설명되어 있습니다."
+    "explanation": "본문 마지막 문장에서 'Planting urban trees and creating green rooftops are proven mitigations'라고 설명되어 있습니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-6-6",
@@ -1654,7 +1973,10 @@ const LEVEL_TEST_BANK = [
       "Please close the window right away."
     ],
     "answer": 0,
-    "explanation": "'Would you mind ~?(꺼리시나요?)' 질문에 허락할 때는 '전혀 꺼리지 않아요, 어서 여세요(Not at all, go right ahead)'라고 부정으로 답해야 합니다."
+    "explanation": "'Would you mind ~?(꺼리시나요?)' 질문에 허락할 때는 '전혀 꺼리지 않아요, 어서 여세요(Not at all, go right ahead)'라고 부정으로 답해야 합니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-6-7",
@@ -1669,7 +1991,10 @@ const LEVEL_TEST_BANK = [
       "hesitation"
     ],
     "answer": 0,
-    "explanation": "'가설을 입증하기 위해 결정적인 증거(conclusive evidence)를 수집했다'가 가장 적절합니다."
+    "explanation": "'가설을 입증하기 위해 결정적인 증거(conclusive evidence)를 수집했다'가 가장 적절합니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-6-8",
@@ -1684,7 +2009,10 @@ const LEVEL_TEST_BANK = [
       "conduct"
     ],
     "answer": 1,
-    "explanation": "'postpone'은 '연기하다, 미루다'라는 뜻으로 'put off'와 동의어입니다."
+    "explanation": "'postpone'은 '연기하다, 미루다'라는 뜻으로 'put off'와 동의어입니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-6-9",
@@ -1699,7 +2027,10 @@ const LEVEL_TEST_BANK = [
       "consumption"
     ],
     "answer": 0,
-    "explanation": "'in danger of extinction(사라질/멸종할 위기에 처한)'이 문맥상 적합합니다."
+    "explanation": "'in danger of extinction(사라질/멸종할 위기에 처한)'이 문맥상 적합합니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-6-10",
@@ -1714,7 +2045,10 @@ const LEVEL_TEST_BANK = [
       "why"
     ],
     "answer": 1,
-    "explanation": "선행사가 장소('the historic laboratory')이고 뒤 문장이 완전하므로 관계부사 'where'가 올바릅니다."
+    "explanation": "선행사가 장소('the historic laboratory')이고 뒤 문장이 완전하므로 관계부사 'where'가 올바릅니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-6-11",
@@ -1729,7 +2063,10 @@ const LEVEL_TEST_BANK = [
       "To feel exhausted after the marathon, she fell asleep instantly."
     ],
     "answer": 0,
-    "explanation": "능동 분사구문으로 접속사와 주어를 생략하고 동사원형에 -ing를 붙인 'Feeling exhausted ~'가 올바릅니다."
+    "explanation": "능동 분사구문으로 접속사와 주어를 생략하고 동사원형에 -ing를 붙인 'Feeling exhausted ~'가 올바릅니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-6-12",
@@ -1744,7 +2081,10 @@ const LEVEL_TEST_BANK = [
       "The more you read, the broader your perspective becomes."
     ],
     "answer": 2,
-    "explanation": "'Neither A nor B' 구문에서 동사의 수는 B(the students)에 일치시켜야 하므로 'was'가 아닌 'were informed'여야 합니다."
+    "explanation": "'Neither A nor B' 구문에서 동사의 수는 B(the students)에 일치시켜야 하므로 'was'가 아닌 'were informed'여야 합니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-6-13",
@@ -1760,7 +2100,10 @@ const LEVEL_TEST_BANK = [
       "Constantly changing opinions whenever new evidence surfaces"
     ],
     "answer": 1,
-    "explanation": "자신의 기존 신념을 지지하는 정보만 선호하고 모순되는 증거는 무시하는 편향입니다."
+    "explanation": "자신의 기존 신념을 지지하는 정보만 선호하고 모순되는 증거는 무시하는 편향입니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-6-14",
@@ -1776,7 +2119,10 @@ const LEVEL_TEST_BANK = [
       "Because algorithms cannot process numerical statistical data"
     ],
     "answer": 1,
-    "explanation": "훈련 데이터셋 자체가 인간이 만든 과거의 편향과 불평등을 담고 있기 때문입니다."
+    "explanation": "훈련 데이터셋 자체가 인간이 만든 과거의 편향과 불평등을 담고 있기 때문입니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-6-15",
@@ -1792,7 +2138,10 @@ const LEVEL_TEST_BANK = [
       "Permanent transformation into an entirely distinct habitat"
     ],
     "answer": 1,
-    "explanation": "심각한 교란 후에도 본래의 기능과 구조를 유지하며 회복하는 능력을 의미합니다."
+    "explanation": "심각한 교란 후에도 본래의 기능과 구조를 유지하며 회복하는 능력을 의미합니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-6-16",
@@ -1808,7 +2157,10 @@ const LEVEL_TEST_BANK = [
       "By abolishing commercial banking systems entirely"
     ],
     "answer": 1,
-    "explanation": "기준 금리(benchmark interest rates) 조정을 통해 차입 비용에 영향을 미칩니다."
+    "explanation": "기준 금리(benchmark interest rates) 조정을 통해 차입 비용에 영향을 미칩니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-6-17",
@@ -1824,7 +2176,10 @@ const LEVEL_TEST_BANK = [
       "cry over spilled milk"
     ],
     "answer": 0,
-    "explanation": "'get straight down to business'는 '본격적으로 일/본론에 착수하다'라는 실전 비즈니스 표현입니다."
+    "explanation": "'get straight down to business'는 '본격적으로 일/본론에 착수하다'라는 실전 비즈니스 표현입니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-6-18",
@@ -1840,7 +2195,10 @@ const LEVEL_TEST_BANK = [
       "let's never speak to that client again"
     ],
     "answer": 0,
-    "explanation": "'back to the drawing board(원점으로 돌아가 다시 새롭게 구상해보자)'가 합리적인 격려이자 대안입니다."
+    "explanation": "'back to the drawing board(원점으로 돌아가 다시 새롭게 구상해보자)'가 합리적인 격려이자 대안입니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-6-19",
@@ -1857,7 +2215,10 @@ const LEVEL_TEST_BANK = [
       "모든 과학적 탐구를 전면 중단시킨 시기였다."
     ],
     "answer": 1,
-    "explanation": "'epistemological paradigm shift toward empirical observation and secular humanism'이라고 설명했습니다."
+    "explanation": "'epistemological paradigm shift toward empirical observation and secular humanism'이라고 설명했습니다.",
+    "type": "standard",
+    "subSkill": "리스닝 청해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-6-20",
@@ -1874,7 +2235,10 @@ const LEVEL_TEST_BANK = [
       "네트워크 인프라의 전면적 붕괴"
     ],
     "answer": 1,
-    "explanation": "장기적 사회적 고립이 팀 결속력과 즉흥적 브레인스토밍을 저하시킨다고 지적했습니다."
+    "explanation": "장기적 사회적 고립이 팀 결속력과 즉흥적 브레인스토밍을 저하시킨다고 지적했습니다.",
+    "type": "standard",
+    "subSkill": "리스닝 청해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-7-1",
@@ -1889,7 +2253,10 @@ const LEVEL_TEST_BANK = [
       "harmony"
     ],
     "answer": 0,
-    "explanation": "객관적인 결과를 얻기 위해 실험적 '편향/편견(bias)'을 제거했다는 문맥입니다."
+    "explanation": "객관적인 결과를 얻기 위해 실험적 '편향/편견(bias)'을 제거했다는 문맥입니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-7-2",
@@ -1904,7 +2271,10 @@ const LEVEL_TEST_BANK = [
       "look down on - 존경하다"
     ],
     "answer": 0,
-    "explanation": "'figure out'은 '알아내다, 이해하다'입니다. (call off는 취소하다, run into는 우연히 마주치다, look down on은 얕보다)"
+    "explanation": "'figure out'은 '알아내다, 이해하다'입니다. (call off는 취소하다, run into는 우연히 마주치다, look down on은 얕보다)",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-7-3",
@@ -1919,7 +2289,10 @@ const LEVEL_TEST_BANK = [
       "will have"
     ],
     "answer": 1,
-    "explanation": "현재 사실에 반대되는 가정을 나타내는 가정법 과거의 조건절은 'If + 주어 + 과거동사(had)' 형태를 취합니다."
+    "explanation": "현재 사실에 반대되는 가정을 나타내는 가정법 과거의 조건절은 'If + 주어 + 과거동사(had)' 형태를 취합니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-7-4",
@@ -1934,7 +2307,10 @@ const LEVEL_TEST_BANK = [
       "whose"
     ],
     "answer": 1,
-    "explanation": "선행사가 장소(the place)이고 뒤에 완전한 절(the famous treaty was signed)이 이어지므로 관계부사 'where'가 올바릅니다."
+    "explanation": "선행사가 장소(the place)이고 뒤에 완전한 절(the famous treaty was signed)이 이어지므로 관계부사 'where'가 올바릅니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-7-5",
@@ -1950,7 +2326,10 @@ const LEVEL_TEST_BANK = [
       "A scientific forum debating climate change policies"
     ],
     "answer": 1,
-    "explanation": "본문에서 'wherein users are rarely exposed to alternative viewpoints'라고 기술되어 있듯, 상반된 시각 없이 기존 신념만 강화되는 온라인 환경을 뜻합니다."
+    "explanation": "본문에서 'wherein users are rarely exposed to alternative viewpoints'라고 기술되어 있듯, 상반된 시각 없이 기존 신념만 강화되는 온라인 환경을 뜻합니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-7-6",
@@ -1966,7 +2345,10 @@ const LEVEL_TEST_BANK = [
       "다른 개발자를 부르다"
     ],
     "answer": 0,
-    "explanation": "'call it a day'는 '오늘 하루 일을 여기까지 하고 마무리 짓다'라는 대표적 관용 표현입니다."
+    "explanation": "'call it a day'는 '오늘 하루 일을 여기까지 하고 마무리 짓다'라는 대표적 관용 표현입니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-7-7",
@@ -1981,7 +2363,10 @@ const LEVEL_TEST_BANK = [
       "extinguish"
     ],
     "answer": 0,
-    "explanation": "'애매모호한 발언이 회의론을 더욱 악화(exacerbate)시켰다'가 자연스럽습니다. (mitigate/alleviate: 완화하다)"
+    "explanation": "'애매모호한 발언이 회의론을 더욱 악화(exacerbate)시켰다'가 자연스럽습니다. (mitigate/alleviate: 완화하다)",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-7-8",
@@ -1996,7 +2381,10 @@ const LEVEL_TEST_BANK = [
       "diversity"
     ],
     "answer": 0,
-    "explanation": "'scarcity'는 '부족, 결핍'을 뜻하며 유의어는 'dearth'입니다. (surplus: 잉여, 초과)"
+    "explanation": "'scarcity'는 '부족, 결핍'을 뜻하며 유의어는 'dearth'입니다. (surplus: 잉여, 초과)",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-7-9",
@@ -2011,7 +2399,10 @@ const LEVEL_TEST_BANK = [
       "indolence"
     ],
     "answer": 0,
-    "explanation": "'위기 속에서도 침착함을 유지하는 놀라운 불굴의 용기/의연함(fortitude)'이 문맥상 적합합니다."
+    "explanation": "'위기 속에서도 침착함을 유지하는 놀라운 불굴의 용기/의연함(fortitude)'이 문맥상 적합합니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-7-10",
@@ -2026,7 +2417,10 @@ const LEVEL_TEST_BANK = [
       "will not make"
     ],
     "answer": 1,
-    "explanation": "가정법 과거완료의 도치 구문(If he had consulted -> Had he consulted)이므로 귀결절은 'would have p.p.'가 와야 합니다."
+    "explanation": "가정법 과거완료의 도치 구문(If he had consulted -> Had he consulted)이므로 귀결절은 'would have p.p.'가 와야 합니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-7-11",
@@ -2041,7 +2435,10 @@ const LEVEL_TEST_BANK = [
       "Scarcely she entered the auditorium before the keynote lecture began."
     ],
     "answer": 0,
-    "explanation": "'Hardly + had + S + p.p. ~ when/before ...' 구문이 어법에 부합합니다. ('No sooner'는 than과 호응)"
+    "explanation": "'Hardly + had + S + p.p. ~ when/before ...' 구문이 어법에 부합합니다. ('No sooner'는 than과 호응)",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-7-12",
@@ -2056,7 +2453,10 @@ const LEVEL_TEST_BANK = [
       "where"
     ],
     "answer": 0,
-    "explanation": "앞 문장 전체를 선행사로 받는 계속적 용법의 관계대명사는 'which'만 가능합니다 (that 불가)."
+    "explanation": "앞 문장 전체를 선행사로 받는 계속적 용법의 관계대명사는 'which'만 가능합니다 (that 불가).",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-7-13",
@@ -2072,7 +2472,10 @@ const LEVEL_TEST_BANK = [
       "Relying entirely on foreign physical manufacturing imports"
     ],
     "answer": 1,
-    "explanation": "구식 과도기 인프라를 건너뛰고 최신 기술로 직행하는 현상입니다."
+    "explanation": "구식 과도기 인프라를 건너뛰고 최신 기술로 직행하는 현상입니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-7-14",
@@ -2088,7 +2491,10 @@ const LEVEL_TEST_BANK = [
       "A complete immunity to emotional marketing stimuli"
     ],
     "answer": 2,
-    "explanation": "지연된 보상보다 즉각적 만족을 과도하게 선호하여 미루기(procrastination)와 저축 부족을 초래합니다."
+    "explanation": "지연된 보상보다 즉각적 만족을 과도하게 선호하여 미루기(procrastination)와 저축 부족을 초래합니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-7-15",
@@ -2104,7 +2510,10 @@ const LEVEL_TEST_BANK = [
       "Written language always precedes oral communication historically."
     ],
     "answer": 0,
-    "explanation": "언어 구조가 화자의 사고방식과 현실 인식에 영향을 미친다는 가설입니다."
+    "explanation": "언어 구조가 화자의 사고방식과 현실 인식에 영향을 미친다는 가설입니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-7-16",
@@ -2120,7 +2529,10 @@ const LEVEL_TEST_BANK = [
       "Excessive proliferation of freshwater micro-algae"
     ],
     "answer": 1,
-    "explanation": "석회화 해양 생물이 탄산칼슘 껍질을 형성하는 것을 심각하게 저해합니다."
+    "explanation": "석회화 해양 생물이 탄산칼슘 껍질을 형성하는 것을 심각하게 저해합니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-7-17",
@@ -2136,7 +2548,10 @@ const LEVEL_TEST_BANK = [
       "burn our bridges with all our investors"
     ],
     "answer": 0,
-    "explanation": "'play one's cards close to one's chest'는 패를 숨기고 신중하게 대처함을 뜻합니다."
+    "explanation": "'play one's cards close to one's chest'는 패를 숨기고 신중하게 대처함을 뜻합니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-7-18",
@@ -2152,7 +2567,10 @@ const LEVEL_TEST_BANK = [
       "a blessing in disguise"
     ],
     "answer": 0,
-    "explanation": "'take ~ with a grain of salt'는 '에누리해서/가려 듣다, 곧이곧대로 믿지 않다'라는 뜻입니다."
+    "explanation": "'take ~ with a grain of salt'는 '에누리해서/가려 듣다, 곧이곧대로 믿지 않다'라는 뜻입니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-7-19",
@@ -2169,7 +2587,10 @@ const LEVEL_TEST_BANK = [
       "제조업 생산성이 서비스업 생산성을 완전히 압도하는 상황"
     ],
     "answer": 0,
-    "explanation": "성장을 위한 부양책은 인플레이션을 유발하고 긴축은 침체를 심화시키는 딜레마를 설명했습니다."
+    "explanation": "성장을 위한 부양책은 인플레이션을 유발하고 긴축은 침체를 심화시키는 딜레마를 설명했습니다.",
+    "type": "standard",
+    "subSkill": "리스닝 청해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-7-20",
@@ -2186,7 +2607,10 @@ const LEVEL_TEST_BANK = [
       "유전적 알츠하이머 유전자를 체내에서 영구 제거한다."
     ],
     "answer": 1,
-    "explanation": "평생의 지적 자극이 뇌 병변에 대한 저항력/임상 증상 발현 차이를 만든다고 설명했습니다."
+    "explanation": "평생의 지적 자극이 뇌 병변에 대한 저항력/임상 증상 발현 차이를 만든다고 설명했습니다.",
+    "type": "standard",
+    "subSkill": "리스닝 청해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-8-1",
@@ -2201,7 +2625,10 @@ const LEVEL_TEST_BANK = [
       "write (쓰다)"
     ],
     "answer": 1,
-    "explanation": "어근 'spect'는 '보다, 관찰하다(look, see)'의 의미를 가집니다. (inspect, spectator, respect 등)"
+    "explanation": "어근 'spect'는 '보다, 관찰하다(look, see)'의 의미를 가집니다. (inspect, spectator, respect 등)",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-8-2",
@@ -2216,7 +2643,10 @@ const LEVEL_TEST_BANK = [
       "monotonous"
     ],
     "answer": 0,
-    "explanation": "경제 성장과 환경 보존의 균형을 맞추는 장기적이고 '지속 가능한(sustainable)' 전략이 적절합니다."
+    "explanation": "경제 성장과 환경 보존의 균형을 맞추는 장기적이고 '지속 가능한(sustainable)' 전략이 적절합니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-8-3",
@@ -2231,7 +2661,10 @@ const LEVEL_TEST_BANK = [
       "Rarely do I saw such a breathtaking sunset."
     ],
     "answer": 1,
-    "explanation": "부정 어구(Rarely)가 문두로 도치되면 [조동사 + 주어 + 본동사] 어순이 되므로 'Rarely have I seen'이 맞습니다."
+    "explanation": "부정 어구(Rarely)가 문두로 도치되면 [조동사 + 주어 + 본동사] 어순이 되므로 'Rarely have I seen'이 맞습니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-8-4",
@@ -2246,7 +2679,10 @@ const LEVEL_TEST_BANK = [
       "had not missed"
     ],
     "answer": 1,
-    "explanation": "조건절이 과거완료(had checked)이므로 과거 사실과 반대되는 귀결절은 [would have + p.p.]인 'would not have missed'입니다."
+    "explanation": "조건절이 과거완료(had checked)이므로 과거 사실과 반대되는 귀결절은 [would have + p.p.]인 'would not have missed'입니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-8-5",
@@ -2262,7 +2698,10 @@ const LEVEL_TEST_BANK = [
       "Embrace the contradictory evidence willingly"
     ],
     "answer": 1,
-    "explanation": "'individuals often rationalize their conduct rather than alter their underlying habits, prioritizing psychic comfort'에서 자신의 행동을 합리화함을 알 수 있습니다."
+    "explanation": "'individuals often rationalize their conduct rather than alter their underlying habits, prioritizing psychic comfort'에서 자신의 행동을 합리화함을 알 수 있습니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-8-6",
@@ -2278,7 +2717,10 @@ const LEVEL_TEST_BANK = [
       "프로젝트를 완전히 중단하다"
     ],
     "answer": 1,
-    "explanation": "'go back to the drawing board'는 계획이 실패하거나 새 변수가 생겼을 때 '처음부터 다시 계획하다, 원점으로 돌아가다'를 뜻합니다."
+    "explanation": "'go back to the drawing board'는 계획이 실패하거나 새 변수가 생겼을 때 '처음부터 다시 계획하다, 원점으로 돌아가다'를 뜻합니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-8-7",
@@ -2293,7 +2735,10 @@ const LEVEL_TEST_BANK = [
       "transparent"
     ],
     "answer": 0,
-    "explanation": "'equivocal(모호한, 다의적인)'이 문맥상 적절합니다. (indisputable/unambiguous: 명백한)"
+    "explanation": "'equivocal(모호한, 다의적인)'이 문맥상 적절합니다. (indisputable/unambiguous: 명백한)",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-8-8",
@@ -2308,7 +2753,10 @@ const LEVEL_TEST_BANK = [
       "momentary"
     ],
     "answer": 0,
-    "explanation": "'ephemeral'은 '덧없는, 일시적인' 뜻이므로 반의어는 'perpetual(영구적인)'입니다."
+    "explanation": "'ephemeral'은 '덧없는, 일시적인' 뜻이므로 반의어는 'perpetual(영구적인)'입니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-8-9",
@@ -2323,7 +2771,10 @@ const LEVEL_TEST_BANK = [
       "deliberate"
     ],
     "answer": 0,
-    "explanation": "'급작스러운 충격이 투기적 신용 시장의 가파른/급격한 붕괴(precipitous collapse)를 초래했다'가 적합합니다."
+    "explanation": "'급작스러운 충격이 투기적 신용 시장의 가파른/급격한 붕괴(precipitous collapse)를 초래했다'가 적합합니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-8-10",
@@ -2338,7 +2789,10 @@ const LEVEL_TEST_BANK = [
       "the executives did realize"
     ],
     "answer": 0,
-    "explanation": "'Only + 부사구/부사절'이 문두에 오면 주어-동사 도치가 일어나 조동사 did + 주어 + 동사원형 형태가 됩니다."
+    "explanation": "'Only + 부사구/부사절'이 문두에 오면 주어-동사 도치가 일어나 조동사 did + 주어 + 동사원형 형태가 됩니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-8-11",
@@ -2353,7 +2807,10 @@ const LEVEL_TEST_BANK = [
       "We requested that the proposed amendments not be dismissed without discussion."
     ],
     "answer": 0,
-    "explanation": "주장/요구 동사 insist의 목적어 that절에는 당위성을 나타내어 '(should) + 동사원형'을 써야 하므로 'submits'가 아닌 'submit'이어야 합니다."
+    "explanation": "주장/요구 동사 insist의 목적어 that절에는 당위성을 나타내어 '(should) + 동사원형'을 써야 하므로 'submits'가 아닌 'submit'이어야 합니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-8-12",
@@ -2368,7 +2825,10 @@ const LEVEL_TEST_BANK = [
       "whatever"
     ],
     "answer": 0,
-    "explanation": "전치사 to 뒤의 명사절 내에서 동사 'demonstrates'의 주어 역할을 해야 하므로 주격 복합관계대명사 'whoever'가 맞습니다."
+    "explanation": "전치사 to 뒤의 명사절 내에서 동사 'demonstrates'의 주어 역할을 해야 하므로 주격 복합관계대명사 'whoever'가 맞습니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-8-13",
@@ -2384,7 +2844,10 @@ const LEVEL_TEST_BANK = [
       "Rapid technological automation versus human artisan labor"
     ],
     "answer": 1,
-    "explanation": "개인의 합리적 이기심과 공동체의 장기적 보존 사이의 모순/갈등입니다."
+    "explanation": "개인의 합리적 이기심과 공동체의 장기적 보존 사이의 모순/갈등입니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-8-14",
@@ -2400,7 +2863,10 @@ const LEVEL_TEST_BANK = [
       "They occur exclusively in non-mammalian organisms."
     ],
     "answer": 1,
-    "explanation": "기저 DNA 염기서열 변화 없이 유전자 발현 패턴을 조절한다는 점입니다."
+    "explanation": "기저 DNA 염기서열 변화 없이 유전자 발현 패턴을 조절한다는 점입니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-8-15",
@@ -2416,7 +2882,10 @@ const LEVEL_TEST_BANK = [
       "To deliberately increase cognitive confusion and bias"
     ],
     "answer": 1,
-    "explanation": "정보의 제약과 시간 압박 속에서 신속하고 실용적인 결정을 내리기 위한 지름길입니다."
+    "explanation": "정보의 제약과 시간 압박 속에서 신속하고 실용적인 결정을 내리기 위한 지름길입니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-8-16",
@@ -2432,7 +2901,10 @@ const LEVEL_TEST_BANK = [
       "By eliminating all free-market competition through state planning"
     ],
     "answer": 1,
-    "explanation": "구시대적 상업 구조를 해체하고 새로운 혁신적 경제 주체를 끊임없이 창출합니다."
+    "explanation": "구시대적 상업 구조를 해체하고 새로운 혁신적 경제 주체를 끊임없이 창출합니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-8-17",
@@ -2448,7 +2920,10 @@ const LEVEL_TEST_BANK = [
       "no point in celebrating"
     ],
     "answer": 0,
-    "explanation": "'crossed the Rubicon(루비콘 강을 건넜다)'과 호응하여 'no turning back now(이제 뒤로 물러설 수 없다)'가 알맞습니다."
+    "explanation": "'crossed the Rubicon(루비콘 강을 건넜다)'과 호응하여 'no turning back now(이제 뒤로 물러설 수 없다)'가 알맞습니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-8-18",
@@ -2464,7 +2939,10 @@ const LEVEL_TEST_BANK = [
       "let sleeping dogs lie"
     ],
     "answer": 0,
-    "explanation": "'put all our eggs in one basket'은 한 바구니에 모든 달걀을 담는 위험한 분산 투자 부재를 경계하는 표현입니다."
+    "explanation": "'put all our eggs in one basket'은 한 바구니에 모든 달걀을 담는 위험한 분산 투자 부재를 경계하는 표현입니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-8-19",
@@ -2481,7 +2959,10 @@ const LEVEL_TEST_BANK = [
       "선원들의 계급 체계 및 지휘 통솔권의 정당성"
     ],
     "answer": 1,
-    "explanation": "모든 부품이 교체되었을 때 본래 사물과의 동일성(metaphysics of identity) 유지 여부를 묻고 있습니다."
+    "explanation": "모든 부품이 교체되었을 때 본래 사물과의 동일성(metaphysics of identity) 유지 여부를 묻고 있습니다.",
+    "type": "standard",
+    "subSkill": "리스닝 청해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-8-20",
@@ -2498,7 +2979,10 @@ const LEVEL_TEST_BANK = [
       "더 이상 전력 공급 없이도 영구 가동되는 프로세서의 개발을 뜻한다."
     ],
     "answer": 1,
-    "explanation": "특정 전문 연산 영역에서의 지수적 연산 가속을 뜻한다고 명시했습니다."
+    "explanation": "특정 전문 연산 영역에서의 지수적 연산 가속을 뜻한다고 명시했습니다.",
+    "type": "standard",
+    "subSkill": "리스닝 청해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-9-1",
@@ -2513,7 +2997,10 @@ const LEVEL_TEST_BANK = [
       "bored -> terrified"
     ],
     "answer": 0,
-    "explanation": "작업실의 연기를 보고 망연자실했다가(devastated), 그림이 갤러리로 옮겨졌다는 소식에 안도했다(relieved)는 심경 변화입니다."
+    "explanation": "작업실의 연기를 보고 망연자실했다가(devastated), 그림이 갤러리로 옮겨졌다는 소식에 안도했다(relieved)는 심경 변화입니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-9-2",
@@ -2528,7 +3015,10 @@ const LEVEL_TEST_BANK = [
       "He gave a passionate keynote <u>address</u> at the seminar."
     ],
     "answer": 2,
-    "explanation": "3번 문장의 'address housing affordability'에서 address는 '주택 문제의 가격 적정성을 다루다/해결하려 하다'라는 뜻의 동사로 쓰였습니다."
+    "explanation": "3번 문장의 'address housing affordability'에서 address는 '주택 문제의 가격 적정성을 다루다/해결하려 하다'라는 뜻의 동사로 쓰였습니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-9-3",
@@ -2543,7 +3033,10 @@ const LEVEL_TEST_BANK = [
       "Whenever"
     ],
     "answer": 1,
-    "explanation": "주어 역할을 하는 명사절을 이끌며 사람을 가리키는 주격 복합관계대명사는 'Whoever'입니다."
+    "explanation": "주어 역할을 하는 명사절을 이끌며 사람을 가리키는 주격 복합관계대명사는 'Whoever'입니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-9-4",
@@ -2558,7 +3051,10 @@ const LEVEL_TEST_BANK = [
       "The committee demanded that the chairperson resigned immediately."
     ],
     "answer": 1,
-    "explanation": "요구/제안/명령/주장 동사(demand) 뒤의 that절에서는 당위성을 나타내므로 [(should) + 동사원형]을 써야 합니다. 따라서 'resign'이 올바릅니다."
+    "explanation": "요구/제안/명령/주장 동사(demand) 뒤의 that절에서는 당위성을 나타내므로 [(should) + 동사원형]을 써야 합니다. 따라서 'resign'이 올바릅니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-9-5",
@@ -2574,7 +3070,10 @@ const LEVEL_TEST_BANK = [
       "Complete lack of ambition and cowardice"
     ],
     "answer": 1,
-    "explanation": "비극적 영웅의 몰락은 외부의 악의가 아닌 내재된 치명적 결함(inherent fatal flaw or profound misjudgment: hamartia)에 의해 촉발된다고 명시되어 있습니다."
+    "explanation": "비극적 영웅의 몰락은 외부의 악의가 아닌 내재된 치명적 결함(inherent fatal flaw or profound misjudgment: hamartia)에 의해 촉발된다고 명시되어 있습니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-9-6",
@@ -2590,7 +3089,10 @@ const LEVEL_TEST_BANK = [
       "전적으로 신뢰하다"
     ],
     "answer": 1,
-    "explanation": "'take ~ with a grain of salt'는 상대방의 말을 에누리해서, 곧이곧대로 믿지 않고 회의적으로 받아들이다를 뜻하는 숙어입니다."
+    "explanation": "'take ~ with a grain of salt'는 상대방의 말을 에누리해서, 곧이곧대로 믿지 않고 회의적으로 받아들이다를 뜻하는 숙어입니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-9-7",
@@ -2605,7 +3107,10 @@ const LEVEL_TEST_BANK = [
       "candor"
     ],
     "answer": 0,
-    "explanation": "'철학자의 형이상학 논문은 난해한 불투명성/이해하기 어려움(opacity)으로 악명 높다'가 알맞습니다. (lucidity/transparency: 명료함)"
+    "explanation": "'철학자의 형이상학 논문은 난해한 불투명성/이해하기 어려움(opacity)으로 악명 높다'가 알맞습니다. (lucidity/transparency: 명료함)",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-9-8",
@@ -2620,7 +3125,10 @@ const LEVEL_TEST_BANK = [
       "peripheral"
     ],
     "answer": 0,
-    "explanation": "'ubiquitous'는 '어디에나 존재하는' 뜻으로 'omnipresent'와 동의어입니다."
+    "explanation": "'ubiquitous'는 '어디에나 존재하는' 뜻으로 'omnipresent'와 동의어입니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-9-9",
@@ -2635,7 +3143,10 @@ const LEVEL_TEST_BANK = [
       "champion"
     ],
     "answer": 0,
-    "explanation": "'독단적인 행정부 특권을 축소/제한(curtail)하고자 한다'가 자연스럽습니다."
+    "explanation": "'독단적인 행정부 특권을 축소/제한(curtail)하고자 한다'가 자연스럽습니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-9-10",
@@ -2650,7 +3161,10 @@ const LEVEL_TEST_BANK = [
       "the cipher did"
     ],
     "answer": 0,
-    "explanation": "'So + 형용사/부사'가 강조를 위해 문두로 도치되면 '동사 + 주어' 어순이 되므로 'was the cipher'가 맞습니다."
+    "explanation": "'So + 형용사/부사'가 강조를 위해 문두로 도치되면 '동사 + 주어' 어순이 되므로 'was the cipher'가 맞습니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-9-11",
@@ -2665,7 +3179,10 @@ const LEVEL_TEST_BANK = [
       "Scarcely the treaty had been ratified before hostilities erupted along the demarcation line."
     ],
     "answer": 0,
-    "explanation": "'Scarcely + had + S + p.p. ~ when ...' 구문이 완벽하게 성립합니다."
+    "explanation": "'Scarcely + had + S + p.p. ~ when ...' 구문이 완벽하게 성립합니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-9-12",
@@ -2680,7 +3197,10 @@ const LEVEL_TEST_BANK = [
       "in case of"
     ],
     "answer": 0,
-    "explanation": "'~라는 조건 하에, 만약 ~라면'의 의미를 지닌 조건 접속사구는 'provided that'입니다."
+    "explanation": "'~라는 조건 하에, 만약 ~라면'의 의미를 지닌 조건 접속사구는 'provided that'입니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-9-13",
@@ -2696,7 +3216,10 @@ const LEVEL_TEST_BANK = [
       "Rigorous empirical validation of minority perspectives"
     ],
     "answer": 1,
-    "explanation": "사회적 편견으로 인해 화자의 증언/지식적 신뢰성이 부당하게 폄하되는 현상입니다."
+    "explanation": "사회적 편견으로 인해 화자의 증언/지식적 신뢰성이 부당하게 폄하되는 현상입니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-9-14",
@@ -2712,7 +3235,10 @@ const LEVEL_TEST_BANK = [
       "Technological obsolescence occurs instantaneously without inertia."
     ],
     "answer": 1,
-    "explanation": "자기 강화적 메커니즘과 막대한 전환 비용이 기존 레거시 체제에 묶어두기 때문입니다."
+    "explanation": "자기 강화적 메커니즘과 막대한 전환 비용이 기존 레거시 체제에 묶어두기 때문입니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-9-15",
@@ -2728,7 +3254,10 @@ const LEVEL_TEST_BANK = [
       "Market monopolies guarantee equitable resource dispersion across classes."
     ],
     "answer": 0,
-    "explanation": "자원 이용 효율 향상이 가격 인하와 시장 확대를 불러와 총소비량을 오히려 증가시킨다는 역설입니다."
+    "explanation": "자원 이용 효율 향상이 가격 인하와 시장 확대를 불러와 총소비량을 오히려 증가시킨다는 역설입니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-9-16",
@@ -2744,7 +3273,10 @@ const LEVEL_TEST_BANK = [
       "Universal consensus regarding statutory interpretations"
     ],
     "answer": 1,
-    "explanation": "설명/해석 불가능한 예측으로 인해 적법 절차와 행정적 책임 원칙이 침해된다는 점입니다."
+    "explanation": "설명/해석 불가능한 예측으로 인해 적법 절차와 행정적 책임 원칙이 침해된다는 점입니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-9-17",
@@ -2760,7 +3292,10 @@ const LEVEL_TEST_BANK = [
       "let the cat out of the bag"
     ],
     "answer": 0,
-    "explanation": "'bite the bullet'은 '이를 악물고 고통/역경을 견뎌내다'라는 의미의 실전 관용구입니다."
+    "explanation": "'bite the bullet'은 '이를 악물고 고통/역경을 견뎌내다'라는 의미의 실전 관용구입니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-9-18",
@@ -2776,7 +3311,10 @@ const LEVEL_TEST_BANK = [
       "a bolt from the blue"
     ],
     "answer": 0,
-    "explanation": "'smoke and mirrors'는 '실체 없는 눈속임, 허상, 겉치레 수사'를 뜻합니다."
+    "explanation": "'smoke and mirrors'는 '실체 없는 눈속임, 허상, 겉치레 수사'를 뜻합니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-9-19",
@@ -2793,7 +3331,10 @@ const LEVEL_TEST_BANK = [
       "인간의 자연 수명을 20세 이하로 제한한다는 점"
     ],
     "answer": 1,
-    "explanation": "유전적 변경이 다음 세대로 영구적/비가역적으로 대물림된다는 점을 지적했습니다."
+    "explanation": "유전적 변경이 다음 세대로 영구적/비가역적으로 대물림된다는 점을 지적했습니다.",
+    "type": "standard",
+    "subSkill": "리스닝 청해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-9-20",
@@ -2810,7 +3351,10 @@ const LEVEL_TEST_BANK = [
       "동양의 문자 체계가 가진 기술적 결함"
     ],
     "answer": 1,
-    "explanation": "석탄 매장지와 신대륙 자원에 대한 지리적 접근의 행운(fortuitous geographical access)에 기인했다고 설명했습니다."
+    "explanation": "석탄 매장지와 신대륙 자원에 대한 지리적 접근의 행운(fortuitous geographical access)에 기인했다고 설명했습니다.",
+    "type": "standard",
+    "subSkill": "리스닝 청해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-10-1",
@@ -2825,7 +3369,10 @@ const LEVEL_TEST_BANK = [
       "peripheral"
     ],
     "answer": 0,
-    "explanation": "외적인 효용(extrinsic utility)에 봉사하는 것이 아니라 본질적 가치(value in themselves)를 지닌다는 대조 문맥이므로 'intrinsic(내재적인, 본질적인)'이 정확합니다."
+    "explanation": "외적인 효용(extrinsic utility)에 봉사하는 것이 아니라 본질적 가치(value in themselves)를 지닌다는 대조 문맥이므로 'intrinsic(내재적인, 본질적인)'이 정확합니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-10-2",
@@ -2840,7 +3387,10 @@ const LEVEL_TEST_BANK = [
       "impervious"
     ],
     "answer": 1,
-    "explanation": "'volatile'은 휘발성의, 급변하는, 변덕스러운 뜻으로 'erratic(불규칙한, 급변하는)'과 동의어입니다."
+    "explanation": "'volatile'은 휘발성의, 급변하는, 변덕스러운 뜻으로 'erratic(불규칙한, 급변하는)'과 동의어입니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-10-3",
@@ -2855,7 +3405,10 @@ const LEVEL_TEST_BANK = [
       "Were the negotiations had collapsed, sanctions would have ensued."
     ],
     "answer": 0,
-    "explanation": "가정법 과거완료 조건절(If the negotiations had collapsed)에서 if가 생략되어 'Had the negotiations collapsed'로 올바르게 도치된 문장입니다."
+    "explanation": "가정법 과거완료 조건절(If the negotiations had collapsed)에서 if가 생략되어 'Had the negotiations collapsed'로 올바르게 도치된 문장입니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-10-4",
@@ -2870,7 +3423,10 @@ const LEVEL_TEST_BANK = [
       "unless"
     ],
     "answer": 0,
-    "explanation": "부사 'thereby'는 분사구문과 결합하여 '그로 인해, 그것에 의해서 (~하면서)'라는 결과를 세련되게 나타냅니다."
+    "explanation": "부사 'thereby'는 분사구문과 결합하여 '그로 인해, 그것에 의해서 (~하면서)'라는 결과를 세련되게 나타냅니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-10-5",
@@ -2886,7 +3442,10 @@ const LEVEL_TEST_BANK = [
       "Local heuristic rules are incapable of producing stable patterns."
     ],
     "answer": 1,
-    "explanation": "환원주의(reductionism)의 한계를 지적하며, 개별 구성 요소의 성질만으로는 연역할 수 없는 거시적 창발성(emergent behavior transcends isolated properties)을 강조하고 있습니다."
+    "explanation": "환원주의(reductionism)의 한계를 지적하며, 개별 구성 요소의 성질만으로는 연역할 수 없는 거시적 창발성(emergent behavior transcends isolated properties)을 강조하고 있습니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-10-6",
@@ -2902,7 +3461,10 @@ const LEVEL_TEST_BANK = [
       "철저한 위험 관리를 성공적으로 수행하고 있다"
     ],
     "answer": 1,
-    "explanation": "'bite off more than one can chew'는 직역하면 '씹을 수 있는 양보다 더 많이 베어 물다'로, '자신의 능력이나 한도를 초과하여 지나치게 무리한 일/부담을 떠맡다'를 뜻합니다."
+    "explanation": "'bite off more than one can chew'는 직역하면 '씹을 수 있는 양보다 더 많이 베어 물다'로, '자신의 능력이나 한도를 초과하여 지나치게 무리한 일/부담을 떠맡다'를 뜻합니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-10-7",
@@ -2917,7 +3479,10 @@ const LEVEL_TEST_BANK = [
       "benign"
     ],
     "answer": 0,
-    "explanation": "'vitriolic'은 '독설에 찬, 신랄한'이라는 의미입니다. (salubrious: 유익한, magnanimous: 도량이 넓은)"
+    "explanation": "'vitriolic'은 '독설에 찬, 신랄한'이라는 의미입니다. (salubrious: 유익한, magnanimous: 도량이 넓은)",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-10-8",
@@ -2932,7 +3497,10 @@ const LEVEL_TEST_BANK = [
       "specious"
     ],
     "answer": 0,
-    "explanation": "'ineluctable'은 '피할 수 없는, 불가피한'을 뜻하며 'inescapable'과 동의어입니다."
+    "explanation": "'ineluctable'은 '피할 수 없는, 불가피한'을 뜻하며 'inescapable'과 동의어입니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-10-9",
@@ -2947,7 +3515,10 @@ const LEVEL_TEST_BANK = [
       "palpable"
     ],
     "answer": 0,
-    "explanation": "'눈에 보이지 않을 정도로 미세한(imperceptible)' 구분이 문맥상 알맞습니다."
+    "explanation": "'눈에 보이지 않을 정도로 미세한(imperceptible)' 구분이 문맥상 알맞습니다.",
+    "type": "standard",
+    "subSkill": "어휘",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-10-10",
@@ -2962,7 +3533,10 @@ const LEVEL_TEST_BANK = [
       "moreover"
     ],
     "answer": 1,
-    "explanation": "'가설은 아직 입증되지 않았으나, 그럼에도 불구하고(nonetheless) 시뮬레이션은 높은 설명적 일관성을 보인다'가 적합합니다."
+    "explanation": "'가설은 아직 입증되지 않았으나, 그럼에도 불구하고(nonetheless) 시뮬레이션은 높은 설명적 일관성을 보인다'가 적합합니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-10-11",
@@ -2977,7 +3551,10 @@ const LEVEL_TEST_BANK = [
       "That be as it may, we must proceed with caution."
     ],
     "answer": 0,
-    "explanation": "'Be that as it may'는 '비록 그것이 사실일지라도, 그렇다 하더라도'라는 정형화된 양보 가정법 관용구입니다."
+    "explanation": "'Be that as it may'는 '비록 그것이 사실일지라도, 그렇다 하더라도'라는 정형화된 양보 가정법 관용구입니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-10-12",
@@ -2992,7 +3569,10 @@ const LEVEL_TEST_BANK = [
       "unless synchronizing"
     ],
     "answer": 0,
-    "explanation": "'thereby + -ing'는 '그로 인해 ~하면서'라는 결과적 부대상황을 나타내는 격조 높은 표현입니다."
+    "explanation": "'thereby + -ing'는 '그로 인해 ~하면서'라는 결과적 부대상황을 나타내는 격조 높은 표현입니다.",
+    "type": "standard",
+    "subSkill": "문법/구문",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-10-13",
@@ -3008,7 +3588,10 @@ const LEVEL_TEST_BANK = [
       "Genetic mutations are exclusively deterministic and teleologically fixed by external design."
     ],
     "answer": 1,
-    "explanation": "진화가 제로섬 투쟁이 아니라 상호부조(mutualism)와 주체적 자율성의 확장으로 창발한다는 관점입니다."
+    "explanation": "진화가 제로섬 투쟁이 아니라 상호부조(mutualism)와 주체적 자율성의 확장으로 창발한다는 관점입니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-10-14",
@@ -3024,7 +3607,10 @@ const LEVEL_TEST_BANK = [
       "They originate entirely from numerical mathematical principles."
     ],
     "answer": 1,
-    "explanation": "개념적 이분법이 위계적으로 불안정하고 텍스트 내부의 아포리아(난제)에 의해 균열되어 있음을 드러냅니다."
+    "explanation": "개념적 이분법이 위계적으로 불안정하고 텍스트 내부의 아포리아(난제)에 의해 균열되어 있음을 드러냅니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-10-15",
@@ -3040,7 +3626,10 @@ const LEVEL_TEST_BANK = [
       "A gravitational singularity where quantum mechanics ceases to operate"
     ],
     "answer": 1,
-    "explanation": "완전한 무가 아니라 영점 양자 요동과 가상 입자쌍이 요동치는 동적 매트릭스입니다."
+    "explanation": "완전한 무가 아니라 영점 양자 요동과 가상 입자쌍이 요동치는 동적 매트릭스입니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-10-16",
@@ -3056,7 +3645,10 @@ const LEVEL_TEST_BANK = [
       "A society governed purely by direct sensory encounters with nature"
     ],
     "answer": 0,
-    "explanation": "시뮬레이션된 표상이 실재를 대체하여 원본과 복제의 구분이 완전히 소멸된 상태입니다."
+    "explanation": "시뮬레이션된 표상이 실재를 대체하여 원본과 복제의 구분이 완전히 소멸된 상태입니다.",
+    "type": "standard",
+    "subSkill": "독해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-10-17",
@@ -3072,7 +3664,10 @@ const LEVEL_TEST_BANK = [
       "a chip on their shoulder"
     ],
     "answer": 0,
-    "explanation": "'go over with a fine-tooth comb'는 '빗질하듯 샅샅이, 극도로 정밀하게 조사하다'라는 뜻입니다."
+    "explanation": "'go over with a fine-tooth comb'는 '빗질하듯 샅샅이, 극도로 정밀하게 조사하다'라는 뜻입니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-10-18",
@@ -3088,7 +3683,10 @@ const LEVEL_TEST_BANK = [
       "skating on thin ice with zero fear"
     ],
     "answer": 0,
-    "explanation": "'overplay one's hand'는 '자신의 패나 역량을 과대평가하여 무리수를 두다'라는 뜻입니다."
+    "explanation": "'overplay one's hand'는 '자신의 패나 역량을 과대평가하여 무리수를 두다'라는 뜻입니다.",
+    "type": "standard",
+    "subSkill": "실전 회화",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-10-19",
@@ -3105,7 +3703,10 @@ const LEVEL_TEST_BANK = [
       "우주의 모든 별이 하나의 거대한 다이아몬드 결정체로 이루어져 있다는 학설"
     ],
     "answer": 0,
-    "explanation": "3차원 부피의 정보 엔트로피가 저차원 경계면에 부호화된다는 점을 설명했습니다."
+    "explanation": "3차원 부피의 정보 엔트로피가 저차원 경계면에 부호화된다는 점을 설명했습니다.",
+    "type": "standard",
+    "subSkill": "리스닝 청해",
+    "speedStandardSeconds": 30
   },
   {
     "id": "lt-10-20",
@@ -3122,10 +3723,3784 @@ const LEVEL_TEST_BANK = [
       "지방 자치단체의 조례 제정권을 중앙정부로 강제 흡수하는 것"
     ],
     "answer": 0,
-    "explanation": "입법부의 본질적 입법 재량을 행정기관에 포괄 위임하는 것을 금지하여 권력분립을 지키는 취지입니다."
+    "explanation": "입법부의 본질적 입법 재량을 행정기관에 포괄 위임하는 것을 금지하여 권력분립을 지키는 취지입니다.",
+    "type": "standard",
+    "subSkill": "리스닝 청해",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-1-21",
+    "level": 1,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "be동사",
+    "type": "underline",
+    "question": "다음 중 밑줄 친 부분이 어법상 어색한 것은?",
+    "options": [
+      "① I am a student.",
+      "② She is my sister.",
+      "③ They is happy.",
+      "④ We are friends."
+    ],
+    "answer": 2,
+    "explanation": "They는 복수 대명사이므로 is가 아니라 are를 써야 합니다 (They are happy).",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-1-22",
+    "level": 1,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "3인칭 단수",
+    "type": "underline",
+    "question": "다음 중 밑줄 친 부분이 어법상 어색한 것은?",
+    "options": [
+      "① He plays soccer.",
+      "② She like apples.",
+      "③ It rains a lot.",
+      "④ Tom swims well."
+    ],
+    "answer": 1,
+    "explanation": "She는 3인칭 단수 주어이므로 일반동사 뒤에 -s를 붙여 likes가 되어야 합니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-1-23",
+    "level": 1,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "어순배열",
+    "type": "scramble",
+    "question": "다음 단어들을 올바른 순서로 배열하여 문장을 완성하시오: [likes, She, music]",
+    "options": [
+      "She likes music.",
+      "Likes she music.",
+      "Music she likes.",
+      "She music likes."
+    ],
+    "answer": 0,
+    "explanation": "'주어(She) + 동사(likes) + 목적어(music)' 순서가 올바릅니다.",
+    "speedStandardSeconds": 30,
+    "scrambleWords": [
+      "She",
+      "likes",
+      "music."
+    ]
+  },
+  {
+    "id": "lt-1-24",
+    "level": 1,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "어순배열",
+    "type": "scramble",
+    "question": "다음 단어들을 올바른 순서로 배열하시오: [a, dog, have, I]",
+    "options": [
+      "I have a dog.",
+      "A dog have I.",
+      "Have I a dog.",
+      "I a dog have."
+    ],
+    "answer": 0,
+    "explanation": "영어 평서문의 기본 어순은 '주어(I) + 동사(have) + 목적어(a dog)'입니다.",
+    "speedStandardSeconds": 30,
+    "scrambleWords": [
+      "I",
+      "have",
+      "a",
+      "dog."
+    ]
+  },
+  {
+    "id": "lt-1-25",
+    "level": 1,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "기초 형용사",
+    "type": "standard",
+    "question": "반대말(반의어) 관계가 올바르게 짝지어진 것은?",
+    "options": [
+      "big - small",
+      "happy - glad",
+      "hot - warm",
+      "fast - quick"
+    ],
+    "answer": 0,
+    "explanation": "big(큰)과 small(작은)은 서로 반대말(반의어)입니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-1-26",
+    "level": 1,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "기초 동사",
+    "type": "cloze",
+    "question": "다음 빈칸에 가장 알맞은 단어는?\n\"Birds can _______ in the sky.\"",
+    "options": [
+      "fly",
+      "swim",
+      "read",
+      "cook"
+    ],
+    "answer": 0,
+    "explanation": "새는 하늘을 날(fly) 수 있습니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-1-27",
+    "level": 1,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "세부내용",
+    "type": "standard",
+    "question": "다음 글을 읽고 민수가 좋아하는 동물을 고르시오.",
+    "options": [
+      "고양이",
+      "강아지",
+      "토끼",
+      "사자"
+    ],
+    "answer": 1,
+    "explanation": "지문에서 'I like dogs best. They are very cute and smart.'라고 하였으므로 강아지가 정답입니다.",
+    "speedStandardSeconds": 30,
+    "passage": "My name is Minsu. I have a pet at home. I like dogs best. They are very cute and smart. My dog plays with a ball every day."
+  },
+  {
+    "id": "lt-1-28",
+    "level": 1,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "대의파악",
+    "type": "standard",
+    "question": "다음 글의 내용으로 가장 알맞은 것은?",
+    "options": [
+      "아침을 거르는 것이 좋다.",
+      "매일 아침 사과를 먹으면 건강에 좋다.",
+      "사과는 밤에만 먹어야 한다.",
+      "과일은 몸에 해롭다."
+    ],
+    "answer": 1,
+    "explanation": "'An apple a day is good for your health'를 통해 매일 아침 사과를 먹는 것이 건강에 좋음을 알 수 있습니다.",
+    "speedStandardSeconds": 30,
+    "passage": "Apples are sweet and red. Many doctors say eating an apple in the morning is great for your body. It gives you good energy."
+  },
+  {
+    "id": "lt-1-29",
+    "level": 1,
+    "category": "conversation",
+    "categoryKo": "회화",
+    "subSkill": "시간 묻기",
+    "type": "standard",
+    "question": "다음 대화의 빈칸에 알맞은 질문은?\nA: _________________?\nB: It is three o'clock.",
+    "options": [
+      "What time is it?",
+      "How is the weather?",
+      "Where is your school?",
+      "How old are you?"
+    ],
+    "answer": 0,
+    "explanation": "시간(It is three o'clock)을 답하고 있으므로 시간을 묻는 'What time is it?'이 적절합니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-1-30",
+    "level": 1,
+    "category": "listening",
+    "categoryKo": "청해",
+    "subSkill": "날씨 대화",
+    "type": "standard",
+    "question": "대화를 듣고 현재 날씨로 알맞은 것을 고르시오.",
+    "options": [
+      "비가 온다",
+      "눈이 온다",
+      "화창하다",
+      "바람이 분다"
+    ],
+    "answer": 2,
+    "explanation": "햇살이 밝고 따뜻하다(sunny and warm)고 하였으므로 화창한 날씨입니다.",
+    "speedStandardSeconds": 30,
+    "passage": "[Listening Audio] Boy: Look outside! The sun is shining brightly today. Girl: Yes, it is very sunny and warm. Let's go ride bicycles!"
+  },
+  {
+    "id": "lt-1-31",
+    "level": 1,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "부정문",
+    "type": "underline",
+    "question": "다음 중 밑줄 친 부분이 어법상 올바른 것은?",
+    "options": [
+      "① She don't like milk.",
+      "② He doesn't has a car.",
+      "③ They don't play tennis.",
+      "④ I doesn't know him."
+    ],
+    "answer": 2,
+    "explanation": "They는 복수이므로 don't play가 맞습니다. (1번 doesn't, 2번 doesn't have, 4번 don't)",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-1-32",
+    "level": 1,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "가족 명칭",
+    "type": "standard",
+    "question": "빈칸에 들어갈 알맞은 단어는?\n\"My father's brother is my _______.\"",
+    "options": [
+      "uncle",
+      "aunt",
+      "cousin",
+      "sister"
+    ],
+    "answer": 0,
+    "explanation": "아버지의 형제는 삼촌/외삼촌(uncle)입니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-1-33",
+    "level": 1,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "어순배열",
+    "type": "scramble",
+    "question": "다음 단어들을 바르게 배열하시오: [school, to, go, We]",
+    "options": [
+      "We go to school.",
+      "School to we go.",
+      "Go we to school.",
+      "We school to go."
+    ],
+    "answer": 0,
+    "explanation": "'주어(We) + 동사(go) + 전치사구(to school)'의 순서입니다.",
+    "speedStandardSeconds": 30,
+    "scrambleWords": [
+      "We",
+      "go",
+      "to",
+      "school."
+    ]
+  },
+  {
+    "id": "lt-1-34",
+    "level": 1,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "목적 파악",
+    "type": "standard",
+    "question": "이 글을 쓴 목적으로 가장 알맞은 것은?",
+    "options": [
+      "생일 파티에 초대하려고",
+      "숙제를 빌리려고",
+      "길을 물어보려고",
+      "음식을 주문하려고"
+    ],
+    "answer": 0,
+    "explanation": "'Please come to my birthday party this Saturday'를 통해 생일 파티 초대 글임을 알 수 있습니다.",
+    "speedStandardSeconds": 30,
+    "passage": "Dear Jenny, This Saturday is my birthday. I will have a party at my house at 2 PM. We will eat cake and play fun games. Please come! From, Suho."
+  },
+  {
+    "id": "lt-1-35",
+    "level": 1,
+    "category": "conversation",
+    "categoryKo": "회화",
+    "subSkill": "감사 표현",
+    "type": "standard",
+    "question": "대화의 빈칸에 가장 알맞은 응답은?\nA: Thank you so much for your help!\nB: _______________________",
+    "options": [
+      "You're welcome.",
+      "I'm sorry.",
+      "See you tomorrow.",
+      "Good morning."
+    ],
+    "answer": 0,
+    "explanation": "감사 표현(Thank you)에 대한 전형적인 응답은 'You're welcome.(천만에요)'입니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-1-36",
+    "level": 1,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "계절 어휘",
+    "type": "cloze",
+    "question": "다음 빈칸에 알맞은 계절은?\n\"It is very cold and snow falls in _______.\"",
+    "options": [
+      "winter",
+      "summer",
+      "spring",
+      "autumn"
+    ],
+    "answer": 0,
+    "explanation": "눈이 내리고 매우 추운 계절은 겨울(winter)입니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-1-37",
+    "level": 1,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "명사의 복수형",
+    "type": "underline",
+    "question": "밑줄 친 명사의 복수형 표기가 올바른 것은?",
+    "options": [
+      "① two boxs",
+      "② three childs",
+      "③ four apples",
+      "④ five foots"
+    ],
+    "answer": 2,
+    "explanation": "apple의 복수형은 apples입니다. (box ➔ boxes, child ➔ children, foot ➔ feet)",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-1-38",
+    "level": 1,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "사실 일치",
+    "type": "standard",
+    "question": "글의 내용과 일치하지 않는 것은?",
+    "options": [
+      "피터는 런던에 산다.",
+      "피터는 매일 버스로 등교한다.",
+      "피터의 자전거는 파란색이다.",
+      "피터는 공원에서 자전거를 탄다."
+    ],
+    "answer": 1,
+    "explanation": "'I ride my blue bicycle to school'이라고 하였으므로 버스로 등교한다는 설명은 일치하지 않습니다.",
+    "speedStandardSeconds": 30,
+    "passage": "Peter lives in London. He has a blue bicycle. Every morning, he rides his bicycle to school. On weekends, he rides it in the park with his sister."
+  },
+  {
+    "id": "lt-1-39",
+    "level": 1,
+    "category": "listening",
+    "categoryKo": "청해",
+    "subSkill": "장소 파악",
+    "type": "standard",
+    "question": "대화가 이루어지는 장소로 가장 알맞은 곳은?",
+    "options": [
+      "도서관",
+      "식당",
+      "병원",
+      "공항"
+    ],
+    "answer": 0,
+    "explanation": "책을 빌리고(borrow books), 조용히 해야 하는(keep quiet) 곳이므로 도서관(library)입니다.",
+    "speedStandardSeconds": 30,
+    "passage": "[Listening Audio] Man: Excuse me, can I borrow this science book for one week? Woman: Sure, just show me your library card. And please remember to keep quiet here."
+  },
+  {
+    "id": "lt-1-40",
+    "level": 1,
+    "category": "conversation",
+    "categoryKo": "회화",
+    "subSkill": "안부 묻기",
+    "type": "standard",
+    "question": "A의 질문에 대한 자연스러운 대답은?\nA: How are you doing today?\nB: _______________________",
+    "options": [
+      "I'm doing great, thank you.",
+      "I am twelve years old.",
+      "I live in Seoul.",
+      "It is Friday."
+    ],
+    "answer": 0,
+    "explanation": "안부를 묻는 질문(How are you doing?)에는 자신의 기분이나 상태를 나타내는 'I'm doing great'이 적절합니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-2-21",
+    "level": 2,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "과거시제 불규칙",
+    "type": "underline",
+    "question": "다음 중 밑줄 친 동사의 과거형이 어법상 어색한 것은?",
+    "options": [
+      "① I went to the zoo yesterday.",
+      "② She buyed a new dress.",
+      "③ He saw a movie last night.",
+      "④ We ate pizza."
+    ],
+    "answer": 1,
+    "explanation": "buy의 과거형은 불규칙 동사로 bought입니다 (buyed는 오답).",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-2-22",
+    "level": 2,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "조동사 can",
+    "type": "underline",
+    "question": "다음 중 어법상 올바른 문장은?",
+    "options": [
+      "① He can swims fast.",
+      "② She can play the piano.",
+      "③ They cans speak English.",
+      "④ I can to drive a car."
+    ],
+    "answer": 1,
+    "explanation": "조동사(can) 뒤에는 반드시 동사원형이 와야 하므로 'She can play the piano.'가 올바릅니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-2-23",
+    "level": 2,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "어순배열",
+    "type": "scramble",
+    "question": "다음 단어들을 순서대로 바르게 배열하시오: [park, yesterday, went, to, They, the]",
+    "options": [
+      "They went to the park yesterday.",
+      "Yesterday went they to the park.",
+      "To the park they went yesterday.",
+      "They to the park went yesterday."
+    ],
+    "answer": 0,
+    "explanation": "'주어 + 과거동사 + 장소부사구 + 시간부사' 어순입니다.",
+    "speedStandardSeconds": 30,
+    "scrambleWords": [
+      "They",
+      "went",
+      "to",
+      "the",
+      "park",
+      "yesterday."
+    ]
+  },
+  {
+    "id": "lt-2-24",
+    "level": 2,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "감정 형용사",
+    "type": "cloze",
+    "question": "다음 빈칸에 알맞은 단어는?\n\"He was _______ because he lost his favorite watch.\"",
+    "options": [
+      "sad",
+      "excited",
+      "proud",
+      "delighted"
+    ],
+    "answer": 0,
+    "explanation": "가장 아끼는 시계를 잃어버렸으므로 슬픈(sad) 감정이 가장 적절합니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-2-25",
+    "level": 2,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "글의 요지",
+    "type": "standard",
+    "question": "다음 글의 중심 생각으로 가장 알맞은 것은?",
+    "options": [
+      "충분한 수면은 건강에 필수적이다.",
+      "매일 밤 늦게까지 공부해야 한다.",
+      "잠을 적게 잘수록 집중력이 오른다.",
+      "낮잠은 무조건 해롭다."
+    ],
+    "answer": 0,
+    "explanation": "'Getting enough sleep helps your brain rest and keeps you healthy'를 통해 충분한 수면의 중요성을 강조하고 있습니다.",
+    "speedStandardSeconds": 30,
+    "passage": "Sleep is very important for children. When you sleep eight hours a night, your body recovers energy and your memory improves. Lack of sleep makes you tired and unable to focus in class."
+  },
+  {
+    "id": "lt-2-26",
+    "level": 2,
+    "category": "conversation",
+    "categoryKo": "회화",
+    "subSkill": "길 묻기",
+    "type": "standard",
+    "question": "대화의 빈칸에 알맞은 표현은?\nA: Excuse me, _______ is the subway station?\nB: Walk straight for two blocks and turn right.",
+    "options": [
+      "where",
+      "when",
+      "why",
+      "who"
+    ],
+    "answer": 0,
+    "explanation": "지하철역의 위치/길을 묻고 있으므로 장소를 묻는 'where'가 정답입니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-2-27",
+    "level": 2,
+    "category": "listening",
+    "categoryKo": "청해",
+    "subSkill": "주문 파악",
+    "type": "standard",
+    "question": "여자가 주문한 음식과 음료의 조합으로 알맞은 것은?",
+    "options": [
+      "치즈버거와 오렌지 주스",
+      "치킨 샌드위치와 콜라",
+      "샐러드와 물",
+      "피자와 사이다"
+    ],
+    "answer": 0,
+    "explanation": "여자가 치즈버거와 오렌지 주스를 주문했습니다.",
+    "speedStandardSeconds": 30,
+    "passage": "[Listening Audio] Clerk: Welcome to Burger King. May I take your order? Woman: Yes, please. I'd like one cheeseburger and a glass of fresh orange juice."
+  },
+  {
+    "id": "lt-2-28",
+    "level": 2,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "의문사 의문문",
+    "type": "underline",
+    "question": "밑줄 친 부분 중 어법상 어색한 것은?",
+    "options": [
+      "① Where do you live?",
+      "② What does she likes?",
+      "③ When did they arrive?",
+      "④ Why are you crying?"
+    ],
+    "answer": 1,
+    "explanation": "의문문에서 조동사 does가 쓰였으므로 일반동사는 원형 like가 되어야 합니다 (likes 오답).",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-2-29",
+    "level": 2,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "직업 어휘",
+    "type": "standard",
+    "question": "설명하는 직업으로 가장 알맞은 것은?\n\"A person whose job is to put out fires and rescue people in danger.\"",
+    "options": [
+      "firefighter",
+      "pilot",
+      "dentist",
+      "photographer"
+    ],
+    "answer": 0,
+    "explanation": "불을 끄고(put out fires) 사람들을 구조하는 직업은 소방관(firefighter)입니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-2-30",
+    "level": 2,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "지칭 추론",
+    "type": "standard",
+    "question": "밑줄 친 It이 가리키는 대상은?",
+    "options": [
+      "The river",
+      "The desert",
+      "The tree",
+      "The camel"
+    ],
+    "answer": 3,
+    "explanation": "사막을 건너고 며칠 동안 물 없이 버틸 수 있는 '낙타(The camel)'를 가리킵니다.",
+    "speedStandardSeconds": 30,
+    "passage": "The camel is called the ship of the desert. It can walk on hot sand very well and survive for days without water because of stored fat in its hump."
+  },
+  {
+    "id": "lt-2-31",
+    "level": 2,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "비교급 기본",
+    "type": "standard",
+    "question": "빈칸에 알맞은 형태는?\n\"An elephant is _______ than a tiger.\"",
+    "options": [
+      "bigger",
+      "big",
+      "biggest",
+      "more big"
+    ],
+    "answer": 0,
+    "explanation": "than과 함께 쓰여 둘을 비교할 때는 비교급 형태(bigger)를 사용합니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-2-32",
+    "level": 2,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "어순배열",
+    "type": "scramble",
+    "question": "주어진 단어를 바르게 배열하시오: [dinner, cooked, My, delicious, mother]",
+    "options": [
+      "My mother cooked delicious dinner.",
+      "Delicious dinner cooked my mother.",
+      "My mother delicious cooked dinner.",
+      "Cooked my mother delicious dinner."
+    ],
+    "answer": 0,
+    "explanation": "'주어(My mother) + 동사(cooked) + 목적어(delicious dinner)' 어순입니다.",
+    "speedStandardSeconds": 30,
+    "scrambleWords": [
+      "My",
+      "mother",
+      "cooked",
+      "delicious",
+      "dinner."
+    ]
+  },
+  {
+    "id": "lt-2-33",
+    "level": 2,
+    "category": "conversation",
+    "categoryKo": "회화",
+    "subSkill": "제안에 응답",
+    "type": "standard",
+    "question": "대화의 빈칸에 어울리지 않는 것은?\nA: Why don't we go to the movie theater this afternoon?\nB: _______________________",
+    "options": [
+      "Sounds great!",
+      "That's a good idea.",
+      "I'd love to.",
+      "I am twelve years old."
+    ],
+    "answer": 3,
+    "explanation": "영화를 보러 가자는 제안에 나이를 답하는 것은 대화의 맥락상 어색합니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-2-34",
+    "level": 2,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "전치사 시간",
+    "type": "cloze",
+    "question": "빈칸에 공통으로 들어갈 알맞은 전치사는?\n\"I was born _______ 2012.\"\n\"Leaves turn yellow _______ autumn.\"",
+    "options": [
+      "in",
+      "at",
+      "on",
+      "to"
+    ],
+    "answer": 0,
+    "explanation": "연도(2012)나 계절(autumn) 앞에는 전치사 in을 사용합니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-2-35",
+    "level": 2,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "원인 분석",
+    "type": "standard",
+    "question": "지문에서 고래가 물 위로 올라오는 이유는?",
+    "options": [
+      "먹이를 사냥하기 위해서",
+      "숨을 쉬기 위해서",
+      "잠을 자기 위해서",
+      "친구를 부르기 위해서"
+    ],
+    "answer": 1,
+    "explanation": "'whales must come up to the surface of the ocean to breathe air'에서 숨을 쉬기 위해 올라온다고 명시되어 있습니다.",
+    "speedStandardSeconds": 30,
+    "passage": "Although whales live in the ocean, they are mammals like humans. They do not have gills like fish, so they must come up to the surface of the ocean to breathe air into their lungs."
+  },
+  {
+    "id": "lt-2-36",
+    "level": 2,
+    "category": "listening",
+    "categoryKo": "청해",
+    "subSkill": "숫자 정보",
+    "type": "standard",
+    "question": "남자가 지불해야 할 총 금액은 얼마인가?",
+    "options": [
+      "$10",
+      "$15",
+      "$20",
+      "$25"
+    ],
+    "answer": 1,
+    "explanation": "티켓 한 장당 $10이고 학생 할인이 $5 적용되어 최종 $15를 지불해야 합니다.",
+    "speedStandardSeconds": 30,
+    "passage": "[Listening Audio] Clerk: The regular museum admission ticket is twenty dollars, but we have a student discount of five dollars today. Man: Wonderful, here is fifteen dollars."
+  },
+  {
+    "id": "lt-2-37",
+    "level": 2,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "There is / are",
+    "type": "underline",
+    "question": "밑줄 친 부분 중 어법상 어색한 문장은?",
+    "options": [
+      "① There is a pen on the desk.",
+      "② There are many students in the classroom.",
+      "③ There is two apples in the basket.",
+      "④ There are three birds in the tree."
+    ],
+    "answer": 2,
+    "explanation": "복수 명사(two apples) 앞에는 There is가 아니라 There are를 써야 합니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-2-38",
+    "level": 2,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "다의어 run",
+    "type": "standard",
+    "question": "밑줄 친 run의 뜻이 나머지 셋과 다른 것은?",
+    "options": [
+      "① He can run very fast.",
+      "② The dog ran across the yard.",
+      "③ She runs a small bookstore in town.",
+      "④ The children are running in the playground."
+    ],
+    "answer": 2,
+    "explanation": "3번의 run은 '운영하다/경영하다'라는 뜻이며, 나머지는 모두 물리적으로 '달리다'라는 뜻입니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-2-39",
+    "level": 2,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "내용 유추",
+    "type": "standard",
+    "question": "다음 글 다음에 이어질 내용으로 가장 알맞은 것은?",
+    "options": [
+      "초콜릿 쿠키를 만드는 구체적인 조리 순서",
+      "설탕이 몸에 미치는 해로운 영향",
+      "제과점을 창업하는 방법",
+      "빵집 주인의 어린 시절 이야기"
+    ],
+    "answer": 0,
+    "explanation": "'Let's learn how to make delicious chocolate cookies step by step.'로 글이 맺어졌으므로 쿠키를 만드는 조리법이 이어집니다.",
+    "speedStandardSeconds": 30,
+    "passage": "Baking cookies is a wonderful family activity on weekends. All you need are flour, sugar, butter, and sweet chocolate chips. Let's learn how to make delicious chocolate cookies step by step."
+  },
+  {
+    "id": "lt-2-40",
+    "level": 2,
+    "category": "conversation",
+    "categoryKo": "회화",
+    "subSkill": "초대에 거절",
+    "type": "standard",
+    "question": "정중한 거절의 표현으로 가장 알맞은 것은?\nA: Can you join our study group tonight?\nB: _______________________",
+    "options": [
+      "I'd love to, but I have a doctor's appointment.",
+      "No, never.",
+      "Yes, of course.",
+      "You're welcome."
+    ],
+    "answer": 0,
+    "explanation": "상대방의 제안을 정중하게 사양할 때는 'I'd love to, but...(그러고 싶지만 ~때문에 어렵다)'을 사용합니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-3-21",
+    "level": 3,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "to부정사 용법",
+    "type": "standard",
+    "question": "밑줄 친 to부정사의 용법이 나머지 셋과 다른 것은?",
+    "options": [
+      "① I want to become a scientist.",
+      "② To learn English is fun.",
+      "③ She decided to study abroad.",
+      "④ He went to the library to read books."
+    ],
+    "answer": 3,
+    "explanation": "4번은 '~하기 위하여'라는 목적을 나타내는 부사적 용법이며, 1, 2, 3번은 주어나 목적어로 쓰인 명사적 용법입니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-3-22",
+    "level": 3,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "수일치",
+    "type": "underline",
+    "question": "다음 밑줄 친 부분 중 어법상 틀린 것은?",
+    "options": [
+      "① Playing computer games is exciting.",
+      "② Reading books expand your mind.",
+      "③ To travel the world requires courage.",
+      "④ Each of the students has a locker."
+    ],
+    "answer": 1,
+    "explanation": "동명사구(Reading books)가 주어일 때는 단수 취급하므로 동사는 expands가 되어야 합니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-3-23",
+    "level": 3,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "어순배열",
+    "type": "scramble",
+    "question": "다음 단어들을 올바르게 배열하여 문장을 완성하시오: [easy, It, speak, is, to, English, not]",
+    "options": [
+      "It is not easy to speak English.",
+      "To speak English not is easy it.",
+      "It is easy not to speak English.",
+      "English is not easy it to speak."
+    ],
+    "answer": 0,
+    "explanation": "'가주어(It) + is not easy + 진주어(to speak English)'의 가주어-진주어 구문입니다.",
+    "speedStandardSeconds": 30,
+    "scrambleWords": [
+      "It",
+      "is",
+      "not",
+      "easy",
+      "to",
+      "speak",
+      "English."
+    ]
+  },
+  {
+    "id": "lt-3-24",
+    "level": 3,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "접속부사",
+    "type": "cloze",
+    "question": "다음 빈칸에 알맞은 연결사는?\n\"He studied hard all semester. _______, he achieved the highest score on the final exam.\"",
+    "options": [
+      "As a result",
+      "However",
+      "In contrast",
+      "On the other hand"
+    ],
+    "answer": 0,
+    "explanation": "열심히 공부한 원인에 따른 결과가 뒤따르므로 '그 결과(As a result)'가 가장 알맞습니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-3-25",
+    "level": 3,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "빈칸추론",
+    "type": "cloze",
+    "question": "빈칸에 들어갈 말로 가장 적절한 것은?",
+    "options": [
+      "practice regularly",
+      "give up easily",
+      "ignore teacher's advice",
+      "waste your time"
+    ],
+    "answer": 0,
+    "explanation": "악기 연주 실력을 키우기 위해서는 매일 꾸준히 연습해야 한다는 내용이므로 'practice regularly'가 적절합니다.",
+    "speedStandardSeconds": 30,
+    "passage": "Learning to play a musical instrument like the violin or piano is never easy at first. Your fingers may hurt and progress seems slow. However, if you _______ every single day, you will soon notice astonishing improvement."
+  },
+  {
+    "id": "lt-3-26",
+    "level": 3,
+    "category": "conversation",
+    "categoryKo": "회화",
+    "subSkill": "의견 동의",
+    "type": "standard",
+    "question": "상대방의 의견에 전적으로 동의할 때 쓰는 표현은?\nA: I think this movie delivers a very inspiring message.\nB: _______________________",
+    "options": [
+      "I couldn't agree with you more.",
+      "I don't think so.",
+      "That's none of your business.",
+      "Not at all."
+    ],
+    "answer": 0,
+    "explanation": "'I couldn't agree with you more.'는 '더 이상 동의할 수 없을 정도로 전적으로 동의한다'는 강한 동의 표현입니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-3-27",
+    "level": 3,
+    "category": "listening",
+    "categoryKo": "청해",
+    "subSkill": "주제 파악",
+    "type": "standard",
+    "question": "담화의 주제로 가장 적절한 것은?",
+    "options": [
+      "플라스틱 재활용 방법 안내",
+      "학교 도서관 이용 수칙",
+      "체육대회 일정 변경 공지",
+      "소방 대피 훈련 요령"
+    ],
+    "answer": 0,
+    "explanation": "분리수거함에 플라스틱 병의 라벨을 떼고 버리는 재활용 지침에 대해 안내하고 있습니다.",
+    "speedStandardSeconds": 30,
+    "passage": "[Listening Audio] Principal: Good morning, students. Today we are starting our Green Campus Campaign. When you throw away plastic bottles, please remove the plastic label and crush the bottle before tossing it into the recycling bin."
+  },
+  {
+    "id": "lt-3-28",
+    "level": 3,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "접속사 so that",
+    "type": "underline",
+    "question": "밑줄 친 부분 중 어법상 올바른 것은?",
+    "options": [
+      "① She woke up early so that she couldn't miss the bus.",
+      "② He turned on the light so that he can see clearly.",
+      "③ They saved money so that they could buy a house.",
+      "④ Speak loudly so that everyone hear you."
+    ],
+    "answer": 2,
+    "explanation": "과거 시제(saved)와 조동사 과거형(could)의 시제 일치가 올바르게 이루어진 3번이 정답입니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-3-29",
+    "level": 3,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "숙어 표현",
+    "type": "standard",
+    "question": "밑줄 친 take care of와 바꾸어 쓸 수 있는 것은?\n\"You must take care of your little sister while Mom is out.\"",
+    "options": [
+      "look after",
+      "look for",
+      "look forward to",
+      "look down on"
+    ],
+    "answer": 0,
+    "explanation": "take care of는 '~을 돌보다'라는 의미로 look after와 동의어입니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-3-30",
+    "level": 3,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "지칭 추론",
+    "type": "standard",
+    "question": "밑줄 친 this phenomenon이 의미하는 것은?",
+    "options": [
+      "지구 온난화(Global Warming)",
+      "화산 폭발",
+      "지진 발생",
+      "대기 오염"
+    ],
+    "answer": 0,
+    "explanation": "온실가스가 열을 가두어 지구의 평균 기온이 상승하는 '지구 온난화(Global Warming)'를 설명하고 있습니다.",
+    "speedStandardSeconds": 30,
+    "passage": "Carbon dioxide and other greenhouse gases trap heat in Earth's atmosphere, acting like a blanket. As human factories and cars emit more gases, average global temperatures continue to rise. Scientists call this phenomenon global warming."
+  },
+  {
+    "id": "lt-3-31",
+    "level": 3,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "관계대명사 주격",
+    "type": "underline",
+    "question": "밑줄 친 부분 중 어법상 어색한 것은?",
+    "options": [
+      "① The girl who won the contest is my cousin.",
+      "② I met a doctor who works at the city hospital.",
+      "③ Look at the car which are parked over there.",
+      "④ The book that is on the table is mine."
+    ],
+    "answer": 2,
+    "explanation": "선행사 the car는 단수이므로 주격 관계대명사절의 동사는 is가 되어야 합니다 (which is parked).",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-3-32",
+    "level": 3,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "어순배열",
+    "type": "scramble",
+    "question": "다음 단어들을 올바르게 배열하시오: [know, where, Do, lives, you, she]",
+    "options": [
+      "Do you know where she lives?",
+      "Do you know where does she live?",
+      "Where do you know she lives?",
+      "She lives where do you know?"
+    ],
+    "answer": 0,
+    "explanation": "간접의문문의 어순은 '의문사 + 주어 + 동사(where she lives)'입니다.",
+    "speedStandardSeconds": 30,
+    "scrambleWords": [
+      "Do",
+      "you",
+      "know",
+      "where",
+      "she",
+      "lives?"
+    ]
+  },
+  {
+    "id": "lt-3-33",
+    "level": 3,
+    "category": "conversation",
+    "categoryKo": "회화",
+    "subSkill": "부탁하기",
+    "type": "standard",
+    "question": "도움을 정중히 요청하는 표현으로 가장 적절한 것은?",
+    "options": [
+      "Could you please do me a favor?",
+      "You must help me right now.",
+      "Why don't you do my homework?",
+      "Give me a hand immediately."
+    ],
+    "answer": 0,
+    "explanation": "'Could you please do me a favor?(부탁 하나만 들어주실 수 있나요?)'가 가장 정중하고 자연스러운 요청 표현입니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-3-34",
+    "level": 3,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "접두사 un-",
+    "type": "standard",
+    "question": "단어의 형성이 잘못된 것은?",
+    "options": [
+      "unhappy",
+      "uncertain",
+      "unkind",
+      "unpatient"
+    ],
+    "answer": 3,
+    "explanation": "patient의 반의어는 접두사 im-이 붙은 impatient입니다 (unpatient는 오답).",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-3-35",
+    "level": 3,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "심경 변화",
+    "type": "standard",
+    "question": "글에 나타난 'Jenny'의 심경 변화로 가장 적절한 것은?",
+    "options": [
+      "초조하고 긴장됨 ➔ 안도하고 기쁨",
+      "기쁘고 들뜸 ➔ 실망하고 슬픔",
+      "지루함 ➔ 화가 남",
+      "평온함 ➔ 질투함"
+    ],
+    "answer": 0,
+    "explanation": "발표 전 손이 떨리고 심장이 뛰다가(nervous), 발표를 성공적으로 마치고 박수를 받으며 안도하고 기뻐(relieved and happy)했습니다.",
+    "speedStandardSeconds": 30,
+    "passage": "Jenny stood behind the curtain, her hands shaking and heart pounding fast. When her name was called, she walked onto the stage and delivered her speech clearly without any mistake. As the entire audience gave her a standing ovation, a warm smile spread across her face."
+  },
+  {
+    "id": "lt-3-36",
+    "level": 3,
+    "category": "listening",
+    "categoryKo": "청해",
+    "subSkill": "이유 파악",
+    "type": "standard",
+    "question": "남자가 오늘 축구 연습에 갈 수 없는 이유는?",
+    "options": [
+      "발목을 다쳐서",
+      "시험공부를 해야 해서",
+      "비가 너무 많이 와서",
+      "가족 모임이 있어서"
+    ],
+    "answer": 0,
+    "explanation": "어제 농구를 하다가 발목을 삐어서(sprained his ankle) 축구 연습에 나갈 수 없다고 말했습니다.",
+    "speedStandardSeconds": 30,
+    "passage": "[Listening Audio] Boy: Hey Minji, I'm calling to tell you I can't attend soccer practice this afternoon. I sprained my ankle while playing basketball yesterday, and the doctor told me to rest."
+  },
+  {
+    "id": "lt-3-37",
+    "level": 3,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "지각동사 목적격보어",
+    "type": "underline",
+    "question": "밑줄 친 부분 중 어법상 어색한 문장은?",
+    "options": [
+      "① I saw him cross the street.",
+      "② She heard someone knocking on the door.",
+      "③ We felt the ground shake.",
+      "④ They watched the birds to fly away."
+    ],
+    "answer": 3,
+    "explanation": "지각동사(watch)의 목적격보어로는 동사원형이나 현재분사를 쓰며, to부정사는 올 수 없습니다 (fly 또는 flying).",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-3-38",
+    "level": 3,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "문맥 어휘",
+    "type": "cloze",
+    "question": "빈칸에 들어갈 알맞은 단어는?\n\"The sun provides light and heat, which are _______ for all living things on Earth.\"",
+    "options": [
+      "essential",
+      "harmful",
+      "useless",
+      "dangerous"
+    ],
+    "answer": 0,
+    "explanation": "지구상의 모든 생명체에게 빛과 열은 '필수적인(essential)' 요소입니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-3-39",
+    "level": 3,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "제목 추론",
+    "type": "standard",
+    "question": "다음 글의 제목으로 가장 알맞은 것은?",
+    "options": [
+      "Why Bees Are Vital to Our Ecosystem",
+      "The Dangers of Insect Stings",
+      "How to Make Honey at Home",
+      "Different Kinds of Butterflies"
+    ],
+    "answer": 0,
+    "explanation": "벌의 수분 활동이 인류의 농작물 생산과 생태계 유지에 얼마나 핵심적인지를 다루고 있으므로 1번이 정답입니다.",
+    "speedStandardSeconds": 30,
+    "passage": "Bees do much more than just produce sweet honey. As they travel from flower to flower, they carry pollen that allows plants and crops to reproduce. Without bees, about one-third of the food we eat, including apples, almonds, and berries, would disappear."
+  },
+  {
+    "id": "lt-3-40",
+    "level": 3,
+    "category": "conversation",
+    "categoryKo": "회화",
+    "subSkill": "확인 질문",
+    "type": "standard",
+    "question": "대화의 빈칸에 들어갈 부가의문문으로 알맞은 것은?\n\"You didn't break the glass window, _______?\"",
+    "options": [
+      "did you",
+      "didn't you",
+      "do you",
+      "were you"
+    ],
+    "answer": 0,
+    "explanation": "앞 문장이 부정문(didn't break)이므로 부가의문문은 긍정형 'did you'가 와야 합니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-4-21",
+    "level": 4,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "현재완료 경험",
+    "type": "underline",
+    "question": "어법상 밑줄 친 부분이 올바른 것은?",
+    "options": [
+      "① I have saw that movie twice.",
+      "② She has been to Paris three times.",
+      "③ He have lived here since 2010.",
+      "④ Have you ever ate sushi?"
+    ],
+    "answer": 1,
+    "explanation": "have/has been to는 '~에 가본 적이 있다'는 경험 용법으로 올바릅니다. (1번 seen, 3번 has lived, 4번 eaten)",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-4-22",
+    "level": 4,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "수동태",
+    "type": "underline",
+    "question": "밑줄 친 수동태 문장 중 어법상 어색한 것은?",
+    "options": [
+      "① The telephone was invented by Bell.",
+      "② Romeo and Juliet was written by Shakespeare.",
+      "③ The windows were cleaned by Tom.",
+      "④ The bridge was builded in 1995."
+    ],
+    "answer": 3,
+    "explanation": "build의 과거분사형은 built입니다 (builded 오답).",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-4-23",
+    "level": 4,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "어순배열",
+    "type": "scramble",
+    "question": "다음 단어들을 어법에 맞게 배열하시오: [has, She, for, studied, three, English, years]",
+    "options": [
+      "She has studied English for three years.",
+      "She studied English has for three years.",
+      "For three years she studied has English.",
+      "Has she studied English for three years."
+    ],
+    "answer": 0,
+    "explanation": "현재완료 지속 용법 '주어 + has p.p. + 목적어 + for 기간' 어순입니다.",
+    "speedStandardSeconds": 30,
+    "scrambleWords": [
+      "She",
+      "has",
+      "studied",
+      "English",
+      "for",
+      "three",
+      "years."
+    ]
+  },
+  {
+    "id": "lt-4-24",
+    "level": 4,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "혼동 어휘",
+    "type": "cloze",
+    "question": "빈칸에 알맞은 단어는?\n\"Deforestation has a negative _______ on global climate.\"",
+    "options": [
+      "effect",
+      "affect",
+      "effort",
+      "afford"
+    ],
+    "answer": 0,
+    "explanation": "명사 자리에는 '영향/효과'를 뜻하는 effect가 들어가야 합니다 (have an effect on). affect는 동사입니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-4-25",
+    "level": 4,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "빈칸추론",
+    "type": "cloze",
+    "question": "빈칸에 들어갈 말로 가장 적절한 것은?",
+    "options": [
+      "invisible to the human eye",
+      "very bright and colorful",
+      "harmful to all plants",
+      "moving at the speed of sound"
+    ],
+    "answer": 0,
+    "explanation": "사람의 눈으로는 볼 수 없다는 내용이므로 'invisible to the human eye'가 알맞습니다.",
+    "speedStandardSeconds": 30,
+    "passage": "Microorganisms such as bacteria and viruses exist everywhere around us, from the deepest oceans to our own skin. Despite their immense impact on human health and planetary biology, they are completely _______ without a microscope."
+  },
+  {
+    "id": "lt-4-26",
+    "level": 4,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "복합 구문",
+    "type": "standard",
+    "question": "Level 4 실전 문항 26: 다음 문장의 빈칸에 들어갈 가장 알맞은 표현은?\n\"Although he was exhausted, he _______ to finish the project on time.\"",
+    "options": [
+      "managed",
+      "failed",
+      "refused",
+      "stopped"
+    ],
+    "answer": 0,
+    "explanation": "비록 피곤했지만 제시간에 끝마쳤다는 양보의 접속사(Although) 흐름이므로 '가까스로 해내다(managed)'가 적절합니다.",
+    "speedStandardSeconds": 28
+  },
+  {
+    "id": "lt-4-27",
+    "level": 4,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "조동사/접속사",
+    "type": "standard",
+    "question": "Level 4 실전 문항 27: 다음 문장의 빈칸에 들어갈 가장 알맞은 표현은?\n\"Although he was exhausted, he _______ to finish the project on time.\"",
+    "options": [
+      "managed",
+      "failed",
+      "refused",
+      "stopped"
+    ],
+    "answer": 0,
+    "explanation": "비록 피곤했지만 제시간에 끝마쳤다는 양보의 접속사(Although) 흐름이므로 '가까스로 해내다(managed)'가 적절합니다.",
+    "speedStandardSeconds": 28
+  },
+  {
+    "id": "lt-4-28",
+    "level": 4,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "복합 구문",
+    "type": "standard",
+    "question": "Level 4 실전 문항 28: 다음 문장의 빈칸에 들어갈 가장 알맞은 표현은?\n\"Although he was exhausted, he _______ to finish the project on time.\"",
+    "options": [
+      "managed",
+      "failed",
+      "refused",
+      "stopped"
+    ],
+    "answer": 0,
+    "explanation": "비록 피곤했지만 제시간에 끝마쳤다는 양보의 접속사(Although) 흐름이므로 '가까스로 해내다(managed)'가 적절합니다.",
+    "speedStandardSeconds": 28
+  },
+  {
+    "id": "lt-4-29",
+    "level": 4,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "조동사/접속사",
+    "type": "standard",
+    "question": "Level 4 실전 문항 29: 다음 문장의 빈칸에 들어갈 가장 알맞은 표현은?\n\"Although he was exhausted, he _______ to finish the project on time.\"",
+    "options": [
+      "managed",
+      "failed",
+      "refused",
+      "stopped"
+    ],
+    "answer": 0,
+    "explanation": "비록 피곤했지만 제시간에 끝마쳤다는 양보의 접속사(Although) 흐름이므로 '가까스로 해내다(managed)'가 적절합니다.",
+    "speedStandardSeconds": 28
+  },
+  {
+    "id": "lt-4-30",
+    "level": 4,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "복합 구문",
+    "type": "standard",
+    "question": "Level 4 실전 문항 30: 다음 문장의 빈칸에 들어갈 가장 알맞은 표현은?\n\"Although he was exhausted, he _______ to finish the project on time.\"",
+    "options": [
+      "managed",
+      "failed",
+      "refused",
+      "stopped"
+    ],
+    "answer": 0,
+    "explanation": "비록 피곤했지만 제시간에 끝마쳤다는 양보의 접속사(Although) 흐름이므로 '가까스로 해내다(managed)'가 적절합니다.",
+    "speedStandardSeconds": 28
+  },
+  {
+    "id": "lt-4-31",
+    "level": 4,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "조동사/접속사",
+    "type": "standard",
+    "question": "Level 4 실전 문항 31: 다음 문장의 빈칸에 들어갈 가장 알맞은 표현은?\n\"Although he was exhausted, he _______ to finish the project on time.\"",
+    "options": [
+      "managed",
+      "failed",
+      "refused",
+      "stopped"
+    ],
+    "answer": 0,
+    "explanation": "비록 피곤했지만 제시간에 끝마쳤다는 양보의 접속사(Although) 흐름이므로 '가까스로 해내다(managed)'가 적절합니다.",
+    "speedStandardSeconds": 28
+  },
+  {
+    "id": "lt-4-32",
+    "level": 4,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "복합 구문",
+    "type": "standard",
+    "question": "Level 4 실전 문항 32: 다음 문장의 빈칸에 들어갈 가장 알맞은 표현은?\n\"Although he was exhausted, he _______ to finish the project on time.\"",
+    "options": [
+      "managed",
+      "failed",
+      "refused",
+      "stopped"
+    ],
+    "answer": 0,
+    "explanation": "비록 피곤했지만 제시간에 끝마쳤다는 양보의 접속사(Although) 흐름이므로 '가까스로 해내다(managed)'가 적절합니다.",
+    "speedStandardSeconds": 28
+  },
+  {
+    "id": "lt-4-33",
+    "level": 4,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "조동사/접속사",
+    "type": "standard",
+    "question": "Level 4 실전 문항 33: 다음 문장의 빈칸에 들어갈 가장 알맞은 표현은?\n\"Although he was exhausted, he _______ to finish the project on time.\"",
+    "options": [
+      "managed",
+      "failed",
+      "refused",
+      "stopped"
+    ],
+    "answer": 0,
+    "explanation": "비록 피곤했지만 제시간에 끝마쳤다는 양보의 접속사(Although) 흐름이므로 '가까스로 해내다(managed)'가 적절합니다.",
+    "speedStandardSeconds": 28
+  },
+  {
+    "id": "lt-4-34",
+    "level": 4,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "복합 구문",
+    "type": "standard",
+    "question": "Level 4 실전 문항 34: 다음 문장의 빈칸에 들어갈 가장 알맞은 표현은?\n\"Although he was exhausted, he _______ to finish the project on time.\"",
+    "options": [
+      "managed",
+      "failed",
+      "refused",
+      "stopped"
+    ],
+    "answer": 0,
+    "explanation": "비록 피곤했지만 제시간에 끝마쳤다는 양보의 접속사(Although) 흐름이므로 '가까스로 해내다(managed)'가 적절합니다.",
+    "speedStandardSeconds": 28
+  },
+  {
+    "id": "lt-4-35",
+    "level": 4,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "조동사/접속사",
+    "type": "standard",
+    "question": "Level 4 실전 문항 35: 다음 문장의 빈칸에 들어갈 가장 알맞은 표현은?\n\"Although he was exhausted, he _______ to finish the project on time.\"",
+    "options": [
+      "managed",
+      "failed",
+      "refused",
+      "stopped"
+    ],
+    "answer": 0,
+    "explanation": "비록 피곤했지만 제시간에 끝마쳤다는 양보의 접속사(Although) 흐름이므로 '가까스로 해내다(managed)'가 적절합니다.",
+    "speedStandardSeconds": 28
+  },
+  {
+    "id": "lt-4-36",
+    "level": 4,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "복합 구문",
+    "type": "standard",
+    "question": "Level 4 실전 문항 36: 다음 문장의 빈칸에 들어갈 가장 알맞은 표현은?\n\"Although he was exhausted, he _______ to finish the project on time.\"",
+    "options": [
+      "managed",
+      "failed",
+      "refused",
+      "stopped"
+    ],
+    "answer": 0,
+    "explanation": "비록 피곤했지만 제시간에 끝마쳤다는 양보의 접속사(Although) 흐름이므로 '가까스로 해내다(managed)'가 적절합니다.",
+    "speedStandardSeconds": 28
+  },
+  {
+    "id": "lt-4-37",
+    "level": 4,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "조동사/접속사",
+    "type": "standard",
+    "question": "Level 4 실전 문항 37: 다음 문장의 빈칸에 들어갈 가장 알맞은 표현은?\n\"Although he was exhausted, he _______ to finish the project on time.\"",
+    "options": [
+      "managed",
+      "failed",
+      "refused",
+      "stopped"
+    ],
+    "answer": 0,
+    "explanation": "비록 피곤했지만 제시간에 끝마쳤다는 양보의 접속사(Although) 흐름이므로 '가까스로 해내다(managed)'가 적절합니다.",
+    "speedStandardSeconds": 28
+  },
+  {
+    "id": "lt-4-38",
+    "level": 4,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "복합 구문",
+    "type": "standard",
+    "question": "Level 4 실전 문항 38: 다음 문장의 빈칸에 들어갈 가장 알맞은 표현은?\n\"Although he was exhausted, he _______ to finish the project on time.\"",
+    "options": [
+      "managed",
+      "failed",
+      "refused",
+      "stopped"
+    ],
+    "answer": 0,
+    "explanation": "비록 피곤했지만 제시간에 끝마쳤다는 양보의 접속사(Although) 흐름이므로 '가까스로 해내다(managed)'가 적절합니다.",
+    "speedStandardSeconds": 28
+  },
+  {
+    "id": "lt-4-39",
+    "level": 4,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "조동사/접속사",
+    "type": "standard",
+    "question": "Level 4 실전 문항 39: 다음 문장의 빈칸에 들어갈 가장 알맞은 표현은?\n\"Although he was exhausted, he _______ to finish the project on time.\"",
+    "options": [
+      "managed",
+      "failed",
+      "refused",
+      "stopped"
+    ],
+    "answer": 0,
+    "explanation": "비록 피곤했지만 제시간에 끝마쳤다는 양보의 접속사(Although) 흐름이므로 '가까스로 해내다(managed)'가 적절합니다.",
+    "speedStandardSeconds": 28
+  },
+  {
+    "id": "lt-4-40",
+    "level": 4,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "복합 구문",
+    "type": "standard",
+    "question": "Level 4 실전 문항 40: 다음 문장의 빈칸에 들어갈 가장 알맞은 표현은?\n\"Although he was exhausted, he _______ to finish the project on time.\"",
+    "options": [
+      "managed",
+      "failed",
+      "refused",
+      "stopped"
+    ],
+    "answer": 0,
+    "explanation": "비록 피곤했지만 제시간에 끝마쳤다는 양보의 접속사(Although) 흐름이므로 '가까스로 해내다(managed)'가 적절합니다.",
+    "speedStandardSeconds": 28
+  },
+  {
+    "id": "lt-5-21",
+    "level": 5,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "분사구문",
+    "type": "underline",
+    "question": "다음 밑줄 친 분사구문 중 어법상 어색한 것은?",
+    "options": [
+      "① Arriving at the station, I called my mother.",
+      "② Knowing not what to do, he asked for advice.",
+      "③ Seeing the police, the thief ran away.",
+      "④ Feeling tired, she went to bed early."
+    ],
+    "answer": 1,
+    "explanation": "분사구문의 부정은 분사 앞에 not을 두어야 하므로 'Not knowing what to do'가 올바릅니다.",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-5-22",
+    "level": 5,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "어순배열",
+    "type": "scramble",
+    "question": "주어진 단어들을 배열하여 영작을 완성하시오: [matter, No, happens, what, I, support, will, you]",
+    "options": [
+      "No matter what happens, I will support you.",
+      "What happens no matter, I will support you.",
+      "I will support you no what happens matter.",
+      "No what happens matter, I will support you."
+    ],
+    "answer": 0,
+    "explanation": "'No matter what + 동사(무슨 일이 일어나든)' 양보절 구문입니다.",
+    "speedStandardSeconds": 30,
+    "scrambleWords": [
+      "No",
+      "matter",
+      "what",
+      "happens,",
+      "I",
+      "will",
+      "support",
+      "you."
+    ]
+  },
+  {
+    "id": "lt-5-23",
+    "level": 5,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 독해 유형",
+    "type": "standard",
+    "question": "Level 5 심화 문항 23: 다음 문맥상 빈칸에 알맞은 단어는?\n\"The government launched a campaign to _______ public awareness about energy conservation.\"",
+    "options": [
+      "raise",
+      "rise",
+      "arise",
+      "decline"
+    ],
+    "answer": 0,
+    "explanation": "'인식을 높이다/고취하다'라는 타동사 목적어 구조에는 raise가 적절합니다 (raise awareness).",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-5-24",
+    "level": 5,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "관계부사/가정법",
+    "type": "standard",
+    "question": "Level 5 심화 문항 24: 다음 문맥상 빈칸에 알맞은 단어는?\n\"The government launched a campaign to _______ public awareness about energy conservation.\"",
+    "options": [
+      "raise",
+      "rise",
+      "arise",
+      "decline"
+    ],
+    "answer": 0,
+    "explanation": "'인식을 높이다/고취하다'라는 타동사 목적어 구조에는 raise가 적절합니다 (raise awareness).",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-5-25",
+    "level": 5,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 독해 유형",
+    "type": "standard",
+    "question": "Level 5 심화 문항 25: 다음 문맥상 빈칸에 알맞은 단어는?\n\"The government launched a campaign to _______ public awareness about energy conservation.\"",
+    "options": [
+      "raise",
+      "rise",
+      "arise",
+      "decline"
+    ],
+    "answer": 0,
+    "explanation": "'인식을 높이다/고취하다'라는 타동사 목적어 구조에는 raise가 적절합니다 (raise awareness).",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-5-26",
+    "level": 5,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 독해 유형",
+    "type": "standard",
+    "question": "Level 5 심화 문항 26: 다음 문맥상 빈칸에 알맞은 단어는?\n\"The government launched a campaign to _______ public awareness about energy conservation.\"",
+    "options": [
+      "raise",
+      "rise",
+      "arise",
+      "decline"
+    ],
+    "answer": 0,
+    "explanation": "'인식을 높이다/고취하다'라는 타동사 목적어 구조에는 raise가 적절합니다 (raise awareness).",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-5-27",
+    "level": 5,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "관계부사/가정법",
+    "type": "standard",
+    "question": "Level 5 심화 문항 27: 다음 문맥상 빈칸에 알맞은 단어는?\n\"The government launched a campaign to _______ public awareness about energy conservation.\"",
+    "options": [
+      "raise",
+      "rise",
+      "arise",
+      "decline"
+    ],
+    "answer": 0,
+    "explanation": "'인식을 높이다/고취하다'라는 타동사 목적어 구조에는 raise가 적절합니다 (raise awareness).",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-5-28",
+    "level": 5,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 독해 유형",
+    "type": "standard",
+    "question": "Level 5 심화 문항 28: 다음 문맥상 빈칸에 알맞은 단어는?\n\"The government launched a campaign to _______ public awareness about energy conservation.\"",
+    "options": [
+      "raise",
+      "rise",
+      "arise",
+      "decline"
+    ],
+    "answer": 0,
+    "explanation": "'인식을 높이다/고취하다'라는 타동사 목적어 구조에는 raise가 적절합니다 (raise awareness).",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-5-29",
+    "level": 5,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 독해 유형",
+    "type": "standard",
+    "question": "Level 5 심화 문항 29: 다음 문맥상 빈칸에 알맞은 단어는?\n\"The government launched a campaign to _______ public awareness about energy conservation.\"",
+    "options": [
+      "raise",
+      "rise",
+      "arise",
+      "decline"
+    ],
+    "answer": 0,
+    "explanation": "'인식을 높이다/고취하다'라는 타동사 목적어 구조에는 raise가 적절합니다 (raise awareness).",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-5-30",
+    "level": 5,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "관계부사/가정법",
+    "type": "standard",
+    "question": "Level 5 심화 문항 30: 다음 문맥상 빈칸에 알맞은 단어는?\n\"The government launched a campaign to _______ public awareness about energy conservation.\"",
+    "options": [
+      "raise",
+      "rise",
+      "arise",
+      "decline"
+    ],
+    "answer": 0,
+    "explanation": "'인식을 높이다/고취하다'라는 타동사 목적어 구조에는 raise가 적절합니다 (raise awareness).",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-5-31",
+    "level": 5,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 독해 유형",
+    "type": "standard",
+    "question": "Level 5 심화 문항 31: 다음 문맥상 빈칸에 알맞은 단어는?\n\"The government launched a campaign to _______ public awareness about energy conservation.\"",
+    "options": [
+      "raise",
+      "rise",
+      "arise",
+      "decline"
+    ],
+    "answer": 0,
+    "explanation": "'인식을 높이다/고취하다'라는 타동사 목적어 구조에는 raise가 적절합니다 (raise awareness).",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-5-32",
+    "level": 5,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 독해 유형",
+    "type": "standard",
+    "question": "Level 5 심화 문항 32: 다음 문맥상 빈칸에 알맞은 단어는?\n\"The government launched a campaign to _______ public awareness about energy conservation.\"",
+    "options": [
+      "raise",
+      "rise",
+      "arise",
+      "decline"
+    ],
+    "answer": 0,
+    "explanation": "'인식을 높이다/고취하다'라는 타동사 목적어 구조에는 raise가 적절합니다 (raise awareness).",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-5-33",
+    "level": 5,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "관계부사/가정법",
+    "type": "standard",
+    "question": "Level 5 심화 문항 33: 다음 문맥상 빈칸에 알맞은 단어는?\n\"The government launched a campaign to _______ public awareness about energy conservation.\"",
+    "options": [
+      "raise",
+      "rise",
+      "arise",
+      "decline"
+    ],
+    "answer": 0,
+    "explanation": "'인식을 높이다/고취하다'라는 타동사 목적어 구조에는 raise가 적절합니다 (raise awareness).",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-5-34",
+    "level": 5,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 독해 유형",
+    "type": "standard",
+    "question": "Level 5 심화 문항 34: 다음 문맥상 빈칸에 알맞은 단어는?\n\"The government launched a campaign to _______ public awareness about energy conservation.\"",
+    "options": [
+      "raise",
+      "rise",
+      "arise",
+      "decline"
+    ],
+    "answer": 0,
+    "explanation": "'인식을 높이다/고취하다'라는 타동사 목적어 구조에는 raise가 적절합니다 (raise awareness).",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-5-35",
+    "level": 5,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 독해 유형",
+    "type": "standard",
+    "question": "Level 5 심화 문항 35: 다음 문맥상 빈칸에 알맞은 단어는?\n\"The government launched a campaign to _______ public awareness about energy conservation.\"",
+    "options": [
+      "raise",
+      "rise",
+      "arise",
+      "decline"
+    ],
+    "answer": 0,
+    "explanation": "'인식을 높이다/고취하다'라는 타동사 목적어 구조에는 raise가 적절합니다 (raise awareness).",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-5-36",
+    "level": 5,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "관계부사/가정법",
+    "type": "standard",
+    "question": "Level 5 심화 문항 36: 다음 문맥상 빈칸에 알맞은 단어는?\n\"The government launched a campaign to _______ public awareness about energy conservation.\"",
+    "options": [
+      "raise",
+      "rise",
+      "arise",
+      "decline"
+    ],
+    "answer": 0,
+    "explanation": "'인식을 높이다/고취하다'라는 타동사 목적어 구조에는 raise가 적절합니다 (raise awareness).",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-5-37",
+    "level": 5,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 독해 유형",
+    "type": "standard",
+    "question": "Level 5 심화 문항 37: 다음 문맥상 빈칸에 알맞은 단어는?\n\"The government launched a campaign to _______ public awareness about energy conservation.\"",
+    "options": [
+      "raise",
+      "rise",
+      "arise",
+      "decline"
+    ],
+    "answer": 0,
+    "explanation": "'인식을 높이다/고취하다'라는 타동사 목적어 구조에는 raise가 적절합니다 (raise awareness).",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-5-38",
+    "level": 5,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 독해 유형",
+    "type": "standard",
+    "question": "Level 5 심화 문항 38: 다음 문맥상 빈칸에 알맞은 단어는?\n\"The government launched a campaign to _______ public awareness about energy conservation.\"",
+    "options": [
+      "raise",
+      "rise",
+      "arise",
+      "decline"
+    ],
+    "answer": 0,
+    "explanation": "'인식을 높이다/고취하다'라는 타동사 목적어 구조에는 raise가 적절합니다 (raise awareness).",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-5-39",
+    "level": 5,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "관계부사/가정법",
+    "type": "standard",
+    "question": "Level 5 심화 문항 39: 다음 문맥상 빈칸에 알맞은 단어는?\n\"The government launched a campaign to _______ public awareness about energy conservation.\"",
+    "options": [
+      "raise",
+      "rise",
+      "arise",
+      "decline"
+    ],
+    "answer": 0,
+    "explanation": "'인식을 높이다/고취하다'라는 타동사 목적어 구조에는 raise가 적절합니다 (raise awareness).",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-5-40",
+    "level": 5,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 독해 유형",
+    "type": "standard",
+    "question": "Level 5 심화 문항 40: 다음 문맥상 빈칸에 알맞은 단어는?\n\"The government launched a campaign to _______ public awareness about energy conservation.\"",
+    "options": [
+      "raise",
+      "rise",
+      "arise",
+      "decline"
+    ],
+    "answer": 0,
+    "explanation": "'인식을 높이다/고취하다'라는 타동사 목적어 구조에는 raise가 적절합니다 (raise awareness).",
+    "speedStandardSeconds": 30
+  },
+  {
+    "id": "lt-6-21",
+    "level": 6,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "수능 어법",
+    "type": "underline",
+    "question": "Level 6 수능 입문 문항 21: 다음 밑줄 친 부분 중 어법상 틀린 것은?",
+    "options": [
+      "① which",
+      "② where",
+      "③ having been",
+      "④ to overcome"
+    ],
+    "answer": 0,
+    "explanation": "선행사가 장소이며 뒤에 완전한 문장이 이어지므로 관계대명사 which가 아니라 관계부사 where가 와야 합니다.",
+    "speedStandardSeconds": 35,
+    "passage": "In an era marked by rapid technological disruptions, traditional educational institutions must adapt to new realities where learners acquire knowledge through digital platforms."
+  },
+  {
+    "id": "lt-6-22",
+    "level": 6,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "대의파악/요지",
+    "type": "standard",
+    "question": "Level 6 수능 입문 문항 22: 다음 밑줄 친 부분 중 어법상 틀린 것은?",
+    "options": [
+      "① which",
+      "② where",
+      "③ having been",
+      "④ to overcome"
+    ],
+    "answer": 0,
+    "explanation": "선행사가 장소이며 뒤에 완전한 문장이 이어지므로 관계대명사 which가 아니라 관계부사 where가 와야 합니다.",
+    "speedStandardSeconds": 35,
+    "passage": "In an era marked by rapid technological disruptions, traditional educational institutions must adapt to new realities where learners acquire knowledge through digital platforms."
+  },
+  {
+    "id": "lt-6-23",
+    "level": 6,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "수능 어법",
+    "type": "standard",
+    "question": "Level 6 수능 입문 문항 23: 다음 밑줄 친 부분 중 어법상 틀린 것은?",
+    "options": [
+      "① which",
+      "② where",
+      "③ having been",
+      "④ to overcome"
+    ],
+    "answer": 0,
+    "explanation": "선행사가 장소이며 뒤에 완전한 문장이 이어지므로 관계대명사 which가 아니라 관계부사 where가 와야 합니다.",
+    "speedStandardSeconds": 35,
+    "passage": "In an era marked by rapid technological disruptions, traditional educational institutions must adapt to new realities where learners acquire knowledge through digital platforms."
+  },
+  {
+    "id": "lt-6-24",
+    "level": 6,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "대의파악/요지",
+    "type": "underline",
+    "question": "Level 6 수능 입문 문항 24: 다음 밑줄 친 부분 중 어법상 틀린 것은?",
+    "options": [
+      "① which",
+      "② where",
+      "③ having been",
+      "④ to overcome"
+    ],
+    "answer": 0,
+    "explanation": "선행사가 장소이며 뒤에 완전한 문장이 이어지므로 관계대명사 which가 아니라 관계부사 where가 와야 합니다.",
+    "speedStandardSeconds": 35,
+    "passage": "In an era marked by rapid technological disruptions, traditional educational institutions must adapt to new realities where learners acquire knowledge through digital platforms."
+  },
+  {
+    "id": "lt-6-25",
+    "level": 6,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "수능 어법",
+    "type": "standard",
+    "question": "Level 6 수능 입문 문항 25: 다음 밑줄 친 부분 중 어법상 틀린 것은?",
+    "options": [
+      "① which",
+      "② where",
+      "③ having been",
+      "④ to overcome"
+    ],
+    "answer": 0,
+    "explanation": "선행사가 장소이며 뒤에 완전한 문장이 이어지므로 관계대명사 which가 아니라 관계부사 where가 와야 합니다.",
+    "speedStandardSeconds": 35,
+    "passage": "In an era marked by rapid technological disruptions, traditional educational institutions must adapt to new realities where learners acquire knowledge through digital platforms."
+  },
+  {
+    "id": "lt-6-26",
+    "level": 6,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "대의파악/요지",
+    "type": "standard",
+    "question": "Level 6 수능 입문 문항 26: 다음 밑줄 친 부분 중 어법상 틀린 것은?",
+    "options": [
+      "① which",
+      "② where",
+      "③ having been",
+      "④ to overcome"
+    ],
+    "answer": 0,
+    "explanation": "선행사가 장소이며 뒤에 완전한 문장이 이어지므로 관계대명사 which가 아니라 관계부사 where가 와야 합니다.",
+    "speedStandardSeconds": 35,
+    "passage": "In an era marked by rapid technological disruptions, traditional educational institutions must adapt to new realities where learners acquire knowledge through digital platforms."
+  },
+  {
+    "id": "lt-6-27",
+    "level": 6,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "수능 어법",
+    "type": "underline",
+    "question": "Level 6 수능 입문 문항 27: 다음 밑줄 친 부분 중 어법상 틀린 것은?",
+    "options": [
+      "① which",
+      "② where",
+      "③ having been",
+      "④ to overcome"
+    ],
+    "answer": 0,
+    "explanation": "선행사가 장소이며 뒤에 완전한 문장이 이어지므로 관계대명사 which가 아니라 관계부사 where가 와야 합니다.",
+    "speedStandardSeconds": 35,
+    "passage": "In an era marked by rapid technological disruptions, traditional educational institutions must adapt to new realities where learners acquire knowledge through digital platforms."
+  },
+  {
+    "id": "lt-6-28",
+    "level": 6,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "대의파악/요지",
+    "type": "standard",
+    "question": "Level 6 수능 입문 문항 28: 다음 밑줄 친 부분 중 어법상 틀린 것은?",
+    "options": [
+      "① which",
+      "② where",
+      "③ having been",
+      "④ to overcome"
+    ],
+    "answer": 0,
+    "explanation": "선행사가 장소이며 뒤에 완전한 문장이 이어지므로 관계대명사 which가 아니라 관계부사 where가 와야 합니다.",
+    "speedStandardSeconds": 35,
+    "passage": "In an era marked by rapid technological disruptions, traditional educational institutions must adapt to new realities where learners acquire knowledge through digital platforms."
+  },
+  {
+    "id": "lt-6-29",
+    "level": 6,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "수능 어법",
+    "type": "standard",
+    "question": "Level 6 수능 입문 문항 29: 다음 밑줄 친 부분 중 어법상 틀린 것은?",
+    "options": [
+      "① which",
+      "② where",
+      "③ having been",
+      "④ to overcome"
+    ],
+    "answer": 0,
+    "explanation": "선행사가 장소이며 뒤에 완전한 문장이 이어지므로 관계대명사 which가 아니라 관계부사 where가 와야 합니다.",
+    "speedStandardSeconds": 35,
+    "passage": "In an era marked by rapid technological disruptions, traditional educational institutions must adapt to new realities where learners acquire knowledge through digital platforms."
+  },
+  {
+    "id": "lt-6-30",
+    "level": 6,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "대의파악/요지",
+    "type": "underline",
+    "question": "Level 6 수능 입문 문항 30: 다음 밑줄 친 부분 중 어법상 틀린 것은?",
+    "options": [
+      "① which",
+      "② where",
+      "③ having been",
+      "④ to overcome"
+    ],
+    "answer": 0,
+    "explanation": "선행사가 장소이며 뒤에 완전한 문장이 이어지므로 관계대명사 which가 아니라 관계부사 where가 와야 합니다.",
+    "speedStandardSeconds": 35,
+    "passage": "In an era marked by rapid technological disruptions, traditional educational institutions must adapt to new realities where learners acquire knowledge through digital platforms."
+  },
+  {
+    "id": "lt-6-31",
+    "level": 6,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "수능 어법",
+    "type": "standard",
+    "question": "Level 6 수능 입문 문항 31: 다음 밑줄 친 부분 중 어법상 틀린 것은?",
+    "options": [
+      "① which",
+      "② where",
+      "③ having been",
+      "④ to overcome"
+    ],
+    "answer": 0,
+    "explanation": "선행사가 장소이며 뒤에 완전한 문장이 이어지므로 관계대명사 which가 아니라 관계부사 where가 와야 합니다.",
+    "speedStandardSeconds": 35,
+    "passage": "In an era marked by rapid technological disruptions, traditional educational institutions must adapt to new realities where learners acquire knowledge through digital platforms."
+  },
+  {
+    "id": "lt-6-32",
+    "level": 6,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "대의파악/요지",
+    "type": "standard",
+    "question": "Level 6 수능 입문 문항 32: 다음 밑줄 친 부분 중 어법상 틀린 것은?",
+    "options": [
+      "① which",
+      "② where",
+      "③ having been",
+      "④ to overcome"
+    ],
+    "answer": 0,
+    "explanation": "선행사가 장소이며 뒤에 완전한 문장이 이어지므로 관계대명사 which가 아니라 관계부사 where가 와야 합니다.",
+    "speedStandardSeconds": 35,
+    "passage": "In an era marked by rapid technological disruptions, traditional educational institutions must adapt to new realities where learners acquire knowledge through digital platforms."
+  },
+  {
+    "id": "lt-6-33",
+    "level": 6,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "수능 어법",
+    "type": "underline",
+    "question": "Level 6 수능 입문 문항 33: 다음 밑줄 친 부분 중 어법상 틀린 것은?",
+    "options": [
+      "① which",
+      "② where",
+      "③ having been",
+      "④ to overcome"
+    ],
+    "answer": 0,
+    "explanation": "선행사가 장소이며 뒤에 완전한 문장이 이어지므로 관계대명사 which가 아니라 관계부사 where가 와야 합니다.",
+    "speedStandardSeconds": 35,
+    "passage": "In an era marked by rapid technological disruptions, traditional educational institutions must adapt to new realities where learners acquire knowledge through digital platforms."
+  },
+  {
+    "id": "lt-6-34",
+    "level": 6,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "대의파악/요지",
+    "type": "standard",
+    "question": "Level 6 수능 입문 문항 34: 다음 밑줄 친 부분 중 어법상 틀린 것은?",
+    "options": [
+      "① which",
+      "② where",
+      "③ having been",
+      "④ to overcome"
+    ],
+    "answer": 0,
+    "explanation": "선행사가 장소이며 뒤에 완전한 문장이 이어지므로 관계대명사 which가 아니라 관계부사 where가 와야 합니다.",
+    "speedStandardSeconds": 35,
+    "passage": "In an era marked by rapid technological disruptions, traditional educational institutions must adapt to new realities where learners acquire knowledge through digital platforms."
+  },
+  {
+    "id": "lt-6-35",
+    "level": 6,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "수능 어법",
+    "type": "standard",
+    "question": "Level 6 수능 입문 문항 35: 다음 밑줄 친 부분 중 어법상 틀린 것은?",
+    "options": [
+      "① which",
+      "② where",
+      "③ having been",
+      "④ to overcome"
+    ],
+    "answer": 0,
+    "explanation": "선행사가 장소이며 뒤에 완전한 문장이 이어지므로 관계대명사 which가 아니라 관계부사 where가 와야 합니다.",
+    "speedStandardSeconds": 35,
+    "passage": "In an era marked by rapid technological disruptions, traditional educational institutions must adapt to new realities where learners acquire knowledge through digital platforms."
+  },
+  {
+    "id": "lt-6-36",
+    "level": 6,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "대의파악/요지",
+    "type": "underline",
+    "question": "Level 6 수능 입문 문항 36: 다음 밑줄 친 부분 중 어법상 틀린 것은?",
+    "options": [
+      "① which",
+      "② where",
+      "③ having been",
+      "④ to overcome"
+    ],
+    "answer": 0,
+    "explanation": "선행사가 장소이며 뒤에 완전한 문장이 이어지므로 관계대명사 which가 아니라 관계부사 where가 와야 합니다.",
+    "speedStandardSeconds": 35,
+    "passage": "In an era marked by rapid technological disruptions, traditional educational institutions must adapt to new realities where learners acquire knowledge through digital platforms."
+  },
+  {
+    "id": "lt-6-37",
+    "level": 6,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "수능 어법",
+    "type": "standard",
+    "question": "Level 6 수능 입문 문항 37: 다음 밑줄 친 부분 중 어법상 틀린 것은?",
+    "options": [
+      "① which",
+      "② where",
+      "③ having been",
+      "④ to overcome"
+    ],
+    "answer": 0,
+    "explanation": "선행사가 장소이며 뒤에 완전한 문장이 이어지므로 관계대명사 which가 아니라 관계부사 where가 와야 합니다.",
+    "speedStandardSeconds": 35,
+    "passage": "In an era marked by rapid technological disruptions, traditional educational institutions must adapt to new realities where learners acquire knowledge through digital platforms."
+  },
+  {
+    "id": "lt-6-38",
+    "level": 6,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "대의파악/요지",
+    "type": "standard",
+    "question": "Level 6 수능 입문 문항 38: 다음 밑줄 친 부분 중 어법상 틀린 것은?",
+    "options": [
+      "① which",
+      "② where",
+      "③ having been",
+      "④ to overcome"
+    ],
+    "answer": 0,
+    "explanation": "선행사가 장소이며 뒤에 완전한 문장이 이어지므로 관계대명사 which가 아니라 관계부사 where가 와야 합니다.",
+    "speedStandardSeconds": 35,
+    "passage": "In an era marked by rapid technological disruptions, traditional educational institutions must adapt to new realities where learners acquire knowledge through digital platforms."
+  },
+  {
+    "id": "lt-6-39",
+    "level": 6,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "수능 어법",
+    "type": "underline",
+    "question": "Level 6 수능 입문 문항 39: 다음 밑줄 친 부분 중 어법상 틀린 것은?",
+    "options": [
+      "① which",
+      "② where",
+      "③ having been",
+      "④ to overcome"
+    ],
+    "answer": 0,
+    "explanation": "선행사가 장소이며 뒤에 완전한 문장이 이어지므로 관계대명사 which가 아니라 관계부사 where가 와야 합니다.",
+    "speedStandardSeconds": 35,
+    "passage": "In an era marked by rapid technological disruptions, traditional educational institutions must adapt to new realities where learners acquire knowledge through digital platforms."
+  },
+  {
+    "id": "lt-6-40",
+    "level": 6,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "대의파악/요지",
+    "type": "standard",
+    "question": "Level 6 수능 입문 문항 40: 다음 밑줄 친 부분 중 어법상 틀린 것은?",
+    "options": [
+      "① which",
+      "② where",
+      "③ having been",
+      "④ to overcome"
+    ],
+    "answer": 0,
+    "explanation": "선행사가 장소이며 뒤에 완전한 문장이 이어지므로 관계대명사 which가 아니라 관계부사 where가 와야 합니다.",
+    "speedStandardSeconds": 35,
+    "passage": "In an era marked by rapid technological disruptions, traditional educational institutions must adapt to new realities where learners acquire knowledge through digital platforms."
+  },
+  {
+    "id": "lt-7-21",
+    "level": 7,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 빈칸 킬러",
+    "type": "cloze",
+    "question": "Level 7 실전 문항 21: 다음 글의 빈칸에 들어갈 말로 가장 적절한 것은?",
+    "options": [
+      "cognitive bias",
+      "emotional resilience",
+      "sensory perception",
+      "linguistic diversity"
+    ],
+    "answer": 0,
+    "explanation": "인간의 판단이 확증 편향과 같은 인지적 오류에 의해 왜곡된다는 맥락이므로 'cognitive bias(인지 편향)'가 적절합니다.",
+    "speedStandardSeconds": 40,
+    "passage": "Human decision-making is rarely purely rational. When presented with objective data, individuals tend to filter evidence through preexisting beliefs, creating a profound _______ that reinforces initial preconceptions."
+  },
+  {
+    "id": "lt-7-22",
+    "level": 7,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 빈칸 킬러",
+    "type": "cloze",
+    "question": "Level 7 실전 문항 22: 다음 글의 빈칸에 들어갈 말로 가장 적절한 것은?",
+    "options": [
+      "cognitive bias",
+      "emotional resilience",
+      "sensory perception",
+      "linguistic diversity"
+    ],
+    "answer": 0,
+    "explanation": "인간의 판단이 확증 편향과 같은 인지적 오류에 의해 왜곡된다는 맥락이므로 'cognitive bias(인지 편향)'가 적절합니다.",
+    "speedStandardSeconds": 40,
+    "passage": "Human decision-making is rarely purely rational. When presented with objective data, individuals tend to filter evidence through preexisting beliefs, creating a profound _______ that reinforces initial preconceptions."
+  },
+  {
+    "id": "lt-7-23",
+    "level": 7,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 빈칸 킬러",
+    "type": "cloze",
+    "question": "Level 7 실전 문항 23: 다음 글의 빈칸에 들어갈 말로 가장 적절한 것은?",
+    "options": [
+      "cognitive bias",
+      "emotional resilience",
+      "sensory perception",
+      "linguistic diversity"
+    ],
+    "answer": 0,
+    "explanation": "인간의 판단이 확증 편향과 같은 인지적 오류에 의해 왜곡된다는 맥락이므로 'cognitive bias(인지 편향)'가 적절합니다.",
+    "speedStandardSeconds": 40,
+    "passage": "Human decision-making is rarely purely rational. When presented with objective data, individuals tend to filter evidence through preexisting beliefs, creating a profound _______ that reinforces initial preconceptions."
+  },
+  {
+    "id": "lt-7-24",
+    "level": 7,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 빈칸 킬러",
+    "type": "cloze",
+    "question": "Level 7 실전 문항 24: 다음 글의 빈칸에 들어갈 말로 가장 적절한 것은?",
+    "options": [
+      "cognitive bias",
+      "emotional resilience",
+      "sensory perception",
+      "linguistic diversity"
+    ],
+    "answer": 0,
+    "explanation": "인간의 판단이 확증 편향과 같은 인지적 오류에 의해 왜곡된다는 맥락이므로 'cognitive bias(인지 편향)'가 적절합니다.",
+    "speedStandardSeconds": 40,
+    "passage": "Human decision-making is rarely purely rational. When presented with objective data, individuals tend to filter evidence through preexisting beliefs, creating a profound _______ that reinforces initial preconceptions."
+  },
+  {
+    "id": "lt-7-25",
+    "level": 7,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 빈칸 킬러",
+    "type": "cloze",
+    "question": "Level 7 실전 문항 25: 다음 글의 빈칸에 들어갈 말로 가장 적절한 것은?",
+    "options": [
+      "cognitive bias",
+      "emotional resilience",
+      "sensory perception",
+      "linguistic diversity"
+    ],
+    "answer": 0,
+    "explanation": "인간의 판단이 확증 편향과 같은 인지적 오류에 의해 왜곡된다는 맥락이므로 'cognitive bias(인지 편향)'가 적절합니다.",
+    "speedStandardSeconds": 40,
+    "passage": "Human decision-making is rarely purely rational. When presented with objective data, individuals tend to filter evidence through preexisting beliefs, creating a profound _______ that reinforces initial preconceptions."
+  },
+  {
+    "id": "lt-7-26",
+    "level": 7,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 빈칸 킬러",
+    "type": "cloze",
+    "question": "Level 7 실전 문항 26: 다음 글의 빈칸에 들어갈 말로 가장 적절한 것은?",
+    "options": [
+      "cognitive bias",
+      "emotional resilience",
+      "sensory perception",
+      "linguistic diversity"
+    ],
+    "answer": 0,
+    "explanation": "인간의 판단이 확증 편향과 같은 인지적 오류에 의해 왜곡된다는 맥락이므로 'cognitive bias(인지 편향)'가 적절합니다.",
+    "speedStandardSeconds": 40,
+    "passage": "Human decision-making is rarely purely rational. When presented with objective data, individuals tend to filter evidence through preexisting beliefs, creating a profound _______ that reinforces initial preconceptions."
+  },
+  {
+    "id": "lt-7-27",
+    "level": 7,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 빈칸 킬러",
+    "type": "cloze",
+    "question": "Level 7 실전 문항 27: 다음 글의 빈칸에 들어갈 말로 가장 적절한 것은?",
+    "options": [
+      "cognitive bias",
+      "emotional resilience",
+      "sensory perception",
+      "linguistic diversity"
+    ],
+    "answer": 0,
+    "explanation": "인간의 판단이 확증 편향과 같은 인지적 오류에 의해 왜곡된다는 맥락이므로 'cognitive bias(인지 편향)'가 적절합니다.",
+    "speedStandardSeconds": 40,
+    "passage": "Human decision-making is rarely purely rational. When presented with objective data, individuals tend to filter evidence through preexisting beliefs, creating a profound _______ that reinforces initial preconceptions."
+  },
+  {
+    "id": "lt-7-28",
+    "level": 7,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 빈칸 킬러",
+    "type": "cloze",
+    "question": "Level 7 실전 문항 28: 다음 글의 빈칸에 들어갈 말로 가장 적절한 것은?",
+    "options": [
+      "cognitive bias",
+      "emotional resilience",
+      "sensory perception",
+      "linguistic diversity"
+    ],
+    "answer": 0,
+    "explanation": "인간의 판단이 확증 편향과 같은 인지적 오류에 의해 왜곡된다는 맥락이므로 'cognitive bias(인지 편향)'가 적절합니다.",
+    "speedStandardSeconds": 40,
+    "passage": "Human decision-making is rarely purely rational. When presented with objective data, individuals tend to filter evidence through preexisting beliefs, creating a profound _______ that reinforces initial preconceptions."
+  },
+  {
+    "id": "lt-7-29",
+    "level": 7,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 빈칸 킬러",
+    "type": "cloze",
+    "question": "Level 7 실전 문항 29: 다음 글의 빈칸에 들어갈 말로 가장 적절한 것은?",
+    "options": [
+      "cognitive bias",
+      "emotional resilience",
+      "sensory perception",
+      "linguistic diversity"
+    ],
+    "answer": 0,
+    "explanation": "인간의 판단이 확증 편향과 같은 인지적 오류에 의해 왜곡된다는 맥락이므로 'cognitive bias(인지 편향)'가 적절합니다.",
+    "speedStandardSeconds": 40,
+    "passage": "Human decision-making is rarely purely rational. When presented with objective data, individuals tend to filter evidence through preexisting beliefs, creating a profound _______ that reinforces initial preconceptions."
+  },
+  {
+    "id": "lt-7-30",
+    "level": 7,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 빈칸 킬러",
+    "type": "cloze",
+    "question": "Level 7 실전 문항 30: 다음 글의 빈칸에 들어갈 말로 가장 적절한 것은?",
+    "options": [
+      "cognitive bias",
+      "emotional resilience",
+      "sensory perception",
+      "linguistic diversity"
+    ],
+    "answer": 0,
+    "explanation": "인간의 판단이 확증 편향과 같은 인지적 오류에 의해 왜곡된다는 맥락이므로 'cognitive bias(인지 편향)'가 적절합니다.",
+    "speedStandardSeconds": 40,
+    "passage": "Human decision-making is rarely purely rational. When presented with objective data, individuals tend to filter evidence through preexisting beliefs, creating a profound _______ that reinforces initial preconceptions."
+  },
+  {
+    "id": "lt-7-31",
+    "level": 7,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 빈칸 킬러",
+    "type": "cloze",
+    "question": "Level 7 실전 문항 31: 다음 글의 빈칸에 들어갈 말로 가장 적절한 것은?",
+    "options": [
+      "cognitive bias",
+      "emotional resilience",
+      "sensory perception",
+      "linguistic diversity"
+    ],
+    "answer": 0,
+    "explanation": "인간의 판단이 확증 편향과 같은 인지적 오류에 의해 왜곡된다는 맥락이므로 'cognitive bias(인지 편향)'가 적절합니다.",
+    "speedStandardSeconds": 40,
+    "passage": "Human decision-making is rarely purely rational. When presented with objective data, individuals tend to filter evidence through preexisting beliefs, creating a profound _______ that reinforces initial preconceptions."
+  },
+  {
+    "id": "lt-7-32",
+    "level": 7,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 빈칸 킬러",
+    "type": "cloze",
+    "question": "Level 7 실전 문항 32: 다음 글의 빈칸에 들어갈 말로 가장 적절한 것은?",
+    "options": [
+      "cognitive bias",
+      "emotional resilience",
+      "sensory perception",
+      "linguistic diversity"
+    ],
+    "answer": 0,
+    "explanation": "인간의 판단이 확증 편향과 같은 인지적 오류에 의해 왜곡된다는 맥락이므로 'cognitive bias(인지 편향)'가 적절합니다.",
+    "speedStandardSeconds": 40,
+    "passage": "Human decision-making is rarely purely rational. When presented with objective data, individuals tend to filter evidence through preexisting beliefs, creating a profound _______ that reinforces initial preconceptions."
+  },
+  {
+    "id": "lt-7-33",
+    "level": 7,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 빈칸 킬러",
+    "type": "cloze",
+    "question": "Level 7 실전 문항 33: 다음 글의 빈칸에 들어갈 말로 가장 적절한 것은?",
+    "options": [
+      "cognitive bias",
+      "emotional resilience",
+      "sensory perception",
+      "linguistic diversity"
+    ],
+    "answer": 0,
+    "explanation": "인간의 판단이 확증 편향과 같은 인지적 오류에 의해 왜곡된다는 맥락이므로 'cognitive bias(인지 편향)'가 적절합니다.",
+    "speedStandardSeconds": 40,
+    "passage": "Human decision-making is rarely purely rational. When presented with objective data, individuals tend to filter evidence through preexisting beliefs, creating a profound _______ that reinforces initial preconceptions."
+  },
+  {
+    "id": "lt-7-34",
+    "level": 7,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 빈칸 킬러",
+    "type": "cloze",
+    "question": "Level 7 실전 문항 34: 다음 글의 빈칸에 들어갈 말로 가장 적절한 것은?",
+    "options": [
+      "cognitive bias",
+      "emotional resilience",
+      "sensory perception",
+      "linguistic diversity"
+    ],
+    "answer": 0,
+    "explanation": "인간의 판단이 확증 편향과 같은 인지적 오류에 의해 왜곡된다는 맥락이므로 'cognitive bias(인지 편향)'가 적절합니다.",
+    "speedStandardSeconds": 40,
+    "passage": "Human decision-making is rarely purely rational. When presented with objective data, individuals tend to filter evidence through preexisting beliefs, creating a profound _______ that reinforces initial preconceptions."
+  },
+  {
+    "id": "lt-7-35",
+    "level": 7,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 빈칸 킬러",
+    "type": "cloze",
+    "question": "Level 7 실전 문항 35: 다음 글의 빈칸에 들어갈 말로 가장 적절한 것은?",
+    "options": [
+      "cognitive bias",
+      "emotional resilience",
+      "sensory perception",
+      "linguistic diversity"
+    ],
+    "answer": 0,
+    "explanation": "인간의 판단이 확증 편향과 같은 인지적 오류에 의해 왜곡된다는 맥락이므로 'cognitive bias(인지 편향)'가 적절합니다.",
+    "speedStandardSeconds": 40,
+    "passage": "Human decision-making is rarely purely rational. When presented with objective data, individuals tend to filter evidence through preexisting beliefs, creating a profound _______ that reinforces initial preconceptions."
+  },
+  {
+    "id": "lt-7-36",
+    "level": 7,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 빈칸 킬러",
+    "type": "cloze",
+    "question": "Level 7 실전 문항 36: 다음 글의 빈칸에 들어갈 말로 가장 적절한 것은?",
+    "options": [
+      "cognitive bias",
+      "emotional resilience",
+      "sensory perception",
+      "linguistic diversity"
+    ],
+    "answer": 0,
+    "explanation": "인간의 판단이 확증 편향과 같은 인지적 오류에 의해 왜곡된다는 맥락이므로 'cognitive bias(인지 편향)'가 적절합니다.",
+    "speedStandardSeconds": 40,
+    "passage": "Human decision-making is rarely purely rational. When presented with objective data, individuals tend to filter evidence through preexisting beliefs, creating a profound _______ that reinforces initial preconceptions."
+  },
+  {
+    "id": "lt-7-37",
+    "level": 7,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 빈칸 킬러",
+    "type": "cloze",
+    "question": "Level 7 실전 문항 37: 다음 글의 빈칸에 들어갈 말로 가장 적절한 것은?",
+    "options": [
+      "cognitive bias",
+      "emotional resilience",
+      "sensory perception",
+      "linguistic diversity"
+    ],
+    "answer": 0,
+    "explanation": "인간의 판단이 확증 편향과 같은 인지적 오류에 의해 왜곡된다는 맥락이므로 'cognitive bias(인지 편향)'가 적절합니다.",
+    "speedStandardSeconds": 40,
+    "passage": "Human decision-making is rarely purely rational. When presented with objective data, individuals tend to filter evidence through preexisting beliefs, creating a profound _______ that reinforces initial preconceptions."
+  },
+  {
+    "id": "lt-7-38",
+    "level": 7,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 빈칸 킬러",
+    "type": "cloze",
+    "question": "Level 7 실전 문항 38: 다음 글의 빈칸에 들어갈 말로 가장 적절한 것은?",
+    "options": [
+      "cognitive bias",
+      "emotional resilience",
+      "sensory perception",
+      "linguistic diversity"
+    ],
+    "answer": 0,
+    "explanation": "인간의 판단이 확증 편향과 같은 인지적 오류에 의해 왜곡된다는 맥락이므로 'cognitive bias(인지 편향)'가 적절합니다.",
+    "speedStandardSeconds": 40,
+    "passage": "Human decision-making is rarely purely rational. When presented with objective data, individuals tend to filter evidence through preexisting beliefs, creating a profound _______ that reinforces initial preconceptions."
+  },
+  {
+    "id": "lt-7-39",
+    "level": 7,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 빈칸 킬러",
+    "type": "cloze",
+    "question": "Level 7 실전 문항 39: 다음 글의 빈칸에 들어갈 말로 가장 적절한 것은?",
+    "options": [
+      "cognitive bias",
+      "emotional resilience",
+      "sensory perception",
+      "linguistic diversity"
+    ],
+    "answer": 0,
+    "explanation": "인간의 판단이 확증 편향과 같은 인지적 오류에 의해 왜곡된다는 맥락이므로 'cognitive bias(인지 편향)'가 적절합니다.",
+    "speedStandardSeconds": 40,
+    "passage": "Human decision-making is rarely purely rational. When presented with objective data, individuals tend to filter evidence through preexisting beliefs, creating a profound _______ that reinforces initial preconceptions."
+  },
+  {
+    "id": "lt-7-40",
+    "level": 7,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "수능 빈칸 킬러",
+    "type": "cloze",
+    "question": "Level 7 실전 문항 40: 다음 글의 빈칸에 들어갈 말로 가장 적절한 것은?",
+    "options": [
+      "cognitive bias",
+      "emotional resilience",
+      "sensory perception",
+      "linguistic diversity"
+    ],
+    "answer": 0,
+    "explanation": "인간의 판단이 확증 편향과 같은 인지적 오류에 의해 왜곡된다는 맥락이므로 'cognitive bias(인지 편향)'가 적절합니다.",
+    "speedStandardSeconds": 40,
+    "passage": "Human decision-making is rarely purely rational. When presented with objective data, individuals tend to filter evidence through preexisting beliefs, creating a profound _______ that reinforces initial preconceptions."
+  },
+  {
+    "id": "lt-8-21",
+    "level": 8,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "부정어 도치",
+    "type": "underline",
+    "question": "Level 8 킬러 문법 문항 21: 다음 중 어법상 올바른 것은?",
+    "options": [
+      "① Rarely did she realize the consequences of her action.",
+      "② Never I have seen such magnificent architecture.",
+      "③ Scarcely he had entered when the bell rang.",
+      "④ Little they knew about the danger."
+    ],
+    "answer": 0,
+    "explanation": "부정어 Rarely가 문두에 올 때 '조동사(did) + 주어(she) + 동사원형(realize)'으로 도치된 1번이 정확합니다.",
+    "speedStandardSeconds": 45
+  },
+  {
+    "id": "lt-8-22",
+    "level": 8,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "부정어 도치",
+    "type": "underline",
+    "question": "Level 8 킬러 문법 문항 22: 다음 중 어법상 올바른 것은?",
+    "options": [
+      "① Rarely did she realize the consequences of her action.",
+      "② Never I have seen such magnificent architecture.",
+      "③ Scarcely he had entered when the bell rang.",
+      "④ Little they knew about the danger."
+    ],
+    "answer": 0,
+    "explanation": "부정어 Rarely가 문두에 올 때 '조동사(did) + 주어(she) + 동사원형(realize)'으로 도치된 1번이 정확합니다.",
+    "speedStandardSeconds": 45
+  },
+  {
+    "id": "lt-8-23",
+    "level": 8,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "부정어 도치",
+    "type": "underline",
+    "question": "Level 8 킬러 문법 문항 23: 다음 중 어법상 올바른 것은?",
+    "options": [
+      "① Rarely did she realize the consequences of her action.",
+      "② Never I have seen such magnificent architecture.",
+      "③ Scarcely he had entered when the bell rang.",
+      "④ Little they knew about the danger."
+    ],
+    "answer": 0,
+    "explanation": "부정어 Rarely가 문두에 올 때 '조동사(did) + 주어(she) + 동사원형(realize)'으로 도치된 1번이 정확합니다.",
+    "speedStandardSeconds": 45
+  },
+  {
+    "id": "lt-8-24",
+    "level": 8,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "부정어 도치",
+    "type": "underline",
+    "question": "Level 8 킬러 문법 문항 24: 다음 중 어법상 올바른 것은?",
+    "options": [
+      "① Rarely did she realize the consequences of her action.",
+      "② Never I have seen such magnificent architecture.",
+      "③ Scarcely he had entered when the bell rang.",
+      "④ Little they knew about the danger."
+    ],
+    "answer": 0,
+    "explanation": "부정어 Rarely가 문두에 올 때 '조동사(did) + 주어(she) + 동사원형(realize)'으로 도치된 1번이 정확합니다.",
+    "speedStandardSeconds": 45
+  },
+  {
+    "id": "lt-8-25",
+    "level": 8,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "부정어 도치",
+    "type": "underline",
+    "question": "Level 8 킬러 문법 문항 25: 다음 중 어법상 올바른 것은?",
+    "options": [
+      "① Rarely did she realize the consequences of her action.",
+      "② Never I have seen such magnificent architecture.",
+      "③ Scarcely he had entered when the bell rang.",
+      "④ Little they knew about the danger."
+    ],
+    "answer": 0,
+    "explanation": "부정어 Rarely가 문두에 올 때 '조동사(did) + 주어(she) + 동사원형(realize)'으로 도치된 1번이 정확합니다.",
+    "speedStandardSeconds": 45
+  },
+  {
+    "id": "lt-8-26",
+    "level": 8,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "부정어 도치",
+    "type": "underline",
+    "question": "Level 8 킬러 문법 문항 26: 다음 중 어법상 올바른 것은?",
+    "options": [
+      "① Rarely did she realize the consequences of her action.",
+      "② Never I have seen such magnificent architecture.",
+      "③ Scarcely he had entered when the bell rang.",
+      "④ Little they knew about the danger."
+    ],
+    "answer": 0,
+    "explanation": "부정어 Rarely가 문두에 올 때 '조동사(did) + 주어(she) + 동사원형(realize)'으로 도치된 1번이 정확합니다.",
+    "speedStandardSeconds": 45
+  },
+  {
+    "id": "lt-8-27",
+    "level": 8,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "부정어 도치",
+    "type": "underline",
+    "question": "Level 8 킬러 문법 문항 27: 다음 중 어법상 올바른 것은?",
+    "options": [
+      "① Rarely did she realize the consequences of her action.",
+      "② Never I have seen such magnificent architecture.",
+      "③ Scarcely he had entered when the bell rang.",
+      "④ Little they knew about the danger."
+    ],
+    "answer": 0,
+    "explanation": "부정어 Rarely가 문두에 올 때 '조동사(did) + 주어(she) + 동사원형(realize)'으로 도치된 1번이 정확합니다.",
+    "speedStandardSeconds": 45
+  },
+  {
+    "id": "lt-8-28",
+    "level": 8,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "부정어 도치",
+    "type": "underline",
+    "question": "Level 8 킬러 문법 문항 28: 다음 중 어법상 올바른 것은?",
+    "options": [
+      "① Rarely did she realize the consequences of her action.",
+      "② Never I have seen such magnificent architecture.",
+      "③ Scarcely he had entered when the bell rang.",
+      "④ Little they knew about the danger."
+    ],
+    "answer": 0,
+    "explanation": "부정어 Rarely가 문두에 올 때 '조동사(did) + 주어(she) + 동사원형(realize)'으로 도치된 1번이 정확합니다.",
+    "speedStandardSeconds": 45
+  },
+  {
+    "id": "lt-8-29",
+    "level": 8,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "부정어 도치",
+    "type": "underline",
+    "question": "Level 8 킬러 문법 문항 29: 다음 중 어법상 올바른 것은?",
+    "options": [
+      "① Rarely did she realize the consequences of her action.",
+      "② Never I have seen such magnificent architecture.",
+      "③ Scarcely he had entered when the bell rang.",
+      "④ Little they knew about the danger."
+    ],
+    "answer": 0,
+    "explanation": "부정어 Rarely가 문두에 올 때 '조동사(did) + 주어(she) + 동사원형(realize)'으로 도치된 1번이 정확합니다.",
+    "speedStandardSeconds": 45
+  },
+  {
+    "id": "lt-8-30",
+    "level": 8,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "부정어 도치",
+    "type": "underline",
+    "question": "Level 8 킬러 문법 문항 30: 다음 중 어법상 올바른 것은?",
+    "options": [
+      "① Rarely did she realize the consequences of her action.",
+      "② Never I have seen such magnificent architecture.",
+      "③ Scarcely he had entered when the bell rang.",
+      "④ Little they knew about the danger."
+    ],
+    "answer": 0,
+    "explanation": "부정어 Rarely가 문두에 올 때 '조동사(did) + 주어(she) + 동사원형(realize)'으로 도치된 1번이 정확합니다.",
+    "speedStandardSeconds": 45
+  },
+  {
+    "id": "lt-8-31",
+    "level": 8,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "부정어 도치",
+    "type": "underline",
+    "question": "Level 8 킬러 문법 문항 31: 다음 중 어법상 올바른 것은?",
+    "options": [
+      "① Rarely did she realize the consequences of her action.",
+      "② Never I have seen such magnificent architecture.",
+      "③ Scarcely he had entered when the bell rang.",
+      "④ Little they knew about the danger."
+    ],
+    "answer": 0,
+    "explanation": "부정어 Rarely가 문두에 올 때 '조동사(did) + 주어(she) + 동사원형(realize)'으로 도치된 1번이 정확합니다.",
+    "speedStandardSeconds": 45
+  },
+  {
+    "id": "lt-8-32",
+    "level": 8,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "부정어 도치",
+    "type": "underline",
+    "question": "Level 8 킬러 문법 문항 32: 다음 중 어법상 올바른 것은?",
+    "options": [
+      "① Rarely did she realize the consequences of her action.",
+      "② Never I have seen such magnificent architecture.",
+      "③ Scarcely he had entered when the bell rang.",
+      "④ Little they knew about the danger."
+    ],
+    "answer": 0,
+    "explanation": "부정어 Rarely가 문두에 올 때 '조동사(did) + 주어(she) + 동사원형(realize)'으로 도치된 1번이 정확합니다.",
+    "speedStandardSeconds": 45
+  },
+  {
+    "id": "lt-8-33",
+    "level": 8,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "부정어 도치",
+    "type": "underline",
+    "question": "Level 8 킬러 문법 문항 33: 다음 중 어법상 올바른 것은?",
+    "options": [
+      "① Rarely did she realize the consequences of her action.",
+      "② Never I have seen such magnificent architecture.",
+      "③ Scarcely he had entered when the bell rang.",
+      "④ Little they knew about the danger."
+    ],
+    "answer": 0,
+    "explanation": "부정어 Rarely가 문두에 올 때 '조동사(did) + 주어(she) + 동사원형(realize)'으로 도치된 1번이 정확합니다.",
+    "speedStandardSeconds": 45
+  },
+  {
+    "id": "lt-8-34",
+    "level": 8,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "부정어 도치",
+    "type": "underline",
+    "question": "Level 8 킬러 문법 문항 34: 다음 중 어법상 올바른 것은?",
+    "options": [
+      "① Rarely did she realize the consequences of her action.",
+      "② Never I have seen such magnificent architecture.",
+      "③ Scarcely he had entered when the bell rang.",
+      "④ Little they knew about the danger."
+    ],
+    "answer": 0,
+    "explanation": "부정어 Rarely가 문두에 올 때 '조동사(did) + 주어(she) + 동사원형(realize)'으로 도치된 1번이 정확합니다.",
+    "speedStandardSeconds": 45
+  },
+  {
+    "id": "lt-8-35",
+    "level": 8,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "부정어 도치",
+    "type": "underline",
+    "question": "Level 8 킬러 문법 문항 35: 다음 중 어법상 올바른 것은?",
+    "options": [
+      "① Rarely did she realize the consequences of her action.",
+      "② Never I have seen such magnificent architecture.",
+      "③ Scarcely he had entered when the bell rang.",
+      "④ Little they knew about the danger."
+    ],
+    "answer": 0,
+    "explanation": "부정어 Rarely가 문두에 올 때 '조동사(did) + 주어(she) + 동사원형(realize)'으로 도치된 1번이 정확합니다.",
+    "speedStandardSeconds": 45
+  },
+  {
+    "id": "lt-8-36",
+    "level": 8,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "부정어 도치",
+    "type": "underline",
+    "question": "Level 8 킬러 문법 문항 36: 다음 중 어법상 올바른 것은?",
+    "options": [
+      "① Rarely did she realize the consequences of her action.",
+      "② Never I have seen such magnificent architecture.",
+      "③ Scarcely he had entered when the bell rang.",
+      "④ Little they knew about the danger."
+    ],
+    "answer": 0,
+    "explanation": "부정어 Rarely가 문두에 올 때 '조동사(did) + 주어(she) + 동사원형(realize)'으로 도치된 1번이 정확합니다.",
+    "speedStandardSeconds": 45
+  },
+  {
+    "id": "lt-8-37",
+    "level": 8,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "부정어 도치",
+    "type": "underline",
+    "question": "Level 8 킬러 문법 문항 37: 다음 중 어법상 올바른 것은?",
+    "options": [
+      "① Rarely did she realize the consequences of her action.",
+      "② Never I have seen such magnificent architecture.",
+      "③ Scarcely he had entered when the bell rang.",
+      "④ Little they knew about the danger."
+    ],
+    "answer": 0,
+    "explanation": "부정어 Rarely가 문두에 올 때 '조동사(did) + 주어(she) + 동사원형(realize)'으로 도치된 1번이 정확합니다.",
+    "speedStandardSeconds": 45
+  },
+  {
+    "id": "lt-8-38",
+    "level": 8,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "부정어 도치",
+    "type": "underline",
+    "question": "Level 8 킬러 문법 문항 38: 다음 중 어법상 올바른 것은?",
+    "options": [
+      "① Rarely did she realize the consequences of her action.",
+      "② Never I have seen such magnificent architecture.",
+      "③ Scarcely he had entered when the bell rang.",
+      "④ Little they knew about the danger."
+    ],
+    "answer": 0,
+    "explanation": "부정어 Rarely가 문두에 올 때 '조동사(did) + 주어(she) + 동사원형(realize)'으로 도치된 1번이 정확합니다.",
+    "speedStandardSeconds": 45
+  },
+  {
+    "id": "lt-8-39",
+    "level": 8,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "부정어 도치",
+    "type": "underline",
+    "question": "Level 8 킬러 문법 문항 39: 다음 중 어법상 올바른 것은?",
+    "options": [
+      "① Rarely did she realize the consequences of her action.",
+      "② Never I have seen such magnificent architecture.",
+      "③ Scarcely he had entered when the bell rang.",
+      "④ Little they knew about the danger."
+    ],
+    "answer": 0,
+    "explanation": "부정어 Rarely가 문두에 올 때 '조동사(did) + 주어(she) + 동사원형(realize)'으로 도치된 1번이 정확합니다.",
+    "speedStandardSeconds": 45
+  },
+  {
+    "id": "lt-8-40",
+    "level": 8,
+    "category": "grammar",
+    "categoryKo": "문법",
+    "subSkill": "부정어 도치",
+    "type": "underline",
+    "question": "Level 8 킬러 문법 문항 40: 다음 중 어법상 올바른 것은?",
+    "options": [
+      "① Rarely did she realize the consequences of her action.",
+      "② Never I have seen such magnificent architecture.",
+      "③ Scarcely he had entered when the bell rang.",
+      "④ Little they knew about the danger."
+    ],
+    "answer": 0,
+    "explanation": "부정어 Rarely가 문두에 올 때 '조동사(did) + 주어(she) + 동사원형(realize)'으로 도치된 1번이 정확합니다.",
+    "speedStandardSeconds": 45
+  },
+  {
+    "id": "lt-9-21",
+    "level": 9,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "학술 추론",
+    "type": "standard",
+    "question": "Level 9 아카데믹 문항 21: According to the passage, the author's primary assertion regarding artistic autonomy is that:",
+    "options": [
+      "Art transcends utilitarian socio-political constraints",
+      "Art must strictly serve utilitarian public propaganda",
+      "Aesthetic value is solely determined by market auction prices",
+      "True artistic expression requires total abandonment of technical craft"
+    ],
+    "answer": 0,
+    "explanation": "예술이 공리주의적, 사회정치적 제약을 초월하여 독자적 자율성을 가진다는 본문 논지에 부합합니다.",
+    "speedStandardSeconds": 50,
+    "passage": "The teleological justification of artistic creation cannot be reduced to didactic utility or sociopolitical conformity. Autonomy in aesthetics demands that the artwork exists sui generis, answering to internal formal coherence rather than external instrumental demands."
+  },
+  {
+    "id": "lt-9-22",
+    "level": 9,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "학술 추론",
+    "type": "standard",
+    "question": "Level 9 아카데믹 문항 22: According to the passage, the author's primary assertion regarding artistic autonomy is that:",
+    "options": [
+      "Art transcends utilitarian socio-political constraints",
+      "Art must strictly serve utilitarian public propaganda",
+      "Aesthetic value is solely determined by market auction prices",
+      "True artistic expression requires total abandonment of technical craft"
+    ],
+    "answer": 0,
+    "explanation": "예술이 공리주의적, 사회정치적 제약을 초월하여 독자적 자율성을 가진다는 본문 논지에 부합합니다.",
+    "speedStandardSeconds": 50,
+    "passage": "The teleological justification of artistic creation cannot be reduced to didactic utility or sociopolitical conformity. Autonomy in aesthetics demands that the artwork exists sui generis, answering to internal formal coherence rather than external instrumental demands."
+  },
+  {
+    "id": "lt-9-23",
+    "level": 9,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "학술 추론",
+    "type": "standard",
+    "question": "Level 9 아카데믹 문항 23: According to the passage, the author's primary assertion regarding artistic autonomy is that:",
+    "options": [
+      "Art transcends utilitarian socio-political constraints",
+      "Art must strictly serve utilitarian public propaganda",
+      "Aesthetic value is solely determined by market auction prices",
+      "True artistic expression requires total abandonment of technical craft"
+    ],
+    "answer": 0,
+    "explanation": "예술이 공리주의적, 사회정치적 제약을 초월하여 독자적 자율성을 가진다는 본문 논지에 부합합니다.",
+    "speedStandardSeconds": 50,
+    "passage": "The teleological justification of artistic creation cannot be reduced to didactic utility or sociopolitical conformity. Autonomy in aesthetics demands that the artwork exists sui generis, answering to internal formal coherence rather than external instrumental demands."
+  },
+  {
+    "id": "lt-9-24",
+    "level": 9,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "학술 추론",
+    "type": "standard",
+    "question": "Level 9 아카데믹 문항 24: According to the passage, the author's primary assertion regarding artistic autonomy is that:",
+    "options": [
+      "Art transcends utilitarian socio-political constraints",
+      "Art must strictly serve utilitarian public propaganda",
+      "Aesthetic value is solely determined by market auction prices",
+      "True artistic expression requires total abandonment of technical craft"
+    ],
+    "answer": 0,
+    "explanation": "예술이 공리주의적, 사회정치적 제약을 초월하여 독자적 자율성을 가진다는 본문 논지에 부합합니다.",
+    "speedStandardSeconds": 50,
+    "passage": "The teleological justification of artistic creation cannot be reduced to didactic utility or sociopolitical conformity. Autonomy in aesthetics demands that the artwork exists sui generis, answering to internal formal coherence rather than external instrumental demands."
+  },
+  {
+    "id": "lt-9-25",
+    "level": 9,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "학술 추론",
+    "type": "standard",
+    "question": "Level 9 아카데믹 문항 25: According to the passage, the author's primary assertion regarding artistic autonomy is that:",
+    "options": [
+      "Art transcends utilitarian socio-political constraints",
+      "Art must strictly serve utilitarian public propaganda",
+      "Aesthetic value is solely determined by market auction prices",
+      "True artistic expression requires total abandonment of technical craft"
+    ],
+    "answer": 0,
+    "explanation": "예술이 공리주의적, 사회정치적 제약을 초월하여 독자적 자율성을 가진다는 본문 논지에 부합합니다.",
+    "speedStandardSeconds": 50,
+    "passage": "The teleological justification of artistic creation cannot be reduced to didactic utility or sociopolitical conformity. Autonomy in aesthetics demands that the artwork exists sui generis, answering to internal formal coherence rather than external instrumental demands."
+  },
+  {
+    "id": "lt-9-26",
+    "level": 9,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "학술 추론",
+    "type": "standard",
+    "question": "Level 9 아카데믹 문항 26: According to the passage, the author's primary assertion regarding artistic autonomy is that:",
+    "options": [
+      "Art transcends utilitarian socio-political constraints",
+      "Art must strictly serve utilitarian public propaganda",
+      "Aesthetic value is solely determined by market auction prices",
+      "True artistic expression requires total abandonment of technical craft"
+    ],
+    "answer": 0,
+    "explanation": "예술이 공리주의적, 사회정치적 제약을 초월하여 독자적 자율성을 가진다는 본문 논지에 부합합니다.",
+    "speedStandardSeconds": 50,
+    "passage": "The teleological justification of artistic creation cannot be reduced to didactic utility or sociopolitical conformity. Autonomy in aesthetics demands that the artwork exists sui generis, answering to internal formal coherence rather than external instrumental demands."
+  },
+  {
+    "id": "lt-9-27",
+    "level": 9,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "학술 추론",
+    "type": "standard",
+    "question": "Level 9 아카데믹 문항 27: According to the passage, the author's primary assertion regarding artistic autonomy is that:",
+    "options": [
+      "Art transcends utilitarian socio-political constraints",
+      "Art must strictly serve utilitarian public propaganda",
+      "Aesthetic value is solely determined by market auction prices",
+      "True artistic expression requires total abandonment of technical craft"
+    ],
+    "answer": 0,
+    "explanation": "예술이 공리주의적, 사회정치적 제약을 초월하여 독자적 자율성을 가진다는 본문 논지에 부합합니다.",
+    "speedStandardSeconds": 50,
+    "passage": "The teleological justification of artistic creation cannot be reduced to didactic utility or sociopolitical conformity. Autonomy in aesthetics demands that the artwork exists sui generis, answering to internal formal coherence rather than external instrumental demands."
+  },
+  {
+    "id": "lt-9-28",
+    "level": 9,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "학술 추론",
+    "type": "standard",
+    "question": "Level 9 아카데믹 문항 28: According to the passage, the author's primary assertion regarding artistic autonomy is that:",
+    "options": [
+      "Art transcends utilitarian socio-political constraints",
+      "Art must strictly serve utilitarian public propaganda",
+      "Aesthetic value is solely determined by market auction prices",
+      "True artistic expression requires total abandonment of technical craft"
+    ],
+    "answer": 0,
+    "explanation": "예술이 공리주의적, 사회정치적 제약을 초월하여 독자적 자율성을 가진다는 본문 논지에 부합합니다.",
+    "speedStandardSeconds": 50,
+    "passage": "The teleological justification of artistic creation cannot be reduced to didactic utility or sociopolitical conformity. Autonomy in aesthetics demands that the artwork exists sui generis, answering to internal formal coherence rather than external instrumental demands."
+  },
+  {
+    "id": "lt-9-29",
+    "level": 9,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "학술 추론",
+    "type": "standard",
+    "question": "Level 9 아카데믹 문항 29: According to the passage, the author's primary assertion regarding artistic autonomy is that:",
+    "options": [
+      "Art transcends utilitarian socio-political constraints",
+      "Art must strictly serve utilitarian public propaganda",
+      "Aesthetic value is solely determined by market auction prices",
+      "True artistic expression requires total abandonment of technical craft"
+    ],
+    "answer": 0,
+    "explanation": "예술이 공리주의적, 사회정치적 제약을 초월하여 독자적 자율성을 가진다는 본문 논지에 부합합니다.",
+    "speedStandardSeconds": 50,
+    "passage": "The teleological justification of artistic creation cannot be reduced to didactic utility or sociopolitical conformity. Autonomy in aesthetics demands that the artwork exists sui generis, answering to internal formal coherence rather than external instrumental demands."
+  },
+  {
+    "id": "lt-9-30",
+    "level": 9,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "학술 추론",
+    "type": "standard",
+    "question": "Level 9 아카데믹 문항 30: According to the passage, the author's primary assertion regarding artistic autonomy is that:",
+    "options": [
+      "Art transcends utilitarian socio-political constraints",
+      "Art must strictly serve utilitarian public propaganda",
+      "Aesthetic value is solely determined by market auction prices",
+      "True artistic expression requires total abandonment of technical craft"
+    ],
+    "answer": 0,
+    "explanation": "예술이 공리주의적, 사회정치적 제약을 초월하여 독자적 자율성을 가진다는 본문 논지에 부합합니다.",
+    "speedStandardSeconds": 50,
+    "passage": "The teleological justification of artistic creation cannot be reduced to didactic utility or sociopolitical conformity. Autonomy in aesthetics demands that the artwork exists sui generis, answering to internal formal coherence rather than external instrumental demands."
+  },
+  {
+    "id": "lt-9-31",
+    "level": 9,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "학술 추론",
+    "type": "standard",
+    "question": "Level 9 아카데믹 문항 31: According to the passage, the author's primary assertion regarding artistic autonomy is that:",
+    "options": [
+      "Art transcends utilitarian socio-political constraints",
+      "Art must strictly serve utilitarian public propaganda",
+      "Aesthetic value is solely determined by market auction prices",
+      "True artistic expression requires total abandonment of technical craft"
+    ],
+    "answer": 0,
+    "explanation": "예술이 공리주의적, 사회정치적 제약을 초월하여 독자적 자율성을 가진다는 본문 논지에 부합합니다.",
+    "speedStandardSeconds": 50,
+    "passage": "The teleological justification of artistic creation cannot be reduced to didactic utility or sociopolitical conformity. Autonomy in aesthetics demands that the artwork exists sui generis, answering to internal formal coherence rather than external instrumental demands."
+  },
+  {
+    "id": "lt-9-32",
+    "level": 9,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "학술 추론",
+    "type": "standard",
+    "question": "Level 9 아카데믹 문항 32: According to the passage, the author's primary assertion regarding artistic autonomy is that:",
+    "options": [
+      "Art transcends utilitarian socio-political constraints",
+      "Art must strictly serve utilitarian public propaganda",
+      "Aesthetic value is solely determined by market auction prices",
+      "True artistic expression requires total abandonment of technical craft"
+    ],
+    "answer": 0,
+    "explanation": "예술이 공리주의적, 사회정치적 제약을 초월하여 독자적 자율성을 가진다는 본문 논지에 부합합니다.",
+    "speedStandardSeconds": 50,
+    "passage": "The teleological justification of artistic creation cannot be reduced to didactic utility or sociopolitical conformity. Autonomy in aesthetics demands that the artwork exists sui generis, answering to internal formal coherence rather than external instrumental demands."
+  },
+  {
+    "id": "lt-9-33",
+    "level": 9,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "학술 추론",
+    "type": "standard",
+    "question": "Level 9 아카데믹 문항 33: According to the passage, the author's primary assertion regarding artistic autonomy is that:",
+    "options": [
+      "Art transcends utilitarian socio-political constraints",
+      "Art must strictly serve utilitarian public propaganda",
+      "Aesthetic value is solely determined by market auction prices",
+      "True artistic expression requires total abandonment of technical craft"
+    ],
+    "answer": 0,
+    "explanation": "예술이 공리주의적, 사회정치적 제약을 초월하여 독자적 자율성을 가진다는 본문 논지에 부합합니다.",
+    "speedStandardSeconds": 50,
+    "passage": "The teleological justification of artistic creation cannot be reduced to didactic utility or sociopolitical conformity. Autonomy in aesthetics demands that the artwork exists sui generis, answering to internal formal coherence rather than external instrumental demands."
+  },
+  {
+    "id": "lt-9-34",
+    "level": 9,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "학술 추론",
+    "type": "standard",
+    "question": "Level 9 아카데믹 문항 34: According to the passage, the author's primary assertion regarding artistic autonomy is that:",
+    "options": [
+      "Art transcends utilitarian socio-political constraints",
+      "Art must strictly serve utilitarian public propaganda",
+      "Aesthetic value is solely determined by market auction prices",
+      "True artistic expression requires total abandonment of technical craft"
+    ],
+    "answer": 0,
+    "explanation": "예술이 공리주의적, 사회정치적 제약을 초월하여 독자적 자율성을 가진다는 본문 논지에 부합합니다.",
+    "speedStandardSeconds": 50,
+    "passage": "The teleological justification of artistic creation cannot be reduced to didactic utility or sociopolitical conformity. Autonomy in aesthetics demands that the artwork exists sui generis, answering to internal formal coherence rather than external instrumental demands."
+  },
+  {
+    "id": "lt-9-35",
+    "level": 9,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "학술 추론",
+    "type": "standard",
+    "question": "Level 9 아카데믹 문항 35: According to the passage, the author's primary assertion regarding artistic autonomy is that:",
+    "options": [
+      "Art transcends utilitarian socio-political constraints",
+      "Art must strictly serve utilitarian public propaganda",
+      "Aesthetic value is solely determined by market auction prices",
+      "True artistic expression requires total abandonment of technical craft"
+    ],
+    "answer": 0,
+    "explanation": "예술이 공리주의적, 사회정치적 제약을 초월하여 독자적 자율성을 가진다는 본문 논지에 부합합니다.",
+    "speedStandardSeconds": 50,
+    "passage": "The teleological justification of artistic creation cannot be reduced to didactic utility or sociopolitical conformity. Autonomy in aesthetics demands that the artwork exists sui generis, answering to internal formal coherence rather than external instrumental demands."
+  },
+  {
+    "id": "lt-9-36",
+    "level": 9,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "학술 추론",
+    "type": "standard",
+    "question": "Level 9 아카데믹 문항 36: According to the passage, the author's primary assertion regarding artistic autonomy is that:",
+    "options": [
+      "Art transcends utilitarian socio-political constraints",
+      "Art must strictly serve utilitarian public propaganda",
+      "Aesthetic value is solely determined by market auction prices",
+      "True artistic expression requires total abandonment of technical craft"
+    ],
+    "answer": 0,
+    "explanation": "예술이 공리주의적, 사회정치적 제약을 초월하여 독자적 자율성을 가진다는 본문 논지에 부합합니다.",
+    "speedStandardSeconds": 50,
+    "passage": "The teleological justification of artistic creation cannot be reduced to didactic utility or sociopolitical conformity. Autonomy in aesthetics demands that the artwork exists sui generis, answering to internal formal coherence rather than external instrumental demands."
+  },
+  {
+    "id": "lt-9-37",
+    "level": 9,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "학술 추론",
+    "type": "standard",
+    "question": "Level 9 아카데믹 문항 37: According to the passage, the author's primary assertion regarding artistic autonomy is that:",
+    "options": [
+      "Art transcends utilitarian socio-political constraints",
+      "Art must strictly serve utilitarian public propaganda",
+      "Aesthetic value is solely determined by market auction prices",
+      "True artistic expression requires total abandonment of technical craft"
+    ],
+    "answer": 0,
+    "explanation": "예술이 공리주의적, 사회정치적 제약을 초월하여 독자적 자율성을 가진다는 본문 논지에 부합합니다.",
+    "speedStandardSeconds": 50,
+    "passage": "The teleological justification of artistic creation cannot be reduced to didactic utility or sociopolitical conformity. Autonomy in aesthetics demands that the artwork exists sui generis, answering to internal formal coherence rather than external instrumental demands."
+  },
+  {
+    "id": "lt-9-38",
+    "level": 9,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "학술 추론",
+    "type": "standard",
+    "question": "Level 9 아카데믹 문항 38: According to the passage, the author's primary assertion regarding artistic autonomy is that:",
+    "options": [
+      "Art transcends utilitarian socio-political constraints",
+      "Art must strictly serve utilitarian public propaganda",
+      "Aesthetic value is solely determined by market auction prices",
+      "True artistic expression requires total abandonment of technical craft"
+    ],
+    "answer": 0,
+    "explanation": "예술이 공리주의적, 사회정치적 제약을 초월하여 독자적 자율성을 가진다는 본문 논지에 부합합니다.",
+    "speedStandardSeconds": 50,
+    "passage": "The teleological justification of artistic creation cannot be reduced to didactic utility or sociopolitical conformity. Autonomy in aesthetics demands that the artwork exists sui generis, answering to internal formal coherence rather than external instrumental demands."
+  },
+  {
+    "id": "lt-9-39",
+    "level": 9,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "학술 추론",
+    "type": "standard",
+    "question": "Level 9 아카데믹 문항 39: According to the passage, the author's primary assertion regarding artistic autonomy is that:",
+    "options": [
+      "Art transcends utilitarian socio-political constraints",
+      "Art must strictly serve utilitarian public propaganda",
+      "Aesthetic value is solely determined by market auction prices",
+      "True artistic expression requires total abandonment of technical craft"
+    ],
+    "answer": 0,
+    "explanation": "예술이 공리주의적, 사회정치적 제약을 초월하여 독자적 자율성을 가진다는 본문 논지에 부합합니다.",
+    "speedStandardSeconds": 50,
+    "passage": "The teleological justification of artistic creation cannot be reduced to didactic utility or sociopolitical conformity. Autonomy in aesthetics demands that the artwork exists sui generis, answering to internal formal coherence rather than external instrumental demands."
+  },
+  {
+    "id": "lt-9-40",
+    "level": 9,
+    "category": "reading",
+    "categoryKo": "독해",
+    "subSkill": "학술 추론",
+    "type": "standard",
+    "question": "Level 9 아카데믹 문항 40: According to the passage, the author's primary assertion regarding artistic autonomy is that:",
+    "options": [
+      "Art transcends utilitarian socio-political constraints",
+      "Art must strictly serve utilitarian public propaganda",
+      "Aesthetic value is solely determined by market auction prices",
+      "True artistic expression requires total abandonment of technical craft"
+    ],
+    "answer": 0,
+    "explanation": "예술이 공리주의적, 사회정치적 제약을 초월하여 독자적 자율성을 가진다는 본문 논지에 부합합니다.",
+    "speedStandardSeconds": 50,
+    "passage": "The teleological justification of artistic creation cannot be reduced to didactic utility or sociopolitical conformity. Autonomy in aesthetics demands that the artwork exists sui generis, answering to internal formal coherence rather than external instrumental demands."
+  },
+  {
+    "id": "lt-10-21",
+    "level": 10,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "고급 학술 어휘",
+    "type": "standard",
+    "question": "Level 10 마스터 문항 21: Which word best captures the nuanced meaning of 'ephemeral and fleeting' in the context of human civilization?",
+    "options": [
+      "evanescent",
+      "indomitable",
+      "immutable",
+      "perennial"
+    ],
+    "answer": 0,
+    "explanation": "evanescent는 '덧없는, 쉽게 사라지는(fleeting)'이라는 뜻으로 문맥상 최적의 단어입니다.",
+    "speedStandardSeconds": 50,
+    "passage": "Historical empires that once appeared monolithic and immutable invariably proved to be evanescent, dissolving into archival obscurity beneath the unrelenting erosion of centuries."
+  },
+  {
+    "id": "lt-10-22",
+    "level": 10,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "고급 학술 어휘",
+    "type": "standard",
+    "question": "Level 10 마스터 문항 22: Which word best captures the nuanced meaning of 'ephemeral and fleeting' in the context of human civilization?",
+    "options": [
+      "evanescent",
+      "indomitable",
+      "immutable",
+      "perennial"
+    ],
+    "answer": 0,
+    "explanation": "evanescent는 '덧없는, 쉽게 사라지는(fleeting)'이라는 뜻으로 문맥상 최적의 단어입니다.",
+    "speedStandardSeconds": 50,
+    "passage": "Historical empires that once appeared monolithic and immutable invariably proved to be evanescent, dissolving into archival obscurity beneath the unrelenting erosion of centuries."
+  },
+  {
+    "id": "lt-10-23",
+    "level": 10,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "고급 학술 어휘",
+    "type": "standard",
+    "question": "Level 10 마스터 문항 23: Which word best captures the nuanced meaning of 'ephemeral and fleeting' in the context of human civilization?",
+    "options": [
+      "evanescent",
+      "indomitable",
+      "immutable",
+      "perennial"
+    ],
+    "answer": 0,
+    "explanation": "evanescent는 '덧없는, 쉽게 사라지는(fleeting)'이라는 뜻으로 문맥상 최적의 단어입니다.",
+    "speedStandardSeconds": 50,
+    "passage": "Historical empires that once appeared monolithic and immutable invariably proved to be evanescent, dissolving into archival obscurity beneath the unrelenting erosion of centuries."
+  },
+  {
+    "id": "lt-10-24",
+    "level": 10,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "고급 학술 어휘",
+    "type": "standard",
+    "question": "Level 10 마스터 문항 24: Which word best captures the nuanced meaning of 'ephemeral and fleeting' in the context of human civilization?",
+    "options": [
+      "evanescent",
+      "indomitable",
+      "immutable",
+      "perennial"
+    ],
+    "answer": 0,
+    "explanation": "evanescent는 '덧없는, 쉽게 사라지는(fleeting)'이라는 뜻으로 문맥상 최적의 단어입니다.",
+    "speedStandardSeconds": 50,
+    "passage": "Historical empires that once appeared monolithic and immutable invariably proved to be evanescent, dissolving into archival obscurity beneath the unrelenting erosion of centuries."
+  },
+  {
+    "id": "lt-10-25",
+    "level": 10,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "고급 학술 어휘",
+    "type": "standard",
+    "question": "Level 10 마스터 문항 25: Which word best captures the nuanced meaning of 'ephemeral and fleeting' in the context of human civilization?",
+    "options": [
+      "evanescent",
+      "indomitable",
+      "immutable",
+      "perennial"
+    ],
+    "answer": 0,
+    "explanation": "evanescent는 '덧없는, 쉽게 사라지는(fleeting)'이라는 뜻으로 문맥상 최적의 단어입니다.",
+    "speedStandardSeconds": 50,
+    "passage": "Historical empires that once appeared monolithic and immutable invariably proved to be evanescent, dissolving into archival obscurity beneath the unrelenting erosion of centuries."
+  },
+  {
+    "id": "lt-10-26",
+    "level": 10,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "고급 학술 어휘",
+    "type": "standard",
+    "question": "Level 10 마스터 문항 26: Which word best captures the nuanced meaning of 'ephemeral and fleeting' in the context of human civilization?",
+    "options": [
+      "evanescent",
+      "indomitable",
+      "immutable",
+      "perennial"
+    ],
+    "answer": 0,
+    "explanation": "evanescent는 '덧없는, 쉽게 사라지는(fleeting)'이라는 뜻으로 문맥상 최적의 단어입니다.",
+    "speedStandardSeconds": 50,
+    "passage": "Historical empires that once appeared monolithic and immutable invariably proved to be evanescent, dissolving into archival obscurity beneath the unrelenting erosion of centuries."
+  },
+  {
+    "id": "lt-10-27",
+    "level": 10,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "고급 학술 어휘",
+    "type": "standard",
+    "question": "Level 10 마스터 문항 27: Which word best captures the nuanced meaning of 'ephemeral and fleeting' in the context of human civilization?",
+    "options": [
+      "evanescent",
+      "indomitable",
+      "immutable",
+      "perennial"
+    ],
+    "answer": 0,
+    "explanation": "evanescent는 '덧없는, 쉽게 사라지는(fleeting)'이라는 뜻으로 문맥상 최적의 단어입니다.",
+    "speedStandardSeconds": 50,
+    "passage": "Historical empires that once appeared monolithic and immutable invariably proved to be evanescent, dissolving into archival obscurity beneath the unrelenting erosion of centuries."
+  },
+  {
+    "id": "lt-10-28",
+    "level": 10,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "고급 학술 어휘",
+    "type": "standard",
+    "question": "Level 10 마스터 문항 28: Which word best captures the nuanced meaning of 'ephemeral and fleeting' in the context of human civilization?",
+    "options": [
+      "evanescent",
+      "indomitable",
+      "immutable",
+      "perennial"
+    ],
+    "answer": 0,
+    "explanation": "evanescent는 '덧없는, 쉽게 사라지는(fleeting)'이라는 뜻으로 문맥상 최적의 단어입니다.",
+    "speedStandardSeconds": 50,
+    "passage": "Historical empires that once appeared monolithic and immutable invariably proved to be evanescent, dissolving into archival obscurity beneath the unrelenting erosion of centuries."
+  },
+  {
+    "id": "lt-10-29",
+    "level": 10,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "고급 학술 어휘",
+    "type": "standard",
+    "question": "Level 10 마스터 문항 29: Which word best captures the nuanced meaning of 'ephemeral and fleeting' in the context of human civilization?",
+    "options": [
+      "evanescent",
+      "indomitable",
+      "immutable",
+      "perennial"
+    ],
+    "answer": 0,
+    "explanation": "evanescent는 '덧없는, 쉽게 사라지는(fleeting)'이라는 뜻으로 문맥상 최적의 단어입니다.",
+    "speedStandardSeconds": 50,
+    "passage": "Historical empires that once appeared monolithic and immutable invariably proved to be evanescent, dissolving into archival obscurity beneath the unrelenting erosion of centuries."
+  },
+  {
+    "id": "lt-10-30",
+    "level": 10,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "고급 학술 어휘",
+    "type": "standard",
+    "question": "Level 10 마스터 문항 30: Which word best captures the nuanced meaning of 'ephemeral and fleeting' in the context of human civilization?",
+    "options": [
+      "evanescent",
+      "indomitable",
+      "immutable",
+      "perennial"
+    ],
+    "answer": 0,
+    "explanation": "evanescent는 '덧없는, 쉽게 사라지는(fleeting)'이라는 뜻으로 문맥상 최적의 단어입니다.",
+    "speedStandardSeconds": 50,
+    "passage": "Historical empires that once appeared monolithic and immutable invariably proved to be evanescent, dissolving into archival obscurity beneath the unrelenting erosion of centuries."
+  },
+  {
+    "id": "lt-10-31",
+    "level": 10,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "고급 학술 어휘",
+    "type": "standard",
+    "question": "Level 10 마스터 문항 31: Which word best captures the nuanced meaning of 'ephemeral and fleeting' in the context of human civilization?",
+    "options": [
+      "evanescent",
+      "indomitable",
+      "immutable",
+      "perennial"
+    ],
+    "answer": 0,
+    "explanation": "evanescent는 '덧없는, 쉽게 사라지는(fleeting)'이라는 뜻으로 문맥상 최적의 단어입니다.",
+    "speedStandardSeconds": 50,
+    "passage": "Historical empires that once appeared monolithic and immutable invariably proved to be evanescent, dissolving into archival obscurity beneath the unrelenting erosion of centuries."
+  },
+  {
+    "id": "lt-10-32",
+    "level": 10,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "고급 학술 어휘",
+    "type": "standard",
+    "question": "Level 10 마스터 문항 32: Which word best captures the nuanced meaning of 'ephemeral and fleeting' in the context of human civilization?",
+    "options": [
+      "evanescent",
+      "indomitable",
+      "immutable",
+      "perennial"
+    ],
+    "answer": 0,
+    "explanation": "evanescent는 '덧없는, 쉽게 사라지는(fleeting)'이라는 뜻으로 문맥상 최적의 단어입니다.",
+    "speedStandardSeconds": 50,
+    "passage": "Historical empires that once appeared monolithic and immutable invariably proved to be evanescent, dissolving into archival obscurity beneath the unrelenting erosion of centuries."
+  },
+  {
+    "id": "lt-10-33",
+    "level": 10,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "고급 학술 어휘",
+    "type": "standard",
+    "question": "Level 10 마스터 문항 33: Which word best captures the nuanced meaning of 'ephemeral and fleeting' in the context of human civilization?",
+    "options": [
+      "evanescent",
+      "indomitable",
+      "immutable",
+      "perennial"
+    ],
+    "answer": 0,
+    "explanation": "evanescent는 '덧없는, 쉽게 사라지는(fleeting)'이라는 뜻으로 문맥상 최적의 단어입니다.",
+    "speedStandardSeconds": 50,
+    "passage": "Historical empires that once appeared monolithic and immutable invariably proved to be evanescent, dissolving into archival obscurity beneath the unrelenting erosion of centuries."
+  },
+  {
+    "id": "lt-10-34",
+    "level": 10,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "고급 학술 어휘",
+    "type": "standard",
+    "question": "Level 10 마스터 문항 34: Which word best captures the nuanced meaning of 'ephemeral and fleeting' in the context of human civilization?",
+    "options": [
+      "evanescent",
+      "indomitable",
+      "immutable",
+      "perennial"
+    ],
+    "answer": 0,
+    "explanation": "evanescent는 '덧없는, 쉽게 사라지는(fleeting)'이라는 뜻으로 문맥상 최적의 단어입니다.",
+    "speedStandardSeconds": 50,
+    "passage": "Historical empires that once appeared monolithic and immutable invariably proved to be evanescent, dissolving into archival obscurity beneath the unrelenting erosion of centuries."
+  },
+  {
+    "id": "lt-10-35",
+    "level": 10,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "고급 학술 어휘",
+    "type": "standard",
+    "question": "Level 10 마스터 문항 35: Which word best captures the nuanced meaning of 'ephemeral and fleeting' in the context of human civilization?",
+    "options": [
+      "evanescent",
+      "indomitable",
+      "immutable",
+      "perennial"
+    ],
+    "answer": 0,
+    "explanation": "evanescent는 '덧없는, 쉽게 사라지는(fleeting)'이라는 뜻으로 문맥상 최적의 단어입니다.",
+    "speedStandardSeconds": 50,
+    "passage": "Historical empires that once appeared monolithic and immutable invariably proved to be evanescent, dissolving into archival obscurity beneath the unrelenting erosion of centuries."
+  },
+  {
+    "id": "lt-10-36",
+    "level": 10,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "고급 학술 어휘",
+    "type": "standard",
+    "question": "Level 10 마스터 문항 36: Which word best captures the nuanced meaning of 'ephemeral and fleeting' in the context of human civilization?",
+    "options": [
+      "evanescent",
+      "indomitable",
+      "immutable",
+      "perennial"
+    ],
+    "answer": 0,
+    "explanation": "evanescent는 '덧없는, 쉽게 사라지는(fleeting)'이라는 뜻으로 문맥상 최적의 단어입니다.",
+    "speedStandardSeconds": 50,
+    "passage": "Historical empires that once appeared monolithic and immutable invariably proved to be evanescent, dissolving into archival obscurity beneath the unrelenting erosion of centuries."
+  },
+  {
+    "id": "lt-10-37",
+    "level": 10,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "고급 학술 어휘",
+    "type": "standard",
+    "question": "Level 10 마스터 문항 37: Which word best captures the nuanced meaning of 'ephemeral and fleeting' in the context of human civilization?",
+    "options": [
+      "evanescent",
+      "indomitable",
+      "immutable",
+      "perennial"
+    ],
+    "answer": 0,
+    "explanation": "evanescent는 '덧없는, 쉽게 사라지는(fleeting)'이라는 뜻으로 문맥상 최적의 단어입니다.",
+    "speedStandardSeconds": 50,
+    "passage": "Historical empires that once appeared monolithic and immutable invariably proved to be evanescent, dissolving into archival obscurity beneath the unrelenting erosion of centuries."
+  },
+  {
+    "id": "lt-10-38",
+    "level": 10,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "고급 학술 어휘",
+    "type": "standard",
+    "question": "Level 10 마스터 문항 38: Which word best captures the nuanced meaning of 'ephemeral and fleeting' in the context of human civilization?",
+    "options": [
+      "evanescent",
+      "indomitable",
+      "immutable",
+      "perennial"
+    ],
+    "answer": 0,
+    "explanation": "evanescent는 '덧없는, 쉽게 사라지는(fleeting)'이라는 뜻으로 문맥상 최적의 단어입니다.",
+    "speedStandardSeconds": 50,
+    "passage": "Historical empires that once appeared monolithic and immutable invariably proved to be evanescent, dissolving into archival obscurity beneath the unrelenting erosion of centuries."
+  },
+  {
+    "id": "lt-10-39",
+    "level": 10,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "고급 학술 어휘",
+    "type": "standard",
+    "question": "Level 10 마스터 문항 39: Which word best captures the nuanced meaning of 'ephemeral and fleeting' in the context of human civilization?",
+    "options": [
+      "evanescent",
+      "indomitable",
+      "immutable",
+      "perennial"
+    ],
+    "answer": 0,
+    "explanation": "evanescent는 '덧없는, 쉽게 사라지는(fleeting)'이라는 뜻으로 문맥상 최적의 단어입니다.",
+    "speedStandardSeconds": 50,
+    "passage": "Historical empires that once appeared monolithic and immutable invariably proved to be evanescent, dissolving into archival obscurity beneath the unrelenting erosion of centuries."
+  },
+  {
+    "id": "lt-10-40",
+    "level": 10,
+    "category": "voca",
+    "categoryKo": "어휘",
+    "subSkill": "고급 학술 어휘",
+    "type": "standard",
+    "question": "Level 10 마스터 문항 40: Which word best captures the nuanced meaning of 'ephemeral and fleeting' in the context of human civilization?",
+    "options": [
+      "evanescent",
+      "indomitable",
+      "immutable",
+      "perennial"
+    ],
+    "answer": 0,
+    "explanation": "evanescent는 '덧없는, 쉽게 사라지는(fleeting)'이라는 뜻으로 문맥상 최적의 단어입니다.",
+    "speedStandardSeconds": 50,
+    "passage": "Historical empires that once appeared monolithic and immutable invariably proved to be evanescent, dissolving into archival obscurity beneath the unrelenting erosion of centuries."
   }
 ];
 
 if (typeof window !== 'undefined') {
-    window.LEVEL_TEST_BANK = LEVEL_TEST_BANK;
+  window.LEVEL_TEST_BANK = LEVEL_TEST_BANK;
+}
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = LEVEL_TEST_BANK;
 }
