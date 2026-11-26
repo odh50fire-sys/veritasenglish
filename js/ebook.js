@@ -33,8 +33,16 @@ class EBookEngine {
     }
 
     init() {
-        this.seriesList = window.EBOOK_SERIES_DATA || [];
         this.books = window.EBOOK_LIBRARY_DATA || window.EBOOK_BOOKS_DATA || [];
+        
+        // 22개 정식 시리즈 메타데이터 로드 및 자가 복구(Fallback) 보장
+        if (window.EBOOK_SERIES_DATA && window.EBOOK_SERIES_DATA.length > 0) {
+            this.seriesList = window.EBOOK_SERIES_DATA;
+        } else {
+            // 자가 복구: 도서 데이터 기반 22개 시리즈 자동 도출
+            this.seriesList = this.deriveSeriesListFromBooks(this.books);
+            window.EBOOK_SERIES_DATA = this.seriesList;
+        }
         this.loadProgress();
         this.renderLibrary();
 
