@@ -3215,35 +3215,140 @@ class StorageManager {
         return word;
     }
 
-    getDueReviewWords() {
-        const today = this.getTodayDateString();
-        const vocabWords = this.words.filter(w => !w.isReadingPassage && !w.isGrammarUnit);
-        // 에빙하우스 복습 대상 선정:
-        // 오늘 신규 학습하는 단어(planDate === today)는 당일 신규 학습 대상이므로 순수 복습 큐에서는 엄격히 제외
-        // 단, 단어사전 등에서 "단어 까먹었을 때(lastForgotten)" 원클릭 리셋된 단어는 당일 복습 큐에 포함
-        let due = vocabWords.filter(w => {
-            if (w.planDate === today && !w.lastForgotten) {
-                return false;
+    /**
+     * [방안 1 핵심] 에빙하우스 망각곡선 주기별 분리 큐 & 🚨 긴급(Overdue) 복습 분류기
+     * - Stage 1 (1일 주기): 어제 학습하여 1차 복습 도래
+     * - Stage 2 (3일 주기): 3일 전 학습 통과 후 2차 복습 도래
+     * - Stage 3 (7일 주기): 7일 전 학습 통과 후 3차 복습 도래
+     * - Stage 4 (14일 주기): 2주일 차 복습 도래
+     * - Stage 5 (30일 주기): 1개월 차 장기기억 완성 복습 도래
+     * - Overdue (🚨 긴급): 복습 예정일이 오늘 이전인데 아직 복습하지 못한 단어
+     */
+    getEbbinghausBins(targetDate = null) {
+        const today = targetDate || this.getTodayDateString();
+        const vocabWords = (this.words || []).filter(w => !w.isReadingPassage && !w.isGrammarUnit);
+
+        const bins = {
+            todayDue: [],       // 오늘 정규 복습 도래 단어 (nextReviewDate === today)
+            overdue: [],        // 🚨 긴급 복습 단어 (nextReviewDate < today)
+            stage1: [],         // 1일 주기 (어제 학습 단어)
+            stage2: [],         // 3일 주기
+            stage3: [],         // 7일 주기
+            stage4: [],         // 14일 주기
+            stage5: [],         // 30일 주기
+            future: [],         // 미래 복습 예정 (nextReviewDate > today)
+            counts: {
+                totalDueToday: 0,
+                urgentOverdue: 0,
+                stage1: 0,
+                stage2: 0,
+                stage3: 0,
+                stage4: 0,
+                stage5: 0
             }
-            if (!w.nextReviewDate) return true;
-            return w.nextReviewDate <= today || (w.planDate && w.planDate < today);
-        });
-        // 만약 과거 학습 이력이 전혀 없어 복습 큐가 비어있고 등록된 어휘만 있을 때는
-        // 과거 배정일 또는 첫 배정 단어를 우선 제공하되, 오늘 신규 학습 단어만 있는 경우 신규 학습에 전념하도록 유지
-        if (due.length === 0 && vocabWords.length > 0) {
-            const pastOrOther = vocabWords.filter(w => w.planDate !== today);
-            if (pastOrOther.length > 0) {
-                const nonSamples = pastOrOther.filter(w => !String(w.id || '').startsWith('sample-'));
-                const pool = nonSamples.length > 0 ? nonSamples : pastOrOther;
-                const scheduledDates = Array.from(new Set(pool.map(w => w.planDate).filter(Boolean))).sort();
-                if (scheduledDates.length > 0) {
-                    due = pool.filter(w => w.planDate === scheduledDates[0]);
+        };
+
+        vocabWords.forEach(w => {
+            // 오늘 배정된 신규 단어는 당일 신규 학습 전용이므로 복습 큐에서는 제외 (단, 까먹어서 당일 리셋된 단어는 포함)
+            if (w.planDate === today && !w.lastForgotten) {
+                return;
+            }
+
+            // nextReviewDate 표준화 및 보정
+            let revDate = w.nextReviewDate;
+            if (!revDate) {
+                // 과거에 배정되었거나 이미 학습한 이력이 있는 경우
+                if (w.planDate && w.planDate < today) {
+                    revDate = this.addDays(w.planDate, SRS_INTERVALS[w.stage || 1] || 1);
+                } else if (w.completed || (w.history && w.history.length > 0) || w.memorized) {
+                    revDate = today;
                 } else {
-                    due = pool.slice(0, 20);
+                    return; // 아직 학습일이 도래하지 않은 미래 신규 단어
                 }
             }
+
+            const stage = Math.min(5, Math.max(1, w.stage || 1));
+            const wordCopy = { ...w, nextReviewDate: revDate, stage: stage };
+
+            if (revDate === today || w.lastForgotten) {
+                // 오늘 정규 복습 단어
+                wordCopy.isOverdue = false;
+                wordCopy.overdueDays = 0;
+                bins.todayDue.push(wordCopy);
+                if (stage === 1) bins.stage1.push(wordCopy);
+                else if (stage === 2) bins.stage2.push(wordCopy);
+                else if (stage === 3) bins.stage3.push(wordCopy);
+                else if (stage === 4) bins.stage4.push(wordCopy);
+                else if (stage === 5) bins.stage5.push(wordCopy);
+            } else if (revDate < today) {
+                // 🚨 긴급 복습 (Overdue) 단어
+                const daysDiff = this.getDaysDiff(revDate, today);
+                wordCopy.isOverdue = true;
+                wordCopy.overdueDays = Math.max(1, daysDiff);
+                bins.overdue.push(wordCopy);
+
+                // 긴급 단어도 해당 주기별 버킷에 동시 분류
+                if (stage === 1) bins.stage1.push(wordCopy);
+                else if (stage === 2) bins.stage2.push(wordCopy);
+                else if (stage === 3) bins.stage3.push(wordCopy);
+                else if (stage === 4) bins.stage4.push(wordCopy);
+                else if (stage === 5) bins.stage5.push(wordCopy);
+            } else {
+                // 미래 복습 단어
+                wordCopy.isOverdue = false;
+                bins.future.push(wordCopy);
+            }
+        });
+
+        // 긴급 단어는 밀린 일수(overdueDays)가 많은 순으로 우선 정렬
+        bins.overdue.sort((a, b) => (b.overdueDays || 0) - (a.overdueDays || 0));
+
+        bins.counts = {
+            totalDueToday: bins.todayDue.length,
+            urgentOverdue: bins.overdue.length,
+            stage1: bins.stage1.length,
+            stage2: bins.stage2.length,
+            stage3: bins.stage3.length,
+            stage4: bins.stage4.length,
+            stage5: bins.stage5.length
+        };
+
+        return bins;
+    }
+
+    /**
+     * 필터 모드별 복습 단어 추출 (누적 600개 폭탄 방지 및 주기별 타겟팅)
+     * @param {'today' | 'urgent' | 'stage1' | 'stage2' | 'stage3' | 'stage4_5' | 'all' | 'recommended'} filterMode
+     */
+    getDueReviewWords(filterMode = 'today') {
+        const bins = this.getEbbinghausBins();
+
+        if (filterMode === 'today') {
+            return bins.todayDue;
+        } else if (filterMode === 'urgent') {
+            return bins.overdue;
+        } else if (filterMode === 'stage1') {
+            return bins.stage1;
+        } else if (filterMode === 'stage2') {
+            return bins.stage2;
+        } else if (filterMode === 'stage3') {
+            return bins.stage3;
+        } else if (filterMode === 'stage4_5') {
+            return [...bins.stage4, ...bins.stage5];
+        } else if (filterMode === 'all') {
+            return [...bins.todayDue, ...bins.overdue].slice(0, 100);
+        } else {
+            // 'recommended' 추천 모드:
+            // 오늘 정규 복습 대상 + 시급한 긴급 단어(최대 10개)로 세션 구성 (20~35단어 적정 유지)
+            if (bins.todayDue.length > 0) {
+                const urgentSlice = bins.overdue.slice(0, 10);
+                return [...bins.todayDue, ...urgentSlice];
+            } else if (bins.overdue.length > 0) {
+                return bins.overdue.slice(0, 25);
+            } else {
+                return [];
+            }
         }
-        return due;
     }
 
     getWeakWords() {
@@ -3584,6 +3689,16 @@ class StorageManager {
         return `${resYear}-${resMonth}-${resDay}`;
     }
 
+    getDaysDiff(fromStr, toStr) {
+        if (!fromStr || !toStr) return 0;
+        const [y1, m1, d1] = fromStr.split('-').map(Number);
+        const [y2, m2, d2] = toStr.split('-').map(Number);
+        const dt1 = new Date(y1, m1 - 1, d1);
+        const dt2 = new Date(y2, m2 - 1, d2);
+        const diffMs = dt2.getTime() - dt1.getTime();
+        return Math.round(diffMs / (1000 * 60 * 60 * 24));
+    }
+
     // ------------------------------------------------------------------------
     // 학교 프로필 & 내신 시험 관리 (School Profile & Exam D-Day)
     // ------------------------------------------------------------------------
@@ -3888,31 +4003,54 @@ class StorageManager {
 
         const wordsOnDate = this.getWordsByDate(dateStr);
 
-        // 1. 단어장 미션 (순수 단어장 어휘 기준, 독해/문법/도서과제 제외)
+        // 1. 단어장 미션 (순수 단어장 어휘 + 에빙하우스 주기 복습 & 🚨 긴급 복습 연동)
         const vocaWords = wordsOnDate.filter(w => !w.isReadingPassage && !w.isGrammarUnit && !w.isEBookTask);
+        const ebbinghausBins = this.getEbbinghausBins(dateStr);
+        const dueTodayCount = ebbinghausBins.counts.totalDueToday;
+        const urgentCount = ebbinghausBins.counts.urgentOverdue;
+
         let vocaMission = { assigned: false };
-        if (vocaWords.length > 0) {
+        if (vocaWords.length > 0 || dueTodayCount > 0 || urgentCount > 0) {
             const completedCount = vocaWords.filter(w => w.completed || (w.history && w.history.length > 0) || w.memorized).length;
-            const isCompleted = (completedCount >= vocaWords.length && vocaWords.length > 0);
+            const isCompleted = (vocaWords.length > 0 ? (completedCount >= vocaWords.length) : (dueTodayCount === 0 && urgentCount === 0));
             
             // 배정된 Day 명칭 추출
-            const dayLabels = Array.from(new Set(vocaWords.map(w => {
+            let dayLabels = Array.from(new Set(vocaWords.map(w => {
                 if (w.isNeungryul2025) return `능률고난도 ${w.neungryulDay || 'Day'}`;
                 if (w.isNeungryulEtym) return `능률어원 ${w.neungryulDay || 'Day'}`;
                 if (w.collectionId) return w.collectionId;
                 return '기본 단어장';
             }))).join(', ');
 
+            if (!dayLabels && (dueTodayCount > 0 || urgentCount > 0)) {
+                dayLabels = '에빙하우스 정기 복습';
+            }
+
+            let subtitleParts = [];
+            if (vocaWords.length > 0) subtitleParts.push(`배정 어휘 ${vocaWords.length}개`);
+            if (dueTodayCount > 0) subtitleParts.push(`복습 ${dueTodayCount}개`);
+            if (urgentCount > 0) subtitleParts.push(`🚨 긴급 ${urgentCount}개`);
+            const subtitleStr = subtitleParts.join(' · ') || '일일 어휘 학습';
+
+            let actionText = '단어 학습하기';
+            if (urgentCount > 0) {
+                actionText = `🚨 긴급 복습 (${urgentCount}개)`;
+            } else if (isCompleted) {
+                actionText = '단어장 복습';
+            }
+
             vocaMission = {
                 assigned: true,
                 type: 'voca',
                 title: dayLabels || '일일 배정 단어',
-                subtitle: `배정 단어 ${vocaWords.length}개`,
-                totalCount: vocaWords.length,
+                subtitle: subtitleStr,
+                totalCount: vocaWords.length + dueTodayCount + urgentCount,
                 completedCount: completedCount,
                 isCompleted: isCompleted,
-                statusText: isCompleted ? `완료 (${completedCount}/${vocaWords.length}단어)` : `진행 중 (${completedCount}/${vocaWords.length}단어)`,
-                actionText: isCompleted ? '단어장 복습' : '단어 학습하기',
+                statusText: urgentCount > 0 
+                    ? `🚨 긴급 복습 ${urgentCount}개 발생!` 
+                    : (isCompleted ? `완료 (${completedCount}/${vocaWords.length || completedCount}단어)` : `진행 중 (${completedCount}/${vocaWords.length}단어)`),
+                actionText: actionText,
                 actionTab: 'flashcards'
             };
         }

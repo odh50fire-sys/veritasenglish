@@ -399,22 +399,22 @@ class PlannerEngine {
                     
                     <!-- 1. 🟦 단어장 퀘스트 (Vocabulary) -->
                     ${dailyReport.missions.voca && dailyReport.missions.voca.assigned ? `
-                        <div class="p-4 rounded-2xl border-2 ${dailyReport.missions.voca.isCompleted ? 'border-emerald-500/70 bg-emerald-950/40' : 'border-blue-500/60 bg-blue-950/40'} shadow-md flex flex-col justify-between transition-all hover:scale-[1.01]">
+                        <div class="p-4 rounded-2xl border-2 ${dailyReport.missions.voca.isCompleted ? 'border-emerald-500/70 bg-emerald-950/40' : (dailyReport.missions.voca.statusText.includes('🚨') ? 'border-rose-500/80 bg-rose-950/40' : 'border-blue-500/60 bg-blue-950/40')} shadow-md flex flex-col justify-between transition-all hover:scale-[1.01]">
                             <div>
                                 <div class="flex items-center justify-between mb-2">
                                     <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-blue-400/20 text-blue-300 border border-blue-400/30 flex items-center gap-1">
                                         <span>📚</span> 단어장 VOCA
                                     </span>
-                                    <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold ${dailyReport.missions.voca.isCompleted ? 'bg-emerald-400 text-slate-950' : 'bg-amber-400/20 text-amber-300 border border-amber-400/40'}">
-                                        ${dailyReport.missions.voca.isCompleted ? '✅ 완수' : '⏳ 진행 중'}
+                                    <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold ${dailyReport.missions.voca.isCompleted ? 'bg-emerald-400 text-slate-950' : (dailyReport.missions.voca.statusText.includes('🚨') ? 'bg-rose-500 text-white animate-pulse' : 'bg-amber-400/20 text-amber-300 border border-amber-400/40')}">
+                                        ${dailyReport.missions.voca.isCompleted ? '✅ 완수' : (dailyReport.missions.voca.statusText.includes('🚨') ? '🚨 긴급 복습' : '⏳ 진행 중')}
                                     </span>
                                 </div>
                                 <h5 class="font-serif font-bold text-sm text-white line-clamp-1">${dailyReport.missions.voca.title}</h5>
                                 <p class="text-xs text-slate-300 mt-0.5">${dailyReport.missions.voca.subtitle}</p>
                             </div>
                             <div class="pt-3 mt-3 border-t border-white/10 flex items-center justify-between">
-                                <span class="text-[11px] font-mono text-blue-200">${dailyReport.missions.voca.statusText}</span>
-                                <button type="button" onclick="window.app && window.app.switchTab('flashcards')" class="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-serif font-bold text-xs flex items-center gap-1 cursor-pointer shadow-2xs transition-colors">
+                                <span class="text-[11px] font-mono ${dailyReport.missions.voca.statusText.includes('🚨') ? 'text-rose-300 font-bold' : 'text-blue-200'}">${dailyReport.missions.voca.statusText}</span>
+                                <button type="button" onclick="${dailyReport.missions.voca.statusText.includes('🚨') ? `window.app && window.app.switchTab('review'); setTimeout(() => window.reviewManager && window.reviewManager.switchBin('urgent'), 100);` : `window.app && window.app.switchTab('flashcards')`}" class="px-3 py-1.5 rounded-lg ${dailyReport.missions.voca.statusText.includes('🚨') ? 'bg-rose-600 hover:bg-rose-500' : 'bg-blue-600 hover:bg-blue-500'} text-white font-serif font-bold text-xs flex items-center gap-1 cursor-pointer shadow-2xs transition-colors">
                                     <span>${dailyReport.missions.voca.actionText}</span>
                                     <i data-lucide="arrow-right" class="w-3 h-3"></i>
                                 </button>

@@ -283,8 +283,15 @@ class FlashcardEngine {
                 sessionBadgeEl.className = 'inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-indigo-100 text-indigo-900 border border-indigo-200 shadow-2xs';
                 sessionBadgeEl.innerHTML = `<i data-lucide="calendar" class="w-3 h-3 text-indigo-700"></i><span>예정 학습 (${word.planDate})</span>`;
             } else if (word.nextReviewDate && word.nextReviewDate <= today) {
-                sessionBadgeEl.className = 'inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-100 text-amber-900 border border-amber-200 shadow-2xs';
-                sessionBadgeEl.innerHTML = `<i data-lucide="refresh-cw" class="w-3 h-3 text-amber-700"></i><span>복습 (${word.stage || 1}단계)</span>`;
+                if (word.isOverdue || word.nextReviewDate < today) {
+                    const diff = window.storage ? window.storage.getDaysDiff(word.nextReviewDate, today) : 1;
+                    sessionBadgeEl.className = 'inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-rose-100 text-rose-800 border border-rose-300 shadow-2xs animate-pulse';
+                    sessionBadgeEl.innerHTML = `<span>🚨</span><span>긴급 복습 (D+${Math.max(1, diff)}일 경과)</span>`;
+                } else {
+                    const cycleMap = { 1: '🌱 1일 주기', 2: '🌿 3일 주기', 3: '🌳 7일 주기', 4: '🔮 14일 주기', 5: '🏆 30일 마스터' };
+                    sessionBadgeEl.className = 'inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-100 text-amber-900 border border-amber-200 shadow-2xs';
+                    sessionBadgeEl.innerHTML = `<i data-lucide="refresh-cw" class="w-3 h-3 text-amber-700"></i><span>${cycleMap[word.stage || 1] || '1일 주기'} 복습</span>`;
+                }
             } else {
                 sessionBadgeEl.className = 'inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-slate-100 text-slate-700 border border-slate-200';
                 sessionBadgeEl.innerHTML = `<i data-lucide="book-open" class="w-3 h-3 text-slate-600"></i><span>단어 학습 (${word.planDate || '전체'})</span>`;
