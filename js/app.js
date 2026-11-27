@@ -1488,13 +1488,16 @@ class AppController {
                             <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-indigo-500/30 text-indigo-200 font-bold uppercase">
                                 Daily Collocation
                             </span>
-                            <button class="dash-audio-btn text-slate-300 hover:text-white p-1" data-audio="${colloc.audioText || colloc.title}" title="발음 듣기">
+                            <button class="dash-audio-btn text-slate-300 hover:text-white p-1" data-audio="${colloc.audioSentence || colloc.exampleEn || colloc.title}" title="발음 듣기">
                                 <i data-lucide="volume-2" class="w-4 h-4"></i>
                             </button>
                         </div>
                         <div class="font-serif font-bold text-base text-white mt-1.5">${colloc.title}</div>
-                        <div class="text-xs text-amber-300 mt-0.5">${colloc.summary}</div>
-                        <div class="text-[11px] text-slate-300 italic mt-1 font-serif">"${colloc.exampleEn}"</div>
+                        <div class="text-xs text-amber-300 mt-0.5">${colloc.summary || colloc.koreanMeaning || ''}</div>
+                        <div class="text-[11px] text-slate-300 italic mt-1 font-serif">"${colloc.exampleEn || colloc.audioSentence || (colloc.awkwardVsNative && colloc.awkwardVsNative.native) || ''}"</div>
+                        ${colloc.exampleKo || (colloc.awkwardVsNative && colloc.awkwardVsNative.reason) ? `
+                            <div class="text-[10px] text-slate-400 mt-1 border-t border-white/5 pt-1">💬 ${colloc.exampleKo || colloc.awkwardVsNative.reason}</div>
+                        ` : ''}
                     </div>
 
                     <div>
@@ -1517,13 +1520,16 @@ class AppController {
                             <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-emerald-500/30 text-emerald-200 font-bold uppercase">
                                 Daily Phrasal Verb & Slang
                             </span>
-                            <button class="dash-audio-btn text-slate-300 hover:text-white p-1" data-audio="${idiom.audioText || idiom.title}" title="발음 듣기">
+                            <button class="dash-audio-btn text-slate-300 hover:text-white p-1" data-audio="${idiom.audioSentence || idiom.exampleEn || idiom.title}" title="발음 듣기">
                                 <i data-lucide="volume-2" class="w-4 h-4"></i>
                             </button>
                         </div>
                         <div class="font-serif font-bold text-base text-white mt-1.5">${idiom.title}</div>
-                        <div class="text-xs text-emerald-300 mt-0.5">${idiom.summary}</div>
-                        <div class="text-[11px] text-slate-300 italic mt-1 font-serif">"${idiom.exampleEn}"</div>
+                        <div class="text-xs text-emerald-300 mt-0.5">${idiom.summary || idiom.koreanMeaning || ''}</div>
+                        <div class="text-[11px] text-slate-300 italic mt-1 font-serif">"${idiom.exampleEn || idiom.audioSentence || (idiom.awkwardVsNative && idiom.awkwardVsNative.native) || ''}"</div>
+                        ${idiom.exampleKo || (idiom.awkwardVsNative && idiom.awkwardVsNative.reason) ? `
+                            <div class="text-[10px] text-slate-400 mt-1 border-t border-white/5 pt-1">💬 ${idiom.exampleKo || idiom.awkwardVsNative.reason}</div>
+                        ` : ''}
                     </div>
 
                     <div>

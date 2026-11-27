@@ -344,6 +344,11 @@ class NativeExpressionsEngine {
         const expr1 = daily.expr1;
         const expr2 = daily.expr2;
 
+        if (!expr1 || !expr2) {
+            container.innerHTML = `<div class="p-6 rounded-2xl bg-slate-900 text-center text-slate-400 text-xs border border-slate-800">원어민 표현 데이터를 준비하는 중입니다...</div>`;
+            return;
+        }
+
         const isExpr1Done = window.storage && window.storage.isDailyMissionCompleted(activeDateStr, expr1.id);
         const isExpr2Done = window.storage && window.storage.isDailyMissionCompleted(activeDateStr, expr2.id);
         const totalMasteredDaily = window.storage ? window.storage.getTotalCompletedDailyCount() : 0;
@@ -425,6 +430,8 @@ class NativeExpressionsEngine {
         const isBm = this.isBookmarked(expr.id);
         const seriesTitle = expr.seriesTitleKo || '원어민 실전 표현';
         const unitTitle = expr.unitTitleKo || `Unit ${expr.unitNumber || 1}`;
+        const activeSentence = expr.exampleEn || expr.audioSentence || (expr.awkwardVsNative && expr.awkwardVsNative.native) || '';
+        const activeMeaning = expr.exampleKo || (expr.awkwardVsNative && expr.awkwardVsNative.reason) || expr.koreanMeaning || '';
 
         return `
             <div class="rounded-xl p-5 border transition-all ${
@@ -482,16 +489,27 @@ class NativeExpressionsEngine {
                         </div>
                     ` : ''}
 
-                    <!-- 오디오 문장 & 쉐도잉 -->
-                    ${expr.audioSentence ? `
-                        <div class="mt-3 p-2.5 rounded-lg bg-white/5 border border-white/5 flex items-center justify-between gap-2">
-                            <div class="text-xs text-slate-200 italic font-serif">
-                                "${this.renderInteractiveSentenceTokens(expr.audioSentence, expr.koreanMeaning)}"
+                    <!-- 원어민 실전 예문 & 발음 청취 -->
+                    ${activeSentence ? `
+                        <div class="mt-3 p-3 rounded-xl bg-white/5 border border-white/10 flex flex-col gap-1.5">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="text-[10px] font-mono font-bold text-amber-300 uppercase tracking-wider flex items-center gap-1">
+                                    <i data-lucide="volume-2" class="w-3.5 h-3.5 text-amber-400"></i> 원어민 실전 예문
+                                </span>
+                                <button onclick="window.tts.speak('${activeSentence.replace(/'/g, "\\'")}')"
+                                        class="px-2 py-0.5 rounded-md bg-amber-400/20 hover:bg-amber-400/30 text-amber-300 text-[11px] font-semibold flex items-center gap-1 cursor-pointer transition-all" title="원어민 발음 듣기">
+                                    <span>듣기</span>
+                                    <span>🔊</span>
+                                </button>
                             </div>
-                            <button onclick="window.tts.speak('${expr.audioSentence.replace(/'/g, "\\'")}')"
-                                    class="w-7 h-7 rounded-lg bg-white/10 hover:bg-white/20 text-white flex items-center justify-center shrink-0 cursor-pointer" title="음성 재생">
-                                🔊
-                            </button>
+                            <div class="text-xs sm:text-sm text-slate-100 font-serif leading-relaxed italic">
+                                "${this.renderInteractiveSentenceTokens(activeSentence, activeMeaning)}"
+                            </div>
+                            ${activeMeaning ? `
+                                <div class="text-[11px] text-slate-400 font-sans border-t border-white/5 pt-1 mt-0.5">
+                                    💬 ${activeMeaning}
+                                </div>
+                            ` : ''}
                         </div>
                     ` : ''}
                 </div>

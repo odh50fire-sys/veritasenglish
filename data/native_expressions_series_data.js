@@ -171,7 +171,9 @@
           "condition": "break the ice / the joke 활용",
           "modelAnswer": "The joke helped break the ice at the meeting.",
           "hint": "The joke helped..."
-        }
+        },
+        "exampleEn": "Telling a light joke is the best way to break the ice.",
+        "exampleKo": "침묵을 깨자는 직역보다는 얼음을 깨듯 냉랭함을 녹인다는 관용어 break the ice가 훨씬 자연스럽습니다."
       },
       {
         "id": "expr-daily-002",
@@ -226,7 +228,9 @@
           "condition": "hit it off / talking about music 활용",
           "modelAnswer": "We hit it off right away while talking about music.",
           "hint": "We hit it off..."
-        }
+        },
+        "exampleEn": "We met yesterday and hit it off immediately.",
+        "exampleKo": "처음 만나자마자 통했다는 원어민의 입에 붙은 표현은 hit it off입니다."
       },
       {
         "id": "expr-daily-003",
@@ -281,7 +285,9 @@
           "condition": "good at / making small talk 활용",
           "modelAnswer": "He is really good at making small talk at parties.",
           "hint": "He is really good at..."
-        }
+        },
+        "exampleEn": "He tried to make small talk while waiting in line.",
+        "exampleKo": "사소한 수다는 'small talk'라는 명사와 동사 'make'가 결합한 연어로 씁니다."
       },
       {
         "id": "expr-daily-004",
@@ -336,7 +342,9 @@
           "condition": "have a lot in common / fashion 활용",
           "modelAnswer": "Jane and I have a lot in common when it comes to fashion.",
           "hint": "Jane and I have..."
-        }
+        },
+        "exampleEn": "Surprisingly, the two of them have a lot in common.",
+        "exampleKo": "취향이나 생각이 같다는 말은 have something in common 관용구를 씁니다."
       }
     ]
   },
@@ -402,7 +410,9 @@
           "condition": "clears up / for a walk 활용",
           "modelAnswer": "Let's go for a walk once it clears up this afternoon.",
           "hint": "Let's go for a walk..."
-        }
+        },
+        "exampleEn": "I hope the rain stops and clears up before our trip.",
+        "exampleKo": "흐렸던 날씨가 맑게 갤 때는 구동사 clear up을 씁니다."
       },
       {
         "id": "expr-daily-006",
@@ -457,7 +467,9 @@
           "condition": "an early bird / even on weekends 활용",
           "modelAnswer": "I am an early bird even on weekends.",
           "hint": "I am an early bird..."
-        }
+        },
+        "exampleEn": "My father has always been an early bird.",
+        "exampleKo": "원어민은 아침형 인간을 간결하게 an early bird, 올빼미형을 a night owl이라 부릅니다."
       },
       {
         "id": "expr-daily-007",
@@ -512,7 +524,9 @@
           "condition": "turn in early tonight 활용",
           "modelAnswer": "Let's turn in early tonight since we have to leave early tomorrow.",
           "hint": "Let's turn in early tonight..."
-        }
+        },
+        "exampleEn": "It's past midnight; I think I'll turn in.",
+        "exampleKo": "go to bed 외에 원어민이 일상에서 정말 자주 쓰는 자연스러운 구동사가 turn in입니다."
       },
       {
         "id": "expr-daily-008",
@@ -567,7 +581,9 @@
           "condition": "beat the rush / left at 6 AM 활용",
           "modelAnswer": "They left at 6 AM to beat the morning rush.",
           "hint": "They left at 6 AM to..."
-        }
+        },
+        "exampleEn": "We left at 4 PM to beat the evening rush.",
+        "exampleKo": "출퇴근 시간이나 인파의 혼잡을 피한다는 표현은 beat the rush로 씁니다."
       }
     ]
   },
@@ -633,7 +649,9 @@
           "condition": "really into / home workouts 활용",
           "modelAnswer": "She is really into home workouts these days.",
           "hint": "She is really into..."
-        }
+        },
+        "exampleEn": "What kind of music are you into lately?",
+        "exampleKo": "원어민은 'My hobby is...'보다는 'I'm into...'라는 표현을 훨씬 더 즐겨 씁니다."
       },
       {
         "id": "expr-daily-010",
@@ -688,7 +706,9 @@
           "condition": "took up swimming / stay healthy 활용",
           "modelAnswer": "He took up swimming to stay healthy.",
           "hint": "He took up swimming..."
-        }
+        },
+        "exampleEn": "He decided to take up photography during vacation.",
+        "exampleKo": "새로운 취미나 활동을 시작할 때는 동사 take up을 씁니다."
       },
       {
         "id": "expr-daily-011",
@@ -743,7 +763,9 @@
           "condition": "binge-watched / on a rainy day 활용",
           "modelAnswer": "We binge-watched the drama all day on a rainy day.",
           "hint": "We binge-watched..."
-        }
+        },
+        "exampleEn": "I stayed up all night to binge-watch my favorite series.",
+        "exampleKo": "넷플릭스 등 OTT 시리즈를 몰아서 연속으로 볼 때는 binge-watch 단어를 씁니다."
       },
       {
         "id": "expr-daily-012",
@@ -798,7 +820,9 @@
           "condition": "blow off steam / after a long day 활용",
           "modelAnswer": "Exercise is a great way to blow off steam after a long day.",
           "hint": "Exercise is a great way to..."
-        }
+        },
+        "exampleEn": "Working out at the gym helps me blow off steam.",
+        "exampleKo": "증기기관의 증기를 빼듯 쌓인 스트레스나 분노를 발산할 때 blow off steam을 씁니다."
       }
     ]
   },
@@ -864,7 +888,9 @@
           "condition": "hung out / at the park 활용",
           "modelAnswer": "We hung out at the park last Sunday.",
           "hint": "We hung out..."
-        }
+        },
+        "exampleEn": "We usually hang out at the local coffee shop.",
+        "exampleKo": "성인에게 'play'는 어린아이 장난감을 갖고 놀거나 게임을 한다는 느낌을 주며, 어울려 노는 것은 hang out입니다."
       },
       {
         "id": "expr-daily-014",
@@ -919,7 +945,9 @@
           "condition": "grab a bite / after the meeting 활용",
           "modelAnswer": "Let's grab a bite nearby after the meeting.",
           "hint": "Let's grab a bite..."
-        }
+        },
+        "exampleEn": "Do you have time to grab a bite right now?",
+        "exampleKo": "가볍게 한 끼 식사를 챙겨 먹는 상황에서 grab a bite는 가장 흔한 생활 표현입니다."
       },
       {
         "id": "expr-daily-015",
@@ -974,7 +1002,9 @@
           "condition": "play it by ear / what time to meet 활용",
           "modelAnswer": "Let's just play it by ear regarding what time to meet tomorrow.",
           "hint": "Let's just play it by ear..."
-        }
+        },
+        "exampleEn": "I'm not sure when I'll finish, so let's play it by ear.",
+        "exampleKo": "악보 없이 귀로 듣고 즉흥 연주하듯 상황에 맞춰 유연하게 결정한다는 표현입니다."
       },
       {
         "id": "expr-daily-016",
@@ -1029,7 +1059,9 @@
           "condition": "pencil in / the meeting next Wednesday 활용",
           "modelAnswer": "I will pencil in the meeting for next Wednesday.",
           "hint": "I will pencil in..."
-        }
+        },
+        "exampleEn": "I'll pencil you in for Friday, but let me know if things change.",
+        "exampleKo": "언제든 지울 수 있는 연필로 적어두듯 '임시로 일정을 픽스하다'는 pencil in입니다."
       }
     ]
   },
@@ -1095,7 +1127,9 @@
           "condition": "caught up / for three hours 활용",
           "modelAnswer": "We caught up at the cafe for three hours.",
           "hint": "We caught up..."
-        }
+        },
+        "exampleEn": "Let's get together soon and catch up.",
+        "exampleKo": "오랜만에 만나 밀린 수다를 떤다는 표현은 동사 catch up이 가장 대표적입니다."
       },
       {
         "id": "expr-daily-018",
@@ -1150,7 +1184,9 @@
           "condition": "What have you been up to / the past few months 활용",
           "modelAnswer": "Long time no see! What have you been up to over the past few months?",
           "hint": "Long time no see! What have you..."
-        }
+        },
+        "exampleEn": "Long time no see! What have you been up to?",
+        "exampleKo": "원어민이 근황을 물을 때 가장 친근하고 자연스럽게 입에 올리는 질문 패턴입니다."
       },
       {
         "id": "expr-daily-019",
@@ -1205,7 +1241,9 @@
           "condition": "keep you in the loop / as soon as 활용",
           "modelAnswer": "I'll keep you in the loop as soon as there is an update.",
           "hint": "I'll keep you in the loop..."
-        }
+        },
+        "exampleEn": "I will keep you in the loop as soon as I hear anything.",
+        "exampleKo": "정보의 원(loop) 안에 넣어둔다는 뜻으로 소외되지 않게 소식을 전해달라는 표현입니다."
       },
       {
         "id": "expr-daily-020",
@@ -1260,7 +1298,9 @@
           "condition": "What a small world / running into you 활용",
           "modelAnswer": "Running into you at the airport? What a small world!",
           "hint": "Running into you at the airport?..."
-        }
+        },
+        "exampleEn": "Running into you here in Paris? What a small world!",
+        "exampleKo": "예상치 못한 장소에서 아는 사람을 우연히 마주쳤을 때 원어민의 감탄사입니다."
       }
     ]
   },
@@ -1326,7 +1366,9 @@
           "condition": "looks great on you / yellow sweater 활용",
           "modelAnswer": "That bright yellow sweater looks great on you.",
           "hint": "That bright yellow sweater..."
-        }
+        },
+        "exampleEn": "That haircut looks really great on you.",
+        "exampleKo": "옷이나 모자, 색상이 특정인에게 어울린다는 표현은 'looks great on [person]'을 씁니다."
       },
       {
         "id": "expr-daily-022",
@@ -1381,7 +1423,9 @@
           "condition": "speak highly of / her leadership 활용",
           "modelAnswer": "All her coworkers speak highly of her leadership.",
           "hint": "All her coworkers speak..."
-        }
+        },
+        "exampleEn": "Everyone in the office speaks highly of her dedication.",
+        "exampleKo": "누군가를 높이 평가하고 칭찬한다는 격식 있는 표현은 speak highly of입니다."
       },
       {
         "id": "expr-daily-023",
@@ -1436,7 +1480,9 @@
           "condition": "I am flattered / that you like my work 활용",
           "modelAnswer": "I am deeply flattered that you like my work.",
           "hint": "I am deeply flattered..."
-        }
+        },
+        "exampleEn": "You think I speak English like a native? I'm flattered!",
+        "exampleKo": "기분 좋은 칭찬을 받았을 때 겸손하면서도 우아하게 감사함을 표하는 원어민의 정석 답변입니다."
       },
       {
         "id": "expr-daily-024",
@@ -1491,7 +1537,9 @@
           "condition": "give credit where it's due / dedication 활용",
           "modelAnswer": "We must give credit where it's due for her dedication.",
           "hint": "We must give credit where..."
-        }
+        },
+        "exampleEn": "Even though I dislike him, I have to give credit where it's due.",
+        "exampleKo": "정당한 성과나 공로를 올바르게 인정하자는 격언 같은 생활 표현입니다."
       }
     ]
   },
@@ -1557,7 +1605,9 @@
           "condition": "chilled out / all Sunday afternoon 활용",
           "modelAnswer": "We chilled out in the living room all Sunday afternoon.",
           "hint": "We chilled out..."
-        }
+        },
+        "exampleEn": "Let's put on some music and chill out.",
+        "exampleKo": "집에서 아무 걱정 없이 푹 쉰다는 캐주얼한 표현은 chill out입니다."
       },
       {
         "id": "expr-daily-026",
@@ -1612,7 +1662,9 @@
           "condition": "recharge his batteries / before the next project 활용",
           "modelAnswer": "He needs to recharge his batteries before starting the next project.",
           "hint": "He needs to recharge..."
-        }
+        },
+        "exampleEn": "I spent the weekend sleeping to recharge my batteries.",
+        "exampleKo": "방전된 스마트폰 배터리를 충전하듯 심신의 에너지를 회복한다는 관용구입니다."
       },
       {
         "id": "expr-daily-027",
@@ -1667,7 +1719,9 @@
           "condition": "sleeping in / on Sunday mornings 활용",
           "modelAnswer": "My favorite thing is sleeping in on Sunday mornings.",
           "hint": "My favorite thing is..."
-        }
+        },
+        "exampleEn": "Since it's a holiday tomorrow, I'm going to sleep in.",
+        "exampleKo": "oversleep은 알람을 못 듣고 '지각하는 늦잠'이고, 주말에 알람 없이 '느긋하게 푹 자는 늦잠'은 sleep in입니다."
       },
       {
         "id": "expr-daily-028",
@@ -1722,7 +1776,9 @@
           "condition": "unwinds / listening to music after work 활용",
           "modelAnswer": "She unwinds by listening to music after work.",
           "hint": "She unwinds by..."
-        }
+        },
+        "exampleEn": "How do you usually unwind after a stressful day?",
+        "exampleKo": "팽팽하게 감긴 태엽을 풀듯 긴장을 푸는 동사 unwind는 휴식을 묘사할 때 품격 있는 표현입니다."
       }
     ]
   },
@@ -1788,7 +1844,9 @@
           "condition": "has a sweet tooth / eats macarons every day 활용",
           "modelAnswer": "My sister has a sweet tooth, so she eats macarons every day.",
           "hint": "My sister has a sweet tooth..."
-        }
+        },
+        "exampleEn": "If you have a sweet tooth, you'll love this bakery.",
+        "exampleKo": "단것을 유난히 좋아하는 식성을 가진 사람을 have a sweet tooth라고 부릅니다."
       },
       {
         "id": "expr-daily-030",
@@ -1843,7 +1901,9 @@
           "condition": "drinks coffee on the go / in the morning 활용",
           "modelAnswer": "She always drinks coffee on the go in the morning.",
           "hint": "She always drinks coffee..."
-        }
+        },
+        "exampleEn": "He lives a busy life, always eating on the go.",
+        "exampleKo": "출근길이나 이동 중에 바쁘게 끼니나 커피를 챙길 때 on the go를 씁니다."
       },
       {
         "id": "expr-daily-031",
@@ -1898,7 +1958,9 @@
           "condition": "the best comfort food / in winter 활용",
           "modelAnswer": "Warm soup is the best comfort food in winter.",
           "hint": "Warm soup is the best..."
-        }
+        },
+        "exampleEn": "Nothing beats spicy tteokbokki as comfort food.",
+        "exampleKo": "추억이 깃들어 있거나 마음이 헛헛할 때 위로를 주는 음식을 영어로 comfort food라 합니다."
       },
       {
         "id": "expr-daily-032",
@@ -1953,7 +2015,9 @@
           "condition": "really hit the spot / tired afternoon 활용",
           "modelAnswer": "A hot cup of tea really hit the spot on a tired afternoon.",
           "hint": "A hot cup of tea..."
-        }
+        },
+        "exampleEn": "That hot ramen really hit the spot after a cold hike.",
+        "exampleKo": "갈증이나 허기가 완벽하게 해소되어 '바로 이 맛이야!'라고 감탄할 때 hit the spot을 씁니다."
       }
     ]
   },
@@ -2019,7 +2083,9 @@
           "condition": "give me a hand / loading these boxes 활용",
           "modelAnswer": "Can you give me a hand loading these boxes into the car?",
           "hint": "Can you give me a hand..."
-        }
+        },
+        "exampleEn": "I'd be glad to give you a hand whenever you need it.",
+        "exampleKo": "손을 빌려준다는 말로 부담 없이 일손을 도와달라고 부탁할 때 give someone a hand를 씁니다."
       },
       {
         "id": "expr-daily-034",
@@ -2074,7 +2140,9 @@
           "condition": "did me a favor / gladly 활용",
           "modelAnswer": "He gladly did me a favor when I asked.",
           "hint": "He gladly did me a favor..."
-        }
+        },
+        "exampleEn": "Would you mind doing me a small favor?",
+        "exampleKo": "부탁을 청할 때 동사 do와 명사 favor를 조합한 정형적 표현입니다."
       },
       {
         "id": "expr-daily-035",
@@ -2129,7 +2197,9 @@
           "condition": "for the ride / I owe you one 활용",
           "modelAnswer": "Thanks for the ride to the airport; I really owe you one!",
           "hint": "Thanks for the ride to the airport;..."
-        }
+        },
+        "exampleEn": "You saved my presentation today; I owe you one big time!",
+        "exampleKo": "도움을 받고 고마움을 표하며 다음엔 내가 은혜를 갚겠다고 할 때 I owe you one을 씁니다."
       },
       {
         "id": "expr-daily-036",
@@ -2184,7 +2254,9 @@
           "condition": "cover for me / while I have lunch 활용",
           "modelAnswer": "Could you cover for me while I have lunch?",
           "hint": "Could you cover for me..."
-        }
+        },
+        "exampleEn": "Sarah agreed to cover for me while I visit the dentist.",
+        "exampleKo": "동료가 자리를 비울 때 업무를 대신 봐준다는 말은 cover for [person]입니다."
       }
     ]
   },
@@ -2250,7 +2322,9 @@
           "condition": "better get going / catch the last train 활용",
           "modelAnswer": "It was fun, but I'd better get going to catch the last train.",
           "hint": "It was fun, but I'd..."
-        }
+        },
+        "exampleEn": "It was great talking, but I'd better get going.",
+        "exampleKo": "시계를 보며 자연스럽게 일어설 때 원어민들이 가장 예의 바르게 쓰는 퇴장 멘트입니다."
       },
       {
         "id": "expr-daily-038",
@@ -2305,7 +2379,9 @@
           "condition": "Everyone looks tired / call it a day 활용",
           "modelAnswer": "Everyone looks tired, so let's call it a day.",
           "hint": "Everyone looks tired, so..."
-        }
+        },
+        "exampleEn": "It's already 7 PM; why don't we call it a day?",
+        "exampleKo": "오늘 할 분량을 마치고 '오늘은 이쯤 하자'고 마무리할 때 쓰는 관용구입니다."
       },
       {
         "id": "expr-daily-039",
@@ -2360,7 +2436,9 @@
           "condition": "keep in touch / after graduation 활용",
           "modelAnswer": "Let's keep in touch even after graduation.",
           "hint": "Let's keep in touch..."
-        }
+        },
+        "exampleEn": "Make sure you keep in touch after you move.",
+        "exampleKo": "헤어질 때 '계속 연락하자'는 따뜻한 인사말은 keep in touch입니다."
       },
       {
         "id": "expr-daily-040",
@@ -2415,7 +2493,9 @@
           "condition": "Take care / until we meet again 활용",
           "modelAnswer": "Take care of yourself until we meet again!",
           "hint": "Take care of yourself..."
-        }
+        },
+        "exampleEn": "It was wonderful seeing you. Take care!",
+        "exampleKo": "원어민이 헤어질 때 건네는 가장 친근하고 따뜻한 작별 인사는 Take care입니다."
       }
     ]
   },
@@ -2481,7 +2561,9 @@
           "condition": "pressed for time / get down to business 활용",
           "modelAnswer": "Since we are pressed for time, let's get down to business right away.",
           "hint": "Since we are pressed for time, let's..."
-        }
+        },
+        "exampleEn": "Let's grab a coffee and get down to business.",
+        "exampleKo": "사담을 마치고 결단력 있게 회의를 본론으로 이끌 때 쓰는 원어민 표준 표현입니다."
       },
       {
         "id": "expr-biz-002",
@@ -2536,7 +2618,9 @@
           "condition": "kick off the conference / keynote speech 활용",
           "modelAnswer": "We plan to kick off the conference with the CEO's keynote speech.",
           "hint": "We plan to kick off..."
-        }
+        },
+        "exampleEn": "I'd like to kick off today's session with a quick summary.",
+        "exampleKo": "프로젝트나 미팅을 에너지 넘치게 공식 개시할 때 kick off를 씁니다."
       },
       {
         "id": "expr-biz-003",
@@ -2591,7 +2675,9 @@
           "condition": "top priority / on the agenda 활용",
           "modelAnswer": "That issue is the top priority on today's agenda.",
           "hint": "That issue is the top priority..."
-        }
+        },
+        "exampleEn": "What is the next topic on the agenda for today?",
+        "exampleKo": "회의에서 다루어질 공식 안건 목록을 on the agenda로 명확하게 표현합니다."
       },
       {
         "id": "expr-biz-004",
@@ -2646,7 +2732,9 @@
           "condition": "Before we wrap up / confirm next steps 활용",
           "modelAnswer": "Before we wrap up the meeting, let's confirm the next steps.",
           "hint": "Before we wrap up..."
-        }
+        },
+        "exampleEn": "We need to wrap up this discussion within ten minutes.",
+        "exampleKo": "회의나 프로젝트를 깔끔하게 끝맺을 때 wrap up을 씁니다."
       }
     ]
   },
@@ -2712,7 +2800,9 @@
           "condition": "on the same page / project priorities 활용",
           "modelAnswer": "We need to be on the same page regarding project priorities.",
           "hint": "We need to be on the same page..."
-        }
+        },
+        "exampleEn": "I called this briefing to ensure we are all on the same page.",
+        "exampleKo": "팀원 모두가 동일한 목표와 이해를 가졌다는 뜻의 대표적 비즈니스 관용어입니다."
       },
       {
         "id": "expr-biz-006",
@@ -2767,7 +2857,9 @@
           "condition": "brings to the table / rich global experience 활용",
           "modelAnswer": "She brings rich global experience to the table for our marketing team.",
           "hint": "She brings rich global experience..."
-        }
+        },
+        "exampleEn": "Her deep understanding of AI brings a lot to the table.",
+        "exampleKo": "협상 테이블이나 조직에 가치 있는 기여를 한다는 표현입니다."
       },
       {
         "id": "expr-biz-007",
@@ -2822,7 +2914,9 @@
           "condition": "provided food for thought / long-term strategy 활용",
           "modelAnswer": "The report provided valuable food for thought for our long-term strategy.",
           "hint": "The report provided valuable..."
-        }
+        },
+        "exampleEn": "His presentation provided valuable food for thought.",
+        "exampleKo": "지적으로 곰곰이 곱씹어 볼 만한 지혜나 아이디어를 뜻합니다."
       },
       {
         "id": "expr-biz-008",
@@ -2877,7 +2971,9 @@
           "condition": "convince executives / to buy into the plan 활용",
           "modelAnswer": "We need to convince the executives to buy into the digital transformation plan.",
           "hint": "We need to convince the executives to..."
-        }
+        },
+        "exampleEn": "It took months for the board to buy into the restructuring plan.",
+        "exampleKo": "어떤 전략이나 가치를 신뢰하여 지지한다는 뜻의 구동사입니다."
       }
     ]
   },
@@ -2943,7 +3039,9 @@
           "condition": "play devil's advocate / identify weaknesses 활용",
           "modelAnswer": "Let me play devil's advocate for a moment to identify potential weaknesses.",
           "hint": "Let me play devil's advocate..."
-        }
+        },
+        "exampleEn": "Let me play devil's advocate for a moment: what if the system fails?",
+        "exampleKo": "토론의 완성도를 높이기 위해 일부러 반대 가설을 제기할 때 쓰는 교양 있는 표현입니다."
       },
       {
         "id": "expr-biz-010",
@@ -2998,7 +3096,9 @@
           "condition": "With all due respect / not feasible 활용",
           "modelAnswer": "With all due respect, that proposal is not feasible under our current timeline.",
           "hint": "With all due respect, that proposal is..."
-        }
+        },
+        "exampleEn": "With all due respect, our team was not consulted on this change.",
+        "exampleKo": "상사나 고객에게 반대 의견을 개진할 때 갖추는 가장 공손하고 전문적인 서두입니다."
       },
       {
         "id": "expr-biz-011",
@@ -3053,7 +3153,9 @@
           "condition": "do not see eye to eye / on the timeline 활용",
           "modelAnswer": "My manager and I do not see eye to eye on the project timeline.",
           "hint": "My manager and I do not..."
-        }
+        },
+        "exampleEn": "The board and the CEO rarely see eye to eye on spending.",
+        "exampleKo": "눈높이를 맞추듯 가치관이나 결정 사항에 대해 뜻이 통한다는 대표적 숙어입니다."
       },
       {
         "id": "expr-biz-012",
@@ -3108,7 +3210,9 @@
           "condition": "I beg to differ / regarding that hypothesis 활용",
           "modelAnswer": "I respectfully beg to differ regarding that hypothesis.",
           "hint": "I respectfully beg to differ..."
-        }
+        },
+        "exampleEn": "You may think it's a minor bug, but I beg to differ.",
+        "exampleKo": "격식 있고 세련되게 반대 의견을 밝히는 최고의 영국식/미국식 비즈니스 표현입니다."
       }
     ]
   },
@@ -3174,7 +3278,9 @@
           "condition": "touch base tomorrow afternoon / final review 활용",
           "modelAnswer": "Let's touch base tomorrow afternoon for the final review.",
           "hint": "Let's touch base tomorrow..."
-        }
+        },
+        "exampleEn": "Can we touch base for five minutes before your next meeting?",
+        "exampleKo": "5~10분 정도 부담 없이 진행 상황을 동기화할 때 가장 사랑받는 표현입니다."
       },
       {
         "id": "expr-biz-014",
@@ -3229,7 +3335,9 @@
           "condition": "follow up on / discussed in the meeting 활용",
           "modelAnswer": "I would like to follow up on the action items discussed in the last meeting.",
           "hint": "I would like to follow up on..."
-        }
+        },
+        "exampleEn": "I just wanted to follow up on the status of our invoice.",
+        "exampleKo": "이전 논의나 이메일에 대한 후속 확인 및 진행 상황 점검 시 표준 표현입니다."
       },
       {
         "id": "expr-biz-015",
@@ -3284,7 +3392,9 @@
           "condition": "looped in the legal team / review the draft 활용",
           "modelAnswer": "I have looped in the legal team so they can review the contract draft.",
           "hint": "I have looped in..."
-        }
+        },
+        "exampleEn": "I've looped in our legal team so they can review the clauses.",
+        "exampleKo": "정보 공유 고리(loop) 안에 팀원을 포함시킨다는 직관적 비즈니스 슬랭입니다."
       },
       {
         "id": "expr-biz-016",
@@ -3339,7 +3449,9 @@
           "condition": "keep you posted / negotiation results 활용",
           "modelAnswer": "I will keep you posted as soon as the negotiation results come out.",
           "hint": "I will keep you posted as soon as..."
-        }
+        },
+        "exampleEn": "I'll keep you posted once we finalize the numbers.",
+        "exampleKo": "새 소식이 들어올 때마다 게시판에 글을 올리듯 실시간으로 소식을 전해달라는 뜻입니다."
       }
     ]
   },
@@ -3405,7 +3517,9 @@
           "condition": "worked over the weekend / to meet the deadline 활용",
           "modelAnswer": "The team worked over the weekend to meet the project deadline.",
           "hint": "The team worked over the weekend..."
-        }
+        },
+        "exampleEn": "We must all work together to meet the deadline.",
+        "exampleKo": "마감일을 지킨다는 정형화된 비즈니스 동사는 meet입니다."
       },
       {
         "id": "expr-biz-018",
@@ -3460,7 +3574,9 @@
           "condition": "push back the deadline / quality inspection 활용",
           "modelAnswer": "We need to push back the deadline by one week for quality inspection.",
           "hint": "We need to push back..."
-        }
+        },
+        "exampleEn": "Due to technical issues, we had to push back the release date.",
+        "exampleKo": "일정이나 마감 기한을 뒤로 늦출 때 구어에서 가장 빈번히 쓰이는 표현입니다."
       },
       {
         "id": "expr-biz-019",
@@ -3515,7 +3631,9 @@
           "condition": "Despite the tight schedule / finished on time 활용",
           "modelAnswer": "Despite the tight schedule, they finished the project on time.",
           "hint": "Despite the tight schedule, they..."
-        }
+        },
+        "exampleEn": "Given our tight schedule, let's skip the lengthy intro.",
+        "exampleKo": "일정이 여유 없이 꽉 차 있을 때 tight schedule을 연어로 씁니다."
       },
       {
         "id": "expr-biz-020",
@@ -3570,7 +3688,9 @@
           "condition": "always crunch time / before the deadline 활용",
           "modelAnswer": "The days before a product launch are always crunch time for the team.",
           "hint": "The days before a product launch are..."
-        }
+        },
+        "exampleEn": "With only three days left, it's crunch time.",
+        "exampleKo": "시간에 쫓기며 총력을 다해 최고의 결과를 내야 하는 중대한 마감 직전을 뜻합니다."
       }
     ]
   },
@@ -3636,7 +3756,9 @@
           "condition": "As per our discussion / attached the specifications 활용",
           "modelAnswer": "As per our discussion yesterday, I have attached the detailed specifications.",
           "hint": "As per our discussion yesterday, I have..."
-        }
+        },
+        "exampleEn": "As per our discussion, I have updated the budget sheet.",
+        "exampleKo": "앞선 구두 협의 내용을 문서로 확정 지을 때 쓰는 정석 비즈니스 이메일 오프닝입니다."
       },
       {
         "id": "expr-biz-022",
@@ -3691,7 +3813,9 @@
           "condition": "Kindly be advised / scheduled at midnight 활용",
           "modelAnswer": "Kindly be advised that system maintenance is scheduled at midnight.",
           "hint": "Kindly be advised that..."
-        }
+        },
+        "exampleEn": "Kindly be advised that the maintenance will take three hours.",
+        "exampleKo": "공식 휴무나 정책 변경 사항을 고객에게 공지할 때 정중한 안내 문구입니다."
       },
       {
         "id": "expr-biz-023",
@@ -3746,7 +3870,9 @@
           "condition": "feel free to reach out / have any questions 활용",
           "modelAnswer": "Please feel free to reach out to me if you have any questions.",
           "hint": "Please feel free to reach out..."
-        }
+        },
+        "exampleEn": "Don't hesitate to reach out if you need assistance.",
+        "exampleKo": "contact보다 더 따뜻하고 적극적으로 소통의 문을 열어두는 비즈니스 표현입니다."
       },
       {
         "id": "expr-biz-024",
@@ -3801,7 +3927,9 @@
           "condition": "look forward to meeting you / next week 활용",
           "modelAnswer": "I look forward to meeting you at the conference next week.",
           "hint": "I look forward to meeting you..."
-        }
+        },
+        "exampleEn": "We look forward to a successful collaboration.",
+        "exampleKo": "to 뒤에 반드시 명사나 동명사(-ing)가 와야 하는 대표적 문법 포인트이자 이메일 클로징입니다."
       }
     ]
   },
@@ -3867,7 +3995,9 @@
           "condition": "apologize for the inconvenience / billing error 활용",
           "modelAnswer": "We apologize for the inconvenience caused by this billing error.",
           "hint": "We apologize for the inconvenience caused by..."
-        }
+        },
+        "exampleEn": "We apologize for the inconvenience and are working to fix it.",
+        "exampleKo": "서비스 지연이나 오류 발생 시 고객에게 전달하는 표준 사과 표현입니다."
       },
       {
         "id": "expr-biz-026",
@@ -3922,7 +4052,9 @@
           "condition": "look into the matter / reply by end of day 활용",
           "modelAnswer": "We will look into the matter and reply to you by the end of the day.",
           "hint": "We will look into the matter and..."
-        }
+        },
+        "exampleEn": "Our technical team is looking into the matter right now.",
+        "exampleKo": "단순히 '보다'가 아니라 철저하게 진상을 조사하여 해결하겠다는 책임감 있는 약속입니다."
       },
       {
         "id": "expr-biz-027",
@@ -3977,7 +4109,9 @@
           "condition": "make every effort / to expedite the approval 활용",
           "modelAnswer": "We will make every effort to expedite the approval process.",
           "hint": "We will make every effort to..."
-        }
+        },
+        "exampleEn": "Can we pay extra to expedite the visa application?",
+        "exampleKo": "비즈니스 물류와 처리 과정에서 '급행으로 신속 처리하다'는 동사 expedite를 씁니다."
       },
       {
         "id": "expr-biz-028",
@@ -4032,7 +4166,9 @@
           "condition": "rectify the problem / improve service quality 활용",
           "modelAnswer": "We are working hard to rectify the problem and improve service quality.",
           "hint": "We are working hard to..."
-        }
+        },
+        "exampleEn": "We are determined to rectify the situation without further delay.",
+        "exampleKo": "단순 수리를 넘어 결함이나 과실을 완벽하게 올바른 상태로 시정한다는 고급 어휘입니다."
       }
     ]
   },
@@ -4098,7 +4234,9 @@
           "condition": "The bottom line is that / top priority 활용",
           "modelAnswer": "The bottom line is that customer satisfaction must remain our top priority.",
           "hint": "The bottom line is that..."
-        }
+        },
+        "exampleEn": "How will this software upgrade impact our bottom line?",
+        "exampleKo": "재무제표의 가장 밑바닥 순이익 라인에서 유래하여 모든 논의의 '가장 중요한 핵심'을 뜻합니다."
       },
       {
         "id": "expr-biz-030",
@@ -4153,7 +4291,9 @@
           "condition": "elevated our brand / worldwide 활용",
           "modelAnswer": "This ad campaign successfully elevated our brand worldwide.",
           "hint": "This ad campaign successfully..."
-        }
+        },
+        "exampleEn": "We are launching premium packaging to elevate our brand.",
+        "exampleKo": "브랜드의 품격과 시장 지위를 한 단계 격상시킬 때 elevate the brand를 씁니다."
       },
       {
         "id": "expr-biz-031",
@@ -4208,7 +4348,9 @@
           "condition": "a game changer / online shopping market 활용",
           "modelAnswer": "This innovative app will be a game changer in the online shopping market.",
           "hint": "This innovative app will be..."
-        }
+        },
+        "exampleEn": "Generative AI has proven to be a game changer.",
+        "exampleKo": "기존 시장의 판도를 완전히 뒤흔들 혁신적인 기술이나 전략을 칭하는 표현입니다."
       },
       {
         "id": "expr-biz-032",
@@ -4263,7 +4405,9 @@
           "condition": "walk you through / key terms of the contract 활용",
           "modelAnswer": "Let me walk you through the key terms of the contract.",
           "hint": "Let me walk you through..."
-        }
+        },
+        "exampleEn": "I will walk you through the key financial highlights.",
+        "exampleKo": "마치 함께 걸어가며 안내하듯 복잡한 과정이나 자료를 친절하게 짚어준다는 뜻입니다."
       }
     ]
   },
@@ -4329,7 +4473,9 @@
           "condition": "talked shop / throughout dinner on Friday 활용",
           "modelAnswer": "They talked shop throughout dinner on Friday evening.",
           "hint": "They talked shop throughout..."
-        }
+        },
+        "exampleEn": "I know it's a party, but can we talk shop for just a minute?",
+        "exampleKo": "식사나 파티 같은 사교적인 자리에서 본업이나 회사 업무 이야기를 꺼낼 때 쓰는 표현입니다."
       },
       {
         "id": "expr-biz-034",
@@ -4384,7 +4530,9 @@
           "condition": "expanded her network / industry meetups 활용",
           "modelAnswer": "She expanded her professional network by actively attending industry meetups.",
           "hint": "She expanded her professional network by..."
-        }
+        },
+        "exampleEn": "LinkedIn is an effective tool to expand your professional network.",
+        "exampleKo": "전문 직무 분야에서 유익한 인맥과 관계를 넓혀갈 때 표준 연어로 씁니다."
       },
       {
         "id": "expr-biz-035",
@@ -4439,7 +4587,9 @@
           "condition": "pick your brain / AI trends over coffee 활용",
           "modelAnswer": "Could I pick your brain on the latest AI trends over a cup of coffee?",
           "hint": "Could I pick your brain on..."
-        }
+        },
+        "exampleEn": "I'd love to buy you lunch and pick your brain for half an hour.",
+        "exampleKo": "전문가의 뇌 속에 든 풍부한 지식과 통찰을 정중하게 빌려 듣는다는 친숙한 표현입니다."
       },
       {
         "id": "expr-biz-036",
@@ -4494,7 +4644,9 @@
           "condition": "foot the bill / business travel expenses 활용",
           "modelAnswer": "The company will foot the bill for all business travel expenses.",
           "hint": "The company will foot the bill..."
-        }
+        },
+        "exampleEn": "Who is going to foot the bill for the team dinner?",
+        "exampleKo": "계산서 맨 아래(foot)에 서명하고 금액을 전부 결제한다는 데서 유래한 표현입니다."
       }
     ]
   },
@@ -4560,7 +4712,9 @@
           "condition": "calls the shots / on the board of directors 활용",
           "modelAnswer": "She is the key figure who calls the shots on the board of directors.",
           "hint": "She is the key figure who..."
-        }
+        },
+        "exampleEn": "Although he is young, he calls the shots on this project.",
+        "exampleKo": "당구 경기에서 공을 어디로 칠지 선언하듯 최종 결정권을 행사한다는 표현입니다."
       },
       {
         "id": "expr-biz-038",
@@ -4615,7 +4769,9 @@
           "condition": "sealed the deal / one-million-dollar partnership 활용",
           "modelAnswer": "They successfully sealed the deal on a one-million-dollar partnership yesterday.",
           "hint": "They successfully sealed the deal on..."
-        }
+        },
+        "exampleEn": "A handshake was all it took to seal the deal.",
+        "exampleKo": "과거 계약 문서에 밀랍 인장(seal)을 찍어 공식 체결하듯 성공적으로 계약을 매듭짓는다는 뜻입니다."
       },
       {
         "id": "expr-biz-039",
@@ -4670,7 +4826,9 @@
           "condition": "green-lighted / new mobile app development 활용",
           "modelAnswer": "Management has officially green-lighted the new mobile app development.",
           "hint": "Management has officially..."
-        }
+        },
+        "exampleEn": "We are just waiting for the client to green-light the proposal.",
+        "exampleKo": "신호등의 초록불처럼 '가도 좋다'고 프로젝트의 출발을 승인해 주는 것을 동사로 씁니다."
       },
       {
         "id": "expr-biz-040",
@@ -4725,7 +4883,9 @@
           "condition": "go back to the drawing board / first proposal was rejected 활용",
           "modelAnswer": "Since our first proposal was rejected, we must go back to the drawing board.",
           "hint": "Since our first proposal was rejected, we..."
-        }
+        },
+        "exampleEn": "If this marketing concept fails, we'll have to go back to the drawing board.",
+        "exampleKo": "설계도면(drawing board)을 지우고 백지상태에서 새로운 계획을 세울 때 쓰는 관용어입니다."
       }
     ]
   },
@@ -4791,7 +4951,9 @@
           "condition": "sheds light on / marine ecosystems",
           "modelAnswer": "This research sheds light on the impact of climate change on marine ecosystems.",
           "hint": "This research sheds light on..."
-        }
+        },
+        "exampleEn": "Recent archaeological findings shed light on ancient trade routes.",
+        "exampleKo": "어두운 곳에 빛을 비추듯 학술적 난제의 실체를 명확히 규명할 때 씁니다."
       },
       {
         "id": "expr-acad-002",
@@ -4846,7 +5008,9 @@
           "condition": "centers around / ethical boundaries",
           "modelAnswer": "The academic dispute centers around the ethical boundaries of gene editing.",
           "hint": "The academic dispute centers around..."
-        }
+        },
+        "exampleEn": "Much of the controversy centers around data privacy laws.",
+        "exampleKo": "논증의 핵심 무게중심이 특정 주제에 맞추어져 있음을 기술하는 학술 동사입니다."
       },
       {
         "id": "expr-acad-003",
@@ -4901,7 +5065,9 @@
           "condition": "put forward a new hypothesis / quantum design",
           "modelAnswer": "The research team put forward a new hypothesis regarding quantum computer design.",
           "hint": "The research team put forward..."
-        }
+        },
+        "exampleEn": "Newton put forward a revolutionary theory of universal gravitation.",
+        "exampleKo": "학술적 가설이나 이론을 공식 제기할 때 쓰는 가장 정제된 표현입니다."
       },
       {
         "id": "expr-acad-004",
@@ -4956,7 +5122,9 @@
           "condition": "warrants immediate attention / policymakers",
           "modelAnswer": "These rapid ecological shifts warrant immediate attention from policymakers.",
           "hint": "These rapid ecological shifts warrant..."
-        }
+        },
+        "exampleEn": "The correlation between air pollution and cognitive decline warrants attention.",
+        "exampleKo": "학술적으로 정당하게 면밀한 검증을 요구한다는 격조 높은 표현입니다."
       }
     ]
   },
@@ -5022,7 +5190,9 @@
           "condition": "gave rise to fierce backlash / small businesses",
           "modelAnswer": "The new tax policy gave rise to fierce backlash among small business owners.",
           "hint": "The new tax policy gave rise to..."
-        }
+        },
+        "exampleEn": "Economic instability often gives rise to political unrest.",
+        "exampleKo": "사건이나 정책이 거대한 연쇄 반응이나 새 국면을 초래할 때 씁니다."
       },
       {
         "id": "expr-acad-006",
@@ -5077,7 +5247,9 @@
           "condition": "stem from unclear instructions",
           "modelAnswer": "Most communication breakdowns stem from unclear instructions.",
           "hint": "Most communication breakdowns stem from..."
-        }
+        },
+        "exampleEn": "His skepticism stems from years of contradictory data.",
+        "exampleKo": "문제의 근본적인 기원을 짚어낼 때 쓰는 표현입니다."
       },
       {
         "id": "expr-acad-007",
@@ -5132,7 +5304,9 @@
           "condition": "attribute improved survival rates to early diagnosis",
           "modelAnswer": "They attribute improved survival rates to advancements in early diagnosis.",
           "hint": "They attribute improved survival rates to..."
-        }
+        },
+        "exampleEn": "Economists attribute the sudden market rebound to lower interest rates.",
+        "exampleKo": "인과관계 분석 및 학술 데이터 귀인 서술의 표준 동사입니다."
       },
       {
         "id": "expr-acad-008",
@@ -5187,7 +5361,9 @@
           "condition": "paved the way for / clean energy",
           "modelAnswer": "The fundamental research paved the way for next-generation clean energy development.",
           "hint": "The fundamental research paved the way for..."
-        }
+        },
+        "exampleEn": "The peace treaty paved the way for lasting regional stability.",
+        "exampleKo": "후속 연구나 혁신이 발전할 토양을 구축했다는 뜻입니다."
       }
     ]
   },
@@ -5253,7 +5429,9 @@
           "condition": "on the contrary, it boosted productivity",
           "modelAnswer": "The measure did not hinder growth; on the contrary, it boosted productivity.",
           "hint": "The measure did not hinder growth; on the contrary..."
-        }
+        },
+        "exampleEn": "Far from being a failure, the trial was, on the contrary, a milestone.",
+        "exampleKo": "앞선 진술이나 통념을 정면으로 반박하며 정반대의 진실을 강조할 때 씁니다."
       },
       {
         "id": "expr-acad-010",
@@ -5308,7 +5486,9 @@
           "condition": "Despite the fact that initial costs are high",
           "modelAnswer": "Despite the fact that initial costs are high, renewable energy is essential.",
           "hint": "Despite the fact that initial costs..."
-        }
+        },
+        "exampleEn": "He completed the project despite the fact that funding was cut.",
+        "exampleKo": "단순한 although보다 객관적 팩트(fact)를 부각하며 양보 구문을 형성할 때 씁니다."
       },
       {
         "id": "expr-acad-011",
@@ -5363,7 +5543,9 @@
           "condition": "conversely, when supply exceeds demand",
           "modelAnswer": "When demand rises, prices increase; conversely, when supply exceeds demand, prices fall.",
           "hint": "When demand rises, prices increase; conversely..."
-        }
+        },
+        "exampleEn": "Optimistic patients recover faster; conversely, chronic stress delays healing.",
+        "exampleKo": "두 대조되는 원리나 결과를 논리적으로 맞비교할 때 쓰는 정통 학술 부사입니다."
       },
       {
         "id": "expr-acad-012",
@@ -5418,7 +5600,9 @@
           "condition": "yielded to objective statistical data",
           "modelAnswer": "Long-standing prejudices finally yielded to objective statistical data.",
           "hint": "Long-standing prejudices finally yielded to..."
-        }
+        },
+        "exampleEn": "Speculative hypotheses must yield to verified laboratory data.",
+        "exampleKo": "새로운 경험적 증거 앞에서 기존의 낡은 가설이 자리를 내주고 물러남을 묘사합니다."
       }
     ]
   },
@@ -5484,7 +5668,9 @@
           "condition": "corroborated the timeline of fossil records",
           "modelAnswer": "Genetic sequencing data corroborated the timeline established by fossil records.",
           "hint": "Genetic sequencing data corroborated the timeline..."
-        }
+        },
+        "exampleEn": "Multiple witnesses corroborated the suspect's testimony.",
+        "exampleKo": "단순한 support를 넘어 객관적인 독립 증거가 동일한 결과를 확증할 때 씁니다."
       },
       {
         "id": "expr-acad-014",
@@ -5499,7 +5685,7 @@
         },
         "explanation": "추상적 가설에 대해 구체적 증거 자료를 들어 타당성을 입증할 때 씁니다.",
         "collocation": "substantiate claims with rigorous data",
-        "audioSentence": "The prosecutor failed to substantiate the allegations in court.",
+        "audioSentence": "Without solid statistical backing, it is impossible to substantiate this claim.",
         "dialogue": [
           {
             "speaker": "Judge",
@@ -5539,7 +5725,9 @@
           "condition": "substantiated their claims through comprehensive surveys",
           "modelAnswer": "The researchers substantiated their claims through comprehensive surveys.",
           "hint": "The researchers substantiated their claims through..."
-        }
+        },
+        "exampleEn": "Without solid statistical backing, it is impossible to substantiate this claim.",
+        "exampleKo": "근거 없는 주장이 아니라 객관적 데이터로 실체와 신빙성을 부여할 때 씁니다."
       },
       {
         "id": "expr-acad-015",
@@ -5594,7 +5782,9 @@
           "condition": "robust empirical evidence supporting the efficacy",
           "modelAnswer": "There is robust empirical evidence supporting the efficacy of this therapy.",
           "hint": "There is robust empirical evidence supporting..."
-        }
+        },
+        "exampleEn": "Empirical evidence demonstrates a clear link between exercise and mental acuity.",
+        "exampleKo": "이론적 공상이 아니라 실제 실험, 관찰, 측정을 통해 얻은 데이터 증거입니다."
       },
       {
         "id": "expr-acad-016",
@@ -5649,7 +5839,9 @@
           "condition": "draws on the latest climate data",
           "modelAnswer": "The author draws on the latest climate data to explain complex ecosystem dynamics.",
           "hint": "The author draws on the latest climate data..."
-        }
+        },
+        "exampleEn": "The novelist draws on historical documents to recreate medieval life.",
+        "exampleKo": "기존의 방대한 학술 문헌, 데이터베이스, 선행 연구를 원천으로 삼을 때 씁니다."
       }
     ]
   },
@@ -5715,7 +5907,9 @@
           "condition": "showed exponential growth over the past five years",
           "modelAnswer": "Electric vehicle sales showed exponential growth over the past five years.",
           "hint": "Electric vehicle sales showed..."
-        }
+        },
+        "exampleEn": "Computing power has shown exponential growth over recent decades.",
+        "exampleKo": "단순한 linear 성장이 아닌 가파른 곡선을 그리며 폭증하는 양상을 뜻합니다."
       },
       {
         "id": "expr-acad-018",
@@ -5770,7 +5964,9 @@
           "condition": "plateaued after one month",
           "modelAnswer": "Her weight loss progress plateaued after one month of strict diet.",
           "hint": "Her weight loss progress plateaued..."
-        }
+        },
+        "exampleEn": "Sales plateaued at fifty thousand units per quarter.",
+        "exampleKo": "고원(plateau)에 도달하듯 상승세를 멈추고 평탄하게 유지되는 상태입니다."
       },
       {
         "id": "expr-acad-019",
@@ -5825,7 +6021,9 @@
           "condition": "recorded a sharp downturn last quarter",
           "modelAnswer": "The manufacturing index recorded a sharp downturn in the last quarter.",
           "hint": "The manufacturing index recorded a..."
-        }
+        },
+        "exampleEn": "Tourism took a sharp downturn during the travel embargo.",
+        "exampleKo": "완만한 하락이 아니라 가파르고 위험하게 수치가 곤두박질치는 양상입니다."
       },
       {
         "id": "expr-acad-020",
@@ -5880,7 +6078,9 @@
           "condition": "only a marginal difference existed between",
           "modelAnswer": "Only a marginal difference existed between the test group and the control group.",
           "hint": "Only a marginal difference existed..."
-        }
+        },
+        "exampleEn": "The price reduction led to only a marginal difference in customer demand.",
+        "exampleKo": "통계적으로 유의미하지 않거나 실질적 영향이 거의 없는 근소한 차이입니다."
       }
     ]
   },
@@ -5946,7 +6146,9 @@
           "condition": "It is plausible that the mutation increased",
           "modelAnswer": "It is plausible that the mutation increased the transmission rate of the virus.",
           "hint": "It is plausible that the mutation..."
-        }
+        },
+        "exampleEn": "Given the current trend, it is plausible that sea levels will rise further.",
+        "exampleKo": "단정하기는 이르지만 논리적, 과학적으로 충분히 그럴듯한 개연성이 있을 때 씁니다."
       },
       {
         "id": "expr-acad-022",
@@ -6001,7 +6203,9 @@
           "condition": "ostensibly aimed at academic exchange",
           "modelAnswer": "The summit was ostensibly aimed at academic exchange, but was deeply commercial.",
           "hint": "The summit was ostensibly aimed at..."
-        }
+        },
+        "exampleEn": "He resigned ostensibly for health reasons, but political pressure was suspected.",
+        "exampleKo": "겉으로 내세우는 명분과 이면에 숨겨진 실상이 다를 때 비판적으로 지적하는 부사입니다."
       },
       {
         "id": "expr-acad-023",
@@ -6056,7 +6260,9 @@
           "condition": "arguably the most significant archaeological find",
           "modelAnswer": "This discovery is arguably the most significant archaeological find of the decade.",
           "hint": "This discovery is arguably the most..."
-        }
+        },
+        "exampleEn": "The discovery of penicillin was arguably the greatest triumph of twentieth-century medicine.",
+        "exampleKo": "100% 단언하기는 어렵지만 강력한 논거로 입증할 수 있는 최상의 명제에 붙입니다."
       },
       {
         "id": "expr-acad-024",
@@ -6111,7 +6317,9 @@
           "condition": "Whether the bill will boost youth employment remains to be seen.",
           "modelAnswer": "Whether the new bill will boost youth employment remains to be seen.",
           "hint": "Whether the new bill will boost..."
-        }
+        },
+        "exampleEn": "Whether the new reform will yield tangible results remains to be seen.",
+        "exampleKo": "섣부른 결론을 유보하고 미래의 데이터 추이를 더 관찰해야 할 때 쓰는 학술적 결언입니다."
       }
     ]
   },
@@ -6177,7 +6385,9 @@
           "condition": "debunked the myth that dietary fat is the sole cause",
           "modelAnswer": "Researchers debunked the myth that dietary fat is the sole cause of heart disease.",
           "hint": "Researchers debunked the myth that..."
-        }
+        },
+        "exampleEn": "Historians have debunked the myth that the Great Wall is visible from orbit.",
+        "exampleKo": "대중 사이에 널리 퍼진 잘못된 근거 없는 미신이나 통념을 실증 데이터로 깨부술 때 씁니다."
       },
       {
         "id": "expr-acad-026",
@@ -6232,7 +6442,9 @@
           "condition": "calls the validity of the survey into question",
           "modelAnswer": "Sampling bias calls the overall validity of the survey results into question.",
           "hint": "Sampling bias calls the overall..."
-        }
+        },
+        "exampleEn": "The revelation of flawed calibration called into question all prior measurements.",
+        "exampleKo": "기존에 정설로 받아들여지던 결과의 신뢰성이나 타당성에 근본적인 물음표를 던질 때 씁니다."
       },
       {
         "id": "expr-acad-027",
@@ -6287,7 +6499,9 @@
           "condition": "filled with flawed assumptions and fallacious reasoning",
           "modelAnswer": "The policy paper is filled with flawed assumptions and fallacious reasoning.",
           "hint": "The policy paper is filled with..."
-        }
+        },
+        "exampleEn": "The argument relies heavily on emotional appeals and fallacious reasoning.",
+        "exampleKo": "논리적 인과관계가 성립하지 않는 결함투성이의 추론 방식을 비판할 때 씁니다."
       },
       {
         "id": "expr-acad-028",
@@ -6342,7 +6556,9 @@
           "condition": "overlooked a critical factor: demographic shifts",
           "modelAnswer": "The initial analysis overlooked a critical factor: rapid demographic shifts.",
           "hint": "The initial analysis overlooked a critical..."
-        }
+        },
+        "exampleEn": "In evaluating the fiscal deficit, policymakers overlooked a critical factor.",
+        "exampleKo": "선행 연구들이 사소한 변수에만 매달리다 가장 결정적인 요소를 놓쳤음을 비판할 때 씁니다."
       }
     ]
   },
@@ -6408,7 +6624,9 @@
           "condition": "conducted under the assumption that consumers are rational",
           "modelAnswer": "The analysis was conducted under the assumption that consumers behave entirely rationally.",
           "hint": "The analysis was conducted under..."
-        }
+        },
+        "exampleEn": "Calculations were made under the assumption that temperature remains constant.",
+        "exampleKo": "어떤 이론이나 수식 모델이 성립하기 위해 전제되어야 할 기초 가정을 명시할 때 씁니다."
       },
       {
         "id": "expr-acad-030",
@@ -6463,7 +6681,9 @@
           "condition": "postulate that human behavior is driven by",
           "modelAnswer": "Economists postulate that human behavior is driven by utility maximization.",
           "hint": "Economists postulate that human behavior..."
-        }
+        },
+        "exampleEn": "Linguists postulate an innate biological capacity for language acquisition.",
+        "exampleKo": "단순한 추측이 아니라 체계적인 이론 전개를 위해 근본 법칙으로서 선언할 때 씁니다."
       },
       {
         "id": "expr-acad-031",
@@ -6518,7 +6738,9 @@
           "condition": "rests on the premise that population will grow",
           "modelAnswer": "The policy rests on the premise that the national population will continue to grow.",
           "hint": "The policy rests on the premise..."
-        }
+        },
+        "exampleEn": "His philosophical argument rests on a flawed premise.",
+        "exampleKo": "결론을 도출하기 위한 논리의 기초 바탕이 되는 참이라고 가정된 명제입니다."
       },
       {
         "id": "expr-acad-032",
@@ -6573,7 +6795,9 @@
           "condition": "strictly contingent upon supply chain stabilization",
           "modelAnswer": "Economic recovery is strictly contingent upon rapid supply chain stabilization.",
           "hint": "Economic recovery is strictly contingent upon..."
-        }
+        },
+        "exampleEn": "Our approval is strictly contingent upon satisfactory environmental reviews.",
+        "exampleKo": "독립적으로 확정된 것이 아니라 외부 변수나 조건의 성립 여부에 종속되어 있을 때 씁니다."
       }
     ]
   },
@@ -6599,7 +6823,7 @@
         },
         "explanation": "실험 통계 수치를 바탕으로 명제를 연역/귀납적으로 추론할 때 씁니다.",
         "collocation": "can be reasonably inferred from the evidence",
-        "audioSentence": "What can we infer from these contradictory results?",
+        "audioSentence": "We can logically infer from the data that the drug crosses the blood-brain barrier.",
         "dialogue": [
           {
             "speaker": "Prof",
@@ -6639,7 +6863,9 @@
           "condition": "can infer from the survey data that consumer confidence",
           "modelAnswer": "We can reasonably infer from the survey data that consumer confidence has rebounded.",
           "hint": "We can reasonably infer from..."
-        }
+        },
+        "exampleEn": "We can logically infer from the data that the drug crosses the blood-brain barrier.",
+        "exampleKo": "단순 관찰에 머물지 않고 논리적 추론 과정을 거쳐 타당한 결론을 이끌어낼 때 씁니다."
       },
       {
         "id": "expr-acad-034",
@@ -6694,7 +6920,9 @@
           "condition": "carries far-reaching implications for cancer therapy",
           "modelAnswer": "This discovery carries far-reaching implications for the future of cancer therapy.",
           "hint": "This discovery carries far-reaching..."
-        }
+        },
+        "exampleEn": "The court's antitrust ruling will have far-reaching implications for Big Tech.",
+        "exampleKo": "단일 분야에 그치지 않고 사회, 경제, 철학 등 전 영역에 걸쳐 깊은 영향을 미칠 때 씁니다."
       },
       {
         "id": "expr-acad-035",
@@ -6749,7 +6977,9 @@
           "condition": "In summary, the proposed algorithm improved both",
           "modelAnswer": "In summary, the proposed algorithm improved both accuracy and computational efficiency.",
           "hint": "In summary, the proposed algorithm..."
-        }
+        },
+        "exampleEn": "In summary, the reform achieved modest gains but failed in structural equity.",
+        "exampleKo": "논문 결론부나 토론 마무리에서 앞선 모든 논증을 간결하고 명확하게 압축할 때 씁니다."
       },
       {
         "id": "expr-acad-036",
@@ -6804,7 +7034,9 @@
           "condition": "coalesced into a unified definition of sustainability",
           "modelAnswer": "Diverse academic insights gradually coalesced into a unified definition of sustainability.",
           "hint": "Diverse academic insights gradually..."
-        }
+        },
+        "exampleEn": "Scattered public protests coalesced into a national political movement.",
+        "exampleKo": "각기 흩어져 있던 파편화된 데이터나 가설들이 하나의 통일된 체계로 결합할 때 씁니다."
       }
     ]
   },
@@ -6870,7 +7102,9 @@
           "condition": "warrants further clinical investigation",
           "modelAnswer": "The clinical significance of this genetic variant warrants further clinical investigation.",
           "hint": "The clinical significance of this..."
-        }
+        },
+        "exampleEn": "The long-term environmental persistence of microplastics warrants further investigation.",
+        "exampleKo": "본 연구의 범위를 넘어 향후 더 심도 있는 추가 실험이나 조사가 필수적임을 제언할 때 씁니다."
       },
       {
         "id": "expr-acad-038",
@@ -6925,7 +7159,9 @@
           "condition": "helps bridge the gap between archaeological records",
           "modelAnswer": "This paper helps bridge the gap between archaeological records and genetic data.",
           "hint": "This paper helps bridge the gap..."
-        }
+        },
+        "exampleEn": "Public outreach programs help bridge the gap between scientists and citizens.",
+        "exampleKo": "상아탑의 추상적 이론과 산업 현장의 실무 사이의 괴리를 연결하고 해소할 때 씁니다."
       },
       {
         "id": "expr-acad-039",
@@ -6980,7 +7216,9 @@
           "condition": "represents a monumental paradigm shift in global energy policy",
           "modelAnswer": "The transition to renewables represents a monumental paradigm shift in global energy policy.",
           "hint": "The transition to renewables represents..."
-        }
+        },
+        "exampleEn": "The widespread adoption of cloud computing initiated a major paradigm shift.",
+        "exampleKo": "단순한 기술 개선이 아니라 사물을 바라보는 근본적인 세계관과 학문적 틀 자체가 바뀜을 뜻합니다."
       },
       {
         "id": "expr-acad-040",
@@ -7035,7 +7273,9 @@
           "condition": "sheds new insight into the navigation mechanisms",
           "modelAnswer": "This study sheds new insight into the navigation mechanisms of migratory birds.",
           "hint": "This study sheds new insight into..."
-        }
+        },
+        "exampleEn": "The newly unearthed manuscript sheds new insight into the philosopher's later years.",
+        "exampleKo": "기존의 시각으로는 볼 수 없었던 심오한 이해와 학문적 혜안을 열어줄 때 씁니다."
       }
     ]
   },
@@ -7101,7 +7341,9 @@
           "condition": "best night of my life, no cap",
           "modelAnswer": "That concert was the best night of my life, no cap.",
           "hint": "That concert was the best..."
-        }
+        },
+        "exampleEn": "I saw the celebrity in person, no cap.",
+        "exampleKo": "거짓말을 하지 않는다는 Z세대 팩트 강조 표현입니다."
       },
       {
         "id": "expr-media-002",
@@ -7156,7 +7398,9 @@
           "condition": "completely slayed the red carpet",
           "modelAnswer": "She completely slayed the red carpet look tonight.",
           "hint": "She completely slayed the..."
-        }
+        },
+        "exampleEn": "Her vocal performance absolutely slayed.",
+        "exampleKo": "무대나 패션에서 완벽하게 해냈을 때 쓰는 최고의 찬사입니다."
       },
       {
         "id": "expr-media-003",
@@ -7211,7 +7455,9 @@
           "condition": "embrace your main character energy",
           "modelAnswer": "Step outside with confidence and embrace your main character energy.",
           "hint": "Step outside with confidence..."
-        }
+        },
+        "exampleEn": "Put your headphones on and walk with main character energy.",
+        "exampleKo": "영화 속 주인공처럼 주위 시선에 주눅 들지 않고 자신감으로 빛날 때 씁니다."
       },
       {
         "id": "expr-media-004",
@@ -7266,7 +7512,9 @@
           "condition": "ghosted her after the second date",
           "modelAnswer": "He completely ghosted her after their second date.",
           "hint": "He completely ghosted her..."
-        }
+        },
+        "exampleEn": "It's rude to ghost people instead of saying no.",
+        "exampleKo": "유령처럼 소리소문없이 사라져 연락을 일방적으로 끊을 때 씁니다."
       }
     ]
   },
@@ -7332,7 +7580,9 @@
           "condition": "decided to bite the bullet and resign",
           "modelAnswer": "He decided to bite the bullet and resign.",
           "hint": "He decided to bite..."
-        }
+        },
+        "exampleEn": "We had to bite the bullet and cancel the vacation.",
+        "exampleKo": "총알을 깨물며 고통을 참듯 피할 수 없는 일을 감수할 때 씁니다."
       },
       {
         "id": "expr-media-006",
@@ -7387,7 +7637,9 @@
           "condition": "ended on a massive cliffhanger",
           "modelAnswer": "Season 1 ended on a massive cliffhanger.",
           "hint": "Season 1 ended on..."
-        }
+        },
+        "exampleEn": "I can't wait for season 2 after that cliffhanger.",
+        "exampleKo": "결말을 보여주지 않고 다음 화를 애타게 만드는 엔딩입니다."
       },
       {
         "id": "expr-media-007",
@@ -7442,7 +7694,9 @@
           "condition": "Spoiler alert: contains the final scene",
           "modelAnswer": "Spoiler alert: this review contains the final scene.",
           "hint": "Spoiler alert: this review..."
-        }
+        },
+        "exampleEn": "Spoiler alert: the hero doesn't make it.",
+        "exampleKo": "결말을 미리 누설하기 전에 청중에게 미리 경고를 날리는 표현입니다."
       },
       {
         "id": "expr-media-008",
@@ -7497,7 +7751,9 @@
           "condition": "jumped the shark after season 3",
           "modelAnswer": "The show jumped the shark after season 3.",
           "hint": "The show jumped the shark..."
-        }
+        },
+        "exampleEn": "Fans feel the sitcom jumped the shark.",
+        "exampleKo": "억지스러운 설정을 도입하다가 내리막길을 걸을 때 씁니다."
       }
     ]
   },
@@ -7563,7 +7819,9 @@
           "condition": "I will always have your back no matter what.",
           "modelAnswer": "I will always have your back no matter what.",
           "hint": "I will always have your..."
-        }
+        },
+        "exampleEn": "She knew her team had her back.",
+        "exampleKo": "위험이나 곤경에 처했을 때 뒤를 든든히 지켜준다는 찐 우정 표현입니다."
       },
       {
         "id": "expr-media-010",
@@ -7618,7 +7876,9 @@
           "condition": "supported each other through thick and thin",
           "modelAnswer": "They supported each other through thick and thin.",
           "hint": "They supported each other..."
-        }
+        },
+        "exampleEn": "We've been through thick and thin together.",
+        "exampleKo": "좋을 때나 나쁠 때나 변함없이 함께 겪어낸다는 깊은 유대감입니다."
       },
       {
         "id": "expr-media-011",
@@ -7673,7 +7933,9 @@
           "condition": "She proved to be my ride or die during crisis.",
           "modelAnswer": "She proved to be my ride or die during the crisis.",
           "hint": "She proved to be my..."
-        }
+        },
+        "exampleEn": "Every hero needs a ride or die companion.",
+        "exampleKo": "생사를 함께할 만큼 절대적으로 충성스럽고 신뢰하는 동반자입니다."
       },
       {
         "id": "expr-media-012",
@@ -7728,7 +7990,9 @@
           "condition": "really vibe with that indie band's music",
           "modelAnswer": "I really vibe with that indie band's music.",
           "hint": "I really vibe with that..."
-        }
+        },
+        "exampleEn": "I don't really vibe with his arrogant attitude.",
+        "exampleKo": "파장이나 주파수가 맞듯 사람이나 장소의 분위기가 마음에 들 때 씁니다."
       }
     ]
   },
@@ -7794,7 +8058,9 @@
           "condition": "The sound system completely blew my mind.",
           "modelAnswer": "The sound system completely blew my mind.",
           "hint": "The sound system completely..."
-        }
+        },
+        "exampleEn": "This magic trick will blow your mind.",
+        "exampleKo": "상상을 초월할 만큼 충격적이거나 경이로울 때 씁니다."
       },
       {
         "id": "expr-media-014",
@@ -7849,7 +8115,9 @@
           "condition": "His solo performance was completely unreal.",
           "modelAnswer": "His solo performance was completely unreal.",
           "hint": "His solo performance was..."
-        }
+        },
+        "exampleEn": "The food at that restaurant is unreal.",
+        "exampleKo": "영화 CG처럼 너무나 환상적이고 경이로워서 현실감이 안 날 때 씁니다."
       },
       {
         "id": "expr-media-015",
@@ -7904,7 +8172,9 @@
           "condition": "She was lost for words upon hearing the news.",
           "modelAnswer": "She was lost for words upon hearing the tragic news.",
           "hint": "She was lost for words..."
-        }
+        },
+        "exampleEn": "She stood there, lost for words.",
+        "exampleKo": "기쁨, 감동, 충격으로 혀가 굳어 아무 말도 나오지 않는 상태입니다."
       },
       {
         "id": "expr-media-016",
@@ -7959,7 +8229,9 @@
           "condition": "Walking through the ruins was a surreal experience.",
           "modelAnswer": "Walking through the ruins was a completely surreal experience.",
           "hint": "Walking through the ruins was..."
-        }
+        },
+        "exampleEn": "Meeting my childhood idol was surreal.",
+        "exampleKo": "달리의 초현실주의 그림처럼 현실에서 도저히 일어날 것 같지 않은 몽환적 느낌입니다."
       }
     ]
   },
@@ -8025,7 +8297,9 @@
           "condition": "Our marketing team is completely on fire this month.",
           "modelAnswer": "Our marketing team is completely on fire this month.",
           "hint": "Our marketing team is..."
-        }
+        },
+        "exampleEn": "You are on fire today, answering all questions!",
+        "exampleKo": "불붙은 듯 연속해서 놀라운 성과를 내며 승승장구할 때 씁니다."
       },
       {
         "id": "expr-media-018",
@@ -8080,7 +8354,9 @@
           "condition": "His popularity is completely off the charts.",
           "modelAnswer": "His popularity is completely off the charts right now.",
           "hint": "His popularity is completely..."
-        }
+        },
+        "exampleEn": "His charisma is off the charts.",
+        "exampleKo": "계측 차트의 눈금을 뚫고 나갈 만큼 수치나 열기가 한계를 초월했을 때 씁니다."
       },
       {
         "id": "expr-media-019",
@@ -8135,7 +8411,9 @@
           "condition": "Coffee on the day exams end hits different.",
           "modelAnswer": "Coffee on the day exams end just hits different.",
           "hint": "Coffee on the day exams..."
-        }
+        },
+        "exampleEn": "Coffee on a rainy morning hits different.",
+        "exampleKo": "같은 노래나 음식이라도 특정 상황에서 가슴에 사무치게 다를 때 씁니다."
       },
       {
         "id": "expr-media-020",
@@ -8190,7 +8468,9 @@
           "condition": "The interview outtakes are pure gold.",
           "modelAnswer": "The interview outtakes are absolute pure gold.",
           "hint": "The interview outtakes are..."
-        }
+        },
+        "exampleEn": "His reaction face was pure gold.",
+        "exampleKo": "불순물이 섞이지 않은 순금처럼 처음부터 끝까지 버릴 구석 없이 완벽할 때 씁니다."
       }
     ]
   },
@@ -8256,7 +8536,9 @@
           "condition": "spilled the tea on what happened on her date",
           "modelAnswer": "She spilled the tea on what happened on her date yesterday.",
           "hint": "She spilled the tea on..."
-        }
+        },
+        "exampleEn": "She spilled the tea on her ex-boyfriend.",
+        "exampleKo": "차(tea)를 쏟아붓듯 가슴속에 품고 있던 재미있는 가십을 털어놓으라는 표현입니다."
       },
       {
         "id": "expr-media-022",
@@ -8311,7 +8593,9 @@
           "condition": "The truth hurts, but you must admit your laziness.",
           "modelAnswer": "The truth hurts, but you must admit your laziness.",
           "hint": "The truth hurts, but..."
-        }
+        },
+        "exampleEn": "Sometimes the truth hurts, but it sets you free.",
+        "exampleKo": "달콤한 거짓말보다 쓰라린 팩트가 더 고통스럽지만 인정해야 할 때 씁니다."
       },
       {
         "id": "expr-media-023",
@@ -8366,7 +8650,9 @@
           "condition": "always kept it real with his childhood friends",
           "modelAnswer": "He always kept it real with his childhood friends after success.",
           "hint": "He always kept it real with..."
-        }
+        },
+        "exampleEn": "Hip hop is all about keeping it real.",
+        "exampleKo": "세속적 성공이나 타인의 시선에 물들지 않고 자기 본연의 진솔함을 유지할 때 씁니다."
       },
       {
         "id": "expr-media-024",
@@ -8421,7 +8707,9 @@
           "condition": "called out her colleague for spreading misinformation",
           "modelAnswer": "She called out her colleague for spreading misinformation in the meeting.",
           "hint": "She called out her colleague..."
-        }
+        },
+        "exampleEn": "Don't be afraid to call out unfair treatment.",
+        "exampleKo": "상대방의 부당함, 거짓말, 위선을 숨기지 않고 면전이나 공개적으로 정면 비판할 때 씁니다."
       }
     ]
   },
@@ -8487,7 +8775,9 @@
           "condition": "had a crush on her throughout high school",
           "modelAnswer": "He had a huge crush on her throughout high school.",
           "hint": "He had a huge crush on..."
-        }
+        },
+        "exampleEn": "Do you have a crush on anyone right now?",
+        "exampleKo": "누군가에게 첫눈에 반해 가슴 설레며 짝사랑할 때 쓰는 대표 표현입니다."
       },
       {
         "id": "expr-media-026",
@@ -8542,7 +8832,9 @@
           "condition": "was hitting on everyone at the party",
           "modelAnswer": "He was blatantly hitting on everyone at the party.",
           "hint": "He was blatantly hitting on..."
-        }
+        },
+        "exampleEn": "Stop hitting on my best friend!",
+        "exampleKo": "호감을 갖고 다가와 작업을 걸거나 들이대며 말을 걸 때 씁니다."
       },
       {
         "id": "expr-media-027",
@@ -8597,7 +8889,9 @@
           "condition": "Constantly breaking promises is a major red flag.",
           "modelAnswer": "Constantly breaking promises is a major red flag in relationships.",
           "hint": "Constantly breaking promises is..."
-        }
+        },
+        "exampleEn": "Frequent lying is the ultimate red flag.",
+        "exampleKo": "축구의 퇴장 레드카드처럼 관계나 성격에서 절대 용납할 수 없는 결격 사유입니다."
       },
       {
         "id": "expr-media-028",
@@ -8652,7 +8946,9 @@
           "condition": "did not want to be tied down by marriage",
           "modelAnswer": "He did not want to be tied down by marriage in his twenties.",
           "hint": "He did not want to be tied..."
-        }
+        },
+        "exampleEn": "He loves traveling and hates being tied down.",
+        "exampleKo": "밧줄로 묶인 것처럼 한 사람이나 정규직 등에 정착해 자유를 잃을까 두려워할 때 씁니다."
       }
     ]
   },
@@ -8718,7 +9014,9 @@
           "condition": "painted the town red to celebrate their championship",
           "modelAnswer": "They painted the town red to celebrate their championship victory.",
           "hint": "They painted the town red to..."
-        }
+        },
+        "exampleEn": "They painted the town red for his 30th birthday.",
+        "exampleKo": "거리를 온통 붉은 축제빛으로 물들이듯 클럽이나 술집을 돌며 광란의 밤을 보낼 때 씁니다."
       },
       {
         "id": "expr-media-030",
@@ -8773,7 +9071,9 @@
           "condition": "turned up at the club all night",
           "modelAnswer": "They turned up at the club and danced all night.",
           "hint": "They turned up at the..."
-        }
+        },
+        "exampleEn": "The music made everyone turn up.",
+        "exampleKo": "볼륨을 올리듯 파티의 텐션과 열기를 최고조로 폭발시킬 때 쓰는 힙합 슬랭입니다."
       },
       {
         "id": "expr-media-031",
@@ -8828,7 +9128,9 @@
           "condition": "Let's decide who will be the designated driver.",
           "modelAnswer": "Let's decide who will be the designated driver before we order drinks.",
           "hint": "Let's decide who will be the..."
-        }
+        },
+        "exampleEn": "Never drive after drinking; always choose a designated driver.",
+        "exampleKo": "친구들이 안심하고 술을 마실 수 있도록 본인은 술을 안 마시고 운전을 전담하는 사람입니다."
       },
       {
         "id": "expr-media-032",
@@ -8883,7 +9185,9 @@
           "condition": "always becomes the life of the party with her humor",
           "modelAnswer": "She always becomes the life of the party with her infectious humor.",
           "hint": "She always becomes the life of..."
-        }
+        },
+        "exampleEn": "He knows how to be the life of the party.",
+        "exampleKo": "그 사람만 나타나면 어색한 파티장이 웃음바다가 되는 최고의 분위기 메이커입니다."
       }
     ]
   },
@@ -8949,7 +9253,9 @@
           "condition": "accidentally spilled the beans about the surprise party",
           "modelAnswer": "He accidentally spilled the beans about the surprise birthday party.",
           "hint": "He accidentally spilled the beans about..."
-        }
+        },
+        "exampleEn": "Who spilled the beans to the media?",
+        "exampleKo": "바구니에 담긴 콩을 엎질러버리듯 감추어야 할 극비 사항을 입 밖으로 흘릴 때 씁니다."
       },
       {
         "id": "expr-media-034",
@@ -9004,7 +9310,9 @@
           "condition": "kept strictly under wraps until the launch show",
           "modelAnswer": "The new smartphone design will be kept strictly under wraps until the launch show.",
           "hint": "The new smartphone design will be..."
-        }
+        },
+        "exampleEn": "We must keep this confidential under wraps.",
+        "exampleKo": "비밀 포장지로 꽁꽁 싸매두듯 공식 발표 전까지 철저히 비공개로 보안을 유지할 때 씁니다."
       },
       {
         "id": "expr-media-035",
@@ -9059,7 +9367,9 @@
           "condition": "elected the CEO behind closed doors",
           "modelAnswer": "The board of directors elected the next CEO behind closed doors.",
           "hint": "The board of directors elected the..."
-        }
+        },
+        "exampleEn": "They reached a settlement behind closed doors.",
+        "exampleKo": "취재진이나 대중이 보지 못하는 닫힌 문 뒤에서 은밀하게 결정될 때 씁니다."
       },
       {
         "id": "expr-media-036",
@@ -9114,7 +9424,9 @@
           "condition": "charged with leaking trade secrets",
           "modelAnswer": "A former employee was charged with leaking trade secrets to rival firms.",
           "hint": "A former employee was charged with..."
-        }
+        },
+        "exampleEn": "Security was tightened after the secret was leaked.",
+        "exampleKo": "수도관에서 물이 새듯 감추어진 비밀 정보가 외부로 누출될 때 씁니다."
       }
     ]
   },
@@ -9180,7 +9492,9 @@
           "condition": "Hang in there, things will get better soon.",
           "modelAnswer": "Hang in there; things will definitely get better soon.",
           "hint": "Hang in there; things will..."
-        }
+        },
+        "exampleEn": "Hang in there, buddy; help is coming.",
+        "exampleKo": "줄에 매달려 버티듯 힘든 시련 속에서 포기하지 말고 버텨내라는 따뜻한 격려입니다."
       },
       {
         "id": "expr-media-038",
@@ -9235,7 +9549,9 @@
           "condition": "Fear of the first job? Been there, done that.",
           "modelAnswer": "Fear of your first job? Been there, done that; you will adjust soon.",
           "hint": "Fear of your first job?..."
-        }
+        },
+        "exampleEn": "Breakups are miserable; been there, done that.",
+        "exampleKo": "나도 이미 과거에 똑같은 실패나 아픔을 겪어봤기에 깊이 공감한다는 쿨한 위로입니다."
       },
       {
         "id": "expr-media-039",
@@ -9290,7 +9606,9 @@
           "condition": "Tired of overtime? I totally feel you.",
           "modelAnswer": "Tired of overtime? I totally feel you, take a good rest.",
           "hint": "Tired of overtime? I totally..."
-        }
+        },
+        "exampleEn": "I feel you, studying all night is torture.",
+        "exampleKo": "상대방의 감정, 고충, 피로를 내 일처럼 온몸으로 공감할 때 쓰는 일상 슬랭입니다."
       },
       {
         "id": "expr-media-040",
@@ -9305,7 +9623,7 @@
         },
         "explanation": "실패로 낙담하여 고개 숙인 친구의 기운을 북돋워 줄 때 씁니다.",
         "collocation": "keep your chin up, tomorrow is a new day",
-        "audioSentence": "She kept her chin up despite severe hardship.",
+        "audioSentence": "Don't let this rejection defeat you; keep your chin up!",
         "dialogue": [
           {
             "speaker": "Coach",
@@ -9345,7 +9663,9 @@
           "condition": "Keep your chin up and don't lose courage!",
           "modelAnswer": "Keep your chin up and don't lose courage in the face of trials.",
           "hint": "Keep your chin up and..."
-        }
+        },
+        "exampleEn": "Don't let this rejection defeat you; keep your chin up!",
+        "exampleKo": "슬퍼서 턱(chin)을 떨구지 말고 턱을 당당히 치켜들고 용기를 내라는 응원입니다."
       }
     ]
   },
@@ -9371,7 +9691,7 @@
         },
         "explanation": "see는 자연스럽게 보이다, look은 특정 방향을 쳐다보다, watch는 경기나 영화처럼 움직임을 지켜볼 때 씁니다.",
         "collocation": "watch a movie / look at the board",
-        "audioSentence": "Did you see that strange bird in the tree?",
+        "audioSentence": "Look at the horizon, see the island in the distance, and watch the waves crash on the shore.",
         "dialogue": [
           {
             "speaker": "Tom",
@@ -9411,7 +9731,9 @@
           "condition": "Look at the problem written on the board.",
           "modelAnswer": "Look at the problem written on the board carefully.",
           "hint": "Look at the problem..."
-        }
+        },
+        "exampleEn": "Look at the horizon, see the island in the distance, and watch the waves crash on the shore.",
+        "exampleKo": "지평선을 바라보고(look), 멀리 섬을 발견하며(see), 파도가 해안에 부딪히는 것을 지켜보세요(watch)."
       },
       {
         "id": "expr-bat-002",
@@ -9426,7 +9748,7 @@
         },
         "explanation": "stare는 당황이나 적의를 품은 응시, gaze는 경이로움이나 그리움에 잠긴 응시입니다.",
         "collocation": "stare rudely vs. gaze in wonder",
-        "audioSentence": "She gazed at the starry night sky for hours.",
+        "audioSentence": "It is rude to stare at strangers, but peaceful to gaze at the starry night sky.",
         "dialogue": [
           {
             "speaker": "Dan",
@@ -9466,7 +9788,9 @@
           "condition": "gazed at the horizon on the beach",
           "modelAnswer": "She stood on the beach and gazed at the distant horizon.",
           "hint": "She stood on the beach and..."
-        }
+        },
+        "exampleEn": "It is rude to stare at strangers, but peaceful to gaze at the starry night sky.",
+        "exampleKo": "낯선 사람을 빤히 쳐다보는 것(stare)은 무례하지만, 밤하늘의 별을 넋 놓고 바라보는 것(gaze)은 평화롭습니다."
       },
       {
         "id": "expr-bat-003",
@@ -9481,7 +9805,7 @@
         },
         "explanation": "glance는 의도적인 짧은 흘겨봄, glimpse는 찰나에 시야를 스친 불완전한 포착입니다.",
         "collocation": "take a glance at / catch a glimpse of",
-        "audioSentence": "I caught a glimpse of the celebrity passing by.",
+        "audioSentence": "I took a quick glance at my watch, and caught a brief glimpse of the celebrity passing by.",
         "dialogue": [
           {
             "speaker": "Mia",
@@ -9521,7 +9845,9 @@
           "condition": "caught a glimpse of him as he drove past",
           "modelAnswer": "I caught a brief glimpse of him as he drove past.",
           "hint": "I caught a brief glimpse of..."
-        }
+        },
+        "exampleEn": "I took a quick glance at my watch, and caught a brief glimpse of the celebrity passing by.",
+        "exampleKo": "시계를 힐끗 보고(glance), 지나가는 유명인을 얼핏 언뜻 보았습니다(glimpse)."
       },
       {
         "id": "expr-bat-004",
@@ -9536,7 +9862,7 @@
         },
         "explanation": "notice는 무언가의 변화나 징후를 감지함, spot은 군중이나 시야 속에서 대상을 콕 집어 포착함입니다.",
         "collocation": "hard to notice vs. spot in a crowd",
-        "audioSentence": "She spotted a typo on page twenty-five.",
+        "audioSentence": "I noticed she got a haircut, and I spotted her in the huge crowd.",
         "dialogue": [
           {
             "speaker": "Tina",
@@ -9576,7 +9902,9 @@
           "condition": "spotted a small typo in the document",
           "modelAnswer": "The proofreader spotted a small typo in the draft document.",
           "hint": "The proofreader spotted a small..."
-        }
+        },
+        "exampleEn": "I noticed she got a haircut, and I spotted her in the huge crowd.",
+        "exampleKo": "notice는 감각적으로 알아차리는 것이고, spot은 숨은 그림 찾기처럼 복잡한 가운데 딱 찾아내는 것입니다."
       }
     ]
   },
@@ -9602,7 +9930,7 @@
         },
         "explanation": "hear는 우연히 소리를 감지함, listen to는 음악이나 강의에 귀를 기울임입니다.",
         "collocation": "listen to music / hear a strange noise",
-        "audioSentence": "Did you hear that thunderstorm last night?",
+        "audioSentence": "Did you hear that thunderstorm while listening to music on your headphones?",
         "dialogue": [
           {
             "speaker": "Ken",
@@ -9642,7 +9970,9 @@
           "condition": "Listen carefully to what the teacher says.",
           "modelAnswer": "Listen carefully to what the teacher is saying.",
           "hint": "Listen carefully to what..."
-        }
+        },
+        "exampleEn": "Did you hear that thunderstorm while listening to music on your headphones?",
+        "exampleKo": "헤드폰으로 음악을 듣고(listen) 있는 동안 저 천둥소리가 들렸나요(hear)?"
       },
       {
         "id": "expr-bat-006",
@@ -9657,7 +9987,7 @@
         },
         "explanation": "overhear는 우연한 청취(무죄), eavesdrop은 의도적인 엿듣기(비도덕적)입니다.",
         "collocation": "overhear a conversation vs. eavesdrop behind the door",
-        "audioSentence": "He was caught eavesdropping on the executive meeting.",
+        "audioSentence": "I overheard their chat on the train, but he deliberately eavesdropped.",
         "dialogue": [
           {
             "speaker": "Ann",
@@ -9697,7 +10027,9 @@
           "condition": "caught eavesdropping on his neighbors",
           "modelAnswer": "He was caught eavesdropping on his neighbors' private argument.",
           "hint": "He was caught eavesdropping on..."
-        }
+        },
+        "exampleEn": "I overheard their chat on the train, but he deliberately eavesdropped.",
+        "exampleKo": "overhear는 남의 대화가 귀에 우연히 들려온 것이고, eavesdrop은 문틈으로 숨어서 엿듣는 얌체 짓입니다."
       },
       {
         "id": "expr-bat-007",
@@ -9712,7 +10044,7 @@
         },
         "explanation": "sound는 음악이나 자연의 소리, noise는 불필요하고 불쾌한 잡음/소음입니다.",
         "collocation": "make too much noise vs. sound of rain",
-        "audioSentence": "Turn off the TV; it's making too much noise.",
+        "audioSentence": "I love the sound of ocean waves, but the construction noise drives me crazy.",
         "dialogue": [
           {
             "speaker": "Lily",
@@ -9752,7 +10084,9 @@
           "condition": "Be careful not to make loud noise at night.",
           "modelAnswer": "Please be careful not to make loud noise late at night.",
           "hint": "Please be careful not to make..."
-        }
+        },
+        "exampleEn": "I love the sound of ocean waves, but the construction noise drives me crazy.",
+        "exampleKo": "sound는 중립적이거나 듣기 좋은 모든 소리, noise는 귀에 거슬리고 불쾌한 소음입니다."
       },
       {
         "id": "expr-bat-008",
@@ -9767,7 +10101,7 @@
         },
         "explanation": "loud는 일반적 큰 소리, deafening은 귀가 먹먹할 정도의 폭발적 굉음입니다.",
         "collocation": "a deafening roar vs. loud voice",
-        "audioSentence": "The stadium erupted in deafening cheers.",
+        "audioSentence": "The music was loud, but the jet engine was deafening.",
         "dialogue": [
           {
             "speaker": "Roy",
@@ -9807,7 +10141,9 @@
           "condition": "erupted with deafening cheers when the goal was scored",
           "modelAnswer": "The stadium erupted with deafening cheers when the winning goal was scored.",
           "hint": "The stadium erupted with deafening..."
-        }
+        },
+        "exampleEn": "The music was loud, but the jet engine was deafening.",
+        "exampleKo": "loud는 단순히 볼륨이 큰 것이고, deafening은 귀청이 떨어져 나갈 듯 고막이 마비되는 압도적 굉음입니다."
       }
     ]
   },
@@ -9833,7 +10169,7 @@
         },
         "explanation": "salary는 연봉제 고정급, wage는 일한 시간만큼 받는 시급/일당입니다.",
         "collocation": "earn a high salary vs. minimum wage",
-        "audioSentence": "The federal minimum wage has remained unchanged.",
+        "audioSentence": "Salaried professionals get a fixed monthly salary, while hourly workers earn an hourly wage.",
         "dialogue": [
           {
             "speaker": "Mark",
@@ -9873,7 +10209,9 @@
           "condition": "offered a high annual salary at the firm",
           "modelAnswer": "He was offered a high annual salary at the multinational firm.",
           "hint": "He was offered a high annual salary..."
-        }
+        },
+        "exampleEn": "Salaried professionals get a fixed monthly salary, while hourly workers earn an hourly wage.",
+        "exampleKo": "salary는 정규직 사무직의 고정 월급/연봉이고, wage는 일한 시간이나 일수에 따라 계산되는 시급/주급입니다."
       },
       {
         "id": "expr-bat-010",
@@ -9888,7 +10226,7 @@
         },
         "explanation": "pay는 일반적인 보수 전반, stipend는 학비/연구 활동 지원금의 성격입니다.",
         "collocation": "receive a research stipend vs. take home pay",
-        "audioSentence": "Graduate assistants survive on a meager stipend.",
+        "audioSentence": "Interns and researchers receive a modest monthly stipend for living costs.",
         "dialogue": [
           {
             "speaker": "Prof",
@@ -9928,7 +10266,9 @@
           "condition": "provides a monthly stipend to young researchers",
           "modelAnswer": "The foundation provides a monthly stipend to promising young researchers.",
           "hint": "The foundation provides a monthly..."
-        }
+        },
+        "exampleEn": "Interns and researchers receive a modest monthly stipend for living costs.",
+        "exampleKo": "pay는 노동의 대가로 받는 모든 급여의 총칭, stipend는 대학원생이나 인턴에게 생활 보조로 지급되는 실비 지원금입니다."
       },
       {
         "id": "expr-bat-011",
@@ -9943,7 +10283,7 @@
         },
         "explanation": "fee는 전문직 수수료/등록비, fare는 오직 교통수단의 승차 요금입니다.",
         "collocation": "bus fare vs. legal fee",
-        "audioSentence": "The entrance fee to the museum is twenty dollars.",
+        "audioSentence": "Lawyers charge an hourly fee, but taxis and buses charge a fare.",
         "dialogue": [
           {
             "speaker": "Driver",
@@ -9983,7 +10323,9 @@
           "condition": "lawyer's consultation fee was $300 per hour",
           "modelAnswer": "The lawyer's consultation fee was three hundred dollars per hour.",
           "hint": "The lawyer's consultation fee was..."
-        }
+        },
+        "exampleEn": "Lawyers charge an hourly fee, but taxis and buses charge a fare.",
+        "exampleKo": "fee는 변호사, 의사, 학원 등 서비스에 대한 수수료/입장료이고, fare는 버스, 지하철, 택시 등 교통수단 탑승 요금입니다."
       },
       {
         "id": "expr-bat-012",
@@ -9998,7 +10340,7 @@
         },
         "explanation": "bonus는 특별 상여금, commission은 영업 실적에 따른 건당 수수료입니다.",
         "collocation": "earn a 5% commission on sales",
-        "audioSentence": "Employees received a generous holiday bonus.",
+        "audioSentence": "Real estate agents earn a percentage commission on every home sold.",
         "dialogue": [
           {
             "speaker": "Agent",
@@ -10038,7 +10380,9 @@
           "condition": "received a performance bonus at year-end",
           "modelAnswer": "All regular employees received a handsome performance bonus at year-end.",
           "hint": "All regular employees received a..."
-        }
+        },
+        "exampleEn": "Real estate agents earn a percentage commission on every home sold.",
+        "exampleKo": "bonus는 회사의 실적에 따라 일괄 또는 성과로 지급되는 격려금, commission은 판매액의 몇 %를 직접 떼어가는 수수료입니다."
       }
     ]
   },
@@ -10064,7 +10408,7 @@
         },
         "explanation": "problem은 부정적이고 해결이 시급함, issue는 정책이나 토론의 쟁점 사안입니다.",
         "collocation": "solve a technical problem vs. discuss a policy issue",
-        "audioSentence": "Homelessness is a complex social issue.",
+        "audioSentence": "A math problem has a correct answer, while a moral issue requires debate.",
         "dialogue": [
           {
             "speaker": "Mechanic",
@@ -10104,7 +10448,9 @@
           "condition": "solved the critical problem in the software",
           "modelAnswer": "Engineers solved the critical technical problem in the software.",
           "hint": "Engineers solved the critical..."
-        }
+        },
+        "exampleEn": "A math problem has a correct answer, while a moral issue requires debate.",
+        "exampleKo": "problem은 즉시 고치거나 풀어야 할 명확한 결함/곤경이고, issue는 사회적 쟁점이나 의견이 엇갈리는 논의 주제입니다."
       },
       {
         "id": "expr-bat-014",
@@ -10119,7 +10465,7 @@
         },
         "explanation": "trouble은 추상적 골칫거리, difficulty는 개별적인 난관이나 장애물입니다.",
         "collocation": "get into trouble vs. face financial difficulties",
-        "audioSentence": "He had great difficulty breathing after the run.",
+        "audioSentence": "He got into serious trouble with the police, but overcame financial difficulties.",
         "dialogue": [
           {
             "speaker": "Cop",
@@ -10159,7 +10505,9 @@
           "condition": "had great difficulty using the interface",
           "modelAnswer": "She had great difficulty navigating the complex software interface.",
           "hint": "She had great difficulty navigating..."
-        }
+        },
+        "exampleEn": "He got into serious trouble with the police, but overcame financial difficulties.",
+        "exampleKo": "trouble은 보통 불가산 명사로 말썽이나 법적 곤경에 빠졌을 때 쓰고, difficulty는 복수형(-ies)으로 구체적 역경들을 뜻합니다."
       },
       {
         "id": "expr-bat-015",
@@ -10174,7 +10522,7 @@
         },
         "explanation": "obstacle은 우회나 돌파가 가능한 장애, barrier는 물리적/제도적으로 가로막는 차단벽입니다.",
         "collocation": "overcome an obstacle vs. break down trade barriers",
-        "audioSentence": "High tariffs act as a trade barrier.",
+        "audioSentence": "A hurdle on a track is an obstacle to jump over, but a language barrier divides cultures.",
         "dialogue": [
           {
             "speaker": "Coach",
@@ -10214,7 +10562,9 @@
           "condition": "overcame every obstacle with persistence",
           "modelAnswer": "They overcame every obstacle through relentless persistence and teamwork.",
           "hint": "They overcame every obstacle through..."
-        }
+        },
+        "exampleEn": "A hurdle on a track is an obstacle to jump over, but a language barrier divides cultures.",
+        "exampleKo": "obstacle은 노력해서 뛰어넘거나 우회할 수 있는 장애물, barrier는 국경이나 언어 장벽처럼 통행을 원천 차단하는 거대한 벽입니다."
       },
       {
         "id": "expr-bat-016",
@@ -10229,7 +10579,7 @@
         },
         "explanation": "dilemma는 선택의 난제, crisis는 긴급 조치가 필요한 총체적 위기입니다.",
         "collocation": "face a moral dilemma vs. manage a financial crisis",
-        "audioSentence": "The hospital faced an acute oxygen crisis.",
+        "audioSentence": "Choosing between two bad jobs is a dilemma, but a market crash is an economic crisis.",
         "dialogue": [
           {
             "speaker": "Ethicist",
@@ -10269,7 +10619,9 @@
           "condition": "managed the PR crisis triggered by product flaws",
           "modelAnswer": "The company acted quickly to manage the PR crisis triggered by product flaws.",
           "hint": "The company acted quickly to..."
-        }
+        },
+        "exampleEn": "Choosing between two bad jobs is a dilemma, but a market crash is an economic crisis.",
+        "exampleKo": "dilemma는 두 개의 불리한 선택지 사이에서 결정을 못 내리는 진퇴양난, crisis는 생존이 위협받는 긴급한 파국적 위기 상황입니다."
       }
     ]
   },
@@ -10295,7 +10647,7 @@
         },
         "explanation": "sensitive는 감성적/민감함, sensible은 실용적/이성적/합리적입니다.",
         "collocation": "sensitive skin vs. a sensible choice",
-        "audioSentence": "Dress warmly; wear sensible winter boots.",
+        "audioSentence": "A sensitive person gets easily offended, while a sensible person makes wise decisions.",
         "dialogue": [
           {
             "speaker": "Dad",
@@ -10335,7 +10687,9 @@
           "condition": "learned not to be overly sensitive to criticism",
           "modelAnswer": "She learned not to be overly sensitive to constructive criticism.",
           "hint": "She learned not to be overly..."
-        }
+        },
+        "exampleEn": "A sensitive person gets easily offended, while a sensible person makes wise decisions.",
+        "exampleKo": "sensitive는 감각이나 감정이 예민하고 섬세한 것이고, sensible은 이성적 분별력과 상식(sense)을 갖춘 현명한 상태입니다."
       },
       {
         "id": "expr-bat-018",
@@ -10350,7 +10704,7 @@
         },
         "explanation": "childish는 유치하고 철없는 태도, childlike는 순수하고 맑은 동심입니다.",
         "collocation": "childish temper tantrum vs. childlike innocence",
-        "audioSentence": "Picasso admired the childlike simplicity of tribal art.",
+        "audioSentence": "Throwing a tantrum is childish, but having a childlike sense of wonder is beautiful.",
         "dialogue": [
           {
             "speaker": "Mom",
@@ -10390,7 +10744,9 @@
           "condition": "Pouting during a meeting is childish behavior.",
           "modelAnswer": "Pouting during a business meeting is extremely childish behavior.",
           "hint": "Pouting during a business meeting..."
-        }
+        },
+        "exampleEn": "Throwing a tantrum is childish, but having a childlike sense of wonder is beautiful.",
+        "exampleKo": "childish는 나잇값을 못 하고 유치하게 떼를 쓰는 부정적 뉘앙스, childlike는 아이처럼 때 묻지 않고 순수한 긍정적 뉘앙스입니다."
       },
       {
         "id": "expr-bat-019",
@@ -10405,7 +10761,7 @@
         },
         "explanation": "confident는 긍정적인 자기 확신, arrogant는 타인을 깔보는 거만함입니다.",
         "collocation": "confident tone vs. arrogant smirk",
-        "audioSentence": "Confidence attracts people; arrogance repels them.",
+        "audioSentence": "A truly confident leader inspires team members, while an arrogant manager alienates them.",
         "dialogue": [
           {
             "speaker": "HR",
@@ -10445,7 +10801,9 @@
           "condition": "difference between arrogance and confidence",
           "modelAnswer": "A true leader understands the difference between arrogance and genuine confidence.",
           "hint": "A true leader understands the..."
-        }
+        },
+        "exampleEn": "A truly confident leader inspires team members, while an arrogant manager alienates them.",
+        "exampleKo": "진정으로 자신감 있는(confident) 리더는 영감을 주지만, 오만한(arrogant) 관리자는 사람들을 멀어지게 합니다."
       },
       {
         "id": "expr-bat-020",
@@ -10460,7 +10818,7 @@
         },
         "explanation": "stubborn은 융통성 없는 황소고집, persistent는 칠전팔기의 끈기와 집념입니다.",
         "collocation": "stubborn as a mule vs. persistent effort",
-        "audioSentence": "Her persistent efforts were rewarded with a Nobel prize.",
+        "audioSentence": "A stubborn donkey refuses to budge, but a persistent scientist keeps testing until discovery.",
         "dialogue": [
           {
             "speaker": "Teacher",
@@ -10500,7 +10858,9 @@
           "condition": "was too stubborn to listen to advice",
           "modelAnswer": "He was far too stubborn to listen to his mentor's wise advice.",
           "hint": "He was far too stubborn..."
-        }
+        },
+        "exampleEn": "A stubborn donkey refuses to budge, but a persistent scientist keeps testing until discovery.",
+        "exampleKo": "stubborn은 합리적 이유 없이 막무가내로 고집부리는 성격, persistent는 목표를 향해 난관을 뚫고 끈기 있게 전진하는 미덕입니다."
       }
     ]
   },
@@ -10526,7 +10886,7 @@
         },
         "explanation": "chance는 복권 같은 운/우연성, opportunity는 커리어나 발전의 소중한 기회입니다.",
         "collocation": "golden opportunity vs. take a chance",
-        "audioSentence": "Seize this career opportunity.",
+        "audioSentence": "Buying a lottery ticket is a game of chance, but landing an interview is a golden opportunity.",
         "dialogue": [
           {
             "speaker": "Mentor",
@@ -10566,7 +10926,9 @@
           "condition": "provided the best opportunity to advance her career",
           "modelAnswer": "The internship provided the best opportunity to advance her career.",
           "hint": "The internship provided the best..."
-        }
+        },
+        "exampleEn": "Buying a lottery ticket is a game of chance, but landing an interview is a golden opportunity.",
+        "exampleKo": "chance는 우연이나 확률(가산/불가산), opportunity는 본인의 성장과 발전을 위해 반드시 잡아야 할 호기(기회)입니다."
       },
       {
         "id": "expr-bat-022",
@@ -10581,7 +10943,7 @@
         },
         "explanation": "luck은 일상의 작은 행운, fortune은 막대한 부나 거대한 숙명적 운입니다.",
         "collocation": "good luck vs. amass a huge fortune",
-        "audioSentence": "He spent a fortune restoring the vintage yacht.",
+        "audioSentence": "Finding a lost wallet is good luck, but inheriting a vast estate is a massive fortune.",
         "dialogue": [
           {
             "speaker": "Boy",
@@ -10621,7 +10983,9 @@
           "condition": "won a massive fortune in the lottery",
           "modelAnswer": "She won a massive fortune in the lottery and donated half to charity.",
           "hint": "She won a massive fortune in..."
-        }
+        },
+        "exampleEn": "Finding a lost wallet is good luck, but inheriting a vast estate is a massive fortune.",
+        "exampleKo": "luck은 일상 속의 소소한 복과 우연한 운수, fortune은 거액의 재산이나 인생 전체를 좌우하는 거대한 운명을 뜻합니다."
       },
       {
         "id": "expr-bat-023",
@@ -10636,7 +11000,7 @@
         },
         "explanation": "possibility는 실현 가능성(0 초과), probability는 통계적 확률/승산입니다.",
         "collocation": "high probability vs. distinct possibility",
-        "audioSentence": "There is a strong probability of rain this evening.",
+        "audioSentence": "A meteor hitting Earth is a possibility, but rain tomorrow has a high probability.",
         "dialogue": [
           {
             "speaker": "Weather Host",
@@ -10676,7 +11040,9 @@
           "condition": "high probability of full recovery",
           "modelAnswer": "Doctors reported a high probability of full recovery after the surgery.",
           "hint": "Doctors reported a high probability of..."
-        }
+        },
+        "exampleEn": "A meteor hitting Earth is a possibility, but rain tomorrow has a high probability.",
+        "exampleKo": "possibility는 0%가 아니어서 일어날 수도 있는 잠재성, probability는 수학적 통계로 따졌을 때 일어날 법한 높은 승산입니다."
       },
       {
         "id": "expr-bat-024",
@@ -10691,7 +11057,7 @@
         },
         "explanation": "coincidence는 단순한 우연, fate는 필연적인 숙명입니다.",
         "collocation": "a strange coincidence vs. accept one's fate",
-        "audioSentence": "By pure coincidence, we booked the same flight.",
+        "audioSentence": "Wearing the same shirt is a funny coincidence, but finding your soulmate feels like fate.",
         "dialogue": [
           {
             "speaker": "Girl",
@@ -10731,7 +11097,9 @@
           "condition": "was a pure coincidence that they attended",
           "modelAnswer": "It was a pure coincidence that they attended the same university.",
           "hint": "It was a pure coincidence that..."
-        }
+        },
+        "exampleEn": "Wearing the same shirt is a funny coincidence, but finding your soulmate feels like fate.",
+        "exampleKo": "coincidence는 인과관계 없는 우연의 일치, fate는 초자연적 힘이나 섭리에 의해 정해진 불가항력의 운명입니다."
       }
     ]
   },
@@ -10757,7 +11125,7 @@
         },
         "explanation": "take a trip은 여행을 가다, travel은 추상적 여행/이동입니다.",
         "collocation": "go on a road trip vs. air travel",
-        "audioSentence": "Travel expands your worldview.",
+        "audioSentence": "I took a weekend business trip, because travel broadens the mind.",
         "dialogue": [
           {
             "speaker": "Agent",
@@ -10797,7 +11165,9 @@
           "condition": "took a backpacking trip to Europe last summer",
           "modelAnswer": "She took a backpacking trip to Europe last summer.",
           "hint": "She took a backpacking trip to..."
-        }
+        },
+        "exampleEn": "I took a weekend business trip, because travel broadens the mind.",
+        "exampleKo": "trip은 구체적으로 다녀온 단기 여행/출장(가산 명사 a trip), travel은 여행이라는 행위나 이동 전반(불가산 명사 또는 동사)입니다."
       },
       {
         "id": "expr-bat-026",
@@ -10812,7 +11182,7 @@
         },
         "explanation": "journey는 긴 여정이나 인생 역정, voyage는 바다/우주로의 항해입니다.",
         "collocation": "life is a journey vs. voyage across the Atlantic",
-        "audioSentence": "The Titanic set off on its maiden voyage.",
+        "audioSentence": "A road trip across Africa is an arduous journey, but sailing around the world is a voyage.",
         "dialogue": [
           {
             "speaker": "Captain",
@@ -10852,7 +11222,9 @@
           "condition": "Life is a journey, not a destination.",
           "modelAnswer": "Life is a long journey, not merely a final destination.",
           "hint": "Life is a long journey..."
-        }
+        },
+        "exampleEn": "A road trip across Africa is an arduous journey, but sailing around the world is a voyage.",
+        "exampleKo": "journey는 육상이나 인생의 길고 험난한 여정, voyage는 선박이나 우주선을 타고 떠나는 대양/우주 항해입니다."
       },
       {
         "id": "expr-bat-027",
@@ -10867,7 +11239,7 @@
         },
         "explanation": "commute는 매일의 출퇴근, transit은 환승/대중교통 시스템입니다.",
         "collocation": "morning commute vs. rapid transit system",
-        "audioSentence": "She reads books during her daily commute.",
+        "audioSentence": "My daily commute takes 45 minutes, using public transit.",
         "dialogue": [
           {
             "speaker": "Ben",
@@ -10907,7 +11279,9 @@
           "condition": "moved closer to reduce his daily commute",
           "modelAnswer": "He moved closer to the office to reduce his daily commute.",
           "hint": "He moved closer to the office..."
-        }
+        },
+        "exampleEn": "My daily commute takes 45 minutes, using public transit.",
+        "exampleKo": "commute는 집과 직장/학교 사이를 매일 오가는 통근/통학 길, transit은 대중교통 체계나 경유지 통과를 뜻합니다."
       },
       {
         "id": "expr-bat-028",
@@ -10922,7 +11296,7 @@
         },
         "explanation": "tour는 정기 순회/투어, excursion은 가벼운 당일치기 현장 견학입니다.",
         "collocation": "guided city tour vs. day excursion to the island",
-        "audioSentence": "The hotel organizes snorkeling excursions.",
+        "audioSentence": "A rock band goes on a world tour, but cruise passengers take a day excursion to the ruins.",
         "dialogue": [
           {
             "speaker": "Guide",
@@ -10962,7 +11336,9 @@
           "condition": "took a day excursion to the volcanic craters",
           "modelAnswer": "We took a delightful day excursion to the volcanic craters on the island.",
           "hint": "We took a delightful day excursion..."
-        }
+        },
+        "exampleEn": "A rock band goes on a world tour, but cruise passengers take a day excursion to the ruins.",
+        "exampleKo": "tour는 여러 도시나 국가를 순회하는 종합 유람, excursion은 본 여행지에서 잠시 짬을 내어 다녀오는 당일치기 근교 소풍/견학입니다."
       }
     ]
   },
@@ -10988,7 +11364,7 @@
         },
         "explanation": "job은 직업/일자리, work는 일/노동/작업입니다.",
         "collocation": "apply for a job vs. hard work pays off",
-        "audioSentence": "He is looking for a full-time job.",
+        "audioSentence": "I love my new job, but I have a lot of hard work to finish tonight.",
         "dialogue": [
           {
             "speaker": "Interviewer",
@@ -11028,7 +11404,9 @@
           "condition": "finally landed her dream job after interviews",
           "modelAnswer": "She finally landed her dream job after multiple rounds of interviews.",
           "hint": "She finally landed her dream..."
-        }
+        },
+        "exampleEn": "I love my new job, but I have a lot of hard work to finish tonight.",
+        "exampleKo": "job은 특정 직위나 고용된 일자리(가산 a job), work는 노동, 업무, 과업이라는 행동 자체(불가산 work)입니다."
       },
       {
         "id": "expr-bat-029b",
@@ -11043,7 +11421,7 @@
         },
         "explanation": "career는 생애 커리어와 발전 과정, occupation은 서식용 직업 분류입니다.",
         "collocation": "career advancement vs. write your occupation on the form",
-        "audioSentence": "She built a stellar career in biotechnology.",
+        "audioSentence": "Teaching was her lifelong career, but her passport lists her occupation as educator.",
         "dialogue": [
           {
             "speaker": "Officer",
@@ -11083,7 +11461,9 @@
           "condition": "built a successful career in renewable energy",
           "modelAnswer": "She built a successful career in the renewable energy sector.",
           "hint": "She built a successful career..."
-        }
+        },
+        "exampleEn": "Teaching was her lifelong career, but her passport lists her occupation as educator.",
+        "exampleKo": "career는 일생에 걸쳐 쌓아 올린 전문적 성취와 진로 궤적, occupation은 공문서나 세관 신고서 직업란에 적는 형식적 직업 명칭입니다."
       },
       {
         "id": "expr-bat-030",
@@ -11098,7 +11478,7 @@
         },
         "explanation": "profession은 화이트칼라 전문직, trade는 숙련된 블루칼라 기술직입니다.",
         "collocation": "medical profession vs. learn a skilled trade",
-        "audioSentence": "Carpentry is an honorable and lucrative trade.",
+        "audioSentence": "Medicine and law are professions requiring licenses, while plumbing and carpentry are skilled trades.",
         "dialogue": [
           {
             "speaker": "Counselor",
@@ -11138,7 +11518,9 @@
           "condition": "Members of the medical profession are held to high standards.",
           "modelAnswer": "Members of the medical profession are held to strict ethical standards.",
           "hint": "Members of the medical profession are..."
-        }
+        },
+        "exampleEn": "Medicine and law are professions requiring licenses, while plumbing and carpentry are skilled trades.",
+        "exampleKo": "profession은 오랜 고등 교육과 공인 면허를 요하는 전문직(의사, 변호사 등), trade는 도제식 훈련과 손기술을 요하는 기능직/기술직(배관공, 목수 등)입니다."
       },
       {
         "id": "expr-bat-031",
@@ -11153,7 +11535,7 @@
         },
         "explanation": "task는 작은 업무 단위, duty는 도덕적/법적 사명과 의무입니다.",
         "collocation": "complete a daily task vs. perform one's civic duty",
-        "audioSentence": "Jury service is an important civic duty.",
+        "audioSentence": "Cleaning your inbox is a routine task, but protecting citizens is a soldier's sacred duty.",
         "dialogue": [
           {
             "speaker": "Sergeant",
@@ -11193,7 +11575,9 @@
           "condition": "completed all tasks on his daily to-do list",
           "modelAnswer": "He completed all assigned tasks on his daily to-do list before noon.",
           "hint": "He completed all assigned tasks..."
-        }
+        },
+        "exampleEn": "Cleaning your inbox is a routine task, but protecting citizens is a soldier's sacred duty.",
+        "exampleKo": "task는 끝내야 할 구체적인 개별 과제/할 일이고, duty는 양심, 법률, 직무에 의해 지켜야 할 무거운 책임과 의무입니다."
       }
     ]
   },
@@ -11219,7 +11603,7 @@
         },
         "explanation": "cost는 생산 비용/원가, price는 소비자가 지불하는 가격표 금액입니다.",
         "collocation": "production cost vs. sticker price",
-        "audioSentence": "The high price covers both manufacturing costs and marketing.",
+        "audioSentence": "The retail price on the tag was $100, but the production cost was only $20.",
         "dialogue": [
           {
             "speaker": "Buyer",
@@ -11259,7 +11643,9 @@
           "condition": "shipping costs increased significantly",
           "modelAnswer": "Company shipping costs increased significantly due to rising fuel prices.",
           "hint": "Company shipping costs increased..."
-        }
+        },
+        "exampleEn": "The retail price on the tag was $100, but the production cost was only $20.",
+        "exampleKo": "cost는 재화나 서비스를 만드는 데 투입된 원가나 치러야 할 대가, price는 매장에서 손님에게 부과하는 최종 정가/판매 가격입니다."
       },
       {
         "id": "expr-bat-033",
@@ -11274,7 +11660,7 @@
         },
         "explanation": "expense는 전반적 생활비/회사 경비, charge는 서비스 건당 청구액입니다.",
         "collocation": "business expenses vs. service charge",
-        "audioSentence": "Living expenses in New York are notoriously high.",
+        "audioSentence": "Travel expenses can be reimbursed, while the bank adds a monthly maintenance charge.",
         "dialogue": [
           {
             "speaker": "Traveler",
@@ -11314,7 +11700,9 @@
           "condition": "trying to reduce unnecessary operating expenses",
           "modelAnswer": "The company is working hard to reduce unnecessary operating expenses.",
           "hint": "The company is working hard to..."
-        }
+        },
+        "exampleEn": "Travel expenses can be reimbursed, while the bank adds a monthly maintenance charge.",
+        "exampleKo": "expense는 살아가거나 사업을 하며 나가는 전반적인 지출/경비, charge는 호텔이나 카드사에서 특정 항목에 매기는 청구 요금입니다."
       },
       {
         "id": "expr-bat-034",
@@ -11329,7 +11717,7 @@
         },
         "explanation": "cheap은 조잡하고 값싼 느낌, economical은 합리적이고 절약적인 미덕입니다.",
         "collocation": "cheap plastic replica vs. an economical hybrid engine",
-        "audioSentence": "Cooking at home is both healthy and economical.",
+        "audioSentence": "A cheap toy breaks in five minutes, but a hybrid car is economical to drive.",
         "dialogue": [
           {
             "speaker": "Buyer",
@@ -11369,7 +11757,9 @@
           "condition": "Taking public transit is the most economical way",
           "modelAnswer": "Taking public transit is the most economical way to commute in the city.",
           "hint": "Taking public transit is the most..."
-        }
+        },
+        "exampleEn": "A cheap toy breaks in five minutes, but a hybrid car is economical to drive.",
+        "exampleKo": "cheap은 가격뿐 아니라 품질도 조잡하고 싸구려라는 부정적 어감, economical은 낭비 없이 알뜰하고 가성비가 훌륭하다는 칭찬입니다."
       },
       {
         "id": "expr-bat-035",
@@ -11384,7 +11774,7 @@
         },
         "explanation": "valuable은 고가의, priceless는 돈으로 살 수 없는 귀중함입니다.",
         "collocation": "valuable gold watch vs. priceless family memories",
-        "audioSentence": "The museum houses priceless artifacts of antiquity.",
+        "audioSentence": "A diamond ring is valuable, but a mother's love is priceless.",
         "dialogue": [
           {
             "speaker": "Appraiser",
@@ -11424,7 +11814,9 @@
           "condition": "True friendship is truly priceless.",
           "modelAnswer": "True friendship is truly priceless compared to material wealth.",
           "hint": "True friendship is truly priceless..."
-        }
+        },
+        "exampleEn": "A diamond ring is valuable, but a mother's love is priceless.",
+        "exampleKo": "valuable은 금전적 가치가 매우 높은 것(환산 가능), priceless는 돈 따위로는 도저히 그 가치를 매길 수 없을 만큼 소중함을 뜻합니다."
       }
     ]
   },
@@ -11450,7 +11842,7 @@
         },
         "explanation": "doubt는 부정적 의심(아닐 거야), suspect는 혐의적 의심(그놈일 거야)입니다.",
         "collocation": "I doubt his honesty vs. police suspect foul play",
-        "audioSentence": "I doubt that prices will drop soon.",
+        "audioSentence": "I doubt it will rain (I think no), but the police suspect he is guilty (they think yes).",
         "dialogue": [
           {
             "speaker": "Judge",
@@ -11490,7 +11882,9 @@
           "condition": "The police suspect that an insider was involved.",
           "modelAnswer": "The police suspect that an insider was involved in the heist.",
           "hint": "The police suspect that an insider..."
-        }
+        },
+        "exampleEn": "I doubt it will rain (I think no), but the police suspect he is guilty (they think yes).",
+        "exampleKo": "doubt는 '~가 아닐 것 같다'고 부정적으로 회의하는 것, suspect는 '~인 것 같다'고 혐의나 가능성을 긍정적으로 의심하는 것입니다."
       },
       {
         "id": "expr-bat-037",
@@ -11505,7 +11899,7 @@
         },
         "explanation": "imagine은 심상화/공상, suppose는 논증을 위한 가설 설정입니다.",
         "collocation": "imagine a better world vs. suppose we lose the match",
-        "audioSentence": "I suppose we should leave now before dark.",
+        "audioSentence": "A novelist imagines fantastical dragons, while a scientist supposes a hypothetical scenario.",
         "dialogue": [
           {
             "speaker": "Math Teacher",
@@ -11545,7 +11939,9 @@
           "condition": "Suppose we miss the last train, what do we do?",
           "modelAnswer": "Suppose we miss the last train tonight, what do we do?",
           "hint": "Suppose we miss the last..."
-        }
+        },
+        "exampleEn": "A novelist imagines fantastical dragons, while a scientist supposes a hypothetical scenario.",
+        "exampleKo": "imagine은 그림이나 환상을 머릿속에 자유롭게 그려보는 상상, suppose는 논리적 추론이나 가정을 위해 '~라고 가정해 보자'입니다."
       },
       {
         "id": "expr-bat-038",
@@ -11560,7 +11956,7 @@
         },
         "explanation": "assume은 독단적 넘겨짚기, presume은 정황 증거에 기반한 추정입니다.",
         "collocation": "make an assumption vs. presumed innocent until proven guilty",
-        "audioSentence": "Presumed innocent is a core legal doctrine.",
+        "audioSentence": "To assume is to guess without evidence, while to presume is to infer based on reasonable probability.",
         "dialogue": [
           {
             "speaker": "Defense",
@@ -11600,7 +11996,9 @@
           "condition": "assumed he would attend the meeting",
           "modelAnswer": "They mistakenly assumed he would attend the meeting, but he was away.",
           "hint": "They mistakenly assumed he would..."
-        }
+        },
+        "exampleEn": "To assume is to guess without evidence, while to presume is to infer based on reasonable probability.",
+        "exampleKo": "assume은 아무런 객관적 근거 없이 자의적으로 속단하는 것, presume은 정황과 관례에 비추어 타당하게 추정하는 것입니다."
       },
       {
         "id": "expr-bat-039",
@@ -11615,7 +12013,7 @@
         },
         "explanation": "remember는 내재된 기억의 존재, recall은 의식적인 기억의 인출입니다.",
         "collocation": "remember someone's face vs. recall exact details",
-        "audioSentence": "He tried hard to recall the telephone number.",
+        "audioSentence": "I naturally remember my childhood home, but I must deliberately recall his license plate.",
         "dialogue": [
           {
             "speaker": "Cop",
@@ -11655,7 +12053,9 @@
           "condition": "could not accurately recall the events before the crash",
           "modelAnswer": "He could not accurately recall the sequence of events before the crash.",
           "hint": "He could not accurately recall..."
-        }
+        },
+        "exampleEn": "I naturally remember my childhood home, but I must deliberately recall his license plate.",
+        "exampleKo": "remember는 머릿속에 기억이 온전히 보존되어 절로 떠오르는 것, recall은 기억의 서랍을 뒤져 의식적으로 회상해 내는 것입니다."
       }
     ]
   },
@@ -11721,7 +12121,9 @@
           "condition": "kick off the product launch campaign next week",
           "modelAnswer": "We plan to kick off the product launch campaign next week.",
           "hint": "We plan to kick off..."
-        }
+        },
+        "exampleEn": "The festival will kick off tomorrow afternoon.",
+        "exampleKo": "축구 경기 킥오프에서 유래하여 어떤 행사나 프로젝트를 활기차게 시작할 때 씁니다."
       },
       {
         "id": "expr-phrasal-002",
@@ -11776,7 +12178,9 @@
           "condition": "wound down by listening to music",
           "modelAnswer": "He wound down by listening to music after heavy work.",
           "hint": "He wound down by listening..."
-        }
+        },
+        "exampleEn": "Take an hour to wind down and relax.",
+        "exampleKo": "시계태엽이 풀리듯 하루나 바쁜 일과의 긴장을 풀고 편안한 상태로 들어설 때 씁니다."
       },
       {
         "id": "expr-phrasal-003",
@@ -11831,7 +12235,9 @@
           "condition": "turned in early because of the exam",
           "modelAnswer": "I turned in early because of the important exam tomorrow.",
           "hint": "I turned in early because..."
-        }
+        },
+        "exampleEn": "Decided to turn in early tonight.",
+        "exampleKo": "침대로 몸을 돌려 눕는다는 어원에서 '잠자리에 들다'를 부드럽게 표현합니다."
       },
       {
         "id": "expr-phrasal-004",
@@ -11886,7 +12292,9 @@
           "condition": "enjoys sleeping in every Saturday",
           "modelAnswer": "She enjoys sleeping in every Saturday morning.",
           "hint": "She enjoys sleeping in..."
-        }
+        },
+        "exampleEn": "Allowed myself to sleep in until ten.",
+        "exampleKo": "overstaying in bed 원해서 알람 없이 푹 늦잠 자는 행복한 상태를 뜻합니다."
       }
     ]
   },
@@ -11952,7 +12360,9 @@
           "condition": "bumped into a former colleague on the subway",
           "modelAnswer": "I bumped into a former colleague on the subway this morning.",
           "hint": "I bumped into a former colleague..."
-        }
+        },
+        "exampleEn": "Never expected to bump into you here.",
+        "exampleKo": "길을 걷다 어깨가 툭 부딪히듯 뜻밖의 장소에서 우연히 아는 사람을 만날 때 씁니다."
       },
       {
         "id": "expr-phrasal-006",
@@ -12007,7 +12417,9 @@
           "condition": "catch up over brunch this weekend",
           "modelAnswer": "We decided to catch up over brunch this weekend.",
           "hint": "We decided to catch up..."
-        }
+        },
+        "exampleEn": "We need to catch up soon.",
+        "exampleKo": "한동안 못 봐서 뒤처진 서로의 삶의 소식을 따라잡는다는 따뜻한 의미입니다."
       },
       {
         "id": "expr-phrasal-007",
@@ -12062,7 +12474,9 @@
           "condition": "finally showed up right before the party ended",
           "modelAnswer": "He finally showed up right before the party ended.",
           "hint": "He finally showed up..."
-        }
+        },
+        "exampleEn": "Over a hundred people showed up for the lecture.",
+        "exampleKo": "약속된 장소에 모습을 드러내거나 참석할 때 씁니다."
       },
       {
         "id": "expr-phrasal-008",
@@ -12117,7 +12531,9 @@
           "condition": "dropped by the bookstore on the way home",
           "modelAnswer": "I dropped by the bookstore on the way home to buy a book.",
           "hint": "I dropped by the bookstore..."
-        }
+        },
+        "exampleEn": "I'll drop by the bakery on my way home.",
+        "exampleKo": "물방울이 툭 떨어지듯 격식 차리지 않고 잠깐 가볍게 들를 때 씁니다."
       }
     ]
   },
@@ -12143,7 +12559,7 @@
         },
         "explanation": "깊은 대화와 정서적 유대를 쌓을 때 자주 등장하는 감성적인 구동사입니다.",
         "collocation": "open up to someone",
-        "audioSentence": "hard to open up about personal struggles",
+        "audioSentence": "It took a while, but he finally opened up about his worries.",
         "dialogue": [
           {
             "speaker": "Grace",
@@ -12183,7 +12599,9 @@
           "condition": "opened up about his concerns to his close friend",
           "modelAnswer": "He opened up about his concerns to his close friend.",
           "hint": "He opened up about his..."
-        }
+        },
+        "exampleEn": "It took a while, but he finally opened up about his worries.",
+        "exampleKo": "굳게 닫혀 있던 마음의 문을 열고 속마음을 솔직히 나눌 때 씁니다."
       },
       {
         "id": "expr-phrasal-010",
@@ -12238,7 +12656,9 @@
           "condition": "drifted apart due to busy careers after college",
           "modelAnswer": "They gradually drifted apart due to busy careers after college.",
           "hint": "They gradually drifted apart..."
-        }
+        },
+        "exampleEn": "Sad to see old friends drift apart.",
+        "exampleKo": "강물에 뜬 조각배가 서서히 다른 방향으로 떠내려가듯 자연스럽게 연락이 뜸해질 때 씁니다."
       },
       {
         "id": "expr-phrasal-011",
@@ -12293,7 +12713,9 @@
           "condition": "brushed off malicious comments and focused on work",
           "modelAnswer": "She brushed off malicious comments and stayed focused on work.",
           "hint": "She brushed off malicious..."
-        }
+        },
+        "exampleEn": "Just brush it off and move forward.",
+        "exampleKo": "옷에 묻은 먼지를 툭툭 털어내듯 불쾌한 비난이나 실수를 대수롭지 않게 넘길 때 씁니다."
       },
       {
         "id": "expr-phrasal-012",
@@ -12348,7 +12770,9 @@
           "condition": "finally made up after a long dispute",
           "modelAnswer": "They finally made up after a long dispute and hugged.",
           "hint": "They finally made up..."
-        }
+        },
+        "exampleEn": "Kiss and make up.",
+        "exampleKo": "깨지거나 어그러진 관계를 원래대로 다시 메우고 복원한다는 의미입니다."
       }
     ]
   },
@@ -12414,7 +12838,9 @@
           "condition": "wrap up drafting the proposal by tomorrow",
           "modelAnswer": "We plan to wrap up drafting the proposal by tomorrow afternoon.",
           "hint": "We plan to wrap up..."
-        }
+        },
+        "exampleEn": "Aim to wrap up by 5 PM.",
+        "exampleKo": "선물을 포장지에 깔끔하게 싸서 묶듯 진행 중이던 일이나 회의를 매듭지을 때 씁니다."
       },
       {
         "id": "expr-phrasal-014",
@@ -12469,7 +12895,9 @@
           "condition": "sent an email to follow up on the interview",
           "modelAnswer": "I sent an email to follow up on last week's job interview.",
           "hint": "I sent an email to..."
-        }
+        },
+        "exampleEn": "Follow up with an email.",
+        "exampleKo": "한 번의 만남이나 질문으로 끝내지 않고 뒤이어 꼼꼼하게 진행 상황을 확인할 때 씁니다."
       },
       {
         "id": "expr-phrasal-015",
@@ -12524,7 +12952,9 @@
           "condition": "powered through the project despite a cold",
           "modelAnswer": "She powered through the final project despite a bad cold.",
           "hint": "She powered through..."
-        }
+        },
+        "exampleEn": "Just power through until Friday.",
+        "exampleKo": "강한 에너지 엔진을 가동하듯 피로나 난관에도 굴하지 않고 묵묵히 버텨내며 해낼 때 씁니다."
       },
       {
         "id": "expr-phrasal-016",
@@ -12579,7 +13009,9 @@
           "condition": "got through the tough winter by encouraging each other",
           "modelAnswer": "We got through that difficult winter by encouraging each other.",
           "hint": "We got through..."
-        }
+        },
+        "exampleEn": "Hard to get through all these readings.",
+        "exampleKo": "긴 터널을 뚫고 지나가듯 고난이나 엄청난 양의 시험공부를 헤쳐나갈 때 씁니다."
       }
     ]
   },
@@ -12645,7 +13077,9 @@
           "condition": "sort out the server bug before leaving",
           "modelAnswer": "The tech team will sort out the server bug before leaving today.",
           "hint": "The tech team will sort out..."
-        }
+        },
+        "exampleEn": "Need some time to sort things out.",
+        "exampleKo": "뒤엉킨 실타래를 가지런히 분류하여 원래의 정돈된 상태로 수습할 때 씁니다."
       },
       {
         "id": "expr-phrasal-018",
@@ -12660,7 +13094,7 @@
         },
         "explanation": "비즈니스 협상에서 마지막 쟁점을 조율할 때 고급스럽게 쓰입니다.",
         "collocation": "iron out differences",
-        "audioSentence": "iron out minor contract terms",
+        "audioSentence": "We agree in principle, but we still need to iron out the fine details.",
         "dialogue": [
           {
             "speaker": "Lawyer",
@@ -12700,7 +13134,9 @@
           "condition": "ironed out their remaining differences before signing",
           "modelAnswer": "They ironed out their remaining differences before signing the agreement.",
           "hint": "They ironed out their remaining..."
-        }
+        },
+        "exampleEn": "We agree in principle, but we still need to iron out the fine details.",
+        "exampleKo": "구겨진 셔츠를 다리미로 빳빳하게 펴듯 계약이나 협상의 미세한 불일치를 부드럽게 펼 때 씁니다."
       },
       {
         "id": "expr-phrasal-019",
@@ -12755,7 +13191,9 @@
           "condition": "finally figured out how to solve the puzzle",
           "modelAnswer": "We finally figured out how to solve that difficult puzzle.",
           "hint": "We finally figured out..."
-        }
+        },
+        "exampleEn": "Can't figure out what he wants.",
+        "exampleKo": "머리를 써서 곰곰이 생각한 끝에 해결책이나 작동 원리를 깨달을 때 씁니다."
       },
       {
         "id": "expr-phrasal-020",
@@ -12770,7 +13208,7 @@
         },
         "explanation": "후보군 선정, 회의 주제 압축, 여행지 결정 시 즐겨 씁니다.",
         "collocation": "narrow down the options",
-        "audioSentence": "narrowed down to finalists",
+        "audioSentence": "We narrowed down the applicants to three top candidates.",
         "dialogue": [
           {
             "speaker": "HR",
@@ -12810,7 +13248,9 @@
           "condition": "narrowed down the candidates to two finalists",
           "modelAnswer": "The committee narrowed down the candidates to two top finalists.",
           "hint": "The committee narrowed down..."
-        }
+        },
+        "exampleEn": "We narrowed down the applicants to three top candidates.",
+        "exampleKo": "넓은 범위를 좁은 통로처럼 좁혀 가장 유력한 몇 가지 옵션으로 압축할 때 씁니다."
       }
     ]
   },
@@ -12876,7 +13316,9 @@
           "condition": "bounced back successfully from near bankruptcy",
           "modelAnswer": "The company bounced back successfully from the brink of bankruptcy.",
           "hint": "The company bounced back..."
-        }
+        },
+        "exampleEn": "Amazing ability to bounce back.",
+        "exampleKo": "탱탱볼이 바닥을 치고 다시 높이 솟아오르듯 좌절 후 놀라운 회복 탄력성을 보일 때 씁니다."
       },
       {
         "id": "expr-phrasal-022",
@@ -12931,7 +13373,9 @@
           "condition": "pulled through the severe cash crisis",
           "modelAnswer": "The startup pulled through the severe financial crisis against all odds.",
           "hint": "The startup pulled through..."
-        }
+        },
+        "exampleEn": "Believe she will pull through.",
+        "exampleKo": "위태로운 밧줄을 당겨 험난한 구렁텅이에서 벗어나듯 죽을 고비나 큰 위기를 극복할 때 씁니다."
       },
       {
         "id": "expr-phrasal-023",
@@ -12946,7 +13390,7 @@
         },
         "explanation": "어려운 상황에서도 끈기 있게 인내하거나 더 나은 조건을 위해 버틸 때 씁니다.",
         "collocation": "hold out for a better offer",
-        "audioSentence": "hold out hope until the end",
+        "audioSentence": "The trapped miners held out until rescue teams arrived.",
         "dialogue": [
           {
             "speaker": "Reporter",
@@ -12986,7 +13430,9 @@
           "condition": "held out until extra time despite fatigue",
           "modelAnswer": "The players held out until extra time despite complete exhaustion.",
           "hint": "The players held out..."
-        }
+        },
+        "exampleEn": "The trapped miners held out until rescue teams arrived.",
+        "exampleKo": "고립된 광부들은 구조대가 도착할 때까지 끝까지 버텨냈습니다(held out)."
       },
       {
         "id": "expr-phrasal-024",
@@ -13001,7 +13447,7 @@
         },
         "explanation": "weather the storm 또는 weather through로 쓰여 품격 있는 극복을 나타냅니다.",
         "collocation": "weather through the recession",
-        "audioSentence": "help each other weather through storms",
+        "audioSentence": "Strong families weather through difficult economic storms together.",
         "dialogue": [
           {
             "speaker": "CEO",
@@ -13041,7 +13487,9 @@
           "condition": "weathered through similar financial crises",
           "modelAnswer": "Our firm has weathered through similar financial crises in the past.",
           "hint": "Our firm has weathered through..."
-        }
+        },
+        "exampleEn": "Strong families weather through difficult economic storms together.",
+        "exampleKo": "거친 풍랑을 만난 배가 침몰하지 않고 폭풍을 뚫고 무사히 항해하듯 시련을 극복할 때 씁니다."
       }
     ]
   },
@@ -13067,7 +13515,7 @@
         },
         "explanation": "가계부 절약, 다이어트, 기업 구조조정에서 빠질 수 없는 단골 구동사입니다.",
         "collocation": "cut back on expenses",
-        "audioSentence": "cut back on sugar intake",
+        "audioSentence": "We need to cut back on dining out to save for a home.",
         "dialogue": [
           {
             "speaker": "Sam",
@@ -13107,7 +13555,9 @@
           "condition": "cut back on unnecessary subscription fees",
           "modelAnswer": "We decided to cut back on unnecessary subscription fees for our vacation.",
           "hint": "We decided to cut back..."
-        }
+        },
+        "exampleEn": "We need to cut back on dining out to save for a home.",
+        "exampleKo": "자르듯(cut) 뒤로 물려(back) 과도한 지출이나 커피, 설탕 섭취 등을 절감할 때 씁니다."
       },
       {
         "id": "expr-phrasal-026",
@@ -13162,7 +13612,9 @@
           "condition": "chipped in to buy a get-well flower basket",
           "modelAnswer": "All colleagues chipped in to buy a beautiful get-well flower basket.",
           "hint": "All colleagues chipped in..."
-        }
+        },
+        "exampleEn": "Everyone chipped in to help.",
+        "exampleKo": "포커 칩을 테이블 중앙에 모으듯 각자 소액의 돈이나 작은 정성을 모을 때 씁니다."
       },
       {
         "id": "expr-phrasal-027",
@@ -13177,7 +13629,7 @@
         },
         "explanation": "바가지요금이나 비싼 수리비, 벌금을 낼 때 씁쓸한 뉘앙스를 담아 씁니다.",
         "collocation": "shell out big money",
-        "audioSentence": "forced to shell out for legal fees",
+        "audioSentence": "I had to shell out a thousand dollars to repair the car.",
         "dialogue": [
           {
             "speaker": "Liam",
@@ -13217,7 +13669,9 @@
           "condition": "shelled out a fortune for last-minute flights",
           "modelAnswer": "He shelled out a small fortune for the last-minute flight tickets.",
           "hint": "He shelled out a..."
-        }
+        },
+        "exampleEn": "I had to shell out a thousand dollars to repair the car.",
+        "exampleKo": "조개껍데기 속에 숨겨둔 비상금을 억지로 까서 내듯 예상치 못한 큰돈을 지출할 때 씁니다."
       },
       {
         "id": "expr-phrasal-028",
@@ -13232,7 +13686,7 @@
         },
         "explanation": "What a rip-off!(완전 바가지야!)라는 명사형 감탄사로도 널리 쓰입니다.",
         "collocation": "get ripped off in tourist areas",
-        "audioSentence": "a total rip-off",
+        "audioSentence": "Tourist shops often rip off unsuspecting travelers.",
         "dialogue": [
           {
             "speaker": "Traveler",
@@ -13272,7 +13726,9 @@
           "condition": "ripped me off by refusing to turn on the meter",
           "modelAnswer": "The taxi driver ripped me off by refusing to turn on the meter.",
           "hint": "The taxi driver ripped me off..."
-        }
+        },
+        "exampleEn": "Tourist shops often rip off unsuspecting travelers.",
+        "exampleKo": "손님의 지갑에서 돈을 거칠게 뜯어내듯(rip) 터무니없는 폭리를 취할 때 씁니다."
       }
     ]
   },
@@ -13298,7 +13754,7 @@
         },
         "explanation": "감동적인 연설, 슬픈 영화, 감사 인사를 전할 때 자주 등장합니다.",
         "collocation": "choked up during the speech",
-        "audioSentence": "makes me choke up every time",
+        "audioSentence": "He choked up with emotion during his daughter's wedding toast.",
         "dialogue": [
           {
             "speaker": "Noah",
@@ -13338,7 +13794,9 @@
           "condition": "choked up while saying farewell to colleagues",
           "modelAnswer": "He choked up while saying his final farewell to beloved colleagues.",
           "hint": "He choked up while saying..."
-        }
+        },
+        "exampleEn": "He choked up with emotion during his daughter's wedding toast.",
+        "exampleKo": "눈물이나 북받치는 감정 때문에 목구멍이 꽉 막힌 듯 말을 잇지 못할 때 씁니다."
       },
       {
         "id": "expr-phrasal-030",
@@ -13393,7 +13851,9 @@
           "condition": "freaked out thinking she forgot to write her name",
           "modelAnswer": "She momentarily freaked out thinking she forgot to write her name.",
           "hint": "She momentarily freaked out..."
-        }
+        },
+        "exampleEn": "Don't freak out, it's just a prank.",
+        "exampleKo": "기이할 정도로(freak) 이성을 잃고 깜짝 놀라거나 극도의 공황 상태에 빠질 때 씁니다."
       },
       {
         "id": "expr-phrasal-031",
@@ -13408,7 +13868,7 @@
         },
         "explanation": "화가 나거나 공황에 빠진 사람을 차분하게 달랠 때 필수입니다.",
         "collocation": "calm down after an argument",
-        "audioSentence": "took a deep breath to calm down",
+        "audioSentence": "Please calm down and explain clearly what happened.",
         "dialogue": [
           {
             "speaker": "Ethan",
@@ -13448,7 +13908,9 @@
           "condition": "took deep breaths to calm down",
           "modelAnswer": "He took several deep breaths to calm down before the interview.",
           "hint": "He took several deep breaths..."
-        }
+        },
+        "exampleEn": "Please calm down and explain clearly what happened.",
+        "exampleKo": "거칠어진 호흡과 감정의 파도를 평온한 아래(down)로 가라앉힐 때 씁니다."
       },
       {
         "id": "expr-phrasal-032",
@@ -13503,7 +13965,9 @@
           "condition": "took our friend out to cheer her up",
           "modelAnswer": "We took our depressed friend out to dinner to cheer her up.",
           "hint": "We took our depressed friend..."
-        }
+        },
+        "exampleEn": "Cheer up, things will improve.",
+        "exampleKo": "우울하게 처져 있는 기분을 위로(up) 끌어올려 기운을 북돋울 때 씁니다."
       }
     ]
   },
@@ -13569,7 +14033,9 @@
           "condition": "headed out early at dawn to avoid traffic",
           "modelAnswer": "We headed out early at dawn to avoid the heavy holiday traffic.",
           "hint": "We headed out early at..."
-        }
+        },
+        "exampleEn": "Ready to head out for dinner?",
+        "exampleKo": "머리(시선)가 향하는 방향으로 몸을 돌려 목적지를 향해 발걸음을 뗄 때 씁니다."
       },
       {
         "id": "expr-phrasal-034",
@@ -13584,7 +14050,7 @@
         },
         "explanation": "세계 일주나 장거리 하이킹, 긴 여정을 개시할 때 즐겨 쓰입니다.",
         "collocation": "set off on a journey",
-        "audioSentence": "set off at sunrise",
+        "audioSentence": "They set off on a three-month backpacking trip across Europe.",
         "dialogue": [
           {
             "speaker": "Guide",
@@ -13624,7 +14090,9 @@
           "condition": "set off for the summit at 5 AM",
           "modelAnswer": "They set off for the mountain summit at 5 AM to catch the sunrise.",
           "hint": "They set off for the..."
-        }
+        },
+        "exampleEn": "They set off on a three-month backpacking trip across Europe.",
+        "exampleKo": "시동을 켜고 출발 신호가 울리듯 기대와 모험에 차서 대장정의 여정을 시작할 때 씁니다."
       },
       {
         "id": "expr-phrasal-035",
@@ -13679,7 +14147,9 @@
           "condition": "checked in at the hotel and unpacked",
           "modelAnswer": "We checked in at the hotel, unpacked our bags, and went downtown.",
           "hint": "We checked in at the..."
-        }
+        },
+        "exampleEn": "Just calling to check in on you.",
+        "exampleKo": "공항 탑승 수속이나 호텔 등록뿐 아니라 지인에게 '나 무사히 도착했어'라고 안부를 전할 때도 씁니다."
       },
       {
         "id": "expr-phrasal-036",
@@ -13694,7 +14164,7 @@
         },
         "explanation": "유학이나 여행을 떠나는 이를 역이나 공항에서 따뜻하게 배웅할 때 씁니다.",
         "collocation": "see someone off at the station",
-        "audioSentence": "gather to see the bride off",
+        "audioSentence": "My parents came to the airport to see me off.",
         "dialogue": [
           {
             "speaker": "Jack",
@@ -13734,7 +14204,9 @@
           "condition": "came to the train station to see him off",
           "modelAnswer": "The whole family came to the station to see him off as he enlisted.",
           "hint": "The whole family came to..."
-        }
+        },
+        "exampleEn": "My parents came to the airport to see me off.",
+        "exampleKo": "떠나가는 사람이 시야에서 사라질 때까지 눈(see)으로 지켜보며 작별을 고할 때 씁니다."
       }
     ]
   },
@@ -13760,7 +14232,7 @@
         },
         "explanation": "cancel의 가장 자연스러운 구어체 대체 표현입니다.",
         "collocation": "call off the wedding",
-        "audioSentence": "call off the search operation",
+        "audioSentence": "They had to call off the soccer match due to heavy thunderstorms.",
         "dialogue": [
           {
             "speaker": "Reporter",
@@ -13800,7 +14272,9 @@
           "condition": "called off the wedding due to unexpected issues",
           "modelAnswer": "They called off the wedding due to unexpected personal issues.",
           "hint": "They called off the..."
-        }
+        },
+        "exampleEn": "They had to call off the soccer match due to heavy thunderstorms.",
+        "exampleKo": "소리쳐서 약속이나 일정을 철회하듯 예정된 행사나 계약을 취소할 때 씁니다."
       },
       {
         "id": "expr-phrasal-038",
@@ -13815,7 +14289,7 @@
         },
         "explanation": "친환경 정책, 노후 기종 교체, 제도 개편에서 품격 있게 쓰입니다.",
         "collocation": "phase out fossil fuel subsidies",
-        "audioSentence": "gradually phased out old software",
+        "audioSentence": "The company plans to phase out plastic packaging over two years.",
         "dialogue": [
           {
             "speaker": "Official",
@@ -13855,7 +14329,9 @@
           "condition": "phase out combustion engine vehicles over a decade",
           "modelAnswer": "The government plans to phase out combustion engine vehicles over the next decade.",
           "hint": "The government plans to phase out..."
-        }
+        },
+        "exampleEn": "The company plans to phase out plastic packaging over two years.",
+        "exampleKo": "달의 위상이 서서히 바뀌듯 급격한 충격 없이 단계별(phase)로 서서히 없애나갈 때 씁니다."
       },
       {
         "id": "expr-phrasal-039",
@@ -13870,7 +14346,7 @@
         },
         "explanation": "상황에 따라 기계 고장, 눈물, 데이터 분석으로 모두 쓰이는 다의어 구동사입니다.",
         "collocation": "car broke down",
-        "audioSentence": "broke down in tears",
+        "audioSentence": "Our car broke down in the middle of the highway.",
         "dialogue": [
           {
             "speaker": "Alex",
@@ -13910,7 +14386,9 @@
           "condition": "broke down in tears upon hearing the sad news",
           "modelAnswer": "She broke down in tears upon hearing the heartbreaking news.",
           "hint": "She broke down in..."
-        }
+        },
+        "exampleEn": "Our car broke down in the middle of the highway.",
+        "exampleKo": "기계가 멈추거나, 억눌렀던 감정의 둑이 터져 펑펑 울거나, 복잡한 데이터를 쪼갤 때 씁니다."
       },
       {
         "id": "expr-phrasal-040",
@@ -13925,7 +14403,7 @@
         },
         "explanation": "실연이나 실패 후 새 출발을 격려할 때 가장 힘이 되는 멘트입니다.",
         "collocation": "move on to the next chapter",
-        "audioSentence": "time to forgive and move on",
+        "audioSentence": "It was a painful failure, but it's time to move on.",
         "dialogue": [
           {
             "speaker": "Emma",
@@ -13965,7 +14443,9 @@
           "condition": "moved on to start a new business venture",
           "modelAnswer": "He moved on from his job loss to start an exciting new business venture.",
           "hint": "He moved on from..."
-        }
+        },
+        "exampleEn": "It was a painful failure, but it's time to move on.",
+        "exampleKo": "지나간 과거의 미련이나 슬픔에 얽매이지 않고 미래를 향해 발걸음을 옮길 때 씁니다."
       }
     ]
   },
@@ -13991,7 +14471,7 @@
         },
         "explanation": "스포츠 경기, 파티, 콘서트 직전 에너지가 폭발할 때 외치는 표현입니다.",
         "collocation": "pumped up for the race",
-        "audioSentence": "feeling super pumped",
+        "audioSentence": "I'm so pumped for the championship game tonight!",
         "dialogue": [
           {
             "speaker": "Coach",
@@ -14031,7 +14511,9 @@
           "condition": "were totally pumped ahead of the championship final",
           "modelAnswer": "The athletes were totally pumped ahead of the championship final.",
           "hint": "The athletes were totally pumped..."
-        }
+        },
+        "exampleEn": "I'm so pumped for the championship game tonight!",
+        "exampleKo": "심장에 펌프질하듯 피가 솟구치며 엄청난 흥분과 열정에 가득 찬 상태를 말합니다."
       },
       {
         "id": "expr-emot-002",
@@ -14046,7 +14528,7 @@
         },
         "explanation": "신작 게임 출시, 아이폰 발표회, 대작 영화 개봉 직전 열광하는 대중의 심리입니다.",
         "collocation": "super hyped for the album release",
-        "audioSentence": "overly hyped product",
+        "audioSentence": "Everyone is so hyped about the new sci-fi blockbuster.",
         "dialogue": [
           {
             "speaker": "Leo",
@@ -14086,7 +14568,9 @@
           "condition": "super hyped about the band's world tour announcement",
           "modelAnswer": "Fans are super hyped about the favorite band's world tour announcement.",
           "hint": "Fans are super hyped..."
-        }
+        },
+        "exampleEn": "Everyone is so hyped about the new sci-fi blockbuster.",
+        "exampleKo": "대중의 관심과 과장(hype)이 모여 기대감이 하늘을 찌르는 상태를 말합니다."
       },
       {
         "id": "expr-emot-003",
@@ -14101,7 +14585,7 @@
         },
         "explanation": "합격 통지, 승진, 청혼을 승낙받았을 때 격식과 감성을 모두 담아 씁니다.",
         "collocation": "thrilled to announce the news",
-        "audioSentence": "absolutely thrilled with the results",
+        "audioSentence": "She was thrilled to receive the prestigious research scholarship.",
         "dialogue": [
           {
             "speaker": "Professor",
@@ -14141,7 +14625,9 @@
           "condition": "thrilled beyond measure to be chosen for the scholarship",
           "modelAnswer": "She was thrilled beyond measure to be selected for the prestigious scholarship.",
           "hint": "She was thrilled beyond..."
-        }
+        },
+        "exampleEn": "She was thrilled to receive the prestigious research scholarship.",
+        "exampleKo": "온몸에 전율(thrill)이 돋을 만큼 가슴 벅차고 황홀한 최고의 기쁨을 말합니다."
       },
       {
         "id": "expr-emot-004",
@@ -14156,7 +14642,7 @@
         },
         "explanation": "여행, 전역, 결혼식, 방학을 기다리는 설렘의 표준 표현입니다.",
         "collocation": "counting down the days until departure",
-        "audioSentence": "can't wait any longer",
+        "audioSentence": "Summer vacation starts in June; I'm counting down the days.",
         "dialogue": [
           {
             "speaker": "Ella",
@@ -14196,7 +14682,9 @@
           "condition": "counted down the days until Christmas morning",
           "modelAnswer": "The children eagerly counted down the days until Christmas morning.",
           "hint": "The children eagerly counted..."
-        }
+        },
+        "exampleEn": "Summer vacation starts in June; I'm counting down the days.",
+        "exampleKo": "달력에 표시를 해두고 하루하루 날짜를 세듯 간절하게 어떤 날을 기다릴 때 씁니다."
       }
     ]
   },
@@ -14222,7 +14710,7 @@
         },
         "explanation": "두 가지 선택지 사이에서 장단점이 팽팽해 결단을 유보할 때 흔히 씁니다.",
         "collocation": "sit on the fence",
-        "audioSentence": "remain on the fence until more info comes",
+        "audioSentence": "I'm still on the fence about whether to take the job in Tokyo.",
         "dialogue": [
           {
             "speaker": "Tom",
@@ -14262,7 +14750,9 @@
           "condition": "still on the fence about attending graduate school",
           "modelAnswer": "He is still on the fence about whether to attend graduate school or start working.",
           "hint": "He is still on the fence..."
-        }
+        },
+        "exampleEn": "I'm still on the fence about whether to take the job in Tokyo.",
+        "exampleKo": "울타리(fence) 위에 위태롭게 걸터앉아 어느 쪽 마당으로 뛰어내릴지 결정을 못 한 상태입니다."
       },
       {
         "id": "expr-emot-006",
@@ -14317,7 +14807,9 @@
           "condition": "started having second thoughts about the luxury purchase",
           "modelAnswer": "He started having second thoughts about making such an expensive luxury purchase.",
           "hint": "He started having second..."
-        }
+        },
+        "exampleEn": "Never have second thoughts.",
+        "exampleKo": "처음엔 충동적이거나 쉽게 결정했다가, 두 번째로 곰곰이 생각해보니 후회나 불안이 밀려올 때 씁니다."
       },
       {
         "id": "expr-emot-007",
@@ -14332,7 +14824,7 @@
         },
         "explanation": "한국어의 '시원섭섭하다', '만감이 교차한다'에 100% 매칭되는 완벽한 표현입니다.",
         "collocation": "have mixed feelings about promotion",
-        "audioSentence": "evoked mixed feelings",
+        "audioSentence": "I have mixed feelings about leaving my hometown after 20 years.",
         "dialogue": [
           {
             "speaker": "Jenny",
@@ -14372,7 +14864,9 @@
           "condition": "had mixed feelings about relocating abroad",
           "modelAnswer": "She had mixed feelings about being relocated to the overseas branch.",
           "hint": "She had mixed feelings about..."
-        }
+        },
+        "exampleEn": "I have mixed feelings about leaving my hometown after 20 years.",
+        "exampleKo": "기쁨과 슬픔, 기대와 두려움이라는 상반된 감정이 뒤섞여(mixed) 마음이 복잡한 상태입니다."
       },
       {
         "id": "expr-emot-008",
@@ -14387,7 +14881,7 @@
         },
         "explanation": "학술, 심리학, 품격 있는 논평에서 사람의 복합적인 내면을 지적으로 표현합니다.",
         "collocation": "ambivalent feelings about artificial intelligence",
-        "audioSentence": "feel ambivalent about success",
+        "audioSentence": "Critics held an ambivalent attitude toward the controversial novel.",
         "dialogue": [
           {
             "speaker": "Host",
@@ -14427,7 +14921,9 @@
           "condition": "felt ambivalent about living apart from family for career",
           "modelAnswer": "She felt deeply ambivalent about living apart from her family for career advancement.",
           "hint": "She felt deeply ambivalent..."
-        }
+        },
+        "exampleEn": "Critics held an ambivalent attitude toward the controversial novel.",
+        "exampleKo": "라틴어 ambi(양쪽) + valere(힘이 있다)에서 유래하여 정반대의 두 감정이 똑같이 강하게 부딪칠 때 씁니다."
       }
     ]
   },
@@ -14453,7 +14949,7 @@
         },
         "explanation": "싫지만 언젠가는 반드시 해야 할 힘든 일을 결연하게 감행할 때 씁니다.",
         "collocation": "bite the bullet and apologize",
-        "audioSentence": "reluctantly bite the bullet",
+        "audioSentence": "I hate dentistry, but I just have to bite the bullet and go.",
         "dialogue": [
           {
             "speaker": "Kevin",
@@ -14493,7 +14989,9 @@
           "condition": "bit the bullet and issued a formal apology to the client",
           "modelAnswer": "He finally bit the bullet and issued a sincere formal apology to the client.",
           "hint": "He finally bit the bullet..."
-        }
+        },
+        "exampleEn": "I hate dentistry, but I just have to bite the bullet and go.",
+        "exampleKo": "전쟁터에서 마취제가 없을 때 총알(bullet)을 입에 물리고 수술의 고통을 견디게 한 유래입니다."
       },
       {
         "id": "expr-emot-010",
@@ -14508,7 +15006,7 @@
         },
         "explanation": "월요병, 치과 진료, 세금 정산 등 생각만 해도 암담한 일에 씁니다.",
         "collocation": "dread waking up early",
-        "audioSentence": "dread public speaking",
+        "audioSentence": "I absolutely dread going to the dentist for a root canal.",
         "dialogue": [
           {
             "speaker": "Lisa",
@@ -14548,7 +15046,9 @@
           "condition": "dread speaking in front of a large audience",
           "modelAnswer": "Many high school students dread speaking in front of a large public audience.",
           "hint": "Many high school students dread..."
-        }
+        },
+        "exampleEn": "I absolutely dread going to the dentist for a root canal.",
+        "exampleKo": "단순한 무서움(fear)을 넘어 다가올 사건에 대해 머리가 찌끈거리고 피하고 싶은 진저리침을 뜻합니다."
       },
       {
         "id": "expr-emot-011",
@@ -14603,7 +15103,9 @@
           "condition": "dragged its feet on enforcing new safety regulations",
           "modelAnswer": "The city council dragged its feet on enforcing strict new safety regulations.",
           "hint": "The city council dragged its..."
-        }
+        },
+        "exampleEn": "Stop dragging your feet.",
+        "exampleKo": "발걸음이 떨어지지 않아 신발을 바닥에 질질 끌며(drag) 억지로 천천히 갈 때 씁니다."
       },
       {
         "id": "expr-emot-012",
@@ -14618,7 +15120,7 @@
         },
         "explanation": "전혀 내키지 않지만 대안이 없어서 마지못해 승낙할 때 절묘하게 쓰입니다.",
         "collocation": "grudgingly admit defeat",
-        "audioSentence": "grudgingly agreed to attend",
+        "audioSentence": "After two hours of debate, he grudgingly agreed to the compromise.",
         "dialogue": [
           {
             "speaker": "Chloe",
@@ -14658,7 +15160,9 @@
           "condition": "grudgingly admitted defeat and shook hands",
           "modelAnswer": "He grudgingly admitted defeat and shook his opponent's hand respectfully.",
           "hint": "He grudgingly admitted defeat..."
-        }
+        },
+        "exampleEn": "After two hours of debate, he grudgingly agreed to the compromise.",
+        "exampleKo": "마음속에 원망이나 불만(grudge)을 품은 채 어쩔 수 없이 고개를 끄덕일 때 씁니다."
       }
     ]
   },
@@ -14724,7 +15228,9 @@
           "condition": "I feel you; I went through the exact same thing last week.",
           "modelAnswer": "I feel you, bro; I went through the exact same painful experience last week.",
           "hint": "I feel you, bro; I went..."
-        }
+        },
+        "exampleEn": "I feel you, stay strong.",
+        "exampleKo": "네가 느끼는 감정의 진폭을 내 가슴으로도 똑같이 느낀다는 최고의 구어체 공감 표현입니다."
       },
       {
         "id": "expr-emot-014",
@@ -14739,7 +15245,7 @@
         },
         "explanation": "상대방의 어려운 결정을 지지하거나 현명한 조언을 건넬 때 전제조건으로 쓰입니다.",
         "collocation": "put yourself in someone's shoes",
-        "audioSentence": "If I were in your shoes",
+        "audioSentence": "If I were in your shoes, I would have made the exact same choice.",
         "dialogue": [
           {
             "speaker": "Doctor",
@@ -14779,7 +15285,9 @@
           "condition": "If I were in your shoes, I would have reacted the same way.",
           "modelAnswer": "If I were in your shoes, I would have reacted in the exact same manner.",
           "hint": "If I were in your shoes..."
-        }
+        },
+        "exampleEn": "If I were in your shoes, I would have made the exact same choice.",
+        "exampleKo": "남의 신발(shoes)에 내 발을 집어넣어 보듯 그의 처지와 입장을 고스란히 헤아려 볼 때 씁니다."
       },
       {
         "id": "expr-emot-015",
@@ -14794,7 +15302,7 @@
         },
         "explanation": "자연재해, 사별, 큰 사고를 당한 유족들에게 전하는 가장 격조 높은 애도 문구입니다.",
         "collocation": "heart goes out to the victims",
-        "audioSentence": "express heartfelt sympathies",
+        "audioSentence": "My heart goes out to all the families affected by the wildfire.",
         "dialogue": [
           {
             "speaker": "Mayor",
@@ -14834,7 +15342,9 @@
           "condition": "My heart goes out to all the survivors affected by the earthquake.",
           "modelAnswer": "My heart goes out to all the survivors deeply affected by the devastating earthquake.",
           "hint": "My heart goes out to all..."
-        }
+        },
+        "exampleEn": "My heart goes out to all the families affected by the wildfire.",
+        "exampleKo": "내 심장과 온 마음이 비극을 겪은 이들에게 걸어가 안아주듯 지극한 위로와 연민을 전할 때 씁니다."
       },
       {
         "id": "expr-emot-016",
@@ -14849,7 +15359,7 @@
         },
         "explanation": "유명 팝송 제목처럼 소중한 친구가 위기에 처했을 때 든든하게 받쳐주는 표현입니다.",
         "collocation": "a shoulder to lean on",
-        "audioSentence": "lean on friends during hardship",
+        "audioSentence": "Whenever life gets too overwhelming, you can always lean on me.",
         "dialogue": [
           {
             "speaker": "Sophia",
@@ -14889,7 +15399,9 @@
           "condition": "feel free to lean on me during tough times",
           "modelAnswer": "Never hesitate to lean on me whenever you go through difficult times.",
           "hint": "Never hesitate to lean on..."
-        }
+        },
+        "exampleEn": "Whenever life gets too overwhelming, you can always lean on me.",
+        "exampleKo": "힘이 빠져 쓰러질 것 같을 때 어깨를 내어주듯 전폭적인 지지와 의지가 되어주겠다는 온기 어린 말입니다."
       }
     ]
   },
@@ -14915,7 +15427,7 @@
         },
         "explanation": "반복되는 거짓말, 소음, 룸메이트의 무개념 행동에 넌더리가 났을 때 씁니다.",
         "collocation": "fed up with waiting",
-        "audioSentence": "fed up with bureaucratic red tape",
+        "audioSentence": "I am totally fed up with his endless excuses and tardiness.",
         "dialogue": [
           {
             "speaker": "Rachel",
@@ -14955,7 +15467,9 @@
           "condition": "fed up with politicians' empty promises",
           "modelAnswer": "Citizens are completely fed up with politicians making empty campaign promises.",
           "hint": "Citizens are completely fed up..."
-        }
+        },
+        "exampleEn": "I am totally fed up with his endless excuses and tardiness.",
+        "exampleKo": "밥을 목구멍 끝까지 억지로 먹여(feed) 더 이상 한 숟가락도 못 넘기듯 한계에 도달한 분노입니다."
       },
       {
         "id": "expr-emot-018",
@@ -14970,7 +15484,7 @@
         },
         "explanation": "모든 방법을 다 써봤지만 해결되지 않아 미칠 것 같은 극한의 절망감을 나타냅니다.",
         "collocation": "mother at her wit's end",
-        "audioSentence": "drove me to my wit's end",
+        "audioSentence": "I've tried everything with this crying baby; I'm at my wit's end.",
         "dialogue": [
           {
             "speaker": "Amber",
@@ -15010,7 +15524,9 @@
           "condition": "was at her wit's end trying to recover lost files",
           "modelAnswer": "She was at her wit's end trying to recover her deleted thesis files.",
           "hint": "She was at her wit's end..."
-        }
+        },
+        "exampleEn": "I've tried everything with this crying baby; I'm at my wit's end.",
+        "exampleKo": "인간의 지혜(wit)가 도달할 수 있는 가장자리 끝(end)에 서서 더 이상 묘수가 없는 상태입니다."
       },
       {
         "id": "expr-emot-019",
@@ -15025,7 +15541,7 @@
         },
         "explanation": "단순한 피곤함(tired)을 넘어 영혼까지 탈탈 털린 듯한 뉘앙스를 풍깁니다.",
         "collocation": "feel emotionally drained",
-        "audioSentence": "drained of all energy",
+        "audioSentence": "After a ten-hour flight with screaming toddlers, I felt totally drained.",
         "dialogue": [
           {
             "speaker": "Boss",
@@ -15065,7 +15581,9 @@
           "condition": "felt emotionally and physically drained from caregiving",
           "modelAnswer": "She felt emotionally and physically drained after months of intensive caregiving.",
           "hint": "She felt emotionally and physically..."
-        }
+        },
+        "exampleEn": "After a ten-hour flight with screaming toddlers, I felt totally drained.",
+        "exampleKo": "욕조 배수구로 물이 쫙 빠져나가듯 신체적·정신적 에너지가 0이 되어 허탈한 상태입니다."
       },
       {
         "id": "expr-emot-020",
@@ -15080,7 +15598,7 @@
         },
         "explanation": "층간소음, 끊임없는 딸깍거림, 얄미운 잔소리에 환장할 것 같을 때 쓰는 표현입니다.",
         "collocation": "noise driving me up the wall",
-        "audioSentence": "driving the teacher crazy",
+        "audioSentence": "That dripping kitchen faucet is driving me up the wall!",
         "dialogue": [
           {
             "speaker": "Leo",
@@ -15120,7 +15638,9 @@
           "condition": "driving the player up the wall with constant lag",
           "modelAnswer": "The constant game lag and sudden freezing was driving the player up the wall.",
           "hint": "The constant game lag..."
-        }
+        },
+        "exampleEn": "That dripping kitchen faucet is driving me up the wall!",
+        "exampleKo": "너무 짜증이 나서 스파이더맨처럼 벽을 타고 기어오르고 싶을 만큼 돌아버리게 만드는 상태입니다."
       }
     ]
   },
@@ -15146,7 +15666,7 @@
         },
         "explanation": "큰 빚을 다 갚았거나, 중대한 시험이나 수술이 무사히 끝났을 때 씁니다.",
         "collocation": "took a weight off my chest",
-        "audioSentence": "feel such a weight lifted",
+        "audioSentence": "Passing that bar exam felt like a huge weight off my shoulders.",
         "dialogue": [
           {
             "speaker": "Liam",
@@ -15186,7 +15706,9 @@
           "condition": "felt like a massive weight off her shoulders upon clean test results",
           "modelAnswer": "Receiving clean health results felt like a massive weight off her shoulders.",
           "hint": "Receiving clean health results..."
-        }
+        },
+        "exampleEn": "Passing that bar exam felt like a huge weight off my shoulders.",
+        "exampleKo": "무거운 역기나 배낭이 어깨에서 쿵 내려앉아 날아갈 듯 가벼워진 안도감을 말합니다."
       },
       {
         "id": "expr-emot-022",
@@ -15201,7 +15723,7 @@
         },
         "explanation": "위험한 순간을 아슬아슬하게 넘겼을 때 전 세계인이 공통으로 짓는 제스처입니다.",
         "collocation": "breathed a collective sigh of relief",
-        "audioSentence": "breathe easy again",
+        "audioSentence": "We all breathed a sigh of relief when the lost toddler was found.",
         "dialogue": [
           {
             "speaker": "Pilot",
@@ -15241,7 +15763,9 @@
           "condition": "breathed a deep sigh of relief upon the safe return",
           "modelAnswer": "The anxious family breathed a deep sigh of relief upon the safe return of their child.",
           "hint": "The anxious family breathed a..."
-        }
+        },
+        "exampleEn": "We all breathed a sigh of relief when the lost toddler was found.",
+        "exampleKo": "참았던 숨을 후- 하고 길게 내쉬며 가슴을 쓸어내리는 신체적 안도 반응입니다."
       },
       {
         "id": "expr-emot-023",
@@ -15256,7 +15780,7 @@
         },
         "explanation": "생명의 은인, 위기에서 구해준 스승이나 동료에게 전하는 가장 정중하고 진심 어린 표현입니다.",
         "collocation": "words cannot express my gratitude",
-        "audioSentence": "can't thank you enough for your generosity",
+        "audioSentence": "You saved my life; I truly cannot thank you enough.",
         "dialogue": [
           {
             "speaker": "Traveler",
@@ -15296,7 +15820,9 @@
           "condition": "cannot thank you enough for staying by my side",
           "modelAnswer": "I honestly cannot thank you enough for staying by my side during my hardest moments.",
           "hint": "I honestly cannot thank you..."
-        }
+        },
+        "exampleEn": "You saved my life; I truly cannot thank you enough.",
+        "exampleKo": "어떤 감사의 말로도 그 은혜의 깊이를 다 채울 수 없을 만큼 극진한 고마움을 전합니다."
       },
       {
         "id": "expr-emot-024",
@@ -15311,7 +15837,7 @@
         },
         "explanation": "자서전, 헌사, 수상 소감에서 인생의 은인에게 바치는 최고의 헌사입니다.",
         "collocation": "forever indebted to someone's guidance",
-        "audioSentence": "deeply indebted to the community",
+        "audioSentence": "I am forever indebted to the surgeon who restored my eyesight.",
         "dialogue": [
           {
             "speaker": "Author",
@@ -15351,7 +15877,9 @@
           "condition": "forever indebted to the brave firefighters who risked their lives",
           "modelAnswer": "We are forever indebted to the brave firefighters who risked their lives to rescue us.",
           "hint": "We are forever indebted to..."
-        }
+        },
+        "exampleEn": "I am forever indebted to the surgeon who restored my eyesight.",
+        "exampleKo": "금전적 빚(debt)처럼 평생 갚아도 모자랄 큰 은혜와 헌신을 마음에 깊이 새긴 상태입니다."
       }
     ]
   },
@@ -15377,7 +15905,7 @@
         },
         "explanation": "기습적인 질문이나 돌발 행동에 말문이 턱 막혔을 때의 당혹감을 세련되게 표현합니다.",
         "collocation": "taken aback by the sudden hostility",
-        "audioSentence": "visibly taken aback",
+        "audioSentence": "She was taken aback by his blunt question during the interview.",
         "dialogue": [
           {
             "speaker": "Interviewer",
@@ -15417,7 +15945,9 @@
           "condition": "taken aback by the sudden cold demeanor of her colleague",
           "modelAnswer": "She was taken aback by the sudden cold and distant demeanor of her colleague.",
           "hint": "She was taken aback by..."
-        }
+        },
+        "exampleEn": "She was taken aback by his blunt question during the interview.",
+        "exampleKo": "돌풍을 맞은 돛단배가 뒤로 확 밀려나듯 예상치 못한 무례함이나 발언에 순간 멍해질 때 씁니다."
       },
       {
         "id": "expr-emot-026",
@@ -15432,7 +15962,7 @@
         },
         "explanation": "갑작스러운 연락, 뜻밖의 행운, 예기치 못한 비보에 일상적으로 쓰입니다.",
         "collocation": "arrived out of the blue",
-        "audioSentence": "a decision made out of the blue",
+        "audioSentence": "Out of the blue, my childhood friend called me after ten years.",
         "dialogue": [
           {
             "speaker": "Hannah",
@@ -15472,7 +16002,9 @@
           "condition": "laid off half the workforce out of the blue",
           "modelAnswer": "The tech company laid off half of its workforce completely out of the blue.",
           "hint": "The tech company laid off..."
-        }
+        },
+        "exampleEn": "Out of the blue, my childhood friend called me after ten years.",
+        "exampleKo": "구름 한 점 없는 맑은 푸른 하늘(blue sky)에서 벼락이 치듯 아무 예고 없이 불쑥 일어날 때 씁니다."
       },
       {
         "id": "expr-emot-027",
@@ -15487,7 +16019,7 @@
         },
         "explanation": "돌발 질문, 기습 공격, 기습 세무조사에 대비 없이 당했을 때의 충격입니다.",
         "collocation": "caught off guard by the question",
-        "audioSentence": "never let yourself be caught off guard",
+        "audioSentence": "The sudden tax audit caught the business owners completely off guard.",
         "dialogue": [
           {
             "speaker": "Reporter",
@@ -15527,7 +16059,9 @@
           "condition": "caught the applicant completely off guard",
           "modelAnswer": "The highly technical coding question caught the confident applicant completely off guard.",
           "hint": "The highly technical coding question..."
-        }
+        },
+        "exampleEn": "The sudden tax audit caught the business owners completely off guard.",
+        "exampleKo": "경비병(guard)이 경계를 풀고 딴청을 피우다 적의 기습에 허를 찔린 군사 용어에서 유래했습니다."
       },
       {
         "id": "expr-emot-028",
@@ -15542,7 +16076,7 @@
         },
         "explanation": "대자연의 장관, 엄청난 슬픔, 깊은 감동을 묘사할 때 최고의 찬사로 쓰입니다.",
         "collocation": "grateful beyond words",
-        "audioSentence": "shocked beyond words",
+        "audioSentence": "The beauty of the Grand Canyon sunrise was simply beyond words.",
         "dialogue": [
           {
             "speaker": "Traveler",
@@ -15582,7 +16116,9 @@
           "condition": "My gratitude for her endless support is beyond words.",
           "modelAnswer": "My heartfelt gratitude for her continuous personal support is simply beyond words.",
           "hint": "My heartfelt gratitude for her..."
-        }
+        },
+        "exampleEn": "The beauty of the Grand Canyon sunrise was simply beyond words.",
+        "exampleKo": "사전의 단어(words)의 경계를 넘어설 만큼 언어의 표현력을 초월한 경이로움이나 충격입니다."
       }
     ]
   },
@@ -15608,7 +16144,7 @@
         },
         "explanation": "연구실의 학자, 무대 위의 배우, 요리하는 셰프처럼 자신감이 뿜어져 나올 때 씁니다.",
         "collocation": "in his element on stage",
-        "audioSentence": "thrive in one's element",
+        "audioSentence": "Put her in front of a piano, and she is truly in her element.",
         "dialogue": [
           {
             "speaker": "Audience",
@@ -15648,7 +16184,9 @@
           "condition": "in her element whenever she steps on stage with a microphone",
           "modelAnswer": "She is truly in her element whenever she steps onto the stage with a microphone.",
           "hint": "She is truly in her..."
-        }
+        },
+        "exampleEn": "Put her in front of a piano, and she is truly in her element.",
+        "exampleKo": "물고기가 물(자연 원소) 속에 있듯 자신이 가장 좋아하고 잘하는 환경에서 빛나는 상태입니다."
       },
       {
         "id": "expr-emot-030",
@@ -15703,7 +16241,9 @@
           "condition": "decided to proudly own her unique haircut",
           "modelAnswer": "She decided to proudly own her unique hairstyle and walked with confidence.",
           "hint": "She decided to proudly own..."
-        }
+        },
+        "exampleEn": "Walk out there and own it.",
+        "exampleKo": "누가 뭐라 하든 내 것이라 인정하고 당당하게 내 것으로 소화해 낼 때 씁니다."
       },
       {
         "id": "expr-emot-031",
@@ -15758,7 +16298,9 @@
           "condition": "doing morning stretches has become second nature to her",
           "modelAnswer": "Doing morning stretches every day has now become second nature to her.",
           "hint": "Doing morning stretches every day..."
-        }
+        },
+        "exampleEn": "Typing is second nature to coders.",
+        "exampleKo": "태어날 때부터 가진 본능(제1의 천성)처럼 오랜 훈련으로 생각조차 거치지 않고 저절로 될 때 씁니다."
       },
       {
         "id": "expr-emot-032",
@@ -15773,7 +16315,7 @@
         },
         "explanation": "흔들림 없는 자신감, 불굴의 신념, 굳건한 평정심을 수식하는 품격 높은 단어입니다.",
         "collocation": "unshakeable confidence",
-        "audioSentence": "an unshakeable belief in justice",
+        "audioSentence": "Nelson Mandela maintained an unshakeable faith in human freedom.",
         "dialogue": [
           {
             "speaker": "Journalist",
@@ -15813,7 +16355,9 @@
           "condition": "demonstrated unshakeable resolve and self-confidence",
           "modelAnswer": "She demonstrated unshakeable resolve and calm confidence despite severe adversity.",
           "hint": "She demonstrated unshakeable resolve..."
-        }
+        },
+        "exampleEn": "Nelson Mandela maintained an unshakeable faith in human freedom.",
+        "exampleKo": "어떤 강풍이나 지진에도 결코 흔들리지 않는 바위 같은 멘탈과 신념을 가리킵니다."
       }
     ]
   },
@@ -15839,7 +16383,7 @@
         },
         "explanation": "요즘 세대가 가장 자주 쓰는 감정 신조어로, 형용사 cringe-worthy로도 쓰입니다.",
         "collocation": "so cringe to watch",
-        "audioSentence": "cringe at old photos",
+        "audioSentence": "I cringed when I watched my high school theater audition tape.",
         "dialogue": [
           {
             "speaker": "Alex",
@@ -15879,7 +16423,9 @@
           "condition": "cringed at the cheesy pickup line",
           "modelAnswer": "He visibly cringed when he overheard the incredibly cheesy pickup line.",
           "hint": "He visibly cringed when..."
-        }
+        },
+        "exampleEn": "I cringed when I watched my high school theater audition tape.",
+        "exampleKo": "극도의 민망함이나 흑역사로 인해 얼굴 근육과 온몸이 오그라들 때 씁니다."
       },
       {
         "id": "expr-emot-034",
@@ -15894,7 +16440,7 @@
         },
         "explanation": "성격 급한 상사나 예민한 가족 구성원의 기분을 거스를까 봐 숨죽일 때 쓰는 완벽한 비유입니다.",
         "collocation": "walking on eggshells around him",
-        "audioSentence": "tired of walking on eggshells",
+        "audioSentence": "Whenever the boss is in a bad mood, the entire office walks on eggshells.",
         "dialogue": [
           {
             "speaker": "Employee",
@@ -15934,7 +16480,9 @@
           "condition": "walked on eggshells all day to avoid the manager's temper",
           "modelAnswer": "Employees walked on eggshells all day to avoid triggering the short-tempered manager.",
           "hint": "Employees walked on eggshells all day..."
-        }
+        },
+        "exampleEn": "Whenever the boss is in a bad mood, the entire office walks on eggshells.",
+        "exampleKo": "깨지기 쉬운 달걀 껍데기(eggshells) 위를 밟듯 상대방이 화낼까 봐 조마조마하게 눈치를 살필 때 씁니다."
       },
       {
         "id": "expr-emot-035",
@@ -15949,7 +16497,7 @@
         },
         "explanation": "한국어의 '대리 수치심'에 정확히 부합하는 최고의 현대 심리 표현입니다.",
         "collocation": "feel second-hand embarrassment",
-        "audioSentence": "painful second-hand embarrassment",
+        "audioSentence": "Watching him forget his speech gave me severe second-hand embarrassment.",
         "dialogue": [
           {
             "speaker": "Viewer",
@@ -15989,7 +16537,9 @@
           "condition": "felt acute second-hand embarrassment watching the awkward performance",
           "modelAnswer": "The entire audience felt acute second-hand embarrassment watching his clumsy performance.",
           "hint": "The entire audience felt acute..."
-        }
+        },
+        "exampleEn": "Watching him forget his speech gave me severe second-hand embarrassment.",
+        "exampleKo": "실수한 사람은 가만히 있는데 보는 내가 쥐구멍에 들어가고 싶을 만큼 대신 부끄러울 때 씁니다."
       },
       {
         "id": "expr-emot-036",
@@ -16004,7 +16554,7 @@
         },
         "explanation": "소개팅, 엘리베이터 안, 썰렁한 농담 뒤에 흐르는 침묵의 표준 표현입니다.",
         "collocation": "break the awkward silence",
-        "audioSentence": "fall into awkward silence",
+        "audioSentence": "After he told a bad joke, an awkward silence filled the dining room.",
         "dialogue": [
           {
             "speaker": "Host",
@@ -16044,7 +16594,9 @@
           "condition": "an awkward silence fell over the conference room",
           "modelAnswer": "An awkward silence fell over the conference room when nobody responded to the question.",
           "hint": "An awkward silence fell over..."
-        }
+        },
+        "exampleEn": "After he told a bad joke, an awkward silence filled the dining room.",
+        "exampleKo": "대화의 맥이 뚝 끊겨 누구도 입을 열지 못하고 시선만 이리저리 굴리는 민망한 정적을 말합니다."
       }
     ]
   },
@@ -16110,7 +16662,9 @@
           "condition": "agreed with him by saying, 'Tell me about it!'",
           "modelAnswer": "When he complained about soaring rent, I nodded and replied, 'Tell me about it!'",
           "hint": "When he complained about soaring..."
-        }
+        },
+        "exampleEn": "A: Traffic is terrible. B: Tell me about it!",
+        "exampleKo": "더 설명하지 않아도 내가 그 고충을 뼈저리게 겪어봐서 너무나 잘 안다는 폭풍 공감의 맞장구입니다."
       },
       {
         "id": "expr-emot-038",
@@ -16165,7 +16719,9 @@
           "condition": "accepted his excuse by saying, 'Fair enough.'",
           "modelAnswer": "When he explained he was exhausted from work, everyone nodded and said, 'Fair enough.'",
           "hint": "When he explained he was..."
-        }
+        },
+        "exampleEn": "If you're tired, fair enough.",
+        "exampleKo": "상대방의 논리나 사정을 듣고 '충분히 공정하고 타당하다(fair)'며 흔쾌히 수긍할 때 씁니다."
       },
       {
         "id": "expr-emot-039",
@@ -16220,7 +16776,9 @@
           "condition": "smiled and replied, 'You bet!' with total confidence",
           "modelAnswer": "When asked if he was ready for the final match, he smiled and replied, 'You bet!'",
           "hint": "When asked if he was..."
-        }
+        },
+        "exampleEn": "Thanks for helping! — You bet!",
+        "exampleKo": "내 모든 돈을 걸(bet) 수 있을 만큼 한 치의 의심도 없이 확실하고 당연하다는 뜻입니다."
       },
       {
         "id": "expr-emot-040",
@@ -16275,7 +16833,9 @@
           "condition": "For what it's worth, I think you made the best possible decision.",
           "modelAnswer": "For what it's worth, I believe you made the absolute best decision under the circumstances.",
           "hint": "For what it's worth, I..."
-        }
+        },
+        "exampleEn": "For what it's worth, you did your best.",
+        "exampleKo": "내 의견이나 정보가 얼마나 큰 가치(worth)가 있을지는 모르겠지만 조심스럽게 건넬 때 씁니다."
       }
     ]
   },
@@ -16301,7 +16861,7 @@
         },
         "explanation": "공항 보안 검색대와 탑승 게이트에서 가장 빈번하게 마주치는 기본 여행 용어입니다.",
         "collocation": "carry-on baggage allowance",
-        "audioSentence": "pack liquids in carry-on",
+        "audioSentence": "Make sure your carry-on baggage meets the airline size limits.",
         "dialogue": [
           {
             "speaker": "Agent",
@@ -16341,7 +16901,9 @@
           "condition": "stowed her carry-on baggage in the overhead compartment",
           "modelAnswer": "She carefully stowed her carry-on baggage into the overhead compartment.",
           "hint": "She carefully stowed her..."
-        }
+        },
+        "exampleEn": "Make sure your carry-on baggage meets the airline size limits.",
+        "exampleKo": "화물칸에 부치는 위탁 수하물(checked baggage)과 대비되어 기내 좌석 위 선반에 직접 들고 타는 짐을 뜻합니다."
       },
       {
         "id": "expr-trav-002",
@@ -16356,7 +16918,7 @@
         },
         "explanation": "stopover(24시간 이상의 장기 체류)와 대비하여 24시간 이내의 환승 대기를 가리킵니다.",
         "collocation": "a long layover at the hub",
-        "audioSentence": "layover flight",
+        "audioSentence": "We have a three-hour layover in Dubai before heading to London.",
         "dialogue": [
           {
             "speaker": "Sam",
@@ -16396,7 +16958,9 @@
           "condition": "explored duty-free shops during a five-hour layover in Singapore",
           "modelAnswer": "We explored various duty-free shops during our five-hour layover in Singapore.",
           "hint": "We explored various duty-free shops..."
-        }
+        },
+        "exampleEn": "We have a three-hour layover in Dubai before heading to London.",
+        "exampleKo": "직항이 아닐 때 목적지로 가는 도중 중간 공항에 잠시 내려 다음 비행기를 갈아타는 대기 시간입니다."
       },
       {
         "id": "expr-trav-003",
@@ -16411,7 +16975,7 @@
         },
         "explanation": "여행자들에게 마법 같은 행운으로 통하는 기분 좋은 표현입니다.",
         "collocation": "got bumped to business class",
-        "audioSentence": "lucky bump at the gate",
+        "audioSentence": "The flight was overbooked, so I got bumped to first class!",
         "dialogue": [
           {
             "speaker": "Alex",
@@ -16451,7 +17015,9 @@
           "condition": "bumped him to business class free of charge",
           "modelAnswer": "The airline bumped him to business class free of charge as a loyalty perk.",
           "hint": "The airline bumped him to..."
-        }
+        },
+        "exampleEn": "The flight was overbooked, so I got bumped to first class!",
+        "exampleKo": "이코노미 좌석이 초과 예약(overbooked)되었을 때 항공사의 보상이나 배려로 상위 등급으로 툭 올려질 때 씁니다."
       },
       {
         "id": "expr-trav-004",
@@ -16466,7 +17032,7 @@
         },
         "explanation": "기내 안내 방송에서 가장 귀 기울여 들어야 할 안전 핵심 단어입니다.",
         "collocation": "hit unexpected turbulence",
-        "audioSentence": "fasten seatbelt during turbulence",
+        "audioSentence": "Please fasten your seatbelts as we are experiencing mild turbulence.",
         "dialogue": [
           {
             "speaker": "Flight Attendant",
@@ -16506,7 +17072,9 @@
           "condition": "encountered severe turbulence while crossing the Pacific",
           "modelAnswer": "The aircraft encountered severe turbulence while flying over the Pacific Ocean.",
           "hint": "The aircraft encountered severe..."
-        }
+        },
+        "exampleEn": "Please fasten your seatbelts as we are experiencing mild turbulence.",
+        "exampleKo": "공기의 기류 불안정으로 인해 항공기가 덜컹거리며 위아래로 요동치는 비행 현상입니다."
       }
     ]
   },
@@ -16532,7 +17100,7 @@
         },
         "explanation": "free of charge보다 호텔리어들이 훨씬 더 즐겨 쓰는 고급 호스피탈리티 표현입니다.",
         "collocation": "receive a complimentary upgrade to a suite",
-        "audioSentence": "complimentary breakfast included",
+        "audioSentence": "As a honeymoon special, the hotel offered us a complimentary upgrade.",
         "dialogue": [
           {
             "speaker": "Front Desk",
@@ -16572,7 +17140,9 @@
           "condition": "provided a complimentary upgrade to a presidential suite",
           "modelAnswer": "The luxury hotel provided a complimentary upgrade to a presidential suite to apologize for the delay.",
           "hint": "The luxury hotel provided a..."
-        }
+        },
+        "exampleEn": "As a honeymoon special, the hotel offered us a complimentary upgrade.",
+        "exampleKo": "complimentary는 '칭찬'의 뜻이 아니라 호텔/항공업계에서 '무료로 제공되는 호의'를 뜻하는 핵심 품격 어휘입니다."
       },
       {
         "id": "expr-trav-006",
@@ -16587,7 +17157,7 @@
         },
         "explanation": "장거리 비행 후 피곤할 때 로비에서 정중하게 문의할 수 있는 필수 표현입니다.",
         "collocation": "request early check-in",
-        "audioSentence": "subject to room availability",
+        "audioSentence": "Our flight arrived at 8 AM, so we requested an early check-in.",
         "dialogue": [
           {
             "speaker": "Guest",
@@ -16627,7 +17197,9 @@
           "condition": "gladly accommodated our request for early check-in",
           "modelAnswer": "The front desk clerk gladly accommodated our polite request for an early check-in.",
           "hint": "The front desk clerk gladly accommodated..."
-        }
+        },
+        "exampleEn": "Our flight arrived at 8 AM, so we requested an early check-in.",
+        "exampleKo": "오후 3시 정규 입실 시간 이전에 호텔에 도착하여 방이 비어 있을 때 먼저 입실하는 서비스를 말합니다."
       },
       {
         "id": "expr-trav-007",
@@ -16642,7 +17214,7 @@
         },
         "explanation": "도어 손잡이에 거는 'Do Not Disturb' 또는 'Please Make Up Room'과 연동되는 기본 호텔 용어입니다.",
         "collocation": "call housekeeping for fresh towels",
-        "audioSentence": "housekeeping service daily",
+        "audioSentence": "Could you send housekeeping to replenish towels in room 402?",
         "dialogue": [
           {
             "speaker": "Guest",
@@ -16682,7 +17254,9 @@
           "condition": "hung the housekeeping request sign on the doorknob",
           "modelAnswer": "She hung the housekeeping request sign on the doorknob before leaving for sightseeing.",
           "hint": "She hung the housekeeping request sign..."
-        }
+        },
+        "exampleEn": "Could you send housekeeping to replenish towels in room 402?",
+        "exampleKo": "호텔에서 객실 청소, 침구 정리, 어메니티 채우기를 전담하는 부서 및 서비스를 칭합니다."
       },
       {
         "id": "expr-trav-008",
@@ -16697,7 +17271,7 @@
         },
         "explanation": "미국, 멕시코 등의 유명 휴양지 호텔 예약 시 결제 단계에서 꼭 확인해야 하는 비용입니다.",
         "collocation": "mandatory resort fee per night",
-        "audioSentence": "amenities covered by resort fee",
+        "audioSentence": "Be aware that many Las Vegas hotels charge a mandatory resort fee.",
         "dialogue": [
           {
             "speaker": "Tourist",
@@ -16737,7 +17311,9 @@
           "condition": "check the daily resort fee before booking the hotel",
           "modelAnswer": "It is always wise to check the daily resort fee before finalizing your hotel booking.",
           "hint": "It is always wise to..."
-        }
+        },
+        "exampleEn": "Be aware that many Las Vegas hotels charge a mandatory resort fee.",
+        "exampleKo": "기본 객실 요금 외에 와이파이, 수영장, 피트니스 등의 이용 명목으로 1박당 의무 부과되는 별도 요금입니다."
       }
     ]
   },
@@ -16763,7 +17339,7 @@
         },
         "explanation": "'We are two people' 대신 원어민처럼 'A table for two, please'로 깔끔하게 말합니다.",
         "collocation": "table for two please",
-        "audioSentence": "reserve a table for four",
+        "audioSentence": "Good evening! We'd like a table for two near the window, please.",
         "dialogue": [
           {
             "speaker": "Host",
@@ -16803,7 +17379,9 @@
           "condition": "reserved a table for two by the window with a night view",
           "modelAnswer": "We reserved a romantic table for two by the window overlooking the city night view.",
           "hint": "We reserved a romantic table..."
-        }
+        },
+        "exampleEn": "Good evening! We'd like a table for two near the window, please.",
+        "exampleKo": "식당에 들어서자마자 매니저(호스트)에게 인원수를 알릴 때 가장 먼저 말하는 자연스러운 정형구입니다."
       },
       {
         "id": "expr-trav-010",
@@ -16818,7 +17396,7 @@
         },
         "explanation": "칼로리 조절이나 눅눅함을 피하고 싶은 전 세계 미식가들의 대표 주문 꿀팁입니다.",
         "collocation": "dressing on the side please",
-        "audioSentence": "sauce on the side",
+        "audioSentence": "I'll have the Caesar salad, but with the dressing on the side, please.",
         "dialogue": [
           {
             "speaker": "Server",
@@ -16858,7 +17436,9 @@
           "condition": "requested the ketchup on the side to keep the fries crispy",
           "modelAnswer": "She politely requested the dipping sauce on the side to keep the fries crispy.",
           "hint": "She politely requested the dipping..."
-        }
+        },
+        "exampleEn": "I'll have the Caesar salad, but with the dressing on the side, please.",
+        "exampleKo": "샐러드나 소스가 음식 위에 흠뻑 뿌려져 나오는 대신 작은 소스 종지에 따로 분리해서 달라는 요청입니다."
       },
       {
         "id": "expr-trav-011",
@@ -16873,7 +17453,7 @@
         },
         "explanation": "글로벌 비즈니스 만찬이나 고급 레스토랑에서 셰프와 서버가 가장 중시하는 안내입니다.",
         "collocation": "inform server of dietary restrictions",
-        "audioSentence": "accommodate dietary needs",
+        "audioSentence": "Does anyone at your table have any allergies or dietary restrictions?",
         "dialogue": [
           {
             "speaker": "Server",
@@ -16913,7 +17493,9 @@
           "condition": "tailored the menu to accommodate dietary restrictions",
           "modelAnswer": "The restaurant chef tailored the multi-course menu to accommodate the guests' dietary restrictions.",
           "hint": "The restaurant chef tailored the..."
-        }
+        },
+        "exampleEn": "Does anyone at your table have any allergies or dietary restrictions?",
+        "exampleKo": "종교적 이유(할랄, 코셔), 건강상 알레르기(땅콩, 글루텐), 신념(비건) 등 식단에서 배제해야 하는 제한 요건입니다."
       },
       {
         "id": "expr-trav-012",
@@ -16928,7 +17510,7 @@
         },
         "explanation": "음식이 너무 맛있을 때 셰프에게 감사를 표하는 최고의 미식 찬사입니다.",
         "collocation": "seared salmon cooked to perfection",
-        "audioSentence": "tender and cooked to perfection",
+        "audioSentence": "The ribeye steak was tender, juicy, and cooked to perfection.",
         "dialogue": [
           {
             "speaker": "Waiter",
@@ -16968,7 +17550,9 @@
           "condition": "The grilled salmon fillet was cooked to absolute perfection.",
           "modelAnswer": "The grilled salmon fillet was crispy outside and cooked to absolute perfection.",
           "hint": "The grilled salmon fillet was..."
-        }
+        },
+        "exampleEn": "The ribeye steak was tender, juicy, and cooked to perfection.",
+        "exampleKo": "스테이크나 해산물이 타지도 덜 익지도 않고 셰프의 장인정신으로 황금 비율로 알맞게 익은 상태를 극찬할 때 씁니다."
       }
     ]
   },
@@ -17034,7 +17618,9 @@
           "condition": "agreed to split the bill evenly among the four of us",
           "modelAnswer": "We agreed to split the bill evenly among the four of us to save time.",
           "hint": "We agreed to split the bill..."
-        }
+        },
+        "exampleEn": "Can we split the bill?",
+        "exampleKo": "식사비 총액을 인원수대로 균등하게 1/N로 나누어 지불할 때 씁니다."
       },
       {
         "id": "expr-trav-014",
@@ -17089,7 +17675,9 @@
           "condition": "sent a slice of homemade tiramisu on the house",
           "modelAnswer": "The generous chef sent a slice of delicious homemade tiramisu to our table on the house.",
           "hint": "The generous chef sent a slice..."
-        }
+        },
+        "exampleEn": "This round is on the house.",
+        "exampleKo": "식당(house)의 지붕이 손님을 대접하듯 주인이나 매니저가 무료 서비스로 기분 좋게 낼 때 씁니다."
       },
       {
         "id": "expr-trav-015",
@@ -17104,7 +17692,7 @@
         },
         "explanation": "북미 문화권 여행 시 식당 문화의 가장 핵심적인 글로벌 상식입니다.",
         "collocation": "leave a generous tip for good service",
-        "audioSentence": "tip etiquette in restaurants",
+        "audioSentence": "In the United States, it is customary to leave a tip of 18 to 20 percent.",
         "dialogue": [
           {
             "speaker": "Tourist",
@@ -17144,7 +17732,9 @@
           "condition": "left a generous 20% tip for the friendly waiter",
           "modelAnswer": "He left a generous 20% tip for the friendly waiter who took great care of us.",
           "hint": "He left a generous 20%..."
-        }
+        },
+        "exampleEn": "In the United States, it is customary to leave a tip of 18 to 20 percent.",
+        "exampleKo": "테이블을 전담해 준 서버의 노고에 감사하며 식사 금액의 일정 비율을 팁으로 결제하거나 테이블에 남길 때 씁니다."
       },
       {
         "id": "expr-trav-016",
@@ -17159,7 +17749,7 @@
         },
         "explanation": "멋지게 한턱 쏘거나 비즈니스 접대에서 호방하게 계산할 때 쓰는 신사적인 표현입니다.",
         "collocation": "cover the bill",
-        "audioSentence": "insist on covering the check",
+        "audioSentence": "Put your wallets away, guys; I'll cover the check tonight.",
         "dialogue": [
           {
             "speaker": "David",
@@ -17199,7 +17789,9 @@
           "condition": "insisted on covering the check for all juniors",
           "modelAnswer": "The senior colleague insisted on covering the check for all the juniors after the team dinner.",
           "hint": "The senior colleague insisted on covering..."
-        }
+        },
+        "exampleEn": "Put your wallets away, guys; I'll cover the check tonight.",
+        "exampleKo": "식사비 계산서(check)를 내 지갑으로 완전히 덮어버리듯(cover) 일행의 식사비를 혼자 전액 부담할 때 씁니다."
       }
     ]
   },
@@ -17225,7 +17817,7 @@
         },
         "explanation": "호텔 위치 선정, 부동산 매물, 여행 일정 안내에서 가장 중요하게 확인하는 표현입니다.",
         "collocation": "easy walking distance",
-        "audioSentence": "located within walking distance",
+        "audioSentence": "The subway station and museum are both within walking distance of the hotel.",
         "dialogue": [
           {
             "speaker": "Tourist",
@@ -17265,7 +17857,9 @@
           "condition": "located within walking distance of the beach and market",
           "modelAnswer": "The boutique hotel is conveniently located within walking distance of the beach and night market.",
           "hint": "The boutique hotel is conveniently located..."
-        }
+        },
+        "exampleEn": "The subway station and museum are both within walking distance of the hotel.",
+        "exampleKo": "차나 버스를 타지 않고 가벼운 도보로 5~10분 안에 도착할 수 있는 편리한 접근성을 뜻합니다."
       },
       {
         "id": "expr-trav-018",
@@ -17280,7 +17874,7 @@
         },
         "explanation": "도시 대중교통 여행 시 복잡한 노선도에서 길을 찾을 때 빠질 수 없는 필수 어휘입니다.",
         "collocation": "major transfer station",
-        "audioSentence": "transfer to the blue line",
+        "audioSentence": "You need to change from Line 2 to Line 4 at the next transfer station.",
         "dialogue": [
           {
             "speaker": "Passenger",
@@ -17320,7 +17914,9 @@
           "condition": "got off at the central transfer station to switch trains",
           "modelAnswer": "We got off at the central transfer station to switch to the express airport rail line.",
           "hint": "We got off at the central..."
-        }
+        },
+        "exampleEn": "You need to change from Line 2 to Line 4 at the next transfer station.",
+        "exampleKo": "서로 다른 지하철 호선이나 기차 노선이 교차하여 다른 열차로 갈아탈 수 있는 대형 역을 말합니다."
       },
       {
         "id": "expr-trav-019",
@@ -17335,7 +17931,7 @@
         },
         "explanation": "운전 내비게이션, 도보 길 찾기뿐 아니라 '인생의 먼 길을 돌아가다'는 은유로도 쓰입니다.",
         "collocation": "take a scenic detour",
-        "audioSentence": "forced to take a detour",
+        "audioSentence": "Because of construction on Main Street, we had to take a detour.",
         "dialogue": [
           {
             "speaker": "Driver",
@@ -17375,7 +17971,9 @@
           "condition": "took a scenic detour along the coastal highway",
           "modelAnswer": "We took a scenic detour along the coastal highway to enjoy the ocean sunset.",
           "hint": "We took a scenic detour..."
-        }
+        },
+        "exampleEn": "Because of construction on Main Street, we had to take a detour.",
+        "exampleKo": "직진 도로가 공사나 사고로 막혀 옆 골목길이나 우회 도로로 멀리 돌아서 갈 때 씁니다."
       },
       {
         "id": "expr-trav-020",
@@ -17390,7 +17988,7 @@
         },
         "explanation": "미국식 crosswalk, 영국식 zebra crossing / pedestrian crossing으로 해외 도로 안전 표지판의 핵심입니다.",
         "collocation": "cross at the pedestrian crossing",
-        "audioSentence": "pedestrian crossing ahead",
+        "audioSentence": "Always use the pedestrian crossing and wait for the green walk signal.",
         "dialogue": [
           {
             "speaker": "Guide",
@@ -17430,7 +18028,9 @@
           "condition": "halted vehicles at the pedestrian crossing",
           "modelAnswer": "The traffic officer halted oncoming vehicles to let school children cross safely at the pedestrian crossing.",
           "hint": "The traffic officer halted oncoming..."
-        }
+        },
+        "exampleEn": "Always use the pedestrian crossing and wait for the green walk signal.",
+        "exampleKo": "보행자(pedestrian)들이 안전하게 차도를 건널 수 있도록 아스팔트 위에 흰 줄무늬로 그어놓은 건널목입니다."
       }
     ]
   },
@@ -17496,7 +18096,9 @@
           "condition": "tried it on in a larger size before purchasing",
           "modelAnswer": "She tried it on in a slightly larger size before finally deciding to purchase the dress.",
           "hint": "She tried it on in..."
-        }
+        },
+        "exampleEn": "Can I try this on?",
+        "exampleKo": "구매를 결정하기 전 피팅룸(fitting room)에서 옷이나 신발의 사이즈와 어울림을 확인하려 착용해 볼 때 씁니다."
       },
       {
         "id": "expr-trav-022",
@@ -17511,7 +18113,7 @@
         },
         "explanation": "해외 쇼핑 시 'Final Sale(교환 환불 불가)'인지 확인하는 핵심 기준입니다.",
         "collocation": "check the store return policy",
-        "audioSentence": "30-day return policy with receipt",
+        "audioSentence": "What is your return policy if the item doesn't fit my daughter?",
         "dialogue": [
           {
             "speaker": "Customer",
@@ -17551,7 +18153,9 @@
           "condition": "generous return policy that offers full refunds within 14 days",
           "modelAnswer": "The department store maintains a generous return policy that offers full refunds within 14 days.",
           "hint": "The department store maintains a..."
-        }
+        },
+        "exampleEn": "What is your return policy if the item doesn't fit my daughter?",
+        "exampleKo": "구매 후 마음이 바뀌거나 하자가 있을 때 영수증 지참 시 며칠 이내에 환불이나 교환이 가능한지 명시한 매장 규정입니다."
       },
       {
         "id": "expr-trav-023",
@@ -17566,7 +18170,7 @@
         },
         "explanation": "미국, 유럽 리테일 매장에서 영수증이 없거나 세일 품목일 때 자주 제안받는 조건입니다.",
         "collocation": "issue store credit for returns",
-        "audioSentence": "redeem store credit online",
+        "audioSentence": "We cannot refund cash for sale items, but we can issue store credit.",
         "dialogue": [
           {
             "speaker": "Shopper",
@@ -17606,7 +18210,9 @@
           "condition": "used the store credit from her return to buy a belt",
           "modelAnswer": "She used the store credit from her shoe return to buy a handsome leather belt.",
           "hint": "She used the store credit..."
-        }
+        },
+        "exampleEn": "We cannot refund cash for sale items, but we can issue store credit.",
+        "exampleKo": "반품 시 현금이나 카드 취소 대신 해당 매장에서 다른 물건을 살 수 있도록 바우처나 포인트 카드로 환급해 주는 제도입니다."
       },
       {
         "id": "expr-trav-024",
@@ -17621,7 +18227,7 @@
         },
         "explanation": "해외 매장에서 가격이 적혀 있지 않을 때 점원에게 가격을 물어보는 기초 어휘입니다.",
         "collocation": "check the price tag",
-        "audioSentence": "a hefty price tag",
+        "audioSentence": "Excuse me, there is no price tag on this ceramic mug.",
         "dialogue": [
           {
             "speaker": "Shopper",
@@ -17661,7 +18267,9 @@
           "condition": "saw the hefty price tag and gently set the watch down",
           "modelAnswer": "He glanced at the hefty price tag on the luxury watch and gently set it back down.",
           "hint": "He glanced at the hefty..."
-        }
+        },
+        "exampleEn": "Excuse me, there is no price tag on this ceramic mug.",
+        "exampleKo": "물건에 붙어 있는 가격 스티커나 라벨을 가리키며, 비유적으로는 '어떤 일의 혹독한 대가'로도 쓰입니다."
       }
     ]
   },
@@ -17687,7 +18295,7 @@
         },
         "explanation": "줄여서 OTC 의약품이라고도 하며 여행자 비상약 구매 시 가장 핵심적인 구분 기준입니다.",
         "collocation": "over-the-counter painkiller",
-        "audioSentence": "OTC medication",
+        "audioSentence": "You do not need a prescription for aspirin; it is sold over-the-counter at any pharmacy.",
         "dialogue": [
           {
             "speaker": "Traveler",
@@ -17727,7 +18335,9 @@
           "condition": "recommended an effective over-the-counter cold remedy",
           "modelAnswer": "The helpful pharmacist recommended an effective over-the-counter cold remedy for the traveler.",
           "hint": "The helpful pharmacist recommended an..."
-        }
+        },
+        "exampleEn": "You do not need a prescription for aspirin; it is sold over-the-counter at any pharmacy.",
+        "exampleKo": "아스피린은 처방전이 필요 없으며 어떤 약국에서나 처방전 없이 일반의약품(over-the-counter)으로 판매됩니다."
       },
       {
         "id": "expr-trav-026",
@@ -17742,7 +18352,7 @@
         },
         "explanation": "약국이나 기내에서 승무원에게 위장약을 달라고 요청할 때 가장 정확한 증상 표현입니다.",
         "collocation": "medicine for upset stomach",
-        "audioSentence": "suffering from an upset stomach",
+        "audioSentence": "I think I ate something spoiled; I have an upset stomach.",
         "dialogue": [
           {
             "speaker": "Flight Attendant",
@@ -17782,7 +18392,9 @@
           "condition": "suffered from a severe upset stomach after eating street food",
           "modelAnswer": "He suffered from an acute upset stomach after sampling unfamiliar street snacks abroad.",
           "hint": "He suffered from an acute..."
-        }
+        },
+        "exampleEn": "I think I ate something spoiled; I have an upset stomach.",
+        "exampleKo": "물갈이나 낯선 향신료로 인해 소화가 안 되고 배가 아프거나 속이 메스꺼운 소화기 트러블을 점잖게 표현합니다."
       },
       {
         "id": "expr-trav-027",
@@ -17797,7 +18409,7 @@
         },
         "explanation": "해외 병원비가 수백만 원에 달할 수 있는 만큼 출국 전 필수 준비물입니다.",
         "collocation": "claim medical expenses on travel insurance",
-        "audioSentence": "buy travel insurance online",
+        "audioSentence": "Always purchase comprehensive travel insurance before visiting abroad.",
         "dialogue": [
           {
             "speaker": "Agent",
@@ -17837,7 +18449,9 @@
           "condition": "reimbursed for emergency medical expenses through travel insurance",
           "modelAnswer": "She was fully reimbursed for high emergency room expenses through her travel insurance policy.",
           "hint": "She was fully reimbursed for..."
-        }
+        },
+        "exampleEn": "Always purchase comprehensive travel insurance before visiting abroad.",
+        "exampleKo": "해외에서 갑작스러운 질병, 상해, 항공기 결항, 수하물 분실 등의 손해를 보상해 주는 여행 필수 방패막입니다."
       },
       {
         "id": "expr-trav-028",
@@ -17852,7 +18466,7 @@
         },
         "explanation": "약국에서 약사가 'Do you have a prescription?'이라고 물을 때의 핵심 어휘입니다.",
         "collocation": "fill a doctor's prescription",
-        "audioSentence": "prescription medicine",
+        "audioSentence": "Antibiotics cannot be purchased without a valid doctor's prescription.",
         "dialogue": [
           {
             "speaker": "Patient",
@@ -17892,7 +18506,9 @@
           "condition": "wrote a doctor's prescription for antibiotics",
           "modelAnswer": "The physician wrote a doctor's prescription for strong antibiotics to clear up the infection.",
           "hint": "The physician wrote a doctor's..."
-        }
+        },
+        "exampleEn": "Antibiotics cannot be purchased without a valid doctor's prescription.",
+        "exampleKo": "전문 의약품(항생제, 수면제 등)을 조제받기 위해 의사가 발행한 정식 약 조제 지시서입니다."
       }
     ]
   },
@@ -17918,7 +18534,7 @@
         },
         "explanation": "단순한 안내를 넘어 영국 문화를 상징하는 대표적 관용 표현이자 기념품 티셔츠 문구입니다.",
         "collocation": "Mind the gap please.",
-        "audioSentence": "announced to mind the gap",
+        "audioSentence": "Mind the gap between the train door and the platform edge.",
         "dialogue": [
           {
             "speaker": "Automated Voice",
@@ -17958,7 +18574,9 @@
           "condition": "minded the platform gap while stepping off the train",
           "modelAnswer": "All passengers carefully minded the platform gap while stepping safely off the crowded train.",
           "hint": "All passengers carefully minded the..."
-        }
+        },
+        "exampleEn": "Mind the gap between the train door and the platform edge.",
+        "exampleKo": "영국 런던 언더그라운드(지하철)에서 유래하여 전 세계 전철 승강장의 발 빠짐 주의 시그니처 멘트입니다."
       },
       {
         "id": "expr-trav-030",
@@ -17973,7 +18591,7 @@
         },
         "explanation": "'You go first'보다 훨씬 더 신사적이고 정중한 글로벌 에티켓의 정수입니다.",
         "collocation": "No, please, after you.",
-        "audioSentence": "insisted by saying after you",
+        "audioSentence": "Please, after you! I'm in no rush to enter the elevator.",
         "dialogue": [
           {
             "speaker": "Gentleman",
@@ -18013,7 +18631,9 @@
           "condition": "held the door open and politely said, 'After you.'",
           "modelAnswer": "He held the heavy glass door open and politely said, 'After you,' with a warm smile.",
           "hint": "He held the heavy glass door..."
-        }
+        },
+        "exampleEn": "Please, after you! I'm in no rush to enter the elevator.",
+        "exampleKo": "엘리베이터 문이 열리거나 좁은 통로를 지날 때 상대방에게 순서를 먼저 양보하며 부드럽게 손짓하는 품격 있는 매너입니다."
       },
       {
         "id": "expr-trav-031",
@@ -18028,7 +18648,7 @@
         },
         "explanation": "영미권에서 Excuse me와 함께 가장 교양 있는 어투로 평가받습니다.",
         "collocation": "pardon me for interrupting",
-        "audioSentence": "Pardon me?",
+        "audioSentence": "Pardon me, could you please point me toward the nearest subway station?",
         "dialogue": [
           {
             "speaker": "Tourist",
@@ -18068,7 +18688,9 @@
           "condition": "said 'Pardon me' while moving through the train",
           "modelAnswer": "He politely said, 'Pardon me,' as he carefully moved through the crowded train aisle.",
           "hint": "He politely said, 'Pardon me,'..."
-        }
+        },
+        "exampleEn": "Pardon me, could you please point me toward the nearest subway station?",
+        "exampleKo": "실례합니다(Pardon me), 가장 가까운 지하철역이 어느 쪽인지 알려주시겠어요?"
       },
       {
         "id": "expr-trav-032",
@@ -18083,7 +18705,7 @@
         },
         "explanation": "영미권 문화에서는 RSVP 요청에 반드시 참석/불참 여부를 기한 내에 답장해 주는 것이 철칙입니다.",
         "collocation": "RSVP by the deadline",
-        "audioSentence": "send an RSVP email",
+        "audioSentence": "Please RSVP by Friday so we can finalize the catering numbers.",
         "dialogue": [
           {
             "speaker": "Host",
@@ -18123,7 +18745,9 @@
           "condition": "promptly sent an RSVP confirming her attendance",
           "modelAnswer": "She promptly sent an RSVP confirming her attendance as soon as she received the elegant invitation.",
           "hint": "She promptly sent an RSVP..."
-        }
+        },
+        "exampleEn": "Please RSVP by Friday so we can finalize the catering numbers.",
+        "exampleKo": "프랑스어 'Répondez s'il vous plaît(회신해 주시기 바랍니다)'의 약어로 파티나 만찬 초대장에 필수적으로 적혀 있습니다."
       }
     ]
   },
@@ -18149,7 +18773,7 @@
         },
         "explanation": "현지인들만 아는 숨은 맛집이나 인적이 드문 숨겨진 보석 같은 명소를 칭송할 때 최고의 찬사입니다.",
         "collocation": "travel off the beaten path",
-        "audioSentence": "quaint hideaway off the beaten path",
+        "audioSentence": "I prefer exploring quaint villages that are well off the beaten path.",
         "dialogue": [
           {
             "speaker": "Traveler",
@@ -18189,7 +18813,9 @@
           "condition": "explored scenic spots off the beaten path by bicycle",
           "modelAnswer": "They avoided overcrowded landmarks and explored charming scenic spots off the beaten path by bicycle.",
           "hint": "They avoided overcrowded landmarks..."
-        }
+        },
+        "exampleEn": "I prefer exploring quaint villages that are well off the beaten path.",
+        "exampleKo": "수많은 관광객이 밟고 지나가 다져진 닳고 닳은 길(beaten path)을 벗어나 호젓한 비경을 찾아갈 때 씁니다."
       },
       {
         "id": "expr-trav-034",
@@ -18204,7 +18830,7 @@
         },
         "explanation": "지리 길 찾기의 기준점이자 도시 관광의 필수 코스입니다.",
         "collocation": "visit historical landmarks",
-        "audioSentence": "designated as a national landmark",
+        "audioSentence": "The Eiffel Tower and the Colosseum are world-renowned historical landmarks.",
         "dialogue": [
           {
             "speaker": "Guide",
@@ -18244,7 +18870,9 @@
           "condition": "toured all the famous historical landmarks in Rome",
           "modelAnswer": "We toured all the famous ancient landmarks across Rome during our four-day vacation.",
           "hint": "We toured all the famous..."
-        }
+        },
+        "exampleEn": "The Eiffel Tower and the Colosseum are world-renowned historical landmarks.",
+        "exampleKo": "먼 곳에서도 알아볼 수 있는 상징적인 건축물이나 한 도시의 정체성을 대표하는 역사적 명소입니다."
       },
       {
         "id": "expr-trav-035",
@@ -18259,7 +18887,7 @@
         },
         "explanation": "티켓 부스(ticket booth) 전면에 가장 크게 써 붙여 있는 필수 여행 어휘입니다.",
         "collocation": "pay the general admission fee",
-        "audioSentence": "free admission on Mondays",
+        "audioSentence": "Children under the age of six can enter the museum free of admission fee.",
         "dialogue": [
           {
             "speaker": "Visitor",
@@ -18299,7 +18927,9 @@
           "condition": "waives the general admission fee every first Sunday",
           "modelAnswer": "The national art gallery waives the general admission fee on the first Sunday of every month.",
           "hint": "The national art gallery waives..."
-        }
+        },
+        "exampleEn": "Children under the age of six can enter the museum free of admission fee.",
+        "exampleKo": "미술관, 국립공원, 유적지 등에 들어갈 때 내는 공식적인 입장료입니다."
       },
       {
         "id": "expr-trav-036",
@@ -18314,7 +18944,7 @@
         },
         "explanation": "자유 여행에서 놓치기 쉬운 숨은 역사와 비하인드 스토리를 배울 때 필수적입니다.",
         "collocation": "book an English guided tour",
-        "audioSentence": "join a walking guided tour",
+        "audioSentence": "Taking a guided tour of the ruins helped us appreciate the rich history.",
         "dialogue": [
           {
             "speaker": "Tourist",
@@ -18354,7 +18984,9 @@
           "condition": "learned fascinating facts thanks to the informative guided tour",
           "modelAnswer": "We learned fascinating historical facts about Pompeii thanks to our highly informative guided tour.",
           "hint": "We learned fascinating historical facts..."
-        }
+        },
+        "exampleEn": "Taking a guided tour of the ruins helped us appreciate the rich history.",
+        "exampleKo": "전문 문화 해설사(tour guide)의 깊이 있는 역사 설명과 안내를 들으며 명소를 탐방하는 알찬 투어입니다."
       }
     ]
   },
@@ -18380,7 +19012,7 @@
         },
         "explanation": "여권, 지갑, 스마트폰을 분실했을 때 가장 먼저 발걸음을 옮겨야 하는 생명의 센터입니다.",
         "collocation": "check the airport lost and found",
-        "audioSentence": "turn in an item to lost and found",
+        "audioSentence": "I accidentally left my camera on the tour bus; where is the lost and found?",
         "dialogue": [
           {
             "speaker": "Frantic Traveler",
@@ -18420,7 +19052,9 @@
           "condition": "breathed a sigh of relief when lost and found returned his passport",
           "modelAnswer": "He breathed a deep sigh of relief when the lost and found clerk handed back his missing passport.",
           "hint": "He breathed a deep sigh..."
-        }
+        },
+        "exampleEn": "I accidentally left my camera on the tour bus; where is the lost and found?",
+        "exampleKo": "공항, 기차역, 박물관 등에서 손님이 깜빡 두고 간 물건을 접수하고 찾아주는 안내 창구입니다."
       },
       {
         "id": "expr-trav-038",
@@ -18435,7 +19069,7 @@
         },
         "explanation": "대사관 긴급 여권 재발급이나 여행자 보험금 청구 시 경찰 신고서(Police Report) 사본이 필수 증빙입니다.",
         "collocation": "file a police report for insurance claim",
-        "audioSentence": "official police report copy",
+        "audioSentence": "If your passport or wallet was stolen, you must file a police report immediately.",
         "dialogue": [
           {
             "speaker": "Victim",
@@ -18475,7 +19109,9 @@
           "condition": "filed an official police report to claim insurance compensation",
           "modelAnswer": "He filed an official police report immediately after the theft to claim insurance compensation.",
           "hint": "He filed an official police report..."
-        }
+        },
+        "exampleEn": "If your passport or wallet was stolen, you must file a police report immediately.",
+        "exampleKo": "소매치기나 절도를 당했을 때 현지 경찰서에 방문하여 피해 사실을 공식 문서로 작성·접수하는 행위입니다."
       },
       {
         "id": "expr-trav-039",
@@ -18490,7 +19126,7 @@
         },
         "explanation": "해외여행의 최종 안전망으로 모든 여행자가 수첩에 메모해 두어야 할 필수 정보입니다.",
         "collocation": "call the emergency embassy contact",
-        "audioSentence": "register with embassy",
+        "audioSentence": "Keep your home country's embassy contact saved on your phone during travels.",
         "dialogue": [
           {
             "speaker": "Citizen",
@@ -18530,7 +19166,9 @@
           "condition": "guided by the emergency embassy contact to safety",
           "modelAnswer": "He was guided safely out of the unrest area by following the instructions of the emergency embassy contact.",
           "hint": "He was guided safely out of..."
-        }
+        },
+        "exampleEn": "Keep your home country's embassy contact saved on your phone during travels.",
+        "exampleKo": "여권 분실, 체포, 대형 자연재해 등 국외 위급 상황 시 자국민을 보호해 주는 대사관 및 영사 콜센터의 연락망입니다."
       },
       {
         "id": "expr-trav-040",
@@ -18545,7 +19183,7 @@
         },
         "explanation": "여행 뉴스에서 기상 악화로 공항 바닥에 누워 있는 승객들을 보도할 때 단골로 등장하는 핵심 어휘입니다.",
         "collocation": "stranded in a foreign country",
-        "audioSentence": "stranded by floodwaters",
+        "audioSentence": "Hundreds of passengers were stranded at the airport due to the blizzard.",
         "dialogue": [
           {
             "speaker": "Reporter",
@@ -18585,7 +19223,9 @@
           "condition": "left completely stranded at the small station due to rail cancellation",
           "modelAnswer": "Dozens of weary commuters were left completely stranded at the remote station due to sudden train cancellations.",
           "hint": "Dozens of weary commuters were left..."
-        }
+        },
+        "exampleEn": "Hundreds of passengers were stranded at the airport due to the blizzard.",
+        "exampleKo": "폭설, 태풍, 항공기 파업 등으로 교통편이 올스톱되어 오도가도 못하고 고립된 절박한 상태를 말합니다."
       }
     ]
   }
@@ -18652,7 +19292,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-01",
     "unitTitleKo": "첫인상 & 침묵 깨기",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Telling a light joke is the best way to break the ice.",
+    "exampleKo": "침묵을 깨자는 직역보다는 얼음을 깨듯 냉랭함을 녹인다는 관용어 break the ice가 훨씬 자연스럽습니다."
   },
   {
     "id": "expr-daily-002",
@@ -18713,7 +19355,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-01",
     "unitTitleKo": "첫인상 & 침묵 깨기",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "We met yesterday and hit it off immediately.",
+    "exampleKo": "처음 만나자마자 통했다는 원어민의 입에 붙은 표현은 hit it off입니다."
   },
   {
     "id": "expr-daily-003",
@@ -18774,7 +19418,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-01",
     "unitTitleKo": "첫인상 & 침묵 깨기",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "He tried to make small talk while waiting in line.",
+    "exampleKo": "사소한 수다는 'small talk'라는 명사와 동사 'make'가 결합한 연어로 씁니다."
   },
   {
     "id": "expr-daily-004",
@@ -18835,7 +19481,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-01",
     "unitTitleKo": "첫인상 & 침묵 깨기",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Surprisingly, the two of them have a lot in common.",
+    "exampleKo": "취향이나 생각이 같다는 말은 have something in common 관용구를 씁니다."
   },
   {
     "id": "expr-daily-005",
@@ -18896,7 +19544,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-02",
     "unitTitleKo": "날씨와 하루 일상",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "I hope the rain stops and clears up before our trip.",
+    "exampleKo": "흐렸던 날씨가 맑게 갤 때는 구동사 clear up을 씁니다."
   },
   {
     "id": "expr-daily-006",
@@ -18957,7 +19607,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-02",
     "unitTitleKo": "날씨와 하루 일상",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "My father has always been an early bird.",
+    "exampleKo": "원어민은 아침형 인간을 간결하게 an early bird, 올빼미형을 a night owl이라 부릅니다."
   },
   {
     "id": "expr-daily-007",
@@ -19018,7 +19670,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-02",
     "unitTitleKo": "날씨와 하루 일상",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "It's past midnight; I think I'll turn in.",
+    "exampleKo": "go to bed 외에 원어민이 일상에서 정말 자주 쓰는 자연스러운 구동사가 turn in입니다."
   },
   {
     "id": "expr-daily-008",
@@ -19079,7 +19733,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-02",
     "unitTitleKo": "날씨와 하루 일상",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "We left at 4 PM to beat the evening rush.",
+    "exampleKo": "출퇴근 시간이나 인파의 혼잡을 피한다는 표현은 beat the rush로 씁니다."
   },
   {
     "id": "expr-daily-009",
@@ -19140,7 +19796,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-03",
     "unitTitleKo": "취미와 관심사 나누기",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "What kind of music are you into lately?",
+    "exampleKo": "원어민은 'My hobby is...'보다는 'I'm into...'라는 표현을 훨씬 더 즐겨 씁니다."
   },
   {
     "id": "expr-daily-010",
@@ -19201,7 +19859,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-03",
     "unitTitleKo": "취미와 관심사 나누기",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "He decided to take up photography during vacation.",
+    "exampleKo": "새로운 취미나 활동을 시작할 때는 동사 take up을 씁니다."
   },
   {
     "id": "expr-daily-011",
@@ -19262,7 +19922,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-03",
     "unitTitleKo": "취미와 관심사 나누기",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "I stayed up all night to binge-watch my favorite series.",
+    "exampleKo": "넷플릭스 등 OTT 시리즈를 몰아서 연속으로 볼 때는 binge-watch 단어를 씁니다."
   },
   {
     "id": "expr-daily-012",
@@ -19323,7 +19985,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-03",
     "unitTitleKo": "취미와 관심사 나누기",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Working out at the gym helps me blow off steam.",
+    "exampleKo": "증기기관의 증기를 빼듯 쌓인 스트레스나 분노를 발산할 때 blow off steam을 씁니다."
   },
   {
     "id": "expr-daily-013",
@@ -19384,7 +20048,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-04",
     "unitTitleKo": "약속 잡기 및 일정 조율",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "We usually hang out at the local coffee shop.",
+    "exampleKo": "성인에게 'play'는 어린아이 장난감을 갖고 놀거나 게임을 한다는 느낌을 주며, 어울려 노는 것은 hang out입니다."
   },
   {
     "id": "expr-daily-014",
@@ -19445,7 +20111,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-04",
     "unitTitleKo": "약속 잡기 및 일정 조율",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Do you have time to grab a bite right now?",
+    "exampleKo": "가볍게 한 끼 식사를 챙겨 먹는 상황에서 grab a bite는 가장 흔한 생활 표현입니다."
   },
   {
     "id": "expr-daily-015",
@@ -19506,7 +20174,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-04",
     "unitTitleKo": "약속 잡기 및 일정 조율",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "I'm not sure when I'll finish, so let's play it by ear.",
+    "exampleKo": "악보 없이 귀로 듣고 즉흥 연주하듯 상황에 맞춰 유연하게 결정한다는 표현입니다."
   },
   {
     "id": "expr-daily-016",
@@ -19567,7 +20237,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-04",
     "unitTitleKo": "약속 잡기 및 일정 조율",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "I'll pencil you in for Friday, but let me know if things change.",
+    "exampleKo": "언제든 지울 수 있는 연필로 적어두듯 '임시로 일정을 픽스하다'는 pencil in입니다."
   },
   {
     "id": "expr-daily-017",
@@ -19628,7 +20300,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-05",
     "unitTitleKo": "가벼운 안부와 근황",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Let's get together soon and catch up.",
+    "exampleKo": "오랜만에 만나 밀린 수다를 떤다는 표현은 동사 catch up이 가장 대표적입니다."
   },
   {
     "id": "expr-daily-018",
@@ -19689,7 +20363,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-05",
     "unitTitleKo": "가벼운 안부와 근황",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Long time no see! What have you been up to?",
+    "exampleKo": "원어민이 근황을 물을 때 가장 친근하고 자연스럽게 입에 올리는 질문 패턴입니다."
   },
   {
     "id": "expr-daily-019",
@@ -19750,7 +20426,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-05",
     "unitTitleKo": "가벼운 안부와 근황",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "I will keep you in the loop as soon as I hear anything.",
+    "exampleKo": "정보의 원(loop) 안에 넣어둔다는 뜻으로 소외되지 않게 소식을 전해달라는 표현입니다."
   },
   {
     "id": "expr-daily-020",
@@ -19811,7 +20489,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-05",
     "unitTitleKo": "가벼운 안부와 근황",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Running into you here in Paris? What a small world!",
+    "exampleKo": "예상치 못한 장소에서 아는 사람을 우연히 마주쳤을 때 원어민의 감탄사입니다."
   },
   {
     "id": "expr-daily-021",
@@ -19872,7 +20552,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-06",
     "unitTitleKo": "칭찬과 겸손한 리액션",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "That haircut looks really great on you.",
+    "exampleKo": "옷이나 모자, 색상이 특정인에게 어울린다는 표현은 'looks great on [person]'을 씁니다."
   },
   {
     "id": "expr-daily-022",
@@ -19933,7 +20615,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-06",
     "unitTitleKo": "칭찬과 겸손한 리액션",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Everyone in the office speaks highly of her dedication.",
+    "exampleKo": "누군가를 높이 평가하고 칭찬한다는 격식 있는 표현은 speak highly of입니다."
   },
   {
     "id": "expr-daily-023",
@@ -19994,7 +20678,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-06",
     "unitTitleKo": "칭찬과 겸손한 리액션",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "You think I speak English like a native? I'm flattered!",
+    "exampleKo": "기분 좋은 칭찬을 받았을 때 겸손하면서도 우아하게 감사함을 표하는 원어민의 정석 답변입니다."
   },
   {
     "id": "expr-daily-024",
@@ -20055,7 +20741,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-06",
     "unitTitleKo": "칭찬과 겸손한 리액션",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Even though I dislike him, I have to give credit where it's due.",
+    "exampleKo": "정당한 성과나 공로를 올바르게 인정하자는 격언 같은 생활 표현입니다."
   },
   {
     "id": "expr-daily-025",
@@ -20116,7 +20804,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-07",
     "unitTitleKo": "주말 계획과 여가",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "Let's put on some music and chill out.",
+    "exampleKo": "집에서 아무 걱정 없이 푹 쉰다는 캐주얼한 표현은 chill out입니다."
   },
   {
     "id": "expr-daily-026",
@@ -20177,7 +20867,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-07",
     "unitTitleKo": "주말 계획과 여가",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "I spent the weekend sleeping to recharge my batteries.",
+    "exampleKo": "방전된 스마트폰 배터리를 충전하듯 심신의 에너지를 회복한다는 관용구입니다."
   },
   {
     "id": "expr-daily-027",
@@ -20238,7 +20930,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-07",
     "unitTitleKo": "주말 계획과 여가",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "Since it's a holiday tomorrow, I'm going to sleep in.",
+    "exampleKo": "oversleep은 알람을 못 듣고 '지각하는 늦잠'이고, 주말에 알람 없이 '느긋하게 푹 자는 늦잠'은 sleep in입니다."
   },
   {
     "id": "expr-daily-028",
@@ -20299,7 +20993,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-07",
     "unitTitleKo": "주말 계획과 여가",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "How do you usually unwind after a stressful day?",
+    "exampleKo": "팽팽하게 감긴 태엽을 풀듯 긴장을 푸는 동사 unwind는 휴식을 묘사할 때 품격 있는 표현입니다."
   },
   {
     "id": "expr-daily-029",
@@ -20360,7 +21056,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-08",
     "unitTitleKo": "음식과 카페 주문 수다",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "If you have a sweet tooth, you'll love this bakery.",
+    "exampleKo": "단것을 유난히 좋아하는 식성을 가진 사람을 have a sweet tooth라고 부릅니다."
   },
   {
     "id": "expr-daily-030",
@@ -20421,7 +21119,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-08",
     "unitTitleKo": "음식과 카페 주문 수다",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "He lives a busy life, always eating on the go.",
+    "exampleKo": "출근길이나 이동 중에 바쁘게 끼니나 커피를 챙길 때 on the go를 씁니다."
   },
   {
     "id": "expr-daily-031",
@@ -20482,7 +21182,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-08",
     "unitTitleKo": "음식과 카페 주문 수다",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Nothing beats spicy tteokbokki as comfort food.",
+    "exampleKo": "추억이 깃들어 있거나 마음이 헛헛할 때 위로를 주는 음식을 영어로 comfort food라 합니다."
   },
   {
     "id": "expr-daily-032",
@@ -20543,7 +21245,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-08",
     "unitTitleKo": "음식과 카페 주문 수다",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "That hot ramen really hit the spot after a cold hike.",
+    "exampleKo": "갈증이나 허기가 완벽하게 해소되어 '바로 이 맛이야!'라고 감탄할 때 hit the spot을 씁니다."
   },
   {
     "id": "expr-daily-033",
@@ -20604,7 +21308,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-09",
     "unitTitleKo": "사소한 부탁과 도움",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "I'd be glad to give you a hand whenever you need it.",
+    "exampleKo": "손을 빌려준다는 말로 부담 없이 일손을 도와달라고 부탁할 때 give someone a hand를 씁니다."
   },
   {
     "id": "expr-daily-034",
@@ -20665,7 +21371,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-09",
     "unitTitleKo": "사소한 부탁과 도움",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "Would you mind doing me a small favor?",
+    "exampleKo": "부탁을 청할 때 동사 do와 명사 favor를 조합한 정형적 표현입니다."
   },
   {
     "id": "expr-daily-035",
@@ -20726,7 +21434,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-09",
     "unitTitleKo": "사소한 부탁과 도움",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "You saved my presentation today; I owe you one big time!",
+    "exampleKo": "도움을 받고 고마움을 표하며 다음엔 내가 은혜를 갚겠다고 할 때 I owe you one을 씁니다."
   },
   {
     "id": "expr-daily-036",
@@ -20787,7 +21497,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-09",
     "unitTitleKo": "사소한 부탁과 도움",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "Sarah agreed to cover for me while I visit the dentist.",
+    "exampleKo": "동료가 자리를 비울 때 업무를 대신 봐준다는 말은 cover for [person]입니다."
   },
   {
     "id": "expr-daily-037",
@@ -20848,7 +21560,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-10",
     "unitTitleKo": "깔끔한 대화 마무리",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "It was great talking, but I'd better get going.",
+    "exampleKo": "시계를 보며 자연스럽게 일어설 때 원어민들이 가장 예의 바르게 쓰는 퇴장 멘트입니다."
   },
   {
     "id": "expr-daily-038",
@@ -20909,7 +21623,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-10",
     "unitTitleKo": "깔끔한 대화 마무리",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "It's already 7 PM; why don't we call it a day?",
+    "exampleKo": "오늘 할 분량을 마치고 '오늘은 이쯤 하자'고 마무리할 때 쓰는 관용구입니다."
   },
   {
     "id": "expr-daily-039",
@@ -20970,7 +21686,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-10",
     "unitTitleKo": "깔끔한 대화 마무리",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "Make sure you keep in touch after you move.",
+    "exampleKo": "헤어질 때 '계속 연락하자'는 따뜻한 인사말은 keep in touch입니다."
   },
   {
     "id": "expr-daily-040",
@@ -21031,7 +21749,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-10",
     "unitTitleKo": "깔끔한 대화 마무리",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "It was wonderful seeing you. Take care!",
+    "exampleKo": "원어민이 헤어질 때 건네는 가장 친근하고 따뜻한 작별 인사는 Take care입니다."
   },
   {
     "id": "expr-biz-001",
@@ -21092,7 +21812,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-01",
     "unitTitleKo": "회의 시작과 안건 상정",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Let's grab a coffee and get down to business.",
+    "exampleKo": "사담을 마치고 결단력 있게 회의를 본론으로 이끌 때 쓰는 원어민 표준 표현입니다."
   },
   {
     "id": "expr-biz-002",
@@ -21153,7 +21875,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-01",
     "unitTitleKo": "회의 시작과 안건 상정",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "I'd like to kick off today's session with a quick summary.",
+    "exampleKo": "프로젝트나 미팅을 에너지 넘치게 공식 개시할 때 kick off를 씁니다."
   },
   {
     "id": "expr-biz-003",
@@ -21214,7 +21938,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-01",
     "unitTitleKo": "회의 시작과 안건 상정",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "What is the next topic on the agenda for today?",
+    "exampleKo": "회의에서 다루어질 공식 안건 목록을 on the agenda로 명확하게 표현합니다."
   },
   {
     "id": "expr-biz-004",
@@ -21275,7 +22001,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-01",
     "unitTitleKo": "회의 시작과 안건 상정",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "We need to wrap up this discussion within ten minutes.",
+    "exampleKo": "회의나 프로젝트를 깔끔하게 끝맺을 때 wrap up을 씁니다."
   },
   {
     "id": "expr-biz-005",
@@ -21336,7 +22064,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-02",
     "unitTitleKo": "완곡한 의견 제시와 동의",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "I called this briefing to ensure we are all on the same page.",
+    "exampleKo": "팀원 모두가 동일한 목표와 이해를 가졌다는 뜻의 대표적 비즈니스 관용어입니다."
   },
   {
     "id": "expr-biz-006",
@@ -21397,7 +22127,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-02",
     "unitTitleKo": "완곡한 의견 제시와 동의",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "Her deep understanding of AI brings a lot to the table.",
+    "exampleKo": "협상 테이블이나 조직에 가치 있는 기여를 한다는 표현입니다."
   },
   {
     "id": "expr-biz-007",
@@ -21458,7 +22190,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-02",
     "unitTitleKo": "완곡한 의견 제시와 동의",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "His presentation provided valuable food for thought.",
+    "exampleKo": "지적으로 곰곰이 곱씹어 볼 만한 지혜나 아이디어를 뜻합니다."
   },
   {
     "id": "expr-biz-008",
@@ -21519,7 +22253,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-02",
     "unitTitleKo": "완곡한 의견 제시와 동의",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "It took months for the board to buy into the restructuring plan.",
+    "exampleKo": "어떤 전략이나 가치를 신뢰하여 지지한다는 뜻의 구동사입니다."
   },
   {
     "id": "expr-biz-009",
@@ -21580,7 +22316,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-03",
     "unitTitleKo": "전문적인 반대와 반론",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Let me play devil's advocate for a moment: what if the system fails?",
+    "exampleKo": "토론의 완성도를 높이기 위해 일부러 반대 가설을 제기할 때 쓰는 교양 있는 표현입니다."
   },
   {
     "id": "expr-biz-010",
@@ -21641,7 +22379,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-03",
     "unitTitleKo": "전문적인 반대와 반론",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "With all due respect, our team was not consulted on this change.",
+    "exampleKo": "상사나 고객에게 반대 의견을 개진할 때 갖추는 가장 공손하고 전문적인 서두입니다."
   },
   {
     "id": "expr-biz-011",
@@ -21702,7 +22442,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-03",
     "unitTitleKo": "전문적인 반대와 반론",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "The board and the CEO rarely see eye to eye on spending.",
+    "exampleKo": "눈높이를 맞추듯 가치관이나 결정 사항에 대해 뜻이 통한다는 대표적 숙어입니다."
   },
   {
     "id": "expr-biz-012",
@@ -21763,7 +22505,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-03",
     "unitTitleKo": "전문적인 반대와 반론",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "You may think it's a minor bug, but I beg to differ.",
+    "exampleKo": "격식 있고 세련되게 반대 의견을 밝히는 최고의 영국식/미국식 비즈니스 표현입니다."
   },
   {
     "id": "expr-biz-013",
@@ -21824,7 +22568,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-04",
     "unitTitleKo": "진행 상황 팔로업과 간단한 상황 체크",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Can we touch base for five minutes before your next meeting?",
+    "exampleKo": "5~10분 정도 부담 없이 진행 상황을 동기화할 때 가장 사랑받는 표현입니다."
   },
   {
     "id": "expr-biz-014",
@@ -21885,7 +22631,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-04",
     "unitTitleKo": "진행 상황 팔로업과 간단한 상황 체크",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "I just wanted to follow up on the status of our invoice.",
+    "exampleKo": "이전 논의나 이메일에 대한 후속 확인 및 진행 상황 점검 시 표준 표현입니다."
   },
   {
     "id": "expr-biz-015",
@@ -21946,7 +22694,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-04",
     "unitTitleKo": "진행 상황 팔로업과 간단한 상황 체크",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "I've looped in our legal team so they can review the clauses.",
+    "exampleKo": "정보 공유 고리(loop) 안에 팀원을 포함시킨다는 직관적 비즈니스 슬랭입니다."
   },
   {
     "id": "expr-biz-016",
@@ -22007,7 +22757,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-04",
     "unitTitleKo": "진행 상황 팔로업과 간단한 상황 체크",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "I'll keep you posted once we finalize the numbers.",
+    "exampleKo": "새 소식이 들어올 때마다 게시판에 글을 올리듯 실시간으로 소식을 전해달라는 뜻입니다."
   },
   {
     "id": "expr-biz-017",
@@ -22068,7 +22820,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-05",
     "unitTitleKo": "마감일 협상과 일정 재조정",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "We must all work together to meet the deadline.",
+    "exampleKo": "마감일을 지킨다는 정형화된 비즈니스 동사는 meet입니다."
   },
   {
     "id": "expr-biz-018",
@@ -22129,7 +22883,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-05",
     "unitTitleKo": "마감일 협상과 일정 재조정",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Due to technical issues, we had to push back the release date.",
+    "exampleKo": "일정이나 마감 기한을 뒤로 늦출 때 구어에서 가장 빈번히 쓰이는 표현입니다."
   },
   {
     "id": "expr-biz-019",
@@ -22190,7 +22946,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-05",
     "unitTitleKo": "마감일 협상과 일정 재조정",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Given our tight schedule, let's skip the lengthy intro.",
+    "exampleKo": "일정이 여유 없이 꽉 차 있을 때 tight schedule을 연어로 씁니다."
   },
   {
     "id": "expr-biz-020",
@@ -22251,7 +23009,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-05",
     "unitTitleKo": "마감일 협상과 일정 재조정",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "With only three days left, it's crunch time.",
+    "exampleKo": "시간에 쫓기며 총력을 다해 최고의 결과를 내야 하는 중대한 마감 직전을 뜻합니다."
   },
   {
     "id": "expr-biz-021",
@@ -22312,7 +23072,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-06",
     "unitTitleKo": "이메일 격식과 프로페셔널 화법",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "As per our discussion, I have updated the budget sheet.",
+    "exampleKo": "앞선 구두 협의 내용을 문서로 확정 지을 때 쓰는 정석 비즈니스 이메일 오프닝입니다."
   },
   {
     "id": "expr-biz-022",
@@ -22373,7 +23135,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-06",
     "unitTitleKo": "이메일 격식과 프로페셔널 화법",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Kindly be advised that the maintenance will take three hours.",
+    "exampleKo": "공식 휴무나 정책 변경 사항을 고객에게 공지할 때 정중한 안내 문구입니다."
   },
   {
     "id": "expr-biz-023",
@@ -22434,7 +23198,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-06",
     "unitTitleKo": "이메일 격식과 프로페셔널 화법",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Don't hesitate to reach out if you need assistance.",
+    "exampleKo": "contact보다 더 따뜻하고 적극적으로 소통의 문을 열어두는 비즈니스 표현입니다."
   },
   {
     "id": "expr-biz-024",
@@ -22495,7 +23261,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-06",
     "unitTitleKo": "이메일 격식과 프로페셔널 화법",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "We look forward to a successful collaboration.",
+    "exampleKo": "to 뒤에 반드시 명사나 동명사(-ing)가 와야 하는 대표적 문법 포인트이자 이메일 클로징입니다."
   },
   {
     "id": "expr-biz-025",
@@ -22556,7 +23324,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-07",
     "unitTitleKo": "고객 클레임 응대와 사과",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "We apologize for the inconvenience and are working to fix it.",
+    "exampleKo": "서비스 지연이나 오류 발생 시 고객에게 전달하는 표준 사과 표현입니다."
   },
   {
     "id": "expr-biz-026",
@@ -22617,7 +23387,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-07",
     "unitTitleKo": "고객 클레임 응대와 사과",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "Our technical team is looking into the matter right now.",
+    "exampleKo": "단순히 '보다'가 아니라 철저하게 진상을 조사하여 해결하겠다는 책임감 있는 약속입니다."
   },
   {
     "id": "expr-biz-027",
@@ -22678,7 +23450,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-07",
     "unitTitleKo": "고객 클레임 응대와 사과",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "Can we pay extra to expedite the visa application?",
+    "exampleKo": "비즈니스 물류와 처리 과정에서 '급행으로 신속 처리하다'는 동사 expedite를 씁니다."
   },
   {
     "id": "expr-biz-028",
@@ -22739,7 +23513,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-07",
     "unitTitleKo": "고객 클레임 응대와 사과",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "We are determined to rectify the situation without further delay.",
+    "exampleKo": "단순 수리를 넘어 결함이나 과실을 완벽하게 올바른 상태로 시정한다는 고급 어휘입니다."
   },
   {
     "id": "expr-biz-029",
@@ -22800,7 +23576,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-08",
     "unitTitleKo": "프로젝트 브리핑과 발표",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "How will this software upgrade impact our bottom line?",
+    "exampleKo": "재무제표의 가장 밑바닥 순이익 라인에서 유래하여 모든 논의의 '가장 중요한 핵심'을 뜻합니다."
   },
   {
     "id": "expr-biz-030",
@@ -22861,7 +23639,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-08",
     "unitTitleKo": "프로젝트 브리핑과 발표",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "We are launching premium packaging to elevate our brand.",
+    "exampleKo": "브랜드의 품격과 시장 지위를 한 단계 격상시킬 때 elevate the brand를 씁니다."
   },
   {
     "id": "expr-biz-031",
@@ -22922,7 +23702,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-08",
     "unitTitleKo": "프로젝트 브리핑과 발표",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Generative AI has proven to be a game changer.",
+    "exampleKo": "기존 시장의 판도를 완전히 뒤흔들 혁신적인 기술이나 전략을 칭하는 표현입니다."
   },
   {
     "id": "expr-biz-032",
@@ -22983,7 +23765,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-08",
     "unitTitleKo": "프로젝트 브리핑과 발표",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "I will walk you through the key financial highlights.",
+    "exampleKo": "마치 함께 걸어가며 안내하듯 복잡한 과정이나 자료를 친절하게 짚어준다는 뜻입니다."
   },
   {
     "id": "expr-biz-033",
@@ -23044,7 +23828,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-09",
     "unitTitleKo": "네트워킹과 비즈니스 식사",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "I know it's a party, but can we talk shop for just a minute?",
+    "exampleKo": "식사나 파티 같은 사교적인 자리에서 본업이나 회사 업무 이야기를 꺼낼 때 쓰는 표현입니다."
   },
   {
     "id": "expr-biz-034",
@@ -23105,7 +23891,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-09",
     "unitTitleKo": "네트워킹과 비즈니스 식사",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "LinkedIn is an effective tool to expand your professional network.",
+    "exampleKo": "전문 직무 분야에서 유익한 인맥과 관계를 넓혀갈 때 표준 연어로 씁니다."
   },
   {
     "id": "expr-biz-035",
@@ -23166,7 +23954,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-09",
     "unitTitleKo": "네트워킹과 비즈니스 식사",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "I'd love to buy you lunch and pick your brain for half an hour.",
+    "exampleKo": "전문가의 뇌 속에 든 풍부한 지식과 통찰을 정중하게 빌려 듣는다는 친숙한 표현입니다."
   },
   {
     "id": "expr-biz-036",
@@ -23227,7 +24017,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-09",
     "unitTitleKo": "네트워킹과 비즈니스 식사",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "Who is going to foot the bill for the team dinner?",
+    "exampleKo": "계산서 맨 아래(foot)에 서명하고 금액을 전부 결제한다는 데서 유래한 표현입니다."
   },
   {
     "id": "expr-biz-037",
@@ -23288,7 +24080,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-10",
     "unitTitleKo": "계약 및 최종 결정 짓기",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "Although he is young, he calls the shots on this project.",
+    "exampleKo": "당구 경기에서 공을 어디로 칠지 선언하듯 최종 결정권을 행사한다는 표현입니다."
   },
   {
     "id": "expr-biz-038",
@@ -23349,7 +24143,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-10",
     "unitTitleKo": "계약 및 최종 결정 짓기",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "A handshake was all it took to seal the deal.",
+    "exampleKo": "과거 계약 문서에 밀랍 인장(seal)을 찍어 공식 체결하듯 성공적으로 계약을 매듭짓는다는 뜻입니다."
   },
   {
     "id": "expr-biz-039",
@@ -23410,7 +24206,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-10",
     "unitTitleKo": "계약 및 최종 결정 짓기",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "We are just waiting for the client to green-light the proposal.",
+    "exampleKo": "신호등의 초록불처럼 '가도 좋다'고 프로젝트의 출발을 승인해 주는 것을 동사로 씁니다."
   },
   {
     "id": "expr-biz-040",
@@ -23471,7 +24269,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-10",
     "unitTitleKo": "계약 및 최종 결정 짓기",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "If this marketing concept fails, we'll have to go back to the drawing board.",
+    "exampleKo": "설계도면(drawing board)을 지우고 백지상태에서 새로운 계획을 세울 때 쓰는 관용어입니다."
   },
   {
     "id": "expr-acad-001",
@@ -23532,7 +24332,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-01",
     "unitTitleKo": "주장과 논거 도입하기",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Recent archaeological findings shed light on ancient trade routes.",
+    "exampleKo": "어두운 곳에 빛을 비추듯 학술적 난제의 실체를 명확히 규명할 때 씁니다."
   },
   {
     "id": "expr-acad-002",
@@ -23593,7 +24395,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-01",
     "unitTitleKo": "주장과 논거 도입하기",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Much of the controversy centers around data privacy laws.",
+    "exampleKo": "논증의 핵심 무게중심이 특정 주제에 맞추어져 있음을 기술하는 학술 동사입니다."
   },
   {
     "id": "expr-acad-003",
@@ -23654,7 +24458,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-01",
     "unitTitleKo": "주장과 논거 도입하기",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Newton put forward a revolutionary theory of universal gravitation.",
+    "exampleKo": "학술적 가설이나 이론을 공식 제기할 때 쓰는 가장 정제된 표현입니다."
   },
   {
     "id": "expr-acad-004",
@@ -23715,7 +24521,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-01",
     "unitTitleKo": "주장과 논거 도입하기",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "The correlation between air pollution and cognitive decline warrants attention.",
+    "exampleKo": "학술적으로 정당하게 면밀한 검증을 요구한다는 격조 높은 표현입니다."
   },
   {
     "id": "expr-acad-005",
@@ -23776,7 +24584,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-02",
     "unitTitleKo": "인과관계 명확히 연결하기",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "Economic instability often gives rise to political unrest.",
+    "exampleKo": "사건이나 정책이 거대한 연쇄 반응이나 새 국면을 초래할 때 씁니다."
   },
   {
     "id": "expr-acad-006",
@@ -23837,7 +24647,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-02",
     "unitTitleKo": "인과관계 명확히 연결하기",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "His skepticism stems from years of contradictory data.",
+    "exampleKo": "문제의 근본적인 기원을 짚어낼 때 쓰는 표현입니다."
   },
   {
     "id": "expr-acad-007",
@@ -23898,7 +24710,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-02",
     "unitTitleKo": "인과관계 명확히 연결하기",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "Economists attribute the sudden market rebound to lower interest rates.",
+    "exampleKo": "인과관계 분석 및 학술 데이터 귀인 서술의 표준 동사입니다."
   },
   {
     "id": "expr-acad-008",
@@ -23959,7 +24773,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-02",
     "unitTitleKo": "인과관계 명확히 연결하기",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "The peace treaty paved the way for lasting regional stability.",
+    "exampleKo": "후속 연구나 혁신이 발전할 토양을 구축했다는 뜻입니다."
   },
   {
     "id": "expr-acad-009",
@@ -24020,7 +24836,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-03",
     "unitTitleKo": "상반된 관점 대조와 양보",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Far from being a failure, the trial was, on the contrary, a milestone.",
+    "exampleKo": "앞선 진술이나 통념을 정면으로 반박하며 정반대의 진실을 강조할 때 씁니다."
   },
   {
     "id": "expr-acad-010",
@@ -24081,7 +24899,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-03",
     "unitTitleKo": "상반된 관점 대조와 양보",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "He completed the project despite the fact that funding was cut.",
+    "exampleKo": "단순한 although보다 객관적 팩트(fact)를 부각하며 양보 구문을 형성할 때 씁니다."
   },
   {
     "id": "expr-acad-011",
@@ -24142,7 +24962,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-03",
     "unitTitleKo": "상반된 관점 대조와 양보",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Optimistic patients recover faster; conversely, chronic stress delays healing.",
+    "exampleKo": "두 대조되는 원리나 결과를 논리적으로 맞비교할 때 쓰는 정통 학술 부사입니다."
   },
   {
     "id": "expr-acad-012",
@@ -24203,7 +25025,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-03",
     "unitTitleKo": "상반된 관점 대조와 양보",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Speculative hypotheses must yield to verified laboratory data.",
+    "exampleKo": "새로운 경험적 증거 앞에서 기존의 낡은 가설이 자리를 내주고 물러남을 묘사합니다."
   },
   {
     "id": "expr-acad-013",
@@ -24264,7 +25088,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-04",
     "unitTitleKo": "데이터 및 증거 인용하기",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Multiple witnesses corroborated the suspect's testimony.",
+    "exampleKo": "단순한 support를 넘어 객관적인 독립 증거가 동일한 결과를 확증할 때 씁니다."
   },
   {
     "id": "expr-acad-014",
@@ -24279,7 +25105,7 @@
     },
     "explanation": "추상적 가설에 대해 구체적 증거 자료를 들어 타당성을 입증할 때 씁니다.",
     "collocation": "substantiate claims with rigorous data",
-    "audioSentence": "The prosecutor failed to substantiate the allegations in court.",
+    "audioSentence": "Without solid statistical backing, it is impossible to substantiate this claim.",
     "dialogue": [
       {
         "speaker": "Judge",
@@ -24325,7 +25151,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-04",
     "unitTitleKo": "데이터 및 증거 인용하기",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Without solid statistical backing, it is impossible to substantiate this claim.",
+    "exampleKo": "근거 없는 주장이 아니라 객관적 데이터로 실체와 신빙성을 부여할 때 씁니다."
   },
   {
     "id": "expr-acad-015",
@@ -24386,7 +25214,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-04",
     "unitTitleKo": "데이터 및 증거 인용하기",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Empirical evidence demonstrates a clear link between exercise and mental acuity.",
+    "exampleKo": "이론적 공상이 아니라 실제 실험, 관찰, 측정을 통해 얻은 데이터 증거입니다."
   },
   {
     "id": "expr-acad-016",
@@ -24447,7 +25277,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-04",
     "unitTitleKo": "데이터 및 증거 인용하기",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "The novelist draws on historical documents to recreate medieval life.",
+    "exampleKo": "기존의 방대한 학술 문헌, 데이터베이스, 선행 연구를 원천으로 삼을 때 씁니다."
   },
   {
     "id": "expr-acad-017",
@@ -24508,7 +25340,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-05",
     "unitTitleKo": "통계와 추세 설명하기",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Computing power has shown exponential growth over recent decades.",
+    "exampleKo": "단순한 linear 성장이 아닌 가파른 곡선을 그리며 폭증하는 양상을 뜻합니다."
   },
   {
     "id": "expr-acad-018",
@@ -24569,7 +25403,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-05",
     "unitTitleKo": "통계와 추세 설명하기",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Sales plateaued at fifty thousand units per quarter.",
+    "exampleKo": "고원(plateau)에 도달하듯 상승세를 멈추고 평탄하게 유지되는 상태입니다."
   },
   {
     "id": "expr-acad-019",
@@ -24630,7 +25466,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-05",
     "unitTitleKo": "통계와 추세 설명하기",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Tourism took a sharp downturn during the travel embargo.",
+    "exampleKo": "완만한 하락이 아니라 가파르고 위험하게 수치가 곤두박질치는 양상입니다."
   },
   {
     "id": "expr-acad-020",
@@ -24691,7 +25529,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-05",
     "unitTitleKo": "통계와 추세 설명하기",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "The price reduction led to only a marginal difference in customer demand.",
+    "exampleKo": "통계적으로 유의미하지 않거나 실질적 영향이 거의 없는 근소한 차이입니다."
   },
   {
     "id": "expr-acad-021",
@@ -24752,7 +25592,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-06",
     "unitTitleKo": "객관적·중립적 어조 유지",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Given the current trend, it is plausible that sea levels will rise further.",
+    "exampleKo": "단정하기는 이르지만 논리적, 과학적으로 충분히 그럴듯한 개연성이 있을 때 씁니다."
   },
   {
     "id": "expr-acad-022",
@@ -24813,7 +25655,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-06",
     "unitTitleKo": "객관적·중립적 어조 유지",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "He resigned ostensibly for health reasons, but political pressure was suspected.",
+    "exampleKo": "겉으로 내세우는 명분과 이면에 숨겨진 실상이 다를 때 비판적으로 지적하는 부사입니다."
   },
   {
     "id": "expr-acad-023",
@@ -24874,7 +25718,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-06",
     "unitTitleKo": "객관적·중립적 어조 유지",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "The discovery of penicillin was arguably the greatest triumph of twentieth-century medicine.",
+    "exampleKo": "100% 단언하기는 어렵지만 강력한 논거로 입증할 수 있는 최상의 명제에 붙입니다."
   },
   {
     "id": "expr-acad-024",
@@ -24935,7 +25781,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-06",
     "unitTitleKo": "객관적·중립적 어조 유지",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Whether the new reform will yield tangible results remains to be seen.",
+    "exampleKo": "섣부른 결론을 유보하고 미래의 데이터 추이를 더 관찰해야 할 때 쓰는 학술적 결언입니다."
   },
   {
     "id": "expr-acad-025",
@@ -24996,7 +25844,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-07",
     "unitTitleKo": "논리적 오류 지적과 반박",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "Historians have debunked the myth that the Great Wall is visible from orbit.",
+    "exampleKo": "대중 사이에 널리 퍼진 잘못된 근거 없는 미신이나 통념을 실증 데이터로 깨부술 때 씁니다."
   },
   {
     "id": "expr-acad-026",
@@ -25057,7 +25907,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-07",
     "unitTitleKo": "논리적 오류 지적과 반박",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "The revelation of flawed calibration called into question all prior measurements.",
+    "exampleKo": "기존에 정설로 받아들여지던 결과의 신뢰성이나 타당성에 근본적인 물음표를 던질 때 씁니다."
   },
   {
     "id": "expr-acad-027",
@@ -25118,7 +25970,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-07",
     "unitTitleKo": "논리적 오류 지적과 반박",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "The argument relies heavily on emotional appeals and fallacious reasoning.",
+    "exampleKo": "논리적 인과관계가 성립하지 않는 결함투성이의 추론 방식을 비판할 때 씁니다."
   },
   {
     "id": "expr-acad-028",
@@ -25179,7 +26033,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-07",
     "unitTitleKo": "논리적 오류 지적과 반박",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "In evaluating the fiscal deficit, policymakers overlooked a critical factor.",
+    "exampleKo": "선행 연구들이 사소한 변수에만 매달리다 가장 결정적인 요소를 놓쳤음을 비판할 때 씁니다."
   },
   {
     "id": "expr-acad-029",
@@ -25240,7 +26096,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-08",
     "unitTitleKo": "가설 설정과 전제 조건",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Calculations were made under the assumption that temperature remains constant.",
+    "exampleKo": "어떤 이론이나 수식 모델이 성립하기 위해 전제되어야 할 기초 가정을 명시할 때 씁니다."
   },
   {
     "id": "expr-acad-030",
@@ -25301,7 +26159,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-08",
     "unitTitleKo": "가설 설정과 전제 조건",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Linguists postulate an innate biological capacity for language acquisition.",
+    "exampleKo": "단순한 추측이 아니라 체계적인 이론 전개를 위해 근본 법칙으로서 선언할 때 씁니다."
   },
   {
     "id": "expr-acad-031",
@@ -25362,7 +26222,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-08",
     "unitTitleKo": "가설 설정과 전제 조건",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "His philosophical argument rests on a flawed premise.",
+    "exampleKo": "결론을 도출하기 위한 논리의 기초 바탕이 되는 참이라고 가정된 명제입니다."
   },
   {
     "id": "expr-acad-032",
@@ -25423,7 +26285,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-08",
     "unitTitleKo": "가설 설정과 전제 조건",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Our approval is strictly contingent upon satisfactory environmental reviews.",
+    "exampleKo": "독립적으로 확정된 것이 아니라 외부 변수나 조건의 성립 여부에 종속되어 있을 때 씁니다."
   },
   {
     "id": "expr-acad-033",
@@ -25438,7 +26302,7 @@
     },
     "explanation": "실험 통계 수치를 바탕으로 명제를 연역/귀납적으로 추론할 때 씁니다.",
     "collocation": "can be reasonably inferred from the evidence",
-    "audioSentence": "What can we infer from these contradictory results?",
+    "audioSentence": "We can logically infer from the data that the drug crosses the blood-brain barrier.",
     "dialogue": [
       {
         "speaker": "Prof",
@@ -25484,7 +26348,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-09",
     "unitTitleKo": "결론 도출 및 시사점",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "We can logically infer from the data that the drug crosses the blood-brain barrier.",
+    "exampleKo": "단순 관찰에 머물지 않고 논리적 추론 과정을 거쳐 타당한 결론을 이끌어낼 때 씁니다."
   },
   {
     "id": "expr-acad-034",
@@ -25545,7 +26411,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-09",
     "unitTitleKo": "결론 도출 및 시사점",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "The court's antitrust ruling will have far-reaching implications for Big Tech.",
+    "exampleKo": "단일 분야에 그치지 않고 사회, 경제, 철학 등 전 영역에 걸쳐 깊은 영향을 미칠 때 씁니다."
   },
   {
     "id": "expr-acad-035",
@@ -25606,7 +26474,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-09",
     "unitTitleKo": "결론 도출 및 시사점",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "In summary, the reform achieved modest gains but failed in structural equity.",
+    "exampleKo": "논문 결론부나 토론 마무리에서 앞선 모든 논증을 간결하고 명확하게 압축할 때 씁니다."
   },
   {
     "id": "expr-acad-036",
@@ -25667,7 +26537,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-09",
     "unitTitleKo": "결론 도출 및 시사점",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "Scattered public protests coalesced into a national political movement.",
+    "exampleKo": "각기 흩어져 있던 파편화된 데이터나 가설들이 하나의 통일된 체계로 결합할 때 씁니다."
   },
   {
     "id": "expr-acad-037",
@@ -25728,7 +26600,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-10",
     "unitTitleKo": "학술적 제언과 향후 과제",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "The long-term environmental persistence of microplastics warrants further investigation.",
+    "exampleKo": "본 연구의 범위를 넘어 향후 더 심도 있는 추가 실험이나 조사가 필수적임을 제언할 때 씁니다."
   },
   {
     "id": "expr-acad-038",
@@ -25789,7 +26663,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-10",
     "unitTitleKo": "학술적 제언과 향후 과제",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "Public outreach programs help bridge the gap between scientists and citizens.",
+    "exampleKo": "상아탑의 추상적 이론과 산업 현장의 실무 사이의 괴리를 연결하고 해소할 때 씁니다."
   },
   {
     "id": "expr-acad-039",
@@ -25850,7 +26726,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-10",
     "unitTitleKo": "학술적 제언과 향후 과제",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "The widespread adoption of cloud computing initiated a major paradigm shift.",
+    "exampleKo": "단순한 기술 개선이 아니라 사물을 바라보는 근본적인 세계관과 학문적 틀 자체가 바뀜을 뜻합니다."
   },
   {
     "id": "expr-acad-040",
@@ -25911,7 +26789,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-10",
     "unitTitleKo": "학술적 제언과 향후 과제",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "The newly unearthed manuscript sheds new insight into the philosopher's later years.",
+    "exampleKo": "기존의 시각으로는 볼 수 없었던 심오한 이해와 학문적 혜안을 열어줄 때 씁니다."
   },
   {
     "id": "expr-media-001",
@@ -25972,7 +26852,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-01",
     "unitTitleKo": "미국 Z세대 최신 유행어",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "I saw the celebrity in person, no cap.",
+    "exampleKo": "거짓말을 하지 않는다는 Z세대 팩트 강조 표현입니다."
   },
   {
     "id": "expr-media-002",
@@ -26033,7 +26915,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-01",
     "unitTitleKo": "미국 Z세대 최신 유행어",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Her vocal performance absolutely slayed.",
+    "exampleKo": "무대나 패션에서 완벽하게 해냈을 때 쓰는 최고의 찬사입니다."
   },
   {
     "id": "expr-media-003",
@@ -26094,7 +26978,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-01",
     "unitTitleKo": "미국 Z세대 최신 유행어",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Put your headphones on and walk with main character energy.",
+    "exampleKo": "영화 속 주인공처럼 주위 시선에 주눅 들지 않고 자신감으로 빛날 때 씁니다."
   },
   {
     "id": "expr-media-004",
@@ -26155,7 +27041,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-01",
     "unitTitleKo": "미국 Z세대 최신 유행어",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "It's rude to ghost people instead of saying no.",
+    "exampleKo": "유령처럼 소리소문없이 사라져 연락을 일방적으로 끊을 때 씁니다."
   },
   {
     "id": "expr-media-005",
@@ -26216,7 +27104,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-02",
     "unitTitleKo": "넷플릭스 필수 단골 이디엄",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "We had to bite the bullet and cancel the vacation.",
+    "exampleKo": "총알을 깨물며 고통을 참듯 피할 수 없는 일을 감수할 때 씁니다."
   },
   {
     "id": "expr-media-006",
@@ -26277,7 +27167,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-02",
     "unitTitleKo": "넷플릭스 필수 단골 이디엄",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "I can't wait for season 2 after that cliffhanger.",
+    "exampleKo": "결말을 보여주지 않고 다음 화를 애타게 만드는 엔딩입니다."
   },
   {
     "id": "expr-media-007",
@@ -26338,7 +27230,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-02",
     "unitTitleKo": "넷플릭스 필수 단골 이디엄",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "Spoiler alert: the hero doesn't make it.",
+    "exampleKo": "결말을 미리 누설하기 전에 청중에게 미리 경고를 날리는 표현입니다."
   },
   {
     "id": "expr-media-008",
@@ -26399,7 +27293,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-02",
     "unitTitleKo": "넷플릭스 필수 단골 이디엄",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "Fans feel the sitcom jumped the shark.",
+    "exampleKo": "억지스러운 설정을 도입하다가 내리막길을 걸을 때 씁니다."
   },
   {
     "id": "expr-media-009",
@@ -26460,7 +27356,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-03",
     "unitTitleKo": "친구 사이 찐 우정 슬랭",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "She knew her team had her back.",
+    "exampleKo": "위험이나 곤경에 처했을 때 뒤를 든든히 지켜준다는 찐 우정 표현입니다."
   },
   {
     "id": "expr-media-010",
@@ -26521,7 +27419,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-03",
     "unitTitleKo": "친구 사이 찐 우정 슬랭",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "We've been through thick and thin together.",
+    "exampleKo": "좋을 때나 나쁠 때나 변함없이 함께 겪어낸다는 깊은 유대감입니다."
   },
   {
     "id": "expr-media-011",
@@ -26582,7 +27482,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-03",
     "unitTitleKo": "친구 사이 찐 우정 슬랭",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Every hero needs a ride or die companion.",
+    "exampleKo": "생사를 함께할 만큼 절대적으로 충성스럽고 신뢰하는 동반자입니다."
   },
   {
     "id": "expr-media-012",
@@ -26643,7 +27545,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-03",
     "unitTitleKo": "친구 사이 찐 우정 슬랭",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "I don't really vibe with his arrogant attitude.",
+    "exampleKo": "파장이나 주파수가 맞듯 사람이나 장소의 분위기가 마음에 들 때 씁니다."
   },
   {
     "id": "expr-media-013",
@@ -26704,7 +27608,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-04",
     "unitTitleKo": "황당하거나 어이없을 때",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "This magic trick will blow your mind.",
+    "exampleKo": "상상을 초월할 만큼 충격적이거나 경이로울 때 씁니다."
   },
   {
     "id": "expr-media-014",
@@ -26765,7 +27671,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-04",
     "unitTitleKo": "황당하거나 어이없을 때",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "The food at that restaurant is unreal.",
+    "exampleKo": "영화 CG처럼 너무나 환상적이고 경이로워서 현실감이 안 날 때 씁니다."
   },
   {
     "id": "expr-media-015",
@@ -26826,7 +27734,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-04",
     "unitTitleKo": "황당하거나 어이없을 때",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "She stood there, lost for words.",
+    "exampleKo": "기쁨, 감동, 충격으로 혀가 굳어 아무 말도 나오지 않는 상태입니다."
   },
   {
     "id": "expr-media-016",
@@ -26887,7 +27797,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-04",
     "unitTitleKo": "황당하거나 어이없을 때",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Meeting my childhood idol was surreal.",
+    "exampleKo": "달리의 초현실주의 그림처럼 현실에서 도저히 일어날 것 같지 않은 몽환적 느낌입니다."
   },
   {
     "id": "expr-media-017",
@@ -26948,7 +27860,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-05",
     "unitTitleKo": "극찬과 감탄의 리액션",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "You are on fire today, answering all questions!",
+    "exampleKo": "불붙은 듯 연속해서 놀라운 성과를 내며 승승장구할 때 씁니다."
   },
   {
     "id": "expr-media-018",
@@ -27009,7 +27923,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-05",
     "unitTitleKo": "극찬과 감탄의 리액션",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "His charisma is off the charts.",
+    "exampleKo": "계측 차트의 눈금을 뚫고 나갈 만큼 수치나 열기가 한계를 초월했을 때 씁니다."
   },
   {
     "id": "expr-media-019",
@@ -27070,7 +27986,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-05",
     "unitTitleKo": "극찬과 감탄의 리액션",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Coffee on a rainy morning hits different.",
+    "exampleKo": "같은 노래나 음식이라도 특정 상황에서 가슴에 사무치게 다를 때 씁니다."
   },
   {
     "id": "expr-media-020",
@@ -27131,7 +28049,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-05",
     "unitTitleKo": "극찬과 감탄의 리액션",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "His reaction face was pure gold.",
+    "exampleKo": "불순물이 섞이지 않은 순금처럼 처음부터 끝까지 버릴 구석 없이 완벽할 때 씁니다."
   },
   {
     "id": "expr-media-021",
@@ -27192,7 +28112,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-06",
     "unitTitleKo": "팩트 폭격과 직언하기",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "She spilled the tea on her ex-boyfriend.",
+    "exampleKo": "차(tea)를 쏟아붓듯 가슴속에 품고 있던 재미있는 가십을 털어놓으라는 표현입니다."
   },
   {
     "id": "expr-media-022",
@@ -27253,7 +28175,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-06",
     "unitTitleKo": "팩트 폭격과 직언하기",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Sometimes the truth hurts, but it sets you free.",
+    "exampleKo": "달콤한 거짓말보다 쓰라린 팩트가 더 고통스럽지만 인정해야 할 때 씁니다."
   },
   {
     "id": "expr-media-023",
@@ -27314,7 +28238,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-06",
     "unitTitleKo": "팩트 폭격과 직언하기",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Hip hop is all about keeping it real.",
+    "exampleKo": "세속적 성공이나 타인의 시선에 물들지 않고 자기 본연의 진솔함을 유지할 때 씁니다."
   },
   {
     "id": "expr-media-024",
@@ -27375,7 +28301,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-06",
     "unitTitleKo": "팩트 폭격과 직언하기",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Don't be afraid to call out unfair treatment.",
+    "exampleKo": "상대방의 부당함, 거짓말, 위선을 숨기지 않고 면전이나 공개적으로 정면 비판할 때 씁니다."
   },
   {
     "id": "expr-media-025",
@@ -27436,7 +28364,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-07",
     "unitTitleKo": "연애와 썸(Romance) 표현",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "Do you have a crush on anyone right now?",
+    "exampleKo": "누군가에게 첫눈에 반해 가슴 설레며 짝사랑할 때 쓰는 대표 표현입니다."
   },
   {
     "id": "expr-media-026",
@@ -27497,7 +28427,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-07",
     "unitTitleKo": "연애와 썸(Romance) 표현",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "Stop hitting on my best friend!",
+    "exampleKo": "호감을 갖고 다가와 작업을 걸거나 들이대며 말을 걸 때 씁니다."
   },
   {
     "id": "expr-media-027",
@@ -27558,7 +28490,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-07",
     "unitTitleKo": "연애와 썸(Romance) 표현",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "Frequent lying is the ultimate red flag.",
+    "exampleKo": "축구의 퇴장 레드카드처럼 관계나 성격에서 절대 용납할 수 없는 결격 사유입니다."
   },
   {
     "id": "expr-media-028",
@@ -27619,7 +28553,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-07",
     "unitTitleKo": "연애와 썸(Romance) 표현",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "He loves traveling and hates being tied down.",
+    "exampleKo": "밧줄로 묶인 것처럼 한 사람이나 정규직 등에 정착해 자유를 잃을까 두려워할 때 씁니다."
   },
   {
     "id": "expr-media-029",
@@ -27680,7 +28616,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-08",
     "unitTitleKo": "파티와 불금 라이프",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "They painted the town red for his 30th birthday.",
+    "exampleKo": "거리를 온통 붉은 축제빛으로 물들이듯 클럽이나 술집을 돌며 광란의 밤을 보낼 때 씁니다."
   },
   {
     "id": "expr-media-030",
@@ -27741,7 +28679,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-08",
     "unitTitleKo": "파티와 불금 라이프",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "The music made everyone turn up.",
+    "exampleKo": "볼륨을 올리듯 파티의 텐션과 열기를 최고조로 폭발시킬 때 쓰는 힙합 슬랭입니다."
   },
   {
     "id": "expr-media-031",
@@ -27802,7 +28742,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-08",
     "unitTitleKo": "파티와 불금 라이프",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Never drive after drinking; always choose a designated driver.",
+    "exampleKo": "친구들이 안심하고 술을 마실 수 있도록 본인은 술을 안 마시고 운전을 전담하는 사람입니다."
   },
   {
     "id": "expr-media-032",
@@ -27863,7 +28805,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-08",
     "unitTitleKo": "파티와 불금 라이프",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "He knows how to be the life of the party.",
+    "exampleKo": "그 사람만 나타나면 어색한 파티장이 웃음바다가 되는 최고의 분위기 메이커입니다."
   },
   {
     "id": "expr-media-033",
@@ -27924,7 +28868,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-09",
     "unitTitleKo": "비밀 유지와 가십 나누기",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "Who spilled the beans to the media?",
+    "exampleKo": "바구니에 담긴 콩을 엎질러버리듯 감추어야 할 극비 사항을 입 밖으로 흘릴 때 씁니다."
   },
   {
     "id": "expr-media-034",
@@ -27985,7 +28931,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-09",
     "unitTitleKo": "비밀 유지와 가십 나누기",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "We must keep this confidential under wraps.",
+    "exampleKo": "비밀 포장지로 꽁꽁 싸매두듯 공식 발표 전까지 철저히 비공개로 보안을 유지할 때 씁니다."
   },
   {
     "id": "expr-media-035",
@@ -28046,7 +28994,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-09",
     "unitTitleKo": "비밀 유지와 가십 나누기",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "They reached a settlement behind closed doors.",
+    "exampleKo": "취재진이나 대중이 보지 못하는 닫힌 문 뒤에서 은밀하게 결정될 때 씁니다."
   },
   {
     "id": "expr-media-036",
@@ -28107,7 +29057,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-09",
     "unitTitleKo": "비밀 유지와 가십 나누기",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "Security was tightened after the secret was leaked.",
+    "exampleKo": "수도관에서 물이 새듯 감추어진 비밀 정보가 외부로 누출될 때 씁니다."
   },
   {
     "id": "expr-media-037",
@@ -28168,7 +29120,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-10",
     "unitTitleKo": "위로와 공감의 원어민 슬랭",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "Hang in there, buddy; help is coming.",
+    "exampleKo": "줄에 매달려 버티듯 힘든 시련 속에서 포기하지 말고 버텨내라는 따뜻한 격려입니다."
   },
   {
     "id": "expr-media-038",
@@ -28229,7 +29183,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-10",
     "unitTitleKo": "위로와 공감의 원어민 슬랭",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "Breakups are miserable; been there, done that.",
+    "exampleKo": "나도 이미 과거에 똑같은 실패나 아픔을 겪어봤기에 깊이 공감한다는 쿨한 위로입니다."
   },
   {
     "id": "expr-media-039",
@@ -28290,7 +29246,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-10",
     "unitTitleKo": "위로와 공감의 원어민 슬랭",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "I feel you, studying all night is torture.",
+    "exampleKo": "상대방의 감정, 고충, 피로를 내 일처럼 온몸으로 공감할 때 쓰는 일상 슬랭입니다."
   },
   {
     "id": "expr-media-040",
@@ -28305,7 +29263,7 @@
     },
     "explanation": "실패로 낙담하여 고개 숙인 친구의 기운을 북돋워 줄 때 씁니다.",
     "collocation": "keep your chin up, tomorrow is a new day",
-    "audioSentence": "She kept her chin up despite severe hardship.",
+    "audioSentence": "Don't let this rejection defeat you; keep your chin up!",
     "dialogue": [
       {
         "speaker": "Coach",
@@ -28351,7 +29309,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-10",
     "unitTitleKo": "위로와 공감의 원어민 슬랭",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "Don't let this rejection defeat you; keep your chin up!",
+    "exampleKo": "슬퍼서 턱(chin)을 떨구지 말고 턱을 당당히 치켜들고 용기를 내라는 응원입니다."
   },
   {
     "id": "expr-bat-001",
@@ -28366,7 +29326,7 @@
     },
     "explanation": "see는 자연스럽게 보이다, look은 특정 방향을 쳐다보다, watch는 경기나 영화처럼 움직임을 지켜볼 때 씁니다.",
     "collocation": "watch a movie / look at the board",
-    "audioSentence": "Did you see that strange bird in the tree?",
+    "audioSentence": "Look at the horizon, see the island in the distance, and watch the waves crash on the shore.",
     "dialogue": [
       {
         "speaker": "Tom",
@@ -28412,7 +29372,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-01",
     "unitTitleKo": "시각 동사의 미묘한 차이",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Look at the horizon, see the island in the distance, and watch the waves crash on the shore.",
+    "exampleKo": "지평선을 바라보고(look), 멀리 섬을 발견하며(see), 파도가 해안에 부딪히는 것을 지켜보세요(watch)."
   },
   {
     "id": "expr-bat-002",
@@ -28427,7 +29389,7 @@
     },
     "explanation": "stare는 당황이나 적의를 품은 응시, gaze는 경이로움이나 그리움에 잠긴 응시입니다.",
     "collocation": "stare rudely vs. gaze in wonder",
-    "audioSentence": "She gazed at the starry night sky for hours.",
+    "audioSentence": "It is rude to stare at strangers, but peaceful to gaze at the starry night sky.",
     "dialogue": [
       {
         "speaker": "Dan",
@@ -28473,7 +29435,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-01",
     "unitTitleKo": "시각 동사의 미묘한 차이",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "It is rude to stare at strangers, but peaceful to gaze at the starry night sky.",
+    "exampleKo": "낯선 사람을 빤히 쳐다보는 것(stare)은 무례하지만, 밤하늘의 별을 넋 놓고 바라보는 것(gaze)은 평화롭습니다."
   },
   {
     "id": "expr-bat-003",
@@ -28488,7 +29452,7 @@
     },
     "explanation": "glance는 의도적인 짧은 흘겨봄, glimpse는 찰나에 시야를 스친 불완전한 포착입니다.",
     "collocation": "take a glance at / catch a glimpse of",
-    "audioSentence": "I caught a glimpse of the celebrity passing by.",
+    "audioSentence": "I took a quick glance at my watch, and caught a brief glimpse of the celebrity passing by.",
     "dialogue": [
       {
         "speaker": "Mia",
@@ -28534,7 +29498,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-01",
     "unitTitleKo": "시각 동사의 미묘한 차이",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "I took a quick glance at my watch, and caught a brief glimpse of the celebrity passing by.",
+    "exampleKo": "시계를 힐끗 보고(glance), 지나가는 유명인을 얼핏 언뜻 보았습니다(glimpse)."
   },
   {
     "id": "expr-bat-004",
@@ -28549,7 +29515,7 @@
     },
     "explanation": "notice는 무언가의 변화나 징후를 감지함, spot은 군중이나 시야 속에서 대상을 콕 집어 포착함입니다.",
     "collocation": "hard to notice vs. spot in a crowd",
-    "audioSentence": "She spotted a typo on page twenty-five.",
+    "audioSentence": "I noticed she got a haircut, and I spotted her in the huge crowd.",
     "dialogue": [
       {
         "speaker": "Tina",
@@ -28595,7 +29561,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-01",
     "unitTitleKo": "시각 동사의 미묘한 차이",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "I noticed she got a haircut, and I spotted her in the huge crowd.",
+    "exampleKo": "notice는 감각적으로 알아차리는 것이고, spot은 숨은 그림 찾기처럼 복잡한 가운데 딱 찾아내는 것입니다."
   },
   {
     "id": "expr-bat-005",
@@ -28610,7 +29578,7 @@
     },
     "explanation": "hear는 우연히 소리를 감지함, listen to는 음악이나 강의에 귀를 기울임입니다.",
     "collocation": "listen to music / hear a strange noise",
-    "audioSentence": "Did you hear that thunderstorm last night?",
+    "audioSentence": "Did you hear that thunderstorm while listening to music on your headphones?",
     "dialogue": [
       {
         "speaker": "Ken",
@@ -28656,7 +29624,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-02",
     "unitTitleKo": "청각 표현의 미묘한 차이",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "Did you hear that thunderstorm while listening to music on your headphones?",
+    "exampleKo": "헤드폰으로 음악을 듣고(listen) 있는 동안 저 천둥소리가 들렸나요(hear)?"
   },
   {
     "id": "expr-bat-006",
@@ -28671,7 +29641,7 @@
     },
     "explanation": "overhear는 우연한 청취(무죄), eavesdrop은 의도적인 엿듣기(비도덕적)입니다.",
     "collocation": "overhear a conversation vs. eavesdrop behind the door",
-    "audioSentence": "He was caught eavesdropping on the executive meeting.",
+    "audioSentence": "I overheard their chat on the train, but he deliberately eavesdropped.",
     "dialogue": [
       {
         "speaker": "Ann",
@@ -28717,7 +29687,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-02",
     "unitTitleKo": "청각 표현의 미묘한 차이",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "I overheard their chat on the train, but he deliberately eavesdropped.",
+    "exampleKo": "overhear는 남의 대화가 귀에 우연히 들려온 것이고, eavesdrop은 문틈으로 숨어서 엿듣는 얌체 짓입니다."
   },
   {
     "id": "expr-bat-007",
@@ -28732,7 +29704,7 @@
     },
     "explanation": "sound는 음악이나 자연의 소리, noise는 불필요하고 불쾌한 잡음/소음입니다.",
     "collocation": "make too much noise vs. sound of rain",
-    "audioSentence": "Turn off the TV; it's making too much noise.",
+    "audioSentence": "I love the sound of ocean waves, but the construction noise drives me crazy.",
     "dialogue": [
       {
         "speaker": "Lily",
@@ -28778,7 +29750,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-02",
     "unitTitleKo": "청각 표현의 미묘한 차이",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "I love the sound of ocean waves, but the construction noise drives me crazy.",
+    "exampleKo": "sound는 중립적이거나 듣기 좋은 모든 소리, noise는 귀에 거슬리고 불쾌한 소음입니다."
   },
   {
     "id": "expr-bat-008",
@@ -28793,7 +29767,7 @@
     },
     "explanation": "loud는 일반적 큰 소리, deafening은 귀가 먹먹할 정도의 폭발적 굉음입니다.",
     "collocation": "a deafening roar vs. loud voice",
-    "audioSentence": "The stadium erupted in deafening cheers.",
+    "audioSentence": "The music was loud, but the jet engine was deafening.",
     "dialogue": [
       {
         "speaker": "Roy",
@@ -28839,7 +29813,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-02",
     "unitTitleKo": "청각 표현의 미묘한 차이",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "The music was loud, but the jet engine was deafening.",
+    "exampleKo": "loud는 단순히 볼륨이 큰 것이고, deafening은 귀청이 떨어져 나갈 듯 고막이 마비되는 압도적 굉음입니다."
   },
   {
     "id": "expr-bat-009",
@@ -28854,7 +29830,7 @@
     },
     "explanation": "salary는 연봉제 고정급, wage는 일한 시간만큼 받는 시급/일당입니다.",
     "collocation": "earn a high salary vs. minimum wage",
-    "audioSentence": "The federal minimum wage has remained unchanged.",
+    "audioSentence": "Salaried professionals get a fixed monthly salary, while hourly workers earn an hourly wage.",
     "dialogue": [
       {
         "speaker": "Mark",
@@ -28900,7 +29876,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-03",
     "unitTitleKo": "돈과 급여 어휘의 미묘한 차이",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Salaried professionals get a fixed monthly salary, while hourly workers earn an hourly wage.",
+    "exampleKo": "salary는 정규직 사무직의 고정 월급/연봉이고, wage는 일한 시간이나 일수에 따라 계산되는 시급/주급입니다."
   },
   {
     "id": "expr-bat-010",
@@ -28915,7 +29893,7 @@
     },
     "explanation": "pay는 일반적인 보수 전반, stipend는 학비/연구 활동 지원금의 성격입니다.",
     "collocation": "receive a research stipend vs. take home pay",
-    "audioSentence": "Graduate assistants survive on a meager stipend.",
+    "audioSentence": "Interns and researchers receive a modest monthly stipend for living costs.",
     "dialogue": [
       {
         "speaker": "Prof",
@@ -28961,7 +29939,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-03",
     "unitTitleKo": "돈과 급여 어휘의 미묘한 차이",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Interns and researchers receive a modest monthly stipend for living costs.",
+    "exampleKo": "pay는 노동의 대가로 받는 모든 급여의 총칭, stipend는 대학원생이나 인턴에게 생활 보조로 지급되는 실비 지원금입니다."
   },
   {
     "id": "expr-bat-011",
@@ -28976,7 +29956,7 @@
     },
     "explanation": "fee는 전문직 수수료/등록비, fare는 오직 교통수단의 승차 요금입니다.",
     "collocation": "bus fare vs. legal fee",
-    "audioSentence": "The entrance fee to the museum is twenty dollars.",
+    "audioSentence": "Lawyers charge an hourly fee, but taxis and buses charge a fare.",
     "dialogue": [
       {
         "speaker": "Driver",
@@ -29022,7 +30002,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-03",
     "unitTitleKo": "돈과 급여 어휘의 미묘한 차이",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Lawyers charge an hourly fee, but taxis and buses charge a fare.",
+    "exampleKo": "fee는 변호사, 의사, 학원 등 서비스에 대한 수수료/입장료이고, fare는 버스, 지하철, 택시 등 교통수단 탑승 요금입니다."
   },
   {
     "id": "expr-bat-012",
@@ -29037,7 +30019,7 @@
     },
     "explanation": "bonus는 특별 상여금, commission은 영업 실적에 따른 건당 수수료입니다.",
     "collocation": "earn a 5% commission on sales",
-    "audioSentence": "Employees received a generous holiday bonus.",
+    "audioSentence": "Real estate agents earn a percentage commission on every home sold.",
     "dialogue": [
       {
         "speaker": "Agent",
@@ -29083,7 +30065,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-03",
     "unitTitleKo": "돈과 급여 어휘의 미묘한 차이",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Real estate agents earn a percentage commission on every home sold.",
+    "exampleKo": "bonus는 회사의 실적에 따라 일괄 또는 성과로 지급되는 격려금, commission은 판매액의 몇 %를 직접 떼어가는 수수료입니다."
   },
   {
     "id": "expr-bat-013",
@@ -29098,7 +30082,7 @@
     },
     "explanation": "problem은 부정적이고 해결이 시급함, issue는 정책이나 토론의 쟁점 사안입니다.",
     "collocation": "solve a technical problem vs. discuss a policy issue",
-    "audioSentence": "Homelessness is a complex social issue.",
+    "audioSentence": "A math problem has a correct answer, while a moral issue requires debate.",
     "dialogue": [
       {
         "speaker": "Mechanic",
@@ -29144,7 +30128,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-04",
     "unitTitleKo": "문제와 위기 어휘의 미묘한 차이",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "A math problem has a correct answer, while a moral issue requires debate.",
+    "exampleKo": "problem은 즉시 고치거나 풀어야 할 명확한 결함/곤경이고, issue는 사회적 쟁점이나 의견이 엇갈리는 논의 주제입니다."
   },
   {
     "id": "expr-bat-014",
@@ -29159,7 +30145,7 @@
     },
     "explanation": "trouble은 추상적 골칫거리, difficulty는 개별적인 난관이나 장애물입니다.",
     "collocation": "get into trouble vs. face financial difficulties",
-    "audioSentence": "He had great difficulty breathing after the run.",
+    "audioSentence": "He got into serious trouble with the police, but overcame financial difficulties.",
     "dialogue": [
       {
         "speaker": "Cop",
@@ -29205,7 +30191,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-04",
     "unitTitleKo": "문제와 위기 어휘의 미묘한 차이",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "He got into serious trouble with the police, but overcame financial difficulties.",
+    "exampleKo": "trouble은 보통 불가산 명사로 말썽이나 법적 곤경에 빠졌을 때 쓰고, difficulty는 복수형(-ies)으로 구체적 역경들을 뜻합니다."
   },
   {
     "id": "expr-bat-015",
@@ -29220,7 +30208,7 @@
     },
     "explanation": "obstacle은 우회나 돌파가 가능한 장애, barrier는 물리적/제도적으로 가로막는 차단벽입니다.",
     "collocation": "overcome an obstacle vs. break down trade barriers",
-    "audioSentence": "High tariffs act as a trade barrier.",
+    "audioSentence": "A hurdle on a track is an obstacle to jump over, but a language barrier divides cultures.",
     "dialogue": [
       {
         "speaker": "Coach",
@@ -29266,7 +30254,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-04",
     "unitTitleKo": "문제와 위기 어휘의 미묘한 차이",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "A hurdle on a track is an obstacle to jump over, but a language barrier divides cultures.",
+    "exampleKo": "obstacle은 노력해서 뛰어넘거나 우회할 수 있는 장애물, barrier는 국경이나 언어 장벽처럼 통행을 원천 차단하는 거대한 벽입니다."
   },
   {
     "id": "expr-bat-016",
@@ -29281,7 +30271,7 @@
     },
     "explanation": "dilemma는 선택의 난제, crisis는 긴급 조치가 필요한 총체적 위기입니다.",
     "collocation": "face a moral dilemma vs. manage a financial crisis",
-    "audioSentence": "The hospital faced an acute oxygen crisis.",
+    "audioSentence": "Choosing between two bad jobs is a dilemma, but a market crash is an economic crisis.",
     "dialogue": [
       {
         "speaker": "Ethicist",
@@ -29327,7 +30317,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-04",
     "unitTitleKo": "문제와 위기 어휘의 미묘한 차이",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Choosing between two bad jobs is a dilemma, but a market crash is an economic crisis.",
+    "exampleKo": "dilemma는 두 개의 불리한 선택지 사이에서 결정을 못 내리는 진퇴양난, crisis는 생존이 위협받는 긴급한 파국적 위기 상황입니다."
   },
   {
     "id": "expr-bat-017",
@@ -29342,7 +30334,7 @@
     },
     "explanation": "sensitive는 감성적/민감함, sensible은 실용적/이성적/합리적입니다.",
     "collocation": "sensitive skin vs. a sensible choice",
-    "audioSentence": "Dress warmly; wear sensible winter boots.",
+    "audioSentence": "A sensitive person gets easily offended, while a sensible person makes wise decisions.",
     "dialogue": [
       {
         "speaker": "Dad",
@@ -29388,7 +30380,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05",
     "unitTitleKo": "성격과 태도의 미묘한 차이",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "A sensitive person gets easily offended, while a sensible person makes wise decisions.",
+    "exampleKo": "sensitive는 감각이나 감정이 예민하고 섬세한 것이고, sensible은 이성적 분별력과 상식(sense)을 갖춘 현명한 상태입니다."
   },
   {
     "id": "expr-bat-018",
@@ -29403,7 +30397,7 @@
     },
     "explanation": "childish는 유치하고 철없는 태도, childlike는 순수하고 맑은 동심입니다.",
     "collocation": "childish temper tantrum vs. childlike innocence",
-    "audioSentence": "Picasso admired the childlike simplicity of tribal art.",
+    "audioSentence": "Throwing a tantrum is childish, but having a childlike sense of wonder is beautiful.",
     "dialogue": [
       {
         "speaker": "Mom",
@@ -29449,7 +30443,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05",
     "unitTitleKo": "성격과 태도의 미묘한 차이",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Throwing a tantrum is childish, but having a childlike sense of wonder is beautiful.",
+    "exampleKo": "childish는 나잇값을 못 하고 유치하게 떼를 쓰는 부정적 뉘앙스, childlike는 아이처럼 때 묻지 않고 순수한 긍정적 뉘앙스입니다."
   },
   {
     "id": "expr-bat-019",
@@ -29464,7 +30460,7 @@
     },
     "explanation": "confident는 긍정적인 자기 확신, arrogant는 타인을 깔보는 거만함입니다.",
     "collocation": "confident tone vs. arrogant smirk",
-    "audioSentence": "Confidence attracts people; arrogance repels them.",
+    "audioSentence": "A truly confident leader inspires team members, while an arrogant manager alienates them.",
     "dialogue": [
       {
         "speaker": "HR",
@@ -29510,7 +30506,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05",
     "unitTitleKo": "성격과 태도의 미묘한 차이",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "A truly confident leader inspires team members, while an arrogant manager alienates them.",
+    "exampleKo": "진정으로 자신감 있는(confident) 리더는 영감을 주지만, 오만한(arrogant) 관리자는 사람들을 멀어지게 합니다."
   },
   {
     "id": "expr-bat-020",
@@ -29525,7 +30523,7 @@
     },
     "explanation": "stubborn은 융통성 없는 황소고집, persistent는 칠전팔기의 끈기와 집념입니다.",
     "collocation": "stubborn as a mule vs. persistent effort",
-    "audioSentence": "Her persistent efforts were rewarded with a Nobel prize.",
+    "audioSentence": "A stubborn donkey refuses to budge, but a persistent scientist keeps testing until discovery.",
     "dialogue": [
       {
         "speaker": "Teacher",
@@ -29571,7 +30569,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05",
     "unitTitleKo": "성격과 태도의 미묘한 차이",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "A stubborn donkey refuses to budge, but a persistent scientist keeps testing until discovery.",
+    "exampleKo": "stubborn은 합리적 이유 없이 막무가내로 고집부리는 성격, persistent는 목표를 향해 난관을 뚫고 끈기 있게 전진하는 미덕입니다."
   },
   {
     "id": "expr-bat-021",
@@ -29586,7 +30586,7 @@
     },
     "explanation": "chance는 복권 같은 운/우연성, opportunity는 커리어나 발전의 소중한 기회입니다.",
     "collocation": "golden opportunity vs. take a chance",
-    "audioSentence": "Seize this career opportunity.",
+    "audioSentence": "Buying a lottery ticket is a game of chance, but landing an interview is a golden opportunity.",
     "dialogue": [
       {
         "speaker": "Mentor",
@@ -29632,7 +30632,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-06",
     "unitTitleKo": "운과 가능성 어휘의 미묘한 차이",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Buying a lottery ticket is a game of chance, but landing an interview is a golden opportunity.",
+    "exampleKo": "chance는 우연이나 확률(가산/불가산), opportunity는 본인의 성장과 발전을 위해 반드시 잡아야 할 호기(기회)입니다."
   },
   {
     "id": "expr-bat-022",
@@ -29647,7 +30649,7 @@
     },
     "explanation": "luck은 일상의 작은 행운, fortune은 막대한 부나 거대한 숙명적 운입니다.",
     "collocation": "good luck vs. amass a huge fortune",
-    "audioSentence": "He spent a fortune restoring the vintage yacht.",
+    "audioSentence": "Finding a lost wallet is good luck, but inheriting a vast estate is a massive fortune.",
     "dialogue": [
       {
         "speaker": "Boy",
@@ -29693,7 +30695,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-06",
     "unitTitleKo": "운과 가능성 어휘의 미묘한 차이",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Finding a lost wallet is good luck, but inheriting a vast estate is a massive fortune.",
+    "exampleKo": "luck은 일상 속의 소소한 복과 우연한 운수, fortune은 거액의 재산이나 인생 전체를 좌우하는 거대한 운명을 뜻합니다."
   },
   {
     "id": "expr-bat-023",
@@ -29708,7 +30712,7 @@
     },
     "explanation": "possibility는 실현 가능성(0 초과), probability는 통계적 확률/승산입니다.",
     "collocation": "high probability vs. distinct possibility",
-    "audioSentence": "There is a strong probability of rain this evening.",
+    "audioSentence": "A meteor hitting Earth is a possibility, but rain tomorrow has a high probability.",
     "dialogue": [
       {
         "speaker": "Weather Host",
@@ -29754,7 +30758,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-06",
     "unitTitleKo": "운과 가능성 어휘의 미묘한 차이",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "A meteor hitting Earth is a possibility, but rain tomorrow has a high probability.",
+    "exampleKo": "possibility는 0%가 아니어서 일어날 수도 있는 잠재성, probability는 수학적 통계로 따졌을 때 일어날 법한 높은 승산입니다."
   },
   {
     "id": "expr-bat-024",
@@ -29769,7 +30775,7 @@
     },
     "explanation": "coincidence는 단순한 우연, fate는 필연적인 숙명입니다.",
     "collocation": "a strange coincidence vs. accept one's fate",
-    "audioSentence": "By pure coincidence, we booked the same flight.",
+    "audioSentence": "Wearing the same shirt is a funny coincidence, but finding your soulmate feels like fate.",
     "dialogue": [
       {
         "speaker": "Girl",
@@ -29815,7 +30821,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-06",
     "unitTitleKo": "운과 가능성 어휘의 미묘한 차이",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Wearing the same shirt is a funny coincidence, but finding your soulmate feels like fate.",
+    "exampleKo": "coincidence는 인과관계 없는 우연의 일치, fate는 초자연적 힘이나 섭리에 의해 정해진 불가항력의 운명입니다."
   },
   {
     "id": "expr-bat-025",
@@ -29830,7 +30838,7 @@
     },
     "explanation": "take a trip은 여행을 가다, travel은 추상적 여행/이동입니다.",
     "collocation": "go on a road trip vs. air travel",
-    "audioSentence": "Travel expands your worldview.",
+    "audioSentence": "I took a weekend business trip, because travel broadens the mind.",
     "dialogue": [
       {
         "speaker": "Agent",
@@ -29876,7 +30884,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-07",
     "unitTitleKo": "여행과 이동 어휘의 미묘한 차이",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "I took a weekend business trip, because travel broadens the mind.",
+    "exampleKo": "trip은 구체적으로 다녀온 단기 여행/출장(가산 명사 a trip), travel은 여행이라는 행위나 이동 전반(불가산 명사 또는 동사)입니다."
   },
   {
     "id": "expr-bat-026",
@@ -29891,7 +30901,7 @@
     },
     "explanation": "journey는 긴 여정이나 인생 역정, voyage는 바다/우주로의 항해입니다.",
     "collocation": "life is a journey vs. voyage across the Atlantic",
-    "audioSentence": "The Titanic set off on its maiden voyage.",
+    "audioSentence": "A road trip across Africa is an arduous journey, but sailing around the world is a voyage.",
     "dialogue": [
       {
         "speaker": "Captain",
@@ -29937,7 +30947,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-07",
     "unitTitleKo": "여행과 이동 어휘의 미묘한 차이",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "A road trip across Africa is an arduous journey, but sailing around the world is a voyage.",
+    "exampleKo": "journey는 육상이나 인생의 길고 험난한 여정, voyage는 선박이나 우주선을 타고 떠나는 대양/우주 항해입니다."
   },
   {
     "id": "expr-bat-027",
@@ -29952,7 +30964,7 @@
     },
     "explanation": "commute는 매일의 출퇴근, transit은 환승/대중교통 시스템입니다.",
     "collocation": "morning commute vs. rapid transit system",
-    "audioSentence": "She reads books during her daily commute.",
+    "audioSentence": "My daily commute takes 45 minutes, using public transit.",
     "dialogue": [
       {
         "speaker": "Ben",
@@ -29998,7 +31010,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-07",
     "unitTitleKo": "여행과 이동 어휘의 미묘한 차이",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "My daily commute takes 45 minutes, using public transit.",
+    "exampleKo": "commute는 집과 직장/학교 사이를 매일 오가는 통근/통학 길, transit은 대중교통 체계나 경유지 통과를 뜻합니다."
   },
   {
     "id": "expr-bat-028",
@@ -30013,7 +31027,7 @@
     },
     "explanation": "tour는 정기 순회/투어, excursion은 가벼운 당일치기 현장 견학입니다.",
     "collocation": "guided city tour vs. day excursion to the island",
-    "audioSentence": "The hotel organizes snorkeling excursions.",
+    "audioSentence": "A rock band goes on a world tour, but cruise passengers take a day excursion to the ruins.",
     "dialogue": [
       {
         "speaker": "Guide",
@@ -30059,7 +31073,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-07",
     "unitTitleKo": "여행과 이동 어휘의 미묘한 차이",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "A rock band goes on a world tour, but cruise passengers take a day excursion to the ruins.",
+    "exampleKo": "tour는 여러 도시나 국가를 순회하는 종합 유람, excursion은 본 여행지에서 잠시 짬을 내어 다녀오는 당일치기 근교 소풍/견학입니다."
   },
   {
     "id": "expr-bat-029",
@@ -30074,7 +31090,7 @@
     },
     "explanation": "job은 직업/일자리, work는 일/노동/작업입니다.",
     "collocation": "apply for a job vs. hard work pays off",
-    "audioSentence": "He is looking for a full-time job.",
+    "audioSentence": "I love my new job, but I have a lot of hard work to finish tonight.",
     "dialogue": [
       {
         "speaker": "Interviewer",
@@ -30120,7 +31136,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-08",
     "unitTitleKo": "직업과 노동 어휘의 미묘한 차이",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "I love my new job, but I have a lot of hard work to finish tonight.",
+    "exampleKo": "job은 특정 직위나 고용된 일자리(가산 a job), work는 노동, 업무, 과업이라는 행동 자체(불가산 work)입니다."
   },
   {
     "id": "expr-bat-029b",
@@ -30135,7 +31153,7 @@
     },
     "explanation": "career는 생애 커리어와 발전 과정, occupation은 서식용 직업 분류입니다.",
     "collocation": "career advancement vs. write your occupation on the form",
-    "audioSentence": "She built a stellar career in biotechnology.",
+    "audioSentence": "Teaching was her lifelong career, but her passport lists her occupation as educator.",
     "dialogue": [
       {
         "speaker": "Officer",
@@ -30181,7 +31199,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-08",
     "unitTitleKo": "직업과 노동 어휘의 미묘한 차이",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Teaching was her lifelong career, but her passport lists her occupation as educator.",
+    "exampleKo": "career는 일생에 걸쳐 쌓아 올린 전문적 성취와 진로 궤적, occupation은 공문서나 세관 신고서 직업란에 적는 형식적 직업 명칭입니다."
   },
   {
     "id": "expr-bat-030",
@@ -30196,7 +31216,7 @@
     },
     "explanation": "profession은 화이트칼라 전문직, trade는 숙련된 블루칼라 기술직입니다.",
     "collocation": "medical profession vs. learn a skilled trade",
-    "audioSentence": "Carpentry is an honorable and lucrative trade.",
+    "audioSentence": "Medicine and law are professions requiring licenses, while plumbing and carpentry are skilled trades.",
     "dialogue": [
       {
         "speaker": "Counselor",
@@ -30242,7 +31262,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-08",
     "unitTitleKo": "직업과 노동 어휘의 미묘한 차이",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Medicine and law are professions requiring licenses, while plumbing and carpentry are skilled trades.",
+    "exampleKo": "profession은 오랜 고등 교육과 공인 면허를 요하는 전문직(의사, 변호사 등), trade는 도제식 훈련과 손기술을 요하는 기능직/기술직(배관공, 목수 등)입니다."
   },
   {
     "id": "expr-bat-031",
@@ -30257,7 +31279,7 @@
     },
     "explanation": "task는 작은 업무 단위, duty는 도덕적/법적 사명과 의무입니다.",
     "collocation": "complete a daily task vs. perform one's civic duty",
-    "audioSentence": "Jury service is an important civic duty.",
+    "audioSentence": "Cleaning your inbox is a routine task, but protecting citizens is a soldier's sacred duty.",
     "dialogue": [
       {
         "speaker": "Sergeant",
@@ -30303,7 +31325,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-08",
     "unitTitleKo": "직업과 노동 어휘의 미묘한 차이",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Cleaning your inbox is a routine task, but protecting citizens is a soldier's sacred duty.",
+    "exampleKo": "task는 끝내야 할 구체적인 개별 과제/할 일이고, duty는 양심, 법률, 직무에 의해 지켜야 할 무거운 책임과 의무입니다."
   },
   {
     "id": "expr-bat-032",
@@ -30318,7 +31342,7 @@
     },
     "explanation": "cost는 생산 비용/원가, price는 소비자가 지불하는 가격표 금액입니다.",
     "collocation": "production cost vs. sticker price",
-    "audioSentence": "The high price covers both manufacturing costs and marketing.",
+    "audioSentence": "The retail price on the tag was $100, but the production cost was only $20.",
     "dialogue": [
       {
         "speaker": "Buyer",
@@ -30364,7 +31388,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-09",
     "unitTitleKo": "비용과 가치 어휘의 미묘한 차이",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "The retail price on the tag was $100, but the production cost was only $20.",
+    "exampleKo": "cost는 재화나 서비스를 만드는 데 투입된 원가나 치러야 할 대가, price는 매장에서 손님에게 부과하는 최종 정가/판매 가격입니다."
   },
   {
     "id": "expr-bat-033",
@@ -30379,7 +31405,7 @@
     },
     "explanation": "expense는 전반적 생활비/회사 경비, charge는 서비스 건당 청구액입니다.",
     "collocation": "business expenses vs. service charge",
-    "audioSentence": "Living expenses in New York are notoriously high.",
+    "audioSentence": "Travel expenses can be reimbursed, while the bank adds a monthly maintenance charge.",
     "dialogue": [
       {
         "speaker": "Traveler",
@@ -30425,7 +31451,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-09",
     "unitTitleKo": "비용과 가치 어휘의 미묘한 차이",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "Travel expenses can be reimbursed, while the bank adds a monthly maintenance charge.",
+    "exampleKo": "expense는 살아가거나 사업을 하며 나가는 전반적인 지출/경비, charge는 호텔이나 카드사에서 특정 항목에 매기는 청구 요금입니다."
   },
   {
     "id": "expr-bat-034",
@@ -30440,7 +31468,7 @@
     },
     "explanation": "cheap은 조잡하고 값싼 느낌, economical은 합리적이고 절약적인 미덕입니다.",
     "collocation": "cheap plastic replica vs. an economical hybrid engine",
-    "audioSentence": "Cooking at home is both healthy and economical.",
+    "audioSentence": "A cheap toy breaks in five minutes, but a hybrid car is economical to drive.",
     "dialogue": [
       {
         "speaker": "Buyer",
@@ -30486,7 +31514,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-09",
     "unitTitleKo": "비용과 가치 어휘의 미묘한 차이",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "A cheap toy breaks in five minutes, but a hybrid car is economical to drive.",
+    "exampleKo": "cheap은 가격뿐 아니라 품질도 조잡하고 싸구려라는 부정적 어감, economical은 낭비 없이 알뜰하고 가성비가 훌륭하다는 칭찬입니다."
   },
   {
     "id": "expr-bat-035",
@@ -30501,7 +31531,7 @@
     },
     "explanation": "valuable은 고가의, priceless는 돈으로 살 수 없는 귀중함입니다.",
     "collocation": "valuable gold watch vs. priceless family memories",
-    "audioSentence": "The museum houses priceless artifacts of antiquity.",
+    "audioSentence": "A diamond ring is valuable, but a mother's love is priceless.",
     "dialogue": [
       {
         "speaker": "Appraiser",
@@ -30547,7 +31577,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-09",
     "unitTitleKo": "비용과 가치 어휘의 미묘한 차이",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "A diamond ring is valuable, but a mother's love is priceless.",
+    "exampleKo": "valuable은 금전적 가치가 매우 높은 것(환산 가능), priceless는 돈 따위로는 도저히 그 가치를 매길 수 없을 만큼 소중함을 뜻합니다."
   },
   {
     "id": "expr-bat-036",
@@ -30562,7 +31594,7 @@
     },
     "explanation": "doubt는 부정적 의심(아닐 거야), suspect는 혐의적 의심(그놈일 거야)입니다.",
     "collocation": "I doubt his honesty vs. police suspect foul play",
-    "audioSentence": "I doubt that prices will drop soon.",
+    "audioSentence": "I doubt it will rain (I think no), but the police suspect he is guilty (they think yes).",
     "dialogue": [
       {
         "speaker": "Judge",
@@ -30608,7 +31640,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-10",
     "unitTitleKo": "추측과 인지의 미묘한 차이",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "I doubt it will rain (I think no), but the police suspect he is guilty (they think yes).",
+    "exampleKo": "doubt는 '~가 아닐 것 같다'고 부정적으로 회의하는 것, suspect는 '~인 것 같다'고 혐의나 가능성을 긍정적으로 의심하는 것입니다."
   },
   {
     "id": "expr-bat-037",
@@ -30623,7 +31657,7 @@
     },
     "explanation": "imagine은 심상화/공상, suppose는 논증을 위한 가설 설정입니다.",
     "collocation": "imagine a better world vs. suppose we lose the match",
-    "audioSentence": "I suppose we should leave now before dark.",
+    "audioSentence": "A novelist imagines fantastical dragons, while a scientist supposes a hypothetical scenario.",
     "dialogue": [
       {
         "speaker": "Math Teacher",
@@ -30669,7 +31703,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-10",
     "unitTitleKo": "추측과 인지의 미묘한 차이",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "A novelist imagines fantastical dragons, while a scientist supposes a hypothetical scenario.",
+    "exampleKo": "imagine은 그림이나 환상을 머릿속에 자유롭게 그려보는 상상, suppose는 논리적 추론이나 가정을 위해 '~라고 가정해 보자'입니다."
   },
   {
     "id": "expr-bat-038",
@@ -30684,7 +31720,7 @@
     },
     "explanation": "assume은 독단적 넘겨짚기, presume은 정황 증거에 기반한 추정입니다.",
     "collocation": "make an assumption vs. presumed innocent until proven guilty",
-    "audioSentence": "Presumed innocent is a core legal doctrine.",
+    "audioSentence": "To assume is to guess without evidence, while to presume is to infer based on reasonable probability.",
     "dialogue": [
       {
         "speaker": "Defense",
@@ -30730,7 +31766,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-10",
     "unitTitleKo": "추측과 인지의 미묘한 차이",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "To assume is to guess without evidence, while to presume is to infer based on reasonable probability.",
+    "exampleKo": "assume은 아무런 객관적 근거 없이 자의적으로 속단하는 것, presume은 정황과 관례에 비추어 타당하게 추정하는 것입니다."
   },
   {
     "id": "expr-bat-039",
@@ -30745,7 +31783,7 @@
     },
     "explanation": "remember는 내재된 기억의 존재, recall은 의식적인 기억의 인출입니다.",
     "collocation": "remember someone's face vs. recall exact details",
-    "audioSentence": "He tried hard to recall the telephone number.",
+    "audioSentence": "I naturally remember my childhood home, but I must deliberately recall his license plate.",
     "dialogue": [
       {
         "speaker": "Cop",
@@ -30791,7 +31829,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-10",
     "unitTitleKo": "추측과 인지의 미묘한 차이",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "I naturally remember my childhood home, but I must deliberately recall his license plate.",
+    "exampleKo": "remember는 머릿속에 기억이 온전히 보존되어 절로 떠오르는 것, recall은 기억의 서랍을 뒤져 의식적으로 회상해 내는 것입니다."
   },
   {
     "id": "expr-phrasal-001",
@@ -30852,7 +31892,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-01",
     "unitTitleKo": "하루 일과 & 루틴 구동사",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "The festival will kick off tomorrow afternoon.",
+    "exampleKo": "축구 경기 킥오프에서 유래하여 어떤 행사나 프로젝트를 활기차게 시작할 때 씁니다."
   },
   {
     "id": "expr-phrasal-002",
@@ -30913,7 +31955,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-01",
     "unitTitleKo": "하루 일과 & 루틴 구동사",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Take an hour to wind down and relax.",
+    "exampleKo": "시계태엽이 풀리듯 하루나 바쁜 일과의 긴장을 풀고 편안한 상태로 들어설 때 씁니다."
   },
   {
     "id": "expr-phrasal-003",
@@ -30974,7 +32018,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-01",
     "unitTitleKo": "하루 일과 & 루틴 구동사",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Decided to turn in early tonight.",
+    "exampleKo": "침대로 몸을 돌려 눕는다는 어원에서 '잠자리에 들다'를 부드럽게 표현합니다."
   },
   {
     "id": "expr-phrasal-004",
@@ -31035,7 +32081,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-01",
     "unitTitleKo": "하루 일과 & 루틴 구동사",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Allowed myself to sleep in until ten.",
+    "exampleKo": "overstaying in bed 원해서 알람 없이 푹 늦잠 자는 행복한 상태를 뜻합니다."
   },
   {
     "id": "expr-phrasal-005",
@@ -31096,7 +32144,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-02",
     "unitTitleKo": "만남과 사교 구동사",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "Never expected to bump into you here.",
+    "exampleKo": "길을 걷다 어깨가 툭 부딪히듯 뜻밖의 장소에서 우연히 아는 사람을 만날 때 씁니다."
   },
   {
     "id": "expr-phrasal-006",
@@ -31157,7 +32207,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-02",
     "unitTitleKo": "만남과 사교 구동사",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "We need to catch up soon.",
+    "exampleKo": "한동안 못 봐서 뒤처진 서로의 삶의 소식을 따라잡는다는 따뜻한 의미입니다."
   },
   {
     "id": "expr-phrasal-007",
@@ -31218,7 +32270,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-02",
     "unitTitleKo": "만남과 사교 구동사",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "Over a hundred people showed up for the lecture.",
+    "exampleKo": "약속된 장소에 모습을 드러내거나 참석할 때 씁니다."
   },
   {
     "id": "expr-phrasal-008",
@@ -31279,7 +32333,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-02",
     "unitTitleKo": "만남과 사교 구동사",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "I'll drop by the bakery on my way home.",
+    "exampleKo": "물방울이 툭 떨어지듯 격식 차리지 않고 잠깐 가볍게 들를 때 씁니다."
   },
   {
     "id": "expr-phrasal-009",
@@ -31294,7 +32350,7 @@
     },
     "explanation": "깊은 대화와 정서적 유대를 쌓을 때 자주 등장하는 감성적인 구동사입니다.",
     "collocation": "open up to someone",
-    "audioSentence": "hard to open up about personal struggles",
+    "audioSentence": "It took a while, but he finally opened up about his worries.",
     "dialogue": [
       {
         "speaker": "Grace",
@@ -31340,7 +32396,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-03",
     "unitTitleKo": "관계와 소통의 뉘앙스",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "It took a while, but he finally opened up about his worries.",
+    "exampleKo": "굳게 닫혀 있던 마음의 문을 열고 속마음을 솔직히 나눌 때 씁니다."
   },
   {
     "id": "expr-phrasal-010",
@@ -31401,7 +32459,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-03",
     "unitTitleKo": "관계와 소통의 뉘앙스",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Sad to see old friends drift apart.",
+    "exampleKo": "강물에 뜬 조각배가 서서히 다른 방향으로 떠내려가듯 자연스럽게 연락이 뜸해질 때 씁니다."
   },
   {
     "id": "expr-phrasal-011",
@@ -31462,7 +32522,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-03",
     "unitTitleKo": "관계와 소통의 뉘앙스",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Just brush it off and move forward.",
+    "exampleKo": "옷에 묻은 먼지를 툭툭 털어내듯 불쾌한 비난이나 실수를 대수롭지 않게 넘길 때 씁니다."
   },
   {
     "id": "expr-phrasal-012",
@@ -31523,7 +32585,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-03",
     "unitTitleKo": "관계와 소통의 뉘앙스",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Kiss and make up.",
+    "exampleKo": "깨지거나 어그러진 관계를 원래대로 다시 메우고 복원한다는 의미입니다."
   },
   {
     "id": "expr-phrasal-013",
@@ -31584,7 +32648,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-04",
     "unitTitleKo": "과업 완수와 생산성",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Aim to wrap up by 5 PM.",
+    "exampleKo": "선물을 포장지에 깔끔하게 싸서 묶듯 진행 중이던 일이나 회의를 매듭지을 때 씁니다."
   },
   {
     "id": "expr-phrasal-014",
@@ -31645,7 +32711,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-04",
     "unitTitleKo": "과업 완수와 생산성",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Follow up with an email.",
+    "exampleKo": "한 번의 만남이나 질문으로 끝내지 않고 뒤이어 꼼꼼하게 진행 상황을 확인할 때 씁니다."
   },
   {
     "id": "expr-phrasal-015",
@@ -31706,7 +32774,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-04",
     "unitTitleKo": "과업 완수와 생산성",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Just power through until Friday.",
+    "exampleKo": "강한 에너지 엔진을 가동하듯 피로나 난관에도 굴하지 않고 묵묵히 버텨내며 해낼 때 씁니다."
   },
   {
     "id": "expr-phrasal-016",
@@ -31767,7 +32837,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-04",
     "unitTitleKo": "과업 완수와 생산성",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Hard to get through all these readings.",
+    "exampleKo": "긴 터널을 뚫고 지나가듯 고난이나 엄청난 양의 시험공부를 헤쳐나갈 때 씁니다."
   },
   {
     "id": "expr-phrasal-017",
@@ -31828,7 +32900,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-05",
     "unitTitleKo": "문제 해결과 조율",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Need some time to sort things out.",
+    "exampleKo": "뒤엉킨 실타래를 가지런히 분류하여 원래의 정돈된 상태로 수습할 때 씁니다."
   },
   {
     "id": "expr-phrasal-018",
@@ -31843,7 +32917,7 @@
     },
     "explanation": "비즈니스 협상에서 마지막 쟁점을 조율할 때 고급스럽게 쓰입니다.",
     "collocation": "iron out differences",
-    "audioSentence": "iron out minor contract terms",
+    "audioSentence": "We agree in principle, but we still need to iron out the fine details.",
     "dialogue": [
       {
         "speaker": "Lawyer",
@@ -31889,7 +32963,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-05",
     "unitTitleKo": "문제 해결과 조율",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "We agree in principle, but we still need to iron out the fine details.",
+    "exampleKo": "구겨진 셔츠를 다리미로 빳빳하게 펴듯 계약이나 협상의 미세한 불일치를 부드럽게 펼 때 씁니다."
   },
   {
     "id": "expr-phrasal-019",
@@ -31950,7 +33026,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-05",
     "unitTitleKo": "문제 해결과 조율",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Can't figure out what he wants.",
+    "exampleKo": "머리를 써서 곰곰이 생각한 끝에 해결책이나 작동 원리를 깨달을 때 씁니다."
   },
   {
     "id": "expr-phrasal-020",
@@ -31965,7 +33043,7 @@
     },
     "explanation": "후보군 선정, 회의 주제 압축, 여행지 결정 시 즐겨 씁니다.",
     "collocation": "narrow down the options",
-    "audioSentence": "narrowed down to finalists",
+    "audioSentence": "We narrowed down the applicants to three top candidates.",
     "dialogue": [
       {
         "speaker": "HR",
@@ -32011,7 +33089,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-05",
     "unitTitleKo": "문제 해결과 조율",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "We narrowed down the applicants to three top candidates.",
+    "exampleKo": "넓은 범위를 좁은 통로처럼 좁혀 가장 유력한 몇 가지 옵션으로 압축할 때 씁니다."
   },
   {
     "id": "expr-phrasal-021",
@@ -32072,7 +33152,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-06",
     "unitTitleKo": "역경 극복과 회복 탄력성",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Amazing ability to bounce back.",
+    "exampleKo": "탱탱볼이 바닥을 치고 다시 높이 솟아오르듯 좌절 후 놀라운 회복 탄력성을 보일 때 씁니다."
   },
   {
     "id": "expr-phrasal-022",
@@ -32133,7 +33215,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-06",
     "unitTitleKo": "역경 극복과 회복 탄력성",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Believe she will pull through.",
+    "exampleKo": "위태로운 밧줄을 당겨 험난한 구렁텅이에서 벗어나듯 죽을 고비나 큰 위기를 극복할 때 씁니다."
   },
   {
     "id": "expr-phrasal-023",
@@ -32148,7 +33232,7 @@
     },
     "explanation": "어려운 상황에서도 끈기 있게 인내하거나 더 나은 조건을 위해 버틸 때 씁니다.",
     "collocation": "hold out for a better offer",
-    "audioSentence": "hold out hope until the end",
+    "audioSentence": "The trapped miners held out until rescue teams arrived.",
     "dialogue": [
       {
         "speaker": "Reporter",
@@ -32194,7 +33278,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-06",
     "unitTitleKo": "역경 극복과 회복 탄력성",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "The trapped miners held out until rescue teams arrived.",
+    "exampleKo": "고립된 광부들은 구조대가 도착할 때까지 끝까지 버텨냈습니다(held out)."
   },
   {
     "id": "expr-phrasal-024",
@@ -32209,7 +33295,7 @@
     },
     "explanation": "weather the storm 또는 weather through로 쓰여 품격 있는 극복을 나타냅니다.",
     "collocation": "weather through the recession",
-    "audioSentence": "help each other weather through storms",
+    "audioSentence": "Strong families weather through difficult economic storms together.",
     "dialogue": [
       {
         "speaker": "CEO",
@@ -32255,7 +33341,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-06",
     "unitTitleKo": "역경 극복과 회복 탄력성",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Strong families weather through difficult economic storms together.",
+    "exampleKo": "거친 풍랑을 만난 배가 침몰하지 않고 폭풍을 뚫고 무사히 항해하듯 시련을 극복할 때 씁니다."
   },
   {
     "id": "expr-phrasal-025",
@@ -32270,7 +33358,7 @@
     },
     "explanation": "가계부 절약, 다이어트, 기업 구조조정에서 빠질 수 없는 단골 구동사입니다.",
     "collocation": "cut back on expenses",
-    "audioSentence": "cut back on sugar intake",
+    "audioSentence": "We need to cut back on dining out to save for a home.",
     "dialogue": [
       {
         "speaker": "Sam",
@@ -32316,7 +33404,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-07",
     "unitTitleKo": "돈과 소비의 리얼 구동사",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "We need to cut back on dining out to save for a home.",
+    "exampleKo": "자르듯(cut) 뒤로 물려(back) 과도한 지출이나 커피, 설탕 섭취 등을 절감할 때 씁니다."
   },
   {
     "id": "expr-phrasal-026",
@@ -32377,7 +33467,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-07",
     "unitTitleKo": "돈과 소비의 리얼 구동사",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "Everyone chipped in to help.",
+    "exampleKo": "포커 칩을 테이블 중앙에 모으듯 각자 소액의 돈이나 작은 정성을 모을 때 씁니다."
   },
   {
     "id": "expr-phrasal-027",
@@ -32392,7 +33484,7 @@
     },
     "explanation": "바가지요금이나 비싼 수리비, 벌금을 낼 때 씁쓸한 뉘앙스를 담아 씁니다.",
     "collocation": "shell out big money",
-    "audioSentence": "forced to shell out for legal fees",
+    "audioSentence": "I had to shell out a thousand dollars to repair the car.",
     "dialogue": [
       {
         "speaker": "Liam",
@@ -32438,7 +33530,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-07",
     "unitTitleKo": "돈과 소비의 리얼 구동사",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "I had to shell out a thousand dollars to repair the car.",
+    "exampleKo": "조개껍데기 속에 숨겨둔 비상금을 억지로 까서 내듯 예상치 못한 큰돈을 지출할 때 씁니다."
   },
   {
     "id": "expr-phrasal-028",
@@ -32453,7 +33547,7 @@
     },
     "explanation": "What a rip-off!(완전 바가지야!)라는 명사형 감탄사로도 널리 쓰입니다.",
     "collocation": "get ripped off in tourist areas",
-    "audioSentence": "a total rip-off",
+    "audioSentence": "Tourist shops often rip off unsuspecting travelers.",
     "dialogue": [
       {
         "speaker": "Traveler",
@@ -32499,7 +33593,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-07",
     "unitTitleKo": "돈과 소비의 리얼 구동사",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "Tourist shops often rip off unsuspecting travelers.",
+    "exampleKo": "손님의 지갑에서 돈을 거칠게 뜯어내듯(rip) 터무니없는 폭리를 취할 때 씁니다."
   },
   {
     "id": "expr-phrasal-029",
@@ -32514,7 +33610,7 @@
     },
     "explanation": "감동적인 연설, 슬픈 영화, 감사 인사를 전할 때 자주 등장합니다.",
     "collocation": "choked up during the speech",
-    "audioSentence": "makes me choke up every time",
+    "audioSentence": "He choked up with emotion during his daughter's wedding toast.",
     "dialogue": [
       {
         "speaker": "Noah",
@@ -32560,7 +33656,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-08",
     "unitTitleKo": "마음과 감정의 파도",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "He choked up with emotion during his daughter's wedding toast.",
+    "exampleKo": "눈물이나 북받치는 감정 때문에 목구멍이 꽉 막힌 듯 말을 잇지 못할 때 씁니다."
   },
   {
     "id": "expr-phrasal-030",
@@ -32621,7 +33719,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-08",
     "unitTitleKo": "마음과 감정의 파도",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Don't freak out, it's just a prank.",
+    "exampleKo": "기이할 정도로(freak) 이성을 잃고 깜짝 놀라거나 극도의 공황 상태에 빠질 때 씁니다."
   },
   {
     "id": "expr-phrasal-031",
@@ -32636,7 +33736,7 @@
     },
     "explanation": "화가 나거나 공황에 빠진 사람을 차분하게 달랠 때 필수입니다.",
     "collocation": "calm down after an argument",
-    "audioSentence": "took a deep breath to calm down",
+    "audioSentence": "Please calm down and explain clearly what happened.",
     "dialogue": [
       {
         "speaker": "Ethan",
@@ -32682,7 +33782,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-08",
     "unitTitleKo": "마음과 감정의 파도",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Please calm down and explain clearly what happened.",
+    "exampleKo": "거칠어진 호흡과 감정의 파도를 평온한 아래(down)로 가라앉힐 때 씁니다."
   },
   {
     "id": "expr-phrasal-032",
@@ -32743,7 +33845,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-08",
     "unitTitleKo": "마음과 감정의 파도",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Cheer up, things will improve.",
+    "exampleKo": "우울하게 처져 있는 기분을 위로(up) 끌어올려 기운을 북돋울 때 씁니다."
   },
   {
     "id": "expr-phrasal-033",
@@ -32804,7 +33908,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-09",
     "unitTitleKo": "이동과 여행의 발걸음",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "Ready to head out for dinner?",
+    "exampleKo": "머리(시선)가 향하는 방향으로 몸을 돌려 목적지를 향해 발걸음을 뗄 때 씁니다."
   },
   {
     "id": "expr-phrasal-034",
@@ -32819,7 +33925,7 @@
     },
     "explanation": "세계 일주나 장거리 하이킹, 긴 여정을 개시할 때 즐겨 쓰입니다.",
     "collocation": "set off on a journey",
-    "audioSentence": "set off at sunrise",
+    "audioSentence": "They set off on a three-month backpacking trip across Europe.",
     "dialogue": [
       {
         "speaker": "Guide",
@@ -32865,7 +33971,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-09",
     "unitTitleKo": "이동과 여행의 발걸음",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "They set off on a three-month backpacking trip across Europe.",
+    "exampleKo": "시동을 켜고 출발 신호가 울리듯 기대와 모험에 차서 대장정의 여정을 시작할 때 씁니다."
   },
   {
     "id": "expr-phrasal-035",
@@ -32926,7 +34034,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-09",
     "unitTitleKo": "이동과 여행의 발걸음",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "Just calling to check in on you.",
+    "exampleKo": "공항 탑승 수속이나 호텔 등록뿐 아니라 지인에게 '나 무사히 도착했어'라고 안부를 전할 때도 씁니다."
   },
   {
     "id": "expr-phrasal-036",
@@ -32941,7 +34051,7 @@
     },
     "explanation": "유학이나 여행을 떠나는 이를 역이나 공항에서 따뜻하게 배웅할 때 씁니다.",
     "collocation": "see someone off at the station",
-    "audioSentence": "gather to see the bride off",
+    "audioSentence": "My parents came to the airport to see me off.",
     "dialogue": [
       {
         "speaker": "Jack",
@@ -32987,7 +34097,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-09",
     "unitTitleKo": "이동과 여행의 발걸음",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "My parents came to the airport to see me off.",
+    "exampleKo": "떠나가는 사람이 시야에서 사라질 때까지 눈(see)으로 지켜보며 작별을 고할 때 씁니다."
   },
   {
     "id": "expr-phrasal-037",
@@ -33002,7 +34114,7 @@
     },
     "explanation": "cancel의 가장 자연스러운 구어체 대체 표현입니다.",
     "collocation": "call off the wedding",
-    "audioSentence": "call off the search operation",
+    "audioSentence": "They had to call off the soccer match due to heavy thunderstorms.",
     "dialogue": [
       {
         "speaker": "Reporter",
@@ -33048,7 +34160,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-10",
     "unitTitleKo": "마침표와 새로운 시작",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "They had to call off the soccer match due to heavy thunderstorms.",
+    "exampleKo": "소리쳐서 약속이나 일정을 철회하듯 예정된 행사나 계약을 취소할 때 씁니다."
   },
   {
     "id": "expr-phrasal-038",
@@ -33063,7 +34177,7 @@
     },
     "explanation": "친환경 정책, 노후 기종 교체, 제도 개편에서 품격 있게 쓰입니다.",
     "collocation": "phase out fossil fuel subsidies",
-    "audioSentence": "gradually phased out old software",
+    "audioSentence": "The company plans to phase out plastic packaging over two years.",
     "dialogue": [
       {
         "speaker": "Official",
@@ -33109,7 +34223,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-10",
     "unitTitleKo": "마침표와 새로운 시작",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "The company plans to phase out plastic packaging over two years.",
+    "exampleKo": "달의 위상이 서서히 바뀌듯 급격한 충격 없이 단계별(phase)로 서서히 없애나갈 때 씁니다."
   },
   {
     "id": "expr-phrasal-039",
@@ -33124,7 +34240,7 @@
     },
     "explanation": "상황에 따라 기계 고장, 눈물, 데이터 분석으로 모두 쓰이는 다의어 구동사입니다.",
     "collocation": "car broke down",
-    "audioSentence": "broke down in tears",
+    "audioSentence": "Our car broke down in the middle of the highway.",
     "dialogue": [
       {
         "speaker": "Alex",
@@ -33170,7 +34286,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-10",
     "unitTitleKo": "마침표와 새로운 시작",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "Our car broke down in the middle of the highway.",
+    "exampleKo": "기계가 멈추거나, 억눌렀던 감정의 둑이 터져 펑펑 울거나, 복잡한 데이터를 쪼갤 때 씁니다."
   },
   {
     "id": "expr-phrasal-040",
@@ -33185,7 +34303,7 @@
     },
     "explanation": "실연이나 실패 후 새 출발을 격려할 때 가장 힘이 되는 멘트입니다.",
     "collocation": "move on to the next chapter",
-    "audioSentence": "time to forgive and move on",
+    "audioSentence": "It was a painful failure, but it's time to move on.",
     "dialogue": [
       {
         "speaker": "Emma",
@@ -33231,7 +34349,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-10",
     "unitTitleKo": "마침표와 새로운 시작",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "It was a painful failure, but it's time to move on.",
+    "exampleKo": "지나간 과거의 미련이나 슬픔에 얽매이지 않고 미래를 향해 발걸음을 옮길 때 씁니다."
   },
   {
     "id": "expr-emot-001",
@@ -33246,7 +34366,7 @@
     },
     "explanation": "스포츠 경기, 파티, 콘서트 직전 에너지가 폭발할 때 외치는 표현입니다.",
     "collocation": "pumped up for the race",
-    "audioSentence": "feeling super pumped",
+    "audioSentence": "I'm so pumped for the championship game tonight!",
     "dialogue": [
       {
         "speaker": "Coach",
@@ -33292,7 +34412,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-01",
     "unitTitleKo": "환희와 벅찬 기대감",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "I'm so pumped for the championship game tonight!",
+    "exampleKo": "심장에 펌프질하듯 피가 솟구치며 엄청난 흥분과 열정에 가득 찬 상태를 말합니다."
   },
   {
     "id": "expr-emot-002",
@@ -33307,7 +34429,7 @@
     },
     "explanation": "신작 게임 출시, 아이폰 발표회, 대작 영화 개봉 직전 열광하는 대중의 심리입니다.",
     "collocation": "super hyped for the album release",
-    "audioSentence": "overly hyped product",
+    "audioSentence": "Everyone is so hyped about the new sci-fi blockbuster.",
     "dialogue": [
       {
         "speaker": "Leo",
@@ -33353,7 +34475,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-01",
     "unitTitleKo": "환희와 벅찬 기대감",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Everyone is so hyped about the new sci-fi blockbuster.",
+    "exampleKo": "대중의 관심과 과장(hype)이 모여 기대감이 하늘을 찌르는 상태를 말합니다."
   },
   {
     "id": "expr-emot-003",
@@ -33368,7 +34492,7 @@
     },
     "explanation": "합격 통지, 승진, 청혼을 승낙받았을 때 격식과 감성을 모두 담아 씁니다.",
     "collocation": "thrilled to announce the news",
-    "audioSentence": "absolutely thrilled with the results",
+    "audioSentence": "She was thrilled to receive the prestigious research scholarship.",
     "dialogue": [
       {
         "speaker": "Professor",
@@ -33414,7 +34538,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-01",
     "unitTitleKo": "환희와 벅찬 기대감",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "She was thrilled to receive the prestigious research scholarship.",
+    "exampleKo": "온몸에 전율(thrill)이 돋을 만큼 가슴 벅차고 황홀한 최고의 기쁨을 말합니다."
   },
   {
     "id": "expr-emot-004",
@@ -33429,7 +34555,7 @@
     },
     "explanation": "여행, 전역, 결혼식, 방학을 기다리는 설렘의 표준 표현입니다.",
     "collocation": "counting down the days until departure",
-    "audioSentence": "can't wait any longer",
+    "audioSentence": "Summer vacation starts in June; I'm counting down the days.",
     "dialogue": [
       {
         "speaker": "Ella",
@@ -33475,7 +34601,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-01",
     "unitTitleKo": "환희와 벅찬 기대감",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Summer vacation starts in June; I'm counting down the days.",
+    "exampleKo": "달력에 표시를 해두고 하루하루 날짜를 세듯 간절하게 어떤 날을 기다릴 때 씁니다."
   },
   {
     "id": "expr-emot-005",
@@ -33490,7 +34618,7 @@
     },
     "explanation": "두 가지 선택지 사이에서 장단점이 팽팽해 결단을 유보할 때 흔히 씁니다.",
     "collocation": "sit on the fence",
-    "audioSentence": "remain on the fence until more info comes",
+    "audioSentence": "I'm still on the fence about whether to take the job in Tokyo.",
     "dialogue": [
       {
         "speaker": "Tom",
@@ -33536,7 +34664,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-02",
     "unitTitleKo": "망설임과 교차하는 심경",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "I'm still on the fence about whether to take the job in Tokyo.",
+    "exampleKo": "울타리(fence) 위에 위태롭게 걸터앉아 어느 쪽 마당으로 뛰어내릴지 결정을 못 한 상태입니다."
   },
   {
     "id": "expr-emot-006",
@@ -33597,7 +34727,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-02",
     "unitTitleKo": "망설임과 교차하는 심경",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "Never have second thoughts.",
+    "exampleKo": "처음엔 충동적이거나 쉽게 결정했다가, 두 번째로 곰곰이 생각해보니 후회나 불안이 밀려올 때 씁니다."
   },
   {
     "id": "expr-emot-007",
@@ -33612,7 +34744,7 @@
     },
     "explanation": "한국어의 '시원섭섭하다', '만감이 교차한다'에 100% 매칭되는 완벽한 표현입니다.",
     "collocation": "have mixed feelings about promotion",
-    "audioSentence": "evoked mixed feelings",
+    "audioSentence": "I have mixed feelings about leaving my hometown after 20 years.",
     "dialogue": [
       {
         "speaker": "Jenny",
@@ -33658,7 +34790,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-02",
     "unitTitleKo": "망설임과 교차하는 심경",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "I have mixed feelings about leaving my hometown after 20 years.",
+    "exampleKo": "기쁨과 슬픔, 기대와 두려움이라는 상반된 감정이 뒤섞여(mixed) 마음이 복잡한 상태입니다."
   },
   {
     "id": "expr-emot-008",
@@ -33673,7 +34807,7 @@
     },
     "explanation": "학술, 심리학, 품격 있는 논평에서 사람의 복합적인 내면을 지적으로 표현합니다.",
     "collocation": "ambivalent feelings about artificial intelligence",
-    "audioSentence": "feel ambivalent about success",
+    "audioSentence": "Critics held an ambivalent attitude toward the controversial novel.",
     "dialogue": [
       {
         "speaker": "Host",
@@ -33719,7 +34853,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-02",
     "unitTitleKo": "망설임과 교차하는 심경",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "Critics held an ambivalent attitude toward the controversial novel.",
+    "exampleKo": "라틴어 ambi(양쪽) + valere(힘이 있다)에서 유래하여 정반대의 두 감정이 똑같이 강하게 부딪칠 때 씁니다."
   },
   {
     "id": "expr-emot-009",
@@ -33734,7 +34870,7 @@
     },
     "explanation": "싫지만 언젠가는 반드시 해야 할 힘든 일을 결연하게 감행할 때 씁니다.",
     "collocation": "bite the bullet and apologize",
-    "audioSentence": "reluctantly bite the bullet",
+    "audioSentence": "I hate dentistry, but I just have to bite the bullet and go.",
     "dialogue": [
       {
         "speaker": "Kevin",
@@ -33780,7 +34916,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-03",
     "unitTitleKo": "마지못한 의무감과 체념",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "I hate dentistry, but I just have to bite the bullet and go.",
+    "exampleKo": "전쟁터에서 마취제가 없을 때 총알(bullet)을 입에 물리고 수술의 고통을 견디게 한 유래입니다."
   },
   {
     "id": "expr-emot-010",
@@ -33795,7 +34933,7 @@
     },
     "explanation": "월요병, 치과 진료, 세금 정산 등 생각만 해도 암담한 일에 씁니다.",
     "collocation": "dread waking up early",
-    "audioSentence": "dread public speaking",
+    "audioSentence": "I absolutely dread going to the dentist for a root canal.",
     "dialogue": [
       {
         "speaker": "Lisa",
@@ -33841,7 +34979,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-03",
     "unitTitleKo": "마지못한 의무감과 체념",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "I absolutely dread going to the dentist for a root canal.",
+    "exampleKo": "단순한 무서움(fear)을 넘어 다가올 사건에 대해 머리가 찌끈거리고 피하고 싶은 진저리침을 뜻합니다."
   },
   {
     "id": "expr-emot-011",
@@ -33902,7 +35042,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-03",
     "unitTitleKo": "마지못한 의무감과 체념",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Stop dragging your feet.",
+    "exampleKo": "발걸음이 떨어지지 않아 신발을 바닥에 질질 끌며(drag) 억지로 천천히 갈 때 씁니다."
   },
   {
     "id": "expr-emot-012",
@@ -33917,7 +35059,7 @@
     },
     "explanation": "전혀 내키지 않지만 대안이 없어서 마지못해 승낙할 때 절묘하게 쓰입니다.",
     "collocation": "grudgingly admit defeat",
-    "audioSentence": "grudgingly agreed to attend",
+    "audioSentence": "After two hours of debate, he grudgingly agreed to the compromise.",
     "dialogue": [
       {
         "speaker": "Chloe",
@@ -33963,7 +35105,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-03",
     "unitTitleKo": "마지못한 의무감과 체념",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "After two hours of debate, he grudgingly agreed to the compromise.",
+    "exampleKo": "마음속에 원망이나 불만(grudge)을 품은 채 어쩔 수 없이 고개를 끄덕일 때 씁니다."
   },
   {
     "id": "expr-emot-013",
@@ -34024,7 +35168,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-04",
     "unitTitleKo": "깊은 공감과 따스한 온기",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "I feel you, stay strong.",
+    "exampleKo": "네가 느끼는 감정의 진폭을 내 가슴으로도 똑같이 느낀다는 최고의 구어체 공감 표현입니다."
   },
   {
     "id": "expr-emot-014",
@@ -34039,7 +35185,7 @@
     },
     "explanation": "상대방의 어려운 결정을 지지하거나 현명한 조언을 건넬 때 전제조건으로 쓰입니다.",
     "collocation": "put yourself in someone's shoes",
-    "audioSentence": "If I were in your shoes",
+    "audioSentence": "If I were in your shoes, I would have made the exact same choice.",
     "dialogue": [
       {
         "speaker": "Doctor",
@@ -34085,7 +35231,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-04",
     "unitTitleKo": "깊은 공감과 따스한 온기",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "If I were in your shoes, I would have made the exact same choice.",
+    "exampleKo": "남의 신발(shoes)에 내 발을 집어넣어 보듯 그의 처지와 입장을 고스란히 헤아려 볼 때 씁니다."
   },
   {
     "id": "expr-emot-015",
@@ -34100,7 +35248,7 @@
     },
     "explanation": "자연재해, 사별, 큰 사고를 당한 유족들에게 전하는 가장 격조 높은 애도 문구입니다.",
     "collocation": "heart goes out to the victims",
-    "audioSentence": "express heartfelt sympathies",
+    "audioSentence": "My heart goes out to all the families affected by the wildfire.",
     "dialogue": [
       {
         "speaker": "Mayor",
@@ -34146,7 +35294,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-04",
     "unitTitleKo": "깊은 공감과 따스한 온기",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "My heart goes out to all the families affected by the wildfire.",
+    "exampleKo": "내 심장과 온 마음이 비극을 겪은 이들에게 걸어가 안아주듯 지극한 위로와 연민을 전할 때 씁니다."
   },
   {
     "id": "expr-emot-016",
@@ -34161,7 +35311,7 @@
     },
     "explanation": "유명 팝송 제목처럼 소중한 친구가 위기에 처했을 때 든든하게 받쳐주는 표현입니다.",
     "collocation": "a shoulder to lean on",
-    "audioSentence": "lean on friends during hardship",
+    "audioSentence": "Whenever life gets too overwhelming, you can always lean on me.",
     "dialogue": [
       {
         "speaker": "Sophia",
@@ -34207,7 +35357,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-04",
     "unitTitleKo": "깊은 공감과 따스한 온기",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Whenever life gets too overwhelming, you can always lean on me.",
+    "exampleKo": "힘이 빠져 쓰러질 것 같을 때 어깨를 내어주듯 전폭적인 지지와 의지가 되어주겠다는 온기 어린 말입니다."
   },
   {
     "id": "expr-emot-017",
@@ -34222,7 +35374,7 @@
     },
     "explanation": "반복되는 거짓말, 소음, 룸메이트의 무개념 행동에 넌더리가 났을 때 씁니다.",
     "collocation": "fed up with waiting",
-    "audioSentence": "fed up with bureaucratic red tape",
+    "audioSentence": "I am totally fed up with his endless excuses and tardiness.",
     "dialogue": [
       {
         "speaker": "Rachel",
@@ -34268,7 +35420,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-05",
     "unitTitleKo": "좌절과 에너지 방전",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "I am totally fed up with his endless excuses and tardiness.",
+    "exampleKo": "밥을 목구멍 끝까지 억지로 먹여(feed) 더 이상 한 숟가락도 못 넘기듯 한계에 도달한 분노입니다."
   },
   {
     "id": "expr-emot-018",
@@ -34283,7 +35437,7 @@
     },
     "explanation": "모든 방법을 다 써봤지만 해결되지 않아 미칠 것 같은 극한의 절망감을 나타냅니다.",
     "collocation": "mother at her wit's end",
-    "audioSentence": "drove me to my wit's end",
+    "audioSentence": "I've tried everything with this crying baby; I'm at my wit's end.",
     "dialogue": [
       {
         "speaker": "Amber",
@@ -34329,7 +35483,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-05",
     "unitTitleKo": "좌절과 에너지 방전",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "I've tried everything with this crying baby; I'm at my wit's end.",
+    "exampleKo": "인간의 지혜(wit)가 도달할 수 있는 가장자리 끝(end)에 서서 더 이상 묘수가 없는 상태입니다."
   },
   {
     "id": "expr-emot-019",
@@ -34344,7 +35500,7 @@
     },
     "explanation": "단순한 피곤함(tired)을 넘어 영혼까지 탈탈 털린 듯한 뉘앙스를 풍깁니다.",
     "collocation": "feel emotionally drained",
-    "audioSentence": "drained of all energy",
+    "audioSentence": "After a ten-hour flight with screaming toddlers, I felt totally drained.",
     "dialogue": [
       {
         "speaker": "Boss",
@@ -34390,7 +35546,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-05",
     "unitTitleKo": "좌절과 에너지 방전",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "After a ten-hour flight with screaming toddlers, I felt totally drained.",
+    "exampleKo": "욕조 배수구로 물이 쫙 빠져나가듯 신체적·정신적 에너지가 0이 되어 허탈한 상태입니다."
   },
   {
     "id": "expr-emot-020",
@@ -34405,7 +35563,7 @@
     },
     "explanation": "층간소음, 끊임없는 딸깍거림, 얄미운 잔소리에 환장할 것 같을 때 쓰는 표현입니다.",
     "collocation": "noise driving me up the wall",
-    "audioSentence": "driving the teacher crazy",
+    "audioSentence": "That dripping kitchen faucet is driving me up the wall!",
     "dialogue": [
       {
         "speaker": "Leo",
@@ -34451,7 +35609,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-05",
     "unitTitleKo": "좌절과 에너지 방전",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "That dripping kitchen faucet is driving me up the wall!",
+    "exampleKo": "너무 짜증이 나서 스파이더맨처럼 벽을 타고 기어오르고 싶을 만큼 돌아버리게 만드는 상태입니다."
   },
   {
     "id": "expr-emot-021",
@@ -34466,7 +35626,7 @@
     },
     "explanation": "큰 빚을 다 갚았거나, 중대한 시험이나 수술이 무사히 끝났을 때 씁니다.",
     "collocation": "took a weight off my chest",
-    "audioSentence": "feel such a weight lifted",
+    "audioSentence": "Passing that bar exam felt like a huge weight off my shoulders.",
     "dialogue": [
       {
         "speaker": "Liam",
@@ -34512,7 +35672,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-06",
     "unitTitleKo": "안도와 깊은 감사",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Passing that bar exam felt like a huge weight off my shoulders.",
+    "exampleKo": "무거운 역기나 배낭이 어깨에서 쿵 내려앉아 날아갈 듯 가벼워진 안도감을 말합니다."
   },
   {
     "id": "expr-emot-022",
@@ -34527,7 +35689,7 @@
     },
     "explanation": "위험한 순간을 아슬아슬하게 넘겼을 때 전 세계인이 공통으로 짓는 제스처입니다.",
     "collocation": "breathed a collective sigh of relief",
-    "audioSentence": "breathe easy again",
+    "audioSentence": "We all breathed a sigh of relief when the lost toddler was found.",
     "dialogue": [
       {
         "speaker": "Pilot",
@@ -34573,7 +35735,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-06",
     "unitTitleKo": "안도와 깊은 감사",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "We all breathed a sigh of relief when the lost toddler was found.",
+    "exampleKo": "참았던 숨을 후- 하고 길게 내쉬며 가슴을 쓸어내리는 신체적 안도 반응입니다."
   },
   {
     "id": "expr-emot-023",
@@ -34588,7 +35752,7 @@
     },
     "explanation": "생명의 은인, 위기에서 구해준 스승이나 동료에게 전하는 가장 정중하고 진심 어린 표현입니다.",
     "collocation": "words cannot express my gratitude",
-    "audioSentence": "can't thank you enough for your generosity",
+    "audioSentence": "You saved my life; I truly cannot thank you enough.",
     "dialogue": [
       {
         "speaker": "Traveler",
@@ -34634,7 +35798,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-06",
     "unitTitleKo": "안도와 깊은 감사",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "You saved my life; I truly cannot thank you enough.",
+    "exampleKo": "어떤 감사의 말로도 그 은혜의 깊이를 다 채울 수 없을 만큼 극진한 고마움을 전합니다."
   },
   {
     "id": "expr-emot-024",
@@ -34649,7 +35815,7 @@
     },
     "explanation": "자서전, 헌사, 수상 소감에서 인생의 은인에게 바치는 최고의 헌사입니다.",
     "collocation": "forever indebted to someone's guidance",
-    "audioSentence": "deeply indebted to the community",
+    "audioSentence": "I am forever indebted to the surgeon who restored my eyesight.",
     "dialogue": [
       {
         "speaker": "Author",
@@ -34695,7 +35861,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-06",
     "unitTitleKo": "안도와 깊은 감사",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "I am forever indebted to the surgeon who restored my eyesight.",
+    "exampleKo": "금전적 빚(debt)처럼 평생 갚아도 모자랄 큰 은혜와 헌신을 마음에 깊이 새긴 상태입니다."
   },
   {
     "id": "expr-emot-025",
@@ -34710,7 +35878,7 @@
     },
     "explanation": "기습적인 질문이나 돌발 행동에 말문이 턱 막혔을 때의 당혹감을 세련되게 표현합니다.",
     "collocation": "taken aback by the sudden hostility",
-    "audioSentence": "visibly taken aback",
+    "audioSentence": "She was taken aback by his blunt question during the interview.",
     "dialogue": [
       {
         "speaker": "Interviewer",
@@ -34756,7 +35924,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-07",
     "unitTitleKo": "경악과 초월적 충격",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "She was taken aback by his blunt question during the interview.",
+    "exampleKo": "돌풍을 맞은 돛단배가 뒤로 확 밀려나듯 예상치 못한 무례함이나 발언에 순간 멍해질 때 씁니다."
   },
   {
     "id": "expr-emot-026",
@@ -34771,7 +35941,7 @@
     },
     "explanation": "갑작스러운 연락, 뜻밖의 행운, 예기치 못한 비보에 일상적으로 쓰입니다.",
     "collocation": "arrived out of the blue",
-    "audioSentence": "a decision made out of the blue",
+    "audioSentence": "Out of the blue, my childhood friend called me after ten years.",
     "dialogue": [
       {
         "speaker": "Hannah",
@@ -34817,7 +35987,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-07",
     "unitTitleKo": "경악과 초월적 충격",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "Out of the blue, my childhood friend called me after ten years.",
+    "exampleKo": "구름 한 점 없는 맑은 푸른 하늘(blue sky)에서 벼락이 치듯 아무 예고 없이 불쑥 일어날 때 씁니다."
   },
   {
     "id": "expr-emot-027",
@@ -34832,7 +36004,7 @@
     },
     "explanation": "돌발 질문, 기습 공격, 기습 세무조사에 대비 없이 당했을 때의 충격입니다.",
     "collocation": "caught off guard by the question",
-    "audioSentence": "never let yourself be caught off guard",
+    "audioSentence": "The sudden tax audit caught the business owners completely off guard.",
     "dialogue": [
       {
         "speaker": "Reporter",
@@ -34878,7 +36050,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-07",
     "unitTitleKo": "경악과 초월적 충격",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "The sudden tax audit caught the business owners completely off guard.",
+    "exampleKo": "경비병(guard)이 경계를 풀고 딴청을 피우다 적의 기습에 허를 찔린 군사 용어에서 유래했습니다."
   },
   {
     "id": "expr-emot-028",
@@ -34893,7 +36067,7 @@
     },
     "explanation": "대자연의 장관, 엄청난 슬픔, 깊은 감동을 묘사할 때 최고의 찬사로 쓰입니다.",
     "collocation": "grateful beyond words",
-    "audioSentence": "shocked beyond words",
+    "audioSentence": "The beauty of the Grand Canyon sunrise was simply beyond words.",
     "dialogue": [
       {
         "speaker": "Traveler",
@@ -34939,7 +36113,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-07",
     "unitTitleKo": "경악과 초월적 충격",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "The beauty of the Grand Canyon sunrise was simply beyond words.",
+    "exampleKo": "사전의 단어(words)의 경계를 넘어설 만큼 언어의 표현력을 초월한 경이로움이나 충격입니다."
   },
   {
     "id": "expr-emot-029",
@@ -34954,7 +36130,7 @@
     },
     "explanation": "연구실의 학자, 무대 위의 배우, 요리하는 셰프처럼 자신감이 뿜어져 나올 때 씁니다.",
     "collocation": "in his element on stage",
-    "audioSentence": "thrive in one's element",
+    "audioSentence": "Put her in front of a piano, and she is truly in her element.",
     "dialogue": [
       {
         "speaker": "Audience",
@@ -35000,7 +36176,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-08",
     "unitTitleKo": "당당한 자신감과 자존감",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Put her in front of a piano, and she is truly in her element.",
+    "exampleKo": "물고기가 물(자연 원소) 속에 있듯 자신이 가장 좋아하고 잘하는 환경에서 빛나는 상태입니다."
   },
   {
     "id": "expr-emot-030",
@@ -35061,7 +36239,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-08",
     "unitTitleKo": "당당한 자신감과 자존감",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Walk out there and own it.",
+    "exampleKo": "누가 뭐라 하든 내 것이라 인정하고 당당하게 내 것으로 소화해 낼 때 씁니다."
   },
   {
     "id": "expr-emot-031",
@@ -35122,7 +36302,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-08",
     "unitTitleKo": "당당한 자신감과 자존감",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Typing is second nature to coders.",
+    "exampleKo": "태어날 때부터 가진 본능(제1의 천성)처럼 오랜 훈련으로 생각조차 거치지 않고 저절로 될 때 씁니다."
   },
   {
     "id": "expr-emot-032",
@@ -35137,7 +36319,7 @@
     },
     "explanation": "흔들림 없는 자신감, 불굴의 신념, 굳건한 평정심을 수식하는 품격 높은 단어입니다.",
     "collocation": "unshakeable confidence",
-    "audioSentence": "an unshakeable belief in justice",
+    "audioSentence": "Nelson Mandela maintained an unshakeable faith in human freedom.",
     "dialogue": [
       {
         "speaker": "Journalist",
@@ -35183,7 +36365,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-08",
     "unitTitleKo": "당당한 자신감과 자존감",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Nelson Mandela maintained an unshakeable faith in human freedom.",
+    "exampleKo": "어떤 강풍이나 지진에도 결코 흔들리지 않는 바위 같은 멘탈과 신념을 가리킵니다."
   },
   {
     "id": "expr-emot-033",
@@ -35198,7 +36382,7 @@
     },
     "explanation": "요즘 세대가 가장 자주 쓰는 감정 신조어로, 형용사 cringe-worthy로도 쓰입니다.",
     "collocation": "so cringe to watch",
-    "audioSentence": "cringe at old photos",
+    "audioSentence": "I cringed when I watched my high school theater audition tape.",
     "dialogue": [
       {
         "speaker": "Alex",
@@ -35244,7 +36428,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-09",
     "unitTitleKo": "어색함과 대리 수치심",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "I cringed when I watched my high school theater audition tape.",
+    "exampleKo": "극도의 민망함이나 흑역사로 인해 얼굴 근육과 온몸이 오그라들 때 씁니다."
   },
   {
     "id": "expr-emot-034",
@@ -35259,7 +36445,7 @@
     },
     "explanation": "성격 급한 상사나 예민한 가족 구성원의 기분을 거스를까 봐 숨죽일 때 쓰는 완벽한 비유입니다.",
     "collocation": "walking on eggshells around him",
-    "audioSentence": "tired of walking on eggshells",
+    "audioSentence": "Whenever the boss is in a bad mood, the entire office walks on eggshells.",
     "dialogue": [
       {
         "speaker": "Employee",
@@ -35305,7 +36491,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-09",
     "unitTitleKo": "어색함과 대리 수치심",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "Whenever the boss is in a bad mood, the entire office walks on eggshells.",
+    "exampleKo": "깨지기 쉬운 달걀 껍데기(eggshells) 위를 밟듯 상대방이 화낼까 봐 조마조마하게 눈치를 살필 때 씁니다."
   },
   {
     "id": "expr-emot-035",
@@ -35320,7 +36508,7 @@
     },
     "explanation": "한국어의 '대리 수치심'에 정확히 부합하는 최고의 현대 심리 표현입니다.",
     "collocation": "feel second-hand embarrassment",
-    "audioSentence": "painful second-hand embarrassment",
+    "audioSentence": "Watching him forget his speech gave me severe second-hand embarrassment.",
     "dialogue": [
       {
         "speaker": "Viewer",
@@ -35366,7 +36554,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-09",
     "unitTitleKo": "어색함과 대리 수치심",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "Watching him forget his speech gave me severe second-hand embarrassment.",
+    "exampleKo": "실수한 사람은 가만히 있는데 보는 내가 쥐구멍에 들어가고 싶을 만큼 대신 부끄러울 때 씁니다."
   },
   {
     "id": "expr-emot-036",
@@ -35381,7 +36571,7 @@
     },
     "explanation": "소개팅, 엘리베이터 안, 썰렁한 농담 뒤에 흐르는 침묵의 표준 표현입니다.",
     "collocation": "break the awkward silence",
-    "audioSentence": "fall into awkward silence",
+    "audioSentence": "After he told a bad joke, an awkward silence filled the dining room.",
     "dialogue": [
       {
         "speaker": "Host",
@@ -35427,7 +36617,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-09",
     "unitTitleKo": "어색함과 대리 수치심",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "After he told a bad joke, an awkward silence filled the dining room.",
+    "exampleKo": "대화의 맥이 뚝 끊겨 누구도 입을 열지 못하고 시선만 이리저리 굴리는 민망한 정적을 말합니다."
   },
   {
     "id": "expr-emot-037",
@@ -35488,7 +36680,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-10",
     "unitTitleKo": "원어민 티키타카 추임새",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "A: Traffic is terrible. B: Tell me about it!",
+    "exampleKo": "더 설명하지 않아도 내가 그 고충을 뼈저리게 겪어봐서 너무나 잘 안다는 폭풍 공감의 맞장구입니다."
   },
   {
     "id": "expr-emot-038",
@@ -35549,7 +36743,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-10",
     "unitTitleKo": "원어민 티키타카 추임새",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "If you're tired, fair enough.",
+    "exampleKo": "상대방의 논리나 사정을 듣고 '충분히 공정하고 타당하다(fair)'며 흔쾌히 수긍할 때 씁니다."
   },
   {
     "id": "expr-emot-039",
@@ -35610,7 +36806,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-10",
     "unitTitleKo": "원어민 티키타카 추임새",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "Thanks for helping! — You bet!",
+    "exampleKo": "내 모든 돈을 걸(bet) 수 있을 만큼 한 치의 의심도 없이 확실하고 당연하다는 뜻입니다."
   },
   {
     "id": "expr-emot-040",
@@ -35671,7 +36869,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-10",
     "unitTitleKo": "원어민 티키타카 추임새",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "For what it's worth, you did your best.",
+    "exampleKo": "내 의견이나 정보가 얼마나 큰 가치(worth)가 있을지는 모르겠지만 조심스럽게 건넬 때 씁니다."
   },
   {
     "id": "expr-trav-001",
@@ -35686,7 +36886,7 @@
     },
     "explanation": "공항 보안 검색대와 탑승 게이트에서 가장 빈번하게 마주치는 기본 여행 용어입니다.",
     "collocation": "carry-on baggage allowance",
-    "audioSentence": "pack liquids in carry-on",
+    "audioSentence": "Make sure your carry-on baggage meets the airline size limits.",
     "dialogue": [
       {
         "speaker": "Agent",
@@ -35732,7 +36932,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-01",
     "unitTitleKo": "공항 수속과 기내 영어",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Make sure your carry-on baggage meets the airline size limits.",
+    "exampleKo": "화물칸에 부치는 위탁 수하물(checked baggage)과 대비되어 기내 좌석 위 선반에 직접 들고 타는 짐을 뜻합니다."
   },
   {
     "id": "expr-trav-002",
@@ -35747,7 +36949,7 @@
     },
     "explanation": "stopover(24시간 이상의 장기 체류)와 대비하여 24시간 이내의 환승 대기를 가리킵니다.",
     "collocation": "a long layover at the hub",
-    "audioSentence": "layover flight",
+    "audioSentence": "We have a three-hour layover in Dubai before heading to London.",
     "dialogue": [
       {
         "speaker": "Sam",
@@ -35793,7 +36995,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-01",
     "unitTitleKo": "공항 수속과 기내 영어",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "We have a three-hour layover in Dubai before heading to London.",
+    "exampleKo": "직항이 아닐 때 목적지로 가는 도중 중간 공항에 잠시 내려 다음 비행기를 갈아타는 대기 시간입니다."
   },
   {
     "id": "expr-trav-003",
@@ -35808,7 +37012,7 @@
     },
     "explanation": "여행자들에게 마법 같은 행운으로 통하는 기분 좋은 표현입니다.",
     "collocation": "got bumped to business class",
-    "audioSentence": "lucky bump at the gate",
+    "audioSentence": "The flight was overbooked, so I got bumped to first class!",
     "dialogue": [
       {
         "speaker": "Alex",
@@ -35854,7 +37058,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-01",
     "unitTitleKo": "공항 수속과 기내 영어",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "The flight was overbooked, so I got bumped to first class!",
+    "exampleKo": "이코노미 좌석이 초과 예약(overbooked)되었을 때 항공사의 보상이나 배려로 상위 등급으로 툭 올려질 때 씁니다."
   },
   {
     "id": "expr-trav-004",
@@ -35869,7 +37075,7 @@
     },
     "explanation": "기내 안내 방송에서 가장 귀 기울여 들어야 할 안전 핵심 단어입니다.",
     "collocation": "hit unexpected turbulence",
-    "audioSentence": "fasten seatbelt during turbulence",
+    "audioSentence": "Please fasten your seatbelts as we are experiencing mild turbulence.",
     "dialogue": [
       {
         "speaker": "Flight Attendant",
@@ -35915,7 +37121,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-01",
     "unitTitleKo": "공항 수속과 기내 영어",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Please fasten your seatbelts as we are experiencing mild turbulence.",
+    "exampleKo": "공기의 기류 불안정으로 인해 항공기가 덜컹거리며 위아래로 요동치는 비행 현상입니다."
   },
   {
     "id": "expr-trav-005",
@@ -35930,7 +37138,7 @@
     },
     "explanation": "free of charge보다 호텔리어들이 훨씬 더 즐겨 쓰는 고급 호스피탈리티 표현입니다.",
     "collocation": "receive a complimentary upgrade to a suite",
-    "audioSentence": "complimentary breakfast included",
+    "audioSentence": "As a honeymoon special, the hotel offered us a complimentary upgrade.",
     "dialogue": [
       {
         "speaker": "Front Desk",
@@ -35976,7 +37184,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-02",
     "unitTitleKo": "호텔 체크인과 투숙 에티켓",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "As a honeymoon special, the hotel offered us a complimentary upgrade.",
+    "exampleKo": "complimentary는 '칭찬'의 뜻이 아니라 호텔/항공업계에서 '무료로 제공되는 호의'를 뜻하는 핵심 품격 어휘입니다."
   },
   {
     "id": "expr-trav-006",
@@ -35991,7 +37201,7 @@
     },
     "explanation": "장거리 비행 후 피곤할 때 로비에서 정중하게 문의할 수 있는 필수 표현입니다.",
     "collocation": "request early check-in",
-    "audioSentence": "subject to room availability",
+    "audioSentence": "Our flight arrived at 8 AM, so we requested an early check-in.",
     "dialogue": [
       {
         "speaker": "Guest",
@@ -36037,7 +37247,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-02",
     "unitTitleKo": "호텔 체크인과 투숙 에티켓",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "Our flight arrived at 8 AM, so we requested an early check-in.",
+    "exampleKo": "오후 3시 정규 입실 시간 이전에 호텔에 도착하여 방이 비어 있을 때 먼저 입실하는 서비스를 말합니다."
   },
   {
     "id": "expr-trav-007",
@@ -36052,7 +37264,7 @@
     },
     "explanation": "도어 손잡이에 거는 'Do Not Disturb' 또는 'Please Make Up Room'과 연동되는 기본 호텔 용어입니다.",
     "collocation": "call housekeeping for fresh towels",
-    "audioSentence": "housekeeping service daily",
+    "audioSentence": "Could you send housekeeping to replenish towels in room 402?",
     "dialogue": [
       {
         "speaker": "Guest",
@@ -36098,7 +37310,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-02",
     "unitTitleKo": "호텔 체크인과 투숙 에티켓",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "Could you send housekeeping to replenish towels in room 402?",
+    "exampleKo": "호텔에서 객실 청소, 침구 정리, 어메니티 채우기를 전담하는 부서 및 서비스를 칭합니다."
   },
   {
     "id": "expr-trav-008",
@@ -36113,7 +37327,7 @@
     },
     "explanation": "미국, 멕시코 등의 유명 휴양지 호텔 예약 시 결제 단계에서 꼭 확인해야 하는 비용입니다.",
     "collocation": "mandatory resort fee per night",
-    "audioSentence": "amenities covered by resort fee",
+    "audioSentence": "Be aware that many Las Vegas hotels charge a mandatory resort fee.",
     "dialogue": [
       {
         "speaker": "Tourist",
@@ -36159,7 +37373,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-02",
     "unitTitleKo": "호텔 체크인과 투숙 에티켓",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "Be aware that many Las Vegas hotels charge a mandatory resort fee.",
+    "exampleKo": "기본 객실 요금 외에 와이파이, 수영장, 피트니스 등의 이용 명목으로 1박당 의무 부과되는 별도 요금입니다."
   },
   {
     "id": "expr-trav-009",
@@ -36174,7 +37390,7 @@
     },
     "explanation": "'We are two people' 대신 원어민처럼 'A table for two, please'로 깔끔하게 말합니다.",
     "collocation": "table for two please",
-    "audioSentence": "reserve a table for four",
+    "audioSentence": "Good evening! We'd like a table for two near the window, please.",
     "dialogue": [
       {
         "speaker": "Host",
@@ -36220,7 +37436,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-03",
     "unitTitleKo": "식당 주문과 미식 취향",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Good evening! We'd like a table for two near the window, please.",
+    "exampleKo": "식당에 들어서자마자 매니저(호스트)에게 인원수를 알릴 때 가장 먼저 말하는 자연스러운 정형구입니다."
   },
   {
     "id": "expr-trav-010",
@@ -36235,7 +37453,7 @@
     },
     "explanation": "칼로리 조절이나 눅눅함을 피하고 싶은 전 세계 미식가들의 대표 주문 꿀팁입니다.",
     "collocation": "dressing on the side please",
-    "audioSentence": "sauce on the side",
+    "audioSentence": "I'll have the Caesar salad, but with the dressing on the side, please.",
     "dialogue": [
       {
         "speaker": "Server",
@@ -36281,7 +37499,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-03",
     "unitTitleKo": "식당 주문과 미식 취향",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "I'll have the Caesar salad, but with the dressing on the side, please.",
+    "exampleKo": "샐러드나 소스가 음식 위에 흠뻑 뿌려져 나오는 대신 작은 소스 종지에 따로 분리해서 달라는 요청입니다."
   },
   {
     "id": "expr-trav-011",
@@ -36296,7 +37516,7 @@
     },
     "explanation": "글로벌 비즈니스 만찬이나 고급 레스토랑에서 셰프와 서버가 가장 중시하는 안내입니다.",
     "collocation": "inform server of dietary restrictions",
-    "audioSentence": "accommodate dietary needs",
+    "audioSentence": "Does anyone at your table have any allergies or dietary restrictions?",
     "dialogue": [
       {
         "speaker": "Server",
@@ -36342,7 +37562,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-03",
     "unitTitleKo": "식당 주문과 미식 취향",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Does anyone at your table have any allergies or dietary restrictions?",
+    "exampleKo": "종교적 이유(할랄, 코셔), 건강상 알레르기(땅콩, 글루텐), 신념(비건) 등 식단에서 배제해야 하는 제한 요건입니다."
   },
   {
     "id": "expr-trav-012",
@@ -36357,7 +37579,7 @@
     },
     "explanation": "음식이 너무 맛있을 때 셰프에게 감사를 표하는 최고의 미식 찬사입니다.",
     "collocation": "seared salmon cooked to perfection",
-    "audioSentence": "tender and cooked to perfection",
+    "audioSentence": "The ribeye steak was tender, juicy, and cooked to perfection.",
     "dialogue": [
       {
         "speaker": "Waiter",
@@ -36403,7 +37625,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-03",
     "unitTitleKo": "식당 주문과 미식 취향",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "The ribeye steak was tender, juicy, and cooked to perfection.",
+    "exampleKo": "스테이크나 해산물이 타지도 덜 익지도 않고 셰프의 장인정신으로 황금 비율로 알맞게 익은 상태를 극찬할 때 씁니다."
   },
   {
     "id": "expr-trav-013",
@@ -36464,7 +37688,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-04",
     "unitTitleKo": "계산과 글로벌 팁 문화",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Can we split the bill?",
+    "exampleKo": "식사비 총액을 인원수대로 균등하게 1/N로 나누어 지불할 때 씁니다."
   },
   {
     "id": "expr-trav-014",
@@ -36525,7 +37751,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-04",
     "unitTitleKo": "계산과 글로벌 팁 문화",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "This round is on the house.",
+    "exampleKo": "식당(house)의 지붕이 손님을 대접하듯 주인이나 매니저가 무료 서비스로 기분 좋게 낼 때 씁니다."
   },
   {
     "id": "expr-trav-015",
@@ -36540,7 +37768,7 @@
     },
     "explanation": "북미 문화권 여행 시 식당 문화의 가장 핵심적인 글로벌 상식입니다.",
     "collocation": "leave a generous tip for good service",
-    "audioSentence": "tip etiquette in restaurants",
+    "audioSentence": "In the United States, it is customary to leave a tip of 18 to 20 percent.",
     "dialogue": [
       {
         "speaker": "Tourist",
@@ -36586,7 +37814,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-04",
     "unitTitleKo": "계산과 글로벌 팁 문화",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "In the United States, it is customary to leave a tip of 18 to 20 percent.",
+    "exampleKo": "테이블을 전담해 준 서버의 노고에 감사하며 식사 금액의 일정 비율을 팁으로 결제하거나 테이블에 남길 때 씁니다."
   },
   {
     "id": "expr-trav-016",
@@ -36601,7 +37831,7 @@
     },
     "explanation": "멋지게 한턱 쏘거나 비즈니스 접대에서 호방하게 계산할 때 쓰는 신사적인 표현입니다.",
     "collocation": "cover the bill",
-    "audioSentence": "insist on covering the check",
+    "audioSentence": "Put your wallets away, guys; I'll cover the check tonight.",
     "dialogue": [
       {
         "speaker": "David",
@@ -36647,7 +37877,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-04",
     "unitTitleKo": "계산과 글로벌 팁 문화",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Put your wallets away, guys; I'll cover the check tonight.",
+    "exampleKo": "식사비 계산서(check)를 내 지갑으로 완전히 덮어버리듯(cover) 일행의 식사비를 혼자 전액 부담할 때 씁니다."
   },
   {
     "id": "expr-trav-017",
@@ -36662,7 +37894,7 @@
     },
     "explanation": "호텔 위치 선정, 부동산 매물, 여행 일정 안내에서 가장 중요하게 확인하는 표현입니다.",
     "collocation": "easy walking distance",
-    "audioSentence": "located within walking distance",
+    "audioSentence": "The subway station and museum are both within walking distance of the hotel.",
     "dialogue": [
       {
         "speaker": "Tourist",
@@ -36708,7 +37940,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-05",
     "unitTitleKo": "길 찾기와 현지 교통",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "The subway station and museum are both within walking distance of the hotel.",
+    "exampleKo": "차나 버스를 타지 않고 가벼운 도보로 5~10분 안에 도착할 수 있는 편리한 접근성을 뜻합니다."
   },
   {
     "id": "expr-trav-018",
@@ -36723,7 +37957,7 @@
     },
     "explanation": "도시 대중교통 여행 시 복잡한 노선도에서 길을 찾을 때 빠질 수 없는 필수 어휘입니다.",
     "collocation": "major transfer station",
-    "audioSentence": "transfer to the blue line",
+    "audioSentence": "You need to change from Line 2 to Line 4 at the next transfer station.",
     "dialogue": [
       {
         "speaker": "Passenger",
@@ -36769,7 +38003,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-05",
     "unitTitleKo": "길 찾기와 현지 교통",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "You need to change from Line 2 to Line 4 at the next transfer station.",
+    "exampleKo": "서로 다른 지하철 호선이나 기차 노선이 교차하여 다른 열차로 갈아탈 수 있는 대형 역을 말합니다."
   },
   {
     "id": "expr-trav-019",
@@ -36784,7 +38020,7 @@
     },
     "explanation": "운전 내비게이션, 도보 길 찾기뿐 아니라 '인생의 먼 길을 돌아가다'는 은유로도 쓰입니다.",
     "collocation": "take a scenic detour",
-    "audioSentence": "forced to take a detour",
+    "audioSentence": "Because of construction on Main Street, we had to take a detour.",
     "dialogue": [
       {
         "speaker": "Driver",
@@ -36830,7 +38066,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-05",
     "unitTitleKo": "길 찾기와 현지 교통",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Because of construction on Main Street, we had to take a detour.",
+    "exampleKo": "직진 도로가 공사나 사고로 막혀 옆 골목길이나 우회 도로로 멀리 돌아서 갈 때 씁니다."
   },
   {
     "id": "expr-trav-020",
@@ -36845,7 +38083,7 @@
     },
     "explanation": "미국식 crosswalk, 영국식 zebra crossing / pedestrian crossing으로 해외 도로 안전 표지판의 핵심입니다.",
     "collocation": "cross at the pedestrian crossing",
-    "audioSentence": "pedestrian crossing ahead",
+    "audioSentence": "Always use the pedestrian crossing and wait for the green walk signal.",
     "dialogue": [
       {
         "speaker": "Guide",
@@ -36891,7 +38129,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-05",
     "unitTitleKo": "길 찾기와 현지 교통",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Always use the pedestrian crossing and wait for the green walk signal.",
+    "exampleKo": "보행자(pedestrian)들이 안전하게 차도를 건널 수 있도록 아스팔트 위에 흰 줄무늬로 그어놓은 건널목입니다."
   },
   {
     "id": "expr-trav-021",
@@ -36952,7 +38192,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-06",
     "unitTitleKo": "쇼핑과 피팅룸 에티켓",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Can I try this on?",
+    "exampleKo": "구매를 결정하기 전 피팅룸(fitting room)에서 옷이나 신발의 사이즈와 어울림을 확인하려 착용해 볼 때 씁니다."
   },
   {
     "id": "expr-trav-022",
@@ -36967,7 +38209,7 @@
     },
     "explanation": "해외 쇼핑 시 'Final Sale(교환 환불 불가)'인지 확인하는 핵심 기준입니다.",
     "collocation": "check the store return policy",
-    "audioSentence": "30-day return policy with receipt",
+    "audioSentence": "What is your return policy if the item doesn't fit my daughter?",
     "dialogue": [
       {
         "speaker": "Customer",
@@ -37013,7 +38255,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-06",
     "unitTitleKo": "쇼핑과 피팅룸 에티켓",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "What is your return policy if the item doesn't fit my daughter?",
+    "exampleKo": "구매 후 마음이 바뀌거나 하자가 있을 때 영수증 지참 시 며칠 이내에 환불이나 교환이 가능한지 명시한 매장 규정입니다."
   },
   {
     "id": "expr-trav-023",
@@ -37028,7 +38272,7 @@
     },
     "explanation": "미국, 유럽 리테일 매장에서 영수증이 없거나 세일 품목일 때 자주 제안받는 조건입니다.",
     "collocation": "issue store credit for returns",
-    "audioSentence": "redeem store credit online",
+    "audioSentence": "We cannot refund cash for sale items, but we can issue store credit.",
     "dialogue": [
       {
         "speaker": "Shopper",
@@ -37074,7 +38318,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-06",
     "unitTitleKo": "쇼핑과 피팅룸 에티켓",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "We cannot refund cash for sale items, but we can issue store credit.",
+    "exampleKo": "반품 시 현금이나 카드 취소 대신 해당 매장에서 다른 물건을 살 수 있도록 바우처나 포인트 카드로 환급해 주는 제도입니다."
   },
   {
     "id": "expr-trav-024",
@@ -37089,7 +38335,7 @@
     },
     "explanation": "해외 매장에서 가격이 적혀 있지 않을 때 점원에게 가격을 물어보는 기초 어휘입니다.",
     "collocation": "check the price tag",
-    "audioSentence": "a hefty price tag",
+    "audioSentence": "Excuse me, there is no price tag on this ceramic mug.",
     "dialogue": [
       {
         "speaker": "Shopper",
@@ -37135,7 +38381,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-06",
     "unitTitleKo": "쇼핑과 피팅룸 에티켓",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Excuse me, there is no price tag on this ceramic mug.",
+    "exampleKo": "물건에 붙어 있는 가격 스티커나 라벨을 가리키며, 비유적으로는 '어떤 일의 혹독한 대가'로도 쓰입니다."
   },
   {
     "id": "expr-trav-025",
@@ -37150,7 +38398,7 @@
     },
     "explanation": "줄여서 OTC 의약품이라고도 하며 여행자 비상약 구매 시 가장 핵심적인 구분 기준입니다.",
     "collocation": "over-the-counter painkiller",
-    "audioSentence": "OTC medication",
+    "audioSentence": "You do not need a prescription for aspirin; it is sold over-the-counter at any pharmacy.",
     "dialogue": [
       {
         "speaker": "Traveler",
@@ -37196,7 +38444,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-07",
     "unitTitleKo": "응급 상황과 약국 소통",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "You do not need a prescription for aspirin; it is sold over-the-counter at any pharmacy.",
+    "exampleKo": "아스피린은 처방전이 필요 없으며 어떤 약국에서나 처방전 없이 일반의약품(over-the-counter)으로 판매됩니다."
   },
   {
     "id": "expr-trav-026",
@@ -37211,7 +38461,7 @@
     },
     "explanation": "약국이나 기내에서 승무원에게 위장약을 달라고 요청할 때 가장 정확한 증상 표현입니다.",
     "collocation": "medicine for upset stomach",
-    "audioSentence": "suffering from an upset stomach",
+    "audioSentence": "I think I ate something spoiled; I have an upset stomach.",
     "dialogue": [
       {
         "speaker": "Flight Attendant",
@@ -37257,7 +38507,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-07",
     "unitTitleKo": "응급 상황과 약국 소통",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "I think I ate something spoiled; I have an upset stomach.",
+    "exampleKo": "물갈이나 낯선 향신료로 인해 소화가 안 되고 배가 아프거나 속이 메스꺼운 소화기 트러블을 점잖게 표현합니다."
   },
   {
     "id": "expr-trav-027",
@@ -37272,7 +38524,7 @@
     },
     "explanation": "해외 병원비가 수백만 원에 달할 수 있는 만큼 출국 전 필수 준비물입니다.",
     "collocation": "claim medical expenses on travel insurance",
-    "audioSentence": "buy travel insurance online",
+    "audioSentence": "Always purchase comprehensive travel insurance before visiting abroad.",
     "dialogue": [
       {
         "speaker": "Agent",
@@ -37318,7 +38570,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-07",
     "unitTitleKo": "응급 상황과 약국 소통",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "Always purchase comprehensive travel insurance before visiting abroad.",
+    "exampleKo": "해외에서 갑작스러운 질병, 상해, 항공기 결항, 수하물 분실 등의 손해를 보상해 주는 여행 필수 방패막입니다."
   },
   {
     "id": "expr-trav-028",
@@ -37333,7 +38587,7 @@
     },
     "explanation": "약국에서 약사가 'Do you have a prescription?'이라고 물을 때의 핵심 어휘입니다.",
     "collocation": "fill a doctor's prescription",
-    "audioSentence": "prescription medicine",
+    "audioSentence": "Antibiotics cannot be purchased without a valid doctor's prescription.",
     "dialogue": [
       {
         "speaker": "Patient",
@@ -37379,7 +38633,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-07",
     "unitTitleKo": "응급 상황과 약국 소통",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "Antibiotics cannot be purchased without a valid doctor's prescription.",
+    "exampleKo": "전문 의약품(항생제, 수면제 등)을 조제받기 위해 의사가 발행한 정식 약 조제 지시서입니다."
   },
   {
     "id": "expr-trav-029",
@@ -37394,7 +38650,7 @@
     },
     "explanation": "단순한 안내를 넘어 영국 문화를 상징하는 대표적 관용 표현이자 기념품 티셔츠 문구입니다.",
     "collocation": "Mind the gap please.",
-    "audioSentence": "announced to mind the gap",
+    "audioSentence": "Mind the gap between the train door and the platform edge.",
     "dialogue": [
       {
         "speaker": "Automated Voice",
@@ -37440,7 +38696,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-08",
     "unitTitleKo": "글로벌 매너와 에티켓",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Mind the gap between the train door and the platform edge.",
+    "exampleKo": "영국 런던 언더그라운드(지하철)에서 유래하여 전 세계 전철 승강장의 발 빠짐 주의 시그니처 멘트입니다."
   },
   {
     "id": "expr-trav-030",
@@ -37455,7 +38713,7 @@
     },
     "explanation": "'You go first'보다 훨씬 더 신사적이고 정중한 글로벌 에티켓의 정수입니다.",
     "collocation": "No, please, after you.",
-    "audioSentence": "insisted by saying after you",
+    "audioSentence": "Please, after you! I'm in no rush to enter the elevator.",
     "dialogue": [
       {
         "speaker": "Gentleman",
@@ -37501,7 +38759,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-08",
     "unitTitleKo": "글로벌 매너와 에티켓",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Please, after you! I'm in no rush to enter the elevator.",
+    "exampleKo": "엘리베이터 문이 열리거나 좁은 통로를 지날 때 상대방에게 순서를 먼저 양보하며 부드럽게 손짓하는 품격 있는 매너입니다."
   },
   {
     "id": "expr-trav-031",
@@ -37516,7 +38776,7 @@
     },
     "explanation": "영미권에서 Excuse me와 함께 가장 교양 있는 어투로 평가받습니다.",
     "collocation": "pardon me for interrupting",
-    "audioSentence": "Pardon me?",
+    "audioSentence": "Pardon me, could you please point me toward the nearest subway station?",
     "dialogue": [
       {
         "speaker": "Tourist",
@@ -37562,7 +38822,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-08",
     "unitTitleKo": "글로벌 매너와 에티켓",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Pardon me, could you please point me toward the nearest subway station?",
+    "exampleKo": "실례합니다(Pardon me), 가장 가까운 지하철역이 어느 쪽인지 알려주시겠어요?"
   },
   {
     "id": "expr-trav-032",
@@ -37577,7 +38839,7 @@
     },
     "explanation": "영미권 문화에서는 RSVP 요청에 반드시 참석/불참 여부를 기한 내에 답장해 주는 것이 철칙입니다.",
     "collocation": "RSVP by the deadline",
-    "audioSentence": "send an RSVP email",
+    "audioSentence": "Please RSVP by Friday so we can finalize the catering numbers.",
     "dialogue": [
       {
         "speaker": "Host",
@@ -37623,7 +38885,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-08",
     "unitTitleKo": "글로벌 매너와 에티켓",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Please RSVP by Friday so we can finalize the catering numbers.",
+    "exampleKo": "프랑스어 'Répondez s'il vous plaît(회신해 주시기 바랍니다)'의 약어로 파티나 만찬 초대장에 필수적으로 적혀 있습니다."
   },
   {
     "id": "expr-trav-033",
@@ -37638,7 +38902,7 @@
     },
     "explanation": "현지인들만 아는 숨은 맛집이나 인적이 드문 숨겨진 보석 같은 명소를 칭송할 때 최고의 찬사입니다.",
     "collocation": "travel off the beaten path",
-    "audioSentence": "quaint hideaway off the beaten path",
+    "audioSentence": "I prefer exploring quaint villages that are well off the beaten path.",
     "dialogue": [
       {
         "speaker": "Traveler",
@@ -37684,7 +38948,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-09",
     "unitTitleKo": "명소 탐방과 문화 투어",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "I prefer exploring quaint villages that are well off the beaten path.",
+    "exampleKo": "수많은 관광객이 밟고 지나가 다져진 닳고 닳은 길(beaten path)을 벗어나 호젓한 비경을 찾아갈 때 씁니다."
   },
   {
     "id": "expr-trav-034",
@@ -37699,7 +38965,7 @@
     },
     "explanation": "지리 길 찾기의 기준점이자 도시 관광의 필수 코스입니다.",
     "collocation": "visit historical landmarks",
-    "audioSentence": "designated as a national landmark",
+    "audioSentence": "The Eiffel Tower and the Colosseum are world-renowned historical landmarks.",
     "dialogue": [
       {
         "speaker": "Guide",
@@ -37745,7 +39011,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-09",
     "unitTitleKo": "명소 탐방과 문화 투어",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "The Eiffel Tower and the Colosseum are world-renowned historical landmarks.",
+    "exampleKo": "먼 곳에서도 알아볼 수 있는 상징적인 건축물이나 한 도시의 정체성을 대표하는 역사적 명소입니다."
   },
   {
     "id": "expr-trav-035",
@@ -37760,7 +39028,7 @@
     },
     "explanation": "티켓 부스(ticket booth) 전면에 가장 크게 써 붙여 있는 필수 여행 어휘입니다.",
     "collocation": "pay the general admission fee",
-    "audioSentence": "free admission on Mondays",
+    "audioSentence": "Children under the age of six can enter the museum free of admission fee.",
     "dialogue": [
       {
         "speaker": "Visitor",
@@ -37806,7 +39074,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-09",
     "unitTitleKo": "명소 탐방과 문화 투어",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "Children under the age of six can enter the museum free of admission fee.",
+    "exampleKo": "미술관, 국립공원, 유적지 등에 들어갈 때 내는 공식적인 입장료입니다."
   },
   {
     "id": "expr-trav-036",
@@ -37821,7 +39091,7 @@
     },
     "explanation": "자유 여행에서 놓치기 쉬운 숨은 역사와 비하인드 스토리를 배울 때 필수적입니다.",
     "collocation": "book an English guided tour",
-    "audioSentence": "join a walking guided tour",
+    "audioSentence": "Taking a guided tour of the ruins helped us appreciate the rich history.",
     "dialogue": [
       {
         "speaker": "Tourist",
@@ -37867,7 +39137,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-09",
     "unitTitleKo": "명소 탐방과 문화 투어",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "Taking a guided tour of the ruins helped us appreciate the rich history.",
+    "exampleKo": "전문 문화 해설사(tour guide)의 깊이 있는 역사 설명과 안내를 들으며 명소를 탐방하는 알찬 투어입니다."
   },
   {
     "id": "expr-trav-037",
@@ -37882,7 +39154,7 @@
     },
     "explanation": "여권, 지갑, 스마트폰을 분실했을 때 가장 먼저 발걸음을 옮겨야 하는 생명의 센터입니다.",
     "collocation": "check the airport lost and found",
-    "audioSentence": "turn in an item to lost and found",
+    "audioSentence": "I accidentally left my camera on the tour bus; where is the lost and found?",
     "dialogue": [
       {
         "speaker": "Frantic Traveler",
@@ -37928,7 +39200,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-10",
     "unitTitleKo": "응급 상황과 위기 대처",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "I accidentally left my camera on the tour bus; where is the lost and found?",
+    "exampleKo": "공항, 기차역, 박물관 등에서 손님이 깜빡 두고 간 물건을 접수하고 찾아주는 안내 창구입니다."
   },
   {
     "id": "expr-trav-038",
@@ -37943,7 +39217,7 @@
     },
     "explanation": "대사관 긴급 여권 재발급이나 여행자 보험금 청구 시 경찰 신고서(Police Report) 사본이 필수 증빙입니다.",
     "collocation": "file a police report for insurance claim",
-    "audioSentence": "official police report copy",
+    "audioSentence": "If your passport or wallet was stolen, you must file a police report immediately.",
     "dialogue": [
       {
         "speaker": "Victim",
@@ -37989,7 +39263,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-10",
     "unitTitleKo": "응급 상황과 위기 대처",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "If your passport or wallet was stolen, you must file a police report immediately.",
+    "exampleKo": "소매치기나 절도를 당했을 때 현지 경찰서에 방문하여 피해 사실을 공식 문서로 작성·접수하는 행위입니다."
   },
   {
     "id": "expr-trav-039",
@@ -38004,7 +39280,7 @@
     },
     "explanation": "해외여행의 최종 안전망으로 모든 여행자가 수첩에 메모해 두어야 할 필수 정보입니다.",
     "collocation": "call the emergency embassy contact",
-    "audioSentence": "register with embassy",
+    "audioSentence": "Keep your home country's embassy contact saved on your phone during travels.",
     "dialogue": [
       {
         "speaker": "Citizen",
@@ -38050,7 +39326,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-10",
     "unitTitleKo": "응급 상황과 위기 대처",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "Keep your home country's embassy contact saved on your phone during travels.",
+    "exampleKo": "여권 분실, 체포, 대형 자연재해 등 국외 위급 상황 시 자국민을 보호해 주는 대사관 및 영사 콜센터의 연락망입니다."
   },
   {
     "id": "expr-trav-040",
@@ -38065,7 +39343,7 @@
     },
     "explanation": "여행 뉴스에서 기상 악화로 공항 바닥에 누워 있는 승객들을 보도할 때 단골로 등장하는 핵심 어휘입니다.",
     "collocation": "stranded in a foreign country",
-    "audioSentence": "stranded by floodwaters",
+    "audioSentence": "Hundreds of passengers were stranded at the airport due to the blizzard.",
     "dialogue": [
       {
         "speaker": "Reporter",
@@ -38111,9 +39389,12 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-10",
     "unitTitleKo": "응급 상황과 위기 대처",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "Hundreds of passengers were stranded at the airport due to the blizzard.",
+    "exampleKo": "폭설, 태풍, 항공기 파업 등으로 교통편이 올스톱되어 오도가도 못하고 고립된 절박한 상태를 말합니다."
   }
 ];
+
   window.NATIVE_EXPRESSIONS_MAP = {
   "expr-daily-001": {
     "id": "expr-daily-001",
@@ -38174,7 +39455,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-01",
     "unitTitleKo": "첫인상 & 침묵 깨기",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Telling a light joke is the best way to break the ice.",
+    "exampleKo": "침묵을 깨자는 직역보다는 얼음을 깨듯 냉랭함을 녹인다는 관용어 break the ice가 훨씬 자연스럽습니다."
   },
   "expr-daily-002": {
     "id": "expr-daily-002",
@@ -38235,7 +39518,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-01",
     "unitTitleKo": "첫인상 & 침묵 깨기",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "We met yesterday and hit it off immediately.",
+    "exampleKo": "처음 만나자마자 통했다는 원어민의 입에 붙은 표현은 hit it off입니다."
   },
   "expr-daily-003": {
     "id": "expr-daily-003",
@@ -38296,7 +39581,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-01",
     "unitTitleKo": "첫인상 & 침묵 깨기",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "He tried to make small talk while waiting in line.",
+    "exampleKo": "사소한 수다는 'small talk'라는 명사와 동사 'make'가 결합한 연어로 씁니다."
   },
   "expr-daily-004": {
     "id": "expr-daily-004",
@@ -38357,7 +39644,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-01",
     "unitTitleKo": "첫인상 & 침묵 깨기",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Surprisingly, the two of them have a lot in common.",
+    "exampleKo": "취향이나 생각이 같다는 말은 have something in common 관용구를 씁니다."
   },
   "expr-daily-005": {
     "id": "expr-daily-005",
@@ -38418,7 +39707,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-02",
     "unitTitleKo": "날씨와 하루 일상",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "I hope the rain stops and clears up before our trip.",
+    "exampleKo": "흐렸던 날씨가 맑게 갤 때는 구동사 clear up을 씁니다."
   },
   "expr-daily-006": {
     "id": "expr-daily-006",
@@ -38479,7 +39770,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-02",
     "unitTitleKo": "날씨와 하루 일상",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "My father has always been an early bird.",
+    "exampleKo": "원어민은 아침형 인간을 간결하게 an early bird, 올빼미형을 a night owl이라 부릅니다."
   },
   "expr-daily-007": {
     "id": "expr-daily-007",
@@ -38540,7 +39833,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-02",
     "unitTitleKo": "날씨와 하루 일상",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "It's past midnight; I think I'll turn in.",
+    "exampleKo": "go to bed 외에 원어민이 일상에서 정말 자주 쓰는 자연스러운 구동사가 turn in입니다."
   },
   "expr-daily-008": {
     "id": "expr-daily-008",
@@ -38601,7 +39896,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-02",
     "unitTitleKo": "날씨와 하루 일상",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "We left at 4 PM to beat the evening rush.",
+    "exampleKo": "출퇴근 시간이나 인파의 혼잡을 피한다는 표현은 beat the rush로 씁니다."
   },
   "expr-daily-009": {
     "id": "expr-daily-009",
@@ -38662,7 +39959,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-03",
     "unitTitleKo": "취미와 관심사 나누기",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "What kind of music are you into lately?",
+    "exampleKo": "원어민은 'My hobby is...'보다는 'I'm into...'라는 표현을 훨씬 더 즐겨 씁니다."
   },
   "expr-daily-010": {
     "id": "expr-daily-010",
@@ -38723,7 +40022,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-03",
     "unitTitleKo": "취미와 관심사 나누기",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "He decided to take up photography during vacation.",
+    "exampleKo": "새로운 취미나 활동을 시작할 때는 동사 take up을 씁니다."
   },
   "expr-daily-011": {
     "id": "expr-daily-011",
@@ -38784,7 +40085,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-03",
     "unitTitleKo": "취미와 관심사 나누기",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "I stayed up all night to binge-watch my favorite series.",
+    "exampleKo": "넷플릭스 등 OTT 시리즈를 몰아서 연속으로 볼 때는 binge-watch 단어를 씁니다."
   },
   "expr-daily-012": {
     "id": "expr-daily-012",
@@ -38845,7 +40148,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-03",
     "unitTitleKo": "취미와 관심사 나누기",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Working out at the gym helps me blow off steam.",
+    "exampleKo": "증기기관의 증기를 빼듯 쌓인 스트레스나 분노를 발산할 때 blow off steam을 씁니다."
   },
   "expr-daily-013": {
     "id": "expr-daily-013",
@@ -38906,7 +40211,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-04",
     "unitTitleKo": "약속 잡기 및 일정 조율",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "We usually hang out at the local coffee shop.",
+    "exampleKo": "성인에게 'play'는 어린아이 장난감을 갖고 놀거나 게임을 한다는 느낌을 주며, 어울려 노는 것은 hang out입니다."
   },
   "expr-daily-014": {
     "id": "expr-daily-014",
@@ -38967,7 +40274,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-04",
     "unitTitleKo": "약속 잡기 및 일정 조율",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Do you have time to grab a bite right now?",
+    "exampleKo": "가볍게 한 끼 식사를 챙겨 먹는 상황에서 grab a bite는 가장 흔한 생활 표현입니다."
   },
   "expr-daily-015": {
     "id": "expr-daily-015",
@@ -39028,7 +40337,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-04",
     "unitTitleKo": "약속 잡기 및 일정 조율",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "I'm not sure when I'll finish, so let's play it by ear.",
+    "exampleKo": "악보 없이 귀로 듣고 즉흥 연주하듯 상황에 맞춰 유연하게 결정한다는 표현입니다."
   },
   "expr-daily-016": {
     "id": "expr-daily-016",
@@ -39089,7 +40400,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-04",
     "unitTitleKo": "약속 잡기 및 일정 조율",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "I'll pencil you in for Friday, but let me know if things change.",
+    "exampleKo": "언제든 지울 수 있는 연필로 적어두듯 '임시로 일정을 픽스하다'는 pencil in입니다."
   },
   "expr-daily-017": {
     "id": "expr-daily-017",
@@ -39150,7 +40463,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-05",
     "unitTitleKo": "가벼운 안부와 근황",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Let's get together soon and catch up.",
+    "exampleKo": "오랜만에 만나 밀린 수다를 떤다는 표현은 동사 catch up이 가장 대표적입니다."
   },
   "expr-daily-018": {
     "id": "expr-daily-018",
@@ -39211,7 +40526,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-05",
     "unitTitleKo": "가벼운 안부와 근황",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Long time no see! What have you been up to?",
+    "exampleKo": "원어민이 근황을 물을 때 가장 친근하고 자연스럽게 입에 올리는 질문 패턴입니다."
   },
   "expr-daily-019": {
     "id": "expr-daily-019",
@@ -39272,7 +40589,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-05",
     "unitTitleKo": "가벼운 안부와 근황",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "I will keep you in the loop as soon as I hear anything.",
+    "exampleKo": "정보의 원(loop) 안에 넣어둔다는 뜻으로 소외되지 않게 소식을 전해달라는 표현입니다."
   },
   "expr-daily-020": {
     "id": "expr-daily-020",
@@ -39333,7 +40652,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-05",
     "unitTitleKo": "가벼운 안부와 근황",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Running into you here in Paris? What a small world!",
+    "exampleKo": "예상치 못한 장소에서 아는 사람을 우연히 마주쳤을 때 원어민의 감탄사입니다."
   },
   "expr-daily-021": {
     "id": "expr-daily-021",
@@ -39394,7 +40715,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-06",
     "unitTitleKo": "칭찬과 겸손한 리액션",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "That haircut looks really great on you.",
+    "exampleKo": "옷이나 모자, 색상이 특정인에게 어울린다는 표현은 'looks great on [person]'을 씁니다."
   },
   "expr-daily-022": {
     "id": "expr-daily-022",
@@ -39455,7 +40778,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-06",
     "unitTitleKo": "칭찬과 겸손한 리액션",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Everyone in the office speaks highly of her dedication.",
+    "exampleKo": "누군가를 높이 평가하고 칭찬한다는 격식 있는 표현은 speak highly of입니다."
   },
   "expr-daily-023": {
     "id": "expr-daily-023",
@@ -39516,7 +40841,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-06",
     "unitTitleKo": "칭찬과 겸손한 리액션",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "You think I speak English like a native? I'm flattered!",
+    "exampleKo": "기분 좋은 칭찬을 받았을 때 겸손하면서도 우아하게 감사함을 표하는 원어민의 정석 답변입니다."
   },
   "expr-daily-024": {
     "id": "expr-daily-024",
@@ -39577,7 +40904,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-06",
     "unitTitleKo": "칭찬과 겸손한 리액션",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Even though I dislike him, I have to give credit where it's due.",
+    "exampleKo": "정당한 성과나 공로를 올바르게 인정하자는 격언 같은 생활 표현입니다."
   },
   "expr-daily-025": {
     "id": "expr-daily-025",
@@ -39638,7 +40967,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-07",
     "unitTitleKo": "주말 계획과 여가",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "Let's put on some music and chill out.",
+    "exampleKo": "집에서 아무 걱정 없이 푹 쉰다는 캐주얼한 표현은 chill out입니다."
   },
   "expr-daily-026": {
     "id": "expr-daily-026",
@@ -39699,7 +41030,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-07",
     "unitTitleKo": "주말 계획과 여가",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "I spent the weekend sleeping to recharge my batteries.",
+    "exampleKo": "방전된 스마트폰 배터리를 충전하듯 심신의 에너지를 회복한다는 관용구입니다."
   },
   "expr-daily-027": {
     "id": "expr-daily-027",
@@ -39760,7 +41093,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-07",
     "unitTitleKo": "주말 계획과 여가",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "Since it's a holiday tomorrow, I'm going to sleep in.",
+    "exampleKo": "oversleep은 알람을 못 듣고 '지각하는 늦잠'이고, 주말에 알람 없이 '느긋하게 푹 자는 늦잠'은 sleep in입니다."
   },
   "expr-daily-028": {
     "id": "expr-daily-028",
@@ -39821,7 +41156,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-07",
     "unitTitleKo": "주말 계획과 여가",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "How do you usually unwind after a stressful day?",
+    "exampleKo": "팽팽하게 감긴 태엽을 풀듯 긴장을 푸는 동사 unwind는 휴식을 묘사할 때 품격 있는 표현입니다."
   },
   "expr-daily-029": {
     "id": "expr-daily-029",
@@ -39882,7 +41219,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-08",
     "unitTitleKo": "음식과 카페 주문 수다",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "If you have a sweet tooth, you'll love this bakery.",
+    "exampleKo": "단것을 유난히 좋아하는 식성을 가진 사람을 have a sweet tooth라고 부릅니다."
   },
   "expr-daily-030": {
     "id": "expr-daily-030",
@@ -39943,7 +41282,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-08",
     "unitTitleKo": "음식과 카페 주문 수다",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "He lives a busy life, always eating on the go.",
+    "exampleKo": "출근길이나 이동 중에 바쁘게 끼니나 커피를 챙길 때 on the go를 씁니다."
   },
   "expr-daily-031": {
     "id": "expr-daily-031",
@@ -40004,7 +41345,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-08",
     "unitTitleKo": "음식과 카페 주문 수다",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Nothing beats spicy tteokbokki as comfort food.",
+    "exampleKo": "추억이 깃들어 있거나 마음이 헛헛할 때 위로를 주는 음식을 영어로 comfort food라 합니다."
   },
   "expr-daily-032": {
     "id": "expr-daily-032",
@@ -40065,7 +41408,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-08",
     "unitTitleKo": "음식과 카페 주문 수다",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "That hot ramen really hit the spot after a cold hike.",
+    "exampleKo": "갈증이나 허기가 완벽하게 해소되어 '바로 이 맛이야!'라고 감탄할 때 hit the spot을 씁니다."
   },
   "expr-daily-033": {
     "id": "expr-daily-033",
@@ -40126,7 +41471,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-09",
     "unitTitleKo": "사소한 부탁과 도움",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "I'd be glad to give you a hand whenever you need it.",
+    "exampleKo": "손을 빌려준다는 말로 부담 없이 일손을 도와달라고 부탁할 때 give someone a hand를 씁니다."
   },
   "expr-daily-034": {
     "id": "expr-daily-034",
@@ -40187,7 +41534,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-09",
     "unitTitleKo": "사소한 부탁과 도움",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "Would you mind doing me a small favor?",
+    "exampleKo": "부탁을 청할 때 동사 do와 명사 favor를 조합한 정형적 표현입니다."
   },
   "expr-daily-035": {
     "id": "expr-daily-035",
@@ -40248,7 +41597,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-09",
     "unitTitleKo": "사소한 부탁과 도움",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "You saved my presentation today; I owe you one big time!",
+    "exampleKo": "도움을 받고 고마움을 표하며 다음엔 내가 은혜를 갚겠다고 할 때 I owe you one을 씁니다."
   },
   "expr-daily-036": {
     "id": "expr-daily-036",
@@ -40309,7 +41660,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-09",
     "unitTitleKo": "사소한 부탁과 도움",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "Sarah agreed to cover for me while I visit the dentist.",
+    "exampleKo": "동료가 자리를 비울 때 업무를 대신 봐준다는 말은 cover for [person]입니다."
   },
   "expr-daily-037": {
     "id": "expr-daily-037",
@@ -40370,7 +41723,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-10",
     "unitTitleKo": "깔끔한 대화 마무리",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "It was great talking, but I'd better get going.",
+    "exampleKo": "시계를 보며 자연스럽게 일어설 때 원어민들이 가장 예의 바르게 쓰는 퇴장 멘트입니다."
   },
   "expr-daily-038": {
     "id": "expr-daily-038",
@@ -40431,7 +41786,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-10",
     "unitTitleKo": "깔끔한 대화 마무리",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "It's already 7 PM; why don't we call it a day?",
+    "exampleKo": "오늘 할 분량을 마치고 '오늘은 이쯤 하자'고 마무리할 때 쓰는 관용구입니다."
   },
   "expr-daily-039": {
     "id": "expr-daily-039",
@@ -40492,7 +41849,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-10",
     "unitTitleKo": "깔끔한 대화 마무리",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "Make sure you keep in touch after you move.",
+    "exampleKo": "헤어질 때 '계속 연락하자'는 따뜻한 인사말은 keep in touch입니다."
   },
   "expr-daily-040": {
     "id": "expr-daily-040",
@@ -40553,7 +41912,9 @@
     "seriesTitleEn": "Daily Life & Casual Small Talk",
     "unitId": "unit-daily-10",
     "unitTitleKo": "깔끔한 대화 마무리",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "It was wonderful seeing you. Take care!",
+    "exampleKo": "원어민이 헤어질 때 건네는 가장 친근하고 따뜻한 작별 인사는 Take care입니다."
   },
   "expr-biz-001": {
     "id": "expr-biz-001",
@@ -40614,7 +41975,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-01",
     "unitTitleKo": "회의 시작과 안건 상정",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Let's grab a coffee and get down to business.",
+    "exampleKo": "사담을 마치고 결단력 있게 회의를 본론으로 이끌 때 쓰는 원어민 표준 표현입니다."
   },
   "expr-biz-002": {
     "id": "expr-biz-002",
@@ -40675,7 +42038,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-01",
     "unitTitleKo": "회의 시작과 안건 상정",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "I'd like to kick off today's session with a quick summary.",
+    "exampleKo": "프로젝트나 미팅을 에너지 넘치게 공식 개시할 때 kick off를 씁니다."
   },
   "expr-biz-003": {
     "id": "expr-biz-003",
@@ -40736,7 +42101,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-01",
     "unitTitleKo": "회의 시작과 안건 상정",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "What is the next topic on the agenda for today?",
+    "exampleKo": "회의에서 다루어질 공식 안건 목록을 on the agenda로 명확하게 표현합니다."
   },
   "expr-biz-004": {
     "id": "expr-biz-004",
@@ -40797,7 +42164,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-01",
     "unitTitleKo": "회의 시작과 안건 상정",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "We need to wrap up this discussion within ten minutes.",
+    "exampleKo": "회의나 프로젝트를 깔끔하게 끝맺을 때 wrap up을 씁니다."
   },
   "expr-biz-005": {
     "id": "expr-biz-005",
@@ -40858,7 +42227,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-02",
     "unitTitleKo": "완곡한 의견 제시와 동의",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "I called this briefing to ensure we are all on the same page.",
+    "exampleKo": "팀원 모두가 동일한 목표와 이해를 가졌다는 뜻의 대표적 비즈니스 관용어입니다."
   },
   "expr-biz-006": {
     "id": "expr-biz-006",
@@ -40919,7 +42290,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-02",
     "unitTitleKo": "완곡한 의견 제시와 동의",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "Her deep understanding of AI brings a lot to the table.",
+    "exampleKo": "협상 테이블이나 조직에 가치 있는 기여를 한다는 표현입니다."
   },
   "expr-biz-007": {
     "id": "expr-biz-007",
@@ -40980,7 +42353,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-02",
     "unitTitleKo": "완곡한 의견 제시와 동의",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "His presentation provided valuable food for thought.",
+    "exampleKo": "지적으로 곰곰이 곱씹어 볼 만한 지혜나 아이디어를 뜻합니다."
   },
   "expr-biz-008": {
     "id": "expr-biz-008",
@@ -41041,7 +42416,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-02",
     "unitTitleKo": "완곡한 의견 제시와 동의",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "It took months for the board to buy into the restructuring plan.",
+    "exampleKo": "어떤 전략이나 가치를 신뢰하여 지지한다는 뜻의 구동사입니다."
   },
   "expr-biz-009": {
     "id": "expr-biz-009",
@@ -41102,7 +42479,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-03",
     "unitTitleKo": "전문적인 반대와 반론",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Let me play devil's advocate for a moment: what if the system fails?",
+    "exampleKo": "토론의 완성도를 높이기 위해 일부러 반대 가설을 제기할 때 쓰는 교양 있는 표현입니다."
   },
   "expr-biz-010": {
     "id": "expr-biz-010",
@@ -41163,7 +42542,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-03",
     "unitTitleKo": "전문적인 반대와 반론",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "With all due respect, our team was not consulted on this change.",
+    "exampleKo": "상사나 고객에게 반대 의견을 개진할 때 갖추는 가장 공손하고 전문적인 서두입니다."
   },
   "expr-biz-011": {
     "id": "expr-biz-011",
@@ -41224,7 +42605,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-03",
     "unitTitleKo": "전문적인 반대와 반론",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "The board and the CEO rarely see eye to eye on spending.",
+    "exampleKo": "눈높이를 맞추듯 가치관이나 결정 사항에 대해 뜻이 통한다는 대표적 숙어입니다."
   },
   "expr-biz-012": {
     "id": "expr-biz-012",
@@ -41285,7 +42668,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-03",
     "unitTitleKo": "전문적인 반대와 반론",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "You may think it's a minor bug, but I beg to differ.",
+    "exampleKo": "격식 있고 세련되게 반대 의견을 밝히는 최고의 영국식/미국식 비즈니스 표현입니다."
   },
   "expr-biz-013": {
     "id": "expr-biz-013",
@@ -41346,7 +42731,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-04",
     "unitTitleKo": "진행 상황 팔로업과 간단한 상황 체크",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Can we touch base for five minutes before your next meeting?",
+    "exampleKo": "5~10분 정도 부담 없이 진행 상황을 동기화할 때 가장 사랑받는 표현입니다."
   },
   "expr-biz-014": {
     "id": "expr-biz-014",
@@ -41407,7 +42794,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-04",
     "unitTitleKo": "진행 상황 팔로업과 간단한 상황 체크",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "I just wanted to follow up on the status of our invoice.",
+    "exampleKo": "이전 논의나 이메일에 대한 후속 확인 및 진행 상황 점검 시 표준 표현입니다."
   },
   "expr-biz-015": {
     "id": "expr-biz-015",
@@ -41468,7 +42857,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-04",
     "unitTitleKo": "진행 상황 팔로업과 간단한 상황 체크",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "I've looped in our legal team so they can review the clauses.",
+    "exampleKo": "정보 공유 고리(loop) 안에 팀원을 포함시킨다는 직관적 비즈니스 슬랭입니다."
   },
   "expr-biz-016": {
     "id": "expr-biz-016",
@@ -41529,7 +42920,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-04",
     "unitTitleKo": "진행 상황 팔로업과 간단한 상황 체크",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "I'll keep you posted once we finalize the numbers.",
+    "exampleKo": "새 소식이 들어올 때마다 게시판에 글을 올리듯 실시간으로 소식을 전해달라는 뜻입니다."
   },
   "expr-biz-017": {
     "id": "expr-biz-017",
@@ -41590,7 +42983,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-05",
     "unitTitleKo": "마감일 협상과 일정 재조정",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "We must all work together to meet the deadline.",
+    "exampleKo": "마감일을 지킨다는 정형화된 비즈니스 동사는 meet입니다."
   },
   "expr-biz-018": {
     "id": "expr-biz-018",
@@ -41651,7 +43046,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-05",
     "unitTitleKo": "마감일 협상과 일정 재조정",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Due to technical issues, we had to push back the release date.",
+    "exampleKo": "일정이나 마감 기한을 뒤로 늦출 때 구어에서 가장 빈번히 쓰이는 표현입니다."
   },
   "expr-biz-019": {
     "id": "expr-biz-019",
@@ -41712,7 +43109,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-05",
     "unitTitleKo": "마감일 협상과 일정 재조정",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Given our tight schedule, let's skip the lengthy intro.",
+    "exampleKo": "일정이 여유 없이 꽉 차 있을 때 tight schedule을 연어로 씁니다."
   },
   "expr-biz-020": {
     "id": "expr-biz-020",
@@ -41773,7 +43172,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-05",
     "unitTitleKo": "마감일 협상과 일정 재조정",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "With only three days left, it's crunch time.",
+    "exampleKo": "시간에 쫓기며 총력을 다해 최고의 결과를 내야 하는 중대한 마감 직전을 뜻합니다."
   },
   "expr-biz-021": {
     "id": "expr-biz-021",
@@ -41834,7 +43235,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-06",
     "unitTitleKo": "이메일 격식과 프로페셔널 화법",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "As per our discussion, I have updated the budget sheet.",
+    "exampleKo": "앞선 구두 협의 내용을 문서로 확정 지을 때 쓰는 정석 비즈니스 이메일 오프닝입니다."
   },
   "expr-biz-022": {
     "id": "expr-biz-022",
@@ -41895,7 +43298,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-06",
     "unitTitleKo": "이메일 격식과 프로페셔널 화법",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Kindly be advised that the maintenance will take three hours.",
+    "exampleKo": "공식 휴무나 정책 변경 사항을 고객에게 공지할 때 정중한 안내 문구입니다."
   },
   "expr-biz-023": {
     "id": "expr-biz-023",
@@ -41956,7 +43361,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-06",
     "unitTitleKo": "이메일 격식과 프로페셔널 화법",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Don't hesitate to reach out if you need assistance.",
+    "exampleKo": "contact보다 더 따뜻하고 적극적으로 소통의 문을 열어두는 비즈니스 표현입니다."
   },
   "expr-biz-024": {
     "id": "expr-biz-024",
@@ -42017,7 +43424,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-06",
     "unitTitleKo": "이메일 격식과 프로페셔널 화법",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "We look forward to a successful collaboration.",
+    "exampleKo": "to 뒤에 반드시 명사나 동명사(-ing)가 와야 하는 대표적 문법 포인트이자 이메일 클로징입니다."
   },
   "expr-biz-025": {
     "id": "expr-biz-025",
@@ -42078,7 +43487,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-07",
     "unitTitleKo": "고객 클레임 응대와 사과",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "We apologize for the inconvenience and are working to fix it.",
+    "exampleKo": "서비스 지연이나 오류 발생 시 고객에게 전달하는 표준 사과 표현입니다."
   },
   "expr-biz-026": {
     "id": "expr-biz-026",
@@ -42139,7 +43550,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-07",
     "unitTitleKo": "고객 클레임 응대와 사과",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "Our technical team is looking into the matter right now.",
+    "exampleKo": "단순히 '보다'가 아니라 철저하게 진상을 조사하여 해결하겠다는 책임감 있는 약속입니다."
   },
   "expr-biz-027": {
     "id": "expr-biz-027",
@@ -42200,7 +43613,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-07",
     "unitTitleKo": "고객 클레임 응대와 사과",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "Can we pay extra to expedite the visa application?",
+    "exampleKo": "비즈니스 물류와 처리 과정에서 '급행으로 신속 처리하다'는 동사 expedite를 씁니다."
   },
   "expr-biz-028": {
     "id": "expr-biz-028",
@@ -42261,7 +43676,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-07",
     "unitTitleKo": "고객 클레임 응대와 사과",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "We are determined to rectify the situation without further delay.",
+    "exampleKo": "단순 수리를 넘어 결함이나 과실을 완벽하게 올바른 상태로 시정한다는 고급 어휘입니다."
   },
   "expr-biz-029": {
     "id": "expr-biz-029",
@@ -42322,7 +43739,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-08",
     "unitTitleKo": "프로젝트 브리핑과 발표",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "How will this software upgrade impact our bottom line?",
+    "exampleKo": "재무제표의 가장 밑바닥 순이익 라인에서 유래하여 모든 논의의 '가장 중요한 핵심'을 뜻합니다."
   },
   "expr-biz-030": {
     "id": "expr-biz-030",
@@ -42383,7 +43802,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-08",
     "unitTitleKo": "프로젝트 브리핑과 발표",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "We are launching premium packaging to elevate our brand.",
+    "exampleKo": "브랜드의 품격과 시장 지위를 한 단계 격상시킬 때 elevate the brand를 씁니다."
   },
   "expr-biz-031": {
     "id": "expr-biz-031",
@@ -42444,7 +43865,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-08",
     "unitTitleKo": "프로젝트 브리핑과 발표",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Generative AI has proven to be a game changer.",
+    "exampleKo": "기존 시장의 판도를 완전히 뒤흔들 혁신적인 기술이나 전략을 칭하는 표현입니다."
   },
   "expr-biz-032": {
     "id": "expr-biz-032",
@@ -42505,7 +43928,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-08",
     "unitTitleKo": "프로젝트 브리핑과 발표",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "I will walk you through the key financial highlights.",
+    "exampleKo": "마치 함께 걸어가며 안내하듯 복잡한 과정이나 자료를 친절하게 짚어준다는 뜻입니다."
   },
   "expr-biz-033": {
     "id": "expr-biz-033",
@@ -42566,7 +43991,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-09",
     "unitTitleKo": "네트워킹과 비즈니스 식사",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "I know it's a party, but can we talk shop for just a minute?",
+    "exampleKo": "식사나 파티 같은 사교적인 자리에서 본업이나 회사 업무 이야기를 꺼낼 때 쓰는 표현입니다."
   },
   "expr-biz-034": {
     "id": "expr-biz-034",
@@ -42627,7 +44054,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-09",
     "unitTitleKo": "네트워킹과 비즈니스 식사",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "LinkedIn is an effective tool to expand your professional network.",
+    "exampleKo": "전문 직무 분야에서 유익한 인맥과 관계를 넓혀갈 때 표준 연어로 씁니다."
   },
   "expr-biz-035": {
     "id": "expr-biz-035",
@@ -42688,7 +44117,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-09",
     "unitTitleKo": "네트워킹과 비즈니스 식사",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "I'd love to buy you lunch and pick your brain for half an hour.",
+    "exampleKo": "전문가의 뇌 속에 든 풍부한 지식과 통찰을 정중하게 빌려 듣는다는 친숙한 표현입니다."
   },
   "expr-biz-036": {
     "id": "expr-biz-036",
@@ -42749,7 +44180,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-09",
     "unitTitleKo": "네트워킹과 비즈니스 식사",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "Who is going to foot the bill for the team dinner?",
+    "exampleKo": "계산서 맨 아래(foot)에 서명하고 금액을 전부 결제한다는 데서 유래한 표현입니다."
   },
   "expr-biz-037": {
     "id": "expr-biz-037",
@@ -42810,7 +44243,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-10",
     "unitTitleKo": "계약 및 최종 결정 짓기",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "Although he is young, he calls the shots on this project.",
+    "exampleKo": "당구 경기에서 공을 어디로 칠지 선언하듯 최종 결정권을 행사한다는 표현입니다."
   },
   "expr-biz-038": {
     "id": "expr-biz-038",
@@ -42871,7 +44306,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-10",
     "unitTitleKo": "계약 및 최종 결정 짓기",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "A handshake was all it took to seal the deal.",
+    "exampleKo": "과거 계약 문서에 밀랍 인장(seal)을 찍어 공식 체결하듯 성공적으로 계약을 매듭짓는다는 뜻입니다."
   },
   "expr-biz-039": {
     "id": "expr-biz-039",
@@ -42932,7 +44369,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-10",
     "unitTitleKo": "계약 및 최종 결정 짓기",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "We are just waiting for the client to green-light the proposal.",
+    "exampleKo": "신호등의 초록불처럼 '가도 좋다'고 프로젝트의 출발을 승인해 주는 것을 동사로 씁니다."
   },
   "expr-biz-040": {
     "id": "expr-biz-040",
@@ -42993,7 +44432,9 @@
     "seriesTitleEn": "Workplace & Professional Business",
     "unitId": "unit-biz-10",
     "unitTitleKo": "계약 및 최종 결정 짓기",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "If this marketing concept fails, we'll have to go back to the drawing board.",
+    "exampleKo": "설계도면(drawing board)을 지우고 백지상태에서 새로운 계획을 세울 때 쓰는 관용어입니다."
   },
   "expr-acad-001": {
     "id": "expr-acad-001",
@@ -43054,7 +44495,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-01",
     "unitTitleKo": "주장과 논거 도입하기",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Recent archaeological findings shed light on ancient trade routes.",
+    "exampleKo": "어두운 곳에 빛을 비추듯 학술적 난제의 실체를 명확히 규명할 때 씁니다."
   },
   "expr-acad-002": {
     "id": "expr-acad-002",
@@ -43115,7 +44558,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-01",
     "unitTitleKo": "주장과 논거 도입하기",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Much of the controversy centers around data privacy laws.",
+    "exampleKo": "논증의 핵심 무게중심이 특정 주제에 맞추어져 있음을 기술하는 학술 동사입니다."
   },
   "expr-acad-003": {
     "id": "expr-acad-003",
@@ -43176,7 +44621,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-01",
     "unitTitleKo": "주장과 논거 도입하기",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Newton put forward a revolutionary theory of universal gravitation.",
+    "exampleKo": "학술적 가설이나 이론을 공식 제기할 때 쓰는 가장 정제된 표현입니다."
   },
   "expr-acad-004": {
     "id": "expr-acad-004",
@@ -43237,7 +44684,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-01",
     "unitTitleKo": "주장과 논거 도입하기",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "The correlation between air pollution and cognitive decline warrants attention.",
+    "exampleKo": "학술적으로 정당하게 면밀한 검증을 요구한다는 격조 높은 표현입니다."
   },
   "expr-acad-005": {
     "id": "expr-acad-005",
@@ -43298,7 +44747,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-02",
     "unitTitleKo": "인과관계 명확히 연결하기",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "Economic instability often gives rise to political unrest.",
+    "exampleKo": "사건이나 정책이 거대한 연쇄 반응이나 새 국면을 초래할 때 씁니다."
   },
   "expr-acad-006": {
     "id": "expr-acad-006",
@@ -43359,7 +44810,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-02",
     "unitTitleKo": "인과관계 명확히 연결하기",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "His skepticism stems from years of contradictory data.",
+    "exampleKo": "문제의 근본적인 기원을 짚어낼 때 쓰는 표현입니다."
   },
   "expr-acad-007": {
     "id": "expr-acad-007",
@@ -43420,7 +44873,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-02",
     "unitTitleKo": "인과관계 명확히 연결하기",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "Economists attribute the sudden market rebound to lower interest rates.",
+    "exampleKo": "인과관계 분석 및 학술 데이터 귀인 서술의 표준 동사입니다."
   },
   "expr-acad-008": {
     "id": "expr-acad-008",
@@ -43481,7 +44936,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-02",
     "unitTitleKo": "인과관계 명확히 연결하기",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "The peace treaty paved the way for lasting regional stability.",
+    "exampleKo": "후속 연구나 혁신이 발전할 토양을 구축했다는 뜻입니다."
   },
   "expr-acad-009": {
     "id": "expr-acad-009",
@@ -43542,7 +44999,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-03",
     "unitTitleKo": "상반된 관점 대조와 양보",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Far from being a failure, the trial was, on the contrary, a milestone.",
+    "exampleKo": "앞선 진술이나 통념을 정면으로 반박하며 정반대의 진실을 강조할 때 씁니다."
   },
   "expr-acad-010": {
     "id": "expr-acad-010",
@@ -43603,7 +45062,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-03",
     "unitTitleKo": "상반된 관점 대조와 양보",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "He completed the project despite the fact that funding was cut.",
+    "exampleKo": "단순한 although보다 객관적 팩트(fact)를 부각하며 양보 구문을 형성할 때 씁니다."
   },
   "expr-acad-011": {
     "id": "expr-acad-011",
@@ -43664,7 +45125,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-03",
     "unitTitleKo": "상반된 관점 대조와 양보",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Optimistic patients recover faster; conversely, chronic stress delays healing.",
+    "exampleKo": "두 대조되는 원리나 결과를 논리적으로 맞비교할 때 쓰는 정통 학술 부사입니다."
   },
   "expr-acad-012": {
     "id": "expr-acad-012",
@@ -43725,7 +45188,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-03",
     "unitTitleKo": "상반된 관점 대조와 양보",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Speculative hypotheses must yield to verified laboratory data.",
+    "exampleKo": "새로운 경험적 증거 앞에서 기존의 낡은 가설이 자리를 내주고 물러남을 묘사합니다."
   },
   "expr-acad-013": {
     "id": "expr-acad-013",
@@ -43786,7 +45251,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-04",
     "unitTitleKo": "데이터 및 증거 인용하기",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Multiple witnesses corroborated the suspect's testimony.",
+    "exampleKo": "단순한 support를 넘어 객관적인 독립 증거가 동일한 결과를 확증할 때 씁니다."
   },
   "expr-acad-014": {
     "id": "expr-acad-014",
@@ -43801,7 +45268,7 @@
     },
     "explanation": "추상적 가설에 대해 구체적 증거 자료를 들어 타당성을 입증할 때 씁니다.",
     "collocation": "substantiate claims with rigorous data",
-    "audioSentence": "The prosecutor failed to substantiate the allegations in court.",
+    "audioSentence": "Without solid statistical backing, it is impossible to substantiate this claim.",
     "dialogue": [
       {
         "speaker": "Judge",
@@ -43847,7 +45314,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-04",
     "unitTitleKo": "데이터 및 증거 인용하기",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Without solid statistical backing, it is impossible to substantiate this claim.",
+    "exampleKo": "근거 없는 주장이 아니라 객관적 데이터로 실체와 신빙성을 부여할 때 씁니다."
   },
   "expr-acad-015": {
     "id": "expr-acad-015",
@@ -43908,7 +45377,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-04",
     "unitTitleKo": "데이터 및 증거 인용하기",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Empirical evidence demonstrates a clear link between exercise and mental acuity.",
+    "exampleKo": "이론적 공상이 아니라 실제 실험, 관찰, 측정을 통해 얻은 데이터 증거입니다."
   },
   "expr-acad-016": {
     "id": "expr-acad-016",
@@ -43969,7 +45440,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-04",
     "unitTitleKo": "데이터 및 증거 인용하기",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "The novelist draws on historical documents to recreate medieval life.",
+    "exampleKo": "기존의 방대한 학술 문헌, 데이터베이스, 선행 연구를 원천으로 삼을 때 씁니다."
   },
   "expr-acad-017": {
     "id": "expr-acad-017",
@@ -44030,7 +45503,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-05",
     "unitTitleKo": "통계와 추세 설명하기",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Computing power has shown exponential growth over recent decades.",
+    "exampleKo": "단순한 linear 성장이 아닌 가파른 곡선을 그리며 폭증하는 양상을 뜻합니다."
   },
   "expr-acad-018": {
     "id": "expr-acad-018",
@@ -44091,7 +45566,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-05",
     "unitTitleKo": "통계와 추세 설명하기",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Sales plateaued at fifty thousand units per quarter.",
+    "exampleKo": "고원(plateau)에 도달하듯 상승세를 멈추고 평탄하게 유지되는 상태입니다."
   },
   "expr-acad-019": {
     "id": "expr-acad-019",
@@ -44152,7 +45629,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-05",
     "unitTitleKo": "통계와 추세 설명하기",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Tourism took a sharp downturn during the travel embargo.",
+    "exampleKo": "완만한 하락이 아니라 가파르고 위험하게 수치가 곤두박질치는 양상입니다."
   },
   "expr-acad-020": {
     "id": "expr-acad-020",
@@ -44213,7 +45692,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-05",
     "unitTitleKo": "통계와 추세 설명하기",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "The price reduction led to only a marginal difference in customer demand.",
+    "exampleKo": "통계적으로 유의미하지 않거나 실질적 영향이 거의 없는 근소한 차이입니다."
   },
   "expr-acad-021": {
     "id": "expr-acad-021",
@@ -44274,7 +45755,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-06",
     "unitTitleKo": "객관적·중립적 어조 유지",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Given the current trend, it is plausible that sea levels will rise further.",
+    "exampleKo": "단정하기는 이르지만 논리적, 과학적으로 충분히 그럴듯한 개연성이 있을 때 씁니다."
   },
   "expr-acad-022": {
     "id": "expr-acad-022",
@@ -44335,7 +45818,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-06",
     "unitTitleKo": "객관적·중립적 어조 유지",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "He resigned ostensibly for health reasons, but political pressure was suspected.",
+    "exampleKo": "겉으로 내세우는 명분과 이면에 숨겨진 실상이 다를 때 비판적으로 지적하는 부사입니다."
   },
   "expr-acad-023": {
     "id": "expr-acad-023",
@@ -44396,7 +45881,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-06",
     "unitTitleKo": "객관적·중립적 어조 유지",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "The discovery of penicillin was arguably the greatest triumph of twentieth-century medicine.",
+    "exampleKo": "100% 단언하기는 어렵지만 강력한 논거로 입증할 수 있는 최상의 명제에 붙입니다."
   },
   "expr-acad-024": {
     "id": "expr-acad-024",
@@ -44457,7 +45944,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-06",
     "unitTitleKo": "객관적·중립적 어조 유지",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Whether the new reform will yield tangible results remains to be seen.",
+    "exampleKo": "섣부른 결론을 유보하고 미래의 데이터 추이를 더 관찰해야 할 때 쓰는 학술적 결언입니다."
   },
   "expr-acad-025": {
     "id": "expr-acad-025",
@@ -44518,7 +46007,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-07",
     "unitTitleKo": "논리적 오류 지적과 반박",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "Historians have debunked the myth that the Great Wall is visible from orbit.",
+    "exampleKo": "대중 사이에 널리 퍼진 잘못된 근거 없는 미신이나 통념을 실증 데이터로 깨부술 때 씁니다."
   },
   "expr-acad-026": {
     "id": "expr-acad-026",
@@ -44579,7 +46070,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-07",
     "unitTitleKo": "논리적 오류 지적과 반박",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "The revelation of flawed calibration called into question all prior measurements.",
+    "exampleKo": "기존에 정설로 받아들여지던 결과의 신뢰성이나 타당성에 근본적인 물음표를 던질 때 씁니다."
   },
   "expr-acad-027": {
     "id": "expr-acad-027",
@@ -44640,7 +46133,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-07",
     "unitTitleKo": "논리적 오류 지적과 반박",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "The argument relies heavily on emotional appeals and fallacious reasoning.",
+    "exampleKo": "논리적 인과관계가 성립하지 않는 결함투성이의 추론 방식을 비판할 때 씁니다."
   },
   "expr-acad-028": {
     "id": "expr-acad-028",
@@ -44701,7 +46196,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-07",
     "unitTitleKo": "논리적 오류 지적과 반박",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "In evaluating the fiscal deficit, policymakers overlooked a critical factor.",
+    "exampleKo": "선행 연구들이 사소한 변수에만 매달리다 가장 결정적인 요소를 놓쳤음을 비판할 때 씁니다."
   },
   "expr-acad-029": {
     "id": "expr-acad-029",
@@ -44762,7 +46259,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-08",
     "unitTitleKo": "가설 설정과 전제 조건",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Calculations were made under the assumption that temperature remains constant.",
+    "exampleKo": "어떤 이론이나 수식 모델이 성립하기 위해 전제되어야 할 기초 가정을 명시할 때 씁니다."
   },
   "expr-acad-030": {
     "id": "expr-acad-030",
@@ -44823,7 +46322,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-08",
     "unitTitleKo": "가설 설정과 전제 조건",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Linguists postulate an innate biological capacity for language acquisition.",
+    "exampleKo": "단순한 추측이 아니라 체계적인 이론 전개를 위해 근본 법칙으로서 선언할 때 씁니다."
   },
   "expr-acad-031": {
     "id": "expr-acad-031",
@@ -44884,7 +46385,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-08",
     "unitTitleKo": "가설 설정과 전제 조건",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "His philosophical argument rests on a flawed premise.",
+    "exampleKo": "결론을 도출하기 위한 논리의 기초 바탕이 되는 참이라고 가정된 명제입니다."
   },
   "expr-acad-032": {
     "id": "expr-acad-032",
@@ -44945,7 +46448,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-08",
     "unitTitleKo": "가설 설정과 전제 조건",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Our approval is strictly contingent upon satisfactory environmental reviews.",
+    "exampleKo": "독립적으로 확정된 것이 아니라 외부 변수나 조건의 성립 여부에 종속되어 있을 때 씁니다."
   },
   "expr-acad-033": {
     "id": "expr-acad-033",
@@ -44960,7 +46465,7 @@
     },
     "explanation": "실험 통계 수치를 바탕으로 명제를 연역/귀납적으로 추론할 때 씁니다.",
     "collocation": "can be reasonably inferred from the evidence",
-    "audioSentence": "What can we infer from these contradictory results?",
+    "audioSentence": "We can logically infer from the data that the drug crosses the blood-brain barrier.",
     "dialogue": [
       {
         "speaker": "Prof",
@@ -45006,7 +46511,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-09",
     "unitTitleKo": "결론 도출 및 시사점",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "We can logically infer from the data that the drug crosses the blood-brain barrier.",
+    "exampleKo": "단순 관찰에 머물지 않고 논리적 추론 과정을 거쳐 타당한 결론을 이끌어낼 때 씁니다."
   },
   "expr-acad-034": {
     "id": "expr-acad-034",
@@ -45067,7 +46574,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-09",
     "unitTitleKo": "결론 도출 및 시사점",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "The court's antitrust ruling will have far-reaching implications for Big Tech.",
+    "exampleKo": "단일 분야에 그치지 않고 사회, 경제, 철학 등 전 영역에 걸쳐 깊은 영향을 미칠 때 씁니다."
   },
   "expr-acad-035": {
     "id": "expr-acad-035",
@@ -45128,7 +46637,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-09",
     "unitTitleKo": "결론 도출 및 시사점",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "In summary, the reform achieved modest gains but failed in structural equity.",
+    "exampleKo": "논문 결론부나 토론 마무리에서 앞선 모든 논증을 간결하고 명확하게 압축할 때 씁니다."
   },
   "expr-acad-036": {
     "id": "expr-acad-036",
@@ -45189,7 +46700,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-09",
     "unitTitleKo": "결론 도출 및 시사점",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "Scattered public protests coalesced into a national political movement.",
+    "exampleKo": "각기 흩어져 있던 파편화된 데이터나 가설들이 하나의 통일된 체계로 결합할 때 씁니다."
   },
   "expr-acad-037": {
     "id": "expr-acad-037",
@@ -45250,7 +46763,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-10",
     "unitTitleKo": "학술적 제언과 향후 과제",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "The long-term environmental persistence of microplastics warrants further investigation.",
+    "exampleKo": "본 연구의 범위를 넘어 향후 더 심도 있는 추가 실험이나 조사가 필수적임을 제언할 때 씁니다."
   },
   "expr-acad-038": {
     "id": "expr-acad-038",
@@ -45311,7 +46826,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-10",
     "unitTitleKo": "학술적 제언과 향후 과제",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "Public outreach programs help bridge the gap between scientists and citizens.",
+    "exampleKo": "상아탑의 추상적 이론과 산업 현장의 실무 사이의 괴리를 연결하고 해소할 때 씁니다."
   },
   "expr-acad-039": {
     "id": "expr-acad-039",
@@ -45372,7 +46889,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-10",
     "unitTitleKo": "학술적 제언과 향후 과제",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "The widespread adoption of cloud computing initiated a major paradigm shift.",
+    "exampleKo": "단순한 기술 개선이 아니라 사물을 바라보는 근본적인 세계관과 학문적 틀 자체가 바뀜을 뜻합니다."
   },
   "expr-acad-040": {
     "id": "expr-acad-040",
@@ -45433,7 +46952,9 @@
     "seriesTitleEn": "Academic Writing & Formal Debates",
     "unitId": "unit-academic-10",
     "unitTitleKo": "학술적 제언과 향후 과제",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "The newly unearthed manuscript sheds new insight into the philosopher's later years.",
+    "exampleKo": "기존의 시각으로는 볼 수 없었던 심오한 이해와 학문적 혜안을 열어줄 때 씁니다."
   },
   "expr-media-001": {
     "id": "expr-media-001",
@@ -45494,7 +47015,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-01",
     "unitTitleKo": "미국 Z세대 최신 유행어",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "I saw the celebrity in person, no cap.",
+    "exampleKo": "거짓말을 하지 않는다는 Z세대 팩트 강조 표현입니다."
   },
   "expr-media-002": {
     "id": "expr-media-002",
@@ -45555,7 +47078,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-01",
     "unitTitleKo": "미국 Z세대 최신 유행어",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Her vocal performance absolutely slayed.",
+    "exampleKo": "무대나 패션에서 완벽하게 해냈을 때 쓰는 최고의 찬사입니다."
   },
   "expr-media-003": {
     "id": "expr-media-003",
@@ -45616,7 +47141,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-01",
     "unitTitleKo": "미국 Z세대 최신 유행어",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Put your headphones on and walk with main character energy.",
+    "exampleKo": "영화 속 주인공처럼 주위 시선에 주눅 들지 않고 자신감으로 빛날 때 씁니다."
   },
   "expr-media-004": {
     "id": "expr-media-004",
@@ -45677,7 +47204,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-01",
     "unitTitleKo": "미국 Z세대 최신 유행어",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "It's rude to ghost people instead of saying no.",
+    "exampleKo": "유령처럼 소리소문없이 사라져 연락을 일방적으로 끊을 때 씁니다."
   },
   "expr-media-005": {
     "id": "expr-media-005",
@@ -45738,7 +47267,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-02",
     "unitTitleKo": "넷플릭스 필수 단골 이디엄",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "We had to bite the bullet and cancel the vacation.",
+    "exampleKo": "총알을 깨물며 고통을 참듯 피할 수 없는 일을 감수할 때 씁니다."
   },
   "expr-media-006": {
     "id": "expr-media-006",
@@ -45799,7 +47330,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-02",
     "unitTitleKo": "넷플릭스 필수 단골 이디엄",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "I can't wait for season 2 after that cliffhanger.",
+    "exampleKo": "결말을 보여주지 않고 다음 화를 애타게 만드는 엔딩입니다."
   },
   "expr-media-007": {
     "id": "expr-media-007",
@@ -45860,7 +47393,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-02",
     "unitTitleKo": "넷플릭스 필수 단골 이디엄",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "Spoiler alert: the hero doesn't make it.",
+    "exampleKo": "결말을 미리 누설하기 전에 청중에게 미리 경고를 날리는 표현입니다."
   },
   "expr-media-008": {
     "id": "expr-media-008",
@@ -45921,7 +47456,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-02",
     "unitTitleKo": "넷플릭스 필수 단골 이디엄",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "Fans feel the sitcom jumped the shark.",
+    "exampleKo": "억지스러운 설정을 도입하다가 내리막길을 걸을 때 씁니다."
   },
   "expr-media-009": {
     "id": "expr-media-009",
@@ -45982,7 +47519,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-03",
     "unitTitleKo": "친구 사이 찐 우정 슬랭",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "She knew her team had her back.",
+    "exampleKo": "위험이나 곤경에 처했을 때 뒤를 든든히 지켜준다는 찐 우정 표현입니다."
   },
   "expr-media-010": {
     "id": "expr-media-010",
@@ -46043,7 +47582,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-03",
     "unitTitleKo": "친구 사이 찐 우정 슬랭",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "We've been through thick and thin together.",
+    "exampleKo": "좋을 때나 나쁠 때나 변함없이 함께 겪어낸다는 깊은 유대감입니다."
   },
   "expr-media-011": {
     "id": "expr-media-011",
@@ -46104,7 +47645,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-03",
     "unitTitleKo": "친구 사이 찐 우정 슬랭",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Every hero needs a ride or die companion.",
+    "exampleKo": "생사를 함께할 만큼 절대적으로 충성스럽고 신뢰하는 동반자입니다."
   },
   "expr-media-012": {
     "id": "expr-media-012",
@@ -46165,7 +47708,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-03",
     "unitTitleKo": "친구 사이 찐 우정 슬랭",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "I don't really vibe with his arrogant attitude.",
+    "exampleKo": "파장이나 주파수가 맞듯 사람이나 장소의 분위기가 마음에 들 때 씁니다."
   },
   "expr-media-013": {
     "id": "expr-media-013",
@@ -46226,7 +47771,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-04",
     "unitTitleKo": "황당하거나 어이없을 때",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "This magic trick will blow your mind.",
+    "exampleKo": "상상을 초월할 만큼 충격적이거나 경이로울 때 씁니다."
   },
   "expr-media-014": {
     "id": "expr-media-014",
@@ -46287,7 +47834,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-04",
     "unitTitleKo": "황당하거나 어이없을 때",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "The food at that restaurant is unreal.",
+    "exampleKo": "영화 CG처럼 너무나 환상적이고 경이로워서 현실감이 안 날 때 씁니다."
   },
   "expr-media-015": {
     "id": "expr-media-015",
@@ -46348,7 +47897,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-04",
     "unitTitleKo": "황당하거나 어이없을 때",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "She stood there, lost for words.",
+    "exampleKo": "기쁨, 감동, 충격으로 혀가 굳어 아무 말도 나오지 않는 상태입니다."
   },
   "expr-media-016": {
     "id": "expr-media-016",
@@ -46409,7 +47960,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-04",
     "unitTitleKo": "황당하거나 어이없을 때",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Meeting my childhood idol was surreal.",
+    "exampleKo": "달리의 초현실주의 그림처럼 현실에서 도저히 일어날 것 같지 않은 몽환적 느낌입니다."
   },
   "expr-media-017": {
     "id": "expr-media-017",
@@ -46470,7 +48023,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-05",
     "unitTitleKo": "극찬과 감탄의 리액션",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "You are on fire today, answering all questions!",
+    "exampleKo": "불붙은 듯 연속해서 놀라운 성과를 내며 승승장구할 때 씁니다."
   },
   "expr-media-018": {
     "id": "expr-media-018",
@@ -46531,7 +48086,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-05",
     "unitTitleKo": "극찬과 감탄의 리액션",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "His charisma is off the charts.",
+    "exampleKo": "계측 차트의 눈금을 뚫고 나갈 만큼 수치나 열기가 한계를 초월했을 때 씁니다."
   },
   "expr-media-019": {
     "id": "expr-media-019",
@@ -46592,7 +48149,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-05",
     "unitTitleKo": "극찬과 감탄의 리액션",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Coffee on a rainy morning hits different.",
+    "exampleKo": "같은 노래나 음식이라도 특정 상황에서 가슴에 사무치게 다를 때 씁니다."
   },
   "expr-media-020": {
     "id": "expr-media-020",
@@ -46653,7 +48212,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-05",
     "unitTitleKo": "극찬과 감탄의 리액션",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "His reaction face was pure gold.",
+    "exampleKo": "불순물이 섞이지 않은 순금처럼 처음부터 끝까지 버릴 구석 없이 완벽할 때 씁니다."
   },
   "expr-media-021": {
     "id": "expr-media-021",
@@ -46714,7 +48275,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-06",
     "unitTitleKo": "팩트 폭격과 직언하기",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "She spilled the tea on her ex-boyfriend.",
+    "exampleKo": "차(tea)를 쏟아붓듯 가슴속에 품고 있던 재미있는 가십을 털어놓으라는 표현입니다."
   },
   "expr-media-022": {
     "id": "expr-media-022",
@@ -46775,7 +48338,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-06",
     "unitTitleKo": "팩트 폭격과 직언하기",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Sometimes the truth hurts, but it sets you free.",
+    "exampleKo": "달콤한 거짓말보다 쓰라린 팩트가 더 고통스럽지만 인정해야 할 때 씁니다."
   },
   "expr-media-023": {
     "id": "expr-media-023",
@@ -46836,7 +48401,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-06",
     "unitTitleKo": "팩트 폭격과 직언하기",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Hip hop is all about keeping it real.",
+    "exampleKo": "세속적 성공이나 타인의 시선에 물들지 않고 자기 본연의 진솔함을 유지할 때 씁니다."
   },
   "expr-media-024": {
     "id": "expr-media-024",
@@ -46897,7 +48464,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-06",
     "unitTitleKo": "팩트 폭격과 직언하기",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Don't be afraid to call out unfair treatment.",
+    "exampleKo": "상대방의 부당함, 거짓말, 위선을 숨기지 않고 면전이나 공개적으로 정면 비판할 때 씁니다."
   },
   "expr-media-025": {
     "id": "expr-media-025",
@@ -46958,7 +48527,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-07",
     "unitTitleKo": "연애와 썸(Romance) 표현",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "Do you have a crush on anyone right now?",
+    "exampleKo": "누군가에게 첫눈에 반해 가슴 설레며 짝사랑할 때 쓰는 대표 표현입니다."
   },
   "expr-media-026": {
     "id": "expr-media-026",
@@ -47019,7 +48590,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-07",
     "unitTitleKo": "연애와 썸(Romance) 표현",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "Stop hitting on my best friend!",
+    "exampleKo": "호감을 갖고 다가와 작업을 걸거나 들이대며 말을 걸 때 씁니다."
   },
   "expr-media-027": {
     "id": "expr-media-027",
@@ -47080,7 +48653,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-07",
     "unitTitleKo": "연애와 썸(Romance) 표현",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "Frequent lying is the ultimate red flag.",
+    "exampleKo": "축구의 퇴장 레드카드처럼 관계나 성격에서 절대 용납할 수 없는 결격 사유입니다."
   },
   "expr-media-028": {
     "id": "expr-media-028",
@@ -47141,7 +48716,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-07",
     "unitTitleKo": "연애와 썸(Romance) 표현",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "He loves traveling and hates being tied down.",
+    "exampleKo": "밧줄로 묶인 것처럼 한 사람이나 정규직 등에 정착해 자유를 잃을까 두려워할 때 씁니다."
   },
   "expr-media-029": {
     "id": "expr-media-029",
@@ -47202,7 +48779,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-08",
     "unitTitleKo": "파티와 불금 라이프",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "They painted the town red for his 30th birthday.",
+    "exampleKo": "거리를 온통 붉은 축제빛으로 물들이듯 클럽이나 술집을 돌며 광란의 밤을 보낼 때 씁니다."
   },
   "expr-media-030": {
     "id": "expr-media-030",
@@ -47263,7 +48842,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-08",
     "unitTitleKo": "파티와 불금 라이프",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "The music made everyone turn up.",
+    "exampleKo": "볼륨을 올리듯 파티의 텐션과 열기를 최고조로 폭발시킬 때 쓰는 힙합 슬랭입니다."
   },
   "expr-media-031": {
     "id": "expr-media-031",
@@ -47324,7 +48905,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-08",
     "unitTitleKo": "파티와 불금 라이프",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Never drive after drinking; always choose a designated driver.",
+    "exampleKo": "친구들이 안심하고 술을 마실 수 있도록 본인은 술을 안 마시고 운전을 전담하는 사람입니다."
   },
   "expr-media-032": {
     "id": "expr-media-032",
@@ -47385,7 +48968,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-08",
     "unitTitleKo": "파티와 불금 라이프",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "He knows how to be the life of the party.",
+    "exampleKo": "그 사람만 나타나면 어색한 파티장이 웃음바다가 되는 최고의 분위기 메이커입니다."
   },
   "expr-media-033": {
     "id": "expr-media-033",
@@ -47446,7 +49031,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-09",
     "unitTitleKo": "비밀 유지와 가십 나누기",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "Who spilled the beans to the media?",
+    "exampleKo": "바구니에 담긴 콩을 엎질러버리듯 감추어야 할 극비 사항을 입 밖으로 흘릴 때 씁니다."
   },
   "expr-media-034": {
     "id": "expr-media-034",
@@ -47507,7 +49094,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-09",
     "unitTitleKo": "비밀 유지와 가십 나누기",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "We must keep this confidential under wraps.",
+    "exampleKo": "비밀 포장지로 꽁꽁 싸매두듯 공식 발표 전까지 철저히 비공개로 보안을 유지할 때 씁니다."
   },
   "expr-media-035": {
     "id": "expr-media-035",
@@ -47568,7 +49157,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-09",
     "unitTitleKo": "비밀 유지와 가십 나누기",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "They reached a settlement behind closed doors.",
+    "exampleKo": "취재진이나 대중이 보지 못하는 닫힌 문 뒤에서 은밀하게 결정될 때 씁니다."
   },
   "expr-media-036": {
     "id": "expr-media-036",
@@ -47629,7 +49220,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-09",
     "unitTitleKo": "비밀 유지와 가십 나누기",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "Security was tightened after the secret was leaked.",
+    "exampleKo": "수도관에서 물이 새듯 감추어진 비밀 정보가 외부로 누출될 때 씁니다."
   },
   "expr-media-037": {
     "id": "expr-media-037",
@@ -47690,7 +49283,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-10",
     "unitTitleKo": "위로와 공감의 원어민 슬랭",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "Hang in there, buddy; help is coming.",
+    "exampleKo": "줄에 매달려 버티듯 힘든 시련 속에서 포기하지 말고 버텨내라는 따뜻한 격려입니다."
   },
   "expr-media-038": {
     "id": "expr-media-038",
@@ -47751,7 +49346,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-10",
     "unitTitleKo": "위로와 공감의 원어민 슬랭",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "Breakups are miserable; been there, done that.",
+    "exampleKo": "나도 이미 과거에 똑같은 실패나 아픔을 겪어봤기에 깊이 공감한다는 쿨한 위로입니다."
   },
   "expr-media-039": {
     "id": "expr-media-039",
@@ -47812,7 +49409,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-10",
     "unitTitleKo": "위로와 공감의 원어민 슬랭",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "I feel you, studying all night is torture.",
+    "exampleKo": "상대방의 감정, 고충, 피로를 내 일처럼 온몸으로 공감할 때 쓰는 일상 슬랭입니다."
   },
   "expr-media-040": {
     "id": "expr-media-040",
@@ -47827,7 +49426,7 @@
     },
     "explanation": "실패로 낙담하여 고개 숙인 친구의 기운을 북돋워 줄 때 씁니다.",
     "collocation": "keep your chin up, tomorrow is a new day",
-    "audioSentence": "She kept her chin up despite severe hardship.",
+    "audioSentence": "Don't let this rejection defeat you; keep your chin up!",
     "dialogue": [
       {
         "speaker": "Coach",
@@ -47873,7 +49472,9 @@
     "seriesTitleEn": "Pop Culture, Movies & Native Slang",
     "unitId": "unit-media-10",
     "unitTitleKo": "위로와 공감의 원어민 슬랭",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "Don't let this rejection defeat you; keep your chin up!",
+    "exampleKo": "슬퍼서 턱(chin)을 떨구지 말고 턱을 당당히 치켜들고 용기를 내라는 응원입니다."
   },
   "expr-bat-001": {
     "id": "expr-bat-001",
@@ -47888,7 +49489,7 @@
     },
     "explanation": "see는 자연스럽게 보이다, look은 특정 방향을 쳐다보다, watch는 경기나 영화처럼 움직임을 지켜볼 때 씁니다.",
     "collocation": "watch a movie / look at the board",
-    "audioSentence": "Did you see that strange bird in the tree?",
+    "audioSentence": "Look at the horizon, see the island in the distance, and watch the waves crash on the shore.",
     "dialogue": [
       {
         "speaker": "Tom",
@@ -47934,7 +49535,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-01",
     "unitTitleKo": "시각 동사의 미묘한 차이",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Look at the horizon, see the island in the distance, and watch the waves crash on the shore.",
+    "exampleKo": "지평선을 바라보고(look), 멀리 섬을 발견하며(see), 파도가 해안에 부딪히는 것을 지켜보세요(watch)."
   },
   "expr-bat-002": {
     "id": "expr-bat-002",
@@ -47949,7 +49552,7 @@
     },
     "explanation": "stare는 당황이나 적의를 품은 응시, gaze는 경이로움이나 그리움에 잠긴 응시입니다.",
     "collocation": "stare rudely vs. gaze in wonder",
-    "audioSentence": "She gazed at the starry night sky for hours.",
+    "audioSentence": "It is rude to stare at strangers, but peaceful to gaze at the starry night sky.",
     "dialogue": [
       {
         "speaker": "Dan",
@@ -47995,7 +49598,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-01",
     "unitTitleKo": "시각 동사의 미묘한 차이",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "It is rude to stare at strangers, but peaceful to gaze at the starry night sky.",
+    "exampleKo": "낯선 사람을 빤히 쳐다보는 것(stare)은 무례하지만, 밤하늘의 별을 넋 놓고 바라보는 것(gaze)은 평화롭습니다."
   },
   "expr-bat-003": {
     "id": "expr-bat-003",
@@ -48010,7 +49615,7 @@
     },
     "explanation": "glance는 의도적인 짧은 흘겨봄, glimpse는 찰나에 시야를 스친 불완전한 포착입니다.",
     "collocation": "take a glance at / catch a glimpse of",
-    "audioSentence": "I caught a glimpse of the celebrity passing by.",
+    "audioSentence": "I took a quick glance at my watch, and caught a brief glimpse of the celebrity passing by.",
     "dialogue": [
       {
         "speaker": "Mia",
@@ -48056,7 +49661,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-01",
     "unitTitleKo": "시각 동사의 미묘한 차이",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "I took a quick glance at my watch, and caught a brief glimpse of the celebrity passing by.",
+    "exampleKo": "시계를 힐끗 보고(glance), 지나가는 유명인을 얼핏 언뜻 보았습니다(glimpse)."
   },
   "expr-bat-004": {
     "id": "expr-bat-004",
@@ -48071,7 +49678,7 @@
     },
     "explanation": "notice는 무언가의 변화나 징후를 감지함, spot은 군중이나 시야 속에서 대상을 콕 집어 포착함입니다.",
     "collocation": "hard to notice vs. spot in a crowd",
-    "audioSentence": "She spotted a typo on page twenty-five.",
+    "audioSentence": "I noticed she got a haircut, and I spotted her in the huge crowd.",
     "dialogue": [
       {
         "speaker": "Tina",
@@ -48117,7 +49724,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-01",
     "unitTitleKo": "시각 동사의 미묘한 차이",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "I noticed she got a haircut, and I spotted her in the huge crowd.",
+    "exampleKo": "notice는 감각적으로 알아차리는 것이고, spot은 숨은 그림 찾기처럼 복잡한 가운데 딱 찾아내는 것입니다."
   },
   "expr-bat-005": {
     "id": "expr-bat-005",
@@ -48132,7 +49741,7 @@
     },
     "explanation": "hear는 우연히 소리를 감지함, listen to는 음악이나 강의에 귀를 기울임입니다.",
     "collocation": "listen to music / hear a strange noise",
-    "audioSentence": "Did you hear that thunderstorm last night?",
+    "audioSentence": "Did you hear that thunderstorm while listening to music on your headphones?",
     "dialogue": [
       {
         "speaker": "Ken",
@@ -48178,7 +49787,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-02",
     "unitTitleKo": "청각 표현의 미묘한 차이",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "Did you hear that thunderstorm while listening to music on your headphones?",
+    "exampleKo": "헤드폰으로 음악을 듣고(listen) 있는 동안 저 천둥소리가 들렸나요(hear)?"
   },
   "expr-bat-006": {
     "id": "expr-bat-006",
@@ -48193,7 +49804,7 @@
     },
     "explanation": "overhear는 우연한 청취(무죄), eavesdrop은 의도적인 엿듣기(비도덕적)입니다.",
     "collocation": "overhear a conversation vs. eavesdrop behind the door",
-    "audioSentence": "He was caught eavesdropping on the executive meeting.",
+    "audioSentence": "I overheard their chat on the train, but he deliberately eavesdropped.",
     "dialogue": [
       {
         "speaker": "Ann",
@@ -48239,7 +49850,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-02",
     "unitTitleKo": "청각 표현의 미묘한 차이",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "I overheard their chat on the train, but he deliberately eavesdropped.",
+    "exampleKo": "overhear는 남의 대화가 귀에 우연히 들려온 것이고, eavesdrop은 문틈으로 숨어서 엿듣는 얌체 짓입니다."
   },
   "expr-bat-007": {
     "id": "expr-bat-007",
@@ -48254,7 +49867,7 @@
     },
     "explanation": "sound는 음악이나 자연의 소리, noise는 불필요하고 불쾌한 잡음/소음입니다.",
     "collocation": "make too much noise vs. sound of rain",
-    "audioSentence": "Turn off the TV; it's making too much noise.",
+    "audioSentence": "I love the sound of ocean waves, but the construction noise drives me crazy.",
     "dialogue": [
       {
         "speaker": "Lily",
@@ -48300,7 +49913,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-02",
     "unitTitleKo": "청각 표현의 미묘한 차이",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "I love the sound of ocean waves, but the construction noise drives me crazy.",
+    "exampleKo": "sound는 중립적이거나 듣기 좋은 모든 소리, noise는 귀에 거슬리고 불쾌한 소음입니다."
   },
   "expr-bat-008": {
     "id": "expr-bat-008",
@@ -48315,7 +49930,7 @@
     },
     "explanation": "loud는 일반적 큰 소리, deafening은 귀가 먹먹할 정도의 폭발적 굉음입니다.",
     "collocation": "a deafening roar vs. loud voice",
-    "audioSentence": "The stadium erupted in deafening cheers.",
+    "audioSentence": "The music was loud, but the jet engine was deafening.",
     "dialogue": [
       {
         "speaker": "Roy",
@@ -48361,7 +49976,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-02",
     "unitTitleKo": "청각 표현의 미묘한 차이",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "The music was loud, but the jet engine was deafening.",
+    "exampleKo": "loud는 단순히 볼륨이 큰 것이고, deafening은 귀청이 떨어져 나갈 듯 고막이 마비되는 압도적 굉음입니다."
   },
   "expr-bat-009": {
     "id": "expr-bat-009",
@@ -48376,7 +49993,7 @@
     },
     "explanation": "salary는 연봉제 고정급, wage는 일한 시간만큼 받는 시급/일당입니다.",
     "collocation": "earn a high salary vs. minimum wage",
-    "audioSentence": "The federal minimum wage has remained unchanged.",
+    "audioSentence": "Salaried professionals get a fixed monthly salary, while hourly workers earn an hourly wage.",
     "dialogue": [
       {
         "speaker": "Mark",
@@ -48422,7 +50039,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-03",
     "unitTitleKo": "돈과 급여 어휘의 미묘한 차이",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Salaried professionals get a fixed monthly salary, while hourly workers earn an hourly wage.",
+    "exampleKo": "salary는 정규직 사무직의 고정 월급/연봉이고, wage는 일한 시간이나 일수에 따라 계산되는 시급/주급입니다."
   },
   "expr-bat-010": {
     "id": "expr-bat-010",
@@ -48437,7 +50056,7 @@
     },
     "explanation": "pay는 일반적인 보수 전반, stipend는 학비/연구 활동 지원금의 성격입니다.",
     "collocation": "receive a research stipend vs. take home pay",
-    "audioSentence": "Graduate assistants survive on a meager stipend.",
+    "audioSentence": "Interns and researchers receive a modest monthly stipend for living costs.",
     "dialogue": [
       {
         "speaker": "Prof",
@@ -48483,7 +50102,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-03",
     "unitTitleKo": "돈과 급여 어휘의 미묘한 차이",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Interns and researchers receive a modest monthly stipend for living costs.",
+    "exampleKo": "pay는 노동의 대가로 받는 모든 급여의 총칭, stipend는 대학원생이나 인턴에게 생활 보조로 지급되는 실비 지원금입니다."
   },
   "expr-bat-011": {
     "id": "expr-bat-011",
@@ -48498,7 +50119,7 @@
     },
     "explanation": "fee는 전문직 수수료/등록비, fare는 오직 교통수단의 승차 요금입니다.",
     "collocation": "bus fare vs. legal fee",
-    "audioSentence": "The entrance fee to the museum is twenty dollars.",
+    "audioSentence": "Lawyers charge an hourly fee, but taxis and buses charge a fare.",
     "dialogue": [
       {
         "speaker": "Driver",
@@ -48544,7 +50165,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-03",
     "unitTitleKo": "돈과 급여 어휘의 미묘한 차이",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Lawyers charge an hourly fee, but taxis and buses charge a fare.",
+    "exampleKo": "fee는 변호사, 의사, 학원 등 서비스에 대한 수수료/입장료이고, fare는 버스, 지하철, 택시 등 교통수단 탑승 요금입니다."
   },
   "expr-bat-012": {
     "id": "expr-bat-012",
@@ -48559,7 +50182,7 @@
     },
     "explanation": "bonus는 특별 상여금, commission은 영업 실적에 따른 건당 수수료입니다.",
     "collocation": "earn a 5% commission on sales",
-    "audioSentence": "Employees received a generous holiday bonus.",
+    "audioSentence": "Real estate agents earn a percentage commission on every home sold.",
     "dialogue": [
       {
         "speaker": "Agent",
@@ -48605,7 +50228,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-03",
     "unitTitleKo": "돈과 급여 어휘의 미묘한 차이",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Real estate agents earn a percentage commission on every home sold.",
+    "exampleKo": "bonus는 회사의 실적에 따라 일괄 또는 성과로 지급되는 격려금, commission은 판매액의 몇 %를 직접 떼어가는 수수료입니다."
   },
   "expr-bat-013": {
     "id": "expr-bat-013",
@@ -48620,7 +50245,7 @@
     },
     "explanation": "problem은 부정적이고 해결이 시급함, issue는 정책이나 토론의 쟁점 사안입니다.",
     "collocation": "solve a technical problem vs. discuss a policy issue",
-    "audioSentence": "Homelessness is a complex social issue.",
+    "audioSentence": "A math problem has a correct answer, while a moral issue requires debate.",
     "dialogue": [
       {
         "speaker": "Mechanic",
@@ -48666,7 +50291,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-04",
     "unitTitleKo": "문제와 위기 어휘의 미묘한 차이",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "A math problem has a correct answer, while a moral issue requires debate.",
+    "exampleKo": "problem은 즉시 고치거나 풀어야 할 명확한 결함/곤경이고, issue는 사회적 쟁점이나 의견이 엇갈리는 논의 주제입니다."
   },
   "expr-bat-014": {
     "id": "expr-bat-014",
@@ -48681,7 +50308,7 @@
     },
     "explanation": "trouble은 추상적 골칫거리, difficulty는 개별적인 난관이나 장애물입니다.",
     "collocation": "get into trouble vs. face financial difficulties",
-    "audioSentence": "He had great difficulty breathing after the run.",
+    "audioSentence": "He got into serious trouble with the police, but overcame financial difficulties.",
     "dialogue": [
       {
         "speaker": "Cop",
@@ -48727,7 +50354,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-04",
     "unitTitleKo": "문제와 위기 어휘의 미묘한 차이",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "He got into serious trouble with the police, but overcame financial difficulties.",
+    "exampleKo": "trouble은 보통 불가산 명사로 말썽이나 법적 곤경에 빠졌을 때 쓰고, difficulty는 복수형(-ies)으로 구체적 역경들을 뜻합니다."
   },
   "expr-bat-015": {
     "id": "expr-bat-015",
@@ -48742,7 +50371,7 @@
     },
     "explanation": "obstacle은 우회나 돌파가 가능한 장애, barrier는 물리적/제도적으로 가로막는 차단벽입니다.",
     "collocation": "overcome an obstacle vs. break down trade barriers",
-    "audioSentence": "High tariffs act as a trade barrier.",
+    "audioSentence": "A hurdle on a track is an obstacle to jump over, but a language barrier divides cultures.",
     "dialogue": [
       {
         "speaker": "Coach",
@@ -48788,7 +50417,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-04",
     "unitTitleKo": "문제와 위기 어휘의 미묘한 차이",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "A hurdle on a track is an obstacle to jump over, but a language barrier divides cultures.",
+    "exampleKo": "obstacle은 노력해서 뛰어넘거나 우회할 수 있는 장애물, barrier는 국경이나 언어 장벽처럼 통행을 원천 차단하는 거대한 벽입니다."
   },
   "expr-bat-016": {
     "id": "expr-bat-016",
@@ -48803,7 +50434,7 @@
     },
     "explanation": "dilemma는 선택의 난제, crisis는 긴급 조치가 필요한 총체적 위기입니다.",
     "collocation": "face a moral dilemma vs. manage a financial crisis",
-    "audioSentence": "The hospital faced an acute oxygen crisis.",
+    "audioSentence": "Choosing between two bad jobs is a dilemma, but a market crash is an economic crisis.",
     "dialogue": [
       {
         "speaker": "Ethicist",
@@ -48849,7 +50480,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-04",
     "unitTitleKo": "문제와 위기 어휘의 미묘한 차이",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Choosing between two bad jobs is a dilemma, but a market crash is an economic crisis.",
+    "exampleKo": "dilemma는 두 개의 불리한 선택지 사이에서 결정을 못 내리는 진퇴양난, crisis는 생존이 위협받는 긴급한 파국적 위기 상황입니다."
   },
   "expr-bat-017": {
     "id": "expr-bat-017",
@@ -48864,7 +50497,7 @@
     },
     "explanation": "sensitive는 감성적/민감함, sensible은 실용적/이성적/합리적입니다.",
     "collocation": "sensitive skin vs. a sensible choice",
-    "audioSentence": "Dress warmly; wear sensible winter boots.",
+    "audioSentence": "A sensitive person gets easily offended, while a sensible person makes wise decisions.",
     "dialogue": [
       {
         "speaker": "Dad",
@@ -48910,7 +50543,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05",
     "unitTitleKo": "성격과 태도의 미묘한 차이",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "A sensitive person gets easily offended, while a sensible person makes wise decisions.",
+    "exampleKo": "sensitive는 감각이나 감정이 예민하고 섬세한 것이고, sensible은 이성적 분별력과 상식(sense)을 갖춘 현명한 상태입니다."
   },
   "expr-bat-018": {
     "id": "expr-bat-018",
@@ -48925,7 +50560,7 @@
     },
     "explanation": "childish는 유치하고 철없는 태도, childlike는 순수하고 맑은 동심입니다.",
     "collocation": "childish temper tantrum vs. childlike innocence",
-    "audioSentence": "Picasso admired the childlike simplicity of tribal art.",
+    "audioSentence": "Throwing a tantrum is childish, but having a childlike sense of wonder is beautiful.",
     "dialogue": [
       {
         "speaker": "Mom",
@@ -48971,7 +50606,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05",
     "unitTitleKo": "성격과 태도의 미묘한 차이",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Throwing a tantrum is childish, but having a childlike sense of wonder is beautiful.",
+    "exampleKo": "childish는 나잇값을 못 하고 유치하게 떼를 쓰는 부정적 뉘앙스, childlike는 아이처럼 때 묻지 않고 순수한 긍정적 뉘앙스입니다."
   },
   "expr-bat-019": {
     "id": "expr-bat-019",
@@ -48986,7 +50623,7 @@
     },
     "explanation": "confident는 긍정적인 자기 확신, arrogant는 타인을 깔보는 거만함입니다.",
     "collocation": "confident tone vs. arrogant smirk",
-    "audioSentence": "Confidence attracts people; arrogance repels them.",
+    "audioSentence": "A truly confident leader inspires team members, while an arrogant manager alienates them.",
     "dialogue": [
       {
         "speaker": "HR",
@@ -49032,7 +50669,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05",
     "unitTitleKo": "성격과 태도의 미묘한 차이",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "A truly confident leader inspires team members, while an arrogant manager alienates them.",
+    "exampleKo": "진정으로 자신감 있는(confident) 리더는 영감을 주지만, 오만한(arrogant) 관리자는 사람들을 멀어지게 합니다."
   },
   "expr-bat-020": {
     "id": "expr-bat-020",
@@ -49047,7 +50686,7 @@
     },
     "explanation": "stubborn은 융통성 없는 황소고집, persistent는 칠전팔기의 끈기와 집념입니다.",
     "collocation": "stubborn as a mule vs. persistent effort",
-    "audioSentence": "Her persistent efforts were rewarded with a Nobel prize.",
+    "audioSentence": "A stubborn donkey refuses to budge, but a persistent scientist keeps testing until discovery.",
     "dialogue": [
       {
         "speaker": "Teacher",
@@ -49093,7 +50732,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05",
     "unitTitleKo": "성격과 태도의 미묘한 차이",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "A stubborn donkey refuses to budge, but a persistent scientist keeps testing until discovery.",
+    "exampleKo": "stubborn은 합리적 이유 없이 막무가내로 고집부리는 성격, persistent는 목표를 향해 난관을 뚫고 끈기 있게 전진하는 미덕입니다."
   },
   "expr-bat-021": {
     "id": "expr-bat-021",
@@ -49108,7 +50749,7 @@
     },
     "explanation": "chance는 복권 같은 운/우연성, opportunity는 커리어나 발전의 소중한 기회입니다.",
     "collocation": "golden opportunity vs. take a chance",
-    "audioSentence": "Seize this career opportunity.",
+    "audioSentence": "Buying a lottery ticket is a game of chance, but landing an interview is a golden opportunity.",
     "dialogue": [
       {
         "speaker": "Mentor",
@@ -49154,7 +50795,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-06",
     "unitTitleKo": "운과 가능성 어휘의 미묘한 차이",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Buying a lottery ticket is a game of chance, but landing an interview is a golden opportunity.",
+    "exampleKo": "chance는 우연이나 확률(가산/불가산), opportunity는 본인의 성장과 발전을 위해 반드시 잡아야 할 호기(기회)입니다."
   },
   "expr-bat-022": {
     "id": "expr-bat-022",
@@ -49169,7 +50812,7 @@
     },
     "explanation": "luck은 일상의 작은 행운, fortune은 막대한 부나 거대한 숙명적 운입니다.",
     "collocation": "good luck vs. amass a huge fortune",
-    "audioSentence": "He spent a fortune restoring the vintage yacht.",
+    "audioSentence": "Finding a lost wallet is good luck, but inheriting a vast estate is a massive fortune.",
     "dialogue": [
       {
         "speaker": "Boy",
@@ -49215,7 +50858,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-06",
     "unitTitleKo": "운과 가능성 어휘의 미묘한 차이",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Finding a lost wallet is good luck, but inheriting a vast estate is a massive fortune.",
+    "exampleKo": "luck은 일상 속의 소소한 복과 우연한 운수, fortune은 거액의 재산이나 인생 전체를 좌우하는 거대한 운명을 뜻합니다."
   },
   "expr-bat-023": {
     "id": "expr-bat-023",
@@ -49230,7 +50875,7 @@
     },
     "explanation": "possibility는 실현 가능성(0 초과), probability는 통계적 확률/승산입니다.",
     "collocation": "high probability vs. distinct possibility",
-    "audioSentence": "There is a strong probability of rain this evening.",
+    "audioSentence": "A meteor hitting Earth is a possibility, but rain tomorrow has a high probability.",
     "dialogue": [
       {
         "speaker": "Weather Host",
@@ -49276,7 +50921,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-06",
     "unitTitleKo": "운과 가능성 어휘의 미묘한 차이",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "A meteor hitting Earth is a possibility, but rain tomorrow has a high probability.",
+    "exampleKo": "possibility는 0%가 아니어서 일어날 수도 있는 잠재성, probability는 수학적 통계로 따졌을 때 일어날 법한 높은 승산입니다."
   },
   "expr-bat-024": {
     "id": "expr-bat-024",
@@ -49291,7 +50938,7 @@
     },
     "explanation": "coincidence는 단순한 우연, fate는 필연적인 숙명입니다.",
     "collocation": "a strange coincidence vs. accept one's fate",
-    "audioSentence": "By pure coincidence, we booked the same flight.",
+    "audioSentence": "Wearing the same shirt is a funny coincidence, but finding your soulmate feels like fate.",
     "dialogue": [
       {
         "speaker": "Girl",
@@ -49337,7 +50984,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-06",
     "unitTitleKo": "운과 가능성 어휘의 미묘한 차이",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Wearing the same shirt is a funny coincidence, but finding your soulmate feels like fate.",
+    "exampleKo": "coincidence는 인과관계 없는 우연의 일치, fate는 초자연적 힘이나 섭리에 의해 정해진 불가항력의 운명입니다."
   },
   "expr-bat-025": {
     "id": "expr-bat-025",
@@ -49352,7 +51001,7 @@
     },
     "explanation": "take a trip은 여행을 가다, travel은 추상적 여행/이동입니다.",
     "collocation": "go on a road trip vs. air travel",
-    "audioSentence": "Travel expands your worldview.",
+    "audioSentence": "I took a weekend business trip, because travel broadens the mind.",
     "dialogue": [
       {
         "speaker": "Agent",
@@ -49398,7 +51047,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-07",
     "unitTitleKo": "여행과 이동 어휘의 미묘한 차이",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "I took a weekend business trip, because travel broadens the mind.",
+    "exampleKo": "trip은 구체적으로 다녀온 단기 여행/출장(가산 명사 a trip), travel은 여행이라는 행위나 이동 전반(불가산 명사 또는 동사)입니다."
   },
   "expr-bat-026": {
     "id": "expr-bat-026",
@@ -49413,7 +51064,7 @@
     },
     "explanation": "journey는 긴 여정이나 인생 역정, voyage는 바다/우주로의 항해입니다.",
     "collocation": "life is a journey vs. voyage across the Atlantic",
-    "audioSentence": "The Titanic set off on its maiden voyage.",
+    "audioSentence": "A road trip across Africa is an arduous journey, but sailing around the world is a voyage.",
     "dialogue": [
       {
         "speaker": "Captain",
@@ -49459,7 +51110,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-07",
     "unitTitleKo": "여행과 이동 어휘의 미묘한 차이",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "A road trip across Africa is an arduous journey, but sailing around the world is a voyage.",
+    "exampleKo": "journey는 육상이나 인생의 길고 험난한 여정, voyage는 선박이나 우주선을 타고 떠나는 대양/우주 항해입니다."
   },
   "expr-bat-027": {
     "id": "expr-bat-027",
@@ -49474,7 +51127,7 @@
     },
     "explanation": "commute는 매일의 출퇴근, transit은 환승/대중교통 시스템입니다.",
     "collocation": "morning commute vs. rapid transit system",
-    "audioSentence": "She reads books during her daily commute.",
+    "audioSentence": "My daily commute takes 45 minutes, using public transit.",
     "dialogue": [
       {
         "speaker": "Ben",
@@ -49520,7 +51173,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-07",
     "unitTitleKo": "여행과 이동 어휘의 미묘한 차이",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "My daily commute takes 45 minutes, using public transit.",
+    "exampleKo": "commute는 집과 직장/학교 사이를 매일 오가는 통근/통학 길, transit은 대중교통 체계나 경유지 통과를 뜻합니다."
   },
   "expr-bat-028": {
     "id": "expr-bat-028",
@@ -49535,7 +51190,7 @@
     },
     "explanation": "tour는 정기 순회/투어, excursion은 가벼운 당일치기 현장 견학입니다.",
     "collocation": "guided city tour vs. day excursion to the island",
-    "audioSentence": "The hotel organizes snorkeling excursions.",
+    "audioSentence": "A rock band goes on a world tour, but cruise passengers take a day excursion to the ruins.",
     "dialogue": [
       {
         "speaker": "Guide",
@@ -49581,7 +51236,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-07",
     "unitTitleKo": "여행과 이동 어휘의 미묘한 차이",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "A rock band goes on a world tour, but cruise passengers take a day excursion to the ruins.",
+    "exampleKo": "tour는 여러 도시나 국가를 순회하는 종합 유람, excursion은 본 여행지에서 잠시 짬을 내어 다녀오는 당일치기 근교 소풍/견학입니다."
   },
   "expr-bat-029": {
     "id": "expr-bat-029",
@@ -49596,7 +51253,7 @@
     },
     "explanation": "job은 직업/일자리, work는 일/노동/작업입니다.",
     "collocation": "apply for a job vs. hard work pays off",
-    "audioSentence": "He is looking for a full-time job.",
+    "audioSentence": "I love my new job, but I have a lot of hard work to finish tonight.",
     "dialogue": [
       {
         "speaker": "Interviewer",
@@ -49642,7 +51299,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-08",
     "unitTitleKo": "직업과 노동 어휘의 미묘한 차이",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "I love my new job, but I have a lot of hard work to finish tonight.",
+    "exampleKo": "job은 특정 직위나 고용된 일자리(가산 a job), work는 노동, 업무, 과업이라는 행동 자체(불가산 work)입니다."
   },
   "expr-bat-029b": {
     "id": "expr-bat-029b",
@@ -49657,7 +51316,7 @@
     },
     "explanation": "career는 생애 커리어와 발전 과정, occupation은 서식용 직업 분류입니다.",
     "collocation": "career advancement vs. write your occupation on the form",
-    "audioSentence": "She built a stellar career in biotechnology.",
+    "audioSentence": "Teaching was her lifelong career, but her passport lists her occupation as educator.",
     "dialogue": [
       {
         "speaker": "Officer",
@@ -49703,7 +51362,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-08",
     "unitTitleKo": "직업과 노동 어휘의 미묘한 차이",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Teaching was her lifelong career, but her passport lists her occupation as educator.",
+    "exampleKo": "career는 일생에 걸쳐 쌓아 올린 전문적 성취와 진로 궤적, occupation은 공문서나 세관 신고서 직업란에 적는 형식적 직업 명칭입니다."
   },
   "expr-bat-030": {
     "id": "expr-bat-030",
@@ -49718,7 +51379,7 @@
     },
     "explanation": "profession은 화이트칼라 전문직, trade는 숙련된 블루칼라 기술직입니다.",
     "collocation": "medical profession vs. learn a skilled trade",
-    "audioSentence": "Carpentry is an honorable and lucrative trade.",
+    "audioSentence": "Medicine and law are professions requiring licenses, while plumbing and carpentry are skilled trades.",
     "dialogue": [
       {
         "speaker": "Counselor",
@@ -49764,7 +51425,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-08",
     "unitTitleKo": "직업과 노동 어휘의 미묘한 차이",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Medicine and law are professions requiring licenses, while plumbing and carpentry are skilled trades.",
+    "exampleKo": "profession은 오랜 고등 교육과 공인 면허를 요하는 전문직(의사, 변호사 등), trade는 도제식 훈련과 손기술을 요하는 기능직/기술직(배관공, 목수 등)입니다."
   },
   "expr-bat-031": {
     "id": "expr-bat-031",
@@ -49779,7 +51442,7 @@
     },
     "explanation": "task는 작은 업무 단위, duty는 도덕적/법적 사명과 의무입니다.",
     "collocation": "complete a daily task vs. perform one's civic duty",
-    "audioSentence": "Jury service is an important civic duty.",
+    "audioSentence": "Cleaning your inbox is a routine task, but protecting citizens is a soldier's sacred duty.",
     "dialogue": [
       {
         "speaker": "Sergeant",
@@ -49825,7 +51488,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-08",
     "unitTitleKo": "직업과 노동 어휘의 미묘한 차이",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Cleaning your inbox is a routine task, but protecting citizens is a soldier's sacred duty.",
+    "exampleKo": "task는 끝내야 할 구체적인 개별 과제/할 일이고, duty는 양심, 법률, 직무에 의해 지켜야 할 무거운 책임과 의무입니다."
   },
   "expr-bat-032": {
     "id": "expr-bat-032",
@@ -49840,7 +51505,7 @@
     },
     "explanation": "cost는 생산 비용/원가, price는 소비자가 지불하는 가격표 금액입니다.",
     "collocation": "production cost vs. sticker price",
-    "audioSentence": "The high price covers both manufacturing costs and marketing.",
+    "audioSentence": "The retail price on the tag was $100, but the production cost was only $20.",
     "dialogue": [
       {
         "speaker": "Buyer",
@@ -49886,7 +51551,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-09",
     "unitTitleKo": "비용과 가치 어휘의 미묘한 차이",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "The retail price on the tag was $100, but the production cost was only $20.",
+    "exampleKo": "cost는 재화나 서비스를 만드는 데 투입된 원가나 치러야 할 대가, price는 매장에서 손님에게 부과하는 최종 정가/판매 가격입니다."
   },
   "expr-bat-033": {
     "id": "expr-bat-033",
@@ -49901,7 +51568,7 @@
     },
     "explanation": "expense는 전반적 생활비/회사 경비, charge는 서비스 건당 청구액입니다.",
     "collocation": "business expenses vs. service charge",
-    "audioSentence": "Living expenses in New York are notoriously high.",
+    "audioSentence": "Travel expenses can be reimbursed, while the bank adds a monthly maintenance charge.",
     "dialogue": [
       {
         "speaker": "Traveler",
@@ -49947,7 +51614,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-09",
     "unitTitleKo": "비용과 가치 어휘의 미묘한 차이",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "Travel expenses can be reimbursed, while the bank adds a monthly maintenance charge.",
+    "exampleKo": "expense는 살아가거나 사업을 하며 나가는 전반적인 지출/경비, charge는 호텔이나 카드사에서 특정 항목에 매기는 청구 요금입니다."
   },
   "expr-bat-034": {
     "id": "expr-bat-034",
@@ -49962,7 +51631,7 @@
     },
     "explanation": "cheap은 조잡하고 값싼 느낌, economical은 합리적이고 절약적인 미덕입니다.",
     "collocation": "cheap plastic replica vs. an economical hybrid engine",
-    "audioSentence": "Cooking at home is both healthy and economical.",
+    "audioSentence": "A cheap toy breaks in five minutes, but a hybrid car is economical to drive.",
     "dialogue": [
       {
         "speaker": "Buyer",
@@ -50008,7 +51677,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-09",
     "unitTitleKo": "비용과 가치 어휘의 미묘한 차이",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "A cheap toy breaks in five minutes, but a hybrid car is economical to drive.",
+    "exampleKo": "cheap은 가격뿐 아니라 품질도 조잡하고 싸구려라는 부정적 어감, economical은 낭비 없이 알뜰하고 가성비가 훌륭하다는 칭찬입니다."
   },
   "expr-bat-035": {
     "id": "expr-bat-035",
@@ -50023,7 +51694,7 @@
     },
     "explanation": "valuable은 고가의, priceless는 돈으로 살 수 없는 귀중함입니다.",
     "collocation": "valuable gold watch vs. priceless family memories",
-    "audioSentence": "The museum houses priceless artifacts of antiquity.",
+    "audioSentence": "A diamond ring is valuable, but a mother's love is priceless.",
     "dialogue": [
       {
         "speaker": "Appraiser",
@@ -50069,7 +51740,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-09",
     "unitTitleKo": "비용과 가치 어휘의 미묘한 차이",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "A diamond ring is valuable, but a mother's love is priceless.",
+    "exampleKo": "valuable은 금전적 가치가 매우 높은 것(환산 가능), priceless는 돈 따위로는 도저히 그 가치를 매길 수 없을 만큼 소중함을 뜻합니다."
   },
   "expr-bat-036": {
     "id": "expr-bat-036",
@@ -50084,7 +51757,7 @@
     },
     "explanation": "doubt는 부정적 의심(아닐 거야), suspect는 혐의적 의심(그놈일 거야)입니다.",
     "collocation": "I doubt his honesty vs. police suspect foul play",
-    "audioSentence": "I doubt that prices will drop soon.",
+    "audioSentence": "I doubt it will rain (I think no), but the police suspect he is guilty (they think yes).",
     "dialogue": [
       {
         "speaker": "Judge",
@@ -50130,7 +51803,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-10",
     "unitTitleKo": "추측과 인지의 미묘한 차이",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "I doubt it will rain (I think no), but the police suspect he is guilty (they think yes).",
+    "exampleKo": "doubt는 '~가 아닐 것 같다'고 부정적으로 회의하는 것, suspect는 '~인 것 같다'고 혐의나 가능성을 긍정적으로 의심하는 것입니다."
   },
   "expr-bat-037": {
     "id": "expr-bat-037",
@@ -50145,7 +51820,7 @@
     },
     "explanation": "imagine은 심상화/공상, suppose는 논증을 위한 가설 설정입니다.",
     "collocation": "imagine a better world vs. suppose we lose the match",
-    "audioSentence": "I suppose we should leave now before dark.",
+    "audioSentence": "A novelist imagines fantastical dragons, while a scientist supposes a hypothetical scenario.",
     "dialogue": [
       {
         "speaker": "Math Teacher",
@@ -50191,7 +51866,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-10",
     "unitTitleKo": "추측과 인지의 미묘한 차이",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "A novelist imagines fantastical dragons, while a scientist supposes a hypothetical scenario.",
+    "exampleKo": "imagine은 그림이나 환상을 머릿속에 자유롭게 그려보는 상상, suppose는 논리적 추론이나 가정을 위해 '~라고 가정해 보자'입니다."
   },
   "expr-bat-038": {
     "id": "expr-bat-038",
@@ -50206,7 +51883,7 @@
     },
     "explanation": "assume은 독단적 넘겨짚기, presume은 정황 증거에 기반한 추정입니다.",
     "collocation": "make an assumption vs. presumed innocent until proven guilty",
-    "audioSentence": "Presumed innocent is a core legal doctrine.",
+    "audioSentence": "To assume is to guess without evidence, while to presume is to infer based on reasonable probability.",
     "dialogue": [
       {
         "speaker": "Defense",
@@ -50252,7 +51929,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-10",
     "unitTitleKo": "추측과 인지의 미묘한 차이",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "To assume is to guess without evidence, while to presume is to infer based on reasonable probability.",
+    "exampleKo": "assume은 아무런 객관적 근거 없이 자의적으로 속단하는 것, presume은 정황과 관례에 비추어 타당하게 추정하는 것입니다."
   },
   "expr-bat-039": {
     "id": "expr-bat-039",
@@ -50267,7 +51946,7 @@
     },
     "explanation": "remember는 내재된 기억의 존재, recall은 의식적인 기억의 인출입니다.",
     "collocation": "remember someone's face vs. recall exact details",
-    "audioSentence": "He tried hard to recall the telephone number.",
+    "audioSentence": "I naturally remember my childhood home, but I must deliberately recall his license plate.",
     "dialogue": [
       {
         "speaker": "Cop",
@@ -50313,7 +51992,9 @@
     "seriesTitleEn": "The Nuance Battle: Confusing Word Pairs",
     "unitId": "unit-battle-05-10",
     "unitTitleKo": "추측과 인지의 미묘한 차이",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "I naturally remember my childhood home, but I must deliberately recall his license plate.",
+    "exampleKo": "remember는 머릿속에 기억이 온전히 보존되어 절로 떠오르는 것, recall은 기억의 서랍을 뒤져 의식적으로 회상해 내는 것입니다."
   },
   "expr-phrasal-001": {
     "id": "expr-phrasal-001",
@@ -50374,7 +52055,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-01",
     "unitTitleKo": "하루 일과 & 루틴 구동사",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "The festival will kick off tomorrow afternoon.",
+    "exampleKo": "축구 경기 킥오프에서 유래하여 어떤 행사나 프로젝트를 활기차게 시작할 때 씁니다."
   },
   "expr-phrasal-002": {
     "id": "expr-phrasal-002",
@@ -50435,7 +52118,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-01",
     "unitTitleKo": "하루 일과 & 루틴 구동사",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Take an hour to wind down and relax.",
+    "exampleKo": "시계태엽이 풀리듯 하루나 바쁜 일과의 긴장을 풀고 편안한 상태로 들어설 때 씁니다."
   },
   "expr-phrasal-003": {
     "id": "expr-phrasal-003",
@@ -50496,7 +52181,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-01",
     "unitTitleKo": "하루 일과 & 루틴 구동사",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Decided to turn in early tonight.",
+    "exampleKo": "침대로 몸을 돌려 눕는다는 어원에서 '잠자리에 들다'를 부드럽게 표현합니다."
   },
   "expr-phrasal-004": {
     "id": "expr-phrasal-004",
@@ -50557,7 +52244,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-01",
     "unitTitleKo": "하루 일과 & 루틴 구동사",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Allowed myself to sleep in until ten.",
+    "exampleKo": "overstaying in bed 원해서 알람 없이 푹 늦잠 자는 행복한 상태를 뜻합니다."
   },
   "expr-phrasal-005": {
     "id": "expr-phrasal-005",
@@ -50618,7 +52307,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-02",
     "unitTitleKo": "만남과 사교 구동사",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "Never expected to bump into you here.",
+    "exampleKo": "길을 걷다 어깨가 툭 부딪히듯 뜻밖의 장소에서 우연히 아는 사람을 만날 때 씁니다."
   },
   "expr-phrasal-006": {
     "id": "expr-phrasal-006",
@@ -50679,7 +52370,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-02",
     "unitTitleKo": "만남과 사교 구동사",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "We need to catch up soon.",
+    "exampleKo": "한동안 못 봐서 뒤처진 서로의 삶의 소식을 따라잡는다는 따뜻한 의미입니다."
   },
   "expr-phrasal-007": {
     "id": "expr-phrasal-007",
@@ -50740,7 +52433,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-02",
     "unitTitleKo": "만남과 사교 구동사",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "Over a hundred people showed up for the lecture.",
+    "exampleKo": "약속된 장소에 모습을 드러내거나 참석할 때 씁니다."
   },
   "expr-phrasal-008": {
     "id": "expr-phrasal-008",
@@ -50801,7 +52496,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-02",
     "unitTitleKo": "만남과 사교 구동사",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "I'll drop by the bakery on my way home.",
+    "exampleKo": "물방울이 툭 떨어지듯 격식 차리지 않고 잠깐 가볍게 들를 때 씁니다."
   },
   "expr-phrasal-009": {
     "id": "expr-phrasal-009",
@@ -50816,7 +52513,7 @@
     },
     "explanation": "깊은 대화와 정서적 유대를 쌓을 때 자주 등장하는 감성적인 구동사입니다.",
     "collocation": "open up to someone",
-    "audioSentence": "hard to open up about personal struggles",
+    "audioSentence": "It took a while, but he finally opened up about his worries.",
     "dialogue": [
       {
         "speaker": "Grace",
@@ -50862,7 +52559,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-03",
     "unitTitleKo": "관계와 소통의 뉘앙스",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "It took a while, but he finally opened up about his worries.",
+    "exampleKo": "굳게 닫혀 있던 마음의 문을 열고 속마음을 솔직히 나눌 때 씁니다."
   },
   "expr-phrasal-010": {
     "id": "expr-phrasal-010",
@@ -50923,7 +52622,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-03",
     "unitTitleKo": "관계와 소통의 뉘앙스",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Sad to see old friends drift apart.",
+    "exampleKo": "강물에 뜬 조각배가 서서히 다른 방향으로 떠내려가듯 자연스럽게 연락이 뜸해질 때 씁니다."
   },
   "expr-phrasal-011": {
     "id": "expr-phrasal-011",
@@ -50984,7 +52685,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-03",
     "unitTitleKo": "관계와 소통의 뉘앙스",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Just brush it off and move forward.",
+    "exampleKo": "옷에 묻은 먼지를 툭툭 털어내듯 불쾌한 비난이나 실수를 대수롭지 않게 넘길 때 씁니다."
   },
   "expr-phrasal-012": {
     "id": "expr-phrasal-012",
@@ -51045,7 +52748,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-03",
     "unitTitleKo": "관계와 소통의 뉘앙스",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Kiss and make up.",
+    "exampleKo": "깨지거나 어그러진 관계를 원래대로 다시 메우고 복원한다는 의미입니다."
   },
   "expr-phrasal-013": {
     "id": "expr-phrasal-013",
@@ -51106,7 +52811,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-04",
     "unitTitleKo": "과업 완수와 생산성",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Aim to wrap up by 5 PM.",
+    "exampleKo": "선물을 포장지에 깔끔하게 싸서 묶듯 진행 중이던 일이나 회의를 매듭지을 때 씁니다."
   },
   "expr-phrasal-014": {
     "id": "expr-phrasal-014",
@@ -51167,7 +52874,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-04",
     "unitTitleKo": "과업 완수와 생산성",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Follow up with an email.",
+    "exampleKo": "한 번의 만남이나 질문으로 끝내지 않고 뒤이어 꼼꼼하게 진행 상황을 확인할 때 씁니다."
   },
   "expr-phrasal-015": {
     "id": "expr-phrasal-015",
@@ -51228,7 +52937,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-04",
     "unitTitleKo": "과업 완수와 생산성",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Just power through until Friday.",
+    "exampleKo": "강한 에너지 엔진을 가동하듯 피로나 난관에도 굴하지 않고 묵묵히 버텨내며 해낼 때 씁니다."
   },
   "expr-phrasal-016": {
     "id": "expr-phrasal-016",
@@ -51289,7 +53000,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-04",
     "unitTitleKo": "과업 완수와 생산성",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Hard to get through all these readings.",
+    "exampleKo": "긴 터널을 뚫고 지나가듯 고난이나 엄청난 양의 시험공부를 헤쳐나갈 때 씁니다."
   },
   "expr-phrasal-017": {
     "id": "expr-phrasal-017",
@@ -51350,7 +53063,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-05",
     "unitTitleKo": "문제 해결과 조율",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Need some time to sort things out.",
+    "exampleKo": "뒤엉킨 실타래를 가지런히 분류하여 원래의 정돈된 상태로 수습할 때 씁니다."
   },
   "expr-phrasal-018": {
     "id": "expr-phrasal-018",
@@ -51365,7 +53080,7 @@
     },
     "explanation": "비즈니스 협상에서 마지막 쟁점을 조율할 때 고급스럽게 쓰입니다.",
     "collocation": "iron out differences",
-    "audioSentence": "iron out minor contract terms",
+    "audioSentence": "We agree in principle, but we still need to iron out the fine details.",
     "dialogue": [
       {
         "speaker": "Lawyer",
@@ -51411,7 +53126,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-05",
     "unitTitleKo": "문제 해결과 조율",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "We agree in principle, but we still need to iron out the fine details.",
+    "exampleKo": "구겨진 셔츠를 다리미로 빳빳하게 펴듯 계약이나 협상의 미세한 불일치를 부드럽게 펼 때 씁니다."
   },
   "expr-phrasal-019": {
     "id": "expr-phrasal-019",
@@ -51472,7 +53189,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-05",
     "unitTitleKo": "문제 해결과 조율",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Can't figure out what he wants.",
+    "exampleKo": "머리를 써서 곰곰이 생각한 끝에 해결책이나 작동 원리를 깨달을 때 씁니다."
   },
   "expr-phrasal-020": {
     "id": "expr-phrasal-020",
@@ -51487,7 +53206,7 @@
     },
     "explanation": "후보군 선정, 회의 주제 압축, 여행지 결정 시 즐겨 씁니다.",
     "collocation": "narrow down the options",
-    "audioSentence": "narrowed down to finalists",
+    "audioSentence": "We narrowed down the applicants to three top candidates.",
     "dialogue": [
       {
         "speaker": "HR",
@@ -51533,7 +53252,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-05",
     "unitTitleKo": "문제 해결과 조율",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "We narrowed down the applicants to three top candidates.",
+    "exampleKo": "넓은 범위를 좁은 통로처럼 좁혀 가장 유력한 몇 가지 옵션으로 압축할 때 씁니다."
   },
   "expr-phrasal-021": {
     "id": "expr-phrasal-021",
@@ -51594,7 +53315,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-06",
     "unitTitleKo": "역경 극복과 회복 탄력성",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Amazing ability to bounce back.",
+    "exampleKo": "탱탱볼이 바닥을 치고 다시 높이 솟아오르듯 좌절 후 놀라운 회복 탄력성을 보일 때 씁니다."
   },
   "expr-phrasal-022": {
     "id": "expr-phrasal-022",
@@ -51655,7 +53378,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-06",
     "unitTitleKo": "역경 극복과 회복 탄력성",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Believe she will pull through.",
+    "exampleKo": "위태로운 밧줄을 당겨 험난한 구렁텅이에서 벗어나듯 죽을 고비나 큰 위기를 극복할 때 씁니다."
   },
   "expr-phrasal-023": {
     "id": "expr-phrasal-023",
@@ -51670,7 +53395,7 @@
     },
     "explanation": "어려운 상황에서도 끈기 있게 인내하거나 더 나은 조건을 위해 버틸 때 씁니다.",
     "collocation": "hold out for a better offer",
-    "audioSentence": "hold out hope until the end",
+    "audioSentence": "The trapped miners held out until rescue teams arrived.",
     "dialogue": [
       {
         "speaker": "Reporter",
@@ -51716,7 +53441,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-06",
     "unitTitleKo": "역경 극복과 회복 탄력성",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "The trapped miners held out until rescue teams arrived.",
+    "exampleKo": "고립된 광부들은 구조대가 도착할 때까지 끝까지 버텨냈습니다(held out)."
   },
   "expr-phrasal-024": {
     "id": "expr-phrasal-024",
@@ -51731,7 +53458,7 @@
     },
     "explanation": "weather the storm 또는 weather through로 쓰여 품격 있는 극복을 나타냅니다.",
     "collocation": "weather through the recession",
-    "audioSentence": "help each other weather through storms",
+    "audioSentence": "Strong families weather through difficult economic storms together.",
     "dialogue": [
       {
         "speaker": "CEO",
@@ -51777,7 +53504,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-06",
     "unitTitleKo": "역경 극복과 회복 탄력성",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Strong families weather through difficult economic storms together.",
+    "exampleKo": "거친 풍랑을 만난 배가 침몰하지 않고 폭풍을 뚫고 무사히 항해하듯 시련을 극복할 때 씁니다."
   },
   "expr-phrasal-025": {
     "id": "expr-phrasal-025",
@@ -51792,7 +53521,7 @@
     },
     "explanation": "가계부 절약, 다이어트, 기업 구조조정에서 빠질 수 없는 단골 구동사입니다.",
     "collocation": "cut back on expenses",
-    "audioSentence": "cut back on sugar intake",
+    "audioSentence": "We need to cut back on dining out to save for a home.",
     "dialogue": [
       {
         "speaker": "Sam",
@@ -51838,7 +53567,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-07",
     "unitTitleKo": "돈과 소비의 리얼 구동사",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "We need to cut back on dining out to save for a home.",
+    "exampleKo": "자르듯(cut) 뒤로 물려(back) 과도한 지출이나 커피, 설탕 섭취 등을 절감할 때 씁니다."
   },
   "expr-phrasal-026": {
     "id": "expr-phrasal-026",
@@ -51899,7 +53630,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-07",
     "unitTitleKo": "돈과 소비의 리얼 구동사",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "Everyone chipped in to help.",
+    "exampleKo": "포커 칩을 테이블 중앙에 모으듯 각자 소액의 돈이나 작은 정성을 모을 때 씁니다."
   },
   "expr-phrasal-027": {
     "id": "expr-phrasal-027",
@@ -51914,7 +53647,7 @@
     },
     "explanation": "바가지요금이나 비싼 수리비, 벌금을 낼 때 씁쓸한 뉘앙스를 담아 씁니다.",
     "collocation": "shell out big money",
-    "audioSentence": "forced to shell out for legal fees",
+    "audioSentence": "I had to shell out a thousand dollars to repair the car.",
     "dialogue": [
       {
         "speaker": "Liam",
@@ -51960,7 +53693,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-07",
     "unitTitleKo": "돈과 소비의 리얼 구동사",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "I had to shell out a thousand dollars to repair the car.",
+    "exampleKo": "조개껍데기 속에 숨겨둔 비상금을 억지로 까서 내듯 예상치 못한 큰돈을 지출할 때 씁니다."
   },
   "expr-phrasal-028": {
     "id": "expr-phrasal-028",
@@ -51975,7 +53710,7 @@
     },
     "explanation": "What a rip-off!(완전 바가지야!)라는 명사형 감탄사로도 널리 쓰입니다.",
     "collocation": "get ripped off in tourist areas",
-    "audioSentence": "a total rip-off",
+    "audioSentence": "Tourist shops often rip off unsuspecting travelers.",
     "dialogue": [
       {
         "speaker": "Traveler",
@@ -52021,7 +53756,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-07",
     "unitTitleKo": "돈과 소비의 리얼 구동사",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "Tourist shops often rip off unsuspecting travelers.",
+    "exampleKo": "손님의 지갑에서 돈을 거칠게 뜯어내듯(rip) 터무니없는 폭리를 취할 때 씁니다."
   },
   "expr-phrasal-029": {
     "id": "expr-phrasal-029",
@@ -52036,7 +53773,7 @@
     },
     "explanation": "감동적인 연설, 슬픈 영화, 감사 인사를 전할 때 자주 등장합니다.",
     "collocation": "choked up during the speech",
-    "audioSentence": "makes me choke up every time",
+    "audioSentence": "He choked up with emotion during his daughter's wedding toast.",
     "dialogue": [
       {
         "speaker": "Noah",
@@ -52082,7 +53819,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-08",
     "unitTitleKo": "마음과 감정의 파도",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "He choked up with emotion during his daughter's wedding toast.",
+    "exampleKo": "눈물이나 북받치는 감정 때문에 목구멍이 꽉 막힌 듯 말을 잇지 못할 때 씁니다."
   },
   "expr-phrasal-030": {
     "id": "expr-phrasal-030",
@@ -52143,7 +53882,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-08",
     "unitTitleKo": "마음과 감정의 파도",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Don't freak out, it's just a prank.",
+    "exampleKo": "기이할 정도로(freak) 이성을 잃고 깜짝 놀라거나 극도의 공황 상태에 빠질 때 씁니다."
   },
   "expr-phrasal-031": {
     "id": "expr-phrasal-031",
@@ -52158,7 +53899,7 @@
     },
     "explanation": "화가 나거나 공황에 빠진 사람을 차분하게 달랠 때 필수입니다.",
     "collocation": "calm down after an argument",
-    "audioSentence": "took a deep breath to calm down",
+    "audioSentence": "Please calm down and explain clearly what happened.",
     "dialogue": [
       {
         "speaker": "Ethan",
@@ -52204,7 +53945,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-08",
     "unitTitleKo": "마음과 감정의 파도",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Please calm down and explain clearly what happened.",
+    "exampleKo": "거칠어진 호흡과 감정의 파도를 평온한 아래(down)로 가라앉힐 때 씁니다."
   },
   "expr-phrasal-032": {
     "id": "expr-phrasal-032",
@@ -52265,7 +54008,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-08",
     "unitTitleKo": "마음과 감정의 파도",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Cheer up, things will improve.",
+    "exampleKo": "우울하게 처져 있는 기분을 위로(up) 끌어올려 기운을 북돋울 때 씁니다."
   },
   "expr-phrasal-033": {
     "id": "expr-phrasal-033",
@@ -52326,7 +54071,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-09",
     "unitTitleKo": "이동과 여행의 발걸음",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "Ready to head out for dinner?",
+    "exampleKo": "머리(시선)가 향하는 방향으로 몸을 돌려 목적지를 향해 발걸음을 뗄 때 씁니다."
   },
   "expr-phrasal-034": {
     "id": "expr-phrasal-034",
@@ -52341,7 +54088,7 @@
     },
     "explanation": "세계 일주나 장거리 하이킹, 긴 여정을 개시할 때 즐겨 쓰입니다.",
     "collocation": "set off on a journey",
-    "audioSentence": "set off at sunrise",
+    "audioSentence": "They set off on a three-month backpacking trip across Europe.",
     "dialogue": [
       {
         "speaker": "Guide",
@@ -52387,7 +54134,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-09",
     "unitTitleKo": "이동과 여행의 발걸음",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "They set off on a three-month backpacking trip across Europe.",
+    "exampleKo": "시동을 켜고 출발 신호가 울리듯 기대와 모험에 차서 대장정의 여정을 시작할 때 씁니다."
   },
   "expr-phrasal-035": {
     "id": "expr-phrasal-035",
@@ -52448,7 +54197,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-09",
     "unitTitleKo": "이동과 여행의 발걸음",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "Just calling to check in on you.",
+    "exampleKo": "공항 탑승 수속이나 호텔 등록뿐 아니라 지인에게 '나 무사히 도착했어'라고 안부를 전할 때도 씁니다."
   },
   "expr-phrasal-036": {
     "id": "expr-phrasal-036",
@@ -52463,7 +54214,7 @@
     },
     "explanation": "유학이나 여행을 떠나는 이를 역이나 공항에서 따뜻하게 배웅할 때 씁니다.",
     "collocation": "see someone off at the station",
-    "audioSentence": "gather to see the bride off",
+    "audioSentence": "My parents came to the airport to see me off.",
     "dialogue": [
       {
         "speaker": "Jack",
@@ -52509,7 +54260,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-09",
     "unitTitleKo": "이동과 여행의 발걸음",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "My parents came to the airport to see me off.",
+    "exampleKo": "떠나가는 사람이 시야에서 사라질 때까지 눈(see)으로 지켜보며 작별을 고할 때 씁니다."
   },
   "expr-phrasal-037": {
     "id": "expr-phrasal-037",
@@ -52524,7 +54277,7 @@
     },
     "explanation": "cancel의 가장 자연스러운 구어체 대체 표현입니다.",
     "collocation": "call off the wedding",
-    "audioSentence": "call off the search operation",
+    "audioSentence": "They had to call off the soccer match due to heavy thunderstorms.",
     "dialogue": [
       {
         "speaker": "Reporter",
@@ -52570,7 +54323,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-10",
     "unitTitleKo": "마침표와 새로운 시작",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "They had to call off the soccer match due to heavy thunderstorms.",
+    "exampleKo": "소리쳐서 약속이나 일정을 철회하듯 예정된 행사나 계약을 취소할 때 씁니다."
   },
   "expr-phrasal-038": {
     "id": "expr-phrasal-038",
@@ -52585,7 +54340,7 @@
     },
     "explanation": "친환경 정책, 노후 기종 교체, 제도 개편에서 품격 있게 쓰입니다.",
     "collocation": "phase out fossil fuel subsidies",
-    "audioSentence": "gradually phased out old software",
+    "audioSentence": "The company plans to phase out plastic packaging over two years.",
     "dialogue": [
       {
         "speaker": "Official",
@@ -52631,7 +54386,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-10",
     "unitTitleKo": "마침표와 새로운 시작",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "The company plans to phase out plastic packaging over two years.",
+    "exampleKo": "달의 위상이 서서히 바뀌듯 급격한 충격 없이 단계별(phase)로 서서히 없애나갈 때 씁니다."
   },
   "expr-phrasal-039": {
     "id": "expr-phrasal-039",
@@ -52646,7 +54403,7 @@
     },
     "explanation": "상황에 따라 기계 고장, 눈물, 데이터 분석으로 모두 쓰이는 다의어 구동사입니다.",
     "collocation": "car broke down",
-    "audioSentence": "broke down in tears",
+    "audioSentence": "Our car broke down in the middle of the highway.",
     "dialogue": [
       {
         "speaker": "Alex",
@@ -52692,7 +54449,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-10",
     "unitTitleKo": "마침표와 새로운 시작",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "Our car broke down in the middle of the highway.",
+    "exampleKo": "기계가 멈추거나, 억눌렀던 감정의 둑이 터져 펑펑 울거나, 복잡한 데이터를 쪼갤 때 씁니다."
   },
   "expr-phrasal-040": {
     "id": "expr-phrasal-040",
@@ -52707,7 +54466,7 @@
     },
     "explanation": "실연이나 실패 후 새 출발을 격려할 때 가장 힘이 되는 멘트입니다.",
     "collocation": "move on to the next chapter",
-    "audioSentence": "time to forgive and move on",
+    "audioSentence": "It was a painful failure, but it's time to move on.",
     "dialogue": [
       {
         "speaker": "Emma",
@@ -52753,7 +54512,9 @@
     "seriesTitleEn": "Essential Phrasal Verbs in Action",
     "unitId": "unit-phrasal-10",
     "unitTitleKo": "마침표와 새로운 시작",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "It was a painful failure, but it's time to move on.",
+    "exampleKo": "지나간 과거의 미련이나 슬픔에 얽매이지 않고 미래를 향해 발걸음을 옮길 때 씁니다."
   },
   "expr-emot-001": {
     "id": "expr-emot-001",
@@ -52768,7 +54529,7 @@
     },
     "explanation": "스포츠 경기, 파티, 콘서트 직전 에너지가 폭발할 때 외치는 표현입니다.",
     "collocation": "pumped up for the race",
-    "audioSentence": "feeling super pumped",
+    "audioSentence": "I'm so pumped for the championship game tonight!",
     "dialogue": [
       {
         "speaker": "Coach",
@@ -52814,7 +54575,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-01",
     "unitTitleKo": "환희와 벅찬 기대감",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "I'm so pumped for the championship game tonight!",
+    "exampleKo": "심장에 펌프질하듯 피가 솟구치며 엄청난 흥분과 열정에 가득 찬 상태를 말합니다."
   },
   "expr-emot-002": {
     "id": "expr-emot-002",
@@ -52829,7 +54592,7 @@
     },
     "explanation": "신작 게임 출시, 아이폰 발표회, 대작 영화 개봉 직전 열광하는 대중의 심리입니다.",
     "collocation": "super hyped for the album release",
-    "audioSentence": "overly hyped product",
+    "audioSentence": "Everyone is so hyped about the new sci-fi blockbuster.",
     "dialogue": [
       {
         "speaker": "Leo",
@@ -52875,7 +54638,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-01",
     "unitTitleKo": "환희와 벅찬 기대감",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Everyone is so hyped about the new sci-fi blockbuster.",
+    "exampleKo": "대중의 관심과 과장(hype)이 모여 기대감이 하늘을 찌르는 상태를 말합니다."
   },
   "expr-emot-003": {
     "id": "expr-emot-003",
@@ -52890,7 +54655,7 @@
     },
     "explanation": "합격 통지, 승진, 청혼을 승낙받았을 때 격식과 감성을 모두 담아 씁니다.",
     "collocation": "thrilled to announce the news",
-    "audioSentence": "absolutely thrilled with the results",
+    "audioSentence": "She was thrilled to receive the prestigious research scholarship.",
     "dialogue": [
       {
         "speaker": "Professor",
@@ -52936,7 +54701,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-01",
     "unitTitleKo": "환희와 벅찬 기대감",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "She was thrilled to receive the prestigious research scholarship.",
+    "exampleKo": "온몸에 전율(thrill)이 돋을 만큼 가슴 벅차고 황홀한 최고의 기쁨을 말합니다."
   },
   "expr-emot-004": {
     "id": "expr-emot-004",
@@ -52951,7 +54718,7 @@
     },
     "explanation": "여행, 전역, 결혼식, 방학을 기다리는 설렘의 표준 표현입니다.",
     "collocation": "counting down the days until departure",
-    "audioSentence": "can't wait any longer",
+    "audioSentence": "Summer vacation starts in June; I'm counting down the days.",
     "dialogue": [
       {
         "speaker": "Ella",
@@ -52997,7 +54764,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-01",
     "unitTitleKo": "환희와 벅찬 기대감",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Summer vacation starts in June; I'm counting down the days.",
+    "exampleKo": "달력에 표시를 해두고 하루하루 날짜를 세듯 간절하게 어떤 날을 기다릴 때 씁니다."
   },
   "expr-emot-005": {
     "id": "expr-emot-005",
@@ -53012,7 +54781,7 @@
     },
     "explanation": "두 가지 선택지 사이에서 장단점이 팽팽해 결단을 유보할 때 흔히 씁니다.",
     "collocation": "sit on the fence",
-    "audioSentence": "remain on the fence until more info comes",
+    "audioSentence": "I'm still on the fence about whether to take the job in Tokyo.",
     "dialogue": [
       {
         "speaker": "Tom",
@@ -53058,7 +54827,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-02",
     "unitTitleKo": "망설임과 교차하는 심경",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "I'm still on the fence about whether to take the job in Tokyo.",
+    "exampleKo": "울타리(fence) 위에 위태롭게 걸터앉아 어느 쪽 마당으로 뛰어내릴지 결정을 못 한 상태입니다."
   },
   "expr-emot-006": {
     "id": "expr-emot-006",
@@ -53119,7 +54890,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-02",
     "unitTitleKo": "망설임과 교차하는 심경",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "Never have second thoughts.",
+    "exampleKo": "처음엔 충동적이거나 쉽게 결정했다가, 두 번째로 곰곰이 생각해보니 후회나 불안이 밀려올 때 씁니다."
   },
   "expr-emot-007": {
     "id": "expr-emot-007",
@@ -53134,7 +54907,7 @@
     },
     "explanation": "한국어의 '시원섭섭하다', '만감이 교차한다'에 100% 매칭되는 완벽한 표현입니다.",
     "collocation": "have mixed feelings about promotion",
-    "audioSentence": "evoked mixed feelings",
+    "audioSentence": "I have mixed feelings about leaving my hometown after 20 years.",
     "dialogue": [
       {
         "speaker": "Jenny",
@@ -53180,7 +54953,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-02",
     "unitTitleKo": "망설임과 교차하는 심경",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "I have mixed feelings about leaving my hometown after 20 years.",
+    "exampleKo": "기쁨과 슬픔, 기대와 두려움이라는 상반된 감정이 뒤섞여(mixed) 마음이 복잡한 상태입니다."
   },
   "expr-emot-008": {
     "id": "expr-emot-008",
@@ -53195,7 +54970,7 @@
     },
     "explanation": "학술, 심리학, 품격 있는 논평에서 사람의 복합적인 내면을 지적으로 표현합니다.",
     "collocation": "ambivalent feelings about artificial intelligence",
-    "audioSentence": "feel ambivalent about success",
+    "audioSentence": "Critics held an ambivalent attitude toward the controversial novel.",
     "dialogue": [
       {
         "speaker": "Host",
@@ -53241,7 +55016,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-02",
     "unitTitleKo": "망설임과 교차하는 심경",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "Critics held an ambivalent attitude toward the controversial novel.",
+    "exampleKo": "라틴어 ambi(양쪽) + valere(힘이 있다)에서 유래하여 정반대의 두 감정이 똑같이 강하게 부딪칠 때 씁니다."
   },
   "expr-emot-009": {
     "id": "expr-emot-009",
@@ -53256,7 +55033,7 @@
     },
     "explanation": "싫지만 언젠가는 반드시 해야 할 힘든 일을 결연하게 감행할 때 씁니다.",
     "collocation": "bite the bullet and apologize",
-    "audioSentence": "reluctantly bite the bullet",
+    "audioSentence": "I hate dentistry, but I just have to bite the bullet and go.",
     "dialogue": [
       {
         "speaker": "Kevin",
@@ -53302,7 +55079,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-03",
     "unitTitleKo": "마지못한 의무감과 체념",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "I hate dentistry, but I just have to bite the bullet and go.",
+    "exampleKo": "전쟁터에서 마취제가 없을 때 총알(bullet)을 입에 물리고 수술의 고통을 견디게 한 유래입니다."
   },
   "expr-emot-010": {
     "id": "expr-emot-010",
@@ -53317,7 +55096,7 @@
     },
     "explanation": "월요병, 치과 진료, 세금 정산 등 생각만 해도 암담한 일에 씁니다.",
     "collocation": "dread waking up early",
-    "audioSentence": "dread public speaking",
+    "audioSentence": "I absolutely dread going to the dentist for a root canal.",
     "dialogue": [
       {
         "speaker": "Lisa",
@@ -53363,7 +55142,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-03",
     "unitTitleKo": "마지못한 의무감과 체념",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "I absolutely dread going to the dentist for a root canal.",
+    "exampleKo": "단순한 무서움(fear)을 넘어 다가올 사건에 대해 머리가 찌끈거리고 피하고 싶은 진저리침을 뜻합니다."
   },
   "expr-emot-011": {
     "id": "expr-emot-011",
@@ -53424,7 +55205,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-03",
     "unitTitleKo": "마지못한 의무감과 체념",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Stop dragging your feet.",
+    "exampleKo": "발걸음이 떨어지지 않아 신발을 바닥에 질질 끌며(drag) 억지로 천천히 갈 때 씁니다."
   },
   "expr-emot-012": {
     "id": "expr-emot-012",
@@ -53439,7 +55222,7 @@
     },
     "explanation": "전혀 내키지 않지만 대안이 없어서 마지못해 승낙할 때 절묘하게 쓰입니다.",
     "collocation": "grudgingly admit defeat",
-    "audioSentence": "grudgingly agreed to attend",
+    "audioSentence": "After two hours of debate, he grudgingly agreed to the compromise.",
     "dialogue": [
       {
         "speaker": "Chloe",
@@ -53485,7 +55268,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-03",
     "unitTitleKo": "마지못한 의무감과 체념",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "After two hours of debate, he grudgingly agreed to the compromise.",
+    "exampleKo": "마음속에 원망이나 불만(grudge)을 품은 채 어쩔 수 없이 고개를 끄덕일 때 씁니다."
   },
   "expr-emot-013": {
     "id": "expr-emot-013",
@@ -53546,7 +55331,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-04",
     "unitTitleKo": "깊은 공감과 따스한 온기",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "I feel you, stay strong.",
+    "exampleKo": "네가 느끼는 감정의 진폭을 내 가슴으로도 똑같이 느낀다는 최고의 구어체 공감 표현입니다."
   },
   "expr-emot-014": {
     "id": "expr-emot-014",
@@ -53561,7 +55348,7 @@
     },
     "explanation": "상대방의 어려운 결정을 지지하거나 현명한 조언을 건넬 때 전제조건으로 쓰입니다.",
     "collocation": "put yourself in someone's shoes",
-    "audioSentence": "If I were in your shoes",
+    "audioSentence": "If I were in your shoes, I would have made the exact same choice.",
     "dialogue": [
       {
         "speaker": "Doctor",
@@ -53607,7 +55394,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-04",
     "unitTitleKo": "깊은 공감과 따스한 온기",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "If I were in your shoes, I would have made the exact same choice.",
+    "exampleKo": "남의 신발(shoes)에 내 발을 집어넣어 보듯 그의 처지와 입장을 고스란히 헤아려 볼 때 씁니다."
   },
   "expr-emot-015": {
     "id": "expr-emot-015",
@@ -53622,7 +55411,7 @@
     },
     "explanation": "자연재해, 사별, 큰 사고를 당한 유족들에게 전하는 가장 격조 높은 애도 문구입니다.",
     "collocation": "heart goes out to the victims",
-    "audioSentence": "express heartfelt sympathies",
+    "audioSentence": "My heart goes out to all the families affected by the wildfire.",
     "dialogue": [
       {
         "speaker": "Mayor",
@@ -53668,7 +55457,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-04",
     "unitTitleKo": "깊은 공감과 따스한 온기",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "My heart goes out to all the families affected by the wildfire.",
+    "exampleKo": "내 심장과 온 마음이 비극을 겪은 이들에게 걸어가 안아주듯 지극한 위로와 연민을 전할 때 씁니다."
   },
   "expr-emot-016": {
     "id": "expr-emot-016",
@@ -53683,7 +55474,7 @@
     },
     "explanation": "유명 팝송 제목처럼 소중한 친구가 위기에 처했을 때 든든하게 받쳐주는 표현입니다.",
     "collocation": "a shoulder to lean on",
-    "audioSentence": "lean on friends during hardship",
+    "audioSentence": "Whenever life gets too overwhelming, you can always lean on me.",
     "dialogue": [
       {
         "speaker": "Sophia",
@@ -53729,7 +55520,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-04",
     "unitTitleKo": "깊은 공감과 따스한 온기",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Whenever life gets too overwhelming, you can always lean on me.",
+    "exampleKo": "힘이 빠져 쓰러질 것 같을 때 어깨를 내어주듯 전폭적인 지지와 의지가 되어주겠다는 온기 어린 말입니다."
   },
   "expr-emot-017": {
     "id": "expr-emot-017",
@@ -53744,7 +55537,7 @@
     },
     "explanation": "반복되는 거짓말, 소음, 룸메이트의 무개념 행동에 넌더리가 났을 때 씁니다.",
     "collocation": "fed up with waiting",
-    "audioSentence": "fed up with bureaucratic red tape",
+    "audioSentence": "I am totally fed up with his endless excuses and tardiness.",
     "dialogue": [
       {
         "speaker": "Rachel",
@@ -53790,7 +55583,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-05",
     "unitTitleKo": "좌절과 에너지 방전",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "I am totally fed up with his endless excuses and tardiness.",
+    "exampleKo": "밥을 목구멍 끝까지 억지로 먹여(feed) 더 이상 한 숟가락도 못 넘기듯 한계에 도달한 분노입니다."
   },
   "expr-emot-018": {
     "id": "expr-emot-018",
@@ -53805,7 +55600,7 @@
     },
     "explanation": "모든 방법을 다 써봤지만 해결되지 않아 미칠 것 같은 극한의 절망감을 나타냅니다.",
     "collocation": "mother at her wit's end",
-    "audioSentence": "drove me to my wit's end",
+    "audioSentence": "I've tried everything with this crying baby; I'm at my wit's end.",
     "dialogue": [
       {
         "speaker": "Amber",
@@ -53851,7 +55646,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-05",
     "unitTitleKo": "좌절과 에너지 방전",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "I've tried everything with this crying baby; I'm at my wit's end.",
+    "exampleKo": "인간의 지혜(wit)가 도달할 수 있는 가장자리 끝(end)에 서서 더 이상 묘수가 없는 상태입니다."
   },
   "expr-emot-019": {
     "id": "expr-emot-019",
@@ -53866,7 +55663,7 @@
     },
     "explanation": "단순한 피곤함(tired)을 넘어 영혼까지 탈탈 털린 듯한 뉘앙스를 풍깁니다.",
     "collocation": "feel emotionally drained",
-    "audioSentence": "drained of all energy",
+    "audioSentence": "After a ten-hour flight with screaming toddlers, I felt totally drained.",
     "dialogue": [
       {
         "speaker": "Boss",
@@ -53912,7 +55709,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-05",
     "unitTitleKo": "좌절과 에너지 방전",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "After a ten-hour flight with screaming toddlers, I felt totally drained.",
+    "exampleKo": "욕조 배수구로 물이 쫙 빠져나가듯 신체적·정신적 에너지가 0이 되어 허탈한 상태입니다."
   },
   "expr-emot-020": {
     "id": "expr-emot-020",
@@ -53927,7 +55726,7 @@
     },
     "explanation": "층간소음, 끊임없는 딸깍거림, 얄미운 잔소리에 환장할 것 같을 때 쓰는 표현입니다.",
     "collocation": "noise driving me up the wall",
-    "audioSentence": "driving the teacher crazy",
+    "audioSentence": "That dripping kitchen faucet is driving me up the wall!",
     "dialogue": [
       {
         "speaker": "Leo",
@@ -53973,7 +55772,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-05",
     "unitTitleKo": "좌절과 에너지 방전",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "That dripping kitchen faucet is driving me up the wall!",
+    "exampleKo": "너무 짜증이 나서 스파이더맨처럼 벽을 타고 기어오르고 싶을 만큼 돌아버리게 만드는 상태입니다."
   },
   "expr-emot-021": {
     "id": "expr-emot-021",
@@ -53988,7 +55789,7 @@
     },
     "explanation": "큰 빚을 다 갚았거나, 중대한 시험이나 수술이 무사히 끝났을 때 씁니다.",
     "collocation": "took a weight off my chest",
-    "audioSentence": "feel such a weight lifted",
+    "audioSentence": "Passing that bar exam felt like a huge weight off my shoulders.",
     "dialogue": [
       {
         "speaker": "Liam",
@@ -54034,7 +55835,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-06",
     "unitTitleKo": "안도와 깊은 감사",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Passing that bar exam felt like a huge weight off my shoulders.",
+    "exampleKo": "무거운 역기나 배낭이 어깨에서 쿵 내려앉아 날아갈 듯 가벼워진 안도감을 말합니다."
   },
   "expr-emot-022": {
     "id": "expr-emot-022",
@@ -54049,7 +55852,7 @@
     },
     "explanation": "위험한 순간을 아슬아슬하게 넘겼을 때 전 세계인이 공통으로 짓는 제스처입니다.",
     "collocation": "breathed a collective sigh of relief",
-    "audioSentence": "breathe easy again",
+    "audioSentence": "We all breathed a sigh of relief when the lost toddler was found.",
     "dialogue": [
       {
         "speaker": "Pilot",
@@ -54095,7 +55898,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-06",
     "unitTitleKo": "안도와 깊은 감사",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "We all breathed a sigh of relief when the lost toddler was found.",
+    "exampleKo": "참았던 숨을 후- 하고 길게 내쉬며 가슴을 쓸어내리는 신체적 안도 반응입니다."
   },
   "expr-emot-023": {
     "id": "expr-emot-023",
@@ -54110,7 +55915,7 @@
     },
     "explanation": "생명의 은인, 위기에서 구해준 스승이나 동료에게 전하는 가장 정중하고 진심 어린 표현입니다.",
     "collocation": "words cannot express my gratitude",
-    "audioSentence": "can't thank you enough for your generosity",
+    "audioSentence": "You saved my life; I truly cannot thank you enough.",
     "dialogue": [
       {
         "speaker": "Traveler",
@@ -54156,7 +55961,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-06",
     "unitTitleKo": "안도와 깊은 감사",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "You saved my life; I truly cannot thank you enough.",
+    "exampleKo": "어떤 감사의 말로도 그 은혜의 깊이를 다 채울 수 없을 만큼 극진한 고마움을 전합니다."
   },
   "expr-emot-024": {
     "id": "expr-emot-024",
@@ -54171,7 +55978,7 @@
     },
     "explanation": "자서전, 헌사, 수상 소감에서 인생의 은인에게 바치는 최고의 헌사입니다.",
     "collocation": "forever indebted to someone's guidance",
-    "audioSentence": "deeply indebted to the community",
+    "audioSentence": "I am forever indebted to the surgeon who restored my eyesight.",
     "dialogue": [
       {
         "speaker": "Author",
@@ -54217,7 +56024,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-06",
     "unitTitleKo": "안도와 깊은 감사",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "I am forever indebted to the surgeon who restored my eyesight.",
+    "exampleKo": "금전적 빚(debt)처럼 평생 갚아도 모자랄 큰 은혜와 헌신을 마음에 깊이 새긴 상태입니다."
   },
   "expr-emot-025": {
     "id": "expr-emot-025",
@@ -54232,7 +56041,7 @@
     },
     "explanation": "기습적인 질문이나 돌발 행동에 말문이 턱 막혔을 때의 당혹감을 세련되게 표현합니다.",
     "collocation": "taken aback by the sudden hostility",
-    "audioSentence": "visibly taken aback",
+    "audioSentence": "She was taken aback by his blunt question during the interview.",
     "dialogue": [
       {
         "speaker": "Interviewer",
@@ -54278,7 +56087,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-07",
     "unitTitleKo": "경악과 초월적 충격",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "She was taken aback by his blunt question during the interview.",
+    "exampleKo": "돌풍을 맞은 돛단배가 뒤로 확 밀려나듯 예상치 못한 무례함이나 발언에 순간 멍해질 때 씁니다."
   },
   "expr-emot-026": {
     "id": "expr-emot-026",
@@ -54293,7 +56104,7 @@
     },
     "explanation": "갑작스러운 연락, 뜻밖의 행운, 예기치 못한 비보에 일상적으로 쓰입니다.",
     "collocation": "arrived out of the blue",
-    "audioSentence": "a decision made out of the blue",
+    "audioSentence": "Out of the blue, my childhood friend called me after ten years.",
     "dialogue": [
       {
         "speaker": "Hannah",
@@ -54339,7 +56150,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-07",
     "unitTitleKo": "경악과 초월적 충격",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "Out of the blue, my childhood friend called me after ten years.",
+    "exampleKo": "구름 한 점 없는 맑은 푸른 하늘(blue sky)에서 벼락이 치듯 아무 예고 없이 불쑥 일어날 때 씁니다."
   },
   "expr-emot-027": {
     "id": "expr-emot-027",
@@ -54354,7 +56167,7 @@
     },
     "explanation": "돌발 질문, 기습 공격, 기습 세무조사에 대비 없이 당했을 때의 충격입니다.",
     "collocation": "caught off guard by the question",
-    "audioSentence": "never let yourself be caught off guard",
+    "audioSentence": "The sudden tax audit caught the business owners completely off guard.",
     "dialogue": [
       {
         "speaker": "Reporter",
@@ -54400,7 +56213,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-07",
     "unitTitleKo": "경악과 초월적 충격",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "The sudden tax audit caught the business owners completely off guard.",
+    "exampleKo": "경비병(guard)이 경계를 풀고 딴청을 피우다 적의 기습에 허를 찔린 군사 용어에서 유래했습니다."
   },
   "expr-emot-028": {
     "id": "expr-emot-028",
@@ -54415,7 +56230,7 @@
     },
     "explanation": "대자연의 장관, 엄청난 슬픔, 깊은 감동을 묘사할 때 최고의 찬사로 쓰입니다.",
     "collocation": "grateful beyond words",
-    "audioSentence": "shocked beyond words",
+    "audioSentence": "The beauty of the Grand Canyon sunrise was simply beyond words.",
     "dialogue": [
       {
         "speaker": "Traveler",
@@ -54461,7 +56276,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-07",
     "unitTitleKo": "경악과 초월적 충격",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "The beauty of the Grand Canyon sunrise was simply beyond words.",
+    "exampleKo": "사전의 단어(words)의 경계를 넘어설 만큼 언어의 표현력을 초월한 경이로움이나 충격입니다."
   },
   "expr-emot-029": {
     "id": "expr-emot-029",
@@ -54476,7 +56293,7 @@
     },
     "explanation": "연구실의 학자, 무대 위의 배우, 요리하는 셰프처럼 자신감이 뿜어져 나올 때 씁니다.",
     "collocation": "in his element on stage",
-    "audioSentence": "thrive in one's element",
+    "audioSentence": "Put her in front of a piano, and she is truly in her element.",
     "dialogue": [
       {
         "speaker": "Audience",
@@ -54522,7 +56339,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-08",
     "unitTitleKo": "당당한 자신감과 자존감",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Put her in front of a piano, and she is truly in her element.",
+    "exampleKo": "물고기가 물(자연 원소) 속에 있듯 자신이 가장 좋아하고 잘하는 환경에서 빛나는 상태입니다."
   },
   "expr-emot-030": {
     "id": "expr-emot-030",
@@ -54583,7 +56402,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-08",
     "unitTitleKo": "당당한 자신감과 자존감",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Walk out there and own it.",
+    "exampleKo": "누가 뭐라 하든 내 것이라 인정하고 당당하게 내 것으로 소화해 낼 때 씁니다."
   },
   "expr-emot-031": {
     "id": "expr-emot-031",
@@ -54644,7 +56465,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-08",
     "unitTitleKo": "당당한 자신감과 자존감",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Typing is second nature to coders.",
+    "exampleKo": "태어날 때부터 가진 본능(제1의 천성)처럼 오랜 훈련으로 생각조차 거치지 않고 저절로 될 때 씁니다."
   },
   "expr-emot-032": {
     "id": "expr-emot-032",
@@ -54659,7 +56482,7 @@
     },
     "explanation": "흔들림 없는 자신감, 불굴의 신념, 굳건한 평정심을 수식하는 품격 높은 단어입니다.",
     "collocation": "unshakeable confidence",
-    "audioSentence": "an unshakeable belief in justice",
+    "audioSentence": "Nelson Mandela maintained an unshakeable faith in human freedom.",
     "dialogue": [
       {
         "speaker": "Journalist",
@@ -54705,7 +56528,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-08",
     "unitTitleKo": "당당한 자신감과 자존감",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Nelson Mandela maintained an unshakeable faith in human freedom.",
+    "exampleKo": "어떤 강풍이나 지진에도 결코 흔들리지 않는 바위 같은 멘탈과 신념을 가리킵니다."
   },
   "expr-emot-033": {
     "id": "expr-emot-033",
@@ -54720,7 +56545,7 @@
     },
     "explanation": "요즘 세대가 가장 자주 쓰는 감정 신조어로, 형용사 cringe-worthy로도 쓰입니다.",
     "collocation": "so cringe to watch",
-    "audioSentence": "cringe at old photos",
+    "audioSentence": "I cringed when I watched my high school theater audition tape.",
     "dialogue": [
       {
         "speaker": "Alex",
@@ -54766,7 +56591,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-09",
     "unitTitleKo": "어색함과 대리 수치심",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "I cringed when I watched my high school theater audition tape.",
+    "exampleKo": "극도의 민망함이나 흑역사로 인해 얼굴 근육과 온몸이 오그라들 때 씁니다."
   },
   "expr-emot-034": {
     "id": "expr-emot-034",
@@ -54781,7 +56608,7 @@
     },
     "explanation": "성격 급한 상사나 예민한 가족 구성원의 기분을 거스를까 봐 숨죽일 때 쓰는 완벽한 비유입니다.",
     "collocation": "walking on eggshells around him",
-    "audioSentence": "tired of walking on eggshells",
+    "audioSentence": "Whenever the boss is in a bad mood, the entire office walks on eggshells.",
     "dialogue": [
       {
         "speaker": "Employee",
@@ -54827,7 +56654,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-09",
     "unitTitleKo": "어색함과 대리 수치심",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "Whenever the boss is in a bad mood, the entire office walks on eggshells.",
+    "exampleKo": "깨지기 쉬운 달걀 껍데기(eggshells) 위를 밟듯 상대방이 화낼까 봐 조마조마하게 눈치를 살필 때 씁니다."
   },
   "expr-emot-035": {
     "id": "expr-emot-035",
@@ -54842,7 +56671,7 @@
     },
     "explanation": "한국어의 '대리 수치심'에 정확히 부합하는 최고의 현대 심리 표현입니다.",
     "collocation": "feel second-hand embarrassment",
-    "audioSentence": "painful second-hand embarrassment",
+    "audioSentence": "Watching him forget his speech gave me severe second-hand embarrassment.",
     "dialogue": [
       {
         "speaker": "Viewer",
@@ -54888,7 +56717,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-09",
     "unitTitleKo": "어색함과 대리 수치심",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "Watching him forget his speech gave me severe second-hand embarrassment.",
+    "exampleKo": "실수한 사람은 가만히 있는데 보는 내가 쥐구멍에 들어가고 싶을 만큼 대신 부끄러울 때 씁니다."
   },
   "expr-emot-036": {
     "id": "expr-emot-036",
@@ -54903,7 +56734,7 @@
     },
     "explanation": "소개팅, 엘리베이터 안, 썰렁한 농담 뒤에 흐르는 침묵의 표준 표현입니다.",
     "collocation": "break the awkward silence",
-    "audioSentence": "fall into awkward silence",
+    "audioSentence": "After he told a bad joke, an awkward silence filled the dining room.",
     "dialogue": [
       {
         "speaker": "Host",
@@ -54949,7 +56780,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-09",
     "unitTitleKo": "어색함과 대리 수치심",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "After he told a bad joke, an awkward silence filled the dining room.",
+    "exampleKo": "대화의 맥이 뚝 끊겨 누구도 입을 열지 못하고 시선만 이리저리 굴리는 민망한 정적을 말합니다."
   },
   "expr-emot-037": {
     "id": "expr-emot-037",
@@ -55010,7 +56843,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-10",
     "unitTitleKo": "원어민 티키타카 추임새",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "A: Traffic is terrible. B: Tell me about it!",
+    "exampleKo": "더 설명하지 않아도 내가 그 고충을 뼈저리게 겪어봐서 너무나 잘 안다는 폭풍 공감의 맞장구입니다."
   },
   "expr-emot-038": {
     "id": "expr-emot-038",
@@ -55071,7 +56906,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-10",
     "unitTitleKo": "원어민 티키타카 추임새",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "If you're tired, fair enough.",
+    "exampleKo": "상대방의 논리나 사정을 듣고 '충분히 공정하고 타당하다(fair)'며 흔쾌히 수긍할 때 씁니다."
   },
   "expr-emot-039": {
     "id": "expr-emot-039",
@@ -55132,7 +56969,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-10",
     "unitTitleKo": "원어민 티키타카 추임새",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "Thanks for helping! — You bet!",
+    "exampleKo": "내 모든 돈을 걸(bet) 수 있을 만큼 한 치의 의심도 없이 확실하고 당연하다는 뜻입니다."
   },
   "expr-emot-040": {
     "id": "expr-emot-040",
@@ -55193,7 +57032,9 @@
     "seriesTitleEn": "Subtle Emotions & Native Reactions",
     "unitId": "unit-emot-10",
     "unitTitleKo": "원어민 티키타카 추임새",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "For what it's worth, you did your best.",
+    "exampleKo": "내 의견이나 정보가 얼마나 큰 가치(worth)가 있을지는 모르겠지만 조심스럽게 건넬 때 씁니다."
   },
   "expr-trav-001": {
     "id": "expr-trav-001",
@@ -55208,7 +57049,7 @@
     },
     "explanation": "공항 보안 검색대와 탑승 게이트에서 가장 빈번하게 마주치는 기본 여행 용어입니다.",
     "collocation": "carry-on baggage allowance",
-    "audioSentence": "pack liquids in carry-on",
+    "audioSentence": "Make sure your carry-on baggage meets the airline size limits.",
     "dialogue": [
       {
         "speaker": "Agent",
@@ -55254,7 +57095,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-01",
     "unitTitleKo": "공항 수속과 기내 영어",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Make sure your carry-on baggage meets the airline size limits.",
+    "exampleKo": "화물칸에 부치는 위탁 수하물(checked baggage)과 대비되어 기내 좌석 위 선반에 직접 들고 타는 짐을 뜻합니다."
   },
   "expr-trav-002": {
     "id": "expr-trav-002",
@@ -55269,7 +57112,7 @@
     },
     "explanation": "stopover(24시간 이상의 장기 체류)와 대비하여 24시간 이내의 환승 대기를 가리킵니다.",
     "collocation": "a long layover at the hub",
-    "audioSentence": "layover flight",
+    "audioSentence": "We have a three-hour layover in Dubai before heading to London.",
     "dialogue": [
       {
         "speaker": "Sam",
@@ -55315,7 +57158,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-01",
     "unitTitleKo": "공항 수속과 기내 영어",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "We have a three-hour layover in Dubai before heading to London.",
+    "exampleKo": "직항이 아닐 때 목적지로 가는 도중 중간 공항에 잠시 내려 다음 비행기를 갈아타는 대기 시간입니다."
   },
   "expr-trav-003": {
     "id": "expr-trav-003",
@@ -55330,7 +57175,7 @@
     },
     "explanation": "여행자들에게 마법 같은 행운으로 통하는 기분 좋은 표현입니다.",
     "collocation": "got bumped to business class",
-    "audioSentence": "lucky bump at the gate",
+    "audioSentence": "The flight was overbooked, so I got bumped to first class!",
     "dialogue": [
       {
         "speaker": "Alex",
@@ -55376,7 +57221,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-01",
     "unitTitleKo": "공항 수속과 기내 영어",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "The flight was overbooked, so I got bumped to first class!",
+    "exampleKo": "이코노미 좌석이 초과 예약(overbooked)되었을 때 항공사의 보상이나 배려로 상위 등급으로 툭 올려질 때 씁니다."
   },
   "expr-trav-004": {
     "id": "expr-trav-004",
@@ -55391,7 +57238,7 @@
     },
     "explanation": "기내 안내 방송에서 가장 귀 기울여 들어야 할 안전 핵심 단어입니다.",
     "collocation": "hit unexpected turbulence",
-    "audioSentence": "fasten seatbelt during turbulence",
+    "audioSentence": "Please fasten your seatbelts as we are experiencing mild turbulence.",
     "dialogue": [
       {
         "speaker": "Flight Attendant",
@@ -55437,7 +57284,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-01",
     "unitTitleKo": "공항 수속과 기내 영어",
-    "unitNumber": 1
+    "unitNumber": 1,
+    "exampleEn": "Please fasten your seatbelts as we are experiencing mild turbulence.",
+    "exampleKo": "공기의 기류 불안정으로 인해 항공기가 덜컹거리며 위아래로 요동치는 비행 현상입니다."
   },
   "expr-trav-005": {
     "id": "expr-trav-005",
@@ -55452,7 +57301,7 @@
     },
     "explanation": "free of charge보다 호텔리어들이 훨씬 더 즐겨 쓰는 고급 호스피탈리티 표현입니다.",
     "collocation": "receive a complimentary upgrade to a suite",
-    "audioSentence": "complimentary breakfast included",
+    "audioSentence": "As a honeymoon special, the hotel offered us a complimentary upgrade.",
     "dialogue": [
       {
         "speaker": "Front Desk",
@@ -55498,7 +57347,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-02",
     "unitTitleKo": "호텔 체크인과 투숙 에티켓",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "As a honeymoon special, the hotel offered us a complimentary upgrade.",
+    "exampleKo": "complimentary는 '칭찬'의 뜻이 아니라 호텔/항공업계에서 '무료로 제공되는 호의'를 뜻하는 핵심 품격 어휘입니다."
   },
   "expr-trav-006": {
     "id": "expr-trav-006",
@@ -55513,7 +57364,7 @@
     },
     "explanation": "장거리 비행 후 피곤할 때 로비에서 정중하게 문의할 수 있는 필수 표현입니다.",
     "collocation": "request early check-in",
-    "audioSentence": "subject to room availability",
+    "audioSentence": "Our flight arrived at 8 AM, so we requested an early check-in.",
     "dialogue": [
       {
         "speaker": "Guest",
@@ -55559,7 +57410,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-02",
     "unitTitleKo": "호텔 체크인과 투숙 에티켓",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "Our flight arrived at 8 AM, so we requested an early check-in.",
+    "exampleKo": "오후 3시 정규 입실 시간 이전에 호텔에 도착하여 방이 비어 있을 때 먼저 입실하는 서비스를 말합니다."
   },
   "expr-trav-007": {
     "id": "expr-trav-007",
@@ -55574,7 +57427,7 @@
     },
     "explanation": "도어 손잡이에 거는 'Do Not Disturb' 또는 'Please Make Up Room'과 연동되는 기본 호텔 용어입니다.",
     "collocation": "call housekeeping for fresh towels",
-    "audioSentence": "housekeeping service daily",
+    "audioSentence": "Could you send housekeeping to replenish towels in room 402?",
     "dialogue": [
       {
         "speaker": "Guest",
@@ -55620,7 +57473,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-02",
     "unitTitleKo": "호텔 체크인과 투숙 에티켓",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "Could you send housekeeping to replenish towels in room 402?",
+    "exampleKo": "호텔에서 객실 청소, 침구 정리, 어메니티 채우기를 전담하는 부서 및 서비스를 칭합니다."
   },
   "expr-trav-008": {
     "id": "expr-trav-008",
@@ -55635,7 +57490,7 @@
     },
     "explanation": "미국, 멕시코 등의 유명 휴양지 호텔 예약 시 결제 단계에서 꼭 확인해야 하는 비용입니다.",
     "collocation": "mandatory resort fee per night",
-    "audioSentence": "amenities covered by resort fee",
+    "audioSentence": "Be aware that many Las Vegas hotels charge a mandatory resort fee.",
     "dialogue": [
       {
         "speaker": "Tourist",
@@ -55681,7 +57536,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-02",
     "unitTitleKo": "호텔 체크인과 투숙 에티켓",
-    "unitNumber": 2
+    "unitNumber": 2,
+    "exampleEn": "Be aware that many Las Vegas hotels charge a mandatory resort fee.",
+    "exampleKo": "기본 객실 요금 외에 와이파이, 수영장, 피트니스 등의 이용 명목으로 1박당 의무 부과되는 별도 요금입니다."
   },
   "expr-trav-009": {
     "id": "expr-trav-009",
@@ -55696,7 +57553,7 @@
     },
     "explanation": "'We are two people' 대신 원어민처럼 'A table for two, please'로 깔끔하게 말합니다.",
     "collocation": "table for two please",
-    "audioSentence": "reserve a table for four",
+    "audioSentence": "Good evening! We'd like a table for two near the window, please.",
     "dialogue": [
       {
         "speaker": "Host",
@@ -55742,7 +57599,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-03",
     "unitTitleKo": "식당 주문과 미식 취향",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Good evening! We'd like a table for two near the window, please.",
+    "exampleKo": "식당에 들어서자마자 매니저(호스트)에게 인원수를 알릴 때 가장 먼저 말하는 자연스러운 정형구입니다."
   },
   "expr-trav-010": {
     "id": "expr-trav-010",
@@ -55757,7 +57616,7 @@
     },
     "explanation": "칼로리 조절이나 눅눅함을 피하고 싶은 전 세계 미식가들의 대표 주문 꿀팁입니다.",
     "collocation": "dressing on the side please",
-    "audioSentence": "sauce on the side",
+    "audioSentence": "I'll have the Caesar salad, but with the dressing on the side, please.",
     "dialogue": [
       {
         "speaker": "Server",
@@ -55803,7 +57662,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-03",
     "unitTitleKo": "식당 주문과 미식 취향",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "I'll have the Caesar salad, but with the dressing on the side, please.",
+    "exampleKo": "샐러드나 소스가 음식 위에 흠뻑 뿌려져 나오는 대신 작은 소스 종지에 따로 분리해서 달라는 요청입니다."
   },
   "expr-trav-011": {
     "id": "expr-trav-011",
@@ -55818,7 +57679,7 @@
     },
     "explanation": "글로벌 비즈니스 만찬이나 고급 레스토랑에서 셰프와 서버가 가장 중시하는 안내입니다.",
     "collocation": "inform server of dietary restrictions",
-    "audioSentence": "accommodate dietary needs",
+    "audioSentence": "Does anyone at your table have any allergies or dietary restrictions?",
     "dialogue": [
       {
         "speaker": "Server",
@@ -55864,7 +57725,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-03",
     "unitTitleKo": "식당 주문과 미식 취향",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "Does anyone at your table have any allergies or dietary restrictions?",
+    "exampleKo": "종교적 이유(할랄, 코셔), 건강상 알레르기(땅콩, 글루텐), 신념(비건) 등 식단에서 배제해야 하는 제한 요건입니다."
   },
   "expr-trav-012": {
     "id": "expr-trav-012",
@@ -55879,7 +57742,7 @@
     },
     "explanation": "음식이 너무 맛있을 때 셰프에게 감사를 표하는 최고의 미식 찬사입니다.",
     "collocation": "seared salmon cooked to perfection",
-    "audioSentence": "tender and cooked to perfection",
+    "audioSentence": "The ribeye steak was tender, juicy, and cooked to perfection.",
     "dialogue": [
       {
         "speaker": "Waiter",
@@ -55925,7 +57788,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-03",
     "unitTitleKo": "식당 주문과 미식 취향",
-    "unitNumber": 3
+    "unitNumber": 3,
+    "exampleEn": "The ribeye steak was tender, juicy, and cooked to perfection.",
+    "exampleKo": "스테이크나 해산물이 타지도 덜 익지도 않고 셰프의 장인정신으로 황금 비율로 알맞게 익은 상태를 극찬할 때 씁니다."
   },
   "expr-trav-013": {
     "id": "expr-trav-013",
@@ -55986,7 +57851,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-04",
     "unitTitleKo": "계산과 글로벌 팁 문화",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Can we split the bill?",
+    "exampleKo": "식사비 총액을 인원수대로 균등하게 1/N로 나누어 지불할 때 씁니다."
   },
   "expr-trav-014": {
     "id": "expr-trav-014",
@@ -56047,7 +57914,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-04",
     "unitTitleKo": "계산과 글로벌 팁 문화",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "This round is on the house.",
+    "exampleKo": "식당(house)의 지붕이 손님을 대접하듯 주인이나 매니저가 무료 서비스로 기분 좋게 낼 때 씁니다."
   },
   "expr-trav-015": {
     "id": "expr-trav-015",
@@ -56062,7 +57931,7 @@
     },
     "explanation": "북미 문화권 여행 시 식당 문화의 가장 핵심적인 글로벌 상식입니다.",
     "collocation": "leave a generous tip for good service",
-    "audioSentence": "tip etiquette in restaurants",
+    "audioSentence": "In the United States, it is customary to leave a tip of 18 to 20 percent.",
     "dialogue": [
       {
         "speaker": "Tourist",
@@ -56108,7 +57977,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-04",
     "unitTitleKo": "계산과 글로벌 팁 문화",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "In the United States, it is customary to leave a tip of 18 to 20 percent.",
+    "exampleKo": "테이블을 전담해 준 서버의 노고에 감사하며 식사 금액의 일정 비율을 팁으로 결제하거나 테이블에 남길 때 씁니다."
   },
   "expr-trav-016": {
     "id": "expr-trav-016",
@@ -56123,7 +57994,7 @@
     },
     "explanation": "멋지게 한턱 쏘거나 비즈니스 접대에서 호방하게 계산할 때 쓰는 신사적인 표현입니다.",
     "collocation": "cover the bill",
-    "audioSentence": "insist on covering the check",
+    "audioSentence": "Put your wallets away, guys; I'll cover the check tonight.",
     "dialogue": [
       {
         "speaker": "David",
@@ -56169,7 +58040,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-04",
     "unitTitleKo": "계산과 글로벌 팁 문화",
-    "unitNumber": 4
+    "unitNumber": 4,
+    "exampleEn": "Put your wallets away, guys; I'll cover the check tonight.",
+    "exampleKo": "식사비 계산서(check)를 내 지갑으로 완전히 덮어버리듯(cover) 일행의 식사비를 혼자 전액 부담할 때 씁니다."
   },
   "expr-trav-017": {
     "id": "expr-trav-017",
@@ -56184,7 +58057,7 @@
     },
     "explanation": "호텔 위치 선정, 부동산 매물, 여행 일정 안내에서 가장 중요하게 확인하는 표현입니다.",
     "collocation": "easy walking distance",
-    "audioSentence": "located within walking distance",
+    "audioSentence": "The subway station and museum are both within walking distance of the hotel.",
     "dialogue": [
       {
         "speaker": "Tourist",
@@ -56230,7 +58103,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-05",
     "unitTitleKo": "길 찾기와 현지 교통",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "The subway station and museum are both within walking distance of the hotel.",
+    "exampleKo": "차나 버스를 타지 않고 가벼운 도보로 5~10분 안에 도착할 수 있는 편리한 접근성을 뜻합니다."
   },
   "expr-trav-018": {
     "id": "expr-trav-018",
@@ -56245,7 +58120,7 @@
     },
     "explanation": "도시 대중교통 여행 시 복잡한 노선도에서 길을 찾을 때 빠질 수 없는 필수 어휘입니다.",
     "collocation": "major transfer station",
-    "audioSentence": "transfer to the blue line",
+    "audioSentence": "You need to change from Line 2 to Line 4 at the next transfer station.",
     "dialogue": [
       {
         "speaker": "Passenger",
@@ -56291,7 +58166,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-05",
     "unitTitleKo": "길 찾기와 현지 교통",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "You need to change from Line 2 to Line 4 at the next transfer station.",
+    "exampleKo": "서로 다른 지하철 호선이나 기차 노선이 교차하여 다른 열차로 갈아탈 수 있는 대형 역을 말합니다."
   },
   "expr-trav-019": {
     "id": "expr-trav-019",
@@ -56306,7 +58183,7 @@
     },
     "explanation": "운전 내비게이션, 도보 길 찾기뿐 아니라 '인생의 먼 길을 돌아가다'는 은유로도 쓰입니다.",
     "collocation": "take a scenic detour",
-    "audioSentence": "forced to take a detour",
+    "audioSentence": "Because of construction on Main Street, we had to take a detour.",
     "dialogue": [
       {
         "speaker": "Driver",
@@ -56352,7 +58229,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-05",
     "unitTitleKo": "길 찾기와 현지 교통",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Because of construction on Main Street, we had to take a detour.",
+    "exampleKo": "직진 도로가 공사나 사고로 막혀 옆 골목길이나 우회 도로로 멀리 돌아서 갈 때 씁니다."
   },
   "expr-trav-020": {
     "id": "expr-trav-020",
@@ -56367,7 +58246,7 @@
     },
     "explanation": "미국식 crosswalk, 영국식 zebra crossing / pedestrian crossing으로 해외 도로 안전 표지판의 핵심입니다.",
     "collocation": "cross at the pedestrian crossing",
-    "audioSentence": "pedestrian crossing ahead",
+    "audioSentence": "Always use the pedestrian crossing and wait for the green walk signal.",
     "dialogue": [
       {
         "speaker": "Guide",
@@ -56413,7 +58292,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-05",
     "unitTitleKo": "길 찾기와 현지 교통",
-    "unitNumber": 5
+    "unitNumber": 5,
+    "exampleEn": "Always use the pedestrian crossing and wait for the green walk signal.",
+    "exampleKo": "보행자(pedestrian)들이 안전하게 차도를 건널 수 있도록 아스팔트 위에 흰 줄무늬로 그어놓은 건널목입니다."
   },
   "expr-trav-021": {
     "id": "expr-trav-021",
@@ -56474,7 +58355,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-06",
     "unitTitleKo": "쇼핑과 피팅룸 에티켓",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Can I try this on?",
+    "exampleKo": "구매를 결정하기 전 피팅룸(fitting room)에서 옷이나 신발의 사이즈와 어울림을 확인하려 착용해 볼 때 씁니다."
   },
   "expr-trav-022": {
     "id": "expr-trav-022",
@@ -56489,7 +58372,7 @@
     },
     "explanation": "해외 쇼핑 시 'Final Sale(교환 환불 불가)'인지 확인하는 핵심 기준입니다.",
     "collocation": "check the store return policy",
-    "audioSentence": "30-day return policy with receipt",
+    "audioSentence": "What is your return policy if the item doesn't fit my daughter?",
     "dialogue": [
       {
         "speaker": "Customer",
@@ -56535,7 +58418,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-06",
     "unitTitleKo": "쇼핑과 피팅룸 에티켓",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "What is your return policy if the item doesn't fit my daughter?",
+    "exampleKo": "구매 후 마음이 바뀌거나 하자가 있을 때 영수증 지참 시 며칠 이내에 환불이나 교환이 가능한지 명시한 매장 규정입니다."
   },
   "expr-trav-023": {
     "id": "expr-trav-023",
@@ -56550,7 +58435,7 @@
     },
     "explanation": "미국, 유럽 리테일 매장에서 영수증이 없거나 세일 품목일 때 자주 제안받는 조건입니다.",
     "collocation": "issue store credit for returns",
-    "audioSentence": "redeem store credit online",
+    "audioSentence": "We cannot refund cash for sale items, but we can issue store credit.",
     "dialogue": [
       {
         "speaker": "Shopper",
@@ -56596,7 +58481,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-06",
     "unitTitleKo": "쇼핑과 피팅룸 에티켓",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "We cannot refund cash for sale items, but we can issue store credit.",
+    "exampleKo": "반품 시 현금이나 카드 취소 대신 해당 매장에서 다른 물건을 살 수 있도록 바우처나 포인트 카드로 환급해 주는 제도입니다."
   },
   "expr-trav-024": {
     "id": "expr-trav-024",
@@ -56611,7 +58498,7 @@
     },
     "explanation": "해외 매장에서 가격이 적혀 있지 않을 때 점원에게 가격을 물어보는 기초 어휘입니다.",
     "collocation": "check the price tag",
-    "audioSentence": "a hefty price tag",
+    "audioSentence": "Excuse me, there is no price tag on this ceramic mug.",
     "dialogue": [
       {
         "speaker": "Shopper",
@@ -56657,7 +58544,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-06",
     "unitTitleKo": "쇼핑과 피팅룸 에티켓",
-    "unitNumber": 6
+    "unitNumber": 6,
+    "exampleEn": "Excuse me, there is no price tag on this ceramic mug.",
+    "exampleKo": "물건에 붙어 있는 가격 스티커나 라벨을 가리키며, 비유적으로는 '어떤 일의 혹독한 대가'로도 쓰입니다."
   },
   "expr-trav-025": {
     "id": "expr-trav-025",
@@ -56672,7 +58561,7 @@
     },
     "explanation": "줄여서 OTC 의약품이라고도 하며 여행자 비상약 구매 시 가장 핵심적인 구분 기준입니다.",
     "collocation": "over-the-counter painkiller",
-    "audioSentence": "OTC medication",
+    "audioSentence": "You do not need a prescription for aspirin; it is sold over-the-counter at any pharmacy.",
     "dialogue": [
       {
         "speaker": "Traveler",
@@ -56718,7 +58607,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-07",
     "unitTitleKo": "응급 상황과 약국 소통",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "You do not need a prescription for aspirin; it is sold over-the-counter at any pharmacy.",
+    "exampleKo": "아스피린은 처방전이 필요 없으며 어떤 약국에서나 처방전 없이 일반의약품(over-the-counter)으로 판매됩니다."
   },
   "expr-trav-026": {
     "id": "expr-trav-026",
@@ -56733,7 +58624,7 @@
     },
     "explanation": "약국이나 기내에서 승무원에게 위장약을 달라고 요청할 때 가장 정확한 증상 표현입니다.",
     "collocation": "medicine for upset stomach",
-    "audioSentence": "suffering from an upset stomach",
+    "audioSentence": "I think I ate something spoiled; I have an upset stomach.",
     "dialogue": [
       {
         "speaker": "Flight Attendant",
@@ -56779,7 +58670,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-07",
     "unitTitleKo": "응급 상황과 약국 소통",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "I think I ate something spoiled; I have an upset stomach.",
+    "exampleKo": "물갈이나 낯선 향신료로 인해 소화가 안 되고 배가 아프거나 속이 메스꺼운 소화기 트러블을 점잖게 표현합니다."
   },
   "expr-trav-027": {
     "id": "expr-trav-027",
@@ -56794,7 +58687,7 @@
     },
     "explanation": "해외 병원비가 수백만 원에 달할 수 있는 만큼 출국 전 필수 준비물입니다.",
     "collocation": "claim medical expenses on travel insurance",
-    "audioSentence": "buy travel insurance online",
+    "audioSentence": "Always purchase comprehensive travel insurance before visiting abroad.",
     "dialogue": [
       {
         "speaker": "Agent",
@@ -56840,7 +58733,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-07",
     "unitTitleKo": "응급 상황과 약국 소통",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "Always purchase comprehensive travel insurance before visiting abroad.",
+    "exampleKo": "해외에서 갑작스러운 질병, 상해, 항공기 결항, 수하물 분실 등의 손해를 보상해 주는 여행 필수 방패막입니다."
   },
   "expr-trav-028": {
     "id": "expr-trav-028",
@@ -56855,7 +58750,7 @@
     },
     "explanation": "약국에서 약사가 'Do you have a prescription?'이라고 물을 때의 핵심 어휘입니다.",
     "collocation": "fill a doctor's prescription",
-    "audioSentence": "prescription medicine",
+    "audioSentence": "Antibiotics cannot be purchased without a valid doctor's prescription.",
     "dialogue": [
       {
         "speaker": "Patient",
@@ -56901,7 +58796,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-07",
     "unitTitleKo": "응급 상황과 약국 소통",
-    "unitNumber": 7
+    "unitNumber": 7,
+    "exampleEn": "Antibiotics cannot be purchased without a valid doctor's prescription.",
+    "exampleKo": "전문 의약품(항생제, 수면제 등)을 조제받기 위해 의사가 발행한 정식 약 조제 지시서입니다."
   },
   "expr-trav-029": {
     "id": "expr-trav-029",
@@ -56916,7 +58813,7 @@
     },
     "explanation": "단순한 안내를 넘어 영국 문화를 상징하는 대표적 관용 표현이자 기념품 티셔츠 문구입니다.",
     "collocation": "Mind the gap please.",
-    "audioSentence": "announced to mind the gap",
+    "audioSentence": "Mind the gap between the train door and the platform edge.",
     "dialogue": [
       {
         "speaker": "Automated Voice",
@@ -56962,7 +58859,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-08",
     "unitTitleKo": "글로벌 매너와 에티켓",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Mind the gap between the train door and the platform edge.",
+    "exampleKo": "영국 런던 언더그라운드(지하철)에서 유래하여 전 세계 전철 승강장의 발 빠짐 주의 시그니처 멘트입니다."
   },
   "expr-trav-030": {
     "id": "expr-trav-030",
@@ -56977,7 +58876,7 @@
     },
     "explanation": "'You go first'보다 훨씬 더 신사적이고 정중한 글로벌 에티켓의 정수입니다.",
     "collocation": "No, please, after you.",
-    "audioSentence": "insisted by saying after you",
+    "audioSentence": "Please, after you! I'm in no rush to enter the elevator.",
     "dialogue": [
       {
         "speaker": "Gentleman",
@@ -57023,7 +58922,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-08",
     "unitTitleKo": "글로벌 매너와 에티켓",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Please, after you! I'm in no rush to enter the elevator.",
+    "exampleKo": "엘리베이터 문이 열리거나 좁은 통로를 지날 때 상대방에게 순서를 먼저 양보하며 부드럽게 손짓하는 품격 있는 매너입니다."
   },
   "expr-trav-031": {
     "id": "expr-trav-031",
@@ -57038,7 +58939,7 @@
     },
     "explanation": "영미권에서 Excuse me와 함께 가장 교양 있는 어투로 평가받습니다.",
     "collocation": "pardon me for interrupting",
-    "audioSentence": "Pardon me?",
+    "audioSentence": "Pardon me, could you please point me toward the nearest subway station?",
     "dialogue": [
       {
         "speaker": "Tourist",
@@ -57084,7 +58985,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-08",
     "unitTitleKo": "글로벌 매너와 에티켓",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Pardon me, could you please point me toward the nearest subway station?",
+    "exampleKo": "실례합니다(Pardon me), 가장 가까운 지하철역이 어느 쪽인지 알려주시겠어요?"
   },
   "expr-trav-032": {
     "id": "expr-trav-032",
@@ -57099,7 +59002,7 @@
     },
     "explanation": "영미권 문화에서는 RSVP 요청에 반드시 참석/불참 여부를 기한 내에 답장해 주는 것이 철칙입니다.",
     "collocation": "RSVP by the deadline",
-    "audioSentence": "send an RSVP email",
+    "audioSentence": "Please RSVP by Friday so we can finalize the catering numbers.",
     "dialogue": [
       {
         "speaker": "Host",
@@ -57145,7 +59048,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-08",
     "unitTitleKo": "글로벌 매너와 에티켓",
-    "unitNumber": 8
+    "unitNumber": 8,
+    "exampleEn": "Please RSVP by Friday so we can finalize the catering numbers.",
+    "exampleKo": "프랑스어 'Répondez s'il vous plaît(회신해 주시기 바랍니다)'의 약어로 파티나 만찬 초대장에 필수적으로 적혀 있습니다."
   },
   "expr-trav-033": {
     "id": "expr-trav-033",
@@ -57160,7 +59065,7 @@
     },
     "explanation": "현지인들만 아는 숨은 맛집이나 인적이 드문 숨겨진 보석 같은 명소를 칭송할 때 최고의 찬사입니다.",
     "collocation": "travel off the beaten path",
-    "audioSentence": "quaint hideaway off the beaten path",
+    "audioSentence": "I prefer exploring quaint villages that are well off the beaten path.",
     "dialogue": [
       {
         "speaker": "Traveler",
@@ -57206,7 +59111,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-09",
     "unitTitleKo": "명소 탐방과 문화 투어",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "I prefer exploring quaint villages that are well off the beaten path.",
+    "exampleKo": "수많은 관광객이 밟고 지나가 다져진 닳고 닳은 길(beaten path)을 벗어나 호젓한 비경을 찾아갈 때 씁니다."
   },
   "expr-trav-034": {
     "id": "expr-trav-034",
@@ -57221,7 +59128,7 @@
     },
     "explanation": "지리 길 찾기의 기준점이자 도시 관광의 필수 코스입니다.",
     "collocation": "visit historical landmarks",
-    "audioSentence": "designated as a national landmark",
+    "audioSentence": "The Eiffel Tower and the Colosseum are world-renowned historical landmarks.",
     "dialogue": [
       {
         "speaker": "Guide",
@@ -57267,7 +59174,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-09",
     "unitTitleKo": "명소 탐방과 문화 투어",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "The Eiffel Tower and the Colosseum are world-renowned historical landmarks.",
+    "exampleKo": "먼 곳에서도 알아볼 수 있는 상징적인 건축물이나 한 도시의 정체성을 대표하는 역사적 명소입니다."
   },
   "expr-trav-035": {
     "id": "expr-trav-035",
@@ -57282,7 +59191,7 @@
     },
     "explanation": "티켓 부스(ticket booth) 전면에 가장 크게 써 붙여 있는 필수 여행 어휘입니다.",
     "collocation": "pay the general admission fee",
-    "audioSentence": "free admission on Mondays",
+    "audioSentence": "Children under the age of six can enter the museum free of admission fee.",
     "dialogue": [
       {
         "speaker": "Visitor",
@@ -57328,7 +59237,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-09",
     "unitTitleKo": "명소 탐방과 문화 투어",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "Children under the age of six can enter the museum free of admission fee.",
+    "exampleKo": "미술관, 국립공원, 유적지 등에 들어갈 때 내는 공식적인 입장료입니다."
   },
   "expr-trav-036": {
     "id": "expr-trav-036",
@@ -57343,7 +59254,7 @@
     },
     "explanation": "자유 여행에서 놓치기 쉬운 숨은 역사와 비하인드 스토리를 배울 때 필수적입니다.",
     "collocation": "book an English guided tour",
-    "audioSentence": "join a walking guided tour",
+    "audioSentence": "Taking a guided tour of the ruins helped us appreciate the rich history.",
     "dialogue": [
       {
         "speaker": "Tourist",
@@ -57389,7 +59300,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-09",
     "unitTitleKo": "명소 탐방과 문화 투어",
-    "unitNumber": 9
+    "unitNumber": 9,
+    "exampleEn": "Taking a guided tour of the ruins helped us appreciate the rich history.",
+    "exampleKo": "전문 문화 해설사(tour guide)의 깊이 있는 역사 설명과 안내를 들으며 명소를 탐방하는 알찬 투어입니다."
   },
   "expr-trav-037": {
     "id": "expr-trav-037",
@@ -57404,7 +59317,7 @@
     },
     "explanation": "여권, 지갑, 스마트폰을 분실했을 때 가장 먼저 발걸음을 옮겨야 하는 생명의 센터입니다.",
     "collocation": "check the airport lost and found",
-    "audioSentence": "turn in an item to lost and found",
+    "audioSentence": "I accidentally left my camera on the tour bus; where is the lost and found?",
     "dialogue": [
       {
         "speaker": "Frantic Traveler",
@@ -57450,7 +59363,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-10",
     "unitTitleKo": "응급 상황과 위기 대처",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "I accidentally left my camera on the tour bus; where is the lost and found?",
+    "exampleKo": "공항, 기차역, 박물관 등에서 손님이 깜빡 두고 간 물건을 접수하고 찾아주는 안내 창구입니다."
   },
   "expr-trav-038": {
     "id": "expr-trav-038",
@@ -57465,7 +59380,7 @@
     },
     "explanation": "대사관 긴급 여권 재발급이나 여행자 보험금 청구 시 경찰 신고서(Police Report) 사본이 필수 증빙입니다.",
     "collocation": "file a police report for insurance claim",
-    "audioSentence": "official police report copy",
+    "audioSentence": "If your passport or wallet was stolen, you must file a police report immediately.",
     "dialogue": [
       {
         "speaker": "Victim",
@@ -57511,7 +59426,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-10",
     "unitTitleKo": "응급 상황과 위기 대처",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "If your passport or wallet was stolen, you must file a police report immediately.",
+    "exampleKo": "소매치기나 절도를 당했을 때 현지 경찰서에 방문하여 피해 사실을 공식 문서로 작성·접수하는 행위입니다."
   },
   "expr-trav-039": {
     "id": "expr-trav-039",
@@ -57526,7 +59443,7 @@
     },
     "explanation": "해외여행의 최종 안전망으로 모든 여행자가 수첩에 메모해 두어야 할 필수 정보입니다.",
     "collocation": "call the emergency embassy contact",
-    "audioSentence": "register with embassy",
+    "audioSentence": "Keep your home country's embassy contact saved on your phone during travels.",
     "dialogue": [
       {
         "speaker": "Citizen",
@@ -57572,7 +59489,9 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-10",
     "unitTitleKo": "응급 상황과 위기 대처",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "Keep your home country's embassy contact saved on your phone during travels.",
+    "exampleKo": "여권 분실, 체포, 대형 자연재해 등 국외 위급 상황 시 자국민을 보호해 주는 대사관 및 영사 콜센터의 연락망입니다."
   },
   "expr-trav-040": {
     "id": "expr-trav-040",
@@ -57587,7 +59506,7 @@
     },
     "explanation": "여행 뉴스에서 기상 악화로 공항 바닥에 누워 있는 승객들을 보도할 때 단골로 등장하는 핵심 어휘입니다.",
     "collocation": "stranded in a foreign country",
-    "audioSentence": "stranded by floodwaters",
+    "audioSentence": "Hundreds of passengers were stranded at the airport due to the blizzard.",
     "dialogue": [
       {
         "speaker": "Reporter",
@@ -57633,14 +59552,13 @@
     "seriesTitleEn": "Travel, Dining & Cultural Etiquette",
     "unitId": "unit-trav-10",
     "unitTitleKo": "응급 상황과 위기 대처",
-    "unitNumber": 10
+    "unitNumber": 10,
+    "exampleEn": "Hundreds of passengers were stranded at the airport due to the blizzard.",
+    "exampleKo": "폭설, 태풍, 항공기 파업 등으로 교통편이 올스톱되어 오도가도 못하고 고립된 절박한 상태를 말합니다."
   }
 };
 
-  // 하위 호환성 레이어 (기존 NATIVE_EXPRESSIONS가 있으면 병합 유지)
-  if (!window.NATIVE_EXPRESSIONS || window.NATIVE_EXPRESSIONS.length < 320) {
-    window.NATIVE_EXPRESSIONS = window.NATIVE_EXPRESSIONS_MASTER_BANK;
-  }
+  window.NATIVE_EXPRESSIONS = window.NATIVE_EXPRESSIONS_MASTER_BANK;
 
   console.log(`[NativeSeriesData] Loaded 8 Series, 80 Units, and ${window.NATIVE_EXPRESSIONS_MASTER_BANK.length} master expressions successfully.`);
 })();
