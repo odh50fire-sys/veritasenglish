@@ -669,6 +669,19 @@ class NativeExpressionsEngine {
             window.storage.markNativeUnitCompleted(this.currentUnit.unitId, this.currentUnit);
         }
 
+        // 학습 이력(History) 자동 기록
+        if (window.storage && typeof window.storage.recordHistoryLog === 'function') {
+            window.storage.recordHistoryLog({
+                type: 'native',
+                title: `원어민 실전 표현: [${this.currentUnit.seriesTitle || 'Native'}] Unit ${this.currentUnit.unitNumber}. ${this.currentUnit.titleKo || this.currentUnit.titleEn}`,
+                detail: `4단계 실전 스튜디오 완독 및 핵심 표현 SRS 복습 등록`,
+                score: 100,
+                total: 100,
+                accuracy: 100,
+                actionTab: 'expressions'
+            });
+        }
+
         // 완독 축하 알림
         alert(`🎉 축하합니다!\n[Unit ${this.currentUnit.unitNumber}: ${this.currentUnit.titleKo}] 4단계 파이프라인을 성공적으로 완독하셨습니다!\n\n단원 내 4개 핵심 표현이 에빙하우스 망각곡선 복습 큐(1일/3일/7일/30일)에 자동 등록되었습니다.`);
 

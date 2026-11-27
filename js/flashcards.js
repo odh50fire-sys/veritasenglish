@@ -99,9 +99,22 @@ class FlashcardEngine {
     }
 
     /**
+     * 필터 버튼 클릭 시 안전 전환 (세션 체크)
+     */
+    selectFilter(filter) {
+        if (this.hasActiveMemorySession() || this.getSavedCheckpoint()) {
+            if (!confirm('현재 진행 중인 학습 세션이 초기화됩니다. 새로운 덱으로 학습하시겠습니까?')) {
+                return;
+            }
+            this.clearSessionCheckpoint();
+        }
+        this.loadDeck(filter, null, true);
+    }
+
+    /**
      * 필터링에 맞춰 덱 로드
      */
-    loadDeck(filter = 'today', customList = null) {
+    loadDeck(filter = 'today', customList = null, forceNew = false) {
         this.currentFilter = filter;
         const allWords = (window.storage.words || []).filter(w => !w.isReadingPassage && !w.isGrammarUnit);
         const nonSamples = allWords.filter(w => !String(w.id || '').startsWith('sample-'));
@@ -154,7 +167,137 @@ class FlashcardEngine {
             btn.classList.toggle('active-subtab', btn.dataset.filter === filter);
         });
 
+        // 저장된 미완료 세션이 있는 경우 이어하기 배너 확인
+        if (!forceNew && !customList) {
+            this.showResumeBannerIfAvailable();
+        } else {
+            this.hideResumeBanner();
+        }
+
         this.renderCard();
+    }
+
+    /**
+     * 세션 체크포인트 관리 (중도 이탈 방지)
+     */
+    getSavedCheckpoint() {
+        try {
+            const raw = localStorage.getItem('veritas_flashcard_session');
+            if (!raw) return null;
+            const session = JSON.parse(raw);
+            const today = window.storage ? window.storage.getTodayDateString() : new Date().toISOString().slice(0, 10);
+            if (session && session.date === today && Array.isArray(session.deckWordIds) && session.deckWordIds.length > 0 && typeof session.currentIndex === 'number' && session.currentIndex > 0 && session.currentIndex < session.deckWordIds.length) {
+                return session;
+            }
+            return null;
+        } catch (e) {
+            console.error('Failed to parse flashcard checkpoint:', e);
+            return null;
+        }
+    }
+
+    saveSessionCheckpoint() {
+        try {
+            if (!Array.isArray(this.deck) || this.deck.length === 0 || this.currentIndex <= 0) return;
+            const session = {
+                date: window.storage ? window.storage.getTodayDateString() : new Date().toISOString().slice(0, 10),
+                filter: this.currentFilter || 'today',
+                flipMode: this.flipMode || 'eng-to-kor',
+                deckWordIds: this.deck.map(w => w.id),
+                currentIndex: this.currentIndex,
+                sessionHardWordIds: (this.sessionHardWords || []).map(w => w.id),
+                sessionInitialDeckIds: (this.sessionInitialDeck || []).map(w => w.id),
+                reviewedSession: { ...this.reviewedSession },
+                timestamp: Date.now()
+            };
+            localStorage.setItem('veritas_flashcard_session', JSON.stringify(session));
+        } catch (e) {
+            console.error('Failed to save flashcard checkpoint:', e);
+        }
+    }
+
+    clearSessionCheckpoint() {
+        try {
+            localStorage.removeItem('veritas_flashcard_session');
+            this.hideResumeBanner();
+        } catch (e) {
+            console.error('Failed to clear flashcard checkpoint:', e);
+        }
+    }
+
+    showResumeBannerIfAvailable() {
+        const session = this.getSavedCheckpoint();
+        const banner = document.getElementById('fc-resume-banner');
+        const infoEl = document.getElementById('fc-resume-info');
+        if (!banner || !infoEl) return false;
+
+        if (session) {
+            const total = session.deckWordIds.length;
+            const current = session.currentIndex;
+            const pct = Math.round((current / total) * 100);
+            const filterNameMap = { today: '오늘의 학습', review: '복습 단어', weak: '취약 단어', all: '전체 단어' };
+            const filterLabel = filterNameMap[session.filter] || '단어 학습';
+
+            infoEl.textContent = `[${filterLabel}] ${current} / 총 ${total}단어 완료 (${pct}%)`;
+            banner.classList.remove('hidden');
+            if (window.lucide) window.lucide.createIcons();
+            return true;
+        } else {
+            banner.classList.add('hidden');
+            return false;
+        }
+    }
+
+    hideResumeBanner() {
+        const banner = document.getElementById('fc-resume-banner');
+        if (banner) banner.classList.add('hidden');
+    }
+
+    hasActiveMemorySession() {
+        return Array.isArray(this.deck) && this.deck.length > 0 && typeof this.currentIndex === 'number' && this.currentIndex > 0 && this.currentIndex < this.deck.length;
+    }
+
+    resumeSavedSession() {
+        const session = this.getSavedCheckpoint();
+        if (!session) {
+            alert('이어서 학습할 세션 데이터가 없습니다.');
+            return;
+        }
+
+        const allWords = window.storage ? (window.storage.words || []) : [];
+        const wordsMap = new Map(allWords.map(w => [String(w.id), w]));
+        const restoredDeck = session.deckWordIds.map(id => wordsMap.get(String(id))).filter(Boolean);
+
+        if (restoredDeck.length === 0) {
+            this.clearSessionCheckpoint();
+            this.loadDeck('today', null, true);
+            return;
+        }
+
+        this.deck = restoredDeck;
+        this.currentIndex = Math.min(session.currentIndex || 0, this.deck.length - 1);
+        this.currentFilter = session.filter || 'today';
+        this.setFlipMode(session.flipMode || 'eng-to-kor');
+        this.isFlipped = false;
+
+        const initialDeck = (session.sessionInitialDeckIds || []).map(id => wordsMap.get(String(id))).filter(Boolean);
+        this.sessionInitialDeck = initialDeck.length > 0 ? initialDeck : [...this.deck];
+        this.sessionHardWords = (session.sessionHardWordIds || []).map(id => wordsMap.get(String(id))).filter(Boolean);
+        this.reviewedSession = session.reviewedSession || { total: this.currentIndex, easy: 0, good: 0, hard: 0 };
+
+        document.querySelectorAll('.fc-filter-btn').forEach(btn => {
+            btn.classList.toggle('active-subtab', btn.dataset.filter === this.currentFilter);
+        });
+
+        this.hideResumeBanner();
+        this.renderCard();
+
+        if (window.lucide) window.lucide.createIcons();
+    }
+
+    discardSavedSession() {
+        this.clearSessionCheckpoint();
+        this.loadDeck(this.currentFilter || 'today', null, true);
     }
 
     shuffleDeck() {
@@ -237,8 +380,10 @@ class FlashcardEngine {
         if (cardElement) cardElement.classList.remove('is-flipped');
 
         if (this.currentIndex >= this.deck.length) {
+            this.clearSessionCheckpoint();
             this.renderCompletionScreen();
         } else {
+            this.saveSessionCheckpoint();
             setTimeout(() => {
                 this.renderCard();
             }, 150);
@@ -395,6 +540,7 @@ class FlashcardEngine {
         if (container) container.classList.add('hidden');
         if (compView) {
             compView.classList.remove('hidden');
+            this.clearSessionCheckpoint();
 
             document.getElementById('fc-summary-total').textContent = this.reviewedSession.total;
             document.getElementById('fc-summary-easy').textContent = this.reviewedSession.easy;

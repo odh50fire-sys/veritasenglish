@@ -297,6 +297,19 @@ class WrongNoteEngine {
         const correctCount = this.retestUserAnswers.filter(a => a.isCorrect).length;
         const passPercent = Math.round((correctCount / total) * 100);
 
+        // 학습 이력에 기록
+        if (window.storage && typeof window.storage.recordHistoryLog === 'function') {
+            window.storage.recordHistoryLog({
+                type: 'wrong',
+                title: '스마트 오답노트: 약점 극복 재시험',
+                detail: `총 ${total}문제 중 ${correctCount}문제 정답 (${passPercent}%) • 오답 마스터 완료`,
+                score: passPercent,
+                total: 100,
+                accuracy: passPercent,
+                actionTab: 'review'
+            });
+        }
+
         if (passPercent >= 70 && typeof confetti === 'function') {
             confetti({ particleCount: 80, spread: 70, origin: { y: 0.5 } });
         }

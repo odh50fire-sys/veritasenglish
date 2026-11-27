@@ -885,15 +885,40 @@
         <section id="tab-flashcards" class="tab-content hidden space-y-6">
             
             <div class="max-w-2xl mx-auto space-y-6">
+                <!-- 중도 이탈 세션 이어하기 안내 배너 -->
+                <div id="fc-resume-banner" class="hidden p-4 rounded-2xl bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white shadow-xl border border-blue-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 transition-all">
+                    <div class="flex items-center gap-3.5 w-full sm:w-auto">
+                        <div class="w-10 h-10 rounded-xl bg-amber-400/20 border border-amber-300/30 flex items-center justify-center shrink-0 text-amber-300 shadow-inner">
+                            <i data-lucide="play-circle" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="text-[11px] font-bold text-amber-300 bg-amber-400/20 px-2 py-0.5 rounded border border-amber-300/40">세션 이어하기 가능</span>
+                                <span id="fc-resume-info" class="text-xs font-bold text-white font-mono">이전 학습 중이던 덱 (0 / 0단어)</span>
+                            </div>
+                            <p class="text-[11px] text-blue-200 mt-0.5">사이트를 나갔다 들어와도 직전 진행 단어부터 안전하게 학습을 이어갈 수 있습니다.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 w-full sm:w-auto justify-end shrink-0">
+                        <button id="btn-fc-resume-yes" class="px-3.5 py-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs shadow-md transition-all cursor-pointer flex items-center gap-1.5" onclick="window.flashcardEngine.resumeSavedSession()">
+                            <i data-lucide="play" class="w-3.5 h-3.5"></i>
+                            <span>이어서 학습하기</span>
+                        </button>
+                        <button id="btn-fc-resume-dismiss" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-blue-100 font-medium text-xs border border-white/10 transition-all cursor-pointer" onclick="window.flashcardEngine.discardSavedSession()">
+                            새로 시작
+                        </button>
+                    </div>
+                </div>
+
                 <!-- 상단 필터 & 진행도 & 양방향 뒤집기 토글 (요구사항 4, 5) -->
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                     <div class="flex flex-wrap items-center gap-2">
                         <!-- 출제 덱 선택 -->
                         <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-xl text-xs font-medium">
-                            <button class="fc-filter-btn px-2.5 py-1.5 rounded-lg active-subtab" data-filter="today" onclick="window.flashcardEngine.loadDeck('today')">오늘의 학습</button>
-                            <button class="fc-filter-btn px-2.5 py-1.5 rounded-lg" data-filter="review" onclick="window.flashcardEngine.loadDeck('review')">복습 단어</button>
-                            <button class="fc-filter-btn px-2.5 py-1.5 rounded-lg" data-filter="weak" onclick="window.flashcardEngine.loadDeck('weak')">취약 단어</button>
-                            <button class="fc-filter-btn px-2.5 py-1.5 rounded-lg" data-filter="all" onclick="window.flashcardEngine.loadDeck('all')">전체 단어</button>
+                            <button class="fc-filter-btn px-2.5 py-1.5 rounded-lg active-subtab" data-filter="today" onclick="window.flashcardEngine.selectFilter('today')">오늘의 학습</button>
+                            <button class="fc-filter-btn px-2.5 py-1.5 rounded-lg" data-filter="review" onclick="window.flashcardEngine.selectFilter('review')">복습 단어</button>
+                            <button class="fc-filter-btn px-2.5 py-1.5 rounded-lg" data-filter="weak" onclick="window.flashcardEngine.selectFilter('weak')">취약 단어</button>
+                            <button class="fc-filter-btn px-2.5 py-1.5 rounded-lg" data-filter="all" onclick="window.flashcardEngine.selectFilter('all')">전체 단어</button>
                         </div>
 
                         <!-- 요구사항 4: 영어-한국어 ↔ 한국어-영어 양방향 뒤집기 토글 -->
@@ -3378,17 +3403,17 @@
     <!-- ======================================================================
          MODAL: 실시간 학습 이력 & 성취 기록 모달 (요구사항 2)
          ====================================================================== -->
-    <div id="modal-learning-history" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 space-y-6 max-h-[90vh] flex flex-col">
+    <div id="modal-learning-history" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs hidden flex items-center justify-center p-3 sm:p-4">
+        <div class="bg-white rounded-3xl max-w-4xl w-full p-5 sm:p-7 shadow-2xl border border-slate-200 space-y-5 max-h-[92vh] flex flex-col">
             <!-- 헤더 -->
-            <div class="flex items-center justify-between pb-4 border-b border-slate-100 shrink-0">
+            <div class="flex items-center justify-between pb-3.5 border-b border-slate-100 shrink-0">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-2xl bg-blue-100 text-blue-900 flex items-center justify-center">
+                    <div class="w-10 h-10 rounded-2xl bg-blue-100 text-blue-900 flex items-center justify-center shrink-0">
                         <i data-lucide="history" class="w-5 h-5"></i>
                     </div>
                     <div>
-                        <h3 class="font-serif font-black text-xl text-slate-900">📊 나의 실시간 학습 이력 & 성취 기록</h3>
-                        <p class="text-xs text-slate-500 mt-0.5">플래시카드, 스마트 퀴즈 및 중등 독해 실전 시험의 누적 학습 로그</p>
+                        <h3 class="font-serif font-black text-xl text-slate-900">📊 나의 전 영역 실시간 학습 이력 & 성취 기록</h3>
+                        <p class="text-xs text-slate-500 mt-0.5">단어장, 퀴즈, 문법 클리닉, 원어민 표현, e-Book 원서, 서술형 영작 및 실전 시험지의 통합 학습 로그</p>
                     </div>
                 </div>
                 <button class="p-2 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-700 transition-colors cursor-pointer" onclick="window.plannerEngine.closeLearningHistoryModal()">
@@ -3396,39 +3421,68 @@
                 </button>
             </div>
 
-            <!-- 3대 핵심 성취 KPI 카드 -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 shrink-0">
-                <div class="p-4 rounded-2xl bg-blue-50/70 border border-blue-200/80">
-                    <div class="text-xs font-mono text-blue-800 font-semibold">마스터 완료 단어</div>
+            <!-- 6대 핵심 영역 성취 KPI 카드 -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 shrink-0">
+                <div class="p-3 rounded-2xl bg-blue-50/80 border border-blue-200/80 flex flex-col justify-between">
+                    <div class="text-[11px] font-mono text-blue-800 font-semibold">마스터 단어</div>
                     <div class="flex items-baseline gap-1 mt-1">
-                        <span id="hist-stat-words" class="font-serif font-black text-2xl text-blue-950">0</span>
-                        <span class="text-xs text-blue-700 font-serif">단어 달성</span>
+                        <span id="hist-stat-words" class="font-serif font-black text-xl text-blue-950">0</span>
+                        <span class="text-[10px] text-blue-700">단어</span>
                     </div>
-                    <p class="text-[11px] text-blue-600 mt-0.5">플래시카드 & 스마트퀴즈 통과</p>
+                    <p class="text-[10px] text-blue-600 mt-0.5 truncate">플래시카드·퀴즈</p>
                 </div>
-                <div class="p-4 rounded-2xl bg-amber-50/70 border border-amber-200/80">
-                    <div class="text-xs font-mono text-amber-800 font-semibold">스마트 퀴즈 평균 정답률</div>
+                <div class="p-3 rounded-2xl bg-purple-50/80 border border-purple-200/80 flex flex-col justify-between">
+                    <div class="text-[11px] font-mono text-purple-800 font-semibold">문법 클리닉</div>
                     <div class="flex items-baseline gap-1 mt-1">
-                        <span id="hist-stat-quiz-acc" class="font-serif font-black text-2xl text-amber-950">0%</span>
-                        <span class="text-xs text-amber-700 font-serif">누적 점수</span>
+                        <span id="hist-stat-grammar" class="font-serif font-black text-xl text-purple-950">0</span>
+                        <span class="text-[10px] text-purple-700">단원</span>
                     </div>
-                    <p class="text-[11px] text-amber-600 mt-0.5">객관식/스펠링/리스닝/문맥</p>
+                    <p class="text-[10px] text-purple-600 mt-0.5 truncate">3800제 진단완료</p>
                 </div>
-                <div class="p-4 rounded-2xl bg-indigo-50/70 border border-indigo-200/80">
-                    <div class="text-xs font-mono text-indigo-800 font-semibold">완독 내신 독해 지문</div>
+                <div class="p-3 rounded-2xl bg-emerald-50/80 border border-emerald-200/80 flex flex-col justify-between">
+                    <div class="text-[11px] font-mono text-emerald-800 font-semibold">원어민 표현</div>
                     <div class="flex items-baseline gap-1 mt-1">
-                        <span id="hist-stat-reading" class="font-serif font-black text-2xl text-indigo-950">0</span>
-                        <span class="text-xs text-indigo-700 font-serif">지문 완료</span>
+                        <span id="hist-stat-native" class="font-serif font-black text-xl text-emerald-950">0</span>
+                        <span class="text-[10px] text-emerald-700">단원</span>
                     </div>
-                    <p class="text-[11px] text-indigo-600 mt-0.5">실전 시험 풀이 & 채점 완료</p>
+                    <p class="text-[10px] text-emerald-600 mt-0.5 truncate">80강 4단계 완독</p>
+                </div>
+                <div class="p-3 rounded-2xl bg-teal-50/80 border border-teal-200/80 flex flex-col justify-between">
+                    <div class="text-[11px] font-mono text-teal-800 font-semibold">e-Book 원서</div>
+                    <div class="flex items-baseline gap-1 mt-1">
+                        <span id="hist-stat-ebook" class="font-serif font-black text-xl text-teal-950">0</span>
+                        <span class="text-[10px] text-teal-700">권</span>
+                    </div>
+                    <p class="text-[10px] text-teal-600 mt-0.5 truncate">222권 5단계 완독</p>
+                </div>
+                <div class="p-3 rounded-2xl bg-rose-50/80 border border-rose-200/80 flex flex-col justify-between">
+                    <div class="text-[11px] font-mono text-rose-800 font-semibold">서술형 영작</div>
+                    <div class="flex items-baseline gap-1 mt-1">
+                        <span id="hist-stat-scramble" class="font-serif font-black text-xl text-rose-950">0</span>
+                        <span class="text-[10px] text-rose-700">문장</span>
+                    </div>
+                    <p class="text-[10px] text-rose-600 mt-0.5 truncate">어순배열 정복</p>
+                </div>
+                <div class="p-3 rounded-2xl bg-amber-50/80 border border-amber-200/80 flex flex-col justify-between">
+                    <div class="text-[11px] font-mono text-amber-800 font-semibold">독해·시험지</div>
+                    <div class="flex items-baseline gap-1 mt-1">
+                        <span id="hist-stat-acc" class="font-serif font-black text-xl text-amber-950">100%</span>
+                        <span class="text-[10px] text-amber-700">정답</span>
+                    </div>
+                    <p class="text-[10px] text-amber-600 mt-0.5 truncate">평균 누적 성적</p>
                 </div>
             </div>
 
             <!-- 카테고리 필터 서브탭 -->
-            <div class="flex items-center gap-1.5 bg-slate-100 p-1 rounded-xl text-xs font-medium shrink-0">
-                <button class="hist-filter-btn px-3 py-1.5 rounded-lg active-subtab" data-filter="all" onclick="window.plannerEngine.filterLearningHistory('all')">전체 이력</button>
-                <button class="hist-filter-btn px-3 py-1.5 rounded-lg" data-filter="voca" onclick="window.plannerEngine.filterLearningHistory('voca')">영단어 & 퀴즈</button>
-                <button class="hist-filter-btn px-3 py-1.5 rounded-lg" data-filter="reading" onclick="window.plannerEngine.filterLearningHistory('reading')">내신 독해 시험</button>
+            <div class="flex items-center gap-1.5 bg-slate-100 p-1 rounded-xl text-xs font-medium overflow-x-auto custom-scrollbar shrink-0">
+                <button class="hist-filter-btn px-3 py-1.5 rounded-lg active-subtab shrink-0" data-filter="all" onclick="window.plannerEngine.filterLearningHistory('all')">전체 이력</button>
+                <button class="hist-filter-btn px-3 py-1.5 rounded-lg shrink-0" data-filter="voca" onclick="window.plannerEngine.filterLearningHistory('voca')">단어장·퀴즈</button>
+                <button class="hist-filter-btn px-3 py-1.5 rounded-lg shrink-0" data-filter="grammar" onclick="window.plannerEngine.filterLearningHistory('grammar')">문법 클리닉</button>
+                <button class="hist-filter-btn px-3 py-1.5 rounded-lg shrink-0" data-filter="native" onclick="window.plannerEngine.filterLearningHistory('native')">원어민 표현</button>
+                <button class="hist-filter-btn px-3 py-1.5 rounded-lg shrink-0" data-filter="ebook" onclick="window.plannerEngine.filterLearningHistory('ebook')">e-Book 원서</button>
+                <button class="hist-filter-btn px-3 py-1.5 rounded-lg shrink-0" data-filter="reading" onclick="window.plannerEngine.filterLearningHistory('reading')">내신 독해</button>
+                <button class="hist-filter-btn px-3 py-1.5 rounded-lg shrink-0" data-filter="scramble" onclick="window.plannerEngine.filterLearningHistory('scramble')">서술형 영작</button>
+                <button class="hist-filter-btn px-3 py-1.5 rounded-lg shrink-0" data-filter="exam" onclick="window.plannerEngine.filterLearningHistory('exam')">오답·시험지</button>
             </div>
 
             <!-- 스크롤 가능한 이력 리스트 테이블 -->
@@ -4436,14 +4490,14 @@
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
     <script src="js/cloud_sync.js"></script>
 
-    <script src="js/storage.js?v=20261127_srs_bins_v2"></script>
+    <script src="js/storage.js?v=20261127_checkpoint_history_v1"></script>
     <script src="js/custom_voca_ai.js"></script>
     <script src="js/ocr.js"></script>
-    <script src="js/flashcards.js?v=20261127_srs_bins_v2"></script>
+    <script src="js/flashcards.js?v=20261127_checkpoint_history_v1"></script>
     <script src="js/quiz.js"></script>
-    <script src="js/review.js?v=20261127_srs_bins_v2"></script>
-    <script src="js/planner.js?v=20261127_srs_bins_v2"></script>
-    <script src="js/expressions.js?v=20261127_srs_bins_v2"></script>
+    <script src="js/review.js?v=20261127_checkpoint_history_v1"></script>
+    <script src="js/planner.js?v=20261127_checkpoint_history_v1"></script>
+    <script src="js/expressions.js?v=20261127_checkpoint_history_v1"></script>
     <script src="js/dictionary.js"></script>
     <script src="js/reading.js?v=20261121_polyexamples"></script>
     <script src="js/level_test.js?v=20261126_v401"></script>
@@ -4452,7 +4506,7 @@
         <script src="data/scramble_sentences.js"></script>
     <script src="js/scramble.js"></script>
     <script src="js/achievements.js"></script>
-    <script src="js/wrong_note.js"></script>
+    <script src="js/wrong_note.js?v=20261127_checkpoint_history_v1"></script>
     <script src="js/exam_studio.js"></script>
     <!-- 부교재 전용 보카북 & 워크북 맞춤 인쇄 스튜디오 엔진 -->
     <script src="js/book_studio.js?v=20261120_h400"></script>
@@ -4472,12 +4526,12 @@
     <script src="data/grammar_syntax_theme_rw_ext_data.js?v=1795127808"></script>
     <script src="data/reading_clinic_data.js"></script>
     <script src="data/writing_clinic_data.js"></script>
-    <script src="js/grammar_clinic.js?v=20261120_v3"></script>
+    <script src="js/grammar_clinic.js?v=20261127_checkpoint_history_v1"></script>
     <script src="js/clinic_studio.js?v=1795127808"></script>
     <!-- 베리타스 비문학 원서 e-Book 도서관 (Veritas e-Library) 데이터 및 엔진 -->
     <script src="data/ebook_library_data.js?v=20261127_ebook_pro_v1"></script>
-    <script src="js/ebook.js?v=20261127_ebook_pro_v1"></script>
-    <script src="js/app.js?v=20261127_ebook_pro_v1"></script>
+    <script src="js/ebook.js?v=20261127_checkpoint_history_v1"></script>
+    <script src="js/app.js?v=20261127_checkpoint_history_v1"></script>
 
     <!-- ======================================================================
          MODAL: 학습자 아이디(프로필) 관리 및 전환 모달

@@ -1510,6 +1510,20 @@ class GrammarClinicEngine {
             completedAt: new Date().toISOString()
         }, unit.levelInfo ? unit.levelInfo.levelCode : null);
 
+        // 학습 이력(History) 자동 기록
+        if (window.storage && typeof window.storage.recordHistoryLog === 'function') {
+            const unitLabel = unit.levelInfo && unit.levelInfo.isSpecial ? `특강 ${unit.unitNo}강` : `Unit ${unit.unitNo}`;
+            window.storage.recordHistoryLog({
+                type: 'grammar',
+                title: `문법 클리닉: ${unit.levelInfo ? `[${unit.levelInfo.badge}] ` : ''}${unitLabel}. ${unit.title}`,
+                detail: `단원 진단 테스트 완료 • 획득 점수: ${score}/${questions.length}문항 (${stars}★ 달성)`,
+                score: score,
+                total: questions.length,
+                accuracy: Math.round((score / Math.max(1, questions.length)) * 100),
+                actionTab: 'grammar'
+            });
+        }
+
         // 축하 폭죽 효과 (4점 이상)
         if (score >= 4 && window.confetti) {
             window.confetti({ particleCount: 50, spread: 70, origin: { y: 0.6 } });

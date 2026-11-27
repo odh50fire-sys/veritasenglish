@@ -2204,6 +2204,22 @@ class EBookEngine {
         };
         this.saveProgress();
 
+        // 학습 이력(History) 자동 기록
+        if (window.storage && typeof window.storage.recordHistoryLog === 'function') {
+            const seriesTitle = this.currentBook?.seriesTitle || '원서';
+            const bookTitle = this.currentBook?.title || bookId;
+            const levelStr = this.currentBook?.level || 'e-Book';
+            window.storage.recordHistoryLog({
+                type: 'ebook',
+                title: `e-Book 원서 독해: [${seriesTitle}] ${bookTitle}`,
+                detail: `${levelStr} 원서 5단계 완독 파이프라인 정복 완료`,
+                score: 100,
+                total: 100,
+                accuracy: 100,
+                actionTab: 'ebook'
+            });
+        }
+
         // 업적 시스템 연동 (있는 경우)
         if (window.achievements && typeof window.achievements.checkBadgeProgress === 'function') {
             window.achievements.checkBadgeProgress();

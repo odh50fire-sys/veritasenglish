@@ -1149,6 +1149,18 @@ class StorageManager {
         this.addExp(expGain, isOneShot ? '어순 배열 원샷 정답' : '어순 배열 완성');
         this.checkAndUnlockBadges();
         this.saveUserProfile();
+
+        // 학습 이력에 기록
+        this.recordHistoryLog({
+            type: 'scramble',
+            title: `서술형 영작: 문장 어순배열 클리닉`,
+            detail: `${isOneShot ? '원샷 퍼펙트 정답' : '어순배열 완성'} (${scrambleId}) • EXP +${expGain}`,
+            score: 100,
+            total: 100,
+            accuracy: 100,
+            actionTab: 'reading'
+        });
+
         return { isFirstTime, expGain };
     }
 
@@ -1175,6 +1187,17 @@ class StorageManager {
         const expGain = record.totalQuestions >= 20 ? Math.round(baseScore * 1.5) : baseScore;
         this.addExp(expGain, `내신 모의고사 완주 (${baseScore}점)`);
         this.checkAndUnlockBadges();
+
+        // 학습 이력에 기록
+        this.recordHistoryLog({
+            type: 'exam',
+            title: `실전 모의고사: ${record.title}`,
+            detail: `성적: ${record.score}점 (정답 ${record.correctCount}/${record.totalQuestions}문항) • 소요시간 ${Math.floor(record.timeSpentSec / 60)}분 ${record.timeSpentSec % 60}초`,
+            score: record.score,
+            total: 100,
+            accuracy: record.score,
+            actionTab: 'reading'
+        });
 
         return record;
     }
@@ -1455,20 +1478,21 @@ class StorageManager {
     /**
      * 학습 이력 로깅 (히스토리)
      */
-    recordHistoryLog({ type, title, detail, score = null, total = null, accuracy = null }) {
+    recordHistoryLog({ type, title, detail, score = null, total = null, accuracy = null, date = null, actionTab = null }) {
         if (!this.history || !Array.isArray(this.history)) this.history = [];
         const now = new Date();
         const logItem = {
             id: 'hist_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5),
             timestamp: now.getTime(),
-            date: this.getTodayDateString(),
+            date: date || this.getTodayDateString(),
             timeStr: now.toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' }),
-            type, // 'flashcard', 'quiz', 'reading'
+            type, // 'flashcard', 'quiz', 'grammar', 'native', 'ebook', 'reading', 'scramble', 'wrong', 'exam'
             title: title || '학습 세션',
             detail: detail || '',
             score,
             total,
-            accuracy: accuracy !== null ? accuracy : (score !== null && total ? Math.round((score / total) * 100) : null)
+            accuracy: accuracy !== null ? accuracy : (score !== null && total ? Math.round((score / total) * 100) : null),
+            actionTab: actionTab || null
         };
         this.history.unshift(logItem);
         if (this.history.length > 500) this.history = this.history.slice(0, 500);
@@ -1476,12 +1500,193 @@ class StorageManager {
         return logItem;
     }
 
+    /**
+     * 전체 학습 기능 통합 이력 조회 (기존 로컬 저장소 진척도 자동 역병합)
+     */
     getHistoryLogs(filterType = 'all') {
-        if (!this.history || !Array.isArray(this.history)) return [];
-        if (filterType === 'all') return this.history;
-        if (filterType === 'voca') return this.history.filter(h => h.type === 'flashcard' || h.type === 'quiz');
-        if (filterType === 'reading') return this.history.filter(h => h.type === 'reading');
-        return this.history.filter(h => h.type === filterType);
+        const directLogs = (this.history || []).slice();
+        const recordedKeys = new Set(directLogs.map(h => `${h.type}_${h.title}`));
+
+        // 1. 문법 클리닉 진척도 역병합
+        try {
+            const userId = this.currentProfileId || 'default';
+            const rawGrammar = localStorage.getItem(`veritas_grammar_progress_${userId}`);
+            if (rawGrammar) {
+                const gMap = JSON.parse(rawGrammar);
+                Object.entries(gMap).forEach(([k, v]) => {
+                    if (v && v.completed && !k.startsWith('lvl_')) {
+                        const key = `grammar_Unit ${k}`;
+                        if (!recordedKeys.has(key)) {
+                            recordedKeys.add(key);
+                            directLogs.push({
+                                id: `hist-grammar-${k}`,
+                                type: 'grammar',
+                                title: `문법 클리닉: Unit ${k}`,
+                                detail: `단원 진단 테스트 완료 • 획득 점수: ${v.score || 5}/5문항 (${v.stars || 3}★ 달성)`,
+                                score: v.score || 5,
+                                total: 5,
+                                accuracy: Math.round(((v.score || 5) / 5) * 100),
+                                timestamp: v.updatedAt ? new Date(v.updatedAt).getTime() : Date.now(),
+                                date: v.updatedAt ? v.updatedAt.slice(0, 10) : this.getTodayDateString(),
+                                actionTab: 'grammar'
+                            });
+                        }
+                    }
+                });
+            }
+        } catch (e) {
+            console.error('Failed to aggregate grammar history:', e);
+        }
+
+        // 2. 원어민 실전 표현 완독 이력 역병합
+        try {
+            const nativeUnits = this.getNativeCompletedUnits() || [];
+            nativeUnits.forEach(uId => {
+                const unitObj = (window.NATIVE_UNITS_DATA || []).find(u => u.unitId === uId);
+                const titleStr = unitObj ? `원어민 실전 표현: [${unitObj.seriesTitle || 'Native'}] ${unitObj.titleKo || unitObj.titleEn}` : `원어민 실전 표현: ${uId}`;
+                const key = `native_${titleStr}`;
+                if (!recordedKeys.has(key)) {
+                    recordedKeys.add(key);
+                    directLogs.push({
+                        id: `hist-native-${uId}`,
+                        type: 'native',
+                        title: titleStr,
+                        detail: `4단계 실전 스튜디오 완독 및 핵심 표현 SRS 복습 등록`,
+                        score: 100,
+                        total: 100,
+                        accuracy: 100,
+                        timestamp: Date.now(),
+                        date: this.getTodayDateString(),
+                        actionTab: 'expressions'
+                    });
+                }
+            });
+        } catch (e) {
+            console.error('Failed to aggregate native history:', e);
+        }
+
+        // 3. e-Book 원서 완독 이력 역병합
+        try {
+            const rawEbook = localStorage.getItem('veritas_ebook_progress');
+            if (rawEbook) {
+                const ebMap = JSON.parse(rawEbook);
+                Object.entries(ebMap).forEach(([bId, p]) => {
+                    if (p && p.completed) {
+                        const book = (window.EBOOK_BOOKS_DATA || []).find(b => b.id === bId);
+                        const titleStr = book ? `e-Book 원서 독해: [${book.seriesTitle || '원서'}] ${book.title}` : `e-Book 원서 독해: ${bId}`;
+                        const key = `ebook_${titleStr}`;
+                        if (!recordedKeys.has(key)) {
+                            recordedKeys.add(key);
+                            directLogs.push({
+                                id: `hist-ebook-${bId}`,
+                                type: 'ebook',
+                                title: titleStr,
+                                detail: `${book ? book.level : 'e-Book'} 원서 5단계 완독 파이프라인 정복 완료`,
+                                score: 100,
+                                total: 100,
+                                accuracy: 100,
+                                timestamp: p.completedAt || Date.now(),
+                                date: p.completedAt ? new Date(p.completedAt).toISOString().slice(0, 10) : this.getTodayDateString(),
+                                actionTab: 'ebook'
+                            });
+                        }
+                    }
+                });
+            }
+        } catch (e) {
+            console.error('Failed to aggregate ebook history:', e);
+        }
+
+        // 4. 내신 실전 모의고사 역병합
+        try {
+            (this.mockExams || []).forEach(exam => {
+                const titleStr = `실전 모의고사: ${exam.title || '내신 실전 모의고사'}`;
+                const key = `exam_${titleStr}`;
+                if (!recordedKeys.has(key)) {
+                    recordedKeys.add(key);
+                    directLogs.push({
+                        id: `hist-${exam.id}`,
+                        type: 'exam',
+                        title: titleStr,
+                        detail: `성적: ${exam.score}점 (정답 ${exam.correctCount || 0}/${exam.totalQuestions || 20}문항) • 소요시간 ${Math.floor((exam.timeSpentSec || 0) / 60)}분`,
+                        score: exam.score,
+                        total: 100,
+                        accuracy: exam.score,
+                        timestamp: exam.id ? Number(String(exam.id).replace('exam-', '')) || Date.now() : Date.now(),
+                        date: exam.date || this.getTodayDateString(),
+                        actionTab: 'reading'
+                    });
+                }
+            });
+        } catch (e) {
+            console.error('Failed to aggregate mock exam history:', e);
+        }
+
+        // 최신순 정렬 (timestamp 내림차순)
+        directLogs.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+
+        // 필터링 적용
+        if (filterType === 'all') return directLogs;
+        if (filterType === 'voca') return directLogs.filter(h => h.type === 'flashcard' || h.type === 'quiz');
+        if (filterType === 'grammar') return directLogs.filter(h => h.type === 'grammar');
+        if (filterType === 'native') return directLogs.filter(h => h.type === 'native');
+        if (filterType === 'ebook') return directLogs.filter(h => h.type === 'ebook');
+        if (filterType === 'reading') return directLogs.filter(h => h.type === 'reading');
+        if (filterType === 'scramble') return directLogs.filter(h => h.type === 'scramble');
+        if (filterType === 'exam') return directLogs.filter(h => h.type === 'exam' || h.type === 'wrong');
+        return directLogs.filter(h => h.type === filterType);
+    }
+
+    /**
+     * 6대 핵심 영역 전체 학습 지표 통계 산출
+     */
+    getAllFeatureStats() {
+        const allWords = this.words || [];
+        const masteredWords = allWords.filter(w => !w.isReadingPassage && !w.isGrammarUnit && ((w.flashcardDone && w.quizDone) || w.studyCompleted || (w.stage && w.stage >= 2))).length;
+
+        // 문법 완료 수
+        let grammarCompleted = 0;
+        try {
+            const userId = this.currentProfileId || 'default';
+            const raw = localStorage.getItem(`veritas_grammar_progress_${userId}`);
+            if (raw) {
+                const map = JSON.parse(raw);
+                grammarCompleted = Object.values(map).filter(v => v && v.completed && !String(v.unitId || '').startsWith('lvl_')).length;
+            }
+        } catch (e) {}
+
+        // 원어민 표현 완독 수
+        const nativeCompleted = (this.getNativeCompletedUnits() || []).length;
+
+        // e-Book 완독 수
+        let ebookCompleted = 0;
+        try {
+            const raw = localStorage.getItem('veritas_ebook_progress');
+            if (raw) {
+                const map = JSON.parse(raw);
+                ebookCompleted = Object.values(map).filter(v => v && v.completed).length;
+            }
+        } catch (e) {}
+
+        // 서술형 영작 성공 수
+        const scrambleCompleted = (this.userProfile?.completedScrambles || []).length;
+
+        // 독해 & 시험지 평균 정답률
+        const readingRecords = this.readingRecords || {};
+        const readingScores = Object.values(readingRecords).map(r => r.score).filter(s => typeof s === 'number');
+        const examScores = (this.mockExams || []).map(e => e.score).filter(s => typeof s === 'number');
+        const allScores = [...readingScores, ...examScores];
+        const avgScore = allScores.length > 0 ? Math.round(allScores.reduce((a, b) => a + b, 0) / allScores.length) : 100;
+
+        return {
+            masteredWords,
+            grammarCompleted,
+            nativeCompleted,
+            ebookCompleted,
+            scrambleCompleted,
+            avgScore,
+            totalLogs: this.getHistoryLogs('all').length
+        };
     }
 
     recordReadingPassageResult(passageId, score, passageTitle = '') {

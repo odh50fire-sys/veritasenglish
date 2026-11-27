@@ -649,7 +649,22 @@ class AppController {
         if (tabName === 'dashboard') {
             this.renderDashboard();
         } else if (tabName === 'flashcards') {
-            window.flashcardEngine.loadDeck(window.flashcardEngine.currentFilter || 'today');
+            if (window.flashcardEngine) {
+                if (window.flashcardEngine.hasActiveMemorySession()) {
+                    window.flashcardEngine.renderCard();
+                } else if (window.flashcardEngine.getSavedCheckpoint()) {
+                    window.flashcardEngine.showResumeBannerIfAvailable();
+                    if (!window.flashcardEngine.deck || window.flashcardEngine.deck.length === 0) {
+                        window.flashcardEngine.loadDeck(window.flashcardEngine.currentFilter || 'today');
+                    }
+                } else {
+                    if (!window.flashcardEngine.deck || window.flashcardEngine.deck.length === 0) {
+                        window.flashcardEngine.loadDeck(window.flashcardEngine.currentFilter || 'today');
+                    } else {
+                        window.flashcardEngine.renderCard();
+                    }
+                }
+            }
         } else if (tabName === 'quiz') {
             window.quizEngine.startQuiz(window.quizEngine.currentMode || 'choice', { scope: window.quizEngine.currentScope || 'today' });
         } else if (tabName === 'review') {

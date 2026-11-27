@@ -1436,25 +1436,25 @@ class PlannerEngine {
     renderLearningHistoryModal() {
         const listEl = document.getElementById('learning-history-list');
         const wordsStatEl = document.getElementById('hist-stat-words');
-        const quizAccStatEl = document.getElementById('hist-stat-quiz-acc');
-        const readingStatEl = document.getElementById('hist-stat-reading');
+        const grammarStatEl = document.getElementById('hist-stat-grammar');
+        const nativeStatEl = document.getElementById('hist-stat-native');
+        const ebookStatEl = document.getElementById('hist-stat-ebook');
+        const scrambleStatEl = document.getElementById('hist-stat-scramble');
+        const accStatEl = document.getElementById('hist-stat-acc');
 
         if (!listEl) return;
 
-        // KPI 통계 산출
-        const allWords = window.storage.words || [];
-        const masteredWords = allWords.filter(w => !w.isReadingPassage && ((w.flashcardDone && w.quizDone) || w.studyCompleted || (w.stage && w.stage >= 2))).length;
-        
-        const historyLogs = window.storage.getHistoryLogs('all') || [];
-        const quizLogs = historyLogs.filter(h => h.type === 'quiz' && typeof h.accuracy === 'number');
-        const avgAcc = quizLogs.length > 0 ? Math.round(quizLogs.reduce((acc, cur) => acc + cur.accuracy, 0) / quizLogs.length) : 0;
-        
-        const readingRecords = window.storage.readingRecords || {};
-        const readingCount = Object.keys(readingRecords).length;
+        // 6대 KPI 통계 산출
+        const stats = window.storage && typeof window.storage.getAllFeatureStats === 'function'
+            ? window.storage.getAllFeatureStats()
+            : { masteredWords: 0, grammarCompleted: 0, nativeCompleted: 0, ebookCompleted: 0, scrambleCompleted: 0, avgScore: 100 };
 
-        if (wordsStatEl) wordsStatEl.textContent = masteredWords;
-        if (quizAccStatEl) quizAccStatEl.textContent = avgAcc > 0 ? `${avgAcc}%` : '100%';
-        if (readingStatEl) readingStatEl.textContent = readingCount;
+        if (wordsStatEl) wordsStatEl.textContent = stats.masteredWords;
+        if (grammarStatEl) grammarStatEl.textContent = stats.grammarCompleted;
+        if (nativeStatEl) nativeStatEl.textContent = stats.nativeCompleted;
+        if (ebookStatEl) ebookStatEl.textContent = stats.ebookCompleted;
+        if (scrambleStatEl) scrambleStatEl.textContent = stats.scrambleCompleted;
+        if (accStatEl) accStatEl.textContent = `${stats.avgScore}%`;
 
         // 필터링된 로그 목록
         const filterType = this.currentHistoryFilter || 'all';
@@ -1464,8 +1464,8 @@ class PlannerEngine {
             listEl.innerHTML = `
                 <div class="py-12 text-center text-slate-400 bg-slate-50/70 rounded-2xl border border-dashed border-slate-200">
                     <i data-lucide="inbox" class="w-10 h-10 mx-auto text-slate-300 mb-2"></i>
-                    <p class="font-serif font-bold text-slate-700 text-sm">아직 기록된 학습 이력이 없습니다.</p>
-                    <p class="text-xs text-slate-400 mt-1">플래시카드나 스마트 퀴즈, 독해 지문을 학습하면 자동으로 이력이 누적됩니다.</p>
+                    <p class="font-serif font-bold text-slate-700 text-sm">해당 분류에 기록된 학습 이력이 아직 없습니다.</p>
+                    <p class="text-xs text-slate-400 mt-1">단어장, 퀴즈, 문법 클리닉, 원어민 표현, e-Book 원서 등을 학습하면 자동으로 누적됩니다.</p>
                 </div>
             `;
             if (window.lucide) window.lucide.createIcons();
@@ -1475,28 +1475,57 @@ class PlannerEngine {
         listEl.innerHTML = logs.map(item => {
             let typeBadge = '';
             let iconName = 'book-open';
+            let jumpTab = item.actionTab || 'flashcards';
+
             if (item.type === 'flashcard') {
                 typeBadge = '<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-100 text-blue-900 border border-blue-200">플래시카드</span>';
                 iconName = 'layers';
+                jumpTab = 'flashcards';
             } else if (item.type === 'quiz') {
                 typeBadge = '<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-200">스마트 퀴즈</span>';
                 iconName = 'check-square';
+                jumpTab = 'quiz';
+            } else if (item.type === 'grammar') {
+                typeBadge = '<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-purple-100 text-purple-900 border border-purple-200">문법 클리닉</span>';
+                iconName = 'bookmark';
+                jumpTab = 'grammar';
+            } else if (item.type === 'native') {
+                typeBadge = '<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-900 border border-emerald-200">원어민 표현</span>';
+                iconName = 'sparkles';
+                jumpTab = 'expressions';
+            } else if (item.type === 'ebook') {
+                typeBadge = '<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-teal-100 text-teal-900 border border-teal-200">e-Book 원서</span>';
+                iconName = 'book';
+                jumpTab = 'ebook';
             } else if (item.type === 'reading') {
                 typeBadge = '<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-indigo-100 text-indigo-900 border border-indigo-200">내신 독해</span>';
                 iconName = 'graduation-cap';
+                jumpTab = 'reading';
+            } else if (item.type === 'scramble') {
+                typeBadge = '<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-100 text-rose-900 border border-rose-200">서술형 영작</span>';
+                iconName = 'align-left';
+                jumpTab = 'reading';
+            } else if (item.type === 'wrong') {
+                typeBadge = '<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-red-100 text-red-900 border border-red-200">오답 클리닉</span>';
+                iconName = 'alert-triangle';
+                jumpTab = 'review';
+            } else if (item.type === 'exam') {
+                typeBadge = '<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-sky-100 text-sky-900 border border-sky-200">실전 모의고사</span>';
+                iconName = 'file-text';
+                jumpTab = 'reading';
             }
 
             let scoreBadge = '';
             if (typeof item.accuracy === 'number') {
-                scoreBadge = `<span class="text-xs font-mono font-bold ${item.accuracy >= 80 ? 'text-emerald-700' : 'text-blue-900'}">${item.accuracy}% 정답</span>`;
+                scoreBadge = `<span class="text-xs font-mono font-bold ${item.accuracy >= 80 ? 'text-emerald-700' : 'text-blue-900'}">${item.accuracy}% 달성</span>`;
             } else if (item.score !== null) {
                 scoreBadge = `<span class="text-xs font-mono font-bold text-blue-900">${item.score}점</span>`;
             }
 
             return `
-                <div class="p-3.5 bg-white border border-slate-200 hover:border-slate-300 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-2xs transition-all">
+                <div class="p-3.5 bg-white border border-slate-200 hover:border-blue-300 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-2xs hover:shadow-xs transition-all">
                     <div class="flex items-start gap-3">
-                        <div class="w-9 h-9 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center shrink-0 mt-0.5">
+                        <div class="w-9 h-9 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center shrink-0 mt-0.5 border border-slate-200">
                             <i data-lucide="${iconName}" class="w-4 h-4 text-blue-900"></i>
                         </div>
                         <div>
@@ -1507,9 +1536,15 @@ class PlannerEngine {
                             <p class="text-xs text-slate-600 mt-1">${item.detail}</p>
                         </div>
                     </div>
-                    <div class="flex sm:flex-col items-center sm:items-end justify-between shrink-0 text-right">
-                        <div class="text-[11px] font-mono text-slate-400">${item.date} ${item.timeStr || ''}</div>
-                        <div class="mt-0.5">${scoreBadge}</div>
+                    <div class="flex sm:flex-col items-center sm:items-end justify-between shrink-0 text-right gap-1.5 border-t sm:border-t-0 pt-2 sm:pt-0 border-slate-100">
+                        <div class="flex items-center gap-2 sm:justify-end">
+                            <span class="text-[11px] font-mono text-slate-400">${item.date} ${item.timeStr || ''}</span>
+                            ${scoreBadge}
+                        </div>
+                        <button type="button" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-blue-100 text-slate-700 hover:text-blue-900 text-[11px] font-semibold transition-all cursor-pointer flex items-center gap-1" onclick="window.plannerEngine.closeLearningHistoryModal(); window.switchTab('${jumpTab}');">
+                            <span>바로가기</span>
+                            <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                        </button>
                     </div>
                 </div>
             `;
