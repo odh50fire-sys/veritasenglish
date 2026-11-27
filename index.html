@@ -1287,11 +1287,17 @@
                 <!-- JS 주입: window.heatmapEngine.render() -->
             </div>
             <!-- 복습 서브 네비게이션 세그먼트 바 -->
-            <div class="flex items-center gap-2 border-b border-slate-200 pb-3">
+            <div class="flex items-center gap-2 border-b border-slate-200 pb-3 flex-wrap">
                 <button id="btn-subtab-review-srs" type="button" onclick="window.app.switchReviewSubTab('srs')" 
                     class="px-4 py-2 rounded-xl bg-slate-900 text-white font-serif font-bold text-xs shadow-xs flex items-center gap-1.5 transition-all cursor-pointer">
                     <i data-lucide="repeat" class="w-4 h-4 text-emerald-400"></i>
                     <span>에빙하우스 망각곡선 복습</span>
+                </button>
+                <button id="btn-subtab-review-rush" type="button" onclick="window.wordRushEngine && window.wordRushEngine.openGameModal()" 
+                    class="px-4 py-2 rounded-xl bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-400 hover:to-orange-500 text-slate-950 font-serif font-black text-xs shadow-sm flex items-center gap-1.5 transition-all cursor-pointer active:scale-95 group" title="60초 고속 서바이벌 인출 복습 게임">
+                    <span class="text-sm group-hover:scale-125 transition-transform">⚡</span>
+                    <span>워드 러시 타임어택</span>
+                    <span class="px-1.5 py-0.2 rounded bg-slate-950 text-amber-300 font-mono text-[9px] font-bold">GAME</span>
                 </button>
                 <button id="btn-subtab-review-wrong" type="button" onclick="window.app.switchReviewSubTab('wrong')" 
                     class="px-4 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-700 font-serif font-semibold text-xs border border-slate-200 flex items-center gap-1.5 transition-all cursor-pointer">
@@ -4513,6 +4519,8 @@
     <!-- 차세대 스마트 고도화 5대 엔진: 잔디 히트맵, 워크맨, 지식그래프, 영작튜터, 단어배틀 -->
     <script src="js/heatmap_engine.js?v=20261127_grid_align_v3"></script>
     <script src="js/audiobook_player.js"></script>
+    <!-- 워드 러시: 서바이벌 타임어택 (능동적 인출 & 4대 모드 아케이드 복습 게임) -->
+    <script src="js/word_rush.js?v=20261127_rush_v1"></script>
     <!-- 베리타스 AI 튜터 (단어 질의응답 & 사이트 기능 가이드 위젯) -->
     <script src="js/ai_tutor.js?v=20261126_v401"></script>
     <!-- 스마트 올인원 영어 학습 어시스턴트 (학교·내신 D-Day, 시중교재 배정 및 원클릭 체크) -->

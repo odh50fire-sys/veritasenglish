@@ -625,6 +625,13 @@ class AppController {
             this.switchReadingSubTab('exam');
             return;
         }
+        if (tabName === 'wordrush' || tabName === 'rush') {
+            this.switchTab('review');
+            if (window.wordRushEngine && typeof window.wordRushEngine.openGameModal === 'function') {
+                window.wordRushEngine.openGameModal();
+            }
+            return;
+        }
         // [방안 1 탭 별칭 지원]
         if (tabName === 'native') tabName = 'expressions';
         if (tabName === 'wordbook') tabName = 'flashcards';

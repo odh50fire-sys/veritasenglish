@@ -452,14 +452,18 @@ class HeatmapEngine {
               </h3>
             </div>
 
-            <!-- 빠른 액션 버튼 2종 -->
-            <div class="flex items-center gap-2 shrink-0">
+            <!-- 빠른 액션 버튼 3종 -->
+            <div class="flex items-center gap-2 shrink-0 flex-wrap">
+              <button onclick="window.wordRushEngine && window.wordRushEngine.openGameModal()" class="px-3 py-1.5 rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-300 hover:to-orange-400 text-slate-950 font-serif font-black text-xs shadow-xs transition-all flex items-center gap-1 cursor-pointer active:scale-95 group" title="60초 타임어택 고속 인출 복습 게임">
+                <span class="group-hover:scale-125 transition-transform">⚡</span>
+                <span>워드 러시 게임</span>
+              </button>
               <button onclick="window.audiobookPlayer && window.audiobookPlayer.playDueWords()" class="px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-serif font-bold text-xs shadow-xs transition-all flex items-center gap-1.5 cursor-pointer active:scale-95" title="복습 예정 어휘를 이어폰으로 미리 듣기">
                 <i data-lucide="headphones" class="w-3.5 h-3.5 text-indigo-200"></i>
                 <span>🎧 복습 오디오북</span>
               </button>
-              <button onclick="window.app && window.app.switchTab('review')" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-300 hover:from-amber-300 hover:to-amber-200 text-blue-950 font-serif font-black text-xs shadow-sm transition-all flex items-center gap-1.5 cursor-pointer active:scale-95">
-                <i data-lucide="refresh-cw" class="w-3.5 h-3.5 text-blue-950"></i>
+              <button onclick="window.app && window.app.switchTab('review')" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-teal-400 to-emerald-400 hover:from-teal-300 hover:to-emerald-300 text-slate-950 font-serif font-black text-xs shadow-sm transition-all flex items-center gap-1.5 cursor-pointer active:scale-95">
+                <i data-lucide="refresh-cw" class="w-3.5 h-3.5 text-slate-950"></i>
                 <span>🚀 스마트 복습 시작</span>
               </button>
             </div>
