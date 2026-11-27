@@ -233,6 +233,12 @@ class ReviewManager {
                 const action = btn.dataset.action;
                 window.storage.recordReviewResult(id, action);
                 this.render();
+                if (window.heatmapEngine && typeof window.heatmapEngine.render === 'function') {
+                    window.heatmapEngine.render();
+                }
+                if (window.heatmapEngine && typeof window.heatmapEngine.render === 'function') {
+                    window.heatmapEngine.render();
+                }
                 if (window.onboardingEngine) window.onboardingEngine.completeQuestStep('readingSolved');
             };
         });
@@ -303,6 +309,9 @@ class ReviewManager {
                 const action = btn.dataset.action;
                 window.storage.recordReviewResult(id, action);
                 this.render();
+                if (window.heatmapEngine && typeof window.heatmapEngine.render === 'function') {
+                    window.heatmapEngine.render();
+                }
             };
         });
 

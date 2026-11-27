@@ -614,8 +614,15 @@ class QuizEngine {
             detail: `출제 범위: ${this.getScopeName(this.currentScope)} • 정답률 ${accuracy}% (${correctCount}/${totalQuestions}문항 정답)`,
             score: this.score,
             total: totalQuestions * 10,
+            questionCount: totalQuestions,
+            wordCount: totalQuestions,
             accuracy: accuracy
         });
+
+        // 365일 에빙하우스 잔디 히트맵 실시간 동기화
+        if (window.heatmapEngine && typeof window.heatmapEngine.render === 'function') {
+            window.heatmapEngine.render();
+        }
 
         // 다음 퀴즈 단계 버튼 라벨 및 액션 갱신 (객관식 -> 스펠링 -> 리스닝 -> 문맥 완성 -> 복습)
         const stageNames = {

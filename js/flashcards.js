@@ -559,9 +559,15 @@ class FlashcardEngine {
                 title: `플래시카드 완수 (${this.flipMode === 'eng-to-kor' ? '영어➔한국어' : '한국어➔영어'})`,
                 detail: `총 ${this.reviewedSession.total}단어 학습 • 완벽암기 ${this.reviewedSession.easy}, 보통 ${this.reviewedSession.good}, 취약 ${this.reviewedSession.hard}`,
                 total: this.reviewedSession.total,
+                wordCount: this.reviewedSession.total,
                 score: this.reviewedSession.easy + this.reviewedSession.good,
                 accuracy: Math.round(((this.reviewedSession.easy + this.reviewedSession.good) / Math.max(1, this.reviewedSession.total)) * 100)
             });
+
+            // 365일 에빙하우스 잔디 히트맵 실시간 동기화
+            if (window.heatmapEngine && typeof window.heatmapEngine.render === 'function') {
+                window.heatmapEngine.render();
+            }
 
             // 같은 단원에서 스마트 퀴즈를 이미 풀었던 단원이면 플래시카드 완료 즉시 전체 학습 완료 동기화
             if (window.storage && typeof window.storage.syncUnitCompletionForFlashcardWords === 'function') {

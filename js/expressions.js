@@ -695,6 +695,7 @@ class NativeExpressionsEngine {
                 detail: `4단계 실전 스튜디오 완독 및 핵심 표현 SRS 복습 등록`,
                 score: 100,
                 total: 100,
+                wordCount: 2,
                 accuracy: 100,
                 actionTab: 'expressions'
             });

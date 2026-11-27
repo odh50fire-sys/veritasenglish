@@ -30,62 +30,184 @@ class HeatmapEngine {
   }
 
   /**
-   * 1년(364일, 52주) 일자별 학습/복습 단어 수 및 통계 집계
+   * 로컬 타임존 기준 YYYY-MM-DD 날짜 포맷팅 헬퍼 (KST 등 시간대 오차 방지)
+   */
+  formatLocalDate(dateInput) {
+    if (!dateInput) return '';
+    const d = (dateInput instanceof Date) ? dateInput : new Date(dateInput);
+    if (isNaN(d.getTime())) return '';
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
+
+  /**
+   * 1년(364일, 52주) 일자별 학습/복습 단어 수 및 통계 집계 (정확한 중복 방지 및 고유 어휘 집계)
    */
   calculateYearlyData() {
     const today = new Date();
-    const dataMap = {};
-    const words = (window.storage && window.storage.words) ? window.storage.words : [];
-    const history = (window.storage && window.storage.history) ? window.storage.history : [];
+    const todayStr = (window.storage && typeof window.storage.getTodayDateString === 'function')
+      ? window.storage.getTodayDateString()
+      : this.formatLocalDate(today);
 
-    // 364일 전 날짜부터 오늘까지 초기화
-    for (let i = 363; i >= 0; i--) {
-      const d = new Date(today);
-      d.setDate(d.getDate() - i);
-      const dateStr = d.toISOString().slice(0, 10);
-      dataMap[dateStr] = {
-        date: dateStr,
-        dayOfWeek: d.getDay(), // 0: Sun, 1: Mon, ...
-        count: 0,
-        quizCount: 0,
-        flashcardCount: 0,
-        readingCount: 0,
-        audiobookCount: 0,
-        accuracy: null
-      };
+    const dataMap = {};
+    const rawWords = (window.storage && Array.isArray(window.storage.words)) ? window.storage.words : [];
+    // 독해 지문이나 문법 강의 카드가 아닌 순수 어휘 및 원어민 표현만 필터링
+    const words = rawWords.filter(w => !w.isReadingPassage && !w.isGrammarUnit && !w.isEBookTask);
+    const history = (window.storage && Array.isArray(window.storage.history)) ? window.storage.history : [];
+
+    // 52주 일요일 시작 기준 그리드 정렬 (GitHub 잔디 표준: Row 0=일, 1=월, 3=수, 5=금)
+    const currentDayOfWeek = today.getDay(); // 0(일) ~ 6(토)
+    const thisSunday = new Date(today);
+    thisSunday.setDate(today.getDate() - currentDayOfWeek);
+    
+    // 51주 전 일요일 계산 (총 52주 = 364일 캘린더)
+    const startSunday = new Date(thisSunday);
+    startSunday.setDate(thisSunday.getDate() - (51 * 7));
+    this.startSunday = startSunday;
+
+    for (let w = 0; w < 52; w++) {
+      for (let dayIdx = 0; dayIdx < 7; dayIdx++) {
+        const d = new Date(startSunday);
+        d.setDate(startSunday.getDate() + (w * 7 + dayIdx));
+        const dateStr = this.formatLocalDate(d);
+        if (!dataMap[dateStr]) {
+          dataMap[dateStr] = {
+            date: dateStr,
+            dayOfWeek: dayIdx,
+            isFuture: dateStr > todayStr,
+            count: 0,
+            uniqueWords: 0,
+            quizWords: 0,
+            flashcardWords: 0,
+            reviewWords: 0,
+            nativeWords: 0,
+            audiobookCount: 0,
+            quizScores: [],
+            accuracy: null,
+            otherActivities: {
+              grammar: 0,
+              reading: 0,
+              ebook: 0,
+              scramble: 0,
+              exam: 0,
+              wrong: 0
+            }
+          };
+        }
+      }
     }
 
-    // 1. storage.history 집계
-    history.forEach(item => {
-      const dStr = item.date;
-      if (dataMap[dStr]) {
-        const c = item.total || item.score || 1;
-        dataMap[dStr].count += c;
-        if (item.type === 'quiz') dataMap[dStr].quizCount += c;
-        else if (item.type === 'flashcard') dataMap[dStr].flashcardCount += c;
-        else if (item.type === 'reading') dataMap[dStr].readingCount += 1;
-        else if (item.type === 'audiobook') dataMap[dStr].audiobookCount += c;
+    // 1. storage.words에서 일자별 실제 복습/학습 완료된 고유 단어(Set) 집계
+    const wordsReviewedPerDate = {}; // dateStr -> Set of word ids
 
-        if (item.accuracy !== null && item.accuracy !== undefined) {
-          dataMap[dStr].accuracy = dataMap[dStr].accuracy !== null 
-            ? Math.round((dataMap[dStr].accuracy + item.accuracy) / 2) 
-            : item.accuracy;
+    words.forEach(w => {
+      // (1) 단어의 최근 복습 일자 검사
+      if (w.lastReviewed) {
+        const revDate = this.formatLocalDate(w.lastReviewed);
+        if (dataMap[revDate]) {
+          if (!wordsReviewedPerDate[revDate]) wordsReviewedPerDate[revDate] = new Set();
+          wordsReviewedPerDate[revDate].add(w.id || w.word);
         }
+      }
+      
+      // (2) 완료 일자 검사 (해당 일자에 학습 완료된 경우)
+      if (w.studyCompleted && w.completedAt) {
+        const compDate = this.formatLocalDate(w.completedAt);
+        if (dataMap[compDate]) {
+          if (!wordsReviewedPerDate[compDate]) wordsReviewedPerDate[compDate] = new Set();
+          wordsReviewedPerDate[compDate].add(w.id || w.word);
+        }
+      }
+
+      // (3) 단어 개별 히스토리 배열 검사 (다회차 복습 이력 보존)
+      if (Array.isArray(w.history)) {
+        w.history.forEach(h => {
+          const hDate = this.formatLocalDate(h.timestamp || h.date);
+          if (dataMap[hDate]) {
+            if (!wordsReviewedPerDate[hDate]) wordsReviewedPerDate[hDate] = new Set();
+            wordsReviewedPerDate[hDate].add(w.id || w.word);
+          }
+        });
       }
     });
 
-    // 2. storage.words 집계 (lastReviewed 또는 planDate)
-    words.forEach(w => {
-      if (w.lastReviewed) {
-        const dStr = new Date(w.lastReviewed).toISOString().slice(0, 10);
-        if (dataMap[dStr]) {
-          dataMap[dStr].count += 1;
+    // 2. storage.history 세션 로그 집계 (과거 세션 복원 및 활동별 분해)
+    history.forEach(item => {
+      const dStr = item.date || this.formatLocalDate(item.timestamp);
+      if (!dataMap[dStr]) return;
+
+      const dayObj = dataMap[dStr];
+
+      if (item.type === 'flashcard') {
+        const fcCount = item.wordCount || item.total || 0;
+        dayObj.flashcardWords += fcCount;
+        if (item.accuracy !== null && item.accuracy !== undefined) {
+          dayObj.quizScores.push(item.accuracy);
         }
-      } else if (w.planDate && dataMap[w.planDate]) {
-        // 이미 배정되어 학습 진행된 단어 가중치
-        if (w.stage && w.stage > 1) {
-          dataMap[w.planDate].count += 1;
+      } else if (item.type === 'quiz') {
+        // 스마트 퀴즈 문항 수 추출 (item.total은 100점 만점 또는 totalQuestions*10일 수 있으므로 정밀 추출)
+        let qCount = 0;
+        if (item.wordCount) {
+          qCount = item.wordCount;
+        } else if (item.questionCount) {
+          qCount = item.questionCount;
+        } else if (typeof item.detail === 'string') {
+          const m = item.detail.match(/(\d+)\s*문항/);
+          if (m) qCount = parseInt(m[1], 10);
         }
+        if (!qCount) {
+          if (item.total && item.total % 10 === 0 && item.total <= 500) {
+            qCount = Math.round(item.total / 10);
+          } else {
+            qCount = item.total || 10;
+          }
+        }
+        dayObj.quizWords += qCount;
+        if (item.accuracy !== null && item.accuracy !== undefined) {
+          dayObj.quizScores.push(item.accuracy);
+        }
+      } else if (item.type === 'review') {
+        const revCount = item.wordCount || item.total || item.count || 1;
+        dayObj.reviewWords += revCount;
+      } else if (item.type === 'native') {
+        const natCount = item.wordCount || item.count || 2;
+        dayObj.nativeWords += natCount;
+      } else if (item.type === 'audiobook') {
+        const abCount = item.wordCount || item.total || 1;
+        dayObj.audiobookCount += abCount;
+      } else if (item.type === 'grammar') {
+        dayObj.otherActivities.grammar += 1;
+      } else if (item.type === 'reading') {
+        dayObj.otherActivities.reading += 1;
+      } else if (item.type === 'ebook') {
+        dayObj.otherActivities.ebook += 1;
+      } else if (item.type === 'scramble') {
+        dayObj.otherActivities.scramble += 1;
+      } else if (item.type === 'exam') {
+        dayObj.otherActivities.exam += 1;
+      } else if (item.type === 'wrong') {
+        dayObj.otherActivities.wrong += 1;
+      }
+    });
+
+    // 3. 일자별 최종 어휘 학습 단어 수(count) 확정 (중복 없는 순수 단어 수 산출)
+    Object.keys(dataMap).forEach(dStr => {
+      const dayObj = dataMap[dStr];
+      const uniqueFromWords = wordsReviewedPerDate[dStr] ? wordsReviewedPerDate[dStr].size : 0;
+      dayObj.uniqueWords = uniqueFromWords;
+
+      // 같은 날 같은 단어로 플래시카드와 퀴즈를 모두 완료한 경우 중복 카운트를 방지하기 위해 Math.max 적용
+      const sessionEstimated = Math.max(dayObj.flashcardWords, dayObj.quizWords) + dayObj.reviewWords + dayObj.nativeWords;
+
+      // 최종 일일 단어 수 산출
+      dayObj.count = Math.max(uniqueFromWords, sessionEstimated);
+
+      // 평균 정답률 계산
+      if (dayObj.quizScores.length > 0) {
+        const sumAcc = dayObj.quizScores.reduce((acc, cur) => acc + cur, 0);
+        dayObj.accuracy = Math.round(sumAcc / dayObj.quizScores.length);
       }
     });
 
@@ -114,10 +236,9 @@ class HeatmapEngine {
 
     // 오늘부터 거꾸로 현재 스트릭 계산
     const reversedKeys = [...dateKeys].reverse();
-    const todayStr = today.toISOString().slice(0, 10);
     const yesterday = new Date(today);
     yesterday.setDate(yesterday.getDate() - 1);
-    const yesterdayStr = yesterday.toISOString().slice(0, 10);
+    const yesterdayStr = this.formatLocalDate(yesterday);
 
     // 오늘 또는 어제 학습 기록이 있으면 스트릭 유지
     if (dataMap[todayStr] && dataMap[todayStr].count > 0) {
@@ -147,11 +268,11 @@ class HeatmapEngine {
    * 망각곡선 주기(D+1, D+3, D+7, D+14, D+30) 미래 복습 단어 수 산출
    */
   calculateForecast(words, today) {
-    const todayStr = today.toISOString().slice(0, 10);
+    const todayStr = this.formatLocalDate(today);
     const addDays = (d, n) => {
       const copy = new Date(d);
       copy.setDate(copy.getDate() + n);
-      return copy.toISOString().slice(0, 10);
+      return this.formatLocalDate(copy);
     };
 
     const targetD1 = addDays(today, 1);
@@ -166,7 +287,10 @@ class HeatmapEngine {
     let d14Count = 0;
     let d30Count = 0;
 
-    words.forEach(w => {
+    // 순수 어휘 단어만 필터링
+    const vocaWords = (words || []).filter(w => !w.isReadingPassage && !w.isGrammarUnit && !w.isEBookTask);
+
+    vocaWords.forEach(w => {
       const nextDate = w.nextReviewDate || w.planDate;
       if (!nextDate) return;
       
@@ -178,12 +302,12 @@ class HeatmapEngine {
     });
 
     // 기본 보정 (등록된 단어가 많을 때 최소 분배 시뮬레이션)
-    if (d1Count === 0 && words.length > 0) {
-      d1Count = Math.min(25, Math.ceil(words.length * 0.1));
-      d3Count = Math.min(45, Math.ceil(words.length * 0.18));
-      d7Count = Math.min(70, Math.ceil(words.length * 0.3));
-      d14Count = Math.min(110, Math.ceil(words.length * 0.45));
-      d30Count = words.length;
+    if (d1Count === 0 && vocaWords.length > 0) {
+      d1Count = Math.min(25, Math.ceil(vocaWords.length * 0.1));
+      d3Count = Math.min(45, Math.ceil(vocaWords.length * 0.18));
+      d7Count = Math.min(70, Math.ceil(vocaWords.length * 0.3));
+      d14Count = Math.min(110, Math.ceil(vocaWords.length * 0.45));
+      d30Count = vocaWords.length;
     }
 
     this.forecastData = {
@@ -432,56 +556,66 @@ class HeatmapEngine {
 
     // 364일 일자 배열 생성 (일요일 시작 기준으로 주 정렬)
     const sortedDates = Object.keys(this.currentYearData).sort();
+    const startSunday = this.startSunday || new Date(sortedDates[0]);
+    const todayStr = (window.storage && typeof window.storage.getTodayDateString === 'function')
+      ? window.storage.getTodayDateString()
+      : this.formatLocalDate(today);
     
-    // 월별 라벨 생성 (월이 바뀌는 주 계산)
+    // 월별 라벨 생성 (월이 바뀌는 주 계산 및 텍스트 겹침 완벽 방지)
     const monthLabels = [];
     const monthNames = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
     let lastMonth = -1;
+    let lastX = -999;
 
     for (let w = 0; w < weeks; w++) {
-      const idx = w * 7;
-      if (idx < sortedDates.length) {
-        const d = new Date(sortedDates[idx]);
-        const m = d.getMonth();
-        if (m !== lastMonth) {
-          monthLabels.push({
-            name: monthNames[m],
-            x: startX + w * (cellSize + cellGap)
-          });
-          lastMonth = m;
-        }
+      const d = new Date(startSunday);
+      d.setDate(startSunday.getDate() + w * 7);
+      const m = d.getMonth();
+      const posX = startX + w * (cellSize + cellGap);
+      if (m !== lastMonth && (posX - lastX >= 36)) {
+        monthLabels.push({
+          name: monthNames[m],
+          x: posX
+        });
+        lastMonth = m;
+        lastX = posX;
       }
     }
 
     let rectsSvg = '';
 
-    // 52주 x 7일 셀 렌더링
+    // 52주 x 7일 셀 렌더링 (Row 0=일, 1=월, 3=수, 5=금 완벽 정렬)
     for (let w = 0; w < weeks; w++) {
       for (let dayIdx = 0; dayIdx < 7; dayIdx++) {
-        const dateIndex = w * 7 + dayIdx;
-        if (dateIndex < sortedDates.length) {
-          const dateStr = sortedDates[dateIndex];
-          const info = this.currentYearData[dateStr] || { count: 0 };
-          const x = startX + w * (cellSize + cellGap);
-          const y = startY + dayIdx * (cellSize + cellGap);
-          const color = this.getLevelColor(info.count);
-          const strokeClass = this.getLevelClass(info.count);
+        const d = new Date(startSunday);
+        d.setDate(startSunday.getDate() + (w * 7 + dayIdx));
+        const dateStr = this.formatLocalDate(d);
+        const info = this.currentYearData[dateStr] || { count: 0, isFuture: dateStr > todayStr };
+        const x = startX + w * (cellSize + cellGap);
+        const y = startY + dayIdx * (cellSize + cellGap);
+        const isFuture = dateStr > todayStr;
+        const color = isFuture ? '#f8fafc' : this.getLevelColor(info.count);
+        const strokeClass = isFuture ? 'stroke-slate-100 opacity-40' : this.getLevelClass(info.count);
 
-          rectsSvg += `
-            <rect 
-              x="${x}" y="${y}" 
-              width="${cellSize}" height="${cellSize}" 
-              rx="2.5" ry="2.5" 
-              fill="${color}" 
-              class="heatmap-cell transition-all duration-150 cursor-pointer hover:stroke-slate-900 hover:stroke-[1.5] ${strokeClass}"
-              data-date="${dateStr}"
-              data-count="${info.count}"
-              data-quiz="${info.quizCount || 0}"
-              data-flash="${info.flashcardCount || 0}"
-              data-accuracy="${info.accuracy !== null ? info.accuracy : ''}"
-            />
-          `;
-        }
+        rectsSvg += `
+          <rect 
+            x="${x}" y="${y}" 
+            width="${cellSize}" height="${cellSize}" 
+            rx="2.5" ry="2.5" 
+            fill="${color}" 
+            class="heatmap-cell transition-all duration-150 cursor-pointer hover:stroke-slate-900 hover:stroke-[1.5] ${strokeClass}"
+            data-date="${dateStr}"
+            data-count="${info.count}"
+            data-unique="${info.uniqueWords || 0}"
+            data-quiz="${info.quizWords || 0}"
+            data-flash="${info.flashcardWords || 0}"
+            data-review="${info.reviewWords || 0}"
+            data-native="${info.nativeWords || 0}"
+            data-accuracy="${info.accuracy !== null ? info.accuracy : ''}"
+            data-other="${encodeURIComponent(JSON.stringify(info.otherActivities || {}))}"
+            data-future="${isFuture ? '1' : '0'}"
+          />
+        `;
       }
     }
 
@@ -504,7 +638,7 @@ class HeatmapEngine {
         ${rectsSvg}
       </svg>
       <!-- 인터랙티브 툴팁 요소 -->
-      <div id="${this.tooltipId}" class="fixed hidden z-50 pointer-events-none px-3 py-2 rounded-xl bg-slate-900/95 text-white text-xs shadow-xl border border-slate-700/80 backdrop-blur-xs transition-opacity duration-150">
+      <div id="${this.tooltipId}" class="fixed hidden z-50 pointer-events-none px-3.5 py-2.5 rounded-xl bg-slate-900/95 text-white text-xs shadow-2xl border border-slate-700/80 backdrop-blur-md transition-opacity duration-150 min-w-[210px] max-w-[260px]">
         <div id="${this.tooltipId}-content"></div>
       </div>
     `;
@@ -524,47 +658,79 @@ class HeatmapEngine {
       const showTooltip = (e) => {
         const date = cell.dataset.date;
         const count = parseInt(cell.dataset.count || '0', 10);
-        const quiz = cell.dataset.quiz;
-        const flash = cell.dataset.flash;
+        const quiz = parseInt(cell.dataset.quiz || '0', 10);
+        const flash = parseInt(cell.dataset.flash || '0', 10);
+        const review = parseInt(cell.dataset.review || '0', 10);
+        const native = parseInt(cell.dataset.native || '0', 10);
         const accuracy = cell.dataset.accuracy;
+        let other = {};
+        try {
+          other = JSON.parse(decodeURIComponent(cell.dataset.other || '{}'));
+        } catch (err) {}
 
-        let statusText = '';
-        if (count === 0) {
-          statusText = '<span class="text-slate-400">학습 기록 없음</span>';
+        const dObj = new Date(date + 'T00:00:00');
+        const dayNames = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
+        const dayName = !isNaN(dObj.getDay()) ? dayNames[dObj.getDay()] : '';
+
+        let statusBadge = '';
+        if (count >= 50) {
+          statusBadge = '<span class="text-emerald-300 font-bold">👑 Lv.4 마스터 달성</span>';
+        } else if (count >= 30) {
+          statusBadge = '<span class="text-amber-300 font-bold">🔥 Lv.3 우수 달성</span>';
+        } else if (count >= 11) {
+          statusBadge = '<span class="text-emerald-400 font-semibold">🌱 Lv.2 기본 달성</span>';
+        } else if (count > 0) {
+          statusBadge = '<span class="text-emerald-200 font-medium">🌿 Lv.1 워밍업 완료</span>';
         } else {
-          statusText = `<span class="text-emerald-400 font-bold font-serif text-sm">${count}단어 완료</span>`;
+          statusBadge = '<span class="text-slate-400 font-normal">휴식일 (미학습)</span>';
         }
 
+        const otherList = [];
+        if (other.grammar > 0) otherList.push(`문법 ${other.grammar}강`);
+        if (other.reading > 0) otherList.push(`내신 독해 ${other.reading}편`);
+        if (other.ebook > 0) otherList.push(`e-Book ${other.ebook}권`);
+        if (other.scramble > 0) otherList.push(`영작 ${other.scramble}개`);
+        if (other.exam > 0) otherList.push(`모의고사 ${other.exam}회`);
+
         content.innerHTML = `
-          <div class="font-mono text-[10px] text-slate-400 border-b border-slate-800 pb-1 mb-1.5 flex items-center justify-between gap-3">
-            <span>📅 ${date}</span>
-            <span class="text-amber-400 font-semibold">${count >= 30 ? '🔥 목표 초과 달성' : (count > 0 ? '🌱 학습 완료' : '미학습')}</span>
+          <div class="font-mono text-[10px] text-slate-400 border-b border-slate-800 pb-1.5 mb-1.5 flex items-center justify-between gap-3">
+            <span>📅 ${date} (${dayName})</span>
+            ${statusBadge}
           </div>
-          <div class="space-y-0.5">
-            <div>${statusText}</div>
+          <div class="space-y-1">
+            <div class="flex items-baseline justify-between">
+              <span class="${count > 0 ? 'text-emerald-400 font-bold font-serif text-sm' : 'text-slate-400 font-medium text-xs'}">
+                ${count > 0 ? `총 ${count}개 단어 완료` : '학습 기록 없음'}
+              </span>
+              ${count > 0 && accuracy ? `<span class="text-[10px] text-amber-300 font-mono font-semibold">정답률 ${accuracy}%</span>` : ''}
+            </div>
             ${count > 0 ? `
-              <div class="text-[10px] text-slate-300 mt-1 flex flex-col gap-0.5">
-                ${quiz > 0 ? `<span>• 퀴즈 완료: <b>${quiz}</b>단어 ${accuracy ? `(정답률 ${accuracy}%)` : ''}</span>` : ''}
-                ${flash > 0 ? `<span>• 플래시카드: <b>${flash}</b>단어</span>` : ''}
+              <div class="text-[10px] text-slate-300 flex flex-col gap-0.5 pt-1 border-t border-slate-800/80">
+                ${flash > 0 ? `<span>• 플래시카드: <b class="text-white">${flash}</b>단어</span>` : ''}
+                ${quiz > 0 ? `<span>• 스마트 퀴즈: <b class="text-white">${quiz}</b>문항</span>` : ''}
+                ${review > 0 ? `<span>• 에빙하우스 복습: <b class="text-white">${review}</b>단어</span>` : ''}
+                ${native > 0 ? `<span>• 원어민 실전 표현: <b class="text-white">${native}</b>개</span>` : ''}
+                ${otherList.length > 0 ? `<span class="text-slate-400">• 기타 활동: ${otherList.join(', ')}</span>` : ''}
               </div>
-            ` : ''}
+            ` : `
+              <div class="text-[10px] text-slate-500 pt-0.5">💡 학습을 완료하여 오늘 잔디를 심어보세요!</div>
+            `}
           </div>
         `;
 
         tooltip.classList.remove('hidden');
 
-        // 툴팁 위치 계산 (마우스 좌표 기준)
-        const x = e.clientX || (cell.getBoundingClientRect().left + 6);
-        const y = e.clientY || cell.getBoundingClientRect().top;
-
-        const tipWidth = 190;
-        const tipHeight = 75;
-        let left = x - tipWidth / 2;
-        let top = y - tipHeight - 12;
+        // 툴팁 위치 계산 (셀 위치 기준 스마트 플립 및 뷰포트 내 배치)
+        const rect = cell.getBoundingClientRect();
+        const tipWidth = tooltip.offsetWidth || 230;
+        const tipHeight = tooltip.offsetHeight || 120;
+        let left = rect.left + rect.width / 2 - tipWidth / 2;
+        let top = rect.top - tipHeight - 10;
 
         if (left < 10) left = 10;
         if (left + tipWidth > window.innerWidth - 10) left = window.innerWidth - tipWidth - 10;
-        if (top < 10) top = y + 20;
+        // 상단 공간이 부족하면 셀 아래쪽에 배치하여 겹침 완벽 방지
+        if (top < 10) top = rect.bottom + 10;
 
         tooltip.style.left = `${left}px`;
         tooltip.style.top = `${top}px`;
